@@ -1,0 +1,23 @@
+name: metablooms-ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  professionalization-projection:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate repository scaffold
+        run: |
+          test -f README.md
+          test -f docs/REPOSITORY_GOVERNANCE.md
+          echo "PASS: repository scaffold present"
+      - name: Emit stable check name
+        run: echo "professionalization-projection check complete"
