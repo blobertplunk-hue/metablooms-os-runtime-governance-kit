@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "registry_id": "CHAT_REGISTRY_v1",
+  "purpose": "Track concurrent ChatGPT chats participating in MetaBlooms OS work.",
+  "active_chats": [],
+  "required_chat_fields": [
+    "chat_id",
+    "lane_id",
+    "project_id",
+    "started_at",
+    "last_seen_at",
+    "current_stage_id",
+    "status",
+    "latest_event_id"
+  ],
+  "status_values": [
+    "active",
+    "idle",
+    "blocked",
+    "stale",
+    "closed",
+    "recovered"
+  ],
+  "update_policy": "append event first, then compact into this registry"
+}
