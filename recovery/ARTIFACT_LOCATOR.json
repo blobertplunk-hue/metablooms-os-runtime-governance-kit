@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "locator_id": "ARTIFACT_LOCATOR_STAGE43A2_v1",
+  "updated_at_utc": "20260504T034041Z",
+  "repo": "blobertplunk-hue/metablooms-os-runtime-governance-kit",
+  "authoritative_artifacts": [
+    {
+      "artifact_id": "WC13_REPAIRED2_FULL_AUTHORITY_ZIP",
+      "kind": "boot_authority_zip",
+      "status": "known_from_chat_mnt_data_and_prior_release_handoff",
+      "sha256": "2a1d96759f71eff45acefe3eb8658e3a3518456867e3b64a763272e85a7a18ed"
+    }
+  ],
+  "stage43b_required_resolution": [
+    "Import filtered os/Metablooms_OS tree into repo or bind verified release-only boot path.",
+    "Prove repo-only or repo+release recovery without relying on current /mnt/data."
+  ]
+}
