@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0.0",
+  "schema_id": "RECOVERY_INDEX_SCHEMA_v1",
+  "required_top_level_fields": [
+    "schema_version",
+    "recovery_index_id",
+    "updated_at_utc",
+    "repo",
+    "latest_boot_authority",
+    "next_authorized_stage",
+    "deferred_or_not_allowed_claims"
+  ],
+  "sha256_pattern": "^[0-9a-f]{64}$"
+}
