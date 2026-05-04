@@ -1,0 +1,11 @@
+# MetaBlooms repository ownership
+# Canonical CODEOWNERS location: .github/CODEOWNERS
+# This first-pass owner map is intentionally conservative for single-owner governance.
+
+.github/CODEOWNERS @blobertplunk-hue
+.github/ @blobertplunk-hue
+docs/ @blobertplunk-hue
+runtime/ @blobertplunk-hue
+scripts/ @blobertplunk-hue
+rulesets/ @blobertplunk-hue
+* @blobertplunk-hue
