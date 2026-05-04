@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "state_id": "REMOTE_COORDINATION_STATE_v1",
+  "repo": "blobertplunk-hue/metablooms-os-runtime-governance-kit",
+  "installed_by_stage": "PROFESSIONALIZATION_CONVERGENCE_STAGE43A1_REMOTE_COORDINATION_SCHEMA_AND_PLAN_INSTALL",
+  "installed_at": "2026-05-04T02:40:00Z",
+  "latest_boot_authority": {
+    "name": "WC13 REPAIRED2",
+    "sha256": "2a1d96759f71eff45acefe3eb8658e3a3518456867e3b64a763272e85a7a18ed"
+  },
+  "latest_known_completed_stage": "PROFESSIONALIZATION_CONVERGENCE_STAGE42_OPERATOR_UX_CARTRIDGE_STAGED_INSTALL",
+  "current_stage": "PROFESSIONALIZATION_CONVERGENCE_STAGE43A1_REMOTE_COORDINATION_SCHEMA_AND_PLAN_INSTALL",
+  "next_authorized_stage_after_success": "PROFESSIONALIZATION_CONVERGENCE_STAGE43A2_RECOVERY_INDEX_AND_ARTIFACT_LOCATOR_HARDENING",
+  "coordination_model": "append-only events + leases + compacted recovery state",
+  "repo_os_tree_status": "not_imported_until_stage43B",
+  "deferred_claims": [
+    "WC14 exists",
+    "multi-human review proven",
+    "human security review complete",
+    "real production DORA metrics exist",
+    "full typed test coverage exists",
+    "multi-user production service exists"
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0.0",
+  "contract_id": "MULTI_CHAT_SYNC_CONTRACT_v1",
+  "stage_installed": "PROFESSIONALIZATION_CONVERGENCE_STAGE43A1_REMOTE_COORDINATION_SCHEMA_AND_PLAN_INSTALL",
+  "purpose": "Coordinate concurrent MetaBlooms chats/projects through append-only repo events, path leases, delta sync packets, and recovery state compaction.",
+  "authoritative_surfaces": [
+    {
+      "surface": "repo_event_log",
+      "path": "coordination/events/",
+      "role": "append-only first-order state"
+    },
+    {
+      "surface": "recovery_index",
+      "path": "recovery/RECOVERY_INDEX.json",
+      "role": "machine-readable compacted current state"
+    },
+    {
+      "surface": "current_state",
+      "path": "recovery/CURRENT_STATE.md",
+      "role": "human-readable compacted current state"
+    },
+    {
+      "surface": "running_handoff_issue",
+      "repo": "blobertplunk-hue/metablooms-os-runtime-governance-kit",
+      "issue": 5,
+      "role": "human recovery anchor"
+    },
+    {
+      "surface": "os_tree",
+      "path": "os/Metablooms_OS/",
+      "role": "repo mirror of OS after Stage 43B"
+    }
+  ],
+  "worker_model": {
+    "worker_types": [
+      "chatgpt_chat",
+      "termux_sync_worker",
+      "powershell_sync_worker",
+      "github_actions_validator"
+    ],
+    "lane_required": true,
+    "stage_id_required": true,
+    "every_meaningful_stage_must_emit_sync_packet": true
+  },
+  "event_requirements": {
+    "event_id": "stable unique identifier, recommended STAGEID_TIMESTAMP_SHORTSHA",
+    "event_type": [
+      "stage_started",
+      "stage_completed",
+      "stage_blocked",
+      "sync_packet_created",
+      "sync_applied",
+      "conflict_detected",
+      "lease_acquired",
+      "lease_released",
+      "handoff_updated"
+    ],
+    "append_only": true,
+    "content_hash_required": true
+  },
+  "state_compaction": {
+    "derived_files": [
+      "recovery/RECOVERY_INDEX.json",
+      "recovery/CURRENT_STATE.md",
+      "recovery/REMOTE_COORDINATION_STATE.json",
+      "recovery/CHAT_REGISTRY.json",
+      "recovery/PROJECT_REGISTRY.json"
+    ],
+    "derived_files_must_reference_event_ids": true,
+    "direct_manual_edits_without_event_reference": "forbidden"
+  },
+  "safety": {
+    "git_contents_api_parallel_write_note": "Do not update the same shared file concurrently; use event fan-in or branch/PR compaction.",
+    "github_actions_concurrency_note": "Actions concurrency does not guarantee ordering; do not rely on it as the sole queue.",
+    "fail_closed_if_handoff_update_fails": true,
+    "queued_handoff_allowed_when_offline": true
+  }
+}

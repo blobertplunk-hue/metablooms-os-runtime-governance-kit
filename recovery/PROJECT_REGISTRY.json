@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "registry_id": "PROJECT_REGISTRY_v1",
+  "purpose": "Map project lanes to ownership, active stage, allowed path scopes, and sync policies.",
+  "projects": [],
+  "required_project_fields": [
+    "project_id",
+    "lane_id",
+    "display_name",
+    "owner",
+    "path_scopes",
+    "current_stage_id",
+    "next_authorized_stage",
+    "status"
+  ],
+  "default_path_scopes": [
+    "os/Metablooms_OS/**",
+    "recovery/**",
+    "coordination/**",
+    "runtime/repo_sync/**"
+  ]
+}

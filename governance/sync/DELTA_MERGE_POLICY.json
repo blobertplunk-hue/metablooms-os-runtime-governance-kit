@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "policy_id": "DELTA_MERGE_POLICY_v1",
+  "purpose": "Define how per-chat/per-stage deltas are merged into repo-backed OS state.",
+  "merge_unit": "sync_packet",
+  "sync_packet_required_fields": [
+    "packet_id",
+    "stage_id",
+    "lane_id",
+    "base_recovery_index_sha256",
+    "changed_paths",
+    "deleted_paths",
+    "artifact_paths",
+    "receipt_sha256",
+    "handoff_sha256",
+    "next_authorized_stage"
+  ],
+  "merge_order": [
+    "validate_packet_schema",
+    "verify_base_or_mark_rebase_required",
+    "check_path_leases",
+    "apply_delta",
+    "run_recovery_check",
+    "write_sync_receipt",
+    "update_event_log",
+    "compact_recovery_state",
+    "update_issue_5"
+  ],
+  "conflict_classes": {
+    "same_path_same_base": "requires explicit merge decision",
+    "same_path_divergent_base": "requires rebase or conflict packet",
+    "global_state_file_direct_edit": "reject unless compactor lease present",
+    "binary_conflict": "prefer latest explicit artifact locator; do not auto-merge bytes"
+  },
+  "small_delta_preference": true,
+  "bulk_os_import_reserved_stage": "PROFESSIONALIZATION_CONVERGENCE_STAGE43B_IMPORT_OS_TREE_TO_REPO_BRANCH"
+}
