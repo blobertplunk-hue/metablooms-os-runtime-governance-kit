@@ -1,0 +1,124 @@
+{
+  "artifact_type": "OperatorVisualTrackerState.v3",
+  "created_utc": "20260502T153800Z",
+  "decisions": {
+    "active_rule": "Boot/start surfaces must point to the visual tracker before governed work resumes.",
+    "optional_improvements": [
+      "Use tracker as boot dashboard in new chats",
+      "Continue UI polish later",
+      "Switch to classroom/product work"
+    ],
+    "required_blocker": "None",
+    "safe_to_stop_now": "Yes"
+  },
+  "headline": {
+    "blockers": {
+      "icon": "🟢",
+      "label": "Blockers",
+      "status": "clear",
+      "summary": "None"
+    },
+    "bootable_os": {
+      "icon": "✅",
+      "label": "Bootable OS",
+      "status": "ready",
+      "summary": "Ready"
+    },
+    "current_focus": {
+      "icon": "🔗",
+      "label": "Current Focus",
+      "status": "active",
+      "summary": "Boot-surface binding"
+    },
+    "next_step": {
+      "icon": "⏸️",
+      "label": "Next Step",
+      "status": "decision",
+      "summary": "User decision"
+    }
+  },
+  "lanes": [
+    {
+      "color": "green",
+      "complete": 5,
+      "name": "Core OS + MPP/CDR baseline",
+      "status": "DONE",
+      "steps": 5
+    },
+    {
+      "color": "green",
+      "complete": 5,
+      "name": "Bounded subprocess wrapper",
+      "status": "DONE",
+      "steps": 5
+    },
+    {
+      "color": "green",
+      "complete": 5,
+      "name": "Atomic JSON writer",
+      "status": "DONE",
+      "steps": 5
+    },
+    {
+      "color": "green",
+      "complete": 5,
+      "name": "Atomic append-log writer",
+      "status": "DONE",
+      "steps": 5
+    },
+    {
+      "color": "green",
+      "complete": 5,
+      "name": "Operator visual tracker polish",
+      "status": "DONE",
+      "steps": 5
+    }
+  ],
+  "latest_export": {
+    "label": "Latest full bootable OS",
+    "path": "/mnt/data/METABLOOMS_OS_BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE5_FULL_AUTHORITY_REPAIRED_20260502T152152Z.zip",
+    "sha256": "08f90b2a788831462aa7e1d72957f7ce21201174f4ea3663527fa96e7c623be9",
+    "short_sha": "08f90b2a7888…7c623be9",
+    "size_bytes": 25701887,
+    "stage": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE5_FULL_AUTHORITY_REPAIRED",
+    "status": "PASS"
+  },
+  "stage3_boot_surface_binding": {
+    "boot_surface_manifest": "runtime/operator_tracker/OPERATOR_VISUAL_TRACKER_BOOT_SURFACE_LATEST.json",
+    "new_chat_start": "NEW_CHAT_START_HERE.md",
+    "root_html": "OPEN_OPERATOR_VISUAL_TRACKER.html",
+    "runtime_html": "runtime/operator_tracker/operator_visual_tracker_latest.html",
+    "self_export_hash_rule": "Final export hash is verified by external .sha256 sidecar; it cannot be embedded inside the ZIP without changing the ZIP hash."
+  },
+  "timeline": [
+    {
+      "label": "Baseline MPP/CDR authority",
+      "state": "done"
+    },
+    {
+      "label": "Bounded subprocess wrapper",
+      "state": "done"
+    },
+    {
+      "label": "Atomic JSON writer",
+      "state": "done"
+    },
+    {
+      "label": "Atomic append-log writer",
+      "state": "done"
+    },
+    {
+      "label": "Visual tracker HTML renderer",
+      "state": "done"
+    },
+    {
+      "label": "Boot-surface tracker binding",
+      "state": "active"
+    },
+    {
+      "label": "Next user-selected work",
+      "state": "next"
+    }
+  ],
+  "title": "MetaBlooms Operator Visual Tracker"
+}

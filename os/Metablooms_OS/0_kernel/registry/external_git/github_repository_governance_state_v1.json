@@ -1,0 +1,37 @@
+{
+  "id": "github_repository_governance_state_v1",
+  "status": "active_verified_by_prior_stage_receipts",
+  "repo": "blobertplunk-hue/metablooms-os-runtime-governance-kit",
+  "repo_url": "https://github.com/blobertplunk-hue/metablooms-os-runtime-governance-kit",
+  "rulesets": [
+    {
+      "name": "metablooms-main-active-lite",
+      "enforcement": "active",
+      "rules": [
+        "deletion",
+        "non_fast_forward"
+      ]
+    },
+    {
+      "name": "metablooms-main-ci-required",
+      "enforcement": "active",
+      "required_check": "professionalization-projection"
+    }
+  ],
+  "positive_pr_test": {
+    "stage": "Stage22",
+    "pr_number": 1,
+    "status": "merged_after_required_check_passed"
+  },
+  "not_yet_claimed": [
+    "failing PRs are blocked",
+    "PR reviews are required",
+    "CODEOWNERS is enforced",
+    "force-push/delete behavior-tested"
+  ],
+  "evidence_basis": [
+    "Stage17 active-lite receipt",
+    "Stage21 CI-required receipt",
+    "Stage22 positive PR evidence bundle"
+  ]
+}

@@ -1,0 +1,341 @@
+{
+  "design_principle": "R20 is an artifact-backed observability and feedback-routing layer; logs alone are invalid.",
+  "external_research_basis": [
+    {
+      "finding": "Use consistent semantic attributes across traces, metrics, logs, profiles, and resources so telemetry can be correlated and analyzed.",
+      "source": "OpenTelemetry Semantic Conventions"
+    },
+    {
+      "finding": "Metric names/attributes require consistent hierarchy, units, and meaningful aggregation.",
+      "source": "OpenTelemetry Metrics Semantic Conventions"
+    },
+    {
+      "finding": "Trace/span identity and span attributes provide a standard basis for cross-stage execution correlation.",
+      "source": "W3C Trace Context / OTel trace conventions"
+    },
+    {
+      "finding": "Delivery performance needs throughput, instability, and recovery metrics; definitions must be explicit and contextual.",
+      "source": "DORA metrics"
+    },
+    {
+      "finding": "Policy should be separated from enforcement, accept structured input, and produce deterministic decisions.",
+      "source": "OPA policy model"
+    }
+  ],
+  "feedback_routes": [
+    {
+      "condition": "all hard thresholds pass; no drift; FIR promotion remains valid",
+      "output": "write monitor PASS receipt and continue to R21/R23 as authorized",
+      "route": "CONTINUE_NORMAL"
+    },
+    {
+      "condition": "new failure class or failed stage/gate without existing correction",
+      "output": "write failure-class seed packet for R17",
+      "route": "DEBUGGING_R17"
+    },
+    {
+      "condition": "recurring failure class, regression recurrence, or known failure repeats",
+      "output": "write enforced-correction trigger packet for R18",
+      "route": "ECL_R18"
+    },
+    {
+      "condition": "research confidence decays, external standard changes, unresolved knowledge gap, or stale source",
+      "output": "write Research Planner/SEE/MMD refresh request",
+      "route": "SEE_MMD_REFRESH"
+    },
+    {
+      "condition": "fitness score drops below threshold without direct failure",
+      "output": "rerun FIR gate with updated monitor telemetry",
+      "route": "FIR_REEVALUATION_R19"
+    },
+    {
+      "condition": "silent failure, missing artifacts, sidecar mismatch, unbound telemetry, unknown severe anomaly, or no valid feedback route",
+      "output": "blocked receipt; no downstream promotion",
+      "route": "STOP_BLOCKED"
+    }
+  ],
+  "fixtures_required": [
+    {
+      "expected": "validate PASS; feedback gate PASS; route CONTINUE_NORMAL",
+      "fixture": "valid_monitor_telemetry_packet_v1.json"
+    },
+    {
+      "expected": "feedback gate FAIL; route STOP_BLOCKED",
+      "fixture": "invalid_monitor_silent_failure_packet_v1.json"
+    },
+    {
+      "expected": "feedback gate FAIL or NEEDS_REPAIR; route FIR_REEVALUATION_R19 or ECL_R18",
+      "fixture": "invalid_monitor_drift_threshold_packet_v1.json"
+    },
+    {
+      "expected": "feedback gate FAIL; unrouteable failure blocks",
+      "fixture": "invalid_monitor_missing_feedback_route_packet_v1.json"
+    },
+    {
+      "expected": "validate FAIL; telemetry_artifact_required",
+      "fixture": "invalid_monitor_console_only_logs_packet_v1.json"
+    }
+  ],
+  "hard_gates": [
+    "Predecessor R19 bundle and sidecar must verify before R20 PASS.",
+    "Every telemetry event must bind to at least one stage, artifact, gate, or route.",
+    "Every FAIL/WARN signal must have a feedback route; unrouteable signals block.",
+    "Silent failure detection is mandatory: PASS verdict with missing artifact/evidence/route blocks.",
+    "Telemetry must be persisted as JSON artifacts; console-only logs are invalid.",
+    "Metric definitions must specify unit, aggregation, measurement window, threshold, and owner.",
+    "R20 cannot mutate prior stage artifacts; it may only write telemetry, routing, receipt, and handoff artifacts.",
+    "R20 PASS requires valid packet, valid feedback gate, valid fixtures, checksum sidecar, and ZIP integrity."
+  ],
+  "implementation_workflow": [
+    {
+      "actions": [
+        "verify MPP_R19 zip checksum sidecar",
+        "run zipfile.testzip",
+        "inspect R19 handoff if available"
+      ],
+      "block_if": [
+        "checksum mismatch",
+        "zip integrity failure",
+        "missing R19 bundle"
+      ],
+      "name": "Predecessor verification",
+      "step": 0
+    },
+    {
+      "actions": [
+        "write MONITOR_TELEMETRY_PACKET_SCHEMA_v1",
+        "write MONITOR_FEEDBACK_GATE_RESULT_SCHEMA_v1",
+        "write MONITOR_ROUTING_DECISION_SCHEMA_v1"
+      ],
+      "block_if": [
+        "schema missing required fields",
+        "not JSON Schema 2020-12"
+      ],
+      "name": "Schema authoring",
+      "step": 1
+    },
+    {
+      "actions": [
+        "write stdlib-only mpp_v3_monitor_telemetry_feedback_gate_v1.py",
+        "implement stable_hash",
+        "implement validate_monitor_packet",
+        "implement run_feedback_gate",
+        "implement write_monitor_packet"
+      ],
+      "block_if": [
+        "non-stdlib dependency",
+        "hash mismatch accepted",
+        "missing route accepted"
+      ],
+      "name": "Validator/gate implementation",
+      "step": 2
+    },
+    {
+      "actions": [
+        "write valid fixture",
+        "write silent-failure fixture",
+        "write drift-threshold fixture",
+        "write missing-route fixture",
+        "write console-only-log fixture"
+      ],
+      "block_if": [
+        "invalid fixture passes",
+        "valid fixture fails"
+      ],
+      "name": "Fixture creation",
+      "step": 3
+    },
+    {
+      "actions": [
+        "py_compile validator",
+        "validate valid packet",
+        "gate valid packet",
+        "gate invalid silent failure packet",
+        "gate invalid drift packet",
+        "gate invalid missing route packet",
+        "validate invalid console-only logs packet"
+      ],
+      "block_if": [
+        "any expected return code mismatch"
+      ],
+      "name": "Smoke validation",
+      "step": 4
+    },
+    {
+      "actions": [
+        "write R20 receipt",
+        "write R20 handoff to R21 persistence or R23 export promotion depending chosen build path",
+        "package one ZIP",
+        "write SHA-256 sidecar",
+        "run ZIP integrity check"
+      ],
+      "block_if": [
+        "missing receipt",
+        "missing handoff",
+        "missing sidecar",
+        "zip test failure"
+      ],
+      "name": "Receipt, handoff, packaging",
+      "step": 5
+    }
+  ],
+  "predecessor_verification": {
+    "r19": {
+      "actual_sha256": "03ac0dee0d0ee7e3bfc9634bf1a1e3c45c3ab5d765c0dff086be1e3fe083b3ae",
+      "checksum_match": true,
+      "sidecar_exists": true,
+      "sidecar_sha256": "03ac0dee0d0ee7e3bfc9634bf1a1e3c45c3ab5d765c0dff086be1e3fe083b3ae",
+      "zip": "/mnt/data/MPP_R19_FIR_FITNESS_INTEGRATION_SCHEMA_AND_GATE_20260501T024900Z.zip",
+      "zip_exists": true,
+      "zip_testzip": null
+    }
+  },
+  "r20_name": "MPP_R20_MONITOR_TELEMETRY_SCHEMA_AND_FEEDBACK_GATE",
+  "r20_success_criteria": [
+    "R19 verified before trust.",
+    "R20 schema, gate, fixtures, receipt, handoff, ZIP, and sidecar exist.",
+    "Valid telemetry packet passes.",
+    "Silent failure packet blocks.",
+    "Drift threshold packet routes to FIR/ECL/SEE as configured.",
+    "Missing feedback route packet blocks.",
+    "Console-only logs packet fails.",
+    "All telemetry metrics include definition, unit, threshold, window, owner, and route.",
+    "PASS result yields an explicit next-stage handoff.",
+    "No prior stage artifacts are overwritten."
+  ],
+  "recommended_next_stage_after_r20": {
+    "best_path": "MPP_R21_PERSISTENT_LEARNING_REGISTRY_AND_METHOD_RELIABILITY_GATE, then R22_ORCHESTRATOR_RUNTIME_CONTROLLER, then R23_EXPORT_PROMOTION_GATE.",
+    "short_path": "MPP_R23_EXPORT_PROMOTION_GATE after R20 if you want to package immediately."
+  },
+  "required_r20_artifacts": [
+    "0_kernel/schemas/mpp_v3/MONITOR_TELEMETRY_PACKET_SCHEMA_v1.json",
+    "0_kernel/schemas/mpp_v3/MONITOR_FEEDBACK_GATE_RESULT_SCHEMA_v1.json",
+    "0_kernel/schemas/mpp_v3/MONITOR_ROUTING_DECISION_SCHEMA_v1.json",
+    "0_kernel/mpp_v3/mpp_v3_monitor_telemetry_feedback_gate_v1.py",
+    "0_kernel/registry/mpp_v3/policy_gates/MPP_V3_MONITOR_FEEDBACK_GATE_v1.json",
+    "tests/fixtures/mpp_v3/valid_monitor_telemetry_packet_v1.json",
+    "tests/fixtures/mpp_v3/invalid_monitor_silent_failure_packet_v1.json",
+    "tests/fixtures/mpp_v3/invalid_monitor_drift_threshold_packet_v1.json",
+    "tests/fixtures/mpp_v3/invalid_monitor_missing_feedback_route_packet_v1.json",
+    "runtime/receipts/mpp_v3/MPP_R20_MONITOR_TELEMETRY_SCHEMA_AND_FEEDBACK_GATE_RECEIPT_<ts>.json",
+    "runtime/handoffs/mpp_v3/MPP_R20_MONITOR_TELEMETRY_SCHEMA_AND_FEEDBACK_GATE_HANDOFF_<ts>.json"
+  ],
+  "schemas_to_build": {
+    "MONITOR_FEEDBACK_GATE_RESULT_SCHEMA_v1": {
+      "required_top_level": [
+        "schema_version",
+        "gate_id",
+        "stage",
+        "created_at",
+        "packet_id",
+        "verdict",
+        "violations",
+        "warnings",
+        "routing_decisions",
+        "result_hash"
+      ]
+    },
+    "MONITOR_ROUTING_DECISION_SCHEMA_v1": {
+      "required_top_level": [
+        "schema_version",
+        "decision_id",
+        "created_at",
+        "source_packet_id",
+        "route_to",
+        "trigger",
+        "severity",
+        "evidence_refs",
+        "next_stage",
+        "blocking",
+        "result_hash"
+      ]
+    },
+    "MONITOR_TELEMETRY_PACKET_SCHEMA_v1": {
+      "blocking_rules": [
+        "metric_definitions minItems >= 5",
+        "telemetry_events minItems >= 1",
+        "feedback_routes minItems >= 1",
+        "silent_failure_checks minItems >= 1",
+        "monitor_summary must reconcile counts"
+      ],
+      "required_top_level": [
+        "schema_version",
+        "packet_id",
+        "stage",
+        "created_at",
+        "objective_id",
+        "source_fir_packet_id",
+        "telemetry_context",
+        "metric_definitions",
+        "telemetry_events",
+        "drift_indicators",
+        "silent_failure_checks",
+        "feedback_routes",
+        "monitor_summary",
+        "result_hash"
+      ]
+    }
+  },
+  "stage_id": "MPP_R20_DESIGN_ENFORCED_GOVERNED_WORKFLOW",
+  "status": "DESIGN_READY",
+  "telemetry_domains": {
+    "artifact_integrity": [
+      "artifact_path",
+      "sha256",
+      "expected_sha256",
+      "size_bytes",
+      "zip_testzip",
+      "sidecar_match",
+      "included_in_bundle"
+    ],
+    "delivery_metrics": [
+      "stage_throughput",
+      "failed_stage_rate",
+      "failed_stage_recovery_time",
+      "rework_rate",
+      "promotion_rate"
+    ],
+    "gate_outcomes": [
+      "gate_id",
+      "gate_name",
+      "verdict",
+      "violations",
+      "warnings",
+      "coverage",
+      "evidence_refs"
+    ],
+    "learning_feedback": [
+      "new_failure_class",
+      "recurring_failure_class",
+      "method_reliability_delta",
+      "research_refresh_needed",
+      "ecl_triggered"
+    ],
+    "operator_context": [
+      "mobile_safe",
+      "single_bundle_returned",
+      "continuation_prompt_present",
+      "receipt_linked",
+      "sidecar_linked"
+    ],
+    "quality_and_fitness": [
+      "fir_weighted_score",
+      "blocking_failure_count",
+      "failed_check_count",
+      "regression_coverage",
+      "recovery_readiness",
+      "trace_health"
+    ],
+    "stage_execution": [
+      "stage_id",
+      "stage_sequence",
+      "status",
+      "duration_ms",
+      "attempt_count",
+      "blocked_reason",
+      "repair_route",
+      "handoff_target"
+    ]
+  },
+  "timestamp": "20260501T031200Z"
+}

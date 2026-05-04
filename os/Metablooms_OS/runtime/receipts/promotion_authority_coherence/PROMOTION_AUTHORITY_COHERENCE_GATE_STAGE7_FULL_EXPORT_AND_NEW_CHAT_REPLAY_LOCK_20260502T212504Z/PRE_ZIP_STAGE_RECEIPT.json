@@ -1,0 +1,24 @@
+{
+  "artifact_type": "STAGE_RECEIPT",
+  "created_utc": "2026-05-02T21:25:04.494508+00:00",
+  "export_sidecar": "/mnt/data/METABLOOMS_OS_PROMOTION_AUTHORITY_COHERENCE_GATE_PAC7_FULL_AUTHORITY_LOCKED_20260502T212504Z.zip.sha256",
+  "export_zip": "/mnt/data/METABLOOMS_OS_PROMOTION_AUTHORITY_COHERENCE_GATE_PAC7_FULL_AUTHORITY_LOCKED_20260502T212504Z.zip",
+  "external_evidence_sources": {
+    "NIST_SSDF_800_218": "https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-218.pdf",
+    "OpenSSF_Scorecard": "https://openssf.org/projects/scorecard/",
+    "SLSA_verifying_artifacts": "https://slsa.dev/spec/v1.0/verifying-artifacts"
+  },
+  "notes": [
+    "pre-zip receipt intentionally cannot contain final archive SHA-256 due to hash circularity"
+  ],
+  "source_zip_sidecar_verification": {
+    "actual_sha256": "ecb457a1abf127bf4de361bf57181a7e3965ad9e13ca29afc6fef41932a1fcbf",
+    "passed": true,
+    "sidecar": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE18_OPERATOR_PACKET_BOOTSTRAP_FINAL_AUTHORITY_REPAIRED_20260502T193453Z.zip.sha256",
+    "sidecar_text": "ecb457a1abf127bf4de361bf57181a7e3965ad9e13ca29afc6fef41932a1fcbf  METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE18_OPERATOR_PACKET_BOOTSTRAP_FINAL_AUTHORITY_REPAIRED_20260502T193453Z.zip\n",
+    "zip": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE18_OPERATOR_PACKET_BOOTSTRAP_FINAL_AUTHORITY_REPAIRED_20260502T193453Z.zip"
+  },
+  "stage_id": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE7_FULL_EXPORT_AND_NEW_CHAT_REPLAY_LOCK",
+  "stage_label_for_live_boot_surface": "PROMOTION_AUTHORITY_COHERENCE_GATE_PAC7_FULL_EXPORT_AND_NEW_CHAT_REPLAY_LOCK",
+  "status": "PRE_ZIP_METADATA_WRITTEN"
+}

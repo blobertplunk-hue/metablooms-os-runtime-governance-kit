@@ -1,0 +1,18 @@
+{
+  "authorized_next_stage": "BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE3_VISUAL_GATE_BINDING_AND_EXPORT_PREP",
+  "from_stage": "BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE2_IMPLEMENT_RESOLVER_AND_LOCAL_METHOD_REPLAY",
+  "required_inputs": [
+    "0_kernel/resolvers/browser_render_capability_resolver_v1.py",
+    "runtime/state/BROWSER_RENDER_METHOD_RELIABILITY_LEDGER_LATEST.json",
+    "runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE2_IMPLEMENT_RESOLVER_AND_LOCAL_METHOD_REPLAY_20260502T224609Z/local_replay/RESOLVER_DECISION_OPERATOR_TRACKER.json",
+    "runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE2_IMPLEMENT_RESOLVER_AND_LOCAL_METHOD_REPLAY_20260502T224609Z/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE2_FIXTURE_AND_DECISION_REPLAY.json"
+  ],
+  "stage3_requirements": [
+    "Bind resolver as the method-selection authority for VPQ render smoke stages.",
+    "Update visual presentation gate handoffs to call resolver before render proof.",
+    "Prepare export inclusion manifest and PC addendum without requiring PC for sandbox-normal workflows.",
+    "Do not mark true browser proof unless selected_method is a true browser method and PNG evidence exists."
+  ],
+  "timestamp_utc": "20260502T224609Z",
+  "verdict": "READY_FOR_STAGE3"
+}

@@ -1,0 +1,11 @@
+{
+  "receipt_id": "T1-STAGE6J_WRITE_ACTIVE_INDEX_filesystem_write_artifact-20260502T013859Z",
+  "tier": "T1",
+  "artifact": "/mnt/data/Metablooms_OS/governance/ACTIVE_INVARIANTS_INDEX.json",
+  "sha256": "4b50529d7dc4fc91f48398656d0a713dce25b580a05134f124f7594ba3b92b10",
+  "bytes_size": 4275,
+  "prior_sha256": "",
+  "stdout_proof": "",
+  "timestamp": "2026-05-02T01:38:59.707194Z",
+  "turn_id": "STAGE6J_WRITE_ACTIVE_INDEX"
+}

@@ -1,0 +1,11 @@
+{
+  "receipt_id": "T1-STAGE6E_FIXTURE_WRITE_filesystem_write_artifact-20260502T003015Z",
+  "tier": "T1",
+  "artifact": "/mnt/data/Metablooms_OS/runtime/governance/executors/fixtures/stage6e/wrapped_write.txt",
+  "sha256": "0c20417d2a58f335b85390ae5140bb8b69c89a78c884fd5101fe3886503c38d2",
+  "bytes_size": 29,
+  "prior_sha256": "",
+  "stdout_proof": "",
+  "timestamp": "2026-05-02T00:30:15.375787Z",
+  "turn_id": "STAGE6E_FIXTURE_WRITE"
+}

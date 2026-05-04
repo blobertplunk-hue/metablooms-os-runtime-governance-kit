@@ -1,0 +1,10 @@
+{
+  "artifact_type": "FIXTURE_MANIFEST_v1",
+  "fixtures": [
+    "valid_tool_selection_packet.json",
+    "deny_missing_tool_selection_packet.json",
+    "deny_normal_python_without_probe.json",
+    "deny_full_extraction_request.json"
+  ],
+  "stage_id": "H0C1_TOOL_SELECTION_EVIDENCE_ROUTER_CONTINUED"
+}

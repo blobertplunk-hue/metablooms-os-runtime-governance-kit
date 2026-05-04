@@ -1,0 +1,9 @@
+TRACKER ▸ Inline Project Tracker
+[██████] 6/6 complete
+Status: DONE
+Stage: TRACKER-5_SMOKE_TEST_AND_EXPORT_PACKAGING
+Now: tracker smoke/export package complete
+Evidence: TRACKER-5_SMOKE_TEST_AND_EXPORT_PACKAGING han…
+Blocker: none
+Next: Use compact tracker for future governed stages
+Stop: tracker workflow complete; stop after this stage

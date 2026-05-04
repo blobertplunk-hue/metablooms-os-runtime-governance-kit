@@ -1,0 +1,215 @@
+{
+  "cartridge_id": "registry_tool_loadout_router_v1",
+  "name": "Registry Tool Loadout Router v1",
+  "type": "routing",
+  "purpose": "Select the smallest effective set of cartridges and tool loadout for the current stage based on task classification, platform, contracts, and workflow state.",
+  "task_types": [
+    "routing",
+    "cartridge_selection",
+    "tool_loadout",
+    "platform_routing",
+    "stage_execution_planning"
+  ],
+  "platform": [
+    "robert",
+    "shaye",
+    "both"
+  ],
+  "input_contract": {
+    "required": [
+      "task_classification",
+      "current_stage",
+      "available_cartridges"
+    ],
+    "optional": [
+      "target",
+      "constraints",
+      "artifact_contracts",
+      "completed_stages",
+      "existing_artifacts",
+      "continuity_packet",
+      "risk_profile"
+    ]
+  },
+  "output_contract": {
+    "artifacts": [
+      "routing_plan"
+    ],
+    "format": "structured_json_or_markdown",
+    "must_include": [
+      "selected_cartridges",
+      "selection_rationale",
+      "tool_loadout",
+      "stage_route",
+      "fallback_routes",
+      "execution_readiness"
+    ]
+  },
+  "handoff_contract": {
+    "structure": "structured_markdown_v1",
+    "fields": [
+      "artifact",
+      "summary",
+      "next_required_input",
+      "next_recommended_cartridge"
+    ]
+  },
+  "execution_mode": "route",
+  "external_tools": [],
+  "validation_rules": [
+    "must_select_minimal_effective_set_of_cartridges",
+    "must_filter_by_platform_compatibility",
+    "must_filter_by_task_type_match",
+    "must_exclude_completed_stage_cartridges_unless_retry_required",
+    "must_define_primary_and_fallback_routes",
+    "must_define_go_no_go_status",
+    "must_output_structured_routing_plan"
+  ],
+  "failure_modes": [
+    "no_matching_cartridge",
+    "ambiguous_task_classification",
+    "missing_available_cartridges",
+    "platform_mismatch",
+    "insufficient_inputs_for_routing"
+  ],
+  "status": "active",
+  "routing_schema": {
+    "ce_result": {
+      "required": [
+        "objective",
+        "constraints",
+        "success_criteria"
+      ]
+    },
+    "selection_inputs": {
+      "required": [
+        "task_classification",
+        "current_stage",
+        "available_cartridges"
+      ],
+      "optional": [
+        "target",
+        "constraints",
+        "artifact_contracts",
+        "completed_stages",
+        "existing_artifacts",
+        "continuity_packet",
+        "risk_profile"
+      ]
+    },
+    "selection_logic": {
+      "required": [
+        "match_task_types",
+        "filter_platform",
+        "exclude_invalid_candidates",
+        "rank_candidates",
+        "select_minimal_effective_set"
+      ]
+    },
+    "selected_cartridges": {
+      "required": [
+        "primary_path"
+      ],
+      "optional": [
+        "secondary_path",
+        "fallback_routes"
+      ]
+    },
+    "selection_rationale": {
+      "required": [
+        "why_selected",
+        "why_rejected"
+      ]
+    },
+    "tool_loadout": {
+      "required": [
+        "tools_for_current_stage"
+      ],
+      "optional": [
+        "deferred_tools"
+      ]
+    },
+    "stage_route": {
+      "required": [
+        "current_stage",
+        "selected_cartridge",
+        "selected_tool",
+        "expected_output"
+      ]
+    },
+    "fallback_routes": {
+      "required": [
+        "fallback_options"
+      ]
+    },
+    "execution_readiness": {
+      "required": [
+        "status",
+        "next_step"
+      ]
+    }
+  },
+  "routing_rules": [
+    {
+      "rule_id": "route_001",
+      "if": {
+        "domain": "visual_design",
+        "target": "shaye"
+      },
+      "then": {
+        "prefer_cartridges": [
+          "canva_prompt_v1",
+          "external_tool_router_v1"
+        ],
+        "prefer_tools": [
+          "Canva Pro"
+        ]
+      }
+    },
+    {
+      "rule_id": "route_002",
+      "if": {
+        "domain": "automation",
+        "target": "robert"
+      },
+      "then": {
+        "prefer_cartridges": [
+          "windows_script_packager_v1",
+          "file_organizer_v1"
+        ],
+        "prefer_tools": [
+          "PowerShell"
+        ]
+      }
+    },
+    {
+      "rule_id": "route_003",
+      "if": {
+        "domain": "planning"
+      },
+      "then": {
+        "prefer_cartridges": [
+          "mb_preflight_planner_v2",
+          "spec_first_planner_v1"
+        ],
+        "prefer_tools": [
+          "ChatGPT"
+        ]
+      }
+    },
+    {
+      "rule_id": "route_004",
+      "if": {
+        "domain": "validation"
+      },
+      "then": {
+        "prefer_cartridges": [
+          "verification_critic_v1"
+        ],
+        "prefer_tools": [
+          "ChatGPT"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "failure_action": "DENY_CODE_ACCEPTANCE_AND_WRITE_CDR_REPAIR_HANDOFF",
+  "id": "CDR_STATIC_ANALYSIS_AND_COMPLEXITY_QUALITY_GATES_REQUIRED_v1",
+  "schema": "MetaBloomsInvariant_v1",
+  "stage": "CDR_STAGE8_STATIC_ANALYSIS_AND_COMPLEXITY_QUALITY_GATES",
+  "statement": "Runtime-significant code must not pass CDR unless static-analysis, complexity, security-grep, test-binding, and recursive-improvement evidence satisfy risk-tier thresholds.",
+  "status": "active",
+  "timestamp_utc": "2026-05-02T12:12:32Z",
+  "validator_path": "runtime/governance/cdr_static_analysis_complexity_gate_v1.py"
+}

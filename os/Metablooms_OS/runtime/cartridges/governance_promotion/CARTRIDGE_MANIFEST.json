@@ -1,0 +1,17 @@
+{
+  "id": "GOVERNANCE_PROMOTION_CARTRIDGE_v1",
+  "status": "staged_for_install",
+  "capability": "governance_request_to_enforced_invariant",
+  "entrypoint": "runtime/cartridges/governance_promotion/GOVERNANCE_PROMOTION_CARTRIDGE_v1.py",
+  "schema": "runtime/cartridges/governance_promotion/GOVERNANCE_PROMOTION_REQUEST_SCHEMA_v1.json",
+  "requires": [
+    "invariant_activation_engine_v1"
+  ],
+  "writes": [
+    "governance/invariants/<id>.json only after tests pass"
+  ],
+  "forbidden": [
+    "activate custom unmapped gates without engine support",
+    "skip positive/negative tests"
+  ]
+}

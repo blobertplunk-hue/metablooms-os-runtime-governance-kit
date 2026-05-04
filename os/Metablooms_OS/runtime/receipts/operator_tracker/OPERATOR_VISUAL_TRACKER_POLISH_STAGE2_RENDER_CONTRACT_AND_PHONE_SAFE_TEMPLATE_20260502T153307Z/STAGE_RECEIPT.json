@@ -1,0 +1,16 @@
+{
+  "artifact_type": "STAGE_RECEIPT.v1",
+  "contract": "/mnt/data/Metablooms_OS/0_kernel/registry/operator_surface/OPERATOR_VISUAL_TRACKER_RENDER_CONTRACT_v1.json",
+  "created_utc": "20260502T153307Z",
+  "html_preview": "/mnt/data/Metablooms_OS/runtime/operator_tracker/operator_visual_tracker_latest.html",
+  "latest_full_authority_input": "/mnt/data/METABLOOMS_OS_BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE5_FULL_AUTHORITY_REPAIRED_20260502T152152Z.zip",
+  "latest_full_authority_input_sha256": "08f90b2a788831462aa7e1d72957f7ce21201174f4ea3663527fa96e7c623be9",
+  "markdown_preview": "/mnt/data/Metablooms_OS/runtime/handoffs/operator_tracker/CURRENT_OPERATOR_TRACKER_PREVIEW_LATEST.md",
+  "next_pointer": "OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_EXPORT_INTEGRATION_AND_BOOT_SURFACE_BINDING",
+  "purpose": "Create a phone-safe, pre-populated HTML visual operator tracker renderer plus schema/contract/validator.",
+  "renderer": "/mnt/data/Metablooms_OS/0_kernel/lib/operator_surface/render_operator_visual_tracker_v2.py",
+  "stage": "OPERATOR_VISUAL_TRACKER_POLISH_STAGE2_RENDER_CONTRACT_AND_PHONE_SAFE_TEMPLATE",
+  "status": "PASS",
+  "validation_summary": "/mnt/data/Metablooms_OS/runtime/receipts/operator_tracker/OPERATOR_VISUAL_TRACKER_POLISH_STAGE2_RENDER_CONTRACT_AND_PHONE_SAFE_TEMPLATE_20260502T153307Z/STAGE2_VALIDATION_SUMMARY.json",
+  "validator": "/mnt/data/Metablooms_OS/0_kernel/validators/validate_operator_visual_tracker_render_v2.py"
+}

@@ -1,0 +1,55 @@
+{
+  "artifact_type": "ARCHIVE_TOOL_ROUTER_INTEGRATION_FINAL_RECEIPT_v1",
+  "bounded_scope_note": "Python package tree was not internalized because copying many files triggered sandbox path-probe instability; non-boot-critical package internalization is deferred to a separate stage.",
+  "changed_paths": [
+    "tools/7zip/7zz",
+    "tools/metablooms_archive_tool/mb_archive_tool",
+    "0_kernel/registry/tool_governance/ARCHIVE_METHOD_ROUTER_POLICY_v1.json",
+    "0_kernel/registry/tool_governance/EXTERNAL_TOOL_CAPABILITY_MANIFEST_v1.json",
+    "0_kernel/lib/archive_method_router_v1.py",
+    "0_kernel/scripts/archive_method_router_v1.py",
+    "0_kernel/lib/governance_decorators_v1.py",
+    "METHOD_RELIABILITY_ROUTER_POLICY_v1.json"
+  ],
+  "completed": [
+    "official_7zz_copied_inside_os_tools_7zip",
+    "libarchive_helper_copied_inside_os_tools_metablooms_archive_tool",
+    "archive_method_router_policy_written",
+    "archive_method_router_script_written",
+    "governance_decorators_written",
+    "method_reliability_router_policy_updated",
+    "boot_smoke_passed_with_accepted_git_warning"
+  ],
+  "created_utc": "20260501T031852Z",
+  "root": "/mnt/data/Metablooms_OS",
+  "stage": "ARCHIVE_TOOL_ROUTER_INTEGRATION_1_FINALIZE_20260501T031852Z",
+  "validation": {
+    "7zz_test_current_authority": {
+      "passed": true,
+      "rc": 0,
+      "stderr_tail": "",
+      "stdout_tail": "\n7-Zip (z) 26.01 (x64) : Copyright (c) 1999-2026 Igor Pavlov : 2026-04-27\n 64-bit locale=C.UTF-8 Threads:56 OPEN_MAX:1048576, ASM\n\nScanning the drive for archives:\n1 file, 50372910 bytes (49 MiB)\n\nTesting archive: /mnt/data/METABLOOMS_OS_STAGE12_PROMPT_GOVERNANCE_PLUS_MPP_R0_R23_PROMOTION_LOCK_INTERNALIZED_20260501T021500Z.zip\n--\nPath = /mnt/data/METABLOOMS_OS_STAGE12_PROMPT_GOVERNANCE_PLUS_MPP_R0_R23_PROMOTION_LOCK_INTERNALIZED_20260501T021500Z.zip\nType = zip\nPhysical Size = 50372910\n\nEverything is Ok\n\nFiles: 2479\nSize:       49678156\nCompressed: 50372910\n"
+    },
+    "boot_executor": {
+      "issues": [],
+      "passed": true,
+      "receipt_path": "/mnt/data/Metablooms_OS/0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777605534695.json",
+      "verdict": "PASS_WITH_WARNINGS",
+      "warnings": [
+        "git_dir_missing"
+      ]
+    },
+    "decorator_import_smoke": {
+      "passed": true,
+      "rc": 0,
+      "stderr": "",
+      "stdout": "decorator_smoke_pass\n"
+    },
+    "sha256_sidecar_current_authority": {
+      "actual": "1d5ce7e6bf03b9c6b75576082c89784c701357d1d023bb7ec4ed5af07833f694",
+      "expected": "1d5ce7e6bf03b9c6b75576082c89784c701357d1d023bb7ec4ed5af07833f694",
+      "passed": true
+    }
+  },
+  "verdict": "PASS"
+}

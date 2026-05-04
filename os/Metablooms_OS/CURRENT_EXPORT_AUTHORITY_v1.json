@@ -1,0 +1,23 @@
+{
+  "artifact_type": "CURRENT_EXPORT_AUTHORITY_v1",
+  "canonical_working_root": "/mnt/data/Metablooms_OS",
+  "export_zip": "/mnt/data/METABLOOMS_WC13_FINAL_BOOTABLE_FULL_AUTHORITY_REPAIRED2_20260503T232000Z.zip",
+  "export_sha256": "external_sidecar_required_after_zip_creation",
+  "export_sha256_sidecar": "/mnt/data/METABLOOMS_WC13_FINAL_BOOTABLE_FULL_AUTHORITY_REPAIRED2_20260503T232000Z.zip.sha256",
+  "external_sidecar_required": true,
+  "latest_boot_surface": "OPEN_OPERATOR_VISUAL_TRACKER.html",
+  "source_pointer": "CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+  "stage": "PROFESSIONALIZATION_CONVERGENCE_STAGE31_WC13_ROOT_AUTHORITY_NARRATIVE_REPAIR_AND_PREVENTION_LOCK",
+  "stage_sequence": 31,
+  "updated_utc": "2026-05-03T23:18:30Z",
+  "promotion_authority_coherence_gate": "PASS_REQUIRED_FOR_ANY_FUTURE_PROMOTION",
+  "required_start_sequence": [
+    "Verify the authority ZIP SHA-256 using the external sidecar",
+    "extract or verify /mnt/data/Metablooms_OS",
+    "read root authority files",
+    "run portable_full_os_boot_verify.py",
+    "run current authority identity validator",
+    "execute at most one bounded governed stage"
+  ],
+  "verdict": "ACTIVE"
+}

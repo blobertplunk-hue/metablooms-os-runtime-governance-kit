@@ -1,0 +1,87 @@
+{
+  "artifact_type": "MB_TRACE_QUERY_RESULT.v1",
+  "query": "export proof sha256",
+  "results": [
+    {
+      "doc_id": "doc_0193",
+      "matched_terms": [
+        "sha256"
+      ],
+      "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/stage9_validator.json",
+      "score": 147
+    },
+    {
+      "doc_id": "doc_0070",
+      "matched_terms": [
+        "sha256"
+      ],
+      "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE8_HISTORICAL_CALLSITE_QUARANTINE_VALIDATION_LATEST.json",
+      "score": 143
+    },
+    {
+      "doc_id": "doc_0089",
+      "matched_terms": [
+        "sha256"
+      ],
+      "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINALIZED_20260502T175839Z/STAGE10_FINALIZATION_BLOCKED.json",
+      "score": 143
+    },
+    {
+      "doc_id": "doc_0192",
+      "matched_terms": [
+        "sha256"
+      ],
+      "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/stage8_validator.json",
+      "score": 141
+    },
+    {
+      "doc_id": "doc_0071",
+      "matched_terms": [
+        "sha256"
+      ],
+      "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_VALIDATION_LATEST.json",
+      "score": 140
+    },
+    {
+      "doc_id": "doc_0201",
+      "matched_terms": [
+        "sha256"
+      ],
+      "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/stage9_validator.json",
+      "score": 140
+    },
+    {
+      "doc_id": "doc_0009",
+      "matched_terms": [
+        "sha256"
+      ],
+      "path": "runtime/traces/observability/HISTORICAL_CALLSITE_QUARANTINE_INDEX_LATEST.json",
+      "score": 138
+    },
+    {
+      "doc_id": "doc_0200",
+      "matched_terms": [
+        "sha256"
+      ],
+      "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/scanner.json",
+      "score": 132
+    },
+    {
+      "doc_id": "doc_0176",
+      "matched_terms": [
+        "sha256"
+      ],
+      "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z/stage8_validator.json",
+      "score": 128
+    },
+    {
+      "doc_id": "doc_0167",
+      "matched_terms": [
+        "sha256"
+      ],
+      "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_20260502T171707Z/stage8_validator.json",
+      "score": 121
+    }
+  ],
+  "verdict": "PASS"
+}

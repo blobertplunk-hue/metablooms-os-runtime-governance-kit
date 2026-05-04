@@ -1,0 +1,14 @@
+{
+  "allowed": true,
+  "decision": "ALLOW",
+  "reason": "route_allowed",
+  "task": "boot_probe",
+  "method": "shell_coreutils",
+  "required_gates": [
+    "root_exists",
+    "write_probe",
+    "sidecar_verify_when_zip_present"
+  ],
+  "router_path": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_CAPABILITY_ROUTER_CARTRIDGE_LATEST.json",
+  "enforcer_equivalence": "python3_S_timeout_safe_policy_evaluation"
+}

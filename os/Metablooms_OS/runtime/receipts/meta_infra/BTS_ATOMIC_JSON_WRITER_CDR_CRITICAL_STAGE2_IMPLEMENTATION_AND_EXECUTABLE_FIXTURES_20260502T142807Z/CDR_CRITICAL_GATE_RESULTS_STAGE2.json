@@ -1,0 +1,48 @@
+{
+  "artifact_type": "CDR_CRITICAL_GATE_RESULTS_STAGE2.v1",
+  "created_utc": "20260502T142807Z",
+  "gates": [
+    {
+      "gate": "Stage1 handoff loaded",
+      "result": "PASS"
+    },
+    {
+      "gate": "Contract loaded or path recorded",
+      "result": "PASS"
+    },
+    {
+      "gate": "Source installed",
+      "result": "PASS"
+    },
+    {
+      "gate": "Executable harness installed",
+      "result": "PASS"
+    },
+    {
+      "gate": "py_compile source and harness",
+      "result": "PASS"
+    },
+    {
+      "gate": "API surface present",
+      "result": "PASS"
+    },
+    {
+      "gate": "Atomic write primitives present",
+      "result": "PASS"
+    },
+    {
+      "gate": "Security serialization controls present",
+      "result": "PASS"
+    },
+    {
+      "gate": "Static anti-pattern scan clean",
+      "result": "PASS"
+    },
+    {
+      "gate": "Executable fixtures pass",
+      "result": "FAIL"
+    }
+  ],
+  "stage": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES",
+  "status": "FAIL"
+}

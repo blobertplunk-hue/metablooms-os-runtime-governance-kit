@@ -1,0 +1,156 @@
+{
+  "version": "1.0",
+  "created_at": 1777064381.6478264,
+  "contract_id": "EXPORT_RECOVERY_PROVEN_VALIDATOR_CONTRACT_v1",
+  "status": "active_contract",
+  "validator_id": "EXPORT_RECOVERY_PROVEN_VALIDATOR_v1",
+  "purpose": "Fail closed unless an exported ZIP, sidecar, ledger, DAG, pointer, manifest, provenance, receipt, and validator decision all agree that the bundle is recovery-proven.",
+  "input_schema": "0_kernel/schemas/EXPORT_RECOVERY_VALIDATOR_INPUT_SCHEMA_v1.json",
+  "decision_schema": "0_kernel/schemas/EXPORT_RECOVERY_VALIDATOR_DECISION_SCHEMA_v1.json",
+  "gate_catalog": "0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_GATE_CATALOG_v1.json",
+  "required_gates": [
+    "G1_LEDGER_DECLARED_OUTPUTS_INSIDE_ZIP",
+    "G2_FINAL_PASS_RECEIPTS_INSIDE_ZIP",
+    "G3_NO_PLACEHOLDER_METADATA",
+    "G4_GIT_HEAD_LIFECYCLE_CONSISTENCY",
+    "G5_SIDECAR_BINDING",
+    "G6_DETERMINISTIC_ZIP_POLICY",
+    "G7_DAG_LEDGER_MAPPING",
+    "G8_POINTER_CONFLICT_RESOLUTION",
+    "G9_TRANSACTIONAL_STATE_ORDER",
+    "G10_POLICY_AS_CODE_DECISION"
+  ],
+  "fail_closed_policy": {
+    "missing_zip": "FAIL",
+    "missing_sidecar": "FAIL",
+    "missing_internal_manifest": "FAIL",
+    "missing_internal_provenance": "FAIL",
+    "missing_ledger_entry": "FAIL",
+    "missing_declared_zip_output": "FAIL",
+    "pending_receipt_inside_zip": "FAIL",
+    "placeholder_metadata": "FAIL",
+    "ambiguous_unlabeled_git_heads": "FAIL",
+    "duplicate_zip_entries": "FAIL",
+    "nested_git_directory": "FAIL",
+    "conflicting_boot_pointer": "FAIL"
+  },
+  "gate_definitions": [
+    {
+      "gate_id": "G1_LEDGER_DECLARED_OUTPUTS_INSIDE_ZIP",
+      "algorithm": [
+        "open export ZIP listing",
+        "load STAGE_STATE_LEDGER_v1.json from active root and from ZIP when available",
+        "select expected ledger entry",
+        "for each ledger-declared output, assert ZIP contains Metablooms_OS_refined/<output>",
+        "allow exception only if output is declared in explicit_external_outputs with external_sidecar_required=true"
+      ],
+      "decision": "blocking FAIL if any required output is missing"
+    },
+    {
+      "gate_id": "G2_FINAL_PASS_RECEIPTS_INSIDE_ZIP",
+      "algorithm": [
+        "for expected stage receipt and final receipts inside ZIP",
+        "load JSON and assert status=complete or locked",
+        "assert verdict=PASS",
+        "assert no next command like VERIFY EXPORT remains"
+      ],
+      "decision": "blocking FAIL for PENDING_EXPORT, export_ready, blocked, or missing verdict"
+    },
+    {
+      "gate_id": "G3_NO_PLACEHOLDER_METADATA",
+      "algorithm": [
+        "scan EXPORT_MANIFEST_v1.json, EXPORT_PROVENANCE_v1.json, sidecar, receipts, baseline locks",
+        "reject values containing <filled_after_zip>, TODO, FIXME, pending, PENDING_EXPORT",
+        "reject size_bytes=0 for exported ZIP subject"
+      ],
+      "decision": "blocking FAIL for placeholder or zero-size final metadata"
+    },
+    {
+      "gate_id": "G4_GIT_HEAD_LIFECYCLE_CONSISTENCY",
+      "algorithm": [
+        "collect heads from pointer, ledger, receipt, manifest, provenance, baseline lock",
+        "if equal, pass",
+        "if not equal, require lifecycle labels: pre_export_head, exported_tree_head, metadata_commit_head, final_lock_head, current_working_head",
+        "assert each label has documented relationship"
+      ],
+      "decision": "blocking FAIL for unlabeled divergence"
+    },
+    {
+      "gate_id": "G5_SIDECAR_BINDING",
+      "algorithm": [
+        "assert sidecar file exists",
+        "compute ZIP sha256 and size",
+        "assert sidecar sha256/size matches",
+        "load internal manifest and assert external_sidecar_required policy or sidecar reference exists"
+      ],
+      "decision": "blocking FAIL if sidecar is absent, mismatched, or unbound"
+    },
+    {
+      "gate_id": "G6_DETERMINISTIC_ZIP_POLICY",
+      "algorithm": [
+        "assert no duplicate ZIP entries",
+        "assert ZIP entry list sorted or manifest records order policy",
+        "assert no __pycache__, .pytest_cache, nested .git, or unmanifested evidence gitlinks",
+        "assert excluded paths policy is present"
+      ],
+      "decision": "blocking FAIL for packaging instability"
+    },
+    {
+      "gate_id": "G7_DAG_LEDGER_MAPPING",
+      "algorithm": [
+        "load STAGE_DAG_v1.json and STAGE_STATE_LEDGER_v1.json",
+        "resolve expected_dag_node_id to expected_ledger_entry_id using explicit mapping or entry metadata",
+        "do not infer short ID equivalence without mapping"
+      ],
+      "decision": "blocking FAIL if mapping is ambiguous"
+    },
+    {
+      "gate_id": "G8_POINTER_CONFLICT_RESOLUTION",
+      "algorithm": [
+        "scan artifact_registry for pointer-like boot-critical artifacts",
+        "assert exactly one active boot-critical pointer per pointer role",
+        "allow quarantined/conflict_resolved status"
+      ],
+      "decision": "blocking FAIL if conflicting active pointers remain"
+    },
+    {
+      "gate_id": "G9_TRANSACTIONAL_STATE_ORDER",
+      "algorithm": [
+        "assert pointer and ledger latest_pass reference committed validated state",
+        "assert FAIL/BLOCK/repair entries do not advance latest_pass unless explicitly governed",
+        "assert validator decision was produced before PASS claim"
+      ],
+      "decision": "blocking FAIL on ordering violation"
+    },
+    {
+      "gate_id": "G10_POLICY_AS_CODE_DECISION",
+      "algorithm": [
+        "assert validator decision artifact exists",
+        "assert every required gate has a gate_result",
+        "assert blocking_failed_count=0 and verdict=PASS"
+      ],
+      "decision": "blocking FAIL without machine-readable decision"
+    }
+  ],
+  "outputs_required_from_implementation": [
+    "0_kernel/scripts/export_recovery_proven_validator_v1.py",
+    "0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_DECISION_v1.json",
+    "0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_REGRESSION_RESULTS_v1.json"
+  ],
+  "G_arc_next_stages": [
+    "G2_EXPORT_RECOVERY_VALIDATOR_IMPLEMENTATION",
+    "G3_EXPORT_RECOVERY_VALIDATOR_REGRESSION_FIXTURES",
+    "G4_RUN_VALIDATOR_AGAINST_F7_EXPORT",
+    "G5_REPAIRED_RECOVERY_PROVEN_EXPORT",
+    "G6_RECOVERY_PROOF_BASELINE_LOCK",
+    "G7_RETURN_TO_E4B"
+  ],
+  "non_goals": [
+    "G1 does not implement validator code.",
+    "G1 does not create regression fixtures.",
+    "G1 does not export a new bundle.",
+    "G1 does not run boot recovery proof."
+  ],
+  "next_stage": "G2_EXPORT_RECOVERY_VALIDATOR_IMPLEMENTATION",
+  "verdict": "PASS"
+}

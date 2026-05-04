@@ -1,0 +1,9 @@
+{
+  "created_utc": "20260501T182011Z",
+  "current_authority_zip": "FILLED_AFTER_EXPORT",
+  "lineage_map": "0_kernel/registry/authority/CUMULATIVE_AUTHORITY_LINEAGE_MAP_v1.json",
+  "schema_version": "CUMULATIVE_AUTHORITY_POINTER_v1",
+  "sidecar": "FILLED_AFTER_EXPORT.sha256",
+  "status": "PROMOTED_AFTER_VALIDATION",
+  "workflow_progress": "runtime/state/WORKFLOW_PROGRESS_LATEST.json"
+}

@@ -1,0 +1,73 @@
+{
+  "version": "1.0",
+  "created_at": 1777062487.8697252,
+  "stage": "F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF",
+  "status": "complete",
+  "inputs": {
+    "f4_handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F4_TO_F5_HANDOFF_v1.json",
+    "f4_receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F4_MANIFEST_PROVENANCE_EXPORT_CONTRACT_RECEIPT_v1.json",
+    "export_contract": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/MANIFEST_PROVENANCE_EXPORT_CONTRACT_v1.json",
+    "pointer": "/mnt/data/Metablooms_OS_refined/0_kernel/state/CURRENT_WORKING_BASELINE_POINTER_v1.json",
+    "dag": "/mnt/data/Metablooms_OS_refined/0_kernel/pipeline/STAGE_DAG_v1.json",
+    "ledger": "/mnt/data/Metablooms_OS_refined/0_kernel/state/STAGE_STATE_LEDGER_v1.json",
+    "manifest_repair_receipt": "/mnt/data/STABLE_D4_MANIFEST_REPAIR_RECEIPT_FOR_F5_v1.json"
+  },
+  "outputs": {
+    "restore_schema": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/RESTORE_LADDER_SCHEMA_v1.json",
+    "restore_contract": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/RESTORE_LADDER_CONTRACT_v1.json",
+    "restore_doc": "/mnt/data/Metablooms_OS_refined/0_kernel/docs/RESTORE_LADDER_MODE_NORMALIZATION_PROOF_v1.md",
+    "restore_proof": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/RESTORE_LADDER_MODE_NORMALIZATION_PROOF_v1.json",
+    "evidence_dir": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/restore_ladder_mode_normalization_evidence",
+    "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF_RECEIPT_v1.json",
+    "handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F5_TO_F6_HANDOFF_v1.json"
+  },
+  "checks": {
+    "required_paths_present": true,
+    "git_clean_after_cleaning_untracked": true,
+    "git_fsck_clean_after_cleaning_untracked": true,
+    "f5_prechecks": {
+      "f4_handoff_ready": true,
+      "f4_receipt_passed": true,
+      "f5_declared_target": true,
+      "export_contract_active": true,
+      "pointer_active": true,
+      "dag_active": true,
+      "ledger_active": true,
+      "ledger_latest_pass_is_f4": true,
+      "stable_manifest_repaired_and_verified": true
+    }
+  },
+  "proof_cases": {
+    "pointer_source_outranks_stable_zip": true,
+    "ledger_latest_pass_outranks_stable_zip_when_pointer_absent": true,
+    "stable_zip_has_manifest_or_explicit_repair_receipt": true,
+    "mode_only_drift_is_normalized_by_core_filemode_false": true,
+    "content_drift_blocks": true
+  },
+  "git_head_at_proof_write": "107f41b2c2ec3c8d69a94bad7f0d0acd006fbaaf",
+  "runaway_turn_guard": {
+    "proof_only": true,
+    "restore_promotion_performed": false,
+    "export_performed": false,
+    "cleanup_performed": false
+  },
+  "verdict": "PASS",
+  "next_improvement_task": "F6 \u2014 Blocked Receipt Handling Rule",
+  "why_next": "Restore selection and mode normalization are proven; next blocked receipts need a rule so failure artifacts do not dirty the next stage.",
+  "remaining_work": [
+    "F6 \u2014 Blocked Receipt Handling Rule",
+    "F7 \u2014 Stable Export + Boot Recovery Proof",
+    "Return to E4A\u2013E5D"
+  ],
+  "progress_estimate": {
+    "stages_remaining_before_return_to_E4": 2,
+    "major_arcs_remaining_after_recovery_arc": 2
+  },
+  "next_correct_command": "EXECUTE F6 \u2014 BLOCKED RECEIPT HANDLING RULE",
+  "evidence_packaging_repair": {
+    "status": "repaired",
+    "replacement_plain_json_evidence": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/restore_ladder_mode_normalization_evidence/mode_normalization_plain_json_evidence_v1.json",
+    "nested_git_repo_removed": true
+  },
+  "git_status_warning_resolved_by": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F5_EVIDENCE_PACKAGING_REPAIR_RECEIPT_v1.json"
+}

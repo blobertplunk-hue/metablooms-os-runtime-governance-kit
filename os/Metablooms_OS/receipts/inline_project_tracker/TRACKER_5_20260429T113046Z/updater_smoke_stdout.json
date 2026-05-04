@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "state_path": "/mnt/data/Metablooms_OS/receipts/inline_project_tracker/TRACKER_5_20260429T113046Z/tmp_handoff_smoke/TRACKER_STATE_v1.json",
+  "receipt_rel": "receipts/inline_project_tracker/TRACKER_5_20260429T113046Z/tmp_handoff_smoke/TMP_RECEIPT.json",
+  "receipt_sha256": "2ad9a5cbc61c92b02bc5f408c57c69ace407ce17065ef4957ba711d27529d28d",
+  "handoff_rel": "receipts/inline_project_tracker/TRACKER_5_20260429T113046Z/tmp_handoff_smoke/TMP_HANDOFF.json",
+  "handoff_sha256": "b0ffe5a11dbe96a3fe6b933f8d69be460f1595bea803e6ba1d7d96bf2eb65365",
+  "render_preview": "/mnt/data/Metablooms_OS/receipts/inline_project_tracker/TRACKER_5_20260429T113046Z/tmp_handoff_smoke/TMP_PREVIEW.txt",
+  "top_marker": true
+}

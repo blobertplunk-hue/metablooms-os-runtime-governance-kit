@@ -1,0 +1,43 @@
+{
+  "api_checks": {
+    "allow_nan_false_present": true,
+    "fsync_present": true,
+    "json_readback_present": true,
+    "mkstemp_same_dir_present": true,
+    "os_replace_present": true,
+    "write_atomic_json_present": true
+  },
+  "artifact_type": "METABLOOMS_STAGE_RECEIPT.v1",
+  "bundle_members": 9,
+  "bundle_path": "/mnt/data/Metablooms_OS/runtime/stage_bundles/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T142807Z.zip",
+  "bundle_sha256": "8ff8d4c4cc4ced366160580aeaedb8f158f7aea7b7a4977473ffac9088a9feb3",
+  "bundle_testzip": null,
+  "compile_results": [
+    {
+      "pass": true,
+      "path": "/mnt/data/Metablooms_OS/0_kernel/lib/io/atomic_json_writer_v1.py"
+    },
+    {
+      "pass": true,
+      "path": "/mnt/data/Metablooms_OS/tests/evals/atomic_json_writer/test_atomic_json_writer_v1.py"
+    }
+  ],
+  "created_utc": "20260502T142807Z",
+  "fixture_count": 0,
+  "fixture_pass": false,
+  "harness_path": "/mnt/data/Metablooms_OS/tests/evals/atomic_json_writer/test_atomic_json_writer_v1.py",
+  "harness_sha256": "850ef4a99803f7ffdfc15ad7519b91797ebe4c75c26afc80cd8d9e5e635b4986",
+  "receipts": [
+    "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T142807Z/CDR_CRITICAL_GATE_RESULTS_STAGE2.json",
+    "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T142807Z/EXECUTABLE_FIXTURE_RESULTS.json",
+    "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T142807Z/FIXTURE_HARNESS_DECISION.json",
+    "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T142807Z/IMPLEMENTATION_MANIFEST.json",
+    "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T142807Z/SEE_EVIDENCE_PACKET.json"
+  ],
+  "runtime_root": "/mnt/data/Metablooms_OS",
+  "source_path": "/mnt/data/Metablooms_OS/0_kernel/lib/io/atomic_json_writer_v1.py",
+  "source_sha256": "4736d449b92562460a093fe603f73eedc8c9fbb779183dc7ddd03a8e03c25529",
+  "stage": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES",
+  "static_findings": [],
+  "status": "FAIL"
+}

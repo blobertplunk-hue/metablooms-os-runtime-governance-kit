@@ -1,0 +1,32 @@
+{
+  "payload": {
+    "artifact_type": "ROOT_FINALIZATION_SUCCESS",
+    "created_utc": "20260502T143431Z",
+    "invariant": "Root trusted only after this final byte marker exists.",
+    "root": "/mnt/data/stage3_atomic_json_fs_smoke",
+    "schema_version": "FILESYSTEM_SAFETY_v1",
+    "source": null,
+    "stats": {
+      "bytes": 0,
+      "dirs": 0,
+      "files": 0
+    },
+    "verdict": "ATOMIC_SUCCESS"
+  },
+  "verdict": "FINALIZATION_MARKED",
+  "write_result": {
+    "path": "/mnt/data/stage3_atomic_json_fs_smoke/.MB_FINALIZATION_SUCCESS.json",
+    "preflight": {
+      "check": "canonical_atomic_json_writer_v1",
+      "created_utc": "20260502T143431Z",
+      "path": "/mnt/data/stage3_atomic_json_fs_smoke/.MB_FINALIZATION_SUCCESS.json",
+      "schema_version": "FILESYSTEM_SAFETY_v1",
+      "writer_decision": {
+        "receipt_path": null,
+        "status": "ALLOW_SUCCESS",
+        "target_sha256": "d63e8664eb113440d03177c9e208bab6a3588acace70eef347f0960634fcf42f"
+      }
+    },
+    "verdict": "ATOMIC_WRITE_PASS"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "artifact_type": "JSON_SCHEMA",
+  "properties": {
+    "artifact_type": {
+      "const": "MB_TRACE_QUERY_PACKET.v1"
+    },
+    "queries": {
+      "type": "array"
+    },
+    "stage_id": {
+      "const": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE12_TRACE_QUERY_PACKET_AND_SEARCHABLE_EVIDENCE_INDEX"
+    },
+    "verdict": {
+      "enum": [
+        "PASS",
+        "FAIL"
+      ]
+    }
+  },
+  "required": [
+    "artifact_type",
+    "stage_id",
+    "verdict",
+    "queries"
+  ],
+  "title": "MB_TRACE_QUERY_PACKET.v1",
+  "type": "object"
+}

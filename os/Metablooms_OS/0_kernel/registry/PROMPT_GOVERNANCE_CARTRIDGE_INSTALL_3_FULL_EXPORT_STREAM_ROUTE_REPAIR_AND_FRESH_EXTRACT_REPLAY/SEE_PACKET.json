@@ -1,0 +1,14 @@
+{
+  "claims": [
+    {
+      "claim": "Stream rebuild avoids source extraction and recompression, addressing prior timeout failure.",
+      "confidence": "high"
+    },
+    {
+      "basis": "scatter failure showed registered_missing_artifact for Stage 1 paths.",
+      "claim": "Cumulative overlay is necessary because Stage 2 registry references Stage 1 artifacts.",
+      "confidence": "high"
+    }
+  ],
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_3_FULL_EXPORT_STREAM_ROUTE_REPAIR_AND_FRESH_EXTRACT_REPLAY"
+}

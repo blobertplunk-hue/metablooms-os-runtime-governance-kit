@@ -1,0 +1,7 @@
+TRACKER PREVIEW — STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS
+Status: PASS
+Installed: trace export adapter spec, policy bindings, active invariant, stdlib adapter, fixtures, smoke test, SEE/CE packets.
+Exports: MetaBlooms JSONL, OpenTelemetry-like span JSON, OpenAI Agents-SDK-like event JSON, LangGraph/LangSmith-like run JSON.
+Smoke: PASS — allow fixture exported four formats; high-risk fixture missing security fields denied.
+Authority export: NOT PERFORMED.
+Next best stage: STAGE6S_FULL_AUTHORITY_EXPORT_AFTER_STAGE6N_TO_6R or STAGE6Q_SOURCE_LEVEL_RETROFIT_PRIORITY_BATCH_1.

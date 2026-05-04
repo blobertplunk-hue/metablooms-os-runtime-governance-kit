@@ -1,0 +1,5 @@
+{
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "{\n  \"validator\": \"assert_gate_registry_integrity_v1\",\n  \"created_utc\": \"2026-04-28T03:21:05Z\",\n  \"registry_path\": \"/mnt/data/Metablooms_OS/runtime/governance/registries/gate_registry_v1.json\",\n  \"decision\": \"pass\",\n  \"errors\": [],\n  \"warnings\": [],\n  \"registry_sha256\": \"06ff1f3d8cbea5b200ebb569b848afcb47b30382e2c94b9963ca8e49001e8bce\",\n  \"gate_count\": 18,\n  \"enabled_count\": 17\n}\n"
+}

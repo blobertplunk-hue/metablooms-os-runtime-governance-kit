@@ -1,0 +1,19 @@
+{
+  "implemented": {
+    "copied": 2093,
+    "skipped": 3,
+    "wrote": 63
+  },
+  "outputs": {
+    "full_export": "/mnt/data/METABLOOMS_OS_PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_3_FULL_EXPORT_STREAM_ROUTE_REPAIR_AND_FRESH_EXTRACT_REPLAY_FULL_AUTHORITY_20260430T221500Z.zip",
+    "sidecar": "/mnt/data/METABLOOMS_OS_PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_3_FULL_EXPORT_STREAM_ROUTE_REPAIR_AND_FRESH_EXTRACT_REPLAY_FULL_AUTHORITY_20260430T221500Z.zip.sha256"
+  },
+  "passes": {
+    "boot": true,
+    "fresh_chat": true,
+    "prompt_validator": true,
+    "scatter": true
+  },
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_3_FULL_EXPORT_STREAM_ROUTE_REPAIR_AND_FRESH_EXTRACT_REPLAY",
+  "status": "PASS"
+}

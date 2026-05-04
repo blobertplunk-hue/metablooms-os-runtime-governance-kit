@@ -1,0 +1,21 @@
+{
+  "schema_version": "PolicyDecision_v1",
+  "decision_id": "decision_1777681816785_53752634",
+  "envelope_id": "STAGE6E_FIXTURE_EXPORT_export_zip",
+  "stage_id": "STAGE6E_BTS_WRAP_EXPORT_AND_FILESYSTEM_EXECUTORS",
+  "decision": "ALLOW",
+  "reason_code": "LOW_RISK_BOUNDED_ACTION",
+  "rationale": "Envelope passed schema, method, path, SEE, approval, and bounded-budget checks.",
+  "decided_at_utc": "2026-05-02T00:30:16Z",
+  "enforced_by": "pre_tool_action_gate_v1",
+  "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/STAGE6E_FIXTURE_EXPORT_export_zip.decision.json",
+  "safe_to_execute": true,
+  "required_next_action": "execute_action_and_write_action_receipt",
+  "matched_rules": [
+    "schema.required",
+    "path.safety",
+    "runaway.breaker",
+    "method.reliability"
+  ],
+  "envelope_sha256": "1798cefd1abf7c6a6e0540c0993fe00faec0558d9855eece030690e430a9e577"
+}

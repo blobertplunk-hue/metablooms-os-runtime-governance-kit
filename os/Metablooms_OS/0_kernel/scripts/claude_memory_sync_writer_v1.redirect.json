@@ -1,0 +1,11 @@
+{
+  "legacy_artifact": "0_kernel/scripts/claude_memory_sync_writer_v1.py",
+  "status": "retired_fail_closed_after_r4_confirmed_after_r11",
+  "adr": "0_kernel/docs/decisions/ADR-0002-adopt-session-state-export-over-model-specific-sync.md",
+  "archive_path": "runtime/governance/legacy_archives/claude_memory_sync_writer_v1.py",
+  "successor_expected": "0_kernel/scripts/session_state_exporter_v1.py",
+  "created_utc": "2026-04-28T02:44:46Z",
+  "validator_expected": "0_kernel/scripts/validate_session_state_export_v1.py",
+  "machine_use_status": "forbidden_as_runtime_authority",
+  "r11_confirmed_utc": "2026-04-28T03:26:30Z"
+}

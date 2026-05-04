@@ -1,0 +1,12 @@
+{
+  "anomalies": [],
+  "created_at": "2026-04-30T23:18:27.861190+00:00",
+  "gate_id": "TRACE-GATE-20260430T231827Z",
+  "packet_id": "TRACE-20260430T231827Z",
+  "result_hash": "bfeefec435d19a31579c1154b6b7734bba76e35e71aea5530d243b0e2e879eaf",
+  "schema_version": "mpp.trace_anomaly_gate_result.v1",
+  "stage": "TRACE_ANOMALY_GATE",
+  "verdict": "PASS",
+  "violations": [],
+  "warnings": []
+}

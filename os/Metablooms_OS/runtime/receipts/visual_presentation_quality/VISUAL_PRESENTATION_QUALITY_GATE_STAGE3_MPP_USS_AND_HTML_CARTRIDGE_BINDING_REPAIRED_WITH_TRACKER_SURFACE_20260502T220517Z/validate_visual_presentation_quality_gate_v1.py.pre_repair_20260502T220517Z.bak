@@ -1,0 +1,268 @@
+#!/usr/bin/env python3
+"""MetaBlooms Visual Presentation Quality Gate validator v1.
+
+Purpose: block promotion of visual artifacts that lack a declared, purpose-fit,
+accessible, mobile-first visual presentation plan and verification checklist.
+This gate validates Stage 1 declarations before Stage 3 binds the gate into
+MPP, USS, and cartridge promotion paths.
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import re
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any
+
+try:
+    from jsonschema import Draft202012Validator
+except Exception:  # pragma: no cover - explicit runtime failure path
+    Draft202012Validator = None  # type: ignore
+
+VERSION = "visual_presentation_quality_gate_validator_v1"
+DEFAULT_SCHEMA = Path(__file__).resolve().parents[1] / "registry" / "visual_presentation_quality" / "visual_presentation_quality_declaration_schema_v1.json"
+VISUAL_TYPES = {
+    "html_activity", "dashboard", "landing_page", "teacher_tool", "student_tool", "operator_tracker", "other_visual_artifact"
+}
+DEFAULT_STYLE_PATTERNS = [
+    r"default\s+browser\s+styles?",
+    r"unstyled",
+    r"plain\s+html",
+    r"no\s+css",
+    r"browser\s+default",
+    r"gray\s+worksheet",
+]
+WEAK_MOTION_PATTERNS = [r"purely\s+decorative", r"decorative\s+only", r"because\s+it\s+looks\s+cool", r"wow\s+only", r"none\s+needed"]
+
+
+def utc_now() -> str:
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def stable_hash(obj: Any) -> str:
+    return hashlib.sha256(json.dumps(obj, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode("utf-8")).hexdigest()
+
+
+def flatten_strings(obj: Any) -> list[str]:
+    out: list[str] = []
+    if isinstance(obj, str):
+        out.append(obj)
+    elif isinstance(obj, dict):
+        for k, v in obj.items():
+            out.extend(flatten_strings(k))
+            out.extend(flatten_strings(v))
+    elif isinstance(obj, list):
+        for v in obj:
+            out.extend(flatten_strings(v))
+    return out
+
+
+def has_text(values: list[str], pattern: str) -> bool:
+    rx = re.compile(pattern, re.I)
+    return any(rx.search(v or "") for v in values)
+
+
+def nonempty_str(obj: dict[str, Any], key: str, min_len: int = 5) -> bool:
+    return isinstance(obj.get(key), str) and len(obj.get(key, "").strip()) >= min_len
+
+
+def validate_semantics(payload: dict[str, Any]) -> tuple[list[str], list[str]]:
+    violations: list[str] = []
+    warnings: list[str] = []
+    artifact_type = payload.get("artifact_type")
+    if artifact_type in VISUAL_TYPES and "visual_presentation" not in payload:
+        violations.append("VPQ_MISSING_VISUAL_PRESENTATION_DECLARATION")
+        return violations, warnings
+    vp = payload.get("visual_presentation")
+    if not isinstance(vp, dict):
+        violations.append("VPQ_VISUAL_PRESENTATION_MUST_BE_OBJECT")
+        return violations, warnings
+
+    # Only declaration/intent fields are scanned for self-declared unstyled/default presentation.
+    # Anti-pattern and blocker lists are supposed to mention bad patterns; those mentions must not fail a valid fixture.
+    declaration_strings = []
+    for key in ["design_system", "design_intent", "color_system", "layout", "typography", "motion"]:
+        declaration_strings.extend(flatten_strings(vp.get(key)))
+    if isinstance(vp.get("note"), str):
+        declaration_strings.append(vp["note"])
+    for pattern in DEFAULT_STYLE_PATTERNS:
+        if has_text(declaration_strings, pattern):
+            violations.append("VPQ_BLOCK_DEFAULT_OR_UNSTYLED_PRESENTATION")
+            break
+
+    design_system = vp.get("design_system", {}) if isinstance(vp.get("design_system"), dict) else {}
+    if not design_system:
+        violations.append("VPQ_MISSING_DESIGN_SYSTEM")
+    else:
+        if not nonempty_str(design_system, "basis", 3):
+            violations.append("VPQ_DESIGN_SYSTEM_BASIS_REQUIRED")
+        if len(design_system.get("tokens_required", []) or []) < 5:
+            violations.append("VPQ_DESIGN_TOKENS_MINIMUM_NOT_MET")
+        if len(design_system.get("component_rules", []) or []) < 3:
+            violations.append("VPQ_COMPONENT_RULES_MINIMUM_NOT_MET")
+
+    mobile = vp.get("mobile_first", {}) if isinstance(vp.get("mobile_first"), dict) else {}
+    if mobile.get("confirmed") is not True:
+        violations.append("VPQ_MOBILE_FIRST_CONFIRMATION_REQUIRED")
+    if len(mobile.get("breakpoints", []) or []) < 2:
+        violations.append("VPQ_MOBILE_BREAKPOINTS_INSUFFICIENT")
+
+    accessibility = vp.get("accessibility", {}) if isinstance(vp.get("accessibility"), dict) else {}
+    if accessibility.get("wcag_target") not in {"WCAG_2_2_AA", "WCAG_2_2_AA_PLUS_SELECTED_AAA"}:
+        violations.append("VPQ_WCAG_2_2_AA_TARGET_REQUIRED")
+    for key in ["focus_visibility", "target_size"]:
+        if not nonempty_str(accessibility, key, 5):
+            violations.append(f"VPQ_ACCESSIBILITY_{key.upper()}_REQUIRED")
+    if accessibility.get("drag_alternative") is not True:
+        violations.append("VPQ_DRAG_ALTERNATIVE_REQUIRED")
+    if accessibility.get("color_independent_meaning") is not True:
+        violations.append("VPQ_COLOR_INDEPENDENT_MEANING_REQUIRED")
+
+    motion = vp.get("motion", {}) if isinstance(vp.get("motion"), dict) else {}
+    if motion.get("reduced_motion_support") is not True:
+        violations.append("VPQ_REDUCED_MOTION_SUPPORT_REQUIRED")
+    purpose = str(motion.get("purpose", ""))
+    if len(purpose.strip()) < 10 or any(re.search(p, purpose, re.I) for p in WEAK_MOTION_PATTERNS):
+        violations.append("VPQ_MOTION_PURPOSE_MUST_BE_FUNCTIONAL")
+
+    layout = vp.get("layout", {}) if isinstance(vp.get("layout"), dict) else {}
+    if not nonempty_str(layout, "visual_hierarchy", 5):
+        violations.append("VPQ_VISUAL_HIERARCHY_REQUIRED")
+    if not nonempty_str(layout, "empty_state_rule", 5):
+        violations.append("VPQ_EMPTY_STATE_RULE_REQUIRED")
+
+    feedback = vp.get("interaction_feedback", {}) if isinstance(vp.get("interaction_feedback"), dict) else {}
+    if not nonempty_str(feedback, "correct_incorrect_states", 5):
+        violations.append("VPQ_CORRECT_INCORRECT_STATE_VISUALS_REQUIRED")
+    if not nonempty_str(feedback, "progress_state", 5):
+        violations.append("VPQ_PROGRESS_STATE_REQUIRED")
+
+    design_intent = vp.get("design_intent", {}) if isinstance(vp.get("design_intent"), dict) else {}
+    for key in ["desired_impression", "functional_mood", "credibility_target", "engagement_strategy"]:
+        if not nonempty_str(design_intent, key, 3):
+            violations.append(f"VPQ_DESIGN_INTENT_{key.upper()}_REQUIRED")
+
+    teacher_professional = vp.get("teacher_professional_presentation", {}) if isinstance(vp.get("teacher_professional_presentation"), dict) else {}
+    if not teacher_professional:
+        violations.append("VPQ_TEACHER_PROFESSIONAL_PRESENTATION_REQUIRED")
+    else:
+        for key in ["teacher_public_credibility", "teacher_mode_separation", "shareable_output_quality", "dashboard_readability", "professional_language"]:
+            if not nonempty_str(teacher_professional, key, 8):
+                violations.append(f"VPQ_TEACHER_PROFESSIONAL_{key.upper()}_REQUIRED")
+        combined_teacher = " ".join(flatten_strings(teacher_professional)).lower()
+        # Block actual weak teacher-facing presentation, but allow text that explicitly says such language is blocked/avoided.
+        weak_contexts = [
+            "uses debug", "shows debug", "include debug", "includes debug", "raw debug",
+            "placeholder copy", "uses placeholder", "default teacher", "unstyled teacher", "messy teacher"
+        ]
+        protective_contexts = [
+            "no debug", "without debug", "not debug", "blocks debug", "avoid debug",
+            "no embarrassing debug", "never expose debug", "no placeholder", "not placeholder",
+            "without placeholder", "blocks placeholder", "avoid placeholder"
+        ]
+        if any(w in combined_teacher for w in weak_contexts) and not any(g in combined_teacher for g in protective_contexts):
+            violations.append("VPQ_TEACHER_PROFESSIONAL_BLOCK_WEAK_PRESENTATION_LANGUAGE")
+
+    anti = [str(x).lower() for x in (vp.get("anti_patterns_blocked", []) or [])]
+    needed_anti = ["default browser", "color-only", "blank"]
+    for token in needed_anti:
+        if not any(token in x for x in anti):
+            violations.append(f"VPQ_ANTI_PATTERN_MISSING_{token.replace('-', '_').replace(' ', '_').upper()}")
+
+    verification = payload.get("verification", {}) if isinstance(payload.get("verification"), dict) else {}
+    static_checks = [str(x).lower() for x in (verification.get("static_checks", []) or [])]
+    render_checks = [str(x).lower() for x in (verification.get("render_checks", []) or [])]
+    review_prompts = verification.get("human_review_prompts", []) or []
+    promotion_blockers = verification.get("promotion_blockers", []) or []
+    if len(static_checks) < 4:
+        violations.append("VPQ_STATIC_CHECKS_MINIMUM_NOT_MET")
+    if not any("focus" in x for x in static_checks):
+        violations.append("VPQ_STATIC_CHECK_FOCUS_REQUIRED")
+    if not any("reduced" in x and "motion" in x for x in static_checks):
+        violations.append("VPQ_STATIC_CHECK_REDUCED_MOTION_REQUIRED")
+    if not any("token" in x or "css custom" in x for x in static_checks):
+        violations.append("VPQ_STATIC_CHECK_DESIGN_TOKENS_REQUIRED")
+    if len(render_checks) < 3:
+        violations.append("VPQ_RENDER_CHECKS_MINIMUM_NOT_MET")
+    if not any("360" in x or "mobile" in x for x in render_checks):
+        violations.append("VPQ_RENDER_MOBILE_CHECK_REQUIRED")
+    if not any("prompt" in x or "student-visible" in x for x in render_checks):
+        violations.append("VPQ_RENDER_STUDENT_PROMPT_CHECK_REQUIRED")
+    if len(review_prompts) < 3:
+        violations.append("VPQ_HUMAN_REVIEW_PROMPTS_MINIMUM_NOT_MET")
+    if len(promotion_blockers) < 5:
+        violations.append("VPQ_PROMOTION_BLOCKERS_MINIMUM_NOT_MET")
+
+    if artifact_type == "html_activity":
+        platform = [str(x).lower() for x in (vp.get("platform_constraints", []) or [])]
+        if not any("google sites" in x for x in platform):
+            violations.append("VPQ_HTML_ACTIVITY_GOOGLE_SITES_CONSTRAINT_REQUIRED")
+        if not any("single-file" in x or "single file" in x for x in platform):
+            violations.append("VPQ_HTML_ACTIVITY_SINGLE_FILE_CONSTRAINT_REQUIRED")
+        if not any("no external" in x for x in platform):
+            warnings.append("VPQ_WARN_HTML_ACTIVITY_EXTERNAL_DEPENDENCY_POLICY_NOT_EXPLICIT")
+
+    return sorted(set(violations)), sorted(set(warnings))
+
+
+def validate_payload(payload: dict[str, Any], schema_path: Path = DEFAULT_SCHEMA) -> dict[str, Any]:
+    schema_violations: list[str] = []
+    if Draft202012Validator is None:
+        schema_violations.append("VPQ_JSONSCHEMA_LIBRARY_UNAVAILABLE")
+    else:
+        schema = json.loads(schema_path.read_text(encoding="utf-8"))
+        validator = Draft202012Validator(schema)
+        for error in sorted(validator.iter_errors(payload), key=lambda e: list(e.path)):
+            loc = "/".join(str(p) for p in error.path) or "$"
+            schema_violations.append(f"SCHEMA:{loc}:{error.message}")
+    semantic_violations, warnings = validate_semantics(payload)
+    violations = sorted(set(schema_violations + semantic_violations))
+    decision = "ALLOW" if not violations else "DENY"
+    result = {
+        "schema_version": "visual_presentation_quality_gate_decision.v1",
+        "validator_version": VERSION,
+        "created_utc": utc_now(),
+        "artifact_id": payload.get("artifact_id"),
+        "artifact_type": payload.get("artifact_type"),
+        "decision": decision,
+        "ok": decision == "ALLOW",
+        "violations": violations,
+        "warnings": warnings,
+        "evidence": {
+            "schema_path": str(schema_path),
+            "schema_sha256": hashlib.sha256(schema_path.read_bytes()).hexdigest() if schema_path.exists() else None,
+            "payload_sha256": stable_hash(payload),
+            "checks": [
+                "json_schema_draft_2020_12",
+                "default_browser_style_block",
+                "design_system_required",
+                "mobile_first_required",
+                "wcag_2_2_aa_required",
+                "reduced_motion_required",
+                "render_static_human_review_lists_required",
+                "html_activity_google_sites_single_file_constraints"
+            ]
+        },
+    }
+    result["result_sha256"] = stable_hash(result)
+    return result
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Validate MetaBlooms visual presentation quality declaration")
+    parser.add_argument("--validate", required=True, help="Path to declaration JSON")
+    parser.add_argument("--schema", default=str(DEFAULT_SCHEMA), help="Path to schema JSON")
+    parser.add_argument("--expect", choices=["ALLOW", "DENY"], help="Optional expected decision")
+    args = parser.parse_args()
+    payload = json.loads(Path(args.validate).read_text(encoding="utf-8"))
+    result = validate_payload(payload, Path(args.schema))
+    print(json.dumps(result, indent=2, sort_keys=True))
+    if args.expect:
+        return 0 if result["decision"] == args.expect else 2
+    return 0 if result["ok"] else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

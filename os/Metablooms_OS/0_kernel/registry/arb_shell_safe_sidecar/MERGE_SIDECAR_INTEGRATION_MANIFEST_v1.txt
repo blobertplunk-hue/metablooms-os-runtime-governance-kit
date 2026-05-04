@@ -1,0 +1,20 @@
+MERGE_SIDECAR_INTEGRATION_MANIFEST_v1
+stage: MERGE-S5-SHELL
+created_utc: 2026-04-25T21:30:53Z
+runner: shell_only
+baseline_modification: false
+namespace: Metablooms_OS_refined/0_kernel/registry/arb_shell_safe_sidecar/
+purpose: Documents ARB shell-safe sidecar overlay into SIR25 staging tree.
+         These files are NOT yet in artifact_registry.json.
+         Registry patch is a separate follow-on stage after MERGE-S9 lock.
+
+files:
+  ARB6S_RUNAWAY_PROOF_STATE_v1.json              8fdd447ffc7896567111f876b414ec1d10cc91543e64eb0f55d12a96f967ca07
+  ARB7_SHELL_ARB_RUNTIME_WIRING_EXPORT_PLAN_v1.json  596c3ae393ed6bfbdefd1a7e036a9889b982d7afa6cd4b433550d1e6c56316d0
+  ARB8B_ARB_RUNTIME_WIRING_CANDIDATE_v1.zip      580316ccb829d1dea634248870ac7dc4b8fe5172e6a0d1f023643ca35f3cd9fb
+  ARB10_SHELL_BASELINE_LOCK_DECISION_v1.json     30224c410c8680521ddc61cdf7da271e80b847ebd45993531f49d703bc0d3bf3
+
+source_bundle: ARB11_TURN_BASED_HANDOFF_BUNDLE_v1.zip
+source_bundle_sha256: 2da9f10927e85df5fe2c1066716388f18ec5b28d192b734d8c969bfe7ffcf413
+sir25_baseline_sha256: b1b82d7765c49db8f4368c4267b9002c141869f103660c4acee07fda7486187b
+sir25_baseline_not_modified: true

@@ -1,0 +1,62 @@
+{
+  "authority_export_performed": false,
+  "boot": {
+    "post_boot_returncode": 0,
+    "post_runtime_returncode": 0,
+    "pre_boot_returncode": 0,
+    "pre_runtime_returncode": 0
+  },
+  "bundle_type": "SUPPORT/PROOF BUNDLE \u2014 NOT THE OS BUNDLE",
+  "installed_paths": [
+    "0_kernel/registry/cdr/CDR_LINT_SECURITY_SCANNER_INTEGRATION_SPEC_v1.json",
+    "0_kernel/registry/cdr/CDR_LINT_SECURITY_SCANNER_POLICY_v1.json",
+    "0_kernel/schemas/cdr/CDR_LINT_SECURITY_SCANNER_PACKET_SCHEMA_v1.json",
+    "runtime/governance/cdr_lint_security_scanner_gate_v1.py",
+    "runtime/quality/cdr/CDR_LINT_SECURITY_BASELINE_LATEST.json",
+    "tests/evals/cdr/test_cdr_lint_security_scanner_gate_v1.py"
+  ],
+  "notes": [
+    "Optional external scanners were not required to be installed; availability is recorded and stdlib AST fallback baseline is mandatory."
+  ],
+  "optional_tool_availability": {
+    "bandit": {
+      "available": false,
+      "path": null
+    },
+    "ruff": {
+      "available": false,
+      "path": null
+    },
+    "semgrep": {
+      "available": false,
+      "path": null
+    },
+    "stdlib_ast_static_scan": {
+      "available": true,
+      "path": "python_stdlib_ast"
+    }
+  },
+  "scanner_baseline_summary": {
+    "fallback_used_for_missing_tools": [
+      "ruff",
+      "bandit",
+      "semgrep"
+    ],
+    "files_scanned_count": 8,
+    "finding_count": 4,
+    "high_count": 3,
+    "low_count": 0,
+    "medium_count": 1,
+    "optional_tools_available": [],
+    "zero_tolerance_count": 0
+  },
+  "schema": "MetaBloomsStageReceipt_v1",
+  "stage": "CDR_STAGE9_LINT_SECURITY_SCANNER_INTEGRATION_AND_BASELINE_REPORTING",
+  "timestamp_utc": "2026-05-02T12:14:38Z",
+  "validation": {
+    "all_cdr_eval_count": 8,
+    "all_cdr_evals_passed": 8,
+    "stage9_eval_pass": true
+  },
+  "verdict": "PASS"
+}

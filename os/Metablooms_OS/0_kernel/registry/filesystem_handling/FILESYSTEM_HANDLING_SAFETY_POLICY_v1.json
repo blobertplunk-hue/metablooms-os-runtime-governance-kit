@@ -1,0 +1,22 @@
+{
+  "artifact_type": "GOVERNED_FILESYSTEM_HANDLING_POLICY",
+  "controls": [
+    {
+      "id": "FS-001",
+      "name": "atomic_move_mount_point_preflight",
+      "requirement": "Temp file must be created in destination directory and same st_dev plus same df -P mount point must pass before os.replace."
+    },
+    {
+      "id": "FS-002",
+      "name": "differential_trace_logging",
+      "requirement": "Trace logs must emit counts/root hash/bounded samples, not full per-file hash lists, unless explicit full manifest artifact is requested."
+    },
+    {
+      "id": "FS-003",
+      "name": "partial_root_safety_lock",
+      "requirement": "Copied runtime root is untrusted unless .MB_FINALIZATION_SUCCESS.json exists; partial/in-progress markers fail closed."
+    }
+  ],
+  "created_utc": "20260501T123011Z",
+  "schema_version": "FILESYSTEM_HANDLING_SAFETY_POLICY_v1"
+}

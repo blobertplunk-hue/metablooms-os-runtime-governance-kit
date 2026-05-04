@@ -1,0 +1,1001 @@
+#!/usr/bin/env python3
+"""MetaBlooms compact operator CLI.
+
+Small, stable command surface for boot/status/verify/export/replay/doctor/run-stage
+so operators do not need dense prompt incantations for the critical path.
+"""
+from __future__ import annotations
+import argparse, json, os, subprocess, sys, time, hashlib, zipfile
+from pathlib import Path
+
+SCHEMA_VERSION = 'MB_CLI_OUTPUT_v25'
+
+
+def utc_now() -> str:
+    return time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())
+
+
+def find_root() -> Path:
+    here = Path(__file__).resolve()
+    for parent in [here.parent, *here.parents]:
+        if (parent / 'boot_manifest_v1.json').exists() and (parent / '0_kernel').exists():
+            return parent
+    env = os.environ.get('METABLOOMS_ROOT')
+    if env and (Path(env) / 'boot_manifest_v1.json').exists():
+        return Path(env)
+    cwd = Path.cwd()
+    if (cwd / 'boot_manifest_v1.json').exists() and (cwd / '0_kernel').exists():
+        return cwd
+    raise SystemExit('METABLOOMS_ROOT_NOT_FOUND')
+
+
+def latest_file(root: Path, patterns):
+    matches = []
+    for pat in patterns:
+        matches.extend(root.glob(pat))
+    matches = [p for p in matches if p.is_file()]
+    if not matches:
+        return None
+    return str(max(matches, key=lambda p: p.stat().st_mtime))
+
+
+def write_json(path: Path, payload: dict) -> str:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, indent=2, sort_keys=True) + '\n', encoding='utf-8')
+    return str(path)
+
+
+def emit(obj, as_json: bool):
+    obj.setdefault('schema_version', SCHEMA_VERSION)
+    if as_json:
+        print(json.dumps(obj, indent=2, sort_keys=True))
+        return
+    verdict = obj.get('verdict') or obj.get('status') or 'OK'
+    print(f"MetaBlooms: {verdict}")
+    for k in ['root','boot_verdict','accepted_warning','latest_receipt','latest_handoff','next_stage','stage_name','thread_id','checkpoint_id','work_order_path','tracker_preview_path','export_path']:
+        if obj.get(k) is not None:
+            print(f"{k}: {obj[k]}")
+    if obj.get('failed_checks'):
+        print('failed_checks: ' + ', '.join(obj['failed_checks']))
+    if obj.get('warnings'):
+        print('warnings: ' + ', '.join(str(x) for x in obj['warnings']))
+    if obj.get('tracker_preview'):
+        print('tracker_preview:')
+        for line in obj['tracker_preview']:
+            print(f'  {line}')
+
+
+
+
+def safe_load_json(path: Path):
+    try:
+        return json.loads(path.read_text(encoding='utf-8'))
+    except Exception as e:
+        return {'parse_error': str(e), 'path': str(path)}
+
+
+def stage_thread_id(stage_name: str) -> str:
+    cleaned = ''.join(ch if ch.isalnum() or ch in ('_', '-') else '_' for ch in stage_name.strip())[:80]
+    return f"stage::{cleaned or 'UNNAMED'}"
+
+
+def checkpoint_id_for(stage_name: str) -> str:
+    seed = f"{stage_name}|{utc_now()}"
+    return hashlib.sha256(seed.encode('utf-8')).hexdigest()[:16]
+
+
+def render_tracker_preview(root: Path, limit: int = 8):
+    tracker_path = root / 'runtime/state/TRACKER_STATE_v1.json'
+    state = safe_load_json(tracker_path) if tracker_path.exists() else {'missing': True, 'path': str(tracker_path)}
+    history = state.get('history', []) if isinstance(state, dict) else []
+    completed = state.get('completed_stages', []) if isinstance(state, dict) else []
+    lines = []
+    lines.append(f"current_stage: {state.get('current_stage') if isinstance(state, dict) else None}")
+    lines.append(f"completed_count: {len(completed) if isinstance(completed, list) else 0}")
+    lines.append(f"blocker: {state.get('blocker') if isinstance(state, dict) else None}")
+    ev = state.get('evidence', {}) if isinstance(state, dict) else {}
+    if isinstance(ev, dict):
+        lines.append(f"latest_receipt: {ev.get('latest_receipt')}")
+        lines.append(f"latest_handoff: {ev.get('latest_handoff')}")
+    if history:
+        lines.append('recent_history:')
+        for item in history[-limit:]:
+            if isinstance(item, dict):
+                lines.append(f"- {item.get('timestamp_utc', '?')} {item.get('stage', '?')} [{item.get('status', '?')}]")
+    return {
+        'tracker_state_path': str(tracker_path),
+        'tracker_state_present': tracker_path.exists(),
+        'current_stage': state.get('current_stage') if isinstance(state, dict) else None,
+        'completed_count': len(completed) if isinstance(completed, list) else 0,
+        'blocker': state.get('blocker') if isinstance(state, dict) else None,
+        'preview_lines': lines,
+    }
+
+
+def command_status(args):
+    root = find_root()
+    pointer = root / 'CURRENT_FULL_AUTHORITY_POINTER_v1.json'
+    authority = None
+    if pointer.exists():
+        try:
+            authority = json.loads(pointer.read_text(encoding='utf-8'))
+        except Exception as e:
+            authority = {'parse_error': str(e)}
+    latest_receipt = latest_file(root, ['runtime/receipts/**/*.json','receipts/**/*.json','0_kernel/registry/boot_receipts/*.json'])
+    latest_handoff = latest_file(root, ['runtime/handoffs/**/*.json','handoffs/**/*.json'])
+    out = {
+        'status': 'READY_FOR_BOUNDED_STAGE',
+        'root': str(root),
+        'authority_pointer_present': pointer.exists(),
+        'authority': authority,
+        'latest_receipt': latest_receipt,
+        'latest_handoff': latest_handoff,
+        'critical_commands': ['mb boot', 'mb status', 'mb verify', 'mb doctor', 'mb run-stage <name> --dry-run', 'mb export --output <zip>', 'mb replay', 'mb evals --check', 'mb evals --scorecards', 'mb evals --runner', 'mb evals --confusion', 'mb evals --alignment-gate', 'mb evals --promotion'],
+    }
+    emit(out, args.json)
+
+
+def command_boot(args):
+    root = find_root()
+    script = root / '0_kernel/scripts/boot_runtime_executor_v1.py'
+    if not script.exists():
+        script = root / 'portable_full_os_boot_verify.py'
+    if not script.exists():
+        raise SystemExit('BOOT_EXECUTOR_NOT_FOUND')
+    cmd = ['python3','-S',str(script)]
+    proc = subprocess.run(cmd, cwd=str(root), text=True, capture_output=True, timeout=args.timeout)
+    receipt_path = None
+    parsed = None
+    try:
+        parsed = json.loads(proc.stdout.strip())
+        receipt_path = parsed.get('receipt_path')
+    except Exception:
+        try:
+            start = proc.stdout.find('{')
+            end = proc.stdout.rfind('}')
+            parsed = json.loads(proc.stdout[start:end+1]) if start >= 0 and end >= start else None
+            receipt_path = parsed.get('receipt_path') if isinstance(parsed, dict) else None
+        except Exception:
+            parsed = None
+    out = {
+        'verdict': 'BOOT_COMMAND_PASS' if proc.returncode == 0 else 'BOOT_COMMAND_FAIL',
+        'root': str(root),
+        'boot_executor': str(script),
+        'returncode': proc.returncode,
+        'stdout_tail': proc.stdout[-2000:],
+        'stderr_tail': proc.stderr[-2000:],
+        'boot_verdict': parsed.get('verdict') if isinstance(parsed, dict) else None,
+        'accepted_warning': 'git_dir_missing' if (isinstance(parsed, dict) and 'git_dir_missing' in parsed.get('warnings', [])) else None,
+        'latest_receipt': receipt_path,
+    }
+    emit(out, args.json)
+    return 0 if proc.returncode == 0 else proc.returncode
+
+
+def command_verify(args):
+    root = find_root()
+    required = [
+        'boot_manifest_v1.json',
+        '0_kernel/scripts/boot_runtime_executor_v1.py',
+        '0_kernel/registry/external_review/EXTERNAL_REVIEW_MATRIX_v1.json',
+        '0_kernel/registry/operator_surface/MB_CLI_COMMAND_SPEC_v1.json',
+        '0_kernel/registry/operator_surface/MB_CLI_COMMAND_SPEC_v2.json',
+        '0_kernel/registry/operator_surface/MB_CLI_COMMAND_SPEC_v3.json',
+        '0_kernel/registry/operator_surface/MB_CLI_COMMAND_SPEC_v4.json',
+        '0_kernel/registry/operator_surface/MB_CLI_COMMAND_SPEC_v5.json',
+        '0_kernel/registry/operator_surface/MB_CLI_COMMAND_SPEC_v6.json',
+        '0_kernel/registry/operator_surface/MB_CLI_COMMAND_SPEC_v7.json',
+        '0_kernel/registry/operator_surface/MB_STAGE_RUNNER_CONTRACT_v1.json',
+        '0_kernel/registry/operator_surface/MB_CARTRIDGE_EXECUTOR_CONTRACT_v1.json',
+        '0_kernel/registry/operator_surface/MB_OBSERVABILITY_TRACE_LEDGER_SPEC_v1.json',
+        '0_kernel/registry/observability/MB_TRACE_SPAN_LEDGER_SPEC_v2.json',
+        '0_kernel/registry/security/SECURITY_ARTIFACT_THREAT_MODEL_v1.json',
+        '0_kernel/registry/security/SECURITY_ARTIFACT_TRUST_POLICY_v1.json',
+        '0_kernel/registry/security/SECURITY_ARTIFACT_ENFORCEMENT_GATES_v1.json',
+        '0_kernel/registry/security/SECURITY_PROMPT_INJECTION_FIXTURE_SET_v1.json',
+        '0_kernel/registry/evals/MB_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_SPEC_v1.json',
+        '0_kernel/registry/evals/EVALS_TRACE_REVIEW_DATASET_SCHEMA_v1.json',
+        '0_kernel/registry/evals/VALIDATOR_ALIGNMENT_POLICY_v1.json',
+        '0_kernel/registry/evals/EVALS_MINIMUM_VIABLE_EVAL_LOOP_v1.json',
+        '0_kernel/registry/operator_surface/MB_CLI_COMMAND_SPEC_v9.json',
+        '0_kernel/registry/operator_surface/MB_CLI_COMMAND_SPEC_v10.json',
+        '0_kernel/registry/evals/MB_EVALS_SCORECARD_SPEC_v1.json',
+        '0_kernel/registry/evals/EVALS_FAILURE_MODE_CATALOG_v1.json',
+        'runtime/evals/evals_trace_review/EVALS_REGRESSION_DATASET_v1.json',
+        'runtime/evals/evals_trace_review/EVALS_SCORECARD_BASELINE_v1.json',
+        '0_kernel/validators/validate_evals_scorecards_stage2_v1.py',
+        '0_kernel/registry/operator_surface/CARTRIDGE_EXECUTOR_REGISTRY_v1.json',
+        '0_kernel/registry/operator_surface/MB_TRACKER_PREVIEW_SPEC_v1.json',
+        '0_kernel/validators/validate_operator_surface_stage2_v1.py',
+        '0_kernel/validators/validate_operator_surface_stage3_v1.py',
+        '0_kernel/validators/validate_operator_surface_stage4_v1.py',
+        '0_kernel/validators/validate_observability_trace_span_ledger_stage1_v1.py',
+        '0_kernel/validators/validate_security_artifact_threat_model_stage1_v1.py',
+        '0_kernel/validators/validate_security_enforcement_stage2_v1.py',
+        '0_kernel/validators/validate_evals_trace_review_stage1_v1.py',
+        '0_kernel/scripts/stage_runner_v1.py',
+        '0_kernel/scripts/cartridge_executor_v1.py',
+        'docs/operator_surface/MB_OPERATOR_QUICKSTART_v3.md',
+        'docs/operator_surface/MB_OPERATOR_QUICKSTART_v4.md',
+        'docs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE1.md',
+        'docs/security/SECURITY_ARTIFACT_THREAT_MODEL_STAGE1.md',
+        'docs/security/SECURITY_ARTIFACT_ENFORCEMENT_STAGE2.md',
+        'docs/evals/EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_STAGE1.md',
+        '0_kernel/registry/filesystem_handling/FILESYSTEM_HANDLING_SAFETY_POLICY_v1.json',
+        '0_kernel/registry/filesystem_handling/FILESYSTEM_HANDLING_SAFETY_POLICY_v2.json',
+        '0_kernel/lib/archive_extraction_route_v1.py',
+        '0_kernel/validators/validate_filesystem_handling_safety_stage2_v1.py',
+    ]
+    checks = {rel: (root / rel).exists() for rel in required}
+    checks['tools/7zip/7zz'] = (root / 'tools/7zip/7zz').exists()
+    checks['tools/metablooms_archive_tool/mb_archive_tool'] = (root / 'tools/metablooms_archive_tool/mb_archive_tool').exists()
+    verdict = 'VERIFY_PASS' if all(checks.values()) else 'VERIFY_FAIL'
+    out = {'verdict': verdict, 'root': str(root), 'checks': checks, 'failed_checks': [k for k,v in checks.items() if not v]}
+    emit(out, args.json)
+    return 0 if verdict == 'VERIFY_PASS' else 2
+
+
+def command_replay(args):
+    root = find_root()
+    handoff = latest_file(root, ['runtime/handoffs/**/*.json','handoffs/**/*.json'])
+    payload = None
+    if handoff:
+        try:
+            payload = json.loads(Path(handoff).read_text(encoding='utf-8'))
+        except Exception as e:
+            payload = {'parse_error': str(e)}
+    next_stage = None
+    if isinstance(payload, dict):
+        next_stage = payload.get('next_stage') or payload.get('recommended_next_stage') or payload.get('next_valid_step')
+    out = {
+        'verdict': 'REPLAY_DRY_RUN_READY' if handoff else 'REPLAY_NO_HANDOFF_FOUND',
+        'root': str(root),
+        'latest_handoff': handoff,
+        'next_stage': next_stage,
+        'dry_run': True,
+        'resume_rule': 'Run one bounded stage from this handoff; do not trust chat-only state.',
+    }
+    emit(out, args.json)
+    return 0
+
+
+def command_doctor(args):
+    root = find_root()
+    checks = []
+    def add(check_id, ok, severity, evidence=None, remediation=None):
+        checks.append({'id': check_id, 'ok': bool(ok), 'severity': severity, 'evidence': evidence, 'remediation': remediation})
+    add('root_detected', root.exists(), 'critical', str(root), 'Set METABLOOMS_ROOT or run from extracted OS root.')
+    add('boot_manifest_present', (root/'boot_manifest_v1.json').exists(), 'critical', 'boot_manifest_v1.json', 'Restore boot manifest from authority bundle.')
+    boot_exec = root/'0_kernel/scripts/boot_runtime_executor_v1.py'
+    add('boot_executor_present', boot_exec.exists(), 'critical', str(boot_exec), 'Restore boot executor before booting.')
+    add('operator_cli_present', (root/'bin/mb').exists(), 'critical', '0_kernel/registry/filesystem_handling/FILESYSTEM_HANDLING_SAFETY_POLICY_v1.json',
+        '0_kernel/registry/filesystem_handling/FILESYSTEM_HANDLING_SAFETY_POLICY_v2.json',
+        '0_kernel/lib/archive_extraction_route_v1.py',
+        '0_kernel/validators/validate_filesystem_handling_safety_stage2_v1.py', 'Restore operator CLI.')
+    add('operator_spec_v2_present', (root/'0_kernel/registry/operator_surface/MB_CLI_COMMAND_SPEC_v2.json').exists(), 'critical', 'MB_CLI_COMMAND_SPEC_v2.json', 'Run Stage 2 integration again.')
+    add('stage2_validator_present', (root/'0_kernel/validators/validate_operator_surface_stage2_v1.py').exists(), 'critical', 'validate_operator_surface_stage2_v1.py', 'Restore Stage 2 validator.')
+    add('archive_router_present', (root/'0_kernel/lib/archive_method_router_v1.py').exists(), 'warning', 'archive_method_router_v1.py', 'Archive fallback unavailable; restore router if exports are flaky.')
+    z7 = root/'tools/7zip/7zz'
+    add('7zz_present', z7.exists(), 'warning', str(z7), 'Install or restore 7zz fallback archive validator.')
+    add('latest_receipt_present', latest_file(root, ['runtime/receipts/**/*.json','receipts/**/*.json']) is not None, 'warning', latest_file(root, ['runtime/receipts/**/*.json','receipts/**/*.json']), 'Run a governed stage to create a receipt.')
+    add('latest_handoff_present', latest_file(root, ['runtime/handoffs/**/*.json','handoffs/**/*.json']) is not None, 'warning', latest_file(root, ['runtime/handoffs/**/*.json','handoffs/**/*.json']), 'Run a governed stage to create a handoff.')
+    add('git_dir_present', (root/'.git').exists(), 'info', '.git', 'Non-blocking in ChatGPT artifact runtime.')
+    if args.deep:
+        try:
+            proc = subprocess.run(['python3','-S',str(boot_exec)], cwd=str(root), text=True, capture_output=True, timeout=args.timeout)
+            add('deep_boot_smoke', proc.returncode == 0, 'critical', {'returncode': proc.returncode, 'stdout_tail': proc.stdout[-1000:], 'stderr_tail': proc.stderr[-1000:]}, 'Inspect boot executor output and latest boot receipt.')
+        except Exception as e:
+            add('deep_boot_smoke', False, 'critical', repr(e), 'Run mb boot --json for detailed failure.')
+    failed_critical = [c['id'] for c in checks if (not c['ok'] and c['severity'] == 'critical')]
+    warnings = [c['id'] for c in checks if (not c['ok'] and c['severity'] == 'warning')]
+    verdict = 'DOCTOR_FAIL' if failed_critical else ('DOCTOR_PASS_WITH_WARNINGS' if warnings else 'DOCTOR_PASS')
+    out = {'verdict': verdict, 'root': str(root), 'checks': checks, 'failed_checks': failed_critical, 'warnings': warnings, 'deep': args.deep}
+    emit(out, args.json)
+    return 0 if not failed_critical else 2
+
+
+
+def command_breaker(args):
+    root = find_root()
+    script = root / '0_kernel/scripts/runaway_turn_breaker_v1.py'
+    if not script.exists():
+        emit({'verdict':'RUNAWAY_BREAKER_NOT_INSTALLED','root':str(root),'required_script':str(script)}, args.json); return 2
+    cmd = [sys.executable,'-S',str(script),'--stage-name',args.stage_name or 'UNSPECIFIED_STAGE','--mode','preflight' if args.preflight else 'status','--timeout',str(args.timeout),'--command-count',str(args.command_count),'--files-touched',str(args.files_touched),'--trace-metadata-bytes',str(args.trace_metadata_bytes),'--json']
+    if args.broad_extract: cmd.append('--broad-extract')
+    if args.allow_broad_extract: cmd.append('--allow-broad-extract')
+    if args.has_receipt_plan: cmd.append('--has-receipt-plan')
+    if args.has_handoff_plan: cmd.append('--has-handoff-plan')
+    proc = subprocess.run(cmd, cwd=str(root), text=True, capture_output=True, timeout=min(max(args.timeout, 5), 20))
+    try: payload=json.loads(proc.stdout)
+    except Exception: payload={'verdict':'RUNAWAY_BREAKER_COMMAND_ERROR','returncode':proc.returncode,'stdout_tail':proc.stdout[-1000:],'stderr_tail':proc.stderr[-1000:]}
+    emit(payload,args.json)
+    return proc.returncode
+
+
+def command_run_stage(args):
+    root = find_root()
+    stage_name = args.stage_name.strip()
+    if not stage_name:
+        raise SystemExit('STAGE_NAME_REQUIRED')
+    latest_handoff = latest_file(root, ['runtime/handoffs/**/*.json','handoffs/**/*.json'])
+    thread_id = stage_thread_id(stage_name)
+    checkpoint_id = checkpoint_id_for(stage_name)
+    runner_contract_path = root / '0_kernel/registry/operator_surface/MB_STAGE_RUNNER_CONTRACT_v1.json'
+    work_order = {
+        'artifact_type': 'MB_RUN_STAGE_WORK_ORDER_v2',
+        'contract_id': 'MB_STAGE_RUNNER_CONTRACT_v1',
+        'created_utc': utc_now(),
+        'stage_name': stage_name,
+        'thread_id': thread_id,
+        'checkpoint_id': checkpoint_id,
+        'root': str(root),
+        'mode': 'execute' if args.execute else 'dry_run',
+        'runner_contract_path': str(runner_contract_path),
+        'latest_handoff': latest_handoff,
+        'scope': {'bounded_stage_only': True, 'requires_receipt': True, 'requires_handoff': True, 'requires_validation': True, 'requires_tracker_preview': True, 'requires_checkpoint': True},
+        'planned_commands': ['load latest handoff', 'validate stage cartridge/spec', 'open checkpoint thread', 'execute one bounded stage', 'write receipt', 'write handoff', 'write tracker preview', 'stop'],
+        'fail_closed_rules': ['no hidden chat state', 'no unbounded recursion', 'no success without artifacts'],
+    }
+    wo_path = root / 'runtime/work_orders/operator_surface' / f'{stage_name}_WORK_ORDER_{utc_now()}.json'
+    if not args.no_write:
+        write_json(wo_path, work_order)
+    breaker = root / '0_kernel/scripts/runaway_turn_breaker_v1.py'
+    if breaker.exists():
+        br_cmd = [sys.executable,'-S',str(breaker),'--stage-name',stage_name,'--mode','run-stage-execute' if args.execute else 'run-stage-dry-run','--timeout',str(args.timeout),'--command-count',str(len(work_order.get('planned_commands',[]))),'--files-touched','40','--has-receipt-plan','--has-handoff-plan','--json']
+        br = subprocess.run(br_cmd, cwd=str(root), text=True, capture_output=True, timeout=min(max(args.timeout,5),20))
+        try: br_payload = json.loads(br.stdout)
+        except Exception: br_payload = {'verdict':'RUNAWAY_BREAKER_ERROR','stdout_tail':br.stdout[-1000:],'stderr_tail':br.stderr[-1000:]}
+        if br.returncode != 0 or br_payload.get('verdict') != 'RUNAWAY_BUDGET_PASS':
+            out = {'verdict':'RUN_STAGE_BLOCKED_BY_RUNAWAY_BREAKER','root':str(root),'stage_name':stage_name,'thread_id':thread_id,'checkpoint_id':checkpoint_id,'work_order_path':str(wo_path) if not args.no_write else None,'breaker':br_payload}
+            emit(out, args.json)
+            return 124
+    runner = root / '0_kernel/scripts/stage_runner_v1.py'
+    if args.execute:
+        if not runner.exists():
+            out = {'verdict': 'RUN_STAGE_EXECUTOR_NOT_WIRED', 'root': str(root), 'stage_name': stage_name, 'thread_id': thread_id, 'checkpoint_id': checkpoint_id, 'work_order_path': str(wo_path) if not args.no_write else None, 'required_runner': str(runner), 'next_action': 'Install a stage runner cartridge or execute this stage through governed ChatGPT tooling.'}
+            emit(out, args.json)
+            return 3
+        proc = subprocess.run(['python3','-S',str(runner), stage_name, '--work-order', str(wo_path)], cwd=str(root), text=True, capture_output=True, timeout=args.timeout)
+        if proc.returncode == 0:
+            run_verdict = 'RUN_STAGE_PASS'
+        elif 'STAGE_RUNNER_CONTRACT_ONLY' in proc.stdout:
+            run_verdict = 'RUN_STAGE_CONTRACT_ONLY'
+        else:
+            run_verdict = 'RUN_STAGE_FAIL'
+        out = {'verdict': run_verdict, 'root': str(root), 'stage_name': stage_name, 'thread_id': thread_id, 'checkpoint_id': checkpoint_id, 'work_order_path': str(wo_path), 'returncode': proc.returncode, 'stdout_tail': proc.stdout[-2000:], 'stderr_tail': proc.stderr[-2000:]}
+        emit(out, args.json)
+        return 0 if proc.returncode == 0 else proc.returncode
+    out = {'verdict': 'RUN_STAGE_DRY_RUN_READY', 'root': str(root), 'stage_name': stage_name, 'thread_id': thread_id, 'checkpoint_id': checkpoint_id, 'work_order_path': str(wo_path) if not args.no_write else None, 'latest_handoff': latest_handoff, 'execute_command': f'mb run-stage {stage_name} --execute --json', 'work_order': work_order}
+    emit(out, args.json)
+    return 0
+
+
+
+def command_tracker(args):
+    root = find_root()
+    preview = render_tracker_preview(root, limit=args.limit)
+    out = {
+        'verdict': 'TRACKER_PREVIEW_READY' if preview['tracker_state_present'] else 'TRACKER_STATE_MISSING',
+        'root': str(root),
+        'tracker_state_path': preview['tracker_state_path'],
+        'tracker_preview': preview['preview_lines'],
+        'current_stage': preview['current_stage'],
+        'completed_count': preview['completed_count'],
+        'blocker': preview['blocker'],
+    }
+    if args.write:
+        path = root / 'runtime/state/operator_surface/TRACKER_PREVIEW_LATEST.txt'
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text('\n'.join(preview['preview_lines']) + '\n', encoding='utf-8')
+        out['tracker_preview_path'] = str(path)
+    emit(out, args.json)
+    return 0 if preview['tracker_state_present'] else 2
+
+
+
+def command_trace(args):
+    root = find_root()
+    candidate_ledgers = [root / 'runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl', root / 'runtime/traces/operator_surface/TRACE_LEDGER_LATEST.jsonl']
+    ledger = next((p for p in candidate_ledgers if p.exists()), candidate_ledgers[0])
+    records = []
+    parse_errors = []
+    if ledger.exists():
+        for idx, line in enumerate(ledger.read_text(encoding='utf-8').splitlines(), start=1):
+            if not line.strip():
+                continue
+            try:
+                rec = json.loads(line)
+            except Exception as e:
+                parse_errors.append({'line_number': idx, 'error': str(e), 'line': line[:300]})
+                continue
+            if args.stage and rec.get('stage_name') != args.stage:
+                continue
+            if args.status and rec.get('status') != args.status:
+                continue
+            records.append(rec)
+    returned = records[-args.limit:] if args.limit else records
+    by_status = {}
+    by_stage = {}
+    trace_ids = set()
+    for rec in records:
+        by_status[rec.get('status','UNKNOWN')] = by_status.get(rec.get('status','UNKNOWN'), 0) + 1
+        by_stage[rec.get('stage_name','UNKNOWN')] = by_stage.get(rec.get('stage_name','UNKNOWN'), 0) + 1
+        if rec.get('trace_id'):
+            trace_ids.add(rec.get('trace_id'))
+    summary = {'ledger_path': str(ledger), 'total_matching_records': len(records), 'record_count_returned': len(returned), 'unique_trace_count': len(trace_ids), 'by_status': by_status, 'by_stage': by_stage, 'parse_error_count': len(parse_errors)}
+    out = {'verdict': 'TRACE_LEDGER_READY' if ledger.exists() and not parse_errors else ('TRACE_LEDGER_PARSE_WARNINGS' if ledger.exists() else 'TRACE_LEDGER_MISSING'), 'root': str(root), 'trace_ledger_path': str(ledger), 'summary': summary, 'records': returned, 'parse_errors': parse_errors[:10]}
+    if args.write_summary:
+        path = root / 'runtime/traces/observability/TRACE_SUMMARY_LATEST.json'
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps({'artifact_type':'MB_TRACE_SUMMARY_v1','created_utc':utc_now(),'summary':summary}, indent=2, sort_keys=True)+'\n', encoding='utf-8')
+        out['summary_path'] = str(path)
+    emit(out, args.json)
+    return 0 if ledger.exists() else 2
+
+
+def load_security_artifacts(root: Path):
+    threat_model = root / '0_kernel/registry/security/SECURITY_ARTIFACT_THREAT_MODEL_v1.json'
+    policy = root / '0_kernel/registry/security/SECURITY_ARTIFACT_TRUST_POLICY_v1.json'
+    validation = root / 'runtime/evals/security/SECURITY_ARTIFACT_THREAT_MODEL_STAGE1_VALIDATION_LATEST.json'
+    gates = root / '0_kernel/registry/security/SECURITY_ARTIFACT_ENFORCEMENT_GATES_v1.json'
+    fixtures = root / '0_kernel/registry/security/SECURITY_PROMPT_INJECTION_FIXTURE_SET_v1.json'
+    stage2_validation = root / 'runtime/evals/security/SECURITY_ARTIFACT_THREAT_MODEL_STAGE2_VALIDATION_LATEST.json'
+    return threat_model, policy, validation, gates, fixtures, stage2_validation
+
+
+def command_security(args):
+    root = find_root()
+    threat_model, policy, validation, gates, fixtures, stage2_validation = load_security_artifacts(root)
+    artifacts = {'threat_model': str(threat_model), 'trust_policy': str(policy), 'stage1_validation': str(validation), 'enforcement_gates': str(gates), 'prompt_injection_fixtures': str(fixtures), 'stage2_validation': str(stage2_validation)}
+    missing = [name for name, path in artifacts.items() if name != 'stage2_validation' and not Path(path).exists()]
+    payload = safe_load_json(threat_model) if threat_model.exists() else None
+    gate_payload = safe_load_json(gates) if gates.exists() else None
+    fixture_payload = safe_load_json(fixtures) if fixtures.exists() else None
+    risk_count = len(payload.get('risks', [])) if isinstance(payload, dict) and isinstance(payload.get('risks'), list) else 0
+    gate_count = len(gate_payload.get('gates', [])) if isinstance(gate_payload, dict) and isinstance(gate_payload.get('gates'), list) else 0
+    fixture_count = len(fixture_payload.get('fixtures', [])) if isinstance(fixture_payload, dict) and isinstance(fixture_payload.get('fixtures'), list) else 0
+    command_count = len(payload.get('security_commands', [])) if isinstance(payload, dict) and isinstance(payload.get('security_commands'), list) else 0
+    if getattr(args, 'red_team', False):
+        validator = root / '0_kernel/validators/validate_security_red_team_stage4_v1.py'
+        runner = root / '0_kernel/scripts/security_red_team_runner_v1.py'
+        if not validator.exists() or not runner.exists():
+            out = {'verdict': 'SECURITY_RED_TEAM_STAGE4_MISSING', 'root': str(root), 'required_validator': str(validator), 'required_runner': str(runner)}
+            emit(out, args.json); return 2
+        proc = subprocess.run(['python3','-S',str(validator)], cwd=str(root), text=True, capture_output=True, timeout=args.timeout)
+        out = {'verdict': 'SECURITY_RED_TEAM_STAGE4_PASS' if proc.returncode == 0 else 'SECURITY_RED_TEAM_STAGE4_FAIL', 'root': str(root), 'validator_returncode': proc.returncode, 'stdout_tail': proc.stdout[-3000:], 'stderr_tail': proc.stderr[-2000:]}
+        emit(out, args.json); return 0 if proc.returncode == 0 else proc.returncode
+    if args.fixtures or args.gate_check:
+        validator = root / '0_kernel/validators/validate_security_enforcement_stage2_v1.py'
+        if not validator.exists():
+            out = {'verdict': 'SECURITY_STAGE2_VALIDATOR_MISSING', 'root': str(root), 'artifacts': artifacts, 'missing': missing, 'required_validator': str(validator)}
+            emit(out, args.json); return 2
+        proc = subprocess.run(['python3','-S',str(validator)], cwd=str(root), text=True, capture_output=True, timeout=args.timeout)
+        out = {'verdict': 'SECURITY_STAGE2_CHECK_PASS' if proc.returncode == 0 else 'SECURITY_STAGE2_CHECK_FAIL', 'root': str(root), 'artifacts': artifacts, 'missing': missing, 'risk_count': risk_count, 'gate_count': gate_count, 'fixture_count': fixture_count, 'validator_returncode': proc.returncode, 'stdout_tail': proc.stdout[-2000:], 'stderr_tail': proc.stderr[-2000:]}
+        emit(out, args.json); return 0 if proc.returncode == 0 else proc.returncode
+    if args.check:
+        validator = root / '0_kernel/validators/validate_security_artifact_threat_model_stage1_v1.py'
+        if not validator.exists():
+            out = {'verdict': 'SECURITY_VALIDATOR_MISSING', 'root': str(root), 'artifacts': artifacts, 'missing': missing, 'required_validator': str(validator)}
+            emit(out, args.json); return 2
+        proc = subprocess.run(['python3','-S',str(validator)], cwd=str(root), text=True, capture_output=True, timeout=args.timeout)
+        out = {'verdict': 'SECURITY_CHECK_PASS' if proc.returncode == 0 else 'SECURITY_CHECK_FAIL', 'root': str(root), 'artifacts': artifacts, 'missing': missing, 'risk_count': risk_count, 'security_command_count': command_count, 'validator_returncode': proc.returncode, 'stdout_tail': proc.stdout[-2000:], 'stderr_tail': proc.stderr[-2000:]}
+        emit(out, args.json); return 0 if proc.returncode == 0 else proc.returncode
+    out = {'verdict': 'SECURITY_ENFORCEMENT_READY' if not missing else 'SECURITY_ARTIFACTS_MISSING', 'root': str(root), 'artifacts': artifacts, 'missing': missing, 'risk_count': risk_count, 'gate_count': gate_count, 'fixture_count': fixture_count, 'security_command_count': command_count, 'critical_controls': payload.get('critical_controls', []) if isinstance(payload, dict) else []}
+    emit(out, args.json); return 0 if not missing else 2
+
+
+
+def load_evals_artifacts(root: Path):
+    spec = root / '0_kernel/registry/evals/MB_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_SPEC_v1.json'
+    dataset_schema = root / '0_kernel/registry/evals/EVALS_TRACE_REVIEW_DATASET_SCHEMA_v1.json'
+    alignment_policy = root / '0_kernel/registry/evals/VALIDATOR_ALIGNMENT_POLICY_v1.json'
+    mve = root / '0_kernel/registry/evals/EVALS_MINIMUM_VIABLE_EVAL_LOOP_v1.json'
+    sample_set = root / 'runtime/evals/evals_trace_review/EVALS_TRACE_SAMPLE_SET_v1.json'
+    validation = root / 'runtime/evals/evals_trace_review/EVALS_TRACE_REVIEW_STAGE1_VALIDATION_LATEST.json'
+    scorecard_spec = root / '0_kernel/registry/evals/MB_EVALS_SCORECARD_SPEC_v1.json'
+    failure_modes = root / '0_kernel/registry/evals/EVALS_FAILURE_MODE_CATALOG_v1.json'
+    regression_dataset = root / 'runtime/evals/evals_trace_review/EVALS_REGRESSION_DATASET_v1.json'
+    scorecard_baseline = root / 'runtime/evals/evals_trace_review/EVALS_SCORECARD_BASELINE_v1.json'
+    stage2_validation = root / 'runtime/evals/evals_trace_review/EVALS_SCORECARDS_STAGE2_VALIDATION_LATEST.json'
+    runner_spec = root / '0_kernel/registry/evals/MB_EVALS_EVALUATOR_RUNNER_SPEC_v1.json'
+    matrix_schema = root / '0_kernel/registry/evals/EVALS_CONFUSION_MATRIX_SCHEMA_v1.json'
+    runner = root / '0_kernel/scripts/evals_evaluator_runner_v1.py'
+    runner_results = root / 'runtime/evals/evals_trace_review/EVALS_EVALUATOR_RUN_STAGE3_RESULTS_LATEST.json'
+    confusion_matrix = root / 'runtime/evals/evals_trace_review/EVALS_CONFUSION_MATRIX_STAGE3_LATEST.json'
+    stage3_validation = root / 'runtime/evals/evals_trace_review/EVALS_EVALUATOR_RUNNER_STAGE3_VALIDATION_LATEST.json'
+    return spec, dataset_schema, alignment_policy, mve, sample_set, validation, scorecard_spec, failure_modes, regression_dataset, scorecard_baseline, stage2_validation, runner_spec, matrix_schema, runner, runner_results, confusion_matrix, stage3_validation
+
+
+
+def command_evals(args):
+    root = find_root()
+    (spec, dataset_schema, alignment_policy, mve, sample_set, validation, scorecard_spec, failure_modes, regression_dataset, scorecard_baseline, stage2_validation, runner_spec, matrix_schema, runner, runner_results, confusion_matrix, stage3_validation) = load_evals_artifacts(root)
+    alignment_gate_spec = root / '0_kernel/registry/evals/MB_EVALS_VALIDATOR_ALIGNMENT_GATE_SPEC_v1.json'
+    alignment_gate = root / '0_kernel/scripts/evals_validator_alignment_gate_v1.py'
+    stage4_validator = root / '0_kernel/validators/validate_evals_validator_alignment_stage4_v1.py'
+    stage4_report = root / 'runtime/evals/evals_trace_review/EVALS_VALIDATOR_ALIGNMENT_STAGE4_REPORT_LATEST.json'
+    stage4_validation = root / 'runtime/evals/evals_trace_review/EVALS_VALIDATOR_ALIGNMENT_STAGE4_VALIDATION_LATEST.json'
+    artifacts = {'spec': str(spec), 'dataset_schema': str(dataset_schema), 'alignment_policy': str(alignment_policy), 'minimum_viable_eval_loop': str(mve), 'sample_set': str(sample_set), 'validation': str(validation), 'scorecard_spec': str(scorecard_spec), 'failure_modes': str(failure_modes), 'regression_dataset': str(regression_dataset), 'scorecard_baseline': str(scorecard_baseline), 'stage2_validation': str(stage2_validation), 'runner_spec': str(runner_spec), 'matrix_schema': str(matrix_schema), 'runner': str(runner), 'runner_results': str(runner_results), 'confusion_matrix': str(confusion_matrix), 'stage3_validation': str(stage3_validation), 'alignment_gate_spec': str(alignment_gate_spec), 'alignment_gate': str(alignment_gate), 'stage4_validator': str(stage4_validator), 'stage4_report': str(stage4_report), 'stage4_validation': str(stage4_validation)}
+    required_stage1 = [spec, dataset_schema, alignment_policy, mve, sample_set]
+    required_stage2 = [scorecard_spec, failure_modes, regression_dataset, scorecard_baseline]
+    required_stage3 = [runner_spec, matrix_schema, runner, runner_results, confusion_matrix]
+    required_stage4 = [alignment_gate_spec, alignment_gate, stage4_validator]
+    need_stage2 = args.scorecards or args.regression or args.check or getattr(args, 'runner', False) or getattr(args, 'confusion', False) or getattr(args, 'alignment_gate', False) or getattr(args, 'promotion', False)
+    need_stage3 = getattr(args, 'runner', False) or getattr(args, 'confusion', False) or getattr(args, 'alignment_gate', False) or getattr(args, 'promotion', False)
+    need_stage4 = getattr(args, 'alignment_gate', False) or getattr(args, 'promotion', False) or args.check
+    missing = [str(p) for p in (required_stage1 + (required_stage2 if need_stage2 else []) + (required_stage3 if need_stage3 else []) + (required_stage4 if need_stage4 else [])) if not p.exists()]
+    spec_payload = safe_load_json(spec) if spec.exists() else {}; sample_payload = safe_load_json(sample_set) if sample_set.exists() else {}; scorecard_payload = safe_load_json(scorecard_spec) if scorecard_spec.exists() else {}; regression_payload = safe_load_json(regression_dataset) if regression_dataset.exists() else {}; results_payload = safe_load_json(runner_results) if runner_results.exists() else {}; matrix_payload = safe_load_json(confusion_matrix) if confusion_matrix.exists() else {}; stage4_payload = safe_load_json(stage4_report) if stage4_report.exists() else {}
+    criteria_count = len(spec_payload.get('quality_criteria', [])) if isinstance(spec_payload, dict) and isinstance(spec_payload.get('quality_criteria'), list) else 0
+    sample_count = len(sample_payload.get('trace_samples', [])) if isinstance(sample_payload, dict) and isinstance(sample_payload.get('trace_samples'), list) else 0
+    scorecard_count = len(scorecard_payload.get('scorecards', [])) if isinstance(scorecard_payload, dict) and isinstance(scorecard_payload.get('scorecards'), list) else 0
+    examples = regression_payload.get('examples', []) if isinstance(regression_payload, dict) and isinstance(regression_payload.get('examples'), list) else []
+    decision_counts = {d: sum(1 for e in examples if e.get('expected_decision') == d) for d in ['PASS','WARN','BLOCK']}
+    if getattr(args, 'alignment_gate', False) or getattr(args, 'promotion', False):
+        if missing:
+            emit({'verdict':'EVALS_ALIGNMENT_GATE_MISSING_INPUTS','root':str(root),'artifacts':artifacts,'missing':missing}, args.json); return 2
+        proc = subprocess.run(['python3','-S',str(alignment_gate),'--json'], cwd=str(root), text=True, capture_output=True, timeout=args.timeout)
+        try: payload = json.loads(proc.stdout.strip())
+        except Exception: payload = {'stdout_tail': proc.stdout[-4000:], 'stderr_tail': proc.stderr[-2000:]}
+        out = {'verdict':'EVALS_ALIGNMENT_GATE_PASS' if proc.returncode == 0 else 'EVALS_ALIGNMENT_GATE_BLOCK','root':str(root),'artifacts':artifacts,'missing':missing,'alignment_gate_returncode':proc.returncode,'alignment_gate':payload,'promotion_decision':payload.get('promotion_decision') if isinstance(payload,dict) else None,'report_path':payload.get('report_path') if isinstance(payload,dict) else None}
+        emit(out,args.json); return 0 if proc.returncode == 0 else proc.returncode
+    if getattr(args, 'runner', False):
+        if not runner.exists():
+            emit({'verdict':'EVALS_RUNNER_MISSING','root':str(root),'artifacts':artifacts,'missing':missing}, args.json); return 2
+        proc = subprocess.run(['python3','-S',str(runner),'--json'], cwd=str(root), text=True, capture_output=True, timeout=args.timeout)
+        m = safe_load_json(confusion_matrix) if confusion_matrix.exists() else {}
+        out = {'verdict':'EVALS_RUNNER_PASS' if proc.returncode == 0 else 'EVALS_RUNNER_FAIL','root':str(root),'artifacts':artifacts,'missing':missing,'runner_returncode':proc.returncode,'stdout_tail':proc.stdout[-3000:],'stderr_tail':proc.stderr[-2000:],'accuracy':m.get('accuracy'),'promotion_decision':m.get('promotion_decision'),'false_pass_example_ids':m.get('false_pass_example_ids',[])}
+        emit(out,args.json); return 0 if proc.returncode == 0 else proc.returncode
+    if getattr(args, 'confusion', False):
+        validator3 = root / '0_kernel/validators/validate_evals_evaluator_runner_stage3_v1.py'
+        if not validator3.exists():
+            emit({'verdict':'EVALS_STAGE3_VALIDATOR_MISSING','root':str(root),'artifacts':artifacts,'missing':missing,'required_validator':str(validator3)}, args.json); return 2
+        proc = subprocess.run(['python3','-S',str(validator3)], cwd=str(root), text=True, capture_output=True, timeout=args.timeout)
+        m = safe_load_json(confusion_matrix) if confusion_matrix.exists() else {}
+        out = {'verdict':'EVALS_CONFUSION_MATRIX_PASS' if proc.returncode == 0 else 'EVALS_CONFUSION_MATRIX_FAIL','root':str(root),'artifacts':artifacts,'missing':missing,'validator':str(validator3),'validator_returncode':proc.returncode,'stdout_tail':proc.stdout[-3000:],'stderr_tail':proc.stderr[-2000:],'matrix':m.get('matrix'),'accuracy':m.get('accuracy'),'promotion_decision':m.get('promotion_decision')}
+        emit(out,args.json); return 0 if proc.returncode == 0 else proc.returncode
+    if args.check or args.scorecards:
+        validator4 = root / '0_kernel/validators/validate_evals_validator_alignment_stage4_v1.py'; validator3 = root / '0_kernel/validators/validate_evals_evaluator_runner_stage3_v1.py'; validator2 = root / '0_kernel/validators/validate_evals_scorecards_stage2_v1.py'; validator1 = root / '0_kernel/validators/validate_evals_trace_review_stage1_v1.py'; validator = validator4 if validator4.exists() else (validator3 if validator3.exists() else (validator2 if validator2.exists() else validator1))
+        if not validator.exists():
+            emit({'verdict':'EVALS_VALIDATOR_MISSING','root':str(root),'artifacts':artifacts,'missing':missing,'required_validator':str(validator)}, args.json); return 2
+        proc = subprocess.run(['python3','-S',str(validator)], cwd=str(root), text=True, capture_output=True, timeout=args.timeout)
+        out = {'verdict':'EVALS_STAGE4_CHECK_PASS' if proc.returncode == 0 and validator == validator4 else ('EVALS_STAGE3_CHECK_PASS' if proc.returncode == 0 and validator == validator3 else ('EVALS_STAGE2_CHECK_PASS' if proc.returncode == 0 and validator == validator2 else ('EVALS_CHECK_PASS' if proc.returncode == 0 else 'EVALS_CHECK_FAIL'))),'root':str(root),'artifacts':artifacts,'missing':missing,'criteria_count':criteria_count,'trace_sample_count':sample_count,'scorecard_count':scorecard_count,'regression_example_count':len(examples),'decision_counts':decision_counts,'validator':str(validator),'validator_returncode':proc.returncode,'stdout_tail':proc.stdout[-3000:],'stderr_tail':proc.stderr[-2000:],'confusion_accuracy':matrix_payload.get('accuracy'),'promotion_decision':stage4_payload.get('promotion_decision') or matrix_payload.get('promotion_decision')}
+        emit(out,args.json); return 0 if proc.returncode == 0 else proc.returncode
+    out = {'verdict':'EVALS_VALIDATOR_ALIGNMENT_GATE_READY' if stage4_report.exists() else ('EVALS_EVALUATOR_RUNNER_READY' if runner_results.exists() and confusion_matrix.exists() else ('EVALS_SCORECARDS_READY' if not missing and scorecard_spec.exists() else ('EVALS_TRACE_REVIEW_READY' if not missing else 'EVALS_ARTIFACTS_MISSING'))),'root':str(root),'artifacts':artifacts,'missing':missing,'criteria_count':criteria_count,'trace_sample_count':sample_count,'scorecard_count':scorecard_count,'regression_example_count':len(examples),'decision_counts':decision_counts,'runner_result_count':results_payload.get('example_count'),'confusion_accuracy':matrix_payload.get('accuracy'),'stage4_promotion_decision':stage4_payload.get('promotion_decision'),'next_action':'Run mb evals --alignment-gate --json before promoting eval-governed cartridges.'}
+    emit(out,args.json); return 0 if not missing else 2
+
+def command_export(args):
+    root = find_root()
+    out_path = Path(args.output).resolve()
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    fs_tool = root / '0_kernel/lib/filesystem_safety_v1.py'
+    diff_tool = root / '0_kernel/lib/trace_diff_logger_v1.py'
+    promotion_gate = root / '0_kernel/security/export_promotion_gate_v1.py'
+    proof_path = root / 'runtime/export_promotion/EXPORT_FILESYSTEM_SAFETY_PROOF_LATEST.json'
+    proof_path.parent.mkdir(parents=True, exist_ok=True)
+    # Produce bounded differential evidence before export; full hash manifests stay out of trace payloads.
+    diff_payload = None
+    try:
+        baseline = root / 'runtime/traces/filesystem_handling/EXPORT_BASELINE_MANIFEST_LATEST.json'
+        summary = root / 'runtime/traces/filesystem_handling/EXPORT_DIFF_SUMMARY_LATEST.json'
+        cmd = ['python3','-S',str(diff_tool),'--root',str(root),'--baseline',str(baseline),'--write-baseline',str(baseline),'--write-summary',str(summary),'--max-list','15']
+        proc_diff = subprocess.run(cmd, cwd=str(root), text=True, capture_output=True, timeout=120)
+        diff_payload = json.loads(proc_diff.stdout.strip()) if proc_diff.stdout.strip().startswith('{') else {'returncode':proc_diff.returncode,'stdout_tail':proc_diff.stdout[-1000:],'stderr_tail':proc_diff.stderr[-1000:]}
+    except Exception as e:
+        diff_payload = {'warning':'diff_summary_failed','error':repr(e)}
+    proof = {
+        'schema_version':'EXPORT_FILESYSTEM_SAFETY_PROOF_v1',
+        'artifact_type':'EXPORT_FILESYSTEM_SAFETY_PROOF',
+        'created_utc':utc_now(),
+        'root':str(root),
+        'output':str(out_path),
+        'tmp_policy':'tmp archive and sidecar are created in the destination directory; no /tmp publication path is allowed',
+        'diff_summary':diff_payload,
+        'required_gates':['same_mount_atomic_replace_preflight','zip_integrity','promotion_gate','bounded_differential_logging']
+    }
+    write_json(proof_path, proof)
+    tmp_path = out_path.parent / f'.{out_path.name}.tmp.{os.getpid()}.zip'
+    tmp_sidecar = out_path.parent / f'.{out_path.name}.sha256.tmp.{os.getpid()}'
+    for p in [tmp_path,tmp_sidecar]:
+        if p.exists(): p.unlink()
+    count = 0
+    with zipfile.ZipFile(tmp_path, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=6) as z:
+        for p in sorted(root.rglob('*')):
+            if p.is_file():
+                # Do not export transient partial/finalization-in-progress locks.
+                if p.name in ('.MB_FINALIZATION_IN_PROGRESS.json','.MB_PARTIAL_ROOT_LOCK.json'):
+                    continue
+                arc = str(Path(root.name) / p.relative_to(root))
+                z.write(p, arc)
+                count += 1
+    with zipfile.ZipFile(tmp_path) as z:
+        bad = z.testzip()
+    sha = hashlib.sha256(tmp_path.read_bytes()).hexdigest()
+    tmp_sidecar.write_text(f"{sha}  {out_path.name}\n", encoding='utf-8')
+    # Hard gate: tmp and final target must be same st_dev and same df -P mount point before os.replace.
+    pre_archive = subprocess.run(['python3','-S',str(fs_tool),'preflight','--tmp',str(tmp_path),'--dst',str(out_path)], cwd=str(root), text=True, capture_output=True, timeout=45)
+    pre_sidecar = subprocess.run(['python3','-S',str(fs_tool),'preflight','--tmp',str(tmp_sidecar),'--dst',str(Path(str(out_path)+'.sha256'))], cwd=str(root), text=True, capture_output=True, timeout=45)
+    try: pre_archive_payload=json.loads(pre_archive.stdout.strip())
+    except Exception: pre_archive_payload={'parse_error':True,'stdout_tail':pre_archive.stdout[-1000:],'stderr_tail':pre_archive.stderr[-1000:]}
+    try: pre_sidecar_payload=json.loads(pre_sidecar.stdout.strip())
+    except Exception: pre_sidecar_payload={'parse_error':True,'stdout_tail':pre_sidecar.stdout[-1000:],'stderr_tail':pre_sidecar.stderr[-1000:]}
+    pre_ok = pre_archive.returncode == 0 and pre_sidecar.returncode == 0 and pre_archive_payload.get('verdict') == 'ATOMIC_REPLACE_SAFE' and pre_sidecar_payload.get('verdict') == 'ATOMIC_REPLACE_SAFE'
+    if not pre_ok or bad is not None:
+        out = {'verdict':'EXPORT_FAIL','root':str(root),'export_path':str(out_path),'entries':count,'sha256':sha,'bad_member':bad,'atomic_preflight_archive':pre_archive_payload,'atomic_preflight_sidecar':pre_sidecar_payload,'sidecar':str(Path(str(out_path)+'.sha256')),'fail_closed':True}
+        emit(out,args.json); return 2
+    os.replace(tmp_path,out_path)
+    os.replace(tmp_sidecar,Path(str(out_path)+'.sha256'))
+    promotion_payload = None; promotion_rc = 0
+    if promotion_gate.exists():
+        proc = subprocess.run(['python3','-S',str(promotion_gate),'--archive',str(out_path),'--json'], cwd=str(root), text=True, capture_output=True, timeout=90)
+        promotion_rc = proc.returncode
+        try: promotion_payload = json.loads(proc.stdout.strip())
+        except Exception: promotion_payload = {'parse_error': True, 'stdout_tail': proc.stdout[-2000:], 'stderr_tail': proc.stderr[-2000:]}
+    else:
+        promotion_rc = 2; promotion_payload = {'verdict': 'EXPORT_PROMOTION_GATE_MISSING', 'required_gate': str(promotion_gate)}
+    ok = promotion_rc == 0
+    out = {'verdict': 'EXPORT_PASS' if ok else 'EXPORT_FAIL', 'root': str(root), 'export_path': str(out_path), 'entries': count, 'sha256': sha, 'bad_member': bad, 'sidecar': str(Path(str(out_path)+'.sha256')), 'atomic_preflight_archive': pre_archive_payload, 'atomic_preflight_sidecar': pre_sidecar_payload, 'differential_trace_summary': diff_payload, 'promotion_gate_returncode': promotion_rc, 'promotion_gate': promotion_payload}
+    emit(out, args.json)
+    return 0 if ok else 2
+
+
+
+def command_checkpoint(args):
+    root = find_root()
+    mgr = root / '0_kernel' / 'scripts' / 'checkpoint_manager_v1.py'
+    if not mgr.exists():
+        emit({'verdict':'CHECKPOINT_MANAGER_MISSING','root':str(root)}, args.json)
+        return 4
+    cmd = [sys.executable or 'python3', '-S', str(mgr)]
+    if getattr(args, 'list', False):
+        cmd.append('--list')
+    elif getattr(args, 'resume', None):
+        cmd += ['--resume', '--thread-id', args.resume]
+        if getattr(args, 'resume_payload', None): cmd += ['--resume-json', args.resume_payload]
+    else:
+        if not getattr(args, 'stage', None):
+            emit({'verdict':'CHECKPOINT_STAGE_REQUIRED'}, args.json); return 2
+        cmd += ['--stage', args.stage]
+        if getattr(args, 'thread_id', None): cmd += ['--thread-id', args.thread_id]
+        if getattr(args, 'state', None): cmd += ['--state-json', args.state]
+        if getattr(args, 'interrupt', None): cmd += ['--interrupt-json', args.interrupt]
+    cp = subprocess.run(cmd, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=getattr(args, 'timeout', 45))
+    if args.json:
+        print(cp.stdout.strip() or json.dumps({'verdict':'CHECKPOINT_COMMAND_EMPTY','stderr':cp.stderr[-500:]}))
+    else:
+        if cp.stdout.strip(): print(cp.stdout.strip())
+        if cp.stderr.strip(): print(cp.stderr.strip(), file=sys.stderr)
+    return cp.returncode
+
+def command_fs_safety(args):
+    root = find_root()
+    validator = root / '0_kernel/validators/validate_filesystem_handling_safety_stage1_v1.py'
+    fs_tool = root / '0_kernel/lib/filesystem_safety_v1.py'
+    diff_tool = root / '0_kernel/lib/trace_diff_logger_v1.py'
+    if getattr(args, 'preflight', False):
+        if not args.tmp or not args.dst:
+            emit({'verdict': 'FS_SAFETY_PRECHECK_USAGE_ERROR', 'required': ['--tmp','--dst']}, args.json); return 2
+        proc = subprocess.run(['python3','-S',str(fs_tool),'preflight','--tmp',args.tmp,'--dst',args.dst], cwd=str(root), text=True, capture_output=True, timeout=args.timeout)
+        try: payload = json.loads(proc.stdout.strip())
+        except Exception: payload = {'stdout_tail': proc.stdout[-2000:], 'stderr_tail': proc.stderr[-2000:]}
+        emit({'verdict': payload.get('verdict','FS_SAFETY_PREFLIGHT_RESULT'), 'root': str(root), 'preflight': payload, 'returncode': proc.returncode}, args.json); return proc.returncode
+    if getattr(args, 'diff', False):
+        target = args.root or str(root)
+        cmd = ['python3','-S',str(diff_tool),'--root',target,'--max-list',str(args.max_list)]
+        if args.baseline: cmd += ['--baseline', args.baseline]
+        if args.write_summary: cmd += ['--write-summary', args.write_summary]
+        proc = subprocess.run(cmd, cwd=str(root), text=True, capture_output=True, timeout=args.timeout)
+        try: payload = json.loads(proc.stdout.strip())
+        except Exception: payload = {'stdout_tail': proc.stdout[-2000:], 'stderr_tail': proc.stderr[-2000:]}
+        emit({'verdict': 'FS_SAFETY_DIFF_READY' if proc.returncode == 0 else 'FS_SAFETY_DIFF_FAIL', 'root': str(root), 'diff': payload, 'returncode': proc.returncode}, args.json); return proc.returncode
+    proc = subprocess.run(['python3','-S',str(validator)], cwd=str(root), text=True, capture_output=True, timeout=args.timeout)
+    try: payload = json.loads(proc.stdout.strip())
+    except Exception: payload = {'stdout_tail': proc.stdout[-4000:], 'stderr_tail': proc.stderr[-2000:]}
+    emit({'verdict': 'FS_SAFETY_PASS' if proc.returncode == 0 else 'FS_SAFETY_FAIL', 'root': str(root), 'validator': payload, 'returncode': proc.returncode}, args.json); return proc.returncode
+
+
+
+def command_extract(args):
+    root = find_root()
+    route = root / '0_kernel/lib/archive_extraction_route_v1.py'
+    if not route.exists():
+        emit({'verdict':'EXTRACTION_ROUTE_MISSING','root':str(root),'required_route':str(route)}, args.json); return 2
+    cmd=['python3','-S',str(route),'--archive',args.archive,'--dest',args.dest,'--timeout',str(args.timeout)]
+    if args.replace: cmd.append('--replace')
+    proc=subprocess.run(cmd,cwd=str(root),text=True,capture_output=True,timeout=args.timeout+30)
+    try: payload=json.loads(proc.stdout.strip())
+    except Exception: payload={'stdout_tail':proc.stdout[-3000:],'stderr_tail':proc.stderr[-2000:]}
+    emit({'verdict':payload.get('verdict','EXTRACTION_ROUTE_RESULT'),'root':str(root),'extraction':payload,'returncode':proc.returncode},args.json)
+    return proc.returncode
+
+
+def command_harness(args):
+    root = find_root()
+    spec = root / '0_kernel/registry/agent_harness/MB_AGENT_HARNESS_STAGE_GRAPH_SPEC_v2.json'
+    if not spec.exists():
+        spec = root / '0_kernel/registry/agent_harness/MB_AGENT_HARNESS_STAGE_GRAPH_SPEC_v1.json'
+    role_policy = root / '0_kernel/registry/agent_harness/MB_AGENT_HARNESS_ROLE_POLICY_v1.json'
+    workpacket_schema = root / '0_kernel/registry/agent_harness/MB_AGENT_HARNESS_WORKPACKET_SCHEMA_v2.json'
+    if not workpacket_schema.exists():
+        workpacket_schema = root / '0_kernel/registry/agent_harness/MB_AGENT_HARNESS_WORKPACKET_SCHEMA_v1.json'
+    planner = root / '0_kernel/scripts/agent_harness_parallel_workpacket_planner_v1.py'
+    if not planner.exists():
+        planner = root / '0_kernel/scripts/agent_harness_planner_v1.py'
+    diff_review = root / '0_kernel/scripts/agent_harness_diff_review_v1.py'
+    validator = root / '0_kernel/validators/validate_agent_harness_stage2_v1.py'
+    if not validator.exists():
+        validator = root / '0_kernel/validators/validate_agent_harness_stage1_v1.py'
+    artifacts = {
+        'stage_graph_spec': str(spec),
+        'role_policy': str(role_policy),
+        'workpacket_schema': str(workpacket_schema),
+        'planner': str(planner),
+        'diff_review': str(diff_review),
+        'validator': str(validator),
+    }
+    missing = [name for name, path in artifacts.items() if name != 'diff_review' and not Path(path).exists()]
+    payload = safe_load_json(spec) if spec.exists() else {}
+    node_count = len(payload.get('stage_graph', {}).get('nodes', [])) if isinstance(payload, dict) else 0
+    edge_count = len(payload.get('stage_graph', {}).get('edges', [])) if isinstance(payload, dict) else 0
+    result = {'verdict': 'AGENT_HARNESS_READY' if not missing else 'AGENT_HARNESS_MISSING_ARTIFACTS', 'root': str(root), 'artifacts': artifacts, 'missing': missing, 'node_count': node_count, 'edge_count': edge_count}
+    if args.plan:
+        cmd = ['python3','-S',str(planner),'--stage',args.stage,'--write-plan','--json']
+        if getattr(args, 'parallel_plan', False):
+            cmd.append('--parallel-plan')
+        cp = subprocess.run(cmd, cwd=str(root), text=True, capture_output=True, timeout=args.timeout)
+        result['planner_rc'] = cp.returncode
+        result['planner_stdout_tail'] = cp.stdout[-4000:]
+        result['planner_stderr_tail'] = cp.stderr[-1000:]
+        if cp.returncode != 0:
+            result['verdict'] = 'AGENT_HARNESS_PLAN_FAIL'
+    if args.diff_review:
+        if not diff_review.exists():
+            result['verdict'] = 'AGENT_HARNESS_DIFF_REVIEW_MISSING'
+        else:
+            cmd = ['python3','-S',str(diff_review),'--json']
+            if args.stage:
+                cmd.extend(['--stage', args.stage])
+            cp = subprocess.run(cmd, cwd=str(root), text=True, capture_output=True, timeout=args.timeout)
+            result['diff_review_rc'] = cp.returncode
+            result['diff_review_stdout_tail'] = cp.stdout[-4000:]
+            result['diff_review_stderr_tail'] = cp.stderr[-1000:]
+            if cp.returncode != 0:
+                result['verdict'] = 'AGENT_HARNESS_DIFF_REVIEW_FAIL'
+    if getattr(args, 'executor_review', False) or getattr(args, 'review_gate', False):
+        gate = root / '0_kernel/scripts/agent_harness_executor_review_gate_v1.py'
+        if not gate.exists():
+            result['verdict'] = 'AGENT_HARNESS_EXECUTOR_REVIEW_GATE_MISSING'
+        else:
+            cmd = ['python3','-S',str(gate),'--stage',args.stage,'--json']
+            if getattr(args, 'review_gate', False):
+                cmd.append('--strict')
+            cp = subprocess.run(cmd, cwd=str(root), text=True, capture_output=True, timeout=args.timeout)
+            result['executor_review_rc'] = cp.returncode
+            result['executor_review_stdout_tail'] = cp.stdout[-4000:]
+            result['executor_review_stderr_tail'] = cp.stderr[-1000:]
+            if cp.returncode != 0:
+                result['verdict'] = 'AGENT_HARNESS_EXECUTOR_REVIEW_FAIL'
+    if args.check:
+        cp = subprocess.run(['python3','-S',str(validator)], cwd=str(root), text=True, capture_output=True, timeout=args.timeout)
+        result['validator_rc'] = cp.returncode
+        result['validator_stdout_tail'] = cp.stdout[-4000:]
+        result['validator_stderr_tail'] = cp.stderr[-1000:]
+        if cp.returncode != 0:
+            result['verdict'] = 'AGENT_HARNESS_CHECK_FAIL'
+    emit(result, args.json)
+    return 0 if result['verdict'] in ('AGENT_HARNESS_READY',) else 2
+
+
+
+def command_quality(args):
+    root = find_root()
+    gate = root / '0_kernel/security/software_quality_gate_v1.py'
+    validator = root / '0_kernel/validators/validate_software_quality_stage2_v1.py'
+    scorecard = root / 'runtime/evals/software_quality/SOFTWARE_QUALITY_STAGE2_SCORECARD_LATEST.json'
+    fixtures = root / 'runtime/evals/software_quality/SOFTWARE_QUALITY_REGRESSION_FIXTURES_v2.json'
+    if getattr(args, 'promotion_gate', False) or getattr(args, 'check', False):
+        target = validator if getattr(args, 'check', False) and validator.exists() else gate
+        proc = subprocess.run([sys.executable, '-S', str(target)], cwd=str(root), text=True, capture_output=True, timeout=getattr(args,'timeout',30))
+        try: payload=json.loads(proc.stdout)
+        except Exception: payload={'verdict':'SOFTWARE_QUALITY_COMMAND_ERROR','rc':proc.returncode,'stdout_tail':proc.stdout[-1000:],'stderr_tail':proc.stderr[-1000:]}
+        emit(payload,args.json); return proc.returncode
+    sc=safe_load_json(scorecard) if scorecard.exists() else {}
+    fx=safe_load_json(fixtures) if fixtures.exists() else {}
+    payload={'verdict':'SOFTWARE_QUALITY_READY' if scorecard.exists() and fixtures.exists() else 'SOFTWARE_QUALITY_INCOMPLETE','scorecard_path':str(scorecard),'fixtures_path':str(fixtures),'overall_score':sc.get('overall_score'),'promotion_decision':sc.get('promotion_decision'),'fixture_count':len(fx.get('fixtures',[])) if isinstance(fx.get('fixtures'),list) else 0}
+    emit(payload,args.json); return 0 if payload['verdict']=='SOFTWARE_QUALITY_READY' else 2
+
+def command_education(args):
+    root = find_root()
+    gate_v2 = root / '0_kernel/scripts/education_validity_gate_v2.py'
+    gate_v1 = root / '0_kernel/scripts/education_validity_gate_v1.py'
+    promo = root / '0_kernel/security/education_promotion_gate_v1.py'
+    validator_v2 = root / '0_kernel/validators/validate_education_validity_stage2_v1.py'
+    validator_v1 = root / '0_kernel/validators/validate_education_validity_stage1_v1.py'
+    if getattr(args, 'promotion_gate', False):
+        proc = subprocess.run([sys.executable, '-S', str(promo), '--json'], cwd=str(root), text=True, capture_output=True, timeout=getattr(args,'timeout',45))
+        try: payload=json.loads(proc.stdout)
+        except Exception: payload={'verdict':'EDUCATION_PROMOTION_GATE_ERROR','rc':proc.returncode,'stdout_tail':proc.stdout[-1000:],'stderr_tail':proc.stderr[-1000:]}
+        emit(payload,args.json); return proc.returncode
+    if getattr(args, 'check', False):
+        validator = validator_v2 if validator_v2.exists() else validator_v1
+        proc = subprocess.run([sys.executable, '-S', str(validator)], cwd=str(root), text=True, capture_output=True, timeout=getattr(args,'timeout',45))
+        try: payload=json.loads(proc.stdout)
+        except Exception: payload={'verdict':'EDUCATION_VALIDITY_CHECK_ERROR','rc':proc.returncode,'stdout_tail':proc.stdout[-1000:],'stderr_tail':proc.stderr[-1000:]}
+        emit(payload,args.json); return proc.returncode
+    if getattr(args, 'gate', False) or getattr(args, 'scorecard', False):
+        gate = gate_v2 if gate_v2.exists() else gate_v1
+        proc = subprocess.run([sys.executable, '-S', str(gate), '--json'], cwd=str(root), text=True, capture_output=True, timeout=getattr(args,'timeout',45))
+        try: payload=json.loads(proc.stdout)
+        except Exception: payload={'verdict':'EDUCATION_VALIDITY_GATE_ERROR','rc':proc.returncode,'stdout_tail':proc.stdout[-1000:],'stderr_tail':proc.stderr[-1000:]}
+        emit(payload,args.json); return proc.returncode
+    spec2 = root / '0_kernel/registry/education_validity/MB_EDUCATION_VALIDITY_GATE_SPEC_v2.json'
+    fixtures2 = root / 'runtime/evals/education_validity/EDUCATION_VALIDITY_STAGE2_FIXTURES_v1.json'
+    payload = {'verdict':'EDUCATION_VALIDITY_READY' if spec2.exists() and fixtures2.exists() else 'EDUCATION_VALIDITY_NOT_INSTALLED','root':str(root),'spec_path':str(spec2) if spec2.exists() else None,'fixture_path':str(fixtures2) if fixtures2.exists() else None}
+    emit(payload,args.json); return 0 if payload['verdict']=='EDUCATION_VALIDITY_READY' else 1
+
+
+def command_portability(args):
+    root = find_root()
+    report = root / 'runtime/replay_proof/ARTIFACT_PORTABILITY_REPLAY_PROOF_STAGE2_REPORT_LATEST.json'
+    if getattr(args, 'replay_proof', False):
+        script = root / '0_kernel/scripts/artifact_replay_proof_v2.py'
+        archive = getattr(args, 'archive', None)
+        if not archive:
+            emit({'verdict':'ARTIFACT_PORTABILITY_FAIL','reason':'archive_required'}, args.json); return 2
+        cmd = [sys.executable, str(script), '--archive', archive, '--json', '--timeout', str(getattr(args,'timeout',10))]
+        if getattr(args, 'sidecar', None): cmd += ['--sidecar', args.sidecar]
+        if getattr(args, 'full_extract', False): cmd += ['--full-extract']
+        res = subprocess.run(cmd, text=True, capture_output=True, timeout=max(getattr(args,'timeout',10)+8,18))
+        try: payload=json.loads(res.stdout)
+        except Exception: payload={'verdict':'ARTIFACT_PORTABILITY_COMMAND_ERROR','rc':res.returncode,'stdout_tail':res.stdout[-1000:],'stderr_tail':res.stderr[-1000:]}
+        emit(payload,args.json); return res.returncode
+    if getattr(args, 'check', False):
+        payload = safe_load_json(report) if report.exists() else {'verdict':'ARTIFACT_PORTABILITY_READY','report_missing':True}
+        emit(payload,args.json); return 0 if payload.get('verdict','').endswith('PASS') or payload.get('verdict')=='ARTIFACT_PORTABILITY_READY' else 2
+    emit({'verdict':'ARTIFACT_PORTABILITY_READY','latest_report':str(report) if report.exists() else None}, args.json); return 0
+
+
+def build_parser():
+    parser = argparse.ArgumentParser(prog='mb', description='MetaBlooms compact operator surface')
+    parser.add_argument('--json', action='store_true', help='emit machine-readable JSON')
+    sub = parser.add_subparsers(dest='cmd', required=True)
+    sub.add_parser('status', help='show one-screen runtime state').set_defaults(func=command_status)
+    pboot = sub.add_parser('boot', help='run the bounded boot smoke')
+    pboot.add_argument('--timeout', type=int, default=45)
+    pboot.set_defaults(func=command_boot)
+    sub.add_parser('verify', help='verify critical operator surface paths').set_defaults(func=command_verify)
+    pdoc = sub.add_parser('doctor', help='run non-destructive diagnostics on the runtime')
+    pdoc.add_argument('--deep', action='store_true', help='include bounded boot smoke')
+    pdoc.add_argument('--timeout', type=int, default=45)
+    pdoc.set_defaults(func=command_doctor)
+    ptracker = sub.add_parser('tracker', help='render compact tracker preview from runtime state')
+    ptracker.add_argument('--limit', type=int, default=8)
+    ptracker.add_argument('--write', action='store_true', help='also write runtime/state/operator_surface/TRACKER_PREVIEW_LATEST.txt')
+    ptracker.set_defaults(func=command_tracker)
+    prun = sub.add_parser('run-stage', help='prepare or execute one bounded governed stage')
+    prun.add_argument('stage_name')
+    prun.add_argument('--dry-run', action='store_true', default=True, help='prepare a work order without executing; default')
+    prun.add_argument('--execute', action='store_true', help='execute only if a stage runner is installed')
+    prun.add_argument('--no-write', action='store_true', help='do not write the dry-run work order')
+    prun.add_argument('--timeout', type=int, default=120)
+    prun.set_defaults(func=command_run_stage)
+    ptrace = sub.add_parser('trace', help='render filtered trace/span ledger preview and summary')
+    ptrace.add_argument('--limit', type=int, default=20)
+    ptrace.add_argument('--stage', help='filter by stage_name')
+    ptrace.add_argument('--status', help='filter by span status such as OK, ERROR, WARN')
+    ptrace.add_argument('--write-summary', action='store_true', help='write runtime/traces/observability/TRACE_SUMMARY_LATEST.json')
+    ptrace.set_defaults(func=command_trace)
+    psec = sub.add_parser('security', help='show or validate artifact threat model and trust policy')
+    psec.add_argument('--check', action='store_true', help='run the security threat-model validator')
+    psec.add_argument('--gate-check', action='store_true', help='run stage-2 enforcement gate validator')
+    psec.add_argument('--fixtures', action='store_true', help='run prompt-injection fixture suite')
+    psec.add_argument('--red-team', action='store_true', help='run Stage 4 red-team adversarial fixture suite')
+    psec.add_argument('--timeout', type=int, default=45)
+    psec.set_defaults(func=command_security)
+    pevals = sub.add_parser('evals', help='show or validate evals trace-review and validator-alignment artifacts')
+    pevals.add_argument('--check', action='store_true', help='run the latest evals validator')
+    pevals.add_argument('--scorecards', action='store_true', help='run scorecard/regression validator')
+    pevals.add_argument('--regression', action='store_true', help='include regression dataset summary')
+    pevals.add_argument('--runner', action='store_true', help='run deterministic Stage 3 evaluator runner')
+    pevals.add_argument('--confusion', action='store_true', help='validate Stage 3 confusion matrix and evaluator output')
+    pevals.add_argument('--alignment-gate', action='store_true', help='run Stage 4 validator alignment promotion gate')
+    pevals.add_argument('--promotion', action='store_true', help='alias for Stage 4 validator alignment promotion gate')
+    pevals.add_argument('--timeout', type=int, default=90)
+    pevals.set_defaults(func=command_evals)
+
+    pcheckpoint = sub.add_parser('checkpoint', help='create/list/resume thread-scoped checkpoints and interrupts')
+    pcheckpoint.add_argument('--stage')
+    pcheckpoint.add_argument('--thread-id')
+    pcheckpoint.add_argument('--state', default='{}')
+    pcheckpoint.add_argument('--interrupt')
+    pcheckpoint.add_argument('--resume')
+    pcheckpoint.add_argument('--resume-payload', default='{}')
+    pcheckpoint.add_argument('--list', action='store_true')
+    pcheckpoint.add_argument('--timeout', type=int, default=45)
+    pcheckpoint.set_defaults(func=command_checkpoint)
+    pfs = sub.add_parser('fs-safety', help='validate atomic moves, differential trace logging, and partial-root finalization locks')
+    pfs.add_argument('--preflight', action='store_true')
+    pfs.add_argument('--tmp')
+    pfs.add_argument('--dst')
+    pfs.add_argument('--diff', action='store_true')
+    pfs.add_argument('--root')
+    pfs.add_argument('--baseline')
+    pfs.add_argument('--write-summary')
+    pfs.add_argument('--max-list', type=int, default=25)
+    pfs.add_argument('--timeout', type=int, default=45)
+    pfs.set_defaults(func=command_fs_safety)
+    pextract = sub.add_parser('extract', help='extract authority ZIP through filesystem safety finalization route')
+    pextract.add_argument('--archive', required=True)
+    pextract.add_argument('--dest', required=True)
+    pextract.add_argument('--replace', action='store_true')
+    pextract.add_argument('--timeout', type=int, default=240)
+    pextract.set_defaults(func=command_extract)
+
+
+    pedu = sub.add_parser('education', help='validate TEKS/STAAR learning efficacy, accessibility, and classroom deployability')
+    pedu.add_argument('--check', action='store_true', help='run Education Validity Stage 1 validator')
+    pedu.add_argument('--gate', action='store_true', help='run deterministic education validity gate')
+    pedu.add_argument('--scorecard', action='store_true', help='alias for --gate')
+    pedu.add_argument('--promotion-gate', action='store_true', help='run hard-wired Education Validity Stage 2 promotion gate')
+    pedu.add_argument('--timeout', type=int, default=45)
+    pedu.set_defaults(func=command_education)
+
+    pharness = sub.add_parser('harness', help='inspect and validate the bounded agent harness stage graph')
+    pharness.add_argument('--plan', action='store_true')
+    pharness.add_argument('--parallel-plan', action='store_true', help='create deterministic parallel workpacket groups')
+    pharness.add_argument('--diff-review', action='store_true', help='summarize bounded diff review for latest harness workpackets')
+    pharness.add_argument('--executor-review', action='store_true', help='run Stage 3 executor review gate over latest plan/diff evidence')
+    pharness.add_argument('--review-gate', action='store_true', help='strict alias for --executor-review used by cartridge executor gate checks')
+    pharness.add_argument('--check', action='store_true')
+    pharness.add_argument('--stage', default='IMPLEMENT_AGENT_HARNESS_STAGE_3_EXECUTOR_REVIEW_GATE')
+    pharness.add_argument('--timeout', type=int, default=60)
+    pharness.set_defaults(func=command_harness)
+
+
+    pquality = sub.add_parser('quality', help='validate software quality gates and export-promotion readiness')
+    pquality.add_argument('--check', action='store_true')
+    pquality.add_argument('--scorecard', action='store_true')
+    pquality.add_argument('--regression', action='store_true')
+    pquality.add_argument('--promotion-gate', action='store_true')
+    pquality.add_argument('--timeout', type=int, default=30)
+    pquality.set_defaults(func=command_quality)
+
+    pport = sub.add_parser('portability', help='verify artifact portability and fresh-extract boot replay proof')
+    pport.add_argument('--check', action='store_true')
+    pport.add_argument('--replay-proof', action='store_true')
+    pport.add_argument('--archive')
+    pport.add_argument('--sidecar')
+    pport.add_argument('--full-extract', action='store_true')
+    pport.add_argument('--timeout', type=int, default=10)
+    pport.set_defaults(func=command_portability)
+    pbreaker = sub.add_parser('breaker', help='preflight runtime budget gate to prevent runaway turns')
+    pbreaker.add_argument('--preflight', action='store_true')
+    pbreaker.add_argument('--stage-name', default='UNSPECIFIED_STAGE')
+    pbreaker.add_argument('--timeout', type=int, default=120)
+    pbreaker.add_argument('--command-count', type=int, default=1)
+    pbreaker.add_argument('--files-touched', type=int, default=1)
+    pbreaker.add_argument('--trace-metadata-bytes', type=int, default=0)
+    pbreaker.add_argument('--broad-extract', action='store_true')
+    pbreaker.add_argument('--allow-broad-extract', action='store_true')
+    pbreaker.add_argument('--has-receipt-plan', action='store_true', default=True)
+    pbreaker.add_argument('--has-handoff-plan', action='store_true', default=True)
+    pbreaker.set_defaults(func=command_breaker)
+    sub.add_parser('replay', help='dry-run latest handoff continuation').set_defaults(func=command_replay)
+    pexport = sub.add_parser('export', help='create a complete compressed OS ZIP')
+    pexport.add_argument('--output', required=True)
+    pexport.set_defaults(func=command_export)
+    return parser
+
+
+def main(argv=None):
+    argv = list(sys.argv[1:] if argv is None else argv)
+    json_mode = False
+    if '--json' in argv:
+        json_mode = True
+        argv = [a for a in argv if a != '--json']
+    parser = build_parser()
+    args = parser.parse_args(argv)
+    args.json = json_mode or getattr(args, 'json', False)
+    return args.func(args) or 0
+
+if __name__ == '__main__':
+    raise SystemExit(main())

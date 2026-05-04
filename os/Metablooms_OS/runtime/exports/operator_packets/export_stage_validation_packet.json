@@ -1,0 +1,54 @@
+{
+  "artifact_bindings": [
+    {
+      "exists": true,
+      "path": "runtime/state/operator_surface/AUDIT_QUERY_PACKS_LATEST.json",
+      "sha256": "40b947ebd559b4c8023efd8875b7a3f16194feeb5d77dff2fa3b7f4d1aa25614",
+      "size_bytes": 17326
+    },
+    {
+      "exists": true,
+      "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE15_RECOVERY_REPLAY_AUDIT_QUERY_VALIDATION_LATEST.json",
+      "sha256": "8e3ed81c46568551de58461a56249efc971cdbb65192c5c9180362bebe1a718a",
+      "size_bytes": 234
+    },
+    {
+      "exists": true,
+      "path": "runtime/traces/observability/OBSERVABILITY_STAGE10_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+      "sha256": "4134bd1ed2d78169b7b61dc08a4dffef29e3bafa4a4b6b8b4d6fdef11118c19d",
+      "size_bytes": 1868
+    },
+    {
+      "exists": true,
+      "path": "runtime/traces/observability/OBSERVABILITY_STAGE11_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+      "sha256": "f27a6ede06e70807c9900a4008ae8b883124348a67e24b957117fbfc0564bbf2",
+      "size_bytes": 1900
+    },
+    {
+      "exists": true,
+      "path": "runtime/traces/observability/OBSERVABILITY_STAGE3_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.json",
+      "sha256": "c36a304f4f3d8dee91b7f35c2e183bf00575be76b183779f8ec5259d7aa4df00",
+      "size_bytes": 1279
+    },
+    {
+      "exists": true,
+      "path": "runtime/traces/observability/OBSERVABILITY_STAGE5_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+      "sha256": "7b9e0cdb676d69dfb99592ae155311da58ea39a26b9cd838596110bf53abb615",
+      "size_bytes": 1614
+    },
+    {
+      "exists": true,
+      "path": "runtime/traces/observability/OBSERVABILITY_STAGE6_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+      "sha256": "31aa749712c97d5c1c56cd1ac505edd837a30dab46a4b601c8dbae0fbc34fa4f",
+      "size_bytes": 1328
+    }
+  ],
+  "command_id": "export_stage_validation_packet",
+  "created_utc": "20260502T191943Z",
+  "issues": [],
+  "label": "Export stage validation packet",
+  "manifest_sha256": "96f05553c52b763c6d5edb3c470a2982bf88c8615cc6e9cbeb4f11a1bb9a532a",
+  "packet_id": "export_stage_validation_packet",
+  "source_pack_id": "audit_stage_validation",
+  "verdict": "PASS"
+}

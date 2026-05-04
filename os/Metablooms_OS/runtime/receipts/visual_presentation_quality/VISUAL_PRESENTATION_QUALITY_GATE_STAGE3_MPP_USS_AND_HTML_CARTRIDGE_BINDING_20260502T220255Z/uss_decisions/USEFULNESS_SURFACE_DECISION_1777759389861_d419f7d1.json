@@ -1,0 +1,38 @@
+{
+  "artifact_id": "example_fraction_html_activity_v1",
+  "block_count": 0,
+  "blocks": [],
+  "decision_id": "d419f7d1-e931-4bcd-9aed-3b163818b9cc",
+  "input_summary": {
+    "declaration_path": "/mnt/data/Metablooms_OS/tests/fixtures/usefulness_surface/valid_usefulness_html_activity_with_visual_presentation_v1.json",
+    "declaration_sha256": "673ad7f813077b95f5e9a3c77f98eaa4cec5735b3adf2b8b13cbe1afe2313535"
+  },
+  "policy_path": "metablooms/governance/usefulness_surface/allow",
+  "receipt_type": "USEFULNESS_SURFACE_GATE_DECISION",
+  "result": "ALLOW",
+  "schema_version": "1.2-vpq-stage3",
+  "summary": {
+    "artifact_type": "html_activity",
+    "covered_count": 6,
+    "covered_dimensions": [
+      "instruction",
+      "misconception_diagnosis",
+      "practice",
+      "realtime_feedback",
+      "teacher_telemetry",
+      "visual_presentation"
+    ],
+    "not_applicable": [],
+    "required_for_type": [
+      "instruction",
+      "practice",
+      "realtime_feedback",
+      "teacher_telemetry",
+      "misconception_diagnosis",
+      "visual_presentation"
+    ]
+  },
+  "timestamp_utc": "2026-05-02T22:03:09Z",
+  "warn_count": 0,
+  "warnings": []
+}

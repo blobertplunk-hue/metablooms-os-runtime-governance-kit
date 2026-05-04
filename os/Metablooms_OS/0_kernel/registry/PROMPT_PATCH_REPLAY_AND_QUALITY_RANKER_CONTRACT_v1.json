@@ -1,0 +1,51 @@
+{
+  "created_utc": "2026-04-30T22:18:07Z",
+  "fail_closed_conditions": [
+    "missing_replay_engine",
+    "missing_ranker",
+    "fixture_replay_failure",
+    "top_candidate_below_threshold",
+    "hard_gate_failure",
+    "ranking_report_not_written",
+    "ledger_write_failure"
+  ],
+  "hard_gates": [
+    "candidate_must_include_original_intent",
+    "candidate_must_include_execution_contract",
+    "candidate_must_include_validation_rule",
+    "candidate_must_include_receipt_or_handoff_rule",
+    "candidate_must_preserve_export_rule_for_export_tasks",
+    "candidate_must_not_regress_best_to_worst_option_rule"
+  ],
+  "id": "PROMPT_PATCH_REPLAY_AND_QUALITY_RANKER_CONTRACT_v1",
+  "inputs": [
+    "raw_prompt",
+    "optimized_prompt candidates",
+    "profile",
+    "fixtures",
+    "prior patch ledger",
+    "prompt engine contract"
+  ],
+  "outputs": [
+    "PROMPT_PATCH_REPLAY_REPORT_v1.json",
+    "PROMPT_PATCH_RANKING_REPORT_v1.json",
+    "ledger replay events"
+  ],
+  "promotion_rule": "Promote only the highest scoring candidate if all hard gates pass and score >= 0.80; otherwise DENY and write failure class.",
+  "purpose": "Replay prompt patch candidates against fixtures and rank them before any prompt writeback/promotion.",
+  "ranking_dimensions": {
+    "artifact_discipline": 0.15,
+    "contract_compliance": 0.2,
+    "evidence_binding": 0.15,
+    "regression_risk": 0.05,
+    "specificity": 0.1,
+    "task_fit": 0.15,
+    "validation_strength": 0.2
+  },
+  "required_runtime_files": [
+    "runtime/governance/prompt_patch_replay_engine_v1.py",
+    "runtime/governance/prompt_quality_ranker_v1.py",
+    "runtime/cartridges/prompt_governance_v1/validate_prompt_patch_replay_quality_ranker_v1.py"
+  ],
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_9_PROMPT_PATCH_REPLAY_AND_QUALITY_RANKER"
+}

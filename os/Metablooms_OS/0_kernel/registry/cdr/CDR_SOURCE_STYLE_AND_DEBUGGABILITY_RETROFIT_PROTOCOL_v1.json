@@ -1,0 +1,16 @@
+{
+  "module_header_required": [
+    "Purpose",
+    "Inputs",
+    "Outputs",
+    "Failure modes",
+    "Debuggability"
+  ],
+  "reconstruction": "RECONSTRUCTED_FROM_CHAT_SUMMARY",
+  "schema": "CDRSourceStyleDebuggabilityRetrofitProtocol_v1",
+  "structured_denial_fields": [
+    "reasons",
+    "violations",
+    "gaps"
+  ]
+}

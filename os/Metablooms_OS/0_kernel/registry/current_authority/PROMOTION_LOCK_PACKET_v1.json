@@ -1,0 +1,14 @@
+{
+  "authority_rule": "This full export is the current boot authority when paired with its external SHA-256 sidecar and replay lock.",
+  "created_utc": "2026-05-02T21:27:00.769732+00:00",
+  "decision": "CURRENT_FULL_EXPORT_AUTHORITY_LOCK_ACTIVE_PENDING_EXTERNAL_SHA256_SIDECAR",
+  "external_sidecar_required": true,
+  "new_authority_sidecar": "/mnt/data/METABLOOMS_OS_PROMOTION_AUTHORITY_COHERENCE_GATE_PAC7_FULL_AUTHORITY_LOCKED_20260502T212700Z.zip.sha256",
+  "new_authority_zip": "/mnt/data/METABLOOMS_OS_PROMOTION_AUTHORITY_COHERENCE_GATE_PAC7_FULL_AUTHORITY_LOCKED_20260502T212700Z.zip",
+  "os_logic_changed": true,
+  "packet_type": "PROMOTION_LOCK_PACKET_v1",
+  "promotion_gate_required": "PROMOTION_AUTHORITY_COHERENCE_GATE_v1",
+  "source_pointer": "CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+  "stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_PAC7_FULL_EXPORT_AND_NEW_CHAT_REPLAY_LOCK",
+  "stage_sequence": 7
+}

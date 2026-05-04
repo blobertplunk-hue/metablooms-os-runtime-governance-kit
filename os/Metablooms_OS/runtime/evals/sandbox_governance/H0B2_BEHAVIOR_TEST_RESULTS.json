@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "sandbox_policy_load": "ALLOW",
+  "fixture_results": {
+    "deny_archive_without_latency_controls": "DENY",
+    "deny_missing_coding_plan": "DENY",
+    "deny_missing_sandbox_policy_loaded": "DENY",
+    "deny_normal_python_without_probe": "DENY",
+    "valid_python_dash_s_with_controls": "ALLOW"
+  },
+  "errors": []
+}

@@ -1,0 +1,125 @@
+{
+  "authority_input": "/mnt/data/METABLOOMS_OS_STAGE5E_FULL_AUTHORITY_EXPORT_AFTER_POINTER_COHERENCE_REPAIR_20260502T004200Z.zip",
+  "boot_checks": {
+    "boot_executor_smoke": {
+      "check_count": 8,
+      "issues": [],
+      "pass_count": 7,
+      "receipt_path": "/mnt/data/Metablooms_OS/0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777681841294.json",
+      "verdict": "PASS_WITH_WARNINGS",
+      "warnings": [
+        "git_dir_missing"
+      ]
+    },
+    "portable_boot_verify": {
+      "chat_kernel": "ALLOW",
+      "errors": [],
+      "root": "/mnt/data/Metablooms_OS",
+      "sandbox_policy": "ALLOW",
+      "stage": "PORTABLE_FULL_OS_BOOT_VERIFY_REPAIRED_H0B2",
+      "status": "PASS",
+      "timestamp_utc": "2026-05-02T00:30:40Z"
+    },
+    "runtime_starter": {
+      "decision": "ALLOW",
+      "invalid_json": [],
+      "missing": [],
+      "mode": "root",
+      "path": "/mnt/data/Metablooms_OS",
+      "read_errors": []
+    }
+  },
+  "implemented": {
+    "active_index_updated": "governance/ACTIVE_INVARIANTS_INDEX.json",
+    "bts_duplicate_append_bug_status": "verified_not_present_after_stage6e; tail duplicate check false",
+    "executor": "runtime/governance/executors/bts_wrapped_executors_v1.py",
+    "invariant": "governance/invariants/BTS_WRAPPED_EXPORT_AND_FILESYSTEM_EXECUTORS_REQUIRED_v1.json"
+  },
+  "installed_files": [
+    {
+      "bytes": 13032,
+      "path": "runtime/governance/executors/bts_wrapped_executors_v1.py",
+      "sha256": "00dd56c2c6e89031f1681eead4f7598019bede48a642037608aeb7c662f4e441"
+    },
+    {
+      "bytes": 147,
+      "path": "runtime/governance/executors/bts_wrapped_executors_v1.py.sha256",
+      "sha256": "5f11b929a3a26c3675cd7e7c021fde73cc132595007343c34b4eb3af4e094644"
+    },
+    {
+      "bytes": 1484,
+      "path": "governance/invariants/BTS_WRAPPED_EXPORT_AND_FILESYSTEM_EXECUTORS_REQUIRED_v1.json",
+      "sha256": "a778b15a4cf4cc3d5a19761d588d860440a9206d6fa0b87ab1f6da5975eda55e"
+    },
+    {
+      "bytes": 173,
+      "path": "governance/invariants/BTS_WRAPPED_EXPORT_AND_FILESYSTEM_EXECUTORS_REQUIRED_v1.json.sha256",
+      "sha256": "a8b0e7b74da0a313ef49a4544c152d0df14689ace186f1b9a93399e6b49d8e2b"
+    },
+    {
+      "bytes": 2517,
+      "path": "governance/ACTIVE_INVARIANTS_INDEX.json",
+      "sha256": "7b244f919fa5b19e06e88ca9c5c1397240d74b5a401325d8f49e0dd3231a2cad"
+    },
+    {
+      "bytes": 130,
+      "path": "governance/ACTIVE_INVARIANTS_INDEX.json.sha256",
+      "sha256": "363641fc58914d21a73aa32242599e7bb894421f503cd82f6365e7a39b7b466c"
+    }
+  ],
+  "live_root": "/mnt/data/Metablooms_OS",
+  "next_stage": "STAGE6F_RETROFIT_EXPORT_AND_FILESYSTEM_CALLS_TO_BTS_WRAPPER_OR_EXPORT_FULL_AUTHORITY_AFTER_6E",
+  "not_done": [
+    "No full OS authority export was created in this stage.",
+    "Existing ad hoc OS scripts are not all retrofitted yet; this stage installs the canonical wrapper path and invariant."
+  ],
+  "schema": "METABLOOMS_STAGE_RECEIPT_v1",
+  "scope": "Install BTS-wrapped filesystem/export executor surfaces, active invariant, fixtures, and tests. No full OS export.",
+  "sota_evidence_refs": [
+    "turn872313search1",
+    "turn872313search3",
+    "turn872313search5"
+  ],
+  "stage": "STAGE6E_BTS_WRAP_EXPORT_AND_FILESYSTEM_EXECUTORS",
+  "tests": {
+    "bts_log_tail_duplicate": false,
+    "bts_log_total_lines": 10,
+    "installed_files": [
+      "runtime/governance/executors/bts_wrapped_executors_v1.py",
+      "governance/invariants/BTS_WRAPPED_EXPORT_AND_FILESYSTEM_EXECUTORS_REQUIRED_v1.json",
+      "governance/ACTIVE_INVARIANTS_INDEX.json"
+    ],
+    "schema": "METABLOOMS_STAGE6E_TEST_RESULTS_v1",
+    "stage": "STAGE6E_BTS_WRAP_EXPORT_AND_FILESYSTEM_EXECUTORS",
+    "tests": [
+      {
+        "actual": "PASS",
+        "expected": "PASS",
+        "implementation_reality": "PASS",
+        "name": "bts_wrapped_filesystem_write",
+        "target": "/mnt/data/Metablooms_OS/runtime/governance/executors/fixtures/stage6e/wrapped_write.txt"
+      },
+      {
+        "actual": "PASS",
+        "expected": "PASS",
+        "export_path": "/mnt/data/Metablooms_OS/runtime/governance/executors/fixtures/stage6e/stage6e_fixture_export.zip",
+        "implementation_reality": "PASS",
+        "name": "bts_wrapped_export_zip_with_approval"
+      },
+      {
+        "actual": "FAIL_BEFORE_EXECUTION",
+        "actual_rc": "1",
+        "expected": "FAIL_BEFORE_EXECUTION",
+        "name": "bts_wrapped_export_zip_without_approval"
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "bts_log_no_duplicate_tail"
+      }
+    ],
+    "verdict": "PASS_WITH_WARNINGS"
+  },
+  "timestamp_utc": "2026-05-02T02:08:00Z",
+  "verdict": "PASS_WITH_WARNINGS_NO_FULL_OS_EXPORT"
+}

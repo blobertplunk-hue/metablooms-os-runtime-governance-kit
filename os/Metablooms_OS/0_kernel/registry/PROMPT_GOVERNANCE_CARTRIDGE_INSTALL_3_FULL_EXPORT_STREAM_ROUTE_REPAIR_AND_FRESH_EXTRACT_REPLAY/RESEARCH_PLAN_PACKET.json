@@ -1,0 +1,8 @@
+{
+  "evidence": [
+    "Python zipfile docs: create/read/test ZIP archives",
+    "Info-ZIP/man zip: store/no-compression is faster than compression and equivalent to -0"
+  ],
+  "route": "python3 -S zipfile streaming; ZIP_STORED; no full source extraction",
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_3_FULL_EXPORT_STREAM_ROUTE_REPAIR_AND_FRESH_EXTRACT_REPLAY"
+}

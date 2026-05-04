@@ -1,0 +1,3326 @@
+{
+  "artifact_type": "MB_CAUSAL_STAGE_GRAPH.v1",
+  "created_utc": "20260502T191942Z",
+  "edges": [
+    {
+      "child_span_id": "2993384202ea7f16",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "17c9e87d0ba677d4",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "680184f2d16015b4",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "a7d488648a9412aa",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "b4eef3eaf6bdec81",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "ad74182ef80a1b6f",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "1a7fd8d7cc39094b",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "b743e4336a2f79af",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "8565a0e7d109f39f",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "4e89ad4ac53b3dc0",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "f3632b815ba10caa",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "f8efc5f3059839b1",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "ef028178aaf6aea3",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "7a5778b7bf786aeb",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "f385c70b55754b0c",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "4364a8742f93e714",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "28d68a4aab5c3017",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "8ae0d8a44dc4ea42",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "94cdb431068cb280",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "c5dabaa311dd4bbc",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "4cca920f5116f446",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "ae6c99521e5612ed",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "52f5323ad8bca7d1",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "678a9cbc8d7935db",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "84da07fb3821f90d",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "fa1da16bf866d772",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "3234dabcfbcce5f6",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "eb0a714a9d83bdd2",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "f4bab6775116dc88",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "9ed1f594379feb62",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "586546019532e8b5",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "427c0b6804dd1fd7",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "99808a98606fd56d",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "3c121f904f14b961",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "37d7b2e6c4a6d6ff",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "a56075884cde4241",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "b3d2fe8303dd04d8",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "ae77ee0ee1739af3",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "8a86695e75a3b8e9",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "ae07aa124625c420",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "634eb403b97d67b0",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "63fdf2b347662848",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "d3d21d0ae12f79a5",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "d6e14ec63c5e013b",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "8daf4994aa145065",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "8076674192c5031c",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "8a1493dfa6274564",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "fafc7a4804379e7f",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "40c9161d746eb06c",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "7dd3d1a652830913",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "0c4dc804fe03064d",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "4114a687bec1ad3b",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "626fc473efbc4572",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "37d9b2a60d5c268d",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "e1c144dca2b689c8",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "c94c8079983ef77b",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "b30ef265c41b4b0d",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "9cb981168f77cdca",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "dc152f2eec453267",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "d26edd66181305d5",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "d967c2769e4a48fc",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "861a33be9daa2d1f",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "152c21f168f148e7",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "56906da8ca678f40",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "6ece31071e51e5ab",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "0b5f7feb4315b972",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "e3d5ea4a3cf006a3",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "005239a256b1f9d3",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "f63f35a488be8745",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "93fccd03f79f17cf",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "30aa5a5d8758b668",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "6b8d4ce785eb0d3d",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "ca4dac34f00dbe53",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "fa8a570e65835ceb",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "8be940ba7ff53698",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "8bb403fe1d536180",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "a9a37e2e9ed19d75",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "f51c82ee3f5e430e",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "31bbb837d074a940",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "f2f99f2b88be5b5c",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "76416036ee76909d",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "f7799945bd366a22",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "603a528142a9cf15",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "db31389c888035e3",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "200d00f054a3189e",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "e79937d55771783b",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "6a5d85dc2f2e9e74",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "5b25943a5e7f9f7a",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "5aebb9bc732fd25d",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "5c756ace425b5422",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "4b461050282ce7c8",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "63d97004d59dbcdb",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "bb3f60d2132deec3",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "f2ac06406bcc463b",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "2b935b8c5ae52c67",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "1cab30ad121d2877",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "55ffd7d32f0d00ac",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "4ded78ce5c0f7b78",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "bb764284b8fd08ad",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "2685043783fc9b14",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "a72924b5059cb907",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "f75df7f77d3687cb",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "d4c88fed98e73e77",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "7ce248e88d757753",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "ae623aa9be694e7e",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "c26f11a5d880752f",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "b006af4595b425f1",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "5cee19d75c78c8bc",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "29496898d9622629",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "5cd134cda574552c",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "c8b27ffecef5b4dd",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "c15e278635d4fdea",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "9d9f2a87376eefed",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "fa2c970337c7eda5",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "80373810832a6b87",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "0e22803651afe6e7",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "12ba2c1dd1606336",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "9fa8cb0e5495beda",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "47afed0802574406",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "581152ea9c2ddf21",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "159f4ef8856d5667",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "38a284a0ad5a1945",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "eb9df1c22c0cbd4e",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "2dd6b660554e864c",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "86a9b6ac579e3307",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "18e6d4015d5cd6de",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "d3c068871c579909",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "44cb6bb4210f9de3",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "67e3ba45dcda1c4a",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "b6c6e4d5ed6b6bb5",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "9e83bef4bc686df1",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "d3401055aa7aace5",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "5150ee57e00b0b92",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "80c3ec0bfb193898",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "ebf00381dba73a21",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "b75e380246308a2b",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "9698922a6c9f2f2a",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "a22beef1cf6f5dd8",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "1c47ba6880feb6fb",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "11b39b82d777910d",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "d8b2a106383b5d93",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "2e742d50965232a5",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "60b7390f1bff659b",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "2fa5bb7c29585d47",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "c7a6b7202a91920e",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "465bf44fb304355e",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "e9d9978e15eb7275",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "6920ed683eaeb9c5",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "6aaa2ab6e5ce4cb5",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "b81675163f280831",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "4dd8e38162b1a2ba",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "5b793c7954319d53",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "b19fbb2d5dc36095",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "e8ca0bf73b5c4e90",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "4e91315923ef13b0",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "328e3c192ae621f8",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "1d67b9e62e0e8d1b",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "16d37007b78e8f56",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "30467b3ba31b8a35",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "bab98c0c4392bbd6",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "4bff6b0ba92e34bd",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "c96a3e71f0b458bc",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "851a24cfcfa96a52",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "645b547725d679a0",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "9a34e24bff464a00",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "8e1fa8b3bdf602f6",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "c948dd5d4109d9f0",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "586c9e4f2b750b9e",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "0d69028a9385b56f",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "98791ef598f87ed7",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "eb4bef48bd6b62af",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "d9307d10bb18b584",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "62b8af9b75415711",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "6db37c426b3e473a",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "b4f0aedc094705f9",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "df6251bb9b66b62e",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "6d2a228936561cb4",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "b526998813c47491",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "b48dafe5010bf327",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "117f20aa44c2f84d",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "72e6164aa35201dc",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "a4dc07eca9bda856",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "f4792360820c3ede",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "99ef067bca32c2a3",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "3008c5f1884b15f1",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "e65dbf78403e98bf",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "839509793adb2106",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "45a88753169215e2",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "6aa120bf4ff1d0c6",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "404fd3696aa25605",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "ebab7a491080066b",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "659265ee1229ad71",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "467a83812c0246fc",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "f3b688399dcb12d3",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "c9b46da95995f591",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "01d2e9b9b4a672b4",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "263e3b23bb4d9baa",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "78a1e07d1cb5f19f",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "14b6bd5e849c4d9c",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "24746b968c8c367f",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "c914eb034e1ecc1e",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "3cb8ff048f14999a",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "318849f2c0c77e1a",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "4b5a126f3be79171",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "6d5babc27d9b0196",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "42470f861bb81e24",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "03ab322fbf8fc3ee",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "1e5727339d274058",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "8f1c42f92c13eea9",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "cf654e5ecca79a82",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "6d252663cb46c87f",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "a1c1c7c46d690843",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "ddb8fc6347bb646b",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "02ae4cc109f8c9e6",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "726f5b788059f56d",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "119c3f3e2a3aa3b7",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "fd5cb34e0b9d54c5",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "648e0b618f6885bc",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    },
+    {
+      "child_span_id": "a06248652ee6c4df",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "relation": "parent_child"
+    }
+  ],
+  "nodes": [
+    {
+      "event_kind": "stage",
+      "event_name": "metablooms.boot_ingestion.start",
+      "source_artifact": "0_kernel/scripts/observability_boot_ingest_v1.py",
+      "span_id": "1bcd9ffab27bbd3c",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION",
+      "status": "OK",
+      "timestamp_utc": "20260502T191942Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777603985636.json",
+      "span_id": "2993384202ea7f16",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777604901513.json",
+      "span_id": "17c9e87d0ba677d4",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777605439498.json",
+      "span_id": "680184f2d16015b4",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777605464720.json",
+      "span_id": "a7d488648a9412aa",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777605534695.json",
+      "span_id": "b4eef3eaf6bdec81",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777608025154.json",
+      "span_id": "ad74182ef80a1b6f",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777608074978.json",
+      "span_id": "1a7fd8d7cc39094b",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777608415718.json",
+      "span_id": "b743e4336a2f79af",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777608425870.json",
+      "span_id": "8565a0e7d109f39f",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777676623544.json",
+      "span_id": "4e89ad4ac53b3dc0",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777676841850.json",
+      "span_id": "f3632b815ba10caa",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777676918129.json",
+      "span_id": "f8efc5f3059839b1",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777676958279.json",
+      "span_id": "ef028178aaf6aea3",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777678669001.json",
+      "span_id": "7a5778b7bf786aeb",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777678817642.json",
+      "span_id": "f385c70b55754b0c",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777681621670.json",
+      "span_id": "4364a8742f93e714",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777681841294.json",
+      "span_id": "28d68a4aab5c3017",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777682788127.json",
+      "span_id": "8ae0d8a44dc4ea42",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777683462880.json",
+      "span_id": "94cdb431068cb280",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777684823859.json",
+      "span_id": "c5dabaa311dd4bbc",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777684854925.json",
+      "span_id": "4cca920f5116f446",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777684907966.json",
+      "span_id": "ae6c99521e5612ed",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777685302369.json",
+      "span_id": "52f5323ad8bca7d1",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777686197570.json",
+      "span_id": "678a9cbc8d7935db",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777686961333.json",
+      "span_id": "84da07fb3821f90d",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777687757675.json",
+      "span_id": "fa1da16bf866d772",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777690007685.json",
+      "span_id": "3234dabcfbcce5f6",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777690484786.json",
+      "span_id": "eb0a714a9d83bdd2",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777690620564.json",
+      "span_id": "f4bab6775116dc88",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777692397699.json",
+      "span_id": "9ed1f594379feb62",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777692707323.json",
+      "span_id": "586546019532e8b5",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777692771499.json",
+      "span_id": "427c0b6804dd1fd7",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777692813956.json",
+      "span_id": "99808a98606fd56d",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777693070433.json",
+      "span_id": "3c121f904f14b961",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777693119535.json",
+      "span_id": "37d7b2e6c4a6d6ff",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777724250818.json",
+      "span_id": "a56075884cde4241",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777724317465.json",
+      "span_id": "b3d2fe8303dd04d8",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/boot_executor_repair/BOOT_RECEIPT_1777036853820.json",
+      "span_id": "ae77ee0ee1739af3",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/project_files_boot/BOOT_RECEIPT_1777338951.json",
+      "span_id": "8a86695e75a3b8e9",
+      "stage_id": "BOOT_FROM_PROJECT_FILE",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/see_d4_recovery_rerun/BOOT_RECEIPT_1777042881007.json",
+      "span_id": "ae07aa124625c420",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR",
+      "status": "OK",
+      "timestamp_utc": "20260502T122020Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/H0B2_HANDOFF.json",
+      "span_id": "634eb403b97d67b0",
+      "stage_id": "H0B2_SANDBOX_TOOL_GOVERNANCE_BOOTSTRAP_AND_LAYOUT_DRIFT_REPAIR",
+      "status": "OK",
+      "timestamp_utc": "2026-04-30T18:24:58Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_CDR_REBUILD_STAGE2_TO_STAGE7_FROM_STAGE6U_PLUS_CHAT_SUMMARIES_HANDOFF_20260502T121500Z.json",
+      "span_id": "63fdf2b347662848",
+      "stage_id": "CDR_REBUILD_STAGE2_TO_STAGE7_FROM_STAGE6U_PLUS_CHAT_SUMMARIES",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T12:10:20Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_CDR_STAGE10_REAL_SCANNER_ADAPTER_INSTALL_PROFILES_HANDOFF_20260502T122700Z.json",
+      "span_id": "d3d21d0ae12f79a5",
+      "stage_id": "CDR_STAGE10_REAL_SCANNER_ADAPTER_INSTALL_PROFILES_OR_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE9",
+      "status": "OK",
+      "timestamp_utc": "20260502T122022Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_CDR_STAGE11_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE2_TO_STAGE10_RECONSTRUCTED_CHAIN_HANDOFF_20260502T123500Z.json",
+      "span_id": "d6e14ec63c5e013b",
+      "stage_id": "CDR_STAGE11_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE2_TO_STAGE10_RECONSTRUCTED_CHAIN",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T12:35:00Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_CDR_STAGE6_ADAPTABILITY_AND_INTERFACE_CONTRACT_HARDENING_HANDOFF_20260502T044500Z.json",
+      "span_id": "8daf4994aa145065",
+      "stage_id": "CDR_STAGE6_ADAPTABILITY_AND_INTERFACE_CONTRACT_HARDENING",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T04:36:43Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_CDR_STAGE8_STATIC_ANALYSIS_AND_COMPLEXITY_QUALITY_GATES_HANDOFF_20260502T121232Z.json",
+      "span_id": "8076674192c5031c",
+      "stage_id": "CDR_STAGE8_STATIC_ANALYSIS_AND_COMPLEXITY_QUALITY_GATES",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T12:12:32Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_CDR_STAGE9_LINT_SECURITY_SCANNER_INTEGRATION_AND_BASELINE_REPORTING_HANDOFF_20260502T121900Z.json",
+      "span_id": "8a1493dfa6274564",
+      "stage_id": "CDR_STAGE9_LINT_SECURITY_SCANNER_INTEGRATION_AND_BASELINE_REPORTING",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T12:14:38Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_STAGE4D_HANDOFF_20260501T235500Z.json",
+      "span_id": "fafc7a4804379e7f",
+      "stage_id": "STAGE4D_POINTER_PROMOTION_AND_NEW_CHAT_BOOT_REHEARSAL",
+      "status": "OK",
+      "timestamp_utc": "2026-05-01T23:55:00Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_STAGE5B_HANDOFF_20260502T000900Z.json",
+      "span_id": "40c9161d746eb06c",
+      "stage_id": "STAGE5B_OS_BUNDLE_DELIVERY_FULL_BOOTABLE_AUTHORITY_HARDENING",
+      "status": "OK",
+      "timestamp_utc": "2026-05-01T23:08:38Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_STAGE5D_HANDOFF_20260502T002700Z.json",
+      "span_id": "7dd3d1a652830913",
+      "stage_id": "STAGE5D_MINIMAL_POINTER_AND_REHEARSAL_PACKET_COHERENCE_REPAIR_NO_BROAD_EXPORT_UNTIL_VERIFIED",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T00:27:00Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_STAGE5E_HANDOFF_20260502T004200Z.json",
+      "span_id": "0c4dc804fe03064d",
+      "stage_id": "STAGE5E_FULL_AUTHORITY_EXPORT_AFTER_POINTER_COHERENCE_REPAIR",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T00:42:00Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_STAGE5_HANDOFF_20260501T230342Z.json",
+      "span_id": "4114a687bec1ad3b",
+      "stage_id": "STAGE5_USE_PROMOTED_AUTHORITY_FOR_NEXT_GOVERNED_TASK",
+      "status": "OK",
+      "timestamp_utc": "2026-05-01T23:03:43.129Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_STAGE5_HANDOFF_FINAL_20260501T230342Z.json",
+      "span_id": "626fc473efbc4572",
+      "stage_id": "STAGE5_USE_PROMOTED_AUTHORITY_FOR_NEXT_GOVERNED_TASK",
+      "status": "OK",
+      "timestamp_utc": "2026-05-01T23:03:43.731Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_STAGE6A_HANDOFF_20260502T010800Z.json",
+      "span_id": "37d9b2a60d5c268d",
+      "stage_id": "STAGE6A_SOTA_GAP_CLOSURE_PLAN_NO_IMPLEMENTATION",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T01:08:00Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_STAGE6B_HANDOFF_20260502T012400Z.json",
+      "span_id": "e1c144dca2b689c8",
+      "stage_id": "STAGE6B_PER_ACTION_TOOL_INTERCEPTION_SCHEMA_AND_WRAPPER",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T01:24:00Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_STAGE6C_HANDOFF_20260502T013800Z.json",
+      "span_id": "c94c8079983ef77b",
+      "stage_id": "STAGE6C_BTS_V4_CANONICAL_AUDIT_AND_INTEGRATION_PLAN",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T00:19:38.729739Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_STAGE6D_HANDOFF_20260502T015200Z.json",
+      "span_id": "b30ef265c41b4b0d",
+      "stage_id": "STAGE6D_BTS_V4_GATE_WRAPPED_INSTALL_SCAFFOLD",
+      "status": "OK",
+      "timestamp_utc": "20260502T015200Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_STAGE6E_HANDOFF_20260502T020800Z.json",
+      "span_id": "9cb981168f77cdca",
+      "stage_id": "METABLOOMS_STAGE6E_HANDOFF_20260502T020800Z",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T02:08:00Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_STAGE6F_HANDOFF_20260502T022600Z.json",
+      "span_id": "dc152f2eec453267",
+      "stage_id": "METABLOOMS_STAGE6F_HANDOFF_20260502T022600Z",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T02:26:00Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_STAGE6G_PRE_EXPORT_HANDOFF_20260502T005353Z.json",
+      "span_id": "d26edd66181305d5",
+      "stage_id": "METABLOOMS_STAGE6G_PRE_EXPORT_HANDOFF_20260502T005353Z",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T00:53:53Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_STAGE6L_HANDOFF_20260502T032600Z.json",
+      "span_id": "d967c2769e4a48fc",
+      "stage_id": "STAGE6L_POST_TOOL_RESULT_VALIDATION_GATE",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T03:26:00Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_STAGE6M_PRE_EXPORT_HANDOFF_20260502T033800Z.json",
+      "span_id": "861a33be9daa2d1f",
+      "stage_id": "STAGE6M_FULL_AUTHORITY_EXPORT_AFTER_POST_TOOL_GATE",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T02:13:11.819275Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_HANDOFF_20260502T035000Z.json",
+      "span_id": "152c21f168f148e7",
+      "stage_id": "STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_20260502T035000Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T122022Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_STAGE6O_OWASP_AGENTIC_AI_COVERAGE_MATRIX_AND_POLICY_BINDINGS_HANDOFF_20260502T035000Z.json",
+      "span_id": "56906da8ca678f40",
+      "stage_id": "STAGE6O_OWASP_AGENTIC_AI_COVERAGE_MATRIX_AND_POLICY_BINDINGS",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T02:53:05Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM_HANDOFF_20260502T035000Z.json",
+      "span_id": "6ece31071e51e5ab",
+      "stage_id": "STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T02:56:34.161254Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_STAGE6Q_LEGACY_EXECUTOR_RETROFIT_AUDIT_HANDOFF_20260502T035000Z.json",
+      "span_id": "0b5f7feb4315b972",
+      "stage_id": "STAGE6Q_LEGACY_EXECUTOR_RETROFIT_AUDIT",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T03:16:54.516625Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_STAGE6Q_REPAIR_LEGACY_EXECUTOR_RETROFIT_HANDOFF_20260502T035000Z.json",
+      "span_id": "e3d5ea4a3cf006a3",
+      "stage_id": "METABLOOMS_STAGE6Q_REPAIR_LEGACY_EXECUTOR_RETROFIT_HANDOFF_20260502T035000Z",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T03:20:13.217658Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS_HANDOFF_20260502T035000Z.json",
+      "span_id": "005239a256b1f9d3",
+      "stage_id": "STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T03:28:17.380951Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_STAGE6S_FULL_AUTHORITY_EXPORT_AFTER_STAGE6N_TO_6R_HANDOFF_20260502T035000Z.json",
+      "span_id": "f63f35a488be8745",
+      "stage_id": "STAGE6S_FULL_AUTHORITY_EXPORT_AFTER_STAGE6N_TO_6R",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T03:32:44Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_STAGE6T_TOOL_UNIVERSE_RESOLVER_COVERAGE_REPAIR_FOR_TRACE_EXPORT_HANDOFF_20260502T035000Z.json",
+      "span_id": "93fccd03f79f17cf",
+      "stage_id": "STAGE6T_TOOL_UNIVERSE_RESOLVER_COVERAGE_REPAIR_FOR_TRACE_EXPORT",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T03:36:48.369837Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_STAGE6U_FULL_AUTHORITY_EXPORT_AFTER_6T_HANDOFF_20260502T035000Z.json",
+      "span_id": "30aa5a5d8758b668",
+      "stage_id": "STAGE6U_FULL_AUTHORITY_EXPORT_AFTER_6T",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T03:38:39Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_10_PROMPT_ROUTE_PREEXECUTION_ENFORCER_AND_TASK_START_HOOK_HANDOFF.json",
+      "span_id": "6b8d4ce785eb0d3d",
+      "stage_id": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_10_PROMPT_ROUTE_PREEXECUTION_ENFORCER_AND_TASK_START_HOOK",
+      "status": "OK",
+      "timestamp_utc": "2026-05-01T00:25:00Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_11_FULL_EXTRACT_REPLAY_FIX_AND_RECOVERY_PROOF_HANDOFF.json",
+      "span_id": "ca4dac34f00dbe53",
+      "stage_id": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_11_FULL_EXTRACT_REPLAY_FIX_AND_RECOVERY_PROOF",
+      "status": "OK",
+      "timestamp_utc": "2026-05-01T00:45:00Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_12_POINTER_PROMOTION_AND_RUNTIME_STARTER_SMOKE_HANDOFF.json",
+      "span_id": "fa8a570e65835ceb",
+      "stage_id": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_12_POINTER_PROMOTION_AND_RUNTIME_STARTER_SMOKE",
+      "status": "OK",
+      "timestamp_utc": "2026-04-30T23:23:00Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/STAGE4C_HANDOFF_PRE_REBUILD_20260501T233500Z.json",
+      "span_id": "8be940ba7ff53698",
+      "stage_id": "STAGE4C_NODE_YAUZL_YAZL_STREAM_REBUILD_AND_BOOT_PROOF",
+      "status": "OK",
+      "timestamp_utc": "20260501T233500Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/agent_harness/AGENT_HARNESS_STAGE1_HANDOFF_LATEST.json",
+      "span_id": "8bb403fe1d536180",
+      "stage_id": "IMPLEMENT_AGENT_HARNESS_STAGE_2_PARALLEL_WORKPACKETS_AND_DIFF_REVIEW_OR_SOFTWARE_QUALITY_STAGE_1",
+      "status": "OK",
+      "timestamp_utc": "20260501T144521Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/agent_harness/AGENT_HARNESS_STAGE2_HANDOFF_LATEST.json",
+      "span_id": "a9a37e2e9ed19d75",
+      "stage_id": "IMPLEMENT_AGENT_HARNESS_STAGE_2_PARALLEL_WORKPACKETS_AND_DIFF_REVIEW_OR_SOFTWARE_QUALITY_STAGE_1",
+      "status": "OK",
+      "timestamp_utc": "20260501T145002Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/agent_harness/AGENT_HARNESS_STAGE3_HANDOFF_LATEST.json",
+      "span_id": "f51c82ee3f5e430e",
+      "stage_id": "EDUCATION_VALIDITY_STAGE_1_OR_ARTIFACT_PORTABILITY_REPLAY_PROOF_STAGE_1",
+      "status": "OK",
+      "timestamp_utc": "20260501T171620Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777724447609.json",
+      "span_id": "31bbb837d074a940",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122046Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777724614954.json",
+      "span_id": "f2f99f2b88be5b5c",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T122334Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_CDR_STAGE12_CDR_LINCHPIN_RECURSIVE_AUDIT_DEEPENING_HANDOFF_20260502T124500Z.json",
+      "span_id": "76416036ee76909d",
+      "stage_id": "CDR_STAGE12_CDR_LINCHPIN_RECURSIVE_AUDIT_DEEPENING",
+      "status": "OK",
+      "timestamp_utc": "20260502T124500Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777725626348.json",
+      "span_id": "f7799945bd366a22",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T124026Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_CDR_STAGE13_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE12_HANDOFF_20260502T125500Z.json",
+      "span_id": "603a528142a9cf15",
+      "stage_id": "CDR_STAGE13_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE12",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T12:55:00Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777725634414.json",
+      "span_id": "db31389c888035e3",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T124034Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777726196193.json",
+      "span_id": "200d00f054a3189e",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T124956Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_MPP_CDR_BINDING_STAGE14_CODE_WORK_REQUIRES_CDR_IN_MPP_HANDOFF_20260502T130500Z.json",
+      "span_id": "e79937d55771783b",
+      "stage_id": "MPP_CDR_BINDING_STAGE14_CODE_WORK_REQUIRES_CDR_IN_MPP",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T12:51:02Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_MPP_CDR_BINDING_STAGE15_RETROFIT_STAGE_CONTRACTS_TO_DECLARE_CODE_BEARING_FLAG_HANDOFF_20260502T131500Z.json",
+      "span_id": "6a5d85dc2f2e9e74",
+      "stage_id": "MPP_CDR_BINDING_STAGE15_RETROFIT_STAGE_CONTRACTS_TO_DECLARE_CODE_BEARING_FLAG",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T12:54:07Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777726780701.json",
+      "span_id": "5b25943a5e7f9f7a",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T125940Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777726839958.json",
+      "span_id": "5aebb9bc732fd25d",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T130038Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777726985549.json",
+      "span_id": "5c756ace425b5422",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T130304Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/METABLOOMS_MPP_CDR_BINDING_STAGE16_FULL_AUTHORITY_EXPORT_AFTER_STAGE15_HANDOFF_20260502T132500Z.json",
+      "span_id": "4b461050282ce7c8",
+      "stage_id": "MPP_CDR_BINDING_STAGE16_FULL_AUTHORITY_EXPORT_AFTER_STAGE15",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T13:03:18Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777729103336.json",
+      "span_id": "63d97004d59dbcdb",
+      "stage_id": "BOOT_RUNTIME_EXECUTOR_H0C1",
+      "status": "OK",
+      "timestamp_utc": "20260502T133822Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/boot/BOOT_FROM_MNT_DATA_STAGE16_HANDOFF_LATEST.json",
+      "span_id": "bb3f60d2132deec3",
+      "stage_id": "boot",
+      "status": "OK",
+      "timestamp_utc": "20260502T133901Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/meta_infra/META_INFRA_SELF_HARDENING_TOOL_ROADMAP_STAGE0_HANDOFF_LATEST.json",
+      "span_id": "f2ac06406bcc463b",
+      "stage_id": "META_INFRA_SELF_HARDENING_TOOL_ROADMAP_STAGE0",
+      "status": "OK",
+      "timestamp_utc": "20260502T134747Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE1_HANDOFF_LATEST.json",
+      "span_id": "2b935b8c5ae52c67",
+      "stage_id": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T13:51:07Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_HANDOFF_LATEST.json",
+      "span_id": "1cab30ad121d2877",
+      "stage_id": "meta_infra",
+      "status": "OK",
+      "timestamp_utc": "20260502T135531Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE3_HANDOFF_LATEST.json",
+      "span_id": "55ffd7d32f0d00ac",
+      "stage_id": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING",
+      "status": "OK",
+      "timestamp_utc": "20260502T140253Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_HANDOFF_LATEST.json",
+      "span_id": "4ded78ce5c0f7b78",
+      "stage_id": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP",
+      "status": "OK",
+      "timestamp_utc": "20260502T140719Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE5_HANDOFF_LATEST.json",
+      "span_id": "bb764284b8fd08ad",
+      "stage_id": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT",
+      "status": "OK",
+      "timestamp_utc": "20260502T142018Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_HANDOFF_LATEST.json",
+      "span_id": "2685043783fc9b14",
+      "stage_id": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T14:23:17Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_HANDOFF_LATEST.json.sha256.json",
+      "span_id": "a72924b5059cb907",
+      "stage_id": "meta_infra",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T14:23:17Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE2_HANDOFF_LATEST.json",
+      "span_id": "f75df7f77d3687cb",
+      "stage_id": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES",
+      "status": "OK",
+      "timestamp_utc": "20260502T143026Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_HANDOFF_LATEST.json",
+      "span_id": "d4c88fed98e73e77",
+      "stage_id": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T143651Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE4_HANDOFF_LATEST.json",
+      "span_id": "7ce248e88d757753",
+      "stage_id": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T144330Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T144330Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE5_HANDOFF_LATEST.json",
+      "span_id": "ae623aa9be694e7e",
+      "stage_id": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT_20260502T145012Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T144702Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/meta_infra/BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE1_HANDOFF_LATEST.json",
+      "span_id": "c26f11a5d880752f",
+      "stage_id": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT",
+      "status": "OK",
+      "timestamp_utc": "20260502T144842Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/operator_tracker/OPERATOR_VISUAL_TRACKER_RESTORE_AND_ENFORCEMENT_STAGE1_HANDOFF_LATEST.json",
+      "span_id": "b006af4595b425f1",
+      "stage_id": "OPERATOR_VISUAL_TRACKER_RESTORE_AND_ENFORCEMENT_STAGE1",
+      "status": "OK",
+      "timestamp_utc": "20260502T145646Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/meta_infra/BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE2_HANDOFF_LATEST.json",
+      "span_id": "5cee19d75c78c8bc",
+      "stage_id": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES",
+      "status": "OK",
+      "timestamp_utc": "20260502T150805Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/meta_infra/BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE3_HANDOFF_LATEST.json",
+      "span_id": "29496898d9622629",
+      "stage_id": "meta_infra",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T15:10:51Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/meta_infra/BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE4_HANDOFF_LATEST.json",
+      "span_id": "5cd134cda574552c",
+      "stage_id": "meta_infra",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T15:18:24Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/meta_infra/BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE5_HANDOFF_LATEST.json.sha256.json",
+      "span_id": "c8b27ffecef5b4dd",
+      "stage_id": "meta_infra",
+      "status": "OK",
+      "timestamp_utc": "20260502T152112Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/meta_infra/BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE5_HANDOFF_LATEST.json",
+      "span_id": "c15e278635d4fdea",
+      "stage_id": "meta_infra",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T15:20:58Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/operator_tracker/OPERATOR_VISUAL_TRACKER_POLISH_STAGE2_HANDOFF_LATEST.json",
+      "span_id": "9d9f2a87376eefed",
+      "stage_id": "OPERATOR_VISUAL_TRACKER_POLISH_STAGE2_RENDER_CONTRACT_AND_PHONE_SAFE_TEMPLATE",
+      "status": "OK",
+      "timestamp_utc": "20260502T153307Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/operator_tracker/OPERATOR_VISUAL_TRACKER_STATE_LATEST.json",
+      "span_id": "fa2c970337c7eda5",
+      "stage_id": "operator_tracker",
+      "status": "OK",
+      "timestamp_utc": "20260502T153800Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/operator_tracker/OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_HANDOFF_LATEST.json",
+      "span_id": "80373810832a6b87",
+      "stage_id": "OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_EXPORT_INTEGRATION_AND_BOOT_SURFACE_BINDING",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T15:37:30Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_FROM_MNT_DATA_20260502T162601Z/runtime_starter_smoke.json",
+      "span_id": "0e22803651afe6e7",
+      "stage_id": "BOOT_FROM_MNT_DATA_20260502T162601Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T162601Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_FROM_MNT_DATA_20260502T162601Z/new_chat_start_contract_validator.json",
+      "span_id": "12ba2c1dd1606336",
+      "stage_id": "BOOT_FROM_MNT_DATA_20260502T162601Z",
+      "status": "BLOCKED",
+      "timestamp_utc": "20260502T162601Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_FROM_MNT_DATA_20260502T162601Z/fresh_chat_rehearsal.json",
+      "span_id": "9fa8cb0e5495beda",
+      "stage_id": "BOOT_FROM_MNT_DATA_20260502T162601Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T162601Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_FROM_MNT_DATA_20260502T162601Z/preexecution_enforcer_boot_prompt.json",
+      "span_id": "47afed0802574406",
+      "stage_id": "BOOT_FROM_MNT_DATA_20260502T162601Z",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T16:25:25Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_FROM_MNT_DATA_20260502T162601Z/task_start_hook_boot_prompt.json",
+      "span_id": "581152ea9c2ddf21",
+      "stage_id": "BOOT_FROM_MNT_DATA_20260502T162601Z",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T16:25:25Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_FROM_MNT_DATA_20260502T162601Z/operator_visual_tracker_boot_surface_validator.json",
+      "span_id": "159f4ef8856d5667",
+      "stage_id": "BOOT_FROM_MNT_DATA_20260502T162601Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T162601Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_FROM_MNT_DATA_20260502T162601Z/BOOT_RECEIPT.json",
+      "span_id": "38a284a0ad5a1945",
+      "stage_id": "BOOT_FROM_MNT_DATA",
+      "status": "OK",
+      "timestamp_utc": "20260502T162601Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_FROM_MNT_DATA_20260502T162601Z/BOOT_HANDOFF.json",
+      "span_id": "eb9df1c22c0cbd4e",
+      "stage_id": "RECONCILE_STAGE3_AUTHORITY_POINTER_AND_NEW_CHAT_START_CONTRACT",
+      "status": "OK",
+      "timestamp_utc": "20260502T162601Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "decision",
+      "event_name": "metablooms.decision.next_build",
+      "source_artifact": "0_kernel/registry/roadmap/NEXT_BUILD_DECISION_LATEST.json",
+      "span_id": "2dd6b660554e864c",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION",
+      "status": "OK",
+      "timestamp_utc": "20260502T163517Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "tracker",
+      "event_name": "metablooms.tracker.state",
+      "source_artifact": "runtime/state/TRACKER_STATE_v1.json",
+      "span_id": "86a9b6ac579e3307",
+      "stage_id": "state",
+      "status": "OK",
+      "timestamp_utc": "20260502T164424Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_HANDOFF_LATEST.json",
+      "span_id": "18e6d4015d5cd6de",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION",
+      "status": "OK",
+      "timestamp_utc": "20260502T164424Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE3_HANDOFF_LATEST.json",
+      "span_id": "d3c068871c579909",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE3_TRACKER_CAUSAL_TIMELINE_BINDING",
+      "status": "OK",
+      "timestamp_utc": "20260502T164756Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_HANDOFF_LATEST.json",
+      "span_id": "44cb6bb4210f9de3",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING",
+      "status": "OK",
+      "timestamp_utc": "20260502T165330Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE6_HANDOFF_LATEST.json",
+      "span_id": "67e3ba45dcda1c4a",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE6_METHOD_RELIABILITY_LEDGER_AND_SUPPRESSED_FAILURE_LESSON_BINDING",
+      "status": "OK",
+      "timestamp_utc": "20260502T170503Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE7_HANDOFF_LATEST.json",
+      "span_id": "b6c6e4d5ed6b6bb5",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE7_METHOD_WRAPPER_CALLSITE_RETROFIT_AND_BOOT_SEQUENCE_ENFORCEMENT",
+      "status": "OK",
+      "timestamp_utc": "20260502T170919Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z/STAGE_RECEIPT.json",
+      "span_id": "9e83bef4bc686df1",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE",
+      "status": "OK",
+      "timestamp_utc": "20260502T171821Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_HANDOFF_LATEST.json",
+      "span_id": "d3401055aa7aace5",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE",
+      "status": "OK",
+      "timestamp_utc": "20260502T171821Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/pre_patch_backups/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+      "span_id": "5150ee57e00b0b92",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE",
+      "status": "OK",
+      "timestamp_utc": "20260502T174908Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/pre_patch_backups/runtime__authority__CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+      "span_id": "80c3ec0bfb193898",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE",
+      "status": "OK",
+      "timestamp_utc": "20260502T174908Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/pre_patch_backups/0_kernel__registry__current_authority__CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+      "span_id": "ebf00381dba73a21",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE",
+      "status": "OK",
+      "timestamp_utc": "20260502T174908Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/SEE_PACKET.json",
+      "span_id": "b75e380246308a2b",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS",
+      "status": "OK",
+      "timestamp_utc": "20260502T174908Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/CE_SYNTHESIS.json",
+      "span_id": "9698922a6c9f2f2a",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS",
+      "status": "OK",
+      "timestamp_utc": "20260502T174908Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/live_boot_guidance_extractor_initial.json",
+      "span_id": "a22beef1cf6f5dd8",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T174910Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/live_boot_guidance_extractor_after_tracker.json",
+      "span_id": "1c47ba6880feb6fb",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T174911Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "validator",
+      "event_name": "metablooms.validator.result",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/stage9_validator.json",
+      "span_id": "11b39b82d777910d",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T174923Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "validator",
+      "event_name": "metablooms.validator.result",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/stage8_validator.json",
+      "span_id": "d8b2a106383b5d93",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T174930Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "validator",
+      "event_name": "metablooms.validator.result",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/new_chat_validator.json",
+      "span_id": "2e742d50965232a5",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T174931Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/wrapper_good.json",
+      "span_id": "60b7390f1bff659b",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T174933Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/STAGE_RECEIPT.json",
+      "span_id": "2fa5bb7c29585d47",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS",
+      "status": "ERROR",
+      "timestamp_utc": "20260502T174908Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/STAGE_HANDOFF.json",
+      "span_id": "c7a6b7202a91920e",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS",
+      "status": "ERROR",
+      "timestamp_utc": "20260502T174908Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/guidance_extractor.json",
+      "span_id": "465bf44fb304355e",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T175128Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/scanner.json",
+      "span_id": "e9d9978e15eb7275",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T175128Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "validator",
+      "event_name": "metablooms.validator.result",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/stage9_validator.json",
+      "span_id": "6920ed683eaeb9c5",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T175128Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "validator",
+      "event_name": "metablooms.validator.result",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/new_chat_validator.json",
+      "span_id": "6aaa2ab6e5ce4cb5",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T175128Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/wrapper_good.json",
+      "span_id": "b81675163f280831",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T175128Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/STAGE_RECEIPT.json",
+      "span_id": "4dd8e38162b1a2ba",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS",
+      "status": "OK",
+      "timestamp_utc": "20260502T175102Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/STAGE_HANDOFF.json",
+      "span_id": "5b793c7954319d53",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS",
+      "status": "OK",
+      "timestamp_utc": "20260502T175102Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_HANDOFF_LATEST.json",
+      "span_id": "b19fbb2d5dc36095",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS",
+      "status": "OK",
+      "timestamp_utc": "20260502T175102Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "export",
+      "event_name": "metablooms.export.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/STAGE9_REPAIRED_FINAL_EXPORT_RECEIPT.external.json",
+      "span_id": "e8ca0bf73b5c4e90",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS",
+      "status": "OK",
+      "timestamp_utc": "20260502T175158Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_20260502T175629Z/SEE_PACKET.json",
+      "span_id": "4e91315923ef13b0",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING",
+      "status": "OK",
+      "timestamp_utc": "20260502T175629Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_20260502T175629Z/CE_SYNTHESIS.json",
+      "span_id": "328e3c192ae621f8",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING",
+      "status": "OK",
+      "timestamp_utc": "20260502T175629Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINALIZED_20260502T175839Z/SEE_PACKET.json",
+      "span_id": "1d67b9e62e0e8d1b",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING",
+      "status": "OK",
+      "timestamp_utc": "20260502T175629Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINALIZED_20260502T175839Z/CE_SYNTHESIS.json",
+      "span_id": "16d37007b78e8f56",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING",
+      "status": "OK",
+      "timestamp_utc": "20260502T175629Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINALIZED_20260502T175839Z/STAGE10_FINALIZATION_BLOCKED.json",
+      "span_id": "30467b3ba31b8a35",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINALIZED_20260502T175839Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T175900Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINALIZED_20260502T175921Z/SEE_PACKET.json",
+      "span_id": "bab98c0c4392bbd6",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING",
+      "status": "OK",
+      "timestamp_utc": "20260502T175629Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINALIZED_20260502T175921Z/CE_SYNTHESIS.json",
+      "span_id": "4bff6b0ba92e34bd",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING",
+      "status": "OK",
+      "timestamp_utc": "20260502T175629Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINALIZED_20260502T175921Z/STAGE_RECEIPT.json",
+      "span_id": "c96a3e71f0b458bc",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING",
+      "status": "OK",
+      "timestamp_utc": "20260502T175921Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINALIZED_20260502T175921Z/STAGE_HANDOFF.json",
+      "span_id": "851a24cfcfa96a52",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING",
+      "status": "OK",
+      "timestamp_utc": "20260502T175921Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINAL_LOCK_20260502T180500Z/SEE_PACKET.json",
+      "span_id": "645b547725d679a0",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING",
+      "status": "OK",
+      "timestamp_utc": "20260502T180500Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINAL_LOCK_20260502T180500Z/CE_SYNTHESIS.json",
+      "span_id": "9a34e24bff464a00",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING",
+      "status": "OK",
+      "timestamp_utc": "20260502T180500Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINAL_LOCK_20260502T180500Z/STAGE_RECEIPT.json",
+      "span_id": "8e1fa8b3bdf602f6",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING",
+      "status": "OK",
+      "timestamp_utc": "20260502T180500Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINAL_LOCK_20260502T180500Z/STAGE_HANDOFF.json",
+      "span_id": "c948dd5d4109d9f0",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING",
+      "status": "OK",
+      "timestamp_utc": "20260502T180500Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_HANDOFF_LATEST.json",
+      "span_id": "586c9e4f2b750b9e",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING",
+      "status": "OK",
+      "timestamp_utc": "20260502T180500Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINAL_LOCK_20260502T180500Z/STAGE10_FINAL_RESULT.json",
+      "span_id": "0d69028a9385b56f",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINAL_LOCK_20260502T180500Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T180238Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS_20260502T180849Z/SEE_PACKET.json",
+      "span_id": "98791ef598f87ed7",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS",
+      "status": "OK",
+      "timestamp_utc": "20260502T180849Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "validator",
+      "event_name": "metablooms.validator.result",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS_20260502T180849Z/stage11_validation_stdout.json",
+      "span_id": "eb4bef48bd6b62af",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS_20260502T180849Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T180900Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS_20260502T180849Z/STAGE_RECEIPT.json",
+      "span_id": "d9307d10bb18b584",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS",
+      "status": "ERROR",
+      "timestamp_utc": "20260502T180900Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS_20260502T180849Z/STAGE_HANDOFF.json",
+      "span_id": "62b8af9b75415711",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS",
+      "status": "ERROR",
+      "timestamp_utc": "20260502T180900Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS_20260502T180916Z/SEE_PACKET.json",
+      "span_id": "6db37c426b3e473a",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS",
+      "status": "OK",
+      "timestamp_utc": "20260502T180916Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "validator",
+      "event_name": "metablooms.validator.result",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS_20260502T180916Z/stage11_validation_stdout.json",
+      "span_id": "b4f0aedc094705f9",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS_20260502T180916Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T180927Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS_20260502T180916Z/STAGE_RECEIPT.json",
+      "span_id": "df6251bb9b66b62e",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS",
+      "status": "OK",
+      "timestamp_utc": "20260502T180927Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS_20260502T180916Z/STAGE_HANDOFF.json",
+      "span_id": "6d2a228936561cb4",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS",
+      "status": "OK",
+      "timestamp_utc": "20260502T180927Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "validator",
+      "event_name": "metablooms.validator.result",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS_20260502T180916Z/stage11_validation_post_ingest_stdout.json",
+      "span_id": "b526998813c47491",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS_20260502T180916Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T180941Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "export",
+      "event_name": "metablooms.export.receipt",
+      "source_artifact": "runtime/receipts/observability/STAGE11_FINAL_PRE_EXPORT_VALIDATION_STDOUT_LATEST.json",
+      "span_id": "b48dafe5010bf327",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS",
+      "status": "OK",
+      "timestamp_utc": "20260502T181130Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "export",
+      "event_name": "metablooms.export.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_FINAL_EXPORT_RECEIPT_LATEST.json",
+      "span_id": "117f20aa44c2f84d",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS",
+      "status": "OK",
+      "timestamp_utc": "20260502T181215Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_HANDOFF_LATEST.json",
+      "span_id": "72e6164aa35201dc",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS",
+      "status": "OK",
+      "timestamp_utc": "20260502T180927Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE12_TRACE_QUERY_PACKET_AND_SEARCHABLE_EVIDENCE_INDEX_20260502T181632Z/SEE_PACKET.json",
+      "span_id": "a4dc07eca9bda856",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE12_TRACE_QUERY_PACKET_AND_SEARCHABLE_EVIDENCE_INDEX",
+      "status": "OK",
+      "timestamp_utc": "20260502T181632Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "validator",
+      "event_name": "metablooms.validator.result",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE12_TRACE_QUERY_PACKET_AND_SEARCHABLE_EVIDENCE_INDEX_20260502T181632Z/stage12_validation_stdout.json",
+      "span_id": "f4792360820c3ede",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE12_TRACE_QUERY_PACKET_AND_SEARCHABLE_EVIDENCE_INDEX",
+      "status": "OK",
+      "timestamp_utc": "20260502T181638Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE12_TRACE_QUERY_PACKET_AND_SEARCHABLE_EVIDENCE_INDEX_20260502T181632Z/STAGE_RECEIPT.json",
+      "span_id": "99ef067bca32c2a3",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE12_TRACE_QUERY_PACKET_AND_SEARCHABLE_EVIDENCE_INDEX",
+      "status": "OK",
+      "timestamp_utc": "20260502T181632Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "validator",
+      "event_name": "metablooms.validator.result",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE12_TRACE_QUERY_PACKET_AND_SEARCHABLE_EVIDENCE_INDEX_20260502T181632Z/stage12_validation_post_ingest_stdout.json",
+      "span_id": "3008c5f1884b15f1",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE12_TRACE_QUERY_PACKET_AND_SEARCHABLE_EVIDENCE_INDEX",
+      "status": "OK",
+      "timestamp_utc": "20260502T181645Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "validator",
+      "event_name": "metablooms.validator.result",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE12_TRACE_QUERY_PACKET_AND_SEARCHABLE_EVIDENCE_INDEX_20260502T181724Z/stage12_final_validation_stdout.json",
+      "span_id": "e65dbf78403e98bf",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE12_TRACE_QUERY_PACKET_AND_SEARCHABLE_EVIDENCE_INDEX",
+      "status": "OK",
+      "timestamp_utc": "20260502T181730Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE12_HANDOFF_LATEST.json",
+      "span_id": "839509793adb2106",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE12_TRACE_QUERY_PACKET_AND_SEARCHABLE_EVIDENCE_INDEX",
+      "status": "OK",
+      "timestamp_utc": "20260502T181632Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_INTERACTIONS_AND_RESULT_PINNING_20260502T183045Z/BOOT_RELOAD_PROOF.json",
+      "span_id": "45a88753169215e2",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_INTERACTIONS_AND_RESULT_PINNING",
+      "status": "OK",
+      "timestamp_utc": "20260502T183045Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_INTERACTIONS_AND_RESULT_PINNING_20260502T183045Z/SEE_PACKET.json",
+      "span_id": "6aa120bf4ff1d0c6",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_INTERACTIONS_AND_RESULT_PINNING",
+      "status": "OK",
+      "timestamp_utc": "20260502T183045Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "validator",
+      "event_name": "metablooms.validator.result",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_INTERACTIONS_AND_RESULT_PINNING_20260502T183045Z/stage13_validation_stdout.json",
+      "span_id": "404fd3696aa25605",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_INTERACTIONS_AND_RESULT_PINNING_20260502T183045Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T183047Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "validator",
+      "event_name": "metablooms.validator.result",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_INTERACTIONS_AND_RESULT_PINNING_20260502T183045Z/stage13_validation_stdout_repaired.json",
+      "span_id": "ebab7a491080066b",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_INTERACTIONS_AND_RESULT_PINNING",
+      "status": "OK",
+      "timestamp_utc": "20260502T183149Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_HANDOFF_LATEST.json",
+      "span_id": "659265ee1229ad71",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_INTERACTIONS_AND_RESULT_PINNING",
+      "status": "OK",
+      "timestamp_utc": "20260502T183138Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "validator",
+      "event_name": "metablooms.validator.result",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_INTERACTIONS_AND_RESULT_PINNING_20260502T183045Z/stage13_validation_post_receipt_stdout.json",
+      "span_id": "467a83812c0246fc",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_INTERACTIONS_AND_RESULT_PINNING",
+      "status": "OK",
+      "timestamp_utc": "20260502T183204Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_INTERACTIONS_AND_RESULT_PINNING_20260502T183045Z/STAGE_RECEIPT.json",
+      "span_id": "f3b688399dcb12d3",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_INTERACTIONS_AND_RESULT_PINNING",
+      "status": "OK",
+      "timestamp_utc": "20260502T183138Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "export",
+      "event_name": "metablooms.export.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING_20260502T190150Z/BOOT_RELOAD_PROOF.json",
+      "span_id": "c9b46da95995f591",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING",
+      "status": "OK",
+      "timestamp_utc": "20260502T190150Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "export",
+      "event_name": "metablooms.export.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING_20260502T190150Z/SEE_PACKET.json",
+      "span_id": "01d2e9b9b4a672b4",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING",
+      "status": "OK",
+      "timestamp_utc": "20260502T190150Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "export",
+      "event_name": "metablooms.export.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING_20260502T190150Z/CE_SYNTHESIS.json",
+      "span_id": "263e3b23bb4d9baa",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING",
+      "status": "OK",
+      "timestamp_utc": "20260502T190150Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "export",
+      "event_name": "metablooms.export.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING_20260502T190150Z/stage14_validation_stdout.json",
+      "span_id": "78a1e07d1cb5f19f",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING_20260502T190150Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T190151Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "export",
+      "event_name": "metablooms.export.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING_20260502T190150Z/stage14_validation_stdout_repaired.json",
+      "span_id": "14b6bd5e849c4d9c",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING",
+      "status": "OK",
+      "timestamp_utc": "20260502T190324Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "export",
+      "event_name": "metablooms.export.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING_20260502T190150Z/stage14_validation_post_receipt_stdout.json",
+      "span_id": "24746b968c8c367f",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING",
+      "status": "OK",
+      "timestamp_utc": "20260502T190441Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "export",
+      "event_name": "metablooms.export.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING_20260502T190150Z/STAGE_RECEIPT.json",
+      "span_id": "c914eb034e1ecc1e",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING",
+      "status": "OK",
+      "timestamp_utc": "20260502T190307Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/pinned_evidence/PINNED_EVIDENCE_RECEIPT_LATEST.json",
+      "span_id": "3cb8ff048f14999a",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING",
+      "status": "OK",
+      "timestamp_utc": "20260502T190630Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_HANDOFF_LATEST.json",
+      "span_id": "318849f2c0c77e1a",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING",
+      "status": "OK",
+      "timestamp_utc": "20260502T190307Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS_20260502T191509Z/SEE_PACKET.json",
+      "span_id": "4b5a126f3be79171",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS",
+      "status": "OK",
+      "timestamp_utc": "20260502T191509Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS_20260502T191509Z/promoted_evidence_replay_stdout.json",
+      "span_id": "6d5babc27d9b0196",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS_20260502T191509Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T191509Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "validator",
+      "event_name": "metablooms.validator.result",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS_20260502T191509Z/stage15_validator_stdout.json",
+      "span_id": "42470f861bb81e24",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS_20260502T191509Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T191509Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS_20260502T191509Z/runtime_wrapper_smoke_stdout.json",
+      "span_id": "03ab322fbf8fc3ee",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS_20260502T191509Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T191509Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "validator",
+      "event_name": "metablooms.validator.result",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS_20260502T191509Z/new_chat_validator_stdout.json",
+      "span_id": "1e5727339d274058",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS_20260502T191509Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T191601Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "validator",
+      "event_name": "metablooms.validator.result",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS_20260502T191509Z/stage15_validator_stdout_post_ingest.json",
+      "span_id": "8f1c42f92c13eea9",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS_20260502T191509Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T191602Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS_20260502T191509Z/STAGE_RECEIPT.json",
+      "span_id": "cf654e5ecca79a82",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS",
+      "status": "OK",
+      "timestamp_utc": "20260502T191509Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_HANDOFF_LATEST.json",
+      "span_id": "6d252663cb46c87f",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS",
+      "status": "OK",
+      "timestamp_utc": "20260502T191509Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "export",
+      "event_name": "metablooms.export.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET_20260502T191921Z/SEE_PACKET.json",
+      "span_id": "a1c1c7c46d690843",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET",
+      "status": "OK",
+      "timestamp_utc": "20260502T191921Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "export",
+      "event_name": "metablooms.export.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET_20260502T191921Z/audit_query_command_surface_stdout.json",
+      "span_id": "ddb8fc6347bb646b",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET_20260502T191921Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T191921Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "export",
+      "event_name": "metablooms.export.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET_20260502T191921Z/stage16_validator_stdout.json",
+      "span_id": "02ae4cc109f8c9e6",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET_20260502T191921Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T191921Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "export",
+      "event_name": "metablooms.export.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET_20260502T191921Z/new_chat_validator_stdout.json",
+      "span_id": "726f5b788059f56d",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET_20260502T191921Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T191921Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "export",
+      "event_name": "metablooms.export.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET_20260502T191921Z/runtime_wrapper_smoke_stdout.json",
+      "span_id": "119c3f3e2a3aa3b7",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET_20260502T191921Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T191921Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "export",
+      "event_name": "metablooms.export.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET_20260502T191921Z/STAGE_RECEIPT.json",
+      "span_id": "fd5cb34e0b9d54c5",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET",
+      "status": "OK",
+      "timestamp_utc": "20260502T191921Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_HANDOFF_LATEST.json",
+      "span_id": "648e0b618f6885bc",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET",
+      "status": "OK",
+      "timestamp_utc": "20260502T191921Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    },
+    {
+      "event_kind": "export",
+      "event_name": "metablooms.export.receipt",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET_20260502T191921Z/post_receipt_boot_ingest_stdout.json",
+      "span_id": "a06248652ee6c4df",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET_20260502T191921Z",
+      "status": "WARN",
+      "timestamp_utc": "20260502T191942Z",
+      "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+    }
+  ],
+  "schema": "0_kernel/registry/observability/MB_CAUSAL_STAGE_GRAPH_SCHEMA_v1.json",
+  "source_ledger": "runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl",
+  "summary": {
+    "by_kind": {
+      "boot": 57,
+      "decision": 1,
+      "export": 17,
+      "handoff": 86,
+      "receipt": 40,
+      "stage": 1,
+      "tracker": 1,
+      "validator": 17
+    },
+    "by_status": {
+      "BLOCKED": 1,
+      "ERROR": 4,
+      "OK": 214,
+      "WARN": 1
+    },
+    "edge_count": 219,
+    "node_count": 220,
+    "record_count": 220
+  }
+}

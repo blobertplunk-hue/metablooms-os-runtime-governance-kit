@@ -1,0 +1,61 @@
+{
+  "schema": "WORKFLOW_AMENDMENT_LEDGER_v5",
+  "generated_utc": "2026-04-26T02:58:00Z",
+  "see_research_session": "20260426_Claude_SEE_CE_Synthesis",
+  "prior_version": "WORKFLOW_AMENDMENT_LEDGER_v4.json",
+  "new_amendments": [
+    {
+      "id": "AMEND-0005",
+      "trigger": "learning loop fires only at end-of-chunk; mid-chunk failures compound undetected",
+      "see_evidence": [
+        "MindStudio: 'Add intermediate validation steps. Don't just validate final outputs.'",
+        "Galileo: 'A corrupted memory at step 5 doesn't just break that step — it poisons every subsequent reflection, plan, and action.'",
+        "Microsoft Azure: 'Mandatory gates make the orchestration synchronous at that step'"
+      ],
+      "local_evidence": "GW5F internal fail-closed attempt log shows failures not caught until end-of-chunk",
+      "rule": "After each artifact in a chunk, evaluate IC-1 through IC-6 interrupt conditions. If any fires, pause, write INTRA_CHUNK_INTERRUPT_RECEIPT, execute W0-W1, then W2-W3 if defect/gap. Never silently continue.",
+      "regression_risk": "Increases per-artifact overhead by ~1 pulse check. Mitigated: checks are context-only, no tool calls.",
+      "status": "accepted",
+      "workflow_version": "v6"
+    },
+    {
+      "id": "AMEND-0006",
+      "trigger": "tool failure mode bundle was created manually; should have been auto-generated",
+      "see_evidence": [
+        "AWS DevOps Agent: 'After DevOps Agent resolves three incidents, the Learning Agent identifies the recurring pattern and generates a learned skill'",
+        "Union.ai: 'Artifacts can serve as a versioned registry... making artifacts the contracts that define inter-workflow dependencies and automations'"
+      ],
+      "local_evidence": "GW5T tool_failure_mode_bundle_v1.zip created by Robert request, not by workflow automation. Same pattern occurred in GW5J (canmore routing) and GW5T (recursive archive extraction).",
+      "rule": "When any failure class reaches threshold (2+ instances), autonomously generate named sidecar bundle with README, trigger evidence, governance artifacts, and SHA index. Write to /mnt/data/workflow_sidecars/. If blocked, write SIDECAR_BLOCKED_RECEIPT.",
+      "regression_risk": "Sidecar generation adds ~1 tool call per threshold crossing. Bounded by threshold — not triggered on every failure.",
+      "status": "accepted",
+      "workflow_version": "v6"
+    },
+    {
+      "id": "AMEND-0007",
+      "trigger": "every ChatGPT session cold-starts; amendment ledger and state re-read from bundle every time",
+      "see_evidence": [
+        "Microsoft Azure: 'Capabilities like memory are increasing the value of signals loops. These technologies enable AI systems to retain context and learn from user feedback'",
+        "AddyOsmani: 'One of the most powerful mechanisms in agent loops is the use of persistent context files that carry knowledge forward between iterations'"
+      ],
+      "local_evidence": "CURRENT_BASELINE_POINTER_v12 and QUEUE_STATE_v10 exist precisely because cold-start requires re-establishing state. Claude memory system provides cross-session persistence that ChatGPT lacks.",
+      "rule": "At end of every session, write CLAUDE_MEMORY_SYNC_v1.json with current_stage, baseline_sha, active_amendments, active_patterns, open_ic_triggers, pending_sidecars, known_blockers, next_chunk, session_note. Claude loads this into memory system as cross-session bridge.",
+      "regression_risk": "Adds one file write per session. Zero regression risk — additive only.",
+      "status": "accepted",
+      "workflow_version": "v6"
+    },
+    {
+      "id": "AMEND-0008",
+      "trigger": "governance runs at preflight and end-of-chunk only; no execution-time intervention",
+      "see_evidence": [
+        "AI Runtime Infrastructure (arxiv 2603.00495): 'A distinct execution-time layer... actively observing, reasoning over, and intervening in agent behavior while the agent is running'",
+        "Oracle/LangChain: 'Agent middleware is emerging as the standard abstraction layer... intercepting the loop at before_model, after_model, and modify_model_request'"
+      ],
+      "local_evidence": "VIGIL paper identifies same gap: 'VIGIL operates primarily OUTSIDE the agent execution loop. Its diagnostic and recovery mechanisms are invoked after failures have been detected.' MetaBlooms has the same architecture gap.",
+      "rule": "Run lightweight pre-artifact and post-artifact runtime pulse checks (RP-PRE-1 through RP-PRE-4, RP-POST-1 through RP-POST-4). Log to RUNTIME_PULSE_LOG_v1.jsonl. No external tool calls — context-only checks. Block on T1 failures. Flag on T2.",
+      "regression_risk": "Adds 8 boolean checks per artifact. Context-only. No tool calls. Negligible overhead.",
+      "status": "accepted",
+      "workflow_version": "v6"
+    }
+  ]
+}

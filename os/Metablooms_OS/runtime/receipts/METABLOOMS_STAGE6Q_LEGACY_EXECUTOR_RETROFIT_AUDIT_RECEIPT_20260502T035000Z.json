@@ -1,0 +1,92 @@
+{
+  "artifacts": [
+    {
+      "bytes": 1699,
+      "path": "research/SEE/STAGE6Q_LEGACY_EXECUTOR_RETROFIT_AUDIT_SEE_v1.json",
+      "sha256": "fcc7c0164b0c0350fc8c6b515bd4a560301318923dc7af4d276ca8eaad69f21a"
+    },
+    {
+      "bytes": 1421,
+      "path": "research/CE/STAGE6Q_LEGACY_EXECUTOR_RETROFIT_AUDIT_CE_v1.json",
+      "sha256": "50077cc6257c30ee8a6d4ef2c21511e87513a56eb38fb1d3016bc23439009ccb"
+    },
+    {
+      "bytes": 199022,
+      "path": "0_kernel/registry/tool_governance/STAGE6Q_LEGACY_EXECUTOR_RETROFIT_AUDIT_MATRIX_v1.json",
+      "sha256": "157a9f381ef36c8d1ae9b520ba078886a047f3de65ab28f2eff6a12469da5f6c"
+    },
+    {
+      "bytes": 793,
+      "path": "governance/invariants/LEGACY_EXECUTOR_RETROFIT_AUDIT_REQUIRED_v1.json",
+      "sha256": "0741fd7862f6d3232016c31eeea7054e4d33df1d70a8ed76b62b3dbc5a35b855"
+    },
+    {
+      "bytes": 2925,
+      "path": "runtime/stage_work/STAGE6Q/tool_candidates.json",
+      "sha256": "97440deaded1ceb1c70e66cb0d5f6b6884483a827e3cc68f0054cb9de21344da"
+    },
+    {
+      "bytes": 718,
+      "path": "runtime/stage_work/STAGE6Q/tool_evaluation.json",
+      "sha256": "7dba706d4ab3a85fdf7b92c11fcc9fdaa7a9cc7c29dfb639586d423723ffa2b9"
+    },
+    {
+      "bytes": 352,
+      "path": "runtime/stage_work/STAGE6Q/tool_evaluation_validation.json",
+      "sha256": "76eb72d91225af58f47c1ff0e87e0bf1b1402d77483b855f3d7e54a703681bcb"
+    },
+    {
+      "bytes": 1296,
+      "path": "runtime/stage_work/STAGE6Q/pre_tool_request.json",
+      "sha256": "92a6263349c3a5d6506afa774d78122b29fae34f6f7640b01c8740512a875205"
+    },
+    {
+      "bytes": 851,
+      "path": "runtime/stage_work/STAGE6Q/pre_tool_decision.json",
+      "sha256": "7634c55569e155a5dcc0bc65a7af2b470cd84088064a14cea9353dca7faa2453"
+    },
+    {
+      "bytes": 951,
+      "path": "runtime/stage_work/STAGE6Q/portable_boot_verify.json",
+      "sha256": "4ab3b30522b3591571dd01c6e8d24fcc7edc21381a51b019c1b2a666d09e2ad3"
+    },
+    {
+      "bytes": 503,
+      "path": "runtime/state/STAGE6Q_TRACKER_PREVIEW.txt",
+      "sha256": "92065f272331fc4bb6ebfff588850c661a06f4341ca8d07964f13074b1ad4348"
+    }
+  ],
+  "audit_summary": {
+    "governed_or_wrapper_paths": 0,
+    "legacy_or_quarantined_references": 6,
+    "open_active_bypass_candidates": 242,
+    "partial_governance_review_required": 16,
+    "verdict": "PASS_WITH_REMEDIATION_QUEUE"
+  },
+  "authority_export_performed": false,
+  "boot_verify": "PASS",
+  "bundle_label": "SUPPORT/PROOF BUNDLE \u2014 NOT THE OS BUNDLE",
+  "external_evidence_refs": [
+    "turn239252search0",
+    "turn239252search3",
+    "turn239252search9",
+    "turn239252search1",
+    "turn239252search2"
+  ],
+  "finalized_at_utc": "2026-05-02T03:17:07.086452Z",
+  "handoff_path": "/mnt/data/Metablooms_OS/runtime/handoffs/METABLOOMS_STAGE6Q_LEGACY_EXECUTOR_RETROFIT_AUDIT_HANDOFF_20260502T035000Z.json",
+  "next_recommended_stage": "STAGE6Q_REPAIR_LEGACY_EXECUTOR_RETROFIT",
+  "post_tool_validation_decision": "/mnt/data/Metablooms_OS/runtime/stage_work/STAGE6Q/post_tool_validation_decision.json",
+  "schema": "MetaBloomsStageReceipt_v1",
+  "stage_id": "STAGE6Q_LEGACY_EXECUTOR_RETROFIT_AUDIT",
+  "status": "PASS_WITH_REMEDIATION_QUEUE",
+  "support_bundle_final_proof": "/mnt/data/METABLOOMS_STAGE6Q_SUPPORT_BUNDLE_FINAL_PROOF_20260502T035000Z.json",
+  "timestamp_utc": "2026-05-02T03:16:54.515832Z",
+  "tool_path": {
+    "bts_evaluation": "PASS",
+    "post_tool_validation": "ALLOW_SUCCESS_COMMIT",
+    "pre_tool_gate": "ALLOW",
+    "resolver": "PASS"
+  },
+  "verdict": "PASS"
+}

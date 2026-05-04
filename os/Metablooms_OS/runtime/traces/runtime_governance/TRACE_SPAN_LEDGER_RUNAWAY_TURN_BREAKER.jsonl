@@ -1,0 +1,1 @@
+{"attributes": {"bounded": true}, "event": "install", "name": "runaway_turn_breaker_stage0_install", "parent_span_id": null, "schema_version": "MB_TRACE_SPAN_LEDGER_SPEC_v2", "span_id": "0e93a52e33a97bb7", "stage_name": "RUNAWAY_TURN_BREAKER_STAGE_0", "status": "PASS", "timestamp_utc": "20260501T203116Z", "trace_id": "52e1ceae55859f488ecc6093a62fa9e5"}

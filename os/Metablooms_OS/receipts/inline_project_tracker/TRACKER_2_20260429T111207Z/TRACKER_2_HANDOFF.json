@@ -1,0 +1,21 @@
+{
+  "from_stage": "TRACKER-2_MARKDOWN_RENDERER_AND_VALIDATOR",
+  "handoff_id": "TRACKER_2_TO_TRACKER_3_20260429T111207Z",
+  "next_command": "Continue MetaBlooms from /mnt/data/Metablooms_OS. Load TRACKER-2 renderer/validator receipt and handoff. Run exactly one bounded TRACKER-3 boot and stage gate implementation stage: create boot/stage/evidence/stop gate artifacts, validate missing-state blocking, existing-state load-before-action, and evidence requirements for DONE/BLOCKED claims, write receipt and handoff, update bundle, and stop before handoff-update wiring.",
+  "receipt_path": "receipts/inline_project_tracker/TRACKER_2_20260429T111207Z/TRACKER_2_RECEIPT.json",
+  "receipt_sha256": "b78df1fea6f630a4b05753852cdf1247b3b9de870d9b97e910a3a30497c6a895",
+  "renderer_path": "0_kernel/cartridges/inline_project_tracker/TRACKER_RENDERER_v1.py",
+  "required_preconditions": [
+    "Load TRACKER_STATE_v1.json before governed action.",
+    "Use TRACKER_RENDERER_v1.py to render inline tracker first.",
+    "Do not implement handoff-update wiring or smoke tests in TRACKER-3.",
+    "Boot/stage gates must require tracker state and reject missing evidence for DONE/BLOCKED claims.",
+    "Stop after writing TRACKER-3 receipt and handoff."
+  ],
+  "root": "/mnt/data/Metablooms_OS",
+  "state_path": "runtime/state/TRACKER_STATE_v1.json",
+  "status": "READY_FOR_BOUNDED_BOOT_STAGE_GATE_STAGE",
+  "timestamp_utc": "20260429T111207Z",
+  "to_stage_authorized": "TRACKER-3_BOOT_AND_STAGE_GATES",
+  "validator_path": "0_kernel/cartridges/inline_project_tracker/TRACKER_VALIDATOR_v1.py"
+}

@@ -1,0 +1,29 @@
+{
+  "decision_id": "R11-20260428T032630Z-25e4c574",
+  "stage": "R11_LEGACY_QUARANTINE_REDIRECTS_AND_CLEANUP",
+  "created_utc": "2026-04-28T03:26:30Z",
+  "result": "allow",
+  "input_artifacts": [
+    "runtime/governance/contracts/legacy_artifact_redirects_v1.json",
+    "runtime/governance/contracts/artifact_disposition_contract_v1.json"
+  ],
+  "output_artifacts": [
+    "runtime/governance/contracts/legacy_quarantine_redirects_contract_v1.json",
+    "0_kernel/scripts/validate_legacy_quarantine_v1.py",
+    "runtime/governance/registries/gate_registry_v1.json",
+    "runtime/governance/contracts/legacy_artifact_redirects_v1.json",
+    "runtime/governance/contracts/artifact_disposition_contract_v1.json"
+  ],
+  "evidence_references": [],
+  "actions": [
+    "quarantined Claude-specific live artifacts",
+    "updated redirects",
+    "registered legacy quarantine gate"
+  ],
+  "validated_utc": "2026-04-28T03:27:45Z",
+  "validation_artifacts": [
+    "runtime/evals/governance_regression_suite_v1/reports/R11_legacy_quarantine_validation_20260428T032630Z.json",
+    "runtime/evals/governance_regression_suite_v1/reports/R11_gate_registry_integrity_20260428T032630Z.json",
+    "receipts/refactor_program/R11_VERIFY_RECEIPT_20260428T032630Z.json"
+  ]
+}

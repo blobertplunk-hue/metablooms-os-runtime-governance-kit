@@ -1,0 +1,11 @@
+{
+  "claim_binding_required": true,
+  "domains_minimum": 2,
+  "forbidden": [
+    "uncited factual claim",
+    "SEE without web.run"
+  ],
+  "requires_web_run_for_SEE": true,
+  "sources_minimum": 3,
+  "task": "research workflow fixture"
+}

@@ -1,0 +1,41 @@
+{
+  "blockers": [
+    "Missing visual_presentation declaration for visual artifact",
+    "Declaration uses default browser styles or no design system",
+    "No WCAG 2.2 AA target or missing focus/touch/drag alternatives",
+    "No mobile-first confirmation for Google Sites/iPad use",
+    "Motion lacks purpose or reduced-motion support",
+    "No rendered screenshot/state evidence before promotion"
+  ],
+  "contract_id": "VISUAL_PRESENTATION_QUALITY_GATE_CONTRACT_v1",
+  "created_utc": "20260502T220900Z",
+  "decision": "install_as_cross_cutting_mpp_gate_plus_cartridge_specific_design_profile",
+  "minimum_stage_sequence": [
+    "STAGE1_SPEC_AND_FIXTURES",
+    "STAGE2_VALIDATOR_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN",
+    "STAGE3_MPP_USS_AND_HTML_CARTRIDGE_BINDING",
+    "STAGE4_RENDER_SMOKE_AND_VISUAL_REVIEW_PACKET",
+    "STAGE5_FULL_AUTHORITY_EXPORT"
+  ],
+  "routing_rule": {
+    "mpp_binding": "Before implementation: require declaration. During implementation: require design-token binding. Before promotion: require static/render/human-review evidence.",
+    "required_for_artifact_types": [
+      "html_activity",
+      "dashboard",
+      "landing_page",
+      "teacher_tool",
+      "student_tool",
+      "operator_tracker",
+      "other_visual_artifact"
+    ]
+  },
+  "status": "stage1_spec_not_yet_enforced_runtimewide",
+  "why_not_html_cartridge_only": [
+    "HTML cartridges can implement visual rules for HTML, but dashboards, trackers, landing pages, and teacher tools also need visual governance.",
+    "MPP must route any visual artifact to the gate before promotion."
+  ],
+  "why_not_uss_only": [
+    "USS declares usefulness dimensions; visual quality requires artifact-type-specific aesthetics, accessibility, platform, and render verification.",
+    "Putting only visual_presentation into USS would create a checkbox field and would not force purpose-specific research or rendered proof."
+  ]
+}

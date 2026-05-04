@@ -1,0 +1,15 @@
+{
+  "argv_resolved": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "/mnt/data/Metablooms_OS/0_kernel/validators/validate_bounded_subprocess_callsite_policy_stage4_v1.py",
+    "--root",
+    "/mnt/data/Metablooms_OS",
+    "--json-out",
+    "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/CALLSITE_POLICY_GATE_RESULT_WRAPPED.json"
+  ],
+  "created_utc": "20260502T140622Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision": "ALLOW_SPAWN",
+  "timeout_seconds": 30
+}

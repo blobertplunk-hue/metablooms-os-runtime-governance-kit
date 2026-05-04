@@ -1,0 +1,19 @@
+{
+  "created_utc": "2026-05-02T03:02:00Z",
+  "evidence_binding": "Stage6J exports use the BTS-wrapped Node ZIP profile and must pass delivery guard, CRC proof, fresh extraction, and boot verification before being labeled bootable OS authority.",
+  "failure_action": "DENY_USER_FACING_OS_BUNDLE_LABEL_OR_RELABEL_BEFORE_RESPONSE",
+  "id": "USER_FACING_DOWNLOAD_LABELS_MUST_DISTINGUISH_BOOTABLE_OS_AUTHORITY_v1",
+  "purpose": "Prevent support/proof bundles from being confused with bootable full OS authority downloads in chat responses.",
+  "required_labels": {
+    "full_os_authority": "BOOTABLE FULL OS AUTHORITY ZIP",
+    "sha256_sidecar": "SHA-256 SIDECAR FOR BOOTABLE FULL OS AUTHORITY ZIP",
+    "support_bundle": "SUPPORT/PROOF BUNDLE - NOT THE OS BUNDLE"
+  },
+  "rule": "Any user-facing download link for a bootable full MetaBlooms OS authority ZIP must be labeled exactly or equivalently as BOOTABLE FULL OS AUTHORITY ZIP. Support, proof, receipt, overlay, fixture, or audit bundles must be labeled SUPPORT/PROOF BUNDLE or equivalent and must not be presented as the OS bundle.",
+  "schema": "mb.invariant.v1",
+  "stage": "STAGE6J_FULL_AUTHORITY_EXPORT_AFTER_BTS_TOOL_UNIVERSE_RESOLVER_RETROFIT",
+  "status": "active",
+  "validator_paths": [
+    "runtime/governance/os_bundle_delivery_guard_v1.py"
+  ]
+}

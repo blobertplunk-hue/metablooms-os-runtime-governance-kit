@@ -1,0 +1,19 @@
+{
+  "artifact_type": "MB_OPERATOR_BUNDLE_PARTITION_SCHEMA.v1",
+  "partition_rules": [
+    "include command surface",
+    "include audit packs",
+    "include operator export packet",
+    "include selected bound evidence artifacts",
+    "include tracker and validation summaries"
+  ],
+  "required_fields": [
+    "artifact_type",
+    "partition_id",
+    "source_authority_zip_sha256",
+    "included_paths",
+    "zip_path",
+    "zip_sha256",
+    "verdict"
+  ]
+}

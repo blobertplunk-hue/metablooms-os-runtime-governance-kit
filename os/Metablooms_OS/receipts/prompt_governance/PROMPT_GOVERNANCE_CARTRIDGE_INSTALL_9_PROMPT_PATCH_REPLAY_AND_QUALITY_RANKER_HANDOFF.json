@@ -1,0 +1,13 @@
+{
+  "created_utc": "2026-04-30T22:18:08Z",
+  "handoff_id": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_9_PROMPT_PATCH_REPLAY_AND_QUALITY_RANKER_HANDOFF",
+  "must_preserve": [
+    "Stage 8 auto-improvement loop",
+    "Stage 9 replay/ranking gate",
+    "append-only prompt patch ledger"
+  ],
+  "next_focus": "Bind auto-improvement/replay/ranking as the mandatory pre-execution hook for every governed process start.",
+  "next_recommended_stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_10_PROMPT_ROUTE_PREEXECUTION_ENFORCER_AND_TASK_START_HOOK",
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_9_PROMPT_PATCH_REPLAY_AND_QUALITY_RANKER",
+  "status": "READY_FOR_NEXT_STAGE"
+}

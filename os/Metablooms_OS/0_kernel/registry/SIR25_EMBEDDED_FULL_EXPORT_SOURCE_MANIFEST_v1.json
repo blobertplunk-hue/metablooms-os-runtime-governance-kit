@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "created_at": 1777128908.1832526,
+  "stage": "SIR25_EXPORT_FULL_INTEGRATED_OS_CANDIDATE",
+  "status": "embedded_pre_zip_manifest",
+  "baseline_root": "/mnt/data/SIR22_baseline_root_for_runtime_integration/Metablooms_OS_refined",
+  "source_sir24_verification": "/mnt/data/SIR24_INTEGRATED_CONTROL_SAFETY_RUNTIME_VERIFICATION_v1.json",
+  "source_sir23_integration": "/mnt/data/SIR23_CONTROL_SAFETY_RUNTIME_INTEGRATION_MANIFEST_v1.json",
+  "source_file_count_before_embedding": 685,
+  "runtime_files": [
+    "loop_controller.py",
+    "mpp_pipeline_runner.py",
+    "regression_tracker.py",
+    "signal_contracts_v1.json"
+  ],
+  "baseline_lock": false,
+  "baseline_export_candidate": true,
+  "recovery_proof_required_before_lock": true,
+  "export_type": "full_integrated_os_candidate"
+}

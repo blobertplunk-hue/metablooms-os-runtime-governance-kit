@@ -1,0 +1,47 @@
+{
+  "authority_label": "WC13_REPAIRED2_BOOTABLE_FULL_AUTHORITY",
+  "authority_stage": "PROFESSIONALIZATION_CONVERGENCE_STAGE31_WC13_ROOT_AUTHORITY_NARRATIVE_REPAIR_AND_PREVENTION_LOCK",
+  "authority_zip": "METABLOOMS_WC13_FINAL_BOOTABLE_FULL_AUTHORITY_REPAIRED2_20260503T232000Z.zip",
+  "authority_sha256": "external_sidecar_required_after_zip_creation",
+  "previous_authority_zip": "METABLOOMS_WC13_FINAL_BOOTABLE_FULL_AUTHORITY_REPAIRED_20260503T222300Z.zip",
+  "previous_authority_sha256": "a63e117eb253c45dc1bdbc7da92304cb0d3df5140d678ca74b3bab7095e9d143",
+  "automatic_tracker_required": true,
+  "boot_root_inside_zip": "Metablooms_OS/",
+  "contains_required_authorities": [
+    "ACTIVE_PROCESS_TRACKER_PREVIEW.txt",
+    "AUTOMATIC_MULTI_STEP_TRACKER_CONTRACT_v1.json",
+    "DORA_STYLE_OS_METRICS_BASELINE_v1.json",
+    "EDUCATIONAL_HTML_DESIGN_SYSTEM_CARTRIDGE_SPEC_v1.json",
+    "GENERAL_CAPABILITY_RESOLVER_CONTRACT_v1.json",
+    "LESSON_PROMOTION_GATE_v1.json",
+    "LESSON_PROMOTION_QUEUE_CONTRACT_v1.json",
+    "OPEN_OPERATOR_VISUAL_TRACKER.html",
+    "PROMPT_STREAMING_SAFE_EXECUTION_POLICY_v1.json",
+    "WC13_PATH_MAP.json",
+    "BOOT_HANDOFF_WC13.md",
+    "STAGE30_WC13_FINAL_EXPORT_RECEIPT.json"
+  ],
+  "current_stage": "WC13_REPAIRED2_ROOT_AUTHORITY_NARRATIVE_LOCK",
+  "created_at_utc": "2026-05-03T23:18:30Z",
+  "latest_handoff": "BOOT_HANDOFF_WC13.md",
+  "portable_boot_verifier": "portable_full_os_boot_verify.py",
+  "root_identity_validator": "0_kernel/validators/validate_current_authority_identity_v1.py",
+  "root_debug_artifacts_removed": [
+    ".write_probe_20260502T163408Z",
+    ".write_probe_stage13_20260502T183045Z",
+    ".write_probe_stage14_20260502T190150Z",
+    ".write_probe_stage15_20260502T191509Z",
+    ".write_probe_stage15_20260502T191509Z.sha256",
+    ".write_probe_stage16_20260502T191921Z",
+    ".write_probe_stage16_20260502T191921Z.sha256"
+  ],
+  "honesty_label": "Full bootable WC13 authority export repaired to align root identity/narrative files with the actual WC13 export.",
+  "allowed_claim": "WC13 repaired2 bootable OS export exists and root authority narrative is current after Stage31 repair.",
+  "disallowed_claims": [
+    "Failing PRs are blocked",
+    "PR reviews are required",
+    "CODEOWNERS is enforced",
+    "Force-push/delete protection has been behavior-tested",
+    "Full professional repo governance is complete"
+  ]
+}

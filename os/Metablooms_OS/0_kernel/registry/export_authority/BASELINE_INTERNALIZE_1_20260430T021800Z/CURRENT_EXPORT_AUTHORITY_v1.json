@@ -1,0 +1,38 @@
+{
+  "artifact_type": "CURRENT_EXPORT_AUTHORITY_v1",
+  "authority_basis": [
+    "FL17-MERGE-5R2 external validation report PASS",
+    "BASELINE-PROMOTION-0 sidecar/zip/path/tracker/semantic/handoff gates PASS"
+  ],
+  "baseline_promoted": true,
+  "created_utc": "20260430T021800Z",
+  "current_full_os_bundle": {
+    "authority_note": "Final ZIP SHA-256 is bound by external sidecar to avoid circular self-hash embedding.",
+    "sha256_external_sidecar_required": true,
+    "sidecar_name": "METABLOOMS_OS_FL17_MERGED_TRACKER_WORKING_BASELINE_INTERNALIZED_20260430T021800Z.zip.sha256",
+    "zip_name": "METABLOOMS_OS_FL17_MERGED_TRACKER_WORKING_BASELINE_INTERNALIZED_20260430T021800Z.zip"
+  },
+  "external_sidecar_required": true,
+  "forbidden_validation_methods_artifact": "FORBIDDEN_VALIDATION_METHODS_v1.json",
+  "next_allowed_stage": "NEW_CHAT_HANDOFF_OR_NEXT_GOVERNED_STAGE_AFTER_BOOT",
+  "notices": [
+    "Candidate ZIP does not contain this promotion artifact; this external authority sidecar must travel with the current baseline until the next full OS export incorporates it."
+  ],
+  "required_boot_protocol": [
+    "verify checksum sidecar before extraction/use",
+    "scan unsafe ZIP member paths before extraction",
+    "use zipfile.testzip or equivalent CRC/header validation; do not use full recursive extraction as default large-archive validation",
+    "selectively read/extract boot-critical files first",
+    "load runtime/state/TRACKER_STATE_v1.json and render compact tracker first",
+    "load latest handoff and run exactly one bounded stage",
+    "preserve FL16 BLOCKED_NOT_PROMOTED semantics; FL17 export pass is package evidence only"
+  ],
+  "source_promoted_bundle": {
+    "path": "/mnt/data/MB_FL17_MERGE_5R2_INTERNAL_PROOF_REPAIR_20260430T015018Z/METABLOOMS_OS_FL17_MERGED_TRACKER_WORKING_5R2_RECOVERY_PROVEN_20260430T015018Z.zip",
+    "sha256": "95a3c18b258fb5aeafffddbd3715b4167bab7b76f53f6b089f0ba15258eb4fcb",
+    "sidecar_path": "/mnt/data/MB_FL17_MERGE_5R2_INTERNAL_PROOF_REPAIR_20260430T015018Z/METABLOOMS_OS_FL17_MERGED_TRACKER_WORKING_5R2_RECOVERY_PROVEN_20260430T015018Z.zip.sha256",
+    "size_bytes": 46379582,
+    "zip_entry_count": 1364
+  },
+  "status": "CURRENT_BASELINE_EXPORT_AUTHORITY_INTERNALIZED_IN_REPAIRED_EXPORT"
+}

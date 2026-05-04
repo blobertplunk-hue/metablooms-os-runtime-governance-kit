@@ -1,0 +1,3 @@
+.registry_mutation.lock
+artifact_registry.json.lock
+*.lock

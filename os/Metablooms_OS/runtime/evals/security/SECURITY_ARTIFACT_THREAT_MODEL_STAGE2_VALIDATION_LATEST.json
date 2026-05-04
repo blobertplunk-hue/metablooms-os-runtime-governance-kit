@@ -1,0 +1,13 @@
+{
+  "artifact_type": "SECURITY_ARTIFACT_THREAT_MODEL_STAGE2_VALIDATION_v1",
+  "checks": {
+    "all_malicious_fixtures_block_or_quarantine": true,
+    "fixture_count_at_least_8": true,
+    "gate_count_at_least_8": true
+  },
+  "created_utc": "20260501T114800Z",
+  "fixture_count": 9,
+  "gate_count": 8,
+  "risk_count": 8,
+  "verdict": "PASS"
+}

@@ -1,0 +1,12 @@
+{
+  "from_stage": "MPP_R22_ORCHESTRATOR_RUNTIME_CONTROLLER",
+  "notes": "R22 controller is integrated. Next stage should promote/export the complete R0-R22 OS authority.",
+  "required_inputs": [
+    "0_kernel/schemas/mpp_v3/ORCHESTRATOR_RUNTIME_PLAN_SCHEMA_v1.json",
+    "0_kernel/mpp_v3/mpp_v3_orchestrator_runtime_controller_v1.py",
+    "tests/fixtures/mpp_v3/valid_orchestrator_runtime_plan_v1.json"
+  ],
+  "schema_version": "metablooms.mpp_stage_handoff.v1",
+  "status": "READY",
+  "to_stage": "MPP_R23_EXPORT_PROMOTION_GATE"
+}

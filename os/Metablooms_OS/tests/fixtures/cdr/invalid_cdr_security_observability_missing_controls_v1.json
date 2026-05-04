@@ -1,0 +1,10 @@
+{
+  "observability_controls": {},
+  "risk_tier": "HIGH",
+  "security_controls": {
+    "input_validation": {
+      "evidence": "ok",
+      "status": "PASS"
+    }
+  }
+}

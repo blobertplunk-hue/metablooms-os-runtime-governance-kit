@@ -1,0 +1,43 @@
+{
+  "artifact_type": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_RECEIPT.v1",
+  "created_utc": "20260502T171707Z",
+  "issues": [
+    "stage8_validator_failed",
+    "stage7_validator_failed"
+  ],
+  "modified_artifacts": [
+    "0_kernel/registry/observability/MB_HISTORICAL_CALLSITE_QUARANTINE_POLICY_v1.json",
+    "0_kernel/scripts/observability_historical_callsite_quarantine_v1.py",
+    "0_kernel/validators/validate_observability_trace_span_ledger_stage8_historical_callsite_quarantine_v1.py",
+    "runtime/traces/observability/HISTORICAL_CALLSITE_QUARANTINE_INDEX_LATEST.json",
+    "OPEN_OPERATOR_VISUAL_TRACKER.html",
+    "runtime/governance/new_chat_start_contract_validator_v1.py"
+  ],
+  "policy": "0_kernel/registry/observability/MB_HISTORICAL_CALLSITE_QUARANTINE_POLICY_v1.json",
+  "quarantine_index": "runtime/traces/observability/HISTORICAL_CALLSITE_QUARANTINE_INDEX_LATEST.json",
+  "results": {
+    "new_chat_validator": {
+      "returncode": 0
+    },
+    "stage6_validator": {
+      "returncode": 0
+    },
+    "stage7_validator": {
+      "returncode": 2
+    },
+    "stage8_validator": {
+      "returncode": 2
+    },
+    "wrapper_bad": {
+      "returncode": 2
+    },
+    "wrapper_good": {
+      "returncode": 0
+    }
+  },
+  "see_packet": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_20260502T171707Z/SEE_PACKET.json",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE",
+  "validation_report": "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE8_HISTORICAL_CALLSITE_QUARANTINE_VALIDATION_LATEST.json",
+  "validator": "0_kernel/validators/validate_observability_trace_span_ledger_stage8_historical_callsite_quarantine_v1.py",
+  "verdict": "FAIL"
+}

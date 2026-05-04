@@ -1,0 +1,23 @@
+{
+  "artifact_type": "EXTERNAL_TOOL_CAPABILITY_MANIFEST_v1",
+  "created_utc": "20260501T031045Z",
+  "not_internalized_this_stage": [
+    "full python_site package tree: quarantined outside OS after partial-copy timeout; remains non-boot-critical and should be handled in a separate bounded stage if needed"
+  ],
+  "tools": {
+    "7zz": {
+      "exists": true,
+      "path": "/mnt/data/Metablooms_OS/tools/7zip/7zz",
+      "sha256": "eea104e8c832b1ed6c63875ed2f50bab80a36dacf8dd0490811058cf20bb2fc5"
+    },
+    "governance_decorators": {
+      "exists": true,
+      "path": "/mnt/data/Metablooms_OS/0_kernel/lib/governance_decorators_v1.py"
+    },
+    "mb_archive_tool": {
+      "exists": true,
+      "path": "/mnt/data/Metablooms_OS/tools/metablooms_archive_tool/mb_archive_tool",
+      "sha256": "09edd1188f1239563bf4e62e0b55e73e0403b8919a28bbf69050c7c010218530"
+    }
+  }
+}

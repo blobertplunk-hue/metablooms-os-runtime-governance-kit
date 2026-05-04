@@ -1,0 +1,43 @@
+{
+  "receipt_type": "PHASE2_INTEGRATION_RECEIPT",
+  "created_utc": "2026-04-27T04:32:01Z",
+  "baseline_sha_before": "2464d3dcab21f5dae0d3f6e4c68b9d04fe22754b89f83f3c85283ab335994467",
+  "items_integrated": 5,
+  "artifacts": [
+    {
+      "name": "USEFULNESS_SURFACE_CONTRACT_SCHEMA_v1.json",
+      "sha256": "25b3cf630e1bbc9b7fa6a49418e5cc89362acc4305918f853ee52132f78d6d36"
+    },
+    {
+      "name": "usefulness_surface_validator_v1.py",
+      "sha256": "e2da3a67c0038a509f49ec77958bee915be8c3bb5e90746f7ec5caa71848e88f"
+    },
+    {
+      "name": "MISCONCEPTION_TELEMETRY_SCHEMA_v1.json",
+      "sha256": "985e053c612a0c84fa2f48360e43d1a1d1f06868f11f4e098fc4a4a162f5e139"
+    },
+    {
+      "name": "MISCONCEPTION_TELEMETRY_ENGINE_v1.js",
+      "sha256": "0724edf8628d898557cff0ea61193472fd4e71fe7b1846f8cd59dcf9cfa7c9b8"
+    },
+    {
+      "name": "fractions_number_line_telemetry_v1.html",
+      "sha256": "a3cb0506bd114741b2ac00c01a9cf37217e1efb91c0c66f6740ddadf992104b8"
+    }
+  ],
+  "see_evidence": [
+    "PMC: whole number bias + SDBF-OR error documented in 4th grade at-risk students",
+    "EdWeek 2024: denominator-size confusion most common number line error",
+    "PMC Catch the Monster: divide line into denominator segments; larger denominator = closer to zero",
+    "Riccomini 2025: error analysis as cornerstone of effective math intervention (NCII)"
+  ],
+  "classroom_capability_added": [
+    "6 conceptual misconception classifiers seeded by peer-reviewed research",
+    "4 behavioral signal classifiers (brute force, rapid sequential, abandonment, hint dependency)",
+    "Real-time student feedback with misconception-specific tips",
+    "Teacher dashboard: live accuracy, flag counts, top misconception, actionable teacher note",
+    "Usefulness Surface Contract: all html_activity artifacts must declare 9 dimensions",
+    "USS Validator: blocks promotion if declaration absent or underpopulated"
+  ],
+  "overall_verdict": "PASS"
+}

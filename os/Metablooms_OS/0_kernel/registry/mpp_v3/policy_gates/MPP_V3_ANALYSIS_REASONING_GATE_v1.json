@@ -1,0 +1,18 @@
+{
+  "locked_at": "20260501T020300Z",
+  "policy_id": "MPP_V3_ANALYSIS_REASONING_GATE_v1",
+  "research_basis": [
+    "OpenAI evals guidance frames evaluations as structured tests against specified criteria.",
+    "NIST AI RMF emphasizes validity, reliability, transparency, accountability, and risk management in AI evaluation.",
+    "LLM-as-judge frameworks distinguish reference-based groundedness/faithfulness and task completion/relevance checks."
+  ],
+  "rules": [
+    "Required dimensions: groundedness, evidence_binding, scope_adherence, contradiction_handling, uncertainty_calibration, repair_routing.",
+    "Dimension weights must sum to 1.",
+    "Every claim must have evidence refs and scores for all required dimensions.",
+    "Blocking dimensions below threshold prevent PASS.",
+    "Weighted score below 0.85 prevents PASS.",
+    "Repair-required packets must declare route to DEBUGGING, ECL, FIR_STAGE, MONITOR, or STOP_BLOCKED."
+  ],
+  "stage": "ANALYSIS_EVALUATION"
+}

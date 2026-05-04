@@ -1,0 +1,66 @@
+{
+  "version": "1.0",
+  "created_at": 1777121832.641372,
+  "stage": "SIR10_ACTIVATE_ONE_VERIFIED_RUNTIME_FAMILY",
+  "status": "experimental_inactive_post_copy",
+  "activation_mode": "standalone_activation_package",
+  "activated_file": {
+    "file": "regression_tracker.py",
+    "family": "regression_tracking",
+    "destination": "/mnt/data/SIR10_activation_package/2_engines/runtime/regression_tracker.py",
+    "sha256": "26eee6a3a4f57eca06f9e6ac36e2b054bc3a4b98e9acc010c384c27231f9bf71",
+    "size_bytes": 4051,
+    "source_staged_path": "/mnt/data/SIR6_staging/integrated_v3_runtime_import_repaired_1777118132/regression_tracker.py",
+    "source_sha256": "26eee6a3a4f57eca06f9e6ac36e2b054bc3a4b98e9acc010c384c27231f9bf71",
+    "registry_capability_id": "staged_regression_tracking_regression_tracker",
+    "adapter_id": "regression_tracker_adapter_v1",
+    "required_wrapper": "run_regression_tracker_candidate_guarded"
+  },
+  "policy": {
+    "single_file_activation": true,
+    "blocked_candidates_not_activated": [
+      "loop_controller.py",
+      "mpp_pipeline_runner.py",
+      "signal_contracts_v1.json"
+    ],
+    "bulk_activation": false,
+    "runtime_family_active_status": "experimental_inactive_until_post_activation_verification",
+    "new_baseline_export_claimed": false
+  },
+  "verification": {
+    "compile": {
+      "cmd": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "py_compile",
+        "/mnt/data/SIR10_activation_package/2_engines/runtime/regression_tracker.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document."
+    },
+    "import": {
+      "passed": true,
+      "exported_symbol_count": 10,
+      "exported_symbols_preview": [
+        "Any",
+        "FIXTURES_PATH",
+        "Path",
+        "annotations",
+        "get_fixtures_count",
+        "hashlib",
+        "json",
+        "promote_failure",
+        "promote_pipeline_errors",
+        "time"
+      ]
+    }
+  },
+  "backup": {
+    "backup_created": false,
+    "reason": "destination did not exist",
+    "backup_path": null
+  },
+  "verdict": "PASS",
+  "next_correct_command": "EXECUTE SIR11 \u2014 POST-ACTIVATION VERIFICATION AND BLOCKED CANDIDATE REPAIR PLAN"
+}

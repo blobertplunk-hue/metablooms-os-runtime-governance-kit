@@ -1,0 +1,12 @@
+{
+  "artifact_type": "FULL_AUTHORITY_EXPORT_RESULT",
+  "created_utc": "20260502T145646Z",
+  "full_export_path": "/mnt/data/METABLOOMS_OS_OPERATOR_VISUAL_TRACKER_RESTORE_STAGE1_FULL_AUTHORITY_20260502T145646Z.zip",
+  "full_export_sha256": "0c228a5cd4e6853f5ed6d27658fe8c0272b269fe1139a0839cb347c828c5cc36",
+  "stage": "OPERATOR_VISUAL_TRACKER_RESTORE_AND_ENFORCEMENT_STAGE1",
+  "stage_bundle_path": "/mnt/data/Metablooms_OS/runtime/stage_bundles/operator_tracker/OPERATOR_VISUAL_TRACKER_RESTORE_AND_ENFORCEMENT_STAGE1_20260502T145646Z.zip",
+  "stage_bundle_sha256": "93cd2cc6b51550c3ea423d672ebc0954674a4d40cf7bc62ee8f9e015081b56e6",
+  "stage_bundle_testzip": "PASS",
+  "status": "PASS",
+  "zip_testzip": "PASS"
+}

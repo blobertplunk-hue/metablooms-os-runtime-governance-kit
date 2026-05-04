@@ -1,0 +1,17 @@
+{
+  "artifact_type": "AGENT_HARNESS_STAGE2_RECEIPT_v1",
+  "changed_paths": [
+    "bin/mb",
+    "0_kernel/scripts/agent_harness_parallel_workpacket_planner_v1.py",
+    "0_kernel/scripts/agent_harness_diff_review_v1.py",
+    "0_kernel/validators/validate_agent_harness_stage2_v1.py"
+  ],
+  "created_utc": "20260501T145002Z",
+  "research_refs": [
+    "OpenAI Agents SDK guardrails/tracing",
+    "LangGraph checkpoint persistence",
+    "git/worktree diff-review practice"
+  ],
+  "stage": "IMPLEMENT_AGENT_HARNESS_STAGE_2_PARALLEL_WORKPACKETS_AND_DIFF_REVIEW_OR_SOFTWARE_QUALITY_STAGE_1",
+  "verdict": "IMPLEMENTED_PENDING_EXPORT_VALIDATION"
+}

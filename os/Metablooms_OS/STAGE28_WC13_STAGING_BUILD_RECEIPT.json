@@ -1,0 +1,30 @@
+{
+  "stage": "PROFESSIONALIZATION_CONVERGENCE_STAGE28_WC13_STAGING_BUILD",
+  "status": "STAGE28_COMPLETE",
+  "decision": "WC13 staging build complete. Final WC13 ZIP not exported in Stage28.",
+  "timestamp_utc": "2026-05-03T21:42:57.900353Z",
+  "staging_root": "/mnt/data/stage28_wc13_staging_build_20260503T214253Z/extract_wc12/Metablooms_OS",
+  "wc12_input_sha256": "f9b1305da011bfdb9344e6de12bff5a4d21e90de81e7305d4fce6ce0d23b2db9",
+  "stage23_input_sha256": "1dce177e3db3ab7bc5421c4589801da0be63fb6447ce2e07764eb965ed17130a",
+  "stage26_input_sha256": "a0db5f324f9916b6b5f105713364b7e11d8e402beb65c35c038bc18d1f7e76d0",
+  "stage27_input_sha256": "011036a9496c417c0b9cb6d88227fb531ffbf1e3700265476bbf54cdce961a34",
+  "overlay_file_count": 12,
+  "required_checks": {
+    "boot_artifacts_present": true,
+    "stage23_authority_files_read": true,
+    "stage26_receipt_read": true,
+    "path_map_written": true,
+    "final_wc13_export_created": false
+  },
+  "allowed_claims": [
+    "WC13 staging tree exists",
+    "Stage23 PC/GitHub automation authorities are overlaid/pointer-bound into WC13 staging",
+    "Stage29 validation is the next stage"
+  ],
+  "disallowed_claims": [
+    "Final WC13 bootable ZIP exists",
+    "WC13 export has been replay-tested",
+    "Failing PRs are blocked",
+    "PR review/CODEOWNERS governance is active"
+  ]
+}

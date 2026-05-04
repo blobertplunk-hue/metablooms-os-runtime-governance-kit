@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "created_at": 1777068405.2263024,
+  "stage": "G6_G5_AUDIT_OPEN_ISSUES_RESOLUTION",
+  "status": "complete",
+  "resolved": [
+    {
+      "issue_id": "G5_AUDIT_BUG_VALIDATOR_DECISION_DECLARED_INTERNAL_BUT_EXTERNAL",
+      "resolution": "Final G6 export includes G5, G6 internal, and G6 external validator decisions inside main ZIP."
+    },
+    {
+      "issue_id": "G5_AUDIT_WARN_POINTER_STALE_F7",
+      "resolution": "Pointer last_stage is G6 and stale_status is not_stale."
+    },
+    {
+      "issue_id": "G5_AUDIT_WARN_DAG_LEDGER_MAPPING_MISSING",
+      "resolution": "STAGE_DAG_LEDGER_ID_MAP_v1.json is included and active."
+    }
+  ],
+  "verdict": "PASS"
+}

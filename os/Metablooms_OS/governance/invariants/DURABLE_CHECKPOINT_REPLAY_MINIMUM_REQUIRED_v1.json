@@ -1,0 +1,15 @@
+{
+  "enforced_by": [
+    "durable_checkpoint_replay_gate_v1.py",
+    "DURABLE_CHECKPOINT_REPLAY_MINIMUM_SPEC_v1.json",
+    "DURABLE_CHECKPOINT_REPLAY_POLICY_BINDINGS_v1.json",
+    "post_tool_result_validation_v1.py"
+  ],
+  "failure_action": "DENY_RESUME_OR_STAGE_SUCCESS_CLAIM_AND_WRITE_FAILED_CLOSED_RECEIPT",
+  "invariant_id": "DURABLE_CHECKPOINT_REPLAY_MINIMUM_REQUIRED_v1",
+  "rule": "Interrupted, long-running, or multi-turn governed stages must persist a durable checkpoint before pause and must resume only from artifact-backed checkpoint/replay records, never from chat-only claims.",
+  "schema": "MetaBloomsInvariant_v1",
+  "stage_id": "STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM",
+  "status": "active",
+  "timestamp_utc": "2026-05-02T02:56:33.706856Z"
+}

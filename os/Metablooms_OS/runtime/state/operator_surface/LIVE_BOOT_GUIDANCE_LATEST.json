@@ -1,0 +1,123 @@
+{
+  "artifact_type": "MB_LIVE_BOOT_GUIDANCE.v1",
+  "created_utc": "20260502T175113Z",
+  "current_authority": {
+    "authority_zip": "METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_FINAL_AUTHORITY_20260502T174908Z.zip",
+    "canonical_working_root": "/mnt/data/Metablooms_OS",
+    "sidecar": "METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_FINAL_AUTHORITY_20260502T174908Z.zip.sha256",
+    "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS"
+  },
+  "deep_links": [
+    {
+      "href": "OPEN_OPERATOR_VISUAL_TRACKER.html",
+      "kind": "html",
+      "label": "Operator tracker",
+      "path": "OPEN_OPERATOR_VISUAL_TRACKER.html"
+    },
+    {
+      "href": "runtime/state/operator_surface/LIVE_BOOT_GUIDANCE_LATEST.json",
+      "kind": "json",
+      "label": "Live boot guidance JSON",
+      "path": "runtime/state/operator_surface/LIVE_BOOT_GUIDANCE_LATEST.json"
+    },
+    {
+      "href": "runtime/state/operator_surface/LIVE_BOOT_GUIDANCE_LATEST.md",
+      "kind": "markdown",
+      "label": "Live boot guidance Markdown",
+      "path": "runtime/state/operator_surface/LIVE_BOOT_GUIDANCE_LATEST.md"
+    },
+    {
+      "href": "0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+      "kind": "markdown",
+      "label": "New-chat contract",
+      "path": "0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md"
+    },
+    {
+      "href": "runtime/traces/observability/HISTORICAL_CALLSITE_QUARANTINE_INDEX_LATEST.json",
+      "kind": "json",
+      "label": "Historical quarantine index",
+      "path": "runtime/traces/observability/HISTORICAL_CALLSITE_QUARANTINE_INDEX_LATEST.json"
+    },
+    {
+      "href": "0_kernel/validators/validate_observability_trace_span_ledger_stage9_live_boot_guidance_v1.py",
+      "kind": "python",
+      "label": "Stage 9 validator",
+      "path": "0_kernel/validators/validate_observability_trace_span_ledger_stage9_live_boot_guidance_v1.py"
+    }
+  ],
+  "forbidden_live_fragments": [
+    "python runtime/governance/runtime_starter_smoke_v1.py",
+    "python3 runtime/governance/runtime_starter_smoke_v1.py",
+    "Run runtime/governance/runtime_starter_smoke_v1.py",
+    "Run `runtime/governance/runtime_starter_smoke_v1.py`"
+  ],
+  "issues": [],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS",
+  "steps": [
+    {
+      "action": "Verify authority pointer and external sidecar.",
+      "command_or_path": "CURRENT_FULL_AUTHORITY_POINTER_v1.json + external .sha256 sidecar",
+      "deep_link": "#live-step-1",
+      "evidence_path": "CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+      "gate": true,
+      "order": 1
+    },
+    {
+      "action": "Open the operator tracker before work resumes.",
+      "command_or_path": "OPEN_OPERATOR_VISUAL_TRACKER.html",
+      "deep_link": "#live-step-2",
+      "evidence_path": "OPEN_OPERATOR_VISUAL_TRACKER.html",
+      "gate": true,
+      "order": 2
+    },
+    {
+      "action": "Run boot-critical governance loader.",
+      "command_or_path": "python runtime/governance/boot_critical_governance_loader_v1.py",
+      "deep_link": "#live-step-3",
+      "evidence_path": "runtime/governance/boot_critical_governance_loader_v1.py",
+      "gate": true,
+      "order": 3
+    },
+    {
+      "action": "Run scatter prevention and fresh-chat rehearsal.",
+      "command_or_path": "python runtime/governance/governance_scatter_prevention_v1.py && python runtime/governance/fresh_chat_boot_rehearsal_v1.py",
+      "deep_link": "#live-step-4",
+      "evidence_path": "runtime/governance/fresh_chat_boot_rehearsal_v1.py",
+      "gate": true,
+      "order": 4
+    },
+    {
+      "action": "Validate the new-chat start contract.",
+      "command_or_path": "python runtime/governance/new_chat_start_contract_validator_v1.py /mnt/data/Metablooms_OS",
+      "deep_link": "#live-step-5",
+      "evidence_path": "runtime/governance/new_chat_start_contract_validator_v1.py",
+      "gate": true,
+      "order": 5
+    },
+    {
+      "action": "Run runtime starter smoke through the wrapper only.",
+      "command_or_path": "runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py --root /mnt/data/Metablooms_OS --json",
+      "deep_link": "#live-step-6",
+      "evidence_path": "runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+      "gate": true,
+      "order": 6
+    },
+    {
+      "action": "Validate historical-callsite quarantine and live boot guidance.",
+      "command_or_path": "python 0_kernel/validators/validate_observability_trace_span_ledger_stage8_historical_callsite_quarantine_v1.py --root /mnt/data/Metablooms_OS --json && python 0_kernel/validators/validate_observability_trace_span_ledger_stage9_live_boot_guidance_v1.py --root /mnt/data/Metablooms_OS --json",
+      "deep_link": "#live-step-7",
+      "evidence_path": "0_kernel/validators/validate_observability_trace_span_ledger_stage9_live_boot_guidance_v1.py",
+      "gate": true,
+      "order": 7
+    },
+    {
+      "action": "Execute exactly one bounded governed stage, then write receipt and handoff.",
+      "command_or_path": "stage-specific governed command",
+      "deep_link": "#live-step-8",
+      "evidence_path": "runtime/receipts/",
+      "gate": true,
+      "order": 8
+    }
+  ],
+  "verdict": "PASS"
+}

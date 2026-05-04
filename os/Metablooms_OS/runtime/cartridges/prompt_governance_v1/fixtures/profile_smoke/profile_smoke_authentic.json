@@ -1,0 +1,23 @@
+{
+  "expected_profile": "authentic",
+  "expected_required_gates": [
+    "context_authority",
+    "voice_preservation",
+    "output_contract",
+    "validation"
+  ],
+  "fixture_id": "profile_smoke_authentic",
+  "forbidden_patterns": [
+    "unranked_options_at_decision_point",
+    "claim_without_artifact",
+    "chat_only_writeback"
+  ],
+  "input_task": "Rewrite a prompt so it preserves user voice and authority while adding validation.",
+  "must_include_output_rules": [
+    "explicit_status",
+    "validation_evidence",
+    "next_step_when_relevant"
+  ],
+  "profile_id": "authentic",
+  "status": "active"
+}

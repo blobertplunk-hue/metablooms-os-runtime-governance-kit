@@ -1,0 +1,19 @@
+{
+  "artifact_type": "STAGE_RECEIPT",
+  "created_utc": "20260501T151900Z",
+  "implemented": [
+    "hard-wired mb export to same-mount tmp publication",
+    "added mb extract route with finalization hook",
+    "upgraded export promotion gate to require filesystem safety proof",
+    "kept trace diffs bounded by counts/root hash/samples"
+  ],
+  "next_stage": "FILESYSTEM_HANDLING_SAFETY_STAGE_3_ROUTE_COVERAGE_AUDIT_AND_RED_TEAM",
+  "schema_version": "FILESYSTEM_HANDLING_SAFETY_STAGE2_RECEIPT_v1",
+  "see_sources": [
+    "POSIX rename same filesystem / EXDEV behavior",
+    "Python shutil copy/copytree are copy operations and do not preserve all metadata",
+    "OpenTelemetry cardinality/log bloat guidance"
+  ],
+  "stage_name": "HARD_WIRE_FILESYSTEM_SAFETY_INTO_ALL_EXPORT_AND_EXTRACTION_ROUTES_STAGE_2",
+  "verdict": "PASS_PENDING_FINAL_EXPORT_VALIDATION"
+}

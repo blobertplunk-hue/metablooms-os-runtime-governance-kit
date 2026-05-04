@@ -1,0 +1,23 @@
+{
+  "artifact_type": "R13B_LEDGER_ABSOLUTE_OUTPUT_RECONCILIATION_DECISION",
+  "stage": "R13B_LEDGER_ABSOLUTE_OUTPUT_RECONCILIATION",
+  "created_utc": "2026-04-29T10:34:43Z",
+  "canonical_root": "/mnt/data/Metablooms_OS",
+  "blocked_output": "/home/claude/merge_staging/verify_reextract/Metablooms_OS_refined/0_kernel/registry/TEST_PROOF_ARTIFACT_v1.json",
+  "classification": "root_relative_reconciliation",
+  "action": "replaced ledger-declared absolute external output with canonical root-relative output and reconciled stale handoff destination metadata",
+  "old_output": "/home/claude/merge_staging/verify_reextract/Metablooms_OS_refined/0_kernel/registry/TEST_PROOF_ARTIFACT_v1.json",
+  "new_output": "0_kernel/registry/TEST_PROOF_ARTIFACT_v1.json",
+  "evidence": {
+    "canonical_artifact_exists": true,
+    "canonical_artifact_sha256": "b7285316a6976896e6ee2b82c76305a1c31d470573358c5e9638ea269a54e0d7",
+    "recorded_handoff_sha256": "b7285316a6976896e6ee2b82c76305a1c31d470573358c5e9638ea269a54e0d7",
+    "sha_match": true,
+    "r13_final_blocked_receipt": "receipts/refactor_program/R13_FINAL_EXPORT_BLOCKED_RECEIPT_20260429T101334Z.json",
+    "r13_final_blocked_handoff": "receipts/refactor_program/R13_FINAL_EXPORT_BLOCKED_HANDOFF_20260429T101334Z.json"
+  },
+  "not_selected": {
+    "restore_from_artifacts": "not needed because canonical artifact already exists with matching SHA-256",
+    "quarantine_as_external_only": "not selected because the output has a valid canonical root-relative counterpart"
+  }
+}

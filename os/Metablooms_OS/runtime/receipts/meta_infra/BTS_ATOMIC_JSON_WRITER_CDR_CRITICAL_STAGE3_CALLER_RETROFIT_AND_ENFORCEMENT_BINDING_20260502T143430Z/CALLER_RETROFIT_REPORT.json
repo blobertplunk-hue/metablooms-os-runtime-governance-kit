@@ -1,0 +1,210 @@
+{
+  "artifact_type": "ATOMIC_JSON_WRITER_STAGE3_CALLER_RETROFIT_REPORT_v1",
+  "canonical_source": "0_kernel/lib/io/atomic_json_writer_v1.py",
+  "compat_adapter": "0_kernel/lib/io/atomic_json_compat_v1.py",
+  "created_utc": "20260502T143651Z",
+  "next_stage_required_for_full_sweep": true,
+  "patched_target_count": 7,
+  "patched_targets": [
+    {
+      "bytes": 7901,
+      "exists": true,
+      "path": "0_kernel/lib/filesystem_safety_v1.py",
+      "sha256": "11ccc15cd3e2d25bb452ab40dd9a5e8d2f8173ede0b716d5d5b226dc6c8a8de4"
+    },
+    {
+      "bytes": 18434,
+      "exists": true,
+      "path": "0_kernel/lib/execution/bounded_subprocess_wrapper_v1.py",
+      "sha256": "8411f4857687af305602cb5e83fabb72f67796da9e7ea19936742c4a30e65475"
+    },
+    {
+      "bytes": 10768,
+      "exists": true,
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_STAGE_FINALIZATION_HOOK_v1.py",
+      "sha256": "2775e757910388c68b6e96b63d4c1247a3f3de2d1d2e67de8dfaced4e6d8ca44"
+    },
+    {
+      "bytes": 5578,
+      "exists": true,
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_STATE_UPDATER_v1.py",
+      "sha256": "99aa3dd762d2da306a5605051816b38b7c0dd98ed9c6cbcf44521ee108374c6e"
+    },
+    {
+      "bytes": 3478,
+      "exists": true,
+      "path": "0_kernel/lib/trace_diff_logger_v1.py",
+      "sha256": "ce9cf3e8c4d58f932759afaf4f7a2f8a36944f75f7a7c52335167986c3eaf092"
+    },
+    {
+      "bytes": 3620,
+      "exists": true,
+      "path": "0_kernel/lib/archive_method_router_v1.py",
+      "sha256": "ebd48089dec564ac11473eec5b8bdc50341302827c11bb0da70b4cf72e5f357c"
+    },
+    {
+      "bytes": 4213,
+      "exists": true,
+      "path": "0_kernel/validators/validate_bounded_subprocess_callsite_policy_stage4_v1.py",
+      "sha256": "f655edc3dec3c0fcbf7ced7e901d7047d8bfef725a4fb99acf7efaacfc5256d8"
+    }
+  ],
+  "policy_artifact": "0_kernel/registry/tool_governance/ATOMIC_JSON_WRITER_CALLSITE_POLICY_STAGE3_v1.json",
+  "policy_validator": "0_kernel/validators/validate_atomic_json_writer_callsite_policy_stage3_v1.py",
+  "remaining_direct_json_write_file_count_non_exempt": 79,
+  "remaining_direct_json_write_files_non_exempt_sample": [
+    {
+      "line": 11,
+      "path": "0_kernel/lib/governance_decorators_v1.py",
+      "snippet": "st=time.time(); path.open('a',encoding='utf-8').write(json.dumps({'event':'start','function':fn.__name__,'ts':st},sort_keys=True)+'\\n')"
+    },
+    {
+      "line": 187,
+      "path": "0_kernel/mpp_v3/mpp_v3_ads_architecture_dag_gate_v1.py",
+      "snippet": "out_path.write_text(json.dumps(packet, indent=2, sort_keys=True) + \"\\n\", encoding=\"utf-8\")"
+    },
+    {
+      "line": 186,
+      "path": "0_kernel/mpp_v3/mpp_v3_analysis_evaluation_reasoning_gate_v1.py",
+      "snippet": "out_path.write_text(json.dumps(packet, indent=2, sort_keys=True) + \"\\n\", encoding=\"utf-8\")"
+    },
+    {
+      "line": 138,
+      "path": "0_kernel/mpp_v3/mpp_v3_cdr_constraints_policy_gate_v1.py",
+      "snippet": "out_path.write_text(json.dumps(packet, indent=2, sort_keys=True) + \"\\n\", encoding=\"utf-8\")"
+    },
+    {
+      "line": 141,
+      "path": "0_kernel/mpp_v3/mpp_v3_debugging_failure_class_repair_router_v1.py",
+      "snippet": "out_path.write_text(json.dumps(packet, indent=2, sort_keys=True)+\"\\n\", encoding=\"utf-8\")"
+    },
+    {
+      "line": 50,
+      "path": "0_kernel/mpp_v3/mpp_v3_drs_decision_gate_v1.py",
+      "snippet": "out_path.write_text(json.dumps(packet, indent=2, sort_keys=True)+\"\\n\")"
+    },
+    {
+      "line": 140,
+      "path": "0_kernel/mpp_v3/mpp_v3_ecl_enforced_correction_regression_gate_v1.py",
+      "snippet": "out_path.write_text(json.dumps(packet, indent=2, sort_keys=True)+\"\\n\", encoding=\"utf-8\")"
+    },
+    {
+      "line": 168,
+      "path": "0_kernel/mpp_v3/mpp_v3_fir_fitness_integration_gate_v1.py",
+      "snippet": "out_path.write_text(json.dumps(packet, indent=2, sort_keys=True)+\"\\n\", encoding=\"utf-8\")"
+    },
+    {
+      "line": 220,
+      "path": "0_kernel/mpp_v3/mpp_v3_implementation_write_path_gate_v1.py",
+      "snippet": "out_path.write_text(json.dumps(packet, indent=2, sort_keys=True) + \"\\n\", encoding=\"utf-8\")"
+    },
+    {
+      "line": 150,
+      "path": "0_kernel/mpp_v3/mpp_v3_monitor_telemetry_feedback_gate_v1.py",
+      "snippet": "packet = base_packet(source_fir_packet_id, objective_id); packet[\"result_hash\"] = stable_hash(packet); validate_monitor_packet(packet); out_"
+    },
+    {
+      "line": 62,
+      "path": "0_kernel/mpp_v3/mpp_v3_normalize_evidence_ce_bridge_v1.py",
+      "snippet": "pkt['result_hash']=stable_hash(pkt); validate_normalized_evidence_packet(pkt); out_path.write_text(json.dumps(pkt,indent=2,sort_keys=True)+'"
+    },
+    {
+      "line": 211,
+      "path": "0_kernel/mpp_v3/mpp_v3_nuf_nonfunctional_budget_gate_v1.py",
+      "snippet": "out_path.write_text(json.dumps(packet, indent=2, sort_keys=True) + \"\\n\", encoding=\"utf-8\")"
+    },
+    {
+      "line": 162,
+      "path": "0_kernel/mpp_v3/mpp_v3_ofm_outcome_frame_gate_v1.py",
+      "snippet": "out_path.write_text(json.dumps(packet, indent=2, sort_keys=True) + \"\\n\", encoding=\"utf-8\")"
+    },
+    {
+      "line": 106,
+      "path": "0_kernel/mpp_v3/mpp_v3_orchestrator_runtime_controller_v1.py",
+      "snippet": "out_path.write_text(json.dumps(packet,indent=2,sort_keys=True)+\"\\n\",encoding=\"utf-8\")"
+    },
+    {
+      "line": 120,
+      "path": "0_kernel/mpp_v3/mpp_v3_persistent_learning_method_reliability_gate_v1.py",
+      "snippet": "out_path.write_text(json.dumps(packet, indent=2, sort_keys=True)+\"\\n\", encoding=\"utf-8\")"
+    },
+    {
+      "line": 231,
+      "path": "0_kernel/mpp_v3/mpp_v3_rrp_recovery_plan_rollback_gate_v1.py",
+      "snippet": "out_path.write_text(json.dumps(packet, indent=2, sort_keys=True) + \"\\n\", encoding=\"utf-8\")"
+    },
+    {
+      "line": 172,
+      "path": "0_kernel/mpp_v3/mpp_v3_sso_scope_conflict_gate_v1.py",
+      "snippet": "out_path.write_text(json.dumps(packet, indent=2, sort_keys=True) + \"\\n\", encoding=\"utf-8\")"
+    },
+    {
+      "line": 179,
+      "path": "0_kernel/mpp_v3/mpp_v3_trace_analysis_anomaly_gate_v1.py",
+      "snippet": "out_path.write_text(json.dumps(packet, indent=2, sort_keys=True) + \"\\n\", encoding=\"utf-8\")"
+    },
+    {
+      "line": 185,
+      "path": "0_kernel/mpp_v3/mpp_v3_uxr_operator_context_accessibility_gate_v1.py",
+      "snippet": "out_path.write_text(json.dumps(packet, indent=2, sort_keys=True) + \"\\n\", encoding=\"utf-8\")"
+    },
+    {
+      "line": 152,
+      "path": "0_kernel/mpp_v3/mpp_v3_verification_evidence_gate_v1.py",
+      "snippet": "out_path.write_text(json.dumps(packet, indent=2, sort_keys=True) + \"\\n\", encoding=\"utf-8\")"
+    },
+    {
+      "line": 25,
+      "path": "0_kernel/scripts/agent_harness_diff_review_v1.py",
+      "snippet": "def wj(p,o): p.parent.mkdir(parents=True,exist_ok=True); p.write_text(json.dumps(o,indent=2,sort_keys=True)+'\\n'); return str(p)"
+    },
+    {
+      "line": 15,
+      "path": "0_kernel/scripts/agent_harness_executor_review_gate_v1.py",
+      "snippet": "def wj(p,o): p.parent.mkdir(parents=True,exist_ok=True); p.write_text(json.dumps(o,indent=2,sort_keys=True)+'\\n'); return str(p)"
+    },
+    {
+      "line": 13,
+      "path": "0_kernel/scripts/agent_harness_parallel_workpacket_planner_v1.py",
+      "snippet": "def wj(p,o): p.parent.mkdir(parents=True,exist_ok=True); p.write_text(json.dumps(o,indent=2,sort_keys=True)+'\\n'); return str(p)"
+    },
+    {
+      "line": 13,
+      "path": "0_kernel/scripts/agent_harness_planner_v1.py",
+      "snippet": "def wj(p,o): p.parent.mkdir(parents=True,exist_ok=True); p.write_text(json.dumps(o,indent=2,sort_keys=True)+'\\n'); return str(p)"
+    },
+    {
+      "line": 78,
+      "path": "0_kernel/scripts/artifact_replay_proof_v2.py",
+      "snippet": "if a.write_report: Path(a.write_report).parent.mkdir(parents=True,exist_ok=True); Path(a.write_report).write_text(json.dumps(r,indent=2,sort"
+    },
+    {
+      "line": 174,
+      "path": "0_kernel/scripts/autonomous_sidecar_generator_v1.py",
+      "snippet": "tmp.write_text(json.dumps(data, indent=2), encoding=\"utf-8\")"
+    },
+    {
+      "line": 97,
+      "path": "0_kernel/scripts/boot_runtime_executor_v1.py",
+      "snippet": "path.write_text(json.dumps(packet, indent=2), encoding=\"utf-8\")"
+    },
+    {
+      "line": 25,
+      "path": "0_kernel/scripts/cartridge_executor_v1.py",
+      "snippet": "def wj(p,o): p.parent.mkdir(parents=True,exist_ok=True); p.write_text(json.dumps(o,indent=2,sort_keys=True)+'\\n'); return str(p)"
+    },
+    {
+      "line": 66,
+      "path": "0_kernel/scripts/cartridge_promotion_gate_v1.py",
+      "snippet": "tmp.write_text(json.dumps(data, indent=2))"
+    },
+    {
+      "line": 50,
+      "path": "0_kernel/scripts/ce_packet_validator_v1.py",
+      "snippet": "path.write_text(json.dumps(result, indent=2), encoding=\"utf-8\")"
+    }
+  ],
+  "scope": "bounded high-value caller retrofit and policy binding; not full-tree JSON-write sweep",
+  "stage": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z",
+  "status": "PASS"
+}

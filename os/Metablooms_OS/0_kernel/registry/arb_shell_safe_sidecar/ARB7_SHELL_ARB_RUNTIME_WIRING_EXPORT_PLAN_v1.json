@@ -1,0 +1,78 @@
+{
+  "artifact_id": "ARB7_SHELL_ARB_RUNTIME_WIRING_EXPORT_PLAN_v1",
+  "stage": "ARB7_SHELL_PLAN_ARB_RUNTIME_WIRING_EXPORT_UNDER_SAFE_SHELL_FIRST_GOVERNANCE",
+  "status": "complete",
+  "verdict": "PASS",
+  "created_by_runner": "shell_only",
+  "python_used": false,
+  "normal_python_status": "blocked_this_session_due_to_startup_timeout",
+  "input_authority": {
+    "arb6s_state_path": "/mnt/data/ARB6S_RUNAWAY_PROOF_STATE_v1.json",
+    "arb6s_required_sha256": "8fdd447ffc7896567111f876b414ec1d10cc91543e64eb0f55d12a96f967ca07",
+    "arb6s_required_verdict": "DONE",
+    "arb6s_required_offset": 4
+  },
+  "governance_constraints": {
+    "runtime_model": "turn_based_artifact_protocol",
+    "primary_runner": "shell_only",
+    "allowed_secondary_runner": "python3 -S only for tiny bounded steps when shell cannot perform the task",
+    "blocked_runner": "normal python3",
+    "exports_blocked_until": "ARB7 plan is independently verified and ARB8 scope is approved",
+    "zip_operations_allowed_next": "index and copy only; no broad recursive scans",
+    "recursive_scan_allowed": false,
+    "baseline_lock_allowed": false,
+    "success_claim_requires": [
+      "visible input artifact",
+      "same-call shell verification",
+      "independent later verification before promotion/export claims"
+    ]
+  },
+  "arb_runtime_wiring_export_plan": [
+    {
+      "stage": "ARB7V-SHELL",
+      "purpose": "Independently verify this ARB7 plan artifact survived and matches SHA.",
+      "runner": "shell_only",
+      "writes": 0,
+      "must_stop": true
+    },
+    {
+      "stage": "ARB8A-SHELL",
+      "purpose": "Create a staging directory containing only the verified ARB6S state file and ARB7 plan, plus a tiny export manifest.",
+      "runner": "shell_only",
+      "writes_max": 3,
+      "zip_operations": 0,
+      "must_stop": true
+    },
+    {
+      "stage": "ARB8B-SHELL",
+      "purpose": "Verify staged files by SHA and create one small candidate ZIP from the bounded staging directory.",
+      "runner": "shell_only",
+      "zip_operations": "zip bounded staging dir only",
+      "recursive_scan": false,
+      "must_stop": true
+    },
+    {
+      "stage": "ARB9A-SHELL",
+      "purpose": "Test candidate ZIP with unzip -t and list top-level entries only.",
+      "runner": "shell_only",
+      "writes": 0,
+      "must_stop": true
+    },
+    {
+      "stage": "ARB9B-SHELL",
+      "purpose": "Re-extract candidate ZIP into a fresh verification directory and verify declared SHA values.",
+      "runner": "shell_only",
+      "writes_bounded": true,
+      "must_stop": true
+    },
+    {
+      "stage": "ARB10-SHELL",
+      "purpose": "Baseline lock decision only if ARB9B passes; no lock if any declared output is missing or unverified.",
+      "runner": "shell_only",
+      "baseline_lock_allowed_only_after": "ARB9B_PASS",
+      "must_stop": true
+    }
+  ],
+  "next_correct_command": "EXECUTE ARB7V-SHELL — VERIFY ARB7 PLAN ARTIFACT SURVIVED AND MATCHES SHA",
+  "must_stop": true
+}

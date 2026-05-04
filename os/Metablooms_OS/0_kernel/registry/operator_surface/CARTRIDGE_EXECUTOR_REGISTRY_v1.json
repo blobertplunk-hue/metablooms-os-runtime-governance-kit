@@ -1,0 +1,106 @@
+{
+  "artifact_type": "CARTRIDGE_EXECUTOR_REGISTRY_v12",
+  "created_utc": "20260501T145002Z",
+  "default_for_unknown_stage": "fail_closed_with_trace",
+  "registered_stage_handlers": [
+    {
+      "handler_id": "operator_surface_stage4_builtin",
+      "mutation_scope": "runtime/receipts, runtime/handoffs, runtime/traces only",
+      "stage_name": "IMPLEMENT_UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE_STAGE_4_REAL_CARTRIDGE_EXECUTOR_WIRING_OR_OBSERVABILITY_TRACE_LEDGER",
+      "stage_prefix": "IMPLEMENT_UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE_STAGE_4"
+    },
+    {
+      "contract": "MB_TRACE_SPAN_LEDGER_SPEC_v2",
+      "executor_mode": "registered_handler_placeholder_for_future_native_execution",
+      "handler_id": "observability_trace_span_ledger_stage1_builtin",
+      "mutation_scope": "runtime/traces, runtime/receipts, runtime/handoffs only",
+      "stage_name": "IMPLEMENT_OBSERVABILITY_TRACE_SPAN_LEDGER_CARTRIDGE_STAGE_1_OR_SECURITY_ARTIFACT_THREAT_MODEL_STAGE_1",
+      "stage_prefix": "IMPLEMENT_OBSERVABILITY_TRACE_SPAN_LEDGER_CARTRIDGE_STAGE_1"
+    },
+    {
+      "contract": "MB_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_SPEC_v1",
+      "executor_mode": "registered_handler_validates_evals_stage1_artifacts",
+      "handler_id": "evals_trace_review_stage1_builtin",
+      "mutation_scope": "runtime/evals, runtime/receipts, runtime/handoffs, runtime/traces only",
+      "stage_name": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_1_OR_SECURITY_STAGE4_RED_TEAM_FIXTURES",
+      "stage_prefix": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_1"
+    },
+    {
+      "contract": "MB_EVALS_SCORECARD_SPEC_v1",
+      "executor_mode": "registered_handler_validates_evals_stage2_scorecards_and_regression_dataset",
+      "handler_id": "evals_trace_review_stage2_builtin",
+      "mutation_scope": "runtime/evals, runtime/receipts, runtime/handoffs, runtime/traces only",
+      "stage_name": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_2_SCORECARDS_AND_REGRESSION_DATASET",
+      "stage_prefix": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_2"
+    },
+    {
+      "contract": "MB_EVALS_EVALUATOR_RUNNER_SPEC_v1",
+      "executor_mode": "registered_handler_runs_evaluator_and_confusion_matrix_validator",
+      "handler_id": "evals_trace_review_stage3_builtin",
+      "mutation_scope": "runtime/evals, runtime/receipts, runtime/handoffs, runtime/traces only",
+      "stage_name": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_3_EVALUATOR_RUNNER_AND_CONFUSION_MATRIX",
+      "stage_prefix": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_3"
+    },
+    {
+      "contract": "MB_EVALS_VALIDATOR_ALIGNMENT_GATE_SPEC_v1",
+      "executor_mode": "registered_handler_runs_alignment_gate_and_validator",
+      "handler_id": "evals_trace_review_stage4_builtin",
+      "mutation_scope": "runtime/evals, runtime/receipts, runtime/handoffs, runtime/traces only",
+      "stage_name": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_4_VALIDATOR_ALIGNMENT_GATE_PROMOTION",
+      "stage_prefix": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_4"
+    },
+    {
+      "contract": "MB_STATE_CHECKPOINT_RESUME_INTERRUPT_SPEC_v1",
+      "executor_mode": "registered_handler_validates_checkpoint_artifacts",
+      "handler_id": "state_checkpoint_resume_interrupt_stage1_builtin",
+      "mutation_scope": "runtime/checkpoints,runtime/receipts,runtime/handoffs,runtime/traces only",
+      "stage_name": "IMPLEMENT_STATE_CHECKPOINT_RESUME_AND_INTERRUPT_CARTRIDGE_STAGE_1_OR_SECURITY_STAGE4_RED_TEAM_FIXTURES",
+      "stage_prefix": "IMPLEMENT_STATE_CHECKPOINT_RESUME_AND_INTERRUPT_CARTRIDGE_STAGE_1"
+    },
+    {
+      "contract": "MB_STATE_CHECKPOINT_RUNNER_SECURITY_INTERRUPT_WIRING_v1",
+      "executor_mode": "registered_handler_validates_checkpoint_runner_security_interrupt_wiring",
+      "handler_id": "state_checkpoint_resume_interrupt_stage2_builtin",
+      "mutation_scope": "runtime/checkpoints,runtime/receipts,runtime/handoffs,runtime/traces only",
+      "stage_name": "IMPLEMENT_STATE_CHECKPOINT_RESUME_AND_INTERRUPT_CARTRIDGE_STAGE_2_WIRE_INTO_STAGE_RUNNER_AND_SECURITY_INTERRUPTS",
+      "stage_prefix": "IMPLEMENT_STATE_CHECKPOINT_RESUME_AND_INTERRUPT_CARTRIDGE_STAGE_2"
+    },
+    {
+      "contract": "MB_AGENT_HARNESS_STAGE_GRAPH_SPEC_v1",
+      "executor_mode": "registered_handler_validates_agent_harness_stage1_contract_and_planner",
+      "handler_id": "agent_harness_stage1_builtin",
+      "mutation_scope": "runtime/agent_harness,runtime/receipts,runtime/handoffs,runtime/traces only",
+      "stage_name": "IMPLEMENT_AGENT_HARNESS_STAGE_1",
+      "stage_prefix": "IMPLEMENT_AGENT_HARNESS_STAGE_1"
+    },
+    {
+      "contract": "MB_AGENT_HARNESS_STAGE_GRAPH_SPEC_v2",
+      "executor_mode": "registered_handler_runs_parallel_workpacket_planner_diff_review_and_validator",
+      "handler_id": "agent_harness_stage2_builtin",
+      "mutation_scope": "runtime/agent_harness,runtime/evals/agent_harness,runtime/receipts,runtime/handoffs,runtime/traces only",
+      "stage_name": "IMPLEMENT_AGENT_HARNESS_STAGE_2_PARALLEL_WORKPACKETS_AND_DIFF_REVIEW_OR_SOFTWARE_QUALITY_STAGE_1",
+      "stage_prefix": "IMPLEMENT_AGENT_HARNESS_STAGE_2"
+    },
+    {
+      "handler_id": "agent_harness_stage3_executor_review_gate_builtin",
+      "handler_path": "0_kernel/scripts/agent_harness_executor_review_gate_v1.py",
+      "requires_executor_review_gate": true,
+      "requires_security_gate": true,
+      "stage_name": "IMPLEMENT_AGENT_HARNESS_STAGE_3_EXECUTOR_REVIEW_GATE",
+      "stage_prefix": "IMPLEMENT_AGENT_HARNESS_STAGE_3",
+      "writes_handoff": "runtime/handoffs/agent_harness/AGENT_HARNESS_STAGE3_HANDOFF_LATEST.json",
+      "writes_receipt": "runtime/receipts/agent_harness/AGENT_HARNESS_STAGE3_RECEIPT_LATEST.json"
+    },
+    {
+      "contract": "MB_EDUCATION_VALIDITY_GATE_SPEC_v1",
+      "executor_mode": "registered_handler_validates_education_validity_stage1_artifacts",
+      "handler_id": "education_validity_stage1_builtin",
+      "stage_prefix": "EDUCATION_VALIDITY_STAGE_1"
+    }
+  ],
+  "stage3_executor_review_gate": {
+    "enabled": true,
+    "gate_path": "0_kernel/scripts/agent_harness_executor_review_gate_v1.py"
+  },
+  "updated_utc": "20260501T173600Z"
+}

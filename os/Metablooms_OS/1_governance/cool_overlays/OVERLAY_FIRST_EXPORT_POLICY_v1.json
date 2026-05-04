@@ -1,0 +1,57 @@
+{
+  "policy_id": "OVERLAY_FIRST_EXPORT_POLICY_v1",
+  "version": "1.0",
+  "created_utc": "2026-04-26",
+  "amendment": "COOL_8_OVERLAY_FIRST_EXPORT",
+  "purpose": "Prevent premature full OS exports. Enforce overlay \u2192 guard \u2192 lock ladder.",
+  "export_ladder": [
+    {
+      "tier": 1,
+      "name": "overlay_export",
+      "allowed_when": "After local validation of overlay files",
+      "guard_required": false,
+      "baseline_lock_allowed": false,
+      "required_artifacts": [
+        "overlay_sha_manifest.json",
+        "overlay_receipt.json"
+      ]
+    },
+    {
+      "tier": 2,
+      "name": "full_os_export",
+      "allowed_when": "After full-bundle export guard returns ALLOW",
+      "guard_required": true,
+      "baseline_lock_allowed": false,
+      "required_artifacts": [
+        "FULL_BUNDLE_EXPORT_GUARD_RECEIPT.json decision=ALLOW",
+        "re-extract verification receipt",
+        "SHA manifest"
+      ]
+    },
+    {
+      "tier": 3,
+      "name": "baseline_lock",
+      "allowed_when": "After runner dry-run passes AND re-extract verifies AND export guard passes",
+      "guard_required": true,
+      "baseline_lock_allowed": true,
+      "required_artifacts": [
+        "runner_dryrun_receipt.json phases_passed complete",
+        "re_extract_verification_receipt.json",
+        "FULL_BUNDLE_EXPORT_GUARD_RECEIPT.json",
+        "BASELINE_LOCK_RECEIPT.json"
+      ]
+    }
+  ],
+  "hard_rules": [
+    "NEVER hand Robert a tiny-slice ZIP and call it the full OS \u2014 the export guard denies this",
+    "NEVER lock a baseline without runner dry-run proof",
+    "NEVER skip re-extract verification before a lock",
+    "Overlay exports are always safe \u2014 they do not claim to be the full OS",
+    "If export guard returns DENY, stop and write a blocker receipt immediately"
+  ],
+  "current_baseline": {
+    "sha256": "2464d3dcab21f5dae0d3f6e4c68b9d04fe22754b89f83f3c85283ab335994467",
+    "files": 804,
+    "locked_at": "2026-04-26T18:17Z"
+  }
+}

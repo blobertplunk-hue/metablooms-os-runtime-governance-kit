@@ -1,0 +1,9 @@
+{
+  "returncode": 0,
+  "schema": "Stage6OSmokeResult_v1",
+  "stage_id": "STAGE6O_OWASP_AGENTIC_AI_COVERAGE_MATRIX_AND_POLICY_BINDINGS",
+  "status": "PASS",
+  "stderr": "",
+  "stdout": "{\n  \"schema\": \"Stage6OPolicyGateSmoke_v1\",\n  \"status\": \"PASS\",\n  \"allow_decision\": \"ALLOW\",\n  \"deny_decision\": \"DENY\",\n  \"deny_missing_count\": 3\n}\n",
+  "timestamp_utc": "2026-05-02T02:53:05Z"
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "artifact_id": "WORKFLOW_GENERALIZATION_RECENT_LESSON_BINDINGS_20260502",
+  "lessons": [
+    {
+      "lesson_id": "visual_surfaces_need_quality_gate",
+      "source_workflow": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE1_TO_STAGE5",
+      "generalized_behavior": "Visual artifacts require purpose-fit visual presentation declarations, teacher-professional presentation requirements, accessibility/static checks, rendered proof tier labels, and export replay evidence.",
+      "future_auto_invocation_targets": ["html_activity", "operator_tracker", "teacher_dashboard", "landing_page", "student_tool"]
+    },
+    {
+      "lesson_id": "browser_render_capability_must_be_resolved_not_assumed",
+      "source_workflow": "BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE1_TO_STAGE4",
+      "generalized_behavior": "Browser/render methods must be capability-probed in the current sandbox, ranked, and recorded with reliability evidence; known-bad methods should be skipped unless conditions change.",
+      "future_auto_invocation_targets": ["visual_review", "html_export", "operator_tracker_review", "google_sites_packaging"]
+    },
+    {
+      "lesson_id": "sandbox_first_pc_enhanced",
+      "source_workflow": "ANDROID_SANDBOX_FIRST_CLARIFICATION",
+      "generalized_behavior": "Robert's normal workflow should complete as much as possible inside /mnt/data and ChatGPT sandbox, with PC addenda prepared as optional stronger verification lanes.",
+      "future_auto_invocation_targets": ["all_metablooms_stages", "export_replay", "device_smoke", "browser_render_replay"]
+    },
+    {
+      "lesson_id": "false_positive_scanners_need_scope_awareness",
+      "source_workflow": "VPQ_STAGE2_AND_STAGE3_REPAIRS",
+      "generalized_behavior": "Validators must distinguish between forbidden declarations and lists/descriptions of blocked anti-patterns, avoiding string-search false positives without structural context.",
+      "future_auto_invocation_targets": ["validators", "quality_gates", "teacher_professional_scanners", "security_pattern_scanners"]
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "version": "1.0",
+  "created_at": 1776997565.7361214,
+  "status": "active_recommendation",
+  "purpose": "Research-backed SEE+CE synthesis of which sandbox languages/libraries should be routed to which MetaBlooms work classes.",
+  "local_probe_summary": {
+    "python": "3.13.5",
+    "available_binaries": [
+      "git",
+      "node",
+      "npm",
+      "python",
+      "bash",
+      "jq",
+      "rg"
+    ],
+    "available_python_modules": [
+      "PIL",
+      "ast",
+      "bs4",
+      "docx",
+      "hashlib",
+      "jsonschema",
+      "libcst",
+      "lxml",
+      "openpyxl",
+      "pandas",
+      "pdfplumber",
+      "pptx",
+      "pypdf",
+      "zipfile"
+    ],
+    "missing_high_value_modules": []
+  },
+  "research_sources": [
+    {
+      "topic": "Python AST for code-aware parsing/transforms",
+      "source": "Python ast documentation",
+      "url": "https://docs.python.org/3/library/ast.html"
+    },
+    {
+      "topic": "JSON Schema for declarative JSON validation",
+      "source": "JSON Schema documentation",
+      "url": "https://json-schema.org/docs"
+    },
+    {
+      "topic": "jsonschema Python validation",
+      "source": "python-jsonschema documentation",
+      "url": "https://python-jsonschema.readthedocs.io/en/v4.18.0/validate/"
+    },
+    {
+      "topic": "Playwright browser automation/testing",
+      "source": "Playwright Python docs",
+      "url": "https://playwright.dev/python/"
+    },
+    {
+      "topic": "python-docx document generation",
+      "source": "python-docx documentation",
+      "url": "https://python-docx.readthedocs.io/"
+    },
+    {
+      "topic": "python-pptx presentation generation",
+      "source": "python-pptx documentation",
+      "url": "https://python-pptx.readthedocs.io/"
+    },
+    {
+      "topic": "pdfplumber PDF layout/text/table extraction",
+      "source": "pdfplumber PyPI documentation",
+      "url": "https://pypi.org/project/pdfplumber/"
+    },
+    {
+      "topic": "lxml HTML/XML parsing",
+      "source": "lxml documentation",
+      "url": "https://lxml.de/4.2/api/lxml-module.html"
+    }
+  ],
+  "ce_synthesis": {
+    "main_failure_pattern": "LLM used reasoning or fragile text patching where a structural tool should have owned the task.",
+    "correct_operating_model": "Classify task -> route to authoritative tool -> execute -> verify artifact -> record receipt.",
+    "highest_leverage_shift": "Use AST/schema/Git/zip/hash/browser/PDF/document libraries as task-specific authorities rather than treating Python snippets as generic glue."
+  },
+  "routing_matrix": [
+    {
+      "work_class": "format-preserving Python code transformation",
+      "primary_tool": "LibCST vendored in 0_kernel/vendor/python",
+      "secondary_tool": "Python ast for structural inspection; safe_code_patch_helpers_v1.py for deterministic line-aware edits",
+      "avoid": "regex-only structural patches",
+      "required_gate": "parse source with LibCST, transform, re-render, re-parse, verify marker/behavior, then git diff"
+    },
+    {
+      "work_class": "code patching / script repair",
+      "primary_tool": "Python ast + safe_code_patch_helpers_v1.py",
+      "secondary_tool": "ripgrep for locating candidate lines",
+      "avoid": "regex-only structural patches",
+      "required_gate": "post-write marker verification + git diff"
+    },
+    {
+      "work_class": "registry mutation",
+      "primary_tool": "registry_mutation_engine_v2_lite_final.py via governed_run.py",
+      "secondary_tool": "jsonschema for request/schema validation",
+      "avoid": "direct artifact_registry.json writes"
+    },
+    {
+      "work_class": "artifact audit / bundle inspection",
+      "primary_tool": "Python zipfile + pathlib + hashlib",
+      "secondary_tool": "jq/rg for quick inspection",
+      "avoid": "filename-only claims"
+    },
+    {
+      "work_class": "JSON contracts / schemas",
+      "primary_tool": "jsonschema",
+      "secondary_tool": "jq",
+      "avoid": "manual eyeballing only"
+    },
+    {
+      "work_class": "HTML engine parsing/repair",
+      "primary_tool": "BeautifulSoup/lxml",
+      "secondary_tool": "Node.js for JS syntax/testing; Playwright when browser behavior matters",
+      "avoid": "regex HTML parsing for structural edits"
+    },
+    {
+      "work_class": "interactive HTML/browser validation",
+      "primary_tool": "Playwright if browser runtime available",
+      "secondary_tool": "Node.js test runner for pure JS logic",
+      "avoid": "assuming HTML works because file exists"
+    },
+    {
+      "work_class": "PDF extraction/audit",
+      "primary_tool": "pdfplumber for layout/tables; pypdf for text/metadata",
+      "secondary_tool": "web.run screenshot for web PDFs when visual inspection needed",
+      "avoid": "OCR unless necessary"
+    },
+    {
+      "work_class": "Word/Doc artifacts",
+      "primary_tool": "python-docx",
+      "secondary_tool": "document skill rules when producing final docx artifacts",
+      "avoid": "plain text renamed as .docx"
+    },
+    {
+      "work_class": "Slides",
+      "primary_tool": "python-pptx plus slide skill rules",
+      "secondary_tool": "artifact_handoff when user asks for presentations",
+      "avoid": "HTML/images posing as editable slide deck"
+    },
+    {
+      "work_class": "Spreadsheets/CSV/data",
+      "primary_tool": "openpyxl for XLSX; pandas/csv for CSV audit",
+      "secondary_tool": "spreadsheet skill rules",
+      "avoid": "LibreOffice unless explicitly requested"
+    }
+  ],
+  "new_governance_requirements": [
+    "Every stage must declare work_class and selected_tool before execution.",
+    "If selected_tool is unavailable, probe and record fallback before proceeding.",
+    "Code patch tasks must use AST or safe line-aware helper with post-write verification.",
+    "HTML structural edits must use parser-based tools where possible.",
+    "Schema/contract claims must be checked with jsonschema when schema exists.",
+    "Browser behavior claims require browser/runtime test when available.",
+    "Artifact export claims require zip/hash/manifest verification.",
+    "Research-triggered tasks require web.run evidence and citations.",
+    "For Python code transformations where formatting/comments must be preserved, prefer vendored LibCST over regex/string patching.",
+    "Before Python code patching/codemod work, run ensure_libcst_available_v1.py; install/vendor LibCST if missing; then use LibCST as primary structural patch tool."
+  ],
+  "recommended_next_artifact": "CODING_DEPENDENCY_BOOTSTRAP_POLICY_v1.json"
+}

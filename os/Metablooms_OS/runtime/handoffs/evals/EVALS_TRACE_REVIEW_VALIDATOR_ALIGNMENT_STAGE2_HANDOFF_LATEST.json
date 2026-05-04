@@ -1,0 +1,8 @@
+{
+  "artifact_type": "EVALS_SCORECARDS_STAGE2_HANDOFF_v1",
+  "completed_stage": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_2_SCORECARDS_AND_REGRESSION_DATASET",
+  "continuation_rule": "Use latest exported OS authority; run exactly one bounded evals Stage 3 to execute evaluator runner and produce confusion matrix over regression dataset.",
+  "created_utc": "20260501T132500Z",
+  "next_stage": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_3_EVALUATOR_RUNNER_AND_CONFUSION_MATRIX",
+  "status": "READY_FOR_NEXT_BOUNDED_STAGE_AFTER_EXPORT_VALIDATION"
+}

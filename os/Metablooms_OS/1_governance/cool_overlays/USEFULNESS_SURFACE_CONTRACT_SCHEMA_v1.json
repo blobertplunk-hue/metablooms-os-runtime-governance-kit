@@ -1,0 +1,64 @@
+{
+  "schema_id": "USEFULNESS_SURFACE_CONTRACT_SCHEMA_v1",
+  "version": "1.0",
+  "created_utc": "2026-04-26",
+  "amendment": "COOL_4_USEFULNESS_SURFACE",
+  "purpose": "Every HTML artifact, tool, or schema must declare which of 9 usefulness dimensions it covers before promotion.",
+  "dimensions": [
+    {
+      "id": "instruction",
+      "label": "Instructional Use",
+      "description": "Directly teaches a concept or skill"
+    },
+    {
+      "id": "practice",
+      "label": "Practice Use",
+      "description": "Students apply the skill"
+    },
+    {
+      "id": "assessment",
+      "label": "Assessment Use",
+      "description": "Measures mastery or progress"
+    },
+    {
+      "id": "realtime_feedback",
+      "label": "Real-Time Student Feedback",
+      "description": "Immediate actionable feedback during activity"
+    },
+    {
+      "id": "teacher_telemetry",
+      "label": "Teacher Telemetry",
+      "description": "Surfaces signals a teacher can act on"
+    },
+    {
+      "id": "misconception_diagnosis",
+      "label": "Misconception Diagnosis",
+      "description": "Distinguishes behavioral misuse from specific conceptual errors"
+    },
+    {
+      "id": "adaptive_support",
+      "label": "Adaptive Support",
+      "description": "Adjusts difficulty or scaffolding based on performance"
+    },
+    {
+      "id": "export_reuse",
+      "label": "Export and Reuse",
+      "description": "Data can be exported to other tools"
+    },
+    {
+      "id": "future_improvement",
+      "label": "Future Improvement Signals",
+      "description": "Generates signals that can improve the artifact itself"
+    }
+  ],
+  "declaration_schema": {
+    "artifact_id": "string required",
+    "artifact_type": "string required \u2014 html_activity|schema|validator|dashboard|telemetry_engine|tool",
+    "teks_standard": "string optional \u2014 e.g. TEKS 3.3A",
+    "grade_level": "string optional",
+    "language": "string optional \u2014 English|Spanish|Bilingual",
+    "dimensions_covered": "object required \u2014 {dimension_id: {covered: bool, note: string}}"
+  },
+  "promotion_rule": "Artifact CANNOT be promoted unless it has a valid declaration with at least 3 covered dimensions.",
+  "metablooms_constraint": "For 3rd grade bilingual classroom: realtime_feedback + teacher_telemetry required for assessment artifacts. misconception_diagnosis required for math practice artifacts."
+}

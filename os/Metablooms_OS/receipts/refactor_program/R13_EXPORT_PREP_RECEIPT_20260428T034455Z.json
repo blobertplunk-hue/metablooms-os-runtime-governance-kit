@@ -1,0 +1,10 @@
+{
+  "base_overlay_strategy": "copy base entries then replace selected live authority prefixes",
+  "base_zip": "/mnt/data/METABLOOMS_FULL_OS_v3_3_PHASE1_PHASE2_MERGED_REPAIRED.zip",
+  "created_utc": "2026-04-28T03:44:55.477278+00:00",
+  "external_hash_binding": "final zip sha is external sidecar/final verify receipt to avoid self-hash circularity",
+  "receipt_type": "R13_EXPORT_PREP_RECEIPT",
+  "source_root": "/mnt/data/Metablooms_OS",
+  "stage": "R13_EXPORT_PREP_AND_FINAL_EXPORT_AUDIT",
+  "verdict": "PASS_PREPARED_FOR_EXPORT"
+}

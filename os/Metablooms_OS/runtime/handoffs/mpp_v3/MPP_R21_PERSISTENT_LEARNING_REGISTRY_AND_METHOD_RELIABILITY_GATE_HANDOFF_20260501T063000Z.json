@@ -1,0 +1,13 @@
+{
+  "alternate_to_stage": "MPP_R23_EXPORT_PROMOTION_GATE",
+  "from_stage": "MPP_R21_PERSISTENT_LEARNING_REGISTRY_AND_METHOD_RELIABILITY_GATE",
+  "notes": "Persistent learning and method reliability are artifactized. Best next stage is R22 orchestrator; short path is R23 export promotion.",
+  "required_inputs": [
+    "0_kernel/schemas/mpp_v3/PERSISTENT_LEARNING_REGISTRY_PACKET_SCHEMA_v1.json",
+    "0_kernel/mpp_v3/mpp_v3_persistent_learning_method_reliability_gate_v1.py",
+    "tests/fixtures/mpp_v3/valid_persistent_learning_registry_packet_v1.json"
+  ],
+  "schema_version": "metablooms.mpp_stage_handoff.v1",
+  "status": "READY",
+  "to_stage": "MPP_R22_ORCHESTRATOR_RUNTIME_CONTROLLER"
+}

@@ -1,0 +1,26 @@
+{
+  "manifest_type": "GOVERNANCE_REGRESSION_SUITE_MANIFEST",
+  "version": "1.0.0",
+  "created_utc": "20260428T032940Z",
+  "authoritative_root": "/mnt/data/Metablooms_OS",
+  "runner": "0_kernel/scripts/run_governance_regression_suite_v1.py",
+  "required_launcher": "runtime/governance/python3_S_lane_exec_v1.sh",
+  "minimum_cases": 15,
+  "required_gate_ids": [
+    "GATE_REGISTRY_INTEGRITY",
+    "UNIFIED_RUNTIME_COMPATIBILITY_VALIDATION",
+    "SESSION_STATE_EXPORT_VALIDATION",
+    "P0A_EXTERNAL_REUSE_SCAN",
+    "USEFULNESS_SURFACE_VALIDATION",
+    "P0PY_PYTHON_HEALTH",
+    "TELEMETRY_CARTRIDGE_VALIDATION",
+    "DECISION_RECEIPT_ENVELOPE_VALIDATION",
+    "LEGACY_QUARANTINE_VALIDATION"
+  ],
+  "required_outcomes": ["positive_allow_or_pass", "negative_deny_or_fail"],
+  "forbidden": ["normal_python_runner", "missing_entrypoint_enabled_gate", "unvalidated_manifest", "silent_fixture_failure"],
+  "external_design_basis": {
+    "opentelemetry_events": "events must use stable names and structured attributes",
+    "opentelemetry_groups": "semantic convention groups include stability/deprecation metadata and should preserve legacy conventions"
+  }
+}

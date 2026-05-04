@@ -1,0 +1,121 @@
+{
+  "artifact_type": "MB_OPERATOR_FAILURE_ROUTER_SUMMARY.v1",
+  "created_utc": "20260502T174935Z",
+  "routes": [
+    {
+      "action": "Verify current authority pointer copies, contract phrases, and new-chat validator before boot-critical execution.",
+      "cluster_record_count": 1,
+      "evidence_binding": [
+        "0_kernel/registry/boot_receipts/BOOT_FROM_MNT_DATA_20260502T162601Z/new_chat_start_contract_validator.json"
+      ],
+      "failure_class": "authority_pointer_contract_mismatch",
+      "route_id": "route_authority_reconciliation_recheck",
+      "status": "RESOLVED_REFERENCE",
+      "target_workflow": "AUTHORITY_RECONCILIATION_RECHECK"
+    },
+    {
+      "action": "Hold if active; attach source artifact to a bounded review stage.",
+      "cluster_record_count": 5,
+      "evidence_binding": [
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_20260502T171707Z/quarantine_scanner_stdout.json",
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_20260502T171707Z/STAGE_RECEIPT.json",
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/STAGE_RECEIPT.json",
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/STAGE_HANDOFF.json",
+        "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_HANDOFF_LATEST.json"
+      ],
+      "failure_class": "unknown_non_ok_trace_record",
+      "route_id": "route_manual_governance_review",
+      "status": "ROUTED",
+      "target_workflow": "MANUAL_GOVERNANCE_REVIEW"
+    }
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING",
+  "summary": {
+    "active_cluster_count": 1,
+    "cluster_count": 2,
+    "monitor_cluster_count": 0,
+    "non_ok_record_count": 6,
+    "record_count": 220,
+    "resolved_or_suppressed_cluster_count": 1
+  },
+  "top_clusters": [
+    {
+      "cluster_id": "failure_cluster_001",
+      "evidence_records": [
+        {
+          "event_kind": "boot",
+          "event_name": "metablooms.boot.receipt",
+          "source_artifact": "0_kernel/registry/boot_receipts/BOOT_FROM_MNT_DATA_20260502T162601Z/new_chat_start_contract_validator.json",
+          "span_id": "3475e8059b1c23f1",
+          "stage_id": "BOOT_FROM_MNT_DATA_20260502T162601Z",
+          "status": "BLOCKED",
+          "timestamp_utc": "20260502T162601Z"
+        }
+      ],
+      "failure_class": "authority_pointer_contract_mismatch",
+      "first_seen_utc": "20260502T162601Z",
+      "last_seen_utc": "20260502T162601Z",
+      "record_count": 1,
+      "route_id": "route_authority_reconciliation_recheck",
+      "severity": "low",
+      "status": "RESOLVED_REFERENCE"
+    },
+    {
+      "cluster_id": "failure_cluster_002",
+      "evidence_records": [
+        {
+          "event_kind": "receipt",
+          "event_name": "metablooms.stage.receipt",
+          "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_20260502T171707Z/quarantine_scanner_stdout.json",
+          "span_id": "cf6ea99cb7acfdd8",
+          "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_20260502T171707Z",
+          "status": "ERROR",
+          "timestamp_utc": "20260502T171711Z"
+        },
+        {
+          "event_kind": "receipt",
+          "event_name": "metablooms.stage.receipt",
+          "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_20260502T171707Z/STAGE_RECEIPT.json",
+          "span_id": "84d4bc7b7d1aa5e4",
+          "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE",
+          "status": "ERROR",
+          "timestamp_utc": "20260502T171707Z"
+        },
+        {
+          "event_kind": "receipt",
+          "event_name": "metablooms.stage.receipt",
+          "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/STAGE_RECEIPT.json",
+          "span_id": "0c64c693e498d44b",
+          "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS",
+          "status": "ERROR",
+          "timestamp_utc": "20260502T174908Z"
+        },
+        {
+          "event_kind": "handoff",
+          "event_name": "metablooms.handoff.ready",
+          "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/STAGE_HANDOFF.json",
+          "span_id": "19c41fb48b19d8c4",
+          "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS",
+          "status": "ERROR",
+          "timestamp_utc": "20260502T174908Z"
+        },
+        {
+          "event_kind": "handoff",
+          "event_name": "metablooms.handoff.ready",
+          "source_artifact": "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_HANDOFF_LATEST.json",
+          "span_id": "5f4db0b53f167756",
+          "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS",
+          "status": "ERROR",
+          "timestamp_utc": "20260502T174908Z"
+        }
+      ],
+      "failure_class": "unknown_non_ok_trace_record",
+      "first_seen_utc": "20260502T171707Z",
+      "last_seen_utc": "20260502T174908Z",
+      "record_count": 5,
+      "route_id": "route_manual_governance_review",
+      "severity": "high",
+      "status": "ACTIVE"
+    }
+  ]
+}

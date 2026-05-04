@@ -1,0 +1,29 @@
+{
+  "checks": [
+    {
+      "check": "minimum_cases_15",
+      "ok": true
+    },
+    {
+      "check": "positive_and_negative_cases_present",
+      "ok": true
+    },
+    {
+      "check": "all_cases_ok",
+      "ok": true
+    },
+    {
+      "check": "regression_gate_registered",
+      "ok": true
+    },
+    {
+      "check": "normal_python_not_required",
+      "ok": true
+    }
+  ],
+  "created_utc": "2026-04-28T03:34:10.801693Z",
+  "receipt_type": "R12_VERIFY_RECEIPT",
+  "report": "runtime/evals/governance_regression_suite_v1/reports/R12_governance_regression_suite_final_20260428T033410Z.json",
+  "stage": "R12_REGRESSION_SUITE_EXPANSION",
+  "verdict": "PASS"
+}

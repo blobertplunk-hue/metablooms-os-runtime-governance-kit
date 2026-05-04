@@ -1,0 +1,40 @@
+{
+  "artifact_type": "MB_OBSERVABILITY_FAILURE_ROUTER_POLICY.v1",
+  "classification_order": [
+    "active_error",
+    "active_blocker",
+    "historical_stale_denial",
+    "misclassified_decision_packet",
+    "unclassified_non_ok"
+  ],
+  "created_utc": "20260502T165302Z",
+  "routing_rules": [
+    {
+      "action": "Verify latest authority pointer copies and new-chat validator before boot-critical execution.",
+      "failure_class": "authority_pointer_contract_mismatch",
+      "target_workflow": "AUTHORITY_RECONCILIATION_RECHECK"
+    },
+    {
+      "action": "Record the wrong CLI shape as a method reliability lesson; preserve amended pass as authoritative.",
+      "failure_class": "cli_invocation_or_amended_receipt_superseded",
+      "target_workflow": "METHOD_RELIABILITY_LEDGER"
+    },
+    {
+      "action": "Treat CE/SEE synthesis packets as evidence packets, not failures, unless an explicit deny/error field exists.",
+      "failure_class": "derived_packet_missing_status_contract",
+      "target_workflow": "TRACE_INGESTION_CLASSIFIER_REPAIR"
+    },
+    {
+      "action": "Hold execution if active and attach source artifact for review.",
+      "failure_class": "unknown_non_ok_trace_record",
+      "target_workflow": "MANUAL_GOVERNANCE_REVIEW"
+    }
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING",
+  "status_semantics": {
+    "ACTIVE": "blocks or should route immediately",
+    "MONITOR": "track and prevent recurrence without blocking current stage",
+    "RESOLVED_REFERENCE": "historical evidence resolved by later passing artifact",
+    "SUPPRESSED_BY_LATER_PASS": "not active because a newer pass supersedes it"
+  }
+}

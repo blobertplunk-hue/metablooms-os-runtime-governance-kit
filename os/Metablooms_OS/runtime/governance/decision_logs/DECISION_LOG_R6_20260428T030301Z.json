@@ -1,0 +1,30 @@
+{
+  "receipt_type": "R6_DECISION_LOG",
+  "stage": "R6_EVIDENCE_BOUND_EXTERNAL_REUSE_SCAN_GATE",
+  "created_utc": "2026-04-28T03:03:02.160271+00:00",
+  "decision_id": "ac07639e-5c97-4504-baef-34531ac8f7ba",
+  "result": "constructed",
+  "input": {
+    "legacy_script_sha256": "6da19d7974b3dbf0ff132f518d277da0dba15c14d0e78b794a276dc5d1c008fa",
+    "legacy_schema_sha256": "27919934cd67c335c68e2099b232bd0e6da862315bf1f2a39feaad96f1181730"
+  },
+  "external_basis": [
+    {
+      "source": "OPA decision logs",
+      "claim": "decision logs include decision_id, input, result, timestamp and context"
+    },
+    {
+      "source": "SLSA v1.2 verifying artifacts",
+      "claim": "provenance and artifacts must be inspected against expectations"
+    },
+    {
+      "source": "JSON Schema annotations",
+      "claim": "annotations are descriptive and not enforcement"
+    }
+  ],
+  "outputs": {
+    "script": "/mnt/data/Metablooms_OS/0_kernel/scripts/p0a_external_reuse_scan_precheck_v1.py",
+    "schema": "/mnt/data/Metablooms_OS/runtime/governance/schemas/external_reuse_scan_gate_schema_v1.json",
+    "registry": "/mnt/data/Metablooms_OS/runtime/governance/registries/gate_registry_v1.json"
+  }
+}

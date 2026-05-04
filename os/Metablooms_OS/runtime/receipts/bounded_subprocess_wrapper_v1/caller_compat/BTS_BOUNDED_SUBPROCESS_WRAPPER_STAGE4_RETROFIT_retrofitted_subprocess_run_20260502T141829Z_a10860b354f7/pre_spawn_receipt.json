@@ -1,0 +1,11 @@
+{
+  "argv_resolved": [
+    "/opt/pyvenv/bin/python3",
+    "/mnt/data/Metablooms_OS/runtime/governance/mpp_cdr_binding_gate_v1.py",
+    "/mnt/data/Metablooms_OS/tests/fixtures/mpp_v3/invalid_mpp_code_work_missing_cdr_v1.json"
+  ],
+  "created_utc": "20260502T141829Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision": "ALLOW_SPAWN",
+  "timeout_seconds": 10
+}

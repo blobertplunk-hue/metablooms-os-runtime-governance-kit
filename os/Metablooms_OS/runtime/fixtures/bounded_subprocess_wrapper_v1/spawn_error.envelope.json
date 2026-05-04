@@ -1,0 +1,17 @@
+{
+  "allowed_roots": [
+    "/mnt/data/Metablooms_OS"
+  ],
+  "argv": [
+    "definitely_not_a_metablooms_binary_404"
+  ],
+  "cwd": "/mnt/data/Metablooms_OS",
+  "max_capture_bytes": 4096,
+  "max_retries": 0,
+  "operation_type": "fixture_spawn_error",
+  "receipt_dir": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135531Z/fixture_receipts/spawn_error",
+  "runtime_root": "/mnt/data/Metablooms_OS",
+  "shell": false,
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES",
+  "timeout_seconds": 5
+}

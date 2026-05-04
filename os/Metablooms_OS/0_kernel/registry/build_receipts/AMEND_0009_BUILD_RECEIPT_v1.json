@@ -1,0 +1,53 @@
+{
+  "receipt_type": "AMEND_0009_CONTRACT_PATCH_BUILD_RECEIPT",
+  "created_utc": "2026-04-26T03:23:52Z",
+  "amendment_id": "AMEND-0009",
+  "runner": "Claude build session",
+  "python_used": false,
+  "mutations_to_active_os": 0,
+
+  "artifacts_produced": [
+    {
+      "file": "TRANSACTIONAL_STAGE_RUNNER_CONTRACT_v2.json",
+      "sha256": "e5dfa007683f0a08ec2e9fd56d2f56878ae293622138f67823f185367524b4f1",
+      "target_path": "0_kernel/schemas/TRANSACTIONAL_STAGE_RUNNER_CONTRACT_v2.json",
+      "supersedes": "TRANSACTIONAL_STAGE_RUNNER_CONTRACT_v1.json",
+      "key_additions": [
+        "P-1_TOOL_ROUTE_GUARD phase — blocks canmore/image_gen/broad_api_discovery before P0",
+        "P5_COMMIT conditional_on_git_available — deferred path writes COMMIT_DEFERRED_RECEIPT",
+        "P6_UPDATE_STATE accepts commit SHA or deferred receipt reference",
+        "runaway_breaker_integration references HEAVY_WORK_CLASS_ENUM_v1"
+      ]
+    },
+    {
+      "file": "HEAVY_WORK_CLASS_ENUM_v1.json",
+      "sha256": "d99b71a51dc1a528ecb753c46aa889c92d3f0f63200309e14369d508bd8a75ac",
+      "target_path": "0_kernel/registry/HEAVY_WORK_CLASS_ENUM_v1.json",
+      "supersedes": "informal heavy_work_classes list in AUTO_RUNAWAY_BREAKER_INVARIANT_v1.json",
+      "key_additions": [
+        "8 typed classes: RESEARCH, ARCHIVE_EXTRACTION, CODE_PATCH, BROWSER_VALIDATION, FULL_EXPORT, REGISTRY_RECONCILIATION, BOOT_RECOVERY, PROOF",
+        "per-class runaway_risk rating",
+        "pre_stage_classification_block schema — required in every stage receipt",
+        "enforcement_rule — at most 1 class per stage; auto-split required if 2+ detected"
+      ]
+    }
+  ],
+
+  "new_capabilities_added": [
+    "CAPABILITY: Pre-execution tool routing gate (P-1) — canmore and broad API discovery can no longer crash a stage mid-execution; they are blocked before P0 with a structured receipt",
+    "CAPABILITY: Sandbox-safe commit model — stages complete cleanly whether or not git is available; all SHAs preserved in deferred receipt for full auditability",
+    "CAPABILITY: Typed runaway prevention — the auto-runaway breaker now has a machine-readable enum; 'too much work' is no longer subjective; every stage must declare its class before executing",
+    "CAPABILITY: Auto-split signal — two or more heavy work classes in a single stage now trigger a mandatory split before execution, not a post-hoc observation"
+  ],
+
+  "chatgpt_deployment_instructions": [
+    "1. Copy TRANSACTIONAL_STAGE_RUNNER_CONTRACT_v2.json to /mnt/data/Metablooms_OS_refined/0_kernel/schemas/",
+    "2. Copy HEAVY_WORK_CLASS_ENUM_v1.json to /mnt/data/Metablooms_OS_refined/0_kernel/registry/",
+    "3. Verify both SHAs match the values in this receipt",
+    "4. The v1 runner contract remains as a fallback — do not delete it until transactional_stage_runner_v1.py is built and tested",
+    "5. Next stage: BUILD-1 — transactional_stage_runner_v1.py using v2 contract as the spec"
+  ],
+
+  "overall_verdict": "PASS",
+  "next_correct_stage": "BUILD-1 — transactional_stage_runner_v1.py"
+}

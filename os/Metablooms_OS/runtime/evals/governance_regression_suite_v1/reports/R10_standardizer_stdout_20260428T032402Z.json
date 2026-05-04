@@ -1,0 +1,5 @@
+{
+  "result": "pass",
+  "manifest": "runtime/governance/receipts/canonical/DECISION_RECEIPT_CANONICALIZATION_MANIFEST_v1.json",
+  "canonical_records": 41
+}

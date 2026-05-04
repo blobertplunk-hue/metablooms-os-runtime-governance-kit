@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-04-28T02:44:46Z",
+  "decision_id": "R2-87477aa2a14ad37f",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"gates_satisfied\": [\"every narrative-heavy split source archived as ADR and legacy archive\", \"redirect contract written\", \"tombstone metadata written where live legacy locations exist\"], \"next_stage\": \"R3_COMPATIBILITY_CONTRACT_REPLACEMENT\", \"stage_completed\": \"R2_ADR_EXTRACTION_AND_ARCHIVAL_CONVERSION\", \"status\": \"PASS\", \"timestamp_utc\": \"2026-04-28T02:44:46Z\"}",
+  "reasons": [],
+  "record_id": "R2_HANDOFF_20260428T024446Z",
+  "record_kind": "handoff",
+  "result": "pass",
+  "source_record": {
+    "path": "receipts/refactor_program/R2_HANDOFF_20260428T024446Z.json",
+    "sha256": "87477aa2a14ad37fda30f8634978ddac6883ed2af8288cdd508bf06a4ae143b3",
+    "size_bytes": 393
+  },
+  "span_id": "a43cf4220411eeb8",
+  "stage_id": "R2",
+  "summary": "Canonical wrapper for R2_HANDOFF_20260428T024446Z.json",
+  "trace_id": "0e8753a119d11151bc105000623e2e4a"
+}

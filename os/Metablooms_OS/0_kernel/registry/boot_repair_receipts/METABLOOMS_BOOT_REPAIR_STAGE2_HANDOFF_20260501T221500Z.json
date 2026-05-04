@@ -1,0 +1,12 @@
+{
+  "handoff_id": "METABLOOMS_BOOT_REPAIR_STAGE2_HANDOFF",
+  "created_utc": "2026-05-01T22:15:00Z",
+  "status": "READY_FOR_NEXT_STAGE_AFTER_TARGETED_BOOT_SMOKE",
+  "current_authority_zip": "METABLOOMS_OS_BOOT_REPAIRED_RUNAWAY_BREAKER_AUTHORITY_STAGE2_20260501T221500Z.zip",
+  "next_recommended_stage": "STAGE3_FULL_EXTRACT_OR_STREAMED_RECOVERY_REPLAY_PROOF",
+  "required_next_checks": [
+    "run targeted boot smoke from fresh extraction of final authority",
+    "run full extract replay if sandbox latency permits or use streamed validator fallback",
+    "update CURRENT_WORKING_BASELINE_POINTER_v1.json inside a subsequent whole-system export if pointer staleness is confirmed"
+  ]
+}

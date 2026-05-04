@@ -1,0 +1,57 @@
+{
+  "adaptability_evidence": [
+    "change_impact_analysis",
+    "extension_point_documentation",
+    "backward_compatibility_tests_or_exemption",
+    "migration_or_deprecation_plan",
+    "interface_examples",
+    "negative_interface_tests"
+  ],
+  "deny_conditions": [
+    "missing_interface_contract",
+    "missing_error_contract",
+    "missing_side_effects",
+    "missing_compatibility_policy",
+    "missing_change_impact_analysis",
+    "stable_or_authority_interface_without_migration_policy",
+    "extension_point_claim_without_evidence",
+    "missing_negative_interface_fixture"
+  ],
+  "principle": "Code is adaptable only when its interfaces, compatibility boundaries, extension points, migration paths, and change-impact risks are explicit and testable.",
+  "purpose": "Make CDR adaptability and interface quality enforceable before accepting runtime-significant code.",
+  "required_interface_contract_fields": [
+    "interface_id",
+    "owner_module",
+    "version",
+    "stability",
+    "purpose",
+    "inputs",
+    "outputs",
+    "error_contract",
+    "side_effects",
+    "security_boundary",
+    "observability_contract",
+    "compatibility_policy",
+    "extension_points",
+    "deprecation_policy",
+    "migration_notes",
+    "examples",
+    "test_evidence"
+  ],
+  "risk_escalation": {
+    "authority_critical": "CRITICAL",
+    "experimental": "LOW",
+    "internal": "MEDIUM",
+    "stable": "HIGH"
+  },
+  "schema": "CDRAdaptabilityInterfaceContractSpec_v1",
+  "stability_levels": [
+    "experimental",
+    "internal",
+    "stable",
+    "authority_critical"
+  ],
+  "stage": "CDR_STAGE6_ADAPTABILITY_AND_INTERFACE_CONTRACT_HARDENING",
+  "status": "active",
+  "timestamp_utc": "2026-05-02T04:36:43Z"
+}

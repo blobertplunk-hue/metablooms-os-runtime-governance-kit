@@ -1,0 +1,53 @@
+{
+  "fixture_rule": "Each fixture must include an input, expected governed outputs, validator checks, and an enforcement decision.",
+  "honesty_label": "bounded synthetic real-task proxies; not yet classroom/user A-B outcomes",
+  "pass_threshold": {
+    "fixture_pass_rate_min": 1.0,
+    "hard_gate_failures_allowed": 0
+  },
+  "purpose": "Prove MetaBlooms improves real task workflows through bounded fixtures, not boot-only smoke tests.",
+  "required_authorities": {
+    "auto_tracker": {
+      "exists": true,
+      "path": "0_kernel/cartridges/automatic_process_tracker/AUTOMATIC_MULTI_STEP_TRACKER_CONTRACT_v1.json"
+    },
+    "capability_resolver": {
+      "exists": true,
+      "path": "0_kernel/registry/general_capability_resolver/GENERAL_CAPABILITY_RESOLVER_CONTRACT_v1.json"
+    },
+    "design_cartridge": {
+      "exists": true,
+      "path": "0_kernel/cartridges/educational_html_design_system/EDUCATIONAL_HTML_DESIGN_SYSTEM_CARTRIDGE_SPEC_v1.json"
+    },
+    "dora_baseline": {
+      "exists": true,
+      "path": "runtime/state/DORA_STYLE_OS_METRICS_BASELINE_v1.json"
+    },
+    "lesson_queue": {
+      "exists": true,
+      "path": "0_kernel/lessons/LESSON_PROMOTION_QUEUE_v1.json"
+    },
+    "measured_scorecard": {
+      "exists": false,
+      "path": "0_kernel/registry/world_class_gap_plan/WORLD_CLASS_LATEST_MEASURED_SCORECARD_v1.json"
+    },
+    "operator_manifest_root": {
+      "exists": true,
+      "path": "BOOT_AUTHORITY_MANIFEST_v1.json"
+    },
+    "prompt_gate": {
+      "exists": true,
+      "path": "0_kernel/validators/next_stage_copy_prompt_exit_gate_v1.py"
+    }
+  },
+  "required_eval_domains": [
+    "educational_html",
+    "blooket_csv",
+    "lesson_workflow",
+    "research_workflow",
+    "artifact_export",
+    "stage_exit_prompt_gate"
+  ],
+  "schema_version": "v1",
+  "stage": "WC_STAGE10_REAL_TASK_EVAL_HARNESS_AND_ENFORCEMENT_PROOF"
+}

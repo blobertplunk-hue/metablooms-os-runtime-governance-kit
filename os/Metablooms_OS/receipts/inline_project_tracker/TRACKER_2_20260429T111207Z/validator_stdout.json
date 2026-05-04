@@ -1,0 +1,25 @@
+{
+  "checks": {
+    "fake_percent_rejection": "PASS",
+    "mobile_width_max_chars": 64,
+    "required_fields": "PASS",
+    "required_render_labels": [
+      "Project:",
+      "Status:",
+      "Stage:",
+      "Progress:",
+      "Now:",
+      "Evidence:",
+      "Blocker:",
+      "Next:",
+      "Stop Rule:"
+    ],
+    "top_of_response_marker": "PASS"
+  },
+  "errors": [],
+  "rendered_preview": "\u256d\u2500 PROJECT TRACKER \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Project: Inline Project Tracker                              \u2502\n\u2502 Status: RUNNING                                              \u2502\n\u2502 Stage: TRACKER-2_MARKDOWN_RENDERER_AND_VALIDATOR             \u2502\n\u2502 Progress: 2/5 \u2588\u2588\u2588\u2588\u2591\u2591\u2591\u2591\u2591\u2591                                     \u2502\n\u2502 Now: TRACKER-2 renderer and validator implemented; validati\u2026 \u2502\n\u2502 Evidence: TRACKER render spec lock 45e460cfeb04              \u2502\n\u2502 Blocker: none                                                \u2502\n\u2502 Next: TRACKER-3 boot and stage gate implementation only.     \u2502\n\u2502 Stop Rule: Stop after TRACKER-2; do not implement boot/stag\u2026 \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f",
+  "renderer_path": "/mnt/data/Metablooms_OS/0_kernel/cartridges/inline_project_tracker/TRACKER_RENDERER_v1.py",
+  "state_path": "/mnt/data/Metablooms_OS/runtime/state/TRACKER_STATE_v1.json",
+  "status": "PASS",
+  "validator": "TRACKER_VALIDATOR_v1"
+}

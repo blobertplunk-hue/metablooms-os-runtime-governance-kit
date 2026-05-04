@@ -1,0 +1,9 @@
+{
+  "id":"WEBRUN_REQUIRED_FOR_GOVERNANCE_REPAIR_v1",
+  "status":"active",
+  "gate":"WEBRUN_REQUIRED_GATE",
+  "description":"Governance repair, governance failure diagnosis, improvement planning, and research-triggered turns require web.run evidence before claims or execution.",
+  "failure_action":"DENY_STAGE_EXECUTION",
+  "source":"project-files boot overlay",
+  "scope":"runtime_governance_overlay"
+}

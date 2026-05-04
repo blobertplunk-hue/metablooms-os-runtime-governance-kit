@@ -1,0 +1,10 @@
+{
+  "ts": "20260428T025601Z",
+  "created_utc": "2026-04-28T02:56:01Z",
+  "registry": "runtime/governance/registries/gate_registry_v1.json",
+  "schema": "runtime/governance/schemas/gate_registry_schema_v1.json",
+  "loader": "runtime/governance/load_gate_registry_v1.py",
+  "validator": "0_kernel/scripts/assert_gate_registry_integrity_v1.py",
+  "alias": "0_kernel/scripts/validate_gate_registry_v1.py",
+  "decision_log": "runtime/governance/decision_logs/DECISION_LOG_R5_20260428T025601Z.json"
+}

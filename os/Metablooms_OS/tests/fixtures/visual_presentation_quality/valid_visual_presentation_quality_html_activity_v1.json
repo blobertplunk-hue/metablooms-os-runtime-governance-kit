@@ -1,0 +1,146 @@
+{
+  "artifact_id": "example_fraction_html_activity_v1",
+  "artifact_type": "html_activity",
+  "verification": {
+    "human_review_prompts": [
+      "Would a parent call this polished within 5 seconds?",
+      "Can a third grader tell what to do next without teacher explanation?",
+      "Does the visual style support the learning goal rather than distract?",
+      "Would this make the teacher look organized and professionally credible if projected, shared with parents, or viewed by an administrator?"
+    ],
+    "promotion_blockers": [
+      "default browser styles",
+      "missing prompt text",
+      "controls under 24px",
+      "color-only feedback",
+      "no reduced motion handling",
+      "teacher controls mixed into student flow",
+      "teacher-facing output looks unfinished, childish in the wrong context, or includes debug/developer language"
+    ],
+    "render_checks": [
+      "mobile 360px no horizontal scroll",
+      "iPad-width layout readable",
+      "student-visible prompt appears before interaction",
+      "all correctness states visible"
+    ],
+    "static_checks": [
+      "CSS custom properties or equivalent design tokens present",
+      "focus-visible styles present",
+      "prefers-reduced-motion handled",
+      "no external font/CDN dependency",
+      "semantic feedback classes present"
+    ]
+  },
+  "visual_presentation": {
+    "accessibility": {
+      "color_independent_meaning": true,
+      "drag_alternative": true,
+      "focus_visibility": "high-contrast outline not obscured by sticky controls",
+      "target_size": "minimum 44px preferred; never below WCAG 2.2 minimum",
+      "wcag_target": "WCAG_2_2_AA_PLUS_SELECTED_AAA"
+    },
+    "anti_patterns_blocked": [
+      "default browser styles",
+      "unstyled gray worksheet UI",
+      "color-only correctness",
+      "hover-only interaction",
+      "unbounded aurora animation",
+      "blank initial screen"
+    ],
+    "audience_profile": {
+      "age_band_or_role": "Grade 3 classroom",
+      "environment": [
+        "iPad",
+        "Google Sites embed",
+        "projected whole-group review"
+      ],
+      "primary_users": [
+        "third grade students",
+        "teacher facilitator"
+      ]
+    },
+    "color_system": {
+      "contrast_rule": "WCAG 2.2 AA minimum for text and controls",
+      "mode": "adaptive",
+      "palette_strategy": "calm high-contrast surfaces with bright semantic feedback",
+      "semantic_colors": [
+        "success",
+        "error",
+        "warning",
+        "hint",
+        "focus"
+      ]
+    },
+    "design_intent": {
+      "credibility_target": "parent and teacher should immediately see a polished instructional product",
+      "desired_impression": "modern playful classroom tool, not worksheet",
+      "engagement_strategy": "card-based progress, immediate visual feedback, restrained expressive accents",
+      "functional_mood": "clear, encouraging, focused"
+    },
+    "design_system": {
+      "basis": "Material 3-informed custom tokens",
+      "component_rules": [
+        "large rounded cards",
+        "clear button states",
+        "consistent progress strip"
+      ],
+      "tokens_required": [
+        "surface",
+        "surface_alt",
+        "primary",
+        "secondary",
+        "success",
+        "warning",
+        "error",
+        "focus",
+        "text_primary",
+        "text_muted"
+      ]
+    },
+    "interaction_feedback": {
+      "audio_visual_sync": "speaker icons excluded from spoken text and synced to highlighted text",
+      "correct_incorrect_states": "color plus icon plus text feedback",
+      "hover_focus_active": "visible state changes for all controls",
+      "progress_state": "current question, score, and next action visible"
+    },
+    "layout": {
+      "density": "medium",
+      "empty_state_rule": "no blank panes; every state has student-readable guidance",
+      "structure": "single-task cards with teacher mode separated from student mode",
+      "visual_hierarchy": "prompt first, action area second, supports third"
+    },
+    "mobile_first": {
+      "breakpoints": [
+        "360px",
+        "768px",
+        "1024px"
+      ],
+      "confirmed": true,
+      "thumb_reach_rule": "primary actions reachable without horizontal scrolling"
+    },
+    "motion": {
+      "level": "subtle",
+      "purpose": "confirm action and direct attention, not decorate",
+      "reduced_motion_support": true
+    },
+    "platform_constraints": [
+      "single-file HTML",
+      "no external dependencies",
+      "Google Sites safe",
+      "iPad Safari safe"
+    ],
+    "purpose_profile": "3_5_student_learning_activity",
+    "teacher_professional_presentation": {
+      "dashboard_readability": "teacher-facing status cards use at-a-glance hierarchy, plain labels, grouped insights, and clear next actions",
+      "professional_language": "teacher-facing copy uses concise, confident instructional language rather than placeholder, jokey, or developer-facing text",
+      "shareable_output_quality": "printable or screenshot-ready summaries use clean labels, readable spacing, and no embarrassing debug language",
+      "teacher_mode_separation": "teacher controls, answer keys, telemetry, and setup notes are visually separated from the student activity path",
+      "teacher_public_credibility": "polished classroom product that makes the teacher look prepared, modern, and professionally intentional when parents, administrators, or teammates see it"
+    },
+    "typography": {
+      "font_strategy": "system UI stack",
+      "readability_rule": "large line height, short measure, no dense blocks",
+      "scale": "fluid grade-3 readable scale"
+    }
+  }
+}

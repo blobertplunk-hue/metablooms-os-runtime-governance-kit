@@ -1,0 +1,42 @@
+{
+  "external_basis": [
+    "OWASP Secure Coding Practices checklist",
+    "Google engineering code review guidance",
+    "Ruff rule-driven linting model",
+    "Bandit/SAST style security scanning"
+  ],
+  "policy": "Required baseline cannot be older than the scanned source hash set; critical/high runtime code must have syntax pass, zero zero_tolerance issues, complexity within tier threshold, explicit test binding, and scanner availability/fallback proof.",
+  "purpose": "Make CDR code acceptance consume concrete lint/security scanner baselines rather than relying only on abstract quality packets.",
+  "scanner_layers": [
+    {
+      "availability": "always",
+      "evidence": "baseline JSON with syntax, complexity proxy, broad-except, dynamic-exec, unsafe path, secret literal, TODO debt, and test binding findings",
+      "id": "stdlib_ast_static_scan",
+      "required": true
+    },
+    {
+      "availability": "optional_external_tool",
+      "evidence": "tool availability and command result if installed",
+      "fallback": "stdlib_ast_static_scan",
+      "id": "ruff",
+      "required": false
+    },
+    {
+      "availability": "optional_external_tool",
+      "evidence": "tool availability and command result if installed",
+      "fallback": "stdlib_ast_static_scan security checks",
+      "id": "bandit",
+      "required": false
+    },
+    {
+      "availability": "optional_external_tool",
+      "evidence": "tool availability and command result if installed",
+      "fallback": "stdlib_ast_static_scan security checks",
+      "id": "semgrep",
+      "required": false
+    }
+  ],
+  "schema": "CDRStaticLintSecurityScannerIntegrationSpec_v1",
+  "stage": "CDR_STAGE9_LINT_SECURITY_SCANNER_INTEGRATION_AND_BASELINE_REPORTING",
+  "status": "RECONSTRUCTED_CHAIN_CONTINUATION"
+}

@@ -1,0 +1,12 @@
+{
+  "checkpoint_id": "ckpt_interrupt",
+  "decision": "approve",
+  "new_checkpoint_id": "ckpt_resumed",
+  "next": "continue",
+  "resume_payload": {
+    "approved": true,
+    "operator": "stage6p_smoke"
+  },
+  "schema": "DurableCheckpointResumePacket_v1",
+  "thread_id": "stage6p.demo"
+}

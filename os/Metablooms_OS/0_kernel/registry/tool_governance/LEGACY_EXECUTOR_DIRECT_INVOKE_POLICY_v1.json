@@ -1,0 +1,33 @@
+{
+  "allow_conditions": [
+    "canonical governance component called as a governance gate/wrapper with receipt output",
+    "test/fixture execution confined to bounded temp root and no authority export",
+    "read-only/schema validation helper with no side effects",
+    "active executor/mutation helper invoked through Tool Universe Resolver, BTS evaluation/selection, pre-tool gate, BTS-wrapped executor, post-tool result validation, and BTS commit",
+    "quarantined legacy replay only with explicit HITL approval token and no production pointer promotion"
+  ],
+  "created_at_utc": "2026-05-02T03:20:12.902015Z",
+  "default_decision_for_bound_candidate": "DENY_DIRECT_INVOCATION",
+  "denied_conditions": [
+    "direct subprocess/file mutation from an audit-bound path without wrapper evidence",
+    "authority export/pointer promotion without HITL token and export budget approval",
+    "missing or stale binding for any Stage6Q audit finding",
+    "attempt to classify support/proof bundle as OS authority"
+  ],
+  "evidence_basis": [
+    {
+      "claim": "Tool guardrails should validate or block tool calls before and after execution.",
+      "source_url": "https://openai.github.io/openai-agents-python/guardrails/"
+    },
+    {
+      "claim": "Human review and guardrails define when a run should continue, pause, or stop for sensitive actions.",
+      "source_url": "https://developers.openai.com/api/docs/guides/agents/guardrails-approvals"
+    },
+    {
+      "claim": "OWASP AI Agent Security Cheat Sheet identifies tool abuse, privilege escalation, and data exfiltration as agent risks.",
+      "source_url": "https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html"
+    }
+  ],
+  "schema": "LegacyExecutorDirectInvokePolicy_v1",
+  "stage_id": "STAGE6Q_REPAIR_LEGACY_EXECUTOR_RETROFIT"
+}

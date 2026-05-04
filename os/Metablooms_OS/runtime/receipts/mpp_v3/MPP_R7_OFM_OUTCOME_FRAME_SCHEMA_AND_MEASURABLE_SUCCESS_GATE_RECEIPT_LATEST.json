@@ -1,0 +1,73 @@
+{
+  "artifacts_written": [],
+  "next_stage": "MPP_R8_ADS_ARCHITECTURE_DAG_SCHEMA_AND_OWNERSHIP_GATE",
+  "predecessor_verification": {
+    "r6": {
+      "actual_sha256": "321e9605f410d04dc8b7fffba55fd675e7b56e378046879529aea1ebdff4c65a",
+      "checksum_match": true,
+      "exists": true,
+      "sha_sidecar_exists": true,
+      "sidecar_sha256": "321e9605f410d04dc8b7fffba55fd675e7b56e378046879529aea1ebdff4c65a",
+      "zip": "/mnt/data/MPP_R6_CDR_CONSTRAINTS_SCHEMA_AND_POLICY_GATE_20260430T233000Z.zip",
+      "zip_testzip": null
+    }
+  },
+  "research_sources": [
+    {
+      "ref": "turn522164search1",
+      "source": "ISO/IEC 25010:2023 product quality model"
+    },
+    {
+      "ref": "turn522164search7",
+      "source": "Open Policy Agent policy testing"
+    }
+  ],
+  "root": "/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z",
+  "root_probe": {
+    "/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z": {
+      "exists": true,
+      "is_dir": true,
+      "writable": true
+    }
+  },
+  "stage_id": "MPP_R7_OFM_OUTCOME_FRAME_SCHEMA_AND_MEASURABLE_SUCCESS_GATE",
+  "status": "PASS",
+  "tests": [
+    {
+      "cmd": "/opt/pyvenv/bin/python -m py_compile /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_ofm_outcome_frame_gate_v1.py",
+      "expected": 0,
+      "returncode": 0,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.",
+      "stdout": ""
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_ofm_outcome_frame_gate_v1.py --validate /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/tests/fixtures/mpp_v3/valid_ofm_outcome_frame_packet_v1.json",
+      "expected": 0,
+      "returncode": 0,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.",
+      "stdout": "{\"packet_id\": \"OFM-20260430T221803Z\", \"result_hash\": \"5ba18b96e026d40a40a864efcab18be257eb1e49fade91b99faba3750585d172\", \"status\": \"PASS\"}"
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_ofm_outcome_frame_gate_v1.py --gate /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/tests/fixtures/mpp_v3/valid_ofm_outcome_frame_packet_v1.json",
+      "expected": 0,
+      "returncode": 0,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.",
+      "stdout": "{\"created_at\": \"2026-04-30T22:18:30.549797+00:00\", \"gate_id\": \"OFM-GATE-20260430T221830Z\", \"packet_id\": \"OFM-20260430T221803Z\", \"result_hash\": \"52be04c4ac344b53bce1d2f44280f3aab5e30a9e32e310c2c7e4336ab9a3c3df\", \"schema_version\": \"mpp.ofm_measurable_success_gate_result.v1\", \"stage\": \"OFM_MEASURABLE_SUCCESS_GATE\", \"verdict\": \"PASS\", \"violations\": [], \"warnings\": []}"
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_ofm_outcome_frame_gate_v1.py --validate /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/tests/fixtures/mpp_v3/invalid_ofm_no_measurable_success_packet_v1.json",
+      "expected": 1,
+      "returncode": 1,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.\nTraceback (most recent call last):\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_ofm_outcome_frame_gate_v1.py\"\u001b[0m, line \u001b[35m184\u001b[0m, in \u001b[35m<module>\u001b[0m\n    raise SystemExit(\u001b[31mmain\u001b[0m\u001b[1;31m()\u001b[0m)\n                     \u001b[31m~~~~\u001b[0m\u001b[1;31m^^\u001b[0m\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_ofm_outcome_frame_gate_v1.py\"\u001b[0m, line \u001b[35m173\u001b[0m, in \u001b[35mmain\u001b[0m\n    print(json.dumps(\u001b[31mvalidate_ofm_packet\u001b[0m\u001b[1;31m(packet)\u001b[0m, sort_keys=True))\n                     \u001b[31m~~~~~~~~~~~~~~~~~~~\u001b[0m\u001b[1;31m^^^^^^^^\u001b[0m\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_ofm_outcome_frame_gate_v1.py\"\u001b[0m, line \u001b[35m60\u001b[0m, in \u001b[35mvalidate_ofm_packet\u001b[0m\n    \u001b[31mrequire\u001b[0m\u001b[1;31m(measurable_count >= 1, \"OFM_NO_MEASURABLE_SUCCESS_CRITERION\")\u001b[0m\n    \u001b[31m~~~~~~~\u001b[0m\u001b[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\u001b[0m\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_ofm_outcome_frame_gate_v1.py\"\u001b[0m, line \u001b[35m25\u001b[0m, in \u001b[35mrequire\u001b[0m\n    raise OFMValidationError(code)\n\u001b[1;35mOFMValidationError\u001b[0m: \u001b[35mOFM_NO_MEASURABLE_SUCCESS_CRITERION\u001b[0m",
+      "stdout": ""
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_ofm_outcome_frame_gate_v1.py --gate /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/tests/fixtures/mpp_v3/invalid_ofm_bad_threshold_packet_v1.json",
+      "expected": 1,
+      "returncode": 1,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.",
+      "stdout": "{\"created_at\": \"2026-04-30T22:18:49.298017+00:00\", \"gate_id\": \"OFM-GATE-20260430T221849Z\", \"packet_id\": \"OFM-BAD-THRESHOLD\", \"result_hash\": \"c7312bc1d57e96827ed04ecb5446ce0937cbd922d8abd355e50b33c4475a48fe\", \"schema_version\": \"mpp.ofm_measurable_success_gate_result.v1\", \"stage\": \"OFM_MEASURABLE_SUCCESS_GATE\", \"verdict\": \"FAIL\", \"violations\": [\"POLICY_BLOCK_BAD_THRESHOLD_SC-001\"], \"warnings\": []}"
+    }
+  ],
+  "timestamp": "20260430T234300Z"
+}

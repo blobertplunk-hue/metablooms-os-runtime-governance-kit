@@ -1,0 +1,5 @@
+{
+  "do_not": "Do not import, patch, or promote FL17 in this stage. Do not treat FL17 as baseline. Do not continue without visible SEE/CE evidence.",
+  "next_correct_command": "Run exactly one bounded FL17-MERGE-1 staging and diff classification stage with SEE/CE preflight: load GOV_REPAIR_SEE_CE_0_REPORT plus FL17-COMPARE-0 and FL17-MERGE-PLAN-0 artifacts, run current web.run research/improvement check appropriate to merge governance if needed, process SEE/CE, extract/probe target tracker-working OS and FL17 candidate to staging, compute hash-based file deltas, classify import/retain/exclude/conflict groups, write delta report, receipt, and handoff, and stop before importing or patching.",
+  "verdict": "PROCEED_TO_FL17_MERGE_1_ONLY_WITH_SEE_CE_PREFLIGHT_AND_THIS_REPORT_LOADED"
+}

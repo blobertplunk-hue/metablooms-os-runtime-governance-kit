@@ -1,0 +1,10 @@
+{
+  "validator": "assert_gate_registry_integrity_v1",
+  "created_utc": "2026-04-28T03:37:10Z",
+  "registry_path": "--root",
+  "decision": "fail",
+  "errors": [
+    "registry missing: --root"
+  ],
+  "warnings": []
+}

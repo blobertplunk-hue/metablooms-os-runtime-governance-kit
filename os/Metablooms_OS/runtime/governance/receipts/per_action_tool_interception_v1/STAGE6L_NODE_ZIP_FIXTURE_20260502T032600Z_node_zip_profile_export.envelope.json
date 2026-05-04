@@ -1,0 +1,29 @@
+{
+  "action_type": "export",
+  "approval_token": "STAGE6L_FIXTURE_EXPORT_APPROVED",
+  "artifacts": {
+    "read_paths": [
+      "/mnt/data/Metablooms_OS/runtime/tmp/stage6l_zip_src",
+      "/mnt/data/Metablooms_OS/runtime/tooling/governed_install_profiles/node_zip_authority_repair_v1",
+      "/mnt/data/metablooms_stage4c_node_stream_rebuild_20260501T233500Z"
+    ],
+    "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/STAGE6L_NODE_ZIP_FIXTURE_20260502T032600Z_node_zip_profile_export.decision.json",
+    "write_paths": [
+      "/mnt/data/METABLOOMS_STAGE6L_NODE_ZIP_EXPORT_FIXTURE_20260502T032600Z.zip"
+    ]
+  },
+  "envelope_id": "STAGE6L_NODE_ZIP_FIXTURE_20260502T032600Z_node_zip_profile_export",
+  "intent": "Validate BTS-wrapped Node ZIP export uses post-tool result validation before success commit",
+  "limits": {
+    "max_bytes": 12,
+    "max_files": 1,
+    "max_steps": 40,
+    "timeout_seconds": 90
+  },
+  "requested_at_utc": "2026-05-02T02:06:57.288151Z",
+  "requires_see": false,
+  "risk_tier": "critical",
+  "schema_version": "ToolCallEnvelope_v1",
+  "stage_id": "STAGE6L_POST_TOOL_RESULT_VALIDATION_GATE",
+  "tool_name": "bts_wrapped_node_zip_profile_export"
+}

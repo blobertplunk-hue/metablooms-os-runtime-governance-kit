@@ -1,0 +1,75 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "name": "adapter_echo",
+      "passed": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "compat-ok\n"
+    },
+    {
+      "name": "adapter_forbidden_unzip_tqq",
+      "passed": true,
+      "returncode": 126,
+      "stderr": "METABLOOMS_BOUNDED_SUBPROCESS_RESULT=DENY_FORBIDDEN_METHOD FAILURE_CLASS=FORBIDDEN_METHOD DECISION_PACKET=/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/stage3_smoke_archive_validation_20260502T140221Z_cb5a0af6c3c4/decision_packet.json\n"
+    },
+    {
+      "name": "filesystem_df_record",
+      "passed": true,
+      "result": {
+        "filesystem": "none",
+        "mount_point": "/",
+        "ok": true,
+        "path": "/mnt/data/Metablooms_OS",
+        "raw": "none           9007199254740988 138564 9007199254602424       1% /"
+      }
+    },
+    {
+      "attempts": [
+        {
+          "cmd": [
+            "/usr/bin/unzip",
+            "-tq",
+            "/mnt/data/stage3_tiny_test.zip"
+          ],
+          "elapsed_sec": 0.012,
+          "rc": 0,
+          "stderr": "",
+          "stdout": "No errors detected in compressed data of /mnt/data/stage3_tiny_test.zip.\n"
+        }
+      ],
+      "name": "archive_method_router_script",
+      "passed": true,
+      "returncode": 0,
+      "router_verdict": "PASS",
+      "stderr": ""
+    },
+    {
+      "name": "patched_static_scan",
+      "passed": true,
+      "scan": [
+        {
+          "contains_run_compat": true,
+          "contains_subprocess_run": false,
+          "path": "/mnt/data/Metablooms_OS/0_kernel/cartridges/inline_project_tracker/TRACKER_STAGE_FINALIZATION_HOOK_v1.py"
+        },
+        {
+          "contains_run_compat": true,
+          "contains_subprocess_run": false,
+          "path": "/mnt/data/Metablooms_OS/0_kernel/lib/filesystem_safety_v1.py"
+        },
+        {
+          "contains_run_compat": true,
+          "contains_subprocess_run": false,
+          "path": "/mnt/data/Metablooms_OS/0_kernel/lib/archive_method_router_v1.py"
+        },
+        {
+          "contains_run_compat": true,
+          "contains_subprocess_run": false,
+          "path": "/mnt/data/Metablooms_OS/0_kernel/lib/archive_extraction_route_v1.py"
+        }
+      ]
+    }
+  ]
+}

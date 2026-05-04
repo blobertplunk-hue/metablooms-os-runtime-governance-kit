@@ -1,0 +1,51 @@
+{
+  "version": "1.0",
+  "created_at": 1777037126.4859886,
+  "stage": "STAGE_D4_SEE_PACKET_VALIDATOR_STABLE_EXPORT",
+  "status": "complete",
+  "inputs": {
+    "d3_handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/D3_TO_D4_HANDOFF_v1.json",
+    "integration_proof": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/SEE_PACKET_VALIDATOR_INTEGRATION_PROOF_v1.json",
+    "validator": "/mnt/data/Metablooms_OS_refined/0_kernel/scripts/see_packet_validator_v1.py",
+    "schema": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/SEE_PACKET_SCHEMA_v1.json",
+    "contract": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/SEE_PACKET_VALIDATOR_CONTRACT_v1.json",
+    "boot_manifest": "/mnt/data/Metablooms_OS_refined/boot_manifest_v1.json",
+    "artifact_registry": "/mnt/data/Metablooms_OS_refined/artifact_registry.json"
+  },
+  "checks": {
+    "git_clean_before_d4": true,
+    "git_fsck_clean_before_d4": true,
+    "d3_handoff_ready": true,
+    "d3_allows_stable_export": true,
+    "d3_proof_passed": true,
+    "see_validator_present": true,
+    "see_schema_present": true,
+    "see_contract_present": true,
+    "boot_manifest_has_see_packet_validator": true,
+    "boot_manifest_requires_see_when_research_triggered": true,
+    "artifact_registry_indexes_see_validator": true,
+    "artifact_registry_indexes_see_schema": true,
+    "artifact_registry_indexes_see_contract": true,
+    "runaway_turn_breaker_present": true,
+    "tracked_cache_invariant_present": true
+  },
+  "cleanup_actions": [],
+  "export_target": "/mnt/data/Metablooms_OS_refined_SEE_PACKET_VALIDATOR_STABLE_D4.zip",
+  "manifest_target": "/mnt/data/Metablooms_OS_refined_SEE_PACKET_VALIDATOR_STABLE_D4.zip.sha256.json",
+  "included_capabilities": [
+    "boot_runtime_executor_v1.py",
+    "trigger_router_evaluator_v1.py",
+    "ce_packet_validator_v1.py",
+    "see_packet_validator_v1.py",
+    "runaway-turn breaker invariant",
+    "tracked-cache export/recovery invariant",
+    "SEE packet validator schema/contract/proof"
+  ],
+  "runaway_turn_guard": {
+    "stable_export_only": true,
+    "no_cleanup_beyond_runtime_pycache": true,
+    "no_broad_scan_beyond_root_export": true
+  },
+  "verdict": "PASS",
+  "next_correct_command": "RUN BOOT RECOVERY PROOF FROM SEE VALIDATOR D4 EXPORT"
+}

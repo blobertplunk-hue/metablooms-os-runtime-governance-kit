@@ -1,0 +1,23 @@
+{
+  "artifact_type": "TRACKER_FINALIZATION_REQUIRED_STAGE_CONTRACT",
+  "created_utc": "20260430T014900Z",
+  "forbidden_tracker_layout": [
+    "box_drawing_borders",
+    "pipe_table_right_border",
+    "fake_percent_without_determinate_denominator"
+  ],
+  "governance_layering": "always_on_governance_baseline_plus_additive_cartridge_governance",
+  "mandatory_for": "all bounded governed MetaBlooms stages",
+  "source_progression": "FL17 quarantined tracker finalization hook imported as active lifecycle enforcement, not FL17 runtime promotion",
+  "stage_order": [
+    "validation_report_written",
+    "receipt_written",
+    "handoff_written",
+    "tracker_finalization_hook_run",
+    "tracker_state_binding_validated",
+    "tracker_rendered_first"
+  ],
+  "stale_state_definition": "current_stage/evidence/history do not bind to the latest stage receipt and handoff",
+  "status": "ACTIVE",
+  "version": "1.0"
+}

@@ -1,0 +1,1824 @@
+{
+  "checks": {
+    "historical_callsite_scanner": {
+      "cmd": [
+        "/opt/pyvenv/bin/python3",
+        "/mnt/data/Metablooms_OS/0_kernel/scripts/observability_historical_callsite_quarantine_v1.py",
+        "--root",
+        "/mnt/data/Metablooms_OS",
+        "--json"
+      ],
+      "returncode": 2,
+      "stderr": "",
+      "stdout": {
+        "artifact_type": "MB_HISTORICAL_CALLSITE_QUARANTINE_INDEX.v1",
+        "created_utc": "20260502T175900Z",
+        "hits": [
+          {
+            "class": "live_operator_surface",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+            "sha256": "2cbfe41aa034e771ada9fa0f20e0c4802acc9e47b1990cc5d1a3c0848c9ae429",
+            "size_bytes": 5039
+          },
+          {
+            "class": "live_operator_surface",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/BOOT_REQUIRED_GATES_v1.json",
+            "sha256": "beb0d01e9cb7310d5344ac89b245d0df56f41e1b744be468a781df5be4e75893",
+            "size_bytes": 8058
+          },
+          {
+            "class": "implementation_dependency",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/CONTROLLED_GOVERNANCE_ARTIFACT_INDEX_v1.json",
+            "sha256": "64caf020c39f5f12e2ddbbaf2ffe536c625d883c1164fde3c60575680f6f5861",
+            "size_bytes": 1144541
+          },
+          {
+            "class": "live_operator_surface",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/RUNTIME_STARTER_SMOKE_CONTRACT_v1.json",
+            "sha256": "8010516a88008194df34188ed66b88543bba88a978bfd6cf06a74cea58251828",
+            "size_bytes": 2207
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777603985636.json",
+            "sha256": "8d632065862bce6314d5a0276b8c83d241636e54de8af1c10babb5bfef068634",
+            "size_bytes": 31749
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777604901513.json",
+            "sha256": "ed453c4eff6e0740900553de03ba08e65602af57747c49b58511edc078d2f540",
+            "size_bytes": 31750
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777605439498.json",
+            "sha256": "779fce3deed50fd622bd179d1df7a8f01c6e0a5b4babf4406f4067aed891042a",
+            "size_bytes": 31750
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777605464720.json",
+            "sha256": "421aad3987739982d2a270c38de06b052fba9495650a77de91a19a67daa2399b",
+            "size_bytes": 31750
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777605534695.json",
+            "sha256": "7199f446f3d76597ed5d9b0f83673fc1bfe23f44f0ac00d19cbd91eb2141409e",
+            "size_bytes": 31750
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777608025154.json",
+            "sha256": "e8f3fcf71135203a45c60d05a8b2f555cc42df227774105aa6e3f1e79fd1de6c",
+            "size_bytes": 31750
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777608074978.json",
+            "sha256": "2a54517e485857189a8c6df0ed5d1a137e725f40fcebec390a91ac5ab6d1f43e",
+            "size_bytes": 31750
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777608415718.json",
+            "sha256": "9d93f0a38f91a46e192a45b0859d941a6709a88f452b31818c8b976b37b6af5c",
+            "size_bytes": 31750
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777608425870.json",
+            "sha256": "59d2eb67839f58d833f35b7e463ca8ed1fd46ff02b6f9923771fcd46ffa9b48d",
+            "size_bytes": 31750
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777676623544.json",
+            "sha256": "20e67237b7d4657ec267b71f55c65dd3009cf15b625cb2c384a0d467e539a7fd",
+            "size_bytes": 31750
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777676841850.json",
+            "sha256": "9f882e2602c672ab9e73d385a6e4cb89e49af60072ca5ff1604505915a1b2d00",
+            "size_bytes": 31749
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777676918129.json",
+            "sha256": "b231f6ac353b958e34606ea9b41c0f7c5247d5619cd3b660915fca765fb2d046",
+            "size_bytes": 31750
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777676958279.json",
+            "sha256": "d8116a55e017f9c18afd26407cccba991393075657e0eb672cba09cc79d92872",
+            "size_bytes": 36391
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777678669001.json",
+            "sha256": "41bfd91827c640225564a55c9084d037701696e535618811b7cc1682db9c0430",
+            "size_bytes": 31749
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777678817642.json",
+            "sha256": "916f5b68dd1aeadbfe5088a6146e135795ab7ea1c35e271d5ebfa6467a5a4d8c",
+            "size_bytes": 31750
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777681621670.json",
+            "sha256": "6ae848c59a83cdaf229cf94535797f0eb604e0d491f0f3a64c3b3222a78c2e50",
+            "size_bytes": 31750
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777681841294.json",
+            "sha256": "46eb4f4e045fba2934f09e688b229a507a46e98cea27d1ad9b026eda4bcf8173",
+            "size_bytes": 31750
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777682788127.json",
+            "sha256": "01f7dce813dce21e91faf9fbfd3bf65dc2f2fa0447819c4001f8dac939d98477",
+            "size_bytes": 31750
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777683462880.json",
+            "sha256": "21622d81e12e14c95ad1e2fa6c054b930849d1c3a5e01ff3760734ea4f2ecebc",
+            "size_bytes": 36390
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777684823859.json",
+            "sha256": "b22e2916a1341f66e5a77b902cc2c06f38e759cb7c4c3ec9888a75456de61f44",
+            "size_bytes": 31749
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777684854925.json",
+            "sha256": "f6115746907b2cf62644620b3c1b05ec22e3a36c33fd5e98018b2a72a539fd88",
+            "size_bytes": 31749
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777684907966.json",
+            "sha256": "643dae5c657ce02899776b65ac29051ac55c5cefae91f0297f9a0ee2112f33e8",
+            "size_bytes": 31750
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777685302369.json",
+            "sha256": "0eb2733086fecf64e22622fd3c0af5b530c966cc408940437f688d38288015ab",
+            "size_bytes": 31747
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777686197570.json",
+            "sha256": "67ad90e9a494067ee7ecd67b5d158688e7a2e3d7e3c9fc8fdf465c0409e34481",
+            "size_bytes": 36391
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777686961333.json",
+            "sha256": "aa59b72f37e6fb1d8d8ac86e59e951e057fe4b5ec540151b6c372634a0f7b9a0",
+            "size_bytes": 39247
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777687757675.json",
+            "sha256": "69adb9610c1b158220388e344cbe677aefe7ec3f9e1778ea6e5c41f14cce3944",
+            "size_bytes": 31750
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777690007685.json",
+            "sha256": "1b57d02f9ef21f636b81d065f16ceeea38ce367eaed8e9d97c5bf1916fec6b2d",
+            "size_bytes": 31750
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777690484786.json",
+            "sha256": "c7159f678528e034fe3e805581d360f1b896183ffcbab23f0d49a7ff015aa47e",
+            "size_bytes": 31750
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777690620564.json",
+            "sha256": "b126f8b86d1a9199aec4b6140f3d449d23195d75d7b4cbde6772d7fe89bd85ea",
+            "size_bytes": 31750
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777692397699.json",
+            "sha256": "ca35db904a4843f8dc7ccc2d0ab38cb0ab0dd81432b1b4ec97f88101d08fb430",
+            "size_bytes": 31750
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777692707323.json",
+            "sha256": "b23fc9133e46f2908b67e1984dac06312f4e792a7ce73c7bffde81dc917ce341",
+            "size_bytes": 31750
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777692771499.json",
+            "sha256": "8b66a1b3e15872f6135adc92a81f0e32460fe00943758b2a496b8b6042b1a6f8",
+            "size_bytes": 35081
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777692813956.json",
+            "sha256": "3cf619e8d5492a891a7f9d70076f815d63fbf6739084203d60d51fef7780d829",
+            "size_bytes": 35795
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777693070433.json",
+            "sha256": "d642be49de59b1ac3600fe1a573742d835b7467ba2e4413cd17f058ac07a9e49",
+            "size_bytes": 31750
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777693119535.json",
+            "sha256": "874e4ec64f24eddd1c6584000d294588df1cbe7ee5089edbde59645269e8b461",
+            "size_bytes": 31750
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777724250818.json",
+            "sha256": "b5399433f265e32adeb882bebecf4f362be1d90bd63e589129af6f98eebed190",
+            "size_bytes": 31750
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777724317465.json",
+            "sha256": "810d0f0c9eb5417f2b1085bc7aec28773bb60440611c42795ded7593059ef4bc",
+            "size_bytes": 31748
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777724447609.json",
+            "sha256": "6a68be57f55e84a45ee25b576d0851a37ce848f6ce005cb40691734ccb315215",
+            "size_bytes": 31749
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777724614954.json",
+            "sha256": "6f7a410073a67343f551764baa527877baff521476d7fa52d681050c5ceff874",
+            "size_bytes": 31750
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777725626348.json",
+            "sha256": "1b2fa48ae234b127511e626c993747d68a4c87afca499c5767ec44ca49af0ad4",
+            "size_bytes": 31750
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777725634414.json",
+            "sha256": "c69b49c07a58e66b49ae7a2f4c3560728422baf4faebbc9080b8b70fc5b04ccc",
+            "size_bytes": 36510
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777726196193.json",
+            "sha256": "deaa119c9e0a262b3c560d08a7a3d81b4be1f9246c9cd79e277445db2ce71723",
+            "size_bytes": 31749
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777726780701.json",
+            "sha256": "fbc72e7dfadb8017e0576f8d7c057cb422bbd0386eacd76c86903d9512800c77",
+            "size_bytes": 31750
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777726839958.json",
+            "sha256": "57298be2ac340286c40c74033ffb780c2f4a37e9582a1d7ed4cdbb3272ee75d9",
+            "size_bytes": 31749
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777726985549.json",
+            "sha256": "ac5f79a3cf4e62b8ed06f1987ce3ac4e23fdc33821af1d29aa4d358533bf1b35",
+            "size_bytes": 31750
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777729103336.json",
+            "sha256": "177061a08cb5c0f5ff03e51b363e62587a91538b9b030fc9bae9b8fcc44a9728",
+            "size_bytes": 31750
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/boot_repair_receipts/METABLOOMS_STAGE2_OVERLAY_VS_RUNAWAY_COMPARISON_20260501T221200Z.json",
+            "sha256": "781e81fe6b76ee9bbd11171b9e51dad9f3f31169261b2aa3bde3f21c38e59939",
+            "size_bytes": 4948
+          },
+          {
+            "class": "live_operator_surface",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/observability/MB_BOOT_SEQUENCE_WRAPPER_ENFORCEMENT_v1.json",
+            "sha256": "7d831afe529a734b65fdbe7b06a026f3729704acdac516628e38903ff353be6b",
+            "size_bytes": 1540
+          },
+          {
+            "class": "unclassified",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "python runtime/governance/runtime_starter_smoke_v1.py",
+              "python3 runtime/governance/runtime_starter_smoke_v1.py",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/observability/MB_BOOT_SURFACE_MINIMAL_MODE_POLICY_v1.json",
+            "sha256": "786f463d1d7668a6c2cb62be53acfa8f5090a0fbc85e566dad40ed55484435d4",
+            "size_bytes": 1248
+          },
+          {
+            "class": "implementation_dependency",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run runtime/governance/runtime_starter_smoke_v1.py",
+              "Run `runtime/governance/runtime_starter_smoke_v1.py`",
+              "python runtime/governance/runtime_starter_smoke_v1.py",
+              "python3 runtime/governance/runtime_starter_smoke_v1.py",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/observability/MB_HISTORICAL_CALLSITE_QUARANTINE_POLICY_v1.json",
+            "sha256": "75f92aa94a2f7bbf235aba642b19dcea8708a7a493563482834a3ba345499221",
+            "size_bytes": 3685
+          },
+          {
+            "class": "implementation_dependency",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run runtime/governance/runtime_starter_smoke_v1.py",
+              "Run `runtime/governance/runtime_starter_smoke_v1.py`",
+              "python runtime/governance/runtime_starter_smoke_v1.py",
+              "python3 runtime/governance/runtime_starter_smoke_v1.py",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/observability/MB_LIVE_BOOT_GUIDANCE_EXTRACTOR_POLICY_v1.json",
+            "sha256": "8a9c5c748d466e80efe077417718bffe56b5f3f45354349e53c162bdd0b2f065",
+            "size_bytes": 942
+          },
+          {
+            "class": "implementation_dependency",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "python runtime/governance/runtime_starter_smoke_v1.py",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/observability/METHOD_RELIABILITY_LESSON_RUNTIME_STARTER_SMOKE_CLI_SHAPE_v1.json",
+            "sha256": "fa7b5d7c1ae237e8e1b6ab8b77084765119d9122a4be4e675688bda6709104b6",
+            "size_bytes": 2113
+          },
+          {
+            "class": "non_operator_state_or_inventory",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/tool_governance/LEGACY_EXECUTOR_RETROFIT_BINDINGS_v1.json",
+            "sha256": "2c643f3cbfc7cf0e81536ca56971327438d203be33f6c1d2f4bb37fc001dac23",
+            "size_bytes": 224926
+          },
+          {
+            "class": "non_operator_state_or_inventory",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/registry/tool_governance/STAGE6Q_LEGACY_EXECUTOR_RETROFIT_AUDIT_MATRIX_v1.json",
+            "sha256": "157a9f381ef36c8d1ae9b520ba078886a047f3de65ab28f2eff6a12469da5f6c",
+            "size_bytes": 199022
+          },
+          {
+            "class": "implementation_dependency",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run runtime/governance/runtime_starter_smoke_v1.py",
+              "Run `runtime/governance/runtime_starter_smoke_v1.py`",
+              "python runtime/governance/runtime_starter_smoke_v1.py",
+              "python3 runtime/governance/runtime_starter_smoke_v1.py",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/scripts/observability_historical_callsite_quarantine_v1.py",
+            "sha256": "eb8d233939f285705be7ea54ac57c512d8dfddce79a633e74982a1aa12903c18",
+            "size_bytes": 3594
+          },
+          {
+            "class": "implementation_dependency",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run runtime/governance/runtime_starter_smoke_v1.py",
+              "Run `runtime/governance/runtime_starter_smoke_v1.py`",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "0_kernel/validators/validate_observability_trace_span_ledger_stage7_boot_sequence_enforcement_v1.py",
+            "sha256": "8d833788f0841f97cced0557f1e80e2100cf9ea0654048efd9fe23bdaefec189",
+            "size_bytes": 6196
+          },
+          {
+            "class": "live_operator_surface",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "NEW_CHAT_START_HERE.md",
+            "sha256": "86d9d16ddd30173e5b59889cbfe5b260f86e4e5be2d83da1c33308409da6f0ad",
+            "size_bytes": 5469
+          },
+          {
+            "class": "implementation_dependency",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run runtime/governance/runtime_starter_smoke_v1.py",
+              "Run `runtime/governance/runtime_starter_smoke_v1.py`",
+              "python runtime/governance/runtime_starter_smoke_v1.py",
+              "python3 runtime/governance/runtime_starter_smoke_v1.py",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/governance/new_chat_start_contract_validator_v1.py",
+            "sha256": "1a3e775e57e1eb4e33ddd2fccc7bb4eda59c45a66fffad6aa539986d37871cd9",
+            "size_bytes": 3567
+          },
+          {
+            "class": "implementation_dependency",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/governance/os_bundle_delivery_guard_v1.py",
+            "sha256": "8fd51e4f3e3ab20680e2d7efe562b0bf7b34ddefb110f316e39c5b8349e15f3c",
+            "size_bytes": 3841
+          },
+          {
+            "class": "implementation_dependency",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+            "sha256": "f8b75581917cc5b34b7cf375d4fbe8113c043b7bf125f17af9d65d9fb16c9faf",
+            "size_bytes": 2623
+          },
+          {
+            "class": "implementation_dependency",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/governance/runtime_starter_smoke_v1.py",
+            "sha256": "08b304911af0221b6d9c228534f98f1f12c3109ce783cd057d9d17ebece2d3d7",
+            "size_bytes": 3223
+          },
+          {
+            "class": "live_operator_surface",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/operator_tracker/operator_visual_tracker_latest.html",
+            "sha256": "58228ed8b4ddb4326b7a3a9560d608f154aa0a7417db2cf4fbf0f49addf90204",
+            "size_bytes": 22999
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/METABLOOMS_CDR_STAGE11_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE2_TO_STAGE10_RECONSTRUCTED_CHAIN_RECEIPT_20260502T123500Z.json",
+            "sha256": "c2909b25a9e2a987b05dd7dd1768ef0614587e299c7ea5be331c954522f5f5f5",
+            "size_bytes": 16292
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/METABLOOMS_CDR_STAGE13_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE12_RECEIPT_20260502T125500Z.json",
+            "sha256": "b76dd6da13db219d5f1641712eca07b9939a401f651b0af3e9b38d493157cb86",
+            "size_bytes": 17281
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/METABLOOMS_MPP_CDR_BINDING_STAGE14_CODE_WORK_REQUIRES_CDR_IN_MPP_RECEIPT_20260502T130500Z.json",
+            "sha256": "2a25193f364a2ef5d49762393fa17c629c17772a93629bb0cf2cd68fe8f89693",
+            "size_bytes": 5993
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/METABLOOMS_STAGE5B_OS_BUNDLE_DELIVERY_HARDENING_RECEIPT_20260502T000900Z.json",
+            "sha256": "f26c60472a0e5890db9201be2b51e076f0abd4df5f450d4e65f8b5fa4c7bd16a",
+            "size_bytes": 4171
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_20260502T162918Z/STAGE_RECEIPT.json",
+            "sha256": "2c7d5b1763443c229beea445391e5c6f7b1370732edfccc2c3acf5e1e6f60da3",
+            "size_bytes": 9974
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run `runtime/governance/runtime_starter_smoke_v1.py`",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_20260502T162918Z/pre_patch_backups/0_kernel__boot_contracts__NEW_CHAT_START_CONTRACT_v1.md",
+            "sha256": "3e5186139593f856e25211458054be0c1f9a2492952e26ea35a37ef47747b198",
+            "size_bytes": 989
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run `runtime/governance/runtime_starter_smoke_v1.py`",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_20260502T162918Z/pre_patch_backups/NEW_CHAT_START_HERE.md",
+            "sha256": "3a10f63e6ce55530a52b4c43d1310be220ab3ab491117ab26d20bccf426cb5d2",
+            "size_bytes": 1863
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_AMENDED_20260502T162944Z/STAGE_RECEIPT.json",
+            "sha256": "37355c8a008442c0fe22618b846d3907989510233ee157d98bd3ac78286513df",
+            "size_bytes": 8435
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_RECONCILED_FULL_AUTHORITY_EXPORT_20260502T163016Z/STAGE_RECEIPT.json",
+            "sha256": "6393d24b62c44790a442a965331ca00504f65d1f76e4fa5eac92bed634dd2f7b",
+            "size_bytes": 6447
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/meta_infra/BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T144842Z/APPEND_STREAM_INVENTORY.json",
+            "sha256": "5883ba52911348433f45c6a604cff5dcde1ac7a5cea4b161ffa550c4a99f3ba1",
+            "size_bytes": 12801
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/meta_infra/BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT_20260502T152058Z/FULL_EXPORT_BOOT_SMOKE.json",
+            "sha256": "41c46ae2ba24b7238594fe631efc801d350b64301c305fbcd6b5f618c245e1ed",
+            "size_bytes": 608
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/meta_infra/BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT_20260502T152058Z/STAGE5_VALIDATION_SUMMARY.json",
+            "sha256": "60c69363bf1656bd682643ea5bc529d834d4adfe47569e1cb76321d3a8fead6a",
+            "size_bytes": 9137
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT_20260502T142018Z/FULL_EXPORT_MANIFEST.json",
+            "sha256": "9d59091bcfd38b02dd249ced21526670677b040a40ac5ac91483e5e667b08f5a",
+            "size_bytes": 1106148
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE7_METHOD_WRAPPER_CALLSITE_RETROFIT_AND_BOOT_SEQUENCE_ENFORCEMENT_20260502T170919Z/CE_SYNTHESIS.json",
+            "sha256": "fb05c2d7521dbfd3951b8d638ca56dcad9c58617bd3dbe81cb7a557c8b042970",
+            "size_bytes": 2042
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE7_METHOD_WRAPPER_CALLSITE_RETROFIT_AND_BOOT_SEQUENCE_ENFORCEMENT_20260502T170919Z/STAGE_RECEIPT.json",
+            "sha256": "9cb1e6f93baae912625d5ce3a73d1e4ecd4d749814d2c76fcb74259523021617",
+            "size_bytes": 20843
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run `runtime/governance/runtime_starter_smoke_v1.py`",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE7_METHOD_WRAPPER_CALLSITE_RETROFIT_AND_BOOT_SEQUENCE_ENFORCEMENT_20260502T170919Z/pre_patch_backups/0_kernel__boot_contracts__NEW_CHAT_START_CONTRACT_v1.md",
+            "sha256": "90c0ef2fd7d3734579568b51f5df7e3b699b83904f6f9420a89f15f588c94d91",
+            "size_bytes": 2576
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE7_METHOD_WRAPPER_CALLSITE_RETROFIT_AND_BOOT_SEQUENCE_ENFORCEMENT_20260502T170919Z/pre_patch_backups/0_kernel__registry__BOOT_REQUIRED_GATES_v1.json",
+            "sha256": "e211b014b0bc4a30277eff531bf2623e3149b96abe3981e3f96aa85969faf9e3",
+            "size_bytes": 6700
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE7_METHOD_WRAPPER_CALLSITE_RETROFIT_AND_BOOT_SEQUENCE_ENFORCEMENT_20260502T170919Z/pre_patch_backups/0_kernel__registry__RUNTIME_STARTER_SMOKE_CONTRACT_v1.json",
+            "sha256": "12383fb4c246d7b5b1638f6591838266559a2cae954b08ef397e1c65fd8a3a53",
+            "size_bytes": 874
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run runtime/governance/runtime_starter_smoke_v1.py",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE7_METHOD_WRAPPER_CALLSITE_RETROFIT_AND_BOOT_SEQUENCE_ENFORCEMENT_20260502T170919Z/pre_patch_backups/0_kernel__registry__current_authority__CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+            "sha256": "788270c82af869b115dfa4d372a04c995392250b6b26fe0b32479b82958f836f",
+            "size_bytes": 5376
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run runtime/governance/runtime_starter_smoke_v1.py",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE7_METHOD_WRAPPER_CALLSITE_RETROFIT_AND_BOOT_SEQUENCE_ENFORCEMENT_20260502T170919Z/pre_patch_backups/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+            "sha256": "788270c82af869b115dfa4d372a04c995392250b6b26fe0b32479b82958f836f",
+            "size_bytes": 5376
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run `runtime/governance/runtime_starter_smoke_v1.py`",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE7_METHOD_WRAPPER_CALLSITE_RETROFIT_AND_BOOT_SEQUENCE_ENFORCEMENT_20260502T170919Z/pre_patch_backups/NEW_CHAT_START_HERE.md",
+            "sha256": "bf694c689e889f69bf25dd06331ddf2786bc0ab313aee2938fd89f4f60c67f14",
+            "size_bytes": 3006
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run runtime/governance/runtime_starter_smoke_v1.py",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE7_METHOD_WRAPPER_CALLSITE_RETROFIT_AND_BOOT_SEQUENCE_ENFORCEMENT_20260502T170919Z/pre_patch_backups/runtime__authority__CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+            "sha256": "788270c82af869b115dfa4d372a04c995392250b6b26fe0b32479b82958f836f",
+            "size_bytes": 5376
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE7_METHOD_WRAPPER_CALLSITE_RETROFIT_AND_BOOT_SEQUENCE_ENFORCEMENT_20260502T170919Z/stage7_validator.json",
+            "sha256": "716cea1f73a56667129090b0b653ade8c1fb71a7418728a624897b85a98f877f",
+            "size_bytes": 7570
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE7_METHOD_WRAPPER_CALLSITE_RETROFIT_AND_BOOT_SEQUENCE_ENFORCEMENT_20260502T170919Z/wrapper_good.json",
+            "sha256": "857961ac9a9ccc78f6cc9b1bea1e152b295504f239db302ba8c7917f10ed1785",
+            "size_bytes": 772
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_20260502T171707Z/pre_patch_backups/0_kernel__boot_contracts__NEW_CHAT_START_CONTRACT_v1.md",
+            "sha256": "cee2e6809c504773daa10ba5ac14f8c9f61e6f2c47d5fa8d13e104d2c627340c",
+            "size_bytes": 3186
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_20260502T171707Z/pre_patch_backups/0_kernel__registry__BOOT_REQUIRED_GATES_v1.json",
+            "sha256": "6c5b9dd09e57f3c5fd332dbda76edf32e443625098cd3d8605b21feee6a9e61a",
+            "size_bytes": 7576
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_20260502T171707Z/pre_patch_backups/0_kernel__registry__RUNTIME_STARTER_SMOKE_CONTRACT_v1.json",
+            "sha256": "96e97a76dbcfbd2c1441ae5947ec6ca47c031ad57984f19f20360a0cadf45b76",
+            "size_bytes": 1653
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_20260502T171707Z/pre_patch_backups/0_kernel__registry__observability__MB_BOOT_SEQUENCE_WRAPPER_ENFORCEMENT_v1.json",
+            "sha256": "415730f5664885ec5e77f692e0530f7ea7db11523904d4b368fd0c4ae68da1d9",
+            "size_bytes": 986
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_20260502T171707Z/pre_patch_backups/NEW_CHAT_START_HERE.md",
+            "sha256": "e39cd0f443e6bde73986dd80b780f9a1396cb87a2bd851f7024b5210fec3bff6",
+            "size_bytes": 3616
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run runtime/governance/runtime_starter_smoke_v1.py",
+              "Run `runtime/governance/runtime_starter_smoke_v1.py`",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_20260502T171707Z/pre_patch_backups/runtime__governance__new_chat_start_contract_validator_v1.py",
+            "sha256": "7672e9b4c4193e061c855b98f72a5fe56db1a512247f4909923fe816444f2a90",
+            "size_bytes": 2855
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run runtime/governance/runtime_starter_smoke_v1.py",
+              "Run `runtime/governance/runtime_starter_smoke_v1.py`",
+              "python runtime/governance/runtime_starter_smoke_v1.py",
+              "python3 runtime/governance/runtime_starter_smoke_v1.py",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_20260502T171707Z/quarantine_scanner_stdout.json",
+            "sha256": "f2d75a8738b8e93c28a73bf05a7a75b3f86c094ced043353b2962a5f379bfde6",
+            "size_bytes": 45850
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_20260502T171707Z/stage7_validator.json",
+            "sha256": "09cdb7bdfc835f02c0d5e9ebdbe136bab05ead6df174aabc81cbeb28da18b9c0",
+            "size_bytes": 8160
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run runtime/governance/runtime_starter_smoke_v1.py",
+              "Run `runtime/governance/runtime_starter_smoke_v1.py`",
+              "python runtime/governance/runtime_starter_smoke_v1.py",
+              "python3 runtime/governance/runtime_starter_smoke_v1.py",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_20260502T171707Z/stage8_validator.json",
+            "sha256": "5c77080aaceab17e334c54df2712f3dbe0d9f3614790c70829275249e5a4b911",
+            "size_bytes": 66724
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_20260502T171707Z/wrapper_good.json",
+            "sha256": "346a04020f14afa316965dd94cc6194dcc319473d148a27ffbdbb3b910810779",
+            "size_bytes": 772
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run runtime/governance/runtime_starter_smoke_v1.py",
+              "Run `runtime/governance/runtime_starter_smoke_v1.py`",
+              "python runtime/governance/runtime_starter_smoke_v1.py",
+              "python3 runtime/governance/runtime_starter_smoke_v1.py",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z/pre_repair_backups/0_kernel__registry__observability__MB_HISTORICAL_CALLSITE_QUARANTINE_POLICY_v1.json",
+            "sha256": "e4d95f32efeac472bcc23edc0cc07a4fcaaff75663dae46d89ed567dd12b44db",
+            "size_bytes": 2773
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run runtime/governance/runtime_starter_smoke_v1.py",
+              "Run `runtime/governance/runtime_starter_smoke_v1.py`",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z/pre_repair_backups/0_kernel__validators__validate_observability_trace_span_ledger_stage7_boot_sequence_enforcement_v1.py",
+            "sha256": "4952ce6bbe128c3327a917483cebb3632966b3b334aec00161bb00dae2468914",
+            "size_bytes": 5978
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run runtime/governance/runtime_starter_smoke_v1.py",
+              "Run `runtime/governance/runtime_starter_smoke_v1.py`",
+              "python runtime/governance/runtime_starter_smoke_v1.py",
+              "python3 runtime/governance/runtime_starter_smoke_v1.py",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z/quarantine_scanner_repair.json",
+            "sha256": "d44ca4b8c87ea86d841328317ad50b92e95f0ff0bed37fc778fbe256394b1ab6",
+            "size_bytes": 52513
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z/stage7_validator.json",
+            "sha256": "a1ea63bf0e409a139629cc6b3b5802ae94964db2a5cf80949fabe370a6661fb9",
+            "size_bytes": 8128
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run runtime/governance/runtime_starter_smoke_v1.py",
+              "Run `runtime/governance/runtime_starter_smoke_v1.py`",
+              "python runtime/governance/runtime_starter_smoke_v1.py",
+              "python3 runtime/governance/runtime_starter_smoke_v1.py",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z/stage8_validator.json",
+            "sha256": "c6e05f7ef78eaf1c67cc0f903f7b74f31103fe9b1dc3e309c682a12e7479d885",
+            "size_bytes": 71578
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z/wrapper_good.json",
+            "sha256": "84f3846754564319c01e41b5c1a693eb608ab50d40eaffcde0d939e024f82290",
+            "size_bytes": 556
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run runtime/governance/runtime_starter_smoke_v1.py",
+              "Run `runtime/governance/runtime_starter_smoke_v1.py`",
+              "python runtime/governance/runtime_starter_smoke_v1.py",
+              "python3 runtime/governance/runtime_starter_smoke_v1.py",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/live_boot_guidance_extractor_after_tracker.json",
+            "sha256": "0ea897c65223c245a2afa75d25703810c7c328fb6c784ab50fe31f6c3852da62",
+            "size_bytes": 5714
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run runtime/governance/runtime_starter_smoke_v1.py",
+              "Run `runtime/governance/runtime_starter_smoke_v1.py`",
+              "python runtime/governance/runtime_starter_smoke_v1.py",
+              "python3 runtime/governance/runtime_starter_smoke_v1.py",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/live_boot_guidance_extractor_initial.json",
+            "sha256": "a158689be2a78657eb4e7c5729c2cf2f7016e8ef4a3dca18571fdbf0b4211a10",
+            "size_bytes": 5714
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/pre_patch_backups/0_kernel__boot_contracts__NEW_CHAT_START_CONTRACT_v1.md",
+            "sha256": "3baf132c544c5eb3d0e7d45053ad09d08b4541f3183371e019246e6199320a03",
+            "size_bytes": 4026
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/pre_patch_backups/NEW_CHAT_START_HERE.md",
+            "sha256": "74a66b857a566ac3af9491da67b86f7e8ad273b4c046209b49c69204f7cebb4e",
+            "size_bytes": 4456
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/pre_patch_backups/OPEN_OPERATOR_VISUAL_TRACKER.html",
+            "sha256": "7469cc018d8aa19456ec2594162d2ddfafcbcc7d85ba5e19d36a9742d6143f3d",
+            "size_bytes": 18029
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run runtime/governance/runtime_starter_smoke_v1.py",
+              "Run `runtime/governance/runtime_starter_smoke_v1.py`",
+              "python runtime/governance/runtime_starter_smoke_v1.py",
+              "python3 runtime/governance/runtime_starter_smoke_v1.py",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/stage8_validator.json",
+            "sha256": "fe8bdf5eef673d785f2e2165e206ca0b899c166edbafe68045d971b903272e58",
+            "size_bytes": 81151
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run runtime/governance/runtime_starter_smoke_v1.py",
+              "Run `runtime/governance/runtime_starter_smoke_v1.py`",
+              "python runtime/governance/runtime_starter_smoke_v1.py",
+              "python3 runtime/governance/runtime_starter_smoke_v1.py",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/stage9_validator.json",
+            "sha256": "ee57178357e691b1fcc03ef99c0e6f3e4cbcd51f24f07289a82a507dbc6b7626",
+            "size_bytes": 104663
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/wrapper_good.json",
+            "sha256": "984ccb99bd55589df462249374422710dc081c8fb570ad44d4f313e1029e4f7f",
+            "size_bytes": 772
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run runtime/governance/runtime_starter_smoke_v1.py",
+              "Run `runtime/governance/runtime_starter_smoke_v1.py`",
+              "python runtime/governance/runtime_starter_smoke_v1.py",
+              "python3 runtime/governance/runtime_starter_smoke_v1.py",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/guidance_extractor.json",
+            "sha256": "93d44ee99d0760f69b9c87b89f37642eb4a6a33373ded2fd0b06a9d88b8e93df",
+            "size_bytes": 5820
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run runtime/governance/runtime_starter_smoke_v1.py",
+              "Run `runtime/governance/runtime_starter_smoke_v1.py`",
+              "python runtime/governance/runtime_starter_smoke_v1.py",
+              "python3 runtime/governance/runtime_starter_smoke_v1.py",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/scanner.json",
+            "sha256": "5f604a2b0425c0e5c0a9ab02257d64de01f1dca97445b371bde7848c8e40a1ba",
+            "size_bytes": 62588
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run runtime/governance/runtime_starter_smoke_v1.py",
+              "Run `runtime/governance/runtime_starter_smoke_v1.py`",
+              "python runtime/governance/runtime_starter_smoke_v1.py",
+              "python3 runtime/governance/runtime_starter_smoke_v1.py",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/stage9_validator.json",
+            "sha256": "04a00943c92b0b390a11528c06d386feb474680d1a3977b93d9585916bb08e5c",
+            "size_bytes": 86386
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/wrapper_good.json",
+            "sha256": "6b995651ee4d9e79521efcef60ecd8670853ca4b4a0214f3b899b875de242b6d",
+            "size_bytes": 772
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/receipts/roadmap_decision/NEXT_BUILD_INTERNAL_RESEARCH_SEE_CE_DECISION_20260502T163517Z/STAGE_RECEIPT.json",
+            "sha256": "a44dc20ebf3c0d4276fbbaa7edb463fada2009015fa846aedabdcb6dd30ce69e",
+            "size_bytes": 1449
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/stage_work/CDR_STAGE9_LINT_SECURITY_SCANNER_INTEGRATION_AND_BASELINE_REPORTING/post_runtime_starter_smoke.json",
+            "sha256": "26f050375ee91a8af9fecbc2f9164a8749ba811422ce4a7e4045ed76f989a6bf",
+            "size_bytes": 330
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/stage_work/CDR_STAGE9_LINT_SECURITY_SCANNER_INTEGRATION_AND_BASELINE_REPORTING/pre_runtime_starter_smoke.json",
+            "sha256": "26f050375ee91a8af9fecbc2f9164a8749ba811422ce4a7e4045ed76f989a6bf",
+            "size_bytes": 330
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/stage_work/STAGE6P/final_boot_executor_smoke.json",
+            "sha256": "ac4bf7aee8e16d79bdb5e1157b5c1f4b4e8aa33449f247b0c84df3886602a474",
+            "size_bytes": 31751
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/stage_work/STAGE6S/STAGE6S_FINAL_EXPORT_PROOF_v1.json",
+            "sha256": "79148880626b62304e13498a164834673cdcd9e4d863fc514fa97497965a895a",
+            "size_bytes": 7349
+          },
+          {
+            "class": "non_operator_state_or_inventory",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/state/PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_12_POINTER_PROMOTION_AND_RUNTIME_STARTER_SMOKE_IMPLEMENTATION_PACKET.json",
+            "sha256": "c8dc37e74c11acb17fa0eaa8afa9289bd394a0c2f9dff5b5656902a2992d06a9",
+            "size_bytes": 1216
+          },
+          {
+            "class": "non_operator_state_or_inventory",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run runtime/governance/runtime_starter_smoke_v1.py",
+              "Run `runtime/governance/runtime_starter_smoke_v1.py`",
+              "python runtime/governance/runtime_starter_smoke_v1.py",
+              "python3 runtime/governance/runtime_starter_smoke_v1.py",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/state/operator_surface/LIVE_BOOT_GUIDANCE_LATEST.json",
+            "sha256": "022d6126aaacec2fa6ef5ee9f2ccf71ce26c0bd977a68b39e66d0eab5e00f504",
+            "size_bytes": 5323
+          },
+          {
+            "class": "non_operator_state_or_inventory",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/state/operator_surface/OPERATOR_BOOT_SEQUENCE_ENFORCEMENT_SUMMARY_LATEST.json",
+            "sha256": "808942823c519c74be1dcba28bc85d9d9a65c8e799d288413ad36ef0ba441089",
+            "size_bytes": 838
+          },
+          {
+            "class": "non_operator_state_or_inventory",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "python runtime/governance/runtime_starter_smoke_v1.py",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/state/operator_surface/OPERATOR_METHOD_RELIABILITY_SUMMARY_LATEST.json",
+            "sha256": "213543615991a96492d32f0c10fbb8eb5378c50a711140e80afb213954d44f68",
+            "size_bytes": 2689
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/traces/filesystem_handling/EXPORT_BASELINE_MANIFEST_LATEST.json",
+            "sha256": "2197d90f403f4552d9fb1a990f409dbb943a3c6756d8937caad13f111ab96ab3",
+            "size_bytes": 1182951
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run runtime/governance/runtime_starter_smoke_v1.py",
+              "Run `runtime/governance/runtime_starter_smoke_v1.py`",
+              "python runtime/governance/runtime_starter_smoke_v1.py",
+              "python3 runtime/governance/runtime_starter_smoke_v1.py",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/traces/observability/HISTORICAL_CALLSITE_QUARANTINE_INDEX_LATEST.json",
+            "sha256": "e107255237d1aaaf3405c0b022b0ebde5d3ff17f17498c10e9f1eab0ad413b7a",
+            "size_bytes": 59485
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "python runtime/governance/runtime_starter_smoke_v1.py",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/traces/observability/METHOD_RELIABILITY_LEDGER_LATEST.json",
+            "sha256": "2c67cc22aa3ef7dc81e1cdc538a8541925c9e8c91644a126c5b142dae3bda4b5",
+            "size_bytes": 2453
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/traces/observability/METHOD_RELIABILITY_STAGE6_WRAPPER_SMOKE_LATEST.json",
+            "sha256": "eccd599a16a87682f8ba7806189e6f8787ad162ed6d4e3cdd895d1c02a10dc30",
+            "size_bytes": 2159
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE10_MINIMAL_MOBILE_VALIDATION_LATEST.json",
+            "sha256": "552ff88b49192ed5bdc82ee298d2016fb7ee041b0204a2f9c61d743da2fd3b69",
+            "size_bytes": 6570
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE7_BOOT_SEQUENCE_ENFORCEMENT_VALIDATION_LATEST.json",
+            "sha256": "b98f6af9599020d3efeccb964a2af0eae36fbfd844f875d4e9549bf3707b251f",
+            "size_bytes": 7425
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE7_VALIDATION_POST_RECEIPT_STDOUT_LATEST.json",
+            "sha256": "96bafb9e8dfd95d5a31ff6d92e813eadfc8e67293fe59553d0a667c5e6d22ea0",
+            "size_bytes": 6891
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run runtime/governance/runtime_starter_smoke_v1.py",
+              "Run `runtime/governance/runtime_starter_smoke_v1.py`",
+              "python runtime/governance/runtime_starter_smoke_v1.py",
+              "python3 runtime/governance/runtime_starter_smoke_v1.py",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE8_HISTORICAL_CALLSITE_QUARANTINE_VALIDATION_LATEST.json",
+            "sha256": "094d16f803df097599fe85b4bb0e57b70d1a52c0487e179e4a1952e592e6dd25",
+            "size_bytes": 78950
+          },
+          {
+            "class": "historical_evidence",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "Run runtime/governance/runtime_starter_smoke_v1.py",
+              "Run `runtime/governance/runtime_starter_smoke_v1.py`",
+              "python runtime/governance/runtime_starter_smoke_v1.py",
+              "python3 runtime/governance/runtime_starter_smoke_v1.py",
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_VALIDATION_LATEST.json",
+            "sha256": "0003d142c2ea535487ab8e23c2d063d732738946ef33ff84adce50d4d72ddb3d",
+            "size_bytes": 82692
+          },
+          {
+            "class": "non_operator_state_or_inventory",
+            "live_forbidden_fragments": [],
+            "matched_patterns": [
+              "runtime_starter_smoke_v1.py"
+            ],
+            "path": "tools/metablooms_archive_tool/os_zip_list.txt",
+            "sha256": "06a4238a4844a7809a422ff5adb6f2ca21371302160528af5ceadb266e7c3a25",
+            "size_bytes": 255643
+          }
+        ],
+        "issues": [
+          "unclassified_direct_reference:0_kernel/registry/observability/MB_BOOT_SURFACE_MINIMAL_MODE_POLICY_v1.json"
+        ],
+        "policy": "0_kernel/registry/observability/MB_HISTORICAL_CALLSITE_QUARANTINE_POLICY_v1.json",
+        "required_operator_entrypoint": "runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py --root /mnt/data/Metablooms_OS --json",
+        "summary": {
+          "counts_by_class": {
+            "historical_evidence": 113,
+            "implementation_dependency": 10,
+            "live_operator_surface": 6,
+            "non_operator_state_or_inventory": 7,
+            "unclassified": 1
+          },
+          "hit_count": 137,
+          "issue_count": 1
+        },
+        "underlying_gate": "runtime/governance/runtime_starter_smoke_v1.py",
+        "verdict": "FAIL"
+      }
+    },
+    "new_chat_validator": {
+      "cmd": [
+        "/opt/pyvenv/bin/python3",
+        "/mnt/data/Metablooms_OS/runtime/governance/new_chat_start_contract_validator_v1.py",
+        "/mnt/data/Metablooms_OS"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": {
+        "checks": [
+          {
+            "name": "exists:CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+            "passed": true
+          },
+          {
+            "name": "exists:runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+            "passed": true
+          },
+          {
+            "name": "exists:0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+            "passed": true
+          },
+          {
+            "name": "exists:0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+            "passed": true
+          },
+          {
+            "name": "exists:NEW_CHAT_START_HERE.md",
+            "passed": true
+          },
+          {
+            "name": "exists:runtime/governance/new_chat_start_contract_validator_v1.py",
+            "passed": true
+          },
+          {
+            "name": "exists:runtime/governance/boot_critical_governance_loader_v1.py",
+            "passed": true
+          },
+          {
+            "name": "exists:runtime/governance/governance_scatter_prevention_v1.py",
+            "passed": true
+          },
+          {
+            "name": "exists:runtime/governance/fresh_chat_boot_rehearsal_v1.py",
+            "passed": true
+          },
+          {
+            "name": "exists:runtime/cartridges/prompt_governance_v1/validate_prompt_governance_cartridge_v1.py",
+            "passed": true
+          },
+          {
+            "name": "exists:runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+            "passed": true
+          },
+          {
+            "name": "exists:0_kernel/registry/observability/MB_BOOT_SEQUENCE_WRAPPER_ENFORCEMENT_v1.json",
+            "passed": true
+          },
+          {
+            "name": "exists:0_kernel/registry/observability/MB_HISTORICAL_CALLSITE_QUARANTINE_POLICY_v1.json",
+            "passed": true
+          },
+          {
+            "name": "exists:runtime/traces/observability/HISTORICAL_CALLSITE_QUARANTINE_INDEX_LATEST.json",
+            "passed": true
+          },
+          {
+            "name": "exists:0_kernel/validators/validate_observability_trace_span_ledger_stage8_historical_callsite_quarantine_v1.py",
+            "passed": true
+          }
+        ],
+        "decision": "ALLOW",
+        "errors": []
+      }
+    },
+    "runtime_wrapper": {
+      "cmd": [
+        "/opt/pyvenv/bin/python3",
+        "/mnt/data/Metablooms_OS/runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+        "--root",
+        "/mnt/data/Metablooms_OS",
+        "--json"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": {
+        "artifact_type": "MB_RUNTIME_STARTER_SMOKE_CONTRACT_WRAPPER_RESULT.v1",
+        "created_utc": "20260502T175857Z",
+        "decision": "ALLOW",
+        "method_reliability_lesson": "METHOD_RUNTIME_STARTER_SMOKE_CLI_SHAPE_v1",
+        "target_shape": "--root",
+        "underlying_gate": "runtime/governance/runtime_starter_smoke_v1.py",
+        "underlying_result": {
+          "decision": "ALLOW",
+          "invalid_json": [],
+          "missing": [],
+          "mode": "root",
+          "path": "/mnt/data/Metablooms_OS",
+          "read_errors": []
+        }
+      }
+    },
+    "stage10_validator": {
+      "cmd": [
+        "/opt/pyvenv/bin/python3",
+        "/mnt/data/Metablooms_OS/0_kernel/validators/validate_observability_trace_span_ledger_stage10_minimal_mobile_v1.py",
+        "--root",
+        "/mnt/data/Metablooms_OS",
+        "--json"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": {
+        "artifact_type": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_MINIMAL_MOBILE_VALIDATION.v1",
+        "checks": [
+          {
+            "exists_nonempty": true,
+            "path": "0_kernel/registry/observability/MB_BOOT_SURFACE_MINIMAL_MODE_SCHEMA_v1.json",
+            "sha256": "756eba88358cadd032385a3f1797d26c5cd81196bb5fd04695e2502384c4e9f9"
+          },
+          {
+            "exists_nonempty": true,
+            "path": "0_kernel/registry/observability/MB_BOOT_SURFACE_MINIMAL_MODE_POLICY_v1.json",
+            "sha256": "786f463d1d7668a6c2cb62be53acfa8f5090a0fbc85e566dad40ed55484435d4"
+          },
+          {
+            "exists_nonempty": true,
+            "path": "0_kernel/scripts/observability_boot_surface_minimal_mode_renderer_v1.py",
+            "sha256": "d0388f23d662c386ca92d005bb36c3cd6b6869febbe12c5b17d9daffe25b4f3e"
+          },
+          {
+            "exists_nonempty": true,
+            "path": "runtime/state/operator_surface/BOOT_SURFACE_MINIMAL_MODE_LATEST.json",
+            "sha256": "7b2fe029c65fdd53e2ba94a33517acd9d36e420595f8acb727fbb0faa5db9aa3"
+          },
+          {
+            "exists_nonempty": true,
+            "path": "runtime/state/operator_surface/BOOT_SURFACE_MINIMAL_MODE_LATEST.md",
+            "sha256": "93b7b5e5a2df838ca3c22d5fe2cbcb6f9726a85f898c29a94a5ec052b049f647"
+          },
+          {
+            "exists_nonempty": true,
+            "path": "OPEN_OPERATOR_VISUAL_TRACKER.html",
+            "sha256": "689af2400c0e032e343e2ef3e45a558ed606be7bd401843347918fd0ffca24b0"
+          },
+          {
+            "name": "mobile_static:viewport_meta",
+            "passed": true
+          },
+          {
+            "name": "mobile_static:overflow_x_hidden",
+            "passed": true
+          },
+          {
+            "name": "mobile_static:touch_target_48",
+            "passed": true
+          },
+          {
+            "name": "mobile_static:code_word_break",
+            "passed": true
+          },
+          {
+            "name": "mobile_static:single_column_breakpoint",
+            "passed": true
+          },
+          {
+            "name": "mobile_static:details_disclosure",
+            "passed": true
+          },
+          {
+            "name": "mobile_static:skip_link",
+            "passed": true
+          }
+        ],
+        "created_utc": "20260502T175851Z",
+        "issues": [],
+        "smoke_checks": [
+          {
+            "name": "renderer_passes",
+            "pass": true,
+            "result": {
+              "cmd": [
+                "/opt/pyvenv/bin/python3",
+                "/mnt/data/Metablooms_OS/0_kernel/scripts/observability_boot_surface_minimal_mode_renderer_v1.py",
+                "--root",
+                "/mnt/data/Metablooms_OS",
+                "--json"
+              ],
+              "returncode": 0,
+              "stderr": "",
+              "stdout": {
+                "artifact_type": "BOOT_SURFACE_MINIMAL_MODE_RENDER_SMOKE.v1",
+                "created_utc": "20260502T175846Z",
+                "guidance_steps": 8,
+                "tracker_bytes": 11861,
+                "verdict": "PASS"
+              }
+            }
+          },
+          {
+            "name": "new_chat_validator_allows",
+            "pass": true,
+            "result": {
+              "cmd": [
+                "/opt/pyvenv/bin/python3",
+                "/mnt/data/Metablooms_OS/runtime/governance/new_chat_start_contract_validator_v1.py",
+                "/mnt/data/Metablooms_OS"
+              ],
+              "returncode": 0,
+              "stderr": "",
+              "stdout": {
+                "checks": [
+                  {
+                    "name": "exists:CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+                    "passed": true
+                  },
+                  {
+                    "name": "exists:runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+                    "passed": true
+                  },
+                  {
+                    "name": "exists:0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+                    "passed": true
+                  },
+                  {
+                    "name": "exists:0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+                    "passed": true
+                  },
+                  {
+                    "name": "exists:NEW_CHAT_START_HERE.md",
+                    "passed": true
+                  },
+                  {
+                    "name": "exists:runtime/governance/new_chat_start_contract_validator_v1.py",
+                    "passed": true
+                  },
+                  {
+                    "name": "exists:runtime/governance/boot_critical_governance_loader_v1.py",
+                    "passed": true
+                  },
+                  {
+                    "name": "exists:runtime/governance/governance_scatter_prevention_v1.py",
+                    "passed": true
+                  },
+                  {
+                    "name": "exists:runtime/governance/fresh_chat_boot_rehearsal_v1.py",
+                    "passed": true
+                  },
+                  {
+                    "name": "exists:runtime/cartridges/prompt_governance_v1/validate_prompt_governance_cartridge_v1.py",
+                    "passed": true
+                  },
+                  {
+                    "name": "exists:runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+                    "passed": true
+                  },
+                  {
+                    "name": "exists:0_kernel/registry/observability/MB_BOOT_SEQUENCE_WRAPPER_ENFORCEMENT_v1.json",
+                    "passed": true
+                  },
+                  {
+                    "name": "exists:0_kernel/registry/observability/MB_HISTORICAL_CALLSITE_QUARANTINE_POLICY_v1.json",
+                    "passed": true
+                  },
+                  {
+                    "name": "exists:runtime/traces/observability/HISTORICAL_CALLSITE_QUARANTINE_INDEX_LATEST.json",
+                    "passed": true
+                  },
+                  {
+                    "name": "exists:0_kernel/validators/validate_observability_trace_span_ledger_stage8_historical_callsite_quarantine_v1.py",
+                    "passed": true
+                  }
+                ],
+                "decision": "ALLOW",
+                "errors": []
+              }
+            }
+          },
+          {
+            "name": "runtime_wrapper_allows",
+            "pass": true,
+            "result": {
+              "cmd": [
+                "/opt/pyvenv/bin/python3",
+                "/mnt/data/Metablooms_OS/runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+                "--root",
+                "/mnt/data/Metablooms_OS",
+                "--json"
+              ],
+              "returncode": 0,
+              "stderr": "",
+              "stdout": {
+                "artifact_type": "MB_RUNTIME_STARTER_SMOKE_CONTRACT_WRAPPER_RESULT.v1",
+                "created_utc": "20260502T175851Z",
+                "decision": "ALLOW",
+                "method_reliability_lesson": "METHOD_RUNTIME_STARTER_SMOKE_CLI_SHAPE_v1",
+                "target_shape": "--root",
+                "underlying_gate": "runtime/governance/runtime_starter_smoke_v1.py",
+                "underlying_result": {
+                  "decision": "ALLOW",
+                  "invalid_json": [],
+                  "missing": [],
+                  "mode": "root",
+                  "path": "/mnt/data/Metablooms_OS",
+                  "read_errors": []
+                }
+              }
+            }
+          }
+        ],
+        "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING",
+        "verdict": "PASS"
+      }
+    }
+  },
+  "failed": [
+    "historical_callsite_scanner"
+  ]
+}

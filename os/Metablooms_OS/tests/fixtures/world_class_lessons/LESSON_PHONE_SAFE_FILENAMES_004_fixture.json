@@ -1,0 +1,24 @@
+{
+  "expected_decision": "pass_when_gate_artifacts_present_else_fail",
+  "fixture_type": "lesson_promotion_regression",
+  "gate_under_test": "PHONE_SAFE_EXPORT_NAMING_GATE",
+  "lesson_id": "LESSON_PHONE_SAFE_FILENAMES_004",
+  "must_block_if": [
+    "evidence_paths_empty",
+    "fixture_missing",
+    "stage_exit_prompt_missing",
+    "successful_stage_without_bootable_full_authority_when_possible"
+  ],
+  "must_require": {
+    "artifact_evidence_paths": [
+      "runtime/receipts/mpp_v3/MPP_R9_UXR_OPERATOR_CONTEXT_SCHEMA_AND_ACCESSIBILITY_GATE_RECEIPT_20260501T001700Z.json",
+      "runtime/receipts/mpp_v3/MPP_R9_UXR_OPERATOR_CONTEXT_SCHEMA_AND_ACCESSIBILITY_GATE_RECEIPT_LATEST.json",
+      "runtime/receipts/workflow_generalization_engine/WORKFLOW_GENERALIZATION_ENGINE_STAGE1_IMPLEMENT_ROUTER_AND_LESSON_LEDGER_EVALS_REPAIR1_CODEGEN_ESCAPE_CLOSURE_20260502T231352Z/WORKFLOW_GENERALIZATION_ENGINE_STAGE1_ROUTER_EVAL_REPORT.json",
+      "runtime/receipts/workflow_generalization_engine/WORKFLOW_GENERALIZATION_ENGINE_STAGE3_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF_20260502T232100Z/preflight/router_eval.json",
+      "runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE2_VALIDATOR_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T215737Z/IMPLEMENTATION_MANIFEST.json"
+    ],
+    "prevention_claim": "Reduces Android/mobile ChatGPT link brittleness."
+  },
+  "problem_class": "mobile_download_friction",
+  "schema_version": "v1"
+}

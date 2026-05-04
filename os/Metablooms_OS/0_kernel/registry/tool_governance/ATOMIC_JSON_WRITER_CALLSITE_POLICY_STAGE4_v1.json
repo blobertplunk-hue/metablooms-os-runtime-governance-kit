@@ -1,0 +1,15 @@
+{
+  "artifact_type": "AtomicJsonWriterCallsitePolicyStage4.v1",
+  "blocked_patterns": [
+    "direct Path.write_text(json.dumps(...))",
+    "direct json.dump(...)"
+  ],
+  "canonical_writer": "0_kernel/lib/io/atomic_json_writer_v1.py",
+  "created_utc": "20260502T144121Z",
+  "deferred_patterns": [
+    "append-only jsonl/log streams",
+    "binary writes",
+    "test fixture setup writes"
+  ],
+  "validator": "0_kernel/validators/validate_atomic_json_writer_callsite_policy_stage4_v1.py"
+}

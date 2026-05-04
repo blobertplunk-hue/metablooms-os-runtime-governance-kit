@@ -1,0 +1,54 @@
+{
+  "version": "1.0",
+  "created_at": 1777065171.3384142,
+  "stage": "G5_REPAIRED_RECOVERY_PROVEN_EXPORT",
+  "status": "complete",
+  "inputs": {
+    "g4_handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G4_TO_G5_HANDOFF_v1.json",
+    "g4_validator_decision": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_G4_F7_DECISION_v1.json",
+    "g4_repair_plan": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G4_F7_EXPORT_REPAIR_PLAN_v1.json"
+  },
+  "outputs": {
+    "export_zip": "/mnt/data/exports/MetaBlooms_OS_refined_G5_REPAIRED_RECOVERY_PROVEN_1777065171.zip",
+    "download_copy": "/mnt/data/MetaBlooms_OS_refined_G5_REPAIRED_RECOVERY_PROVEN_1777065171.zip",
+    "sidecar": "/mnt/data/exports/MetaBlooms_OS_refined_G5_REPAIRED_RECOVERY_PROVEN_1777065171.zip.sha256.json",
+    "download_sidecar": "/mnt/data/MetaBlooms_OS_refined_G5_REPAIRED_RECOVERY_PROVEN_1777065171.zip.sha256.json",
+    "validator_decision": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_G5_REPAIRED_DECISION_v1.json",
+    "repair_summary": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G5_REPAIRED_EXPORT_REPAIR_SUMMARY_v1.json",
+    "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G5_REPAIRED_RECOVERY_PROVEN_EXPORT_RECEIPT_v1.json",
+    "handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G5_TO_G6_HANDOFF_v1.json"
+  },
+  "checks": {
+    "required_paths_present": true,
+    "git_clean_before_g5": true,
+    "git_fsck_clean_before_g5": true,
+    "g4_prechecks": {
+      "g4_handoff_ready": true,
+      "g4_receipt_passed": true,
+      "g4_prior_export_failed_validator": true,
+      "g5_declared_target": true,
+      "ledger_latest_pass_is_g4": true,
+      "pointer_active": true
+    }
+  },
+  "verdict": "PASS",
+  "next_improvement_task": "G6 \u2014 Recovery Proof + Baseline Lock",
+  "why_next": "The repaired export must now be restored from the ZIP and locked as the new recovery-proven baseline.",
+  "remaining_work": [
+    "G6 \u2014 Recovery Proof + Baseline Lock",
+    "G7 \u2014 Return to E4B"
+  ],
+  "progress_estimate": {
+    "stages_remaining_before_return_to_E4B": 2,
+    "current_arc": "G export-recovery validator hardening"
+  },
+  "next_correct_command": "EXECUTE G6 \u2014 RECOVERY PROOF + BASELINE LOCK",
+  "validator_decision_summary": {
+    "validator_verdict": "PASS",
+    "blocking_failed_count": 0,
+    "decision": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_G5_REPAIRED_DECISION_v1.json"
+  },
+  "export_sha256": "cfc6b0c914e49f5da5c8d02986cf4609e5a732d9c3be072d0e5e28b15f98d3e5",
+  "export_size_bytes": 15270560,
+  "git_head_exported_tree": "b76fe2c99cf4090e9f33db6b40874e1695557ba3"
+}

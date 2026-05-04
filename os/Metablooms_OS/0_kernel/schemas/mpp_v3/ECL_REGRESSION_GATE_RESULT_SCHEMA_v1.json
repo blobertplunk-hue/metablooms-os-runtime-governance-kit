@@ -1,0 +1,65 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/ECL_REGRESSION_GATE_RESULT_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "coverage": {
+      "type": "object"
+    },
+    "created_at": {
+      "minLength": 10,
+      "type": "string"
+    },
+    "gate_id": {
+      "minLength": 6,
+      "type": "string"
+    },
+    "packet_id": {
+      "minLength": 8,
+      "type": "string"
+    },
+    "result_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "mpp.ecl_regression_gate_result.v1"
+    },
+    "stage": {
+      "const": "ECL_REGRESSION_GATE"
+    },
+    "verdict": {
+      "enum": [
+        "PASS",
+        "FAIL"
+      ],
+      "type": "string"
+    },
+    "violations": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "warnings": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "gate_id",
+    "stage",
+    "created_at",
+    "packet_id",
+    "verdict",
+    "violations",
+    "warnings",
+    "coverage",
+    "result_hash"
+  ],
+  "title": "MPP v3 ECL Regression Gate Result",
+  "type": "object"
+}

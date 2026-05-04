@@ -1,0 +1,52 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+# MetaBlooms Stage4 bounded subprocess enforcement shim.
+from pathlib import Path as _MBPath
+import sys as _MBSys
+_MB_SELF = _MBPath(__file__).resolve()
+for _MB_PARENT in [_MB_SELF] + list(_MB_SELF.parents):
+    _MB_EXEC_LIB = _MB_PARENT / "0_kernel" / "lib" / "execution"
+    if (_MB_EXEC_LIB / "bounded_subprocess_compat_v1.py").exists():
+        if str(_MB_EXEC_LIB) not in _MBSys.path:
+            _MBSys.path.insert(0, str(_MB_EXEC_LIB))
+        break
+from bounded_subprocess_compat_v1 import run as bounded_subprocess_run
+import argparse, json, time, hashlib
+from pathlib import Path
+
+def now(): return time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())
+def h(s): return hashlib.sha256(s.encode()).hexdigest()[:16]
+def root():
+    p=Path(__file__).resolve()
+    for q in [p.parent,*p.parents]:
+        if (q/'boot_manifest_v1.json').exists() and (q/'0_kernel').exists(): return q
+    return Path.cwd()
+def wj(p,o): p.parent.mkdir(parents=True,exist_ok=True); _mb_write_json_file(p, o, operation_id='STAGE4_ATOMIC_JSON_0_kernel_scripts_agent_harness_diff_review_v1_py_L25', create_parent=True, allowed_roots=[str(_MBAJWPath('/mnt/data').resolve())], indent=2, sort_keys=True, ensure_ascii=True, max_bytes=20000000); return str(p)
+def aj(p,o): p.parent.mkdir(parents=True,exist_ok=True); p.open('a',encoding='utf-8').write(json.dumps(o,sort_keys=True)+'\n'); return str(p)
+def load(p): return json.loads(Path(p).read_text(encoding='utf-8'))
+
+def main(argv=None):
+    pa=argparse.ArgumentParser(); pa.add_argument('--stage',default='IMPLEMENT_AGENT_HARNESS_STAGE_2_PARALLEL_WORKPACKETS_AND_DIFF_REVIEW'); pa.add_argument('--plan'); pa.add_argument('--json',action='store_true'); a=pa.parse_args(argv)
+    r=root(); plan_path=Path(a.plan) if a.plan else r/'runtime/agent_harness/AGENT_HARNESS_STAGE2_PARALLEL_WORKPACKET_PLAN_LATEST.json'
+    if not plan_path.exists():
+        planner=r/'0_kernel/scripts/agent_harness_parallel_workpacket_planner_v1.py'
+        import subprocess
+        cp=bounded_subprocess_run(['python3','-S',str(planner),'--stage',a.stage,'--write-plan','--parallel-plan','--json'],cwd=str(r),text=True,capture_output=True,timeout=60)
+        if cp.returncode!=0:
+            print(json.dumps({'verdict':'DIFF_REVIEW_PLAN_MISSING_AND_PLANNER_FAILED','planner_rc':cp.returncode,'stdout_tail':cp.stdout[-2000:]})); return cp.returncode
+    plan=load(plan_path)
+    packets=plan.get('workpackets',[])
+    implementation=[p for p in packets if p.get('role')=='implementation_agent']
+    reviewed=[{'workpacket_id':p['workpacket_id'],'role':p['role'],'write_scope':p.get('write_scope',[]),'status':'DIFF_REVIEW_REQUIRED' if p.get('diff_review_required') else 'NO_DIFF_REQUIRED','risk':'bounded' if p.get('write_scope') else 'missing_scope'} for p in packets]
+    blockers=[]
+    for p in implementation:
+        if not p.get('write_scope'): blockers.append({'workpacket_id':p['workpacket_id'],'reason':'implementation_missing_write_scope'})
+    if plan.get('conflicts'): blockers.append({'reason':'parallel_write_scope_conflicts','conflicts':plan.get('conflicts')})
+    report={'artifact_type':'AGENT_HARNESS_STAGE2_DIFF_REVIEW_REPORT_v1','created_utc':now(),'stage_name':a.stage,'verdict':'DIFF_REVIEW_PASS' if not blockers else 'DIFF_REVIEW_BLOCK','workpacket_count':len(packets),'implementation_workpacket_count':len(implementation),'blockers':blockers,'bounded_summary':reviewed[:25],'omitted_workpacket_count':max(0,len(reviewed)-25),'full_plan_path':str(plan_path)}
+    out_path=r/'runtime/agent_harness/diff_reviews/AGENT_HARNESS_STAGE2_DIFF_REVIEW_LATEST.json'
+    wj(out_path, report)
+    aj(r/'runtime/traces/agent_harness/TRACE_SPAN_LEDGER_AGENT_HARNESS_STAGE2.jsonl',{'schema_version':'MB_TRACE_SPAN_LEDGER_SPEC_v2','trace_id':h(a.stage),'span_id':h(a.stage+'diffreview'+now()),'parent_span_id':None,'name':'agent_harness.stage2.diff_review','stage_name':a.stage,'event':'end','status':'OK' if not blockers else 'ERROR','timestamp_utc':now(),'attributes':{'workpacket_count':len(packets),'blocker_count':len(blockers),'report_path':str(out_path)}})
+    print(json.dumps(report,indent=2,sort_keys=True) if a.json else report['verdict'])
+    return 0 if not blockers else 8
+if __name__=='__main__': raise SystemExit(main())

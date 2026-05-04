@@ -1,0 +1,23 @@
+{
+  "artifact_type": "MB_SEE_PACKET.v1",
+  "created_utc": "20260502T181632Z",
+  "sources": [
+    {
+      "claim": "OpenTelemetry logs support correlation with resources/traces for navigational, filtering, querying, and analytical capabilities.",
+      "url": "https://opentelemetry.io/docs/specs/otel/logs/"
+    },
+    {
+      "claim": "OpenTelemetry semantic conventions standardize names and attributes across telemetry.",
+      "url": "https://opentelemetry.io/docs/concepts/semantic-conventions/"
+    },
+    {
+      "claim": "SLSA provenance is useful only when inspected/verified by consumers.",
+      "url": "https://slsa.dev/spec/v1.0/verifying-artifacts"
+    },
+    {
+      "claim": "Inverted indexes store term-to-document mappings to speed query processing.",
+      "url": "https://www.khoury.northeastern.edu/home/vip/teach/IRcourse/2_indexing_ngrams/slides/indexing_1.pdf"
+    }
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE12_TRACE_QUERY_PACKET_AND_SEARCHABLE_EVIDENCE_INDEX"
+}

@@ -1,0 +1,20 @@
+{
+  "critical_non_waivable": true,
+  "observability_controls": [
+    "trace_span_contract",
+    "error_attributes",
+    "correlation",
+    "exportable_formats",
+    "log_integrity"
+  ],
+  "reconstruction": "RECONSTRUCTED_FROM_CHAT_SUMMARY",
+  "schema": "CDRSecurityObservabilityDeepeningSpec_v1",
+  "security_controls": [
+    "input_validation",
+    "access_control",
+    "secret_data_protection",
+    "file_path_safety",
+    "safe_error_logging",
+    "root_cause_recurrence"
+  ]
+}

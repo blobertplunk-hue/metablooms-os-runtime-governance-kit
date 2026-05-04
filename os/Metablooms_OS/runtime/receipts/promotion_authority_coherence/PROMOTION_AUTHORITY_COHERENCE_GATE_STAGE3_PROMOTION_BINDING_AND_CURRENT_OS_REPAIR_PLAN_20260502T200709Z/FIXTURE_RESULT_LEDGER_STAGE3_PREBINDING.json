@@ -1,0 +1,60 @@
+{
+  "checks": [],
+  "created_at": "2026-05-02T20:07:20.178852+00:00",
+  "decision": "PASS",
+  "evidence": {
+    "fixtures_dir": "/mnt/data/Metablooms_OS/runtime/evals/promotion_authority_coherence/fixtures"
+  },
+  "failed_fixture_count": 0,
+  "fixture_count": 6,
+  "fixture_results": [
+    {
+      "decision": "DENY",
+      "expected_decision": "DENY",
+      "fixture_id": "PAC-FIX-001",
+      "matches_expected": true,
+      "result_hash": "3b7e39b9695b65276077db37df5bab54337cad19ea1501c2362b181fafc85b13"
+    },
+    {
+      "decision": "DENY",
+      "expected_decision": "DENY",
+      "fixture_id": "PAC-FIX-002",
+      "matches_expected": true,
+      "result_hash": "3e1e38688d6aed61d39a325a428ab7f8f6692614cf02c9b113f104dd92faa1fc"
+    },
+    {
+      "decision": "DENY",
+      "expected_decision": "DENY",
+      "fixture_id": "PAC-FIX-003",
+      "matches_expected": true,
+      "result_hash": "d62f4a7446b70ca7b190e23ffbfb9fb320692375a3b55515cf1f06ba8fa112e8"
+    },
+    {
+      "decision": "DENY",
+      "expected_decision": "DENY",
+      "fixture_id": "PAC-FIX-004",
+      "matches_expected": true,
+      "result_hash": "2223b2c2df10d45b1dc40ba9e34b8d0c6b41100d79d86b25b9b7143d6b058a31"
+    },
+    {
+      "decision": "PASS",
+      "expected_decision": "PASS",
+      "fixture_id": "PAC-FIX-005",
+      "matches_expected": true,
+      "result_hash": "e2922eeca010f9141fc8fb4aa5b012297d16bc234027bf581fb7c40f84b4f785"
+    },
+    {
+      "decision": "DENY",
+      "expected_decision": "DENY",
+      "fixture_id": "PAC-FIX-006",
+      "matches_expected": true,
+      "result_hash": "5dbb5cf9a4b967b1b71a6c83420f8b0e02e7e2c483b51c36bd012f1797642084"
+    }
+  ],
+  "gate_id": "PROMOTION_AUTHORITY_COHERENCE_GATE_v1",
+  "mode": "fixture_ledger",
+  "passed_fixture_count": 6,
+  "result_hash": "12f9d4be30af18f35db976fe0a0075fcfdcaff24600b5444bb479b00a01559c1",
+  "schema_version": "metablooms.promotion_authority_coherence_gate.result.v1",
+  "stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN"
+}

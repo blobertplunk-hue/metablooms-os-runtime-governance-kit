@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "artifact_id": "WORKFLOW_GENERALIZATION_ROUTING_BINDING_v1",
+  "routing_rules": [
+    {
+      "when_task_contains": ["html", "visual", "tracker", "dashboard", "landing page", "student activity"],
+      "auto_include": ["VISUAL_PRESENTATION_QUALITY_GATE", "BROWSER_RENDER_CAPABILITY_RESOLVER"],
+      "reason": "Visual product quality and render proof tier should be automatic for visual artifacts."
+    },
+    {
+      "when_task_contains": ["screenshot", "render", "browser", "mobile smoke", "Google Sites"],
+      "auto_include": ["BROWSER_RENDER_CAPABILITY_RESOLVER"],
+      "reason": "Do not assume Playwright/Chromium availability; resolve sandbox capability first."
+    },
+    {
+      "when_stage_repairs_failure": true,
+      "auto_include": ["WORKFLOW_GENERALIZATION_ENGINE"],
+      "reason": "Every repair should create or update a durable prevention path when the failure class can recur."
+    }
+  ],
+  "binding_status": "policy_binding_created_static_router_integration_pending",
+  "next_required_stage": "WORKFLOW_GENERALIZATION_ENGINE_STAGE1_IMPLEMENT_ROUTER_AND_LESSON_LEDGER_EVALS"
+}

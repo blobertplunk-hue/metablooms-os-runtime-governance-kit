@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+import json, sys
+from pathlib import Path
+ROOT=Path('/mnt/data/Metablooms_OS')
+
+import importlib.util
+_BOUNDED_COMPAT_SPEC = importlib.util.spec_from_file_location('bounded_subprocess_compat_v1', ROOT / '0_kernel/lib/execution/bounded_subprocess_compat_v1.py')
+bounded_subprocess = importlib.util.module_from_spec(_BOUNDED_COMPAT_SPEC)
+assert _BOUNDED_COMPAT_SPEC and _BOUNDED_COMPAT_SPEC.loader
+_BOUNDED_COMPAT_SPEC.loader.exec_module(bounded_subprocess)
+AD=ROOT/'runtime/governance/observability_trace_export_adapter_v1.py'
+ALLOW=ROOT/'tests/fixtures/observability/stage6r_trace_export_allow_v1.json'
+DENY=ROOT/'tests/fixtures/observability/stage6r_trace_export_deny_v1.json'
+OUT=ROOT/'runtime/evals/observability/stage6r'
+OUT.mkdir(parents=True, exist_ok=True)
+formats=['metablooms_jsonl','opentelemetry_span_json','openai_agents_event_json','langgraph_run_json']
+results=[]
+for fmt in formats:
+    p=OUT/(fmt+'_allow.json')
+    cp=bounded_subprocess.run([sys.executable,'-S',str(AD),str(ALLOW),fmt,str(p)],capture_output=True,text=True)
+    obj=json.loads(p.read_text()) if p.exists() else {}
+    results.append({'format':fmt,'returncode':cp.returncode,'decision':obj.get('decision'),'exists':p.exists()})
+# deny fixture should fail
+p=OUT/'deny_result.json'
+cp=bounded_subprocess.run([sys.executable,'-S',str(AD),str(DENY),'opentelemetry_span_json',str(p)],capture_output=True,text=True)
+deny=json.loads(p.read_text()) if p.exists() else {}
+verdict='PASS' if all(r['returncode']==0 and r['decision']=='ALLOW' and r['exists'] for r in results) and cp.returncode!=0 and deny.get('decision')=='DENY' else 'FAIL'
+summary={'schema':'Stage6RTraceExportSmokeResult_v1','verdict':verdict,'allow_results':results,'deny_returncode':cp.returncode,'deny_decision':deny.get('decision'),'deny_errors':deny.get('errors',[])}
+print(json.dumps(summary,indent=2,sort_keys=True))
+_mb_write_json_file(ROOT / 'runtime/evals/observability/STAGE6R_TRACE_EXPORT_ADAPTER_SMOKE_RESULT.json', summary, operation_id='STAGE4_ATOMIC_JSON_tests_evals_observability_test_stage6r_trace_export_adapter_v1_py_L31', create_parent=True, allowed_roots=[str(_MBAJWPath('/mnt/data').resolve())], indent=2, sort_keys=True, ensure_ascii=True, max_bytes=20000000)
+raise SystemExit(0 if verdict=='PASS' else 1)

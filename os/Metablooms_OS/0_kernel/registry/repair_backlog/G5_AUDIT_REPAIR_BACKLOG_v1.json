@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "created_at": 1777065653.89696,
+  "backlog_id": "G5_AUDIT_REPAIR_BACKLOG_v1",
+  "status": "active",
+  "source_audit": "/mnt/data/Pasted markdown.md",
+  "items": [
+    {
+      "issue_id": "G5_AUDIT_BUG_VALIDATOR_DECISION_DECLARED_INTERNAL_BUT_EXTERNAL",
+      "severity": "BUG",
+      "finding": "G5 export manifest declares validator_decision as 0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_G5_REPAIRED_DECISION_v1.json while marking external_required=true, but the file is not inside the G5 ZIP.",
+      "risk": "Restore code may interpret the path as an internal bundle path and fail to verify the decision.",
+      "prevention_invariant": "Internal-looking relative paths must exist inside the main ZIP. External-only validator decisions must use explicit external artifact locators, sidecar references, and no internal relative path ambiguity.",
+      "required_fix": "G6 must either include the validator decision inside the main ZIP or rewrite manifest validator_policy to an unambiguous external_decision_artifact with governance bundle locator + sidecar binding.",
+      "blocks_baseline_lock": true
+    },
+    {
+      "issue_id": "G5_AUDIT_WARN_POINTER_STALE_F7",
+      "severity": "WARN",
+      "finding": "CURRENT_WORKING_BASELINE_POINTER last_stage/head still reflects F7-era state instead of G5.",
+      "risk": "Restore or boot may select stale lifecycle state even though ledger and repaired export advanced.",
+      "prevention_invariant": "After a repaired export validates, update the current working pointer to the latest validated stage or explicitly mark it stale/non-authoritative for that lifecycle.",
+      "required_fix": "G6 must update pointer last_stage to G5/G6 or mark pointer lifecycle role explicitly before baseline lock.",
+      "blocks_baseline_lock": false
+    },
+    {
+      "issue_id": "G5_AUDIT_WARN_DAG_LEDGER_MAPPING_MISSING",
+      "severity": "WARN",
+      "finding": "DAG short IDs such as G5 still lack explicit mapping to ledger full IDs such as G5_REPAIRED_RECOVERY_PROVEN_EXPORT.",
+      "risk": "Programmatic DAG/ledger cross-reference may silently find zero matches.",
+      "prevention_invariant": "Maintain an explicit DAG-to-ledger mapping artifact; never infer short ID equivalence.",
+      "required_fix": "Add STAGE_DAG_LEDGER_ID_MAP_v1.json before or during G6/G7 and require validator use of the mapping.",
+      "blocks_baseline_lock": false
+    }
+  ],
+  "must_address_before": "G6_RECOVERY_PROOF_BASELINE_LOCK",
+  "verdict": "PASS"
+}

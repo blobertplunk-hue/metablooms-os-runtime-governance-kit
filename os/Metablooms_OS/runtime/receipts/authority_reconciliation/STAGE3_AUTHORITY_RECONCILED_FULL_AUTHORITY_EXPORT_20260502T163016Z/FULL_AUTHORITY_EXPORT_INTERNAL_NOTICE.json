@@ -1,0 +1,10 @@
+{
+  "artifact_type": "FullAuthorityExportInternalNotice.v1",
+  "contains": "Reconciled Stage 3 authority pointers, updated NEW_CHAT_START_CONTRACT_v1.md, validator pass receipts, and operator visual tracker boot surface.",
+  "created_utc": "2026-05-02T16:30:16Z",
+  "export_sha256_sidecar": "/mnt/data/METABLOOMS_OS_STAGE3_AUTHORITY_RECONCILED_NEW_CHAT_VALIDATOR_PASS_20260502T163016Z.zip.sha256",
+  "export_zip": "/mnt/data/METABLOOMS_OS_STAGE3_AUTHORITY_RECONCILED_NEW_CHAT_VALIDATOR_PASS_20260502T163016Z.zip",
+  "external_sidecar_required": true,
+  "self_hash_rule": "Final ZIP SHA is written to external .sha256 sidecar after archive bytes are finalized.",
+  "stage": "STAGE3_AUTHORITY_RECONCILED_FULL_AUTHORITY_EXPORT"
+}

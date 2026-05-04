@@ -1,0 +1,76 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "id": "append_single_jsonl_record",
+      "status": "ALLOW_APPENDED",
+      "pass": true
+    },
+    {
+      "id": "append_two_records_preserves_order",
+      "status": "ALLOW_APPENDED_AND_TWO_VALID_LINES",
+      "pass": true
+    },
+    {
+      "id": "create_parent_when_authorized",
+      "status": "ALLOW_APPENDED",
+      "pass": true
+    },
+    {
+      "id": "unicode_payload_roundtrip",
+      "status": "ALLOW_APPENDED",
+      "pass": true
+    },
+    {
+      "id": "critical_fsync_path",
+      "status": "ALLOW_APPENDED",
+      "pass": true
+    },
+    {
+      "id": "deny_path_escape_dotdot",
+      "status": "DENY_PATH_DENIED",
+      "pass": true
+    },
+    {
+      "id": "deny_unsafe_suffix",
+      "status": "DENY_UNSAFE_SUFFIX",
+      "pass": true
+    },
+    {
+      "id": "deny_raw_string_record",
+      "status": "DENY_RECORD_INVALID",
+      "pass": true
+    },
+    {
+      "id": "deny_non_finite_json",
+      "status": "DENY_RECORD_INVALID",
+      "pass": true
+    },
+    {
+      "id": "deny_record_too_large",
+      "status": "DENY_RECORD_TOO_LARGE",
+      "pass": true
+    },
+    {
+      "id": "deny_no_fsync_without_exception_for_governance",
+      "status": "DENY_POLICY_DENIED",
+      "pass": true
+    },
+    {
+      "id": "deny_symlink_target",
+      "status": "DENY_SYMLINK_DENIED",
+      "pass": true
+    },
+    {
+      "id": "deny_symlink_ancestor",
+      "status": "DENY_SYMLINK_DENIED",
+      "pass": true
+    },
+    {
+      "id": "multi_process_append_no_corrupt_lines",
+      "status": "ALL_LINES_PARSE_AND_COUNT_MATCHES",
+      "pass": true
+    }
+  ],
+  "workdir": "/mnt/data/mb_append_fixture_nzaymx7y"
+}

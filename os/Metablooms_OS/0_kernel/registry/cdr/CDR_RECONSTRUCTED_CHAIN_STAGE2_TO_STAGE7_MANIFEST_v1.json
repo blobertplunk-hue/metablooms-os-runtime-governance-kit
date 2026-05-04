@@ -1,0 +1,24 @@
+{
+  "chat_basis": {
+    "authority_note": "These are reconstructed artifacts, not original Stage 2-7 support bundles, except Stage 6 which was reuploaded and verified.",
+    "source": "conversation_summaries_provided_in_current_chat_context",
+    "stages": {
+      "CDR_STAGE2": "Full code acceptance contract and recursive audit loop: all CDR dimensions require evidence; valid fixture allow, missing regression deny.",
+      "CDR_STAGE3": "Recursive audit expansion and risk-tiered test matrix: LOW/MEDIUM/HIGH/CRITICAL evidence tiers; authority export trigger escalates to CRITICAL.",
+      "CDR_STAGE4": "Source-level self-audit and fixture generation: audit CDR governance source, require fixture/eval coverage, generate negative fixtures.",
+      "CDR_STAGE5": "Source style and debuggability retrofit: module headers Purpose/Inputs/Outputs/Failure modes/Debuggability and structured denial reasons.",
+      "CDR_STAGE6": "Adaptability and interface contract hardening: uploaded support bundle verified and extracted; requires purpose, IO, errors, side effects, compatibility, extension and deprecation policy.",
+      "CDR_STAGE7": "Security and observability deepening: require input validation, access control, secret protection, file path safety, safe error logging, recurrence controls, trace span/error/correlation/export/log integrity."
+    }
+  },
+  "not_original_warning": "Reconstructed artifacts are clearly marked and must not be represented as original Stage 2-7 bundles.",
+  "reconstruction_status": "stage2_stage3_stage4_stage5_stage7_reconstructed_from_chat_summaries_stage6_verified_from_uploaded_support_bundle",
+  "schema": "CDRReconstructedChainManifest_v1",
+  "stage": "CDR_REBUILD_STAGE2_TO_STAGE7_FROM_STAGE6U_PLUS_CHAT_SUMMARIES",
+  "stage6_uploaded_support_bundle": "/mnt/data/METABLOOMS_CDR_STAGE6_ADAPTABILITY_AND_INTERFACE_CONTRACT_HARDENING_SUPPORT_PROOF_BUNDLE_NOT_OS_20260502T044500Z.zip",
+  "stage6_uploaded_support_bundle_sha256": "5da01a3ad7cc86b2a5dc74a50d953f859097cea67b01db74bbef9a38fa1f7b74",
+  "stage6u_authority_sha256": "78543cf3fa1618b590c1f75740ca68dc9357db3b66e5ebda4e2fe4cb3320abe9",
+  "stage6u_authority_zip": "/mnt/data/METABLOOMS_OS_STAGE6U_FULL_AUTHORITY_AFTER_6T_BOOTABLE_FULL_OS_AUTHORITY_20260502T035000Z.zip",
+  "timestamp_utc": "2026-05-02T12:10:19Z",
+  "verdict": "RECONSTRUCTED_CHAIN"
+}

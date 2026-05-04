@@ -1,0 +1,5 @@
+{
+  "stage": "H0B2C_DUPLICATE_FREE_EXPORT_REPAIR",
+  "status": "CE_SYNTHESIS",
+  "summary": "H0B2 warning export is repaired by rebuilding a clean archive with one central-directory entry per path. The latest duplicate occurrence is retained because H0B2 used append-patch semantics. ZIP_STORED is intentionally used to avoid repeated compression timeouts flagged by sandbox export-latency governance. Promotion requires zero duplicate names, testzip pass, required sandbox governance files preserved, and targeted fresh-extract/import behavior tests."
+}

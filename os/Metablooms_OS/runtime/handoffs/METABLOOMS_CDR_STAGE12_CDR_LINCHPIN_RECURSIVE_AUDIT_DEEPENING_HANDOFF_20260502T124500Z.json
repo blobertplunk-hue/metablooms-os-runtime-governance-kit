@@ -1,0 +1,11 @@
+{
+  "last_receipt": "/mnt/data/Metablooms_OS/runtime/receipts/METABLOOMS_CDR_STAGE12_CDR_LINCHPIN_RECURSIVE_AUDIT_DEEPENING_RECEIPT_20260502T124500Z.json",
+  "must_preserve": "Stage 12 is support/proof only until exported; do not claim Stage 12 is in an authority ZIP before Stage 13 export proof.",
+  "next_best_stage": "CDR_STAGE13_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE12",
+  "required_next_step": "Export a new bootable full OS authority ZIP if CDR Stage 12 should become the active downloadable authority.",
+  "schema": "MetaBloomsStageHandoff_v1",
+  "stage": "CDR_STAGE12_CDR_LINCHPIN_RECURSIVE_AUDIT_DEEPENING",
+  "status": "READY_FOR_NEXT_STAGE",
+  "support_bundle_label": "SUPPORT/PROOF BUNDLE \u2014 NOT THE OS BUNDLE",
+  "timestamp_utc": "20260502T124500Z"
+}

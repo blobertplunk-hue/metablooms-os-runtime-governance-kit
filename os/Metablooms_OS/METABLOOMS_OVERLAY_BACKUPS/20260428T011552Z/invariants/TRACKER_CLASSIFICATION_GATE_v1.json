@@ -1,0 +1,7 @@
+{
+  "id": "TRACKER_CLASSIFICATION_GATE_v1",
+  "status": "proposed",
+  "gate": "TRACKER_RELEASE_GATE",
+  "description": "Future extension: enforce exact BASELINE_ONLY/LIVE_CONTROL_SURFACE/NON_CANONICAL_STATUS_PAGE classification.",
+  "failure_action": "DENY_RELEASE_AND_WRITE_BLOCKER_REPORT"
+}

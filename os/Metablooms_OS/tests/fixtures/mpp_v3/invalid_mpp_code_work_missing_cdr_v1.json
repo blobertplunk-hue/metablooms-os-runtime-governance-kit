@@ -1,0 +1,13 @@
+{
+  "cdr_evidence": {},
+  "cdr_gate_result": {
+    "verdict": "NOT_RUN"
+  },
+  "code_artifact_classes": [
+    "python"
+  ],
+  "mpp_compliance_claimed": true,
+  "stage_contains_code": true,
+  "stage_id": "EXAMPLE_BAD_CODE_STAGE",
+  "stage_verdict_requested": "PASS"
+}

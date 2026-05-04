@@ -1,0 +1,79 @@
+{
+  "created_utc": "2026-04-28T02:58:11Z",
+  "decision_id": "R5_GATE_REGISTRY_AND_WIRING_REPLACEMENT-6a63d4df82f33673",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [
+    {
+      "path": "runtime/governance/registries/gate_registry_v1.json"
+    },
+    {
+      "path": "runtime/governance/schemas/gate_registry_schema_v1.json"
+    },
+    {
+      "path": "runtime/governance/load_gate_registry_v1.py"
+    },
+    {
+      "path": "0_kernel/scripts/assert_gate_registry_integrity_v1.py"
+    },
+    {
+      "path": "0_kernel/scripts/validate_gate_registry_v1.py"
+    },
+    {
+      "path": "runtime/governance/contracts/legacy_artifact_redirects_v1.json"
+    },
+    {
+      "path": "runtime/evals/governance_regression_suite_v1/fixtures/gate_registry_v1.valid.json"
+    },
+    {
+      "path": "runtime/evals/governance_regression_suite_v1/fixtures/gate_registry_v1.enabled_missing_entrypoint.json"
+    },
+    {
+      "path": "runtime/evals/governance_regression_suite_v1/reports/R5_gate_registry_validation_live_20260428T025601Z.json"
+    },
+    {
+      "path": "runtime/evals/governance_regression_suite_v1/reports/R5_gate_registry_validation_fixture_valid_20260428T025601Z.json"
+    },
+    {
+      "path": "runtime/evals/governance_regression_suite_v1/reports/R5_gate_registry_validation_fixture_bad_20260428T025601Z.json"
+    },
+    {
+      "path": "runtime/evals/governance_regression_suite_v1/reports/R5_gate_registry_loader_20260428T025601Z.json"
+    },
+    {
+      "path": "runtime/evals/governance_regression_suite_v1/reports/R5_gate_registry_alias_20260428T025601Z.json"
+    },
+    {
+      "path": "runtime/governance/decision_logs/DECISION_LOG_R5_20260428T025601Z.json"
+    }
+  ],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"checks\": [{\"check\": \"live_registry_validation_passes\", \"pass\": true}, {\"check\": \"valid_fixture_passes\", \"pass\": true}, {\"check\": \"bad_fixture_fails\", \"pass\": true}, {\"check\": \"loader_reads_registry\", \"pass\": true}, {\"check\": \"alias_validator_passes\", \"pass\": true}, {\"check\": \"enabled_gates_have_existing_entrypoints\", \"missing_enabled\": [], \"pass\": true}, {\"check\": \"p0a_deferred_until_r6\", \"pass\": true}, {\"check\": \"p0py_deferred_until_r8\", \"pass\": true}, {\"check\": \"legacy_memory_sync_retired\", \"pass\": true}, {\"check\": \"all_decision_log_required_fields_boolean\", \"pass\": true}, {\"check\": \"cool6_redirect_archive_only_after_r5\", \"pass\": true}], \"created_utc\": \"2026-04-28T02:58:11Z\", \"external_evidence_summary\": [\"OPA decision logs support auditable gate decision records with decision_id.\", \"OpenTelemetry event conventions support stable names and attributes for later telemetry stages.\", \"JSON Schema annotation docs reinforce separation of descriptive metadata from enforcement.\"], \"gate_summary\": {\"deferred\": [\"P0A_EXTERNAL_REUSE_SCAN\", \"P0PY_PYTHON_HEALTH\"], \"enabled_count\": 13, \"gate_count\": 16, \"retired\": [\"MEMORY_SYNC_VALIDATION\"]}, \"no_gap_assertions\": [\"COOL_6 plan is no longer a live wiring authority.\", \"Every enabled gate resolves to an existing entrypoint.\", \"Deferred gates name successor stages and are not enabled prematurely.\", \"Legacy memory sync validation is retired in favor of session-state export validation.\", \"Registry validator and compatibility wrapper both run",
+  "reasons": [],
+  "record_id": "R5_GATE_REGISTRY_RECEIPT_20260428T025601Z",
+  "record_kind": "stage_receipt",
+  "result": "pass",
+  "source_record": {
+    "path": "receipts/refactor_program/R5_GATE_REGISTRY_RECEIPT_20260428T025601Z.json",
+    "sha256": "6a63d4df82f336731a6ef008d1951f65f25eb9f94a07338ea771f88a3edf63c6",
+    "size_bytes": 5959
+  },
+  "span_id": "2a1aa03b7330516f",
+  "stage_id": "R5_GATE_REGISTRY_AND_WIRING_REPLACEMENT",
+  "summary": "Canonical wrapper for R5_GATE_REGISTRY_RECEIPT_20260428T025601Z.json",
+  "trace_id": "f142dda155b477c919017610d217cf7f"
+}

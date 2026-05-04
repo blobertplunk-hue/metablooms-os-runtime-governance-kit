@@ -1,0 +1,36 @@
+{
+  "created_utc": "20260428T024157Z",
+  "decision_id": "R1_CLASSIFICATION_AND_DISPOSITION_BINDING-d614d95b18710fe6",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"checks\": {\"all_split_items_have_archive_and_successor_targets\": true, \"contract_written\": true, \"decision_log_written\": true, \"no_ambiguity\": true}, \"live_runtime_conflict_count\": 0, \"stage\": \"R1_CLASSIFICATION_AND_DISPOSITION_BINDING\", \"timestamp_utc\": \"20260428T024157Z\", \"verdict\": \"PASS\"}",
+  "reasons": [],
+  "record_id": "R1_VERIFY_RECEIPT_20260428T024157Z",
+  "record_kind": "verify_receipt",
+  "result": "pass",
+  "source_record": {
+    "path": "receipts/refactor_program/R1_VERIFY_RECEIPT_20260428T024157Z.json",
+    "sha256": "d614d95b18710fe6968d86c6fb68ca4c9114dd6db7e34f0e903019a36e5b73d4",
+    "size_bytes": 326
+  },
+  "span_id": "79ba36806b6a62f0",
+  "stage_id": "R1_CLASSIFICATION_AND_DISPOSITION_BINDING",
+  "summary": "Canonical wrapper for R1_VERIFY_RECEIPT_20260428T024157Z.json",
+  "trace_id": "7a38761a085116f29f04b896835bd32e"
+}

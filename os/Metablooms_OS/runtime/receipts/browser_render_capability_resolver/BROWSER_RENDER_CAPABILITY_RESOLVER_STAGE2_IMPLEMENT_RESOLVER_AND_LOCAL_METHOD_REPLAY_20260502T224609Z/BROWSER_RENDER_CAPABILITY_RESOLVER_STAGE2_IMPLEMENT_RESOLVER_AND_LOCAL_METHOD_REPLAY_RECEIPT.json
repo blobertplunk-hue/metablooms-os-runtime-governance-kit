@@ -1,0 +1,33 @@
+{
+  "fixture_replay": "PASS",
+  "implementation": {
+    "eval_harness": "tests/evals/browser_render_capability/test_browser_render_capability_resolver_v1.py",
+    "resolver": "0_kernel/resolvers/browser_render_capability_resolver_v1.py"
+  },
+  "inputs_verified": [
+    "0_kernel/registry/browser_render_capability/BROWSER_RENDER_CAPABILITY_RESOLVER_POLICY_v1.json",
+    "0_kernel/registry/browser_render_capability/browser_render_capability_resolver_decision_schema_v1.json",
+    "tests/fixtures/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_FIXTURE_INDEX_v1.json"
+  ],
+  "local_method_replay": {
+    "decision": "ALLOW_RENDER_PROXY_WITH_LIMITATION",
+    "decision_path": "runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE2_IMPLEMENT_RESOLVER_AND_LOCAL_METHOD_REPLAY_20260502T224609Z/local_replay/RESOLVER_DECISION_OPERATOR_TRACKER.json",
+    "honesty_label": "sandbox_render_proxy",
+    "proxy_available_this_turn": true,
+    "selected_method": "weasyprint_pdf_png_proxy",
+    "static_available_this_turn": true,
+    "true_browser_available_this_turn": false
+  },
+  "next_stage": "BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE3_VISUAL_GATE_BINDING_AND_EXPORT_PREP",
+  "notes": [
+    "This stage does not export a full OS bundle.",
+    "Browser methods remain bounded and non-authoritative unless they produce a nonblank PNG.",
+    "WeasyPrint proxy is the selected sandbox-first fallback for ordinary visual proof when browser screenshot is preferred but not required."
+  ],
+  "reliability_ledger": "runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE2_IMPLEMENT_RESOLVER_AND_LOCAL_METHOD_REPLAY_20260502T224609Z/BROWSER_RENDER_METHOD_RELIABILITY_LEDGER_STAGE2.json",
+  "root": "/mnt/data/Metablooms_OS",
+  "stage": "BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE2_IMPLEMENT_RESOLVER_AND_LOCAL_METHOD_REPLAY",
+  "timestamp_utc": "20260502T224609Z",
+  "tracker_preview": "runtime/state/BROWSER_RENDER_CAPABILITY_RESOLVER_TRACKER_PREVIEW.txt",
+  "verdict": "PASS"
+}

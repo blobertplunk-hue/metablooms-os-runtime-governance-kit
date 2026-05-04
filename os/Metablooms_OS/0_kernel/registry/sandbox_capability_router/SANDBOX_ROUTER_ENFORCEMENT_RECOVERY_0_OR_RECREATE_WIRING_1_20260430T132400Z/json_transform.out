@@ -1,0 +1,1 @@
+{"allowed":true,"decision":"ALLOW","reason":"route_allowed","task":"json_transform","method":"jq"}

@@ -1,0 +1,32 @@
+{
+  "ce_inputs": [
+    {
+      "atom_ids": [
+        "ATOM-001"
+      ],
+      "expected_ce_action": "synthesize",
+      "input_id": "CEI-001",
+      "question": "What does this evidence imply for MPP stage design: JSON Schema 2020-12 is the current schema dialect used for MPP v3 packet contracts."
+    },
+    {
+      "atom_ids": [
+        "ATOM-002"
+      ],
+      "expected_ce_action": "synthesize",
+      "input_id": "CEI-002",
+      "question": "What does this evidence imply for MPP stage design: SLSA provenance principles require artifact metadata sufficient for later verification."
+    }
+  ],
+  "coverage_questions": [
+    "Which claims are multi-source verified?",
+    "Which claims require MMD escalation?"
+  ],
+  "created_at": "2026-04-30T21:58:06.585134+00:00",
+  "mmd_ready": true,
+  "normalized_evidence_packet_id": "NEP-20260430T215806Z",
+  "packet_id": "CEB-20260430T215806Z",
+  "result_hash": "e5bcc0de728814dd8a6860fff826f5cf465a8a11e6958ca978f3388e2e8621fe",
+  "schema_version": "mpp.ce_bridge_packet.v1",
+  "semantic_gaps": [],
+  "stage": "CE"
+}

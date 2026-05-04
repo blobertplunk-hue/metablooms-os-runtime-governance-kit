@@ -1,0 +1,20 @@
+{
+  "turn_text": "MetaBlooms OS governance implementation export",
+  "explicit_meta_task": true,
+  "authority_boot_verified": true,
+  "router_decision": "os_governance",
+  "web_sources": [
+    "s"
+  ],
+  "SEE_artifact": "a",
+  "CE_artifact": "b",
+  "will_implement": true,
+  "implementation_plan_artifact": "i",
+  "test_plan_artifact": "t",
+  "fixture_manifest_artifact": "f",
+  "promotion_requested": true,
+  "tracker_path": "/mnt/data/Metablooms_OS/Metablooms_OS/trackers/live/LIVE_CONTROL_SURFACE_PROJECT_FILES_BOOT_OVERLAY.html",
+  "baseline_path": "/mnt/data/Metablooms_OS/Metablooms_OS/trackers/live/LIVE_CONTROL_SURFACE_PROJECT_FILES_BOOT_OVERLAY.html",
+  "live_state_path": "/mnt/data/Metablooms_OS/Metablooms_OS/runtime/state/TRACKER_STATE_v1.json",
+  "pre_tool_contract_exempt": true
+}

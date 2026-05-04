@@ -1,0 +1,22 @@
+{
+  "artifact_type": "SEE_PACKET",
+  "created_utc": "20260430T015018Z",
+  "sources": [
+    {
+      "citation": "turn610741search0",
+      "claim": "Governance/risk management should be systematic, not ad hoc.",
+      "source": "NIST AI RMF"
+    },
+    {
+      "citation": "turn610741search1",
+      "claim": "Artifacts/provenance should be verified against expectations.",
+      "source": "SLSA verifying artifacts"
+    },
+    {
+      "citation": "turn377538search1",
+      "claim": "ZipFile.testzip checks CRCs and file headers and returns None when no bad file is found.",
+      "source": "Python zipfile docs"
+    }
+  ],
+  "stage_id": "FL17-MERGE-5R2_INTERNAL_PROOF_SIDECAR_BINDING_REPAIR"
+}

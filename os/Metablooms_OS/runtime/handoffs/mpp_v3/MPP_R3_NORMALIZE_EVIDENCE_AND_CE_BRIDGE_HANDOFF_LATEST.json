@@ -1,0 +1,13 @@
+{
+  "from_stage": "MPP_R3_NORMALIZE_EVIDENCE_AND_CE_BRIDGE",
+  "to_stage": "MPP_R4_MMD_GAP_LEDGER_VALIDATOR_AND_ESCALATION_GATE",
+  "status": "READY_WITH_R3_STATIC_VALIDATION",
+  "root": "/mnt/data/mbos_audit_extract_4945/Metablooms_OS",
+  "required_inputs": [
+    "0_kernel/schemas/mpp_v3/MMD_GAP_LEDGER_SCHEMA_v1.json",
+    "0_kernel/mpp_v3/mpp_v3_normalize_evidence_ce_bridge_v1.py",
+    "tests/fixtures/mpp_v3/valid_normalized_evidence_packet_v1.json",
+    "tests/fixtures/mpp_v3/valid_ce_bridge_packet_v1.json"
+  ],
+  "notes": "R3 bridges normalized SEE/research evidence into CE inputs and MMD readiness. R4 should add the MMD gap-ledger validator and rerun dynamic validation when Python is responsive."
+}

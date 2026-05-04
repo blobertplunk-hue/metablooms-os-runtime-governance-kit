@@ -1,0 +1,26 @@
+{
+  "bundle": "runtime/stage_bundles/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE1_SPEC_AND_FIXTURES_20260502T195918Z_DELTA.zip",
+  "bundle_member_count": 28,
+  "bundle_sha256": "00abcca34eb8529a085f825370146d0380a41dcd17757fa78037a5f3257de38d",
+  "json_results": [
+    {
+      "parse": "PASS",
+      "path": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_SPEC_v1.json",
+      "schema_version": "metablooms.promotion_authority_coherence_gate.spec.v1",
+      "sha256": "93889f3a114b8dea4fd6371eb77a8bbc54bc1d508b4387e0d6db78195341bdf7"
+    },
+    {
+      "parse": "PASS",
+      "path": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_LIFECYCLE_STATES_v1.json",
+      "schema_version": "metablooms.promotion_authority_lifecycle_states.v1",
+      "sha256": "7e37b1c4b32b773e54ed4bcba19c10a9dece1d43150339f5b83252103c34bb25"
+    },
+    {
+      "parse": "PASS",
+      "path": "runtime/evals/promotion_authority_coherence/fixtures/FIXTURE_MANIFEST_v1.json",
+      "schema_version": "metablooms.promotion_authority_coherence.fixture_manifest.v1",
+      "sha256": "4be268c0d46d065fbc7a4095180d69e743f7f840fcfc505a67d05a357338cca7"
+    }
+  ],
+  "verification_status": "PASS"
+}

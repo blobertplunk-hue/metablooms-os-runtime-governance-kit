@@ -1,0 +1,9 @@
+{
+  "required": [
+    "stage_id",
+    "dimensions",
+    "recursive_improvement",
+    "evidence"
+  ],
+  "schema": "CDRCodeAcceptancePacketSchema_v1"
+}

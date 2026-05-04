@@ -1,0 +1,17 @@
+{
+  "id": "SANDBOX_BOOTSTRAP_CONTRACT_v1",
+  "must_precede": [
+    "planning",
+    "router_selection",
+    "coding",
+    "archive_rebuild",
+    "checksum",
+    "final_response"
+  ],
+  "promotion_blockers": [
+    "missing_sandbox_policy",
+    "missing_coding_plan",
+    "python3_without_probe",
+    "archive_hash_without_latency_controls"
+  ]
+}

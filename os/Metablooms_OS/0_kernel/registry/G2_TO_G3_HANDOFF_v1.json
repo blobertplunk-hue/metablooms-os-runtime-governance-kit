@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "created_at": 1777064523.009117,
+  "from_stage": "G2_EXPORT_RECOVERY_VALIDATOR_IMPLEMENTATION",
+  "to_stage": "G3_EXPORT_RECOVERY_VALIDATOR_REGRESSION_FIXTURES",
+  "status": "ready",
+  "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G2_EXPORT_RECOVERY_VALIDATOR_IMPLEMENTATION_RECEIPT_v1.json",
+  "validator_script": "/mnt/data/Metablooms_OS_refined/0_kernel/scripts/export_recovery_proven_validator_v1.py",
+  "validator_contract": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/EXPORT_RECOVERY_PROVEN_VALIDATOR_CONTRACT_v1.json",
+  "fixtures_allowed": true,
+  "export_allowed": false,
+  "cleanup_allowed": false,
+  "next_command": "EXECUTE G3 \u2014 EXPORT RECOVERY VALIDATOR REGRESSION FIXTURES"
+}

@@ -1,0 +1,13 @@
+{
+  "artifact_type": "BASELINE_INTERNALIZE_1_CE_SYNTHESIS_v1",
+  "constraints": [
+    "Do not change project logic; add/internalize authority and method reliability artifacts only.",
+    "Do not use forbidden full recursive extraction validation as default.",
+    "Use bounded archive-native validation: sidecar, unsafe path scan, zipfile.testzip, central directory inventory, selective boot-critical reads.",
+    "Internal authority may state external_sidecar_required to avoid circular ZIP hash embedding.",
+    "Tracker must remain compact/mobile-safe and current to BASELINE-INTERNALIZE-1."
+  ],
+  "created_utc": "20260430T021800Z",
+  "decision": "Proceed with additive ZIP repair that writes authority artifacts, receipt/handoff, validation report, manifest, and updated tracker state; no feature work.",
+  "stage": "BASELINE-INTERNALIZE-1"
+}

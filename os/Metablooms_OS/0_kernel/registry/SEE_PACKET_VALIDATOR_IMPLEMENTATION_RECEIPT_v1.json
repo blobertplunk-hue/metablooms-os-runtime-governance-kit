@@ -1,0 +1,103 @@
+{
+  "version": "1.0",
+  "created_at": 1777037027.9690573,
+  "stage": "STAGE_D2_SEE_PACKET_VALIDATOR_IMPLEMENTATION",
+  "status": "complete",
+  "pre_checks": {
+    "d1_handoff_ready": true,
+    "d1_allows_implementation": true,
+    "d1_disallows_export": true,
+    "d1_disallows_cleanup": true,
+    "contract_targets_validator": true,
+    "schema_id_correct": true,
+    "git_clean_before_d2": true
+  },
+  "outputs": {
+    "validator": "/mnt/data/Metablooms_OS_refined/0_kernel/scripts/see_packet_validator_v1.py",
+    "test_evidence_dir": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/see_packet_validator_test_evidence"
+  },
+  "tests": {
+    "valid_full_see_packet": {
+      "passed": true,
+      "verdict": "PASS",
+      "issues": [],
+      "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/see_packet_validator_test_evidence/valid_full_see_packet/SEE_VALIDATION_RECEIPT_1777037027953.json"
+    },
+    "missing_web_run_evidence": {
+      "passed": true,
+      "verdict": "FAIL",
+      "issues": [
+        "missing_required_field:web_run_evidence",
+        "web_run_evidence_missing_or_not_object",
+        "web_run_evidence_missing",
+        "pass_verdict_without_web_run_evidence"
+      ],
+      "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/see_packet_validator_test_evidence/missing_web_run_evidence/SEE_VALIDATION_RECEIPT_1777037027954.json"
+    },
+    "web_run_called_false": {
+      "passed": true,
+      "verdict": "FAIL",
+      "issues": [
+        "web_run_called_false",
+        "pass_verdict_without_web_run_evidence"
+      ],
+      "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/see_packet_validator_test_evidence/web_run_called_false/SEE_VALIDATION_RECEIPT_1777037027955.json"
+    },
+    "no_sources": {
+      "passed": true,
+      "verdict": "FAIL",
+      "issues": [
+        "sources_missing_or_empty",
+        "web_run_called_but_no_sources",
+        "no_source_ids_available",
+        "source_binding_references_missing_source:0:S1",
+        "source_binding_references_missing_source:0:S2",
+        "source_binding_references_missing_source:1:S2",
+        "pass_verdict_without_sources"
+      ],
+      "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/see_packet_validator_test_evidence/no_sources/SEE_VALIDATION_RECEIPT_1777037027956.json"
+    },
+    "claim_references_missing_source": {
+      "passed": true,
+      "verdict": "FAIL",
+      "issues": [
+        "source_binding_references_missing_source:0:MISSING"
+      ],
+      "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/see_packet_validator_test_evidence/claim_references_missing_source/SEE_VALIDATION_RECEIPT_1777037027957.json"
+    },
+    "packet_file_input_valid": {
+      "passed": true,
+      "verdict": "PASS",
+      "issues": [],
+      "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/see_packet_validator_test_evidence/packet_file_input_valid/SEE_VALIDATION_RECEIPT_1777037027958.json"
+    },
+    "invalid_json_file": {
+      "passed": true,
+      "returncode": 2,
+      "verdict": "FAIL",
+      "issues": [
+        "parse_error:JSONDecodeError('Expecting property name enclosed in double quotes: line 1 column 2 (char 1)')"
+      ],
+      "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/see_packet_validator_test_evidence/invalid_json_file/SEE_VALIDATION_RECEIPT_1777037027961.json"
+    },
+    "cli_packet_file_and_inline_paths": {
+      "passed": true,
+      "packet_file_returncode": 0,
+      "inline_returncode": 0,
+      "receipt_count": 2,
+      "receipts": [
+        "/mnt/data/Metablooms_OS_refined/0_kernel/registry/see_packet_validator_test_evidence/cli_paths/SEE_VALIDATION_RECEIPT_1777037027965.json",
+        "/mnt/data/Metablooms_OS_refined/0_kernel/registry/see_packet_validator_test_evidence/cli_paths/SEE_VALIDATION_RECEIPT_1777037027966.json"
+      ]
+    }
+  },
+  "syntax_validation": "ast.parse_passed",
+  "runaway_turn_guard": {
+    "implementation_only": true,
+    "export_performed": false,
+    "cleanup_performed": false,
+    "broad_scan_performed": false
+  },
+  "verdict": "PASS",
+  "next_correct_command": "EXECUTE STAGE D3 \u2014 SEE PACKET VALIDATOR INTEGRATION PROOF"
+}

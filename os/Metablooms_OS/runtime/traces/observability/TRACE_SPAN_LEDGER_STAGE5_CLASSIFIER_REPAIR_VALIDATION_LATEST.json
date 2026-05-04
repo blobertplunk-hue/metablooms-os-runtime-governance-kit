@@ -1,0 +1,69 @@
+{
+  "artifact_type": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE5_CLASSIFIER_REPAIR_VALIDATION.v1",
+  "checks": [
+    {
+      "exists_nonempty": true,
+      "path": "0_kernel/scripts/observability_boot_ingest_v1.py"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "0_kernel/registry/observability/MB_TRACE_INGESTION_CLASSIFIER_POLICY_v1.json"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "runtime/fixtures/observability/trace_ingestion_classifier_stage5/SHA256SUMS.txt"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_INDEX_LATEST.json"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "runtime/traces/observability/FAILURE_CLUSTER_REPORT_LATEST.json"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "runtime/traces/observability/REPAIR_ROUTER_BINDING_LATEST.json"
+    }
+  ],
+  "created_utc": "20260502T165955Z",
+  "fixture_results": [
+    {
+      "actual": "OK",
+      "expected": "OK",
+      "fixture": "runtime/fixtures/observability/trace_ingestion_classifier_stage5/ce_synthesis_with_failure_word.json",
+      "pass": true
+    },
+    {
+      "actual": "WARN",
+      "expected": "WARN",
+      "fixture": "runtime/fixtures/observability/trace_ingestion_classifier_stage5/packet_with_issues.json",
+      "pass": true
+    },
+    {
+      "actual": "ERROR",
+      "expected": "ERROR",
+      "fixture": "runtime/fixtures/observability/trace_ingestion_classifier_stage5/receipt_failed.json",
+      "pass": true
+    },
+    {
+      "actual": "OK",
+      "expected": "OK",
+      "fixture": "runtime/fixtures/observability/trace_ingestion_classifier_stage5/see_packet_without_status.json",
+      "pass": true
+    },
+    {
+      "actual": "BLOCKED",
+      "expected": "BLOCKED",
+      "fixture": "runtime/fixtures/observability/trace_ingestion_classifier_stage5/validator_denied.json",
+      "pass": true
+    }
+  ],
+  "issues": [],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE5_TRACE_INGESTION_CLASSIFIER_REPAIR_AND_REGRESSION_FIXTURES",
+  "verdict": "PASS"
+}

@@ -1,0 +1,51 @@
+{
+  "artifact_type": "MB_TRACE_QUERY_INDEX_POLICY.v1",
+  "created_utc": "20260502T181632Z",
+  "index_path": "runtime/traces/observability/SEARCHABLE_EVIDENCE_INDEX_LATEST.json",
+  "live_operator_surface": "OPEN_OPERATOR_VISUAL_TRACKER.html",
+  "query_definitions": [
+    {
+      "intent": "Find blocker/failure evidence and repair route.",
+      "label": "Blocker evidence",
+      "query": "blocked blocker error failure repair router",
+      "query_id": "q_blocker"
+    },
+    {
+      "intent": "Find stage receipts, validations, and handoffs.",
+      "label": "Stage evidence",
+      "query": "stage validation receipt handoff verdict pass fail",
+      "query_id": "q_stage"
+    },
+    {
+      "intent": "Find export containment and hash evidence.",
+      "label": "Export proof",
+      "query": "export containment proof zip sha256 duplicate members required artifacts",
+      "query_id": "q_export"
+    },
+    {
+      "intent": "Find current boot guidance and wrapper validation.",
+      "label": "Boot path",
+      "query": "live boot guidance wrapper root new chat validator allow",
+      "query_id": "q_boot"
+    },
+    {
+      "intent": "Find tracker UI evidence.",
+      "label": "Tracker surface",
+      "query": "operator tracker minimal mode visual waterfall evidence filters",
+      "query_id": "q_tracker"
+    },
+    {
+      "intent": "Find historical/live callsite classification evidence.",
+      "label": "Callsite quarantine",
+      "query": "historical callsite quarantine direct runtime starter smoke wrapper only",
+      "query_id": "q_callsite"
+    }
+  ],
+  "query_packet_path": "runtime/state/operator_surface/TRACE_QUERY_PACKET_LATEST.json",
+  "required_html_markers": [
+    "data-section=\"trace_query_packet\"",
+    "data-section=\"searchable_evidence_index\"",
+    "data-section=\"trace_query_results\""
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE12_TRACE_QUERY_PACKET_AND_SEARCHABLE_EVIDENCE_INDEX"
+}

@@ -1,0 +1,38 @@
+{
+  "artifact_type": "METABLOOMS_SEE_PACKET_v1",
+  "purpose": "External evidence binding for bounded subprocess wrapper ADS and contracts.",
+  "sources": [
+    {
+      "claim": "Python subprocess.run supports timeout, kills and waits for child on timeout, but initial process creation may not be interruptible immediately.",
+      "relevance": "hard timeout must be enforced at wrapper envelope and receipt level, not assumed as perfect interruption",
+      "url": "https://docs.python.org/3/library/subprocess.html",
+      "web_ref": "turn450698view1"
+    },
+    {
+      "claim": "Python recommends passing args as a sequence and using fully qualified executable paths for maximum reliability.",
+      "relevance": "contract requires argv array and executable resolver",
+      "url": "https://docs.python.org/3/library/subprocess.html",
+      "web_ref": "turn450698view2"
+    },
+    {
+      "claim": "subprocess does not implicitly use a shell; shell=True shifts quoting and metacharacter responsibility to the application.",
+      "relevance": "contract rejects shell=True except explicit CDR-approved exception",
+      "url": "https://docs.python.org/3/library/subprocess.html",
+      "web_ref": "turn450698view0"
+    },
+    {
+      "claim": "OWASP recommends avoiding OS commands when possible; if unavoidable use parameterization plus allowlist input validation.",
+      "relevance": "envelope requires command allowlist, argument validators, and stdlib alternatives preference",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.html",
+      "web_ref": "turn450698view4"
+    },
+    {
+      "claim": "CWE-78 identifies OS command construction from externally influenced input as command injection weakness and recommends vetted constructs/strict allowlists.",
+      "relevance": "negative fixtures include shell metacharacter and argument injection attempts",
+      "url": "https://cwe.mitre.org/data/definitions/78.html",
+      "web_ref": "turn450698view5"
+    }
+  ],
+  "stage_id": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT",
+  "timestamp_utc": "2026-05-02T13:51:07Z"
+}

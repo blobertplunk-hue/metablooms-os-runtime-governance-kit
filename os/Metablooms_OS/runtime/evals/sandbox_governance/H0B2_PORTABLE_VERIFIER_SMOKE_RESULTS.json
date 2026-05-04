@@ -1,0 +1,9 @@
+{
+  "stage": "PORTABLE_FULL_OS_BOOT_VERIFY_REPAIRED_H0B2",
+  "timestamp_utc": "2026-05-03T23:18:31Z",
+  "status": "PASS",
+  "root": "/mnt/data/wc13_repair_stage31/extract/Metablooms_OS",
+  "errors": [],
+  "sandbox_policy": "ALLOW",
+  "chat_kernel": "ALLOW"
+}

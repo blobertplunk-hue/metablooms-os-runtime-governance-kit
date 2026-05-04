@@ -1,0 +1,8 @@
+{
+  "authority_sidecar": "METABLOOMS_OS_H0C2_GOVERNANCE_SURVIVAL_PROMOTION_BLOCKERS_CLEAN_AUTHORITY_FINAL_20260430T204500Z.zip.sha256",
+  "authority_zip": "METABLOOMS_OS_H0C2_GOVERNANCE_SURVIVAL_PROMOTION_BLOCKERS_CLEAN_AUTHORITY_FINAL_20260430T204500Z.zip",
+  "next_stage_policy": "No next stage unless this final zip checksum, duplicate scan, zip integrity, targeted fresh-extract smoke, behavior tests, receipt/handoff/tracker inclusion all pass.",
+  "next_suggested_stage": "H0C3_ROUTER_CARTRIDGE_RUNTIME_UNIVERSALIZATION_OR_USER_SELECTED_BOUNDED_STAGE",
+  "stage": "H0C2_GOVERNANCE_SURVIVAL_AND_PROMOTION_BLOCKER_AUDIT",
+  "status": "PASS_CLEAN_AUTHORITY_EXPORTED"
+}

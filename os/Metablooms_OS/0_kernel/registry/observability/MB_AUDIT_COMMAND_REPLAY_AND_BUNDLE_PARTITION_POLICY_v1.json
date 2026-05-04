@@ -1,0 +1,26 @@
+{
+  "artifact_type": "MB_AUDIT_COMMAND_REPLAY_AND_BUNDLE_PARTITION_POLICY.v1",
+  "created_utc": "20260502T192542Z",
+  "rules": [
+    "replay every command in AUDIT_QUERY_COMMAND_SURFACE_LATEST.json against the exported authority ZIP, not only the live tree",
+    "fail closed if any command evidence path is absent from the authority ZIP",
+    "fail closed if an export command packet binding path is absent or its SHA does not match the ZIP member bytes",
+    "produce a smaller operator-only partition ZIP containing command surfaces, audit packs, tracker, validation reports, and packet-bound evidence",
+    "write a containment proof for both the operator-only partition and the final full authority export"
+  ],
+  "see_basis": [
+    {
+      "claim": "SLSA provenance only helps when it is inspected and verified by consumers.",
+      "source": "https://slsa.dev/spec/v1.0/verifying-artifacts"
+    },
+    {
+      "claim": "OpenTelemetry supports generated, collected, and exported traces/logs/metrics for analysis.",
+      "source": "https://opentelemetry.io/"
+    },
+    {
+      "claim": "SLSA frames artifact integrity as a supply-chain tamper-resistance problem.",
+      "source": "https://slsa.dev/"
+    }
+  ],
+  "stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE17_AUDIT_COMMAND_EXECUTION_REPLAY_AND_BUNDLE_PARTITIONING"
+}

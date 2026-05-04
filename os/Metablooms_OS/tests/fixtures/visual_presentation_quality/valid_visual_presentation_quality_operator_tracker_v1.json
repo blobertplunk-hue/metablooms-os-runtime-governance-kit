@@ -1,0 +1,143 @@
+{
+  "artifact_id": "open_operator_visual_tracker_vpq_binding_v1",
+  "artifact_type": "operator_tracker",
+  "verification": {
+    "human_review_prompts": [
+      "In five seconds, can the operator tell whether work is blocked?",
+      "Does the dashboard make the teacher look organized and credible?",
+      "Is the next action visually obvious without reading receipt JSON?"
+    ],
+    "promotion_blockers": [
+      "default browser styling",
+      "missing status hierarchy",
+      "missing mobile breakpoint",
+      "color-only state communication",
+      "debug copy above user-facing status",
+      "no teacher-professional credibility evidence"
+    ],
+    "render_checks": [
+      "360px mobile scan shows blocker and next action cards",
+      "desktop scan shows progress lanes and latest export without horizontal overflow",
+      "operator prompt and receipt links remain visible and legible"
+    ],
+    "static_checks": [
+      "CSS custom property tokens exist",
+      "focus-visible style exists",
+      "prefers-reduced-motion block exists",
+      "mobile breakpoint <= 720px exists",
+      "semantic status labels exist"
+    ]
+  },
+  "visual_presentation": {
+    "accessibility": {
+      "color_independent_meaning": true,
+      "drag_alternative": true,
+      "focus_visibility": "high contrast focus ring on links, cards, and controls",
+      "target_size": "large mobile touch zones and readable spacing for phone review",
+      "wcag_target": "WCAG_2_2_AA"
+    },
+    "anti_patterns_blocked": [
+      "default browser styles",
+      "color-only status meaning",
+      "blank status strip",
+      "debug-copy-first layout",
+      "tiny receipt-only tracker"
+    ],
+    "audience_profile": {
+      "age_band_or_role": "adult operator / 3rd grade teacher",
+      "environment": [
+        "phone-first ChatGPT review",
+        "desktop artifact inspection",
+        "new-chat boot handoff"
+      ],
+      "primary_users": [
+        "teacher-operator",
+        "future-chat assistant operator"
+      ]
+    },
+    "color_system": {
+      "contrast_rule": "all text and status labels target WCAG 2.2 AA contrast; color never carries meaning alone",
+      "mode": "dark",
+      "palette_strategy": "deep navy surfaces with semantic green, blue, amber, and red status accents",
+      "semantic_colors": [
+        "success green plus label",
+        "active blue plus label",
+        "warning amber plus label",
+        "blocked red plus label"
+      ]
+    },
+    "design_intent": {
+      "credibility_target": "make the teacher-operator look organized, prepared, and technically credible when showing the workflow",
+      "desired_impression": "premium command center with calm high-confidence status clarity",
+      "engagement_strategy": "use grouped status cards, visual progress lanes, and clear next-action hierarchy so the operator sees state within seconds",
+      "functional_mood": "controlled, legible, high-signal"
+    },
+    "design_system": {
+      "basis": "Material 3-inspired dark operator dashboard with MetaBlooms governance tokens",
+      "component_rules": [
+        "hero answers current status first",
+        "status cards expose blockers, bootability, focus, and next action",
+        "progress lanes use labeled segmented bars with accessible text",
+        "decision cards separate required and optional work",
+        "receipt links remain visually secondary but discoverable"
+      ],
+      "tokens_required": [
+        "bg-gradient",
+        "surface-card",
+        "status-success",
+        "status-active",
+        "status-warning",
+        "text-primary",
+        "text-muted",
+        "radius-xl",
+        "shadow-depth",
+        "focus-ring"
+      ]
+    },
+    "interaction_feedback": {
+      "audio_visual_sync": "not audio-first; TTS-visible labels can be read without relying on emoji names",
+      "correct_incorrect_states": "pass, blocked, active, and next states use icon, label, border, and text together",
+      "hover_focus_active": "visible focus ring and card lift for keyboard/pointer review",
+      "progress_state": "segmented progress lanes and current-stage badge show completion at a glance"
+    },
+    "layout": {
+      "density": "adaptive",
+      "empty_state_rule": "unknown values render as explicit unknown cards rather than blank holes",
+      "structure": "single-column mobile first with responsive cards, progress lanes, export panel, and decision panel",
+      "visual_hierarchy": "top hero and four status cards answer the current state before receipts and technical details"
+    },
+    "mobile_first": {
+      "breakpoints": [
+        "360px phone",
+        "720px tablet/desktop transition",
+        "1120px desktop max width"
+      ],
+      "confirmed": true,
+      "thumb_reach_rule": "status and next-action cards stack for one-handed phone scanning"
+    },
+    "motion": {
+      "level": "subtle",
+      "purpose": "motion is limited to state affordance and hover/focus emphasis so progress remains readable",
+      "reduced_motion_support": true
+    },
+    "platform_constraints": [
+      "single-file HTML tracker artifact",
+      "works from /mnt/data sandbox download",
+      "no external network dependency",
+      "phone-safe vertical layout"
+    ],
+    "purpose_profile": "operator_governance_surface",
+    "teacher_professional_presentation": {
+      "dashboard_readability": "at-a-glance status cards and progress lanes prioritize what is done, active, blocked, and next",
+      "professional_language": "copy uses concise governance language and avoids placeholder, jokey, or confusing developer text",
+      "shareable_output_quality": "screenshot-ready dashboard cards use clean labels, readable spacing, and no raw debug-first presentation",
+      "teacher_mode_separation": "operator-only governance evidence is separated from any future student-facing classroom artifacts",
+      "teacher_public_credibility": "operator dashboard should make the teacher look prepared, modern, technically organized, and professionally intentional"
+    },
+    "typography": {
+      "font_strategy": "system sans stack for fast offline single-file rendering",
+      "readability_rule": "short labels, visible hierarchy, no dense debug paragraphs in primary scan zone",
+      "scale": "clamped mobile-first heading scale with readable card labels"
+    }
+  }
+}

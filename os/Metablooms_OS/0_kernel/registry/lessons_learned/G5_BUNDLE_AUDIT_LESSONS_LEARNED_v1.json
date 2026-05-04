@@ -1,0 +1,79 @@
+{
+  "version": "1.0",
+  "created_at": 1777065653.8957636,
+  "stage": "LEARN_FROM_G5_BUNDLE_AND_GOVERNANCE_BUNDLE_AUDIT",
+  "source_audit": "/mnt/data/Pasted markdown.md",
+  "source_audit_sha256": "1d879012beefda603407c4f5375199a2b07caa43d43d186c36885bee5aeed89b",
+  "source_summary": {
+    "overall_verdict": "NEAR-PASS",
+    "main_blocker": "G5 validator decision path is declared like an internal relative path but decision file is external to main ZIP.",
+    "warnings": [
+      "pointer stale at F7-era head/last_stage",
+      "DAG short ID to ledger full ID mapping still missing"
+    ],
+    "positive": [
+      "original F7 issues mostly fixed",
+      "validator infrastructure proven",
+      "governance bundle is cryptographically verifiable"
+    ]
+  },
+  "open_issues": [
+    {
+      "issue_id": "G5_AUDIT_BUG_VALIDATOR_DECISION_DECLARED_INTERNAL_BUT_EXTERNAL",
+      "severity": "BUG",
+      "finding": "G5 export manifest declares validator_decision as 0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_G5_REPAIRED_DECISION_v1.json while marking external_required=true, but the file is not inside the G5 ZIP.",
+      "risk": "Restore code may interpret the path as an internal bundle path and fail to verify the decision.",
+      "prevention_invariant": "Internal-looking relative paths must exist inside the main ZIP. External-only validator decisions must use explicit external artifact locators, sidecar references, and no internal relative path ambiguity.",
+      "required_fix": "G6 must either include the validator decision inside the main ZIP or rewrite manifest validator_policy to an unambiguous external_decision_artifact with governance bundle locator + sidecar binding.",
+      "blocks_baseline_lock": true
+    },
+    {
+      "issue_id": "G5_AUDIT_WARN_POINTER_STALE_F7",
+      "severity": "WARN",
+      "finding": "CURRENT_WORKING_BASELINE_POINTER last_stage/head still reflects F7-era state instead of G5.",
+      "risk": "Restore or boot may select stale lifecycle state even though ledger and repaired export advanced.",
+      "prevention_invariant": "After a repaired export validates, update the current working pointer to the latest validated stage or explicitly mark it stale/non-authoritative for that lifecycle.",
+      "required_fix": "G6 must update pointer last_stage to G5/G6 or mark pointer lifecycle role explicitly before baseline lock.",
+      "blocks_baseline_lock": false
+    },
+    {
+      "issue_id": "G5_AUDIT_WARN_DAG_LEDGER_MAPPING_MISSING",
+      "severity": "WARN",
+      "finding": "DAG short IDs such as G5 still lack explicit mapping to ledger full IDs such as G5_REPAIRED_RECOVERY_PROVEN_EXPORT.",
+      "risk": "Programmatic DAG/ledger cross-reference may silently find zero matches.",
+      "prevention_invariant": "Maintain an explicit DAG-to-ledger mapping artifact; never infer short ID equivalence.",
+      "required_fix": "Add STAGE_DAG_LEDGER_ID_MAP_v1.json before or during G6/G7 and require validator use of the mapping.",
+      "blocks_baseline_lock": false
+    }
+  ],
+  "positive_learnings": [
+    {
+      "learning_id": "GOV_BUNDLE_CRYPTOGRAPHIC_VERIFICATION_WORKS",
+      "finding": "Governance bundle verified 312/312 files and SHA sidecar matched.",
+      "invariant": "Keep governance-only bundles cryptographically manifest-backed and sidecar-bound.",
+      "scope": "governance_bundle_exports"
+    },
+    {
+      "learning_id": "VALIDATOR_INFRASTRUCTURE_EFFECTIVE",
+      "finding": "G0-G5 validator arc caught known F7 failures and repaired most original audit issues.",
+      "invariant": "Continue converting audits into regression fixtures and validator gates.",
+      "scope": "future_export_recovery_work"
+    },
+    {
+      "learning_id": "GOVERNANCE_BUNDLE_NOT_MAIN_BUNDLE_PROOF",
+      "finding": "Governance bundle can contain proof missing from main ZIP.",
+      "invariant": "Treat governance bundle proof as governance-layer evidence, not replacement for main bundle self-consistency.",
+      "scope": "baseline_lock_decisions"
+    }
+  ],
+  "new_invariants": [
+    "Internal-looking relative paths must exist inside the main ZIP. External-only validator decisions must use explicit external artifact locators, sidecar references, and no internal relative path ambiguity.",
+    "After a repaired export validates, update the current working pointer to the latest validated stage or explicitly mark it stale/non-authoritative for that lifecycle.",
+    "Maintain an explicit DAG-to-ledger mapping artifact; never infer short ID equivalence.",
+    "Keep governance-only bundles cryptographically manifest-backed and sidecar-bound.",
+    "Continue converting audits into regression fixtures and validator gates.",
+    "Treat governance bundle proof as governance-layer evidence, not replacement for main bundle self-consistency."
+  ],
+  "verdict": "PASS",
+  "next_correct_command": "EXECUTE G6 \u2014 RECOVERY PROOF + BASELINE LOCK WITH G5 AUDIT OPEN ISSUES"
+}

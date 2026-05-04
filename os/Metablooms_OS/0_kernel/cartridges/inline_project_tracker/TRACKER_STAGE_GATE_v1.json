@@ -1,0 +1,20 @@
+{
+  "schema_version": "TRACKER_STAGE_GATE_v1",
+  "gate_id": "inline_project_tracker.stage_gate.v1",
+  "purpose": "Constrain governed work to the next handoff-authorized bounded stage and prevent silent scope expansion.",
+  "rules": [
+    {
+      "id": "STAGE-AUTH-001",
+      "rule": "The current stage must be authorized by the latest valid handoff before implementation begins."
+    },
+    {
+      "id": "STAGE-SCOPE-001",
+      "rule": "Run exactly one bounded stage per turn unless the user explicitly expands scope."
+    },
+    {
+      "id": "STAGE-PROGRESS-001",
+      "rule": "Determinate progress may be rendered only when stage_index and stage_total are known and valid."
+    }
+  ],
+  "failure_status": "BLOCKED_TRACKER_STAGE_GATE"
+}

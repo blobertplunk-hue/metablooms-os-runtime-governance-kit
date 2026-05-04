@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "created_at": 1776998216.2523248,
+  "status": "active",
+  "title": "Ruff Lint/Format Policy",
+  "purpose": "Require Ruff lint/format checks for Python code generated or modified by MetaBlooms governance workflows.",
+  "rules": [
+    {
+      "id": "ruff_required_for_python_script_changes",
+      "when": "Python files under 0_kernel/scripts, engines, validators, or mutation tooling are created or modified",
+      "must": [
+        "run 0_kernel/scripts/ensure_ruff_available_v1.py before final commit",
+        "run 0_kernel/vendor/bin/ruff check on changed Python files",
+        "run 0_kernel/vendor/bin/ruff format when safe or report why formatting was skipped",
+        "record Ruff bootstrap/check results in receipts for governed changes"
+      ]
+    },
+    {
+      "id": "ruff_vendor_install",
+      "when": "Ruff is missing and pip/network are available",
+      "must": [
+        "install Ruff into 0_kernel/vendor/python",
+        "use 0_kernel/vendor/bin/ruff wrapper as stable entrypoint",
+        "verify ruff --version before using"
+      ]
+    }
+  ],
+  "bootstrap_script": "0_kernel/scripts/ensure_ruff_available_v1.py",
+  "ruff_wrapper": "0_kernel/vendor/bin/ruff",
+  "receipt_path": "0_kernel/registry/RUFF_BOOTSTRAP_RECEIPT_latest.json"
+}

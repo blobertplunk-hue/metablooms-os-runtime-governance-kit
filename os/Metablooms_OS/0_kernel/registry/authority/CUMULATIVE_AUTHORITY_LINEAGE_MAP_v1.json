@@ -1,0 +1,63 @@
+{
+  "base_authority": "/mnt/data/METABLOOMS_OS_ARTIFACT_PORTABILITY_REPLAY_PROOF_STAGE2_FRESH_EXTRACT_BOOT_REPLAY_20260501T180126Z.zip",
+  "base_authority_sha256": "383018bd8a4bfb5a0d1a5bd1c5e24b232e6a50a4363cb9e14a0c099c6272a24b",
+  "branches": [
+    {
+      "branch": "archive_router",
+      "status": "complete"
+    },
+    {
+      "branch": "external_review_matrix",
+      "status": "complete"
+    },
+    {
+      "branch": "ux_operator_surface",
+      "status": "stage4_complete"
+    },
+    {
+      "branch": "observability_trace_ledger",
+      "status": "stage1_complete"
+    },
+    {
+      "branch": "security_threat_model",
+      "status": "stage4_complete"
+    },
+    {
+      "branch": "evals_validator_alignment",
+      "status": "stage4_complete"
+    },
+    {
+      "branch": "filesystem_safety",
+      "status": "stage2_complete"
+    },
+    {
+      "branch": "state_checkpoint_resume_interrupt",
+      "status": "stage2_complete"
+    },
+    {
+      "branch": "agent_harness",
+      "status": "stage3_complete"
+    },
+    {
+      "branch": "education_validity",
+      "status": "stage2_complete"
+    },
+    {
+      "branch": "artifact_portability_replay_proof",
+      "status": "stage2_complete"
+    },
+    {
+      "branch": "software_quality",
+      "status": "stage2_reconstructed_and_reintegrated"
+    }
+  ],
+  "created_utc": "20260501T182011Z",
+  "purpose": "reconcile divergent branch authorities into one cumulative authority pointer without broad extraction",
+  "repaired_gaps": [
+    "software_quality_stage2_files_restored",
+    "cumulative_authority_pointer_added",
+    "workflow_progress_tracker_added"
+  ],
+  "schema_version": "CUMULATIVE_AUTHORITY_LINEAGE_MAP_v1",
+  "validation_strategy": "zip_update_overlay_central_directory_duplicate_scan_targeted_smoke"
+}

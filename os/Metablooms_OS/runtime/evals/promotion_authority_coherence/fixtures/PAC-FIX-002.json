@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-05-02T19:59:18.342997+00:00",
+  "defects": [
+    "live_boot_file_names_noncurrent_authority"
+  ],
+  "expected_decision": "DENY",
+  "fixture_id": "PAC-FIX-002",
+  "result_hash": "fbb5d117f6bb7823a916651943167421b8a5d11914e1ca6ec09f6dfe16d0b605",
+  "schema_version": "metablooms.promotion_authority_coherence.fixture.v1",
+  "setup": {
+    "current_authority": "STAGE18",
+    "live_start_file_text": "Boot from STAGE3 authority package"
+  },
+  "title": "deny_stale_authority_reference_in_live_start_file"
+}

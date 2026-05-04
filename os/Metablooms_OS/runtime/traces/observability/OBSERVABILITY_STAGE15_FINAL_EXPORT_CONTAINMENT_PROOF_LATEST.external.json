@@ -1,0 +1,32 @@
+{
+  "artifact_type": "MB_OBSERVABILITY_STAGE15_FINAL_EXPORT_CONTAINMENT_PROOF.external.v1",
+  "bad_member": null,
+  "created_utc": "20260502T191630Z",
+  "duplicate_members": 0,
+  "missing_required_members": [],
+  "required_members": [
+    "CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "0_kernel/registry/observability/MB_PROMOTED_EVIDENCE_RECOVERY_REPLAY_SCHEMA_v1.json",
+    "0_kernel/registry/observability/MB_AUDIT_QUERY_PACK_SCHEMA_v1.json",
+    "0_kernel/registry/observability/MB_PROMOTED_EVIDENCE_RECOVERY_REPLAY_POLICY_v1.json",
+    "runtime/governance/promoted_evidence_recovery_replay_v1.py",
+    "runtime/governance/validate_observability_trace_span_ledger_stage15_v1.py",
+    "runtime/traces/observability/PROMOTED_EVIDENCE_RECOVERY_REPLAY_LATEST.json",
+    "runtime/state/operator_surface/AUDIT_QUERY_PACKS_LATEST.json",
+    "runtime/state/operator_surface/AUDIT_QUERY_PACKS_LATEST.md",
+    "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE15_RECOVERY_REPLAY_AUDIT_QUERY_VALIDATION_LATEST.json",
+    "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_HANDOFF_LATEST.json",
+    "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS_20260502T191509Z/STAGE_RECEIPT.json",
+    "OPEN_OPERATOR_VISUAL_TRACKER.html",
+    "runtime/traces/observability/OBSERVABILITY_STAGE15_PRE_EXPORT_CONTAINMENT_REQUIREMENTS_LATEST.json"
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS",
+  "verdict": "PASS",
+  "zip": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_RECOVERY_REPLAY_AUDIT_QUERY_FINAL_AUTHORITY_LOCKED_20260502T191630Z.zip",
+  "zip_entries": 5687,
+  "zip_integrity": "PASS",
+  "zip_sha256": "d61e983646d57555d76fe447d855b8a3ba8d06f1f1905f17249797dc789cb52a",
+  "zip_size_bytes": 26195459
+}

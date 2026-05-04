@@ -1,0 +1,21 @@
+{
+  "created_at": "2026-05-02T19:59:18.342997+00:00",
+  "from_stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE1_SPEC_AND_FIXTURES",
+  "required_inputs": [
+    "PROMOTION_AUTHORITY_COHERENCE_GATE_SPEC_v1.json",
+    "PROMOTION_AUTHORITY_LIFECYCLE_STATES_v1.json",
+    "FIXTURE_MANIFEST_v1.json"
+  ],
+  "result_hash": "de63f93d973773f512ba0ad123dcd6fdd22fee99976dded747e293f9bc62f0c5",
+  "schema_version": "metablooms.stage_handoff.v1",
+  "stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE1_SPEC_AND_FIXTURES",
+  "stage2_required_actions": [
+    "Implement executable gate",
+    "Run six fixtures and write fixture result ledger",
+    "Bind gate as pre-promotion blocker",
+    "Run current OS scan in report-only mode without bulk-registering artifacts"
+  ],
+  "status": "HANDOFF_READY",
+  "stop_condition": "Stage 1 complete; no current authority promotion performed.",
+  "to_stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN"
+}

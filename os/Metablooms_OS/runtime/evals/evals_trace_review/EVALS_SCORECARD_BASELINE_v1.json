@@ -1,0 +1,39 @@
+{
+  "artifact_type": "EVALS_SCORECARD_BASELINE_v1",
+  "created_utc": "20260501T132500Z",
+  "dataset": "EVALS_REGRESSION_DATASET_v1",
+  "decision_counts": {
+    "BLOCK": 10,
+    "PASS": 10,
+    "WARN": 4
+  },
+  "example_count": 24,
+  "failure_mode_coverage": [
+    "FM-001",
+    "FM-002",
+    "FM-003",
+    "FM-004",
+    "FM-005",
+    "FM-006",
+    "FM-007",
+    "FM-008",
+    "FM-009",
+    "FM-010"
+  ],
+  "maturity": "minimum_viable_regression_dataset_installed_not_yet_production_calibrated",
+  "next_required_stage": "Stage 3 should add evaluator runner and confusion matrix over actual outputs.",
+  "promotion_thresholds": {
+    "block_on_any_required_score_zero": true,
+    "block_on_false_success_examples": true,
+    "minimum_examples": 20,
+    "required_decisions": [
+      "PASS",
+      "WARN",
+      "BLOCK"
+    ],
+    "required_failure_modes_minimum": 8,
+    "target_review_window": "20-50 trace examples per meaningful change before mature coverage claims"
+  },
+  "scorecard_count": 6,
+  "stage_name": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_2_SCORECARDS_AND_REGRESSION_DATASET"
+}

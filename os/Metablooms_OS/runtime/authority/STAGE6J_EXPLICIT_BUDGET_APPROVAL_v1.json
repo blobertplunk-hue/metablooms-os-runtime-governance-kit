@@ -1,0 +1,25 @@
+{
+  "approval_token": "STAGE6J_EXPLICIT_BUDGET_APPROVAL_BOOTABLE_FULL_OS_AUTHORITY_EXPORT_AFTER_RESOLVER_RETROFIT",
+  "approved_action": "Full OS authority export from /mnt/data/Metablooms_OS using BTS-wrapped Node ZIP profile after Stage6H/6I resolver retrofit.",
+  "budget": {
+    "max_bytes": 200000000,
+    "max_files": 10000,
+    "max_steps": 100,
+    "timeout_seconds": 180
+  },
+  "created_utc": "2026-05-02T03:02:00Z",
+  "required_route": [
+    "BTS-wrapped executor",
+    "Tool Universe Resolver",
+    "Stage6B pre-action gate",
+    "Node/yazl stream export",
+    "Node/yauzl CRC proof",
+    "delivery guard",
+    "fresh extraction",
+    "portable boot verify",
+    "boot executor smoke"
+  ],
+  "schema": "mb.stage6j.explicit_budget_approval.v1",
+  "stage": "STAGE6J_FULL_AUTHORITY_EXPORT_AFTER_BTS_TOOL_UNIVERSE_RESOLVER_RETROFIT",
+  "user_facing_label_requirement": "Final bootable OS download link must be labeled BOOTABLE FULL OS AUTHORITY ZIP."
+}

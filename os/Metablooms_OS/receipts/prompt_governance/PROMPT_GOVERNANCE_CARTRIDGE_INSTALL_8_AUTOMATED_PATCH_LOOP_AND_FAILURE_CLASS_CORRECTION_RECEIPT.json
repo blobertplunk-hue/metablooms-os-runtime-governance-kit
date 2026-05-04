@@ -1,0 +1,42 @@
+{
+  "base_authority": "Stage6 full authority ZIP. Stage7 artifacts were absent in /mnt/data, so telemetry/drift prerequisites were recovered in this stage before Stage8 install.",
+  "created_utc": "2026-04-30T22:11:22Z",
+  "implemented": [
+    "prompt_engine_telemetry_v1.py",
+    "prompt_engine_drift_gate_v1.py",
+    "prompt_auto_improvement_loop_v1.py",
+    "validate_prompt_auto_improvement_loop_v1.py",
+    "PROMPT_AUTO_IMPROVEMENT_LOOP_CONTRACT_v1.json",
+    "PROMPT_PATCH_LEDGER_v1.jsonl",
+    "auto_patch fixtures"
+  ],
+  "receipt_id": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_8_AUTOMATED_PATCH_LOOP_AND_FAILURE_CLASS_CORRECTION_RECEIPT",
+  "status": "PASS",
+  "validations": {
+    "auto_patch_current_request": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\n  \"packet_type\": \"PROMPT_AUTO_IMPROVEMENT_PACKET_v1\",\n  \"task_type\": \"implementation_repair_export\",\n  \"selected_profile\": \"governed_implementation\",\n  \"raw_prompt_hash\": \"ab4a128bbe0066ca8c87f3863b4e79ae12973ffdde7f595f73e79482a103a1b2\",\n  \"optimized_prompt_hash\": \"4ac401a114beb7aa3a0f5375a450f8cdc6a61c2ba5d4aafe4a38f0e27a01e4de\",\n  \"optimized_prompt\": \"GOVERNED TASK PROMPT - AUTO-OPTIMIZED\\n\\nProfile: governed_implementation\\nTask type: implementation_repair_export\\n\\nOriginal user intent:\\nPROMPT_GOVERNANCE_CARTRIDGE_INSTALL_8_AUTOMATED_PATCH_LOOP_AND_FAILURE_CLASS_CORRECTION. when I start a process, I want my prompts automatically improved for the task\\n\\nExecution contract:\\n1. Verify current OS authority, checksum sidecar, and canonical root before changing files.\\n2. Audit relevant runtime artifacts and identify missing/broken/weak/strong components.\\n3. Select tools using the OS method router; prefer safe_walk/coreutils/python3 -S for bounded filesystem work.\\n4. Apply the smallest valid code-backed patch or installation; never leave governance as loose documentation.\\n5. Validate by direct file readback and behavior tests.\\n6. Update telemetry, weakness ledger, reusable asset index, receipts, handoff, and tracker.\\n7. Export a full OS bundle with checksum when gates pass; otherwise produce a blocked/partial receipt.\\n\\nTask-specific constraints:\\n- Boot from the current authority artifact and verify sidecar before mutation.\\n- Inspect existing artifacts before patching; do not duplicate or overwrite blindly.\\n- Make the smallest code-backed change that restores or improves governed behavior.\\n- Validate with readback plus executable gates before claiming success.\\n- Write receipt, handoff, validation packet, and reusable-index updates.\\n\\nRequired output sections:\\n- Boot / authority status\\n- Gap / weakness findings\\n- Patch or installation summary\\n- Validation results\\n- Export status and artifacts\\n- Next governed step\\n\",\n  \"improvement_rationale\": [\n    \"selected_profile_by_keyword_and_os_context:governed_implementation\"\n  ],\n  \"validation_checks\": {\n    \"has_profile\": true,\n    \"has_original_intent\": true,\n    \"has_execution_contract\": true,\n    \"has_validation_requirement\": true,\n    \"has_export_rule\": true,\n    \"has_receipt_rule\": true\n  },\n  \"created_utc\": \"2026-04-30T22:11:23Z\",\n  \"drift_gate_decision\": {\n    \"decision\": \"ALLOW\",\n    \"errors\": [],\n    \"drift_flags\": []\n  },\n  \"decision\": \"ALLOW\"\n}\n"
+    },
+    "auto_patch_loop": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\n  \"decision\": \"ALLOW\",\n  \"errors\": [],\n  \"fixture_count\": 6,\n  \"results\": [\n    {\n      \"fixture\": \"auto_patch_adaptive.json\",\n      \"decision\": \"ALLOW\",\n      \"profile\": \"adaptive\",\n      \"checks\": {\n        \"has_profile\": true,\n        \"has_original_intent\": true,\n        \"has_execution_contract\": true,\n        \"has_validation_requirement\": true,\n        \"has_export_rule\": true,\n        \"has_receipt_rule\": true\n      }\n    },\n    {\n      \"fixture\": \"auto_patch_artifact.json\",\n      \"decision\": \"ALLOW\",\n      \"profile\": \"governed_implementation\",\n      \"checks\": {\n        \"has_profile\": true,\n        \"has_original_intent\": true,\n        \"has_execution_contract\": true,\n        \"has_validation_requirement\": true,\n        \"has_export_rule\": true,\n        \"has_receipt_rule\": true\n      }\n    },\n    {\n      \"fixture\": \"auto_patch_authentic.json\",\n      \"decision\": \"ALLOW\",\n      \"profile\": \"authentic\",\n      \"checks\": {\n        \"has_profile\": true,\n        \"has_original_intent\": true,\n        \"has_execution_contract\": true,\n        \"has_validation_requirement\": true,\n        \"has_export_rule\": true,\n        \"has_receipt_rule\": true\n      }\n    },\n    {\n      \"fixture\": \"auto_patch_fix_export.json\",\n      \"decision\": \"ALLOW\",\n      \"profile\": \"governed_implementation\",\n      \"checks\": {\n        \"has_profile\": true,\n        \"has_original_intent\": true,\n        \"has_execution_contract\": true,\n        \"has_validation_requirement\": true,\n        \"has_export_rule\": true,\n        \"has_receipt_rule\": true\n      }\n    },\n    {\n      \"fixture\": \"auto_patch_research.json\",\n      \"decision\": \"ALLOW\",\n      \"profile\": \"governed_research\",\n      \"checks\": {\n        \"has_profile\": true,\n        \"has_original_intent\": true,\n        \"has_execution_contract\": true,\n        \"has_validation_requirement\": true,\n        \"has_export_rule\": true,\n        \"has_receipt_rule\": true\n      }\n    },\n    {\n      \"fixture\": \"auto_patch_wit.json\",\n      \"decision\": \"ALLOW\",\n      \"profile\": \"wit\",\n      \"checks\": {\n        \"has_profile\": true,\n        \"has_original_intent\": true,\n        \"has_execution_contract\": true,\n        \"has_validation_requirement\": true,\n        \"has_export_rule\": true,\n        \"has_receipt_rule\": true\n      }\n    }\n  ]\n}\n"
+    },
+    "boot_loader": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "prompt_cartridge": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\n  \"decision\": \"ALLOW\",\n  \"errors\": [],\n  \"checks\": [\n    {\n      \"name\": \"exists:CARTRIDGE_MANIFEST.json\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:PROMPT_ENGINE_CONTRACT_v1.json\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:PROMPT_PROFILE_REGISTRY_v1.json\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:PROMPT_FAILURE_TAXONOMY_v1.json\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:PROMPT_WEAKNESS_LEDGER_TEMPLATE_v1.json\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:PROMPT_PATCH_WRITEBACK_PROTOCOL_v1.json\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:PROMPT_OUTPUT_RULES_v1.json\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:PROMPT_REUSABLE_ASSET_INDEXING_RULES_v1.json\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:PROMPT_CARTRIDGE_INSTALLATION_METADATA_v1.json\",\n      \"passed\": true\n    }\n  ]\n}\n"
+    },
+    "scatter": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\n  \"decision\": \"ALLOW\",\n  \"errors\": [],\n  \"current_controlled_count\": 1912,\n  \"registered_count\": 1912,\n  \"index_status\": \"active\",\n  \"mode\": \"controlled_artifact_index\"\n}\n"
+    }
+  }
+}

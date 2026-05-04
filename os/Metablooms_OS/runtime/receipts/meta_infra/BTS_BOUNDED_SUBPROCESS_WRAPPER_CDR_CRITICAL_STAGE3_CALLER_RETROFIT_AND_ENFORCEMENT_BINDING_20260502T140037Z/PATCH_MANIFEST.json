@@ -1,0 +1,37 @@
+{
+  "artifact_type": "METABLOOMS_STAGE3_PATCH_MANIFEST_v1",
+  "created_utc": "20260502T140253Z",
+  "patched_files": [
+    {
+      "bytes": 4408,
+      "path": "/mnt/data/Metablooms_OS/0_kernel/lib/execution/bounded_subprocess_compat_v1.py",
+      "relative_path": "0_kernel/lib/execution/bounded_subprocess_compat_v1.py",
+      "sha256": "37622aa356c313dfcfb9b0a14c64db1caf2378a3774f8b6146b95d6a67b9e955"
+    },
+    {
+      "bytes": 11111,
+      "path": "/mnt/data/Metablooms_OS/0_kernel/cartridges/inline_project_tracker/TRACKER_STAGE_FINALIZATION_HOOK_v1.py",
+      "relative_path": "0_kernel/cartridges/inline_project_tracker/TRACKER_STAGE_FINALIZATION_HOOK_v1.py",
+      "sha256": "c0d53a4b49c335ff83cc1ef6746e645776b1575916201cf5a41f421d911bc616"
+    },
+    {
+      "bytes": 7986,
+      "path": "/mnt/data/Metablooms_OS/0_kernel/lib/filesystem_safety_v1.py",
+      "relative_path": "0_kernel/lib/filesystem_safety_v1.py",
+      "sha256": "983b206934a11f611ce726248448a26842a4857c3665c858733d4e9030e1cf31"
+    },
+    {
+      "bytes": 3372,
+      "path": "/mnt/data/Metablooms_OS/0_kernel/lib/archive_method_router_v1.py",
+      "relative_path": "0_kernel/lib/archive_method_router_v1.py",
+      "sha256": "588b52a430ac2a8639264581e74d11b33b1d2f995f3ba36b6c8271258c18916c"
+    },
+    {
+      "bytes": 7835,
+      "path": "/mnt/data/Metablooms_OS/0_kernel/lib/archive_extraction_route_v1.py",
+      "relative_path": "0_kernel/lib/archive_extraction_route_v1.py",
+      "sha256": "a43cc1c257b179009a31c4665a8e8e9c383321a4eaf828c9c759ddaa75f8a325"
+    }
+  ],
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING"
+}

@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "created_at": 1776996542.6106286,
+  "purpose": "Commit existing registry backups and patch mutation engine to include _registry_backups in future git transaction staging.",
+  "pre_status": "?? _registry_backups/",
+  "backup_dir_exists": true,
+  "engine_patch": {
+    "patch_status": "patched",
+    "before_sha256": "a03fa023be4983e6d25d97a8e6b005e88f7771fc7a283f9757e545151842d2fc",
+    "after_sha256": "6bcd7dcc4db5f7b5025e4eeb32b72d8a3d1b16f197b2b5e49ed7ac886c7fd7c1",
+    "changed": true
+  },
+  "verification": {
+    "backup_git_add_block_present": true,
+    "post_write_verification": "passed"
+  }
+}

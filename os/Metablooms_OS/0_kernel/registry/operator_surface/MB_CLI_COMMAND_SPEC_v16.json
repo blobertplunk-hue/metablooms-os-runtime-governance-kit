@@ -1,0 +1,20 @@
+{
+  "artifact_type": "MB_CLI_COMMAND_SPEC_v16",
+  "created_utc": "20260501T162800Z",
+  "fail_closed_rules": [
+    "unknown stage remains blocked",
+    "malicious prompt injection remains blocked",
+    "reviewable security issues interrupt instead of executing",
+    "checkpoint manager is required for execution path"
+  ],
+  "new_or_hardened_commands": [
+    {
+      "command": "mb run-stage <stage> --execute --json",
+      "stage2_behavior": "creates checkpoint_start, applies security gate, interrupts reviewable failures, delegates executor only after pass, writes checkpoint_end"
+    },
+    {
+      "command": "mb checkpoint --resume <thread_id> --resume-payload <json> --json",
+      "stage2_behavior": "same-thread resume cursor for interrupted security decisions"
+    }
+  ]
+}

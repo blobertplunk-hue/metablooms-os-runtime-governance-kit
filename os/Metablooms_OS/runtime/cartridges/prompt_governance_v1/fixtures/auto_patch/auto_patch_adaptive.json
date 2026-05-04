@@ -1,0 +1,5 @@
+{
+  "expected_decision": "ALLOW",
+  "fixture_id": "auto_patch_adaptive",
+  "raw_prompt": "Improve this lesson prompt for student scaffolding and misconception routing"
+}

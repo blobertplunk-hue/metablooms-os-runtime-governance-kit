@@ -1,0 +1,59 @@
+{
+  "version": "1.0",
+  "created_at": 1777062052.5907457,
+  "stage": "F3_TRANSACTIONAL_STAGE_RUNNER_CONTRACT",
+  "status": "complete",
+  "inputs": {
+    "f2_handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F2_TO_F3_HANDOFF_v1.json",
+    "f2_receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F2_STAGE_DAG_AND_DEPENDENCY_LEDGER_CONTRACT_RECEIPT_v1.json",
+    "current_working_pointer": "/mnt/data/Metablooms_OS_refined/0_kernel/state/CURRENT_WORKING_BASELINE_POINTER_v1.json",
+    "stage_dag": "/mnt/data/Metablooms_OS_refined/0_kernel/pipeline/STAGE_DAG_v1.json",
+    "stage_state_ledger": "/mnt/data/Metablooms_OS_refined/0_kernel/state/STAGE_STATE_LEDGER_v1.json"
+  },
+  "outputs": {
+    "runner_schema": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/TRANSACTIONAL_STAGE_RUNNER_SCHEMA_v1.json",
+    "runner_contract": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/TRANSACTIONAL_STAGE_RUNNER_CONTRACT_v1.json",
+    "runner_doc": "/mnt/data/Metablooms_OS_refined/0_kernel/docs/TRANSACTIONAL_STAGE_RUNNER_CONTRACT_v1.md",
+    "state_machine": "/mnt/data/Metablooms_OS_refined/0_kernel/pipeline/TRANSACTIONAL_STAGE_STATE_MACHINE_v1.json",
+    "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F3_TRANSACTIONAL_STAGE_RUNNER_CONTRACT_RECEIPT_v1.json",
+    "handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F3_TO_F4_HANDOFF_v1.json"
+  },
+  "checks": {
+    "required_paths_present": true,
+    "git_clean_before_f3": true,
+    "git_fsck_clean_before_f3": true,
+    "f2_dag_ledger_prechecks": {
+      "f2_handoff_ready": true,
+      "f2_receipt_passed": true,
+      "f3_declared_target": true,
+      "pointer_active": true,
+      "dag_active": true,
+      "ledger_active": true,
+      "dag_contract_active": true,
+      "ledger_latest_pass_is_f2": true
+    }
+  },
+  "git_head_at_contract_write": "01353b64fff6b11096cceb8af1b80689f7e68fcb",
+  "runaway_turn_guard": {
+    "contract_only": true,
+    "runner_script_implementation_performed": false,
+    "restore_performed": false,
+    "export_performed": false,
+    "cleanup_performed": false
+  },
+  "verdict": "PASS",
+  "next_improvement_task": "F4 \u2014 Manifest/Provenance Export Contract",
+  "why_next": "Transaction semantics are now defined; next the export process needs provenance and manifest requirements so future restores can verify artifacts.",
+  "remaining_work": [
+    "F4 \u2014 Manifest/Provenance Export Contract",
+    "F5 \u2014 Restore Ladder + Mode-Normalization Proof",
+    "F6 \u2014 Blocked Receipt Handling Rule",
+    "F7 \u2014 Stable Export + Boot Recovery Proof",
+    "Return to E4A\u2013E5D"
+  ],
+  "progress_estimate": {
+    "stages_remaining_before_return_to_E4": 4,
+    "major_arcs_remaining_after_recovery_arc": 2
+  },
+  "next_correct_command": "EXECUTE F4 \u2014 MANIFEST/PROVENANCE EXPORT CONTRACT"
+}

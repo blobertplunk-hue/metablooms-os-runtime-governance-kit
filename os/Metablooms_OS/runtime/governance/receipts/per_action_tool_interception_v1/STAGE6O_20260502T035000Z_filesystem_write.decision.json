@@ -1,0 +1,6 @@
+{
+  "decision": "ALLOW",
+  "reason": "bounded write to OS security/governance paths and support bundle only",
+  "schema": "PreToolActionGateDecision_v1",
+  "stage_id": "STAGE6O_OWASP_AGENTIC_AI_COVERAGE_MATRIX_AND_POLICY_BINDINGS"
+}

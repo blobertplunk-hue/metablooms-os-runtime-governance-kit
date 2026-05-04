@@ -1,0 +1,14 @@
+{
+  "additional_candidates": [
+    {
+      "candidate_id": "bad_missing_best_to_worst",
+      "optimized_prompt": "Execution contract:\nValidate output. Write receipt and handoff. Original user intent: Improve task prompt.",
+      "prompt": "Execution contract:\nValidate output. Write receipt and handoff. Original user intent: Improve task prompt."
+    }
+  ],
+  "expected_decision": "ALLOW",
+  "fixture_id": "patch_replay_option_ordering_prompt",
+  "min_top_score": 0.8,
+  "raw_prompt": "Improve this task prompt and list options in best-to-worst order before executing.",
+  "task_hint": "governed_implementation"
+}

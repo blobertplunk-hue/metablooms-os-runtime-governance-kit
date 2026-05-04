@@ -1,0 +1,28 @@
+{
+  "checkpoint_id": "ckpt_interrupt",
+  "created_at_utc": "2026-05-02T03:31:34.167400Z",
+  "interrupt": {
+    "reason": "bounded_stage_pause",
+    "resume_options": [
+      "approve",
+      "reject"
+    ]
+  },
+  "metadata": {},
+  "next": "await_human_or_next_turn",
+  "parent_checkpoint_id": null,
+  "record_sha256": "3116be9c8cf3a417f252dbcc631c9a06e9f4ab4e3a4e02a8ca3478d4ffcaf954",
+  "resume": null,
+  "schema": "MetaBloomsDurableCheckpointRecord_v1",
+  "stage_id": "STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM",
+  "state": {
+    "completed": [
+      "boot",
+      "see",
+      "ce"
+    ],
+    "step": "before_handoff"
+  },
+  "status": "INTERRUPTED",
+  "thread_id": "stage6p.demo"
+}

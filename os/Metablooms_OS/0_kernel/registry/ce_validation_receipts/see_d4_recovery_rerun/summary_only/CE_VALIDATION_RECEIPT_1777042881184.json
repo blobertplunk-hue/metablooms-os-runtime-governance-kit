@@ -1,0 +1,40 @@
+{
+  "version": "1.0",
+  "created_at": 1777042881.1845186,
+  "stage": "CE_VALIDATION",
+  "schema_validation": {
+    "passed": false,
+    "issues": [
+      "missing_required_field:intent_model",
+      "missing_required_field:hidden_goal_detection",
+      "missing_required_field:misinterpretation_traps",
+      "missing_required_field:trap_mitigation_plan",
+      "missing_required_field:fact_inference_uncertainty_map",
+      "missing_required_field:comprehension_readiness_decision"
+    ]
+  },
+  "semantic_validation": {
+    "passed": false,
+    "issues": [
+      "context_summary_only"
+    ]
+  },
+  "context_summary_only_check": {
+    "passed": false,
+    "context_summary_only": true
+  },
+  "verdict": "FAIL",
+  "issues": [
+    "missing_required_field:intent_model",
+    "missing_required_field:hidden_goal_detection",
+    "missing_required_field:misinterpretation_traps",
+    "missing_required_field:trap_mitigation_plan",
+    "missing_required_field:fact_inference_uncertainty_map",
+    "missing_required_field:comprehension_readiness_decision",
+    "context_summary_only"
+  ],
+  "next_stage": "BLOCK_WITH_CE_VALIDATION_RECEIPT",
+  "packet_source": "(see_d4_rerun_summary_only)",
+  "schema_path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/schemas/CE_PACKET_SCHEMA_v1.json",
+  "receipt_path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/registry/ce_validation_receipts/see_d4_recovery_rerun/summary_only/CE_VALIDATION_RECEIPT_1777042881184.json"
+}

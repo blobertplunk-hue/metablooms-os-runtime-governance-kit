@@ -1,0 +1,90 @@
+{
+  "created_at": "2026-05-02T20:03:29.586491+00:00",
+  "current_os_report_only_scan": {
+    "decision": "DENY",
+    "defects": [
+      "controlled_artifact_missing_from_index",
+      "live_boot_file_names_noncurrent_authority",
+      "registered_hash_mismatch"
+    ],
+    "missing_from_registry_count": 939,
+    "registered_hash_mismatch_count": 83,
+    "report_only": true,
+    "result_hash": "78742327d2f811e00fbdf9a20e9bcae70c0853c6acf1442590bd25b85082cf75",
+    "stale_reference_count": 4
+  },
+  "decision": "PASS_FOR_STAGE2_LOCAL_IMPLEMENTATION",
+  "external_evidence_ids": [
+    "SEE-SLSA-VERIFY",
+    "SEE-NIST-SSDF-PS3",
+    "SEE-OPENSSF-SCORECARD"
+  ],
+  "fixture_ledger": {
+    "decision": "PASS",
+    "failed_fixture_count": 0,
+    "fixture_count": 6,
+    "passed_fixture_count": 6,
+    "result_hash": "f683822a0c60fd9086b788313849e4eff0eb896407fe0a510b91570d2ee56410"
+  },
+  "implementation_outputs": [
+    "0_kernel/mpp_v3/promotion_authority_coherence_gate_v1.py",
+    "0_kernel/mpp_v3/promotion_authority_coherence_gate_v1.py.sha256",
+    "0_kernel/schemas/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_RESULT_SCHEMA_v1.json",
+    "0_kernel/schemas/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_RESULT_SCHEMA_v1.json.sha256",
+    "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_PRE_PROMOTION_BINDING_v1.json",
+    "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_PRE_PROMOTION_BINDING_v1.json.sha256"
+  ],
+  "next_stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE3_PROMOTION_BINDING_AND_CURRENT_OS_REPAIR_PLAN",
+  "not_done": [
+    "No bulk registration performed",
+    "No current authority promotion performed",
+    "No hard-blocker mutation of existing export promotion gate yet"
+  ],
+  "receipt_outputs": [
+    "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/CURRENT_OS_REPORT_ONLY_SCAN.json",
+    "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/CURRENT_OS_REPORT_ONLY_SCAN.json.sha256",
+    "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/CURRENT_OS_SCAN_STDOUT.json",
+    "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/FIXTURE_RESULT_LEDGER.json",
+    "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/FIXTURE_RESULT_LEDGER.json.sha256",
+    "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/FIXTURE_RESULT_LEDGER_DUPLICATE.json",
+    "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/FIXTURE_RESULT_LEDGER_DUPLICATE.json.sha256",
+    "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/FIXTURE_RUN_STDOUT.json",
+    "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/IMPLEMENTATION_CONTRACT.json",
+    "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/IMPLEMENTATION_CONTRACT.json.sha256",
+    "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/IMPLEMENTATION_CONTRACT_VALIDATION.json",
+    "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/IMPLEMENTATION_CONTRACT_VALIDATION.json.sha256",
+    "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/PAC-FIX-001_RESULT.json",
+    "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/PAC-FIX-001_RESULT.json.sha256",
+    "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/PAC-FIX-002_RESULT.json",
+    "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/PAC-FIX-002_RESULT.json.sha256",
+    "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/PAC-FIX-003_RESULT.json",
+    "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/PAC-FIX-003_RESULT.json.sha256",
+    "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/PAC-FIX-004_RESULT.json",
+    "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/PAC-FIX-004_RESULT.json.sha256",
+    "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/PAC-FIX-005_RESULT.json",
+    "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/PAC-FIX-005_RESULT.json.sha256",
+    "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/PAC-FIX-006_RESULT.json",
+    "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/PAC-FIX-006_RESULT.json.sha256",
+    "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/SEE_PACKET.json",
+    "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/SEE_PACKET.json.sha256",
+    "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/WRITE_PATH_GATE_RESULT.json",
+    "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/WRITE_PATH_GATE_RESULT.json.sha256"
+  ],
+  "receipt_update_note": "Receipt updated with initial bundle hash; final repaired bundle below includes this updated receipt and supersedes the initial bundle.",
+  "result_hash": "e341f2c08a5e734292a87025755e14baa29fcc11711020a82d9246310bb65b88",
+  "root": "/mnt/data/Metablooms_OS",
+  "schema_version": "metablooms.stage_receipt.v1",
+  "stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN",
+  "status": "STAGE_COMPLETE_NO_AUTHORITY_PROMOTION_DELTA_REPAIRED_AFTER_RECEIPT_BINDING",
+  "verified_delta_bundle_pre_receipt_update": {
+    "file_count": 42,
+    "zip_path": "/mnt/data/Metablooms_OS/runtime/stage_bundles/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z_VERIFIED_DELTA.zip",
+    "zip_sha256": "f9be738a8dbf51399fedcfc037c6a581fcb2cb26843f5ba279e2dc9d26cb8252",
+    "zip_size": 44093,
+    "zip_test": "PASS"
+  },
+  "write_path_gate": {
+    "result_hash": "66e1db29c048eca372207673c9b8c2a54763be594d503269fa07683c66d57ec2",
+    "verdict": "PASS"
+  }
+}

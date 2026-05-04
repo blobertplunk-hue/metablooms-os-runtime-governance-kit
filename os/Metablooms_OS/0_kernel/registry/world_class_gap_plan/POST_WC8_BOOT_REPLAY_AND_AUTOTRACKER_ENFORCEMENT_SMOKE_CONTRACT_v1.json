@@ -1,0 +1,66 @@
+{
+  "authority_source": "BOOTABLE_FULL_AUTHORITY_WC8.zip",
+  "bounded_stage_type": "replay_and_enforcement_smoke",
+  "created_at_utc": "20260503T010700Z",
+  "decision": "PASS",
+  "enforced_rules": [
+    "multi_step_processes_emit_ACTIVE_PROCESS_TRACKER_PREVIEW_without_user_request",
+    "stage_exit_writes_receipt_handoff_and_next_prompt",
+    "successful_stage_exports_short_phone_safe_BOOTABLE_FULL_AUTHORITY_bundle",
+    "download_links_not_exposed_until_exact_file_verification_passes"
+  ],
+  "previous_stage": "WC_STAGE8_FULL_WORLD_CLASS_EXPORT_AND_NEW_CHAT_REPLAY_LOCK",
+  "purpose": "Prove WC8 can boot in a new turn and that automatic multi-step tracker, receipt, handoff, next prompt, and short full-authority export rules are active before any future MetaBlooms task.",
+  "required_authority_checks": [
+    {
+      "artifact": "WORLD_CLASS_MEASURED_SCORECARD_BASELINE_v1.json",
+      "exists": true,
+      "path": "0_kernel/registry/world_class_gap_plan/WORLD_CLASS_MEASURED_SCORECARD_BASELINE_v1.json",
+      "size_bytes": 10607
+    },
+    {
+      "artifact": "DORA_STYLE_OS_METRICS_BASELINE_v1.json",
+      "exists": true,
+      "path": "runtime/state/DORA_STYLE_OS_METRICS_BASELINE_v1.json",
+      "size_bytes": 431
+    },
+    {
+      "artifact": "EDUCATIONAL_HTML_DESIGN_SYSTEM_CARTRIDGE_SPEC_v1.json",
+      "exists": true,
+      "path": "0_kernel/cartridges/educational_html_design_system/EDUCATIONAL_HTML_DESIGN_SYSTEM_CARTRIDGE_SPEC_v1.json",
+      "size_bytes": 537
+    },
+    {
+      "artifact": "OPERATOR_EXPERIENCE_POLISH_CONTRACT_v1.json",
+      "exists": true,
+      "path": "0_kernel/registry/world_class_gap_plan/OPERATOR_EXPERIENCE_POLISH_CONTRACT_v1.json",
+      "size_bytes": 540
+    },
+    {
+      "artifact": "LESSON_PROMOTION_QUEUE_v1.json",
+      "exists": true,
+      "path": "0_kernel/lessons/LESSON_PROMOTION_QUEUE_v1.json",
+      "size_bytes": 9417
+    },
+    {
+      "artifact": "GENERAL_CAPABILITY_RESOLVER_CONTRACT_v1.json",
+      "exists": true,
+      "path": "0_kernel/registry/general_capability_resolver/GENERAL_CAPABILITY_RESOLVER_CONTRACT_v1.json",
+      "size_bytes": 1935
+    },
+    {
+      "artifact": "AUTOMATIC_MULTI_STEP_TRACKER_CONTRACT_v1.json",
+      "exists": true,
+      "path": "0_kernel/cartridges/automatic_process_tracker/AUTOMATIC_MULTI_STEP_TRACKER_CONTRACT_v1.json",
+      "size_bytes": 1682
+    },
+    {
+      "artifact": "automatic_process_tracker_emitter_v1.py",
+      "exists": true,
+      "path": "0_kernel/cartridges/automatic_process_tracker/automatic_process_tracker_emitter_v1.py",
+      "size_bytes": 2224
+    }
+  ],
+  "schema_version": "v1",
+  "stage": "POST_WC8_BOOT_REPLAY_AND_AUTOTRACKER_ENFORCEMENT_SMOKE"
+}

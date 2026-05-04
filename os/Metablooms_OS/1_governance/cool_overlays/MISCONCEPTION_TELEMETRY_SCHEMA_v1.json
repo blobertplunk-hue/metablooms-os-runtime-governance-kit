@@ -1,0 +1,134 @@
+{
+  "schema_id": "MISCONCEPTION_TELEMETRY_SCHEMA_v1",
+  "version": "1.0",
+  "created_utc": "2026-04-26",
+  "see_evidence": [
+    "PMC: students treat fractions as 2 independent whole numbers \u2014 2/6 > 1/2 because 2>1 and 6>2 (Stafylidou & Vosniadou 2004)",
+    "EdWeek 2024: most common number line error \u2014 3/8 > 3/4 because 8>4, do not understand piece size",
+    "PMC intervention: divide number line into denominator segments; larger denominator = closer to zero",
+    "Riccomini 2025: error analysis integrated into intervention is cornerstone of effective math intervention (NCII)",
+    "PMC SDBF-OR: smallest denominator seen as biggest fraction without considering numerator"
+  ],
+  "behavioral_signals": [
+    {
+      "id": "BRUTE_FORCE_TAP",
+      "label": "Brute force tapping",
+      "detection": "3+ attempts within 4 seconds",
+      "teacher_action": "Check in \u2014 may be frustrated",
+      "severity": "low"
+    },
+    {
+      "id": "RAPID_SEQUENTIAL",
+      "label": "Rapid sequential answers",
+      "detection": "Answer in under 1.5 seconds",
+      "teacher_action": "Remind to read the question",
+      "severity": "low"
+    },
+    {
+      "id": "ABANDONMENT",
+      "label": "Question abandonment",
+      "detection": "No interaction for 20+ seconds",
+      "teacher_action": "Student may be stuck \u2014 offer hint",
+      "severity": "medium"
+    },
+    {
+      "id": "HINT_DEPENDENCY",
+      "label": "Hint dependency",
+      "detection": "Hint used on 3+ consecutive questions",
+      "teacher_action": "May need small-group pull",
+      "severity": "medium"
+    }
+  ],
+  "conceptual_signals": [
+    {
+      "id": "WHOLE_NUMBER_BIAS",
+      "label": "Whole number bias",
+      "description": "Treats fraction as two independent whole numbers",
+      "detection": "Larger numerator or denominator always placed as greater",
+      "example": "Says 2/6 > 1/2 because 2>1 and 6>2",
+      "teks": "TEKS 3.3A",
+      "teacher_action": "Use unit fraction anchor: show 1/2 vs 1/6 with equal-length segments",
+      "severity": "high"
+    },
+    {
+      "id": "DENOMINATOR_SIZE_CONFUSION",
+      "label": "Denominator size confusion",
+      "description": "Believes larger denominator means larger fraction",
+      "detection": "Fraction with larger denominator consistently placed higher",
+      "example": "Places 1/8 right of 1/4",
+      "teks": "TEKS 3.3H",
+      "teacher_action": "Pizza model: 8 slices vs 4 slices \u2014 which piece is bigger?",
+      "severity": "high"
+    },
+    {
+      "id": "TICK_MARK_COUNTING",
+      "label": "Tick mark not interval counting",
+      "description": "Counts tick marks instead of spaces on number line",
+      "detection": "Correct denominator but one position off",
+      "example": "1/4 placed at first tick mark instead of after first interval",
+      "teks": "TEKS 3.3B",
+      "teacher_action": "Explicitly teach: count the spaces not the lines. Use colored interval blocks.",
+      "severity": "medium"
+    },
+    {
+      "id": "UNIT_FRACTION_INVERSION",
+      "label": "Unit fraction magnitude inversion",
+      "description": "Believes 1/8 > 1/4 because 8 > 4",
+      "detection": "Unit fractions placed in reverse order",
+      "example": "1/8 placed right of 1/4 on number line",
+      "teks": "TEKS 3.3A 3.3H",
+      "teacher_action": "Fold paper in half vs eighths: which piece is bigger?",
+      "severity": "high"
+    },
+    {
+      "id": "ZERO_ANCHOR_CONFUSION",
+      "label": "Zero anchor confusion",
+      "description": "Does not anchor fractions between 0 and 1",
+      "detection": "Fractions placed outside 0-1 or wrong side",
+      "example": "Places 3/4 at position 3 on 0-4 number line",
+      "teks": "TEKS 3.3B",
+      "teacher_action": "Establish 0 and 1 anchors first. Ask: can this be more than a whole?",
+      "severity": "high"
+    },
+    {
+      "id": "EQUIVALENT_FRACTION_GAP",
+      "label": "Equivalent fraction non-recognition",
+      "description": "Does not recognize 2/4 = 1/2 same position",
+      "detection": "Places equivalent fractions at different positions",
+      "example": "1/2 at midpoint but 2/4 at different location",
+      "teks": "TEKS 3.3F",
+      "teacher_action": "Overlay two number lines: halves and fourths. Show alignment.",
+      "severity": "medium"
+    }
+  ],
+  "event_schema": {
+    "event_id": "string",
+    "session_id": "string",
+    "student_id": "string anon no-PII",
+    "timestamp_ms": "number",
+    "question_id": "string",
+    "question_type": "place_on_line|compare_fractions|identify_fraction",
+    "fraction_target": "string e.g. 1/4",
+    "student_response": "string",
+    "correct": "boolean",
+    "response_time_ms": "number",
+    "attempt_number": "number",
+    "hint_used": "boolean",
+    "signal_type": "behavioral|conceptual|none",
+    "signal_id": "string or null",
+    "signal_confidence": "number 0-1",
+    "teacher_flag": "boolean"
+  },
+  "session_summary_schema": {
+    "student_id": "string",
+    "session_id": "string",
+    "questions_attempted": "number",
+    "questions_correct": "number",
+    "accuracy_pct": "number",
+    "behavioral_flags": "array of signal_ids",
+    "conceptual_flags": "array of signal_ids",
+    "top_misconception": "highest-confidence conceptual signal_id or null",
+    "needs_intervention": "boolean",
+    "teacher_note": "auto-generated action sentence"
+  }
+}

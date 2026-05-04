@@ -1,0 +1,12 @@
+{
+  "from_stage": "MPP_R7_OFM_OUTCOME_FRAME_SCHEMA_AND_MEASURABLE_SUCCESS_GATE",
+  "notes": "R8 should consume OFM outcomes and map architecture components to outcomes and ownership.",
+  "required_inputs": [
+    "0_kernel/schemas/mpp_v3/OFM_OUTCOME_FRAME_PACKET_SCHEMA_v1.json",
+    "0_kernel/mpp_v3/mpp_v3_ofm_outcome_frame_gate_v1.py",
+    "tests/fixtures/mpp_v3/valid_ofm_outcome_frame_packet_v1.json"
+  ],
+  "root": "/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z",
+  "status": "READY",
+  "to_stage": "MPP_R8_ADS_ARCHITECTURE_DAG_SCHEMA_AND_OWNERSHIP_GATE"
+}

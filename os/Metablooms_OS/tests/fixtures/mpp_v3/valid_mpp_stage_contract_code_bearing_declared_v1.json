@@ -1,0 +1,14 @@
+{
+  "cdr_binding_packet_path": "runtime/stage_work/example/cdr_binding_packet.json",
+  "cdr_required": true,
+  "code_artifact_classes": [
+    "python",
+    "validator"
+  ],
+  "declaration_source": "stage_contract",
+  "declared_by": "stage_planner",
+  "mpp_cdr_binding_policy_version": "MPP_CODE_WORK_REQUIRES_CDR_v1",
+  "stage_contains_code": true,
+  "stage_id": "EXAMPLE_CODE_STAGE",
+  "stage_verdict_requested": "PASS"
+}

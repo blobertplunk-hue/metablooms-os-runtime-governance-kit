@@ -1,0 +1,16 @@
+{
+  "expected_decisions": {
+    "fixture_01_playwright_full_success.json": "ALLOW_BROWSER_SCREENSHOT",
+    "fixture_02_current_sandbox_weasy_fallback.json": "ALLOW_RENDER_PROXY_WITH_LIMITATION",
+    "fixture_03_production_browser_required_denied.json": "DENY_PRODUCTION_PROMOTION",
+    "fixture_04_static_only_preimplementation_allowed.json": "ALLOW_STATIC_ONLY_WITH_LIMITATION"
+  },
+  "fixtures": [
+    "fixture_01_playwright_full_success.json",
+    "fixture_02_current_sandbox_weasy_fallback.json",
+    "fixture_03_production_browser_required_denied.json",
+    "fixture_04_static_only_preimplementation_allowed.json"
+  ],
+  "stage": "BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE1_SANDBOX_FIRST_POLICY_AND_FIXTURES",
+  "timestamp_utc": "20260502T224349Z"
+}

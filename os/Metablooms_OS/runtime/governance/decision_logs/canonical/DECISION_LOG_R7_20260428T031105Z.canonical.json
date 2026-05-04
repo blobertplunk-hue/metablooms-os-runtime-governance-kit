@@ -1,0 +1,48 @@
+{
+  "created_utc": "2026-04-28T03:11:05Z",
+  "decision_id": "R7-20260428T031105Z",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [
+    {
+      "claim": "OPA decision-log pattern: include decision_id, input, result, timestamp for audit/debugging"
+    },
+    {
+      "claim": "JSON Schema annotation fields are documentation, not enforcement; validator performs enforcement"
+    }
+  ],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"decision_basis\": [\"Usefulness validator promoted from staged Claude-originated source into active live gate\", \"Validator hardened to require python3 -S and decision-log receipts\", \"Gate registry updated and integrity validator passed\", \"Positive fixture allowed; negative fixtures denied\"], \"decision_id\": \"R7-20260428T031105Z\", \"decision_log_type\": \"REFRACTOR_PROGRAM_STAGE_DECISION\", \"external_pattern_basis\": [\"OPA decision-log pattern: include decision_id, input, result, timestamp for audit/debugging\", \"JSON Schema annotation fields are documentation, not enforcement; validator performs enforcement\"], \"result\": \"pass\", \"stage\": \"R7_USEFULNESS_VALIDATOR_PROMOTION\", \"timestamp_utc\": \"2026-04-28T03:11:05Z\"}",
+  "reasons": [
+    "Usefulness validator promoted from staged Claude-originated source into active live gate",
+    "Validator hardened to require python3 -S and decision-log receipts",
+    "Gate registry updated and integrity validator passed",
+    "Positive fixture allowed; negative fixtures denied"
+  ],
+  "record_id": "DECISION_LOG_R7_20260428T031105Z",
+  "record_kind": "decision_log",
+  "result": "pass",
+  "source_record": {
+    "path": "runtime/governance/decision_logs/DECISION_LOG_R7_20260428T031105Z.json",
+    "sha256": "e3d0419be901529294d62413203a3b0e9de89847d1371afda50c566ff3e4e858",
+    "size_bytes": 764
+  },
+  "span_id": "09bda927dcdc88a4",
+  "stage_id": "R7_USEFULNESS_VALIDATOR_PROMOTION",
+  "summary": "Canonical wrapper for DECISION_LOG_R7_20260428T031105Z.json",
+  "trace_id": "8346c7745d5a49966e2fb8747488bc50"
+}

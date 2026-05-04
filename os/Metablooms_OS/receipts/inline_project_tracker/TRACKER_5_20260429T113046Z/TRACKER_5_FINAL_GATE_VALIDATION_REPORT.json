@@ -1,0 +1,31 @@
+{
+  "artifacts": {
+    "TRACKER_BOOT_GATE_v1.json": {
+      "path": "/mnt/data/Metablooms_OS/0_kernel/cartridges/inline_project_tracker/TRACKER_BOOT_GATE_v1.json",
+      "sha256": "7b65a5841c32ea3f2d2a1af1314ee1644737999ced80a895a1b37498c524c555"
+    },
+    "TRACKER_EVIDENCE_GATE_v1.json": {
+      "path": "/mnt/data/Metablooms_OS/0_kernel/cartridges/inline_project_tracker/TRACKER_EVIDENCE_GATE_v1.json",
+      "sha256": "b2a69bc98a13c1846146a4ce1e670d98315ea6480d42a7ab0900da82a8efeef4"
+    },
+    "TRACKER_STAGE_GATE_v1.json": {
+      "path": "/mnt/data/Metablooms_OS/0_kernel/cartridges/inline_project_tracker/TRACKER_STAGE_GATE_v1.json",
+      "sha256": "b9235e974616fab4f93de361385a4529910b8e5f8d2ad230cb0b6ca3e4bb3fef"
+    },
+    "TRACKER_STOP_GATE_v1.json": {
+      "path": "/mnt/data/Metablooms_OS/0_kernel/cartridges/inline_project_tracker/TRACKER_STOP_GATE_v1.json",
+      "sha256": "1940286875fa28af08db44369487a0b598d86b8d053bb71e918ffc15e61108c2"
+    }
+  },
+  "checks": {
+    "done_blocked_evidence_rejection": "PASS",
+    "existing_state_load_before_action": "PASS",
+    "gate_files_present": "PASS",
+    "missing_state_blocking": "PASS",
+    "top_marker_after_load": "PASS"
+  },
+  "errors": [],
+  "rendered_preview": "TRACKER \u25b8 Inline Project Tracker\n[\u2588\u2588\u2588\u2588\u2588\u2588] 6/6 complete\nStatus: DONE\nStage: TRACKER-5_SMOKE_TEST_AND_EXPORT_PACKAGING\nNow: tracker smoke/export package complete\nEvidence: TRACKER-5_SMOKE_TEST_AND_EXPORT_PACKAGING han\u2026\nBlocker: none\nNext: Use compact tracker for future governed stages\nStop: tracker workflow complete; stop after this stage",
+  "status": "PASS",
+  "validator": "TRACKER_GATE_VALIDATOR_v1"
+}

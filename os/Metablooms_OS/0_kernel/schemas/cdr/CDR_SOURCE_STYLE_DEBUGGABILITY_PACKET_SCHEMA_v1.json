@@ -1,0 +1,9 @@
+{
+  "required": [
+    "module_headers",
+    "structured_denial_contract",
+    "warnings_before",
+    "warnings_after"
+  ],
+  "schema": "CDRSourceStyleDebuggabilityPacketSchema_v1"
+}

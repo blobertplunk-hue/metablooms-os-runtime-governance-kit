@@ -1,0 +1,106 @@
+{
+  "contract_id": "unified_runtime_compatibility_contract_v1",
+  "version": "1.0",
+  "created_utc": "2026-04-28T02:52:00Z",
+  "created_by_stage": "R3_COMPATIBILITY_CONTRACT_REPLACEMENT",
+  "authoritative_root": "/mnt/data/Metablooms_OS",
+  "accepted_source_tracks": [
+    {
+      "track_id": "GW",
+      "track_name": "governed_workflow_lineage",
+      "status": "accepted_for_legacy_reference_only",
+      "allowed_uses": ["archive_lookup", "receipt_lineage", "historical_decision_context"],
+      "disallowed_uses": ["live_runtime_authority", "operator_instruction_source"]
+    },
+    {
+      "track_id": "OS",
+      "track_name": "runtime_kernel_lineage",
+      "status": "accepted_for_runtime_contract_binding",
+      "allowed_uses": ["baseline_lineage", "runtime_compatibility_checks", "receipt_lineage"],
+      "disallowed_uses": ["unverified_external_override"]
+    }
+  ],
+  "required_handoff_artifacts": [
+    {
+      "artifact_id": "artifact_disposition_contract_v1",
+      "path": "runtime/governance/contracts/artifact_disposition_contract_v1.json",
+      "required": true
+    },
+    {
+      "artifact_id": "legacy_artifact_redirects_v1",
+      "path": "runtime/governance/contracts/legacy_artifact_redirects_v1.json",
+      "required": true
+    },
+    {
+      "artifact_id": "ADR-0001",
+      "path": "0_kernel/docs/decisions/ADR-0001-split-rationale-from-runtime-contracts.md",
+      "required": true
+    },
+    {
+      "artifact_id": "R2_verify_receipt",
+      "path": "receipts/refactor_program/R2_VERIFY_RECEIPT_20260428T024446Z.json",
+      "required": true
+    }
+  ],
+  "compatibility_rules": [
+    {
+      "rule_id": "ucrc-001-authority-root",
+      "description": "Only /mnt/data/Metablooms_OS may act as authoritative runtime root for this refactor line.",
+      "enforcement": "hard_fail",
+      "condition": {
+        "type": "path_exact_match",
+        "field": "authoritative_root",
+        "equals": "/mnt/data/Metablooms_OS"
+      }
+    },
+    {
+      "rule_id": "ucrc-002-cross-link-demotion",
+      "description": "Legacy cross-link memo is archive-only after R3 and may not be treated as active runtime authority.",
+      "enforcement": "hard_fail",
+      "condition": {
+        "type": "legacy_redirect_status",
+        "legacy_artifact": "1_governance/workflow_v6/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.json",
+        "expected_machine_use_status": "archive_only_after_r3"
+      }
+    },
+    {
+      "rule_id": "ucrc-003-handoff-artifacts-present",
+      "description": "Required handoff artifacts must exist before any successor contract relying on this compatibility layer is accepted.",
+      "enforcement": "hard_fail",
+      "condition": {
+        "type": "all_required_paths_exist"
+      }
+    },
+    {
+      "rule_id": "ucrc-004-staleness-bound",
+      "description": "Compatibility contract must be renewed before stale_after_utc.",
+      "enforcement": "hard_fail",
+      "condition": {
+        "type": "stale_after_future",
+        "field": "stale_after_utc"
+      }
+    },
+    {
+      "rule_id": "ucrc-005-supersession-traceability",
+      "description": "This contract must explicitly supersede the legacy cross-link memo and its redirect metadata.",
+      "enforcement": "hard_fail",
+      "condition": {
+        "type": "supersedes_contains_all",
+        "required": [
+          "1_governance/workflow_v6/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.json",
+          "1_governance/workflow_v6/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.redirect.json"
+        ]
+      }
+    }
+  ],
+  "stale_after_utc": "2026-07-01T00:00:00Z",
+  "supersedes": [
+    "1_governance/workflow_v6/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.json",
+    "1_governance/workflow_v6/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.redirect.json"
+  ],
+  "notes": {
+    "legacy_cross_link_archive": "runtime/governance/legacy_archives/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.json",
+    "legacy_redirect_contract": "runtime/governance/contracts/legacy_artifact_redirects_v1.json",
+    "purpose": "Executable compatibility binding replacing the mixed-purpose cross-link memo."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "files_to_change": [
+    "runtime/governance/sandbox_tool_governance_v1.py",
+    "runtime/governance/chat_governance_kernel_v1.py",
+    "portable_full_os_boot_verify.py",
+    "0_kernel/sandbox_governance/*.json",
+    "runtime/evals/sandbox_governance/*"
+  ],
+  "method_policy": "shell + python3 -S only for this stage",
+  "smallest_valid_change": "wire sandbox policy into chat governance and repair stale layout verifier",
+  "stage": "H0B2_SANDBOX_TOOL_GOVERNANCE_BOOTSTRAP_AND_LAYOUT_DRIFT_REPAIR",
+  "tests_to_run": [
+    "H0B2 sandbox eval",
+    "chat governance integrated eval",
+    "portable verifier smoke",
+    "fresh ZIP critical-path smoke"
+  ],
+  "timestamp_utc": "2026-04-30T18:24:58Z"
+}

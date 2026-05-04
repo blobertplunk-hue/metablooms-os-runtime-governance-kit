@@ -1,0 +1,14 @@
+{
+  "id": "github_release_distribution_state_v1",
+  "status": "release_download_verified_in_stage25",
+  "release_url": "https://github.com/blobertplunk-hue/metablooms-os-runtime-governance-kit/releases/tag/metablooms-wc12-stage23-20260503",
+  "release_tag": "metablooms-wc12-stage23-20260503",
+  "assets": {
+    "BOOTABLE_FULL_AUTHORITY_WC12_RECONSTRUCTED.zip": "f9b1305da011bfdb9344e6de12bff5a4d21e90de81e7305d4fce6ce0d23b2db9",
+    "STAGE23_PC_BOOTSTRAP_KIT_RESCUE.zip": "1dce177e3db3ab7bc5421c4589801da0be63fb6447ce2e07764eb965ed17130a"
+  },
+  "pc_paths": {
+    "wc12": "C:\\MetaBlooms\\OS-Archives\\WC12\\BOOTABLE_FULL_AUTHORITY_WC12_RECONSTRUCTED.zip",
+    "stage23": "C:\\MetaBlooms\\Scripts\\pc-bootstrap-kit-releases\\STAGE23_PC_BOOTSTRAP_KIT_RESCUE.zip"
+  }
+}

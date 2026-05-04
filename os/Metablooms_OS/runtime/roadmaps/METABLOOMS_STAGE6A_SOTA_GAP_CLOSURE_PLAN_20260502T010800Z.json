@@ -1,0 +1,137 @@
+{
+  "artifact_type": "METABLOOMS_STAGE6A_SOTA_GAP_CLOSURE_PLAN",
+  "stage": "STAGE6A_SOTA_GAP_CLOSURE_PLAN_NO_IMPLEMENTATION",
+  "verdict": "PLAN_READY_REQUIRES_SEPARATE_IMPLEMENTATION_STAGES",
+  "created_utc": "2026-05-02T01:08:00Z",
+  "authority_root": "/mnt/data/Metablooms_OS",
+  "authority_zip": "/mnt/data/METABLOOMS_OS_STAGE5E_FULL_AUTHORITY_EXPORT_AFTER_POINTER_COHERENCE_REPAIR_20260502T004200Z.zip",
+  "source_basis": {
+    "artifact_basis": [
+      "Stage5E full authority export and sidecar verified earlier",
+      "Live root contains OS bundle delivery invariant and validator",
+      "Runtime starter smoke from live root returned ALLOW during Stage6A boot probe"
+    ],
+    "fresh_see_basis": [
+      "Microsoft official Agent Governance Toolkit blog, April 2026",
+      "OWASP Top 10 for Agentic Applications 2026 official page",
+      "LangGraph official docs on durable execution, persistence, and HITL",
+      "OpenAI Agents SDK official docs on tracing and guardrails",
+      "EU AI Act official implementation timeline and FAQ"
+    ]
+  },
+  "rating_summary": {
+    "metablooms_leads": [
+      "artifact export integrity and user-facing OS bundle delivery guard",
+      "failure learning as policy generation and forbidden-method routing",
+      "domain-specific classroom/TEKS governance"
+    ],
+    "external_peers_lead": [
+      "per-action tool interception and capability sandboxing",
+      "formal mechanical HITL approvals and signed approval tokens",
+      "durable graph runtime/checkpointing/state replay",
+      "production observability integrations such as LangSmith/OpenTelemetry/Agents SDK tracing",
+      "broader OWASP Agentic AI Top 10 coverage"
+    ]
+  },
+  "gap_closure_backlog_best_to_worst_priority": [
+    {
+      "rank": 1,
+      "id": "A6_PER_ACTION_TOOL_INTERCEPTION_GATE",
+      "why_first": "Largest safety surface gap versus Microsoft AGT; converts stage-boundary governance into per-tool-call governance.",
+      "deliverables": [
+        "ToolCallEnvelope_v1 schema",
+        "PolicyDecision_v1 schema",
+        "pre_tool_action_gate_v1 runner wrapper",
+        "deny/allow/defer/approve decision receipt",
+        "fixture tests for shell, node, zip, filesystem, web/SEE, and export actions"
+      ],
+      "success_gates": [
+        "every OS runner that invokes external tools must pass through the wrapper",
+        "direct unwrapped tool execution is logged as governance breach in OS receipts",
+        "known forbidden methods such as broad unzip -tqq are denied or rerouted"
+      ],
+      "stage": "STAGE6B_PER_ACTION_TOOL_INTERCEPTION_SCHEMA_AND_WRAPPER"
+    },
+    {
+      "rank": 2,
+      "id": "A6_FORMAL_HITL_INTERRUPT_APPROVAL_GATE",
+      "why_first": "Closes the social-HITL gap; prevents long repairs/export/pointer promotion from proceeding without explicit bounded approval.",
+      "deliverables": [
+        "HITLApprovalRequest_v1 schema",
+        "HITLApprovalToken_v1 schema",
+        "interrupt_before_export, interrupt_before_pointer_promotion, interrupt_before_broad_repair gates",
+        "approval/denial receipts"
+      ],
+      "success_gates": [
+        "broad export cannot begin without an approval token",
+        "pointer promotion cannot begin without an approval token",
+        "the runaway-turn breaker forces audit-only fallback when approval is absent"
+      ],
+      "stage": "STAGE6C_HITL_INTERRUPT_APPROVAL_GATE"
+    },
+    {
+      "rank": 3,
+      "id": "A6_OWASP_AGENTIC_AI_TOP10_COVERAGE_MATRIX",
+      "why_first": "Turns external security taxonomy into an explicit OS compliance/evidence matrix.",
+      "deliverables": [
+        "OWASP_Agentic_Top10_Coverage_Matrix_v1.json",
+        "risk-to-invariant mapping",
+        "coverage status per risk: covered/partial/missing",
+        "evidence path bindings"
+      ],
+      "success_gates": [
+        "all 10 OWASP risks have an owner invariant or explicit gap ticket",
+        "coverage matrix is checked during boot and export"
+      ],
+      "stage": "STAGE6D_OWASP_ASI_COVERAGE_MATRIX_AND_GAPS"
+    },
+    {
+      "rank": 4,
+      "id": "A6_DURABLE_STATE_CHECKPOINT_REPLAY",
+      "why_first": "Closes LangGraph-style durable execution gap for ChatGPT turn interruptions and long-running OS workflows.",
+      "deliverables": [
+        "StageCheckpoint_v1 schema",
+        "idempotent side-effect task wrapper",
+        "resume-from-last-safe-checkpoint runner",
+        "checkpoint replay proof fixture"
+      ],
+      "success_gates": [
+        "interrupted stage resumes without redoing completed side effects",
+        "checkpoint history records input, output, hash, and idempotence status"
+      ],
+      "stage": "STAGE6E_DURABLE_CHECKPOINT_REPLAY_ENGINE"
+    },
+    {
+      "rank": 5,
+      "id": "A6_OBSERVABILITY_EXPORT_ADAPTERS",
+      "why_first": "Improves trace usability and ecosystem interoperability after safety-critical gates exist.",
+      "deliverables": [
+        "OpenTelemetry-compatible JSONL span exporter",
+        "Agents-SDK-style span taxonomy mapping",
+        "trace completeness validator"
+      ],
+      "success_gates": [
+        "every governed stage emits trace_id/span_id/parent_span_id",
+        "exported traces validate against OTEL-shaped schema"
+      ],
+      "stage": "STAGE6F_OBSERVABILITY_TRACE_EXPORTER"
+    },
+    {
+      "rank": 6,
+      "id": "A6_ACTIVE_INVARIANT_INDEX_COHERENCE_REPAIR",
+      "why_first": "Small but important internal coherence gap found in live root: registry path exists but ACTIVE_INVARIANTS_INDEX_v1.json was not present at the checked kernel registry location.",
+      "deliverables": [
+        "canonical active invariant index location resolver",
+        "index regeneration from governance/invariants",
+        "boot/export validator requires index presence and membership"
+      ],
+      "success_gates": [
+        "active index exists at canonical runtime and kernel paths or path map explicitly resolves them",
+        "delivery invariant listed in active index",
+        "missing index blocks export"
+      ],
+      "stage": "STAGE6G_ACTIVE_INVARIANT_INDEX_COHERENCE_REPAIR"
+    }
+  ],
+  "implementation_rule": "Implement exactly one stage per turn. Each implementation stage must boot, verify Stage5E or later authority, run SEE if the design has external dependencies, make minimal changes, test fixtures, write receipt/handoff, and export a full OS authority only when the OS bundle delivery guard passes."
+}

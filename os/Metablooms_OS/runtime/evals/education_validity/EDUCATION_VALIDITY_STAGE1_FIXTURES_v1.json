@@ -1,0 +1,199 @@
+{
+  "artifact_type": "EDUCATION_VALIDITY_STAGE1_FIXTURES_v1",
+  "created_utc": "20260501T173600Z",
+  "fixtures": [
+    {
+      "expected_decision": "PASS",
+      "features": {
+        "answer_key": true,
+        "deployment": "google_sites_safe",
+        "distractor_parity": true,
+        "eb_support": true,
+        "official_source_refs": [
+          "TEA"
+        ],
+        "student_visible_feedback": true,
+        "teks_codes": [
+          "3.12B"
+        ],
+        "telemetry": true,
+        "tts_plan": true
+      },
+      "fixture_class": "valid_teks_staar_activity",
+      "fixture_id": "EDU-001"
+    },
+    {
+      "expected_decision": "BLOCK",
+      "features": {
+        "answer_key": true,
+        "official_source_refs": [
+          "teacher"
+        ],
+        "student_visible_feedback": true
+      },
+      "fixture_class": "missing_teks",
+      "fixture_id": "EDU-002"
+    },
+    {
+      "expected_decision": "BLOCK",
+      "features": {
+        "answer_key": true,
+        "official_source_refs": [
+          "TEA"
+        ],
+        "student_visible_feedback": false,
+        "teks_codes": [
+          "3.5B"
+        ]
+      },
+      "fixture_class": "answer_feedback_invisible",
+      "fixture_id": "EDU-003"
+    },
+    {
+      "expected_decision": "WARN",
+      "features": {
+        "answer_key": true,
+        "official_source_refs": [
+          "TEA"
+        ],
+        "student_visible_feedback": true,
+        "teks_codes": [
+          "3.6F"
+        ],
+        "tts_plan": "needs_repair"
+      },
+      "fixture_class": "tts_reads_icons",
+      "fixture_id": "EDU-004"
+    },
+    {
+      "expected_decision": "WARN",
+      "features": {
+        "answer_key": true,
+        "cognitive_demand": "copy_only",
+        "official_source_refs": [
+          "TEA"
+        ],
+        "student_visible_feedback": true,
+        "teks_codes": [
+          "3.2A"
+        ]
+      },
+      "fixture_class": "copy_only_low_demand",
+      "fixture_id": "EDU-005"
+    },
+    {
+      "expected_decision": "BLOCK",
+      "features": {
+        "answer_key": true,
+        "official_source_refs": [],
+        "student_visible_feedback": true,
+        "teks_codes": [
+          "3.8A"
+        ]
+      },
+      "fixture_class": "unsupported_staar_claim",
+      "fixture_id": "EDU-006"
+    },
+    {
+      "expected_decision": "WARN",
+      "features": {
+        "answer_key": true,
+        "distractor_parity": false,
+        "official_source_refs": [
+          "TEA"
+        ],
+        "student_visible_feedback": true,
+        "teks_codes": [
+          "3.4K"
+        ]
+      },
+      "fixture_class": "weak_distractors",
+      "fixture_id": "EDU-007"
+    },
+    {
+      "expected_decision": "BLOCK",
+      "features": {
+        "answer_key": true,
+        "eb_support": "reveals_answer",
+        "official_source_refs": [
+          "TEA"
+        ],
+        "student_visible_feedback": true,
+        "teks_codes": [
+          "3.7C"
+        ]
+      },
+      "fixture_class": "eb_support_reveals_answer",
+      "fixture_id": "EDU-008"
+    },
+    {
+      "expected_decision": "PASS",
+      "features": {
+        "answer_key": true,
+        "deployment": "canvas_safe",
+        "distractor_parity": true,
+        "official_source_refs": [
+          "TEA"
+        ],
+        "student_visible_feedback": true,
+        "teks_codes": [
+          "3.10A"
+        ],
+        "telemetry": true,
+        "tts_plan": true
+      },
+      "fixture_class": "valid_canvas_single_file",
+      "fixture_id": "EDU-009"
+    },
+    {
+      "expected_decision": "BLOCK",
+      "features": {
+        "answer_key": true,
+        "deployment": "blocked_network_dependency",
+        "official_source_refs": [
+          "TEA"
+        ],
+        "student_visible_feedback": true,
+        "teks_codes": [
+          "3.12C"
+        ]
+      },
+      "fixture_class": "blocked_external_dependency",
+      "fixture_id": "EDU-010"
+    },
+    {
+      "expected_decision": "WARN",
+      "features": {
+        "answer_key": true,
+        "official_source_refs": [
+          "TEA"
+        ],
+        "student_visible_feedback": true,
+        "teks_codes": [
+          "3.6H"
+        ],
+        "telemetry": false
+      },
+      "fixture_class": "telemetry_missing",
+      "fixture_id": "EDU-011"
+    },
+    {
+      "expected_decision": "PASS",
+      "features": {
+        "answer_key": true,
+        "distractor_parity": true,
+        "official_source_refs": [
+          "TEA"
+        ],
+        "student_visible_feedback": true,
+        "teks_codes": [
+          "3.4E"
+        ],
+        "telemetry": true,
+        "tts_plan": true
+      },
+      "fixture_class": "valid_interactive_manipulative",
+      "fixture_id": "EDU-012"
+    }
+  ]
+}

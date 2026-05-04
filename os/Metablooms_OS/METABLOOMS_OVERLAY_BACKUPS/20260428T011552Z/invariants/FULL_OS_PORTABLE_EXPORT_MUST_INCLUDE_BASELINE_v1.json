@@ -1,0 +1,33 @@
+{
+  "id": "FULL_OS_PORTABLE_EXPORT_MUST_INCLUDE_BASELINE_v1",
+  "status": "active",
+  "gate": "FULL_BUNDLE_EXPORT_GATE",
+  "description": "Any portable/export/handoff bundle for MetaBlooms must include the current full OS baseline ZIP and must not ship only a partial stage/work-slice bundle unless explicitly marked scoped_nonportable.",
+  "failure_action": "DENY_EXPORT_OR_HANDOFF",
+  "applies_to": [
+    "portable_export",
+    "handoff_export",
+    "baseline_export",
+    "project_files_replacement_bundle"
+  ],
+  "required_bundle_contents": [
+    "current full OS baseline ZIP",
+    "baseline pointer JSON",
+    "current tracker HTML",
+    "receipt/lock JSON",
+    "manifest/SHA ledger",
+    "boot/restore evidence"
+  ],
+  "minimum_rules": {
+    "must_contain_full_baseline_zip_sha256": "3e088364a54cbcb1d2b1f3c36f2a31c06e784d909e365745ed8cb8b6e6b75c79",
+    "must_contain_full_baseline_zip_min_bytes": 15217795,
+    "reject_if_only_contains_stage_receipts": true
+  },
+  "source_request": "Permanent governance requested so future handoffs include the whole integrated OS instead of tiny work-slice bundles.",
+  "activation_requirements": [
+    "validator present",
+    "positive full bundle ALLOW",
+    "negative tiny slice DENY",
+    "normal governed_execution unaffected"
+  ]
+}

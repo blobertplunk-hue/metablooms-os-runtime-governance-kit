@@ -1,0 +1,99 @@
+{
+  "adaptability_checks": {
+    "change_impact_analysis": "PASS",
+    "compatibility_assessment": "FAIL",
+    "extension_point_assessment": "PASS",
+    "migration_or_deprecation_assessment": "PASS"
+  },
+  "changed_modules": [
+    "runtime/governance/cdr_adaptability_interface_contract_gate_v1.py"
+  ],
+  "eval_evidence": [
+    {
+      "path": "tests/evals/cdr/test_cdr_adaptability_interface_contract_gate_v1.py",
+      "result": "PASS"
+    }
+  ],
+  "fixture_evidence": [
+    {
+      "kind": "positive",
+      "path": "tests/fixtures/cdr/valid_cdr_adaptability_interface_contract_packet_v1.json"
+    }
+  ],
+  "interface_contracts": [
+    {
+      "compatibility_policy": {},
+      "deprecation_policy": {
+        "policy": "not_deprecated"
+      },
+      "error_contract": {
+        "deny_exit_code": 1,
+        "reason_codes": "machine_readable",
+        "usage_exit_code": 2
+      },
+      "examples": [
+        {
+          "command": "python3 -S runtime/governance/cdr_adaptability_interface_contract_gate_v1.py tests/fixtures/cdr/valid_cdr_adaptability_interface_contract_packet_v1.json"
+        }
+      ],
+      "extension_points": [
+        {
+          "name": "additional_required_checks",
+          "proof": "new check can be added as packet field without changing CLI shape"
+        }
+      ],
+      "inputs": [
+        {
+          "description": "Path to packet JSON",
+          "name": "packet_path",
+          "required": true,
+          "type": "filesystem_path"
+        }
+      ],
+      "interface_id": "cdr_adaptability_interface_contract_gate_cli_v1",
+      "migration_notes": {
+        "consumer_impact": "No migration required for existing CDR gates; this is additive."
+      },
+      "observability_contract": {
+        "denial_fields": [
+          "reasons"
+        ],
+        "warning_fields": [
+          "warnings"
+        ]
+      },
+      "outputs": [
+        {
+          "description": "verdict, reasons, warnings",
+          "name": "verdict_json",
+          "type": "json"
+        }
+      ],
+      "owner_module": "runtime/governance/cdr_adaptability_interface_contract_gate_v1.py",
+      "purpose": "Evaluate CDR adaptability/interface contract packets from a JSON path and return ALLOW/DENY JSON.",
+      "security_boundary": {
+        "untrusted_input": "packet JSON",
+        "validation": "schema and field checks only; no code execution"
+      },
+      "side_effects": {
+        "filesystem_writes": false,
+        "mutates_runtime": false,
+        "network": false
+      },
+      "stability": "stable",
+      "test_evidence": [
+        {
+          "kind": "positive_interface",
+          "path": "tests/fixtures/cdr/valid_cdr_adaptability_interface_contract_packet_v1.json"
+        },
+        {
+          "kind": "negative_interface",
+          "path": "tests/fixtures/cdr/invalid_cdr_adaptability_missing_compatibility_packet_v1.json"
+        }
+      ],
+      "version": "1.0.0"
+    }
+  ],
+  "schema": "CDRAdaptabilityInterfaceContractPacket_v1",
+  "stage": "CDR_STAGE6_ADAPTABILITY_AND_INTERFACE_CONTRACT_HARDENING"
+}

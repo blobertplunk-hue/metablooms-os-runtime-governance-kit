@@ -1,0 +1,80 @@
+{
+  "all_pass": true,
+  "artifact_type": "METABLOOMS_BOUNDED_SUBPROCESS_WRAPPER_FIXTURE_RESULTS_v1",
+  "created_utc": "20260502T135430Z",
+  "results": [
+    {
+      "actual": "ALLOW_SUCCESS",
+      "attempt_count": 1,
+      "decision_packet_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135430Z/fixture_receipts/pass_echo/decision_packet.json",
+      "expected": "ALLOW_SUCCESS",
+      "failure_event_path": null,
+      "fixture": "pass_echo",
+      "pass": true
+    },
+    {
+      "actual": "ALLOW_NONZERO",
+      "attempt_count": 1,
+      "decision_packet_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135430Z/fixture_receipts/nonzero_exit/decision_packet.json",
+      "expected": "ALLOW_NONZERO",
+      "failure_event_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135430Z/fixture_receipts/nonzero_exit/SUBPROCESS_FAILURE_EVENT_fixture_nonzero_exit_20260502T135430Z_a8b109df8b38.json",
+      "fixture": "nonzero_exit",
+      "pass": true
+    },
+    {
+      "actual": "TIMEOUT_TERMINATED",
+      "attempt_count": 2,
+      "decision_packet_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135430Z/fixture_receipts/timeout_retry/decision_packet.json",
+      "expected": "TIMEOUT_TERMINATED",
+      "failure_event_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135430Z/fixture_receipts/timeout_retry/SUBPROCESS_FAILURE_EVENT_fixture_timeout_retry_20260502T135431Z_1cba50cece00.json",
+      "fixture": "timeout_retry",
+      "pass": true
+    },
+    {
+      "actual": "DENY_SCHEMA_INVALID",
+      "attempt_count": 0,
+      "decision_packet_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135430Z/fixture_receipts/deny_shell/decision_packet.json",
+      "expected": "DENY_SCHEMA_INVALID",
+      "failure_event_path": null,
+      "fixture": "deny_shell",
+      "pass": true
+    },
+    {
+      "actual": "DENY_PATH_ESCAPE",
+      "attempt_count": 0,
+      "decision_packet_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135430Z/fixture_receipts/deny_path_escape/decision_packet.json",
+      "expected": "DENY_PATH_ESCAPE",
+      "failure_event_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135430Z/fixture_receipts/deny_path_escape/SUBPROCESS_FAILURE_EVENT_fixture_deny_path_escape_20260502T135431Z_55fa2b9f7a1c.json",
+      "fixture": "deny_path_escape",
+      "pass": true
+    },
+    {
+      "actual": "DENY_FORBIDDEN_METHOD",
+      "attempt_count": 0,
+      "decision_packet_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135430Z/fixture_receipts/deny_forbidden_unzip_tqq/decision_packet.json",
+      "expected": "DENY_FORBIDDEN_METHOD",
+      "failure_event_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135430Z/fixture_receipts/deny_forbidden_unzip_tqq/SUBPROCESS_FAILURE_EVENT_fixture_forbidden_archive_validation_20260502T135431Z_7a2bb4744185.json",
+      "fixture": "deny_forbidden_unzip_tqq",
+      "pass": true
+    },
+    {
+      "actual": "OUTPUT_LIMIT_EXCEEDED",
+      "attempt_count": 1,
+      "decision_packet_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135430Z/fixture_receipts/output_limit/decision_packet.json",
+      "expected": "OUTPUT_LIMIT_EXCEEDED",
+      "failure_event_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135430Z/fixture_receipts/output_limit/SUBPROCESS_FAILURE_EVENT_fixture_output_limit_20260502T135431Z_8461f03b9708.json",
+      "fixture": "output_limit",
+      "pass": true
+    },
+    {
+      "actual": "SPAWN_ERROR",
+      "attempt_count": 0,
+      "decision_packet_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135430Z/fixture_receipts/spawn_error/decision_packet.json",
+      "expected": "SPAWN_ERROR",
+      "failure_event_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135430Z/fixture_receipts/spawn_error/SUBPROCESS_FAILURE_EVENT_fixture_spawn_error_20260502T135431Z_b5d3fbe3fd81.json",
+      "fixture": "spawn_error",
+      "pass": true
+    }
+  ],
+  "stage_id": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES"
+}

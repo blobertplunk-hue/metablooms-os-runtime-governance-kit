@@ -1,0 +1,36 @@
+{
+  "availability_values": [
+    "AVAILABLE",
+    "UNAVAILABLE_WITH_FALLBACK",
+    "UNAVAILABLE_BLOCKING"
+  ],
+  "fallback_baseline_required": true,
+  "install_decision_values": [
+    "NOT_INSTALLED_PROFILE_ONLY",
+    "INSTALLED_AND_SMOKED",
+    "BLOCKED_BY_POLICY"
+  ],
+  "normalization_contract_required_fields": [
+    "raw_output_path",
+    "normalized_packet_path",
+    "source_hash_binding",
+    "finding_severity_map"
+  ],
+  "required_fields": [
+    "stage",
+    "scanner_profiles",
+    "fallback_baseline",
+    "availability",
+    "install_decision",
+    "normalization_contract",
+    "evidence"
+  ],
+  "scanner_profile_required_fields": [
+    "tool_id",
+    "safe_default_command",
+    "fallback",
+    "outputs",
+    "fail_closed_on"
+  ],
+  "schema": "CDR_REAL_SCANNER_ADAPTER_PACKET_SCHEMA_v1"
+}

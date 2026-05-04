@@ -1,0 +1,18 @@
+{
+  "dimensions": {
+    "adaptability": "registry supports sidecar declarations and future native contracts",
+    "completeness": "spec policy schema gate fixtures eval invariant registry installed",
+    "comprehensibility": "module header contract and stable reason codes",
+    "correctness": "gate fixtures allow/deny expected cases",
+    "debuggability": "gate returns exact missing/mismatch reason codes",
+    "integration": "active invariant index updated",
+    "observability": "receipt/handoff/support proof record the decision and validation",
+    "recursive_improvement": "next stage export or broader contract rewrite queued",
+    "regression_resistance": "fixtures lock missing flag and mismatch regressions",
+    "security": "code-bearing false negatives are denied before code acceptance",
+    "testability": "positive and negative fixtures plus eval"
+  },
+  "risk_tier": "HIGH",
+  "stage_id": "MPP_CDR_BINDING_STAGE15_RETROFIT_STAGE_CONTRACTS_TO_DECLARE_CODE_BEARING_FLAG",
+  "verdict": "PASS"
+}

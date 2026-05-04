@@ -1,0 +1,17 @@
+╭──────────────────────────────────────────────╮
+│ VPQ Gate Tracker · Stage 4 Render Review       │
+├──────────────────────────────────────────────┤
+│ Stage 1 Spec + fixtures        ✅ PASS         │
+│ Stage 2 Validator + fixtures   ✅ PASS         │
+│ Stage 3 MPP/USS/HTML binding   ✅ PASS         │
+│ Stage 4 Render review packet   ⚠️ PASS*        │
+├──────────────────────────────────────────────┤
+│ Tracker static smoke           ✅ PASS         │
+│ WeasyPrint/PDF/PNG render      ✅ PASS         │
+│ Chromium browser screenshot    ⚠️ BLOCKED      │
+│ Playwright screenshot          ⚠️ NO BROWSER   │
+├──────────────────────────────────────────────┤
+│ Verdict: PASS_WITH_BROWSER_RENDER_LIMITATION
+│ Next: VISUAL_PRESENTATION_QUALITY_GATE_STAGE5_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF
+╰──────────────────────────────────────────────╯
+*Stage 4 is locally promotable with an explicit browser-render limitation.

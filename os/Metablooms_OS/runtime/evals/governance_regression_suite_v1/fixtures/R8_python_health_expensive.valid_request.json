@@ -1,0 +1,7 @@
+{
+  "target_work_type": "schema_validate",
+  "simulated_probe": {
+    "python3_dash_S": {"available": true, "elapsed_ms": 72.0, "stdout": "{\"no_site\": true, \"site_loaded\": false}", "timeout": false},
+    "python3_normal": {"available": true, "elapsed_ms": 2990.0, "stdout": "{\"no_site\": false, \"site_loaded\": true}", "timeout": false}
+  }
+}

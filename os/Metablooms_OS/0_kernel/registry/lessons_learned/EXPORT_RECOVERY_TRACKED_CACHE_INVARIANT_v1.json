@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "created_at": 1777036623.7015676,
+  "lesson_id": "EXPORT_RECOVERY_TRACKED_CACHE_INVARIANT_v1",
+  "status": "active_invariant",
+  "invariant": "Export and recovery tools must preserve all tracked files. Cleanup may remove only explicitly allowed untracked runtime-generated paths.",
+  "allowed_runtime_cleanup": [
+    "0_kernel/scripts/__pycache__/"
+  ],
+  "disallowed_cleanup": [
+    "0_kernel/vendor/**/__pycache__/",
+    "any tracked file returned by git ls-files"
+  ],
+  "required_future_tool_behavior": [
+    "Before excluding a generated-looking path from export, check whether it is tracked by Git.",
+    "Never use broad __pycache__ exclusions.",
+    "Use path-scoped cleanup rules only."
+  ]
+}

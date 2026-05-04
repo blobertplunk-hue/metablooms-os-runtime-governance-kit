@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "STAGE_STATE_LEDGER_SCHEMA_v1",
+  "title": "MetaBlooms Stage State Ledger v1",
+  "type": "object",
+  "required": [
+    "version",
+    "created_at",
+    "ledger_id",
+    "status",
+    "entries",
+    "latest_pass",
+    "verdict"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": [
+        "number",
+        "string"
+      ]
+    },
+    "updated_at": {
+      "type": [
+        "number",
+        "string"
+      ]
+    },
+    "ledger_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "entries": {
+      "type": "array"
+    },
+    "latest_pass": {
+      "type": "object"
+    },
+    "verdict": {
+      "type": "string"
+    }
+  }
+}

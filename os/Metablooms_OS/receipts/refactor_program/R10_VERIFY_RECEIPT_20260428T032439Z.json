@@ -1,0 +1,22 @@
+{
+  "checks": {
+    "fixture_invalid_denied": true,
+    "fixture_valid_passed": true,
+    "gate_registry_integrity_passed": true,
+    "manifest_validator_passed": true,
+    "native_r10_log_validated": true,
+    "standardizer_passed": true
+  },
+  "created_utc": "2026-04-28T03:24:39.307635Z",
+  "receipt_type": "R10_VERIFY_RECEIPT",
+  "reports": [
+    "runtime/evals/governance_regression_suite_v1/reports/R10_standardizer_stdout_20260428T032402Z.json",
+    "runtime/evals/governance_regression_suite_v1/reports/R10_canonical_manifest_validation_20260428T032402Z.json",
+    "runtime/evals/governance_regression_suite_v1/reports/R10_fixture_valid_20260428T032402Z.json",
+    "runtime/evals/governance_regression_suite_v1/reports/R10_fixture_invalid_missing_decision_id_20260428T032402Z.json",
+    "runtime/evals/governance_regression_suite_v1/reports/R10_gate_registry_integrity_20260428T032424Z.json",
+    "runtime/evals/governance_regression_suite_v1/reports/R10_native_decision_log_validation_20260428T032439Z.json"
+  ],
+  "stage": "R10_DECISION_LOGGING_AND_RECEIPT_UNIFICATION",
+  "verdict": "PASS"
+}

@@ -1,0 +1,66 @@
+{
+  "artifact_type": "MB_PROMOTED_PINNED_EVIDENCE_RECEIPT.v1",
+  "created_utc": "20260502T190630Z",
+  "issues": [],
+  "pin_count": 3,
+  "pins": [
+    {
+      "actual_sha256": "2bb0a5a8439f692fa1abe4b7cae710e4773806db4f24cf812976e51622058b64",
+      "declared_sha256": "2bb0a5a8439f692fa1abe4b7cae710e4773806db4f24cf812976e51622058b64",
+      "exists": true,
+      "matched_terms": [
+        "blocked",
+        "error"
+      ],
+      "ordinal": 1,
+      "path": "runtime/state/operator_surface/VISUAL_TRACE_WATERFALL_LATEST.json",
+      "pin_id": "pin_q_blocker_1",
+      "query_id": "q_blocker",
+      "rank": 1,
+      "sha256_matches_artifact": true,
+      "title": "MB_VISUAL_TRACE_WATERFALL_EVIDENCE_FILTERS.v1",
+      "verdict": "PASS"
+    },
+    {
+      "actual_sha256": "4f1e97b4c59ce10b2229ec776d6d55b2a62017708a3dac239e9b93fab72a3822",
+      "declared_sha256": "872eadf9bcbb2acd55efe404fcfc49975cd437470c506f80a0eb4b1c1bb420d7",
+      "exists": true,
+      "matched_terms": [
+        "fail",
+        "handoff",
+        "pass",
+        "receipt",
+        "stage",
+        "verdict"
+      ],
+      "ordinal": 2,
+      "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl",
+      "pin_id": "pin_q_stage_1",
+      "query_id": "q_stage",
+      "rank": 1,
+      "sha256_matches_artifact": false,
+      "title": "TRACE_SPAN_LEDGER_LATEST.jsonl",
+      "verdict": null
+    },
+    {
+      "actual_sha256": "ee57178357e691b1fcc03ef99c0e6f3e4cbcd51f24f07289a82a507dbc6b7626",
+      "declared_sha256": "ee57178357e691b1fcc03ef99c0e6f3e4cbcd51f24f07289a82a507dbc6b7626",
+      "exists": true,
+      "matched_terms": [
+        "sha256"
+      ],
+      "ordinal": 3,
+      "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/stage9_validator.json",
+      "pin_id": "pin_q_export_1",
+      "query_id": "q_export",
+      "rank": 1,
+      "sha256_matches_artifact": true,
+      "title": "stage9_validator.json",
+      "verdict": null
+    }
+  ],
+  "promotion_mode": "operator_selected_pin_manifest",
+  "source_manifest": "runtime/state/operator_surface/EVIDENCE_RESULT_PINNING_MODEL_LATEST.json",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING",
+  "verdict": "PASS"
+}

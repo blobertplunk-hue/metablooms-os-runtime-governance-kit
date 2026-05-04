@@ -1,0 +1,40 @@
+{
+  "artifact_type": "MB_METHOD_RELIABILITY_LEDGER_POLICY.v1",
+  "created_utc": "20260502T170503Z",
+  "decision_values": [
+    "PROMOTE",
+    "WATCH",
+    "FORBID",
+    "NO_CHANGE"
+  ],
+  "method_record_required_fields": [
+    "method_id",
+    "method_name",
+    "method_type",
+    "failure_class",
+    "status",
+    "attempts",
+    "successes",
+    "failures",
+    "blocked_failures",
+    "reliability_score",
+    "preferred_invocation",
+    "forbidden_invocations",
+    "evidence_refs",
+    "prevention_artifacts",
+    "recommended_decision"
+  ],
+  "principles": [
+    "Suppressed historical failures remain evidence; they are not deleted or reclassified to hide history.",
+    "A repeated or suppressible method mistake must produce a durable method record, a preferred replacement command, and a regression fixture when possible.",
+    "Command-shape lessons must be enforced with executable wrappers rather than chat-only instructions."
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE6_METHOD_RELIABILITY_LEDGER_AND_SUPPRESSED_FAILURE_LESSON_BINDING",
+  "status_values": [
+    "preferred",
+    "watch",
+    "forbidden",
+    "suppressed_lesson_bound"
+  ],
+  "verdict": "ACTIVE"
+}

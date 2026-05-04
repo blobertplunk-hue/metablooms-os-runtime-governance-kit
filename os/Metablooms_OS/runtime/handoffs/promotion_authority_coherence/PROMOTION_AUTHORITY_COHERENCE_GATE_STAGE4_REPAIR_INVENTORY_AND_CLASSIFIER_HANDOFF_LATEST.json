@@ -1,0 +1,48 @@
+{
+  "blocked_actions": [
+    "bulk_register_missing_controlled_artifacts",
+    "update_registry_hashes_before_stale_boot_reference_repair",
+    "promote_full_authority_export_before PAC PASS"
+  ],
+  "classified_inventory": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER_20260502T201258Z/PROMOTION_AUTHORITY_REPAIR_CLASSIFIED_INVENTORY_v1.json",
+  "classified_inventory_sha256": "5e41095532de0f4d7965caf731310daa5a399e97da06d58b78e6dd730ffacdd5",
+  "completed": [
+    "current PAC report-only scan replayed",
+    "repair inventory classifier implemented",
+    "all current PAC defects classified by lifecycle/action/priority",
+    "no authority mutation performed"
+  ],
+  "created_at": "2026-05-02T20:14:02.789329+00:00",
+  "current_os_counts": {
+    "controlled_files_scanned": 2086,
+    "missing_from_registry": 452,
+    "registered_entries": 3086,
+    "registered_hash_mismatches": 85,
+    "stale_live_authority_refs": 4,
+    "total_repair_items": 541
+  },
+  "current_os_gate_state": "DENY_REPORT_ONLY",
+  "do_not_do": [
+    "Do not bulk-register missing controlled artifacts",
+    "Do not update registry hash mismatches before stale boot reference repair",
+    "Do not promote full authority export until PAC scan passes"
+  ],
+  "receipt": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER_20260502T201258Z/STAGE_RECEIPT.json",
+  "required_next_stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE5_STALE_BOOT_REFERENCE_REPAIR",
+  "schema_version": "metablooms.stage_handoff.v1",
+  "stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER",
+  "status": "HANDOFF_READY",
+  "summary_by_recommended_action": {
+    "patch_live_boot_guidance_to_current_stage18_authority": 2,
+    "patch_live_boot_reference_then_update_registered_hash": 7,
+    "rebuild_registry_index_and_sidecar_after_all_repairs": 2,
+    "regenerate_sidecar_after_parent_hash_reconciliation": 43,
+    "register_candidate_after_owner_and_scope_review": 292,
+    "relocate_or_mark_historical_then_replace_with_current_stage18_packet": 2,
+    "repair_content_then_register_current_hash": 6,
+    "validate_parent_then_register_or_regenerate_sidecar": 154,
+    "verify_drift_then_update_registered_hash": 33
+  },
+  "verified_delta_bundle": "runtime/stage_bundles/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER_20260502T201258Z_VERIFIED_DELTA.zip",
+  "verified_delta_bundle_sha256": "2b166d74e04e9da89b7e94b4d1fcdbc2d32799547d13d5e9411ddab3860a8479"
+}

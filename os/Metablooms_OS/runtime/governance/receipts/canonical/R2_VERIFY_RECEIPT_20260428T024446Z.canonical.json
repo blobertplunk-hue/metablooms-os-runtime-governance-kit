@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-04-28T02:44:46Z",
+  "decision_id": "R2_ADR_EXTRACTION_AND_ARCHIVAL_CONVERSION-52f7a818f376c12c",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"adr_paths\": [\"0_kernel/docs/decisions/ADR-0001-split-rationale-from-runtime-contracts.md\", \"0_kernel/docs/decisions/ADR-0002-adopt-session-state-export-over-model-specific-sync.md\", \"0_kernel/docs/decisions/ADR-0002-adopt-session-state-export-over-model-specific-sync.md\", \"0_kernel/docs/decisions/ADR-0003-adopt-gate-registry-for-runtime-wiring.md\"], \"all_present\": true, \"archive_paths\": [\"runtime/governance/legacy_archives/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.json\", \"runtime/governance/legacy_archives/CLAUDE_MEMORY_SYNC_v1.json\", \"runtime/governance/legacy_archives/claude_memory_sync_writer_v1.py\", \"runtime/governance/legacy_archives/COOL_6_RUNTIME_GATE_WIRING_PLAN_v1.json\"], \"checks\": {\"0_kernel/docs/decisions/ADR-0001-split-rationale-from-runtime-contracts.md\": {\"exists\": true, \"sha256\": \"9e10fa643510a31eec1320857047e6baecd5f62a020596a1845dbac0643b0cd7\", \"size_bytes\": 3257}, \"0_kernel/docs/decisions/ADR-0002-adopt-session-state-export-over-model-specific-sync.md\": {\"exists\": true, \"sha256\": \"a621e508ca0013233fbf0a3f0c74558e8a9cbca2f059f71927a4304ea930016a\", \"size_bytes\": 3396}, \"0_kernel/docs/decisions/ADR-0003-adopt-gate-registry-for-runtime-wiring.md\": {\"exists\": true, \"sha256\": \"3803b36e42d12a430509d9cd177981c439cd37486457e59dc714f6848b4ef23a\", \"size_bytes\": 3059}, \"0_kernel/scripts/claude_memory_sync_writer_v1.redirect.json\": {\"exists\": true, \"sha256\": \"6963d57300752545f88f1dad957e95f321b516250922e674233933f9bfbaff22\", \"size_bytes\": 444}, \"1_governance/workflow_v6/CROSS",
+  "reasons": [],
+  "record_id": "R2_VERIFY_RECEIPT_20260428T024446Z",
+  "record_kind": "verify_receipt",
+  "result": "pass",
+  "source_record": {
+    "path": "receipts/refactor_program/R2_VERIFY_RECEIPT_20260428T024446Z.json",
+    "sha256": "52f7a818f376c12cf29238097772285fb849450bc54de3e52edeff80e7d1669b",
+    "size_bytes": 3236
+  },
+  "span_id": "a9919e1ca4fc99d9",
+  "stage_id": "R2_ADR_EXTRACTION_AND_ARCHIVAL_CONVERSION",
+  "summary": "Canonical wrapper for R2_VERIFY_RECEIPT_20260428T024446Z.json",
+  "trace_id": "0dfe50e3b506cfcc0dd5556090254e6e"
+}

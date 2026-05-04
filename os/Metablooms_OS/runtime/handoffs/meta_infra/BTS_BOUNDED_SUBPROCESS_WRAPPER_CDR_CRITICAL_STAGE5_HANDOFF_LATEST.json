@@ -1,0 +1,12 @@
+{
+  "artifact_type": "METABLOOMS_STAGE_HANDOFF_v1",
+  "created_utc": "20260502T142018Z",
+  "full_authority_export_path": "/mnt/data/METABLOOMS_OS_BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE5_FULL_AUTHORITY_20260502T142018Z.zip",
+  "full_authority_export_sha256": "6320b60044177813f42dec5f9ff391bf18993098993eb46d8661c331eb54efc6",
+  "next_stage": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT",
+  "next_stage_scope": "Begin the next ranked MetaBlooms internal hardening tool: CDR CRITICAL ADS/contract for atomic JSON writer retrofit.",
+  "receipt": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT_20260502T142018Z/STAGE_RECEIPT.json",
+  "runtime_root": "/mnt/data/Metablooms_OS",
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT",
+  "status": "PASS_WITH_WARNINGS"
+}

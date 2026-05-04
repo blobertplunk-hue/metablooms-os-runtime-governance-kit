@@ -1,0 +1,164 @@
+{
+  "candidate_set_id": "tool_candidates_d74c628646440ea8",
+  "candidates": [
+    {
+      "competence_score": 1.0,
+      "decision_status": "PREFERRED",
+      "denied_replacements": [
+        "unzip_tqq_full_test"
+      ],
+      "display_name": "Node/yazl streaming ZIP export",
+      "evidence_refs": [
+        "runtime/tooling/governed_install_profiles/node_zip_authority_repair_v1"
+      ],
+      "execution_route": "runtime/governance/executors/bts_wrapped_executors_v1.py export-zip-node-profile",
+      "fallbacks": [
+        "python_zipfile_compatibility_fallback",
+        "zip_cli_metadata_scan"
+      ],
+      "install_state": "GOVERNED_PROFILE",
+      "known_failure_classes": [],
+      "reasons": [
+        "job_type match: zip_export",
+        "governed/promoted route",
+        "requires approval",
+        "preferred_when matches job family",
+        "BTS competence_score=1.0"
+      ],
+      "requires_approval": true,
+      "risk_tier": "export",
+      "score": 87.003,
+      "tool_id": "node_yazl_stream_export"
+    },
+    {
+      "competence_score": null,
+      "decision_status": "PREFERRED",
+      "denied_replacements": [
+        "unzip_tqq_full_test"
+      ],
+      "display_name": "Node/yauzl streamed CRC proof",
+      "evidence_refs": [
+        "METABLOOMS_STAGE4_NODE_YAUZL_FULL_STREAM_CRC_PROOF"
+      ],
+      "execution_route": "runtime/tooling/governed_install_profiles/node_zip_authority_repair_v1/stream_crc_proof.js",
+      "fallbacks": [
+        "zipinfo_metadata_scan",
+        "jar_list"
+      ],
+      "install_state": "GOVERNED_PROFILE",
+      "known_failure_classes": [],
+      "reasons": [
+        "job_type match: zip_export",
+        "governed/promoted route"
+      ],
+      "requires_approval": false,
+      "risk_tier": "read",
+      "score": 70.006,
+      "tool_id": "node_yauzl_crc_proof"
+    },
+    {
+      "competence_score": null,
+      "decision_status": "ALLOWED",
+      "denied_replacements": [
+        "unzip_tqq_full_test"
+      ],
+      "display_name": "zipinfo metadata scan",
+      "evidence_refs": [],
+      "execution_route": "zipinfo -t / central directory metadata",
+      "fallbacks": [
+        "jar_list"
+      ],
+      "install_state": "SMOKE_TESTED",
+      "known_failure_classes": [],
+      "reasons": [
+        "job_type match: zip_export",
+        "smoke-tested route"
+      ],
+      "requires_approval": false,
+      "risk_tier": "read",
+      "score": 63.006,
+      "tool_id": "zipinfo_metadata_scan"
+    },
+    {
+      "competence_score": 1.0,
+      "decision_status": "ALLOWED",
+      "denied_replacements": [
+        "unzip_tqq_full_test"
+      ],
+      "display_name": "Python zipfile compatibility fallback",
+      "evidence_refs": [],
+      "execution_route": "python3 -S stdlib zipfile fallback",
+      "fallbacks": [
+        "zip_cli_direct"
+      ],
+      "install_state": "INSTALLED",
+      "known_failure_classes": [
+        "broad_extract_timeout_risk",
+        "python_startup_expensive_if_not_-S"
+      ],
+      "reasons": [
+        "job_type match: zip_export",
+        "installed route",
+        "requires approval",
+        "BTS competence_score=1.0",
+        "known failure classes lower rank"
+      ],
+      "requires_approval": true,
+      "risk_tier": "export",
+      "score": 54.005,
+      "tool_id": "python_zipfile_compatibility_fallback"
+    },
+    {
+      "competence_score": null,
+      "decision_status": "DENIED",
+      "denied_replacements": [
+        "node_yauzl_crc_proof",
+        "zipinfo_metadata_scan"
+      ],
+      "display_name": "unzip -tqq full test",
+      "evidence_refs": [
+        "FORBIDDEN_VALIDATION_METHODS_v1.json"
+      ],
+      "execution_route": "DENIED",
+      "fallbacks": [],
+      "install_state": "DENIED",
+      "known_failure_classes": [
+        "timeout_large_archive_validation"
+      ],
+      "reasons": [
+        "denied by risk tier / forbidden-method memory"
+      ],
+      "requires_approval": true,
+      "risk_tier": "denied",
+      "score": -100.0,
+      "tool_id": "unzip_tqq_full_test"
+    }
+  ],
+  "classified_job_type": "zip_export",
+  "created_utc": "2026-05-02T14:18:39.855749Z",
+  "resolver_version": "TOOL_UNIVERSE_RESOLVER_v1",
+  "schema": "TOOL_CANDIDATE_SET_v1",
+  "selection_gate": {
+    "requires_why_not_better_if_selected_not_top": true,
+    "rule": "BTS_TOOL_EVALUATION must cover resolver candidates or explain exclusions; selected tool should be top_allowed_tool_id unless WHY_NOT_BETTER_TOOL justification passes."
+  },
+  "source_registries": [
+    "0_kernel/registry/tool_governance/TOOL_CAPABILITY_GENOME_BASELINE_v1.json",
+    "0_kernel/registry/tool_governance/sandbox_tool_probe_inventory_v1.json",
+    "0_kernel/registry/tool_governance/GOVERNED_TOOL_INSTALL_PROFILE_REGISTRY_v1.json",
+    "_bts/tool_competence.json",
+    "FORBIDDEN_VALIDATION_METHODS_v1.json",
+    "runtime/authority/FORBIDDEN_VALIDATION_METHODS_v1.json"
+  ],
+  "stage_id": "STAGE6T_ZIP_REGRESSION",
+  "sufficiency": {
+    "allowed_count": 4,
+    "candidate_count": 5,
+    "coverage_score": 1.0,
+    "reasons": [],
+    "score_spread": 32.998,
+    "verdict": "PASS"
+  },
+  "task": "Create a BOOTABLE FULL OS AUTHORITY ZIP export with CRC proof and sidecar",
+  "top_allowed_tool_id": "node_yazl_stream_export"
+}

@@ -1,0 +1,7 @@
+{
+  "version": "1.0",
+  "file": "fail_pending_receipt.zip",
+  "sha256": "56c70283a6e51213ddc8d95fff4b7bed183551d1642ae8e6132b426d7c2c2ef4",
+  "size_bytes": 3821,
+  "verdict": "PASS"
+}

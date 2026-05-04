@@ -1,0 +1,11 @@
+{
+  "constraints": [
+    "Start process prompts through prompt_auto_improvement_loop_v1.py before execution.",
+    "Use ledger + telemetry to compare raw vs optimized prompt behavior.",
+    "Full export should be verified with fresh-extract replay."
+  ],
+  "created_utc": "2026-04-30T22:11:22Z",
+  "handoff_id": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_8_AUTOMATED_PATCH_LOOP_AND_FAILURE_CLASS_CORRECTION_HANDOFF",
+  "next_recommended_stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_9_PROMPT_PATCH_REPLAY_AND_QUALITY_RANKER",
+  "status": "READY_FOR_NEXT_STAGE"
+}

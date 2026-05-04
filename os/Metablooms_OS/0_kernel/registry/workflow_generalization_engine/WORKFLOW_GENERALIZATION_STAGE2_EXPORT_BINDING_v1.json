@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "artifact_id": "WORKFLOW_GENERALIZATION_STAGE2_EXPORT_BINDING_v1",
+  "stage": "WORKFLOW_GENERALIZATION_ENGINE_STAGE2_TRANSCRIPT_IMPORTER_AND_EXPORT_BINDING_OR_FULL_EXPORT",
+  "required_paths_for_export": [
+    "0_kernel/routers/workflow_generalization_router_v1.py",
+    "0_kernel/importers/transcript_lesson_importer_v1.py",
+    "0_kernel/registry/workflow_generalization_engine/WORKFLOW_GENERALIZATION_ENGINE_POLICY_v1.json",
+    "0_kernel/registry/workflow_generalization_engine/WORKFLOW_LESSON_LEDGER_SCHEMA_v1.json",
+    "0_kernel/registry/workflow_generalization_engine/TRANSCRIPT_LESSON_IMPORT_GATE_POLICY_v1.json",
+    "0_kernel/registry/workflow_generalization_engine/TRANSCRIPT_LESSON_IMPORT_CANDIDATE_SCHEMA_v1.json",
+    "0_kernel/registry/workflow_generalization_engine/WORKFLOW_GENERALIZATION_STAGE2_EXPORT_BINDING_v1.json",
+    "runtime/ledgers/workflow_generalization/WORKFLOW_LESSON_LEDGER_v1.json",
+    "runtime/ledgers/workflow_generalization/WORKFLOW_TRANSCRIPT_IMPORT_LEDGER_v1.json",
+    "tests/evals/workflow_generalization/test_workflow_generalization_router_v1.py",
+    "tests/evals/workflow_generalization/test_transcript_lesson_importer_v1.py"
+  ],
+  "replay_commands": [
+    "python3 -S 0_kernel/importers/transcript_lesson_importer_v1.py tests/evals/workflow_generalization/fixtures/transcript_better_sandbox_visual.txt --out runtime/tmp/replay_transcript_candidate.json",
+    "python3 -S 0_kernel/routers/workflow_generalization_router_v1.py --task 'Import old transcript and improve workflow only if better than current' --candidate-json runtime/tmp/replay_transcript_candidate.json --out runtime/tmp/replay_transcript_route.json",
+    "python3 -S tests/evals/workflow_generalization/test_transcript_lesson_importer_v1.py . runtime/tmp/replay_transcript_eval"
+  ]
+}

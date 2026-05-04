@@ -1,0 +1,287 @@
+{
+  "$id": "https://metablooms.local/schemas/mpp_v3/RESEARCH_PLANNER_PACKET_SCHEMA_v1.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "created_at": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "handoff": {
+      "additionalProperties": false,
+      "properties": {
+        "next_stage": {
+          "const": "SEE"
+        },
+        "required_artifacts": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "next_stage",
+        "required_artifacts"
+      ],
+      "type": "object"
+    },
+    "objective": {
+      "additionalProperties": false,
+      "properties": {
+        "domain": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "operator_context": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "request": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "stakes": {
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ]
+        }
+      },
+      "required": [
+        "request",
+        "domain",
+        "stakes",
+        "operator_context"
+      ],
+      "type": "object"
+    },
+    "packet_id": {
+      "minLength": 8,
+      "type": "string"
+    },
+    "planning_basis": {
+      "additionalProperties": false,
+      "properties": {
+        "assumptions": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "known_facts": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "unknowns": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "known_facts",
+        "unknowns",
+        "assumptions"
+      ],
+      "type": "object"
+    },
+    "quality_gates": {
+      "additionalProperties": false,
+      "properties": {
+        "claim_binding_required": {
+          "type": "boolean"
+        },
+        "minimum_domain_diversity": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "minimum_source_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "mmd_required": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "minimum_source_count",
+        "minimum_domain_diversity",
+        "claim_binding_required",
+        "mmd_required"
+      ],
+      "type": "object"
+    },
+    "query_plan": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "expected_evidence_type": {
+            "enum": [
+              "official",
+              "peer_reviewed",
+              "technical_docs",
+              "expert_practice",
+              "news_current",
+              "community_failure_report",
+              "internal_artifact"
+            ]
+          },
+          "priority": {
+            "enum": [
+              "must",
+              "should",
+              "could"
+            ]
+          },
+          "purpose": {
+            "minLength": 3,
+            "type": "string"
+          },
+          "query": {
+            "minLength": 3,
+            "type": "string"
+          },
+          "query_id": {
+            "pattern": "^Q-[0-9]{3}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query_id",
+          "query",
+          "purpose",
+          "expected_evidence_type",
+          "priority"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "recursion_policy": {
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "expansion_triggers": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "max_rounds": {
+          "maximum": 8,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "stop_conditions": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "enabled",
+        "max_rounds",
+        "expansion_triggers",
+        "stop_conditions"
+      ],
+      "type": "object"
+    },
+    "research_trigger": {
+      "additionalProperties": false,
+      "properties": {
+        "freshness_required": {
+          "type": "boolean"
+        },
+        "minimum_source_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "must_use_web_run": {
+          "type": "boolean"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "trigger_reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "required",
+        "trigger_reason",
+        "must_use_web_run",
+        "freshness_required"
+      ],
+      "type": "object"
+    },
+    "schema_version": {
+      "const": "research_planner_packet.v1"
+    },
+    "source_plan": {
+      "additionalProperties": false,
+      "properties": {
+        "contradiction_handling": {
+          "enum": [
+            "record_and_resolve",
+            "record_and_block",
+            "record_for_later"
+          ]
+        },
+        "date_capture_required": {
+          "type": "boolean"
+        },
+        "exclusion_rules": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "preferred_source_types": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "preferred_source_types",
+        "exclusion_rules",
+        "date_capture_required",
+        "contradiction_handling"
+      ],
+      "type": "object"
+    },
+    "stage": {
+      "const": "RESEARCH_PLANNER"
+    }
+  },
+  "required": [
+    "schema_version",
+    "packet_id",
+    "stage",
+    "created_at",
+    "objective",
+    "research_trigger",
+    "planning_basis",
+    "query_plan",
+    "source_plan",
+    "recursion_policy",
+    "quality_gates",
+    "handoff"
+  ],
+  "title": "MetaBlooms MPP v3 Research Planner Packet",
+  "type": "object"
+}

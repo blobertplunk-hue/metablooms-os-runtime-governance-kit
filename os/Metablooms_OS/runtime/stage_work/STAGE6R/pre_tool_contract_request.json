@@ -1,0 +1,28 @@
+{
+  "task_class":"governed_execution",
+  "task_domain":"governance_repair",
+  "stage_name":"STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS",
+  "request_text":"Install observability trace export adapters using bounded Python3 -S stdlib after Tool Universe Resolver returned no allowed candidate; bind SEE/CE web evidence and write receipts/support proof only.",
+  "web_run_sources":["https://openai.github.io/openai-agents-python/tracing/","https://opentelemetry.io/docs/concepts/signals/traces/","https://docs.langchain.com/oss/python/langgraph/observability","https://docs.langchain.com/oss/python/langgraph/durable-execution"],
+  "SEE_summary":"Tracing should capture tool calls, handoffs, guardrails/custom events, spans, exporters, and durable checkpoint links.",
+  "CE_decision":"Install stdlib trace export adapters and policy bindings; no authority export.",
+  "explicit_user_authorized_python3_S":true,
+  "pre_tool_contract":{
+    "lane":"python3_S",
+    "single_purpose":true,
+    "broad_recursive_scan":false,
+    "zip_build":false,
+    "full_export":false,
+    "timeout_seconds":25,
+    "kill_after_seconds":5,
+    "max_tool_calls":2,
+    "max_steps":1,
+    "max_files":80,
+    "max_bytes":50000000,
+    "receipt_path":"/mnt/data/Metablooms_OS/runtime/receipts/METABLOOMS_STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS_RECEIPT_20260502T035000Z.json",
+    "fallback_lane":"shell_coreutils",
+    "all_in_one":false,
+    "retry_same_lane_count":0,
+    "requires_timeout_wrapper":true
+  }
+}

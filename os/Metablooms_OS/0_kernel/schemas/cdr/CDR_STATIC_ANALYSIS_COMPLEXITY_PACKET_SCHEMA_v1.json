@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "recursive_improvement": {
+      "type": "object"
+    },
+    "risk_tier": {
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH",
+        "CRITICAL"
+      ]
+    },
+    "schema": {
+      "const": "CDRStaticAnalysisComplexityPacket_v1"
+    },
+    "static_analysis": {
+      "type": "object"
+    },
+    "target_files": {
+      "minItems": 1,
+      "type": "array"
+    },
+    "test_binding": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema",
+    "risk_tier",
+    "target_files",
+    "static_analysis",
+    "test_binding",
+    "recursive_improvement"
+  ],
+  "title": "CDR_STATIC_ANALYSIS_COMPLEXITY_PACKET_SCHEMA_v1",
+  "type": "object"
+}

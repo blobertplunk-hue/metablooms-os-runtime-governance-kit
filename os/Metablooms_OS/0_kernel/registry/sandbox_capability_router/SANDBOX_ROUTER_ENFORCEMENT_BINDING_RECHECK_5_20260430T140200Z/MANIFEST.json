@@ -1,0 +1,122 @@
+{
+  "files": [
+    {
+      "path": "SANDBOX_ROUTER_ENFORCEMENT_BINDING_RECHECK_5_RECEIPT.json",
+      "sha256": "ff944ed5de9939727541563913d5709bcdb1ad0b3a5eb2d732fd8763bc54e0b2",
+      "size": 2799
+    },
+    {
+      "path": "SANDBOX_ROUTER_ENFORCEMENT_BINDING_RECHECK_5_HANDOFF.json",
+      "sha256": "5300ee1c1f630108801798cf1a52794d6c56ef6fcac6d6d4258b80112450dbd3",
+      "size": 1167
+    },
+    {
+      "path": "SANDBOX_ROUTER_ENFORCEMENT_BINDING_RECHECK_5_RECEIPT.json.sha256",
+      "sha256": "83f8cb97349c6a0fa5648f156220d92b83d379a10cbe5fa0b6edaaee69d7aced",
+      "size": 124
+    },
+    {
+      "path": "SANDBOX_ROUTER_ENFORCEMENT_BINDING_RECHECK_5_HANDOFF.json.sha256",
+      "sha256": "682a73d13b82f1c3091cc128f5d7cc8c2c35c8845752b7417f3015798540ddd0",
+      "size": 124
+    },
+    {
+      "path": "probes/source_handoff_sha256_check.txt",
+      "sha256": "153ecd6112cf2d2916d1c36d7089794b26ff4c7964d37fde5b43931740462713",
+      "size": 66
+    },
+    {
+      "path": "probes/boot_binding.json",
+      "sha256": "5900e31ed5018a737bc28d85c9e6067ee8712bdc9c37056247f3e71aba1132a1",
+      "size": 506
+    },
+    {
+      "path": "probes/boot_binding.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "probes/boot_binding.exit",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size": 2
+    },
+    {
+      "path": "probes/export_binding.json",
+      "sha256": "61c70b4d8a507fb9188ba407304089c212a7c7f2ac2331b0bd138d2230bf709e",
+      "size": 766
+    },
+    {
+      "path": "probes/export_binding.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "probes/export_binding.exit",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size": 2
+    },
+    {
+      "path": "probes/governed_execution_binding.json",
+      "sha256": "fbc46c5660174d705666d1cee44d85bb6b6021a56cc009e0689e6f92b28d128e",
+      "size": 633
+    },
+    {
+      "path": "probes/governed_execution_binding.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "probes/governed_execution_binding.exit",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size": 2
+    },
+    {
+      "path": "probes/delivery_binding.json",
+      "sha256": "98b7b4f0fb7ab41b403a2b2c2974c2bd7074623cfb1bfb60f89321a2b06f8775",
+      "size": 645
+    },
+    {
+      "path": "probes/delivery_binding.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "probes/delivery_binding.exit",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size": 2
+    },
+    {
+      "path": "probes/hardlink_deny.json",
+      "sha256": "97b7fdaf6e313f10cbcb465d291beef4250890ba79966d830806050ea6b00bc3",
+      "size": 382
+    },
+    {
+      "path": "probes/hardlink_deny.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "probes/hardlink_deny.exit",
+      "sha256": "10159baf262b43a92d95db59dae1f72c645127301661e0a3ce4e38b295a97c58",
+      "size": 2
+    },
+    {
+      "path": "probes/wrapper_boot_smoke.json",
+      "sha256": "e74f509a345e82aa08871aadf6e6a61bfb35508177061894e951df5b68365dba",
+      "size": 209
+    },
+    {
+      "path": "probes/wrapper_boot_smoke.exit",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size": 2
+    },
+    {
+      "path": "probes/wrapper_boot_smoke.trace",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    }
+  ],
+  "stage": "SANDBOX_ROUTER_ENFORCEMENT_BINDING_RECHECK_5",
+  "status": "PASS",
+  "timestamp_utc": "20260430T140200Z"
+}

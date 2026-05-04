@@ -1,0 +1,10 @@
+{
+  "artifact_type": "SEE_PACKET",
+  "stage_id": "FL17-MERGE-5_FULL_OS_EXPORT_AND_RECOVERY_VALIDATION",
+  "created_utc": "20260430T022600Z",
+  "sources": [
+    {"claim": "AI governance should be systematic and improve trustworthiness in design, development, use, and evaluation.", "source": "NIST AI Risk Management Framework", "citation": "turn460731search0"},
+    {"claim": "Provenance must be verified against expectations before it carries trust value.", "source": "SLSA verifying artifacts", "citation": "turn460731search7"},
+    {"claim": "ZIP member paths and extraction behavior require validation against unsafe/traversal assumptions.", "source": "Python zipfile documentation", "citation": "turn460731search3"}
+  ]
+}

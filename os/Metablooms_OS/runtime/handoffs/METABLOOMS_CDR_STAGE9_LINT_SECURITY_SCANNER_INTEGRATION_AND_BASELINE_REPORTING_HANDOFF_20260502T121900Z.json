@@ -1,0 +1,13 @@
+{
+  "last_receipt": "runtime/receipts/METABLOOMS_CDR_STAGE9_LINT_SECURITY_SCANNER_INTEGRATION_AND_BASELINE_REPORTING_RECEIPT_20260502T121900Z.json",
+  "next_best_stage": "CDR_STAGE10_REAL_SCANNER_ADAPTER_INSTALL_PROFILES_OR_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE9",
+  "requirements": [
+    "Do not claim external scanners ran unless tool availability says installed and run output exists.",
+    "Keep stdlib AST baseline as deterministic fallback.",
+    "If exporting, include reconstructed CDR chain and Stage 8/9 artifacts in a new bootable authority ZIP."
+  ],
+  "schema": "MetaBloomsHandoff_v1",
+  "stage": "CDR_STAGE9_LINT_SECURITY_SCANNER_INTEGRATION_AND_BASELINE_REPORTING",
+  "status": "READY_FOR_NEXT_STAGE",
+  "timestamp_utc": "2026-05-02T12:14:38Z"
+}

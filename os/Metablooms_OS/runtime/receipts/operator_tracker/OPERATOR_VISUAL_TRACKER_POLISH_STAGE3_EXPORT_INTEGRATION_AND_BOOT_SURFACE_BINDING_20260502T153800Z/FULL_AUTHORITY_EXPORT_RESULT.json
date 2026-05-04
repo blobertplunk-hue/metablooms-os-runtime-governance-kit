@@ -1,0 +1,18 @@
+{
+  "artifact_type": "FULL_AUTHORITY_EXPORT_RESULT.v1",
+  "boot_surface_manifest_in_zip": "Metablooms_OS/runtime/operator_tracker/OPERATOR_VISUAL_TRACKER_BOOT_SURFACE_LATEST.json",
+  "created_utc": "2026-05-02T15:37:30Z",
+  "created_utc_finalized": "2026-05-02T15:37:34Z",
+  "duplicate_members": 0,
+  "external_sidecar_rule": "The sidecar is authoritative for the final ZIP SHA.",
+  "full_export_path": "/mnt/data/METABLOOMS_OS_OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_FULL_AUTHORITY_20260502T153800Z.zip",
+  "full_export_sha256": "17d8b48ca4aca3673922b59ba4a5d471137f66acb4f9eeabcab6f4e1cf332000",
+  "full_export_sidecar": "/mnt/data/METABLOOMS_OS_OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_FULL_AUTHORITY_20260502T153800Z.zip.sha256",
+  "members": 5142,
+  "root_html_in_zip": "Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html",
+  "stage": "OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_EXPORT_INTEGRATION_AND_BOOT_SURFACE_BINDING",
+  "zip_runtime_smoke_returncode": 0,
+  "zip_runtime_smoke_stderr": "",
+  "zip_runtime_smoke_stdout": "{\n  \"decision\": \"ALLOW\",\n  \"invalid_json\": [],\n  \"missing\": [],\n  \"mode\": \"zip\",\n  \"path\": \"/mnt/data/METABLOOMS_OS_OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_FULL_AUTHORITY_20260502T153800Z.zip\",\n  \"read_errors\": []\n}\n",
+  "zip_testzip": "PASS"
+}

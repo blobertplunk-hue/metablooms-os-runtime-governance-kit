@@ -1,0 +1,38 @@
+{
+  "required_current_files": {
+    "0_kernel/registry/operator_surface/VISUAL_PRESENTATION_OPERATOR_TRACKER_BINDING_v1.json": true,
+    "0_kernel/registry/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_CONTRACT_v1.json": true,
+    "0_kernel/registry/visual_presentation_quality/visual_presentation_quality_declaration_schema_v1.json": true,
+    "0_kernel/validators/validate_visual_presentation_quality_gate_v1.py": true,
+    "OPEN_OPERATOR_VISUAL_TRACKER.html": true,
+    "runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE4_RENDER_SMOKE_AND_VISUAL_REVIEW_PACKET_20260502T220827Z/VISUAL_PRESENTATION_QUALITY_GATE_STAGE4_RENDER_SMOKE_AND_VISUAL_REVIEW_PACKET_RECEIPT.json": true,
+    "runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE4_RENDER_SMOKE_AND_VISUAL_REVIEW_PACKET_20260502T220827Z/VISUAL_REVIEW_PACKET_STAGE4.json": true,
+    "runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE4_RENDER_SMOKE_AND_VISUAL_REVIEW_PACKET_20260502T220827Z/weasy_render/operator_tracker_render_contact_sheet.png": true,
+    "runtime/state/VISUAL_PRESENTATION_QUALITY_GATE_TRACKER_PREVIEW.txt": true,
+    "tests/fixtures/usefulness_surface/valid_usefulness_html_activity_with_visual_presentation_v1.json": true,
+    "tests/fixtures/usefulness_surface/valid_usefulness_operator_tracker_with_visual_presentation_v1.json": true,
+    "tests/fixtures/visual_presentation_quality/invalid_visual_presentation_quality_default_browser_styles_v1.json": true,
+    "tests/fixtures/visual_presentation_quality/valid_visual_presentation_quality_html_activity_v1.json": true,
+    "tests/fixtures/visual_presentation_quality/valid_visual_presentation_quality_operator_tracker_v1.json": true
+  },
+  "root": "/mnt/data/Metablooms_OS",
+  "root_exists": true,
+  "stage4_handoff": {
+    "authorized_next_stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE5_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF",
+    "blockers": [],
+    "created_utc": "2026-05-02T22:15:10Z",
+    "from_stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE4_RENDER_SMOKE_AND_VISUAL_REVIEW_PACKET",
+    "known_limitations": [
+      "Chromium/Playwright screenshots unavailable in this sandbox turn; proxy render proof was used."
+    ],
+    "next_stage_requirements": [
+      "Include VPQ registry, validator, fixtures, USS/MPP bindings, operator tracker, Stage 1-4 receipts, and render review packet in full OS export",
+      "Run portability replay proof from exported ZIP",
+      "If browser runtime becomes reliable, add browser screenshot replay proof before final lock; otherwise mark browser render limitation explicitly in export metadata"
+    ],
+    "schema_version": "metablooms_stage_handoff.v1",
+    "stage4_verdict": "PASS_WITH_BROWSER_RENDER_LIMITATION"
+  },
+  "stage4_handoff_exists": true,
+  "stage4_receipt_exists": true
+}

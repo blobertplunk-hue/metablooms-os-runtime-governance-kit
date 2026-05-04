@@ -1,0 +1,46 @@
+{
+  "recursive_improvement": {
+    "candidates": [
+      {
+        "benefit_score": 4,
+        "decision": "rejected",
+        "id": "remove_dynamic_exec",
+        "risk_score": 1,
+        "scope_cost": 1,
+        "stage_fit": true
+      }
+    ]
+  },
+  "risk_tier": "HIGH",
+  "schema": "CDRStaticAnalysisComplexityPacket_v1",
+  "static_analysis": {
+    "ast_parse": true,
+    "complexity_scan": true,
+    "file_reports": [
+      {
+        "broad_exception_handlers": 4,
+        "dynamic_exec_count": 1,
+        "file": "runtime/governance/overcomplex_example.py",
+        "max_cognitive_complexity_proxy": 29,
+        "max_cyclomatic_complexity": 22,
+        "max_function_lines": 92,
+        "max_nesting_depth": 6,
+        "secret_literal_count": 0,
+        "syntax_errors": 0,
+        "todo_count": 3,
+        "unsafe_path_pattern_count": 0
+      }
+    ],
+    "security_grep": true,
+    "style_scan": true
+  },
+  "target_files": [
+    "runtime/governance/overcomplex_example.py"
+  ],
+  "test_binding": {
+    "eval_test": "tests/evals/cdr/test_cdr_static_analysis_complexity_gate_v1.py",
+    "negative_fixture": "tests/fixtures/cdr/invalid_cdr_static_analysis_complexity_over_complex_v1.json",
+    "positive_fixture": "tests/fixtures/cdr/valid_cdr_static_analysis_complexity_packet_v1.json",
+    "regression_binding": "CDR_STAGE8_STATIC_ANALYSIS_AND_COMPLEXITY_QUALITY_GATES"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "created_at": 1777061460.4266863,
+  "from_stage": "F1_CURRENT_WORKING_BASELINE_POINTER_CONTRACT",
+  "to_stage": "F2_STAGE_DAG_AND_DEPENDENCY_LEDGER_CONTRACT",
+  "status": "ready",
+  "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F1_CURRENT_WORKING_BASELINE_POINTER_CONTRACT_RECEIPT_v1.json",
+  "pointer_file": "/mnt/data/Metablooms_OS_refined/0_kernel/state/CURRENT_WORKING_BASELINE_POINTER_v1.json",
+  "pointer_contract": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/CURRENT_WORKING_BASELINE_POINTER_CONTRACT_v1.json",
+  "next_command": "EXECUTE F2 \u2014 STAGE DAG + DEPENDENCY LEDGER CONTRACT"
+}

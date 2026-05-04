@@ -1,0 +1,12 @@
+{
+  "artifact_type": "H0C1_CE_SYNTHESIS_v1",
+  "created_utc": "2026-04-30T21:45:00Z",
+  "design_decisions": [
+    "single manifest of mandatory gates",
+    "loader called by boot executor",
+    "controlled governance directories",
+    "anti-scatter validator",
+    "fresh-export proof required"
+  ],
+  "synthesis": "The fix is not another loose gate. The OS needs a boot-critical required-gates manifest, a loader invoked by the boot executor, a scatter-prevention validator over governance-bearing directories, and promotion tests that prove these remain present after a fresh export. Router/cartridge dispatch remains subordinate to the always-on chat governance kernel."
+}

@@ -1,0 +1,11 @@
+{
+  "argv_resolved": [
+    "/usr/bin/python3.13",
+    "-S",
+    "/mnt/data/Metablooms_OS/tests/evals/atomic_json_writer/test_atomic_json_writer_v1.py"
+  ],
+  "created_utc": "20260502T143026Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision": "ALLOW_SPAWN",
+  "timeout_seconds": 15
+}

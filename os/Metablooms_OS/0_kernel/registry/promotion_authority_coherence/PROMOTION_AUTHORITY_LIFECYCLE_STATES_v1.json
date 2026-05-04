@@ -1,0 +1,107 @@
+{
+  "classification_rules": [
+    {
+      "if_path_matches": [
+        "CURRENT_*AUTHORITY*.json",
+        "NEW_CHAT_START_HERE.md",
+        "0_kernel/boot_contracts/**",
+        "0_kernel/registry/current_authority/**"
+      ],
+      "rule_id": "LIFE-001",
+      "state_default": "active_authority"
+    },
+    {
+      "if_path_matches": [
+        "0_kernel/registry/**",
+        "0_kernel/cartridges/**",
+        "runtime/governance/**"
+      ],
+      "rule_id": "LIFE-002",
+      "state_default": "active_supporting"
+    },
+    {
+      "if_path_contains": [
+        "pre_patch_backups",
+        "backup",
+        "_bak_"
+      ],
+      "rule_id": "LIFE-003",
+      "state_default": "backup"
+    },
+    {
+      "if_path_matches": [
+        "runtime/receipts/**"
+      ],
+      "rule_id": "LIFE-004",
+      "state_default": "receipt"
+    },
+    {
+      "if_explicit_quarantine_marker": true,
+      "rule_id": "LIFE-005",
+      "state_default": "quarantine"
+    }
+  ],
+  "content_hash": "9ffec2fa8886219b666fbc82557ce9d041e419a0a57980109d3aa645a4acc575",
+  "created_at": "2026-05-02T19:59:18.342997+00:00",
+  "deny_if": [
+    "unclassified_controlled_artifact",
+    "active_authority_without_hash",
+    "active_authority_unregistered",
+    "live_boot_graph_references_historical_or_quarantine",
+    "stale_stage_reference_without_historical_marker"
+  ],
+  "purpose": "Classify every boot/promotion/controlled artifact before registry closure or authority promotion.",
+  "schema_version": "metablooms.promotion_authority_lifecycle_states.v1",
+  "stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE1_SPEC_AND_FIXTURES",
+  "states": {
+    "active_authority": {
+      "allowed_in_boot_graph": true,
+      "description": "Current boot/promotion artifact that may be referenced by live pointers or start contracts.",
+      "promotable": true,
+      "requires_registry_entry": true,
+      "requires_sha256": true
+    },
+    "active_supporting": {
+      "allowed_in_boot_graph": true,
+      "description": "Supporting artifact needed by the current authority graph.",
+      "promotable": true,
+      "requires_registry_entry": true,
+      "requires_sha256": true
+    },
+    "backup": {
+      "allowed_in_boot_graph": false,
+      "description": "Pre-patch or generated backup; must not be boot-critical.",
+      "promotable": false,
+      "requires_registry_entry": false,
+      "requires_sha256": false
+    },
+    "generated_non_authoritative": {
+      "allowed_in_boot_graph": false,
+      "description": "Derived output not used for authority decisions.",
+      "promotable": false,
+      "requires_registry_entry": false,
+      "requires_sha256": false
+    },
+    "historical": {
+      "allowed_in_boot_graph": false,
+      "description": "Retained prior authority or receipt; may mention stale stages only with historical marker.",
+      "promotable": false,
+      "requires_registry_entry": true,
+      "requires_sha256": true
+    },
+    "quarantine": {
+      "allowed_in_boot_graph": false,
+      "description": "Known conflicting or suspect artifact preserved but explicitly excluded from authority.",
+      "promotable": false,
+      "requires_registry_entry": true,
+      "requires_sha256": true
+    },
+    "receipt": {
+      "allowed_in_boot_graph": false,
+      "description": "Evidence of a stage execution; not an authority source unless separately promoted.",
+      "promotable": false,
+      "requires_registry_entry": false,
+      "requires_sha256": true
+    }
+  }
+}

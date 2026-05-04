@@ -1,0 +1,83 @@
+{
+  "version": "1.0",
+  "created_at": 1777037027.951925,
+  "stage": "SEE_PASS",
+  "original_request": "Research best practices for a validator and cite sources.",
+  "research_trigger": {
+    "required": true,
+    "trigger_reason": "The request explicitly asks for research.",
+    "trigger_terms": [
+      "research",
+      "sources"
+    ]
+  },
+  "query_plan": [
+    {
+      "query": "official documentation structured validation",
+      "purpose": "Find authoritative guidance on validation structure",
+      "expected_source_type": "official"
+    },
+    {
+      "query": "evidence synthesis source binding",
+      "purpose": "Find source-binding guidance",
+      "expected_source_type": "reference"
+    }
+  ],
+  "web_run_evidence": {
+    "web_run_called": true,
+    "call_count": 2,
+    "tool_reference_required": true
+  },
+  "sources": [
+    {
+      "source_id": "S1",
+      "title": "Official validation documentation",
+      "url_or_ref": "turn0search0",
+      "source_type": "official_docs",
+      "used_for": [
+        "schema design",
+        "validation behavior"
+      ]
+    },
+    {
+      "source_id": "S2",
+      "title": "Evidence synthesis reference",
+      "url_or_ref": "turn0search1",
+      "source_type": "reference",
+      "used_for": [
+        "source binding",
+        "limitations"
+      ]
+    }
+  ],
+  "claim_source_bindings": [
+    {
+      "claim": "The validator must bind substantive claims to sources.",
+      "source_ids": [
+        "S1",
+        "S2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "The packet should record gaps and contradictions separately.",
+      "source_ids": [
+        "S2"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "gaps_and_contradictions": {
+    "gaps": [
+      "No live web citations are embedded inside this synthetic test packet."
+    ],
+    "contradictions": []
+  },
+  "synthesis": "The research evidence supports a source-bound SEE packet with web.run evidence, claim bindings, gaps, contradictions, and limitations.",
+  "limitations": [
+    "This is synthetic test data, not a live SEE packet."
+  ],
+  "see_verdict": "PASS",
+  "issues": [],
+  "receipt_path": ""
+}

@@ -1,0 +1,37 @@
+{
+  "created_at_utc": "2026-05-02T02:48:39.708152Z",
+  "schema": "SEEPacket_v1",
+  "sources": [
+    {
+      "finding": "OpenAI Agents SDK HITL pauses execution for sensitive tool calls until approval/rejection and supports serializing/resuming run state.",
+      "ref": "turn281711search0",
+      "url": "https://openai.github.io/openai-agents-python/human_in_the_loop/"
+    },
+    {
+      "finding": "OpenAI guardrails guidance says tool validation must be placed next to the tool causing side effects, because manager/workflow boundaries matter.",
+      "ref": "turn281711search3",
+      "url": "https://developers.openai.com/api/docs/guides/agents/guardrails-approvals"
+    },
+    {
+      "finding": "LangGraph interrupts pause graph execution for external input and surface JSON-serializable interrupt payloads.",
+      "ref": "turn281711search1",
+      "url": "https://docs.langchain.com/oss/python/langgraph/interrupts"
+    },
+    {
+      "finding": "Durable execution allows interrupted workflows, including HITL workflows, to resume from recorded state.",
+      "ref": "turn281711search19",
+      "url": "https://docs.langchain.com/oss/python/langgraph/durable-execution"
+    },
+    {
+      "finding": "OWASP identifies tool abuse and privilege escalation as AI agent security risks.",
+      "ref": "turn281711search5",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html"
+    },
+    {
+      "finding": "OWASP recommends user approval for high-impact actions before they occur.",
+      "ref": "turn281711search8",
+      "url": "https://genai.owasp.org/llmrisk/llm06-sensitive-information-disclosure/"
+    }
+  ],
+  "stage_id": "STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_20260502T035000Z"
+}

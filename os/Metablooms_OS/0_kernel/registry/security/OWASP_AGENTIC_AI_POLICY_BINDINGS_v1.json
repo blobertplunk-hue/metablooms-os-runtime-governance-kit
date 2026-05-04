@@ -1,0 +1,136 @@
+{
+  "default_decision": "deny_when_unclassified_high_impact",
+  "enforcement_mode": "block_missing_required_controls",
+  "high_impact_action_classes": [
+    "filesystem_export",
+    "pointer_promotion",
+    "privileged_mutation",
+    "external_install",
+    "destructive_delete",
+    "credentialed_external_action",
+    "release_delivery",
+    "network_side_effect",
+    "broad_repair"
+  ],
+  "minimum_required_controls": {
+    "broad_repair": [
+      "stage budget approval",
+      "runaway breaker",
+      "bounded scope",
+      "failure learning ledger update"
+    ],
+    "external_install": [
+      "supply_chain_origin",
+      "version/hash pinning",
+      "sandbox smoke",
+      "negative capability registry check"
+    ],
+    "filesystem_export": [
+      "Tool Universe Resolver",
+      "BTS wrapper",
+      "pre_tool_action_gate_v1",
+      "post_tool_result_validation_v1",
+      "CRC proof",
+      "SHA sidecar",
+      "fresh boot proof",
+      "delivery guard"
+    ],
+    "network_side_effect": [
+      "SEE evidence binding",
+      "domain/source allowlist when applicable",
+      "HITL token if high impact",
+      "egress logging"
+    ],
+    "pointer_promotion": [
+      "formal HITL approval token",
+      "authority pointer coherence proof",
+      "rollback path",
+      "post_tool_result_validation_v1"
+    ],
+    "privileged_mutation": [
+      "formal HITL approval token",
+      "least privilege scope",
+      "T1 mutation receipt",
+      "rollback note"
+    ]
+  },
+  "receipt_requirements": [
+    "decision_packet",
+    "risk_ids",
+    "controls_present",
+    "controls_missing",
+    "decision",
+    "reason",
+    "timestamp_utc"
+  ],
+  "risk_to_controls": {
+    "ASI01": [
+      "intent_capsule_required",
+      "goal_shift_detection",
+      "HITL_for_goal_change",
+      "untrusted_content_filtering",
+      "behavioral_baseline_logging"
+    ],
+    "ASI02": [
+      "Tool Universe Resolver",
+      "BTS_TOOL_EVALUATION",
+      "least_privilege_tool_scope",
+      "post_tool_result_validation_v1",
+      "cost_loop_limit"
+    ],
+    "ASI03": [
+      "non_human_identity_scope",
+      "credential_inheritance_deny",
+      "approval_token_for_privileged_action",
+      "audit_subject_binding"
+    ],
+    "ASI04": [
+      "artifact_hash_pin",
+      "source_origin_manifest",
+      "install_profile_smoke",
+      "deny_unverified_mcp_or_tool_descriptor"
+    ],
+    "ASI05": [
+      "execution_contract_required",
+      "shell_write_path_boundary",
+      "argument_sanitization",
+      "dry_run_or_probe_before_mutation",
+      "dangerous_command_denylist"
+    ],
+    "ASI06": [
+      "artifact_precedence_over_memory",
+      "memory_write_requires_explicit_user_or_artifact",
+      "context_source_labeling",
+      "quarantine_untrusted_context"
+    ],
+    "ASI07": [
+      "handoff_schema_required",
+      "delegated_context_filtering",
+      "capability_scope_on_handoff",
+      "cross_agent_message_authentication"
+    ],
+    "ASI08": [
+      "runaway_turn_breaker",
+      "stage_budget_limits",
+      "one_bounded_stage_per_turn",
+      "fail_closed_partial_receipt",
+      "dependency_blast_radius_map"
+    ],
+    "ASI09": [
+      "download_label_guard",
+      "support_bundle_not_authority",
+      "explicit_uncertainty_and_evidence",
+      "HITL_denial_reasons_visible"
+    ],
+    "ASI10": [
+      "autonomy_minimization",
+      "least_agency_policy",
+      "kill_switch_or_stop_condition",
+      "drift_monitoring",
+      "authority_pointer_coherence"
+    ]
+  },
+  "schema": "OWASPAgenticAIPolicyBindings_v1",
+  "stage_id": "STAGE6O_OWASP_AGENTIC_AI_COVERAGE_MATRIX_AND_POLICY_BINDINGS",
+  "timestamp_utc": "2026-05-02T02:53:05Z"
+}

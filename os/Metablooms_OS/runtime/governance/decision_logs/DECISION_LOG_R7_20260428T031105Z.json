@@ -1,0 +1,17 @@
+{
+  "decision_log_type": "REFRACTOR_PROGRAM_STAGE_DECISION",
+  "stage": "R7_USEFULNESS_VALIDATOR_PROMOTION",
+  "decision_id": "R7-20260428T031105Z",
+  "timestamp_utc": "2026-04-28T03:11:05Z",
+  "result": "pass",
+  "decision_basis": [
+    "Usefulness validator promoted from staged Claude-originated source into active live gate",
+    "Validator hardened to require python3 -S and decision-log receipts",
+    "Gate registry updated and integrity validator passed",
+    "Positive fixture allowed; negative fixtures denied"
+  ],
+  "external_pattern_basis": [
+    "OPA decision-log pattern: include decision_id, input, result, timestamp for audit/debugging",
+    "JSON Schema annotation fields are documentation, not enforcement; validator performs enforcement"
+  ]
+}

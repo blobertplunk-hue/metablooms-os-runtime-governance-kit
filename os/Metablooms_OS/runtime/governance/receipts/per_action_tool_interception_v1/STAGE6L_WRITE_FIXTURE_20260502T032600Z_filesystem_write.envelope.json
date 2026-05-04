@@ -1,0 +1,24 @@
+{
+  "action_type": "filesystem_write",
+  "artifacts": {
+    "read_paths": [],
+    "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/STAGE6L_WRITE_FIXTURE_20260502T032600Z_filesystem_write.decision.json",
+    "write_paths": [
+      "/mnt/data/Metablooms_OS/runtime/tmp/STAGE6L_WRAPPED_WRITE_FIXTURE.txt"
+    ]
+  },
+  "envelope_id": "STAGE6L_WRITE_FIXTURE_20260502T032600Z_filesystem_write",
+  "intent": "Validate BTS-wrapped filesystem write uses post-tool result validation before success commit",
+  "limits": {
+    "max_bytes": 31,
+    "max_files": 5,
+    "max_steps": 10,
+    "timeout_seconds": 30
+  },
+  "requested_at_utc": "2026-05-02T02:06:55.502683Z",
+  "requires_see": false,
+  "risk_tier": "medium",
+  "schema_version": "ToolCallEnvelope_v1",
+  "stage_id": "STAGE6L_POST_TOOL_RESULT_VALIDATION_GATE",
+  "tool_name": "bts_wrapped_filesystem_write"
+}

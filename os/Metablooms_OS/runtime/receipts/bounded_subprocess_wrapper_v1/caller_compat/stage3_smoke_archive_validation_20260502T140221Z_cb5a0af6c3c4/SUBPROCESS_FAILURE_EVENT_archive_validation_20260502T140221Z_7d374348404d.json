@@ -1,0 +1,38 @@
+{
+  "argv_redacted": [
+    "unzip",
+    "-tqq",
+    "/mnt/data/Metablooms_OS/nonexistent.zip"
+  ],
+  "artifact_type": "METABLOOMS_SUBPROCESS_FAILURE_LEARNING_EVENT_v1",
+  "attempts": [],
+  "created_utc": "20260502T140221Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "failure_class": "FORBIDDEN_METHOD",
+  "operation_type": "archive_validation",
+  "policy_matches": [
+    {
+      "method": {
+        "exception_policy": "Only allowed if explicitly authorized by a future stage, file-count/size threshold is bounded, timeout budget is declared, checkpoint receipt is written before and after, and failure cannot block smaller validation fallback.",
+        "forbidden_by_default": true,
+        "method_id": "FULL_ARCHIVE_RECURSIVE_EXTRACTION_FOR_LARGE_OS_VALIDATION_IN_CHATGPT_SANDBOX",
+        "observed_failure": "unzip -tqq and jar xf full recursive extraction timed out/stalled during FL17-MERGE-5 validation; user had to stop turn.",
+        "replacement_methods": [
+          "checksum sidecar verification",
+          "zipfile.ZipFile.testzip CRC/header validation",
+          "unsafe member path scan",
+          "central directory/member inventory",
+          "selective extraction/read of required boot-critical files",
+          "required semantic/tracker authority checks"
+        ],
+        "scope": "MetaBlooms full OS export/recovery validation in ChatGPT-style sandbox"
+      },
+      "method_id": "FULL_ARCHIVE_RECURSIVE_EXTRACTION_FOR_LARGE_OS_VALIDATION_IN_CHATGPT_SANDBOX",
+      "reason": "matched_observed_unzip_tqq_forbidden_method"
+    }
+  ],
+  "recommendation": "Route future matching operations through bounded wrapper and method reliability policy before spawn.",
+  "result_class": "DENY_FORBIDDEN_METHOD",
+  "root": "/mnt/data/Metablooms_OS",
+  "stage": "stage3_smoke"
+}

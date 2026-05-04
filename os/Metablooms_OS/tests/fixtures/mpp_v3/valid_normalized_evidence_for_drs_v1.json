@@ -1,0 +1,39 @@
+{
+  "claim_index": {
+    "claim_001": {
+      "atom_ids": [
+        "ATOM-001"
+      ],
+      "coverage": "single_source"
+    }
+  },
+  "created_at": "2026-04-30T23:12:00Z",
+  "normalized_atoms": [
+    {
+      "atom_id": "ATOM-001",
+      "claim": "Decision records must bind choices to evidence, context, alternatives, consequences, status, and confidence.",
+      "confidence": "high",
+      "evidence_refs": [
+        "SEE-R5-SMOKE"
+      ],
+      "risk_flags": []
+    }
+  ],
+  "packet_id": "NEP-R5-SMOKE",
+  "quality_summary": {
+    "atom_count": 1,
+    "blocked": false,
+    "source_count": 1,
+    "warnings": []
+  },
+  "result_hash": "d9c749c773a26deb999ad97a64bb6c0f2709dd15edec00d6859ed60d1d43bd38",
+  "schema_version": "mpp.normalized_evidence_packet.v1",
+  "source_packets": [
+    {
+      "packet_id": "SEE-R5-SMOKE",
+      "packet_type": "SEE",
+      "result_hash": "d7ff0b6da8c0d8fe4c0c18c1f8fc3e6ae67793c80989f3f0c17dca995ee3ca11"
+    }
+  ],
+  "stage": "NORMALIZE_EVIDENCE"
+}

@@ -1,0 +1,40 @@
+{
+  "artifact_id": "open_operator_visual_tracker_usefulness_binding_v1",
+  "artifact_type": "operator_tracker",
+  "dimensions_covered": {
+    "assessment": {
+      "covered": true,
+      "evidence": [
+        "OPEN_OPERATOR_VISUAL_TRACKER.html status cards"
+      ],
+      "note": "assesses current OS state, blocker status, and bootable authority at a glance"
+    },
+    "future_improvement": {
+      "covered": true,
+      "evidence": [
+        "tracker binding policy"
+      ],
+      "note": "surfaces stale, missing, or confusing tracker states as future improvement signals"
+    },
+    "realtime_feedback": {
+      "covered": true,
+      "evidence": [
+        "operator tracker hero status section"
+      ],
+      "note": "shows current focus, next step, blockers, and progress lanes immediately"
+    },
+    "visual_presentation": {
+      "covered": true,
+      "evidence": [
+        "/mnt/data/Metablooms_OS/tests/fixtures/visual_presentation_quality/valid_visual_presentation_quality_operator_tracker_v1.json"
+      ],
+      "note": "uses declared dark operator dashboard visual system with mobile-first hierarchy"
+    }
+  },
+  "promotion_context": {
+    "promotion_stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE3_MPP_USS_AND_HTML_CARTRIDGE_BINDING_REPAIR2_TRACKER_HASH_CLOSURE",
+    "target_artifact_path": "/mnt/data/Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html",
+    "target_artifact_sha256": "5f332fd5a6658163023ec4ba7897d2dfeae408a8bcbe462e11aef4968129146c"
+  },
+  "promotion_required": true
+}

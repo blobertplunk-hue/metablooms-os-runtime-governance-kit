@@ -1,0 +1,226 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/NUF_NONFUNCTIONAL_REQUIREMENTS_PACKET_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "budget_policy": {
+      "additionalProperties": false,
+      "properties": {
+        "allowed_budget": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "budget_metric": {
+          "minLength": 2,
+          "type": "string"
+        },
+        "budget_type": {
+          "enum": [
+            "error_budget",
+            "latency_budget",
+            "token_budget",
+            "time_budget",
+            "artifact_budget",
+            "memory_budget"
+          ],
+          "type": "string"
+        },
+        "burn_action": {
+          "minLength": 5,
+          "type": "string"
+        },
+        "escalation_action": {
+          "minLength": 5,
+          "type": "string"
+        },
+        "policy_id": {
+          "pattern": "^BUDGET-[0-9]{3}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "policy_id",
+        "budget_type",
+        "budget_metric",
+        "allowed_budget",
+        "burn_action",
+        "escalation_action"
+      ],
+      "type": "object"
+    },
+    "created_at": {
+      "minLength": 10,
+      "type": "string"
+    },
+    "objective_id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "packet_id": {
+      "minLength": 8,
+      "type": "string"
+    },
+    "quality_model": {
+      "additionalProperties": false,
+      "properties": {
+        "mapped_characteristics": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 3,
+          "type": "array"
+        },
+        "model": {
+          "enum": [
+            "ISO_IEC_25010_2023",
+            "SRE_SLO",
+            "CUSTOM"
+          ],
+          "type": "string"
+        },
+        "version": {
+          "minLength": 3,
+          "type": "string"
+        }
+      },
+      "required": [
+        "model",
+        "version",
+        "mapped_characteristics"
+      ],
+      "type": "object"
+    },
+    "requirements": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "blocking": {
+            "type": "boolean"
+          },
+          "category": {
+            "enum": [
+              "performance",
+              "reliability",
+              "security",
+              "maintainability",
+              "portability",
+              "compatibility",
+              "usability",
+              "accessibility",
+              "determinism",
+              "artifact_integrity",
+              "latency",
+              "resource_budget"
+            ],
+            "type": "string"
+          },
+          "description": {
+            "minLength": 10,
+            "type": "string"
+          },
+          "measurement_window": {
+            "minLength": 2,
+            "type": "string"
+          },
+          "metric": {
+            "minLength": 2,
+            "type": "string"
+          },
+          "requirement_id": {
+            "pattern": "^NUF-[0-9]{3}$",
+            "type": "string"
+          },
+          "source_constraint_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "threshold": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "verification_method": {
+            "minLength": 5,
+            "type": "string"
+          }
+        },
+        "required": [
+          "requirement_id",
+          "category",
+          "description",
+          "metric",
+          "threshold",
+          "measurement_window",
+          "verification_method",
+          "blocking",
+          "source_constraint_ids"
+        ],
+        "type": "object"
+      },
+      "minItems": 3,
+      "type": "array"
+    },
+    "result_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "mpp.nuf_nonfunctional_requirements_packet.v1"
+    },
+    "source_uxr_packet_id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "stage": {
+      "const": "NUF"
+    },
+    "tradeoffs": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "decision": {
+            "minLength": 5,
+            "type": "string"
+          },
+          "rationale": {
+            "minLength": 8,
+            "type": "string"
+          },
+          "tension": {
+            "minLength": 5,
+            "type": "string"
+          },
+          "tradeoff_id": {
+            "pattern": "^TRD-[0-9]{3}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tradeoff_id",
+          "tension",
+          "decision",
+          "rationale"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "packet_id",
+    "stage",
+    "created_at",
+    "objective_id",
+    "source_uxr_packet_id",
+    "quality_model",
+    "requirements",
+    "budget_policy",
+    "tradeoffs",
+    "result_hash"
+  ],
+  "title": "MPP v3 NUF Nonfunctional Requirements Packet",
+  "type": "object"
+}

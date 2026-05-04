@@ -1,0 +1,11 @@
+{
+  "receipt_id": "T1-STAGE6E_FIXTURE_EXPORT_export_zip_artifact-20260502T003016Z",
+  "tier": "T1",
+  "artifact": "/mnt/data/Metablooms_OS/runtime/governance/executors/fixtures/stage6e/stage6e_fixture_export.zip",
+  "sha256": "73eac44395921cf063870327f2f0c934a2ac6b344c45ad5758e6bee9ec9b1e21",
+  "bytes_size": 253,
+  "prior_sha256": "",
+  "stdout_proof": "",
+  "timestamp": "2026-05-02T00:30:16.877444Z",
+  "turn_id": "STAGE6E_FIXTURE_EXPORT"
+}

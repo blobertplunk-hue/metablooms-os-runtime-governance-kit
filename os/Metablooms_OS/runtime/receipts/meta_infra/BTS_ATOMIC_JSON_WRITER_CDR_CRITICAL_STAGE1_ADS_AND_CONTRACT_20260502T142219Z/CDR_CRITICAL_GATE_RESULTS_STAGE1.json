@@ -1,0 +1,48 @@
+{
+  "artifact_type": "CDR_CRITICAL_GATE_RESULTS_STAGE1_ATOMIC_JSON_WRITER_v1",
+  "created_utc": "2026-05-02T14:23:17Z",
+  "gates": [
+    {
+      "gate": "Stage5 handoff loaded",
+      "result": "PASS"
+    },
+    {
+      "gate": "Runtime root verified",
+      "result": "PASS"
+    },
+    {
+      "gate": "Existing atomic writer inventory complete",
+      "result": "PASS"
+    },
+    {
+      "gate": "SEE evidence bound",
+      "result": "PASS"
+    },
+    {
+      "gate": "ADS written",
+      "result": "PASS"
+    },
+    {
+      "gate": "Contract written",
+      "result": "PASS"
+    },
+    {
+      "gate": "Input schema written",
+      "result": "PASS"
+    },
+    {
+      "gate": "Output schema written",
+      "result": "PASS"
+    },
+    {
+      "gate": "Failure schema written",
+      "result": "PASS"
+    },
+    {
+      "gate": "Fixture matrix written",
+      "result": "PASS"
+    }
+  ],
+  "stage": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT",
+  "verdict": "PASS"
+}

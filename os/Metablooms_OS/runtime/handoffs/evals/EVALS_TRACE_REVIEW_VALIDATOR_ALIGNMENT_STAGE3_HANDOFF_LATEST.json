@@ -1,0 +1,8 @@
+{
+  "artifact_type": "EVALS_EVALUATOR_RUNNER_CONFUSION_MATRIX_STAGE3_HANDOFF_v1",
+  "completed_stage": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_3_EVALUATOR_RUNNER_AND_CONFUSION_MATRIX",
+  "continuation_rule": "Run one bounded stage only; wire Stage 3 confusion-matrix promotion decision into cartridge/export promotion gates.",
+  "created_utc": "20260501T122230Z",
+  "next_stage": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_4_VALIDATOR_ALIGNMENT_GATE_PROMOTION",
+  "status": "READY_FOR_NEXT_BOUNDED_STAGE"
+}

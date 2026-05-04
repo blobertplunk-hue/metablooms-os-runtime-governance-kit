@@ -1,0 +1,12 @@
+{
+  "from_stage": "MPP_R16_ANALYSIS_EVALUATION_SCHEMA_AND_REASONING_GATE",
+  "notes": "R17 should consume analysis failures/risk routes to produce failure classes and repair routing.",
+  "required_inputs": [
+    "0_kernel/schemas/mpp_v3/ANALYSIS_EVALUATION_PACKET_SCHEMA_v1.json",
+    "0_kernel/mpp_v3/mpp_v3_analysis_evaluation_reasoning_gate_v1.py",
+    "tests/fixtures/mpp_v3/valid_analysis_evaluation_packet_v1.json"
+  ],
+  "root": "/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z",
+  "status": "READY",
+  "to_stage": "MPP_R17_DEBUGGING_FAILURE_CLASS_SCHEMA_AND_REPAIR_ROUTER"
+}

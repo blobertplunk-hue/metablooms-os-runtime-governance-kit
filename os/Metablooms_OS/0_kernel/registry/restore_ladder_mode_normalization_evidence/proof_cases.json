@@ -1,0 +1,116 @@
+{
+  "pointer_source_outranks_stable_zip": {
+    "passed": true,
+    "observed": {
+      "selected_source": "pointer",
+      "candidates": {
+        "pointer": {
+          "exists": true,
+          "valid": true
+        },
+        "ledger": {
+          "exists": true,
+          "valid": true
+        },
+        "stable": {
+          "exists": true,
+          "manifest_exists": true,
+          "manifest_sha_matches": true,
+          "manifest_size_matches": true,
+          "repair_receipt_exists": true
+        }
+      }
+    }
+  },
+  "ledger_latest_pass_outranks_stable_zip_when_pointer_absent": {
+    "passed": true,
+    "observed": {
+      "selected_without_pointer": "ledger"
+    }
+  },
+  "stable_zip_has_manifest_or_explicit_repair_receipt": {
+    "passed": true,
+    "observed": {
+      "stable_zip": "/mnt/data/Metablooms_OS_refined_SEE_PACKET_VALIDATOR_D4_CURRENT_STABLE_BASELINE.zip",
+      "stable_manifest": "/mnt/data/Metablooms_OS_refined_SEE_PACKET_VALIDATOR_D4_CURRENT_STABLE_BASELINE.zip.sha256.json",
+      "manifest_repair_receipt": "/mnt/data/STABLE_D4_MANIFEST_REPAIR_RECEIPT_FOR_F5_v1.json",
+      "stable": {
+        "exists": true,
+        "manifest_exists": true,
+        "manifest_sha_matches": true,
+        "manifest_size_matches": true,
+        "repair_receipt_exists": true
+      }
+    }
+  },
+  "mode_only_drift_is_normalized_by_core_filemode_false": {
+    "passed": true,
+    "observed": {
+      "status_before": {
+        "cmd": [
+          "git",
+          "status",
+          "--short"
+        ],
+        "returncode": 0,
+        "stdout": "M script.sh",
+        "stderr": ""
+      },
+      "numstat_before": {
+        "cmd": [
+          "git",
+          "diff",
+          "--numstat"
+        ],
+        "returncode": 0,
+        "stdout": "0\t0\tscript.sh",
+        "stderr": ""
+      },
+      "summary_before": {
+        "cmd": [
+          "git",
+          "diff",
+          "--summary"
+        ],
+        "returncode": 0,
+        "stdout": "mode change 100755 => 100644 script.sh",
+        "stderr": ""
+      },
+      "status_after_core_filemode_false": {
+        "cmd": [
+          "git",
+          "status",
+          "--short"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      }
+    }
+  },
+  "content_drift_blocks": {
+    "passed": true,
+    "observed": {
+      "content_status": {
+        "cmd": [
+          "git",
+          "status",
+          "--short"
+        ],
+        "returncode": 0,
+        "stdout": "M script.sh",
+        "stderr": ""
+      },
+      "content_numstat": {
+        "cmd": [
+          "git",
+          "diff",
+          "--numstat"
+        ],
+        "returncode": 0,
+        "stdout": "1\t1\tscript.sh",
+        "stderr": ""
+      }
+    }
+  }
+}

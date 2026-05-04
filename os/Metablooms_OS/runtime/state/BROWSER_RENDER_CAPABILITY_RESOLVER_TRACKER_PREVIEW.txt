@@ -1,0 +1,10 @@
+╭────────────────────────────────────────────────────────────╮
+│ Browser Render Capability Resolver                         │
+├────────────────────────────────────────────────────────────┤
+│ Stage 1  Policy + fixtures                         PASS     │
+│ Stage 2  Resolver + local method replay             PASS     │
+│ Stage 3  Visual gate binding + export prep          PASS     │
+│ Selected sandbox method: weasyprint_pdf_png_proxy     │
+│ Honesty label: sandbox_render_proxy                  │
+│ Next: full export + portability replay proof                  │
+╰────────────────────────────────────────────────────────────╯

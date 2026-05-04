@@ -1,0 +1,9 @@
+{
+  "artifact_type": "MB_BOOT_RELOAD_PROOF.v1",
+  "created_utc": "20260502T190150Z",
+  "pointer_before_sha256": "5d762eebedeaf5f3748ea8742b24f9a6d1ea9a82c7d949c66235076bd9e81fe4",
+  "pointer_before_stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_INTERACTIONS_AND_RESULT_PINNING",
+  "root": "/mnt/data/Metablooms_OS",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING",
+  "write_probe": ".write_probe_stage14_20260502T190150Z"
+}

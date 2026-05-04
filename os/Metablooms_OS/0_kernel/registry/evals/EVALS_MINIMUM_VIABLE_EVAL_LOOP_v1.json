@@ -1,0 +1,14 @@
+{
+  "artifact_type": "EVALS_MINIMUM_VIABLE_EVAL_LOOP_v1",
+  "created_utc": "20260501T130400Z",
+  "loop": [
+    "collect representative traces",
+    "sample random/outlier/failure traces",
+    "open-code first observed failure",
+    "cluster failure modes",
+    "write validator or fixture for repeated failures",
+    "rerun evals before promotion",
+    "persist receipt/handoff/trace evidence"
+  ],
+  "stage1_scope": "install executable schema, sample dataset, validator, command surface, and handler; do not claim full eval maturity until Stage 2 expands dataset and scorecards."
+}

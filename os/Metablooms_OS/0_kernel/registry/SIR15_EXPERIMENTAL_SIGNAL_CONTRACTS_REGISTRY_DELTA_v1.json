@@ -1,0 +1,59 @@
+{
+  "version": "1.0",
+  "created_at": 1777126084.6325326,
+  "stage": "SIR15_ACTIVATE_SIGNAL_CONTRACTS_REPAIRED_CANDIDATE",
+  "status": "experimental_inactive_post_copy",
+  "activation_root": "/mnt/data/SIR10_activation_package",
+  "activated_file": {
+    "file": "signal_contracts_v1.json",
+    "family": "signal_contract_schema",
+    "destination": "/mnt/data/SIR10_activation_package/2_engines/runtime/signal_contracts_v1.json",
+    "sha256": "3554dee7e88dfe0d2bec408f94885476cd1e6b290be7258f60caf8c2f8959750",
+    "size_bytes": 588,
+    "source_staged_path": "/mnt/data/SIR6_staging/integrated_v3_runtime_import_repaired_1777118132/signal_contracts_v1.json",
+    "source_sha256": "3554dee7e88dfe0d2bec408f94885476cd1e6b290be7258f60caf8c2f8959750"
+  },
+  "policy": {
+    "single_file_activation": true,
+    "deferred_candidates_not_activated": [
+      "loop_controller.py",
+      "mpp_pipeline_runner.py"
+    ],
+    "bulk_activation": false,
+    "runtime_family_active_status": "experimental_inactive_until_post_activation_verification",
+    "new_baseline_export_claimed": false
+  },
+  "verification": {
+    "source_marker_gates": {
+      "json_parse_passed": true,
+      "version_marker_present": true,
+      "schema_marker_present": true,
+      "metadata_present": true
+    },
+    "destination_gates": {
+      "destination_exists": true,
+      "destination_sha_matches_source": true,
+      "json_parse_passed": true,
+      "version_marker_present": true,
+      "schema_marker_present": true,
+      "metadata_present": true
+    },
+    "scope_gates": {
+      "target_exactly_one_file": true,
+      "target_was_sir13_pass": true,
+      "patch_sha_matches": true,
+      "backup_before_overwrite_satisfied": true,
+      "no_deferred_candidate_activation": true,
+      "runtime_files_expected": true,
+      "baseline_export_not_performed": true,
+      "activation_package_only": true
+    }
+  },
+  "backup": {
+    "backup_created": false,
+    "reason": "destination did not exist",
+    "backup_path": null
+  },
+  "verdict": "PASS",
+  "next_correct_command": "EXECUTE SIR16 \u2014 ACTIVATE LOOP CONTROLLER REPAIRED CANDIDATE"
+}

@@ -1,0 +1,95 @@
+{
+  "authority_export_performed": false,
+  "boot_basis": "/mnt/data/Metablooms_OS extracted from Stage 6M authority ZIP; Stage 6O writes support/proof artifacts only.",
+  "governance_path": [
+    "Tool Universe Resolver",
+    "BTS_TOOL_EVALUATION",
+    "BTS_TOOL_SELECTION",
+    "pre_tool_action_gate_v1",
+    "BTS-wrapped filesystem write",
+    "post_tool_result_validation_v1",
+    "BTS_TOOL_RESULT",
+    "BTS_COMMIT"
+  ],
+  "installed_artifacts": [
+    {
+      "path": "0_kernel/registry/security/OWASP_AGENTIC_AI_COVERAGE_MATRIX_v1.json",
+      "sha256": "7eca57f4c21b89626d52043f742edc37bfc5a9a041f441945ee172c61df414c7"
+    },
+    {
+      "path": "0_kernel/registry/security/OWASP_AGENTIC_AI_POLICY_BINDINGS_v1.json",
+      "sha256": "e09b944cec7b1a1f39f4328ebed476de6670a74790963e24f9585a897220c5fe"
+    },
+    {
+      "path": "governance/invariants/OWASP_AGENTIC_AI_POLICY_BINDINGS_REQUIRED_v1.json",
+      "sha256": "3423633b04e0b4e26341475051885e3d6f581913723ae908cd351a551ca237f1"
+    },
+    {
+      "path": "runtime/governance/owasp_agentic_ai_policy_gate_v1.py",
+      "sha256": "784e8d31ba4826f4d87c4cd46bec4850dfc79759a70ef5abd9a52030cc27a9d4"
+    },
+    {
+      "path": "tests/fixtures/security/owasp_agentic_policy_allow_v1.json",
+      "sha256": "a638e711c093b6682cd13819d3d21bf7c8fcaef32aabeb39978bf7de7e4d7603"
+    },
+    {
+      "path": "tests/fixtures/security/owasp_agentic_policy_deny_missing_controls_v1.json",
+      "sha256": "478133318676ee8b022587339c8b8850a8fb6c32f0aab5575bee99935b3f65b5"
+    },
+    {
+      "path": "tests/evals/security/test_owasp_agentic_ai_policy_gate_v1.py",
+      "sha256": "a60df7dbd5dede96d2ed9c03802a7b11c3b0bd00225d3e433513d67407616736"
+    },
+    {
+      "path": "research/SEE/STAGE6O_OWASP_AGENTIC_AI_COVERAGE_MATRIX_AND_POLICY_BINDINGS_SEE_v1.json",
+      "sha256": "a7671b37d865a51017bbf003e2a4288f778f1a03d1624cf2b74ad8a369dea758"
+    },
+    {
+      "path": "research/CE/STAGE6O_OWASP_AGENTIC_AI_COVERAGE_MATRIX_AND_POLICY_BINDINGS_CE_v1.json",
+      "sha256": "2f05a2a1b507cd5baf55f9632cc6f971e1d1f7fe3f56085a5b74f02ed79a7a88"
+    },
+    {
+      "path": "runtime/governance/receipts/tool_universe_resolver_v1/STAGE6O_20260502T035000Z_security_policy_candidate_set.json",
+      "sha256": "18e537d34dcf6f51db868acecfa53fabf11c5e80b4ad795efa751027d99201e4"
+    },
+    {
+      "path": "runtime/governance/receipts/per_action_tool_interception_v1/STAGE6O_20260502T035000Z_filesystem_write.decision.json",
+      "sha256": "3ffd2a94eb77506f9addfaaed054916d9104e943c8c6b3052cea60e58ee64ac0"
+    },
+    {
+      "path": "runtime/evals/security/STAGE6O_OWASP_AGENTIC_AI_POLICY_GATE_SMOKE_RESULT.json",
+      "sha256": "152e66b1aa6d2e06f883a056bd8df02f3698efca6e98fb95fe1bceddbed24714"
+    },
+    {
+      "path": "runtime/state/STAGE6O_TRACKER_PREVIEW.txt",
+      "sha256": "d804d723fa85cf8dee0e1139bcf3e8609bf5fa6af1dcb80a67e29a4155dfe541"
+    }
+  ],
+  "next_stage": "STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM",
+  "schema": "MetaBloomsStageReceipt_v1",
+  "stage_id": "STAGE6O_OWASP_AGENTIC_AI_COVERAGE_MATRIX_AND_POLICY_BINDINGS",
+  "status": "PASS",
+  "support_bundle": {
+    "duplicates": 0,
+    "entries": 34,
+    "hash_policy": "external_sidecar_required_to_avoid_zip_hash_circularity",
+    "label": "SUPPORT/PROOF BUNDLE \u2014 NOT THE OS BUNDLE",
+    "path": "/mnt/data/METABLOOMS_STAGE6O_OWASP_AGENTIC_AI_COVERAGE_MATRIX_AND_POLICY_BINDINGS_SUPPORT_PROOF_BUNDLE_NOT_OS_20260502T035000Z.zip",
+    "sidecar_path": "/mnt/data/METABLOOMS_STAGE6O_OWASP_AGENTIC_AI_COVERAGE_MATRIX_AND_POLICY_BINDINGS_SUPPORT_PROOF_BUNDLE_NOT_OS_20260502T035000Z.zip.sha256",
+    "testzip": null
+  },
+  "timestamp_utc": "2026-05-02T02:53:05Z",
+  "verification": {
+    "duplicate_scan": "PASS",
+    "policy_gate_smoke": "PASS",
+    "receipt_hash_mismatch_repair": "PASS_no_internal_final_zip_hash_claim",
+    "support_bundle_hash_policy": "external_sidecar_required",
+    "support_bundle_testzip": null
+  },
+  "web_evidence_sources": [
+    "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+    "https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/",
+    "https://owaspai.org/docs/ai_security_overview/",
+    "https://openai.github.io/openai-agents-python/"
+  ]
+}

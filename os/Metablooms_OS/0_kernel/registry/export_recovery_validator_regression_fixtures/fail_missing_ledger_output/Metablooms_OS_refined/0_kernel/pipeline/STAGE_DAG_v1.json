@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "dag_id": "STAGE_DAG_v1",
+  "status": "active",
+  "nodes": [
+    {
+      "id": "TEST",
+      "name": "TEST_EXPORT_STAGE",
+      "class": "export",
+      "status": "complete",
+      "produces": [
+        "0_kernel/registry/TEST_EXPORT_STAGE_RECEIPT_v1.json",
+        "0_kernel/registry/TEST_LOCK_v1.json",
+        "EXPORT_MANIFEST_v1.json",
+        "EXPORT_PROVENANCE_v1.json",
+        "RESTORE_CONTRACT_v1.json",
+        "CAPABILITY_SET_v1.json"
+      ]
+    }
+  ],
+  "edges": [],
+  "verdict": "PASS"
+}

@@ -1,0 +1,15 @@
+{
+  "artifact_type": "STAGE_RECEIPT.v1",
+  "created_utc": "20260502T175102Z",
+  "issues": [],
+  "repair_note": "Repaired Stage 9 validation to use current historical callsite scanner rather than Stage 8 validator with a stage8-only pointer assertion; updated quarantine policy classifications for Stage 9 artifacts.",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS",
+  "validation_summary": {
+    "guidance": "PASS",
+    "new_chat": "ALLOW",
+    "scanner": "PASS",
+    "stage9": "PASS",
+    "wrapper": "ALLOW"
+  },
+  "verdict": "PASS"
+}

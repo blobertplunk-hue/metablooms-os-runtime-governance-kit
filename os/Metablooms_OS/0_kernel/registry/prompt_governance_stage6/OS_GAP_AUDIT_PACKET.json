@@ -1,0 +1,17 @@
+{
+  "created_utc": "2026-04-30T21:56:29.826439Z",
+  "findings": [
+    {
+      "classification": "validation_gap",
+      "gap": "Stage 5 full shell unzip test timed out",
+      "repair": "install deterministic full recovery replay validator and rerun fresh-extract validators"
+    },
+    {
+      "classification": "governance_enforcement_gap",
+      "gap": "full recovery validator not boot-required",
+      "repair": "add validator to boot required gates"
+    }
+  ],
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_6_FULL_RECOVERY_PROOF_AND_GOVERNANCE_REPAIR",
+  "type": "OS_GAP_AUDIT_PACKET"
+}

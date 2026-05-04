@@ -1,0 +1,14 @@
+{
+  "artifact_type": "StageHandoff.v1",
+  "created_utc": "2026-05-02T15:20:58Z",
+  "from_stage": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT",
+  "latest_full_authority_sha256": "f7bab1ae985d9fe661ceab8f5220c37f009f71fa0a190e54efcaab4fc295416b",
+  "latest_full_authority_sha256_binding": "external_sidecar_required",
+  "latest_full_authority_zip": "/mnt/data/METABLOOMS_OS_BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE5_FULL_AUTHORITY_REPAIRED_20260502T152152Z.zip",
+  "latest_tracker_state": "append-log Stage5 full export complete",
+  "next_pointer": "USER_DECISION_NEXT_META_INFRA_OR_PRODUCT_WORK",
+  "optional": true,
+  "receipt": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT_20260502T152058Z/STAGE_RECEIPT.json",
+  "repaired_export_notice": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT_20260502T152058Z/FULL_AUTHORITY_EXPORT_INTERNAL_NOTICE_REPAIRED.json",
+  "status": "PASS"
+}

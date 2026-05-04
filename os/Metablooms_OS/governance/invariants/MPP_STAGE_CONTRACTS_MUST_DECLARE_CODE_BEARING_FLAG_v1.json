@@ -1,0 +1,9 @@
+{
+  "failure_action": "DENY_STAGE_CONTRACT_OR_STAGE_PASS",
+  "gate": "mpp_stage_contract_code_bearing_declaration_gate_v1",
+  "id": "MPP_STAGE_CONTRACTS_MUST_DECLARE_CODE_BEARING_FLAG_v1",
+  "rule": "All MPP stage contracts must explicitly declare stage_contains_code and code_artifact_classes. Code-bearing stages require cdr_required=true and CDR binding evidence before PASS.",
+  "stage": "MPP_CDR_BINDING_STAGE15_RETROFIT_STAGE_CONTRACTS_TO_DECLARE_CODE_BEARING_FLAG",
+  "status": "active",
+  "validator_path": "runtime/governance/mpp_stage_contract_code_bearing_declaration_gate_v1.py"
+}

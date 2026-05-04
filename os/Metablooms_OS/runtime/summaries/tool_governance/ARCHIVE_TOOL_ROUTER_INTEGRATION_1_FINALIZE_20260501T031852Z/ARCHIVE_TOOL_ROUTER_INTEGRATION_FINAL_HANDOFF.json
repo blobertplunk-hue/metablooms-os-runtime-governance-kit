@@ -1,0 +1,13 @@
+{
+  "artifact_type": "ARCHIVE_TOOL_ROUTER_INTEGRATION_FINAL_HANDOFF_v1",
+  "created_utc": "20260501T031852Z",
+  "from_stage": "ARCHIVE_TOOL_ROUTER_INTEGRATION_1_FINALIZE_20260501T031852Z",
+  "instructions": [
+    "Invoke python3 -S /mnt/data/Metablooms_OS/0_kernel/lib/archive_method_router_v1.py <zip> --sidecar <sidecar> --root /mnt/data/Metablooms_OS for bounded archive validation.",
+    "Use /mnt/data/Metablooms_OS/tools/7zip/7zz as an independent archive fallback.",
+    "Do not treat full recursive extraction as primary validation for large OS bundles.",
+    "Do not delete a verified existing runtime root before source/alternate-root verification."
+  ],
+  "next_valid_stage": "USE_7ZZ_ROUTER_FOR_NEXT_EXPORT_OR_FRESH_EXTRACT_VALIDATION",
+  "verdict": "PASS"
+}

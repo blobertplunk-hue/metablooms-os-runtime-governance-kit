@@ -1,0 +1,31 @@
+{
+  "current_stage_verdict": "PASS",
+  "latest_receipt": "runtime/receipts/METABLOOMS_STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM_RECEIPT_20260502T035000Z.json",
+  "next_stage_options_best_to_worst": [
+    {
+      "rank": 1,
+      "stage": "STAGE6Q_LEGACY_EXECUTOR_RETROFIT_AUDIT",
+      "why": "Find remaining legacy executor paths that bypass resolver/BTS/pre/post gates now that HITL, OWASP, and checkpoint controls exist."
+    },
+    {
+      "rank": 2,
+      "stage": "STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS",
+      "why": "Make BTS and checkpoint spans more compatible with OpenTelemetry/Agents SDK trace semantics."
+    }
+  ],
+  "resume_root": "/mnt/data/Metablooms_OS",
+  "schema": "MetaBloomsHandoff_v1",
+  "stage_id": "STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM",
+  "status": "READY_FOR_NEXT_STAGE",
+  "stop_conditions": [
+    "Do not export full OS unless explicitly requested and budget-approved.",
+    "Do not resume from chat-only checkpoint claims.",
+    "Run exactly one bounded stage next turn."
+  ],
+  "support_bundle": {
+    "label": "SUPPORT/PROOF BUNDLE \u2014 NOT THE OS BUNDLE",
+    "path": "/mnt/data/METABLOOMS_STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM_SUPPORT_PROOF_BUNDLE_NOT_OS_20260502T035000Z.zip",
+    "sha256": "9cb42425aa2967433d829e684a0865fbd48aca91c2a09e13ea239ac7d2c84b42"
+  },
+  "timestamp_utc": "2026-05-02T02:56:34.161254Z"
+}

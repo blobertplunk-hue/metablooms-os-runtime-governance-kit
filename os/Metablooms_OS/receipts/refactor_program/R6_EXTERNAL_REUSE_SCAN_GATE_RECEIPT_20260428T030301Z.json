@@ -1,0 +1,30 @@
+{
+  "receipt_type": "R6_EXTERNAL_REUSE_SCAN_GATE_RECEIPT",
+  "stage": "R6_EVIDENCE_BOUND_EXTERNAL_REUSE_SCAN_GATE",
+  "created_utc": "2026-04-28T03:03:02.161965+00:00",
+  "promoted_files": [
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/p0a_external_reuse_scan_precheck_v1.py",
+    "/mnt/data/Metablooms_OS/runtime/governance/schemas/external_reuse_scan_gate_schema_v1.json"
+  ],
+  "legacy_archives": [
+    "/mnt/data/Metablooms_OS/runtime/governance/legacy_archives/R6_external_reuse_scan_gate/p0a_external_reuse_scan_precheck_v1.legacy.py",
+    "/mnt/data/Metablooms_OS/runtime/governance/legacy_archives/R6_external_reuse_scan_gate/COOL_5_EXTERNAL_REUSE_SCAN_GATE_SCHEMA_v1.legacy.json"
+  ],
+  "fixtures": [
+    "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/fixtures/R6_external_reuse_scan_request_valid.json",
+    "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/fixtures/R6_external_reuse_scan_request_missing_evidence.json",
+    "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/fixtures/R6_external_reuse_scan_request_stale.json"
+  ],
+  "registry_updated": true,
+  "decision_log": "/mnt/data/Metablooms_OS/runtime/governance/decision_logs/DECISION_LOG_R6_20260428T030301Z.json",
+  "verdict": "PASS",
+  "verify_receipt": "/mnt/data/Metablooms_OS/receipts/refactor_program/R6_VERIFY_RECEIPT_20260428T030301Z.json",
+  "handoff": "/mnt/data/Metablooms_OS/receipts/refactor_program/R6_HANDOFF_20260428T030301Z.json",
+  "reports": {
+    "valid": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R6_external_reuse_scan_valid_20260428T030301Z.json",
+    "missing": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R6_external_reuse_scan_missing_20260428T030301Z.json",
+    "stale": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R6_external_reuse_scan_stale_20260428T030301Z.json",
+    "registry": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R6_gate_registry_integrity_20260428T030301Z.json"
+  },
+  "next_stage": "R7_USEFULNESS_VALIDATOR_PROMOTION"
+}

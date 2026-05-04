@@ -1,0 +1,26 @@
+{
+  "receipt_type": "R7_USEFULNESS_VALIDATOR_PROMOTION_RECEIPT",
+  "stage": "R7_USEFULNESS_VALIDATOR_PROMOTION",
+  "created_utc": "2026-04-28T03:11:05Z",
+  "verdict": "PASS",
+  "mutations": [
+    "Promoted 0_kernel/scripts/usefulness_surface_validator_v1.py",
+    "Created runtime/governance/schemas/usefulness_surface_declaration_schema_v1.json",
+    "Activated USEFULNESS_SURFACE_VALIDATION gate in gate_registry_v1.json",
+    "Created valid and negative regression fixtures",
+    "Patched python3_S_lane_exec_v1.sh default root from Metablooms_OS_refined to Metablooms_OS"
+  ],
+  "artifact_hashes": {
+    "validator_sha256": "8aa5028a37202a3857f902b7d4f4f75dfe49c1d586ced940602b0f136cf94cfa",
+    "schema_sha256": "c0ca2dd94f9b9e5a9bd1ac2967950e7b9155994000441357c412843e9e8ee30d",
+    "gate_registry_sha256": "a913b6844304bb6eac8065fa2505441794aedc25fd6f074b3bd7a4be80565e9c",
+    "python3_S_launcher_sha256": "fa4a2255d8a72bc7b6f881d8be9dde55dffefb75bd9337ddcbfde5b26994e219"
+  },
+  "reports": {
+    "valid_fixture": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R7_usefulness_valid_20260428T031100Z.json",
+    "too_few_fixture": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R7_usefulness_too_few_20260428T031100Z.json",
+    "missing_required_fixture": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R7_usefulness_missing_required_20260428T031240Z.json",
+    "gate_registry_integrity": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R7_gate_registry_integrity_20260428T030936Z.json"
+  },
+  "next_stage": "R8_PYTHON_HEALTH_GOVERNANCE_PROMOTION"
+}

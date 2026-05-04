@@ -1,0 +1,85 @@
+{
+  "plan_id": "COOL_6_RUNTIME_GATE_WIRING_PLAN_v1",
+  "version": "1.0",
+  "created_utc": "2026-04-26",
+  "phase_sequence": [
+    "P-1: TOOL_ROUTE_GUARD",
+    "P0A: EXTERNAL_REUSE_SCAN (new)",
+    "P0PY: PYTHON_HEALTH_CHECK (new)",
+    "P0: RESEARCH_SEE_CE_GATE",
+    "P1: RUNTIME_WRITE_ROLLBACK_GATE",
+    "P1-P2: IC_INTERRUPT_CHECKER per artifact",
+    "P1-P2: RUNTIME_PULSE_GATE per artifact boundary",
+    "P3: TRACKER_RELEASE_GATE + FULL_BUNDLE_EXPORT_GATE",
+    "P3: CARTRIDGE_PROMOTION_GATE if applicable",
+    "Session boundary: MEMORY_SYNC_VALIDATION"
+  ],
+  "gate_wiring": [
+    {
+      "gate": "TOOL_ROUTE_GUARD",
+      "phase": "P-1",
+      "script": "transactional_stage_runner_v1.py",
+      "blocking": true
+    },
+    {
+      "gate": "P0A_EXTERNAL_REUSE_SCAN",
+      "phase": "P0A",
+      "script": "p0a_external_reuse_scan_precheck_v1.py",
+      "blocking": true
+    },
+    {
+      "gate": "P0PY_PYTHON_HEALTH",
+      "phase": "P0PY",
+      "script": "p0py_python_health_governance_v1.py",
+      "blocking": false
+    },
+    {
+      "gate": "RESEARCH_SEE_CE_GATE",
+      "phase": "P0",
+      "script": "invariant_activation_engine_v1.py",
+      "blocking": true
+    },
+    {
+      "gate": "RUNTIME_WRITE_ROLLBACK_GATE",
+      "phase": "P1",
+      "script": "invariant_activation_engine_v1.py",
+      "blocking": true
+    },
+    {
+      "gate": "IC_INTERRUPT_CHECKER",
+      "phase": "between artifacts",
+      "script": "intra_chunk_interrupt_checker_v1.py",
+      "blocking": "defect/gap only"
+    },
+    {
+      "gate": "RUNTIME_PULSE_GATE",
+      "phase": "RP-PRE/POST each artifact",
+      "script": "runtime_pulse_logger_v1.py",
+      "blocking": "T1 only"
+    },
+    {
+      "gate": "TRACKER_RELEASE_GATE",
+      "phase": "P3",
+      "script": "invariant_activation_engine_v1.py",
+      "blocking": true
+    },
+    {
+      "gate": "FULL_BUNDLE_EXPORT_GATE",
+      "phase": "P3 export task classes",
+      "script": "full_bundle_export_guard_v1.py via IAE",
+      "blocking": true
+    },
+    {
+      "gate": "CARTRIDGE_PROMOTION_GATE",
+      "phase": "P3 cartridge task class",
+      "script": "cartridge_promotion_gate_v1.py",
+      "blocking": true
+    },
+    {
+      "gate": "MEMORY_SYNC_VALIDATION",
+      "phase": "session boundary",
+      "script": "memory_sync_validator_v1.py",
+      "blocking": true
+    }
+  ]
+}

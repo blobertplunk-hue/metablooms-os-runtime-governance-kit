@@ -1,0 +1,12 @@
+{
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_3_FULL_EXPORT_STREAM_ROUTE_REPAIR_AND_FRESH_EXTRACT_REPLAY",
+  "steps": [
+    "verify sidecars",
+    "compose cumulative overlay",
+    "patch controlled index",
+    "stream full export",
+    "fresh extract",
+    "run boot/prompt/scatter/fresh-chat gates",
+    "embed validation/handoff on success"
+  ]
+}

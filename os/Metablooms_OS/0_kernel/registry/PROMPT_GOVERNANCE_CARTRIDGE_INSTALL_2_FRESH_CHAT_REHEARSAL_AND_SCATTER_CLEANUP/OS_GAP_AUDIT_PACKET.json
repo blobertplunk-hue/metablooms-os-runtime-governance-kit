@@ -1,0 +1,1 @@
+{"stage":"PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_2_FRESH_CHAT_REHEARSAL_AND_SCATTER_CLEANUP","gaps":["anti-scatter threshold was loose","fresh-chat rehearsal was not executable","prompt cartridge needed boot-gate binding"],"repairs":["controlled artifact registry code","scatter validator code","fresh-chat rehearsal code","boot gate update","reusable asset index update"]}

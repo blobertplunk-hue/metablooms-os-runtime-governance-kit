@@ -1,0 +1,36 @@
+{
+  "errors": [
+    {
+      "expected": "ALLOW",
+      "fixture": "valid_full_promotion",
+      "result": {
+        "checked_utc": "2026-05-02T14:45:54Z",
+        "decision": "DENY",
+        "errors": [
+          "unregistered_active_governance_file:0_kernel/chat_governance/ALWAYS_ON_INVARIANTS_v1.json"
+        ],
+        "gate_id": "GOVERNANCE_SURVIVAL_PROMOTION_GATE_v1.0",
+        "required_count": 0,
+        "root": "/mnt/data/Metablooms_OS",
+        "warnings": [
+          "unregistered_active_governance_file_count:56"
+        ]
+      }
+    }
+  ],
+  "fixture_results": {
+    "deny_export_without_fresh_extract_smoke": "DENY",
+    "deny_missing_ce_after_see": "DENY",
+    "deny_missing_chat_kernel": "DENY",
+    "deny_missing_receipt_handoff": "DENY",
+    "deny_missing_sandbox_policy": "DENY",
+    "deny_missing_see_gate_when_required": "DENY",
+    "deny_missing_tool_selector": "DENY",
+    "deny_missing_tracker_gate": "DENY",
+    "deny_unregistered_governance_file": "DENY",
+    "valid_full_promotion": "DENY"
+  },
+  "stage": "H0C2_GOVERNANCE_SURVIVAL_AND_PROMOTION_BLOCKER_AUDIT",
+  "status": "FAIL",
+  "tested_utc": "2026-05-02T14:45:55Z"
+}

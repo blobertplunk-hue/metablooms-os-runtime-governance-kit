@@ -1,0 +1,6 @@
+TRACKER PREVIEW — CDR_STAGE11_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE2_TO_STAGE10_RECONSTRUCTED_CHAIN
+Status: PASS_PRE_EXPORT_READY
+Export: BOOTABLE FULL OS AUTHORITY ZIP — CDR Stage 11
+Includes: Stage 6U base plus reconstructed/verified CDR Stage 2-10 chain.
+CDR evals: 9/9 PASS.
+Sidecar: external SHA-256 required after export.

@@ -1,0 +1,22 @@
+{
+  "version": "1.0",
+  "export_id": "fail_missing_ledger_output",
+  "external_sidecar_required": true,
+  "external_sidecar": "fail_missing_ledger_output.zip.sha256.json",
+  "sha256_policy": "external_sidecar_required",
+  "size_policy": "external_sidecar_required",
+  "git_heads": {
+    "pre_export_head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "exported_tree_head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "metadata_commit_head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "final_lock_head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "current_working_head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "excluded_paths_policy": {
+    "excluded": [
+      "__pycache__",
+      ".git"
+    ]
+  },
+  "verdict": "PASS"
+}

@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "metablooms://runtime/governance/schemas/gate_registry_schema_v1.json",
+  "title": "MetaBlooms Gate Registry v1",
+  "type": "object",
+  "required": [
+    "registry_id",
+    "version",
+    "created_utc",
+    "status",
+    "source_plan",
+    "governance_rules",
+    "gates"
+  ],
+  "properties": {
+    "registry_id": {
+      "const": "gate_registry_v1"
+    },
+    "version": {
+      "type": "string"
+    },
+    "created_utc": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "active"
+      ]
+    },
+    "source_plan": {
+      "type": "object"
+    },
+    "governance_rules": {
+      "type": "object"
+    },
+    "gates": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "gate_id",
+          "phase",
+          "status",
+          "enabled",
+          "blocking",
+          "entrypoint",
+          "launcher",
+          "applies_to",
+          "required_inputs",
+          "outputs",
+          "decision_log_required",
+          "source",
+          "reason"
+        ],
+        "properties": {
+          "gate_id": {
+            "type": "string",
+            "pattern": "^[A-Z0-9_]+$"
+          },
+          "phase": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "active",
+              "deferred",
+              "retired"
+            ]
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "blocking": {},
+          "entrypoint": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "launcher": {
+            "type": "string"
+          },
+          "applies_to": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "required_inputs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "outputs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "decision_log_required": {
+            "type": "boolean"
+          },
+          "source": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "successor_gate": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "deferred_until_stage": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

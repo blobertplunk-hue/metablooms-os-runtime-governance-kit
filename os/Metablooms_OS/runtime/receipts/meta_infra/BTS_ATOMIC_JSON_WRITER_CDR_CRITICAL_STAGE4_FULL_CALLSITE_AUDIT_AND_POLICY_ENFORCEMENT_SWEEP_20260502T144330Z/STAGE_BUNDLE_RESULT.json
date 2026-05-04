@@ -1,0 +1,7 @@
+{
+  "bundle": "/mnt/data/Metablooms_OS/runtime/stage_bundles/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T144330Z.zip",
+  "checksum": "/mnt/data/Metablooms_OS/runtime/stage_bundles/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T144330Z.zip.sha256",
+  "members": 81,
+  "sha256": "267639b806d8a074f23dade66925becefdb91622a01c47fa26bdcd552df17ce4",
+  "testzip": "PASS"
+}

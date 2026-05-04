@@ -1,0 +1,4 @@
+{
+  "reason": "Stage4/Stage5 scan found no blocking direct append-open callsites in test/eval harnesses outside canonical append writer fixture internals.",
+  "safe_patches_applied": 0
+}

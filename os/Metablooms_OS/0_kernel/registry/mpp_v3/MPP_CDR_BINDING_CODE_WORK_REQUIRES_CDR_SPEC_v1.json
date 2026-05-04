@@ -1,0 +1,74 @@
+{
+  "basis": [
+    {
+      "claim": "Code review should examine design, functionality, complexity, tests, naming, comments, style, documentation, every line and broader context.",
+      "source": "Google Engineering Practices"
+    },
+    {
+      "claim": "Secure development should reduce vulnerabilities, mitigate exploitation impact and address root causes to prevent recurrence.",
+      "source": "NIST SSDF"
+    },
+    {
+      "claim": "Secure coding requires validation, access control, error handling/logging, file management and general coding practices.",
+      "source": "OWASP Secure Coding Checklist"
+    }
+  ],
+  "binding_rules": [
+    {
+      "id": "MPP-CDR-001",
+      "if": "stage_contains_code == true",
+      "then": "cdr_gate_result.verdict must be PASS before stage PASS"
+    },
+    {
+      "id": "MPP-CDR-002",
+      "if": "stage_contains_code == true",
+      "then": "cdr_packet_path, cdr_gate_path, cdr_eval_path, and cdr_evidence_hashes are required"
+    },
+    {
+      "id": "MPP-CDR-003",
+      "if": "stage_contains_code == true and cdr_gate_result.verdict != PASS",
+      "then": "stage verdict must be BLOCKED_CDR_REQUIRED or FAIL_CDR"
+    },
+    {
+      "id": "MPP-CDR-004",
+      "if": "stage claims MPP compliance",
+      "then": "stage must explicitly report whether code-bearing work occurred and how CDR was invoked or why it was not applicable"
+    },
+    {
+      "id": "MPP-CDR-005",
+      "if": "schema/gate/policy/validator artifacts are changed",
+      "then": "they are code-bearing even if not executable source files"
+    },
+    {
+      "id": "MPP-CDR-006",
+      "if": "work is described as small/simple/just a script/just HTML/just a validator",
+      "then": "no exemption is granted; CDR remains required if code-bearing"
+    }
+  ],
+  "canonical_rule": "CDR is a mandatory subgate of MPP for all code-bearing work.",
+  "definitions": {
+    "cdr": "Coding Done Right: mandatory code-acceptance and recursive improvement gate invoked by MPP for code-bearing work.",
+    "code_bearing_work": "Any task that writes, patches, generates, audits, validates, exports, or operationally depends on executable or runtime-affecting artifacts, including Python, JavaScript, shell, Node, HTML/JS, validators, gates, schemas that drive execution, packaging scripts, and runtime policies.",
+    "mpp": "Mandatory Process Pipeline: full governed execution workflow for MetaBlooms stages."
+  },
+  "non_goals": [
+    "Does not re-export full authority in this stage.",
+    "Does not rewrite all historic MPP artifacts; installs a forward-enforcing binding gate and invariant."
+  ],
+  "required_order": [
+    "MPP_BOOT",
+    "MPP_SCOPE_CONTRACT",
+    "SEE_IF_NEEDED",
+    "CE_SYNTHESIS",
+    "BTS_TOOL_SELECTION",
+    "IMPLEMENT_OR_AUDIT",
+    "CDR_CODE_ACCEPTANCE_GATE",
+    "VERIFY",
+    "RECEIPT",
+    "HANDOFF",
+    "STOP"
+  ],
+  "schema": "MPP_CDR_BINDING_SPEC_v1",
+  "stage": "MPP_CDR_BINDING_STAGE14_CODE_WORK_REQUIRES_CDR_IN_MPP",
+  "timestamp_utc": "2026-05-02T12:50:55Z"
+}

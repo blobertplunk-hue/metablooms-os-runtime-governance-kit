@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "created_at": 1777036623.6996799,
+  "lesson_id": "RUNAWAY_TURN_BREAKER_INVARIANT_v1",
+  "status": "active_invariant",
+  "root_cause_class": "unbounded execution stage / missing checkpoint breaker",
+  "invariant": "Every governed execution stage must have explicit timeout, scope, checkpoint, and partial-receipt behavior. If a stage appears to hang or loop, stop, do not claim success, write a partial receipt if possible, and resume from the last verified artifact.",
+  "required_future_behavior": [
+    "Use subprocess timeouts for every external command.",
+    "Bound recursive scans by path, file type, file size, count, or explicit manifest.",
+    "Write a partial receipt on interruption, timeout, or suspected runaway execution.",
+    "Fail closed instead of claiming success when a stage is interrupted or unverified.",
+    "Resume from artifacts and receipts, not conversational memory.",
+    "Prefer smaller recovery stages after timeout, tool instability, or repeated execution failure."
+  ],
+  "default_limits": {
+    "subprocess_timeout_seconds": 60,
+    "recursive_scan_requires_filter": true,
+    "partial_receipt_required_on_blocker": true
+  }
+}

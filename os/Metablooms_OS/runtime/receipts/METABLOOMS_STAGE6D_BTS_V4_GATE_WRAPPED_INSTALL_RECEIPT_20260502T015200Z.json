@@ -1,0 +1,122 @@
+{
+  "schema": "METABLOOMS_STAGE_RECEIPT_v1",
+  "stage": "STAGE6D_BTS_V4_GATE_WRAPPED_INSTALL_SCAFFOLD",
+  "timestamp_utc": "20260502T015200Z",
+  "verdict": "PASS_WITH_WARNINGS_NO_FULL_OS_EXPORT",
+  "scope": "Patched and installed BTS v4 as an OS-gated receipt/reasoning reconstruction scaffold; no full OS export.",
+  "source_uploaded_bts": "/mnt/data/BTS_v4_canonical.py",
+  "source_uploaded_bts_sha256": "b87f89032d640df524530419803cde98a4479e1a546a935455174e9c66275c47",
+  "installed_files": [
+    {
+      "path": "/mnt/data/Metablooms_OS/runtime/governance/bts_v4/BTS.py",
+      "sha256": "2a52131e3334152e7e8c396412ca71084d0549cf033f301a51f3277b89b30433",
+      "bytes": 42979
+    },
+    {
+      "path": "/mnt/data/Metablooms_OS/runtime/governance/bts_v4/BTS_V4_OS_PATH_REGISTRY_v1.json",
+      "sha256": "ac9bde07644f63efaffbbd3c24186f87b5a35f278febbb20d26ef1c7deee59c6",
+      "bytes": 710
+    },
+    {
+      "path": "/mnt/data/Metablooms_OS/governance/invariants/BTS_V4_GATED_RECEIPT_ENGINE_REQUIRED_v1.json",
+      "sha256": "5986ecf5f190eed63c54f7a90a3e3b360e5c6ee0b4aa0bb14d6dbee4f0e36e5f",
+      "bytes": 648
+    },
+    {
+      "path": "/mnt/data/Metablooms_OS/governance/ACTIVE_INVARIANTS_INDEX.json",
+      "sha256": "cec07b97ea45002f95f2316fe0096f7af45acb54d3bcf2810e482738ba97d8fe",
+      "bytes": 2052
+    }
+  ],
+  "proofs": [
+    {
+      "path": "/mnt/data/METABLOOMS_STAGE6D_BTS_V4_GATE_WRAPPED_INSTALL_TESTS_20260502T015200Z.json",
+      "sha256": "45094c02035916d0a6824578dc3d13cfb0a58afb8b1e9cdecb5f09041fb7ab21",
+      "bytes": 927
+    },
+    {
+      "path": "/mnt/data/METABLOOMS_STAGE6D_RUNTIME_STARTER_SMOKE_20260502T015200Z.json",
+      "sha256": "77781b2c547ee26a47513d651b74d6bd981dd7bf38dacfdc8f18b0e90b3f6a47",
+      "bytes": 141
+    },
+    {
+      "path": "/mnt/data/METABLOOMS_STAGE6D_PORTABLE_BOOT_VERIFY_20260502T015200Z.json",
+      "sha256": "22c02ee69e0d15a56fbc6d5a04fc2922d122ac76fc5a4fc29a71a99cf7919b28",
+      "bytes": 231
+    },
+    {
+      "path": "/mnt/data/METABLOOMS_STAGE6D_BOOT_EXECUTOR_SMOKE_20260502T015200Z.json",
+      "sha256": "861dd8f0c5fead0285f5b3d3bb0b6fd28a38db5c8ed79081db1a5f029bd21823",
+      "bytes": 31751
+    }
+  ],
+  "test_summary": {
+    "verdict": "PASS",
+    "results": [
+      {
+        "name": "switch_before_selection_denied",
+        "ok": true,
+        "detail": "BTS_TOOL_SWITCH ordering violation in turn STAGE6D-TEST-SWITCH-BEFORE: switch must occur after BTS_TOOL_SELECTION and before BTS_TOOL_EXECUTION (pipeline_pos=0)"
+      },
+      {
+        "name": "switch_after_selection_commit_ok",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "gated_t1_file_receipt",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "gated_subprocess_safe_stdout",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "gated_subprocess_forbidden_denied",
+        "ok": true,
+        "detail": "BTS OS gate denied/deferred action: DENY FORBIDDEN_VALIDATION_METHOD"
+      },
+      {
+        "name": "path_registry_exists",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "invariant_exists",
+        "ok": true,
+        "detail": ""
+      }
+    ]
+  },
+  "changes": [
+    "Installed runtime/governance/bts_v4/BTS.py as patched OS-gated BTS v4 scaffold.",
+    "Added _run_pre_action_gate wrapper to route BTS-managed subprocess and managed file-write surfaces through Stage6B pre-tool action gate.",
+    "Hardened BTS_TOOL_SWITCH ordering to only allow switch after selection and before execution.",
+    "Added BTS_V4_OS_PATH_REGISTRY_v1.json binding BTS ledger/write paths to OS layout.",
+    "Added BTS_V4_GATED_RECEIPT_ENGINE_REQUIRED_v1 invariant and active index entry."
+  ],
+  "accepted_warnings": [
+    "No full OS export in this stage by design; live root is changed and support/proof bundle is produced.",
+    "BTS cannot intercept ChatGPT platform tools directly; it governs BTS-managed execution routed through this OS module.",
+    "BOOT executor still reports git_dir_missing as expected for ZIP/live-root authority without .git."
+  ],
+  "blocked_or_deferred": [
+    "Future stage should wrap export/filesystem executors to require BTS turn records, then produce full authority export."
+  ],
+  "see_evidence_refs": [
+    {
+      "id": "turn497450search0",
+      "claim": "Per-action governance pattern: policy engine intercepts each agent action before execution; framework adapters; incremental packages."
+    },
+    {
+      "id": "turn497450search2",
+      "claim": "OWASP Agentic Applications Top 10 is a peer-reviewed operational risk taxonomy."
+    },
+    {
+      "id": "turn497450search4",
+      "claim": "OpenAI Agents SDK supports full traces of context/tools/handoffs and agentic applications."
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "remove_paths": [
+    "runtime/governance/chat_governance_kernel_v1.py"
+  ]
+}

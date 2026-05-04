@@ -1,0 +1,17 @@
+{
+  "receipt_type": "R11_VERIFY_RECEIPT",
+  "stage": "R11_LEGACY_QUARANTINE_REDIRECTS_AND_CLEANUP",
+  "created_utc": "2026-04-28T03:27:45Z",
+  "verdict": "PASS",
+  "legacy_quarantine_validation": "runtime/evals/governance_regression_suite_v1/reports/R11_legacy_quarantine_validation_20260428T032630Z.json",
+  "legacy_quarantine_validation_sha256": "8d18f44b958a71f57e45d7dda32fd2909bfb4d32560d3074f157cd2c05605966",
+  "gate_registry_integrity": "runtime/evals/governance_regression_suite_v1/reports/R11_gate_registry_integrity_20260428T032630Z.json",
+  "gate_registry_integrity_sha256": "855d4d26e6328fd6cab35d5b391d1a7602b8481e95f248750062dc3f61f5aa21",
+  "legacy_live_scan": "runtime/evals/governance_regression_suite_v1/reports/R11_legacy_live_scan_20260428T032630Z.txt",
+  "checked_count": 5,
+  "blocks": [],
+  "gate_errors": [],
+  "contract": "runtime/governance/contracts/legacy_quarantine_redirects_contract_v1.json",
+  "contract_sha256": "76400ed5576b7fd9222ba653828f9b7ab13de7f6cd03d7c0aba8470e02350cfe",
+  "registry_sha256": "eca9d75c2a6dba4d4028ef1bfc516b060c8aca2cebb83e33b60afff1623e00d4"
+}

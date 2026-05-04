@@ -1,0 +1,16 @@
+{
+  "bootable_full_authority_zip": "BOOTABLE_FULL_AUTHORITY_WC6.zip",
+  "next_prompt_path": "runtime/state/NEXT_STAGE_COPY_PROMPT.md",
+  "next_stage": "WC_STAGE8_FULL_WORLD_CLASS_EXPORT_AND_NEW_CHAT_REPLAY_LOCK",
+  "priority_authorities": [
+    "WORLD_CLASS_MEASURED_SCORECARD_BASELINE_v1.json",
+    "DORA_STYLE_OS_METRICS_BASELINE_v1.json",
+    "EDUCATIONAL_HTML_DESIGN_SYSTEM_CARTRIDGE_SPEC_v1.json",
+    "LESSON_PROMOTION_QUEUE_v1.json",
+    "GENERAL_CAPABILITY_RESOLVER_CONTRACT_v1.json"
+  ],
+  "schema_version": "v1",
+  "stage": "WC_STAGE6_GENERAL_CAPABILITY_RESOLVER_FRAMEWORK",
+  "timestamp": "20260503T005700Z",
+  "verdict": "PASS"
+}

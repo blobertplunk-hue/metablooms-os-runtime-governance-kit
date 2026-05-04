@@ -1,0 +1,9 @@
+{
+  "negative_fixture_required": true,
+  "reconstruction": "RECONSTRUCTED_FROM_CHAT_SUMMARY",
+  "required_fixture_types": [
+    "valid_positive",
+    "invalid_negative"
+  ],
+  "schema": "CDRFixtureGenerationPolicy_v1"
+}

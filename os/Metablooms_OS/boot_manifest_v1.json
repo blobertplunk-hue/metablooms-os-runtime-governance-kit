@@ -1,0 +1,308 @@
+{
+  "boot_executor": {
+    "receipt_dir": "0_kernel/registry/boot_receipts",
+    "required": true,
+    "script": "0_kernel/scripts/boot_runtime_executor_v1.py",
+    "status": "active"
+  },
+  "boot_ready": true,
+  "boot_required_gates": {
+    "loader": "runtime/governance/boot_critical_governance_loader_v1.py",
+    "manifest": "0_kernel/registry/BOOT_REQUIRED_GATES_v1.json",
+    "must_run_before_governed_stage": true,
+    "scatter_validator": "runtime/governance/governance_scatter_prevention_v1.py",
+    "status": "active"
+  },
+  "ce_packet_validator": {
+    "contract": "0_kernel/schemas/CE_PACKET_VALIDATOR_CONTRACT_v1.json",
+    "schema": "0_kernel/schemas/CE_PACKET_SCHEMA_v1.json",
+    "script": "0_kernel/scripts/ce_packet_validator_v1.py",
+    "status": "active"
+  },
+  "created_at": 1776979996.6404314,
+  "current_stable_baseline": {
+    "baseline_export": "/mnt/data/METABLOOMS_OS_H0C1_BOOT_CRITICAL_GOVERNANCE_CONSOLIDATED_CLEAN_AUTHORITY_20260430T214500Z.zip",
+    "baseline_manifest": "/mnt/data/METABLOOMS_OS_H0C1_BOOT_CRITICAL_GOVERNANCE_CONSOLIDATED_CLEAN_AUTHORITY_20260430T214500Z.zip.sha256",
+    "boot_executor_integrated": true,
+    "boot_recovery_proven": true,
+    "boot_required_gates_integrated": true,
+    "chat_governance_integrated": true,
+    "governance_scatter_prevention_integrated": true,
+    "sandbox_governance_integrated": true,
+    "sha256_external_sidecar_required": true,
+    "status": "active_H0C1_boot_critical_governance_consolidated"
+  },
+  "entrypoints": {
+    "pointer_artifact": {
+      "exists": true,
+      "path": "/mnt/data/Metablooms_OS_refined/1_governance/logic_gates/current_best_engine_pointer_v1.json",
+      "size": 1042
+    },
+    "primary_backend_engine": {
+      "exists": true,
+      "path": "/mnt/data/Metablooms_OS_refined/2_engines/backend/3_8A/DOWNLOAD_3_8A_gas_script.gs",
+      "size": 10269
+    },
+    "primary_ui_engine": {
+      "exists": true,
+      "path": "/mnt/data/Metablooms_OS_refined/2_engines/ui/3_8A/DOWNLOAD_3_8A_engine.html",
+      "size": 32953
+    },
+    "prompt_engine": {
+      "exists": true,
+      "path": "/mnt/data/Metablooms_OS_refined/1_governance/specs/PROMPT_ENGINE_v2.md",
+      "size": 11426
+    }
+  },
+  "execution_safety": {
+    "auto_runaway_breaker": {
+      "auto_split_required": true,
+      "invariant": "0_kernel/registry/lessons_learned/AUTO_RUNAWAY_BREAKER_INVARIANT_v1.json",
+      "max_heavy_work_classes_per_stage": 1,
+      "must_run_before_governed_stage_execution": true,
+      "stage_split_contract": "0_kernel/registry/AUTO_RUNAWAY_STAGE_SPLIT_CONTRACT_v1.json",
+      "status": "active"
+    },
+    "runaway_turn_breaker": {
+      "broad_recursive_scan_requires_filter": true,
+      "invariant": "0_kernel/registry/lessons_learned/RUNAWAY_TURN_BREAKER_INVARIANT_v1.json",
+      "partial_receipt_on_blocker_required": true,
+      "resume_from_verified_artifact_required": true,
+      "status": "active",
+      "subprocess_timeout_required": true
+    }
+  },
+  "export_recovery_validator": {
+    "G0_scope_lock": {
+      "ce_packet": "0_kernel/registry/G0_EXPORT_RECOVERY_VALIDATOR_CE_PACKET_v1.json",
+      "gate_matrix": "0_kernel/registry/G0_EXPORT_RECOVERY_VALIDATOR_GATE_MATRIX_v1.json",
+      "next_stage": "G1_EXPORT_RECOVERY_VALIDATOR_SCHEMA_AND_CONTRACT",
+      "scope_contract": "0_kernel/registry/G0_EXPORT_RECOVERY_VALIDATOR_SCOPE_CONTRACT_v1.json",
+      "see_packet": "0_kernel/registry/G0_EXPORT_RECOVERY_VALIDATOR_SEE_PACKET_v1.json",
+      "status": "active_scope_lock"
+    },
+    "G1_schema_contract": {
+      "contract": "0_kernel/schemas/EXPORT_RECOVERY_PROVEN_VALIDATOR_CONTRACT_v1.json",
+      "decision_schema": "0_kernel/schemas/EXPORT_RECOVERY_VALIDATOR_DECISION_SCHEMA_v1.json",
+      "gate_catalog": "0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_GATE_CATALOG_v1.json",
+      "input_schema": "0_kernel/schemas/EXPORT_RECOVERY_VALIDATOR_INPUT_SCHEMA_v1.json",
+      "next_stage": "G2_EXPORT_RECOVERY_VALIDATOR_IMPLEMENTATION",
+      "status": "active_contract"
+    },
+    "G2_implementation": {
+      "next_stage": "G3_EXPORT_RECOVERY_VALIDATOR_REGRESSION_FIXTURES",
+      "smoke_decision": "0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_SMOKE_DECISION_v1.json",
+      "status": "active_implementation",
+      "validator_script": "0_kernel/scripts/export_recovery_proven_validator_v1.py"
+    },
+    "G3_regression_fixtures": {
+      "fixtures_manifest": "0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_REGRESSION_FIXTURES_MANIFEST_v1.json",
+      "governance_inventory": "0_kernel/registry/GOVERNANCE_USED_FOR_EXPORT_VALIDATOR_BUILD_v1.json",
+      "next_stage": "G4_RUN_VALIDATOR_AGAINST_F7_EXPORT",
+      "regression_results": "0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_REGRESSION_RESULTS_v1.json",
+      "status": "active_regression_fixtures"
+    },
+    "G4_real_f7_validation": {
+      "next_stage": "G5_REPAIRED_RECOVERY_PROVEN_EXPORT",
+      "repair_plan": "0_kernel/registry/G4_F7_EXPORT_REPAIR_PLAN_v1.json",
+      "source_export_verdict": "FAIL",
+      "status": "complete",
+      "validator_decision": "0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_G4_F7_DECISION_v1.json"
+    },
+    "G5_repaired_export": {
+      "export_manifest": "EXPORT_MANIFEST_v1.json",
+      "export_provenance": "EXPORT_PROVENANCE_v1.json",
+      "next_stage": "G6_RECOVERY_PROOF_BASELINE_LOCK",
+      "receipt": "0_kernel/registry/G5_REPAIRED_RECOVERY_PROVEN_EXPORT_RECEIPT_v1.json",
+      "repair_summary": "0_kernel/registry/G5_REPAIRED_EXPORT_REPAIR_SUMMARY_v1.json",
+      "status": "active_repaired_export"
+    },
+    "G6_recovery_proof_baseline_lock": {
+      "baseline_lock": "0_kernel/registry/G6_RECOVERY_PROVEN_BASELINE_LOCK_v1.json",
+      "dag_ledger_map": "0_kernel/registry/STAGE_DAG_LEDGER_ID_MAP_v1.json",
+      "external_validator_decision": "0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_G6_EXTERNAL_DECISION_v1.json",
+      "next_stage": "G7_RETURN_TO_E4B",
+      "recovery_proof": "0_kernel/registry/G6_RECOVERY_PROOF_v1.json",
+      "status": "locked_two_pass_self_consistent"
+    }
+  },
+  "failures": [],
+  "governance_modules": {
+    "coding_dependency_bootstrap": {
+      "bootstrap_script": "0_kernel/scripts/ensure_libcst_available_v1.py",
+      "policy": "0_kernel/registry/CODING_DEPENDENCY_BOOTSTRAP_POLICY_v1.json",
+      "required_for_task_classes": [
+        "coding",
+        "code_patching",
+        "python_script_repair",
+        "codemod",
+        "mutation_engine_patch",
+        "validator_patch"
+      ],
+      "status": "active"
+    },
+    "research_trigger": {
+      "integration_contract": "0_kernel/registry/RESEARCH_TRIGGER_AND_TOOL_GOVERNANCE_INTEGRATION_v1.json",
+      "integration_document": "0_kernel/registry/research_trigger/research_trigger_integration_v1.md",
+      "path": "0_kernel/registry/research_trigger/research_trigger_rule_v1.json",
+      "required_boot_documents": [
+        "0_kernel/registry/research_trigger/research_trigger_integration_v1.md"
+      ],
+      "status": "active",
+      "updated_at": 1776997309.5225825
+    },
+    "ruff_lint_format": {
+      "bootstrap_script": "0_kernel/scripts/ensure_ruff_available_v1.py",
+      "policy": "0_kernel/registry/RUFF_LINT_FORMAT_POLICY_v1.json",
+      "required_for_task_classes": [
+        "coding",
+        "python_script_repair",
+        "validator_patch",
+        "mutation_engine_patch",
+        "governed_run_patch"
+      ],
+      "status": "active",
+      "wrapper": "0_kernel/vendor/bin/ruff"
+    },
+    "sandbox_tool_governance": {
+      "capability_registry": "0_kernel/registry/tool_governance/sandbox_tool_capability_registry_v1.json",
+      "integration_contract": "0_kernel/registry/RESEARCH_TRIGGER_AND_TOOL_GOVERNANCE_INTEGRATION_v1.json",
+      "path": "0_kernel/registry/tool_governance/sandbox_tool_governance_v1.md",
+      "status": "active"
+    }
+  },
+  "host_enforcement_bridge": {
+    "contract": "0_kernel/registry/HOST_ENFORCEMENT_BRIDGE_CONTRACT_v1.json",
+    "no_ungoverned_metablooms_mode": true,
+    "status": "active"
+  },
+  "lessons_learned": {
+    "G5_bundle_audit": {
+      "g6_precondition": "0_kernel/registry/G6_PRECONDITION_G5_AUDIT_OPEN_ISSUES_v1.json",
+      "lessons": "0_kernel/registry/lessons_learned/G5_BUNDLE_AUDIT_LESSONS_LEARNED_v1.json",
+      "repair_backlog": "0_kernel/registry/repair_backlog/G5_AUDIT_REPAIR_BACKLOG_v1.json",
+      "status": "active",
+      "validator_delta": "0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_G5_AUDIT_DELTA_REQUIREMENTS_v1.json"
+    },
+    "export_recovery_tracked_cache_invariant": "0_kernel/registry/lessons_learned/EXPORT_RECOVERY_TRACKED_CACHE_INVARIANT_v1.json",
+    "runaway_turn_breaker_invariant": "0_kernel/registry/lessons_learned/RUNAWAY_TURN_BREAKER_INVARIANT_v1.json"
+  },
+  "master_pipeline_enforcement": {
+    "E4A_scope_lock": {
+      "handoff": "0_kernel/registry/E4A_TO_E4B_HANDOFF_v1.json",
+      "next_stage": "E4B_EXECUTION_PLAN_PACKET_CONTRACT",
+      "recovery_precondition": "F7_RECOVERY_PROVEN_STABLE_BASELINE_LOCK_PASS",
+      "scope_contract": "0_kernel/registry/E4A_MASTER_PIPELINE_PROOF_SCOPE_CONTRACT_v1.json",
+      "status": "active_scope_lock"
+    }
+  },
+  "notes": [
+    "Generated after second-pass taxonomy refinement passed hash verification with zero failures",
+    "Use Metablooms_OS_refined as the refined working-root candidate",
+    "Preserve Metablooms_OS and flat /mnt/data as rollback/source layers"
+  ],
+  "operator_visual_tracker_boot_surface": {
+    "manifest": "runtime/operator_tracker/OPERATOR_VISUAL_TRACKER_BOOT_SURFACE_LATEST.json",
+    "must_render_before_governed_stage": true,
+    "root_html": "OPEN_OPERATOR_VISUAL_TRACKER.html",
+    "runtime_html": "runtime/operator_tracker/operator_visual_tracker_latest.html",
+    "state": "runtime/handoffs/operator_tracker/OPERATOR_VISUAL_TRACKER_STATE_LATEST.json",
+    "status": "active",
+    "validator": "0_kernel/validators/validate_operator_visual_tracker_boot_surface_stage3_v1.py"
+  },
+  "recovery_architecture": {
+    "F0_scope_lock": {
+      "next_stage": "F1_CURRENT_WORKING_BASELINE_POINTER_CONTRACT",
+      "scope_contract": "0_kernel/registry/F0_RECOVERY_ARCHITECTURE_SCOPE_CONTRACT_v1.json",
+      "status": "active_scope_lock"
+    },
+    "F7_recovery_proven_export": {
+      "baseline_lock": "0_kernel/registry/F7_RECOVERY_PROVEN_STABLE_BASELINE_LOCK_v1.json",
+      "capability_set": "CAPABILITY_SET_v1.json",
+      "export_zip": "/mnt/data/exports/MetaBlooms_OS_refined_F7_RECOVERY_PROVEN_1777063110.zip",
+      "internal_manifest": "EXPORT_MANIFEST_v1.json",
+      "internal_provenance": "EXPORT_PROVENANCE_v1.json",
+      "internal_restore_contract": "RESTORE_CONTRACT_v1.json",
+      "next_stage": "E4A_MASTER_PIPELINE_PROOF_SCOPE_LOCK",
+      "recovery_proof": "0_kernel/registry/F7_BOOT_RECOVERY_PROOF_v1.json",
+      "sidecar": "/mnt/data/exports/MetaBlooms_OS_refined_F7_RECOVERY_PROVEN_1777063110.zip.sha256.json",
+      "status": "locked_recovery_proven"
+    },
+    "blocked_receipt_handling_rule": {
+      "canonical_blocker_dir": "0_kernel/registry/blockers/",
+      "next_stage": "F7_STABLE_EXPORT_BOOT_RECOVERY_PROOF",
+      "proof": "0_kernel/registry/BLOCKED_RECEIPT_HANDLING_RULE_PROOF_v1.json",
+      "rule": "0_kernel/schemas/BLOCKED_RECEIPT_HANDLING_RULE_v1.json",
+      "schema": "0_kernel/schemas/BLOCKED_RECEIPT_HANDLING_RULE_SCHEMA_v1.json",
+      "status": "active_rule",
+      "template": "0_kernel/pipeline/BLOCKED_RECEIPT_TEMPLATE_v1.json"
+    },
+    "current_working_baseline_pointer": {
+      "contract": "0_kernel/schemas/CURRENT_WORKING_BASELINE_POINTER_CONTRACT_v1.json",
+      "next_stage": "F2_STAGE_DAG_AND_DEPENDENCY_LEDGER_CONTRACT",
+      "pointer": "0_kernel/state/CURRENT_WORKING_BASELINE_POINTER_v1.json",
+      "restore_precedence": "pointer_before_stable_release_zip",
+      "schema": "0_kernel/schemas/CURRENT_WORKING_BASELINE_POINTER_SCHEMA_v1.json",
+      "status": "active_contract"
+    },
+    "manifest_provenance_export_contract": {
+      "contract": "0_kernel/schemas/MANIFEST_PROVENANCE_EXPORT_CONTRACT_v1.json",
+      "manifest_schema": "0_kernel/schemas/EXPORT_MANIFEST_SCHEMA_v1.json",
+      "next_stage": "F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF",
+      "provenance_schema": "0_kernel/schemas/EXPORT_PROVENANCE_SCHEMA_v1.json",
+      "status": "active_contract",
+      "template_manifest": "0_kernel/pipeline/EXPORT_MANIFEST_TEMPLATE_v1.json",
+      "template_provenance": "0_kernel/pipeline/EXPORT_PROVENANCE_TEMPLATE_v1.json"
+    },
+    "restore_ladder": {
+      "contract": "0_kernel/schemas/RESTORE_LADDER_CONTRACT_v1.json",
+      "mode_normalization": "git config core.filemode false before status checks",
+      "next_stage": "F6_BLOCKED_RECEIPT_HANDLING_RULE",
+      "proof": "0_kernel/registry/RESTORE_LADDER_MODE_NORMALIZATION_PROOF_v1.json",
+      "schema": "0_kernel/schemas/RESTORE_LADDER_SCHEMA_v1.json",
+      "selection_order": [
+        "pointer",
+        "ledger_latest_pass",
+        "recovery_proven_stable_manifest",
+        "manual_repair_receipt"
+      ],
+      "status": "active_contract_and_proof"
+    },
+    "stage_dag_and_ledger": {
+      "contract": "0_kernel/schemas/STAGE_DAG_AND_DEPENDENCY_LEDGER_CONTRACT_v1.json",
+      "dag": "0_kernel/pipeline/STAGE_DAG_v1.json",
+      "ledger": "0_kernel/state/STAGE_STATE_LEDGER_v1.json",
+      "next_stage": "F3_TRANSACTIONAL_STAGE_RUNNER_CONTRACT",
+      "restore_precedence": "pointer_then_ledger_then_stable_release",
+      "status": "active_contract"
+    },
+    "transactional_stage_runner_contract": {
+      "contract": "0_kernel/schemas/TRANSACTIONAL_STAGE_RUNNER_CONTRACT_v1.json",
+      "next_stage": "F4_MANIFEST_PROVENANCE_EXPORT_CONTRACT",
+      "runner_implementation_status": "not_implemented_contract_only",
+      "schema": "0_kernel/schemas/TRANSACTIONAL_STAGE_RUNNER_SCHEMA_v1.json",
+      "state_machine": "0_kernel/pipeline/TRANSACTIONAL_STAGE_STATE_MACHINE_v1.json",
+      "status": "active_contract"
+    }
+  },
+  "registry_path": "artifact_registry.json",
+  "registry_status": "refined_verified",
+  "root": "<resolved_at_boot_by_boot_runtime_executor_v1.2>",
+  "see_packet_validator": {
+    "contract": "0_kernel/schemas/SEE_PACKET_VALIDATOR_CONTRACT_v1.json",
+    "required_when_research_triggered": true,
+    "schema": "0_kernel/schemas/SEE_PACKET_SCHEMA_v1.json",
+    "script": "0_kernel/scripts/see_packet_validator_v1.py",
+    "spec": "0_kernel/docs/SEE_PACKET_VALIDATOR_SPEC_v1.md",
+    "status": "active"
+  },
+  "trigger_router_evaluator": {
+    "pipeline": "0_kernel/schemas/MASTER_PIPELINE_CONTRACT_v1.json",
+    "router": "0_kernel/schemas/TRIGGER_ROUTER_v1.json",
+    "script": "0_kernel/scripts/trigger_router_evaluator_v1.py",
+    "status": "active"
+  },
+  "updated_at": 1777068405.2349033,
+  "updated_at_utc": "2026-04-30T21:45:00Z",
+  "version": "1.0"
+}

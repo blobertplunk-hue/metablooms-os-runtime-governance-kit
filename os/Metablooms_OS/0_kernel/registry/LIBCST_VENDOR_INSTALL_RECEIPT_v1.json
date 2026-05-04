@@ -1,0 +1,45 @@
+{
+  "version": "1.0",
+  "created_at": 1776997705.026328,
+  "status": "installed_verified",
+  "package": "libcst",
+  "vendor_path": "/mnt/data/Metablooms_OS_refined/0_kernel/vendor/python",
+  "python": "3.13.5 (main, Jun 25 2025, 18:55:22) [GCC 14.2.0]",
+  "verification": {
+    "cmd": [
+      "/opt/pyvenv/bin/python",
+      "-c",
+      "\nimport sys\nsys.path.insert(0, '/mnt/data/Metablooms_OS_refined/0_kernel/vendor/python')\nimport libcst as cst\nmodule = cst.parse_module('x = 1\\n')\nprint(type(module).__name__)\nprint(module.code.strip())\nprint(hasattr(cst, 'parse_module'))\n"
+    ],
+    "returncode": 0,
+    "stdout": "Module\nx = 1\nTrue",
+    "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document."
+  },
+  "vendor_file_count": 650,
+  "vendor_total_size_bytes": 15634923,
+  "dist_info_metadata": {
+    "pyyaml_ft-8.0.0.dist-info": {
+      "name": "PyYAML-ft",
+      "version": "8.0.0"
+    },
+    "libcst-1.8.6.dist-info": {
+      "name": "libcst",
+      "version": "1.8.6"
+    }
+  },
+  "external_research_basis": [
+    {
+      "claim": "LibCST requires Python 3.9+ and is installed with pip install libcst; it ships binary wheels and source.",
+      "source": "PyPI LibCST"
+    },
+    {
+      "claim": "LibCST parses Python source into a lossless concrete syntax tree preserving formatting details, useful for codemods and linters.",
+      "source": "Instagram/LibCST GitHub"
+    }
+  ],
+  "usage_contract": {
+    "import_pattern": "import sys; sys.path.insert(0, '/mnt/data/Metablooms_OS_refined/0_kernel/vendor/python'); import libcst as cst",
+    "preferred_use": "code-aware parsing/transforms where formatting preservation matters",
+    "fallback": "Python ast + safe_code_patch_helpers_v1.py if vendor import fails"
+  }
+}

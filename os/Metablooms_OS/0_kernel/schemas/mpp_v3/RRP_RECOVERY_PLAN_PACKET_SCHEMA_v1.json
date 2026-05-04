@@ -1,0 +1,260 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/RRP_RECOVERY_PLAN_PACKET_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "cleanup_plan": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "created_at": {
+      "minLength": 10,
+      "type": "string"
+    },
+    "drift_controls": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "failure_modes": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "detection": {
+            "minLength": 5,
+            "type": "string"
+          },
+          "failure_id": {
+            "pattern": "^RRP-FM-[0-9]{3}$",
+            "type": "string"
+          },
+          "mode": {
+            "minLength": 5,
+            "type": "string"
+          },
+          "recovery_strategy": {
+            "minLength": 8,
+            "type": "string"
+          },
+          "rollback_required": {
+            "type": "boolean"
+          },
+          "safe_state": {
+            "minLength": 5,
+            "type": "string"
+          },
+          "severity": {
+            "enum": [
+              "S1_LOW",
+              "S2_MED",
+              "S3_HIGH",
+              "S4_CRITICAL"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "failure_id",
+          "mode",
+          "severity",
+          "detection",
+          "safe_state",
+          "recovery_strategy",
+          "rollback_required"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "objective_id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "packet_id": {
+      "minLength": 8,
+      "type": "string"
+    },
+    "recovery_objectives": {
+      "additionalProperties": false,
+      "properties": {
+        "data_loss_tolerance": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "rollback_window": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "rpo": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "rto": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "success_state": {
+          "minLength": 10,
+          "type": "string"
+        }
+      },
+      "required": [
+        "rto",
+        "rpo",
+        "rollback_window",
+        "data_loss_tolerance",
+        "success_state"
+      ],
+      "type": "object"
+    },
+    "recovery_runbook": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action": {
+            "minLength": 5,
+            "type": "string"
+          },
+          "evidence": {
+            "minLength": 5,
+            "type": "string"
+          },
+          "expected_result": {
+            "minLength": 5,
+            "type": "string"
+          },
+          "owner": {
+            "minLength": 3,
+            "type": "string"
+          },
+          "step_id": {
+            "pattern": "^RRP-STEP-[0-9]{3}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "step_id",
+          "action",
+          "owner",
+          "expected_result",
+          "evidence"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "result_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "rollback_plan": {
+      "additionalProperties": false,
+      "properties": {
+        "abort_conditions": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "owner": {
+          "minLength": 3,
+          "type": "string"
+        },
+        "steps": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "trigger_conditions": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "verification": {
+          "minLength": 8,
+          "type": "string"
+        }
+      },
+      "required": [
+        "trigger_conditions",
+        "steps",
+        "owner",
+        "verification",
+        "abort_conditions"
+      ],
+      "type": "object"
+    },
+    "schema_version": {
+      "const": "mpp.rrp_recovery_plan_packet.v1"
+    },
+    "source_sso_packet_id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "stage": {
+      "const": "RRP"
+    },
+    "validation_drills": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "drill_id": {
+            "pattern": "^DRILL-[0-9]{3}$",
+            "type": "string"
+          },
+          "frequency": {
+            "minLength": 3,
+            "type": "string"
+          },
+          "pass_criteria": {
+            "minLength": 5,
+            "type": "string"
+          },
+          "scenario": {
+            "minLength": 5,
+            "type": "string"
+          }
+        },
+        "required": [
+          "drill_id",
+          "scenario",
+          "frequency",
+          "pass_criteria"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "packet_id",
+    "stage",
+    "created_at",
+    "objective_id",
+    "source_sso_packet_id",
+    "recovery_objectives",
+    "failure_modes",
+    "rollback_plan",
+    "recovery_runbook",
+    "validation_drills",
+    "drift_controls",
+    "cleanup_plan",
+    "result_hash"
+  ],
+  "title": "MPP v3 RRP Recovery Plan Packet",
+  "type": "object"
+}

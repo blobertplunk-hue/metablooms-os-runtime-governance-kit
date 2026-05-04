@@ -1,0 +1,10 @@
+┌─ Workflow Generalization Engine ───────────────────────┐
+│ Stage 0 Policy/Lesson Binding      ✅ PASS              │
+│ Stage 1 Router + Lesson Ledger     ✅ PASS              │
+│ Stage 2 Transcript Import Gate     ✅ PASS              │
+│ Dense transcript lessons           ✅ Calibrated         │
+│ Old transcripts                    Candidate evidence   │
+│ Adoption rule                      Better-than-current  │
+│ Regression guard                   Hard flags block     │
+│ Next                               Export/replay lock   │
+└─────────────────────────────────────────────────────────┘

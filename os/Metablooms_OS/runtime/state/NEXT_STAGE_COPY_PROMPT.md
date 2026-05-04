@@ -1,0 +1,11 @@
+Boot from /mnt/data using BOOTABLE_FULL_AUTHORITY_WC12.zip and its .sha256 sidecar. Verify checksum, extract to /mnt/data/Metablooms_OS, load BOOT_AUTHORITY_MANIFEST_v1.json and the latest boot/runtime handoff, then run exactly one bounded governed stage WC_STAGE13_TASK_SPECIFIC_GATE_ADAPTERS_AND_EXTERNAL_REPLAY_AUDIT.
+
+Stage constraints:
+- Previous completed stage: WC_STAGE12_RUNTIME_ORCHESTRATOR_GATE_WIRING_AND_FIELD_TASK_FIXTURES
+- Use the latest measured scorecard, DORA-style metrics baseline, educational HTML design-system cartridge, operator polish authority manifest, lesson promotion queue/fixture factory, general capability resolver framework, automatic multi-step tracker contract, next-stage copy prompt exit gate, real-task eval harness, expanded real-task corpus, runtime eval gate binding, runtime orchestrator gate wiring, and field-task fixtures as priority authority.
+- For any multi-step process, automatically show a tracker preview without the user asking.
+- Run exactly one bounded governed stage, write receipts/handoff, and stop.
+- At stage exit, generate runtime/state/NEXT_STAGE_COPY_PROMPT.md with a copy-ready prompt for the following stage.
+- Before final response, validate the continuation prompt with 0_kernel/validators/next_stage_copy_prompt_exit_gate_v1.py.
+- Before any successful stage is called FINISHED, run 0_kernel/evals/real_task_eval_harness/real_task_eval_runtime_gate_v1.py or a task-specific stricter descendant gate.
+- When successful, export a clearly labeled BOOTABLE_FULL_AUTHORITY bundle plus .sha256 sidecar using a short phone-safe filename.

@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-04-28T02:58:11Z",
+  "decision_id": "R5_GATE_REGISTRY_AND_WIRING_REPLACEMENT-41dcc61c7b677a2c",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"alias_report\": \"runtime/evals/governance_regression_suite_v1/reports/R5_gate_registry_alias_20260428T025601Z.json\", \"bad_fixture_report\": \"runtime/evals/governance_regression_suite_v1/reports/R5_gate_registry_validation_fixture_bad_20260428T025601Z.json\", \"checks\": [{\"check\": \"live_registry_validation_passes\", \"pass\": true}, {\"check\": \"valid_fixture_passes\", \"pass\": true}, {\"check\": \"bad_fixture_fails\", \"pass\": true}, {\"check\": \"loader_reads_registry\", \"pass\": true}, {\"check\": \"alias_validator_passes\", \"pass\": true}, {\"check\": \"enabled_gates_have_existing_entrypoints\", \"missing_enabled\": [], \"pass\": true}, {\"check\": \"p0a_deferred_until_r6\", \"pass\": true}, {\"check\": \"p0py_deferred_until_r8\", \"pass\": true}, {\"check\": \"legacy_memory_sync_retired\", \"pass\": true}, {\"check\": \"all_decision_log_required_fields_boolean\", \"pass\": true}, {\"check\": \"cool6_redirect_archive_only_after_r5\", \"pass\": true}], \"created_utc\": \"2026-04-28T02:58:11Z\", \"live_report\": \"runtime/evals/governance_regression_suite_v1/reports/R5_gate_registry_validation_live_20260428T025601Z.json\", \"loader_report\": \"runtime/evals/governance_regression_suite_v1/reports/R5_gate_registry_loader_20260428T025601Z.json\", \"stage\": \"R5_GATE_REGISTRY_AND_WIRING_REPLACEMENT\", \"valid_fixture_report\": \"runtime/evals/governance_regression_suite_v1/reports/R5_gate_registry_validation_fixture_valid_20260428T025601Z.json\", \"verdict\": \"PASS\"}",
+  "reasons": [],
+  "record_id": "R5_VERIFY_RECEIPT_20260428T025601Z",
+  "record_kind": "verify_receipt",
+  "result": "pass",
+  "source_record": {
+    "path": "receipts/refactor_program/R5_VERIFY_RECEIPT_20260428T025601Z.json",
+    "sha256": "41dcc61c7b677a2cf7baef889ef2a9309daa363cfc00f4297be6233a6e0bad97",
+    "size_bytes": 1678
+  },
+  "span_id": "724e239667706320",
+  "stage_id": "R5_GATE_REGISTRY_AND_WIRING_REPLACEMENT",
+  "summary": "Canonical wrapper for R5_VERIFY_RECEIPT_20260428T025601Z.json",
+  "trace_id": "49e5d44f82f791d5ac4eb1f15260ca0d"
+}

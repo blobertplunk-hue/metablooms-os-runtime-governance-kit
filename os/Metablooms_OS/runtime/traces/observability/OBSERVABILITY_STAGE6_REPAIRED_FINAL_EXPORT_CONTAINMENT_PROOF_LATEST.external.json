@@ -1,0 +1,26 @@
+{
+  "artifact_type": "MB_OBSERVABILITY_STAGE6_REPAIRED_FINAL_EXPORT_CONTAINMENT_PROOF.v1",
+  "authority_pointer_json_equivalent": true,
+  "created_utc": "20260502T170554Z",
+  "duplicate_members": 0,
+  "entry_count": 5397,
+  "missing_required_artifacts": [],
+  "post_receipt_trace_refresh_included": true,
+  "required_artifacts": [
+    "0_kernel/registry/observability/METHOD_RELIABILITY_LESSON_RUNTIME_STARTER_SMOKE_CLI_SHAPE_v1.json",
+    "runtime/traces/observability/METHOD_RELIABILITY_LEDGER_LATEST.json",
+    "runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+    "0_kernel/validators/validate_observability_trace_span_ledger_stage6_method_reliability_v1.py",
+    "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE6_METHOD_RELIABILITY_VALIDATION_LATEST.json",
+    "runtime/traces/observability/OBSERVABILITY_STAGE6_POST_RECEIPT_BOOT_INGEST_STDOUT_LATEST.json",
+    "runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl",
+    "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE6_HANDOFF_LATEST.json",
+    "OPEN_OPERATOR_VISUAL_TRACKER.html"
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE6_METHOD_RELIABILITY_LEDGER_AND_SUPPRESSED_FAILURE_LESSON_BINDING",
+  "testzip_bad_member": null,
+  "verdict": "PASS",
+  "zip_path": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE6_METHOD_RELIABILITY_REPAIRED_20260502T170554Z.zip",
+  "zip_sha256": "34f51d161977a193dea39a46792752c3c334172b7ea9d3812b6836f6d0489af3",
+  "zip_size_bytes": 26348763
+}

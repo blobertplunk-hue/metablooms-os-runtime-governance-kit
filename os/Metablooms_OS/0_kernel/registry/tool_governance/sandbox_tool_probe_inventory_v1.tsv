@@ -1,0 +1,27 @@
+tool	available	path	probe_status	version	error
+python3	True	/opt/pyvenv/bin/python3	pass	Python 3.13.5	
+python	True	/opt/pyvenv/bin/python	pass	Python 3.13.5	
+node	True	/opt/nvm/versions/node/v22.16.0/bin/node	pass	v22.16.0	
+npm	True	/opt/nvm/versions/node/v22.16.0/bin/npm	pass	10.9.2	
+ruby	True	/usr/bin/ruby	pass	ruby 3.3.8 (2025-04-09 revision b200bad6cd) [x86_64-linux-gnu]	
+perl	True	/usr/bin/perl	pass		
+java	True	/usr/bin/java	pass	openjdk version "21.0.10" 2026-01-20	
+javac	True	/usr/bin/javac	pass	javac 21.0.10	
+go	True	/usr/local/go/bin/go	return_2	flag provided but not defined: -version	
+php	True	/usr/bin/php	pass	PHP 8.4.16 (cli) (built: Dec 18 2025 21:19:25) (NTS)	
+gcc	True	/usr/bin/gcc	pass	gcc (Debian 14.2.0-19) 14.2.0	
+g++	True	/usr/bin/g++	pass	g++ (Debian 14.2.0-19) 14.2.0	
+make	True	/usr/bin/make	pass	GNU Make 4.4.1	
+git	True	/usr/bin/git	pass	git version 2.47.3	
+pandoc	True	/usr/bin/pandoc	pass	pandoc 3.1.11.1	
+libreoffice	True	/usr/bin/libreoffice	pass	LibreOffice 25.2.3.2 520(Build:2)	
+soffice	True	/usr/bin/soffice	pass	LibreOffice 25.2.3.2 520(Build:2)	
+pdftotext	True	/usr/bin/pdftotext	pass	I/O Error: Couldn't open file '--version': No such file or directory.	
+convert	True	/opt/imagemagick/bin/convert	pass	Version: ImageMagick 7.1.2-1 Q16-HDRI x86_64 23308 https://imagemagick.org	
+magick	True	/opt/imagemagick/bin/magick	pass	Version: ImageMagick 7.1.2-1 Q16-HDRI x86_64 23308 https://imagemagick.org	
+ffmpeg	True	/usr/bin/ffmpeg	return_8	ffmpeg version 7.1.3-0+deb13u1 Copyright (c) 2000-2025 the FFmpeg developers	
+zip	True	/usr/bin/zip	pass	Copyright (c) 1990-2008 Info-ZIP - Type 'zip "-L"' for software license.	
+unzip	True	/usr/bin/unzip	return_10	caution:  both -n and -o specified; ignoring -o	
+tar	True	/usr/bin/tar	pass	tar (GNU tar) 1.35	
+jq	True	/usr/bin/jq	pass	jq-1.7	
+sqlite3			not_available		

@@ -1,0 +1,18 @@
+{
+  "locked_at": "20260430T234300Z",
+  "policy_id": "MPP_V3_OFM_MEASURABLE_SUCCESS_GATE_v1",
+  "research_basis": [
+    "Outcome requirements should be measurable and suitable for evaluation.",
+    "ISO/IEC 25010:2023 provides a product quality reference model for specifying and evaluating quality.",
+    "Policy-as-code guidance supports encoding requirements as testable gates."
+  ],
+  "rules": [
+    "At least one outcome is required.",
+    "At least one measurable success criterion is required.",
+    "At least one blocking success criterion is required.",
+    "Measurable success criteria must include metric, threshold, and verification method.",
+    "Thresholds may not be TBD, N/A, unknown, or deferred.",
+    "At least one failure criterion is required."
+  ],
+  "stage": "OFM"
+}

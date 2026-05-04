@@ -1,0 +1,61 @@
+{
+  "action_items": [
+    {
+      "action_id": "ACT-001",
+      "description": "Add regression fixture for the failed reasoning dimension.",
+      "done_definition": "fixture fails before repair and passes after repair",
+      "owner": "MPP_R17",
+      "priority": "P1"
+    }
+  ],
+  "created_at": "2026-04-30T23:38:10.407073+00:00",
+  "failure_classes": [
+    {
+      "category": "reasoning_failure",
+      "evidence_refs": [
+        "R16_ANALYSIS_REASONING_GATE"
+      ],
+      "failure_class_id": "FC-001",
+      "owner": "MPP_R17",
+      "recurrence_risk": "medium",
+      "severity": "S4_CRITICAL",
+      "symptom": "claim lacks sufficient grounding or evidence binding",
+      "trigger": "analysis gate reports repair_required"
+    }
+  ],
+  "learning_hooks": [
+    "persist failure class and route in receipt",
+    "promote recurring failure to ECL if it repeats"
+  ],
+  "objective_id": "OBJ-MPP-R17",
+  "packet_id": "DEBUG-BAD-CRITICAL",
+  "repair_routes": [
+    {
+      "blocking": false,
+      "failure_class_id": "FC-001",
+      "max_attempts": 1,
+      "repair_strategy": "rerun_gate",
+      "route_id": "ROUTE-001",
+      "route_to": "ANALYSIS_EVALUATION"
+    }
+  ],
+  "result_hash": "0149803d962a712a9336b523856003f73fc998af3da01dead53f0820c8da3ede",
+  "root_cause_analysis": [
+    {
+      "confidence": "high",
+      "failure_class_id": "FC-001",
+      "five_whys": [
+        "Why fail? score below threshold",
+        "Why score low? evidence missing or weak",
+        "Why evidence weak? research/normalization did not supply binding"
+      ],
+      "preventive_change": "route to smallest repair stage and add regression fixture",
+      "proximate_cause": "claim evaluation failed threshold",
+      "rca_id": "RCA-001",
+      "systemic_cause": "prior stage did not bind enough evidence before reasoning evaluation"
+    }
+  ],
+  "schema_version": "mpp.debugging_failure_class_packet.v1",
+  "source_analysis_packet_id": "AE-R16-SMOKE",
+  "stage": "DEBUGGING"
+}

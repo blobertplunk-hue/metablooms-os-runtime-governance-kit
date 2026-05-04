@@ -1,0 +1,5 @@
+{
+  "final_response": true,
+  "handoff_artifact": "handoffs/x.json",
+  "receipt_artifact": "receipts/x.json"
+}

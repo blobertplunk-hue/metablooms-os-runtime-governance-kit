@@ -1,0 +1,239 @@
+{
+  "artifact_type": "MB_TRACE_SPAN_LEDGER_INDEX.v1",
+  "by_kind": {
+    "boot": 57,
+    "decision": 1,
+    "export": 17,
+    "handoff": 86,
+    "receipt": 40,
+    "stage": 1,
+    "tracker": 1,
+    "validator": 17
+  },
+  "by_stage_top": {
+    "BOOT_FROM_MNT_DATA": 1,
+    "BOOT_FROM_MNT_DATA_20260502T162601Z": 6,
+    "BOOT_FROM_PROJECT_FILE": 1,
+    "BOOT_RUNTIME_EXECUTOR": 2,
+    "BOOT_RUNTIME_EXECUTOR_H0C1": 46,
+    "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT": 1,
+    "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES": 1,
+    "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT": 1,
+    "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES": 1,
+    "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z": 1,
+    "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T144330Z": 1,
+    "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT_20260502T145012Z": 1,
+    "IMPLEMENT_AGENT_HARNESS_STAGE_2_PARALLEL_WORKPACKETS_AND_DIFF_REVIEW_OR_SOFTWARE_QUALITY_STAGE_1": 2,
+    "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING": 13,
+    "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS": 9,
+    "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS_20260502T180916Z": 2,
+    "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE12_TRACE_QUERY_PACKET_AND_SEARCHABLE_EVIDENCE_INDEX": 6,
+    "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_INTERACTIONS_AND_RESULT_PINNING": 6,
+    "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING": 8,
+    "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS": 3,
+    "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS_20260502T191509Z": 5,
+    "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET": 3,
+    "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET_20260502T191921Z": 5,
+    "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION": 3,
+    "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE": 5,
+    "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS": 8,
+    "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z": 6,
+    "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z": 5,
+    "STAGE5_USE_PROMOTED_AUTHORITY_FOR_NEXT_GOVERNED_TASK": 2,
+    "meta_infra": 6
+  },
+  "by_status": {
+    "BLOCKED": 1,
+    "ERROR": 4,
+    "OK": 214,
+    "WARN": 1
+  },
+  "created_utc": "20260502T191942Z",
+  "latest_records": [
+    {
+      "event_name": "metablooms.export.receipt",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING_20260502T190150Z/stage14_validation_post_receipt_stdout.json",
+      "span_id": "24746b968c8c367f",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING",
+      "status": "OK",
+      "timestamp_utc": "20260502T190441Z"
+    },
+    {
+      "event_name": "metablooms.export.receipt",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING_20260502T190150Z/STAGE_RECEIPT.json",
+      "span_id": "c914eb034e1ecc1e",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING",
+      "status": "OK",
+      "timestamp_utc": "20260502T190307Z"
+    },
+    {
+      "event_name": "metablooms.stage.receipt",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "source_artifact": "runtime/receipts/pinned_evidence/PINNED_EVIDENCE_RECEIPT_LATEST.json",
+      "span_id": "3cb8ff048f14999a",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING",
+      "status": "OK",
+      "timestamp_utc": "20260502T190630Z"
+    },
+    {
+      "event_name": "metablooms.handoff.ready",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "source_artifact": "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_HANDOFF_LATEST.json",
+      "span_id": "318849f2c0c77e1a",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING",
+      "status": "OK",
+      "timestamp_utc": "20260502T190307Z"
+    },
+    {
+      "event_name": "metablooms.stage.receipt",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS_20260502T191509Z/SEE_PACKET.json",
+      "span_id": "4b5a126f3be79171",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS",
+      "status": "OK",
+      "timestamp_utc": "20260502T191509Z"
+    },
+    {
+      "event_name": "metablooms.stage.receipt",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS_20260502T191509Z/promoted_evidence_replay_stdout.json",
+      "span_id": "6d5babc27d9b0196",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS_20260502T191509Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T191509Z"
+    },
+    {
+      "event_name": "metablooms.validator.result",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS_20260502T191509Z/stage15_validator_stdout.json",
+      "span_id": "42470f861bb81e24",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS_20260502T191509Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T191509Z"
+    },
+    {
+      "event_name": "metablooms.stage.receipt",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS_20260502T191509Z/runtime_wrapper_smoke_stdout.json",
+      "span_id": "03ab322fbf8fc3ee",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS_20260502T191509Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T191509Z"
+    },
+    {
+      "event_name": "metablooms.validator.result",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS_20260502T191509Z/new_chat_validator_stdout.json",
+      "span_id": "1e5727339d274058",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS_20260502T191509Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T191601Z"
+    },
+    {
+      "event_name": "metablooms.validator.result",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS_20260502T191509Z/stage15_validator_stdout_post_ingest.json",
+      "span_id": "8f1c42f92c13eea9",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS_20260502T191509Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T191602Z"
+    },
+    {
+      "event_name": "metablooms.stage.receipt",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS_20260502T191509Z/STAGE_RECEIPT.json",
+      "span_id": "cf654e5ecca79a82",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS",
+      "status": "OK",
+      "timestamp_utc": "20260502T191509Z"
+    },
+    {
+      "event_name": "metablooms.handoff.ready",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "source_artifact": "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_HANDOFF_LATEST.json",
+      "span_id": "6d252663cb46c87f",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS",
+      "status": "OK",
+      "timestamp_utc": "20260502T191509Z"
+    },
+    {
+      "event_name": "metablooms.export.receipt",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET_20260502T191921Z/SEE_PACKET.json",
+      "span_id": "a1c1c7c46d690843",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET",
+      "status": "OK",
+      "timestamp_utc": "20260502T191921Z"
+    },
+    {
+      "event_name": "metablooms.export.receipt",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET_20260502T191921Z/audit_query_command_surface_stdout.json",
+      "span_id": "ddb8fc6347bb646b",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET_20260502T191921Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T191921Z"
+    },
+    {
+      "event_name": "metablooms.export.receipt",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET_20260502T191921Z/stage16_validator_stdout.json",
+      "span_id": "02ae4cc109f8c9e6",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET_20260502T191921Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T191921Z"
+    },
+    {
+      "event_name": "metablooms.export.receipt",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET_20260502T191921Z/new_chat_validator_stdout.json",
+      "span_id": "726f5b788059f56d",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET_20260502T191921Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T191921Z"
+    },
+    {
+      "event_name": "metablooms.export.receipt",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET_20260502T191921Z/runtime_wrapper_smoke_stdout.json",
+      "span_id": "119c3f3e2a3aa3b7",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET_20260502T191921Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T191921Z"
+    },
+    {
+      "event_name": "metablooms.export.receipt",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET_20260502T191921Z/STAGE_RECEIPT.json",
+      "span_id": "fd5cb34e0b9d54c5",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET",
+      "status": "OK",
+      "timestamp_utc": "20260502T191921Z"
+    },
+    {
+      "event_name": "metablooms.handoff.ready",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "source_artifact": "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_HANDOFF_LATEST.json",
+      "span_id": "648e0b618f6885bc",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET",
+      "status": "OK",
+      "timestamp_utc": "20260502T191921Z"
+    },
+    {
+      "event_name": "metablooms.export.receipt",
+      "parent_span_id": "1bcd9ffab27bbd3c",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET_20260502T191921Z/post_receipt_boot_ingest_stdout.json",
+      "span_id": "a06248652ee6c4df",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET_20260502T191921Z",
+      "status": "WARN",
+      "timestamp_utc": "20260502T191942Z"
+    }
+  ],
+  "record_count": 220,
+  "root_span_id": "1bcd9ffab27bbd3c",
+  "schema": "0_kernel/registry/observability/MB_TRACE_SPAN_EVENT_SCHEMA_v1.json",
+  "source_ledger": "runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl",
+  "trace_id": "ac758e1a3c4d9603c8a3748bd5b2e9e2"
+}

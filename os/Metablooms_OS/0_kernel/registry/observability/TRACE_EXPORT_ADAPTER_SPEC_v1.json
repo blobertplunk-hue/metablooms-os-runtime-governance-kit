@@ -1,0 +1,87 @@
+{
+  "formats": {
+    "langgraph_run_json": {
+      "required_fields": [
+        "run_id",
+        "parent_run_id",
+        "thread_id",
+        "checkpoint_id",
+        "name",
+        "inputs",
+        "outputs",
+        "metadata"
+      ]
+    },
+    "metablooms_jsonl": {
+      "required_fields": [
+        "schema",
+        "trace_id",
+        "span_id",
+        "parent_span_id",
+        "stage_id",
+        "name",
+        "kind",
+        "timestamp_utc",
+        "attributes",
+        "events",
+        "links",
+        "status"
+      ]
+    },
+    "openai_agents_event_json": {
+      "required_fields": [
+        "type",
+        "trace_id",
+        "span_id",
+        "parent_span_id",
+        "stage_id",
+        "event",
+        "attributes"
+      ]
+    },
+    "opentelemetry_span_json": {
+      "required_fields": [
+        "traceId",
+        "spanId",
+        "parentSpanId",
+        "name",
+        "kind",
+        "startTimeUnixNano",
+        "endTimeUnixNano",
+        "attributes",
+        "events",
+        "links",
+        "status"
+      ]
+    }
+  },
+  "mandatory_capture_points": [
+    "tool_universe_resolution",
+    "bts_tool_evaluation",
+    "bts_tool_selection",
+    "pre_tool_action_gate",
+    "tool_execution",
+    "post_tool_result_validation",
+    "hitl_approval_gate",
+    "checkpoint_write",
+    "handoff_write",
+    "support_bundle_write"
+  ],
+  "minimum_security_attributes": [
+    "risk_tier",
+    "tool_id",
+    "action_type",
+    "stage_id",
+    "policy_decision",
+    "approval_token_id",
+    "artifact_sha256",
+    "checkpoint_id",
+    "thread_id",
+    "bts_commit_id"
+  ],
+  "privacy_policy": "Do not export raw sensitive payloads by default; export hashes, counts, and redacted summaries unless an explicit export profile permits payload inclusion.",
+  "purpose": "Export MetaBlooms BTS/gate/stage spans into portable observability records compatible with OpenTelemetry-like span fields and agent-run trace concepts.",
+  "schema": "TraceExportAdapterSpec_v1",
+  "stage_id": "STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS",
+  "status": "active"
+}

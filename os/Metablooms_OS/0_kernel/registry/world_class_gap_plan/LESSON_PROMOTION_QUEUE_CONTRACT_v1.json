@@ -1,0 +1,37 @@
+{
+  "created_at": "20260503T004507Z",
+  "external_basis": [
+    {
+      "claim": "Corrective/preventive action items should reduce recurrence rather than merely document failure.",
+      "label": "Google SRE postmortem culture"
+    },
+    {
+      "claim": "Retrospectives identify what worked, what failed, and concrete improvements for future work.",
+      "label": "Atlassian retrospective practice"
+    }
+  ],
+  "mandatory_gates": [
+    "Every accepted lesson must bind to at least one artifact evidence path.",
+    "Every accepted lesson must produce a regression fixture.",
+    "No lesson may be marked active from chat memory alone.",
+    "Stage exit must generate a phone-safe NEXT_STAGE_COPY_PROMPT.md.",
+    "Successful stages must export one short-name BOOTABLE_FULL_AUTHORITY bundle whenever possible."
+  ],
+  "minimum_lesson_fields": [
+    "lesson_id",
+    "problem_class",
+    "evidence_paths",
+    "adopt_decision",
+    "acceptance_gate",
+    "fixture_path",
+    "prevents_regression"
+  ],
+  "promotion_decisions": [
+    "accept",
+    "reject",
+    "defer"
+  ],
+  "purpose": "Convert repeated chat/stage failures and successful corrections into durable OS lessons, promotion queue records, and regression fixtures.",
+  "schema_version": "v1",
+  "stage": "WC_STAGE3_LESSON_PROMOTION_QUEUE_AND_FIXTURE_FACTORY"
+}

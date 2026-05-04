@@ -1,0 +1,11 @@
+{
+  "receipt_id": "T1-STAGE6G_REHEARSAL_20260502T005353Z_filesystem_write_artifact-20260502T005418Z",
+  "tier": "T1",
+  "artifact": "/mnt/data/Metablooms_OS/0_kernel/registry/current_authority/NEW_CHAT_BOOT_REHEARSAL_PACKET_v1.json",
+  "sha256": "2157d5134db11f23b21e1bc22dfbf824be80896d2cfded41cc845ac56077c746",
+  "bytes_size": 1215,
+  "prior_sha256": "",
+  "stdout_proof": "",
+  "timestamp": "2026-05-02T00:54:18.345121Z",
+  "turn_id": "STAGE6G_REHEARSAL_20260502T005353Z"
+}

@@ -1,0 +1,18 @@
+{
+  "artifact_type": "MB_CLI_COMMAND_SPEC_v9",
+  "commands": [
+    {
+      "name": "evals",
+      "purpose": "show eval trace-review readiness",
+      "structured_json": true
+    },
+    {
+      "fail_closed": "EVALS_CHECK_FAIL",
+      "name": "evals --check",
+      "purpose": "run evals trace-review validator before promotion"
+    }
+  ],
+  "created_utc": "20260501T130400Z",
+  "inherits": "MB_CLI_COMMAND_SPEC_v8",
+  "purpose": "Add evals trace-review and validator-alignment command surface."
+}

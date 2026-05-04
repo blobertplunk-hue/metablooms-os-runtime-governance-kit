@@ -1,0 +1,9 @@
+{
+  "decisions": [
+    "Make anti-scatter exact-registration based.",
+    "Add executable fresh-chat rehearsal gate.",
+    "Bind prompt cartridge into boot-required gates.",
+    "Package full OS only after validators allow."
+  ],
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_2_FRESH_CHAT_REHEARSAL_AND_SCATTER_CLEANUP"
+}

@@ -1,0 +1,29 @@
+{
+  "artifacts": [
+    "0_kernel/registry/browser_render_capability/BROWSER_RENDER_CAPABILITY_VISUAL_GATE_BINDING_v1.json",
+    "0_kernel/registry/browser_render_capability/BROWSER_RENDER_CAPABILITY_EXPORT_PREP_MANIFEST_v1.json",
+    "tools/pc_addenda/browser_render_replay/README.md",
+    "tools/pc_addenda/browser_render_replay/run_browser_render_replay.ps1",
+    "runtime/state/BROWSER_RENDER_CAPABILITY_RESOLVER_TRACKER_PREVIEW.txt",
+    "runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE3_VISUAL_GATE_BINDING_AND_EXPORT_PREP_20260502T225725Z/export_prep_replay/EXPORT_PREP_RESOLVER_DECISION_OPERATOR_TRACKER.json"
+  ],
+  "decision": "ALLOW_RENDER_PROXY_WITH_LIMITATION",
+  "evidence_basis": {
+    "chrome_headless_docs": "headless screenshot is valid when local browser launch succeeds",
+    "playwright_docs": "managed browser install/bundle governs Playwright screenshot viability",
+    "weasyprint_docs": "HTML/CSS PDF rendering supports proxy evidence when browser screenshot unavailable"
+  },
+  "export_check": {
+    "checked_count": 23,
+    "missing_required_paths": [],
+    "pass": true
+  },
+  "honesty_label": "sandbox_render_proxy",
+  "implementation_manifest": "runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE3_VISUAL_GATE_BINDING_AND_EXPORT_PREP_20260502T225725Z/IMPLEMENTATION_MANIFEST.json",
+  "selected_method": "weasyprint_pdf_png_proxy",
+  "stage": "BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE3_VISUAL_GATE_BINDING_AND_EXPORT_PREP",
+  "stage_limit": "No full OS export in Stage 3; export deferred to Stage 4.",
+  "summary": "Bound BrowserRenderCapabilityResolver into visual-gate render proof selection and export-prep manifest while preserving Android/ChatGPT sandbox-first workflow.",
+  "timestamp_utc": "20260502T225725Z",
+  "verdict": "PASS"
+}

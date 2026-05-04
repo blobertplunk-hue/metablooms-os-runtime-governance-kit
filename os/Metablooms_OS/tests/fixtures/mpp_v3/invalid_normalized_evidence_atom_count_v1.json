@@ -1,0 +1,59 @@
+{
+  "claim_index": {
+    "claim_001": {
+      "atom_ids": [
+        "ATOM-001"
+      ],
+      "coverage": "mixed"
+    },
+    "claim_002": {
+      "atom_ids": [
+        "ATOM-002"
+      ],
+      "coverage": "mixed"
+    }
+  },
+  "created_at": "2026-04-30T21:58:06.584279+00:00",
+  "normalized_atoms": [
+    {
+      "atom_id": "ATOM-001",
+      "claim": "JSON Schema 2020-12 is the current schema dialect used for MPP v3 packet contracts.",
+      "confidence": "high",
+      "evidence_refs": [
+        "RPP-R1-SMOKE"
+      ],
+      "risk_flags": []
+    },
+    {
+      "atom_id": "ATOM-002",
+      "claim": "SLSA provenance principles require artifact metadata sufficient for later verification.",
+      "confidence": "high",
+      "evidence_refs": [
+        "SEE-R2-SMOKE"
+      ],
+      "risk_flags": []
+    }
+  ],
+  "packet_id": "NEP-20260430T215806Z",
+  "quality_summary": {
+    "atom_count": 999,
+    "blocked": false,
+    "source_count": 2,
+    "warnings": []
+  },
+  "result_hash": "846cf2b4170be019a1af3e9812e7575a048fa66819ca65bf504b7bc03c3b34fd",
+  "schema_version": "mpp.normalized_evidence_packet.v1",
+  "source_packets": [
+    {
+      "packet_id": "RPP-R1-SMOKE",
+      "packet_type": "RESEARCH_PLANNER",
+      "result_hash": "82f3e9c695dc6b8d1b11818d5701919e286de8d47f7c3eb3100c485f79e57828"
+    },
+    {
+      "packet_id": "SEE-R2-SMOKE",
+      "packet_type": "SEE",
+      "result_hash": "db77fd01af957221a4989b64b3770a83a3c56068405b9f0e9408feae57fd17e4"
+    }
+  ],
+  "stage": "NORMALIZE_EVIDENCE"
+}

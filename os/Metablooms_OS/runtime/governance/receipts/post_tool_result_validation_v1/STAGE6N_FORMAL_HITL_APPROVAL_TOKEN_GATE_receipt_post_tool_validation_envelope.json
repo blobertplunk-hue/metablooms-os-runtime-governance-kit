@@ -1,0 +1,20 @@
+{
+  "action_type": "filesystem_write",
+  "actual": {
+    "implementation_reality_verdict": "PASS"
+  },
+  "artifacts": {
+    "primary_path": "/mnt/data/Metablooms_OS/runtime/receipts/METABLOOMS_STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_RECEIPT_20260502T035000Z.json",
+    "receipt_path": "/mnt/data/Metablooms_OS/runtime/receipts/METABLOOMS_STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_RECEIPT_20260502T035000Z.json"
+  },
+  "created_at_utc": "2026-05-02T02:49:24.497648Z",
+  "expected": {
+    "min_bytes": 1000,
+    "sha256": "8d3bdc80b9c240ed621bb29915a524dc1be39176cc1b4ba01b6e1a1b00dd0971"
+  },
+  "intent": "Validate Stage6N receipt exists after governed write",
+  "schema_version": "PostToolResultValidationEnvelope_v1",
+  "stage_id": "STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_20260502T035000Z",
+  "tool_id": "bts_wrapped_filesystem_write",
+  "validation_id": "STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_20260502T035000Z_receipt_post_validation"
+}

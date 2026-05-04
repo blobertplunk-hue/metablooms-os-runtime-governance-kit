@@ -1,0 +1,14 @@
+{
+  "completed_work": [
+    "verified Stage 4 handoff",
+    "wrote manifest and pointer before zipping",
+    "recorded Stage 5 repair learning",
+    "selected regular-file stored ZIP export path"
+  ],
+  "created_utc": "2026-05-02T22:24:25Z",
+  "export_filename": "METABLOOMS_OS_VISUAL_PRESENTATION_QUALITY_GATE_STAGE5_FULL_AUTHORITY_EXPORT_20260502T222425Z_STORED_REPAIRED.zip",
+  "root": "/mnt/data/Metablooms_OS",
+  "schema_version": "metablooms_stage_receipt.v1",
+  "stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE5_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF",
+  "verdict": "PRE_FINAL_READY_FOR_STORED_ZIP"
+}

@@ -1,0 +1,107 @@
+{
+  "bound_prior_probe": "runtime/receipts/browser_render_capability_probe_20260502T223422Z/BROWSER_RENDER_CAPABILITY_PROBE_RECEIPT.json",
+  "bound_visual_stage5_receipt_external": "/mnt/data/VISUAL_PRESENTATION_QUALITY_GATE_STAGE5_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF_20260502T222425Z_FINAL_RECEIPT_EXTERNAL.json",
+  "default_environment": "android_chatgpt_sandbox",
+  "id": "BROWSER_RENDER_CAPABILITY_RESOLVER_POLICY_v1",
+  "method_order": [
+    {
+      "attempt_when": "playwright package and managed browser bundle are already present; install only if same-turn network probe succeeds",
+      "known_current_status": "package present; browser bundle absent; install DNS failed in prior probe",
+      "method_id": "playwright_managed_browser",
+      "priority": 1,
+      "success_artifacts": [
+        "png screenshots for mobile/tablet/desktop",
+        "metadata with viewport and nonblank image check"
+      ]
+    },
+    {
+      "attempt_when": "chromium binary present and no same-turn hard-fail cache says it is hanging",
+      "known_current_status": "chromium present but hung in prior probe",
+      "method_id": "system_chromium_headless",
+      "priority": 2,
+      "success_artifacts": [
+        "png screenshots",
+        "exit code 0",
+        "nonblank image check"
+      ]
+    },
+    {
+      "attempt_when": "xvfb-run and chromium present and direct chromium failed without hard sandbox crash",
+      "known_current_status": "xvfb-run present; hung in prior probe",
+      "method_id": "xvfb_chromium",
+      "priority": 3,
+      "success_artifacts": [
+        "png screenshots",
+        "exit code 0",
+        "nonblank image check"
+      ]
+    },
+    {
+      "attempt_when": "binary present",
+      "known_current_status": "not present in prior probe",
+      "method_id": "firefox_or_other_installed_browser",
+      "priority": 4,
+      "success_artifacts": [
+        "png screenshots via browser-specific command or automation"
+      ]
+    },
+    {
+      "attempt_when": "binary present",
+      "known_current_status": "not present in prior probe",
+      "method_id": "wkhtmltoimage_or_equivalent",
+      "priority": 5,
+      "success_artifacts": [
+        "png render proxy",
+        "nonblank check"
+      ]
+    },
+    {
+      "attempt_when": "weasyprint is present and artifact class permits proxy evidence",
+      "known_current_status": "working fallback in Stage 4",
+      "method_id": "weasyprint_pdf_png_proxy",
+      "priority": 6,
+      "success_artifacts": [
+        "pdf render",
+        "png/contact-sheet proxy",
+        "nonblank check"
+      ]
+    },
+    {
+      "attempt_when": "always, and as fallback when rendering is blocked",
+      "known_current_status": "working fallback",
+      "method_id": "static_vpq_accessibility_checks",
+      "priority": 7,
+      "success_artifacts": [
+        "static report",
+        "VPQ fixture replay",
+        "limitation label"
+      ]
+    }
+  ],
+  "pc_addendum_policy": "Always prepare but do not require PC/PowerShell/CI replay unless artifact_type or production flag declares browser_screenshot_required.",
+  "promotion_rules": {
+    "browser_screenshot_preferred": "ALLOW_RENDER_PROXY_WITH_LIMITATION if true browser replay fails after bounded attempts and proxy/static evidence passes.",
+    "browser_screenshot_required": "DENY if no true browser screenshot is produced inside the current environment; emit PC/CI addendum but do not pretend proxy evidence is browser proof.",
+    "render_proxy_allowed": "ALLOW_RENDER_PROXY_WITH_LIMITATION when WeasyPrint/static evidence passes and limitation is recorded.",
+    "static_only_allowed": "ALLOW_STATIC_ONLY_WITH_LIMITATION only for low-risk visual documentation or pre-implementation review packets."
+  },
+  "purpose": "Make visual render verification sandbox-first for Android/ChatGPT workflows while preserving stronger PC/CI browser replay as an enhancement lane.",
+  "reliability_learning_policy": "Every attempt must append method reliability evidence. Repeated hard-fail methods should be skipped within the same stage unless input conditions changed.",
+  "scope": [
+    "html_activity",
+    "operator_tracker",
+    "dashboard",
+    "teacher_tool",
+    "student_tool",
+    "landing_page",
+    "visual_artifact"
+  ],
+  "source_evidence_artifact": "0_kernel/registry/browser_render_capability/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE1_SEE_PACKET_v1.json",
+  "stage_created": "BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE1_SANDBOX_FIRST_POLICY_AND_FIXTURES",
+  "timeout_policy": {
+    "hard_fail_cache_scope": "same_turn_receipt",
+    "max_total_seconds_stage1_probe": 30,
+    "per_method_seconds": 8
+  },
+  "timestamp_utc": "20260502T224349Z"
+}

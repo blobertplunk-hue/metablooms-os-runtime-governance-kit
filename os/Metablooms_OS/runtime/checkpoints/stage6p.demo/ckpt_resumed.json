@@ -1,0 +1,35 @@
+{
+  "checkpoint_id": "ckpt_resumed",
+  "created_at_utc": "2026-05-02T03:31:34.263923Z",
+  "interrupt": {
+    "reason": "bounded_stage_pause",
+    "resume_options": [
+      "approve",
+      "reject"
+    ]
+  },
+  "metadata": {
+    "decision": "approve",
+    "parent_record_sha256": "3116be9c8cf3a417f252dbcc631c9a06e9f4ab4e3a4e02a8ca3478d4ffcaf954",
+    "resumed_from": "ckpt_interrupt"
+  },
+  "next": "continue",
+  "parent_checkpoint_id": "ckpt_interrupt",
+  "record_sha256": "72852290ed2b521a46031e0018f969c6bebdb02652501b44a566bdf06096e70a",
+  "resume": {
+    "approved": true,
+    "operator": "stage6p_smoke"
+  },
+  "schema": "MetaBloomsDurableCheckpointRecord_v1",
+  "stage_id": "STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM",
+  "state": {
+    "completed": [
+      "boot",
+      "see",
+      "ce"
+    ],
+    "step": "before_handoff"
+  },
+  "status": "RESUMED",
+  "thread_id": "stage6p.demo"
+}

@@ -1,0 +1,6 @@
+{
+  "decision_path": "/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE2_IMPLEMENT_RESOLVER_AND_LOCAL_METHOD_REPLAY_20260502T224609Z/local_replay/RESOLVER_DECISION_OPERATOR_TRACKER.json",
+  "decision": "ALLOW_RENDER_PROXY_WITH_LIMITATION",
+  "selected_method": "weasyprint_pdf_png_proxy",
+  "honesty_label": "sandbox_render_proxy"
+}

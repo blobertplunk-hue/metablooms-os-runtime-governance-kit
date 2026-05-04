@@ -1,0 +1,8 @@
+{
+  "decision": "ALLOW",
+  "invalid_json": [],
+  "missing": [],
+  "mode": "root",
+  "path": "/mnt/data/stage6s_fresh_extract_smoke/Metablooms_OS",
+  "read_errors": []
+}

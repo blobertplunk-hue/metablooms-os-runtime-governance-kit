@@ -1,0 +1,30 @@
+{
+  "artifact_type": "MB_STAGE_RECEIPT.v1",
+  "ce_synthesis": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING_20260502T190150Z/CE_SYNTHESIS.json",
+  "created_utc": "20260502T190307Z",
+  "final_export": {
+    "external_containment_proof": "runtime/traces/observability/OBSERVABILITY_STAGE14_REPAIRED_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+    "external_sidecar_required": true,
+    "repair_note": "Supersedes first Stage 14 export so the ZIP contains the first proof and prior final_export receipt fields.",
+    "zip_path": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_PROMOTION_FINAL_AUTHORITY_REPAIRED_20260502T190150Z.zip",
+    "zip_sha256": "1cf42f9c5b1f2126cb3357db035a435e9f32fda62f5fb40cb35a507bc784a1d8",
+    "zip_sha256_sidecar": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_PROMOTION_FINAL_AUTHORITY_REPAIRED_20260502T190150Z.zip.sha256"
+  },
+  "notes": [
+    "Browser-local pins are now promotable into formal receipt artifacts.",
+    "Final export containment proof requires the promoted receipt and binding artifacts."
+  ],
+  "outputs": [
+    "0_kernel/scripts/promote_pinned_evidence_receipt_v1.py",
+    "runtime/receipts/pinned_evidence/PINNED_EVIDENCE_RECEIPT_LATEST.json",
+    "runtime/traces/observability/PINNED_EVIDENCE_EXPORT_BINDING_LATEST.json",
+    "runtime/state/operator_surface/PINNED_EVIDENCE_RECEIPT_PROMOTION_LATEST.json",
+    "OPEN_OPERATOR_VISUAL_TRACKER.html"
+  ],
+  "pre_export_requirements": "runtime/traces/observability/OBSERVABILITY_STAGE14_PRE_EXPORT_CONTAINMENT_REQUIREMENTS_LATEST.json",
+  "repair_note": "Initial Stage 14 validator generation failed due to quote-literal syntax. Validator was repaired and rerun successfully.",
+  "see_packet": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING_20260502T190150Z/SEE_PACKET.json",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING",
+  "validation_report": "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_PROMOTION_VALIDATION_LATEST.json",
+  "verdict": "PASS"
+}

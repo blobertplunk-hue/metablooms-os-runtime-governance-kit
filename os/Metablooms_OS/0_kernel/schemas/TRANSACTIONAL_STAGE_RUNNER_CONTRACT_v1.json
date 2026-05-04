@@ -1,0 +1,107 @@
+{
+  "version": "1.0",
+  "created_at": 1777062052.5873492,
+  "contract_id": "TRANSACTIONAL_STAGE_RUNNER_CONTRACT_v1",
+  "status": "active_contract",
+  "purpose": "Define retry-safe, stage-bounded transaction semantics for future governed MetaBlooms stages.",
+  "problems_addressed": [
+    "partial mutation before validation",
+    "dirty-tree loops caused by uncommitted receipts",
+    "re-running a repair in a different root",
+    "claiming success without committed artifacts",
+    "restoring older releases and losing later work"
+  ],
+  "transaction_phases": [
+    {
+      "id": "P0_PREFLIGHT",
+      "purpose": "Verify active root, git cleanliness, required handoff, pointer, DAG, ledger, and auto-runaway scope.",
+      "may_mutate_active_root": false,
+      "must_write_receipt": true
+    },
+    {
+      "id": "P1_STAGE_ROOT",
+      "purpose": "Create isolated staging root under /mnt/data/_stage/<stage_id>/.",
+      "may_mutate_active_root": false,
+      "must_write_receipt": true
+    },
+    {
+      "id": "P2_WRITE_OUTPUTS",
+      "purpose": "Write candidate artifacts only inside staging root unless the stage is explicitly contract-only and already clean.",
+      "may_mutate_active_root": false,
+      "must_write_receipt": true
+    },
+    {
+      "id": "P3_VERIFY",
+      "purpose": "Run syntax, schema, artifact-existence, content-hash, route, or proof checks required by the contract.",
+      "may_mutate_active_root": false,
+      "must_write_receipt": true
+    },
+    {
+      "id": "P4_PROMOTE",
+      "purpose": "Promote verified outputs into active root using the smallest valid change set.",
+      "may_mutate_active_root": true,
+      "must_write_receipt": true
+    },
+    {
+      "id": "P5_COMMIT",
+      "purpose": "Commit promoted outputs and receipts to Git.",
+      "may_mutate_active_root": true,
+      "must_write_receipt": true
+    },
+    {
+      "id": "P6_UPDATE_STATE",
+      "purpose": "Update current working pointer and stage-state ledger after commit succeeds.",
+      "may_mutate_active_root": true,
+      "must_write_receipt": true
+    },
+    {
+      "id": "P7_HANDOFF",
+      "purpose": "Write next-stage handoff and stop.",
+      "may_mutate_active_root": true,
+      "must_write_receipt": true
+    }
+  ],
+  "promotion_rules": [
+    "Never promote from staging unless all required checks pass.",
+    "Promotion must be the smallest valid change set.",
+    "Promotion must not delete tracked files unless a specific deletion contract exists.",
+    "For contract-only stages, direct writes are allowed only after clean preflight and must be committed in the same stage."
+  ],
+  "rollback_rules": [
+    "If preflight fails, do not mutate active root.",
+    "If staged verification fails, leave active root unchanged and write a blocked receipt outside active root or commit a blocked receipt by rule F6.",
+    "If promotion fails, stop and write a blocker receipt identifying promoted/unpromoted paths.",
+    "If commit fails, stop and do not update pointer or ledger."
+  ],
+  "idempotency_rules": [
+    "Stage IDs and artifact names must be deterministic.",
+    "Re-running a completed stage must overwrite the same target artifacts or detect that they already satisfy the contract.",
+    "Receipt filenames for canonical stage receipts must be stable; timestamped receipts are allowed only inside evidence folders.",
+    "State updates occur only after a successful commit."
+  ],
+  "receipt_rules": [
+    "Every phase must be represented in the final stage receipt.",
+    "Blocked receipts must not advance latest_pass.",
+    "Success receipts must include outputs, commit, git status, next improvement task, remaining work, and next command.",
+    "No success claim is valid without a committed receipt or explicit blocker receipt."
+  ],
+  "state_update_rules": [
+    "After commit, update CURRENT_WORKING_BASELINE_POINTER_v1.json to the new commit.",
+    "After commit, append PASS entry to STAGE_STATE_LEDGER_v1.json.",
+    "Do not update pointer or latest_pass after FAIL/BLOCK.",
+    "F6 will define blocked-receipt commit behavior in detail."
+  ],
+  "runaway_breaker_integration": {
+    "must_classify_scope_before_P1": true,
+    "max_heavy_work_classes_per_stage": 1,
+    "split_before_execution_when_broad": true
+  },
+  "non_goals": [
+    "F3 does not implement a Python runner.",
+    "F3 does not export a baseline.",
+    "F3 does not perform restore proof.",
+    "F3 does not continue E4."
+  ],
+  "next_stage": "F4_MANIFEST_PROVENANCE_EXPORT_CONTRACT",
+  "verdict": "PASS"
+}

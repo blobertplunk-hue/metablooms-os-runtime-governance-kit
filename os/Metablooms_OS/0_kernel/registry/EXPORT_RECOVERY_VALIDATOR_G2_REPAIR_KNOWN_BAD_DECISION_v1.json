@@ -1,0 +1,278 @@
+{
+  "version": "1.0",
+  "created_at": 1777064615.551928,
+  "validator_id": "EXPORT_RECOVERY_PROVEN_VALIDATOR_v1",
+  "stage": "EXPORT_RECOVERY_VALIDATION",
+  "input": {
+    "version": "1.0",
+    "export_zip": "/mnt/data/MetaBlooms_OS_refined_F7_RECOVERY_PROVEN_1777063110.zip",
+    "sidecar_manifest": "/mnt/data/MetaBlooms_OS_refined_F7_RECOVERY_PROVEN_1777063110.zip.sha256.json",
+    "active_root": "/mnt/data/Metablooms_OS_refined",
+    "expected_stage": "F7_STABLE_EXPORT_BOOT_RECOVERY_PROOF",
+    "expected_ledger_entry_id": "F7_STABLE_EXPORT_BOOT_RECOVERY_PROOF",
+    "expected_dag_node_id": "F7",
+    "ledger_path": "/mnt/data/Metablooms_OS_refined/0_kernel/state/STAGE_STATE_LEDGER_v1.json",
+    "dag_path": "/mnt/data/Metablooms_OS_refined/0_kernel/pipeline/STAGE_DAG_v1.json",
+    "pointer_path": "/mnt/data/Metablooms_OS_refined/0_kernel/state/CURRENT_WORKING_BASELINE_POINTER_v1.json",
+    "boot_manifest_path": "/mnt/data/Metablooms_OS_refined/boot_manifest_v1.json",
+    "artifact_registry_path": "/mnt/data/Metablooms_OS_refined/artifact_registry.json",
+    "external_sidecar_policy": {
+      "external_sidecar_required": true,
+      "sidecar_must_match_zip": true,
+      "internal_manifest_must_reference_sidecar": true
+    },
+    "git_head_policy": {
+      "allow_lifecycle_heads": true,
+      "required_labels": [
+        "pre_export_head",
+        "exported_tree_head",
+        "metadata_commit_head",
+        "final_lock_head",
+        "current_working_head"
+      ]
+    },
+    "gate_policy": {
+      "fail_closed": true,
+      "required_gates": [
+        "G1_LEDGER_DECLARED_OUTPUTS_INSIDE_ZIP",
+        "G2_FINAL_PASS_RECEIPTS_INSIDE_ZIP",
+        "G3_NO_PLACEHOLDER_METADATA",
+        "G4_GIT_HEAD_LIFECYCLE_CONSISTENCY",
+        "G5_SIDECAR_BINDING",
+        "G6_DETERMINISTIC_ZIP_POLICY",
+        "G7_DAG_LEDGER_MAPPING",
+        "G8_POINTER_CONFLICT_RESOLUTION",
+        "G9_TRANSACTIONAL_STATE_ORDER",
+        "G10_POLICY_AS_CODE_DECISION"
+      ]
+    }
+  },
+  "gate_results": [
+    {
+      "gate_id": "G1_LEDGER_DECLARED_OUTPUTS_INSIDE_ZIP",
+      "severity": "blocking",
+      "passed": false,
+      "evidence": {
+        "expected_stage": "F7_STABLE_EXPORT_BOOT_RECOVERY_PROOF",
+        "expected_entry_id": "F7_STABLE_EXPORT_BOOT_RECOVERY_PROOF",
+        "declared_outputs": [
+          "EXPORT_MANIFEST_v1.json",
+          "EXPORT_PROVENANCE_v1.json",
+          "RESTORE_CONTRACT_v1.json",
+          "CAPABILITY_SET_v1.json",
+          "0_kernel/registry/F7_BOOT_RECOVERY_PROOF_v1.json",
+          "0_kernel/registry/F7_RECOVERY_PROVEN_STABLE_BASELINE_LOCK_v1.json",
+          "0_kernel/registry/F7_TO_E4A_RETURN_HANDOFF_v1.json"
+        ],
+        "missing_outputs": [
+          "0_kernel/registry/F7_BOOT_RECOVERY_PROOF_v1.json",
+          "0_kernel/registry/F7_RECOVERY_PROVEN_STABLE_BASELINE_LOCK_v1.json"
+        ]
+      },
+      "message": "ledger entry missing or declared outputs missing from ZIP"
+    },
+    {
+      "gate_id": "G2_FINAL_PASS_RECEIPTS_INSIDE_ZIP",
+      "severity": "blocking",
+      "passed": false,
+      "evidence": {
+        "checked_receipts": [],
+        "bad_receipts": []
+      },
+      "message": "missing or non-final receipt inside ZIP"
+    },
+    {
+      "gate_id": "G3_NO_PLACEHOLDER_METADATA",
+      "severity": "blocking",
+      "passed": false,
+      "evidence": {
+        "placeholder_hits": [
+          {
+            "object": "EXPORT_MANIFEST_v1.json",
+            "path": "sha256",
+            "token": "<filled_after_zip>",
+            "value": "<filled_after_zip>"
+          },
+          {
+            "object": "EXPORT_MANIFEST_v1.json",
+            "path": "size_bytes",
+            "token": "size_bytes=0",
+            "value": 0
+          },
+          {
+            "object": "EXPORT_PROVENANCE_v1.json",
+            "path": "subject[0].sha256",
+            "token": "<filled_after_zip>",
+            "value": "<filled_after_zip>"
+          },
+          {
+            "object": "EXPORT_PROVENANCE_v1.json",
+            "path": "subject[0].size_bytes",
+            "token": "size_bytes=0",
+            "value": 0
+          }
+        ],
+        "internal_present": {
+          "EXPORT_MANIFEST_v1.json": true,
+          "EXPORT_PROVENANCE_v1.json": true,
+          "RESTORE_CONTRACT_v1.json": true,
+          "CAPABILITY_SET_v1.json": true
+        }
+      },
+      "message": "placeholder or missing internal metadata found"
+    },
+    {
+      "gate_id": "G4_GIT_HEAD_LIFECYCLE_CONSISTENCY",
+      "severity": "blocking",
+      "passed": false,
+      "evidence": {
+        "heads": {
+          "pointer:git.head": "60757dc1b811d52643b546128e0870433cb5f198",
+          "ledger_entry:git_head": "2b7447c3a626d028ede86fba7ce970ff082a4a5a",
+          "manifest:git_head": "1a95da5d163d17c1250934661cfa86b14d699a32",
+          "provenance:source.git_head": "1a95da5d163d17c1250934661cfa86b14d699a32"
+        },
+        "unique_heads": [
+          "1a95da5d163d17c1250934661cfa86b14d699a32",
+          "2b7447c3a626d028ede86fba7ce970ff082a4a5a",
+          "60757dc1b811d52643b546128e0870433cb5f198"
+        ],
+        "required_labels": [
+          "final_lock_head",
+          "current_working_head",
+          "exported_tree_head",
+          "metadata_commit_head",
+          "pre_export_head"
+        ],
+        "labeled_ok": false
+      },
+      "message": "unlabeled git head divergence"
+    },
+    {
+      "gate_id": "G5_SIDECAR_BINDING",
+      "severity": "blocking",
+      "passed": false,
+      "evidence": {
+        "actual_sha": "6e3ef107850115fa3230a0af1e03e4efb360c7dcff9c52401daaa68d2e14bb90",
+        "sidecar_sha": "6e3ef107850115fa3230a0af1e03e4efb360c7dcff9c52401daaa68d2e14bb90",
+        "actual_size": 15148738,
+        "sidecar_size": 15148738,
+        "sidecar_bound": false
+      },
+      "message": "sidecar missing, mismatched, or unbound"
+    },
+    {
+      "gate_id": "G6_DETERMINISTIC_ZIP_POLICY",
+      "severity": "blocking",
+      "passed": false,
+      "evidence": {
+        "duplicate_entries": [],
+        "bad_entries": [],
+        "sorted_ok": false,
+        "entry_count": 551
+      },
+      "message": "ZIP has duplicate/forbidden/unsorted entries"
+    },
+    {
+      "gate_id": "G7_DAG_LEDGER_MAPPING",
+      "severity": "blocking",
+      "passed": true,
+      "evidence": {
+        "expected_dag_node_id": "F7",
+        "dag_node": {
+          "id": "F7",
+          "name": "Stable Export + Boot Recovery Proof",
+          "class": "export_recovery_split",
+          "status": "complete",
+          "produces": [
+            "F7_STABLE_EXPORT_BOOT_RECOVERY_PROOF_RECEIPT_v1.json",
+            "F7_TO_E4A_RETURN_HANDOFF_v1.json",
+            "EXPORT_MANIFEST_v1.json",
+            "EXPORT_PROVENANCE_v1.json",
+            "RESTORE_CONTRACT_v1.json",
+            "CAPABILITY_SET_v1.json",
+            "recovery-proven stable export zip"
+          ]
+        },
+        "ledger_entry_id": "F7_STABLE_EXPORT_BOOT_RECOVERY_PROOF"
+      },
+      "message": "DAG node maps to ledger entry"
+    },
+    {
+      "gate_id": "G8_POINTER_CONFLICT_RESOLUTION",
+      "severity": "blocking",
+      "passed": false,
+      "evidence": {
+        "pointer_like_count": 6,
+        "role_counts": {
+          "f1_pointer_artifact": 5,
+          "f7_export_boot_recovery_artifact": 1
+        },
+        "conflicts": {
+          "f1_pointer_artifact": 5
+        }
+      },
+      "message": "active pointer conflict detected"
+    },
+    {
+      "gate_id": "G9_TRANSACTIONAL_STATE_ORDER",
+      "severity": "blocking",
+      "passed": true,
+      "evidence": {
+        "latest_pass": {
+          "entry_id": "G2_EXPORT_RECOVERY_VALIDATOR_IMPLEMENTATION",
+          "timestamp": 1777064523.0074081,
+          "stage": "G2_EXPORT_RECOVERY_VALIDATOR_IMPLEMENTATION",
+          "verdict": "PASS",
+          "git_head": "c1b07661259eb2fab0f591bb57491bf37d108e71",
+          "receipt": "0_kernel/registry/G2_EXPORT_RECOVERY_VALIDATOR_IMPLEMENTATION_RECEIPT_v1.json",
+          "outputs": [
+            "0_kernel/scripts/export_recovery_proven_validator_v1.py",
+            "0_kernel/docs/EXPORT_RECOVERY_PROVEN_VALIDATOR_IMPLEMENTATION_NOTES_v1.md",
+            "0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_SMOKE_DECISION_v1.json",
+            "0_kernel/registry/G2_TO_G3_HANDOFF_v1.json"
+          ],
+          "dependencies": [
+            "G1_EXPORT_RECOVERY_VALIDATOR_SCHEMA_AND_CONTRACT"
+          ],
+          "supersedes": [
+            "manual_export_audit_only"
+          ],
+          "advances_latest_pass": true
+        },
+        "pointer_status": "active_current_working_baseline"
+      },
+      "message": "transactional state ordering appears valid"
+    },
+    {
+      "gate_id": "G10_POLICY_AS_CODE_DECISION",
+      "severity": "blocking",
+      "passed": false,
+      "evidence": {
+        "represented_gates": [
+          "G1_LEDGER_DECLARED_OUTPUTS_INSIDE_ZIP",
+          "G2_FINAL_PASS_RECEIPTS_INSIDE_ZIP",
+          "G3_NO_PLACEHOLDER_METADATA",
+          "G4_GIT_HEAD_LIFECYCLE_CONSISTENCY",
+          "G5_SIDECAR_BINDING",
+          "G6_DETERMINISTIC_ZIP_POLICY",
+          "G7_DAG_LEDGER_MAPPING",
+          "G8_POINTER_CONFLICT_RESOLUTION",
+          "G9_TRANSACTIONAL_STATE_ORDER"
+        ],
+        "missing_required": [],
+        "prior_ok": false
+      },
+      "message": "missing or failing machine-readable gate decision"
+    }
+  ],
+  "summary": {
+    "passed_count": 2,
+    "failed_count": 8,
+    "blocking_failed_count": 8,
+    "warnings_count": 0,
+    "elapsed_seconds": 0.135259
+  },
+  "verdict": "FAIL",
+  "next_correct_command": "REPAIR EXPORT \u2014 VALIDATOR BLOCKED RECOVERY-PROVEN CLAIM"
+}

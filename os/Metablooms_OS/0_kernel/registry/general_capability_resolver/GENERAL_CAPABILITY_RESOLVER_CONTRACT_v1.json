@@ -1,0 +1,50 @@
+{
+  "allowed_decisions": [
+    "ALLOW_PRIMARY",
+    "ALLOW_FALLBACK_WITH_LIMITATION",
+    "DENY_BLOCKED",
+    "SKIP_KNOWN_HARD_FAIL"
+  ],
+  "created_utc": "20260503T005700Z",
+  "external_basis": [
+    {
+      "claim": "Repeated failures should change future calls rather than blindly retrying protected operations.",
+      "label": "circuit_breaker_pattern"
+    },
+    {
+      "claim": "Execution environments expose runner/context/debug evidence that can be used for capability-aware decisions.",
+      "label": "github_runner_contexts_debugging"
+    },
+    {
+      "claim": "Systems should degrade gracefully and label limitations rather than overclaim blocked capabilities.",
+      "label": "sre_graceful_degradation"
+    }
+  ],
+  "hard_rules": [
+    "Never claim a capability is unavailable without a direct same-turn probe or existing same-turn hard-fail cache.",
+    "Never claim primary proof when only fallback/proxy proof exists.",
+    "Prefer known-working fallback methods over repeated known-hard-fail methods unless conditions changed.",
+    "Append capability decisions to a reliability ledger with evidence paths.",
+    "Stage exit must produce NEXT_STAGE_COPY_PROMPT.md and, when successful, a short-name BOOTABLE_FULL_AUTHORITY export."
+  ],
+  "purpose": "Generalize sandbox-first capability resolution across MetaBlooms tasks so flaky tools are probed, ranked, attempted, fallback-labeled, and logged instead of assumed or repeatedly retried.",
+  "required_decision_fields": [
+    "task_id",
+    "capability_need",
+    "candidate_methods",
+    "selected_method",
+    "decision",
+    "limitation_label",
+    "evidence_paths",
+    "reliability_updates"
+  ],
+  "schema_version": "v1",
+  "selection_order": [
+    "artifact_required_capability",
+    "same_turn_probe_result",
+    "method_reliability_ledger",
+    "fallback_contract",
+    "operator_cost"
+  ],
+  "stage": "WC_STAGE6_GENERAL_CAPABILITY_RESOLVER_FRAMEWORK"
+}

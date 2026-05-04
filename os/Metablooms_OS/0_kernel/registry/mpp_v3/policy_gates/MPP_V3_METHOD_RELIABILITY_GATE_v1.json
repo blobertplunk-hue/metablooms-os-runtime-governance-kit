@@ -1,0 +1,19 @@
+{
+  "locked_at": "20260501T063000Z",
+  "policy_id": "MPP_V3_METHOD_RELIABILITY_GATE_v1",
+  "research_basis": [
+    "OpenTelemetry semantic conventions standardize telemetry attributes for correlation.",
+    "DORA metrics include instability and recovery measures such as change fail rate, rework rate, and failed deployment recovery time.",
+    "SLSA artifact verification stresses provenance/expectation checks and monitoring only becomes useful when action is taken."
+  ],
+  "rules": [
+    "Every learning event must bind to evidence and a recurrence key.",
+    "Every action-required learning event must route to DEBUGGING, ECL, SEE/MMD, FIR, STOP_BLOCKED, or METHOD_ROUTER_UPDATE.",
+    "Every method record must reconcile attempts = successes + failures.",
+    "Low reliability methods must be demoted, watched, or forbidden.",
+    "Methods with blocked failures cannot be promoted.",
+    "Forbidden methods must emit FORBID decisions.",
+    "Router updates must include evidence references and stable hashes."
+  ],
+  "stage": "PERSISTENT_LEARNING"
+}

@@ -1,0 +1,63 @@
+{
+  "artifact_type": "METABLOOMS_EXECUTABLE_FIXTURE_MANIFEST_v1",
+  "created_utc": "20260502T135430Z",
+  "fixtures": [
+    {
+      "bytes": 681,
+      "expected_result_class": "ALLOW_SUCCESS",
+      "fixture": "pass_echo",
+      "path": "/mnt/data/Metablooms_OS/runtime/fixtures/bounded_subprocess_wrapper_v1/pass_echo.envelope.json",
+      "sha256": "f521675cd511ad594a01490abea44fbd262513a74923d033f74feb172f9cea00"
+    },
+    {
+      "bytes": 702,
+      "expected_result_class": "ALLOW_NONZERO",
+      "fixture": "nonzero_exit",
+      "path": "/mnt/data/Metablooms_OS/runtime/fixtures/bounded_subprocess_wrapper_v1/nonzero_exit.envelope.json",
+      "sha256": "8a4349ae5f931c9ba38e1d66f2f079b83691de731a637c3176f6ec4fc7efc9c0"
+    },
+    {
+      "bytes": 693,
+      "expected_result_class": "TIMEOUT_TERMINATED",
+      "fixture": "timeout_retry",
+      "path": "/mnt/data/Metablooms_OS/runtime/fixtures/bounded_subprocess_wrapper_v1/timeout_retry.envelope.json",
+      "sha256": "6636fea7a4e904f56d188fd29592403598b843f2a1877b3e0d5f04cfc374c53e"
+    },
+    {
+      "bytes": 625,
+      "expected_result_class": "DENY_SCHEMA_INVALID",
+      "fixture": "deny_shell",
+      "path": "/mnt/data/Metablooms_OS/runtime/fixtures/bounded_subprocess_wrapper_v1/deny_shell.envelope.json",
+      "sha256": "ed2855ccea76915d2c6bbc0a34c1e9690dcd6f356ac9552380a7b567b8f5633a"
+    },
+    {
+      "bytes": 664,
+      "expected_result_class": "DENY_PATH_ESCAPE",
+      "fixture": "deny_path_escape",
+      "path": "/mnt/data/Metablooms_OS/runtime/fixtures/bounded_subprocess_wrapper_v1/deny_path_escape.envelope.json",
+      "sha256": "9a7ce8656abd96cbee8fa38ce954f6b10b5fc200ebc23fc7c1cb0da5a102c2ae"
+    },
+    {
+      "bytes": 674,
+      "expected_result_class": "DENY_FORBIDDEN_METHOD",
+      "fixture": "deny_forbidden_unzip_tqq",
+      "path": "/mnt/data/Metablooms_OS/runtime/fixtures/bounded_subprocess_wrapper_v1/deny_forbidden_unzip_tqq.envelope.json",
+      "sha256": "eab699b767d05df97cbfb4eef4184562ffd1ac19f99e67ac90bdd1f1b9dfaf7d"
+    },
+    {
+      "bytes": 679,
+      "expected_result_class": "OUTPUT_LIMIT_EXCEEDED",
+      "fixture": "output_limit",
+      "path": "/mnt/data/Metablooms_OS/runtime/fixtures/bounded_subprocess_wrapper_v1/output_limit.envelope.json",
+      "sha256": "339295fa38cb316a720b3b1ae3e8cafaff994e4b16e293693e9646245ad76a92"
+    },
+    {
+      "bytes": 648,
+      "expected_result_class": "SPAWN_ERROR",
+      "fixture": "spawn_error",
+      "path": "/mnt/data/Metablooms_OS/runtime/fixtures/bounded_subprocess_wrapper_v1/spawn_error.envelope.json",
+      "sha256": "c4be631362a6e9fea4494c68f79fc4e70be022be90c62abf5fbe499f95bf4fe2"
+    }
+  ],
+  "stage_id": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES"
+}

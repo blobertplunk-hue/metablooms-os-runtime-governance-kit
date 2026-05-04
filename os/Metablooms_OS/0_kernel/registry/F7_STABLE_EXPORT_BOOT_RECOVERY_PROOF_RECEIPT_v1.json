@@ -1,0 +1,68 @@
+{
+  "version": "1.0",
+  "created_at": 1777063110.0663812,
+  "stage": "F7_STABLE_EXPORT_BOOT_RECOVERY_PROOF",
+  "status": "complete",
+  "inputs": {
+    "f6_handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F6_TO_F7_HANDOFF_v1.json",
+    "f6_receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F6_BLOCKED_RECEIPT_HANDLING_RULE_RECEIPT_v1.json",
+    "export_contract": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/MANIFEST_PROVENANCE_EXPORT_CONTRACT_v1.json",
+    "restore_contract": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/RESTORE_LADDER_CONTRACT_v1.json",
+    "blocked_rule": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/BLOCKED_RECEIPT_HANDLING_RULE_v1.json",
+    "pointer": "/mnt/data/Metablooms_OS_refined/0_kernel/state/CURRENT_WORKING_BASELINE_POINTER_v1.json",
+    "ledger": "/mnt/data/Metablooms_OS_refined/0_kernel/state/STAGE_STATE_LEDGER_v1.json",
+    "dag": "/mnt/data/Metablooms_OS_refined/0_kernel/pipeline/STAGE_DAG_v1.json"
+  },
+  "outputs": {
+    "export_zip": "/mnt/data/exports/MetaBlooms_OS_refined_F7_RECOVERY_PROVEN_1777063110.zip",
+    "download_copy": "/mnt/data/MetaBlooms_OS_refined_F7_RECOVERY_PROVEN_1777063110.zip",
+    "sidecar": "/mnt/data/exports/MetaBlooms_OS_refined_F7_RECOVERY_PROVEN_1777063110.zip.sha256.json",
+    "download_sidecar": "/mnt/data/MetaBlooms_OS_refined_F7_RECOVERY_PROVEN_1777063110.zip.sha256.json",
+    "recovery_proof": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F7_BOOT_RECOVERY_PROOF_v1.json",
+    "baseline_lock": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F7_RECOVERY_PROVEN_STABLE_BASELINE_LOCK_v1.json",
+    "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F7_STABLE_EXPORT_BOOT_RECOVERY_PROOF_RECEIPT_v1.json",
+    "handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F7_TO_E4A_RETURN_HANDOFF_v1.json"
+  },
+  "checks": {
+    "required_paths_present": true,
+    "git_clean_before_f7": true,
+    "git_fsck_clean_before_f7": true,
+    "f6_prechecks": {
+      "f6_handoff_ready": true,
+      "f6_receipt_passed": true,
+      "f7_declared_target": true,
+      "ledger_latest_pass_is_f6": true,
+      "pointer_active": true,
+      "dag_active": true,
+      "export_contract_active": true,
+      "restore_contract_active": true,
+      "blocked_rule_active": true
+    }
+  },
+  "verdict": "PASS",
+  "next_correct_command": "RETURN TO E4A \u2014 MASTER PIPELINE PROOF SCOPE LOCK",
+  "git_head_at_export": "1a95da5d163d17c1250934661cfa86b14d699a32",
+  "restore_checks": {
+    "zip_sha_matches_sidecar": true,
+    "zip_size_matches_sidecar": true,
+    "restored_required_files_present": true,
+    "internal_manifest_present": true,
+    "internal_provenance_present": true,
+    "internal_restore_contract_present": true,
+    "capability_set_passed": true,
+    "f0_f7_receipts_present": true
+  },
+  "export_sha256": "6e3ef107850115fa3230a0af1e03e4efb360c7dcff9c52401daaa68d2e14bb90",
+  "export_size_bytes": 15148738,
+  "git_head_final": "66c02ea78aa786630ca9ba529ced50f8721add21",
+  "next_improvement_task": "Return to E4A \u2014 Master Pipeline Proof Scope Lock",
+  "why_next": "Recovery architecture has a recovery-proven stable export; return to E4 with baseline drift, restore, provenance, and blocked-receipt failures mitigated.",
+  "remaining_work": [
+    "E4A\u2013E4E",
+    "E5A\u2013E5D"
+  ],
+  "progress_estimate": {
+    "recovery_arc_complete": true,
+    "stages_remaining_in_prior_E_arc": 9
+  }
+}

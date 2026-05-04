@@ -1,0 +1,183 @@
+{
+  "artifacts_written": [
+    "0_kernel/registry/world_class_gap_plan/REAL_TASK_CORPUS_EXPANSION_CONTRACT_v1.json",
+    "0_kernel/evals/real_task_eval_harness/REAL_TASK_CORPUS_v2.json",
+    "0_kernel/evals/real_task_eval_harness/real_task_corpus_runner_v2.py",
+    "0_kernel/evals/real_task_eval_harness/real_task_eval_runtime_gate_v1.py",
+    "0_kernel/registry/world_class_gap_plan/RUNTIME_STAGE_EXIT_EVAL_GATE_BINDING_v1.json",
+    "runtime/state/REAL_TASK_CORPUS_RESULTS_v2.json",
+    "runtime/state/REAL_TASK_EVAL_RUNTIME_GATE_RESULT_v1.json",
+    "0_kernel/registry/world_class_gap_plan/WORLD_CLASS_LATEST_MEASURED_SCORECARD_v3_AFTER_WC11.json",
+    "0_kernel/registry/world_class_gap_plan/WC_STAGE11_REAL_TASK_CORPUS_EXPANSION_REPORT_v1.md",
+    "runtime/state/NEXT_STAGE_COPY_PROMPT.md"
+  ],
+  "eval_summary": {
+    "domains": [
+      "artifact_export",
+      "blooket_csv",
+      "educational_html",
+      "lesson_plan",
+      "repair_debugging",
+      "research_see"
+    ],
+    "pass_rate": 1.0,
+    "passed": 12,
+    "results": [
+      {
+        "checks": {
+          "aria_live": true,
+          "doctype": true,
+          "focus_style": true,
+          "lang": true,
+          "no_external_cdn": true,
+          "reduced_motion": true,
+          "tokens": true,
+          "tts_hidden_icon": true,
+          "viewport": true
+        },
+        "domain": "educational_html",
+        "fixture_id": "HTML_ACTIVITY_FULL_STRUCTURE_001",
+        "verdict": "PASS"
+      },
+      {
+        "checks": {
+          "aria_live": true,
+          "no_external_cdn": true,
+          "no_module_import": true,
+          "self_contained": true,
+          "tokens": true,
+          "viewport": true
+        },
+        "domain": "educational_html",
+        "fixture_id": "HTML_ACTIVITY_GOOGLE_SITES_SAFE_002",
+        "verdict": "PASS"
+      },
+      {
+        "checks": {
+          "answer_distribution": true,
+          "correct_answer_present": true,
+          "four_answers": true,
+          "header_exact": true,
+          "spacer_row": true
+        },
+        "domain": "blooket_csv",
+        "fixture_id": "BLOOKET_WORD_BUILDING_CSV_001",
+        "verdict": "PASS"
+      },
+      {
+        "checks": {
+          "header_exact": true,
+          "no_extra_columns": true,
+          "question_rows_present": true,
+          "spacer_row": true
+        },
+        "domain": "blooket_csv",
+        "fixture_id": "BLOOKET_TEMPLATE_NO_LAYOUT_DRIFT_002",
+        "verdict": "PASS"
+      },
+      {
+        "checks": {
+          "eb_supports": true,
+          "evidence_requirement": true,
+          "exit_check": true,
+          "grade": true,
+          "objective": true,
+          "standard": true,
+          "steps": true
+        },
+        "domain": "lesson_plan",
+        "fixture_id": "LESSON_PLAN_TEKS_EVIDENCE_001",
+        "verdict": "PASS"
+      },
+      {
+        "checks": {
+          "exit_ticket": true,
+          "misconceptions": true,
+          "reteach": true,
+          "standard": true
+        },
+        "domain": "lesson_plan",
+        "fixture_id": "LESSON_PLAN_MASTERY_RETEACH_002",
+        "verdict": "PASS"
+      },
+      {
+        "checks": {
+          "blocks_provisional_percentages": true,
+          "evidence_binding": true,
+          "requires_citations": true,
+          "requires_web_run": true
+        },
+        "domain": "research_see",
+        "fixture_id": "RESEARCH_SEE_CURRENT_CITATIONS_001",
+        "verdict": "PASS"
+      },
+      {
+        "checks": {
+          "minimum_domains": true,
+          "minimum_sources": true,
+          "official_sources_preferred": true,
+          "record_search_query": true
+        },
+        "domain": "research_see",
+        "fixture_id": "RESEARCH_SEE_SOURCE_DIVERSITY_002",
+        "verdict": "PASS"
+      },
+      {
+        "checks": {
+          "boot_smoke": true,
+          "clean_extract_smoke": true,
+          "primary_bundle": true,
+          "sha256_check": true,
+          "sidecar": true,
+          "stat": true,
+          "zip_test": true
+        },
+        "domain": "artifact_export",
+        "fixture_id": "ARTIFACT_EXPORT_FULL_AUTHORITY_001",
+        "verdict": "PASS"
+      },
+      {
+        "checks": {
+          "download_manifest": true,
+          "no_forbidden_words": true,
+          "phone_safe_name": true
+        },
+        "domain": "artifact_export",
+        "fixture_id": "ARTIFACT_EXPORT_PHONE_SAFE_NAMES_002",
+        "verdict": "PASS"
+      },
+      {
+        "checks": {
+          "minimal_fix": true,
+          "read_before_patch": true,
+          "receipt": true,
+          "regression_test": true,
+          "root_cause": true
+        },
+        "domain": "repair_debugging",
+        "fixture_id": "REPAIR_DEBUGGING_ROOT_CAUSE_001",
+        "verdict": "PASS"
+      },
+      {
+        "checks": {
+          "do_not_assume_missing": true,
+          "fallback_selector": true,
+          "probe_filesystem": true,
+          "record_failed_methods": true
+        },
+        "domain": "repair_debugging",
+        "fixture_id": "REPAIR_DEBUGGING_CAPABILITY_PROBE_002",
+        "verdict": "PASS"
+      }
+    ],
+    "schema_version": "v2",
+    "total": 12,
+    "verdict": "PASS"
+  },
+  "next_stage": "WC_STAGE12_RUNTIME_ORCHESTRATOR_GATE_WIRING_AND_FIELD_TASK_FIXTURES",
+  "runtime_gate_verdict": "PASS",
+  "source_authority_zip": "BOOTABLE_FULL_AUTHORITY_WC10.zip",
+  "stage": "WC_STAGE11_REAL_TASK_CORPUS_EXPANSION_AND_RUNTIME_GATE_BINDING",
+  "timestamp_utc": "20260503T024822Z",
+  "verdict": "PASS"
+}

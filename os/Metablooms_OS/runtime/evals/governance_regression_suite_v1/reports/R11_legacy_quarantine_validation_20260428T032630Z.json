@@ -1,0 +1,15 @@
+{
+  "decision_id": "R11-LEGACY-QUARANTINE-20260428T032635Z",
+  "result": "allow",
+  "checked_count": 5,
+  "checked": [
+    "1_governance/workflow_v6/CLAUDE_MEMORY_SEED_v1.json",
+    "1_governance/workflow_v6/CLAUDE_OPERATING_CONTRACT_v1.md",
+    "1_governance/workflow_v6/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.json",
+    "0_kernel/scripts/claude_memory_sync_writer_v1.py",
+    "1_governance/cool_overlays/COOL_6_RUNTIME_GATE_WIRING_PLAN_v1.json"
+  ],
+  "blocks": [],
+  "warnings": [],
+  "contract_path": "/mnt/data/Metablooms_OS/runtime/governance/contracts/legacy_quarantine_redirects_contract_v1.json"
+}

@@ -1,0 +1,40 @@
+{
+  "actions": [
+    "installed_general_capability_resolver_contract",
+    "installed_policy",
+    "installed_executable_resolver",
+    "installed_router_binding",
+    "ran_fixture_tests",
+    "generated_next_stage_copy_prompt",
+    "prepared_full_authority_export"
+  ],
+  "artifacts_written": [
+    "0_kernel/registry/general_capability_resolver/GENERAL_CAPABILITY_RESOLVER_CONTRACT_v1.json",
+    "0_kernel/registry/general_capability_resolver/GENERAL_CAPABILITY_RESOLVER_POLICY_v1.json",
+    "0_kernel/capability_resolver/general_capability_resolver_v1.py",
+    "0_kernel/registry/general_capability_resolver/GENERAL_CAPABILITY_ROUTER_BINDING_v1.json",
+    "tests/capability_resolver/general_capability_resolver_fixture_v1.json",
+    "tests/capability_resolver/test_general_capability_resolver_v1.py",
+    "runtime/state/GENERAL_CAPABILITY_RESOLVER_TEST_REPORT_v1.json",
+    "runtime/state/GENERAL_CAPABILITY_RELIABILITY_LEDGER_v1.jsonl",
+    "0_kernel/registry/world_class_gap_plan/WC_STAGE6_GENERAL_CAPABILITY_RESOLVER_FRAMEWORK_REPORT_v1.md",
+    "runtime/state/NEXT_STAGE_COPY_PROMPT.md",
+    "runtime/state/NEXT_STAGE_COPY_PROMPT.json"
+  ],
+  "boot_authority": "BOOTABLE_FULL_AUTHORITY_WC3.zip",
+  "external_basis_labels": [
+    "circuit_breaker_pattern",
+    "github_runner_contexts_debugging",
+    "sre_graceful_degradation"
+  ],
+  "previous_completed_stage": "WC_STAGE3_LESSON_PROMOTION_QUEUE_AND_FIXTURE_FACTORY",
+  "schema_version": "v1",
+  "stage": "WC_STAGE6_GENERAL_CAPABILITY_RESOLVER_FRAMEWORK",
+  "timestamp": "20260503T005700Z",
+  "verdict": "PASS",
+  "verification": {
+    "boot_smoke_root": "PASS_WITH_WARNINGS_OR_ALLOW",
+    "fixture_test": "PASS",
+    "py_compile": "PASS"
+  }
+}

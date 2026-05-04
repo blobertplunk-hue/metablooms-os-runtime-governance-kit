@@ -1,0 +1,11 @@
+{
+  "cdr_evidence": {},
+  "cdr_gate_result": {
+    "verdict": "NOT_APPLICABLE"
+  },
+  "code_artifact_classes": [],
+  "mpp_compliance_claimed": true,
+  "stage_contains_code": false,
+  "stage_id": "EXAMPLE_NON_CODE_STAGE",
+  "stage_verdict_requested": "PASS"
+}

@@ -1,0 +1,388 @@
+{
+  "contract_id": "artifact_disposition_contract_v1",
+  "stage": "R1_CLASSIFICATION_AND_DISPOSITION_BINDING",
+  "timestamp_utc": "20260428T024157Z",
+  "authoritative_root": "/mnt/data/Metablooms_OS",
+  "source_manifest": "/mnt/data/Metablooms_OS/receipts/refactor_program/R0_SOURCE_INTAKE_MANIFEST_20260428T023844Z.json",
+  "source_path_map": "/mnt/data/Metablooms_OS/receipts/refactor_program/R0_PATH_MAP_20260428T023844Z.json",
+  "decision_protocol": {
+    "decision_class": "Class B",
+    "selection_rule": "Choose dispositions that minimize ambiguity, preserve rationale in ADR/archive targets, and route executable value into explicit successor artifacts.",
+    "candidate_options": [
+      "Keep all source artifacts in place and promote wholesale",
+      "Split rationale-heavy artifacts while promoting executable artifacts into successor paths",
+      "Archive most artifacts and rebuild successors from scratch"
+    ],
+    "chosen_option": "Split rationale-heavy artifacts while promoting executable artifacts into successor paths",
+    "rejected_options": [
+      "Keep all source artifacts in place and promote wholesale",
+      "Archive most artifacts and rebuild successors from scratch"
+    ],
+    "time_bound_minutes": 10
+  },
+  "items": [
+    {
+      "source_artifact_id": "CLAUDE_MEMORY_SYNC_v1.json",
+      "staged_lookup": "CLAUDE_MEMORY_SYNC_v1.json",
+      "disposition": "split",
+      "reason": "Model-specific sync snapshot is not runtime authority; preserve historical context while replacing with model-agnostic state export.",
+      "archive_targets": [
+        {
+          "artifact_id": "ADR-0002-adopt-session-state-export-over-model-specific-sync",
+          "path": "0_kernel/docs/decisions/ADR-0002-adopt-session-state-export-over-model-specific-sync.md"
+        },
+        {
+          "artifact_id": "legacy_model_specific_sync_snapshot",
+          "path": "runtime/governance/legacy_archives/CLAUDE_MEMORY_SYNC_v1.json"
+        }
+      ],
+      "successor_targets": [
+        {
+          "artifact_id": "session_state_export_schema_v1",
+          "path": "runtime/governance/schemas/session_state_export_schema_v1.json"
+        },
+        {
+          "artifact_id": "session_state_export_latest_v1",
+          "path": "runtime/governance/state_exports/SESSION_STATE_EXPORT_LATEST_v1.json"
+        }
+      ],
+      "staged_path": "/mnt/data/Metablooms_OS/0_kernel/staging/refactor_intake_20260428T023844Z/source_bundle_extract/CLAUDE_MEMORY_SYNC_v1.json",
+      "source_sha256": "be1a806d01ede56df088498c72cc1e1a16c6563b164fffd8d283d33420f1b445",
+      "source_size_bytes": 2869,
+      "live_runtime_conflicts": [],
+      "has_live_runtime_conflict": false,
+      "r11_final_status": "split_successors_active_legacy_archived_or_redirected"
+    },
+    {
+      "source_artifact_id": "0_kernel/scripts/claude_memory_sync_writer_v1.py",
+      "staged_lookup": "0_kernel/scripts/claude_memory_sync_writer_v1.py",
+      "disposition": "split",
+      "reason": "Claude-specific writer should be replaced by model-agnostic exporter while preserving legacy source for traceability.",
+      "archive_targets": [
+        {
+          "artifact_id": "legacy_claude_memory_sync_writer",
+          "path": "runtime/governance/legacy_archives/claude_memory_sync_writer_v1.py"
+        },
+        {
+          "artifact_id": "ADR-0002-adopt-session-state-export-over-model-specific-sync",
+          "path": "0_kernel/docs/decisions/ADR-0002-adopt-session-state-export-over-model-specific-sync.md"
+        }
+      ],
+      "successor_targets": [
+        {
+          "artifact_id": "session_state_exporter_v1",
+          "path": "0_kernel/scripts/session_state_exporter_v1.py"
+        },
+        {
+          "artifact_id": "validate_session_state_export_v1",
+          "path": "0_kernel/scripts/validate_session_state_export_v1.py"
+        }
+      ],
+      "staged_path": "/mnt/data/Metablooms_OS/0_kernel/staging/refactor_intake_20260428T023844Z/source_bundle_extract/Metablooms_OS/0_kernel/scripts/claude_memory_sync_writer_v1.py",
+      "source_sha256": "27600f4a273ced13bfc0e157be376cb15c3b0660acac60f0799f415b4bb0a49e",
+      "source_size_bytes": 20399,
+      "live_runtime_conflicts": [],
+      "has_live_runtime_conflict": false,
+      "r11_final_status": "split_successors_active_legacy_archived_or_redirected"
+    },
+    {
+      "source_artifact_id": "0_kernel/scripts/p0a_external_reuse_scan_precheck_v1.py",
+      "staged_lookup": "0_kernel/scripts/p0a_external_reuse_scan_precheck_v1.py",
+      "disposition": "promote",
+      "reason": "Executable governance logic is substantively useful and should become an evidence-bound gate under runtime-safe conventions.",
+      "archive_targets": [],
+      "successor_targets": [
+        {
+          "artifact_id": "external_reuse_scan_gate_v1",
+          "path": "0_kernel/scripts/external_reuse_scan_gate_v1.py"
+        },
+        {
+          "artifact_id": "external_reuse_decision_log_schema_v1",
+          "path": "runtime/governance/schemas/external_reuse_decision_schema_v1.json"
+        }
+      ],
+      "staged_path": "/mnt/data/Metablooms_OS/0_kernel/staging/refactor_intake_20260428T023844Z/source_bundle_extract/Metablooms_OS/0_kernel/scripts/p0a_external_reuse_scan_precheck_v1.py",
+      "source_sha256": "6da19d7974b3dbf0ff132f518d277da0dba15c14d0e78b794a276dc5d1c008fa",
+      "source_size_bytes": 6654,
+      "live_runtime_conflicts": [],
+      "has_live_runtime_conflict": false,
+      "r11_final_status": "promoted_or_hardened_by_successor_stage"
+    },
+    {
+      "source_artifact_id": "1_governance/cool_overlays/COOL_5_EXTERNAL_REUSE_SCAN_GATE_SCHEMA_v1.json",
+      "staged_lookup": "1_governance/cool_overlays/COOL_5_EXTERNAL_REUSE_SCAN_GATE_SCHEMA_v1.json",
+      "disposition": "promote",
+      "reason": "Schema content should be carried forward into a runtime governance schema location.",
+      "archive_targets": [],
+      "successor_targets": [
+        {
+          "artifact_id": "external_reuse_gate_schema_v1",
+          "path": "runtime/governance/schemas/external_reuse_gate_schema_v1.json"
+        }
+      ],
+      "staged_path": "/mnt/data/Metablooms_OS/0_kernel/staging/refactor_intake_20260428T023844Z/source_bundle_extract/Metablooms_OS/1_governance/cool_overlays/COOL_5_EXTERNAL_REUSE_SCAN_GATE_SCHEMA_v1.json",
+      "source_sha256": "27919934cd67c335c68e2099b232bd0e6da862315bf1f2a39feaad96f1181730",
+      "source_size_bytes": 2314,
+      "live_runtime_conflicts": [],
+      "has_live_runtime_conflict": false,
+      "r11_final_status": "promoted_or_hardened_by_successor_stage"
+    },
+    {
+      "source_artifact_id": "1_governance/cool_overlays/COOL_6_RUNTIME_GATE_WIRING_PLAN_v1.json",
+      "staged_lookup": "1_governance/cool_overlays/COOL_6_RUNTIME_GATE_WIRING_PLAN_v1.json",
+      "disposition": "split",
+      "reason": "Plan prose should become both ADR history and executable registry input.",
+      "archive_targets": [
+        {
+          "artifact_id": "ADR-0003-adopt-gate-registry-for-runtime-wiring",
+          "path": "0_kernel/docs/decisions/ADR-0003-adopt-gate-registry-for-runtime-wiring.md"
+        },
+        {
+          "artifact_id": "legacy_gate_wiring_plan",
+          "path": "runtime/governance/legacy_archives/COOL_6_RUNTIME_GATE_WIRING_PLAN_v1.json"
+        }
+      ],
+      "successor_targets": [
+        {
+          "artifact_id": "gate_registry_v1",
+          "path": "runtime/governance/registries/gate_registry_v1.json"
+        },
+        {
+          "artifact_id": "validate_gate_registry_v1",
+          "path": "0_kernel/scripts/validate_gate_registry_v1.py"
+        }
+      ],
+      "staged_path": "/mnt/data/Metablooms_OS/0_kernel/staging/refactor_intake_20260428T023844Z/source_bundle_extract/Metablooms_OS/1_governance/cool_overlays/COOL_6_RUNTIME_GATE_WIRING_PLAN_v1.json",
+      "source_sha256": "bb90a63995473293f557035a3b2a7da073c101b0bb21a36a81bc065535075bfa",
+      "source_size_bytes": 2341,
+      "live_runtime_conflicts": [],
+      "has_live_runtime_conflict": false,
+      "r11_final_status": "split_successors_active_legacy_archived_or_redirected"
+    },
+    {
+      "source_artifact_id": "0_kernel/scripts/usefulness_surface_validator_v1.py",
+      "staged_lookup": "0_kernel/scripts/usefulness_surface_validator_v1.py",
+      "disposition": "promote",
+      "reason": "Existing validator is already close to a durable gate and should be promoted into standardized validator naming.",
+      "archive_targets": [],
+      "successor_targets": [
+        {
+          "artifact_id": "validate_usefulness_surface_v1",
+          "path": "0_kernel/scripts/validate_usefulness_surface_v1.py"
+        },
+        {
+          "artifact_id": "usefulness_surface_schema_v1",
+          "path": "runtime/governance/schemas/usefulness_surface_schema_v1.json"
+        }
+      ],
+      "staged_path": "/mnt/data/Metablooms_OS/0_kernel/staging/refactor_intake_20260428T023844Z/source_bundle_extract/Metablooms_OS/0_kernel/scripts/usefulness_surface_validator_v1.py",
+      "source_sha256": "e2da3a67c0038a509f49ec77958bee915be8c3bb5e90746f7ec5caa71848e88f",
+      "source_size_bytes": 6071,
+      "live_runtime_conflicts": [],
+      "has_live_runtime_conflict": false,
+      "r11_final_status": "promoted_or_hardened_by_successor_stage"
+    },
+    {
+      "source_artifact_id": "0_kernel/scripts/p0py_python_health_governance_v1.py",
+      "staged_lookup": "0_kernel/scripts/p0py_python_health_governance_v1.py",
+      "disposition": "promote",
+      "reason": "Python health governance directly addresses known runtime failures and should be preserved as an active gate/input.",
+      "archive_targets": [],
+      "successor_targets": [
+        {
+          "artifact_id": "python_health_gate_v1",
+          "path": "0_kernel/scripts/python_health_gate_v1.py"
+        },
+        {
+          "artifact_id": "python_health_policy_binding_v1",
+          "path": "runtime/governance/PYTHON_HEALTH_POLICY_BINDING_v1.json"
+        }
+      ],
+      "staged_path": "/mnt/data/Metablooms_OS/0_kernel/staging/refactor_intake_20260428T023844Z/source_bundle_extract/Metablooms_OS/0_kernel/scripts/p0py_python_health_governance_v1.py",
+      "source_sha256": "0dc2cb1a552b33bc6d7fb97e112a4eb0234b9074d3f897a127ae42d4e19d2cb5",
+      "source_size_bytes": 8295,
+      "live_runtime_conflicts": [],
+      "has_live_runtime_conflict": false,
+      "r11_final_status": "promoted_or_hardened_by_successor_stage"
+    },
+    {
+      "source_artifact_id": "0_kernel/scripts/stage_base_resolver_v1.py",
+      "staged_lookup": "0_kernel/scripts/stage_base_resolver_v1.py",
+      "disposition": "promote",
+      "reason": "Writable-root and stage-base resolution is directly useful and should be promoted largely in-place.",
+      "archive_targets": [],
+      "successor_targets": [
+        {
+          "artifact_id": "stage_base_resolver_v1",
+          "path": "0_kernel/scripts/stage_base_resolver_v1.py"
+        }
+      ],
+      "staged_path": "/mnt/data/Metablooms_OS/0_kernel/staging/refactor_intake_20260428T023844Z/source_bundle_extract/Metablooms_OS/0_kernel/scripts/stage_base_resolver_v1.py",
+      "source_sha256": "873d67574a9e23ac83561e11f2bd3fdb43186a7496057449da94557c79dd386b",
+      "source_size_bytes": 4949,
+      "live_runtime_conflicts": [],
+      "has_live_runtime_conflict": false,
+      "r11_final_status": "promoted_or_hardened_by_successor_stage"
+    },
+    {
+      "source_artifact_id": "2_engines/telemetry/MISCONCEPTION_TELEMETRY_ENGINE_v1.js",
+      "staged_lookup": "2_engines/telemetry/MISCONCEPTION_TELEMETRY_ENGINE_v1.js",
+      "disposition": "promote",
+      "reason": "Telemetry engine is one of the strongest executable assets and should move into cartridge-grade engine placement.",
+      "archive_targets": [],
+      "successor_targets": [
+        {
+          "artifact_id": "misconception_telemetry_engine_v1",
+          "path": "2_engines/telemetry/engine/misconception_telemetry_engine_v1.js"
+        },
+        {
+          "artifact_id": "misconception_telemetry_replay_fixture_v1",
+          "path": "2_engines/telemetry/fixtures/misconception_telemetry_replay_fixture_v1.json"
+        }
+      ],
+      "staged_path": "/mnt/data/Metablooms_OS/0_kernel/staging/refactor_intake_20260428T023844Z/source_bundle_extract/Metablooms_OS/2_engines/telemetry/MISCONCEPTION_TELEMETRY_ENGINE_v1.js",
+      "source_sha256": "0724edf8628d898557cff0ea61193472fd4e71fe7b1846f8cd59dcf9cfa7c9b8",
+      "source_size_bytes": 13725,
+      "live_runtime_conflicts": [],
+      "has_live_runtime_conflict": false,
+      "r11_final_status": "promoted_or_hardened_by_successor_stage"
+    },
+    {
+      "source_artifact_id": "1_governance/cool_overlays/MISCONCEPTION_TELEMETRY_SCHEMA_v1.json",
+      "staged_lookup": "1_governance/cool_overlays/MISCONCEPTION_TELEMETRY_SCHEMA_v1.json",
+      "disposition": "promote",
+      "reason": "Telemetry schema should be promoted into engine-adjacent schema placement.",
+      "archive_targets": [],
+      "successor_targets": [
+        {
+          "artifact_id": "misconception_telemetry_event_schema_v1",
+          "path": "2_engines/telemetry/schemas/misconception_telemetry_event_schema_v1.json"
+        }
+      ],
+      "staged_path": "/mnt/data/Metablooms_OS/0_kernel/staging/refactor_intake_20260428T023844Z/source_bundle_extract/Metablooms_OS/1_governance/cool_overlays/MISCONCEPTION_TELEMETRY_SCHEMA_v1.json",
+      "source_sha256": "985e053c612a0c84fa2f48360e43d1a1d1f06868f11f4e098fc4a4a162f5e139",
+      "source_size_bytes": 5352,
+      "live_runtime_conflicts": [],
+      "has_live_runtime_conflict": false,
+      "r11_final_status": "promoted_or_hardened_by_successor_stage"
+    },
+    {
+      "source_artifact_id": "3_data/html_activities/fractions_number_line_telemetry_v1.html",
+      "staged_lookup": "3_data/html_activities/fractions_number_line_telemetry_v1.html",
+      "disposition": "promote",
+      "reason": "The classroom demo is useful as a replay/smoke-test artifact and should remain available under telemetry demo placement.",
+      "archive_targets": [],
+      "successor_targets": [
+        {
+          "artifact_id": "fractions_number_line_telemetry_demo_v1",
+          "path": "3_data/html_activities/telemetry_demos/fractions_number_line_telemetry_v1.html"
+        }
+      ],
+      "staged_path": "/mnt/data/Metablooms_OS/0_kernel/staging/refactor_intake_20260428T023844Z/source_bundle_extract/Metablooms_OS/3_data/html_activities/fractions_number_line_telemetry_v1.html",
+      "source_sha256": "a3cb0506bd114741b2ac00c01a9cf37217e1efb91c0c66f6740ddadf992104b8",
+      "source_size_bytes": 35672,
+      "live_runtime_conflicts": [],
+      "has_live_runtime_conflict": false,
+      "r11_final_status": "promoted_or_hardened_by_successor_stage"
+    },
+    {
+      "source_artifact_id": "0_kernel/scripts/dryrun_receipt_phase_accuracy_patch_v1.py",
+      "staged_lookup": "0_kernel/scripts/dryrun_receipt_phase_accuracy_patch_v1.py",
+      "disposition": "promote",
+      "reason": "Receipt accuracy patch closes a real auditability gap and should be preserved as a maintenance utility.",
+      "archive_targets": [],
+      "successor_targets": [
+        {
+          "artifact_id": "apply_dryrun_receipt_phase_accuracy_patch_v1",
+          "path": "0_kernel/scripts/apply_dryrun_receipt_phase_accuracy_patch_v1.py"
+        }
+      ],
+      "staged_path": "/mnt/data/Metablooms_OS/0_kernel/staging/refactor_intake_20260428T023844Z/source_bundle_extract/Metablooms_OS/0_kernel/scripts/dryrun_receipt_phase_accuracy_patch_v1.py",
+      "source_sha256": "fd2fca947fddf83fdd7f82e3847b4b62d90f7c8cfa9157ba614348cc2aab03f3",
+      "source_size_bytes": 6296,
+      "live_runtime_conflicts": [],
+      "has_live_runtime_conflict": false,
+      "r11_final_status": "promoted_or_hardened_by_successor_stage"
+    },
+    {
+      "source_artifact_id": "1_governance/workflow_v6/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.json",
+      "staged_lookup": "1_governance/workflow_v6/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.json",
+      "disposition": "split",
+      "reason": "Cross-link memo is historical/rationale-heavy and should be split into ADR plus executable compatibility contract.",
+      "archive_targets": [
+        {
+          "artifact_id": "ADR-0001-split-rationale-from-runtime-contracts",
+          "path": "0_kernel/docs/decisions/ADR-0001-split-rationale-from-runtime-contracts.md"
+        },
+        {
+          "artifact_id": "legacy_cross_link_handoff",
+          "path": "runtime/governance/legacy_archives/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.json"
+        }
+      ],
+      "successor_targets": [
+        {
+          "artifact_id": "unified_runtime_compatibility_contract_v1",
+          "path": "runtime/governance/contracts/unified_runtime_compatibility_contract_v1.json"
+        },
+        {
+          "artifact_id": "validate_unified_runtime_compatibility_contract_v1",
+          "path": "0_kernel/scripts/validate_unified_runtime_compatibility_contract_v1.py"
+        }
+      ],
+      "staged_path": "/mnt/data/Metablooms_OS/0_kernel/staging/refactor_intake_20260428T023844Z/source_bundle_extract/Metablooms_OS/1_governance/workflow_v6/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.json",
+      "source_sha256": "b0b2fa19a37e973bb38da416a569b43612d0c77912304640c20e53412a88f3b4",
+      "source_size_bytes": 6926,
+      "live_runtime_conflicts": [],
+      "has_live_runtime_conflict": false,
+      "r11_final_status": "split_successors_active_legacy_archived_or_redirected"
+    }
+  ],
+  "summary": {
+    "total_items": 13,
+    "promote_count": 9,
+    "split_count": 4,
+    "archive_only_count": 0,
+    "discard_count": 0,
+    "live_runtime_conflict_count": 0,
+    "ambiguous_count": 0,
+    "split_without_targets_count": 0
+  },
+  "gate_status": {
+    "no_ambiguity": true,
+    "all_split_items_have_archive_and_successor_targets": true,
+    "live_conflicts_recorded": true
+  },
+  "r11_finalized_utc": "2026-04-28T03:26:30Z",
+  "finalization_stage": "R11_LEGACY_QUARANTINE_REDIRECTS_AND_CLEANUP",
+  "r11_additional_legacy_quarantines": [
+    {
+      "legacy_artifact": "1_governance/workflow_v6/CLAUDE_MEMORY_SEED_v1.json",
+      "status": "quarantined_archive_only_after_r11",
+      "live_location": "1_governance/workflow_v6/CLAUDE_MEMORY_SEED_v1.json",
+      "redirect": "1_governance/workflow_v6/CLAUDE_MEMORY_SEED_v1.json.redirect.json",
+      "archive_path": "runtime/governance/legacy_quarantine/R11_20260428T032630Z/CLAUDE_MEMORY_SEED_v1.json",
+      "archive_sha256": "b6b2a0e7fe8012e38bc730817b39a671f0516943194ed0d0093e68bd2572d2c9",
+      "original_sha256": "b6b2a0e7fe8012e38bc730817b39a671f0516943194ed0d0093e68bd2572d2c9",
+      "successor_contracts": [
+        "runtime/governance/state_exports/SESSION_STATE_EXPORT_LATEST_v1.json",
+        "0_kernel/scripts/session_state_exporter_v1.py"
+      ],
+      "adr": "0_kernel/docs/decisions/ADR-0002-adopt-session-state-export-over-model-specific-sync.md"
+    },
+    {
+      "legacy_artifact": "1_governance/workflow_v6/CLAUDE_OPERATING_CONTRACT_v1.md",
+      "status": "quarantined_archive_only_after_r11",
+      "live_location": "1_governance/workflow_v6/CLAUDE_OPERATING_CONTRACT_v1.md",
+      "redirect": "1_governance/workflow_v6/CLAUDE_OPERATING_CONTRACT_v1.md.redirect.json",
+      "archive_path": "runtime/governance/legacy_quarantine/R11_20260428T032630Z/CLAUDE_OPERATING_CONTRACT_v1.md",
+      "archive_sha256": "0aa014fe7be1451c45123c6c7de580f8cf8696070b36c88d2a447dd612320a1d",
+      "original_sha256": "0aa014fe7be1451c45123c6c7de580f8cf8696070b36c88d2a447dd612320a1d",
+      "successor_contracts": [
+        "runtime/governance/contracts/unified_runtime_compatibility_contract_v1.json",
+        "runtime/governance/registries/gate_registry_v1.json",
+        "runtime/governance/state_exports/SESSION_STATE_EXPORT_LATEST_v1.json"
+      ],
+      "adr": "0_kernel/docs/decisions/ADR-0001-split-rationale-from-runtime-contracts.md"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "created_at": "2026-05-02T19:59:18.342997+00:00",
+  "defects": [
+    "declared_shape_fails_smoke"
+  ],
+  "expected_decision": "DENY",
+  "fixture_id": "PAC-FIX-003",
+  "result_hash": "7a44820de8c5f81519393c50bfb8202e16ba1c9da506ecec7c94102bb2d21b34",
+  "schema_version": "metablooms.promotion_authority_coherence.fixture.v1",
+  "setup": {
+    "actual_supported_shape": "positional_root",
+    "declared_shape": "--root",
+    "validator": "fresh_chat_boot_rehearsal_v1.py"
+  },
+  "title": "deny_validator_cli_shape_mismatch"
+}

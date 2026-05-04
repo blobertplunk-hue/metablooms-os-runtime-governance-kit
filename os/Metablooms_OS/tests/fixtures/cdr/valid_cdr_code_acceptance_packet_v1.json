@@ -1,0 +1,77 @@
+{
+  "dimensions": {
+    "adaptability": {
+      "evidence": [
+        "adaptability_evidence"
+      ],
+      "status": "PASS"
+    },
+    "completeness": {
+      "evidence": [
+        "completeness_evidence"
+      ],
+      "status": "PASS"
+    },
+    "comprehensibility": {
+      "evidence": [
+        "comprehensibility_evidence"
+      ],
+      "status": "PASS"
+    },
+    "correctness": {
+      "evidence": [
+        "correctness_evidence"
+      ],
+      "status": "PASS"
+    },
+    "debuggability": {
+      "evidence": [
+        "debuggability_evidence"
+      ],
+      "status": "PASS"
+    },
+    "integration": {
+      "evidence": [
+        "integration_evidence"
+      ],
+      "status": "PASS"
+    },
+    "observability": {
+      "evidence": [
+        "observability_evidence"
+      ],
+      "status": "PASS"
+    },
+    "recursive_improvement": {
+      "evidence": [
+        "recursive_improvement_evidence"
+      ],
+      "status": "PASS"
+    },
+    "regression_resistance": {
+      "evidence": [
+        "regression_resistance_evidence"
+      ],
+      "status": "PASS"
+    },
+    "security": {
+      "evidence": [
+        "security_evidence"
+      ],
+      "status": "PASS"
+    },
+    "testability": {
+      "evidence": [
+        "testability_evidence"
+      ],
+      "status": "PASS"
+    }
+  },
+  "evidence": [
+    "reconstructed"
+  ],
+  "recursive_improvement": {
+    "open_high_value_improvements": false
+  },
+  "stage_id": "reconstructed_stage2_valid"
+}

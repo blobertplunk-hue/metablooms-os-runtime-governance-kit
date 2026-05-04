@@ -1,0 +1,35 @@
+{
+  "version": "1.0",
+  "created_at": 1776998223.7683868,
+  "status": "PASS",
+  "vendor_python": "/mnt/data/Metablooms_OS_refined/0_kernel/vendor/python",
+  "ruff_wrapper": "/mnt/data/Metablooms_OS_refined/0_kernel/vendor/bin/ruff",
+  "before": {
+    "cmd": [
+      "/mnt/data/Metablooms_OS_refined/0_kernel/vendor/bin/ruff",
+      "--version"
+    ],
+    "returncode": 0,
+    "stdout": "ruff 0.15.11",
+    "stderr": ""
+  },
+  "install_attempted": false,
+  "install_result": null,
+  "after": {
+    "cmd": [
+      "/mnt/data/Metablooms_OS_refined/0_kernel/vendor/bin/ruff",
+      "--version"
+    ],
+    "returncode": 0,
+    "stdout": "ruff 0.15.11",
+    "stderr": ""
+  },
+  "usage_contract": {
+    "preferred_for": "Python linting and formatting before committing generated or modified scripts",
+    "commands": [
+      "ruff check <paths>",
+      "ruff format <paths>"
+    ],
+    "fallback": "Python syntax compile + pytest where Ruff unavailable"
+  }
+}

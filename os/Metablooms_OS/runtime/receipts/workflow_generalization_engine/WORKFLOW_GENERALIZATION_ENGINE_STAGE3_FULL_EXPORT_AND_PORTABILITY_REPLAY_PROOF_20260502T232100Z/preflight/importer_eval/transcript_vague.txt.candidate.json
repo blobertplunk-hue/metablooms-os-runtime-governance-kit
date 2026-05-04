@@ -1,0 +1,61 @@
+{
+  "candidates": [
+    {
+      "lesson_id": "transcript_candidate_abfd5d8a2c06",
+      "source": {
+        "type": "transcript_import",
+        "path": "/mnt/data/Metablooms_OS/tests/evals/workflow_generalization/fixtures/transcript_vague.txt",
+        "sha256": "f4106a263d28cd30c8beb9541acbd75a097d2b996cdd0d71594939c3fb29a2e9"
+      },
+      "evidence": {
+        "summary": "This was good. Maybe do better next time. Some stuff should improve.",
+        "strength": 0.35,
+        "excerpt_count": 1,
+        "tags": [
+          "directive"
+        ],
+        "excerpts": [
+          {
+            "line": 1,
+            "text": "This was good. Maybe do better next time. Some stuff should improve.",
+            "tags": [
+              "directive"
+            ]
+          }
+        ]
+      },
+      "baseline_comparison": {
+        "current_behavior": "Use current OS routing, gates, resolvers, ledgers, fixtures, and sandbox-first defaults.",
+        "proposed_behavior": "Adopt transcript-derived workflow lesson only if it improves current behavior and can be artifactized.",
+        "score_current": {
+          "reliability": 3,
+          "sandbox_fit": 4,
+          "automation": 3,
+          "honesty": 4,
+          "artifactization": 3
+        },
+        "score_candidate": {
+          "reliability": 3,
+          "sandbox_fit": 3,
+          "automation": 3,
+          "honesty": 3,
+          "artifactization": 2
+        },
+        "regression_flags": []
+      },
+      "auto_include": [
+        "WORKFLOW_GENERALIZATION_ENGINE"
+      ],
+      "artifactization": {
+        "required": true,
+        "minimum_artifacts": [
+          "ledger_event",
+          "router_candidate",
+          "fixture_or_receipt"
+        ],
+        "candidate_kind": "transcript_lesson"
+      },
+      "import_decision_hint": "defer_or_reject_unless_router_scores_higher"
+    }
+  ]
+}

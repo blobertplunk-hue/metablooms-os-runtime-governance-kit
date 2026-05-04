@@ -1,0 +1,51 @@
+{
+  "decision": "ALLOW",
+  "format": "metablooms_jsonl",
+  "record": {
+    "attributes": {
+      "action_type": "filesystem_write",
+      "artifact_sha256": "abc123",
+      "bts_commit_id": "bts_commit_stage6r",
+      "checkpoint_id": "ckpt_stage6p_child",
+      "policy_decision": "ALLOW",
+      "risk_tier": "high",
+      "thread_id": "thread_stage6",
+      "tool_id": "python3_S_stdlib"
+    },
+    "events": [],
+    "kind": "INTERNAL",
+    "links": [],
+    "name": "bts.tool_execution",
+    "parent_span_id": null,
+    "schema": "MetaBloomsTraceSpan_v1",
+    "span_id": "span_6ce52eed657b9436",
+    "stage_id": "STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS",
+    "status": "PASS",
+    "timestamp_utc": "2026-05-02T14:18:40.340470Z",
+    "trace_id": "trace_d0a708fa1c146ca3"
+  },
+  "schema": "TraceExportAdapterResult_v1",
+  "span": {
+    "attributes": {
+      "action_type": "filesystem_write",
+      "artifact_sha256": "abc123",
+      "bts_commit_id": "bts_commit_stage6r",
+      "checkpoint_id": "ckpt_stage6p_child",
+      "policy_decision": "ALLOW",
+      "risk_tier": "high",
+      "thread_id": "thread_stage6",
+      "tool_id": "python3_S_stdlib"
+    },
+    "events": [],
+    "kind": "INTERNAL",
+    "links": [],
+    "name": "bts.tool_execution",
+    "parent_span_id": null,
+    "schema": "MetaBloomsTraceSpan_v1",
+    "span_id": "span_6ce52eed657b9436",
+    "stage_id": "STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS",
+    "status": "PASS",
+    "timestamp_utc": "2026-05-02T14:18:40.340470Z",
+    "trace_id": "trace_d0a708fa1c146ca3"
+  }
+}

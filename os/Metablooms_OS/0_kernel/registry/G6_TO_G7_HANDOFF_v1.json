@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "created_at": 1777068405.232832,
+  "from_stage": "G6_RECOVERY_PROOF_BASELINE_LOCK",
+  "to_stage": "G7_RETURN_TO_E4B",
+  "status": "ready",
+  "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G6_RECOVERY_PROOF_BASELINE_LOCK_RECEIPT_v1.json",
+  "export_zip": "/mnt/data/exports/MetaBlooms_OS_refined_G6_SELF_CONSISTENT_BASELINE_LOCK_1777068405.zip",
+  "sidecar": "/mnt/data/exports/MetaBlooms_OS_refined_G6_SELF_CONSISTENT_BASELINE_LOCK_1777068405.zip.sha256.json",
+  "baseline_lock": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G6_RECOVERY_PROVEN_BASELINE_LOCK_v1.json",
+  "next_command": "EXECUTE G7 \u2014 RETURN TO E4B"
+}

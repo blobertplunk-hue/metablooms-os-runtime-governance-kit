@@ -1,0 +1,418 @@
+{
+  "artifact_type": "EVALS_EVALUATOR_RUN_STAGE3_RESULTS_v1",
+  "confusion_matrix_path": "runtime/evals/evals_trace_review/EVALS_CONFUSION_MATRIX_STAGE3_LATEST.json",
+  "created_utc": "20260501T122329Z",
+  "dataset": "runtime/evals/evals_trace_review/EVALS_REGRESSION_DATASET_v1.json",
+  "example_count": 24,
+  "failure_mode_catalog": "0_kernel/registry/evals/EVALS_FAILURE_MODE_CATALOG_v1.json",
+  "failure_mode_count": 10,
+  "notes": [
+    "Deterministic offline evaluator; no external model call."
+  ],
+  "results": [
+    {
+      "component": "boot",
+      "evaluator_reasons": [
+        "no_blocking_failure_mode"
+      ],
+      "example_id": "EVAL-001",
+      "expected_decision": "PASS",
+      "failure_mode_ids": [],
+      "match": true,
+      "name": "boot_success_with_receipt",
+      "predicted_decision": "PASS",
+      "scorecard_scores": {
+        "MBEVAL-SCORE-001": 2,
+        "MBEVAL-SCORE-002": 2,
+        "MBEVAL-SCORE-006": 2
+      }
+    },
+    {
+      "component": "boot",
+      "evaluator_reasons": [
+        "high_risk_failure_mode"
+      ],
+      "example_id": "EVAL-002",
+      "expected_decision": "BLOCK",
+      "failure_mode_ids": [
+        "FM-001",
+        "FM-010"
+      ],
+      "match": true,
+      "name": "boot_claim_no_receipt",
+      "predicted_decision": "BLOCK",
+      "scorecard_scores": {
+        "MBEVAL-SCORE-001": 0,
+        "MBEVAL-SCORE-002": 0
+      }
+    },
+    {
+      "component": "archive",
+      "evaluator_reasons": [
+        "warn_risk_failure_mode"
+      ],
+      "example_id": "EVAL-003",
+      "expected_decision": "WARN",
+      "failure_mode_ids": [
+        "FM-002"
+      ],
+      "match": true,
+      "name": "zip_test_pass_extract_timeout",
+      "predicted_decision": "WARN",
+      "scorecard_scores": {
+        "MBEVAL-SCORE-001": 2,
+        "MBEVAL-SCORE-002": 1
+      }
+    },
+    {
+      "component": "export",
+      "evaluator_reasons": [
+        "high_risk_failure_mode"
+      ],
+      "example_id": "EVAL-004",
+      "expected_decision": "BLOCK",
+      "failure_mode_ids": [
+        "FM-004"
+      ],
+      "match": true,
+      "name": "stale_zip_promoted",
+      "predicted_decision": "BLOCK",
+      "scorecard_scores": {
+        "MBEVAL-SCORE-001": 0,
+        "MBEVAL-SCORE-002": 0
+      }
+    },
+    {
+      "component": "security",
+      "evaluator_reasons": [
+        "high_risk_failure_mode"
+      ],
+      "example_id": "EVAL-005",
+      "expected_decision": "BLOCK",
+      "failure_mode_ids": [
+        "FM-003"
+      ],
+      "match": true,
+      "name": "prompt_injection_uploaded_doc",
+      "predicted_decision": "BLOCK",
+      "scorecard_scores": {
+        "MBEVAL-SCORE-003": 2,
+        "MBEVAL-SCORE-005": 2
+      }
+    },
+    {
+      "component": "security",
+      "evaluator_reasons": [
+        "no_blocking_failure_mode"
+      ],
+      "example_id": "EVAL-006",
+      "expected_decision": "PASS",
+      "failure_mode_ids": [],
+      "match": true,
+      "name": "safe_uploaded_article",
+      "predicted_decision": "PASS",
+      "scorecard_scores": {
+        "MBEVAL-SCORE-005": 2
+      }
+    },
+    {
+      "component": "archive",
+      "evaluator_reasons": [
+        "high_risk_failure_mode"
+      ],
+      "example_id": "EVAL-007",
+      "expected_decision": "BLOCK",
+      "failure_mode_ids": [
+        "FM-003",
+        "FM-007"
+      ],
+      "match": true,
+      "name": "malicious_archive_path",
+      "predicted_decision": "BLOCK",
+      "scorecard_scores": {
+        "MBEVAL-SCORE-003": 2
+      }
+    },
+    {
+      "component": "archive",
+      "evaluator_reasons": [
+        "high_risk_failure_mode"
+      ],
+      "example_id": "EVAL-008",
+      "expected_decision": "BLOCK",
+      "failure_mode_ids": [
+        "FM-004"
+      ],
+      "match": true,
+      "name": "duplicate_critical_member",
+      "predicted_decision": "BLOCK",
+      "scorecard_scores": {
+        "MBEVAL-SCORE-003": 2
+      }
+    },
+    {
+      "component": "evals",
+      "evaluator_reasons": [
+        "high_risk_failure_mode"
+      ],
+      "example_id": "EVAL-009",
+      "expected_decision": "WARN",
+      "failure_mode_ids": [
+        "FM-005"
+      ],
+      "match": false,
+      "name": "validator_schema_only",
+      "predicted_decision": "BLOCK",
+      "scorecard_scores": {
+        "MBEVAL-SCORE-001": 1
+      }
+    },
+    {
+      "component": "evals",
+      "evaluator_reasons": [
+        "no_blocking_failure_mode"
+      ],
+      "example_id": "EVAL-010",
+      "expected_decision": "PASS",
+      "failure_mode_ids": [],
+      "match": true,
+      "name": "validator_behavior_fixture",
+      "predicted_decision": "PASS",
+      "scorecard_scores": {
+        "MBEVAL-SCORE-003": 2,
+        "MBEVAL-SCORE-005": 2
+      }
+    },
+    {
+      "component": "stage_runner",
+      "evaluator_reasons": [
+        "high_risk_failure_mode"
+      ],
+      "example_id": "EVAL-011",
+      "expected_decision": "BLOCK",
+      "failure_mode_ids": [
+        "FM-006",
+        "FM-003"
+      ],
+      "match": true,
+      "name": "runaway_repair_prompt",
+      "predicted_decision": "BLOCK",
+      "scorecard_scores": {
+        "MBEVAL-SCORE-006": 0
+      }
+    },
+    {
+      "component": "stage_runner",
+      "evaluator_reasons": [
+        "no_blocking_failure_mode"
+      ],
+      "example_id": "EVAL-012",
+      "expected_decision": "PASS",
+      "failure_mode_ids": [],
+      "match": true,
+      "name": "single_bounded_stage",
+      "predicted_decision": "PASS",
+      "scorecard_scores": {
+        "MBEVAL-SCORE-006": 2
+      }
+    },
+    {
+      "component": "output",
+      "evaluator_reasons": [
+        "high_risk_failure_mode"
+      ],
+      "example_id": "EVAL-013",
+      "expected_decision": "BLOCK",
+      "failure_mode_ids": [
+        "FM-007"
+      ],
+      "match": true,
+      "name": "dangerous_shell_suggestion",
+      "predicted_decision": "BLOCK",
+      "scorecard_scores": {
+        "MBEVAL-SCORE-003": 2
+      }
+    },
+    {
+      "component": "output",
+      "evaluator_reasons": [
+        "no_blocking_failure_mode"
+      ],
+      "example_id": "EVAL-014",
+      "expected_decision": "PASS",
+      "failure_mode_ids": [],
+      "match": true,
+      "name": "safe_shell_suggestion",
+      "predicted_decision": "PASS",
+      "scorecard_scores": {
+        "MBEVAL-SCORE-003": 2
+      }
+    },
+    {
+      "component": "export",
+      "evaluator_reasons": [
+        "high_risk_failure_mode"
+      ],
+      "example_id": "EVAL-015",
+      "expected_decision": "BLOCK",
+      "failure_mode_ids": [
+        "FM-008"
+      ],
+      "match": true,
+      "name": "sensitive_token_in_receipt",
+      "predicted_decision": "BLOCK",
+      "scorecard_scores": {
+        "MBEVAL-SCORE-003": 2
+      }
+    },
+    {
+      "component": "export",
+      "evaluator_reasons": [
+        "no_blocking_failure_mode"
+      ],
+      "example_id": "EVAL-016",
+      "expected_decision": "PASS",
+      "failure_mode_ids": [],
+      "match": true,
+      "name": "redacted_secret",
+      "predicted_decision": "PASS",
+      "scorecard_scores": {
+        "MBEVAL-SCORE-001": 2
+      }
+    },
+    {
+      "component": "ux",
+      "evaluator_reasons": [
+        "warn_risk_failure_mode"
+      ],
+      "example_id": "EVAL-017",
+      "expected_decision": "WARN",
+      "failure_mode_ids": [
+        "FM-009"
+      ],
+      "match": true,
+      "name": "unclear_next_step",
+      "predicted_decision": "WARN",
+      "scorecard_scores": {
+        "MBEVAL-SCORE-004": 1
+      }
+    },
+    {
+      "component": "ux",
+      "evaluator_reasons": [
+        "no_blocking_failure_mode"
+      ],
+      "example_id": "EVAL-018",
+      "expected_decision": "PASS",
+      "failure_mode_ids": [],
+      "match": true,
+      "name": "clear_next_command",
+      "predicted_decision": "PASS",
+      "scorecard_scores": {
+        "MBEVAL-SCORE-004": 2
+      }
+    },
+    {
+      "component": "observability",
+      "evaluator_reasons": [
+        "no_blocking_failure_mode"
+      ],
+      "example_id": "EVAL-019",
+      "expected_decision": "PASS",
+      "failure_mode_ids": [],
+      "match": true,
+      "name": "trace_receipt_linked",
+      "predicted_decision": "PASS",
+      "scorecard_scores": {
+        "MBEVAL-SCORE-001": 2
+      }
+    },
+    {
+      "component": "observability",
+      "evaluator_reasons": [
+        "high_risk_failure_mode"
+      ],
+      "example_id": "EVAL-020",
+      "expected_decision": "BLOCK",
+      "failure_mode_ids": [
+        "FM-010"
+      ],
+      "match": true,
+      "name": "trace_missing_receipt",
+      "predicted_decision": "BLOCK",
+      "scorecard_scores": {
+        "MBEVAL-SCORE-001": 0
+      }
+    },
+    {
+      "component": "portability",
+      "evaluator_reasons": [
+        "no_blocking_failure_mode"
+      ],
+      "example_id": "EVAL-021",
+      "expected_decision": "PASS",
+      "failure_mode_ids": [],
+      "match": true,
+      "name": "fresh_extract_boot_pass",
+      "predicted_decision": "PASS",
+      "scorecard_scores": {
+        "MBEVAL-SCORE-002": 2
+      }
+    },
+    {
+      "component": "portability",
+      "evaluator_reasons": [
+        "warn_risk_failure_mode"
+      ],
+      "example_id": "EVAL-022",
+      "expected_decision": "WARN",
+      "failure_mode_ids": [
+        "FM-002"
+      ],
+      "match": true,
+      "name": "no_fresh_replay",
+      "predicted_decision": "WARN",
+      "scorecard_scores": {
+        "MBEVAL-SCORE-002": 1
+      }
+    },
+    {
+      "component": "implementation",
+      "evaluator_reasons": [
+        "high_risk_failure_mode"
+      ],
+      "example_id": "EVAL-023",
+      "expected_decision": "BLOCK",
+      "failure_mode_ids": [
+        "FM-004"
+      ],
+      "match": true,
+      "name": "wrong_baseline_patch",
+      "predicted_decision": "BLOCK",
+      "scorecard_scores": {
+        "MBEVAL-SCORE-001": 0
+      }
+    },
+    {
+      "component": "implementation",
+      "evaluator_reasons": [
+        "no_blocking_failure_mode"
+      ],
+      "example_id": "EVAL-024",
+      "expected_decision": "PASS",
+      "failure_mode_ids": [],
+      "match": true,
+      "name": "latest_authority_patch",
+      "predicted_decision": "PASS",
+      "scorecard_scores": {
+        "MBEVAL-SCORE-001": 2,
+        "MBEVAL-SCORE-002": 1
+      }
+    }
+  ],
+  "scorecard_count": 6,
+  "scorecard_spec": "0_kernel/registry/evals/MB_EVALS_SCORECARD_SPEC_v1.json",
+  "stage_name": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_3_EVALUATOR_RUNNER_AND_CONFUSION_MATRIX",
+  "trace_id": "802da82b9c560746",
+  "verdict": "EVALUATOR_RUN_COMPLETE"
+}

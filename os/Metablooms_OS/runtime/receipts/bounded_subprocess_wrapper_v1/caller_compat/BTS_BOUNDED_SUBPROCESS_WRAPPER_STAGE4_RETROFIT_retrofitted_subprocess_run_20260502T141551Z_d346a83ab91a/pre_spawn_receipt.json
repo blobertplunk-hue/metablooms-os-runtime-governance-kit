@@ -1,0 +1,11 @@
+{
+  "argv_resolved": [
+    "/opt/pyvenv/bin/python3",
+    "/mnt/data/Metablooms_OS/runtime/governance/mpp_stage_contract_code_bearing_declaration_gate_v1.py",
+    "/mnt/data/Metablooms_OS/tests/fixtures/mpp_v3/valid_mpp_stage_contract_non_code_declared_v1.json"
+  ],
+  "created_utc": "20260502T141551Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision": "ALLOW_SPAWN",
+  "timeout_seconds": 10
+}

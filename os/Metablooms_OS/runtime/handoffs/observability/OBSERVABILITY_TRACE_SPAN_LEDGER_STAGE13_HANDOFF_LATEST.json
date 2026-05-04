@@ -1,0 +1,14 @@
+{
+  "artifact_type": "MB_STAGE_HANDOFF.v1",
+  "continuation_prompt": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING",
+  "created_utc": "20260502T183138Z",
+  "must_preserve": [
+    "minimal mode remains default",
+    "pinned evidence cannot overwrite receipts",
+    "export must include Stage 13 UI, pinning model, validator, receipt, handoff, and tracker"
+  ],
+  "next_recommended_stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_INTERACTIONS_AND_RESULT_PINNING",
+  "summary": "Stage 13 added interactive evidence query expansion, SHA-bound result inspection, local browser pinning, and copyable pin manifests in the operator tracker.",
+  "verdict": "PASS"
+}

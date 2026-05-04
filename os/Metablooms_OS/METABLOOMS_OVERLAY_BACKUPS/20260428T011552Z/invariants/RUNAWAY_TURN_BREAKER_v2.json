@@ -1,0 +1,1 @@
+{"id":"RUNAWAY_TURN_BREAKER_v2","status":"active","gate":"PRE_TOOL_EXECUTION_CONTRACT_GATE","description":"Every governed stage must be bounded by wall-clock, step, file, byte, tool-call, receipt, and handoff limits before execution.","failure_action":"DENY_UNBOUNDED_STAGE","runtime_enforcement":"runtime/governance/pre_tool_execution_contract_gate_v1.py"}

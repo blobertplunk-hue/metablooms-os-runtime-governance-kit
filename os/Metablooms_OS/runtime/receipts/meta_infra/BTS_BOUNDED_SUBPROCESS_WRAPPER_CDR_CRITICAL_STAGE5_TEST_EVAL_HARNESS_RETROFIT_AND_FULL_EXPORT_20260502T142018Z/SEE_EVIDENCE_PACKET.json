@@ -1,0 +1,15 @@
+{
+  "artifact_type": "SEE_EVIDENCE_PACKET_v1",
+  "created_utc": "20260502T142018Z",
+  "sources": [
+    {
+      "claim": "Python subprocess timeout kills/waits after communicate timeout but initial process creation may not be interruptible.",
+      "url": "https://docs.python.org/3/library/subprocess.html"
+    },
+    {
+      "claim": "OWASP recommends allowlisted commands and allowlisted argument validation for OS command execution.",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.html"
+    }
+  ],
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT"
+}

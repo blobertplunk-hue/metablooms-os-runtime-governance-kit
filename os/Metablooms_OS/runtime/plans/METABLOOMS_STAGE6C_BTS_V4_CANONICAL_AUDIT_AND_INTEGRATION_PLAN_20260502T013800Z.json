@@ -1,0 +1,182 @@
+{
+  "schema": "METABLOOMS_STAGE6C_BTS_V4_CANONICAL_AUDIT_AND_INTEGRATION_PLAN_v1",
+  "stage_id": "STAGE6C_BTS_V4_CANONICAL_AUDIT_AND_INTEGRATION_PLAN",
+  "timestamp_utc": "2026-05-02T00:19:38.726115Z",
+  "verdict": "AUDIT_PASS_INSTALL_DEFERRED",
+  "input_artifact": {
+    "path": "/mnt/data/BTS_v4_canonical.py",
+    "sha256": "b87f89032d640df524530419803cde98a4479e1a546a935455174e9c66275c47",
+    "bytes": 38275
+  },
+  "source_summary": {
+    "candidate_role": "BTS v4 canonical receipt/reasoning reconstruction engine candidate",
+    "features_confirmed_by_source": [
+      "CDR V1-V5 contracts",
+      "BTSTurnTracker tool pipeline",
+      "BTS_TOOL_SWITCH",
+      "T1/T2/T3/MISSING receipts",
+      "produce_tier1_subprocess_receipt",
+      "check_tier_satisfied",
+      "P8.5 reconcile",
+      "competence audit",
+      "implementation_reality",
+      "boot receipt",
+      "self-test"
+    ]
+  },
+  "test_results": {
+    "isolated_self_test": {
+      "exit_code": 0,
+      "all_pass": true,
+      "stdout_path": "/mnt/data/BTS_v4_selftest_stdout.txt",
+      "stderr_path": "/mnt/data/BTS_v4_selftest_stderr.txt"
+    },
+    "custom_audit_tests": {
+      "schema": "stage6c_bts_v4_audit_tests_v1",
+      "results": [
+        {
+          "test": "commit_without_result_rejected",
+          "verdict": "PASS",
+          "detail": "RuntimeError: BTS pipeline violation in turn T-INCOMPLETE: expected BTS_TOOL_RESULT, got BTS_COMMIT"
+        },
+        {
+          "test": "switch_before_selection_rejected",
+          "verdict": "FAIL",
+          "detail": "emit_switch allowed before selection"
+        },
+        {
+          "test": "sufficiency_all_pass_gates",
+          "verdict": "PASS",
+          "detail": "score=0.225"
+        },
+        {
+          "test": "log_sha_chain_valid",
+          "verdict": "PASS",
+          "detail": "{\"lines\": 0, \"bad\": []}"
+        },
+        {
+          "test": "empty_stdout_subprocess_rejected",
+          "verdict": "PASS",
+          "detail": "RuntimeError: BTS T1: subprocess failed (rc=0). stdout='' stderr=''"
+        }
+      ]
+    },
+    "chain_test": {
+      "schema": "stage6c_chain_test_v1",
+      "lines": 3,
+      "bad": [],
+      "verdict": "PASS"
+    },
+    "runtime_starter_smoke": {
+      "decision": "ALLOW",
+      "invalid_json": [],
+      "missing": [],
+      "mode": "root",
+      "path": "/mnt/data/Metablooms_OS",
+      "read_errors": []
+    },
+    "portable_boot_verify": {
+      "stage": "PORTABLE_FULL_OS_BOOT_VERIFY_REPAIRED_H0B2",
+      "timestamp_utc": "2026-05-02T00:18:37Z",
+      "status": "PASS",
+      "root": "/mnt/data/Metablooms_OS",
+      "errors": [],
+      "sandbox_policy": "ALLOW",
+      "chat_kernel": "ALLOW"
+    }
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "major",
+      "status": "open",
+      "finding": "BTS v4 subprocess receipt executes arbitrary commands and currently bypasses Stage6B pre_tool_action_gate_v1 unless wrapped.",
+      "required_fix": "Route produce_tier1_subprocess_receipt through ToolCallEnvelope_v1 and PolicyDecision_v1 before subprocess.run."
+    },
+    {
+      "id": "F2",
+      "severity": "moderate",
+      "status": "open",
+      "finding": "BTS_TOOL_SWITCH can be emitted before BTS_TOOL_SELECTION; custom audit marked switch_before_selection_rejected as FAIL.",
+      "required_fix": "Enforce switch only after selection and before execution/result, or explicitly define allowable switch lifecycle."
+    },
+    {
+      "id": "F3",
+      "severity": "moderate",
+      "status": "open",
+      "finding": "BTS writes to _bts/ and bts/bts_log.ndjson; these are not yet registered as canonical OS receipt/ledger surfaces.",
+      "required_fix": "Install BTS path registry binding and include these paths in export/receipt manifests before canonical use."
+    },
+    {
+      "id": "F4",
+      "severity": "moderate",
+      "status": "open",
+      "finding": "No active invariant index file was found by *ACTIVE*INVARIANT* search in live root during Stage6C, despite Stage6B invariant files existing.",
+      "required_fix": "Before BTS install, resolve invariant activation/index path consistency and bind BTS_REQUIRED invariant through the actual activation engine."
+    },
+    {
+      "id": "F5",
+      "severity": "low",
+      "status": "open",
+      "finding": "Self-test uses temporary root and does not test live OS layout, Stage6B gate integration, export inclusion, or new-chat boot from exported ZIP.",
+      "required_fix": "Add live-root and fresh-extract fixture tests in install stage."
+    },
+    {
+      "id": "F6",
+      "severity": "passed",
+      "status": "closed",
+      "finding": "Commit without BTS_TOOL_RESULT was rejected by pipeline violation during custom audit.",
+      "required_fix": "None; keep regression test."
+    },
+    {
+      "id": "F7",
+      "severity": "passed",
+      "status": "closed",
+      "finding": "SHA chain was valid across generated log entries in custom chain test.",
+      "required_fix": "Keep regression test."
+    },
+    {
+      "id": "F8",
+      "severity": "passed",
+      "status": "closed",
+      "finding": "Empty-stdout subprocess receipt was rejected.",
+      "required_fix": "Keep regression test."
+    }
+  ],
+  "integration_plan_best_to_worst": [
+    {
+      "rank": 1,
+      "stage": "STAGE6D_BTS_V4_GATE_WRAPPED_INSTALL_SCAFFOLD",
+      "scope": "Create OS path registry for BTS, add BTS_REQUIRED invariant, install candidate under runtime/governance/bts/BTS_v4.py, wrap subprocess and file writes through Stage6B gate. Run unit fixtures only. No full export."
+    },
+    {
+      "rank": 2,
+      "stage": "STAGE6E_BTS_V4_PIPELINE_HARDENING",
+      "scope": "Patch switch lifecycle enforcement, add log chain verifier, add claim coverage fixtures, add implementation_reality fixtures, add negative tests. No broad export until tests pass."
+    },
+    {
+      "rank": 3,
+      "stage": "STAGE6F_BTS_V4_LIVE_OS_BOOT_AND_EXPORT_BINDING",
+      "scope": "Bind BTS logs/receipts into export manifest, run live-root smoke and fresh-extract smoke, then full OS authority export only if delivery guard passes."
+    },
+    {
+      "rank": 4,
+      "stage": "STAGE6G_BTS_V4_PER_ACTION_GATE_ADAPTERS",
+      "scope": "Make shell/node/python/filesystem/export action helper adapters emit ToolCallEnvelope -> PolicyDecision -> BTS_TOOL_* records."
+    }
+  ],
+  "install_decision": "DEFER_CANONICAL_INSTALL_UNTIL_GATE_WRAPPED",
+  "no_canonical_install_performed": true,
+  "no_full_os_export_created": true,
+  "stage6b_context": {
+    "receipt_exists": true,
+    "handoff_exists": true,
+    "pre_tool_gate_exists": true
+  },
+  "active_invariant_index_candidates": [
+    "/mnt/data/Metablooms_OS/governance/ACTIVE_INVARIANTS_INDEX.json",
+    "/mnt/data/Metablooms_OS/governance/ACTIVE_INVARIANTS_INDEX.json.sha256",
+    "/mnt/data/Metablooms_OS/governance/ACTIVE_INVARIANTS_INDEX.json",
+    "/mnt/data/Metablooms_OS/governance/ACTIVE_INVARIANTS_INDEX.json.sha256"
+  ]
+}

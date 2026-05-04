@@ -1,0 +1,87 @@
+{
+  "artifact_plan": [
+    {
+      "artifact_id": "ART-001",
+      "purpose": "validate implementation contracts and write paths",
+      "relative_path": "0_kernel/mpp_v3/mpp_v3_implementation_write_path_gate_v1.py",
+      "validation": "py_compile plus valid/invalid write-path gate fixtures"
+    },
+    {
+      "artifact_id": "ART-002",
+      "purpose": "prove R13 execution and tests",
+      "relative_path": "runtime/receipts/mpp_v3/MPP_R13_IMPLEMENTATION_CONTRACT_SCHEMA_AND_WRITE_PATH_GATE_RECEIPT_LATEST.json",
+      "validation": "exists and contains PASS status"
+    }
+  ],
+  "created_at": "2026-04-30T23:06:37.641764+00:00",
+  "implementation_targets": [
+    {
+      "artifact_type": "python",
+      "expected_hash_mode": "sha256_required",
+      "operation": "create",
+      "owner": "MPP_R13",
+      "path": "0_kernel/mpp_v3/mpp_v3_implementation_write_path_gate_v1.py",
+      "target_id": "IMPL-001"
+    },
+    {
+      "artifact_type": "json",
+      "expected_hash_mode": "sha256_required",
+      "operation": "create",
+      "owner": "MPP_R13",
+      "path": "0_kernel/schemas/mpp_v3/IMPLEMENTATION_CONTRACT_PACKET_SCHEMA_v1.json",
+      "target_id": "IMPL-002"
+    }
+  ],
+  "objective_id": "OBJ-MPP-R13",
+  "packet_id": "IMPL-BAD-NO-RECEIPT",
+  "post_write_checks": [
+    "recompute artifact hashes",
+    "run py_compile",
+    "package ZIP and checksum sidecar"
+  ],
+  "pre_write_checks": [
+    "verify R12 bundle checksum and ZIP integrity",
+    "validate implementation contract",
+    "run write-path gate with probe"
+  ],
+  "provenance": {
+    "builder": "MPP_R13_IMPLEMENTATION_CONTRACT_SCHEMA_AND_WRITE_PATH_GATE",
+    "expected_outputs": [
+      "implementation schema",
+      "write-path gate",
+      "fixtures",
+      "receipt",
+      "handoff",
+      "ZIP sidecar"
+    ],
+    "inputs": [
+      "R12 handoff",
+      "RRP recovery plan schema",
+      "write-root probe"
+    ],
+    "verification_expectations": [
+      "hashes match",
+      "write paths stay under allowed root",
+      "forbidden paths blocked"
+    ]
+  },
+  "result_hash": "8dc2cfa43e79b0467c539fef053fba687b9b3238c9fd4e2ade2c90a51294266c",
+  "schema_version": "mpp.implementation_contract_packet.v1",
+  "source_rrp_packet_id": "RRP-R12-SMOKE",
+  "stage": "IMPLEMENTATION",
+  "write_policy": {
+    "allowed_roots": [
+      "/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z"
+    ],
+    "forbidden_path_patterns": [
+      "..",
+      "~",
+      "\u0000",
+      "//"
+    ],
+    "requires_atomic_write": true,
+    "requires_parent_creation": true,
+    "requires_probe": true,
+    "requires_receipt": false
+  }
+}

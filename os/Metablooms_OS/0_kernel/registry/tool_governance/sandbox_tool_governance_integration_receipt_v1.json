@@ -1,0 +1,11 @@
+{
+  "stage": "INTEGRATE_SANDBOX_TOOL_GOVERNANCE",
+  "status": "complete",
+  "os_root": "/mnt/data/Metablooms_OS",
+  "artifacts": [
+    "/mnt/data/Metablooms_OS/core/governance/sandbox_tool_governance_v1.md",
+    "/mnt/data/Metablooms_OS/tooling/sandbox_tool_capability_registry_v1.json",
+    "/mnt/data/Metablooms_OS/tooling/sandbox_tool_probe_inventory_v1.json",
+    "/mnt/data/Metablooms_OS/tooling/sandbox_tool_probe_inventory_v1.tsv"
+  ]
+}

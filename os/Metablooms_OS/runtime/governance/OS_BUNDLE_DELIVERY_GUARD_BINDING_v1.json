@@ -1,0 +1,10 @@
+{
+  "id": "OS_BUNDLE_DELIVERY_GUARD_BINDING_v1",
+  "status": "active",
+  "stage": "STAGE5B_OS_BUNDLE_DELIVERY_FULL_BOOTABLE_AUTHORITY_HARDENING",
+  "updated_utc": "2026-05-01T23:08:38Z",
+  "primary_validator": "runtime/governance/os_bundle_delivery_guard_v1.py",
+  "legacy_guard": "runtime/governance/full_bundle_export_guard_v1.py",
+  "delivery_rule": "Only a ZIP that passes os_bundle_delivery_guard_v1.py may be linked or described as an OS bundle. Other bundles must be labeled proof/support/receipt artifacts.",
+  "failure_action": "DENY_OS_BUNDLE_LABEL"
+}

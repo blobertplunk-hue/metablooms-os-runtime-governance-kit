@@ -1,0 +1,82 @@
+{
+  "claim_evaluations": [
+    {
+      "claim": "R16 artifacts are grounded in the R15 trace handoff and verification evidence.",
+      "claim_id": "AE-CLAIM-001",
+      "dimension_scores": {
+        "contradiction_handling": 0.95,
+        "evidence_binding": 0.95,
+        "groundedness": 0.95,
+        "repair_routing": 0.95,
+        "scope_adherence": 0.95,
+        "uncertainty_calibration": 0.9
+      },
+      "evidence_refs": [
+        "MPP_R15_TRACE_ANALYSIS_SCHEMA_AND_ANOMALY_GATE_20260501T014300Z.zip",
+        "R15_HANDOFF"
+      ],
+      "notes": "All required dimensions clear blocking thresholds.",
+      "status": "PASS"
+    }
+  ],
+  "created_at": "2026-04-30T23:24:47.709862+00:00",
+  "evaluation_dimensions": [
+    {
+      "blocking": true,
+      "dimension_id": "AE-DIM-001",
+      "name": "groundedness",
+      "threshold": 0.9,
+      "weight": 0.5
+    },
+    {
+      "blocking": true,
+      "dimension_id": "AE-DIM-002",
+      "name": "evidence_binding",
+      "threshold": 0.9,
+      "weight": 0.2
+    },
+    {
+      "blocking": true,
+      "dimension_id": "AE-DIM-003",
+      "name": "scope_adherence",
+      "threshold": 0.9,
+      "weight": 0.15
+    },
+    {
+      "blocking": true,
+      "dimension_id": "AE-DIM-004",
+      "name": "contradiction_handling",
+      "threshold": 0.85,
+      "weight": 0.15
+    },
+    {
+      "blocking": false,
+      "dimension_id": "AE-DIM-005",
+      "name": "uncertainty_calibration",
+      "threshold": 0.8,
+      "weight": 0.15
+    },
+    {
+      "blocking": true,
+      "dimension_id": "AE-DIM-006",
+      "name": "repair_routing",
+      "threshold": 0.9,
+      "weight": 0.15
+    }
+  ],
+  "objective_id": "OBJ-MPP-R16",
+  "packet_id": "AE-BAD-WEIGHTS",
+  "reasoning_risks": [],
+  "result_hash": "5406cf76b53deba80631f0d999b470674c2885e0d934a9e936f7b49ec3fc21ec",
+  "schema_version": "mpp.analysis_evaluation_packet.v1",
+  "score_summary": {
+    "blocking_failures": 0,
+    "claim_count": 1,
+    "failed_claim_count": 0,
+    "repair_required": false,
+    "weighted_score": 0.9425
+  },
+  "source_trace_packet_id": "TRACE-R15-SMOKE",
+  "stage": "ANALYSIS_EVALUATION",
+  "verdict": "PASS"
+}

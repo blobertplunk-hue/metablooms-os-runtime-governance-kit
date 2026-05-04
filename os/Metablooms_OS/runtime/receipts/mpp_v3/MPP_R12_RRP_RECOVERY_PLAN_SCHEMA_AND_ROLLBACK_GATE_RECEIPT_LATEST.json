@@ -1,0 +1,84 @@
+{
+  "artifacts_written": [],
+  "next_stage": "MPP_R13_IMPLEMENTATION_CONTRACT_SCHEMA_AND_WRITE_PATH_GATE",
+  "predecessor_verification": {
+    "r11": {
+      "actual_sha256": "0bcaffacc6941b1acc576c03eca6b10c623de4dcb31065b600018ab5acbf70d7",
+      "checksum_match": true,
+      "exists": true,
+      "sha_sidecar_exists": true,
+      "sidecar_sha256": "0bcaffacc6941b1acc576c03eca6b10c623de4dcb31065b600018ab5acbf70d7",
+      "zip": "/mnt/data/MPP_R11_SSO_SCOPE_SCHEMA_AND_CONFLICT_GATE_20260501T004200Z.zip",
+      "zip_testzip": null
+    }
+  },
+  "research_sources": [
+    {
+      "ref": "turn671449search0",
+      "source": "AWS Reliability Pillar DR planning"
+    },
+    {
+      "ref": "turn671449search6",
+      "source": "AWS Cutover runbook best practices"
+    },
+    {
+      "ref": "turn671449search2",
+      "source": "NIST SP 800-34 contingency planning"
+    }
+  ],
+  "root": "/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z",
+  "root_probe": {
+    "/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z": {
+      "exists": true,
+      "is_dir": true,
+      "writable": true
+    }
+  },
+  "stage_id": "MPP_R12_RRP_RECOVERY_PLAN_SCHEMA_AND_ROLLBACK_GATE",
+  "status": "PASS",
+  "tests": [
+    {
+      "cmd": "/opt/pyvenv/bin/python -m py_compile /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_rrp_recovery_plan_rollback_gate_v1.py",
+      "expected": 0,
+      "returncode": 0,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.",
+      "stdout": ""
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_rrp_recovery_plan_rollback_gate_v1.py --validate /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/tests/fixtures/mpp_v3/valid_rrp_recovery_plan_packet_v1.json",
+      "expected": 0,
+      "returncode": 0,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.",
+      "stdout": "{\"packet_id\": \"RRP-20260430T230020Z\", \"result_hash\": \"dc44937ce78a5d2e55f6645a9cb6f4173760e781e0a72232d8ecce61952746c0\", \"status\": \"PASS\"}"
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_rrp_recovery_plan_rollback_gate_v1.py --gate /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/tests/fixtures/mpp_v3/valid_rrp_recovery_plan_packet_v1.json",
+      "expected": 0,
+      "returncode": 0,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.",
+      "stdout": "{\"coverage\": {\"cleanup_steps\": 2, \"drift_controls\": 2, \"failure_modes\": 2, \"has_rollback_window\": true, \"has_rpo\": true, \"has_rto\": true, \"rollback_steps\": 4, \"validation_drills\": 2}, \"created_at\": \"2026-04-30T23:00:48.660231+00:00\", \"gate_id\": \"RRP-GATE-20260430T230048Z\", \"packet_id\": \"RRP-20260430T230020Z\", \"result_hash\": \"285ae6dff47620b5ab88869ad6b9196f68cd1a6e2f84906f7dbcb45b98adc2a6\", \"schema_version\": \"mpp.rrp_rollback_gate_result.v1\", \"stage\": \"RRP_ROLLBACK_GATE\", \"verdict\": \"PASS\", \"violations\": [], \"warnings\": []}"
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_rrp_recovery_plan_rollback_gate_v1.py --validate /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/tests/fixtures/mpp_v3/invalid_rrp_no_rollback_steps_packet_v1.json",
+      "expected": 1,
+      "returncode": 1,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.\nTraceback (most recent call last):\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_rrp_recovery_plan_rollback_gate_v1.py\"\u001b[0m, line \u001b[35m253\u001b[0m, in \u001b[35m<module>\u001b[0m\n    raise SystemExit(\u001b[31mmain\u001b[0m\u001b[1;31m()\u001b[0m)\n                     \u001b[31m~~~~\u001b[0m\u001b[1;31m^^\u001b[0m\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_rrp_recovery_plan_rollback_gate_v1.py\"\u001b[0m, line \u001b[35m242\u001b[0m, in \u001b[35mmain\u001b[0m\n    print(json.dumps(\u001b[31mvalidate_rrp_packet\u001b[0m\u001b[1;31m(packet)\u001b[0m, sort_keys=True))\n                     \u001b[31m~~~~~~~~~~~~~~~~~~~\u001b[0m\u001b[1;31m^^^^^^^^\u001b[0m\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_rrp_recovery_plan_rollback_gate_v1.py\"\u001b[0m, line \u001b[35m62\u001b[0m, in \u001b[35mvalidate_rrp_packet\u001b[0m\n    \u001b[31mrequire\u001b[0m\u001b[1;31m(rollback[\"steps\"], \"RRP_ROLLBACK_NO_STEPS\")\u001b[0m\n    \u001b[31m~~~~~~~\u001b[0m\u001b[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\u001b[0m\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_rrp_recovery_plan_rollback_gate_v1.py\"\u001b[0m, line \u001b[35m28\u001b[0m, in \u001b[35mrequire\u001b[0m\n    raise RRPValidationError(code)\n\u001b[1;35mRRPValidationError\u001b[0m: \u001b[35mRRP_ROLLBACK_NO_STEPS\u001b[0m",
+      "stdout": ""
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_rrp_recovery_plan_rollback_gate_v1.py --validate /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/tests/fixtures/mpp_v3/invalid_rrp_unknown_recovery_objective_packet_v1.json",
+      "expected": 1,
+      "returncode": 1,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.\nTraceback (most recent call last):\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_rrp_recovery_plan_rollback_gate_v1.py\"\u001b[0m, line \u001b[35m253\u001b[0m, in \u001b[35m<module>\u001b[0m\n    raise SystemExit(\u001b[31mmain\u001b[0m\u001b[1;31m()\u001b[0m)\n                     \u001b[31m~~~~\u001b[0m\u001b[1;31m^^\u001b[0m\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_rrp_recovery_plan_rollback_gate_v1.py\"\u001b[0m, line \u001b[35m242\u001b[0m, in \u001b[35mmain\u001b[0m\n    print(json.dumps(\u001b[31mvalidate_rrp_packet\u001b[0m\u001b[1;31m(packet)\u001b[0m, sort_keys=True))\n                     \u001b[31m~~~~~~~~~~~~~~~~~~~\u001b[0m\u001b[1;31m^^^^^^^^\u001b[0m\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_rrp_recovery_plan_rollback_gate_v1.py\"\u001b[0m, line \u001b[35m48\u001b[0m, in \u001b[35mvalidate_rrp_packet\u001b[0m\n    \u001b[31mrequire\u001b[0m\u001b[1;31m(not _bad(objectives[key]), f\"RRP_OBJECTIVE_BAD_{key.upper()}\")\u001b[0m\n    \u001b[31m~~~~~~~\u001b[0m\u001b[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\u001b[0m\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_rrp_recovery_plan_rollback_gate_v1.py\"\u001b[0m, line \u001b[35m28\u001b[0m, in \u001b[35mrequire\u001b[0m\n    raise RRPValidationError(code)\n\u001b[1;35mRRPValidationError\u001b[0m: \u001b[35mRRP_OBJECTIVE_BAD_RTO\u001b[0m",
+      "stdout": ""
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_rrp_recovery_plan_rollback_gate_v1.py --gate /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/tests/fixtures/mpp_v3/invalid_rrp_no_validation_drill_packet_v1.json",
+      "expected": 1,
+      "returncode": 1,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.",
+      "stdout": "{\"coverage\": {\"cleanup_steps\": 2, \"drift_controls\": 2, \"failure_modes\": 2, \"has_rollback_window\": true, \"has_rpo\": true, \"has_rto\": true, \"rollback_steps\": 4, \"validation_drills\": 0}, \"created_at\": \"2026-04-30T23:01:17.248771+00:00\", \"gate_id\": \"RRP-GATE-20260430T230117Z\", \"packet_id\": \"RRP-BAD-NO-DRILL\", \"result_hash\": \"a0ffbf3fe4c7bc3b2de19c9492a857e27edcda3d0979ed2609653c78a6b4c0aa\", \"schema_version\": \"mpp.rrp_rollback_gate_result.v1\", \"stage\": \"RRP_ROLLBACK_GATE\", \"verdict\": \"FAIL\", \"violations\": [\"RRP_GATE_NO_DRILL\", \"RRP_NO_VALIDATION_DRILLS\"], \"warnings\": []}"
+    }
+  ],
+  "timestamp": "20260501T005900Z"
+}

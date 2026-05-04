@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "created_at": 1777061460.113997,
+  "lesson_id": "AUTO_RUNAWAY_BREAKER_INVARIANT_v1",
+  "status": "active_invariant",
+  "invariant": "Before any governed stage executes, classify scope. If more than one heavy work class is present, auto-split into micro-stages before running code.",
+  "heavy_work_classes": [
+    "implementation",
+    "proof",
+    "export",
+    "boot_recovery",
+    "cleanup_deletion",
+    "baseline_lock"
+  ],
+  "auto_stop_thresholds": {
+    "max_heavy_work_classes_per_stage": 1,
+    "max_new_artifact_families_per_stage": 2
+  }
+}

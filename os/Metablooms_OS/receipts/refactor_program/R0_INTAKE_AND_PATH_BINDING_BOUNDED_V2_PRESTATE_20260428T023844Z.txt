@@ -1,0 +1,8 @@
+stage=R0_INTAKE_AND_PATH_BINDING_BOUNDED_V2
+timestamp_utc=20260428T023844Z
+root=/mnt/data/Metablooms_OS
+zip=/mnt/data/METABLOOMS_FULL_OS_v3_3_PHASE1_PHASE2_MERGED_REPAIRED.zip
+pwd=/
+root_exists=true
+zip_exists=true
+root_writable=true

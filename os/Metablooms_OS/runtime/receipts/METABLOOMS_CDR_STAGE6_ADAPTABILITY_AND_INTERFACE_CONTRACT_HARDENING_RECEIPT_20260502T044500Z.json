@@ -1,0 +1,26 @@
+{
+  "authority_export_performed": false,
+  "installed_artifacts": [
+    "0_kernel/registry/cdr/CDR_ADAPTABILITY_INTERFACE_CONTRACT_SPEC_v1.json",
+    "0_kernel/registry/cdr/CDR_ADAPTABILITY_INTERFACE_POLICY_v1.json",
+    "0_kernel/schemas/cdr/CDR_ADAPTABILITY_INTERFACE_CONTRACT_PACKET_SCHEMA_v1.json",
+    "runtime/governance/cdr_adaptability_interface_contract_gate_v1.py",
+    "governance/invariants/CDR_ADAPTABILITY_AND_INTERFACE_CONTRACT_REQUIRED_v1.json",
+    "tests/fixtures/cdr/valid_cdr_adaptability_interface_contract_packet_v1.json",
+    "tests/fixtures/cdr/invalid_cdr_adaptability_missing_compatibility_packet_v1.json",
+    "tests/evals/cdr/test_cdr_adaptability_interface_contract_gate_v1.py",
+    "research/SEE/CDR_STAGE6_ADAPTABILITY_AND_INTERFACE_CONTRACT_HARDENING_SEE_v1.json",
+    "research/CE/CDR_STAGE6_ADAPTABILITY_AND_INTERFACE_CONTRACT_HARDENING_CE_v1.json"
+  ],
+  "schema": "MetaBloomsStageReceipt_v1",
+  "stage": "CDR_STAGE6_ADAPTABILITY_AND_INTERFACE_CONTRACT_HARDENING",
+  "summary": "CDR adaptability is now operationalized through versioned interface contracts, compatibility/deprecation policy, change-impact analysis, extension-point evidence, and negative interface tests.",
+  "timestamp_utc": "2026-05-02T04:36:43Z",
+  "validation": {
+    "gate_eval": "PASS",
+    "invalid_fixture": "DENY",
+    "post_portable_boot_verify": "PASS",
+    "valid_fixture": "ALLOW"
+  },
+  "verdict": "PASS"
+}

@@ -1,0 +1,159 @@
+{
+  "artifacts_written": [
+    {
+      "bytes": 14715,
+      "path": "0_kernel/mpp_v3/__pycache__/mpp_v3_orchestrator_runtime_controller_v1.cpython-313.pyc",
+      "sha256": "e3aebba8dce2d350a85fc13b1c7f7c631d88d4c9ac1edc5376d3b4e7f0f57c78"
+    },
+    {
+      "bytes": 10822,
+      "path": "0_kernel/mpp_v3/mpp_v3_orchestrator_runtime_controller_v1.py",
+      "sha256": "bbc28d971a81697ba50a7054d8ec4a50f49a94059f78b7853a3f408ff7192983"
+    },
+    {
+      "bytes": 977,
+      "path": "0_kernel/registry/mpp_v3/policy_gates/MPP_V3_ORCHESTRATOR_CONTROLLER_GATE_v1.json",
+      "sha256": "ebdb3c1e9bdac7ace41cbdb7761409ee0e740a423241487809d0f641ba03976e"
+    },
+    {
+      "bytes": 651,
+      "path": "0_kernel/schemas/mpp_v3/ORCHESTRATOR_CONTROLLER_GATE_RESULT_SCHEMA_v1.json",
+      "sha256": "c10abaa34f1894d4100e02f239c768d53fd747d97c6952e33b4ee323de04c3f6"
+    },
+    {
+      "bytes": 751,
+      "path": "0_kernel/schemas/mpp_v3/ORCHESTRATOR_RUNTIME_PLAN_SCHEMA_v1.json",
+      "sha256": "60c68bd9fd1c2bea786e164c5f2de135e557478ca0860ed26f7a65cb0aba8b1f"
+    },
+    {
+      "bytes": 673,
+      "path": "0_kernel/schemas/mpp_v3/ORCHESTRATOR_TRANSITION_DECISION_SCHEMA_v1.json",
+      "sha256": "e5695d4ae468d9b4c18a0bbf7586f579486c3b668fcb10b20f669737eff6cae4"
+    },
+    {
+      "bytes": 532,
+      "path": "runtime/handoffs/mpp_v3/MPP_R22_ORCHESTRATOR_RUNTIME_CONTROLLER_HANDOFF_20260501T075000Z.json",
+      "sha256": "c70a44bb8ec637c187f5a64b22de483e85f807cfe996f94b4a787a9a04e57a08"
+    },
+    {
+      "bytes": 532,
+      "path": "runtime/handoffs/mpp_v3/MPP_R22_ORCHESTRATOR_RUNTIME_CONTROLLER_HANDOFF_LATEST.json",
+      "sha256": "c70a44bb8ec637c187f5a64b22de483e85f807cfe996f94b4a787a9a04e57a08"
+    },
+    {
+      "bytes": 2204,
+      "path": "runtime/receipts/mpp_v3/MPP_R22_ORCHESTRATOR_RUNTIME_CONTROLLER_RECEIPT_20260501T075000Z.json",
+      "sha256": "935841d261541842ab0ce75fb90f901068bbf4a3a9777cdbc142426c6548beed"
+    },
+    {
+      "bytes": 2204,
+      "path": "runtime/receipts/mpp_v3/MPP_R22_ORCHESTRATOR_RUNTIME_CONTROLLER_RECEIPT_LATEST.json",
+      "sha256": "935841d261541842ab0ce75fb90f901068bbf4a3a9777cdbc142426c6548beed"
+    },
+    {
+      "bytes": 653,
+      "path": "runtime/summaries/mpp_v3/MPP_R22_ORCHESTRATOR_RUNTIME_CONTROLLER_SUMMARY.md",
+      "sha256": "34a38c1470f96b3e421381584c361e7edfea486722b98fbe65e62d37bc0c1546"
+    },
+    {
+      "bytes": 5533,
+      "path": "tests/fixtures/mpp_v3/invalid_orchestrator_desired_actual_drift_packet_v1.json",
+      "sha256": "bd413d8565d8e904b3970a5ec0827c76b9a77d6d0fc37657ea9a77a147c6b918"
+    },
+    {
+      "bytes": 5103,
+      "path": "tests/fixtures/mpp_v3/invalid_orchestrator_no_exit_handler_packet_v1.json",
+      "sha256": "f1f347f8d5ba41738de4ac36c8723f9cd3bf1403993d39a5636f27b95dfcfb26"
+    },
+    {
+      "bytes": 5533,
+      "path": "tests/fixtures/mpp_v3/invalid_orchestrator_retry_budget_packet_v1.json",
+      "sha256": "6a93e42ec3af9e048c259c7030abdd94b35bf6c83b29ef3e8d091de6275a6b87"
+    },
+    {
+      "bytes": 1033,
+      "path": "tests/fixtures/mpp_v3/valid_orchestrator_controller_gate_result_v1.json",
+      "sha256": "9a8875bcc9e6667c0b248b060eb718f294b0d45d77be869038784c21ff75733f"
+    },
+    {
+      "bytes": 5540,
+      "path": "tests/fixtures/mpp_v3/valid_orchestrator_runtime_plan_v1.json",
+      "sha256": "bcc8dab00426b0601cc692e5f082671f62a364df2307945172f23135b0713ac3"
+    },
+    {
+      "bytes": 594,
+      "path": "tests/fixtures/mpp_v3/valid_orchestrator_transition_decision_v1.json",
+      "sha256": "9e1b94f76221e13f74c089c56ebd1063284209374e66ebe4bc6afb4863185b18"
+    }
+  ],
+  "base_full_os_verification": {
+    "actual_sha256": "302089d45d1f0509e26e6526fe8075a47a57a77165e5b2006c5c685a03d2f859",
+    "checksum_match": true,
+    "exists": true,
+    "sha_sidecar_exists": true,
+    "sidecar_sha256": "302089d45d1f0509e26e6526fe8075a47a57a77165e5b2006c5c685a03d2f859",
+    "zip": "/mnt/data/METABLOOMS_OS_FULL_MPP_V3_R0_R21_INTEGRATED_20260501T063000Z.zip",
+    "zip_testzip": null
+  },
+  "next_stage": "MPP_R23_EXPORT_PROMOTION_GATE",
+  "research_sources": [
+    {
+      "citation": "turn163979search5",
+      "source": "Temporal durable execution"
+    },
+    {
+      "citation": "turn163979search6",
+      "source": "Argo Workflows retries"
+    },
+    {
+      "citation": "turn163979search10",
+      "source": "Argo Workflows exit handlers"
+    },
+    {
+      "citation": "turn163979search0",
+      "source": "OpenTelemetry semantic conventions"
+    }
+  ],
+  "schema_version": "metablooms.mpp_stage_receipt.v1",
+  "stage_id": "MPP_R22_ORCHESTRATOR_RUNTIME_CONTROLLER",
+  "status": "PASS",
+  "tests": [
+    {
+      "detail": "/mnt/data/R22_overlay_20260501T075000Z/Metablooms_OS/0_kernel/mpp_v3/__pycache__/mpp_v3_orchestrator_runtime_controller_v1.cpython-313.pyc",
+      "expected": "PASS",
+      "name": "py_compile",
+      "status": "PASS"
+    },
+    {
+      "detail": "{'status': 'PASS', 'packet_id': 'ORCH-20260501T004431Z', 'result_hash': '24aeb224721dd23496587cc4d8af2e06c8e0e71a98f42cbaf2effd857b32ff7b'}",
+      "expected": "PASS",
+      "name": "valid_validate",
+      "status": "PASS"
+    },
+    {
+      "detail": "True",
+      "expected": "PASS",
+      "name": "valid_gate_pass",
+      "status": "PASS"
+    },
+    {
+      "detail": "True",
+      "expected": "PASS",
+      "name": "desired_actual_drift_gate_fails",
+      "status": "PASS"
+    },
+    {
+      "error": "OrchestratorError:ORCH_NO_EXIT_HANDLERS",
+      "expected": "RAISE",
+      "name": "no_exit_handler_validate_raises",
+      "status": "PASS"
+    },
+    {
+      "error": "OrchestratorError:ORCH_RETRY_MAX_ATTEMPTS_OUT_OF_BOUNDS",
+      "expected": "RAISE",
+      "name": "retry_budget_validate_raises",
+      "status": "PASS"
+    }
+  ],
+  "timestamp": "20260501T075000Z"
+}

@@ -1,0 +1,46 @@
+{
+  "created_utc": "2026-04-28T02:52:00Z",
+  "decision_id": "R3-20260428T025200Z",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [
+    {
+      "claim": "/mnt/data/Metablooms_OS/runtime/governance/contracts/unified_runtime_compatibility_contract_v1.json"
+    },
+    {
+      "claim": "/mnt/data/Metablooms_OS/0_kernel/scripts/validate_unified_runtime_compatibility_contract_v1.py"
+    },
+    {
+      "claim": "/mnt/data/Metablooms_OS/receipts/refactor_program/R3_VERIFY_RECEIPT_20260428T025200Z.json"
+    }
+  ],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"chosen_option\": \"Replace with minimal compatibility contract and validator\", \"created_utc\": \"2026-04-28T02:52:00Z\", \"decision_class\": \"Class B\", \"decision_id\": \"R3-20260428T025200Z\", \"evidence\": [\"/mnt/data/Metablooms_OS/runtime/governance/contracts/unified_runtime_compatibility_contract_v1.json\", \"/mnt/data/Metablooms_OS/0_kernel/scripts/validate_unified_runtime_compatibility_contract_v1.py\", \"/mnt/data/Metablooms_OS/receipts/refactor_program/R3_VERIFY_RECEIPT_20260428T025200Z.json\"], \"options_considered\": [\"Keep cross-link memo plus redirect only\", \"Replace with minimal compatibility contract and validator\", \"Fold compatibility details into artifact_disposition_contract_v1 only\"], \"stage\": \"R3_COMPATIBILITY_CONTRACT_REPLACEMENT\", \"why\": \"Provides executable machine-checkable compatibility rules while preserving rationale in ADR/archive paths.\"}",
+  "reasons": [],
+  "record_id": "DECISION_LOG_R3_20260428T025200Z",
+  "record_kind": "decision_log",
+  "result": "wrapped",
+  "source_record": {
+    "path": "runtime/governance/decision_logs/DECISION_LOG_R3_20260428T025200Z.json",
+    "sha256": "9fe35f00c0a92ba46f650f813d0005399df08498d409cbc8ced82c93e6d9e2af",
+    "size_bytes": 910
+  },
+  "span_id": "287aad25b69f8093",
+  "stage_id": "R3_COMPATIBILITY_CONTRACT_REPLACEMENT",
+  "summary": "Canonical wrapper for DECISION_LOG_R3_20260428T025200Z.json",
+  "trace_id": "b02afb063684a552ad3d9f1b02cbd414"
+}

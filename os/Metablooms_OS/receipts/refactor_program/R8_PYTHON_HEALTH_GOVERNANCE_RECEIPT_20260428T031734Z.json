@@ -1,0 +1,57 @@
+{
+  "archived": [
+    "runtime/governance/legacy_archives/R8_python_health/p0py_python_health_governance_v1.staged_source.py"
+  ],
+  "created_utc": "2026-04-28T03:18:31Z",
+  "normal_python_live_probe_policy": "forbidden; live gate uses hook-chain inspection plus prior forensic receipt",
+  "promoted": [
+    "0_kernel/scripts/p0py_python_health_governance_v1.py",
+    "runtime/governance/schemas/python_health_gate_decision_schema_v1.json"
+  ],
+  "receipt_type": "R8_STAGE_RECEIPT",
+  "reports": {
+    "bad_s": {
+      "blocks": [
+        "python3 -S lane exceeds max startup threshold",
+        "python3 -S probe shows site module loaded"
+      ],
+      "decision": "deny",
+      "path": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R8_python_health_bad_s_20260428T031734Z.json",
+      "sha256": "313fee2799be29112688f25353218a5c422c83fa63f9555819da8d246524524e",
+      "status": "healthy_but_safe_lane_preferred"
+    },
+    "live": {
+      "blocks": null,
+      "decision": "allow_with_route_controls",
+      "path": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R8_python_health_live_20260428T031734Z.json",
+      "sha256": "b95654b76841d71e466db6d9f130c0a79dcbf9ecda6205c325c4c064e998c37b",
+      "status": "normal_python_quarantined_without_execution"
+    },
+    "normal_failed": {
+      "blocks": null,
+      "decision": "allow_with_route_controls",
+      "path": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R8_python_health_normal_failed_20260428T031734Z.json",
+      "sha256": "7f8d2393832997358f5a1fbc7051e237386e312e0c37261bb9e8bcb35be1c16c",
+      "status": "normal_python_unavailable_or_hung"
+    },
+    "registry": {
+      "blocks": [],
+      "decision": "pass",
+      "path": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R8_gate_registry_integrity_20260428T031734Z.json",
+      "sha256": "d5d40c7b82deeeb0734ad41052e8f12141878e138056e21412340882334bb693",
+      "status": null
+    },
+    "valid": {
+      "blocks": null,
+      "decision": "allow_with_route_controls",
+      "path": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R8_python_health_expensive_20260428T031734Z.json",
+      "sha256": "1a00c457c778e4c581031dbe7fbad4296dca08069c9d9e862d9fb200acd2f9b6",
+      "status": "normal_python_expensive_quarantine"
+    }
+  },
+  "stage": "R8_PYTHON_HEALTH_GOVERNANCE_PROMOTION",
+  "updated": [
+    "runtime/governance/registries/gate_registry_v1.json"
+  ],
+  "verdict": "PASS"
+}

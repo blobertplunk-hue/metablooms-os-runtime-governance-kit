@@ -1,0 +1,13 @@
+{
+  "id": "ROUTER_CONTRACT_v1",
+  "status": "runtime_active",
+  "router_inside_kernel": true,
+  "routes": {
+    "os_repair": "runtime/governance + 0_kernel/registry + export gates",
+    "research": "SEE cartridge then CE cartridge",
+    "html_activity": "HTML cartridge + accessibility/telemetry validators",
+    "csv_blooket": "CSV cartridge + template/row-count validators",
+    "docx": "document cartridge + formatting validators",
+    "slides": "slides cartridge + artifact handoff"
+  }
+}

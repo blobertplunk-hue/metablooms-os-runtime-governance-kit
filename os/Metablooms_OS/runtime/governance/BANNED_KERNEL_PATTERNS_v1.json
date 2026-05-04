@@ -1,0 +1,23 @@
+{
+  "banned_patterns": [
+    {
+      "allowed_path_fragments": [
+        "0_kernel/vendor/"
+      ],
+      "pattern": ".rglob(",
+      "replacement": "runtime/governance/safe_walk_v1.py::safe_walk",
+      "scope": [
+        "0_kernel",
+        "runtime"
+      ]
+    }
+  ],
+  "fail_closed_conditions": [
+    "non_vendor_kernel_or_runtime_file_contains_Path_rglob_or_dot_rglob"
+  ],
+  "id": "BANNED_KERNEL_PATTERNS_v1",
+  "purpose": "Prevent known sandbox-deadlock-prone traversal patterns in MetaBlooms kernel/runtime code.",
+  "status": "active",
+  "updated_by": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_5_PROMPT_ENGINE_REGRESSION_FIXTURES_AND_PROFILE_SMOKE",
+  "updated_utc": "2026-04-30T21:36:34Z"
+}

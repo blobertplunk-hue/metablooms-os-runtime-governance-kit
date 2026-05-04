@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-04-28T02:52:00Z",
+  "decision_id": "R3_COMPATIBILITY_CONTRACT_REPLACEMENT-68a60b1ca5135b15",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"contract_path\": \"/mnt/data/Metablooms_OS/runtime/governance/contracts/unified_runtime_compatibility_contract_v1.json\", \"created_utc\": \"2026-04-28T02:52:00Z\", \"fixtures\": [{\"expected\": \"pass\", \"path\": \"/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/fixtures/unified_runtime_compatibility_contract_v1.valid.json\", \"sha256\": \"9fd07a64c988b174d8507ddc54d9760ed81a4bf3905c99c7fb1ad4c48bdff4f7\"}, {\"expected\": \"fail\", \"path\": \"/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/fixtures/unified_runtime_compatibility_contract_v1.stale.json\", \"sha256\": \"f9e34d2df8d07a4db5a5d053a6b6cc10225e8e51d039e7fd8bc5cb0ffde375e3\"}], \"live_validation_report\": \"/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R3_contract_validation_live_20260428T025200Z.json\", \"next_stage\": \"R4_SESSION_STATE_EXPORT_REPLACEMENT\", \"old_cross_link_status\": \"archive_only\", \"stage\": \"R3_COMPATIBILITY_CONTRACT_REPLACEMENT\", \"stale_validation_report\": \"/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R3_contract_validation_stale_20260428T025200Z.json\", \"validator_path\": \"/mnt/data/Metablooms_OS/0_kernel/scripts/validate_unified_runtime_compatibility_contract_v1.py\", \"verdict\": \"PASS\"}",
+  "reasons": [],
+  "record_id": "R3_COMPATIBILITY_CONTRACT_RECEIPT_20260428T025200Z",
+  "record_kind": "stage_receipt",
+  "result": "pass",
+  "source_record": {
+    "path": "receipts/refactor_program/R3_COMPATIBILITY_CONTRACT_RECEIPT_20260428T025200Z.json",
+    "sha256": "68a60b1ca5135b15ec3afedae1ec060b5a8b87391b62f1fb6420b0157d947091",
+    "size_bytes": 1332
+  },
+  "span_id": "20afc4532151f6e1",
+  "stage_id": "R3_COMPATIBILITY_CONTRACT_REPLACEMENT",
+  "summary": "Canonical wrapper for R3_COMPATIBILITY_CONTRACT_RECEIPT_20260428T025200Z.json",
+  "trace_id": "5a1f9c77ad8ad7381c535562c4e337fc"
+}

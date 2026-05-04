@@ -1,0 +1,21 @@
+{
+  "stage": "FL17-MERGE-2_QUARANTINED_EVIDENCE_IMPORT",
+  "research_sources": [
+    {
+      "claim": "AI governance and risk management should be systematic, not ad hoc.",
+      "source": "NIST AI RMF",
+      "citation": "turn682728search0"
+    },
+    {
+      "claim": "Provenance must be verified against expectations; provenance alone is insufficient.",
+      "source": "SLSA verifying artifacts v1.2",
+      "citation": "turn682728search2"
+    },
+    {
+      "claim": "Workflow status/progress/error updates are status messages when added without context changes.",
+      "source": "W3C WCAG status messages",
+      "citation": "turn682728search6"
+    }
+  ],
+  "synthesis_input": "User requires always-on MetaBlooms governance; this import stage must be quarantined and expectation-verified before active runtime change."
+}

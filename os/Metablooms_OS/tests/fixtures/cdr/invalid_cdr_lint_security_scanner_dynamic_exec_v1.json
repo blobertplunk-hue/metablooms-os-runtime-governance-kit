@@ -1,0 +1,84 @@
+{
+  "baseline": {
+    "files_scanned": [
+      "runtime/governance/cdr_adaptability_interface_contract_gate_v1.py",
+      "runtime/governance/cdr_code_acceptance_gate_v1.py",
+      "runtime/governance/cdr_risk_tiered_test_matrix_gate_v1.py",
+      "runtime/governance/cdr_source_level_self_audit_gate_v1.py",
+      "runtime/governance/cdr_source_style_debuggability_gate_v1.py",
+      "runtime/governance/cdr_security_observability_gate_v1.py",
+      "runtime/governance/cdr_static_analysis_complexity_gate_v1.py",
+      "runtime/governance/cdr_lint_security_scanner_gate_v1.py"
+    ],
+    "findings": [
+      {
+        "id": "fixture:dynamic_exec",
+        "line": 7,
+        "message": "exec used",
+        "path": "runtime/governance/example.py",
+        "severity": "zero_tolerance",
+        "type": "dynamic_exec"
+      }
+    ],
+    "generated_at_utc": "2026-05-02T12:14:37Z",
+    "optional_scanner_runs": [],
+    "schema": "CDRLintSecurityScannerBaseline_v1",
+    "source_hashes": {
+      "runtime/governance/cdr_adaptability_interface_contract_gate_v1.py": "3920606ce17584aeadd262a728d4f1b424a836e03b5559ba11c70ac100c99acc",
+      "runtime/governance/cdr_code_acceptance_gate_v1.py": "7cd792969d214fb61140acae467c496939c38b588e4f6314a46100e7c65527b5",
+      "runtime/governance/cdr_lint_security_scanner_gate_v1.py": "c69669cac31bccdb4493d9398a5e4933b5033536832b5bf1a8cb739a7edb5d6d",
+      "runtime/governance/cdr_risk_tiered_test_matrix_gate_v1.py": "1c94f23c6e140bc0730a8dfd07274000d30c364638f32a45a5425ec1daa2ba40",
+      "runtime/governance/cdr_security_observability_gate_v1.py": "4d34bc750d29f85dc2e3b09d5cc4d55afcdc6be8e98687d5c716b5f07110b705",
+      "runtime/governance/cdr_source_level_self_audit_gate_v1.py": "45f33228fb0663a6f3844ba3f02fe249392a1460ffd693e6ec540741a36789d3",
+      "runtime/governance/cdr_source_style_debuggability_gate_v1.py": "a128423ae20aa983716704420672ddc48822f426b668383e0e37cae701c0f6f2",
+      "runtime/governance/cdr_static_analysis_complexity_gate_v1.py": "50ccd77cb4bd860817d7b133ff5cda368205ca6a6a49d9ac35926b7ce89073d4"
+    },
+    "source_root": "runtime/governance",
+    "stage": "CDR_STAGE9_LINT_SECURITY_SCANNER_INTEGRATION_AND_BASELINE_REPORTING",
+    "summary": {
+      "fallback_used_for_missing_tools": [
+        "ruff",
+        "bandit",
+        "semgrep"
+      ],
+      "files_scanned_count": 8,
+      "finding_count": 4,
+      "high_count": 3,
+      "low_count": 0,
+      "medium_count": 1,
+      "optional_tools_available": [],
+      "zero_tolerance_count": 1
+    },
+    "tool_availability": {
+      "bandit": {
+        "available": false,
+        "path": null
+      },
+      "ruff": {
+        "available": false,
+        "path": null
+      },
+      "semgrep": {
+        "available": false,
+        "path": null
+      },
+      "stdlib_ast_static_scan": {
+        "available": true,
+        "path": "python_stdlib_ast"
+      }
+    }
+  },
+  "decision": "request_allow",
+  "required_checks": [
+    "stdlib_ast_static_scan",
+    "source_hashes",
+    "test_binding",
+    "zero_tolerance_absent"
+  ],
+  "risk_tier": "CRITICAL",
+  "schema": "CDRLintSecurityScannerPacket_v1",
+  "stage": "CDR_STAGE9_LINT_SECURITY_SCANNER_INTEGRATION_AND_BASELINE_REPORTING",
+  "test_binding": {
+    "eval_path": "tests/evals/cdr/test_cdr_lint_security_scanner_gate_v1.py"
+  }
+}

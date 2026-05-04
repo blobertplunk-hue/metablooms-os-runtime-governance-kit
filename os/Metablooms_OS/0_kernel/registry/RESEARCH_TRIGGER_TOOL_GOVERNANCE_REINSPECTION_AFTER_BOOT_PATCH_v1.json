@@ -1,0 +1,115 @@
+{
+  "version": "1.0",
+  "created_at": 1776998753.1398702,
+  "purpose": "Reinspect research-trigger and sandbox-tool governance after boot manifest patch.",
+  "verdict": "PASS_PROMOTION_CONFIRMED",
+  "issues": [],
+  "file_checks": {
+    "research_trigger_rule_v1.json": {
+      "exists": true,
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/research_trigger/research_trigger_rule_v1.json",
+      "size": 1105,
+      "sha256": "32423dfb41c76823faae877602075540844dc8b960d9c3368eb3287340489c5c",
+      "in_boot_manifest": true,
+      "in_artifact_registry_by_id": true,
+      "in_integration_contract": true
+    },
+    "interceptor_research_trigger_patch_v1.json": {
+      "exists": true,
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/research_trigger/interceptor_research_trigger_patch_v1.json",
+      "size": 843,
+      "sha256": "fc1af3c8003e13b35a1c511b98c9c76e9d2443289fdab77637d09462ff8d3e01",
+      "in_boot_manifest": false,
+      "in_artifact_registry_by_id": true,
+      "in_integration_contract": true
+    },
+    "verifier_research_trigger_patch_v1.json": {
+      "exists": true,
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/research_trigger/verifier_research_trigger_patch_v1.json",
+      "size": 914,
+      "sha256": "8c7f083ddcff06de48c397ebac036b5e9b75c6f646a94fa9656846abb41b1b32",
+      "in_boot_manifest": false,
+      "in_artifact_registry_by_id": true,
+      "in_integration_contract": true
+    },
+    "research_trigger_validation_receipt.schema.json": {
+      "exists": true,
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/research_trigger/research_trigger_validation_receipt.schema.json",
+      "size": 682,
+      "sha256": "5f9783c62a8bbc9f9069e2c8aad8f2bebba60934d34a6828d7fc01f77ff271bd",
+      "in_boot_manifest": false,
+      "in_artifact_registry_by_id": true,
+      "in_integration_contract": true
+    },
+    "research_trigger_integration_v1.md": {
+      "exists": true,
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/research_trigger/research_trigger_integration_v1.md",
+      "size": 892,
+      "sha256": "3fdcd6cdbfd4e0d72baad8a7be7a878ceae7b3597e5aa93352f84966825e75a7",
+      "in_boot_manifest": true,
+      "in_artifact_registry_by_id": true,
+      "in_integration_contract": true
+    },
+    "sandbox_tool_governance_v1.md": {
+      "exists": true,
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/tool_governance/sandbox_tool_governance_v1.md",
+      "size": 1153,
+      "sha256": "947a3e5f1e1c088c928642918ff075d0baa957b97570f90150fdaf001fbc6ac2",
+      "in_boot_manifest": true,
+      "in_artifact_registry_by_id": true,
+      "in_integration_contract": true
+    },
+    "sandbox_tool_capability_registry_v1.json": {
+      "exists": true,
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/tool_governance/sandbox_tool_capability_registry_v1.json",
+      "size": 8859,
+      "sha256": "75e9c589d9955d9c423e05db2d4c42681e1c6f7ac1b1042e8192887be6c7c53b",
+      "in_boot_manifest": true,
+      "in_artifact_registry_by_id": true,
+      "in_integration_contract": true
+    },
+    "sandbox_tool_probe_inventory_v1.json": {
+      "exists": true,
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/tool_governance/sandbox_tool_probe_inventory_v1.json",
+      "size": 5333,
+      "sha256": "5e844e85fd59237445f9b786b5cac027e8c242e540d3c34842f55bf2bcb0fb8b",
+      "in_boot_manifest": false,
+      "in_artifact_registry_by_id": true,
+      "in_integration_contract": true
+    },
+    "sandbox_tool_probe_inventory_v1.tsv": {
+      "exists": true,
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/tool_governance/sandbox_tool_probe_inventory_v1.tsv",
+      "size": 1851,
+      "sha256": "3c3893bcb1d3aeeb45a874104953fd7136359f7eb22a037a3870ad40597cc714",
+      "in_boot_manifest": false,
+      "in_artifact_registry_by_id": true,
+      "in_integration_contract": true
+    },
+    "sandbox_tool_governance_integration_receipt_v1.json": {
+      "exists": true,
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/tool_governance/sandbox_tool_governance_integration_receipt_v1.json",
+      "size": 444,
+      "sha256": "9d1a868d6f6698ba143c4da620cc6671eca0bc4251aea169258d2c72b455e1cb",
+      "in_boot_manifest": false,
+      "in_artifact_registry_by_id": true,
+      "in_integration_contract": true
+    }
+  },
+  "boot_research_trigger_module": {
+    "status": "active",
+    "path": "0_kernel/registry/research_trigger/research_trigger_rule_v1.json",
+    "integration_contract": "0_kernel/registry/RESEARCH_TRIGGER_AND_TOOL_GOVERNANCE_INTEGRATION_v1.json",
+    "required_boot_documents": [
+      "0_kernel/registry/research_trigger/research_trigger_integration_v1.md"
+    ],
+    "integration_document": "0_kernel/registry/research_trigger/research_trigger_integration_v1.md",
+    "updated_at": 1776997309.5225825
+  },
+  "boot_tool_governance_module": {
+    "status": "active",
+    "path": "0_kernel/registry/tool_governance/sandbox_tool_governance_v1.md",
+    "capability_registry": "0_kernel/registry/tool_governance/sandbox_tool_capability_registry_v1.json",
+    "integration_contract": "0_kernel/registry/RESEARCH_TRIGGER_AND_TOOL_GOVERNANCE_INTEGRATION_v1.json"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "artifact_hashes": {
+    "contract": "edbeba47e736d912ddddad1f2940bec299743e42181a455a83a0518705ec6095",
+    "next_prompt": "1d2cf879a397ba4718f10545f2e42e8a1d0cadc232514d4fc256013a7f054c74",
+    "next_prompt_json": "8e53c490efc13550567f8b869eea5d608a62b47d91b703f561399049ee7de57d",
+    "report": "1f5d832097b271d74eb767ea7657efe6b72f531a51fe5ef4b4c61f4344b6e1ce"
+  },
+  "artifacts_written": [
+    "0_kernel/registry/world_class_gap_plan/POST_WC8_BOOT_REPLAY_AND_AUTOTRACKER_ENFORCEMENT_SMOKE_CONTRACT_v1.json",
+    "0_kernel/registry/world_class_gap_plan/POST_WC8_BOOT_REPLAY_AND_AUTOTRACKER_ENFORCEMENT_SMOKE_REPORT_v1.md",
+    "runtime/state/ACTIVE_PROCESS_TRACKER_PREVIEW.txt",
+    "runtime/state/ACTIVE_PROCESS_TRACKER_PREVIEW.json",
+    "runtime/state/NEXT_STAGE_COPY_PROMPT.md",
+    "runtime/state/NEXT_STAGE_COPY_PROMPT.json"
+  ],
+  "bounded_scope": "Replay and enforcement smoke only; no unrelated task executed.",
+  "export_required": "BOOTABLE_FULL_AUTHORITY_WC8R.zip",
+  "input_authority": "BOOTABLE_FULL_AUTHORITY_WC8.zip",
+  "next_stage": "NEXT_REQUESTED_METABLOOMS_TASK",
+  "previous_stage": "WC_STAGE8_FULL_WORLD_CLASS_EXPORT_AND_NEW_CHAT_REPLAY_LOCK",
+  "required_authority_checks": [
+    {
+      "artifact": "WORLD_CLASS_MEASURED_SCORECARD_BASELINE_v1.json",
+      "exists": true,
+      "path": "0_kernel/registry/world_class_gap_plan/WORLD_CLASS_MEASURED_SCORECARD_BASELINE_v1.json",
+      "size_bytes": 10607
+    },
+    {
+      "artifact": "DORA_STYLE_OS_METRICS_BASELINE_v1.json",
+      "exists": true,
+      "path": "runtime/state/DORA_STYLE_OS_METRICS_BASELINE_v1.json",
+      "size_bytes": 431
+    },
+    {
+      "artifact": "EDUCATIONAL_HTML_DESIGN_SYSTEM_CARTRIDGE_SPEC_v1.json",
+      "exists": true,
+      "path": "0_kernel/cartridges/educational_html_design_system/EDUCATIONAL_HTML_DESIGN_SYSTEM_CARTRIDGE_SPEC_v1.json",
+      "size_bytes": 537
+    },
+    {
+      "artifact": "OPERATOR_EXPERIENCE_POLISH_CONTRACT_v1.json",
+      "exists": true,
+      "path": "0_kernel/registry/world_class_gap_plan/OPERATOR_EXPERIENCE_POLISH_CONTRACT_v1.json",
+      "size_bytes": 540
+    },
+    {
+      "artifact": "LESSON_PROMOTION_QUEUE_v1.json",
+      "exists": true,
+      "path": "0_kernel/lessons/LESSON_PROMOTION_QUEUE_v1.json",
+      "size_bytes": 9417
+    },
+    {
+      "artifact": "GENERAL_CAPABILITY_RESOLVER_CONTRACT_v1.json",
+      "exists": true,
+      "path": "0_kernel/registry/general_capability_resolver/GENERAL_CAPABILITY_RESOLVER_CONTRACT_v1.json",
+      "size_bytes": 1935
+    },
+    {
+      "artifact": "AUTOMATIC_MULTI_STEP_TRACKER_CONTRACT_v1.json",
+      "exists": true,
+      "path": "0_kernel/cartridges/automatic_process_tracker/AUTOMATIC_MULTI_STEP_TRACKER_CONTRACT_v1.json",
+      "size_bytes": 1682
+    },
+    {
+      "artifact": "automatic_process_tracker_emitter_v1.py",
+      "exists": true,
+      "path": "0_kernel/cartridges/automatic_process_tracker/automatic_process_tracker_emitter_v1.py",
+      "size_bytes": 2224
+    }
+  ],
+  "schema_version": "v1",
+  "stage": "POST_WC8_BOOT_REPLAY_AND_AUTOTRACKER_ENFORCEMENT_SMOKE",
+  "timestamp_utc": "20260503T010700Z",
+  "verdict": "PASS"
+}

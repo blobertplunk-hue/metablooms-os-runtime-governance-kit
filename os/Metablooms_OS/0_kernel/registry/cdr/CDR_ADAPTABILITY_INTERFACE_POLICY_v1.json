@@ -1,0 +1,17 @@
+{
+  "acceptance_rule": "All runtime-significant code changes must provide at least one interface contract or an explicit no-interface-change proof; stable/authority-critical interfaces require compatibility and migration evidence.",
+  "gate": "runtime/governance/cdr_adaptability_interface_contract_gate_v1.py",
+  "meta_blooms_alignment": [
+    "artifact_first",
+    "fail_closed",
+    "no_implicit_state",
+    "recursive_improvement",
+    "bounded_stage",
+    "receipts_and_handoffs"
+  ],
+  "risk_tier_binding": "Delegates overall test depth to CDR_RISK_TIERED_TEST_MATRIX_v1 while adding interface-specific evidence checks.",
+  "schema": "CDRAdaptabilityInterfacePolicy_v1",
+  "stage": "CDR_STAGE6_ADAPTABILITY_AND_INTERFACE_CONTRACT_HARDENING",
+  "status": "active",
+  "timestamp_utc": "2026-05-02T04:36:43Z"
+}

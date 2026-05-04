@@ -1,0 +1,14 @@
+{
+  "artifact_type": "FULL_AUTHORITY_EXPORT_RESULT.v1",
+  "created_utc": "20260502T153307Z",
+  "duplicate_members": 0,
+  "full_export_path": "/mnt/data/METABLOOMS_OS_OPERATOR_VISUAL_TRACKER_POLISH_STAGE2_FULL_AUTHORITY_20260502T153307Z.zip",
+  "full_export_sha256": "9143547e56a51f6027ee32b7c4854bdbb2ca20b026d0e9a3932cc53abe7c4fe6",
+  "html_preview": "/mnt/data/Metablooms_OS/runtime/operator_tracker/operator_visual_tracker_latest.html",
+  "members": 5111,
+  "stage": "OPERATOR_VISUAL_TRACKER_POLISH_STAGE2_RENDER_CONTRACT_AND_PHONE_SAFE_TEMPLATE",
+  "stage_bundle_path": "/mnt/data/Metablooms_OS/runtime/stage_bundles/operator_tracker/OPERATOR_VISUAL_TRACKER_POLISH_STAGE2_RENDER_CONTRACT_AND_PHONE_SAFE_TEMPLATE_20260502T153307Z.zip",
+  "stage_bundle_sha256": "4619cf491489aa6c898c21ffb522f4a5cfe3557b44cd6df1a8ef206be859f66d",
+  "status": "PASS",
+  "zip_testzip": "PASS"
+}

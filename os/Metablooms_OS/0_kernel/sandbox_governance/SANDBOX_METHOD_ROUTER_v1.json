@@ -1,0 +1,10 @@
+{
+  "default_method_order": [
+    "shell",
+    "python3 -S",
+    "jq",
+    "zipinfo/unzip"
+  ],
+  "id": "SANDBOX_METHOD_ROUTER_v1",
+  "python_policy": "python3 -S is required for stdlib-only OS work unless exception artifact exists"
+}

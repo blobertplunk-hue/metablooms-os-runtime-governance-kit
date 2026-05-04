@@ -1,0 +1,36 @@
+{
+  "created_utc": "20260502T144842Z",
+  "evidence": [
+    {
+      "claim": "Append-log designs should use append-only sequential records with clear commit semantics; WAL designs append changes to a separate log and can allow readers and writers to proceed concurrently.",
+      "source": "SQLite WAL documentation",
+      "support": "WAL changes are appended to a separate file; commit occurs when a commit record is appended; WAL allows concurrent reads/writes and more sequential disk I/O.",
+      "url": "https://www.sqlite.org/wal.html"
+    },
+    {
+      "claim": "Durability is a configurable performance tradeoff; fsync improves durability but slows commits.",
+      "source": "Android SQLite performance best practices",
+      "support": "When WAL is enabled, default commits issue fsync to help ensure data reaches disk; this improves durability but slows commits.",
+      "url": "https://developer.android.com/topic/performance/sqlite-performance-best-practices"
+    },
+    {
+      "claim": "Structured logging and consistent event attributes are required for operational/security use; logs support audit trails and incident reconstruction.",
+      "source": "OWASP Logging Cheat Sheet",
+      "support": "Application logging should be consistent and includes audit trails, policy violations, incident investigation, and security monitoring.",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html"
+    },
+    {
+      "claim": "Log injection/forging is a concrete threat when unvalidated input is written to logs.",
+      "source": "OWASP Log Injection",
+      "support": "Writing invalidated user input to log files can allow forged entries or malicious content injection.",
+      "url": "https://owasp.org/www-community/attacks/Log_Injection"
+    },
+    {
+      "claim": "Implementation should use low-level append/open semantics rather than seek-then-write patterns; Python exposes os.open and O_APPEND for append-on-each-write behavior.",
+      "source": "Python os documentation",
+      "support": "Python os provides O_APPEND and open/write/fsync primitives for OS-level file operations.",
+      "url": "https://docs.python.org/3/library/os.html"
+    }
+  ],
+  "stage": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT"
+}

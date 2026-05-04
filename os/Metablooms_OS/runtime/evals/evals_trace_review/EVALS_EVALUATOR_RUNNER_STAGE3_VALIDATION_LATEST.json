@@ -1,0 +1,24 @@
+{
+  "artifact_type": "EVALS_EVALUATOR_RUNNER_CONFUSION_MATRIX_STAGE3_VALIDATION_v1",
+  "created_utc": "20260501T122329Z",
+  "issues": [],
+  "paths": {
+    "dataset": "/mnt/data/evals_stage3_smoke2/Metablooms_OS/runtime/evals/evals_trace_review/EVALS_REGRESSION_DATASET_v1.json",
+    "matrix": "/mnt/data/evals_stage3_smoke2/Metablooms_OS/runtime/evals/evals_trace_review/EVALS_CONFUSION_MATRIX_STAGE3_LATEST.json",
+    "matrix_schema": "/mnt/data/evals_stage3_smoke2/Metablooms_OS/0_kernel/registry/evals/EVALS_CONFUSION_MATRIX_SCHEMA_v1.json",
+    "results": "/mnt/data/evals_stage3_smoke2/Metablooms_OS/runtime/evals/evals_trace_review/EVALS_EVALUATOR_RUN_STAGE3_RESULTS_LATEST.json",
+    "runner": "/mnt/data/evals_stage3_smoke2/Metablooms_OS/0_kernel/scripts/evals_evaluator_runner_v1.py",
+    "runner_spec": "/mnt/data/evals_stage3_smoke2/Metablooms_OS/0_kernel/registry/evals/MB_EVALS_EVALUATOR_RUNNER_SPEC_v1.json",
+    "scorecards": "/mnt/data/evals_stage3_smoke2/Metablooms_OS/0_kernel/registry/evals/MB_EVALS_SCORECARD_SPEC_v1.json"
+  },
+  "root": "/mnt/data/evals_stage3_smoke2/Metablooms_OS",
+  "verdict": "PASS",
+  "warnings": [
+    {
+      "example_ids": [
+        "EVAL-009"
+      ],
+      "reason": "evaluator_mismatches_present"
+    }
+  ]
+}

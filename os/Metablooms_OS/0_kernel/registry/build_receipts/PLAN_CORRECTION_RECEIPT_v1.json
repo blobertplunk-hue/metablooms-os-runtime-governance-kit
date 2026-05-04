@@ -1,0 +1,100 @@
+{
+  "receipt_type": "BUILD_PLAN_CE_SEE_CORRECTION_RECEIPT",
+  "created_utc": "2026-04-26T03:15:00Z",
+  "source": "ChatGPT CE+SEE verdict on MetaBlooms_Build_Plan_v1.docx",
+  "runner": "Claude adversarial auditor",
+
+  "verdicts": [
+    {
+      "claim_id": "C1",
+      "chatgpt_claim": "P-1 TOOL_ROUTE_GUARD needed before P0",
+      "claude_assessment": "ACCEPTED — CORRECT",
+      "see_evidence": [
+        "Traefik Triple Gate: tool routing must be a separate gate from model interaction layer",
+        "BDI Architecture: adoption filters gate before intention commitment",
+        "DevSecOps: each transition guarded by explicit gate"
+      ],
+      "confidence": "T2-SEARCH",
+      "action": "Add P-1 TOOL_ROUTE_GUARD to TRANSACTIONAL_STAGE_RUNNER_CONTRACT_v1 as new amendment AMEND-0009"
+    },
+    {
+      "claim_id": "C2",
+      "chatgpt_claim": "GIT_COMMIT must be conditional/deferred in ChatGPT environment",
+      "claude_assessment": "ACCEPTED — CORRECT",
+      "see_evidence": [
+        "GitHub Actions: artifact persistence does not require git commit per transfer",
+        "Harness CI: conditional execution is standard pipeline pattern",
+        "EXECUTION_TOOL_FALLBACK_POLICY already embeds conditional logic"
+      ],
+      "confidence": "T2-SEARCH",
+      "action": "Patch stage 10 GIT_COMMIT to conditional — if git available and configured, commit; else write COMMIT_DEFERRED_RECEIPT_v1.json"
+    },
+    {
+      "claim_id": "C3",
+      "chatgpt_claim": "Heavy work class enum required — subjective gate fails",
+      "claude_assessment": "ACCEPTED — CORRECT",
+      "see_evidence": [
+        "Traefik TBAC: Tools/Tasks/Transactions categorized by type as enforcement mechanism",
+        "Agentic AI architecture taxonomy: Perception/Brain/Planning/Action/Tool Use — taxonomy IS the control mechanism"
+      ],
+      "confidence": "T2-SEARCH",
+      "chatgpt_proposed_enum": [
+        "RESEARCH", "ARCHIVE_EXTRACTION", "CODE_PATCH",
+        "BROWSER_VALIDATION", "FULL_EXPORT", "REGISTRY_RECONCILIATION"
+      ],
+      "action": "Adopt ChatGPT enum. Add to AUTO_RUNAWAY_STAGE_SPLIT_CONTRACT_v1 as HEAVY_WORK_CLASS_ENUM_v1"
+    },
+    {
+      "claim_id": "C4",
+      "chatgpt_claim": "web.run is available in ChatGPT outside Python/container execution",
+      "claude_assessment": "ACCEPTED — CORRECTION TO PLAN",
+      "see_evidence": ["T1-ARTIFACT: ChatGPT uses web.run in GW stages (confirmed by GW5T SEE packets)"],
+      "confidence": "T1-ARTIFACT",
+      "action": "Patch Section 2 of build plan: replace 'ChatGPT cannot do live web research' with 'ChatGPT web.run available outside Python/container; Python-S/container have no internet access'"
+    },
+    {
+      "claim_id": "C5",
+      "chatgpt_claim": "SHA values are expected values not facts until /mnt/data verification",
+      "claude_assessment": "ACCEPTED — CORRECT AUDIT POSTURE",
+      "see_evidence": ["T1-ARTIFACT: All SHAs in this plan are from Claude's session, not from /mnt/data direct verification"],
+      "confidence": "T1-ARTIFACT",
+      "action": "No change to plan text — this is already stated in Section 8. ChatGPT's posture is correct."
+    }
+  ],
+
+  "confirmed_unchanged": [
+    "Transactional Stage Runner as Priority 1 — confirmed",
+    "v6 amendments (AMEND-0005 through AMEND-0008) — confirmed appropriate",
+    "GW5U0 environment validation as first action — confirmed",
+    "P0-P7 runner phase structure — confirmed sound"
+  ],
+
+  "revised_priority_order": [
+    "GW5U0: Environment validation receipt — NOT a build stage, runs first",
+    "1. P-1 TOOL_ROUTE_GUARD amendment to runner contract",
+    "2. HEAVY_WORK_CLASS_ENUM_v1 for auto-runaway breaker",
+    "3. Transactional Stage Runner v1 (includes P-1, conditional GIT_COMMIT)",
+    "4. Intra-Chunk Interrupt Checker (AMEND-0005)",
+    "5. Runtime Pulse Logger (AMEND-0008)",
+    "6. Autonomous Sidecar Generator (AMEND-0006)",
+    "7. Claude Memory Sync Writer (AMEND-0007)",
+    "8. Sidecar namespace registry patch"
+  ],
+
+  "new_amendment": {
+    "id": "AMEND-0009",
+    "trigger": "ChatGPT CE+SEE verdict identified missing P-1 tool routing gate before P0 PREFLIGHT",
+    "see_evidence": [
+      "Traefik Triple Gate architecture (March 2026) — tool routing is a separate governance layer",
+      "BDI agentic architecture — adoption filters gate before execution commitment",
+      "DevSecOps: explicit gates between every transition"
+    ],
+    "rule": "The Transactional Stage Runner MUST include P-1 TOOL_ROUTE_GUARD as the first phase, before P0 PREFLIGHT. P-1 loads METABLOOMS_TOOL_FAILURE_AND_FALLBACK_ROUTER_v1.json, blocks canmore/image_gen/api_tool_discovery unless explicitly allowed, selects python_user_visible or container, writes TOOL_ROUTE_DECISION_LOG, then gates into P0.",
+    "regression_risk": "Adds one phase — bounded check, no mutations. Consistent with existing EXECUTION_TOOL_FALLBACK_POLICY_v1.json.",
+    "status": "accepted",
+    "workflow_version": "v6.1"
+  },
+
+  "plan_document_status": "VALID WITH 4 PATCHES — proceed to GW5U0 validation",
+  "next_correct_stage": "GW5U0_VALIDATE_METABLOOMS_BUILD_PLAN_ENVIRONMENT_AND_PATH_ASSUMPTIONS"
+}

@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "created_at": 1777036623.7283034,
+  "stage": "LOCK_RECREATED_CURRENT_BASELINE_BEFORE_D0",
+  "status": "locked",
+  "source_restored_from": "/mnt/data/Metablooms_OS_refined_research_tool_governed_bootfixed_v6.zip",
+  "source_sha256": "156fccfe2e901d3ac9f1cb0632f17eccfab817ebd9e4b8415200e2b518be9d37",
+  "locked_capabilities": [
+    "boot runtime executor",
+    "trigger router evaluator",
+    "CE packet validator",
+    "runaway-turn breaker invariant",
+    "tracked-cache export/recovery invariant"
+  ],
+  "checks": {
+    "trigger_router_smoke_passed": true,
+    "ce_validator_smoke_passed": true
+  },
+  "verdict": "PASS",
+  "next_correct_command": "EXECUTE D0 \u2014 VERIFY BASELINE + LOCK D1 SCOPE ONLY"
+}

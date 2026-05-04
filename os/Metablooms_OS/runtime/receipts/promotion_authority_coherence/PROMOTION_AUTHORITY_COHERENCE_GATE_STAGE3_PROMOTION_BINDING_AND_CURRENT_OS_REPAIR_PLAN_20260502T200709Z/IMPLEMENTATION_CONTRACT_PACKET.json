@@ -1,0 +1,206 @@
+{
+  "artifact_plan": [
+    {
+      "artifact_id": "ART-001",
+      "purpose": "Stage 3 hard binding or repair-plan artifact",
+      "relative_path": "0_kernel/mpp_v3/mpp_v3_export_promotion_gate_v1.py",
+      "validation": "exists, parses when JSON/Python, SHA-256 sidecar present where applicable"
+    },
+    {
+      "artifact_id": "ART-002",
+      "purpose": "Stage 3 hard binding or repair-plan artifact",
+      "relative_path": "0_kernel/mpp_v3/mpp_v3_export_promotion_gate_v1.py.sha256",
+      "validation": "exists, parses when JSON/Python, SHA-256 sidecar present where applicable"
+    },
+    {
+      "artifact_id": "ART-003",
+      "purpose": "Stage 3 hard binding or repair-plan artifact",
+      "relative_path": "0_kernel/registry/mpp_v3/policy_gates/MPP_V3_EXPORT_PROMOTION_GATE_v1.json",
+      "validation": "exists, parses when JSON/Python, SHA-256 sidecar present where applicable"
+    },
+    {
+      "artifact_id": "ART-004",
+      "purpose": "Stage 3 hard binding or repair-plan artifact",
+      "relative_path": "0_kernel/registry/mpp_v3/policy_gates/MPP_V3_EXPORT_PROMOTION_GATE_v1.json.sha256",
+      "validation": "exists, parses when JSON/Python, SHA-256 sidecar present where applicable"
+    },
+    {
+      "artifact_id": "ART-005",
+      "purpose": "Stage 3 hard binding or repair-plan artifact",
+      "relative_path": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_HARD_PROMOTION_BINDING_v1.json",
+      "validation": "exists, parses when JSON/Python, SHA-256 sidecar present where applicable"
+    },
+    {
+      "artifact_id": "ART-006",
+      "purpose": "Stage 3 hard binding or repair-plan artifact",
+      "relative_path": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_HARD_PROMOTION_BINDING_v1.json.sha256",
+      "validation": "exists, parses when JSON/Python, SHA-256 sidecar present where applicable"
+    },
+    {
+      "artifact_id": "ART-007",
+      "purpose": "Stage 3 hard binding or repair-plan artifact",
+      "relative_path": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_PRE_PROMOTION_BINDING_v1.json",
+      "validation": "exists, parses when JSON/Python, SHA-256 sidecar present where applicable"
+    },
+    {
+      "artifact_id": "ART-008",
+      "purpose": "Stage 3 hard binding or repair-plan artifact",
+      "relative_path": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_PRE_PROMOTION_BINDING_v1.json.sha256",
+      "validation": "exists, parses when JSON/Python, SHA-256 sidecar present where applicable"
+    },
+    {
+      "artifact_id": "ART-009",
+      "purpose": "Stage 3 hard binding or repair-plan artifact",
+      "relative_path": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_CURRENT_OS_REPAIR_PLAN_v1.json",
+      "validation": "exists, parses when JSON/Python, SHA-256 sidecar present where applicable"
+    },
+    {
+      "artifact_id": "ART-010",
+      "purpose": "Stage 3 hard binding or repair-plan artifact",
+      "relative_path": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_CURRENT_OS_REPAIR_PLAN_v1.json.sha256",
+      "validation": "exists, parses when JSON/Python, SHA-256 sidecar present where applicable"
+    }
+  ],
+  "created_at": "2026-05-02T20:09:24.589281+00:00",
+  "implementation_targets": [
+    {
+      "artifact_type": "python",
+      "expected_hash_mode": "sha256_required",
+      "operation": "update",
+      "owner": "PAC_STAGE3",
+      "path": "0_kernel/mpp_v3/mpp_v3_export_promotion_gate_v1.py",
+      "target_id": "IMPL-001"
+    },
+    {
+      "artifact_type": "json_or_sha256",
+      "expected_hash_mode": "sha256_required",
+      "operation": "update",
+      "owner": "PAC_STAGE3",
+      "path": "0_kernel/mpp_v3/mpp_v3_export_promotion_gate_v1.py.sha256",
+      "target_id": "IMPL-002"
+    },
+    {
+      "artifact_type": "json_or_sha256",
+      "expected_hash_mode": "sha256_required",
+      "operation": "update",
+      "owner": "PAC_STAGE3",
+      "path": "0_kernel/registry/mpp_v3/policy_gates/MPP_V3_EXPORT_PROMOTION_GATE_v1.json",
+      "target_id": "IMPL-003"
+    },
+    {
+      "artifact_type": "json_or_sha256",
+      "expected_hash_mode": "sha256_required",
+      "operation": "update",
+      "owner": "PAC_STAGE3",
+      "path": "0_kernel/registry/mpp_v3/policy_gates/MPP_V3_EXPORT_PROMOTION_GATE_v1.json.sha256",
+      "target_id": "IMPL-004"
+    },
+    {
+      "artifact_type": "json_or_sha256",
+      "expected_hash_mode": "sha256_required",
+      "operation": "create",
+      "owner": "PAC_STAGE3",
+      "path": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_HARD_PROMOTION_BINDING_v1.json",
+      "target_id": "IMPL-005"
+    },
+    {
+      "artifact_type": "json_or_sha256",
+      "expected_hash_mode": "sha256_required",
+      "operation": "create",
+      "owner": "PAC_STAGE3",
+      "path": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_HARD_PROMOTION_BINDING_v1.json.sha256",
+      "target_id": "IMPL-006"
+    },
+    {
+      "artifact_type": "json_or_sha256",
+      "expected_hash_mode": "sha256_required",
+      "operation": "update",
+      "owner": "PAC_STAGE3",
+      "path": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_PRE_PROMOTION_BINDING_v1.json",
+      "target_id": "IMPL-007"
+    },
+    {
+      "artifact_type": "json_or_sha256",
+      "expected_hash_mode": "sha256_required",
+      "operation": "update",
+      "owner": "PAC_STAGE3",
+      "path": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_PRE_PROMOTION_BINDING_v1.json.sha256",
+      "target_id": "IMPL-008"
+    },
+    {
+      "artifact_type": "json_or_sha256",
+      "expected_hash_mode": "sha256_required",
+      "operation": "create",
+      "owner": "PAC_STAGE3",
+      "path": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_CURRENT_OS_REPAIR_PLAN_v1.json",
+      "target_id": "IMPL-009"
+    },
+    {
+      "artifact_type": "json_or_sha256",
+      "expected_hash_mode": "sha256_required",
+      "operation": "create",
+      "owner": "PAC_STAGE3",
+      "path": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_CURRENT_OS_REPAIR_PLAN_v1.json.sha256",
+      "target_id": "IMPL-010"
+    }
+  ],
+  "objective_id": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE3_PROMOTION_BINDING_AND_CURRENT_OS_REPAIR_PLAN",
+  "packet_id": "PAC-STAGE3-IMPLEMENTATION-CONTRACT",
+  "post_write_checks": [
+    "py_compile patched export gate",
+    "old export packet denied for missing PAC gate",
+    "patched export packet passes when PAC gate is present",
+    "JSON parse checks",
+    "delta ZIP structural validation"
+  ],
+  "pre_write_checks": [
+    "load Stage 2 gate and fixtures",
+    "run current OS report-only scan",
+    "run Stage 2 fixture ledger"
+  ],
+  "provenance": {
+    "builder": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE3_PROMOTION_BINDING_AND_CURRENT_OS_REPAIR_PLAN",
+    "expected_outputs": [
+      "0_kernel/mpp_v3/mpp_v3_export_promotion_gate_v1.py",
+      "0_kernel/mpp_v3/mpp_v3_export_promotion_gate_v1.py.sha256",
+      "0_kernel/registry/mpp_v3/policy_gates/MPP_V3_EXPORT_PROMOTION_GATE_v1.json",
+      "0_kernel/registry/mpp_v3/policy_gates/MPP_V3_EXPORT_PROMOTION_GATE_v1.json.sha256",
+      "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_HARD_PROMOTION_BINDING_v1.json",
+      "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_HARD_PROMOTION_BINDING_v1.json.sha256",
+      "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_PRE_PROMOTION_BINDING_v1.json",
+      "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_PRE_PROMOTION_BINDING_v1.json.sha256",
+      "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_CURRENT_OS_REPAIR_PLAN_v1.json",
+      "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_CURRENT_OS_REPAIR_PLAN_v1.json.sha256"
+    ],
+    "inputs": [
+      "Stage 2 gate runner",
+      "Stage 1 spec/fixtures",
+      "current OS report-only scan",
+      "SEE sources: SLSA, NIST SSDF, OpenSSF Scorecard"
+    ],
+    "verification_expectations": [
+      "PAC gate binding active",
+      "export promotion denies packets lacking PAC blocker",
+      "current OS repair plan written without bulk-blessing"
+    ]
+  },
+  "result_hash": "8a5818440f27945db468677fb6c6f183657b99cfa6760d1174805384fae9090b",
+  "schema_version": "mpp.implementation_contract_packet.v1",
+  "source_rrp_packet_id": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_HANDOFF_LATEST",
+  "stage": "IMPLEMENTATION",
+  "write_policy": {
+    "allowed_roots": [
+      "/mnt/data/Metablooms_OS"
+    ],
+    "forbidden_path_patterns": [
+      "..",
+      "~",
+      "\u0000",
+      "//"
+    ],
+    "requires_atomic_write": true,
+    "requires_parent_creation": true,
+    "requires_probe": true,
+    "requires_receipt": true
+  }
+}

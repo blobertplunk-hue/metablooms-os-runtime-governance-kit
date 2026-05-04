@@ -1,0 +1,24 @@
+{
+  "artifact_type": "MB_PINNED_EVIDENCE_EXPORT_BINDING.v1",
+  "bound_evidence_paths": [
+    "runtime/state/operator_surface/VISUAL_TRACE_WATERFALL_LATEST.json",
+    "runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl",
+    "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/stage9_validator.json"
+  ],
+  "bound_evidence_sha256": {
+    "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/stage9_validator.json": "ee57178357e691b1fcc03ef99c0e6f3e4cbcd51f24f07289a82a507dbc6b7626",
+    "runtime/state/operator_surface/VISUAL_TRACE_WATERFALL_LATEST.json": "2bb0a5a8439f692fa1abe4b7cae710e4773806db4f24cf812976e51622058b64",
+    "runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl": "bdad6b4dc7c934931b6f00c899c2a5b3f693d30dc2d082bce5e145200b3abc9d"
+  },
+  "created_utc": "20260502T190150Z",
+  "export_contract": {
+    "external_sidecar_required_for_zip_sha256": true,
+    "final_export_must_contain_promoted_receipt": true,
+    "final_export_must_contain_promotion_policy": true,
+    "final_export_must_contain_tracker_binding": true,
+    "final_export_must_contain_validator": true
+  },
+  "operator_use": "A pinned browser selection can be copied into a manifest, then promoted by the promotion script into a formal receipt that is included in the next authority export.",
+  "promoted_receipt": "runtime/receipts/pinned_evidence/PINNED_EVIDENCE_RECEIPT_LATEST.json",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING"
+}

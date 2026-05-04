@@ -1,0 +1,48 @@
+{
+  "artifact_type": "MB_METHOD_RELIABILITY_LEDGER.v1",
+  "created_utc": "20260502T170503Z",
+  "method_records": [
+    {
+      "attempts": 2,
+      "blocked_failures": 1,
+      "confidence": "high",
+      "evidence_refs": [
+        "runtime/traces/observability/FAILURE_CLUSTER_REPORT_LATEST.json",
+        "runtime/traces/observability/REPAIR_ROUTER_BINDING_LATEST.json",
+        "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_20260502T162918Z/STAGE_RECEIPT.json",
+        "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_AMENDED_20260502T162944Z/STAGE_RECEIPT.json"
+      ],
+      "failure_class": "cli_invocation_or_amended_receipt_superseded",
+      "failures": 1,
+      "forbidden_invocations": [
+        "python runtime/governance/runtime_starter_smoke_v1.py /mnt/data/Metablooms_OS --json",
+        "python runtime/governance/runtime_starter_smoke_v1.py <root> --json"
+      ],
+      "last_outcome": "PASS_AFTER_NAMED_ROOT",
+      "method_id": "METHOD_RUNTIME_STARTER_SMOKE_CLI_SHAPE_v1",
+      "method_name": "runtime_starter_smoke_named_target_contract",
+      "method_type": "boot_validation_command_shape",
+      "preferred_invocation": "python runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py --root /mnt/data/Metablooms_OS --json",
+      "prevention_artifacts": [
+        "runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+        "0_kernel/validators/validate_observability_trace_span_ledger_stage6_method_reliability_v1.py",
+        "runtime/fixtures/observability/method_reliability_stage6/SHA256SUMS.txt"
+      ],
+      "recommended_decision": "PROMOTE",
+      "reliability_score": 0.5,
+      "replacement_wrapper": "runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+      "status": "suppressed_lesson_bound",
+      "successes": 1
+    }
+  ],
+  "source_failure_cluster_report": "runtime/traces/observability/FAILURE_CLUSTER_REPORT_LATEST.json",
+  "source_repair_router_binding": "runtime/traces/observability/REPAIR_ROUTER_BINDING_LATEST.json",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE6_METHOD_RELIABILITY_LEDGER_AND_SUPPRESSED_FAILURE_LESSON_BINDING",
+  "summary": {
+    "active_blockers": 0,
+    "forbidden_invocation_patterns": 1,
+    "method_record_count": 1,
+    "preferred_methods": 1,
+    "suppressed_lessons_bound": 1
+  }
+}

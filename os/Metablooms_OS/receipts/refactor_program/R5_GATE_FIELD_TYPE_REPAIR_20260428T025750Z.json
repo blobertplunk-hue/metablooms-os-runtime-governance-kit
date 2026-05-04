@@ -1,0 +1,10 @@
+{
+  "repair_id": "R5_GATE_FIELD_TYPE_REPAIR_20260428T025750Z",
+  "created_utc": "2026-04-28T02:57:50Z",
+  "root_cause": "Initial add() calls passed successor_gate values positionally into decision_log_required, producing string values where booleans were required. Validator did not type-check the field.",
+  "fixes": [
+    "Corrected P0A, P0PY, and MEMORY_SYNC_VALIDATION fields in registry and fixtures.",
+    "Added validator type checks for enabled, decision_log_required, and status."
+  ],
+  "mistake_class": "positional_optional_argument_misbinding + insufficient_schema_runtime_type_check"
+}

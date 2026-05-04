@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "artifact_type": "MB_CAUSAL_STAGE_GRAPH_SCHEMA.v1",
+  "created_utc": "20260502T164238Z",
+  "purpose": "Derivative causal graph schema generated from the canonical trace/span ledger.",
+  "required_fields": ["artifact_type", "created_utc", "source_ledger", "nodes", "edges", "summary"],
+  "node_fields": ["span_id", "trace_id", "stage_id", "event_name", "event_kind", "status", "timestamp_utc", "source_artifact"],
+  "edge_fields": ["parent_span_id", "child_span_id", "relation"],
+  "valid_relations": ["parent_child", "source_to_derivative", "stage_to_validator", "stage_to_receipt", "receipt_to_handoff"],
+  "fail_closed_rules": [
+    "Every graph node must correspond to a ledger span_id.",
+    "Every parent_child edge must reference span_ids present in nodes.",
+    "Graph summary counts must match the canonical JSONL ledger counts."
+  ]
+}

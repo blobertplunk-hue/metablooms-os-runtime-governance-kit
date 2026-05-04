@@ -1,0 +1,32 @@
+{
+  "allowed_direct_references": [
+    "implementation dependency",
+    "required file/member inventory",
+    "historical receipt/evidence",
+    "wrapper internals"
+  ],
+  "artifact_type": "MB_BOOT_SEQUENCE_WRAPPER_ENFORCEMENT.v1",
+  "created_utc": "20260502T170919Z",
+  "fail_closed_if": [
+    "wrapper missing",
+    "wrapper smoke DENY",
+    "positional root accepted",
+    "new chat contract omits wrapper",
+    "authority start sequence uses direct smoke command",
+    "live_operator_direct_runtime_starter_smoke_command_detected",
+    "unclassified_direct_callsite_reference_detected"
+  ],
+  "forbidden_direct_references": [
+    "operator-facing boot sequence command",
+    "new chat start instructions",
+    "authority pointer required_start_sequence"
+  ],
+  "historical_callsite_quarantine_index": "runtime/traces/observability/HISTORICAL_CALLSITE_QUARANTINE_INDEX_LATEST.json",
+  "historical_callsite_quarantine_policy": "0_kernel/registry/observability/MB_HISTORICAL_CALLSITE_QUARANTINE_POLICY_v1.json",
+  "operator_entrypoint": "runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py --root /mnt/data/Metablooms_OS --json",
+  "stage8_updated_by": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE",
+  "stage8_updated_utc": "20260502T171707Z",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE7_METHOD_WRAPPER_CALLSITE_RETROFIT_AND_BOOT_SEQUENCE_ENFORCEMENT",
+  "underlying_gate": "runtime/governance/runtime_starter_smoke_v1.py",
+  "verdict": "ENFORCE"
+}

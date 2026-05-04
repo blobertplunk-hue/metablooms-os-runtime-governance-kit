@@ -1,0 +1,50 @@
+{
+  "version": "1.0",
+  "created_at": 1777061653.5815554,
+  "contract_id": "STAGE_DAG_AND_DEPENDENCY_LEDGER_CONTRACT_v1",
+  "status": "active_contract",
+  "purpose": "Prevent lost-stage restores by recording governed stage dependencies, outputs, and latest successful state.",
+  "problems_addressed": [
+    "Restoring a valid stable ZIP can lose later governed stage deltas.",
+    "The runtime needs to know which stage receipts and outputs supersede older release bundles.",
+    "Repair stages need a durable ledger entry even when no stable export is produced."
+  ],
+  "dag_file": "0_kernel/pipeline/STAGE_DAG_v1.json",
+  "dag_schema": "0_kernel/schemas/STAGE_DAG_SCHEMA_v1.json",
+  "ledger_file": "0_kernel/state/STAGE_STATE_LEDGER_v1.json",
+  "ledger_schema": "0_kernel/schemas/STAGE_STATE_LEDGER_SCHEMA_v1.json",
+  "ledger_update_required_after": [
+    "successful governed stage",
+    "successful repair/rematerialization stage",
+    "successful baseline lock",
+    "successful export",
+    "blocked stage when a blocked receipt is committed"
+  ],
+  "ledger_entry_required_fields": [
+    "stage",
+    "verdict",
+    "git_head",
+    "receipt",
+    "outputs",
+    "dependencies",
+    "supersedes",
+    "timestamp"
+  ],
+  "restore_policy": [
+    "Prefer current working pointer first.",
+    "If pointer is unavailable, use latest PASS ledger entry.",
+    "Only then fall back to latest recovery-proven stable baseline."
+  ],
+  "validity_rules": [
+    "A PASS ledger entry must reference an existing receipt.",
+    "A PASS ledger entry must reference a git commit.",
+    "Stage outputs listed in a PASS entry must exist at commit time.",
+    "Blocked entries may exist but must not advance latest_pass."
+  ],
+  "non_goals": [
+    "F2 does not implement a transactional runner.",
+    "F2 does not export a new baseline.",
+    "F2 does not perform restore proof."
+  ],
+  "next_stage": "F3_TRANSACTIONAL_STAGE_RUNNER_CONTRACT"
+}

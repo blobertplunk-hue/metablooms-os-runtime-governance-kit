@@ -1,0 +1,36 @@
+{
+  "artifact_type": "StageReceipt.v1",
+  "created_utc": "2026-05-02T15:20:58Z",
+  "final_user_facing_export_path": "/mnt/data/METABLOOMS_OS_BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE5_FULL_AUTHORITY_REPAIRED_20260502T152152Z.zip",
+  "final_user_facing_export_sha256_binding": "external_sidecar_required",
+  "full_authority_export": {
+    "artifact_type": "FullAuthorityExportResult.v1",
+    "created_utc": "2026-05-02T15:20:58Z",
+    "duplicate_members": 0,
+    "members": 5081,
+    "size_bytes": 25684695,
+    "stage": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT",
+    "status": "PASS",
+    "zip_path": "/mnt/data/METABLOOMS_OS_BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE5_FULL_AUTHORITY_20260502T152058Z.zip",
+    "zip_sha256": "f7bab1ae985d9fe661ceab8f5220c37f009f71fa0a190e54efcaab4fc295416b",
+    "zip_testzip": "PASS"
+  },
+  "notes": [
+    "No safe test/eval append-log caller patches were required; policy scan found no blocking test/eval append-open call sites outside canonical fixture internals.",
+    "portable_full_os_boot_verify.py had a prior atomic JSON retrofit defect and was repaired before full export validation.",
+    "Repaired export created after final receipts/handoff existed so the ZIP includes its declared stage artifacts; final SHA-256 is external sidecar-bound."
+  ],
+  "repaired_export_notice": {
+    "artifact_type": "FullAuthorityExportInternalNotice.v1",
+    "created_utc": "2026-05-02T15:21:52Z",
+    "export_zip_path": "/mnt/data/METABLOOMS_OS_BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE5_FULL_AUTHORITY_REPAIRED_20260502T152152Z.zip",
+    "reason": "ZIP hash cannot be embedded inside the ZIP without changing the ZIP; final SHA-256 is bound by adjacent .sha256 sidecar and user-facing receipt.",
+    "repair_reason": "Initial Stage5 export was produced before final stage receipt/handoff were written; this repaired export includes those artifacts.",
+    "sha256_binding": "external_sidecar_required",
+    "stage": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT"
+  },
+  "root": "/mnt/data/Metablooms_OS",
+  "stage": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT",
+  "status": "PASS",
+  "validation_summary": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT_20260502T152058Z/STAGE5_VALIDATION_SUMMARY.json"
+}

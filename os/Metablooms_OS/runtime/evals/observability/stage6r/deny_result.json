@@ -1,0 +1,25 @@
+{
+  "decision": "DENY",
+  "errors": [
+    "security_attribute:tool_id",
+    "security_attribute:action_type",
+    "security_attribute:policy_decision"
+  ],
+  "schema": "TraceExportAdapterResult_v1",
+  "span": {
+    "attributes": {
+      "risk_tier": "high"
+    },
+    "events": [],
+    "kind": "INTERNAL",
+    "links": [],
+    "name": "bts.tool_execution",
+    "parent_span_id": null,
+    "schema": "MetaBloomsTraceSpan_v1",
+    "span_id": "span_9a941f78bd9fd336",
+    "stage_id": "STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS",
+    "status": "PASS",
+    "timestamp_utc": "2026-05-02T14:18:40.847637Z",
+    "trace_id": "trace_4df2bb785b4edbbe"
+  }
+}

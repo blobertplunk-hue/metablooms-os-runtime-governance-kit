@@ -1,0 +1,30 @@
+{
+  "artifact_type": "MB_OPERATOR_TRACKER_CAUSAL_TIMELINE_BUILD_REPORT.v1",
+  "created_utc": "20260502T165929Z",
+  "model_summary": {
+    "blocked_count": 3,
+    "error_count": 0,
+    "event_kinds": {
+      "boot": 57,
+      "decision": 12,
+      "export": 26,
+      "handoff": 86,
+      "receipt": 30,
+      "stage": 1,
+      "tracker": 1,
+      "validator": 7
+    },
+    "graph_edge_count": 219,
+    "graph_node_count": 220,
+    "ok_count": 217,
+    "record_count": 220,
+    "warn_count": 0
+  },
+  "outputs": [
+    "runtime/state/operator_surface/OPERATOR_CAUSAL_TIMELINE_LATEST.json",
+    "runtime/state/operator_surface/OPERATOR_CAUSAL_TIMELINE_PREVIEW_LATEST.md",
+    "OPEN_OPERATOR_VISUAL_TRACKER.html"
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE3_TRACKER_CAUSAL_TIMELINE_BINDING",
+  "verdict": "PASS"
+}

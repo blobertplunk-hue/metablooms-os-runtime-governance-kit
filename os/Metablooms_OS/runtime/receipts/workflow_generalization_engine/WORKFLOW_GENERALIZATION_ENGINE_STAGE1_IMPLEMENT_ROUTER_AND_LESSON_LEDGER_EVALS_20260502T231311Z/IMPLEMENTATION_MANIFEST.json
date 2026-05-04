@@ -1,0 +1,17 @@
+{
+  "stage": "WORKFLOW_GENERALIZATION_ENGINE_STAGE1_IMPLEMENT_ROUTER_AND_LESSON_LEDGER_EVALS",
+  "timestamp_utc": "20260502T231311Z",
+  "files": [
+    "0_kernel/registry/workflow_generalization_engine/WORKFLOW_LESSON_LEDGER_SCHEMA_v1.json",
+    "runtime/ledgers/workflow_generalization/WORKFLOW_LESSON_LEDGER_v1.json",
+    "0_kernel/routers/workflow_generalization_router_v1.py",
+    "tests/evals/workflow_generalization/test_workflow_generalization_router_v1.py",
+    "0_kernel/registry/workflow_generalization_engine/WORKFLOW_GENERALIZATION_EXPORT_PREP_MANIFEST_v1.json",
+    "runtime/state/WORKFLOW_GENERALIZATION_ENGINE_TRACKER_PREVIEW.txt",
+    "tests/evals/workflow_generalization/fixtures/html_visual_task.json",
+    "tests/evals/workflow_generalization/fixtures/repair_failure_task.json",
+    "tests/evals/workflow_generalization/fixtures/old_transcript_better_candidate.json",
+    "tests/evals/workflow_generalization/fixtures/old_transcript_not_better_candidate.json",
+    "tests/evals/workflow_generalization/fixtures/evidence_missing_defer_candidate.json"
+  ]
+}

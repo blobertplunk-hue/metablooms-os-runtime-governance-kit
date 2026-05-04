@@ -1,0 +1,31 @@
+{
+  "artifact_type": "OBSERVABILITY_STAGE12_FINAL_EXPORT_CONTAINMENT_PROOF.external.v1",
+  "created_utc": "20260502T181724Z",
+  "duplicate_members": [],
+  "index_document_count": 204,
+  "index_term_count": 3955,
+  "missing_required_members": [],
+  "required_members": [
+    "0_kernel/registry/observability/MB_TRACE_QUERY_PACKET_SCHEMA_v1.json",
+    "0_kernel/registry/observability/MB_SEARCHABLE_EVIDENCE_INDEX_SCHEMA_v1.json",
+    "0_kernel/registry/observability/MB_TRACE_QUERY_INDEX_POLICY_v1.json",
+    "0_kernel/scripts/observability_trace_query_indexer_v1.py",
+    "0_kernel/validators/validate_observability_trace_span_ledger_stage12_trace_query_v1.py",
+    "runtime/traces/observability/SEARCHABLE_EVIDENCE_INDEX_LATEST.json",
+    "runtime/state/operator_surface/TRACE_QUERY_PACKET_LATEST.json",
+    "runtime/state/operator_surface/TRACE_QUERY_PACKET_LATEST.md",
+    "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE12_TRACE_QUERY_VALIDATION_LATEST.json",
+    "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE12_HANDOFF_LATEST.json",
+    "OPEN_OPERATOR_VISUAL_TRACKER.html",
+    "CURRENT_FULL_AUTHORITY_POINTER_v1.json"
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE12_TRACE_QUERY_PACKET_AND_SEARCHABLE_EVIDENCE_INDEX",
+  "validation_report": "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE12_TRACE_QUERY_VALIDATION_LATEST.json",
+  "verdict": "PASS",
+  "zip_entries": 5563,
+  "zip_name": "METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE12_TRACE_QUERY_FINAL_AUTHORITY_LOCKED_20260502T181724Z.zip",
+  "zip_path": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE12_TRACE_QUERY_FINAL_AUTHORITY_LOCKED_20260502T181724Z.zip",
+  "zip_sha256": "d55dbf320c4d76a3e7fa62f8a692c8af42c049129dd9ece0434386a6fd977f04",
+  "zip_size_bytes": 26077347,
+  "zip_testzip": null
+}

@@ -1,0 +1,41 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/METHOD_ROUTER_UPDATE_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "decision": {
+      "enum": [
+        "PROMOTE",
+        "DEMOTE",
+        "FORBID",
+        "WATCH",
+        "NO_CHANGE"
+      ]
+    },
+    "evidence_refs": {
+      "minItems": 1,
+      "type": "array"
+    },
+    "result_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "mpp.method_router_update.v1"
+    }
+  },
+  "required": [
+    "schema_version",
+    "update_id",
+    "created_at",
+    "source_packet_id",
+    "method_id",
+    "decision",
+    "reason",
+    "evidence_refs",
+    "blocking",
+    "result_hash"
+  ],
+  "title": "MPP v3 Method Router Update",
+  "type": "object"
+}

@@ -1,0 +1,28 @@
+{
+  "artifact_type": "UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE_RESULTS_v1",
+  "commands": [
+    "boot",
+    "status",
+    "verify",
+    "export",
+    "replay"
+  ],
+  "created_utc": "20260501T040605Z",
+  "implemented": [
+    "bin/mb CLI",
+    "command spec",
+    "fixtures",
+    "validator",
+    "quickstart"
+  ],
+  "improvement_points": 1.0,
+  "new_score_claim": 2.5,
+  "previous_score": 1.5,
+  "remaining_gaps": [
+    "run-stage command not yet wired to full cartridge registry",
+    "doctor command not yet implemented",
+    "human approval interrupts not yet first-class"
+  ],
+  "stage_id": "IMPLEMENT_UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE_STAGE_1",
+  "verdict": "IMPLEMENTED_PENDING_VALIDATION"
+}

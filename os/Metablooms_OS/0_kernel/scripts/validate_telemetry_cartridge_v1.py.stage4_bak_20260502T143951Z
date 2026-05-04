@@ -1,0 +1,92 @@
+#!/usr/bin/env python3
+import json, sys, re, hashlib, time
+from pathlib import Path
+from datetime import datetime, timezone
+
+ROOT=Path('/mnt/data/Metablooms_OS')
+ALLOWED_SIGNALS={None,'BRUTE_FORCE_TAP','RAPID_SEQUENTIAL','ABANDONMENT','HINT_DEPENDENCY','UNIT_FRACTION_INVERSION','DENOMINATOR_SIZE_CONFUSION','TICK_MARK_COUNTING','ZERO_ANCHOR_CONFUSION','WHOLE_NUMBER_BIAS','EQUIVALENT_FRACTION_GAP'}
+ALLOWED_EVENTS={'metablooms.learning.attempt','metablooms.learning.signal','metablooms.learning.session_summary'}
+REQ_ATTR=['artifact.id','session.id','student.pseudonymous_id','question.id','attempt.number','answer.correct','signal.type']
+HEX32=re.compile(r'^[0-9a-f]{32}$'); HEX16=re.compile(r'^[0-9a-f]{16}$')
+
+def sha(p):
+    h=hashlib.sha256()
+    with open(p,'rb') as f:
+        for b in iter(lambda:f.read(1024*1024), b''):
+            h.update(b)
+    return h.hexdigest()
+
+def load(p): return json.loads(Path(p).read_text(encoding='utf-8'))
+
+def check_event(ev):
+    blocks=[]
+    for k in ['event_name','event_time_unix_ms','trace_id','span_id','severity_number','attributes']:
+        if k not in ev: blocks.append(f'missing top-level field: {k}')
+    if blocks: return blocks
+    if ev['event_name'] not in ALLOWED_EVENTS: blocks.append('unknown event_name')
+    if not isinstance(ev['event_time_unix_ms'], int): blocks.append('event_time_unix_ms must be integer')
+    if not isinstance(ev['trace_id'], str) or not HEX32.match(ev['trace_id']): blocks.append('trace_id must be 32 lowercase hex')
+    if not isinstance(ev['span_id'], str) or not HEX16.match(ev['span_id']): blocks.append('span_id must be 16 lowercase hex')
+    if not isinstance(ev.get('severity_number'), int) or not (1 <= ev['severity_number'] <= 24): blocks.append('severity_number out of range')
+    attrs=ev.get('attributes')
+    if not isinstance(attrs, dict): return blocks+['attributes must be object']
+    for k in REQ_ATTR:
+        if k not in attrs: blocks.append(f'missing attribute: {k}')
+    if attrs.get('signal.type') not in ('none','behavioral','conceptual'): blocks.append('invalid signal.type')
+    if attrs.get('signal.id') not in ALLOWED_SIGNALS: blocks.append('invalid signal.id')
+    if not isinstance(attrs.get('answer.correct'), bool): blocks.append('answer.correct must be boolean')
+    if not isinstance(attrs.get('attempt.number'), int) or attrs.get('attempt.number',0)<1: blocks.append('attempt.number must be integer >=1')
+    return blocks
+
+def main():
+    if 'site' in sys.modules:
+        print(json.dumps({'decision':'deny','blocks':['must be launched with python3 -S; site is loaded']})); return 2
+    contract=ROOT/'runtime/governance/contracts/telemetry_cartridge_contract_v1.json'
+    manifest=ROOT/'runtime/cartridges/telemetry_misconception_v1/CARTRIDGE_MANIFEST.json'
+    blocks=[]; warnings=[]
+    for p in [contract, manifest]:
+        if not p.exists(): blocks.append(f'missing {p}')
+    c=load(contract); m=load(manifest)
+    for rel in [c['source_artifacts']['domain_schema'],c['source_artifacts']['engine'],c['source_artifacts']['adapter'],c['source_artifacts']['demo'],c['event_contract']['schema']]:
+        if not (ROOT/rel).exists(): blocks.append(f'missing artifact path {rel}')
+    schema=load(ROOT/c['event_contract']['schema'])
+    if sorted(c['event_contract']['event_names']) != sorted(schema['properties']['event_name']['enum']):
+        blocks.append('contract event_names do not match event schema enum')
+    engine=(ROOT/c['source_artifacts']['engine']).read_text(encoding='utf-8')
+    for token in ['class MisconceptionTelemetryEngine','recordAttempt','module.exports']:
+        if token not in engine: blocks.append(f'engine missing token {token}')
+    adapter=(ROOT/c['source_artifacts']['adapter']).read_text(encoding='utf-8')
+    for token in ['toMetaBloomsTelemetryEvent','traceparent','event_name']:
+        if token not in adapter: blocks.append(f'adapter missing token {token}')
+    html=(ROOT/c['source_artifacts']['demo']).read_text(encoding='utf-8')
+    for token in ['MisconceptionTelemetryEngine','recordAttempt','teacher_telemetry']:
+        if token not in html: blocks.append(f'demo missing token {token}')
+    replay=ROOT/'runtime/cartridges/telemetry_misconception_v1/replay'
+    fixtures={
+      'valid': replay/'valid_signal_event_v1.json',
+      'invalid_missing': replay/'invalid_missing_event_name_v1.json',
+      'invalid_signal': replay/'invalid_unknown_signal_v1.json'
+    }
+    fixture_results={}
+    for name,p in fixtures.items():
+        ev=load(p); b=check_event(ev); fixture_results[name]={'blocks':b,'decision':'deny' if b else 'allow','sha256':sha(p)}
+    if fixture_results['valid']['decision']!='allow': blocks.append('valid replay fixture denied')
+    if fixture_results['invalid_missing']['decision']!='deny': blocks.append('invalid_missing replay fixture allowed')
+    if fixture_results['invalid_signal']['decision']!='deny': blocks.append('invalid_signal replay fixture allowed')
+    decision='deny' if blocks else 'allow'
+    out={
+      'decision_id':'TELEMETRY-CART-'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ'),
+      'gate_id':'TELEMETRY_CARTRIDGE_VALIDATION',
+      'decision':decision,
+      'blocks':blocks,
+      'warnings':warnings,
+      'fixture_results':fixture_results,
+      'contract_sha256':sha(contract),
+      'manifest_sha256':sha(manifest),
+      'created_utc':datetime.now(timezone.utc).isoformat()
+    }
+    report=ROOT/'runtime/evals/governance_regression_suite_v1/reports'/('R9_telemetry_cartridge_validation_'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')+'.json')
+    report.write_text(json.dumps(out, indent=2, sort_keys=True)+'\n', encoding='utf-8')
+    print(json.dumps(out, indent=2, sort_keys=True))
+    return 0 if decision=='allow' else 1
+if __name__=='__main__': raise SystemExit(main())

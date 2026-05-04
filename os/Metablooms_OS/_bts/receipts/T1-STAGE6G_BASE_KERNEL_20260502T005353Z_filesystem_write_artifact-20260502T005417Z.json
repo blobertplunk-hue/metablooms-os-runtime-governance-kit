@@ -1,0 +1,11 @@
+{
+  "receipt_id": "T1-STAGE6G_BASE_KERNEL_20260502T005353Z_filesystem_write_artifact-20260502T005417Z",
+  "tier": "T1",
+  "artifact": "/mnt/data/Metablooms_OS/0_kernel/state/CURRENT_WORKING_BASELINE_POINTER_v1.json",
+  "sha256": "3e5b88da05ada47532028593afeb4fc533489f4eda8b8b02bbf1dcf347004d17",
+  "bytes_size": 1238,
+  "prior_sha256": "",
+  "stdout_proof": "",
+  "timestamp": "2026-05-02T00:54:17.430743Z",
+  "turn_id": "STAGE6G_BASE_KERNEL_20260502T005353Z"
+}

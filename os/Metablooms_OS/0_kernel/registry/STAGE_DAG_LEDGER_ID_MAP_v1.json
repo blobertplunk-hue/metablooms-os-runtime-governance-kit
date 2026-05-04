@@ -1,0 +1,66 @@
+{
+  "version": "1.0",
+  "created_at": 1777068405.2255132,
+  "map_id": "STAGE_DAG_LEDGER_ID_MAP_v1",
+  "status": "active",
+  "mappings": [
+    {
+      "dag_id": "E4A",
+      "dag_name": "Master Pipeline Proof Scope Lock",
+      "ledger_entry_id": "E4A_MASTER_PIPELINE_PROOF_SCOPE_LOCK",
+      "ledger_entry_present": true,
+      "mapping_method": "explicit_known_mapping"
+    },
+    {
+      "dag_id": "G0",
+      "dag_name": "Export Recovery Validator Scope Lock",
+      "ledger_entry_id": "G0_EXPORT_RECOVERY_VALIDATOR_SCOPE_LOCK",
+      "ledger_entry_present": true,
+      "mapping_method": "explicit_known_mapping"
+    },
+    {
+      "dag_id": "G1",
+      "dag_name": "Export Recovery Validator Schema + Contract",
+      "ledger_entry_id": "G1_EXPORT_RECOVERY_VALIDATOR_SCHEMA_AND_CONTRACT",
+      "ledger_entry_present": true,
+      "mapping_method": "explicit_known_mapping"
+    },
+    {
+      "dag_id": "G2",
+      "dag_name": "Export Recovery Validator Implementation",
+      "ledger_entry_id": "G2_EXPORT_RECOVERY_VALIDATOR_IMPLEMENTATION",
+      "ledger_entry_present": true,
+      "mapping_method": "explicit_known_mapping"
+    },
+    {
+      "dag_id": "G3",
+      "dag_name": "Export Recovery Validator Regression Fixtures",
+      "ledger_entry_id": "G3_EXPORT_RECOVERY_VALIDATOR_REGRESSION_FIXTURES",
+      "ledger_entry_present": true,
+      "mapping_method": "explicit_known_mapping"
+    },
+    {
+      "dag_id": "G4",
+      "dag_name": "Run Validator Against F7 Export",
+      "ledger_entry_id": "G4_RUN_VALIDATOR_AGAINST_F7_EXPORT",
+      "ledger_entry_present": true,
+      "mapping_method": "explicit_known_mapping"
+    },
+    {
+      "dag_id": "G5",
+      "dag_name": "Repaired Recovery-Proven Export",
+      "ledger_entry_id": "G5_REPAIRED_RECOVERY_PROVEN_EXPORT",
+      "ledger_entry_present": true,
+      "mapping_method": "explicit_known_mapping"
+    },
+    {
+      "dag_id": "G6",
+      "dag_name": "Recovery Proof + Baseline Lock",
+      "ledger_entry_id": "G6_RECOVERY_PROOF_BASELINE_LOCK",
+      "ledger_entry_present": true,
+      "mapping_method": "explicit_known_mapping"
+    }
+  ],
+  "required_for_validator": true,
+  "verdict": "PASS"
+}

@@ -1,0 +1,75 @@
+{
+  "artifact_type": "MB_AGENT_HARNESS_ROLE_POLICY_v1",
+  "created_utc": "20260501T144521Z",
+  "default_decision": "deny_unregistered_role",
+  "roles": [
+    {
+      "forbidden": [
+        "write_runtime_source"
+      ],
+      "permissions": [
+        "read_request",
+        "write_work_order"
+      ],
+      "role": "task_intake"
+    },
+    {
+      "forbidden": [
+        "write_runtime_source",
+        "promote_export"
+      ],
+      "permissions": [
+        "write_SEE_packet"
+      ],
+      "role": "evidence_researcher"
+    },
+    {
+      "forbidden": [
+        "execute_tools_without_gates"
+      ],
+      "permissions": [
+        "write_stage_plan"
+      ],
+      "role": "stage_planner"
+    },
+    {
+      "forbidden": [
+        "direct_promote_without_validation"
+      ],
+      "permissions": [
+        "write_overlay_under_declared_scope"
+      ],
+      "role": "implementation_agent"
+    },
+    {
+      "forbidden": [
+        "patch_code"
+      ],
+      "permissions": [
+        "read_overlay",
+        "write_validation_report"
+      ],
+      "role": "validation_agent"
+    },
+    {
+      "forbidden": [
+        "patch_code"
+      ],
+      "permissions": [
+        "write_audit_report",
+        "block_promotion"
+      ],
+      "role": "adversarial_auditor"
+    },
+    {
+      "forbidden": [
+        "skip_sidecar",
+        "skip_promotion_gate"
+      ],
+      "permissions": [
+        "write_export_after_gate"
+      ],
+      "role": "export_promotion_agent"
+    }
+  ]
+}

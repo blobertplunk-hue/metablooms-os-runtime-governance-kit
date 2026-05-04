@@ -1,0 +1,13 @@
+{
+  "artifact_type": "CE_SYNTHESIS",
+  "constraints": [
+    "Always-on MetaBlooms governance is mandatory baseline; cartridge governance is additive.",
+    "Tracker finalization must be an explicit stage-finalization contract, not an optional helper.",
+    "A tracker state is stale if current_stage/evidence/history do not bind to the latest stage receipt and handoff.",
+    "DONE/BLOCKED status claims require receipt/handoff evidence and validation report.",
+    "Compact mobile tracker format remains mandatory: no box drawing or pipe-table layout."
+  ],
+  "created_utc": "20260430T014900Z",
+  "implementation_boundary": "Patch only tracker lifecycle/finalization enforcement; no FL17 promotion; no full OS export.",
+  "stage": "FL17-MERGE-3_TRACKER_LIFECYCLE_REPAIR"
+}

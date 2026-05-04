@@ -1,0 +1,29 @@
+{
+  "schema_version": "TRACKER_HANDOFF_BINDING_v1",
+  "purpose": "Require tracker state to bind current stage status to the receipt and handoff that authorize the next stage.",
+  "binding_rules": [
+    "A stage may not be marked DONE unless a receipt path and handoff path exist.",
+    "The tracker state's latest evidence must include both the stage receipt and the stage handoff with SHA-256 hashes.",
+    "The tracker history entry for the stage must reference the receipt path and handoff path.",
+    "The next_allowed_action must match the next command authorized by the handoff.",
+    "The tracker render preview must be generated after state update and must start with the top-of-response tracker marker."
+  ],
+  "required_state_fields_after_update": [
+    "status",
+    "current_stage",
+    "completed_stages",
+    "evidence",
+    "history",
+    "next_allowed_action",
+    "stop_rule",
+    "last_updated_utc"
+  ],
+  "blocked_if": [
+    "receipt_missing",
+    "handoff_missing",
+    "receipt_hash_missing",
+    "handoff_hash_missing",
+    "state_not_updated_after_receipt_and_handoff",
+    "rendered_tracker_not_first"
+  ]
+}

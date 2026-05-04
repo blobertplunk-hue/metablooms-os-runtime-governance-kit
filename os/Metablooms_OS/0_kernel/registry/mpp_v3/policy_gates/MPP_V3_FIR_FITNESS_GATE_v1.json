@@ -1,0 +1,18 @@
+{
+  "locked_at": "20260501T024900Z",
+  "policy_id": "MPP_V3_FIR_FITNESS_GATE_v1",
+  "research_basis": [
+    "Architecture fitness functions provide executable checks that continuously test architectural characteristics.",
+    "DORA metrics provide outcome metrics for delivery throughput, instability, and recovery.",
+    "OPA policy testing shows governance policies should include executable tests."
+  ],
+  "rules": [
+    "Required fitness dimensions: artifact_integrity, schema_compliance, test_pass_rate, regression_coverage, recovery_readiness.",
+    "Fitness dimension weights must sum to 1.",
+    "Every required dimension must have at least one fitness check.",
+    "Blocking dimension failure or hard block prevents promotion.",
+    "Weighted score must meet minimum promotion score.",
+    "Promotion decision must be PROMOTE_TO_MONITOR before Monitor stage."
+  ],
+  "stage": "FIR_STAGE"
+}

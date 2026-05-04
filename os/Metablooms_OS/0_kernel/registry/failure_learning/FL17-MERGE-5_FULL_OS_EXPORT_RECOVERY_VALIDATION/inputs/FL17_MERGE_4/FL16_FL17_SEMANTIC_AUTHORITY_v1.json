@@ -1,0 +1,71 @@
+{
+  "always_on_governance": "mandatory; cartridge governance additive",
+  "artifact_type": "FL16_FL17_SEMANTIC_AUTHORITY",
+  "correspondence_rules": [
+    "If artifact_type == EXPORT_MANIFEST and verdict == PASS, infer export_packaging_pass only.",
+    "If a stage receipt says status == blocked_before_promotion or verdict == BLOCKED_NOT_PROMOTED, promotion_pass MUST be false.",
+    "If export manifest contains_through_stage references a blocked stage, that blocked stage must remain blocked unless an explicit later promotion authority supersedes it.",
+    "Any future baseline promotion must cite both the candidate export package and a promotion receipt/handoff with PASS."
+  ],
+  "created_utc": "20260430T015900Z",
+  "prohibited_inferences": [
+    "Do not infer FL16 promotion success from FL17 export PASS.",
+    "Do not infer baseline replacement from archive integrity alone.",
+    "Do not treat contains_through_stage as all-contained-stages-passed."
+  ],
+  "semantic_rulings": [
+    {
+      "binding": "No later export/package PASS may relabel FL16 as promoted unless a later explicit semantic repair stage records a passed promotion receipt/handoff.",
+      "evidence": {
+        "blocker": "FL15 ZIP passes extraction/boot but omits FL15 ledger-declared outputs; export validator blocks promotion.",
+        "blocking_gate_failures_count": 2,
+        "export_recovery_validator_verdict": "FAIL",
+        "handoff_status": "BLOCKED_NOT_PROMOTED",
+        "promotion_decision": "NOT_PROMOTED",
+        "receipt_status": "blocked_before_promotion",
+        "receipt_verdict": "BLOCKED_NOT_PROMOTED",
+        "stage_id": "FAILURE-LEARNING-16_VALIDATE_AND_PROMOTE_FL15_FULL_EXPORT_WITH_PYTHON_S",
+        "validation_report_verdict": "PASS"
+      },
+      "id": "SR-FL16-001",
+      "ruling": "BLOCKED_NOT_PROMOTED",
+      "subject": "FAILURE-LEARNING-16_VALIDATE_AND_PROMOTE_FL15_FULL_EXPORT_WITH_PYTHON_S"
+    },
+    {
+      "binding": "FL17 export PASS means the repaired archive packaging/provenance passed; it includes FL16 blocked evidence and does not convert FL16 promotion status to PASS.",
+      "evidence": {
+        "contains_through_stage": "FAILURE-LEARNING-16_VALIDATE_AND_PROMOTE_FL15_FULL_EXPORT_WITH_PYTHON_S",
+        "manifest_verdict": "PASS",
+        "materials": [
+          "active runtime root",
+          "FL14 G11/G12 executable gates",
+          "FL15 reconstructed missing output repair",
+          "FL16 blocked validation evidence"
+        ],
+        "provenance_status": "pass_external_sidecar_bound",
+        "provenance_verdict": "PASS",
+        "stage_id": "FAILURE-LEARNING-17_REPAIRED_FULL_EXPORT_WITH_FL15_FL16_ARTIFACTS",
+        "subject": [
+          {
+            "name": "METABLOOMS_OS_STABLE_v0.8.0_FL17_REPAIRED_FULL_20260430T003434Z.zip",
+            "sha256_policy": "external_sidecar_required",
+            "sidecar": "METABLOOMS_OS_STABLE_v0.8.0_FL17_REPAIRED_FULL_20260430T003434Z.zip.sha256.json"
+          }
+        ],
+        "unsafe_member_paths": 0,
+        "zip_integrity_testzip": null
+      },
+      "id": "SR-FL17-001",
+      "ruling": "EXPORT_PACKAGE_PASS_ONLY",
+      "subject": "FAILURE-LEARNING-17_REPAIRED_FULL_EXPORT_WITH_FL15_FL16_ARTIFACTS"
+    }
+  ],
+  "semantic_terms": {
+    "blocked_before_promotion": "The candidate may be extractable/bootable or packaged, but it failed one or more promotion-blocking gates and must not become baseline.",
+    "export_packaging_pass": "The archive package passed packaging/provenance/integrity checks for what it contains.",
+    "promotion_pass": "The candidate was explicitly promoted to current clean/baseline source by a passed promotion receipt/handoff.",
+    "validation_pass": "The validation stage passed its declared gates."
+  },
+  "stage": "FL17-MERGE-4_SEMANTIC_RECONCILIATION",
+  "target_baseline_policy": "keep_current_tracker_working_os_active; no baseline promotion performed"
+}

@@ -1,0 +1,6 @@
+{
+  "deny_critical_non_waivable_na": true,
+  "deny_missing_required_controls": true,
+  "reconstruction": "RECONSTRUCTED_FROM_CHAT_SUMMARY",
+  "schema": "CDRSecurityObservabilityPolicy_v1"
+}

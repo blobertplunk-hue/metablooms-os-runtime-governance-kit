@@ -1,0 +1,22 @@
+{
+  "stage": "R0_INTAKE_AND_PATH_BINDING_BOUNDED_V2",
+  "timestamp_utc": "20260428T023844Z",
+  "verdict": "PASS",
+  "authoritative_root": "/mnt/data/Metablooms_OS",
+  "source_zip": "/mnt/data/METABLOOMS_FULL_OS_v3_3_PHASE1_PHASE2_MERGED_REPAIRED.zip",
+  "source_zip_sha256": "7c4d8a128b34d1bf42486a212aa22633386b0c5a785730b0e7238642ac7d0df8",
+  "staging_root": "/mnt/data/Metablooms_OS/0_kernel/staging/refactor_intake_20260428T023844Z/source_bundle_extract",
+  "present_count": 13,
+  "missing_count": 0,
+  "gate_results": {
+    "all_targets_accounted_for": true,
+    "no_live_runtime_mutation_beyond_staging_and_stage_artifacts": true
+  },
+  "artifacts": {
+    "source_intake_manifest": "/mnt/data/Metablooms_OS/receipts/refactor_program/R0_SOURCE_INTAKE_MANIFEST_20260428T023844Z.json",
+    "path_map": "/mnt/data/Metablooms_OS/receipts/refactor_program/R0_PATH_MAP_20260428T023844Z.json",
+    "source_hash_probe": "/mnt/data/Metablooms_OS/receipts/refactor_program/R0_SOURCE_HASH_PROBE_20260428T023844Z.json",
+    "risk_register": "/mnt/data/Metablooms_OS/runtime/governance/risk/refactor_program_risk_register_v1.json"
+  },
+  "next_stage": "R1_CLASSIFICATION_AND_DISPOSITION_BINDING"
+}

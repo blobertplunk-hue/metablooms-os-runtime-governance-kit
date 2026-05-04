@@ -1,0 +1,14 @@
+{
+  "artifact_type": "R13_FINAL_EXPORT_BLOCKED_RECEIPT",
+  "stage": "R13_FINAL_EXPORT_SELF_CONSISTENCY_AUDIT_AND_EXPORT",
+  "created_utc": "2026-04-29T10:13:34Z",
+  "canonical_root": "/mnt/data/Metablooms_OS",
+  "verdict": "BLOCKED_BEFORE_EXPORT",
+  "reason": "ledger_declared_outputs_missing",
+  "missing_outputs": [
+    "/home/claude/merge_staging/verify_reextract/Metablooms_OS_refined/0_kernel/registry/TEST_PROOF_ARTIFACT_v1.json"
+  ],
+  "handoff": "receipts/refactor_program/R13_FINAL_EXPORT_BLOCKED_HANDOFF_20260429T101334Z.json",
+  "stage_log": "/mnt/data/MB_R13_FINAL_EXPORT_20260429T101334Z/stage.log",
+  "stopped_before_export": true
+}

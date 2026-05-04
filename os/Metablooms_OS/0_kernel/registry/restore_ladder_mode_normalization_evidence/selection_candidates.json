@@ -1,0 +1,17 @@
+{
+  "pointer": {
+    "exists": true,
+    "valid": true
+  },
+  "ledger": {
+    "exists": true,
+    "valid": true
+  },
+  "stable": {
+    "exists": true,
+    "manifest_exists": true,
+    "manifest_sha_matches": true,
+    "manifest_size_matches": true,
+    "repair_receipt_exists": true
+  }
+}

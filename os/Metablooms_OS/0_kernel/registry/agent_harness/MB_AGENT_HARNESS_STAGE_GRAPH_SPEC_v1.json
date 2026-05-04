@@ -1,0 +1,166 @@
+{
+  "artifact_type": "MB_AGENT_HARNESS_STAGE_GRAPH_SPEC_v1",
+  "created_utc": "20260501T144521Z",
+  "invariants": [
+    "agent outputs are artifacts, not authority until validator and promotion gates pass",
+    "each role has an explicit write scope",
+    "all handoffs are JSON and trace-linked",
+    "human interrupt checkpoints are required for reviewable security gates",
+    "no broad extraction is required for harness metadata validation"
+  ],
+  "purpose": "Provide a bounded multi-role agent harness contract for MetaBlooms stages without granting autonomous broad filesystem mutation.",
+  "research_basis": [
+    {
+      "principle": "Agent workflows need traces, guardrails, tool boundaries, and handoff visibility.",
+      "source": "OpenAI Agents SDK tracing/guardrails/handoffs"
+    },
+    {
+      "principle": "Durable thread/checkpoint identity is required for resume, interrupt, and human review.",
+      "source": "LangGraph persistence/human-in-loop"
+    }
+  ],
+  "stage1_limit": "Installs the harness contract, command surface, validator, and executor registration. It does not launch parallel autonomous agents.",
+  "stage_graph": {
+    "edges": [
+      [
+        "intake",
+        "research"
+      ],
+      [
+        "research",
+        "planner"
+      ],
+      [
+        "planner",
+        "implementer"
+      ],
+      [
+        "implementer",
+        "validator"
+      ],
+      [
+        "validator",
+        "auditor"
+      ],
+      [
+        "auditor",
+        "exporter"
+      ]
+    ],
+    "nodes": [
+      {
+        "id": "intake",
+        "must_not_write": [
+          "source_tree"
+        ],
+        "required_gates": [
+          "scope_gate",
+          "security_preflight"
+        ],
+        "role": "task_intake",
+        "writes": [
+          "work_order"
+        ]
+      },
+      {
+        "id": "research",
+        "must_not_write": [
+          "implementation_files"
+        ],
+        "required_gates": [
+          "citation_presence",
+          "recency_policy"
+        ],
+        "role": "evidence_researcher",
+        "writes": [
+          "SEE_packet"
+        ]
+      },
+      {
+        "id": "planner",
+        "must_not_write": [
+          "runtime_source"
+        ],
+        "required_gates": [
+          "one_stage_limit",
+          "dependency_map"
+        ],
+        "role": "stage_planner",
+        "writes": [
+          "bounded_stage_plan"
+        ]
+      },
+      {
+        "id": "implementer",
+        "must_not_write": [
+          "authority_zip_directly"
+        ],
+        "required_gates": [
+          "write_scope",
+          "atomic_publication_preflight"
+        ],
+        "role": "implementation_agent",
+        "writes": [
+          "overlay_files"
+        ]
+      },
+      {
+        "id": "validator",
+        "must_not_write": [
+          "implementation_files"
+        ],
+        "required_gates": [
+          "targeted_smoke",
+          "duplicate_scan",
+          "required_member_check"
+        ],
+        "role": "validation_agent",
+        "writes": [
+          "validation_report"
+        ]
+      },
+      {
+        "id": "auditor",
+        "must_not_write": [
+          "implementation_files"
+        ],
+        "required_gates": [
+          "false_success_check",
+          "prompt_injection_check"
+        ],
+        "role": "adversarial_auditor",
+        "writes": [
+          "audit_report"
+        ]
+      },
+      {
+        "id": "exporter",
+        "must_not_write": [
+          "unvalidated_authority"
+        ],
+        "required_gates": [
+          "export_promotion_gate",
+          "sidecar_check"
+        ],
+        "role": "export_promotion_agent",
+        "writes": [
+          "promoted_export",
+          "checksum_sidecar"
+        ]
+      }
+    ],
+    "parallelizable_groups": [
+      [
+        "research"
+      ],
+      [
+        "validator",
+        "auditor"
+      ]
+    ],
+    "serialization_points": [
+      "planner_approval",
+      "export_promotion"
+    ]
+  }
+}

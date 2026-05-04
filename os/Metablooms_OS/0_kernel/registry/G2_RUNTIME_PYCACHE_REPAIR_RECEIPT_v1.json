@@ -1,0 +1,43 @@
+{
+  "version": "1.0",
+  "created_at": 1777064615.7786686,
+  "stage": "REPAIR_G2_CLEAN_RUNTIME_PYCACHE_VERIFY_VALIDATOR_IMPLEMENTATION",
+  "status": "complete",
+  "problem": "G2 implementation left untracked runtime cache at 0_kernel/scripts/__pycache__.",
+  "actions": [
+    {
+      "action": "removed_runtime_scripts_pycache",
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/scripts/__pycache__",
+      "removed": true
+    },
+    {
+      "action": "removed_pycache_recreated_after_checks",
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/scripts/__pycache__"
+    }
+  ],
+  "checks": {
+    "validator_py_compile_passed": true,
+    "validator_help_passed": true,
+    "known_bad_f7_correctly_fails": true
+  },
+  "outputs": {
+    "updated_g2_receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G2_EXPORT_RECOVERY_VALIDATOR_IMPLEMENTATION_RECEIPT_v1.json",
+    "known_bad_decision": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_G2_REPAIR_KNOWN_BAD_DECISION_v1.json",
+    "repair_receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G2_RUNTIME_PYCACHE_REPAIR_RECEIPT_v1.json"
+  },
+  "verdict": "PASS",
+  "next_improvement_task": "G3 \u2014 Export Recovery Validator Regression Fixtures",
+  "why_next": "G2 implementation is clean and verified; next create controlled fixtures to prove validator gates before running full export repair.",
+  "remaining_work": [
+    "G3 \u2014 Regression Fixtures",
+    "G4 \u2014 Run Validator Against F7 Export",
+    "G5 \u2014 Repaired Recovery-Proven Export",
+    "G6 \u2014 Recovery Proof + Baseline Lock",
+    "G7 \u2014 Return to E4B"
+  ],
+  "progress_estimate": {
+    "stages_remaining_before_return_to_E4B": 5,
+    "current_arc": "G export-recovery validator hardening"
+  },
+  "next_correct_command": "EXECUTE G3 \u2014 EXPORT RECOVERY VALIDATOR REGRESSION FIXTURES"
+}

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+PYTHON='/opt/pyvenv/bin/python'
+VENDOR='/mnt/data/Metablooms_OS_refined/0_kernel/vendor/python'
+if [ -x "$VENDOR/bin/ruff" ]; then
+  exec "$VENDOR/bin/ruff" "$@"
+else
+  exec "$PYTHON" -c "import sys; sys.path.insert(0, '$VENDOR'); from ruff.__main__ import main; raise SystemExit(main())" "$@"
+fi

@@ -1,0 +1,40 @@
+{
+  "artifact_type": "STAGE_RECEIPT.v1",
+  "checks": {
+    "historical_callsite_scanner": {
+      "decision": null,
+      "returncode": 0,
+      "verdict": "PASS"
+    },
+    "new_chat_validator": {
+      "decision": "ALLOW",
+      "returncode": 0,
+      "verdict": null
+    },
+    "runtime_wrapper": {
+      "decision": "ALLOW",
+      "returncode": 0,
+      "verdict": null
+    },
+    "stage10_validator": {
+      "decision": null,
+      "returncode": 0,
+      "verdict": "PASS"
+    }
+  },
+  "created_utc": "20260502T175921Z",
+  "external_sidecar_required": true,
+  "outputs": [
+    "OPEN_OPERATOR_VISUAL_TRACKER.html",
+    "runtime/state/operator_surface/BOOT_SURFACE_MINIMAL_MODE_LATEST.json",
+    "runtime/state/operator_surface/BOOT_SURFACE_MINIMAL_MODE_LATEST.md",
+    "0_kernel/validators/validate_observability_trace_span_ledger_stage10_minimal_mobile_v1.py",
+    "0_kernel/scripts/observability_boot_surface_minimal_mode_renderer_v1.py",
+    "0_kernel/registry/observability/MB_BOOT_SURFACE_MINIMAL_MODE_POLICY_v1.json"
+  ],
+  "planned_export": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_MINIMAL_MOBILE_FINAL_AUTHORITY_LOCKED_20260502T175921Z.zip",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING",
+  "summary": "Finalized minimal-first, mobile-hardened boot tracker with current-action card, progressive evidence drawers, deep links, static mobile checks, and wrapper-only live guidance.",
+  "validation": "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE10_MINIMAL_MOBILE_VALIDATION_LATEST.json",
+  "verdict": "PASS"
+}

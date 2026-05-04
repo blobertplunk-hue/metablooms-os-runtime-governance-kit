@@ -1,0 +1,45 @@
+{
+  "fixtures": [
+    {
+      "class": "critical_path_contract",
+      "expected": "PASS",
+      "id": "SQ2-001"
+    },
+    {
+      "class": "python_compile_failure",
+      "expected": "BLOCK",
+      "id": "SQ2-002"
+    },
+    {
+      "class": "missing_receipt_handoff",
+      "expected": "BLOCK",
+      "id": "SQ2-003"
+    },
+    {
+      "class": "bounded_validation_warning",
+      "expected": "WARN",
+      "id": "SQ2-004"
+    },
+    {
+      "class": "diff_review_gate",
+      "expected": "PASS",
+      "id": "SQ2-005"
+    },
+    {
+      "class": "documentation_quickstart",
+      "expected": "PASS",
+      "id": "SQ2-006"
+    },
+    {
+      "class": "export_promotion_quality_gate",
+      "expected": "PASS",
+      "id": "SQ2-007"
+    },
+    {
+      "class": "false_pass_guard",
+      "expected": "BLOCK",
+      "id": "SQ2-008"
+    }
+  ],
+  "schema_version": "SOFTWARE_QUALITY_REGRESSION_FIXTURES_v2"
+}

@@ -1,0 +1,89 @@
+{
+  "auto_improvement_selection": "enabled",
+  "auto_improvement_stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_8_AUTOMATED_PATCH_LOOP_AND_FAILURE_CLASS_CORRECTION",
+  "default_profile": "governed_implementation",
+  "id": "PROMPT_PROFILE_REGISTRY_v1",
+  "profiles": [
+    {
+      "profile_id": "governed_implementation",
+      "required_gates": [
+        "boot",
+        "gap_audit",
+        "SEE_when_current_or_niche",
+        "CE",
+        "bounded_plan",
+        "implementation",
+        "validation",
+        "receipt_handoff"
+      ],
+      "use_when": "coding, patching, artifact writing, export, repair"
+    },
+    {
+      "profile_id": "governed_research",
+      "required_gates": [
+        "research_plan",
+        "recursive_search",
+        "source_quality_filter",
+        "SEE",
+        "CE",
+        "citation_binding"
+      ],
+      "use_when": "research, standards, current evidence, niche facts"
+    },
+    {
+      "profile_id": "governed_artifact_generation",
+      "required_gates": [
+        "source_parse",
+        "schema_or_template_lock",
+        "generation",
+        "render_or_format_validation",
+        "export_manifest"
+      ],
+      "use_when": "documents, CSVs, HTML, slides, spreadsheets"
+    },
+    {
+      "profile_id": "governed_audit",
+      "required_gates": [
+        "requirement_extraction",
+        "artifact_inventory",
+        "behavior_probe",
+        "gap_matrix",
+        "receipt"
+      ],
+      "use_when": "compare requirements to implementation"
+    },
+    {
+      "profile_id": "authentic",
+      "required_gates": [
+        "context_authority",
+        "voice_preservation",
+        "output_contract",
+        "validation"
+      ],
+      "use_when": "prompting must preserve user voice, authority, and authentic task intent"
+    },
+    {
+      "profile_id": "adaptive",
+      "required_gates": [
+        "task_classification",
+        "profile_selection",
+        "adaptive_constraints",
+        "validation"
+      ],
+      "use_when": "prompting must adapt supports, route skill needs, or respond to misconception evidence"
+    },
+    {
+      "profile_id": "wit",
+      "required_gates": [
+        "tone_control",
+        "audience_fit",
+        "accuracy_constraints",
+        "safety_bounds"
+      ],
+      "use_when": "prompting permits light humor or memorable phrasing without losing accuracy or governance"
+    }
+  ],
+  "stage5_updated_by": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_5_PROMPT_ENGINE_REGRESSION_FIXTURES_AND_PROFILE_SMOKE",
+  "stage5_updated_utc": "2026-04-30T21:36:34Z",
+  "status": "active"
+}

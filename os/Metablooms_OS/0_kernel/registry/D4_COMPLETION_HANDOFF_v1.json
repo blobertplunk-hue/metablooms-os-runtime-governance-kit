@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "created_at": 1777037126.4867728,
+  "from_stage": "STAGE_D4_SEE_PACKET_VALIDATOR_STABLE_EXPORT",
+  "to_stage": "BOOT_RECOVERY_PROOF_FROM_SEE_VALIDATOR_D4_EXPORT",
+  "status": "ready",
+  "stable_export_pending": "/mnt/data/Metablooms_OS_refined_SEE_PACKET_VALIDATOR_STABLE_D4.zip",
+  "stable_manifest_pending": "/mnt/data/Metablooms_OS_refined_SEE_PACKET_VALIDATOR_STABLE_D4.zip.sha256.json",
+  "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/SEE_PACKET_VALIDATOR_STABLE_EXPORT_RECEIPT_v1.json",
+  "next_command": "RUN BOOT RECOVERY PROOF FROM SEE VALIDATOR D4 EXPORT"
+}

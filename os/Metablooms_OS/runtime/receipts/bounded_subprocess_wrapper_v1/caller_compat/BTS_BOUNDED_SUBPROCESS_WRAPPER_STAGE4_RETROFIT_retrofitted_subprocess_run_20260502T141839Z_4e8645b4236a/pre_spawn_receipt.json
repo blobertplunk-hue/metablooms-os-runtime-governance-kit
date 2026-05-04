@@ -1,0 +1,18 @@
+{
+  "argv_resolved": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "/mnt/data/Metablooms_OS/runtime/governance/tool_universe_resolver_v1.py",
+    "resolve",
+    "--task",
+    "Create a BOOTABLE FULL OS AUTHORITY ZIP export with CRC proof and sidecar",
+    "--stage-id",
+    "STAGE6T_ZIP_REGRESSION",
+    "--out",
+    "/mnt/data/Metablooms_OS/runtime/stage_work/STAGE6T/zip_export_regression_candidate_set.json"
+  ],
+  "created_utc": "20260502T141839Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision": "ALLOW_SPAWN",
+  "timeout_seconds": 10
+}

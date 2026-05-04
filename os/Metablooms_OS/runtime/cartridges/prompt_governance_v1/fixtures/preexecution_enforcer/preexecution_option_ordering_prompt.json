@@ -1,0 +1,4 @@
+{
+  "expect_required_phrase": "best-to-worst",
+  "prompt": "give ranked options for the next governed step"
+}

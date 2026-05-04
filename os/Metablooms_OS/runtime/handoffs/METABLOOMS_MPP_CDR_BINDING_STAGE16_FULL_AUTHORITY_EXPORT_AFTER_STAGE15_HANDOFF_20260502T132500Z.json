@@ -1,0 +1,26 @@
+{
+  "authority_sha256": "EXTERNAL_SIDECAR_REQUIRED_AFTER_EXPORT",
+  "boot_sequence": [
+    "verify checksum sidecar",
+    "run runtime starter smoke",
+    "run portable boot verify",
+    "run boot runtime executor",
+    "load latest handoff",
+    "run one bounded governed stage"
+  ],
+  "current_authority_label": "BOOTABLE FULL OS AUTHORITY ZIP \u2014 MPP/CDR Stage 16",
+  "current_authority_zip": "/mnt/data/METABLOOMS_OS_MPP_CDR_STAGE16_FULL_AUTHORITY_AFTER_STAGE15_BOOTABLE_FULL_OS_AUTHORITY_20260502T132500Z.zip",
+  "current_authority_zip_sidecar": "/mnt/data/METABLOOMS_OS_MPP_CDR_STAGE16_FULL_AUTHORITY_AFTER_STAGE15_BOOTABLE_FULL_OS_AUTHORITY_20260502T132500Z.zip.sha256",
+  "included": [
+    "CDR_STAGE13_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE12",
+    "MPP_CDR_BINDING_STAGE14_CODE_WORK_REQUIRES_CDR_IN_MPP",
+    "MPP_CDR_BINDING_STAGE15_RETROFIT_STAGE_CONTRACTS_TO_DECLARE_CODE_BEARING_FLAG",
+    "MPP_CDR_BINDING_STAGE16_FULL_AUTHORITY_EXPORT_AFTER_STAGE15"
+  ],
+  "next_best_stage": "NEXT_BOUNDED_GOVERNED_TASK_OR_CDR_STAGE17_LINCHPIN_AUDIT_CONTINUATION",
+  "notice": "CDR stages 2,3,4,5,7 remain marked reconstructed from chat summaries; Stage6 verified from uploaded support bundle.",
+  "schema": "MetaBloomsStageHandoff_v1",
+  "stage": "MPP_CDR_BINDING_STAGE16_FULL_AUTHORITY_EXPORT_AFTER_STAGE15",
+  "status": "READY_FOR_NEXT_STAGE_AFTER_AUTHORITY_EXPORT",
+  "timestamp_utc": "2026-05-02T13:03:18Z"
+}

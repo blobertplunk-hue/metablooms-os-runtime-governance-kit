@@ -1,0 +1,189 @@
+{
+  "version": "1.0",
+  "created_at": 1776997986.6274412,
+  "status": "active_recommendation",
+  "purpose": "Research-backed list of additional tools worth installing or activating for MetaBlooms OS work.",
+  "local_probe": {
+    "available_now": {
+      "uv": "/opt/pyvenv/bin/uv",
+      "playwright_python_module": true,
+      "pydantic": true,
+      "pytest": true,
+      "pandoc": "/usr/bin/pandoc",
+      "node": "/opt/nvm/versions/node/v22.16.0/bin/node",
+      "npm": "/opt/nvm/versions/node/v22.16.0/bin/npm",
+      "jq": "/usr/bin/jq",
+      "rg": "/usr/bin/rg",
+      "libcst": "vendored in 0_kernel/vendor/python"
+    },
+    "not_currently_available": {
+      "ruff": "not found in PATH",
+      "pyright": "not found in PATH",
+      "duckdb": "Python module not installed",
+      "tree_sitter": "Python module not installed",
+      "selectolax": "Python module not installed"
+    }
+  },
+  "ranked_install_candidates": [
+    {
+      "rank": 1,
+      "tool": "ruff",
+      "install_type": "python package / binary CLI",
+      "priority": "P0",
+      "why": "Fast linting and formatting; catches many script bugs before execution and can replace a pile of smaller Python lint/format tools.",
+      "best_for_metablooms": [
+        "pre-commit-style script validation",
+        "catching import/name shadowing",
+        "formatting generated Python",
+        "guarding mutation engine/governed_run patches"
+      ],
+      "evidence": [
+        "Ruff official docs describe it as an extremely fast Python linter and formatter written in Rust.",
+        "Ruff formatter docs describe it as a fast formatter designed as a drop-in replacement for Black."
+      ],
+      "recommended_governance": "Install/vendor ruff and require ruff check on generated/modified Python scripts before commit."
+    },
+    {
+      "rank": 2,
+      "tool": "pyright",
+      "install_type": "npm package / CLI",
+      "priority": "P0",
+      "why": "Static type checking for Python; especially useful for registry/mutation engine code where type mistakes cause governance bugs.",
+      "best_for_metablooms": [
+        "mutation engine validation",
+        "governed_run wrapper validation",
+        "schema/receipt code validation",
+        "preventing variable shadowing bugs"
+      ],
+      "evidence": [
+        "Microsoft Pyright docs describe it as a full-featured standards-compliant static type checker designed for high performance and large Python code bases."
+      ],
+      "recommended_governance": "Install via npm or vendor CLI; run pyright on 0_kernel/scripts after structural patches."
+    },
+    {
+      "rank": 3,
+      "tool": "playwright browser binaries",
+      "install_type": "Playwright browser install",
+      "priority": "P0/P1",
+      "why": "The Python module exists, but browser runtime may need installation. This gives actual browser validation for HTML learning engines instead of file-exists claims.",
+      "best_for_metablooms": [
+        "HTML engine smoke tests",
+        "Google Sites/Cambium-like UI behavior checks",
+        "click/interaction regression tests",
+        "screenshot-based visual validation"
+      ],
+      "evidence": [
+        "Playwright supports Chromium, Firefox and WebKit with one API and is available for Python.",
+        "Playwright install docs require browser installation after package install."
+      ],
+      "recommended_governance": "Add browser-runtime probe; if install succeeds, require smoke test for downloadable HTML engines."
+    },
+    {
+      "rank": 4,
+      "tool": "duckdb",
+      "install_type": "Python package",
+      "priority": "P1",
+      "why": "In-process analytics database for large audit tables, registries, CSVs, telemetry, and duplicate analysis.",
+      "best_for_metablooms": [
+        "large artifact inventories",
+        "telemetry/log analysis",
+        "CSV/Parquet audit stores",
+        "querying registry snapshots"
+      ],
+      "evidence": [
+        "DuckDB is described as an in-process analytical database suitable for fast local analytics and data processing workflows."
+      ],
+      "recommended_governance": "Install if registry/log volume grows; use for audit ledgers and telemetry."
+    },
+    {
+      "rank": 5,
+      "tool": "tree-sitter + language grammars",
+      "install_type": "Python packages / native parser libraries",
+      "priority": "P1/P2",
+      "why": "Multi-language parsing for JS/HTML/CSS/Python-like source. Useful later for richer multi-language engine patching.",
+      "best_for_metablooms": [
+        "JavaScript structural inspection",
+        "HTML/JS engine audits",
+        "multi-language code navigation",
+        "future codemod/router improvements"
+      ],
+      "evidence": [
+        "Tree-sitter is an incremental parsing system that builds concrete syntax trees and is useful for syntax highlighting, go-to definition, code reshaping, and related programming tools."
+      ],
+      "recommended_governance": "Defer until JS/HTML codemod need exceeds bs4/lxml/Node."
+    },
+    {
+      "rank": 6,
+      "tool": "pydantic",
+      "install_type": "already installed Python package",
+      "priority": "USE_NOW",
+      "why": "Already available; stronger typed validation for request objects, receipts, and policies than manual dict checks.",
+      "best_for_metablooms": [
+        "mutation request models",
+        "receipt schemas",
+        "boot manifest contracts",
+        "tool routing policy models"
+      ],
+      "evidence": [
+        "Pydantic docs describe it as a widely used Python data validation library that uses type annotations to parse and validate complex data."
+      ],
+      "recommended_governance": "Start using pydantic models for new Python governance engines."
+    },
+    {
+      "rank": 7,
+      "tool": "pytest",
+      "install_type": "already installed Python package",
+      "priority": "USE_NOW",
+      "why": "Already available; creates a real regression harness instead of one-off manual probes.",
+      "best_for_metablooms": [
+        "engine unit tests",
+        "validator regression tests",
+        "artifact audit tests",
+        "rollback/idempotency tests"
+      ],
+      "evidence": [
+        "pytest is widely documented as a framework for writing scalable tests with simple syntax."
+      ],
+      "recommended_governance": "Create 0_kernel/tests and require pytest after changes to scripts."
+    },
+    {
+      "rank": 8,
+      "tool": "uv",
+      "install_type": "already installed CLI",
+      "priority": "USE_NOW",
+      "why": "Already available. Fast Python package/project manager; useful for dependency bootstrap and repeatable vendor installs.",
+      "best_for_metablooms": [
+        "faster dependency installs",
+        "vendor bootstrap",
+        "future isolated tool environments"
+      ],
+      "evidence": [
+        "uv official docs describe it as an extremely fast Python package and project manager written in Rust."
+      ],
+      "recommended_governance": "Prefer uv for future package bootstrap when compatible; fall back to pip."
+    }
+  ],
+  "recommended_next_installs": [
+    "ruff",
+    "pyright",
+    "Playwright browser runtime probe/install",
+    "duckdb"
+  ],
+  "recommended_next_uses_without_install": [
+    "pydantic",
+    "pytest",
+    "uv",
+    "pandoc",
+    "jq",
+    "rg"
+  ],
+  "policy_update_needed": {
+    "new_rule": "Before coding/export/HTML/test-heavy work, check installable tool policy and prefer the ranked authoritative tool over ad hoc scripts.",
+    "next_artifact": "INSTALLABLE_TOOL_BOOTSTRAP_POLICY_v1.json"
+  },
+  "ruff_status": {
+    "status": "installed_vendored",
+    "wrapper": "0_kernel/vendor/bin/ruff",
+    "policy": "0_kernel/registry/RUFF_LINT_FORMAT_POLICY_v1.json"
+  }
+}

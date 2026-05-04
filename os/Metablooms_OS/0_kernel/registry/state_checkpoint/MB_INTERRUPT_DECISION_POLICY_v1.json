@@ -1,0 +1,24 @@
+{
+  "allowed_decisions": [
+    "approve",
+    "edit",
+    "reject",
+    "defer"
+  ],
+  "artifact_type": "MB_INTERRUPT_DECISION_POLICY_v1",
+  "created_utc": "20260501T160500Z",
+  "default_decision": "defer",
+  "fail_closed_conditions": [
+    "missing_thread_id",
+    "checkpoint_not_found",
+    "checkpoint_not_interrupted",
+    "non_json_resume_payload",
+    "resume_from_chat_claim_only"
+  ],
+  "human_review_payload_fields": [
+    "reason",
+    "requested_action",
+    "risk_summary",
+    "resume_options"
+  ]
+}

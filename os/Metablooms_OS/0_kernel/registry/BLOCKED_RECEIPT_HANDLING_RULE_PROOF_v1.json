@@ -1,0 +1,32 @@
+{
+  "version": "1.0",
+  "created_at": 1777062946.186999,
+  "stage": "F6_BLOCKED_RECEIPT_HANDLING_RULE_PROOF",
+  "status": "complete",
+  "proof_cases": {
+    "canonical_blocker_dir_exists": {
+      "passed": true
+    },
+    "synthetic_blocker_written": {
+      "passed": true
+    },
+    "blocked_template_pointer_false": {
+      "passed": true
+    },
+    "blocked_template_latest_pass_false": {
+      "passed": true
+    },
+    "nested_git_evidence_forbidden": {
+      "passed": true
+    },
+    "broad_git_clean_forbidden": {
+      "passed": true
+    },
+    "repair_entries_do_not_advance_latest_pass": {
+      "passed": true
+    }
+  },
+  "synthetic_blocked_receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/blockers/F6_SYNTHETIC_BLOCKED_RECEIPT_v1.json",
+  "verdict": "PASS",
+  "next_correct_command": "EXECUTE F7 \u2014 STABLE EXPORT + BOOT RECOVERY PROOF"
+}

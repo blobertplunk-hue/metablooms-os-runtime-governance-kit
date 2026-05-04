@@ -1,0 +1,6 @@
+{
+  "candidate_count": 1,
+  "lesson_id": "transcript_candidate_6b755560af01",
+  "strength": 0.72,
+  "flags": []
+}

@@ -1,0 +1,99 @@
+{
+  "created_utc": "20260428T012341Z",
+  "scope": "forensic diff of current sandbox vs prior local evidence and GPT-5.5 release-window claims",
+  "limitations": [
+    "No pre-5.5 full filesystem snapshot of /opt was found in /mnt/data for direct before/after file hashing.",
+    "This packet therefore compares live sandbox state to older sandbox authority artifacts in /mnt/data and to release-window timestamps and official release claims."
+  ],
+  "live_paths": {
+    "/opt/python-hooks/sitecustomize.py": {
+      "mtime_utc": "2026-04-28T01:13:18.563047Z",
+      "size": 1007,
+      "is_dir": false
+    },
+    "/opt/pyvenv/lib/python3.13/site-packages/000_oai_py_sys_path_prepend.pth": {
+      "mtime_utc": "2026-04-21T01:48:01Z",
+      "size": 31,
+      "is_dir": false
+    },
+    "/opt/pyvenv/lib/python3.13/site-packages/oai_py_sys_path_prepend.py": {
+      "mtime_utc": "2026-04-21T01:48:01Z",
+      "size": 855,
+      "is_dir": false
+    },
+    "/opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool": {
+      "mtime_utc": "2026-04-21T21:29:17Z",
+      "size": 4096,
+      "is_dir": true
+    }
+  },
+  "live_env_subset": {
+    "CUA_DD_TERMINAL_MODE": "false",
+    "CUA_DD_HIVE_PORT": "50939",
+    "CUA_DD_PDF_READER_SERVICE": "false",
+    "CUA_DD_INIT_CONATINER_DAEMON": "false",
+    "CUA_DD_PYTHON_TOOL_USER": "oai",
+    "CUA_DD_INIT_NEKO": "false",
+    "CUA_DD_INIT_XVFB": "false",
+    "CUA_DD_CHROME_USER": "oai",
+    "CUA_DD_PYTHON_TOOL_WARM_SPREADSHEET_RUNTIME": "true",
+    "CUA_DD_VM_BUILD": "openaiappliedcaasprod.azurecr.io/chrome-chatgpt-prod-5p4:alpaca-20260421212454-f3bf2ace07a4-linux-amd64",
+    "CUA_DD_ENABLE_CHROME": "false",
+    "CUA_DD_INIT_ARTIFACT_TOOL_V2_RECORD_OPERATIONS": "true",
+    "CUA_DD_INIT_X11VNC": "false",
+    "CUA_DD_CHROME_AUTO_RESTART": "false",
+    "CUA_DD_INIT_RSYNC_DAEMON": "false",
+    "CUA_DD_ENABLE_NOTEBOOK_SERVER": "false",
+    "CUA_DD_MITMPROXY": "false",
+    "CUA_DD_VM_COMMIT_TIMESTAMP": "20260421212454",
+    "CUA_DD_INIT_XFCE4": "false",
+    "CUA_DD_INIT_DBUS": "false",
+    "CUA_DD_VM_COMMIT_SHA": "f3bf2ace07a46a1470444427399c4e103076f4be",
+    "CUA_DD_NGINX_PORT": "8080",
+    "CUA_DD_INIT_PICOM": "false",
+    "CUA_DD_INIT_CONTAINER_DAEMON": "false",
+    "CUA_DD_TERMINAL_SERVER_USER": "oai",
+    "CUA_DD_HIVE_CLIENT_LOG_LEVEL": "WARN",
+    "CUA_DD_INIT_MULTIKERNEL_JUPYTER_SERVER": "false",
+    "CUA_DD_PYTHON_TOOL": "true",
+    "CUA_DD_INIT_ARTIFACT_TOOL_V2_ALIAS": "",
+    "CUA_DD_CONTAINER_DAEMON_PORT": "8085",
+    "CUA_DD_INIT_EXTENSION_SERVER": "false",
+    "CUA_DD_INIT_MULTIKERNEL_JUPYTER_SERVER_USER": "oai",
+    "CUA_DD_ENABLE_VNC": "false",
+    "CUA_DD_ENABLE_APPLY_PATCH": "true",
+    "CUA_DD_INIT_NGINX": "false",
+    "CUA_DD_INIT_HIVE": "false",
+    "CUA_DD_STARTUP_LIBREOFFICE": "false",
+    "CUA_DD_INIT_TERMINAL_SERVER": "true",
+    "CUA_DD_TERMINAL_LOCAL_LOOPBACK": "true",
+    "CUA_DD_INIT_SYNC_SHARE": "false",
+    "CUA_DD_INIT_OPENBOX": "false",
+    "CUA_DD_INIT_ARTIFACT_TOOL_V2": "true"
+  },
+  "prior_local_sandbox_docs": [
+    "--Simon Willison\u0393\u00c7\u00d6s complete analysis of ChatGPT\u0393\u00c7\u00d6s sandboxed code interpreter - container environment (January 26, 2026)--.pdf",
+    "SANDBOX_AUTHORITATIVE_SPEC.md",
+    "SANDBOX_COMPOSITE_LOAD_SUSTAINED_10S_STAGGERED.md",
+    "SANDBOX_MASTER_INDEX.md",
+    "SANDBOX_OPERATING_RULES.md"
+  ],
+  "current_probe_artifacts": [
+    "/mnt/data/Metablooms_OS/receipts/WRITE_PROBE_20260428T011550Z.txt",
+    "/mnt/data/Metablooms_OS/receipts/python_probe/PYTHON_CONTROL_FLAGS_20260428T011736Z.txt",
+    "/mnt/data/Metablooms_OS/receipts/python_probe/PYTHON_IMPORTTIME_20260428T011720Z.txt",
+    "/mnt/data/Metablooms_OS/receipts/python_probe/PYTHON_SANDBOX_FINDINGS_20260428T011802Z.json",
+    "/mnt/data/Metablooms_OS/receipts/python_probe/PYTHON_SANDBOX_FINDINGS_20260428T011802Z.md",
+    "/mnt/data/Metablooms_OS/receipts/python_probe/PYTHON_SANDBOX_PROBE_20260428T011640Z.txt",
+    "/mnt/data/Metablooms_OS/receipts/python_probe/PYTHON_STARTUP_HOOK_DETAIL_20260428T011707Z.txt",
+    "/mnt/data/Metablooms_OS/receipts/sandbox_release_probe/SANDBOX_55_CHANGE_ASSESSMENT_20260428T012100Z.md",
+    "/mnt/data/Metablooms_OS/receipts/sandbox_release_probe/SANDBOX_RELEASE_PROBE_RAW.txt",
+    "/mnt/data/Metablooms_OS/receipts/sandbox_release_probe/SANDBOX_RELEASE_PROBE_SUMMARY.json"
+  ],
+  "key_findings": [
+    "Normal python startup remains penalized by the site hook chain; python3 -S bypasses the penalty.",
+    "The current runtime injects /opt/python-hooks through a .pth file and loads sitecustomize.py.",
+    "Relevant hook/tool files have mtimes in the April 21-28, 2026 window, overlapping the GPT-5.5 release on April 23, 2026.",
+    "Older sandbox authority docs found in /mnt/data describe resource limits and operating rules, not this python startup hook chain."
+  ]
+}

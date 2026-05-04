@@ -1,0 +1,65 @@
+{
+  "artifacts": [
+    {
+      "bytes": 11826,
+      "path": "/mnt/data/Metablooms_OS/0_kernel/validators/validate_visual_presentation_quality_gate_v1.py",
+      "sha256": "0dd9f3d0ec08697219356ef02bd524f54c36fa3267ef11c1949e25e876c875d4"
+    },
+    {
+      "bytes": 2378,
+      "path": "/mnt/data/Metablooms_OS/tests/evals/visual_presentation_quality/test_visual_presentation_quality_gate_v1.py",
+      "sha256": "0b22508e1b465ef711af959e99d7d99bcaba9b2b64f9007ffe6306951f49c52f"
+    },
+    {
+      "bytes": 10323,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE2_VALIDATOR_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T215848Z/VISUAL_PRESENTATION_QUALITY_GATE_STAGE2_FIXTURE_RESULTS.json",
+      "sha256": "1501134ccbb16902db2599ad604036e0fcb9e0a745dd70cf72fa04e92e753a70"
+    },
+    {
+      "bytes": 2655,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE2_VALIDATOR_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T215848Z/IMPLEMENTATION_MANIFEST.json",
+      "sha256": "cecdf992be4c9fe12a0deea0cd8922855d45c5c0388239552c928cb337845fb9"
+    },
+    {
+      "bytes": 1127,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE2_VALIDATOR_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T215848Z/FAILURE_LEARNING_EVENT_STAGE2_REPAIR.json",
+      "sha256": "e00b1379ff4b80c51bf6a1182fae46cfcaa1c51403e713a1598ba23a8c8e8818"
+    }
+  ],
+  "bounded_scope": "validator implementation and local fixture execution only; no runtime-wide binding and no full export",
+  "checks": {
+    "fixture_results_passed": true,
+    "harness_returncode": 0,
+    "invalid_fixture_decision": "DENY",
+    "py_compile_returncode": 0,
+    "valid_fixture_decision": "ALLOW"
+  },
+  "created_utc": "2026-05-02T21:59:02Z",
+  "not_done": [
+    "Stage 3 has not yet bound the validator into MPP, USS, or HTML cartridge promotion paths.",
+    "Stage 4 rendered-state smoke and visual review packet are not yet implemented.",
+    "Stage 5 full authority export is not yet run."
+  ],
+  "root": "/mnt/data/Metablooms_OS",
+  "schema_version": "metablooms_stage_receipt.v1",
+  "see_sources": [
+    {
+      "claim": "W3C encourages use of the latest WCAG version, and WCAG 2.2 content also meets WCAG 2.1 and 2.0.",
+      "source_ref": "turn423054search0"
+    },
+    {
+      "claim": "Material Design 3 is an adaptable system of guidelines, components, and tools supporting UI best practices.",
+      "source_ref": "turn423054search10"
+    },
+    {
+      "claim": "NN/g recommends 5-second, first-click, and preference testing to evaluate visual-design perception.",
+      "source_ref": "turn423054search5"
+    },
+    {
+      "claim": "The aesthetic-usability effect means attractive interfaces can be perceived as more usable, which also can mask usability issues.",
+      "source_ref": "turn423054search2"
+    }
+  ],
+  "stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE2_VALIDATOR_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN",
+  "verdict": "PASS"
+}

@@ -1,0 +1,67 @@
+{
+  "artifact_type": "ATOMIC_JSON_WRITER_STAGE3_PATCH_MANIFEST_v1",
+  "created_utc": "20260502T143651Z",
+  "files": [
+    {
+      "bytes": 2763,
+      "exists": true,
+      "path": "0_kernel/lib/io/atomic_json_compat_v1.py",
+      "sha256": "c0483a62708b9debef7cf46f4271bda2568056a1fb4dbaee5bb8dcc7d34b060a"
+    },
+    {
+      "bytes": 7901,
+      "exists": true,
+      "path": "0_kernel/lib/filesystem_safety_v1.py",
+      "sha256": "11ccc15cd3e2d25bb452ab40dd9a5e8d2f8173ede0b716d5d5b226dc6c8a8de4"
+    },
+    {
+      "bytes": 18434,
+      "exists": true,
+      "path": "0_kernel/lib/execution/bounded_subprocess_wrapper_v1.py",
+      "sha256": "8411f4857687af305602cb5e83fabb72f67796da9e7ea19936742c4a30e65475"
+    },
+    {
+      "bytes": 10768,
+      "exists": true,
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_STAGE_FINALIZATION_HOOK_v1.py",
+      "sha256": "2775e757910388c68b6e96b63d4c1247a3f3de2d1d2e67de8dfaced4e6d8ca44"
+    },
+    {
+      "bytes": 5578,
+      "exists": true,
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_STATE_UPDATER_v1.py",
+      "sha256": "99aa3dd762d2da306a5605051816b38b7c0dd98ed9c6cbcf44521ee108374c6e"
+    },
+    {
+      "bytes": 3478,
+      "exists": true,
+      "path": "0_kernel/lib/trace_diff_logger_v1.py",
+      "sha256": "ce9cf3e8c4d58f932759afaf4f7a2f8a36944f75f7a7c52335167986c3eaf092"
+    },
+    {
+      "bytes": 3620,
+      "exists": true,
+      "path": "0_kernel/lib/archive_method_router_v1.py",
+      "sha256": "ebd48089dec564ac11473eec5b8bdc50341302827c11bb0da70b4cf72e5f357c"
+    },
+    {
+      "bytes": 4213,
+      "exists": true,
+      "path": "0_kernel/validators/validate_bounded_subprocess_callsite_policy_stage4_v1.py",
+      "sha256": "f655edc3dec3c0fcbf7ced7e901d7047d8bfef725a4fb99acf7efaacfc5256d8"
+    },
+    {
+      "bytes": 3110,
+      "exists": true,
+      "path": "0_kernel/validators/validate_atomic_json_writer_callsite_policy_stage3_v1.py",
+      "sha256": "e0d7f00e4f0f43192f85d0a8261e9cc96d48a4f9eeca81934fd6fd2d73228386"
+    },
+    {
+      "bytes": 982,
+      "exists": true,
+      "path": "0_kernel/registry/tool_governance/ATOMIC_JSON_WRITER_CALLSITE_POLICY_STAGE3_v1.json",
+      "sha256": "1fb7bcdde1926b4bba54300be7e3dbec8b135a07127a16d556ef14f4d9c63107"
+    }
+  ],
+  "stage": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z"
+}

@@ -1,0 +1,17 @@
+{
+  "authority_rule": "Stage 12 prompt-governance remains base authority; MPP R23 remains subsystem source; Stage 12 conflicts still win.",
+  "basis_artifact_bundle": "MPP_PROMPT_OS_INTEGRATION_2B_EXTRACTION_ROUTE_REPAIR_AND_PROMOTION_LOCK_ARTIFACTS_20260501T020800Z.zip",
+  "basis_artifact_bundle_sha256": "602d812a003799fa09746f872667711636f2dba4811de4fd5010282a626952f1",
+  "basis_stage": "MPP_PROMPT_OS_INTEGRATION_2B_EXTRACTION_ROUTE_REPAIR_AND_PROMOTION_LOCK",
+  "circular_hash_note": "Final archive hash is intentionally stored only in external sidecar and root pointer because embedding it inside the ZIP would mutate the ZIP hash.",
+  "created_utc": "2026-05-01T02:15:01.115021Z",
+  "decision": "PROMOTION_LOCK_INTERNALIZED",
+  "external_sidecar_required": true,
+  "new_authority_sidecar": "METABLOOMS_OS_STAGE12_PROMPT_GOVERNANCE_PLUS_MPP_R0_R23_PROMOTION_LOCK_INTERNALIZED_20260501T021500Z.zip.sha256",
+  "new_authority_zip": "METABLOOMS_OS_STAGE12_PROMPT_GOVERNANCE_PLUS_MPP_R0_R23_PROMOTION_LOCK_INTERNALIZED_20260501T021500Z.zip",
+  "os_logic_changed": false,
+  "packet_type": "PROMOTION_LOCK_PACKET_v1",
+  "pre_internalization_authority_sha256": "0ac71749e7da09bdad3ad3c8b070df8546d938d7ef179144630c1a79d39aaaeb",
+  "pre_internalization_authority_zip": "METABLOOMS_OS_STAGE12_PROMPT_GOVERNANCE_PLUS_MPP_R0_R23_INTEGRATED_20260501T015903Z.zip",
+  "stage": "MPP_PROMPT_OS_INTEGRATION_3_POINTER_INTERNALIZATION_AND_NEW_CHAT_BOOT_REHEARSAL"
+}

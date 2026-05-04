@@ -1,0 +1,50 @@
+{
+  "artifact_id": "example_fraction_html_activity_v1",
+  "artifact_type": "html_activity",
+  "dimensions_covered": {
+    "instruction": {
+      "covered": true,
+      "evidence": [
+        "student prompt exists"
+      ],
+      "note": "Student prompt and supports explain the task clearly."
+    },
+    "misconception_diagnosis": {
+      "covered": true,
+      "evidence": [
+        "diagnostic map"
+      ],
+      "note": "Wrong answer patterns are mapped to misconception labels."
+    },
+    "practice": {
+      "covered": true,
+      "evidence": [
+        "practice loop"
+      ],
+      "note": "Students complete multiple interactive practice attempts."
+    },
+    "realtime_feedback": {
+      "covered": true,
+      "evidence": [
+        "feedback classes"
+      ],
+      "note": "Correct and incorrect states update immediately."
+    },
+    "teacher_telemetry": {
+      "covered": true,
+      "evidence": [
+        "teacher panel"
+      ],
+      "note": "Teacher can review progress and misconception information."
+    },
+    "visual_presentation": {
+      "covered": true,
+      "evidence": [
+        "VPQ validator ALLOW",
+        "teacher professional profile"
+      ],
+      "note": "Visual presentation declaration passed VPQ and includes teacher professional polish."
+    }
+  },
+  "promotion_required": false
+}

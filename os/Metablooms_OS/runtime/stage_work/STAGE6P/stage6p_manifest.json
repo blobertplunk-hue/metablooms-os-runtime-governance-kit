@@ -1,0 +1,103 @@
+{
+  "artifacts": [
+    {
+      "bytes": 2336,
+      "path": "/mnt/data/Metablooms_OS/research/SEE/STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM_SEE_v1.json",
+      "sha256": "be28b6f907cdf87dadca07523c97a7f0dca79b2409230bc3b91f915b904c6458"
+    },
+    {
+      "bytes": 1235,
+      "path": "/mnt/data/Metablooms_OS/research/CE/STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM_CE_v1.json",
+      "sha256": "512f63e7fe64154889444aa0a30e60540012f5bd69ca09125b504b12d8dc2245"
+    },
+    {
+      "bytes": 1600,
+      "path": "/mnt/data/Metablooms_OS/0_kernel/registry/state_checkpoint/DURABLE_CHECKPOINT_REPLAY_MINIMUM_SPEC_v1.json",
+      "sha256": "68799b76b36b80af6787c09d1b6607051045f2e3522765077131285d983d83b8"
+    },
+    {
+      "bytes": 1187,
+      "path": "/mnt/data/Metablooms_OS/0_kernel/registry/state_checkpoint/DURABLE_CHECKPOINT_REPLAY_POLICY_BINDINGS_v1.json",
+      "sha256": "1430973906a4591e0f9af4b20b2aede31ba0c65db3870c7343f6d34e15539cd3"
+    },
+    {
+      "bytes": 763,
+      "path": "/mnt/data/Metablooms_OS/governance/invariants/DURABLE_CHECKPOINT_REPLAY_MINIMUM_REQUIRED_v1.json",
+      "sha256": "ca7c6dd3aacc0720170b92a064a5500adc5e5b103cf101b1ad6dd31562507dbb"
+    },
+    {
+      "bytes": 7776,
+      "path": "/mnt/data/Metablooms_OS/runtime/governance/durable_checkpoint_replay_gate_v1.py",
+      "sha256": "b7c79c9ad7ef13a1775b93a29037e2432ae4899e06017d1e8d2a4dc53da2d424"
+    },
+    {
+      "bytes": 286,
+      "path": "/mnt/data/Metablooms_OS/tests/fixtures/state_checkpoint/stage6p_resume_allow_v1.json",
+      "sha256": "cc64bb2d949f983fcbf45fc0b9c7a16568c1168cd334a29bdaad73640861b53d"
+    },
+    {
+      "bytes": 187,
+      "path": "/mnt/data/Metablooms_OS/tests/fixtures/state_checkpoint/stage6p_resume_deny_payload_v1.json",
+      "sha256": "5bf670a199b1e65146a3e646c80882187d300d67e5e6d0a6dbaa05ef97013505"
+    },
+    {
+      "bytes": 1851,
+      "path": "/mnt/data/Metablooms_OS/tests/evals/state_checkpoint/test_stage6p_durable_checkpoint_replay_gate_v1.py",
+      "sha256": "df63c7b7b7405394ccd0765d781f2c16636ebff597a6ea65410cc01219a8a953"
+    },
+    {
+      "bytes": 5066,
+      "path": "/mnt/data/Metablooms_OS/governance/ACTIVE_INVARIANTS_INDEX.json",
+      "sha256": "1ce2741fdf6c70769339a35f9dfeebaf5444ef331435b3f9b395cf6100deb019"
+    },
+    {
+      "bytes": 1098,
+      "path": "/mnt/data/Metablooms_OS/runtime/evals/state_checkpoint/STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM_SMOKE_RESULT.json",
+      "sha256": "6e92662e4ddbd9dfe9b3049456d4b3b846aff4315998c25fb86eaf4240717da1"
+    },
+    {
+      "bytes": 437,
+      "path": "/mnt/data/Metablooms_OS/runtime/state/STAGE6P_TRACKER_PREVIEW.txt",
+      "sha256": "e4d558c71ab151ed3481afc9df5680eece99526897f926fd01bc9412913ecdeb"
+    },
+    {
+      "bytes": 4002,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/METABLOOMS_STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM_RECEIPT_20260502T035000Z.json",
+      "sha256": "797f7bed221eed7cd3290d78cf6fb110c80a4a52848b8884cc6387b2f7b473b9"
+    },
+    {
+      "bytes": 1070,
+      "path": "/mnt/data/Metablooms_OS/runtime/handoffs/METABLOOMS_STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM_HANDOFF_20260502T035000Z.json",
+      "sha256": "39277ad81276503e99e3e702eed859f10d666660387cfd43512343ce3b567745"
+    }
+  ],
+  "smoke": {
+    "deny_returncode": 20,
+    "deny_stdout": {
+      "decision": "DENY",
+      "reason": "resume_payload_not_object"
+    },
+    "resume_returncode": 0,
+    "resume_stdout": {
+      "action": "resume_checkpoint",
+      "child_file_sha256": "060030f18a76381f95dc9e9944217d82e3e09e402f247a3aec59cb4632a657f0",
+      "child_path": "/mnt/data/Metablooms_OS/runtime/checkpoints/stage6p.demo/ckpt_resumed.json",
+      "child_record_sha256": "48c2fa9807084bbe3cfb3ab4a82aa1f4795140f3411964470995da7017540a35",
+      "decision": "ALLOW",
+      "parent_path": "/mnt/data/Metablooms_OS/runtime/checkpoints/stage6p.demo/ckpt_interrupt.json"
+    },
+    "returncode": 0,
+    "schema": "Stage6PDurableCheckpointSmokeResult_v1",
+    "stderr": "",
+    "verdict": "PASS",
+    "write_returncode": 0,
+    "write_stdout": {
+      "action": "write_checkpoint",
+      "decision": "ALLOW",
+      "file_sha256": "7a03d3c8daa25fc0215eedb4cff17400594c493889eeca851e32e492c12babcc",
+      "path": "/mnt/data/Metablooms_OS/runtime/checkpoints/stage6p.demo/ckpt_interrupt.json",
+      "record_sha256": "95959b30b12915f4a451826974d0bf0e6bbcf44fbe0e0a85b8919379be76cf25"
+    }
+  },
+  "stage": "STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM"
+}

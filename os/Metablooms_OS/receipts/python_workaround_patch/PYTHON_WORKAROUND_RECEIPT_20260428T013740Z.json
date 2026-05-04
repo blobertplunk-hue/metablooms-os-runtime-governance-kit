@@ -1,0 +1,24 @@
+{
+  "stage": "PYTHON_SANDBOX_WORKAROUND_PATCH",
+  "created_at_utc": "20260428T013740Z",
+  "root": "/mnt/data/Metablooms_OS",
+  "changes": [
+    {
+      "path": "runtime/governance/python3_S_lane_exec_v1.sh",
+      "purpose": "Canonical Python -S launcher with vendor PYTHONPATH injection"
+    },
+    {
+      "path": "0_kernel/scripts/governed_run.py",
+      "purpose": "Route validator/script/engine execution through Python -S launcher instead of plain python"
+    },
+    {
+      "path": "runtime/governance/PYTHON_RESILIENT_EXECUTION_POLICY_v1.json",
+      "purpose": "Activate runtime policy and bind lane launcher"
+    },
+    {
+      "path": "runtime/governance/pre_tool_execution_contract_gate_v1.py",
+      "purpose": "Accept canonical lane name python3_dash_S_stdlib"
+    }
+  ],
+  "verification_artifact": "receipts/python_workaround_patch/PYTHON_WORKAROUND_VERIFY_20260428T013740Z.txt"
+}

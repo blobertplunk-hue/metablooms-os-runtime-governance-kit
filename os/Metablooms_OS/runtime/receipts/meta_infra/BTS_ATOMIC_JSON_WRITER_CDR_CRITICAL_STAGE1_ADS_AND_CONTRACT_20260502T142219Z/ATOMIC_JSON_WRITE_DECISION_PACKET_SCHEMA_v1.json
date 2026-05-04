@@ -1,0 +1,71 @@
+{
+  "$id": "metablooms://schemas/AtomicJsonWriteDecisionPacket.v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "bytes_written": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "created_utc": {
+      "type": "string"
+    },
+    "decision": {
+      "enum": [
+        "ALLOW_WRITE_COMMITTED",
+        "DENY_SCHEMA_INVALID",
+        "DENY_PATH_ESCAPE",
+        "DENY_SYMLINK",
+        "DENY_SUFFIX",
+        "DENY_OVERWRITE_POLICY",
+        "DENY_NON_SERIALIZABLE",
+        "DENY_PARENT_CREATE",
+        "WRITE_IO_ERROR",
+        "WRITE_VERIFY_FAILED"
+      ],
+      "type": "string"
+    },
+    "error_class": {
+      "type": "string"
+    },
+    "failure_event_path": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "operation_id": {
+      "type": "string"
+    },
+    "policy": {
+      "type": "object"
+    },
+    "receipt_path": {
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "AtomicJsonWriteDecisionPacket.v1"
+    },
+    "sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "target_path": {
+      "type": "string"
+    },
+    "target_resolved": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "operation_id",
+    "created_utc",
+    "decision",
+    "target_path",
+    "target_resolved",
+    "receipt_path"
+  ],
+  "title": "AtomicJsonWriteDecisionPacket.v1",
+  "type": "object"
+}

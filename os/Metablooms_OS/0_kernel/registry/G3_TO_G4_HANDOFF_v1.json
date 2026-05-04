@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "created_at": 1777064935.8573391,
+  "from_stage": "G3_EXPORT_RECOVERY_VALIDATOR_REGRESSION_FIXTURES",
+  "to_stage": "G4_RUN_VALIDATOR_AGAINST_F7_EXPORT",
+  "status": "ready",
+  "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G3_EXPORT_RECOVERY_VALIDATOR_REGRESSION_FIXTURES_RECEIPT_v1.json",
+  "validator_script": "/mnt/data/Metablooms_OS_refined/0_kernel/scripts/export_recovery_proven_validator_v1.py",
+  "regression_results": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_REGRESSION_RESULTS_v1.json",
+  "governance_inventory": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/GOVERNANCE_USED_FOR_EXPORT_VALIDATOR_BUILD_v1.json",
+  "real_export_validation_allowed": true,
+  "export_allowed": false,
+  "cleanup_allowed": false,
+  "next_command": "EXECUTE G4 \u2014 RUN VALIDATOR AGAINST F7 EXPORT"
+}

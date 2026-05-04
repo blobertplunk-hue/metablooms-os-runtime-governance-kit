@@ -1,0 +1,21 @@
+{
+  "stage": "SANDBOX_ROUTER_BOOT_EXPORT_BINDING_AUDIT_3",
+  "timestamp_utc": "2026-04-30T13:52:49Z",
+  "heavy_export_repair_run": false,
+  "binding_audit": {
+    "boot_probe": "PASS",
+    "export_repair": "PASS",
+    "governed_execution": "PASS",
+    "downloadable_artifact_delivery": "PASS",
+    "hardlink_export_denied": "PASS"
+  },
+  "patch_scope": "metadata_only",
+  "node_enforcer_note": "Node-based enforcer previously passed smoke; this audit used timeout-safe python3 -S equivalent evaluation after same-turn node invocations showed shell timeout instability.",
+  "artifacts": {
+    "router_latest": "0_kernel/registry/sandbox_capability_router/SANDBOX_CAPABILITY_ROUTER_CARTRIDGE_LATEST.json",
+    "wiring_latest": "0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_WIRING_LATEST.json",
+    "shell_wrapper": "0_kernel/scripts/sandbox_router/enforce_sandbox_route.sh",
+    "node_enforcer": "0_kernel/lib/sandbox_router_enforcer_v1.mjs",
+    "python_policy_loader": "0_kernel/lib/sandbox_router_policy_loader_v1.py"
+  }
+}

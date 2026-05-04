@@ -1,0 +1,21 @@
+{
+  "schema_version": "PolicyDecision_v1",
+  "decision_id": "decision_1777681454860_8639649f",
+  "envelope_id": "stage6d_bts_v4_gate_wrapped_install_scaffold",
+  "stage_id": "STAGE6D_BTS_V4_GATE_WRAPPED_INSTALL_SCAFFOLD",
+  "decision": "ALLOW",
+  "reason_code": "LOW_RISK_BOUNDED_ACTION",
+  "rationale": "Envelope passed schema, method, path, SEE, approval, and bounded-budget checks.",
+  "decided_at_utc": "2026-05-02T00:24:14Z",
+  "enforced_by": "pre_tool_action_gate_v1",
+  "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/stage6d_install_scaffold.decision.json",
+  "safe_to_execute": true,
+  "required_next_action": "execute_action_and_write_action_receipt",
+  "matched_rules": [
+    "schema.required",
+    "path.safety",
+    "runaway.breaker",
+    "method.reliability"
+  ],
+  "envelope_sha256": "25bd631bf3bdc9425905f7d5cec723ed6a42f1e039914b37618e0e668a48d0aa"
+}

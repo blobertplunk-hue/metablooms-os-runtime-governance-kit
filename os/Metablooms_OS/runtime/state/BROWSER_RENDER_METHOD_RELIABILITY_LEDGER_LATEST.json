@@ -1,0 +1,81 @@
+{
+  "decision": "ALLOW_RENDER_PROXY_WITH_LIMITATION",
+  "environment": "android_chatgpt_sandbox",
+  "honesty_label": "sandbox_render_proxy",
+  "html_under_test": "/mnt/data/Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html",
+  "id": "BROWSER_RENDER_METHOD_RELIABILITY_LEDGER_STAGE2_v1",
+  "method_results": [
+    {
+      "artifacts": [
+        "/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE2_IMPLEMENT_RESOLVER_AND_LOCAL_METHOD_REPLAY_20260502T224609Z/local_replay/playwright_probe.py"
+      ],
+      "duration_seconds": 2.038,
+      "failure_class": "PLAYWRIGHT_BROWSER_BUNDLE_ABSENT",
+      "method_id": "playwright_managed_browser",
+      "retry_recommendation": "retry_only_if_conditions_change",
+      "skipped": false,
+      "success": false
+    },
+    {
+      "artifacts": [],
+      "duration_seconds": 5.016,
+      "failure_class": "CHROMIUM_SANDBOX_HANG",
+      "method_id": "system_chromium_headless",
+      "retry_recommendation": "skip_same_stage_after_timeout",
+      "skipped": false,
+      "success": false
+    },
+    {
+      "artifacts": [],
+      "duration_seconds": 5.004,
+      "failure_class": "XVFB_CHROMIUM_HANG",
+      "method_id": "xvfb_chromium",
+      "retry_recommendation": "skip_same_stage_after_timeout",
+      "skipped": false,
+      "success": false
+    },
+    {
+      "artifacts": [],
+      "duration_seconds": null,
+      "failure_class": "OTHER_BROWSER_ABSENT",
+      "method_id": "firefox_or_other_installed_browser",
+      "retry_recommendation": "retry_only_if_conditions_change",
+      "skipped": true,
+      "success": false
+    },
+    {
+      "artifacts": [],
+      "duration_seconds": null,
+      "failure_class": "WKHTMLTOIMAGE_ABSENT",
+      "method_id": "wkhtmltoimage_or_equivalent",
+      "retry_recommendation": "retry_only_if_conditions_change",
+      "skipped": true,
+      "success": false
+    },
+    {
+      "artifacts": [
+        "/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE2_IMPLEMENT_RESOLVER_AND_LOCAL_METHOD_REPLAY_20260502T224609Z/local_replay/weasyprint_proxy.pdf",
+        "/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE2_IMPLEMENT_RESOLVER_AND_LOCAL_METHOD_REPLAY_20260502T224609Z/local_replay/weasyprint_proxy.png"
+      ],
+      "duration_seconds": null,
+      "failure_class": "NONE",
+      "method_id": "weasyprint_pdf_png_proxy",
+      "retry_recommendation": "prefer",
+      "skipped": false,
+      "success": true
+    },
+    {
+      "artifacts": [],
+      "duration_seconds": null,
+      "failure_class": "NONE",
+      "method_id": "static_vpq_accessibility_checks",
+      "retry_recommendation": "allow_static_fallback",
+      "skipped": false,
+      "success": true
+    }
+  ],
+  "operational_rule": "Within sandbox turns, use Playwright/Chromium only through bounded probes; if they timeout or bundle is absent, do not block ordinary visual work when WeasyPrint proxy and static VPQ checks pass unless browser_screenshot_required is declared.",
+  "selected_method": "weasyprint_pdf_png_proxy",
+  "stage": "BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE2_IMPLEMENT_RESOLVER_AND_LOCAL_METHOD_REPLAY",
+  "timestamp_utc": "20260502T224609Z"
+}

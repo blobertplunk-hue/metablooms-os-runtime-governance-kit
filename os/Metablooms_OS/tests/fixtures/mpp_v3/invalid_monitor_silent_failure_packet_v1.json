@@ -1,0 +1,209 @@
+{
+  "created_at": "2026-05-01T00:10:57.535380+00:00",
+  "drift_indicators": [
+    {
+      "breached": false,
+      "drift_id": "DRIFT-001",
+      "metric_name": "drift_breach_count",
+      "observed": "0",
+      "route": "CONTINUE_NORMAL",
+      "threshold": "0"
+    }
+  ],
+  "feedback_routes": [
+    {
+      "blocking": false,
+      "condition": "all checks pass",
+      "evidence_required": [
+        "MONITOR_GATE_PASS"
+      ],
+      "route": "CONTINUE_NORMAL",
+      "route_id": "ROUTE-001",
+      "target_stage": "R21_OR_R23"
+    },
+    {
+      "blocking": false,
+      "condition": "new failure class or failed gate",
+      "evidence_required": [
+        "failed_event"
+      ],
+      "route": "DEBUGGING_R17",
+      "route_id": "ROUTE-002",
+      "target_stage": "MPP_R17"
+    },
+    {
+      "blocking": false,
+      "condition": "recurring failure or regression recurrence",
+      "evidence_required": [
+        "recurrence_evidence"
+      ],
+      "route": "ECL_R18",
+      "route_id": "ROUTE-003",
+      "target_stage": "MPP_R18"
+    },
+    {
+      "blocking": false,
+      "condition": "stale or insufficient research basis",
+      "evidence_required": [
+        "research_staleness"
+      ],
+      "route": "SEE_MMD_REFRESH",
+      "route_id": "ROUTE-004",
+      "target_stage": "MPP_R1_TO_R4"
+    },
+    {
+      "blocking": false,
+      "condition": "fitness drift below threshold",
+      "evidence_required": [
+        "drift_indicator"
+      ],
+      "route": "FIR_REEVALUATION_R19",
+      "route_id": "ROUTE-005",
+      "target_stage": "MPP_R19"
+    },
+    {
+      "blocking": true,
+      "condition": "silent failure, unrouteable signal, missing artifact, or sidecar mismatch",
+      "evidence_required": [
+        "blocking_violation"
+      ],
+      "route": "STOP_BLOCKED",
+      "route_id": "ROUTE-006",
+      "target_stage": "STOP_BLOCKED"
+    }
+  ],
+  "metric_definitions": [
+    {
+      "aggregation": "mean",
+      "measurement_window": "per stage",
+      "metric_id": "MET-001",
+      "name": "artifact_integrity_pass_rate",
+      "owner": "MPP_R20",
+      "route_on_breach": "STOP_BLOCKED",
+      "threshold": "1.0",
+      "unit": "ratio"
+    },
+    {
+      "aggregation": "mean",
+      "measurement_window": "per stage",
+      "metric_id": "MET-002",
+      "name": "gate_pass_rate",
+      "owner": "MPP_R20",
+      "route_on_breach": "DEBUGGING_R17",
+      "threshold": "1.0",
+      "unit": "ratio"
+    },
+    {
+      "aggregation": "sum",
+      "measurement_window": "per monitor packet",
+      "metric_id": "MET-003",
+      "name": "drift_breach_count",
+      "owner": "MPP_R20",
+      "route_on_breach": "FIR_REEVALUATION_R19",
+      "threshold": "0",
+      "unit": "count"
+    },
+    {
+      "aggregation": "sum",
+      "measurement_window": "per monitor packet",
+      "metric_id": "MET-004",
+      "name": "silent_failure_count",
+      "owner": "MPP_R20",
+      "route_on_breach": "STOP_BLOCKED",
+      "threshold": "0",
+      "unit": "count"
+    },
+    {
+      "aggregation": "mean",
+      "measurement_window": "per monitor packet",
+      "metric_id": "MET-005",
+      "name": "feedback_route_coverage",
+      "owner": "MPP_R20",
+      "route_on_breach": "STOP_BLOCKED",
+      "threshold": "1.0",
+      "unit": "ratio"
+    },
+    {
+      "aggregation": "mean",
+      "measurement_window": "per pipeline",
+      "metric_id": "MET-006",
+      "name": "rework_rate",
+      "owner": "MPP_R20",
+      "route_on_breach": "ECL_R18",
+      "threshold": "<=0.20",
+      "unit": "ratio"
+    }
+  ],
+  "monitor_summary": {
+    "artifact_persisted": true,
+    "decision": "STOP_BLOCKED",
+    "drift_breach_count": 0,
+    "event_count": 2,
+    "fail_event_count": 0,
+    "silent_failure_count": 1,
+    "unrouteable_signal_count": 0,
+    "warn_event_count": 0
+  },
+  "objective_id": "OBJ-MPP-R20",
+  "packet_id": "MONITOR-BAD-SILENT",
+  "result_hash": "59bbae5430c73f9cb6c01ced30e05de42358b97806c63f26742fcd206bdbdd48",
+  "schema_version": "mpp.monitor_telemetry_packet.v1",
+  "silent_failure_checks": [
+    {
+      "check_id": "SILENT-001",
+      "description": "PASS result must have persisted telemetry artifact and evidence-bound events.",
+      "evidence_refs": [
+        "valid_monitor_telemetry_packet_v1.json"
+      ],
+      "passed": false,
+      "route_on_fail": "STOP_BLOCKED"
+    },
+    {
+      "check_id": "SILENT-002",
+      "description": "Every failure/warning signal must have a valid feedback route.",
+      "evidence_refs": [
+        "feedback_routes"
+      ],
+      "passed": true,
+      "route_on_fail": "STOP_BLOCKED"
+    }
+  ],
+  "source_fir_packet_id": "FIR-R19-SMOKE",
+  "stage": "MONITOR",
+  "telemetry_context": {
+    "artifact_persistence": true,
+    "mode": "stage_monitor",
+    "run_id": "RUN-OBJ-MPP-R20",
+    "trace_id": "0467d2e73378a146b6e9d384ec6a3ef1"
+  },
+  "telemetry_events": [
+    {
+      "artifact_refs": [
+        "MPP_R19_FIR_FITNESS_INTEGRATION_SCHEMA_AND_GATE_20260501T024900Z.zip"
+      ],
+      "event_id": "EVT-001",
+      "event_type": "artifact_integrity",
+      "gate_refs": [
+        "FIR_FITNESS_GATE"
+      ],
+      "route": "CONTINUE_NORMAL",
+      "severity": "INFO",
+      "stage_ref": "R19",
+      "status": "PASS"
+    },
+    {
+      "artifact_refs": [
+        "MONITOR_TELEMETRY_PACKET_SCHEMA_v1.json"
+      ],
+      "event_id": "EVT-002",
+      "event_type": "gate_outcome",
+      "gate_refs": [
+        "MONITOR_FEEDBACK_GATE"
+      ],
+      "route": "CONTINUE_NORMAL",
+      "severity": "INFO",
+      "stage_ref": "R20",
+      "status": "PASS"
+    }
+  ]
+}

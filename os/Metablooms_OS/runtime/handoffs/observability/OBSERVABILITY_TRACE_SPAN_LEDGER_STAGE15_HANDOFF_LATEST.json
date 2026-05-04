@@ -1,0 +1,16 @@
+{
+  "artifact_type": "MB_STAGE_HANDOFF.v1",
+  "completed": [
+    "Promoted evidence recovery replay from exported ZIP",
+    "Audit query packs generated",
+    "Tracker deep-link section added",
+    "Stage 15 validator passed"
+  ],
+  "created_utc": "20260502T191509Z",
+  "final_export_sha256_sidecar": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_RECOVERY_REPLAY_AUDIT_QUERY_FINAL_AUTHORITY_LOCKED_20260502T191630Z.zip.sha256",
+  "final_export_zip": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_RECOVERY_REPLAY_AUDIT_QUERY_FINAL_AUTHORITY_LOCKED_20260502T191630Z.zip",
+  "finalized_utc": "20260502T191630Z",
+  "next_recommended_stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS",
+  "verdict": "PASS"
+}

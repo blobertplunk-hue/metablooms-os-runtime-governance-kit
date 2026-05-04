@@ -1,0 +1,12 @@
+{
+  "artifact_type": "METABLOOMS_STAGE_HANDOFF_v1",
+  "created_utc": "20260502T144702Z",
+  "full_authority_export": "/mnt/data/METABLOOMS_OS_BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE5_FULL_AUTHORITY_20260502T145012Z.zip",
+  "full_authority_sha256": "66bba2bd61cb9a4b8335025a05bfd18cb3772fa1fc687eaeab1bacac4016de1e",
+  "next_stage": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT",
+  "next_stage_scope": "Design an atomic append/log writer for JSONL/ledger append streams deferred by atomic JSON writer Stage4/5.",
+  "receipt": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT_20260502T145012Z/STAGE_RECEIPT.json",
+  "runtime_root": "/mnt/data/Metablooms_OS",
+  "stage": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT_20260502T145012Z",
+  "status": "PASS_WITH_WARNINGS"
+}

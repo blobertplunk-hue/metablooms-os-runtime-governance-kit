@@ -1,0 +1,15 @@
+== wrapper smoke ==
+{"exe": "/opt/pyvenv/bin/python3", "site_loaded": false}
+== governed_run references ==
+13:PYTHON_LANE = os.path.join(ROOT, "runtime/governance/python3_S_lane_exec_v1.sh")
+16:def python_lane_cmd(*args):
+17:    return [PYTHON_LANE, *args]
+24:    code, out, err = run(python_lane_cmd(VALIDATOR, script_path))
+36:    return run(python_lane_cmd(script_path))
+39:    cmd = python_lane_cmd(ENGINE, "--request", request_path)
+== policy status ==
+3:  "status": "active",
+40:      "launcher": "runtime/governance/python3_S_lane_exec_v1.sh",
+== gate lane aliases ==
+7:ALLOWED={"shell_coreutils","jq","node","python3_S","python3_dash_S_stdlib"}
+16:    if lane in {"python3_S","python3_dash_S_stdlib"}:

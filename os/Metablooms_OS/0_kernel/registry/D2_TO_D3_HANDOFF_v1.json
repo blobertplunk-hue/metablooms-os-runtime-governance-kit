@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "created_at": 1777037027.9699602,
+  "from_stage": "STAGE_D2_SEE_PACKET_VALIDATOR_IMPLEMENTATION",
+  "to_stage": "STAGE_D3_SEE_PACKET_VALIDATOR_INTEGRATION_PROOF",
+  "status": "ready",
+  "validator": "/mnt/data/Metablooms_OS_refined/0_kernel/scripts/see_packet_validator_v1.py",
+  "schema": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/SEE_PACKET_SCHEMA_v1.json",
+  "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/SEE_PACKET_VALIDATOR_IMPLEMENTATION_RECEIPT_v1.json",
+  "test_evidence_dir": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/see_packet_validator_test_evidence",
+  "integration_proof_allowed": true,
+  "stable_export_allowed": false,
+  "cleanup_allowed": false,
+  "next_command": "EXECUTE STAGE D3 \u2014 SEE PACKET VALIDATOR INTEGRATION PROOF"
+}

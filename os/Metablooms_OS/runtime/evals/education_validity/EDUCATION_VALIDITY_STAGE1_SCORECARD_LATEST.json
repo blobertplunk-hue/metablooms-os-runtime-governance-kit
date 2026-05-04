@@ -1,0 +1,51 @@
+{
+  "artifact_type": "EDUCATION_VALIDITY_STAGE1_SCORECARD_v1",
+  "baseline": {
+    "expected_decisions": [
+      "PASS",
+      "WARN",
+      "BLOCK"
+    ],
+    "false_pass_tolerance": 0,
+    "fixture_count": 12,
+    "minimum_accuracy": 0.9
+  },
+  "created_utc": "20260501T173600Z",
+  "criteria": [
+    {
+      "id": "EDU-GATE-001",
+      "name": "source_and_standards_alignment",
+      "weight": 0.1429
+    },
+    {
+      "id": "EDU-GATE-002",
+      "name": "assessment_fidelity",
+      "weight": 0.1429
+    },
+    {
+      "id": "EDU-GATE-003",
+      "name": "cognitive_demand_and_misconception_quality",
+      "weight": 0.1429
+    },
+    {
+      "id": "EDU-GATE-004",
+      "name": "udl_and_accessibility",
+      "weight": 0.1429
+    },
+    {
+      "id": "EDU-GATE-005",
+      "name": "emergent_bilingual_support",
+      "weight": 0.1429
+    },
+    {
+      "id": "EDU-GATE-006",
+      "name": "feedback_and_telemetry",
+      "weight": 0.1429
+    },
+    {
+      "id": "EDU-GATE-007",
+      "name": "classroom_deployability",
+      "weight": 0.1429
+    }
+  ]
+}

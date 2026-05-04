@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "artifact_type": "MB_TRACE_SPAN_EVENT_SCHEMA.v1",
+  "created_utc": "20260502T164238Z",
+  "purpose": "Canonical MetaBlooms trace/span event record schema for boot, governed stages, validators, receipts, handoffs, exports, and blockers.",
+  "alignment": {
+    "opentelemetry": "Event names identify event structure; attributes carry contextual detail; trace/span fields model operation causality.",
+    "w3c_trace_context": "trace_id/span_id/parent_span_id provide vendor-neutral trace identity concepts inside the artifact runtime.",
+    "slsa_provenance": "input_materials and output_artifacts bind where, when, and how artifacts were produced."
+  },
+  "required_fields": [
+    "schema_version",
+    "event_name",
+    "trace_id",
+    "span_id",
+    "parent_span_id",
+    "stage_id",
+    "event_kind",
+    "status",
+    "timestamp_utc",
+    "source_artifact",
+    "input_materials",
+    "output_artifacts",
+    "attributes"
+  ],
+  "status_enum": ["OK", "WARN", "ERROR", "BLOCKED"],
+  "event_kind_enum": ["boot", "stage", "validator", "receipt", "handoff", "export", "decision", "tracker", "tool", "unknown"],
+  "event_name_prefixes": ["metablooms.boot", "metablooms.stage", "metablooms.validator", "metablooms.receipt", "metablooms.handoff", "metablooms.export", "metablooms.decision", "metablooms.tracker", "metablooms.tool"],
+  "json_schema": {
+    "type": "object",
+    "additionalProperties": true,
+    "required": ["schema_version", "event_name", "trace_id", "span_id", "parent_span_id", "stage_id", "event_kind", "status", "timestamp_utc", "source_artifact", "input_materials", "output_artifacts", "attributes"],
+    "properties": {
+      "schema_version": {"const": "MB_TRACE_SPAN_EVENT.v1"},
+      "event_name": {"type": "string", "minLength": 1},
+      "trace_id": {"type": "string", "minLength": 16},
+      "span_id": {"type": "string", "minLength": 8},
+      "parent_span_id": {"type": ["string", "null"]},
+      "stage_id": {"type": "string", "minLength": 1},
+      "event_kind": {"enum": ["boot", "stage", "validator", "receipt", "handoff", "export", "decision", "tracker", "tool", "unknown"]},
+      "status": {"enum": ["OK", "WARN", "ERROR", "BLOCKED"]},
+      "timestamp_utc": {"type": "string", "minLength": 10},
+      "source_artifact": {"type": "string", "minLength": 1},
+      "input_materials": {"type": "array", "items": {"type": "string"}},
+      "output_artifacts": {"type": "array", "items": {"type": "string"}},
+      "attributes": {"type": "object"}
+    }
+  },
+  "fail_closed_rules": [
+    "Every JSONL row must parse as JSON.",
+    "Every row must include canonical fields and schema_version MB_TRACE_SPAN_EVENT.v1.",
+    "Every ERROR or BLOCKED row must include attributes.error, attributes.blocker, or attributes.reason.",
+    "Every non-null parent_span_id must reference an existing span_id in the same ledger.",
+    "Derivative index and causal graph must be regenerated from the raw ledger, not hand-authored summaries."
+  ]
+}

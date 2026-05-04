@@ -1,0 +1,47 @@
+{
+  "artifact_type": "CDRCriticalGateResultsStage5.v1",
+  "created_utc": "2026-05-02T15:20:58Z",
+  "gates": [
+    {
+      "gate": "Stage4 handoff loaded",
+      "result": "PASS"
+    },
+    {
+      "gate": "Stage5 policy installed",
+      "result": "PASS"
+    },
+    {
+      "gate": "Test/eval append harness scan",
+      "result": "PASS"
+    },
+    {
+      "gate": "Compile critical append/export files",
+      "result": "PASS"
+    },
+    {
+      "gate": "Append writer fixture harness",
+      "result": "PASS"
+    },
+    {
+      "gate": "Stage5 callsite policy gate",
+      "result": "PASS"
+    },
+    {
+      "gate": "Portable boot verify repaired and passing",
+      "result": "PASS"
+    },
+    {
+      "gate": "Runtime starter smoke root",
+      "result": "PASS"
+    },
+    {
+      "gate": "Full authority ZIP integrity",
+      "result": "PASS"
+    },
+    {
+      "gate": "ZIP runtime starter smoke",
+      "result": "PASS"
+    }
+  ],
+  "stage": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT"
+}

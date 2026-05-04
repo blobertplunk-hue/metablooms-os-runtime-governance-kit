@@ -1,0 +1,13 @@
+{
+  "artifact_type": "UX_OPERATOR_SURFACE_STAGE_2_HANDOFF_v1",
+  "created_utc": "20260501T103500Z",
+  "latest_stage": "IMPLEMENT_UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE_STAGE_2_RUN_STAGE_AND_DOCTOR_COMMANDS",
+  "next_recommended_stage": "IMPLEMENT_UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE_STAGE_3_STAGE_RUNNER_CONTRACT_AND_TRACKER_PREVIEW",
+  "required_start": [
+    "verify current authority zip and sidecar",
+    "extract or stream-patch from latest authority",
+    "run mb doctor --json",
+    "run one bounded stage only"
+  ],
+  "verdict": "READY_FOR_NEXT_BOUNDED_STAGE"
+}

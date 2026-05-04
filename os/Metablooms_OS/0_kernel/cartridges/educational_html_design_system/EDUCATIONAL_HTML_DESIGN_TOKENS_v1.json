@@ -1,0 +1,14 @@
+{
+  "schema_version": "v1",
+  "provenance": "RECONSTRUCTED_FROM_CHAT_SUMMARY_AND_BASE_AUTHORITY_20260503",
+  "css_custom_properties": [
+    "--mb-color-bg",
+    "--mb-color-surface",
+    "--mb-color-text",
+    "--mb-color-focus",
+    "--mb-space-1",
+    "--mb-radius-card",
+    "--mb-font-base",
+    "--mb-touch-target-min"
+  ]
+}

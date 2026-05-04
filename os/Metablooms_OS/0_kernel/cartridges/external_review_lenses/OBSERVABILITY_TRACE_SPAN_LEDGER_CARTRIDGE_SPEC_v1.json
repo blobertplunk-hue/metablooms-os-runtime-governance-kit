@@ -1,0 +1,41 @@
+{
+  "artifact_type": "METABLOOMS_GOVERNED_CARTRIDGE_SPEC_v1",
+  "cartridge_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_CARTRIDGE",
+  "created_utc": "20260501T040110Z",
+  "deny_conditions": [
+    "chat_claim_without_artifact",
+    "validator_described_but_not_executable",
+    "missing_receipt_or_handoff",
+    "score_increase_without_evidence",
+    "export_missing_declared_outputs"
+  ],
+  "first_implementation_stage": "IMPLEMENT_OBSERVABILITY_TRACE_SPAN_LEDGER_CARTRIDGE_STAGE_1_DESIGN_SCHEMA_FIXTURES_VALIDATOR",
+  "inputs": [
+    "current_runtime_root",
+    "authority_pointer",
+    "latest_boot_receipt",
+    "latest_export_validation",
+    "SEE_artifacts",
+    "CE_artifacts"
+  ],
+  "lens": "Observability",
+  "mandatory_gates": [
+    "fresh_boot_or_accepted_warning_gate",
+    "artifact_location_verification_gate",
+    "source_evidence_binding_gate",
+    "executable_validator_gate",
+    "regression_fixture_gate",
+    "receipt_and_handoff_gate",
+    "whole_os_export_inclusion_gate"
+  ],
+  "outputs": [
+    "0_kernel/registry/external_review/OBSERVABILITY_TRACE_SPAN_LEDGER_CARTRIDGE_RESULTS_v1.json",
+    "runtime/evals/external_review/OBSERVABILITY_TRACE_SPAN_LEDGER_CARTRIDGE_VALIDATION_v1.json",
+    "runtime/receipts/external_review/OBSERVABILITY_TRACE_SPAN_LEDGER_CARTRIDGE_RECEIPT_v1.json"
+  ],
+  "priority": "P1",
+  "problem_statement": "No unified trace/span schema, searchable execution timeline, failure clustering, or cross-stage causal graph.",
+  "source_lens": "langsmith_observability",
+  "status": "SPEC_CREATED_IMPLEMENTATION_PENDING",
+  "success_definition": "MetaBlooms improves Observability score by at least 1.0 point and proves the improvement with executable validators, receipts, and replayable fixtures."
+}

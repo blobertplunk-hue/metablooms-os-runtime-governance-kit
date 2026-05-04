@@ -1,0 +1,74 @@
+{
+  "artifacts": [
+    {
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_BOOT_GATE_v1.json",
+      "sha256": "7b65a5841c32ea3f2d2a1af1314ee1644737999ced80a895a1b37498c524c555",
+      "size_bytes": 1015
+    },
+    {
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_STAGE_GATE_v1.json",
+      "sha256": "b9235e974616fab4f93de361385a4529910b8e5f8d2ad230cb0b6ca3e4bb3fef",
+      "size_bytes": 743
+    },
+    {
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_EVIDENCE_GATE_v1.json",
+      "sha256": "b2a69bc98a13c1846146a4ce1e670d98315ea6480d42a7ab0900da82a8efeef4",
+      "size_bytes": 752
+    },
+    {
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_STOP_GATE_v1.json",
+      "sha256": "1940286875fa28af08db44369487a0b598d86b8d053bb71e918ffc15e61108c2",
+      "size_bytes": 589
+    },
+    {
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_GATE_VALIDATOR_v1.py",
+      "sha256": "2650f712be8bd8976d6c4d9ec2132da0053ba3eb951c90414928b0c84431ae5a",
+      "size_bytes": 7485
+    },
+    {
+      "path": "1_governance/tracker/TRACKER_GATE_ENFORCEMENT_POLICY_v1.md",
+      "sha256": "b6b3a9c38827b1c8273b88cea061b3d47b36704f39e8f663fb7060763af22e90",
+      "size_bytes": 962
+    },
+    {
+      "path": "receipts/inline_project_tracker/TRACKER_3_20260429T111546Z/TRACKER_3_EXTERNAL_CHECK.md",
+      "sha256": "29a0acf5ea53c212f0652092863f2b7b098823d7529a2f1232571da7d405cc71",
+      "size_bytes": 731
+    },
+    {
+      "path": "receipts/inline_project_tracker/TRACKER_3_20260429T111546Z/TRACKER_3_GATE_VALIDATION_REPORT.json",
+      "sha256": "879e47b65c2c9654838a017b9ec7e4e497d9af48a135258d3d0063121ca77702",
+      "size_bytes": 2648
+    },
+    {
+      "path": "receipts/inline_project_tracker/TRACKER_3_20260429T111546Z/TRACKER_3_RENDERED_PREVIEW.txt",
+      "sha256": "bd51719324a7dd7d0c95d80e024dd73c7001d94956d2066daa6b62a101c7fd64",
+      "size_bytes": 955
+    },
+    {
+      "path": "runtime/state/TRACKER_STATE_v1.json",
+      "sha256": "9d931ba6c4f5476aac68d4a4a51047189c8bbb4eeefcd6b9b933e45caa867409",
+      "size_bytes": 6308
+    }
+  ],
+  "authorized_by": "receipts/inline_project_tracker/TRACKER_2_20260429T111207Z/TRACKER_2_HANDOFF.json",
+  "blocked": false,
+  "external_check": {
+    "json_schema_required": "required fields must be explicit, not inferred",
+    "wcag_status_messages": "status/progress/error messages should be text-accessible without context changes"
+  },
+  "receipt_id": "TRACKER_3_RECEIPT_20260429T111546Z",
+  "root": "/mnt/data/Metablooms_OS",
+  "scope": "boot/stage/evidence/stop gate artifacts only; stopped before handoff-update wiring",
+  "stage": "TRACKER-3_BOOT_AND_STAGE_GATES",
+  "status": "PASS",
+  "stop_before": "TRACKER-4_HANDOFF_UPDATE_WIRING",
+  "timestamp_utc": "20260429T111546Z",
+  "validation": {
+    "done_blocked_evidence_rejection": "PASS",
+    "existing_state_load_before_action": "PASS",
+    "gate_files_present": "PASS",
+    "missing_state_blocking": "PASS",
+    "top_marker_after_load": "PASS"
+  }
+}

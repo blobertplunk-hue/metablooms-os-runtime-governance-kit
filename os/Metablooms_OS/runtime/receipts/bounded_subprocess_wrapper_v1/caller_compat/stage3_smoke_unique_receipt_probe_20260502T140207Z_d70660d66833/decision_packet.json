@@ -1,0 +1,44 @@
+{
+  "argv_redacted": [
+    "python3",
+    "-S",
+    "-c",
+    "print(2)"
+  ],
+  "argv_resolved": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "-c",
+    "print(2)"
+  ],
+  "artifact_type": "METABLOOMS_BOUNDED_COMMAND_DECISION_PACKET_v1",
+  "attempts": [
+    {
+      "attempt_index": 0,
+      "elapsed_ms": 24,
+      "returncode": 0,
+      "started_utc": "20260502T140207Z",
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_truncated": false,
+      "stdout": "2\n",
+      "stdout_bytes": 2,
+      "stdout_sha256": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+      "stdout_truncated": false,
+      "timeout_seconds": 5.0
+    }
+  ],
+  "created_utc": "20260502T140207Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision_packet_path": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/stage3_smoke_unique_receipt_probe_20260502T140207Z_d70660d66833/decision_packet.json",
+  "failure_class": null,
+  "failure_event_path": null,
+  "operation_type": "unique_receipt_probe",
+  "policy_matches": [],
+  "pre_spawn_receipt_path": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/stage3_smoke_unique_receipt_probe_20260502T140207Z_d70660d66833/pre_spawn_receipt.json",
+  "receipt_dir": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/stage3_smoke_unique_receipt_probe_20260502T140207Z_d70660d66833",
+  "result_class": "ALLOW_SUCCESS",
+  "stage": "stage3_smoke",
+  "total_elapsed_ms": 25
+}

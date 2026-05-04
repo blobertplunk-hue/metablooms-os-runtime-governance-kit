@@ -1,0 +1,39 @@
+{
+  "receipt_type": "EXTERNAL_REUSE_SCAN_GATE_DECISION",
+  "version": "1.0.0",
+  "decision_id": "fa8215d7-73fe-419c-a4a1-e6f4d63a1c72",
+  "created_utc": "2026-04-28T03:03:21.971676Z",
+  "stage_name": "R6_TEST_STALE_EVIDENCE",
+  "asset_type": "gate",
+  "asset_name": "external_reuse_scan_gate",
+  "reuse_decision": "compose_existing",
+  "result": "deny",
+  "blocks": [
+    "evidence_items[0] is stale (>180 days)",
+    "evidence_items[1] is stale (>180 days)"
+  ],
+  "warns": [],
+  "input_summary": {
+    "evidence_count": 2,
+    "candidate_count": 2,
+    "evidence_bundle": {
+      "path": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/fixtures/R6_external_reuse_scan_evidence_stale.json",
+      "sha256": "2b623171364af61fdfec60f400f68eaf221a451e6a3c6bb3c9b5d79fb0945501",
+      "resolved_path": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/fixtures/R6_external_reuse_scan_evidence_stale.json",
+      "actual_sha256": "2b623171364af61fdfec60f400f68eaf221a451e6a3c6bb3c9b5d79fb0945501"
+    },
+    "target_artifact": {
+      "path": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/fixtures/R6_target_artifact_fixture.json",
+      "sha256": "8c068a02b251edb3dc314ed22a3d8c092b62a4bc424cc15950e5b8617ccfb53e",
+      "resolved_path": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/fixtures/R6_target_artifact_fixture.json",
+      "actual_sha256": "8c068a02b251edb3dc314ed22a3d8c092b62a4bc424cc15950e5b8617ccfb53e"
+    }
+  },
+  "policy_basis": [
+    "OPA-style decision_id/input/result audit log",
+    "SLSA-style artifact/provenance expectation checks",
+    "JSON Schema annotations are not enforcement"
+  ],
+  "receipt_path": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R6_decisions/P0A_EXTERNAL_REUSE_SCAN_R6_TEST_STALE_EVIDENCE_fa8215d7-73fe-419c-a4a1-e6f4d63a1c72.json",
+  "receipt_sha256": "141593c4970733996dd1c18289dd2e7da4b9606643cb33fe36ed7eeea043fe43"
+}

@@ -1,0 +1,11 @@
+{
+  "from_stage": "MPP_R4_MMD_GAP_LEDGER_VALIDATOR_AND_ESCALATION_GATE",
+  "to_stage": "MPP_R5_DRS_DECISION_RECORD_VALIDATOR_AND_RESEARCH_TO_DECISION_GATE",
+  "status": "READY",
+  "required_inputs": [
+    "overlay/0_kernel/mpp_v3/mpp_v3_mmd_gap_ledger_validator_v1.py",
+    "overlay/tests/fixtures/mpp_v3/valid_mmd_gap_ledger_pass_v1.json",
+    "overlay/tests/fixtures/mpp_v3/valid_mmd_gap_ledger_blocked_v1.json"
+  ],
+  "notes": "R4 validates MMD ledgers and blocks downstream stages when critical or blocking gaps remain open."
+}

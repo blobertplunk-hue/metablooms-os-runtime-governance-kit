@@ -1,0 +1,10 @@
+{
+  "artifact_type": "NextBuildDecisionPointer.v1",
+  "created_utc": "20260502T163517Z",
+  "decision": "OBSERVABILITY_TRACE_SPAN_LEDGER_CARTRIDGE",
+  "recommended_next_stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION",
+  "receipt_dir": "/mnt/data/Metablooms_OS/runtime/receipts/roadmap_decision/NEXT_BUILD_INTERNAL_RESEARCH_SEE_CE_DECISION_20260502T163517Z",
+  "see_packet": "/mnt/data/Metablooms_OS/runtime/receipts/roadmap_decision/NEXT_BUILD_INTERNAL_RESEARCH_SEE_CE_DECISION_20260502T163517Z/SEE_PACKET.json",
+  "ce_synthesis": "/mnt/data/Metablooms_OS/runtime/receipts/roadmap_decision/NEXT_BUILD_INTERNAL_RESEARCH_SEE_CE_DECISION_20260502T163517Z/CE_SYNTHESIS.json",
+  "internal_os_evidence": "/mnt/data/Metablooms_OS/runtime/receipts/roadmap_decision/NEXT_BUILD_INTERNAL_RESEARCH_SEE_CE_DECISION_20260502T163517Z/INTERNAL_OS_EVIDENCE.json"
+}

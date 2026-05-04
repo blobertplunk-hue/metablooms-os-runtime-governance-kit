@@ -1,0 +1,40 @@
+{
+  "stage": "SANDBOX_TOOL_ROUTE_RESEARCH",
+  "kind": "SEE",
+  "purpose": "Research reliable archive validation/extraction routes for MetaBlooms OS boot in the ChatGPT Linux sandbox.",
+  "web_run_sources": [
+    {
+      "source_id": "turn508689search2",
+      "claim": "Info-ZIP UnZip can list, test, and extract ZIP archives and recreates stored directory structure by default."
+    },
+    {
+      "source_id": "turn508689search1",
+      "claim": "libarchive/bsdtar supports ZIP and other archive formats, uses streaming architecture, and includes command-line tools."
+    },
+    {
+      "source_id": "turn508689search6",
+      "claim": "7-Zip command-line supports list, test, and extract-with-full-paths commands."
+    },
+    {
+      "source_id": "turn508689search5",
+      "claim": "7-Zip t command tests archive integrity."
+    },
+    {
+      "source_id": "turn508689search4",
+      "claim": "7-Zip x preserves directory structure and -o sets the output directory."
+    }
+  ],
+  "sandbox_probe_summary": {
+    "available": ["/usr/bin/unzip", "/usr/bin/zip", "/usr/bin/tar", "/opt/pyvenv/bin/python3", "node", "jq", "sha256sum", "timeout", "find", "rsync", "cp", "mv", "stat", "du"],
+    "not_found_in_path": ["7z", "7za", "bsdtar"],
+    "python_mode": "python3 -S available and preferred for stdlib-only extraction/validation",
+    "zipfile_available": true
+  },
+  "observed_runtime_state": {
+    "zip_sha256_verified": true,
+    "zip_entry_count": 2479,
+    "extracted_root": "/mnt/data/Metablooms_OS",
+    "extracted_file_count": 2479,
+    "boot_executor_result": "PASS_WITH_WARNINGS due only to git_dir_missing"
+  }
+}

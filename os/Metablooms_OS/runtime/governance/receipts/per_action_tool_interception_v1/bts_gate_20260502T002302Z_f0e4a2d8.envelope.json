@@ -1,0 +1,30 @@
+{
+  "schema_version": "ToolCallEnvelope_v1",
+  "envelope_id": "bts_gate_20260502T002302Z_f0e4a2d8",
+  "stage_id": "BTS_BOOT_RECEIPT",
+  "action_type": "filesystem",
+  "tool_name": "write_bts_boot_receipt",
+  "command_summary": "",
+  "intent": "Write BTS boot receipt",
+  "risk_tier": "low",
+  "requested_at_utc": "2026-05-02T00:23:02.789687Z",
+  "requires_see": false,
+  "see_evidence_refs": [],
+  "limits": {
+    "timeout_seconds": 10,
+    "max_files": 1,
+    "max_bytes": 260,
+    "max_steps": 1
+  },
+  "artifacts": {
+    "read_paths": [],
+    "write_paths": [
+      "/mnt/data/Metablooms_OS/_bts/BOOT_RECEIPT_STAGE6D-FIXTURE.json"
+    ],
+    "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/bts_gate_20260502T002302Z_f0e4a2d8.decision.json"
+  },
+  "metadata": {
+    "caller": "BTS_v4_gate_wrapped",
+    "ledger_surface": "BTS_V4_CANONICAL_RECEIPT_ENGINE"
+  }
+}

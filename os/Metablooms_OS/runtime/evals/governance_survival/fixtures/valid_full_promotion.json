@@ -1,0 +1,24 @@
+{
+  "CE_artifact": "research/CE/H0C2_GOVERNANCE_SURVIVAL_CE_SYNTHESIS_v1.json",
+  "SEE_artifact": "research/SEE/H0C2_GOVERNANCE_SURVIVAL_SEE_PACKET_v1.json",
+  "SEE_completed": true,
+  "SEE_required": true,
+  "behavior_tests_passed": true,
+  "cartridge_execution_requested": true,
+  "checksum_sidecar_written": true,
+  "complete_os_export_written": true,
+  "duplicate_free_zip_validation_passed": true,
+  "final_response": true,
+  "handoff_artifact": "handoffs/H0C2_HANDOFF.json",
+  "promotion_requested": true,
+  "receipt_artifact": "receipts/H0C2_RECEIPT.json",
+  "router_decision": "os_governance",
+  "targeted_fresh_extract_smoke_passed": true,
+  "tool_selection_packet": "packets/tool_selection.json",
+  "tool_use_requested": true,
+  "tracker_preview": "[tracker]",
+  "web_run_evidence": [
+    "turn523351search0"
+  ],
+  "zip_integrity_test_passed": true
+}

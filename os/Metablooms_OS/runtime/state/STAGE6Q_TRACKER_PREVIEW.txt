@@ -1,0 +1,11 @@
+TRACKER PREVIEW — STAGE6Q_LEGACY_EXECUTOR_RETROFIT_AUDIT
+Status: PASS_WITH_REMEDIATION_QUEUE
+Scanned files: 494
+Risky executor-like files: 264
+Open active bypass candidates: 242
+Partial governance review required: 16
+Governed/wrapper paths: 0
+Legacy/quarantined references: 6
+Repair performed: NO — audit-only stage.
+Authority export: NOT PERFORMED.
+Next best stage: STAGE6Q_REPAIR_OR_STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS depending on whether you want to close audit findings before tracing.

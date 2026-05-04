@@ -1,0 +1,12 @@
+{
+  "controls_provided": [
+    "tool_universe_resolver_selection",
+    "bts_tool_evaluation",
+    "pre_tool_action_gate",
+    "bts_wrapped_executor",
+    "post_tool_result_validation",
+    "bts_commit"
+  ],
+  "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_STAGE_FINALIZATION_HOOK_v1.py",
+  "schema": "LegacyExecutorInvocationPacket_v1"
+}

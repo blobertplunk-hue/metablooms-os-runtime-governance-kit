@@ -1,0 +1,25 @@
+{
+  "artifact_type": "STAGE_RECEIPT.v1",
+  "changed_artifacts": [
+    "MB_LIVE_BOOT_GUIDANCE_SCHEMA_v1.json",
+    "MB_LIVE_BOOT_GUIDANCE_EXTRACTOR_POLICY_v1.json",
+    "observability_live_boot_guidance_extractor_v1.py",
+    "validate_observability_trace_span_ledger_stage9_live_boot_guidance_v1.py",
+    "LIVE_BOOT_GUIDANCE_LATEST.json",
+    "LIVE_BOOT_GUIDANCE_LATEST.md",
+    "OPEN_OPERATOR_VISUAL_TRACKER.html"
+  ],
+  "created_utc": "20260502T174908Z",
+  "issues": [
+    "stage9_validator_failed",
+    "stage8_validator_failed"
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS",
+  "validation_summary": {
+    "new_chat": "ALLOW",
+    "stage8": "FAIL",
+    "stage9": "FAIL",
+    "wrapper": "ALLOW"
+  },
+  "verdict": "FAIL"
+}

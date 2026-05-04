@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-04-28T03:11:05Z",
+  "decision_id": "R7-9f9ccc0aafbf3023",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"completed_stage\": \"R7_USEFULNESS_VALIDATOR_PROMOTION\", \"created_utc\": \"2026-04-28T03:11:05Z\", \"handoff_type\": \"REFRACTOR_PROGRAM_STAGE_HANDOFF\", \"next_stage\": \"R8_PYTHON_HEALTH_GOVERNANCE_PROMOTION\", \"notes\": [\"USEFULNESS_SURFACE_VALIDATION is active in gate registry\", \"P0PY_PYTHON_HEALTH remains deferred until R8\"], \"required_next_inputs\": [\"R7_VERIFY_RECEIPT_20260428T031105Z.json\", \"runtime/governance/registries/gate_registry_v1.json\", \"0_kernel/scripts/usefulness_surface_validator_v1.py\"], \"verdict\": \"PASS\"}",
+  "reasons": [],
+  "record_id": "R7_HANDOFF_20260428T031105Z",
+  "record_kind": "handoff",
+  "result": "pass",
+  "source_record": {
+    "path": "receipts/refactor_program/R7_HANDOFF_20260428T031105Z.json",
+    "sha256": "9f9ccc0aafbf30230696c6500d4f1dd518d93a290dd5d054b0ef1332afc92194",
+    "size_bytes": 563
+  },
+  "span_id": "6613806d9626b207",
+  "stage_id": "R7",
+  "summary": "Canonical wrapper for R7_HANDOFF_20260428T031105Z.json",
+  "trace_id": "6a2333db3729073553628b95ad7ac3b9"
+}

@@ -1,0 +1,13 @@
+{
+  "artifact_type": "StageHandoff.v1",
+  "contract": "/mnt/data/Metablooms_OS/0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+  "created_utc": "2026-05-02T16:29:45Z",
+  "current_authority_pointer": "/mnt/data/Metablooms_OS/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+  "new_chat_validator_decision": "ALLOW",
+  "operator_tracker": "/mnt/data/Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html",
+  "receipt": "/mnt/data/Metablooms_OS/runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_AMENDED_20260502T162944Z/STAGE_RECEIPT.json",
+  "runtime_starter_smoke_decision": "ALLOW",
+  "stage": "STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_AMENDED",
+  "status": "PASS",
+  "stop_rule": "Stop after amended validation receipt; wait for next user-requested bounded stage."
+}

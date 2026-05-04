@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "artifacts": [
+    {
+      "artifact_id": "CURRENT_WORKING_BASELINE_POINTER_v1.json",
+      "path": "0_kernel/state/CURRENT_WORKING_BASELINE_POINTER_v1.json",
+      "type": "current_pointer",
+      "status": "active"
+    },
+    {
+      "artifact_id": "OLD_POINTER.json",
+      "path": "old",
+      "type": "current_pointer",
+      "status": "active"
+    }
+  ]
+}

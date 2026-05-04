@@ -1,0 +1,27 @@
+{
+  "cmd": [
+    "/opt/pyvenv/bin/python3",
+    "/mnt/data/Metablooms_OS/runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+    "--root",
+    "/mnt/data/Metablooms_OS",
+    "--json"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "stdout": {
+    "artifact_type": "MB_RUNTIME_STARTER_SMOKE_CONTRACT_WRAPPER_RESULT.v1",
+    "created_utc": "20260502T174933Z",
+    "decision": "ALLOW",
+    "method_reliability_lesson": "METHOD_RUNTIME_STARTER_SMOKE_CLI_SHAPE_v1",
+    "target_shape": "--root",
+    "underlying_gate": "runtime/governance/runtime_starter_smoke_v1.py",
+    "underlying_result": {
+      "decision": "ALLOW",
+      "invalid_json": [],
+      "missing": [],
+      "mode": "root",
+      "path": "/mnt/data/Metablooms_OS",
+      "read_errors": []
+    }
+  }
+}

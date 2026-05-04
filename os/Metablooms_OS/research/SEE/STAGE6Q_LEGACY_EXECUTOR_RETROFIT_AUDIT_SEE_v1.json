@@ -1,0 +1,38 @@
+{
+  "created_at_utc": "2026-05-02T03:16:52.674137Z",
+  "derived_controls": [
+    "all executable tool paths should have pre-action and post-result guards",
+    "tool calls and guardrails should be traceable",
+    "legacy executors are supply-chain and tool-misuse risk surfaces",
+    "audit-only scans must not mutate executor logic"
+  ],
+  "schema": "SEE_Packet_v1",
+  "sources": [
+    {
+      "claim": "OpenAI Agents documentation includes guardrails/human review, results/state, tools/integrations and observability surfaces.",
+      "id": "turn239252search0",
+      "url": "https://developers.openai.com/api/docs/guides/agents"
+    },
+    {
+      "claim": "OpenAI Agents SDK tool guardrails wrap function tools and validate/block tool calls before and after execution.",
+      "id": "turn239252search3",
+      "url": "https://openai.github.io/openai-agents-python/guardrails/"
+    },
+    {
+      "claim": "OpenAI Agents SDK tracing records agent events including tool calls, handoffs, guardrails, and custom events.",
+      "id": "turn239252search9",
+      "url": "https://openai.github.io/openai-agents-python/tracing/"
+    },
+    {
+      "claim": "OWASP Top 10 for Agentic Applications 2026 is the reference risk model for agentic applications.",
+      "id": "turn239252search1",
+      "url": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/"
+    },
+    {
+      "claim": "LangGraph durable execution persists workflow step state to resume without reprocessing completed work.",
+      "id": "turn239252search2",
+      "url": "https://docs.langchain.com/oss/python/langgraph/durable-execution"
+    }
+  ],
+  "stage_id": "STAGE6Q_LEGACY_EXECUTOR_RETROFIT_AUDIT"
+}

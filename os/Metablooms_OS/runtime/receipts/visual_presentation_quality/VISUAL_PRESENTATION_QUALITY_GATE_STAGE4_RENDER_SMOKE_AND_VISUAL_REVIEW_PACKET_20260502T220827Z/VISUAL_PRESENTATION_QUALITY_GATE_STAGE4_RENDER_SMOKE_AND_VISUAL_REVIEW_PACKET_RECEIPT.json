@@ -1,0 +1,27 @@
+{
+  "authority_basis": "Booted PAC7 OS in /mnt/data/Metablooms_OS; Stage 3 repair2 handoff authorized Stage 4.",
+  "completed_work": [
+    "Reloaded Stage 3 artifacts",
+    "Re-ran VPQ valid/invalid fixtures",
+    "Ran operator tracker static smoke",
+    "Attempted Chromium/Playwright render methods",
+    "Rendered tracker through WeasyPrint PDF and PNG proxy",
+    "Built visual review packet",
+    "Recorded tool reliability failure for python3 -S/jsonschema and browser rendering limitations"
+  ],
+  "created_utc": "2026-05-02T22:15:10Z",
+  "next_stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE5_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF",
+  "root": "/mnt/data/Metablooms_OS",
+  "schema_version": "metablooms_stage_receipt.v1",
+  "stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE4_RENDER_SMOKE_AND_VISUAL_REVIEW_PACKET",
+  "stop_rule": "Stop after Stage 4 receipt/handoff; do not export until user authorizes Stage 5.",
+  "test_summary": {
+    "browser_render_smoke": "BLOCKED_BY_SANDBOX_TOOL_RELIABILITY",
+    "tracker_static_smoke": "PASS",
+    "vpq_invalid_default_browser": "DENY",
+    "vpq_valid_html": "ALLOW",
+    "vpq_valid_operator_tracker": "ALLOW",
+    "weasyprint_render_smoke": "PASS"
+  },
+  "verdict": "PASS_WITH_BROWSER_RENDER_LIMITATION"
+}

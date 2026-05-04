@@ -1,0 +1,41 @@
+{
+  "artifact_id": "invalid_missing_visual_dimension",
+  "block_count": 1,
+  "blocks": [
+    "Required dimension visual_presentation missing for artifact_type=html_activity"
+  ],
+  "decision_id": "130d6dcc-f2a2-4ba5-9806-4750830d4214",
+  "input_summary": {
+    "declaration_path": "/mnt/data/Metablooms_OS/tests/fixtures/usefulness_surface/invalid_usefulness_html_activity_missing_visual_presentation_v1.json",
+    "declaration_sha256": "6b61f84f67b9942675b4d7b02ad46833b4397cd3ce74cbeb05bdb904d4f83bc1"
+  },
+  "policy_path": "metablooms/governance/usefulness_surface/allow",
+  "receipt_path": "/mnt/data/Metablooms_OS/runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE3_MPP_USS_AND_HTML_CARTRIDGE_BINDING_FINAL_20260502T220510Z/uss_decisions/USEFULNESS_SURFACE_DECISION_1777759532965_130d6dcc.json",
+  "receipt_sha256": "3e7a57997b2c6d6d804f6a964ef31eedb17b8d4157749bed99418321ac91cc0d",
+  "receipt_type": "USEFULNESS_SURFACE_GATE_DECISION",
+  "result": "DENY",
+  "schema_version": "1.2-vpq-stage3",
+  "summary": {
+    "artifact_type": "html_activity",
+    "covered_count": 5,
+    "covered_dimensions": [
+      "instruction",
+      "misconception_diagnosis",
+      "practice",
+      "realtime_feedback",
+      "teacher_telemetry"
+    ],
+    "not_applicable": [],
+    "required_for_type": [
+      "instruction",
+      "practice",
+      "realtime_feedback",
+      "teacher_telemetry",
+      "misconception_diagnosis",
+      "visual_presentation"
+    ]
+  },
+  "timestamp_utc": "2026-05-02T22:05:32Z",
+  "warn_count": 0,
+  "warnings": []
+}

@@ -1,0 +1,10 @@
+{
+  "bundle": "runtime/stage_bundles/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE1_SPEC_AND_FIXTURES_20260502T195918Z_DELTA.zip",
+  "bundle_bytes": 19372,
+  "bundle_sha256": "00abcca34eb8529a085f825370146d0380a41dcd17757fa78037a5f3257de38d",
+  "created_at": "2026-05-02T19:59:18.342997+00:00",
+  "output_count": 14,
+  "receipt": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE1_SPEC_AND_FIXTURES_20260502T195918Z/STAGE_RECEIPT.json",
+  "stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE1_SPEC_AND_FIXTURES",
+  "status": "DELTA_BUNDLE_CREATED"
+}

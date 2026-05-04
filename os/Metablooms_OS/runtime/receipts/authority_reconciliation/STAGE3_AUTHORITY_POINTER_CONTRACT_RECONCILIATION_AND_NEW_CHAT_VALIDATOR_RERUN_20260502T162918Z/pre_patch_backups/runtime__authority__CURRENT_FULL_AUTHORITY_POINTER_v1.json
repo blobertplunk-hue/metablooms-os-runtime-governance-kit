@@ -1,0 +1,20 @@
+{
+  "artifact_type": "CURRENT_FULL_AUTHORITY_POINTER_v1",
+  "canonical_working_root": "/mnt/data/Metablooms_OS",
+  "export_sha256": "EXTERNAL_SIDECAR_REQUIRED_AFTER_EXPORT",
+  "export_sha256_sidecar": "/mnt/data/METABLOOMS_OS_OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_FULL_AUTHORITY_REPAIRED_20260502T154025Z.zip.sha256",
+  "export_zip": "/mnt/data/METABLOOMS_OS_OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_FULL_AUTHORITY_REPAIRED_20260502T154025Z.zip",
+  "external_sidecar_required": true,
+  "latest_boot_surface": "OPEN_OPERATOR_VISUAL_TRACKER.html",
+  "required_start_sequence": [
+    "verify external .sha256 sidecar",
+    "extract or mount /mnt/data/Metablooms_OS",
+    "open/show operator visual tracker",
+    "run boot surface validator",
+    "run runtime starter smoke",
+    "execute at most one bounded governed stage"
+  ],
+  "stage": "OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_EXPORT_INTEGRATION_AND_BOOT_SURFACE_BINDING",
+  "updated_utc": "2026-05-02T15:38:08Z",
+  "verdict": "ACTIVE"
+}

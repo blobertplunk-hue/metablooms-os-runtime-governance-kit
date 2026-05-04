@@ -1,0 +1,8 @@
+{
+  "artifact_type": "EVALS_TRACE_REVIEW_VALIDATOR_ALIGNMENT_STAGE1_HANDOFF_v1",
+  "completed_stage": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_1_OR_SECURITY_STAGE4_RED_TEAM_FIXTURES",
+  "continuation_rule": "Expand from seed examples to 20-50 reviewed traces, add scorecards, and calibrate validators before broader promotion.",
+  "created_utc": "20260501T130400Z",
+  "next_stage": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_2_SCORECARDS_AND_REGRESSION_DATASET",
+  "status": "READY_FOR_NEXT_BOUNDED_STAGE"
+}

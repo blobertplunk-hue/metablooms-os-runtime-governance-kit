@@ -1,0 +1,43 @@
+{
+  "artifact_type": "FILESYSTEM_HANDLING_SAFETY_POLICY",
+  "created_utc": "20260501T151900Z",
+  "hard_wired_routes": [
+    {
+      "requirements": [
+        "same-directory temp zip",
+        "df -P same mount preflight",
+        "os.stat st_dev same-device preflight",
+        "bounded differential trace summary",
+        "export promotion proof member",
+        "partial/in-progress marker exclusion"
+      ],
+      "route": "mb export"
+    },
+    {
+      "requirements": [
+        "extract to staging under destination parent",
+        "archive unsafe-path/duplicate-critical preflight",
+        "finalization marker after extraction and required-file checks",
+        "same-mount publication preflight",
+        "partial-root lock on failure"
+      ],
+      "route": "mb extract"
+    },
+    {
+      "requirements": [
+        "required filesystem safety artifacts",
+        "export proof member",
+        "no partial root or in-progress markers",
+        "critical duplicate/unsafe path block"
+      ],
+      "route": "export_promotion_gate_v1.py"
+    }
+  ],
+  "non_goals": [
+    "No broad full-root extraction is required during validation when sandbox path probes are unstable.",
+    "No unbounded hash list in trace metadata."
+  ],
+  "promotion_rule": "An export or extraction route is not trusted unless the filesystem safety route emits PASS evidence or a fail-closed blocker.",
+  "schema_version": "FILESYSTEM_HANDLING_SAFETY_POLICY_v2",
+  "stage_name": "HARD_WIRE_FILESYSTEM_SAFETY_INTO_ALL_EXPORT_AND_EXTRACTION_ROUTES_STAGE_2"
+}

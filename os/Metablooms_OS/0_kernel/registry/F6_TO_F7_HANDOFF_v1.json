@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "created_at": 1777062946.214521,
+  "from_stage": "F6_BLOCKED_RECEIPT_HANDLING_RULE",
+  "to_stage": "F7_STABLE_EXPORT_BOOT_RECOVERY_PROOF",
+  "status": "ready",
+  "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F6_BLOCKED_RECEIPT_HANDLING_RULE_RECEIPT_v1.json",
+  "blocked_rule": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/BLOCKED_RECEIPT_HANDLING_RULE_v1.json",
+  "blocked_template": "/mnt/data/Metablooms_OS_refined/0_kernel/pipeline/BLOCKED_RECEIPT_TEMPLATE_v1.json",
+  "export_allowed": true,
+  "boot_recovery_required": true,
+  "cleanup_allowed": false,
+  "next_command": "EXECUTE F7 \u2014 STABLE EXPORT + BOOT RECOVERY PROOF"
+}

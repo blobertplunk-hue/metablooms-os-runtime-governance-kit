@@ -1,0 +1,24 @@
+{
+  "binding_status": "SUPERSEDED_BY_HARD_PROMOTION_BINDING_v1",
+  "gate_id": "PROMOTION_AUTHORITY_COHERENCE_GATE_v1",
+  "hard_blocker_activation_stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE3_PROMOTION_BINDING_AND_CURRENT_OS_REPAIR_PLAN",
+  "must_run_before_labels": [
+    "current",
+    "full_authority",
+    "bootable",
+    "baseline",
+    "promotion_locked",
+    "latest"
+  ],
+  "notes": "Stage 2 binds the executable location and proof obligations but intentionally does not mutate existing promotion gates until fixture proof and current-OS report-only scan are complete.",
+  "required_success_evidence": [
+    "FIXTURE_RESULT_LEDGER.json",
+    "CURRENT_OS_REPORT_ONLY_SCAN.json",
+    "STAGE_RECEIPT.json"
+  ],
+  "runner": "0_kernel/mpp_v3/promotion_authority_coherence_gate_v1.py",
+  "schema_version": "metablooms.promotion_authority_coherence.pre_promotion_binding.v1",
+  "stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN",
+  "superseded_by": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_HARD_PROMOTION_BINDING_v1.json",
+  "superseded_utc": "2026-05-02T20:08:15.471106+00:00"
+}

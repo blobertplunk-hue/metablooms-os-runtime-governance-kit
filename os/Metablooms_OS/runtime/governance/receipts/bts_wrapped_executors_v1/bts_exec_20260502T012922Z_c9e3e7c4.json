@@ -1,0 +1,60 @@
+{
+  "approval_token_present": true,
+  "bts_receipt_id": "T1-STAGE6I_FALLBACK_EXPORT_FIXTURE_20260502T012918Z_export_zip_artifact-20260502T012921Z",
+  "bts_turn_committed": true,
+  "export_bytes": 197,
+  "export_path": "/mnt/data/STAGE6I_FALLBACK_EXPORT_FIXTURE.zip",
+  "export_sha256": "0e18c3083e72d3116d1d620a7bc495e6d5123816279c5da6f1dd338db5ba574f",
+  "implementation_reality": {
+    "actual_files": [
+      "/mnt/data/STAGE6I_FALLBACK_EXPORT_FIXTURE.zip"
+    ],
+    "claimed_files": [
+      "/mnt/data/STAGE6I_FALLBACK_EXPORT_FIXTURE.zip"
+    ],
+    "unclaimed": [],
+    "unfulfilled": [],
+    "verdict": "PASS"
+  },
+  "kind": "export_zip",
+  "policy_decision": {
+    "decided_at_utc": "2026-05-02T01:29:21Z",
+    "decision": "ALLOW",
+    "decision_id": "decision_1777685361062_80db7eeb",
+    "enforced_by": "pre_tool_action_gate_v1",
+    "envelope_id": "STAGE6I_FALLBACK_EXPORT_FIXTURE_20260502T012918Z_export_zip",
+    "envelope_sha256": "9f6df2b54ae3168844daf51c8f50aaad72580e0b8f4ec61e796de2e0e2724323",
+    "matched_rules": [
+      "schema.required",
+      "path.safety",
+      "runaway.breaker",
+      "method.reliability"
+    ],
+    "rationale": "Envelope passed schema, method, path, SEE, approval, and bounded-budget checks.",
+    "reason_code": "LOW_RISK_BOUNDED_ACTION",
+    "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/STAGE6I_FALLBACK_EXPORT_FIXTURE_20260502T012918Z_export_zip.decision.json",
+    "required_next_action": "execute_action_and_write_action_receipt",
+    "safe_to_execute": true,
+    "schema_version": "PolicyDecision_v1",
+    "stage_id": "STAGE6I"
+  },
+  "receipt_id": "bts_exec_20260502T012922Z_c9e3e7c4",
+  "schema": "mb.bts_wrapped_executors.v1",
+  "source_dir": "/mnt/data/Metablooms_OS/runtime/tmp/stage6i_fallback_export_fixture_src",
+  "stage_id": "STAGE6I",
+  "timestamp_utc": "2026-05-02T01:29:22.077796Z",
+  "tool_selection_sufficiency": {
+    "covered_candidate_count": 4,
+    "missing_candidates": [],
+    "reasons": [],
+    "required_candidate_count": 4,
+    "schema": "TOOL_SELECTION_SUFFICIENCY_GATE_RESULT_v1",
+    "selected_tool_id": "python_zipfile_compatibility_fallback",
+    "timestamp_utc": "2026-05-02T01:29:20.571193Z",
+    "top_allowed_tool_id": "node_yazl_stream_export",
+    "verdict": "PASS"
+  },
+  "tool_universe_candidate_set_id": "tool_candidates_4529254eabcd75ea",
+  "turn_id": "STAGE6I_FALLBACK_EXPORT_FIXTURE_20260502T012918Z",
+  "verdict": "PASS"
+}

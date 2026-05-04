@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "BLOCKED_RECEIPT_HANDLING_RULE_SCHEMA_v1",
+  "title": "MetaBlooms Blocked Receipt Handling Rule v1",
+  "type": "object",
+  "required": [
+    "version",
+    "created_at",
+    "rule_id",
+    "status",
+    "blocked_receipt_policy",
+    "dirty_tree_policy",
+    "ledger_policy",
+    "pointer_policy",
+    "verdict"
+  ]
+}

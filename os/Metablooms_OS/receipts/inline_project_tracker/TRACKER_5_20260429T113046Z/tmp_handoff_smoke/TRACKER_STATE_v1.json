@@ -1,0 +1,281 @@
+{
+  "active_root": "/mnt/data/Metablooms_OS",
+  "authority": [
+    "/mnt/data/Metablooms_OS",
+    "/mnt/data/PROMPT_ENGINE_v2.md",
+    "0_kernel/docs/inline_project_tracker/TRACKER_DESIGN_CONSTRAINTS_v1.json",
+    "0_kernel/docs/inline_project_tracker/TRACKER_INLINE_RENDER_SPEC_v1.md",
+    "0_kernel/docs/inline_project_tracker/TRACKER_IMPLEMENTATION_PLAN_v1.md",
+    "receipts/inline_project_tracker/TRACKER_0_20260429T110735Z/TRACKER_0_HANDOFF.json"
+  ],
+  "blocker": {
+    "evidence_path": null,
+    "present": false,
+    "summary": "none"
+  },
+  "completed_stages": [
+    "TRACKER-0_INLINE_PROJECT_TRACKER_RESEARCH_AND_DESIGN_LOCK",
+    "TRACKER-1_SCHEMA_AND_STATE_SEED",
+    "TRACKER-2_MARKDOWN_RENDERER_AND_VALIDATOR",
+    "TRACKER-3_BOOT_AND_STAGE_GATES",
+    "TRACKER-4_HANDOFF_UPDATE_WIRING",
+    "TRACKER-4R_MOBILE_REFLOW_RENDERER_REPAIR",
+    "TRACKER-5_TMP"
+  ],
+  "current_stage": "TRACKER-5_TMP",
+  "evidence": [
+    {
+      "kind": "receipt",
+      "label": "TRACKER-0 receipt",
+      "path": "receipts/inline_project_tracker/TRACKER_0_20260429T110735Z/TRACKER_0_RECEIPT.json",
+      "sha256": "7414c17acaa360683c76082998c9df0bafa63c1082fe75a0841d8f7e9ca44fc8"
+    },
+    {
+      "kind": "handoff",
+      "label": "TRACKER-0 handoff",
+      "path": "receipts/inline_project_tracker/TRACKER_0_20260429T110735Z/TRACKER_0_HANDOFF.json",
+      "sha256": "cc7e4ee5afa0acfda4c5b17bee7c6b1a3f56367763b3ad16dbdbca18a454712a"
+    },
+    {
+      "kind": "source",
+      "label": "TRACKER implementation plan",
+      "path": "0_kernel/docs/inline_project_tracker/TRACKER_IMPLEMENTATION_PLAN_v1.md",
+      "sha256": "0995e7d13428cebf96668f0b06f9851fbdaa8df78c82ae41a25d094b3cb6a120"
+    },
+    {
+      "kind": "schema",
+      "label": "TRACKER state schema",
+      "path": "0_kernel/schemas/TRACKER_STATE_SCHEMA_v1.json",
+      "sha256": "6455023540862967aab71cc4fe1ed9c6f1e3c9d44deb2375eaec04bb27de50c9"
+    },
+    {
+      "kind": "state",
+      "label": "TRACKER state seed",
+      "path": "runtime/state/TRACKER_STATE_v1.json",
+      "sha256": "29cee3751e40c1924d7509105a48026ae63a99e2e1e453b9747af9003f367c69"
+    },
+    {
+      "kind": "source",
+      "label": "TRACKER renderer",
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_RENDERER_v1.py",
+      "sha256": "e03794d1cb0ef1b214b53d0e22acff046df007904f5d8090d26c2240b5f39eb1"
+    },
+    {
+      "kind": "source",
+      "label": "TRACKER validator",
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_VALIDATOR_v1.py",
+      "sha256": "33ba5768e438a0b70c80c5af8a9fa2d455f7052cbaff7901ca1b153bb765270c"
+    },
+    {
+      "kind": "source",
+      "label": "TRACKER render spec lock",
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_RENDER_SPEC_LOCK_v1.md",
+      "sha256": "45e460cfeb0406183f18367e92669914254e3945e29587d720bfc8874c395810"
+    },
+    {
+      "kind": "gate",
+      "label": "Tracker Boot Gate",
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_BOOT_GATE_v1.json",
+      "sha256": "7b65a5841c32ea3f2d2a1af1314ee1644737999ced80a895a1b37498c524c555"
+    },
+    {
+      "kind": "gate",
+      "label": "Tracker Stage Gate",
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_STAGE_GATE_v1.json",
+      "sha256": "b9235e974616fab4f93de361385a4529910b8e5f8d2ad230cb0b6ca3e4bb3fef"
+    },
+    {
+      "kind": "gate",
+      "label": "Tracker Evidence Gate",
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_EVIDENCE_GATE_v1.json",
+      "sha256": "b2a69bc98a13c1846146a4ce1e670d98315ea6480d42a7ab0900da82a8efeef4"
+    },
+    {
+      "kind": "gate",
+      "label": "Tracker Stop Gate",
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_STOP_GATE_v1.json",
+      "sha256": "1940286875fa28af08db44369487a0b598d86b8d053bb71e918ffc15e61108c2"
+    },
+    {
+      "kind": "validator",
+      "label": "Tracker Gate Validator",
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_GATE_VALIDATOR_v1.py",
+      "sha256": "2650f712be8bd8976d6c4d9ec2132da0053ba3eb951c90414928b0c84431ae5a"
+    },
+    {
+      "kind": "policy",
+      "label": "Tracker Gate Enforcement Policy",
+      "path": "1_governance/tracker/TRACKER_GATE_ENFORCEMENT_POLICY_v1.md",
+      "sha256": "b6b3a9c38827b1c8273b88cea061b3d47b36704f39e8f663fb7060763af22e90"
+    },
+    {
+      "kind": "report",
+      "label": "Tracker 3 Gate Validation Report",
+      "path": "receipts/inline_project_tracker/TRACKER_3_20260429T111546Z/TRACKER_3_GATE_VALIDATION_REPORT.json",
+      "sha256": "81684cdf04af0b622371ec0ee9bcfb4e3de3aa505c0c428e0f1b0a9bbb6167c9"
+    },
+    {
+      "kind": "receipt",
+      "label": "TRACKER-4_HANDOFF_UPDATE_WIRING receipt",
+      "path": "receipts/inline_project_tracker/TRACKER_4_20260429T111733Z/TRACKER_4_RECEIPT.json",
+      "sha256": "90e7ad2efbe3b250e0ed96fcd4aa205217ff8f424e52e6626c5cfbc9e352857f"
+    },
+    {
+      "kind": "handoff",
+      "label": "TRACKER-4_HANDOFF_UPDATE_WIRING handoff",
+      "path": "receipts/inline_project_tracker/TRACKER_4_20260429T111733Z/TRACKER_4_HANDOFF.json",
+      "sha256": "f2b2f11e47810f456c632a830dd92315f14a17eea2b4b44e5ceaa0a0df5111c3"
+    },
+    {
+      "kind": "source",
+      "label": "TRACKER-4R compact visual renderer",
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_RENDERER_v1.py",
+      "sha256": "a7adf506ea70fb866a9836b72162c835c4cabbfea404a610996ceae9227eccda"
+    },
+    {
+      "kind": "validator",
+      "label": "TRACKER-4R mobile reflow validator",
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_VALIDATOR_v1.py",
+      "sha256": "c1c10140279271582c85fdf7b9493f592e8c7fcd7155010681336426b2340942"
+    },
+    {
+      "kind": "spec",
+      "label": "TRACKER-4R render spec lock",
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_RENDER_SPEC_LOCK_v1.md",
+      "sha256": "5296c7f22cf2506829e03c3dba23e71870e013868019cd4fe7170a83dc35fbc9"
+    },
+    {
+      "kind": "policy",
+      "label": "TRACKER-4R mobile reflow policy",
+      "path": "1_governance/tracker/TRACKER_MOBILE_REFLOW_POLICY_v1.md",
+      "sha256": "bf063fa137cd2fa48a33819ca125dc4c70ce45052e20b1eaa59a5bc5a47654e6"
+    },
+    {
+      "kind": "visual_failure_evidence",
+      "label": "mobile screenshot evidence 1",
+      "path": "receipts/inline_project_tracker/TRACKER_4R_20260429T112238Z/mobile_failure_screenshot_1.png",
+      "sha256": "a26a9a3523d4180030b9365f97dd58234d6b5b1b33200c2a19de42d54a2763b0"
+    },
+    {
+      "kind": "visual_failure_evidence",
+      "label": "mobile screenshot evidence 2",
+      "path": "receipts/inline_project_tracker/TRACKER_4R_20260429T112238Z/mobile_failure_screenshot_2.png",
+      "sha256": "a3fc67b7b354efe7f782c925c1398d2ee59cdcf266bef8929b2948088d8b92af"
+    },
+    {
+      "kind": "receipt",
+      "label": "TRACKER-4R receipt",
+      "path": "receipts/inline_project_tracker/TRACKER_4R_20260429T112238Z/TRACKER_4R_RECEIPT.json",
+      "sha256": "d2e8bff2e80c07ea9b00dc72f4276bb3b0f39b45c06f19218d6632c8ed62bea9"
+    },
+    {
+      "kind": "handoff",
+      "label": "TRACKER-4R handoff",
+      "path": "receipts/inline_project_tracker/TRACKER_4R_20260429T112238Z/TRACKER_4R_HANDOFF.json",
+      "sha256": "98d94a73896a26893a7d8641569feec7b3014b3af98f44b15264fef2fd717357"
+    },
+    {
+      "kind": "receipt",
+      "label": "TRACKER-5_TMP receipt",
+      "path": "receipts/inline_project_tracker/TRACKER_5_20260429T113046Z/tmp_handoff_smoke/TMP_RECEIPT.json",
+      "sha256": "2ad9a5cbc61c92b02bc5f408c57c69ace407ce17065ef4957ba711d27529d28d"
+    },
+    {
+      "kind": "handoff",
+      "label": "TRACKER-5_TMP handoff",
+      "path": "receipts/inline_project_tracker/TRACKER_5_20260429T113046Z/tmp_handoff_smoke/TMP_HANDOFF.json",
+      "sha256": "b0ffe5a11dbe96a3fe6b933f8d69be460f1595bea803e6ba1d7d96bf2eb65365"
+    }
+  ],
+  "history": [
+    {
+      "evidence_path": "receipts/inline_project_tracker/TRACKER_0_20260429T110735Z/TRACKER_0_RECEIPT.json",
+      "stage": "TRACKER-0_INLINE_PROJECT_TRACKER_RESEARCH_AND_DESIGN_LOCK",
+      "status": "PASS",
+      "timestamp_utc": "20260429T110735Z"
+    },
+    {
+      "evidence_path": "receipts/inline_project_tracker/TRACKER_1_20260429T111056Z/TRACKER_1_RECEIPT.json",
+      "stage": "TRACKER-1_SCHEMA_AND_STATE_SEED",
+      "status": "PASS_PENDING_RECEIPT",
+      "timestamp_utc": "20260429T111056Z"
+    },
+    {
+      "evidence_path": "receipts/inline_project_tracker/TRACKER_2_20260429T111207Z/TRACKER_2_RECEIPT.json",
+      "stage": "TRACKER-2_MARKDOWN_RENDERER_AND_VALIDATOR",
+      "status": "PASS",
+      "timestamp_utc": "20260429T111207Z"
+    },
+    {
+      "receipt_dir": "receipts/inline_project_tracker/TRACKER_3_20260429T111546Z",
+      "stage": "TRACKER-3_BOOT_AND_STAGE_GATES",
+      "status": "DONE",
+      "timestamp_utc": "20260429T111546Z"
+    },
+    {
+      "handoff_path": "receipts/inline_project_tracker/TRACKER_4_20260429T111733Z/TRACKER_4_HANDOFF.json",
+      "handoff_sha256": "f2b2f11e47810f456c632a830dd92315f14a17eea2b4b44e5ceaa0a0df5111c3",
+      "handoff_status": "READY_FOR_BOUNDED_SMOKE_TEST_EXPORT_PACKAGING_STAGE",
+      "receipt_path": "receipts/inline_project_tracker/TRACKER_4_20260429T111733Z/TRACKER_4_RECEIPT.json",
+      "receipt_sha256": "629b47039d80817fd28769746f68294322b761a9c2527fe9450dd5938b37da26",
+      "stage": "TRACKER-4_HANDOFF_UPDATE_WIRING",
+      "status": "DONE",
+      "timestamp_utc": "20260429T111733Z"
+    },
+    {
+      "handoff_path": "receipts/inline_project_tracker/TRACKER_4_20260429T111733Z/TRACKER_4_HANDOFF.json",
+      "handoff_sha256": "f2b2f11e47810f456c632a830dd92315f14a17eea2b4b44e5ceaa0a0df5111c3",
+      "handoff_status": "READY_FOR_BOUNDED_SMOKE_TEST_EXPORT_PACKAGING_STAGE",
+      "receipt_path": "receipts/inline_project_tracker/TRACKER_4_20260429T111733Z/TRACKER_4_RECEIPT.json",
+      "receipt_sha256": "90e7ad2efbe3b250e0ed96fcd4aa205217ff8f424e52e6626c5cfbc9e352857f",
+      "stage": "TRACKER-4_HANDOFF_UPDATE_WIRING",
+      "status": "DONE",
+      "timestamp_utc": "20260429T111733Z"
+    },
+    {
+      "evidence_path": "receipts/inline_project_tracker/TRACKER_4R_20260429T112238Z/TRACKER_4R_RECEIPT.json",
+      "stage": "TRACKER-4R_MOBILE_REFLOW_RENDERER_REPAIR",
+      "status": "DONE_PENDING_RECEIPT",
+      "timestamp_utc": "20260429T112238Z"
+    },
+    {
+      "handoff_path": "receipts/inline_project_tracker/TRACKER_4R_20260429T112238Z/TRACKER_4R_HANDOFF.json",
+      "handoff_sha256": "98d94a73896a26893a7d8641569feec7b3014b3af98f44b15264fef2fd717357",
+      "receipt_path": "receipts/inline_project_tracker/TRACKER_4R_20260429T112238Z/TRACKER_4R_RECEIPT.json",
+      "receipt_sha256": "d2e8bff2e80c07ea9b00dc72f4276bb3b0f39b45c06f19218d6632c8ed62bea9",
+      "stage": "TRACKER-4R_MOBILE_REFLOW_RENDERER_REPAIR",
+      "status": "DONE",
+      "timestamp_utc": "20260429T112238Z"
+    },
+    {
+      "handoff_path": "receipts/inline_project_tracker/TRACKER_5_20260429T113046Z/tmp_handoff_smoke/TMP_HANDOFF.json",
+      "handoff_sha256": "b0ffe5a11dbe96a3fe6b933f8d69be460f1595bea803e6ba1d7d96bf2eb65365",
+      "handoff_status": "READY",
+      "receipt_path": "receipts/inline_project_tracker/TRACKER_5_20260429T113046Z/tmp_handoff_smoke/TMP_RECEIPT.json",
+      "receipt_sha256": "2ad9a5cbc61c92b02bc5f408c57c69ace407ce17065ef4957ba711d27529d28d",
+      "stage": "TRACKER-5_TMP",
+      "status": "DONE",
+      "timestamp_utc": "SMOKE"
+    }
+  ],
+  "last_updated_utc": "SMOKE",
+  "mode": "governed_project",
+  "next_allowed_action": "none",
+  "now": "temporary smoke update",
+  "progress_label": "6/6 tracker stages complete",
+  "progress_mode": "determinate",
+  "project_id": "metablooms_inline_project_tracker",
+  "project_name": "Inline Project Tracker",
+  "schema_version": "TRACKER_STATE_v1",
+  "stage_index": 6,
+  "stage_total": 6,
+  "status": "DONE",
+  "stop_rule": "test only",
+  "tracker_id": "inline_project_tracker_v1",
+  "validation": {
+    "mobile_safe_width_chars": 64,
+    "percent_rule": "determinate_allowed",
+    "schema_validated": true,
+    "state_validated": true
+  }
+}

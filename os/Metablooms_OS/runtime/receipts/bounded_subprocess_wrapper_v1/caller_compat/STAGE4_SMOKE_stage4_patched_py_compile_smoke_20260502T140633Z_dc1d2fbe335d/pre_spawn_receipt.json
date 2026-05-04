@@ -1,0 +1,13 @@
+{
+  "argv_resolved": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "-m",
+    "py_compile",
+    "/mnt/data/Metablooms_OS/0_kernel/cartridges/inline_project_tracker/TRACKER_SMOKE_TEST_v1.py"
+  ],
+  "created_utc": "20260502T140633Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision": "ALLOW_SPAWN",
+  "timeout_seconds": 10
+}

@@ -1,0 +1,485 @@
+{
+  "created_utc": "20260501T182900Z",
+  "fixtures": [
+    {
+      "expected_decision": "PASS",
+      "features": {
+        "accessibility": [
+          "tts_filtered",
+          "keyboard"
+        ],
+        "answer_key": true,
+        "assessment_fidelity": "staar_like",
+        "cognitive_demand": "analyze_predict",
+        "deployment": "google_sites_safe",
+        "eb_support": "sentence_stems_no_answer_reveal",
+        "misconception_model": true,
+        "official_source_refs": [
+          "TEA_STAAR_RELEASED_ITEM_RATIONALE"
+        ],
+        "scoring_rule": true,
+        "student_visible_feedback": true,
+        "teks_codes": [
+          "3.12B"
+        ],
+        "telemetry": true,
+        "udl_options": [
+          "engagement",
+          "representation",
+          "action_expression"
+        ]
+      },
+      "fixture_id": "EDU2-001"
+    },
+    {
+      "expected_decision": "BLOCK",
+      "features": {
+        "accessibility": [
+          "tts_filtered",
+          "keyboard"
+        ],
+        "answer_key": true,
+        "assessment_fidelity": "staar_like",
+        "cognitive_demand": "analyze_predict",
+        "deployment": "google_sites_safe",
+        "eb_support": "sentence_stems_no_answer_reveal",
+        "misconception_model": true,
+        "official_source_refs": [
+          "TEA_STAAR_RELEASED_ITEM_RATIONALE"
+        ],
+        "scoring_rule": true,
+        "student_visible_feedback": true,
+        "teks_codes": [],
+        "telemetry": true,
+        "udl_options": [
+          "engagement",
+          "representation",
+          "action_expression"
+        ]
+      },
+      "fixture_id": "EDU2-002"
+    },
+    {
+      "expected_decision": "BLOCK",
+      "features": {
+        "accessibility": [
+          "tts_filtered",
+          "keyboard"
+        ],
+        "answer_key": true,
+        "assessment_fidelity": "staar_like",
+        "cognitive_demand": "analyze_predict",
+        "deployment": "google_sites_safe",
+        "eb_support": "sentence_stems_no_answer_reveal",
+        "misconception_model": true,
+        "official_source_refs": [],
+        "scoring_rule": true,
+        "student_visible_feedback": true,
+        "teks_codes": [
+          "3.12B"
+        ],
+        "telemetry": true,
+        "udl_options": [
+          "engagement",
+          "representation",
+          "action_expression"
+        ]
+      },
+      "fixture_id": "EDU2-003"
+    },
+    {
+      "expected_decision": "BLOCK",
+      "features": {
+        "accessibility": [
+          "tts_filtered",
+          "keyboard"
+        ],
+        "answer_key": false,
+        "assessment_fidelity": "staar_like",
+        "cognitive_demand": "analyze_predict",
+        "deployment": "google_sites_safe",
+        "eb_support": "sentence_stems_no_answer_reveal",
+        "misconception_model": true,
+        "official_source_refs": [
+          "TEA_STAAR_RELEASED_ITEM_RATIONALE"
+        ],
+        "scoring_rule": false,
+        "student_visible_feedback": true,
+        "teks_codes": [
+          "3.12B"
+        ],
+        "telemetry": true,
+        "udl_options": [
+          "engagement",
+          "representation",
+          "action_expression"
+        ]
+      },
+      "fixture_id": "EDU2-004"
+    },
+    {
+      "expected_decision": "WARN",
+      "features": {
+        "accessibility": [
+          "tts_filtered",
+          "keyboard"
+        ],
+        "answer_key": true,
+        "assessment_fidelity": "staar_like",
+        "cognitive_demand": "copy_only",
+        "deployment": "google_sites_safe",
+        "eb_support": "sentence_stems_no_answer_reveal",
+        "misconception_model": true,
+        "official_source_refs": [
+          "TEA_STAAR_RELEASED_ITEM_RATIONALE"
+        ],
+        "scoring_rule": true,
+        "student_visible_feedback": true,
+        "teks_codes": [
+          "3.12B"
+        ],
+        "telemetry": true,
+        "udl_options": [
+          "engagement",
+          "representation",
+          "action_expression"
+        ]
+      },
+      "fixture_id": "EDU2-005"
+    },
+    {
+      "expected_decision": "BLOCK",
+      "features": {
+        "accessibility": [
+          "tts_filtered",
+          "keyboard"
+        ],
+        "answer_key": true,
+        "assessment_fidelity": "staar_like",
+        "cognitive_demand": "analyze_predict",
+        "deployment": "google_sites_safe",
+        "eb_support": "reveals_answer",
+        "misconception_model": true,
+        "official_source_refs": [
+          "TEA_STAAR_RELEASED_ITEM_RATIONALE"
+        ],
+        "scoring_rule": true,
+        "student_visible_feedback": true,
+        "teks_codes": [
+          "3.12B"
+        ],
+        "telemetry": true,
+        "udl_options": [
+          "engagement",
+          "representation",
+          "action_expression"
+        ]
+      },
+      "fixture_id": "EDU2-006"
+    },
+    {
+      "expected_decision": "WARN",
+      "features": {
+        "accessibility": [
+          "tts_filtered",
+          "keyboard"
+        ],
+        "answer_key": true,
+        "assessment_fidelity": "staar_like",
+        "cognitive_demand": "analyze_predict",
+        "deployment": "google_sites_safe",
+        "eb_support": "sentence_stems_no_answer_reveal",
+        "misconception_model": true,
+        "official_source_refs": [
+          "TEA_STAAR_RELEASED_ITEM_RATIONALE"
+        ],
+        "scoring_rule": true,
+        "student_visible_feedback": true,
+        "teks_codes": [
+          "3.12B"
+        ],
+        "telemetry": false,
+        "udl_options": [
+          "engagement",
+          "representation",
+          "action_expression"
+        ]
+      },
+      "fixture_id": "EDU2-007"
+    },
+    {
+      "expected_decision": "BLOCK",
+      "features": {
+        "accessibility": [
+          "tts_filtered",
+          "keyboard"
+        ],
+        "answer_key": true,
+        "assessment_fidelity": "staar_like",
+        "cognitive_demand": "analyze_predict",
+        "deployment": "blocked_network_dependency",
+        "eb_support": "sentence_stems_no_answer_reveal",
+        "misconception_model": true,
+        "official_source_refs": [
+          "TEA_STAAR_RELEASED_ITEM_RATIONALE"
+        ],
+        "scoring_rule": true,
+        "student_visible_feedback": true,
+        "teks_codes": [
+          "3.12B"
+        ],
+        "telemetry": true,
+        "udl_options": [
+          "engagement",
+          "representation",
+          "action_expression"
+        ]
+      },
+      "fixture_id": "EDU2-008"
+    },
+    {
+      "expected_decision": "WARN",
+      "features": {
+        "accessibility": [
+          "tts_filtered",
+          "keyboard"
+        ],
+        "answer_key": true,
+        "assessment_fidelity": "staar_like",
+        "cognitive_demand": "analyze_predict",
+        "deployment": "google_sites_safe",
+        "distractor_parity": false,
+        "eb_support": "sentence_stems_no_answer_reveal",
+        "misconception_model": true,
+        "official_source_refs": [
+          "TEA_STAAR_RELEASED_ITEM_RATIONALE"
+        ],
+        "scoring_rule": true,
+        "student_visible_feedback": true,
+        "teks_codes": [
+          "3.12B"
+        ],
+        "telemetry": true,
+        "udl_options": [
+          "engagement",
+          "representation",
+          "action_expression"
+        ]
+      },
+      "fixture_id": "EDU2-009"
+    },
+    {
+      "expected_decision": "PASS",
+      "features": {
+        "accessibility": [
+          "tts_filtered",
+          "keyboard"
+        ],
+        "answer_key": true,
+        "assessment_fidelity": "staar_like",
+        "cognitive_demand": "compare_order_reason",
+        "deployment": "offline_single_file",
+        "eb_support": "sentence_stems_no_answer_reveal",
+        "misconception_model": true,
+        "official_source_refs": [
+          "TEA_STAAR_RELEASED_STUDENT_EXPECTATIONS"
+        ],
+        "scoring_rule": true,
+        "student_visible_feedback": true,
+        "teks_codes": [
+          "3.2D"
+        ],
+        "telemetry": true,
+        "udl_options": [
+          "engagement",
+          "representation",
+          "action_expression"
+        ]
+      },
+      "fixture_id": "EDU2-010"
+    },
+    {
+      "expected_decision": "BLOCK",
+      "features": {
+        "accessibility": [
+          "tts_filtered",
+          "keyboard"
+        ],
+        "answer_key": true,
+        "assessment_fidelity": "staar_like",
+        "cognitive_demand": "analyze_predict",
+        "deployment": "google_sites_safe",
+        "eb_support": "sentence_stems_no_answer_reveal",
+        "misconception_model": true,
+        "official_source_refs": [
+          "TEA_STAAR_RELEASED_ITEM_RATIONALE"
+        ],
+        "scoring_rule": true,
+        "student_visible_feedback": false,
+        "teks_codes": [
+          "3.12B"
+        ],
+        "telemetry": true,
+        "udl_options": [
+          "engagement",
+          "representation",
+          "action_expression"
+        ]
+      },
+      "fixture_id": "EDU2-011"
+    },
+    {
+      "expected_decision": "WARN",
+      "features": {
+        "accessibility": [
+          "keyboard"
+        ],
+        "answer_key": true,
+        "assessment_fidelity": "staar_like",
+        "cognitive_demand": "analyze_predict",
+        "deployment": "google_sites_safe",
+        "eb_support": "sentence_stems_no_answer_reveal",
+        "misconception_model": true,
+        "official_source_refs": [
+          "TEA_STAAR_RELEASED_ITEM_RATIONALE"
+        ],
+        "scoring_rule": true,
+        "student_visible_feedback": true,
+        "teks_codes": [
+          "3.12B"
+        ],
+        "telemetry": true,
+        "tts_plan": "needs_repair",
+        "udl_options": [
+          "engagement",
+          "representation",
+          "action_expression"
+        ]
+      },
+      "fixture_id": "EDU2-012"
+    },
+    {
+      "expected_decision": "PASS",
+      "features": {
+        "accessibility": [
+          "tts_filtered",
+          "keyboard",
+          "aria_labels"
+        ],
+        "answer_key": true,
+        "assessment_fidelity": "simulation_with_reasoning",
+        "cognitive_demand": "predict_justify",
+        "deployment": "google_sites_safe",
+        "eb_support": "sentence_stems_no_answer_reveal",
+        "misconception_model": true,
+        "official_source_refs": [
+          "TEA",
+          "IES_LOGIC_MODEL"
+        ],
+        "scoring_rule": true,
+        "student_visible_feedback": true,
+        "teks_codes": [
+          "3.12C"
+        ],
+        "telemetry": true,
+        "udl_options": [
+          "engagement",
+          "representation",
+          "action_expression"
+        ]
+      },
+      "fixture_id": "EDU2-013"
+    },
+    {
+      "expected_decision": "BLOCK",
+      "features": {
+        "accessibility": [
+          "tts_filtered",
+          "keyboard"
+        ],
+        "answer_key": true,
+        "assessment_fidelity": "staar_like",
+        "cognitive_demand": "analyze_predict",
+        "contains_unvetted_external_script": true,
+        "deployment": "google_sites_safe",
+        "eb_support": "sentence_stems_no_answer_reveal",
+        "misconception_model": true,
+        "official_source_refs": [
+          "TEA_STAAR_RELEASED_ITEM_RATIONALE"
+        ],
+        "scoring_rule": true,
+        "student_visible_feedback": true,
+        "teks_codes": [
+          "3.12B"
+        ],
+        "telemetry": true,
+        "udl_options": [
+          "engagement",
+          "representation",
+          "action_expression"
+        ]
+      },
+      "fixture_id": "EDU2-014"
+    },
+    {
+      "expected_decision": "WARN",
+      "features": {
+        "accessibility": [
+          "tts_filtered",
+          "keyboard"
+        ],
+        "answer_key": true,
+        "assessment_fidelity": "staar_like",
+        "cognitive_demand": "analyze_predict",
+        "deployment": "google_sites_safe",
+        "eb_support": "none",
+        "misconception_model": true,
+        "official_source_refs": [
+          "TEA_STAAR_RELEASED_ITEM_RATIONALE"
+        ],
+        "scoring_rule": true,
+        "student_visible_feedback": true,
+        "teks_codes": [
+          "3.12B"
+        ],
+        "telemetry": true,
+        "udl_options": [
+          "representation"
+        ]
+      },
+      "fixture_id": "EDU2-015"
+    },
+    {
+      "expected_decision": "PASS",
+      "features": {
+        "accessibility": [
+          "tts_filtered",
+          "keyboard"
+        ],
+        "answer_key": true,
+        "assessment_fidelity": "evidence_based_rla",
+        "cognitive_demand": "infer_with_text_evidence",
+        "deployment": "offline_single_file",
+        "eb_support": "sentence_stems_no_answer_reveal",
+        "misconception_model": true,
+        "official_source_refs": [
+          "TEA_STAAR_ITEM_RATIONALE"
+        ],
+        "scoring_rule": true,
+        "student_visible_feedback": true,
+        "teks_codes": [
+          "3.6F",
+          "3.6H"
+        ],
+        "telemetry": true,
+        "udl_options": [
+          "engagement",
+          "representation",
+          "action_expression"
+        ]
+      },
+      "fixture_id": "EDU2-016"
+    }
+  ],
+  "schema_version": "EDUCATION_VALIDITY_STAGE2_FIXTURES_v1"
+}

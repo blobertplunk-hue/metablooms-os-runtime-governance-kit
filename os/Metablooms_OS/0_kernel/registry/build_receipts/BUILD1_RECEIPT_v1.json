@@ -1,0 +1,58 @@
+{
+  "receipt_type": "BUILD_RECEIPT",
+  "build_id": "BUILD-1",
+  "artifact": "transactional_stage_runner_v1.py",
+  "created_utc": "2026-04-26T10:19:45Z",
+  "sha256": "774cc14755b73e91556a3c49adaa48194b2254de9da7586400cae8adc6f0323c",
+  "lines": 886,
+  "contract_implemented": "TRANSACTIONAL_STAGE_RUNNER_CONTRACT_v2",
+  "target_path": "0_kernel/scripts/transactional_stage_runner_v1.py",
+
+  "see_evidence": [
+    "SQLAlchemy/Clean Architecture: commit once at end if all succeeds; rollback once on failure",
+    "Python os.replace: atomic promotion on POSIX — write to temp, replace atomically",
+    "CI/CD 2025: build once in staging, verify, then promote same artifact — deploys should be boring"
+  ],
+
+  "phases_implemented": [
+    "P-1_TOOL_ROUTE_GUARD — blocks canmore/image_gen/broad_api_discovery; validates execution path",
+    "P0_PREFLIGHT — validates root, boot_ready, heavy work class against enum",
+    "P1_STAGE_ROOT — creates isolated /mnt/data/_stage/<stage_id>/ (empty check enforced)",
+    "P2_WRITE_OUTPUTS — writes to staging only; supports content_json, content_text, copy_from",
+    "P3_VERIFY — SHA256 verifies all staged outputs before promotion",
+    "P4_PROMOTE — atomic promotion via shutil.copy2 + os.replace",
+    "P5_COMMIT — conditional: git commit if available; COMMIT_DEFERRED_RECEIPT if not",
+    "P6_UPDATE_STATE — updates baseline pointer + stage state ledger; accepts commit SHA or deferred ref",
+    "P7_HANDOFF — writes next-stage handoff; stops"
+  ],
+
+  "validation_tests": [
+    {"test": "syntax check", "result": "PASS"},
+    {"test": "import check — all constants correct", "result": "PASS"},
+    {"test": "CLI --help", "result": "PASS"},
+    {"test": "full lifecycle P-1→P7 with real file output", "result": "PASS — P5 correctly DEFERRED (no git)"},
+    {"test": "forbidden execution path blocks at P-1", "result": "PASS — BLOCKED with receipt"},
+    {"test": "invalid heavy work class blocks at P0", "result": "PASS — BLOCKED with receipt"},
+    {"test": "dry-run stops after P0, no staging dir", "result": "PASS — 0 staging dirs created"}
+  ],
+
+  "new_capabilities": [
+    "CAPABILITY: Autonomous P-1→P7 stage execution — ChatGPT no longer needs manual sub-commands per stage",
+    "CAPABILITY: Fail-closed at every phase — blocked receipt written before any mutation on failure",
+    "CAPABILITY: Staging root isolation — no active root mutations before P4 verify passes",
+    "CAPABILITY: Atomic file promotion — os.replace ensures no partial writes reach active tree",
+    "CAPABILITY: Git-optional pipeline — stages complete cleanly in sandbox with deferred receipt",
+    "CAPABILITY: Heavy work class enforcement — stages blocked at P0 if class not in enum",
+    "CAPABILITY: Request-file interface — stage plans can be pre-written as JSON and replayed"
+  ],
+
+  "chatgpt_deployment": [
+    "Copy transactional_stage_runner_v1.py to /mnt/data/Metablooms_OS_refined/0_kernel/scripts/",
+    "Verify SHA matches: 774cc14755b73e91556a3c49adaa48194b2254de9da7586400cae8adc6f0323c",
+    "Run dry-run validation: python transactional_stage_runner_v1.py --stage-name TEST --heavy-work-class PROOF --dry-run",
+    "Expected: DRY_RUN_PASS with P-1 and P0 both PASS"
+  ],
+
+  "overall_verdict": "PASS",
+  "next_correct_stage": "BUILD-2 — intra_chunk_interrupt_checker_v1.py"
+}

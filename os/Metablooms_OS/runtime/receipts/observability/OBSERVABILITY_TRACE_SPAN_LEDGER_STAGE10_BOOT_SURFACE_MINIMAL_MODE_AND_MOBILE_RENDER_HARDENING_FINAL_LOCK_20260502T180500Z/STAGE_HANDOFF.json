@@ -1,0 +1,11 @@
+{
+  "artifact_type": "STAGE_HANDOFF.v1",
+  "created_utc": "20260502T180500Z",
+  "current_authority_zip": "METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_MINIMAL_MOBILE_FINAL_AUTHORITY_LOCKED_20260502T180500Z.zip",
+  "final_export_sha256": "4286e599a426d830a8806f6693e9ab9c399c8ede382c0fa1e7c2e66709b03c01",
+  "next_purpose": "Add optional evidence-mode trace waterfall and filters while preserving minimal mode as the default phone-safe surface.",
+  "next_recommended_stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS",
+  "resume_from": "/mnt/data/Metablooms_OS",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING",
+  "verdict": "PASS"
+}

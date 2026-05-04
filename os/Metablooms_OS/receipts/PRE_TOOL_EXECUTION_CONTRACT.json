@@ -1,0 +1,12 @@
+{
+  "id": "PRE_TOOL_EXECUTION_CONTRACT",
+  "timestamp_utc": "20260428T011550Z",
+  "governance": "ACSM",
+  "mode": "BOOT_FROM_PROJECT_FILE",
+  "project_bundle": "/mnt/data/METABLOOMS_PROJECT_FILES_UPGRADED_CLEAN_v3_2_FULL_PRESERVED.zip",
+  "project_bundle_sha256": "29487f71703598b47dec175867d095f1005e7ccef734ab6d4731cb64431a53c3",
+  "baseline_source": "project-files embedded baseline",
+  "allow_normal_python": false,
+  "require_receipt_before_claim": true,
+  "status": "ACTIVE"
+}

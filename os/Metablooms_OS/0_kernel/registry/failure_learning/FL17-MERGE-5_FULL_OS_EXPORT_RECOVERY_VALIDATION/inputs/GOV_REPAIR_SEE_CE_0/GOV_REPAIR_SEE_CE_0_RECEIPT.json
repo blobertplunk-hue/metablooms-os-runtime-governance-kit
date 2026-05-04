@@ -1,0 +1,33 @@
+{
+  "artifact_type": "STAGE_RECEIPT",
+  "created_utc": "20260430T010558Z",
+  "inputs": [
+    "/mnt/data/MB_FL17_COMPARE_0_AUDIT_20260430T011200Z",
+    "/mnt/data/MB_FL17_MERGE_PLAN_0_20260430T011900Z",
+    "/mnt/data/METABLOOMS_OS_STABLE_v0.8.0_20260429T212440Z.zip",
+    "/mnt/data/METABLOOMS_OS_STABLE_v0.8.0_FL17_REPACKED_FROM_FL15_20260430T003638Z.zip",
+    "/mnt/data/MB_FULL_OS_WITH_TRACKER_INTEGRATED_20260429T113808Z/METABLOOMS_OS_FULL_WITH_INLINE_TRACKER_INTEGRATED_20260429T113808Z.zip",
+    "/mnt/data/PROMPT_ENGINE_v2.md"
+  ],
+  "outputs": [
+    "GOV_REPAIR_SEE_CE_0_REPORT.json",
+    "GOV_REPAIR_SEE_PACKET_v1.json",
+    "GOV_REPAIR_CE_SYNTHESIS_v1.json",
+    "GOV_REPAIR_CONTINUATION_DECISION_v1.json",
+    "GOV_REPAIR_SEE_CE_0_RECEIPT.json",
+    "GOV_REPAIR_SEE_CE_0_HANDOFF.json"
+  ],
+  "stage": "GOV-REPAIR-SEE-CE-0",
+  "status": "PASS_GOVERNANCE_REPAIR_COMPLETE_NO_FL17_PATCHING",
+  "validations": {
+    "amended_continuation_decision_written": true,
+    "ce_synthesis_written": true,
+    "no_fl17_import_or_patch": true,
+    "no_promotion": true,
+    "prior_compare_plan_loaded": true,
+    "prior_outputs_audited": true,
+    "see_packet_written": true,
+    "web_run_research_performed": true
+  },
+  "verdict": "PASS"
+}

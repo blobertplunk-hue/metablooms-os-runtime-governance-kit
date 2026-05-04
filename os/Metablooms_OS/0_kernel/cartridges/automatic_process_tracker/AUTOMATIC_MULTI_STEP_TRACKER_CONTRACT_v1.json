@@ -1,0 +1,38 @@
+{
+  "external_basis": {
+    "dora_metrics": "DORA metrics: delivery performance uses throughput and instability/recovery signals.",
+    "sre_launch_readiness": "Google SRE reliable launches/checklists: launch coordination signs off safe launches and checklists provide action items.",
+    "user_tracker_requirement": "User interruption during WC_STAGE8: tracker should show automatically for every multi-step process.",
+    "wcag_conformance": "WCAG conformance requires satisfying applicable success criteria."
+  },
+  "honesty_rule": "If rich visual UI cannot be rendered, emit text tracker preview and label limitation.",
+  "minimum_tracker_fields": [
+    "stage",
+    "previous_stage",
+    "current_step",
+    "steps",
+    "status",
+    "primary_authority",
+    "next_prompt_required",
+    "export_required",
+    "download_link_precheck_required"
+  ],
+  "purpose": "Make the operator tracker automatic for every multi-step governed process so Robert does not have to ask for it in each chat.",
+  "schema_version": "v1",
+  "stage": "WC_STAGE8_FULL_WORLD_CLASS_EXPORT_AND_NEW_CHAT_REPLAY_LOCK",
+  "status": "required_at_multistep_process_start_and_exit",
+  "trigger_rule": {
+    "multi_step_process_detected_when_any": [
+      "stage has more than one step",
+      "stage writes more than one artifact",
+      "stage performs boot+inspect+execute+verify+export",
+      "stage is marked bounded_governed_stage"
+    ],
+    "required_behavior": [
+      "emit a concise chat-visible tracker preview early",
+      "write runtime/state/ACTIVE_PROCESS_TRACKER_PREVIEW.txt",
+      "include tracker_status in receipt/handoff",
+      "block success if no tracker artifact exists"
+    ]
+  }
+}

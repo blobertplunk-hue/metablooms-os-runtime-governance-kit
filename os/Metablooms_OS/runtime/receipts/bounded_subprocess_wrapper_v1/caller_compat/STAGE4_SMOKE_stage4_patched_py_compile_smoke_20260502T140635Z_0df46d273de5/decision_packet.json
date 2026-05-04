@@ -1,0 +1,46 @@
+{
+  "argv_redacted": [
+    "python3",
+    "-S",
+    "-m",
+    "py_compile",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/ensure_libcst_available_v1.py"
+  ],
+  "argv_resolved": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "-m",
+    "py_compile",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/ensure_libcst_available_v1.py"
+  ],
+  "artifact_type": "METABLOOMS_BOUNDED_COMMAND_DECISION_PACKET_v1",
+  "attempts": [
+    {
+      "attempt_index": 0,
+      "elapsed_ms": 483,
+      "returncode": 0,
+      "started_utc": "20260502T140635Z",
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_truncated": false,
+      "stdout": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_truncated": false,
+      "timeout_seconds": 10.0
+    }
+  ],
+  "created_utc": "20260502T140635Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision_packet_path": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/STAGE4_SMOKE_stage4_patched_py_compile_smoke_20260502T140635Z_0df46d273de5/decision_packet.json",
+  "failure_class": null,
+  "failure_event_path": null,
+  "operation_type": "stage4_patched_py_compile_smoke",
+  "policy_matches": [],
+  "pre_spawn_receipt_path": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/STAGE4_SMOKE_stage4_patched_py_compile_smoke_20260502T140635Z_0df46d273de5/pre_spawn_receipt.json",
+  "receipt_dir": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/STAGE4_SMOKE_stage4_patched_py_compile_smoke_20260502T140635Z_0df46d273de5",
+  "result_class": "ALLOW_SUCCESS",
+  "stage": "STAGE4_SMOKE",
+  "total_elapsed_ms": 485
+}

@@ -1,0 +1,33 @@
+{
+  "receipt_type": "R6_VERIFY_RECEIPT",
+  "stage": "R6_EVIDENCE_BOUND_EXTERNAL_REUSE_SCAN_GATE",
+  "created_utc": "2026-04-28T03:04:56.415876+00:00",
+  "verdict": "PASS",
+  "errors": [],
+  "checks": {
+    "valid_fixture_result": "allow",
+    "missing_fixture_result": "deny",
+    "stale_fixture_result": "deny",
+    "registry_decision": "pass",
+    "p0a_gate_enabled": true,
+    "p0a_decision_log_required": true
+  },
+  "reports": {
+    "valid": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R6_external_reuse_scan_valid_20260428T030301Z.json",
+    "missing": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R6_external_reuse_scan_missing_20260428T030301Z.json",
+    "stale": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R6_external_reuse_scan_stale_20260428T030301Z.json",
+    "registry": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R6_gate_registry_integrity_20260428T030301Z.json"
+  },
+  "report_sha256": {
+    "valid": "c3196e843c553d63c90b44877238f9ec945be8f20fa40b3489e532aa3b5ef4e2",
+    "missing": "724b37fb2c300e5f68ed9d0f1cd0c30cf33701407b2f4f5feed5577da50e473a",
+    "stale": "6dfd8c273c6ae7de7f949712bd04b341810f553f9c4577a0cac50b35c5fe4e8e",
+    "registry": "06f46d3c6fda13cb5e2904e90bb7eb8cde7e93747290b2de8aee84e87f45d882"
+  },
+  "promoted": {
+    "script": "0_kernel/scripts/p0a_external_reuse_scan_precheck_v1.py",
+    "schema": "runtime/governance/schemas/external_reuse_scan_gate_schema_v1.json",
+    "registry": "runtime/governance/registries/gate_registry_v1.json"
+  },
+  "next_stage": "R7_USEFULNESS_VALIDATOR_PROMOTION"
+}

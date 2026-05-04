@@ -1,0 +1,23 @@
+{
+  "results": [
+    {
+      "case": "pass_fixture",
+      "packet_hash": "e2bfecca011b858bbc299a8c78cb6db7b00269213d2e5ebba5700e2ff2aa1b7e",
+      "status": "PASS"
+    },
+    {
+      "case": "fail_fixture_missing_query_id",
+      "codes": [
+        "REQUIRED",
+        "PATTERN"
+      ],
+      "status": "PASS"
+    },
+    {
+      "case": "generated_packet",
+      "packet_hash": "b9f6f38b0aa77f2dd991215c7f41e858a20ef2f806b60d0f5435a9f594242855",
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS"
+}

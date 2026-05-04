@@ -1,0 +1,43 @@
+{
+  "version": "1.0",
+  "created_at": 1777036855.304405,
+  "stage": "D0_VERIFY_BASELINE_AND_LOCK_D1_SCOPE_ONLY",
+  "status": "complete",
+  "checks": {
+    "active_root_exists": true,
+    "active_root_git_exists": true,
+    "active_root_git_clean": true,
+    "active_root_git_fsck_clean": true,
+    "baseline_lock_exists": true,
+    "baseline_lock_passed": true,
+    "boot_manifest_current_baseline_points_to_lock": true,
+    "stable_manifest_verified": true,
+    "boot_executor_present": true,
+    "trigger_router_evaluator_present": true,
+    "ce_packet_validator_present": true,
+    "runaway_turn_breaker_active": true,
+    "tracked_cache_invariant_present": true
+  },
+  "baseline": {
+    "active_root": "/mnt/data/Metablooms_OS_refined",
+    "baseline_lock": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/BASELINE_LOCK_RECREATED_CURRENT_BEFORE_D0_RECEIPT.json",
+    "stable_export": "/mnt/data/Metablooms_OS_refined_RECREATED_CURRENT_BASELINE_BEFORE_D0.zip",
+    "stable_export_sha256": "b488d68e4a487c370e5b168a7393d65f9216353d0dc3a707399876d89e494c26"
+  },
+  "selected_improvement": {
+    "id": "D1",
+    "name": "SEE packet schema + validator",
+    "scope": "specification only; implementation deferred to D2"
+  },
+  "runaway_turn_guard": {
+    "active": true,
+    "implementation_allowed_in_D1": false
+  },
+  "outputs": {
+    "scope": "/mnt/data/Metablooms_OS_refined/0_kernel/docs/NEXT_IMPROVEMENT_PASS_D0_SCOPE_LOCK_v1.md",
+    "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/NEXT_IMPROVEMENT_PASS_D0_SCOPE_LOCK_RECEIPT_v1.json",
+    "handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/D0_TO_D1_HANDOFF_v1.json"
+  },
+  "verdict": "PASS",
+  "next_correct_command": "EXECUTE STAGE D1 \u2014 SEE PACKET VALIDATOR SPEC"
+}

@@ -1,0 +1,8 @@
+TRACKER PREVIEW — STAGE6T_TOOL_UNIVERSE_RESOLVER_COVERAGE_REPAIR_FOR_TRACE_EXPORT
+Status: PASS
+Repair: Tool Universe Resolver now classifies trace/export/adapter work as observability_trace_export.
+Top trace candidate: python_observability_trace_export_adapter
+Trace smoke: PASS — classified observability_trace_export; allowed_count=3.
+Zip regression: zip_export -> node_yazl_stream_export.
+Authority export: NOT PERFORMED.
+Next best stage: STAGE6U_SOURCE_LEVEL_RETROFIT_PRIORITY_BATCH_1_OR_AUTHORITY_EXPORT_AFTER_6T.

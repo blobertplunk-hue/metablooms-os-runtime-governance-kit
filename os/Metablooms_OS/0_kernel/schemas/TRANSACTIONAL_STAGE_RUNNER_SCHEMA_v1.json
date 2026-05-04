@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "TRANSACTIONAL_STAGE_RUNNER_SCHEMA_v1",
+  "title": "MetaBlooms Transactional Stage Runner Contract v1",
+  "type": "object",
+  "required": [
+    "version",
+    "created_at",
+    "contract_id",
+    "status",
+    "transaction_phases",
+    "promotion_rules",
+    "rollback_rules",
+    "idempotency_rules",
+    "receipt_rules",
+    "verdict"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": [
+        "number",
+        "string"
+      ]
+    },
+    "contract_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "transaction_phases": {
+      "type": "array"
+    },
+    "promotion_rules": {
+      "type": "array"
+    },
+    "rollback_rules": {
+      "type": "array"
+    },
+    "idempotency_rules": {
+      "type": "array"
+    },
+    "receipt_rules": {
+      "type": "array"
+    },
+    "verdict": {
+      "type": "string"
+    }
+  }
+}

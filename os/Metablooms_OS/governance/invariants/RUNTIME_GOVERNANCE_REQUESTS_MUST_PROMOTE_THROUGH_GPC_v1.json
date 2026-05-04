@@ -1,0 +1,19 @@
+{
+  "id": "RUNTIME_GOVERNANCE_REQUESTS_MUST_PROMOTE_THROUGH_GPC_v1",
+  "status": "active",
+  "gate": "RESEARCH_SEE_CE_GATE",
+  "description": "When the user asks for a governance rule or invariant to be enforced, it must be processed through the Governance Promotion Cartridge: write invariant JSON, bind to a mapped gate, generate positive and negative tests, and only mark active after IAE proves ALLOW and DENY behavior.",
+  "failure_action": "DENY_STAGE_EXECUTION",
+  "activation_requirements": [
+    "positive test must ALLOW",
+    "negative test must DENY",
+    "promotion receipt must be written",
+    "active status only after test proof"
+  ],
+  "source_request": {
+    "id": "RUNTIME_GOVERNANCE_REQUESTS_MUST_PROMOTE_THROUGH_GPC_v1",
+    "governance_text": "When the user asks for a governance rule or invariant to be enforced, it must be processed through the Governance Promotion Cartridge: write invariant JSON, bind to a mapped gate, generate positive and negative tests, and only mark active after IAE proves ALLOW and DENY behavior.",
+    "target_gate": "RESEARCH_SEE_CE_GATE",
+    "failure_action": "DENY_STAGE_EXECUTION"
+  }
+}

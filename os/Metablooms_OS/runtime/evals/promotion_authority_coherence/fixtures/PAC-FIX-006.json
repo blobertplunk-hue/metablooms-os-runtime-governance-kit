@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-05-02T19:59:18.342997+00:00",
+  "defects": [
+    "receipt_claims_success_without_all_gate_evidence"
+  ],
+  "expected_decision": "DENY",
+  "fixture_id": "PAC-FIX-006",
+  "result_hash": "d046f3154a4d4f7ba63c616f4ffcc5f31d9d647cc446f1c76ab46ae38657aa85",
+  "schema_version": "metablooms.promotion_authority_coherence.fixture.v1",
+  "setup": {
+    "gate_result_hash": null,
+    "promotion_receipt_status": "SUCCESS"
+  },
+  "title": "deny_receipt_success_without_gate_evidence"
+}

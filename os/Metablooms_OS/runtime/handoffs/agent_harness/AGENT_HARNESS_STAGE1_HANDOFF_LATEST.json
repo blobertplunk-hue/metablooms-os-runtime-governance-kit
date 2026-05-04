@@ -1,0 +1,8 @@
+{
+  "artifact_type": "AGENT_HARNESS_STAGE1_HANDOFF_v1",
+  "completed_stage": "IMPLEMENT_AGENT_HARNESS_STAGE_1",
+  "continuation_rule": "Run one bounded stage; Stage 2 may add parallel workpackets/diff review but must keep hard security gates and checkpoint interrupts.",
+  "created_utc": "20260501T144521Z",
+  "next_stage": "IMPLEMENT_AGENT_HARNESS_STAGE_2_PARALLEL_WORKPACKETS_AND_DIFF_REVIEW_OR_SOFTWARE_QUALITY_STAGE_1",
+  "status": "READY_FOR_VALIDATION"
+}

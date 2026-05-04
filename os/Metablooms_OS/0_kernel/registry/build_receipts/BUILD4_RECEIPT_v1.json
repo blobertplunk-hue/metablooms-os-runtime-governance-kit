@@ -1,0 +1,41 @@
+{
+  "receipt_type": "BUILD_RECEIPT",
+  "build_id": "BUILD-4",
+  "artifact": "autonomous_sidecar_generator_v1.py",
+  "created_utc": "2026-04-26T10:41:43Z",
+  "sha256": "783b46be80ef0b660dff3709104bc3b5311e0f02972f54cfaf1bbd24fe85e276",
+  "lines": 600,
+  "amendment_implemented": "AMEND-0006",
+  "target_path": "0_kernel/scripts/autonomous_sidecar_generator_v1.py",
+  "see_evidence": [
+    "Each incident becomes a learning opportunity — patterns stored in knowledge repositories",
+    "Promote successful patterns into reusable playbooks that next projects can inherit",
+    "Self-healing risk: sidecar generator stops after packaging — never repairs, only surfaces"
+  ],
+  "trigger_classes_implemented": [
+    "IC_FAILURE: threshold=2, fires on repeat IC interrupt conditions",
+    "TOOL_FAILURE: threshold=2, fires on repeat tool routing failures",
+    "SEE_GAP: threshold=2, fires when SEE returns 0 results twice",
+    "AMENDMENT_CANDIDATE: threshold=1, fires on every W3 amendment proposal",
+    "SUCCESS_PATTERN: threshold=1, fires on every W5 pattern promotion"
+  ],
+  "validation_tests": [
+    {"test": "syntax check", "result": "PASS"},
+    {"test": "T1 direct generate IC_FAILURE — README + evidence + index", "result": "PASS"},
+    {"test": "T2 ThresholdManager fires at threshold=2", "result": "PASS"},
+    {"test": "T3 AMENDMENT_CANDIDATE fires at threshold=1 with proposal", "result": "PASS"},
+    {"test": "T4 SIDECAR_BLOCKED_RECEIPT on write failure — no exception", "result": "PASS"},
+    {"test": "T5 ledger summary — all classes tracked", "result": "PASS"},
+    {"test": "T6 SHA integrity on generated index", "result": "PASS"}
+  ],
+  "new_capabilities": [
+    "CAPABILITY: All 5 trigger classes auto-generate named sidecar bundles at configurable thresholds",
+    "CAPABILITY: Amendment proposals and success patterns bundled automatically from W3/W5 output",
+    "CAPABILITY: SIDECAR_BLOCKED_RECEIPT written when writes fail — never silently drops evidence",
+    "CAPABILITY: ThresholdManager tracks per-class per-chunk counts — fires once per threshold crossing",
+    "CAPABILITY: SIDECAR_GENERATION_LEDGER_v1.jsonl records all generated sidecars for audit query",
+    "CAPABILITY: generate, record, summary, query CLI subcommands — integrates with stage runner"
+  ],
+  "overall_verdict": "PASS",
+  "next_correct_stage": "BUILD-5 — claude_memory_sync_writer_v1.py"
+}

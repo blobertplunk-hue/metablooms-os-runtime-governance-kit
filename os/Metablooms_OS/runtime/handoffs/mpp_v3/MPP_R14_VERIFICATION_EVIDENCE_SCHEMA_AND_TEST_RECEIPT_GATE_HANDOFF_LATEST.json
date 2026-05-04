@@ -1,0 +1,12 @@
+{
+  "from_stage": "MPP_R14_VERIFICATION_EVIDENCE_SCHEMA_AND_TEST_RECEIPT_GATE",
+  "notes": "R15 should consume verification evidence and detect trace/anomaly patterns before reasoning evaluation.",
+  "required_inputs": [
+    "0_kernel/schemas/mpp_v3/VERIFICATION_EVIDENCE_PACKET_SCHEMA_v1.json",
+    "0_kernel/mpp_v3/mpp_v3_verification_evidence_gate_v1.py",
+    "tests/fixtures/mpp_v3/valid_verification_evidence_packet_v1.json"
+  ],
+  "root": "/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z",
+  "status": "READY",
+  "to_stage": "MPP_R15_TRACE_ANALYSIS_SCHEMA_AND_ANOMALY_GATE"
+}

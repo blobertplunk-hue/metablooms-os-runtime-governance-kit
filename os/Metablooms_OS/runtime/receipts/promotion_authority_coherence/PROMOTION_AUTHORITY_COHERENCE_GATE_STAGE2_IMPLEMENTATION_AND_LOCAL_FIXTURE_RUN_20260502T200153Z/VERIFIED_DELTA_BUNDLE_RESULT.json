@@ -1,0 +1,12 @@
+{
+  "created_at": "2026-05-02T20:03:30.382779+00:00",
+  "duplicate_members": [],
+  "file_count": 42,
+  "result_hash": "f2582ed0908fcd3de73320c94a2cc384e5128a70678b6602156e41cc0ec08a5d",
+  "schema_version": "metablooms.delta_bundle_result.v1",
+  "stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN",
+  "zip_path": "/mnt/data/Metablooms_OS/runtime/stage_bundles/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z_VERIFIED_DELTA.zip",
+  "zip_sha256": "f9be738a8dbf51399fedcfc037c6a581fcb2cb26843f5ba279e2dc9d26cb8252",
+  "zip_size": 44093,
+  "zip_test": "PASS"
+}

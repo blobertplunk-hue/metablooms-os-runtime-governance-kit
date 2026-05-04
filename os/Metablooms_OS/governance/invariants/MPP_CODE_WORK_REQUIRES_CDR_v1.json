@@ -1,0 +1,9 @@
+{
+  "block_if": "stage_contains_code == true and cdr_gate_result.verdict != PASS",
+  "id": "MPP_CODE_WORK_REQUIRES_CDR_v1",
+  "required_gate": "runtime/governance/mpp_cdr_binding_gate_v1.py",
+  "rule": "All code-bearing work must run through MPP and MPP must invoke CDR before code is accepted.",
+  "schema": "Invariant_v1",
+  "stage": "MPP_CDR_BINDING_STAGE14_CODE_WORK_REQUIRES_CDR_IN_MPP",
+  "status": "ACTIVE"
+}

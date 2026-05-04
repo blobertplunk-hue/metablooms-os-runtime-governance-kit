@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-04-28T03:11:05Z",
+  "decision_id": "R7_USEFULNESS_VALIDATOR_PROMOTION-059eed0d359b1ab6",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"checks\": {\"launcher_default_root_current\": true, \"launcher_site_suppression_verified\": true, \"missing_required_fixture_denied\": true, \"registry_integrity_passed\": true, \"schema_exists\": true, \"too_few_fixture_denied\": true, \"valid_fixture_allowed\": true, \"validator_exists\": true}, \"closed_loopholes\": [\"No usefulness validator path using normal Python\", \"No promoted artifact can pass usefulness gate with fewer than three useful dimensions\", \"No html_activity can pass without required feedback/telemetry/misconception dimensions\", \"No telemetry_engine can pass without telemetry and misconception dimensions\", \"No decisionless validation path; each run emits a decision receipt\", \"No default launcher root ambiguity to Metablooms_OS_refined\"], \"created_utc\": \"2026-04-28T03:11:05Z\", \"receipt_type\": \"R7_VERIFY_RECEIPT\", \"stage\": \"R7_USEFULNESS_VALIDATOR_PROMOTION\", \"verdict\": \"PASS\"}",
+  "reasons": [],
+  "record_id": "R7_VERIFY_RECEIPT_20260428T031105Z",
+  "record_kind": "verify_receipt",
+  "result": "pass",
+  "source_record": {
+    "path": "receipts/refactor_program/R7_VERIFY_RECEIPT_20260428T031105Z.json",
+    "sha256": "059eed0d359b1ab6a57b7620868d08b28670136e511bde438587d5289682337f",
+    "size_bytes": 968
+  },
+  "span_id": "0b225a0e83ecce87",
+  "stage_id": "R7_USEFULNESS_VALIDATOR_PROMOTION",
+  "summary": "Canonical wrapper for R7_VERIFY_RECEIPT_20260428T031105Z.json",
+  "trace_id": "dce8bf63fb08f669f565e20e24e3d9ed"
+}

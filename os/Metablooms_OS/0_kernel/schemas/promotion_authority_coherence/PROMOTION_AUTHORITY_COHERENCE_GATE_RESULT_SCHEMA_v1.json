@@ -1,0 +1,21 @@
+{
+  "schema_version": "metablooms.promotion_authority_coherence_gate.result_schema.v1",
+  "title": "Promotion Authority Coherence Gate Result",
+  "type": "object",
+  "required": ["schema_version", "gate_id", "mode", "decision", "checks", "created_at", "result_hash"],
+  "properties": {
+    "schema_version": {"const": "metablooms.promotion_authority_coherence_gate.result.v1"},
+    "gate_id": {"const": "PROMOTION_AUTHORITY_COHERENCE_GATE_v1"},
+    "mode": {"enum": ["fixture", "fixture_ledger", "current_os_report_only"]},
+    "fixture_id": {"type": "string"},
+    "decision": {"enum": ["PASS", "DENY", "BLOCKED"]},
+    "expected_decision": {"enum": ["PASS", "DENY", "BLOCKED"]},
+    "matches_expected": {"type": "boolean"},
+    "checks": {"type": "array"},
+    "defects": {"type": "array", "items": {"type": "string"}},
+    "evidence": {"type": "object"},
+    "created_at": {"type": "string"},
+    "result_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,229 @@
+{
+  "created_at": "2026-05-02T20:03:46.485556+00:00",
+  "files": [
+    {
+      "path": "0_kernel/mpp_v3/promotion_authority_coherence_gate_v1.py",
+      "sha256": "49dd6a4ed231dbf5b461a1f30cbd80f8715460048543c2d5ce7033a773c2ec03",
+      "size": 16698
+    },
+    {
+      "path": "0_kernel/mpp_v3/promotion_authority_coherence_gate_v1.py.sha256",
+      "sha256": "6b7d96b57fecb5f411e10794045d419eb9cc3357d1ee5680e2f0c53163fce1b0",
+      "size": 147
+    },
+    {
+      "path": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_PRE_PROMOTION_BINDING_v1.json",
+      "sha256": "70df15b0f725993d3b84d126807dedbb76eaaa2ed12e43c1d1d9256aaacebba0",
+      "size": 936
+    },
+    {
+      "path": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_PRE_PROMOTION_BINDING_v1.json.sha256",
+      "sha256": "39a5f0a400f6e967a37001eed8a7c59658d1d1e06ed4fb3ca32335de59c8e286",
+      "size": 198
+    },
+    {
+      "path": "0_kernel/schemas/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_RESULT_SCHEMA_v1.json",
+      "sha256": "96f9afd04b1974873884f37c1e07b185b399a17021722c7828738a51fe884433",
+      "size": 1001
+    },
+    {
+      "path": "0_kernel/schemas/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_RESULT_SCHEMA_v1.json.sha256",
+      "sha256": "838b4840fa80db43c5ead63e694d6e44a649fbee9672b8225a012fe3c4fbf40f",
+      "size": 194
+    },
+    {
+      "path": "runtime/handoffs/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_HANDOFF_20260502T200153Z.json",
+      "sha256": "bc9e7748be0ac7254cb8e7ceefbf2c70989f1dd88998c7d2ab7e9bd47333162b",
+      "size": 1505
+    },
+    {
+      "path": "runtime/handoffs/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_HANDOFF_20260502T200153Z.json.sha256",
+      "sha256": "b4f29d0087538c7c9a17c4b0022ba49037a872187f9b8a89fc10c3cffa1716fb",
+      "size": 175
+    },
+    {
+      "path": "runtime/handoffs/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_HANDOFF_LATEST.json",
+      "sha256": "bc9e7748be0ac7254cb8e7ceefbf2c70989f1dd88998c7d2ab7e9bd47333162b",
+      "size": 1505
+    },
+    {
+      "path": "runtime/handoffs/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_HANDOFF_LATEST.json.sha256",
+      "sha256": "24a47f7637fe1939d653002c83b95e1119bb4bfb3ce208cfadd3701e89d03851",
+      "size": 165
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/CURRENT_OS_REPORT_ONLY_SCAN.json",
+      "sha256": "5e92c3b6ada9445d650ee86fc7d931772b967b591ae3f516715264098c7e69fd",
+      "size": 12971
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/CURRENT_OS_REPORT_ONLY_SCAN.json.sha256",
+      "sha256": "9aeb6c3e8be5dbc0e5fed8ad73080157faf3567d3ef899f3bc2cfc9cd545d5b6",
+      "size": 99
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/CURRENT_OS_SCAN_STDOUT.json",
+      "sha256": "5e92c3b6ada9445d650ee86fc7d931772b967b591ae3f516715264098c7e69fd",
+      "size": 12971
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/DELTA_MANIFEST.json",
+      "sha256": "3946724443dc829b3013ed7a18d552a000371a232bccef88bd8867c400737392",
+      "size": 11961
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/DELTA_MANIFEST.json.sha256",
+      "sha256": "0b7e7b2b9e25fd43171b34b2fcd921ead71d73f458834af1ee0874b550dd7cd1",
+      "size": 86
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/FIXTURE_RESULT_LEDGER.json",
+      "sha256": "d8fbda31954ab4aa28fd95170c69317478733a4d6371b9f3c9b97de6b967e924",
+      "size": 2033
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/FIXTURE_RESULT_LEDGER.json.sha256",
+      "sha256": "3580fd3c59d729bb4a43a802da50aa1e79125ff67b60ecdf7f7a4e1b73050873",
+      "size": 93
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/FIXTURE_RESULT_LEDGER_DUPLICATE.json",
+      "sha256": "d8fbda31954ab4aa28fd95170c69317478733a4d6371b9f3c9b97de6b967e924",
+      "size": 2033
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/FIXTURE_RESULT_LEDGER_DUPLICATE.json.sha256",
+      "sha256": "77746e74dcedf1b2c9a5d35909ca76cdaa0d07b237ee7c6b8ff0ca553d53e5b5",
+      "size": 103
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/FIXTURE_RUN_STDOUT.json",
+      "sha256": "d8fbda31954ab4aa28fd95170c69317478733a4d6371b9f3c9b97de6b967e924",
+      "size": 2033
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/IMPLEMENTATION_CONTRACT.json",
+      "sha256": "c58bd4d558baec5dbba8f135f018c7f46b116a7d5c22def121d2babbe5df4aa9",
+      "size": 3487
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/IMPLEMENTATION_CONTRACT.json.sha256",
+      "sha256": "22c03db8510ee2b329fa474de341669498553fc873248980c7b80912624874f4",
+      "size": 95
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/IMPLEMENTATION_CONTRACT_VALIDATION.json",
+      "sha256": "d340001976d31275f6bb02b0c50101c9bc69b14d0828aa8ef763fe25c485d8f6",
+      "size": 151
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/IMPLEMENTATION_CONTRACT_VALIDATION.json.sha256",
+      "sha256": "c4b288b40d85ffefd09aac0214549602a14387220c25ca23c2fd1628ac1d8728",
+      "size": 273
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/PAC-FIX-001_RESULT.json",
+      "sha256": "43fc360628dc86c0224f4cdd9bc13fc273f798e979b2885e43630e9e56c671be",
+      "size": 2696
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/PAC-FIX-001_RESULT.json.sha256",
+      "sha256": "a577f24be40583f67a7a9aa4a89de17a36b2c107b6f6cf8cce5403ae305fbca8",
+      "size": 90
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/PAC-FIX-002_RESULT.json",
+      "sha256": "1a3bf25d3f38359eafc144e2611c5dd0aa2fdcf3f54ae68259a2b60c5f63ffaa",
+      "size": 2700
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/PAC-FIX-002_RESULT.json.sha256",
+      "sha256": "30907bfda2210d7105abbc13086e4c3e9dc90a00ef9d187479e604dfd9090aa9",
+      "size": 90
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/PAC-FIX-003_RESULT.json",
+      "sha256": "191e482b2955d3511e52305ddab43d9ca24b9a1da856596a404697b47db79f6f",
+      "size": 2624
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/PAC-FIX-003_RESULT.json.sha256",
+      "sha256": "74a5326d167447ecdfb03021a94fdbd57ec4715283829b6e1a9d973438e76752",
+      "size": 90
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/PAC-FIX-004_RESULT.json",
+      "sha256": "9f394cb239945ea51af76baaa45bb42802f7456218e3b620c0c2a1edb67c4821",
+      "size": 2654
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/PAC-FIX-004_RESULT.json.sha256",
+      "sha256": "ef5e0fc9419a1f2bd7c0d7b4e5c22b291ed96930d85f761eea644a20bda34e7e",
+      "size": 90
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/PAC-FIX-005_RESULT.json",
+      "sha256": "5859a79e6fb9d36ef79b2593225f407448224babd877d46fabc74d42653b5d04",
+      "size": 2462
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/PAC-FIX-005_RESULT.json.sha256",
+      "sha256": "aacaee79d17d1ee530b5be7f770320c1d5f3cbbb66285c1c2239337bf2773aa4",
+      "size": 90
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/PAC-FIX-006_RESULT.json",
+      "sha256": "331231d4e003d766e63dca083b5a4c6cb075bd38ae4f9fab61ff773cd10812aa",
+      "size": 2658
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/PAC-FIX-006_RESULT.json.sha256",
+      "sha256": "412c17b50b76f2d0d3553d30108b5c5a57d10bc53fd086c41d095629b207c769",
+      "size": 90
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/SEE_PACKET.json",
+      "sha256": "22aa41cbff46a4e099af6e5a9a18df859ec74e8c29b99b53bbd9703b328e2b34",
+      "size": 996
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/SEE_PACKET.json.sha256",
+      "sha256": "1241d9fa46ee2a02da81b2ea6f8b8791f3e72bcda9b33262b50dff0cf702be3e",
+      "size": 82
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/STAGE_RECEIPT.json",
+      "sha256": "1453abca01ba37b39c86c578e54f05f6f4631637b7adc9bbd823e686213701cd",
+      "size": 7955
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/STAGE_RECEIPT.json.sha256",
+      "sha256": "910edec79ac41e3807f3c1e9e47a2958ef9c04c7c77b4892077f672467b3b38b",
+      "size": 85
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/VERIFIED_DELTA_BUNDLE_RESULT.json",
+      "sha256": "17d7fb376bf686b85b9a87ed5c67f364852342d10b777b4e33bf2bcbf0044595",
+      "size": 672
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/VERIFIED_DELTA_BUNDLE_RESULT.json.sha256",
+      "sha256": "1fdbc19d6e5779811a85801b56fcc8ade823338776c348d741c8326e8623c906",
+      "size": 100
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/WRITE_PATH_GATE_RESULT.json",
+      "sha256": "a26e024f476f6c0928dca0a14f5be22791e7fb8a59d91f81149e820c5be24203",
+      "size": 1290
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/WRITE_PATH_GATE_RESULT.json.sha256",
+      "sha256": "ff4d0e82356f7d0c60d379ae9c0c52f500598343608e626cb4ae318e9270a8b5",
+      "size": 261
+    }
+  ],
+  "result_hash": "dad9e073d1c22789abf8abb2c4391929dba3acf85c2fc22ab236e7db1b610a77",
+  "schema_version": "metablooms.stage_delta_manifest.v1",
+  "stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN",
+  "supersedes": "initial_delta_bundle_before_receipt_update"
+}

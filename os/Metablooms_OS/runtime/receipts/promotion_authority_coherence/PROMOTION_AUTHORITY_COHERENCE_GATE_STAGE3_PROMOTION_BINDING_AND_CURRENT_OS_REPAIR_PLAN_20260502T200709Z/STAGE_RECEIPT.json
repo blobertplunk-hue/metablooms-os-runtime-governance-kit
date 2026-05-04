@@ -1,0 +1,144 @@
+{
+  "blocked_or_deferred": [
+    "Current OS repair not executed in Stage 3. Existing authority graph remains DENY until Stage 4+ classification/repair.",
+    "No full authority export promoted in this stage."
+  ],
+  "created_at": "2026-05-02T20:10:48.788554+00:00",
+  "next_stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER",
+  "objective": "Bind PAC gate as hard export-promotion blocker and write current OS repair plan without bulk-blessing artifacts.",
+  "outputs": [
+    {
+      "path": "0_kernel/mpp_v3/mpp_v3_export_promotion_gate_v1.py",
+      "sha256": "5166298c307be9466c5f45aff54e8a1929ba247e7c5303b565e31e5a90a1d090",
+      "size": 6617
+    },
+    {
+      "path": "0_kernel/mpp_v3/mpp_v3_export_promotion_gate_v1.py.sha256",
+      "sha256": "a1dc295b14b28806dc750879bd95651bcf3d3c722786e5f71f82e088618bb459",
+      "size": 101
+    },
+    {
+      "path": "0_kernel/registry/mpp_v3/policy_gates/MPP_V3_EXPORT_PROMOTION_GATE_v1.json",
+      "sha256": "760f5b9bdb69b8db298572fce4baeacba2e838b68cb79df3470cdf48b1f55353",
+      "size": 1599
+    },
+    {
+      "path": "0_kernel/registry/mpp_v3/policy_gates/MPP_V3_EXPORT_PROMOTION_GATE_v1.json.sha256",
+      "sha256": "6fefba2215c3147f4c0a0de1147b5cbc0866f490655d12dbfafc04da46eff038",
+      "size": 103
+    },
+    {
+      "path": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_HARD_PROMOTION_BINDING_v1.json",
+      "sha256": "df8b69246a62b7eeb228e384771eefd454e8711e19eec1656072bf1e8a781f0b",
+      "size": 1301
+    },
+    {
+      "path": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_HARD_PROMOTION_BINDING_v1.json.sha256",
+      "sha256": "b40c42c36eafcd0bb7761bffef269648475137cef66f4bf90bde3d5077aada82",
+      "size": 127
+    },
+    {
+      "path": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_PRE_PROMOTION_BINDING_v1.json",
+      "sha256": "687243db07d6d92e35038db4c7c2940a78f290444f4bf230ef3850bda35eda07",
+      "size": 1163
+    },
+    {
+      "path": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_PRE_PROMOTION_BINDING_v1.json.sha256",
+      "sha256": "27e0d7a9b360f1f197653a6577321d153e13d29c290fb2f7f06375cb840c804f",
+      "size": 126
+    },
+    {
+      "path": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_CURRENT_OS_REPAIR_PLAN_v1.json",
+      "sha256": "5d8d01485740e79651c28f61d705f9880c6d6635d3d78a0d0839c16a6824ce14",
+      "size": 12968
+    },
+    {
+      "path": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_CURRENT_OS_REPAIR_PLAN_v1.json.sha256",
+      "sha256": "7b3c6383e7a56480de1b3247eccb525a9578f9dc2f513734219e19579577ab35",
+      "size": 127
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE3_PROMOTION_BINDING_AND_CURRENT_OS_REPAIR_PLAN_20260502T200709Z/CURRENT_OS_REPORT_ONLY_SCAN_BEFORE_STAGE3.json",
+      "sha256": "7783d6c227f5c12f500f2228659238151df29dff5610420c23d741452c368585",
+      "size": 12960
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE3_PROMOTION_BINDING_AND_CURRENT_OS_REPAIR_PLAN_20260502T200709Z/FIXTURE_RESULT_LEDGER_STAGE3_PREBINDING.json",
+      "sha256": "92f29cacad861935f48a230ce8dcc68af57f36449ba82ec9c79ae1a3a8a2f49c",
+      "size": 2033
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE3_PROMOTION_BINDING_AND_CURRENT_OS_REPAIR_PLAN_20260502T200709Z/EXPORT_GATE_OLD_FIXTURE_EXPECTED_DENY.json",
+      "sha256": "6bb8d283fcfc457d1331bb077da5cd80ee9de832954e7e396778456f3b6cff60",
+      "size": 710
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE3_PROMOTION_BINDING_AND_CURRENT_OS_REPAIR_PLAN_20260502T200709Z/EXPORT_GATE_PATCHED_FIXTURE_WITH_PAC_PASS_PACKET.json",
+      "sha256": "3fd3fe8c9bcb2eaebdfc28f8b959e58f259c2a3920624d09243b3f93b8550002",
+      "size": 3837
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE3_PROMOTION_BINDING_AND_CURRENT_OS_REPAIR_PLAN_20260502T200709Z/EXPORT_GATE_PATCHED_FIXTURE_WITH_PAC_PASS_RESULT.json",
+      "sha256": "f2693adf84a020e2a0c65a098895d6536cacb78c7a370c14550dae5c1f03887c",
+      "size": 661
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE3_PROMOTION_BINDING_AND_CURRENT_OS_REPAIR_PLAN_20260502T200709Z/WRITE_PATH_GATE_RESULT.json",
+      "sha256": "1cbb919d90363ed46839221328c59d6f8e564c6e66b152c39beb0b149bfb65b2",
+      "size": 3437
+    },
+    {
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE3_PROMOTION_BINDING_AND_CURRENT_OS_REPAIR_PLAN_20260502T200709Z/CURRENT_OS_REPORT_ONLY_SCAN_AFTER_STAGE3.json",
+      "sha256": "07a1815c9568e7dbadb72e2cbdcdd0a5d827e24cf5df0e66951e4865435a4eb5",
+      "size": 12927
+    }
+  ],
+  "schema_version": "metablooms.stage_receipt.v1",
+  "see_basis": [
+    {
+      "claim": "artifact/provenance trust requires verification before acceptance",
+      "source": "SLSA"
+    },
+    {
+      "claim": "release integrity/provenance evidence should be retained and protected",
+      "source": "NIST SSDF"
+    },
+    {
+      "claim": "automated checks expose security/risk posture before acceptance",
+      "source": "OpenSSF Scorecard"
+    }
+  ],
+  "stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE3_PROMOTION_BINDING_AND_CURRENT_OS_REPAIR_PLAN",
+  "status": "PASS_WITH_CURRENT_OS_REPAIR_BLOCKERS_REMAINING",
+  "verification": {
+    "current_os_after": {
+      "decision": "DENY",
+      "defects": [
+        "controlled_artifact_missing_from_index",
+        "live_boot_file_names_noncurrent_authority",
+        "registered_hash_mismatch"
+      ],
+      "mismatches": 85,
+      "missing": 947,
+      "stale_refs": 4
+    },
+    "current_os_before": {
+      "decision": "DENY",
+      "defects": [
+        "controlled_artifact_missing_from_index",
+        "live_boot_file_names_noncurrent_authority",
+        "registered_hash_mismatch"
+      ],
+      "mismatches": 83,
+      "missing": 940,
+      "stale_refs": 4
+    },
+    "export_gate_old_fixture_expected_violation": "EXPORT_MISSING_PROMOTION_AUTHORITY_COHERENCE_GATE",
+    "export_gate_old_fixture_verdict": "FAIL",
+    "export_gate_patched_fixture_verdict": "PASS",
+    "fixture_count": 6,
+    "fixture_ledger_decision": "PASS",
+    "py_compile_export_gate": "PASS",
+    "write_path_gate_verdict": "PASS"
+  }
+}

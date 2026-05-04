@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "artifact_type": {
+      "const": "MB_LIVE_BOOT_GUIDANCE.v1"
+    },
+    "deep_links": {
+      "type": "array"
+    },
+    "steps": {
+      "type": "array"
+    },
+    "verdict": {
+      "enum": [
+        "PASS",
+        "FAIL"
+      ]
+    }
+  },
+  "required": [
+    "artifact_type",
+    "stage_id",
+    "created_utc",
+    "verdict",
+    "steps",
+    "deep_links"
+  ],
+  "title": "MetaBlooms Live Boot Guidance v1",
+  "type": "object"
+}

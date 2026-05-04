@@ -1,0 +1,155 @@
+{
+  "cartridge_id": "progress_ledger_v1",
+  "name": "Progress Ledger v1",
+  "type": "core_governance",
+  "purpose": "Track explicit workflow state, stage completion, artifacts, decisions, validation status, issues, and next actions so the system does not rely on chat memory.",
+  "task_types": [
+    "state_tracking",
+    "progress_recording",
+    "stage_management",
+    "artifact_tracking",
+    "continuity_support"
+  ],
+  "platform": [
+    "robert",
+    "shaye",
+    "both"
+  ],
+  "input_contract": {
+    "required": [
+      "project_id",
+      "current_stage",
+      "stage_status"
+    ],
+    "optional": [
+      "artifact",
+      "cartridge_used",
+      "tool_used",
+      "validation_status",
+      "issues",
+      "decisions",
+      "next_stage",
+      "next_required_input",
+      "continuity_packet",
+      "timestamp"
+    ]
+  },
+  "output_contract": {
+    "artifacts": [
+      "ledger_entry",
+      "project_ledger_state"
+    ],
+    "format": "structured_json_or_markdown",
+    "must_include": [
+      "project_id",
+      "current_stage",
+      "stage_status",
+      "completed_stages",
+      "artifacts_created",
+      "validation_state",
+      "issues",
+      "next_action"
+    ]
+  },
+  "handoff_contract": {
+    "structure": "structured_markdown_v1",
+    "fields": [
+      "artifact",
+      "summary",
+      "next_required_input",
+      "next_recommended_cartridge"
+    ]
+  },
+  "execution_mode": "record",
+  "external_tools": [],
+  "validation_rules": [
+    "must_record_current_stage",
+    "must_record_stage_status",
+    "must_record_artifact_if_created",
+    "must_record_validation_state_if_available",
+    "must_not_rely_on_implicit_chat_state",
+    "must_output_structured_ledger_state"
+  ],
+  "failure_modes": [
+    "missing_project_id",
+    "missing_current_stage",
+    "missing_stage_status",
+    "ambiguous_stage_transition",
+    "inconsistent_validation_state"
+  ],
+  "status": "active",
+  "ledger_schema": {
+    "project_header": {
+      "required": [
+        "project_id"
+      ],
+      "optional": [
+        "project_name",
+        "version",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    "ledger_entry": {
+      "required": [
+        "current_stage",
+        "stage_status"
+      ],
+      "optional": [
+        "cartridge_used",
+        "tool_used",
+        "artifact",
+        "validation_status",
+        "issues",
+        "decisions",
+        "next_stage",
+        "next_required_input",
+        "timestamp"
+      ]
+    },
+    "project_ledger_state": {
+      "required": [
+        "completed_stages",
+        "artifacts_created",
+        "validation_state",
+        "issues",
+        "next_action"
+      ],
+      "optional": [
+        "open_risks",
+        "continuity_link"
+      ]
+    }
+  },
+  "status_rules": {
+    "allowed_stage_status": [
+      "not_started",
+      "in_progress",
+      "complete",
+      "failed",
+      "blocked",
+      "retry_required"
+    ],
+    "transition_rules": [
+      "not_started_to_in_progress",
+      "in_progress_to_complete",
+      "in_progress_to_failed",
+      "failed_to_retry_required",
+      "retry_required_to_in_progress",
+      "complete_to_next_stage_not_started"
+    ]
+  },
+  "ledger_output_schema": {
+    "project_id": "",
+    "current_stage": "",
+    "stage_status": "",
+    "completed_stages": [],
+    "artifacts_created": [],
+    "validation_state": {
+      "status": "",
+      "issues": []
+    },
+    "issues": [],
+    "next_action": ""
+  }
+}

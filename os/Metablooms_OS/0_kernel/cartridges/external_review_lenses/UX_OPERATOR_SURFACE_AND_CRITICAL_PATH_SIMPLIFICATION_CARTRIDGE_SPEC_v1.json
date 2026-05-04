@@ -1,0 +1,41 @@
+{
+  "artifact_type": "METABLOOMS_GOVERNED_CARTRIDGE_SPEC_v1",
+  "cartridge_id": "UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE",
+  "created_utc": "20260501T040110Z",
+  "deny_conditions": [
+    "chat_claim_without_artifact",
+    "validator_described_but_not_executable",
+    "missing_receipt_or_handoff",
+    "score_increase_without_evidence",
+    "export_missing_declared_outputs"
+  ],
+  "first_implementation_stage": "IMPLEMENT_UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE_STAGE_1_DESIGN_SCHEMA_FIXTURES_VALIDATOR",
+  "inputs": [
+    "current_runtime_root",
+    "authority_pointer",
+    "latest_boot_receipt",
+    "latest_export_validation",
+    "SEE_artifacts",
+    "CE_artifacts"
+  ],
+  "lens": "UX/product simplicity",
+  "mandatory_gates": [
+    "fresh_boot_or_accepted_warning_gate",
+    "artifact_location_verification_gate",
+    "source_evidence_binding_gate",
+    "executable_validator_gate",
+    "regression_fixture_gate",
+    "receipt_and_handoff_gate",
+    "whole_os_export_inclusion_gate"
+  ],
+  "outputs": [
+    "0_kernel/registry/external_review/UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE_RESULTS_v1.json",
+    "runtime/evals/external_review/UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE_VALIDATION_v1.json",
+    "runtime/receipts/external_review/UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE_RECEIPT_v1.json"
+  ],
+  "priority": "P0",
+  "problem_statement": "No minimal operator surface such as mb boot/run/verify/export/replay, no one-screen critical path, and no plain-English state dashboard.",
+  "source_lens": "langgraph_interrupts",
+  "status": "SPEC_CREATED_IMPLEMENTATION_PENDING",
+  "success_definition": "MetaBlooms improves UX/product simplicity score by at least 1.0 point and proves the improvement with executable validators, receipts, and replayable fixtures."
+}

@@ -1,0 +1,32 @@
+{
+  "receipt_type": "GW6_BATCH_BUILD_RECEIPT",
+  "created_utc": "2026-04-26T17:35:56Z",
+  "workflow": "GOVERNED_RECURSIVE_SEE_CE_WORKFLOW_v6",
+  "heavy_work_class": "CODE_PATCH",
+  "parallelism_model": "BUILD_parallel_INTEGRATE_sequential",
+  "builds_completed": 4,
+  "owasp_risks_addressed": [
+    "ASI01_AGENT_GOAL_HIJACK",
+    "ASI04_SUPPLY_CHAIN",
+    "ASI06_MEMORY_POISONING"
+  ],
+  "artifacts": [
+    {
+      "name": "sync_writer_baseline_sha_patch_v1.py",
+      "sha256": "bc18dd2a9852ff5d2000678949aa9fff5222d297eaf30e2267482058d0fb2777"
+    },
+    {
+      "name": "see_finding_consistency_gate_v1.py",
+      "sha256": "4b9e5c78211f2af47f3e790a07c8b16ef4c1ccad6dc9bf87626f7e519c4b043a"
+    },
+    {
+      "name": "cartridge_promotion_gate_v1.py",
+      "sha256": "a73d67453d6aaf44340d03a37b295eca529bf7582827bba49f1651f8d8598fa5"
+    },
+    {
+      "name": "session_anomaly_detector_v1.py",
+      "sha256": "11518ea3728fdcdedfd04379ca260fa7c38b4fa2f43e2ffe76e8acf0f36e1448"
+    }
+  ],
+  "overall_verdict": "PASS"
+}

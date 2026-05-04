@@ -1,0 +1,22 @@
+{
+  "artifact_type": "FL17_MERGE_4_VALIDATION_REPORT",
+  "checks": {
+    "contains_through_stage_is_fl16": true,
+    "fl16_promotion_decision_not_promoted": true,
+    "fl16_status_blocked_before_promotion": true,
+    "fl16_verdict_blocked_not_promoted": true,
+    "fl17_export_manifest_pass": true,
+    "fl17_provenance_pass": true,
+    "fl17_unsafe_paths_zero": true,
+    "fl17_zip_testzip_pass": true,
+    "full_os_export_performed_false": true,
+    "promotion_performed_false": true,
+    "required_inputs_present": true,
+    "root_exists": true,
+    "semantic_authority_disallows_export_pass_as_promotion": true,
+    "write_probe_pass": true
+  },
+  "created_utc": "20260430T015900Z",
+  "stage": "FL17-MERGE-4_SEMANTIC_RECONCILIATION",
+  "verdict": "PASS"
+}

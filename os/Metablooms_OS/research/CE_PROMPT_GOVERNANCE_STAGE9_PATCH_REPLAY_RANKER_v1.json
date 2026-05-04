@@ -1,0 +1,28 @@
+{
+  "created_utc": "2026-04-30T22:18:07Z",
+  "decisions": [
+    {
+      "decision": "Install deterministic replay engine and quality ranker as executable governance gates.",
+      "rationale": "Stage 8 can generate improved prompts; Stage 9 must replay and rank candidate patches before writeback/promotion."
+    },
+    {
+      "decision": "Use weighted score dimensions with required hard gates.",
+      "dimensions": [
+        "contract_compliance",
+        "evidence_binding",
+        "validation_strength",
+        "task_fit",
+        "specificity",
+        "artifact_discipline",
+        "regression_risk"
+      ]
+    }
+  ],
+  "packet_id": "CE_PROMPT_GOVERNANCE_STAGE9_PATCH_REPLAY_RANKER_v1",
+  "preservation_rules": [
+    "Do not replace Stage 8 auto-improvement loop; compose with it.",
+    "Keep patch ledger append-only.",
+    "Do not promote a candidate that fails hard gates even if numeric score is high."
+  ],
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_9_PROMPT_PATCH_REPLAY_AND_QUALITY_RANKER"
+}

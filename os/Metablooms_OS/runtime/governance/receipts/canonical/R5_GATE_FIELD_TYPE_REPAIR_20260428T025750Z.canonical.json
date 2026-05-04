@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-04-28T02:57:50Z",
+  "decision_id": "R5-3b5a594c1cc307d0",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"created_utc\": \"2026-04-28T02:57:50Z\", \"fixes\": [\"Corrected P0A, P0PY, and MEMORY_SYNC_VALIDATION fields in registry and fixtures.\", \"Added validator type checks for enabled, decision_log_required, and status.\"], \"mistake_class\": \"positional_optional_argument_misbinding + insufficient_schema_runtime_type_check\", \"repair_id\": \"R5_GATE_FIELD_TYPE_REPAIR_20260428T025750Z\", \"root_cause\": \"Initial add() calls passed successor_gate values positionally into decision_log_required, producing string values where booleans were required. Validator did not type-check the field.\"}",
+  "reasons": [],
+  "record_id": "R5_GATE_FIELD_TYPE_REPAIR_20260428T025750Z",
+  "record_kind": "repair_receipt",
+  "result": "wrapped",
+  "source_record": {
+    "path": "receipts/refactor_program/R5_GATE_FIELD_TYPE_REPAIR_20260428T025750Z.json",
+    "sha256": "3b5a594c1cc307d07f5e489aba2240240786634f3d4444023153535cc599fcf2",
+    "size_bytes": 599
+  },
+  "span_id": "990779ca191b63db",
+  "stage_id": "R5",
+  "summary": "Canonical wrapper for R5_GATE_FIELD_TYPE_REPAIR_20260428T025750Z.json",
+  "trace_id": "bae240b89477b7cec0bd431f98ab00b8"
+}

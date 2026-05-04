@@ -1,0 +1,21 @@
+{
+  "artifact_type": "CE_SYNTHESIS",
+  "constraints": [
+    "Do not promote FL17 or FL16 as baseline in this stage.",
+    "Represent FL17 export PASS as archive/package validation only.",
+    "Represent FL16 status as BLOCKED_NOT_PROMOTED because its receipt explicitly says blocked_before_promotion and promotion_decision NOT_PROMOTED.",
+    "Write semantic authority artifacts that make packaging_success and promotion_success disjoint unless promotion receipt/handoff explicitly pass.",
+    "Preserve current tracker-working OS active baseline."
+  ],
+  "created_utc": "20260430T015900Z",
+  "derived_checks": [
+    "FL16 receipt status == blocked_before_promotion",
+    "FL16 promotion_decision == NOT_PROMOTED",
+    "FL16 verdict == BLOCKED_NOT_PROMOTED",
+    "FL17 export manifest verdict == PASS",
+    "FL17 contains_through_stage names FL16 validation stage",
+    "No baseline pointer promotion is performed by this stage"
+  ],
+  "semantic_rule": "Packaging/export validity can carry blocked evidence; it does not convert a blocked validation/promotion stage into a passed promotion.",
+  "stage": "FL17-MERGE-4_SEMANTIC_RECONCILIATION"
+}

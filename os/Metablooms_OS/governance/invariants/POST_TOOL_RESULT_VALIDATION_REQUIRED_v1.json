@@ -1,0 +1,15 @@
+{
+  "created_at_utc": "2026-05-02T03:26:00Z",
+  "description": "BTS-governed tool executions must validate tool outputs against intent/evidence before emitting BTS_TOOL_RESULT success or committing a success claim.",
+  "failure_action": "DENY_BTS_SUCCESS_COMMIT_AND_ROUTE_TO_REPAIR_OR_FAILURE_RESULT",
+  "gate": "post_tool_result_validation_v1",
+  "id": "POST_TOOL_RESULT_VALIDATION_REQUIRED_v1",
+  "required_surfaces": [
+    "bts_wrapped_filesystem_write",
+    "bts_wrapped_node_zip_profile_export",
+    "bts_wrapped_export_zip"
+  ],
+  "stage": "STAGE6L_POST_TOOL_RESULT_VALIDATION_GATE",
+  "status": "active",
+  "validator_path": "runtime/governance/post_tool_result_validation_v1.py"
+}

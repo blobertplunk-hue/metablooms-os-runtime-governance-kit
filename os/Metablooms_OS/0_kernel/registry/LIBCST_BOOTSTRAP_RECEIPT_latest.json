@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "created_at": 1776997843.1400845,
+  "status": "PASS",
+  "vendor_path": "/mnt/data/Metablooms_OS_refined/0_kernel/vendor/python",
+  "before_import_ok": true,
+  "before_detail": {
+    "module_type": "Module",
+    "code": "x = 1",
+    "parse_module": true
+  },
+  "install_attempted": false,
+  "install_result": null,
+  "after_import_ok": true,
+  "after_detail": {
+    "module_type": "Module",
+    "code": "x = 1",
+    "parse_module": true
+  },
+  "usage_contract": {
+    "preferred_for": "format-preserving Python code transforms and codemods",
+    "fallback": "Python ast + safe_code_patch_helpers_v1.py",
+    "forbidden": "regex-only structural code patching"
+  }
+}

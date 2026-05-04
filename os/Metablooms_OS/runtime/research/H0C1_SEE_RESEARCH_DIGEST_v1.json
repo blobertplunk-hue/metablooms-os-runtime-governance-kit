@@ -1,0 +1,22 @@
+{
+  "artifact_type": "H0C1_SEE_RESEARCH_DIGEST_v1",
+  "claims": [
+    {
+      "claim": "Governance must be lifecycle-spanning and cross-cutting, not a one-time checklist.",
+      "source": "NIST AI RMF core Govern/Map/Measure/Manage framing via web.run search result turn876895search0"
+    },
+    {
+      "claim": "Guardrails can miss execution pathways such as handoffs unless explicitly scoped to those pathways.",
+      "source": "OpenAI Agents SDK guardrails via web.run search result turn876895search1"
+    },
+    {
+      "claim": "Tracing should capture tool calls, handoffs, guardrails, and custom events for auditing and debugging.",
+      "source": "OpenAI agent governance/tracing sources via web.run search results turn876895search7 and turn876895search13"
+    },
+    {
+      "claim": "Agentic systems must address risks across planning, tools, memory, orchestration, and no-governance/update-drift conditions.",
+      "source": "OWASP Agentic AI resources via web.run search results turn876895search2, turn876895search5, turn876895search8"
+    }
+  ],
+  "created_utc": "2026-04-30T21:45:00Z"
+}

@@ -1,0 +1,12 @@
+{
+  "from_stage": "MPP_R12_RRP_RECOVERY_PLAN_SCHEMA_AND_ROLLBACK_GATE",
+  "notes": "R13 should use RRP rollback gates before implementation writes and must bind implementation to a verified write path.",
+  "required_inputs": [
+    "0_kernel/schemas/mpp_v3/RRP_RECOVERY_PLAN_PACKET_SCHEMA_v1.json",
+    "0_kernel/mpp_v3/mpp_v3_rrp_recovery_plan_rollback_gate_v1.py",
+    "tests/fixtures/mpp_v3/valid_rrp_recovery_plan_packet_v1.json"
+  ],
+  "root": "/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z",
+  "status": "READY",
+  "to_stage": "MPP_R13_IMPLEMENTATION_CONTRACT_SCHEMA_AND_WRITE_PATH_GATE"
+}

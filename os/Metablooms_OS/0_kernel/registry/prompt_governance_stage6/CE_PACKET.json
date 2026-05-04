@@ -1,0 +1,11 @@
+{
+  "created_utc": "2026-04-30T21:56:29.826446Z",
+  "decisions": [
+    {
+      "decision": "promote only after deterministic replay validator returns ALLOW",
+      "rationale": "turn-time shell unzip timeout was a validation gap, not implementation proof"
+    }
+  ],
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_6_FULL_RECOVERY_PROOF_AND_GOVERNANCE_REPAIR",
+  "type": "CE_PACKET"
+}

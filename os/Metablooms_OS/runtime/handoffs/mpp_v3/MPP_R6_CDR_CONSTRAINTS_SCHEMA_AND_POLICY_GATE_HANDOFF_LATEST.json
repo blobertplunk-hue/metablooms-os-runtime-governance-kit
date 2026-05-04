@@ -1,0 +1,12 @@
+{
+  "from_stage": "MPP_R6_CDR_CONSTRAINTS_SCHEMA_AND_POLICY_GATE",
+  "notes": "R7 should use validated CDR constraints to frame measurable outcomes and failure criteria.",
+  "required_inputs": [
+    "0_kernel/schemas/mpp_v3/CDR_CONSTRAINTS_PACKET_SCHEMA_v1.json",
+    "0_kernel/mpp_v3/mpp_v3_cdr_constraints_policy_gate_v1.py",
+    "tests/fixtures/mpp_v3/valid_cdr_constraints_packet_v1.json"
+  ],
+  "root": "/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z",
+  "status": "READY",
+  "to_stage": "MPP_R7_OFM_OUTCOME_FRAME_SCHEMA_AND_MEASURABLE_SUCCESS_GATE"
+}

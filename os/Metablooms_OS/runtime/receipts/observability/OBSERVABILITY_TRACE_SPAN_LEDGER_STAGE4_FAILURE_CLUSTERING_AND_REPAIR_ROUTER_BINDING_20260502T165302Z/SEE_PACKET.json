@@ -1,0 +1,35 @@
+{
+  "artifact_type": "SEE_PACKET.v1",
+  "claims": [
+    {
+      "claim": "Use structured telemetry concepts and standardized error/exception attributes rather than ad-hoc string matching only.",
+      "sources": [
+        "OpenTelemetry exception semantic conventions for logs",
+        "OpenTelemetry span events deprecation guidance"
+      ]
+    },
+    {
+      "claim": "Treat operations reliability as a software problem with automated routing/repair support.",
+      "sources": [
+        "Google SRE",
+        "AWS SRE explainer"
+      ]
+    },
+    {
+      "claim": "Bind failure routing to artifact provenance and verification evidence.",
+      "sources": [
+        "SLSA build provenance",
+        "SLSA artifact verification"
+      ]
+    },
+    {
+      "claim": "Root-cause labels enable aggregate analysis and reveal common incident patterns.",
+      "sources": [
+        "USENIX ATC 2023 AutoARTS root cause labeling paper"
+      ]
+    }
+  ],
+  "created_utc": "20260502T165302Z",
+  "method": "web.run current evidence refresh; sources used in final chat citations",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING"
+}

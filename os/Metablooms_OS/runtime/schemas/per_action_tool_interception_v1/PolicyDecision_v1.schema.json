@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "metablooms://schemas/PolicyDecision_v1.schema.json",
+  "title": "PolicyDecision_v1",
+  "type": "object",
+  "required": ["schema_version", "decision_id", "envelope_id", "stage_id", "decision", "reason_code", "rationale", "decided_at_utc", "enforced_by", "receipt_path"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "PolicyDecision_v1"},
+    "decision_id": {"type": "string", "minLength": 8},
+    "envelope_id": {"type": "string", "minLength": 8},
+    "stage_id": {"type": "string", "minLength": 3},
+    "decision": {"enum": ["ALLOW", "DENY", "DEFER", "REQUIRE_APPROVAL"]},
+    "reason_code": {"type": "string", "minLength": 3},
+    "rationale": {"type": "string", "minLength": 3},
+    "decided_at_utc": {"type": "string"},
+    "enforced_by": {"const": "pre_tool_action_gate_v1"},
+    "receipt_path": {"type": "string"},
+    "safe_to_execute": {"type": "boolean"},
+    "required_next_action": {"type": "string"},
+    "matched_rules": {"type": "array", "items": {"type": "string"}},
+    "envelope_sha256": {"type": "string"}
+  }
+}

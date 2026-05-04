@@ -1,0 +1,6 @@
+{
+  "latest_stage": "H0B2C_DUPLICATE_FREE_EXPORT_REPAIR",
+  "next_stage_blocked_until_user_request": true,
+  "recommended_next_stage": "H0B3_ROUTER_CARTRIDGE_SELECTION_KERNEL_IMPLEMENTATION",
+  "status": "CLEAN_AUTHORITY_EXPORTED_AND_SHARED"
+}

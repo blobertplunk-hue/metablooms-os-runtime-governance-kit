@@ -1,0 +1,85 @@
+{
+  "created_utc": "2026-04-30T22:18:08Z",
+  "decision": "ALLOW",
+  "fixture_count": 4,
+  "packet_type": "PROMPT_PATCH_RANKING_REPORT_v1",
+  "source_replay_report": "runtime/state/PROMPT_PATCH_REPLAY_REPORT_v1.json",
+  "top_candidates": [
+    {
+      "candidate_id": "patch_replay_artifact_generation_prompt:auto_primary",
+      "decision": "ALLOW",
+      "dimensions": {
+        "artifact_discipline": 1.0,
+        "contract_compliance": 1.0,
+        "evidence_binding": 0.6,
+        "regression_risk": 1.0,
+        "specificity": 1.0,
+        "task_fit": 1.0,
+        "validation_strength": 1.0
+      },
+      "hard_gate": {
+        "allow": true,
+        "errors": []
+      },
+      "prompt_hash": "6e7031fa3eaba6800387d5f96c5ed557ef479c26ad73d51f4a5db5f0db52a01e",
+      "score": 0.94
+    },
+    {
+      "candidate_id": "patch_replay_export_prompt:auto_primary",
+      "decision": "ALLOW",
+      "dimensions": {
+        "artifact_discipline": 1.0,
+        "contract_compliance": 1.0,
+        "evidence_binding": 0.6,
+        "regression_risk": 1.0,
+        "specificity": 1.0,
+        "task_fit": 1.0,
+        "validation_strength": 1.0
+      },
+      "hard_gate": {
+        "allow": true,
+        "errors": []
+      },
+      "prompt_hash": "2342e8edcf36f8fd718c0ada11faa51d7f9b9e03bba06edc2be0577de45e09a5",
+      "score": 0.94
+    },
+    {
+      "candidate_id": "patch_replay_option_ordering_prompt:auto_primary",
+      "decision": "ALLOW",
+      "dimensions": {
+        "artifact_discipline": 1.0,
+        "contract_compliance": 1.0,
+        "evidence_binding": 0.6,
+        "regression_risk": 1.0,
+        "specificity": 1.0,
+        "task_fit": 1.0,
+        "validation_strength": 1.0
+      },
+      "hard_gate": {
+        "allow": true,
+        "errors": []
+      },
+      "prompt_hash": "fcc2985d1e0d0bc7159d8c2c9203639e2d750106da3709f498c89e04decaaa78",
+      "score": 0.94
+    },
+    {
+      "candidate_id": "patch_replay_research_prompt:auto_primary",
+      "decision": "ALLOW",
+      "dimensions": {
+        "artifact_discipline": 1.0,
+        "contract_compliance": 1.0,
+        "evidence_binding": 1.0,
+        "regression_risk": 1.0,
+        "specificity": 1.0,
+        "task_fit": 1.0,
+        "validation_strength": 1.0
+      },
+      "hard_gate": {
+        "allow": true,
+        "errors": []
+      },
+      "prompt_hash": "1e32f278eaf6a6890362801f07237e8f3813445ae7d06a16d23e16d42b8140e6",
+      "score": 1.0
+    }
+  ]
+}

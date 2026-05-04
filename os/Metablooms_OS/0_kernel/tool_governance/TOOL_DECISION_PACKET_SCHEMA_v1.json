@@ -1,0 +1,16 @@
+{
+  "artifact_type": "TOOL_DECISION_PACKET_SCHEMA_v1",
+  "optional_fields": [
+    "used_tool",
+    "selected_method",
+    "override_justification",
+    "normal_python_probe_passed",
+    "normal_python_necessary",
+    "requires_full_extraction",
+    "latency_exception"
+  ],
+  "required_fields": [
+    "task",
+    "tool_selection_decision_packet_written"
+  ]
+}

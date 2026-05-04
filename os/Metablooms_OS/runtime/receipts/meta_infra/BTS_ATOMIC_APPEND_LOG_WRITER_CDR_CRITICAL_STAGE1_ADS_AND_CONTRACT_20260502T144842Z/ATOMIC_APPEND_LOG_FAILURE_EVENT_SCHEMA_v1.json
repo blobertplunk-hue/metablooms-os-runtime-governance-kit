@@ -1,0 +1,47 @@
+{
+  "$id": "metablooms://schemas/AtomicAppendLogFailureEvent.v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "created_utc": {
+      "type": "string"
+    },
+    "failure_class": {
+      "enum": [
+        "SCHEMA_INVALID",
+        "PATH_DENIED",
+        "SYMLINK_DENIED",
+        "UNSAFE_SUFFIX",
+        "RECORD_INVALID",
+        "RECORD_TOO_LARGE",
+        "LOG_TOO_LARGE",
+        "WRITE_FAILED",
+        "FSYNC_FAILED",
+        "READBACK_FAILED",
+        "POLICY_DENIED"
+      ]
+    },
+    "operation_id": {
+      "type": "string"
+    },
+    "reason_code": {
+      "type": "string"
+    },
+    "safe_summary": {
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "AtomicAppendLogFailureEvent.v1"
+    }
+  },
+  "required": [
+    "schema_version",
+    "operation_id",
+    "failure_class",
+    "reason_code",
+    "created_utc",
+    "safe_summary"
+  ],
+  "title": "AtomicAppendLogFailureEvent.v1",
+  "type": "object"
+}

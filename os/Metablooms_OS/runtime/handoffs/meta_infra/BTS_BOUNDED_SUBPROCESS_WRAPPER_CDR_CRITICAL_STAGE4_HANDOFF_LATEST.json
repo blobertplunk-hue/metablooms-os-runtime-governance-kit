@@ -1,0 +1,22 @@
+{
+  "artifact_type": "METABLOOMS_STAGE_HANDOFF_v1",
+  "created_utc": "20260502T140719Z",
+  "latest_policy_gate": "/mnt/data/Metablooms_OS/0_kernel/validators/validate_bounded_subprocess_callsite_policy_stage4_v1.py",
+  "next_stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT",
+  "next_stage_scope": "retrofit tests/evals if desired, run broader regression suite through wrapper, then export a whole-system authority bundle with checksum.",
+  "policy_registry_artifact": "/mnt/data/Metablooms_OS/0_kernel/registry/tool_governance/BOUNDED_SUBPROCESS_CALLSITE_POLICY_STAGE4_v1.json",
+  "receipt": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/STAGE_RECEIPT.json",
+  "runtime_root": "/mnt/data/Metablooms_OS",
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP",
+  "status": "PASS",
+  "summary": {
+    "blocking_live_call_sites_after": 0,
+    "patched_files": 32,
+    "patched_subprocess_run_replacements": 54,
+    "remaining_warning_call_sites_by_zone": {
+      "bounded_wrapper_internal_exempt": 1,
+      "snapshot_vendor_legacy_or_artifact_exempt": 74,
+      "test_eval_fixture_warn": 19
+    }
+  }
+}

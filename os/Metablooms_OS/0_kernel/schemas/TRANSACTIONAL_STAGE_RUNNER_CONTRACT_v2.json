@@ -1,0 +1,129 @@
+{
+  "version": "2.0",
+  "created_at": 1777173600,
+  "contract_id": "TRANSACTIONAL_STAGE_RUNNER_CONTRACT_v2",
+  "supersedes": "TRANSACTIONAL_STAGE_RUNNER_CONTRACT_v1",
+  "amendment": "AMEND-0009",
+  "status": "active_contract",
+  "purpose": "Define retry-safe, stage-bounded transaction semantics for governed MetaBlooms stages. v2 adds P-1 TOOL_ROUTE_GUARD (pre-execution tool selection gate) and conditional P5 GIT_COMMIT.",
+  "see_evidence": [
+    "Akira AI: 'Pre-tool checks are the circuit breakers of agentic systems — validate authorization, relevance, and schema before any action executes.'",
+    "Agentic AI Architectures: 'A Tool Router maps abstract actions to concrete, permissioned tools and sits before the Execution Gateway.'",
+    "ChatGPT CE+SEE verdict 2026-04-26: canmore/api_tool_discovery failures happened before P0, requiring a pre-P0 routing gate."
+  ],
+  "problems_addressed": [
+    "partial mutation before validation",
+    "dirty-tree loops caused by uncommitted receipts",
+    "re-running a repair in a different root",
+    "claiming success without committed artifacts",
+    "restoring older releases and losing later work",
+    "tool routing failures (canmore, image_gen, broad api_tool discovery) crashing execution before P0",
+    "GIT_COMMIT blocking stage completion when git unavailable in sandbox"
+  ],
+  "transaction_phases": [
+    {
+      "id": "P-1_TOOL_ROUTE_GUARD",
+      "purpose": "Load METABLOOMS_TOOL_FAILURE_AND_FALLBACK_ROUTER_v1.json. Block forbidden tool classes. Select execution path (python_user_visible or container). Write TOOL_ROUTE_DECISION_LOG. Gate into P0 only on PASS.",
+      "may_mutate_active_root": false,
+      "must_write_receipt": true,
+      "required_inputs": ["METABLOOMS_TOOL_FAILURE_AND_FALLBACK_ROUTER_v1.json"],
+      "outputs": ["TOOL_ROUTE_DECISION_LOG_<stage_id>.json"],
+      "forbidden_tool_classes": ["canmore", "image_gen", "api_tool_discovery_broad"],
+      "allowed_execution_paths": ["python_user_visible", "container"],
+      "fallback_order": ["python_user_visible", "container", "fail_closed"],
+      "fail_action": "write TOOL_ROUTE_BLOCKED_RECEIPT and stop — do NOT advance to P0",
+      "max_retries": 1
+    },
+    {
+      "id": "P0_PREFLIGHT",
+      "purpose": "Verify active root, git cleanliness, required handoff, pointer, DAG, ledger, and auto-runaway scope.",
+      "may_mutate_active_root": false,
+      "must_write_receipt": true,
+      "precondition": "P-1_TOOL_ROUTE_GUARD must have written PASS receipt"
+    },
+    {
+      "id": "P1_STAGE_ROOT",
+      "purpose": "Create isolated staging root under /mnt/data/_stage/<stage_id>/.",
+      "may_mutate_active_root": false,
+      "must_write_receipt": true
+    },
+    {
+      "id": "P2_WRITE_OUTPUTS",
+      "purpose": "Write candidate artifacts only inside staging root unless the stage is explicitly contract-only and already clean.",
+      "may_mutate_active_root": false,
+      "must_write_receipt": true
+    },
+    {
+      "id": "P3_VERIFY",
+      "purpose": "Run syntax, schema, artifact-existence, content-hash, route, or proof checks required by the contract.",
+      "may_mutate_active_root": false,
+      "must_write_receipt": true
+    },
+    {
+      "id": "P4_PROMOTE",
+      "purpose": "Promote verified outputs into active root using the smallest valid change set.",
+      "may_mutate_active_root": true,
+      "must_write_receipt": true
+    },
+    {
+      "id": "P5_COMMIT",
+      "purpose": "Commit promoted outputs and receipts to Git if git is available and configured. Otherwise write COMMIT_DEFERRED_RECEIPT and advance to P6.",
+      "may_mutate_active_root": true,
+      "must_write_receipt": true,
+      "conditional_on_git_available": true,
+      "git_not_available_action": "write COMMIT_DEFERRED_RECEIPT_<stage_id>.json with all promoted artifact SHAs; advance to P6 normally",
+      "git_check_commands": ["git -C /mnt/data rev-parse --is-inside-work-tree", "git config user.email"],
+      "see_evidence": "GitHub Actions artifact model: artifacts persist with digest validation without requiring git commit per transfer"
+    },
+    {
+      "id": "P6_UPDATE_STATE",
+      "purpose": "Update current working pointer and stage-state ledger. Accepts either a git commit SHA or a COMMIT_DEFERRED_RECEIPT reference.",
+      "may_mutate_active_root": true,
+      "must_write_receipt": true,
+      "state_update_accepts": ["git_commit_sha", "commit_deferred_receipt_path"]
+    },
+    {
+      "id": "P7_HANDOFF",
+      "purpose": "Write next-stage handoff and stop.",
+      "may_mutate_active_root": true,
+      "must_write_receipt": true
+    }
+  ],
+  "promotion_rules": [
+    "Never promote from staging unless all required checks pass.",
+    "Promotion must be the smallest valid change set.",
+    "Promotion must not delete tracked files unless a specific deletion contract exists.",
+    "For contract-only stages, direct writes are allowed only after clean preflight and must be committed in the same stage."
+  ],
+  "rollback_rules": [
+    "If P-1 fails, do not enter P0. Write TOOL_ROUTE_BLOCKED_RECEIPT and stop.",
+    "If preflight fails, do not mutate active root.",
+    "If staged verification fails, leave active root unchanged and write a blocked receipt.",
+    "If promotion fails, stop and write a blocker receipt identifying promoted/unpromoted paths.",
+    "If commit fails and git is available, stop and do not update pointer or ledger.",
+    "If commit is deferred (git unavailable), continue to P6 with deferred receipt."
+  ],
+  "idempotency_rules": [
+    "Stage IDs and artifact names must be deterministic.",
+    "Re-running a completed stage must overwrite the same target artifacts or detect that they already satisfy the contract.",
+    "Receipt filenames for canonical stage receipts must be stable.",
+    "State updates occur only after a successful commit or deferred receipt."
+  ],
+  "receipt_rules": [
+    "Every phase must be represented in the final stage receipt.",
+    "Blocked receipts must not advance latest_pass.",
+    "Success receipts must include outputs, commit or deferred receipt reference, git status, next improvement task, remaining work, and next command.",
+    "P-1 TOOL_ROUTE_DECISION_LOG must be included in every stage receipt."
+  ],
+  "runaway_breaker_integration": {
+    "must_classify_scope_before_P1": true,
+    "max_heavy_work_classes_per_stage": 1,
+    "heavy_work_class_enum": "see HEAVY_WORK_CLASS_ENUM_v1.json",
+    "split_before_execution_when_broad": true
+  },
+  "new_capabilities": [
+    "P-1 TOOL_ROUTE_GUARD prevents canmore/image_gen/broad api_tool_discovery from entering execution",
+    "Conditional GIT_COMMIT — deferred path allows stages to complete without git, preserving all SHAs in receipt",
+    "P6 accepts both commit SHA and deferred receipt — state tracking survives git-unavailable environments"
+  ]
+}

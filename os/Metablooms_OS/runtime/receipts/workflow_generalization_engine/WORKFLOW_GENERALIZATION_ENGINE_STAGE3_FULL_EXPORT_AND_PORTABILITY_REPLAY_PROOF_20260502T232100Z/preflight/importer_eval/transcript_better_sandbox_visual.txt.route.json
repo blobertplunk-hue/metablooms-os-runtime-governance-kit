@@ -1,0 +1,31 @@
+{
+  "task_text": "Import old transcript and improve workflow only if better than current",
+  "auto_include": [
+    "TRANSCRIPT_LESSON_IMPORT_GATE",
+    "WORKFLOW_GENERALIZATION_ENGINE",
+    "BROWSER_RENDER_CAPABILITY_RESOLVER",
+    "VISUAL_PRESENTATION_QUALITY_GATE"
+  ],
+  "routing_reasons": [
+    {
+      "match": "\\b(old transcript|transcript|chat log|previous chat|conversation export)\\b",
+      "include": [
+        "TRANSCRIPT_LESSON_IMPORT_GATE",
+        "WORKFLOW_GENERALIZATION_ENGINE"
+      ]
+    }
+  ],
+  "candidate_adoptions": [
+    {
+      "lesson_id": "transcript_candidate_6b755560af01",
+      "decision": "adopt",
+      "reason": "candidate_scores_higher_than_current_and_no_hard_regression",
+      "current_total": 17.0,
+      "candidate_total": 25.0,
+      "flags": []
+    }
+  ],
+  "candidate_rejections": [],
+  "candidate_deferrals": [],
+  "honesty": "candidate transcript lessons only affect routing when better_than_current passes"
+}

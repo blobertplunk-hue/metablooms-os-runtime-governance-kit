@@ -1,0 +1,18 @@
+{
+  "schema_version": "PolicyDecision_v1",
+  "decision_id": "decision_1777681382775_f78086be",
+  "envelope_id": "bts_gate_20260502T002302Z_dc3d3705",
+  "stage_id": "BTS_V4_GATE_WRAPPED_RUNTIME",
+  "decision": "DENY",
+  "reason_code": "FORBIDDEN_VALIDATION_METHOD",
+  "rationale": "Known timeout-prone validation method is denied; use zipinfo -t or Node/yauzl CRC proof.",
+  "decided_at_utc": "2026-05-02T00:23:02Z",
+  "enforced_by": "pre_tool_action_gate_v1",
+  "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/bts_gate_20260502T002302Z_dc3d3705.decision.json",
+  "safe_to_execute": false,
+  "required_next_action": "select_replacement_validation_method",
+  "matched_rules": [
+    "method.denylist"
+  ],
+  "envelope_sha256": "cce14ae4e8d21049147a87740f36cba9680bbeb17d993f89377878e4a9b16eb8"
+}

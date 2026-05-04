@@ -1,0 +1,27 @@
+{
+  "artifact_type": "SEE_EVIDENCE_PACKET.v1",
+  "created_utc": "20260502T142819Z",
+  "sources": [
+    {
+      "claim": "Atomic file writes should use a same-directory temp file and atomic replace/rename; durability guidance includes fsyncing temp file and directory.",
+      "source_ref": "turn391510search9",
+      "url": "https://python-atomicwrites.readthedocs.io/"
+    },
+    {
+      "claim": "Path traversal involves dot-dot or absolute-path manipulation to access files outside intended directories.",
+      "source_ref": "turn391510search1",
+      "url": "https://owasp.org/www-community/attacks/Path_Traversal"
+    },
+    {
+      "claim": "Path traversal prevention should canonicalize the path and verify it stays under the expected base directory.",
+      "source_ref": "turn391510search4",
+      "url": "https://portswigger.net/web-security/file-path-traversal"
+    },
+    {
+      "claim": "Python json module can deterministically serialize with sort_keys and preserves object order semantics.",
+      "source_ref": "turn391510search17",
+      "url": "https://docs.python.org/3/library/json.html"
+    }
+  ],
+  "stage": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES"
+}

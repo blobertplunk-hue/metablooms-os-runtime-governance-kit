@@ -1,0 +1,18 @@
+{
+  "base_sha256": "302089d45d1f0509e26e6526fe8075a47a57a77165e5b2006c5c685a03d2f859",
+  "base_zip": "METABLOOMS_OS_FULL_MPP_V3_R0_R21_INTEGRATED_20260501T063000Z.zip",
+  "created_at": "2026-05-01T00:44:31.790601+00:00",
+  "export_id": "METABLOOMS_OS_FULL_MPP_V3_R0_R22_INTEGRATED_20260501T075000Z",
+  "external_sidecar_required": true,
+  "integrated_stage": "R22",
+  "next_recommended_stage": "MPP_R23_EXPORT_PROMOTION_GATE",
+  "r22_delta_sha256": "b84b814676bc980c1f2a3ef871d6db72b18c2991215ca1a6a2f6d461b430e0ec",
+  "r22_delta_zip": "MPP_R22_ORCHESTRATOR_RUNTIME_CONTROLLER_20260501T075000Z_DELTA.zip",
+  "required_markers": [
+    "Metablooms_OS/0_kernel/schemas/mpp_v3/ORCHESTRATOR_RUNTIME_PLAN_SCHEMA_v1.json",
+    "Metablooms_OS/0_kernel/mpp_v3/mpp_v3_orchestrator_runtime_controller_v1.py",
+    "Metablooms_OS/runtime/handoffs/mpp_v3/MPP_R22_ORCHESTRATOR_RUNTIME_CONTROLLER_HANDOFF_LATEST.json",
+    "Metablooms_OS/runtime/receipts/mpp_v3/MPP_R22_ORCHESTRATOR_RUNTIME_CONTROLLER_RECEIPT_LATEST.json"
+  ],
+  "schema_version": "metablooms.full_mpp_integrated_export_manifest.v1"
+}

@@ -1,0 +1,7 @@
+{
+  "target_work_type": "stdlib_python",
+  "simulated_probe": {
+    "python3_dash_S": {"available": true, "elapsed_ms": 80.0, "stdout": "{\"no_site\": true, \"site_loaded\": false}", "timeout": false},
+    "python3_normal": {"available": false, "elapsed_ms": 8000.0, "stdout": "", "timeout": true}
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "from_stage": "MPP_R10_NUF_NONFUNCTIONAL_REQUIREMENTS_SCHEMA_AND_BUDGET_GATE",
+  "notes": "R11 should use NUF budgets and UXR constraints to define strict in-scope/out-of-scope boundaries and conflict gates.",
+  "required_inputs": [
+    "0_kernel/schemas/mpp_v3/NUF_NONFUNCTIONAL_REQUIREMENTS_PACKET_SCHEMA_v1.json",
+    "0_kernel/mpp_v3/mpp_v3_nuf_nonfunctional_budget_gate_v1.py",
+    "tests/fixtures/mpp_v3/valid_nuf_nonfunctional_requirements_packet_v1.json"
+  ],
+  "root": "/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z",
+  "status": "READY",
+  "to_stage": "MPP_R11_SSO_SCOPE_SCHEMA_AND_CONFLICT_GATE"
+}

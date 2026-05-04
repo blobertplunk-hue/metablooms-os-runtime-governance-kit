@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "dir_count": 2,
+  "latest": [
+    "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/stage3_smoke_unique_receipt_probe_20260502T140207Z_2793c09c63b4",
+    "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/stage3_smoke_unique_receipt_probe_20260502T140207Z_d70660d66833"
+  ],
+  "rcs": [
+    0,
+    0
+  ]
+}

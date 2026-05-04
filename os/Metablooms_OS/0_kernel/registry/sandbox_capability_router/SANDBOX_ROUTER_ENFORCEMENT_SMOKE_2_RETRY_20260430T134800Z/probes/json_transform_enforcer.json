@@ -1,0 +1,13 @@
+{
+  "allowed": true,
+  "decision": "ALLOW",
+  "reason": "route_allowed",
+  "task": "json_transform",
+  "method": "jq",
+  "required_gates": [
+    "input_json_valid",
+    "output_json_valid",
+    "atomic_write"
+  ],
+  "router_path": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_CAPABILITY_ROUTER_CARTRIDGE_LATEST.json"
+}

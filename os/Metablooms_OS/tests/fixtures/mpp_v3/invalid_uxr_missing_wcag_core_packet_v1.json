@@ -1,0 +1,121 @@
+{
+  "accessibility_requirements": [
+    {
+      "blocking": true,
+      "criterion": "2.1.1 Keyboard",
+      "level": "A",
+      "requirement_id": "A11Y-001",
+      "standard": "WCAG_2_2",
+      "test_method": "manual keyboard sweep and focus-order check"
+    },
+    {
+      "blocking": true,
+      "criterion": "2.4.11 Focus Not Obscured",
+      "level": "AA",
+      "requirement_id": "A11Y-002",
+      "standard": "WCAG_2_2",
+      "test_method": "focus visibility check under sticky UI"
+    },
+    {
+      "blocking": true,
+      "criterion": "2.5.7 Dragging Movements",
+      "level": "AA",
+      "requirement_id": "A11Y-003",
+      "standard": "WCAG_2_2",
+      "test_method": "verify non-drag alternative for drag actions"
+    },
+    {
+      "blocking": false,
+      "criterion": "3.2.6 Consistent Help",
+      "level": "A",
+      "requirement_id": "A11Y-005",
+      "standard": "WCAG_2_2",
+      "test_method": "help-location consistency audit"
+    },
+    {
+      "blocking": false,
+      "criterion": "3.3.7 Redundant Entry",
+      "level": "A",
+      "requirement_id": "A11Y-006",
+      "standard": "WCAG_2_2",
+      "test_method": "multi-step redundant-entry audit"
+    }
+  ],
+  "context_constraints": [
+    {
+      "constraint_id": "UXC-001",
+      "description": "Operator may run workflows from a phone in the ChatGPT UI.",
+      "mitigation": "Keep stages bounded and return a single bundle plus checksum.",
+      "name": "Mobile-first execution",
+      "severity": "high"
+    },
+    {
+      "constraint_id": "UXC-002",
+      "description": "Chat text cannot be the only source of workflow state.",
+      "mitigation": "Write receipts, handoffs, schemas, fixtures, and checksums.",
+      "name": "Artifact persistence",
+      "severity": "critical"
+    }
+  ],
+  "created_at": "2026-04-30T22:33:51.318401+00:00",
+  "objective_id": "OBJ-MPP-R9",
+  "operator_profiles": [
+    {
+      "constraints": [
+        "turn-bounded execution",
+        "artifact-first proof",
+        "mobile-first review"
+      ],
+      "primary_goal": "Run governed stages in a phone-safe ChatGPT UI without losing artifacts.",
+      "profile_id": "OP-001",
+      "role": "MetaBlooms operator",
+      "skill_level": "expert"
+    },
+    {
+      "constraints": [
+        "iPad/touch use",
+        "emergent bilingual support",
+        "reduced cognitive overload"
+      ],
+      "primary_goal": "Use produced learning artifacts with accessible controls and clear feedback.",
+      "profile_id": "OP-002",
+      "role": "Student-facing artifact user",
+      "skill_level": "mixed"
+    }
+  ],
+  "packet_id": "UXR-BAD-MISSING-WCAG",
+  "platform_requirements": [
+    {
+      "platform": "ChatGPT mobile app / phone",
+      "platform_id": "PLAT-001",
+      "requirement": "single bundled artifact with checksum and short continuation prompt",
+      "test_method": "receipt and final response check"
+    },
+    {
+      "platform": "iPad / touch classroom use",
+      "platform_id": "PLAT-002",
+      "requirement": "touch targets and drag alternatives are required for student-facing outputs",
+      "test_method": "accessibility gate and UI smoke check"
+    }
+  ],
+  "result_hash": "08a3b44625b023a5b07278f7a1e5ca9fe3ed13a94d04cbf0f7ffa1047c776fbf",
+  "schema_version": "mpp.uxr_operator_context_packet.v1",
+  "source_ads_packet_id": "ADS-R8-SMOKE",
+  "stage": "UXR",
+  "ux_risks": [
+    {
+      "detectable_by": "missing receipt, handoff, or checksum",
+      "impact": "operator cannot continue governed workflow reliably",
+      "mitigation": "write latest handoff and return one bundle plus sidecar",
+      "risk": "artifact loss across turns",
+      "risk_id": "UXRISK-001"
+    },
+    {
+      "detectable_by": "UXR accessibility gate failure",
+      "impact": "some users cannot complete the activity",
+      "mitigation": "require WCAG 2.2 core checks before promotion",
+      "risk": "student-facing controls inaccessible by keyboard or touch",
+      "risk_id": "UXRISK-002"
+    }
+  ]
+}

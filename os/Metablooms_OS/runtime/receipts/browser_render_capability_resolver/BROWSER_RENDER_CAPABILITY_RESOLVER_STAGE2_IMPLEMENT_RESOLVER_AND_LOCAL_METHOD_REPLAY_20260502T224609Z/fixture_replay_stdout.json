@@ -1,0 +1,46 @@
+{
+  "results": [
+    {
+      "actual_decision": "ALLOW_BROWSER_SCREENSHOT",
+      "expected_decision": "ALLOW_BROWSER_SCREENSHOT",
+      "fixture": "fixture_01_playwright_full_success.json",
+      "pass": true,
+      "reason": "ok",
+      "schema_valid": true
+    },
+    {
+      "actual_decision": "ALLOW_RENDER_PROXY_WITH_LIMITATION",
+      "expected_decision": "ALLOW_RENDER_PROXY_WITH_LIMITATION",
+      "fixture": "fixture_02_current_sandbox_weasy_fallback.json",
+      "pass": true,
+      "reason": "ok",
+      "schema_valid": true
+    },
+    {
+      "actual_decision": "DENY_PRODUCTION_PROMOTION",
+      "expected_decision": "DENY_PRODUCTION_PROMOTION",
+      "fixture": "fixture_03_production_browser_required_denied.json",
+      "pass": true,
+      "reason": "ok",
+      "schema_valid": true
+    },
+    {
+      "actual_decision": "ALLOW_STATIC_ONLY_WITH_LIMITATION",
+      "expected_decision": "ALLOW_STATIC_ONLY_WITH_LIMITATION",
+      "fixture": "fixture_04_static_only_preimplementation_allowed.json",
+      "pass": true,
+      "reason": "ok",
+      "schema_valid": true
+    },
+    {
+      "actual_decision": "ALLOW_RENDER_PROXY_WITH_LIMITATION",
+      "expected_decision": "ALLOW_RENDER_PROXY_WITH_LIMITATION_OR_ALLOW_BROWSER_SCREENSHOT",
+      "fixture": "actual_local_resolver_decision",
+      "pass": true,
+      "reason": "ok",
+      "schema_valid": true,
+      "selected_method": "weasyprint_pdf_png_proxy"
+    }
+  ],
+  "verdict": "PASS"
+}
