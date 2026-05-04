@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "protocol_id": "LEASE_PROTOCOL_v1",
+  "purpose": "Prevent concurrent chats from mutating the same OS/repo paths without explicit conflict packets.",
+  "lease_storage": "coordination/leases/",
+  "lease_file_pattern": "coordination/leases/{lane_id}__{path_hash}.lease.json",
+  "lease_fields": [
+    "lease_id",
+    "lane_id",
+    "chat_id",
+    "project_id",
+    "stage_id",
+    "path_globs",
+    "acquired_at",
+    "expires_at",
+    "renewal_count",
+    "owner_evidence",
+    "status"
+  ],
+  "default_ttl_minutes": 45,
+  "max_ttl_minutes": 180,
+  "renewal_required_for_long_stage": true,
+  "stale_lease_policy": {
+    "status": "recoverable_after_ttl",
+    "recovery_requires": "write stale lease event and conflict-safe continuation receipt",
+    "never_delete_without_tombstone": true
+  },
+  "path_scope_rules": {
+    "global_state_files": [
+      "recovery/RECOVERY_INDEX.json",
+      "recovery/CURRENT_STATE.md",
+      "recovery/REMOTE_COORDINATION_STATE.json"
+    ],
+    "global_state_policy": "use append-only event fan-in; compactor updates global state under single compaction lease",
+    "os_path_policy": "lease exact directories when mutating; read-only operations do not require lease"
+  }
+}
