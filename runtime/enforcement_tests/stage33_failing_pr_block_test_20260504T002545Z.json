@@ -1,0 +1,9 @@
+{
+  "stage": "STAGE33_FAILING_PR_REQUIRED_CHECK_BLOCK_TEST",
+  "timestamp": "2026-05-04T00:25:45Z",
+  "repo": "blobertplunk-hue/metablooms-os-runtime-governance-kit",
+  "branch": "stage33-failing-pr-block-test-20260504T002542Z",
+  "purpose": "Intentional failing PR: move docs/REPOSITORY_GOVERNANCE.md so metablooms-ci required check fails.",
+  "expected_failed_check": "professionalization-projection",
+  "merge_policy": "must not merge"
+}
