@@ -1,0 +1,166 @@
+{
+  "active_root": "/mnt/data/Metablooms_OS",
+  "authority": [
+    "/mnt/data/Metablooms_OS",
+    "/mnt/data/PROMPT_ENGINE_v2.md",
+    "0_kernel/docs/inline_project_tracker/TRACKER_DESIGN_CONSTRAINTS_v1.json",
+    "0_kernel/docs/inline_project_tracker/TRACKER_INLINE_RENDER_SPEC_v1.md",
+    "0_kernel/docs/inline_project_tracker/TRACKER_IMPLEMENTATION_PLAN_v1.md",
+    "receipts/inline_project_tracker/TRACKER_0_20260429T110735Z/TRACKER_0_HANDOFF.json"
+  ],
+  "blocker": null,
+  "completed_stages": [
+    "FL17-MERGE-3_TRACKER_LIFECYCLE_REPAIR",
+    "FL17-MERGE-4_SEMANTIC_RECONCILIATION",
+    "FL17-MERGE-5_FULL_OS_EXPORT_AND_RECOVERY_VALIDATION",
+    "TRACKER-0_INLINE_PROJECT_TRACKER_RESEARCH_AND_DESIGN_LOCK",
+    "TRACKER-1_SCHEMA_AND_STATE_SEED",
+    "TRACKER-2_MARKDOWN_RENDERER_AND_VALIDATOR",
+    "TRACKER-3_BOOT_AND_STAGE_GATES",
+    "TRACKER-4R_MOBILE_REFLOW_RENDERER_REPAIR",
+    "TRACKER-4_HANDOFF_UPDATE_WIRING",
+    "TRACKER-5_SMOKE_TEST_AND_EXPORT_PACKAGING",
+    "FL17-MERGE-5R_RECOVERY_PROOF_REPAIR",
+    "FL17-MERGE-5R2_INTERNAL_PROOF_SIDECAR_BINDING_REPAIR",
+    "H0C2_GOVERNANCE_SURVIVAL_AND_PROMOTION_BLOCKER_AUDIT",
+    "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION"
+  ],
+  "current_stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION",
+  "evidence": {
+    "latest_handoff": "0_kernel/registry/H0C2_GOVERNANCE_SURVIVAL_PROMOTION_HANDOFF_v1.json",
+    "latest_receipt": "0_kernel/registry/H0C2_GOVERNANCE_SURVIVAL_PROMOTION_RECEIPT_v1.json",
+    "recovery_proof": "/mnt/data/Metablooms_OS/0_kernel/registry/failure_learning/FL17-MERGE-5R2_INTERNAL_PROOF_SIDECAR_BINDING_REPAIR/FL17_MERGE_5R2_INTERNAL_PROOF_REPAIR_REPORT.json",
+    "semantic_authority": "/mnt/data/Metablooms_OS/0_kernel/registry/failure_learning/FL17-MERGE-4_SEMANTIC_RECONCILIATION/FL16_FL17_SEMANTIC_AUTHORITY_v1.json"
+  },
+  "history": [
+    {
+      "evidence_path": "receipts/inline_project_tracker/TRACKER_0_20260429T110735Z/TRACKER_0_RECEIPT.json",
+      "stage": "TRACKER-0_INLINE_PROJECT_TRACKER_RESEARCH_AND_DESIGN_LOCK",
+      "status": "PASS",
+      "timestamp_utc": "20260429T110735Z"
+    },
+    {
+      "evidence_path": "receipts/inline_project_tracker/TRACKER_1_20260429T111056Z/TRACKER_1_RECEIPT.json",
+      "stage": "TRACKER-1_SCHEMA_AND_STATE_SEED",
+      "status": "PASS_PENDING_RECEIPT",
+      "timestamp_utc": "20260429T111056Z"
+    },
+    {
+      "evidence_path": "receipts/inline_project_tracker/TRACKER_2_20260429T111207Z/TRACKER_2_RECEIPT.json",
+      "stage": "TRACKER-2_MARKDOWN_RENDERER_AND_VALIDATOR",
+      "status": "PASS",
+      "timestamp_utc": "20260429T111207Z"
+    },
+    {
+      "receipt_dir": "receipts/inline_project_tracker/TRACKER_3_20260429T111546Z",
+      "stage": "TRACKER-3_BOOT_AND_STAGE_GATES",
+      "status": "DONE",
+      "timestamp_utc": "20260429T111546Z"
+    },
+    {
+      "handoff_path": "receipts/inline_project_tracker/TRACKER_4_20260429T111733Z/TRACKER_4_HANDOFF.json",
+      "handoff_sha256": "f2b2f11e47810f456c632a830dd92315f14a17eea2b4b44e5ceaa0a0df5111c3",
+      "handoff_status": "READY_FOR_BOUNDED_SMOKE_TEST_EXPORT_PACKAGING_STAGE",
+      "receipt_path": "receipts/inline_project_tracker/TRACKER_4_20260429T111733Z/TRACKER_4_RECEIPT.json",
+      "receipt_sha256": "629b47039d80817fd28769746f68294322b761a9c2527fe9450dd5938b37da26",
+      "stage": "TRACKER-4_HANDOFF_UPDATE_WIRING",
+      "status": "DONE",
+      "timestamp_utc": "20260429T111733Z"
+    },
+    {
+      "handoff_path": "receipts/inline_project_tracker/TRACKER_4_20260429T111733Z/TRACKER_4_HANDOFF.json",
+      "handoff_sha256": "f2b2f11e47810f456c632a830dd92315f14a17eea2b4b44e5ceaa0a0df5111c3",
+      "handoff_status": "READY_FOR_BOUNDED_SMOKE_TEST_EXPORT_PACKAGING_STAGE",
+      "receipt_path": "receipts/inline_project_tracker/TRACKER_4_20260429T111733Z/TRACKER_4_RECEIPT.json",
+      "receipt_sha256": "90e7ad2efbe3b250e0ed96fcd4aa205217ff8f424e52e6626c5cfbc9e352857f",
+      "stage": "TRACKER-4_HANDOFF_UPDATE_WIRING",
+      "status": "DONE",
+      "timestamp_utc": "20260429T111733Z"
+    },
+    {
+      "evidence_path": "receipts/inline_project_tracker/TRACKER_4R_20260429T112238Z/TRACKER_4R_RECEIPT.json",
+      "stage": "TRACKER-4R_MOBILE_REFLOW_RENDERER_REPAIR",
+      "status": "DONE_PENDING_RECEIPT",
+      "timestamp_utc": "20260429T112238Z"
+    },
+    {
+      "handoff_path": "receipts/inline_project_tracker/TRACKER_4R_20260429T112238Z/TRACKER_4R_HANDOFF.json",
+      "handoff_sha256": "98d94a73896a26893a7d8641569feec7b3014b3af98f44b15264fef2fd717357",
+      "receipt_path": "receipts/inline_project_tracker/TRACKER_4R_20260429T112238Z/TRACKER_4R_RECEIPT.json",
+      "receipt_sha256": "d2e8bff2e80c07ea9b00dc72f4276bb3b0f39b45c06f19218d6632c8ed62bea9",
+      "stage": "TRACKER-4R_MOBILE_REFLOW_RENDERER_REPAIR",
+      "status": "DONE",
+      "timestamp_utc": "20260429T112238Z"
+    },
+    {
+      "handoff_path": "receipts/inline_project_tracker/TRACKER_5_20260429T113046Z/TRACKER_5_HANDOFF.json",
+      "handoff_sha256": "14fb29b34d9bf98d746558815a15ceac790fbb8deba53a310e7d7767ce2ba2a5",
+      "handoff_status": "TRACKER_CARTRIDGE_PACKAGED_AND_VALIDATED",
+      "receipt_path": "receipts/inline_project_tracker/TRACKER_5_20260429T113046Z/TRACKER_5_RECEIPT.json",
+      "receipt_sha256": "5439e234c9cfa935f19309e62f6510831fceec9a262a439c235caf79e1cca7d3",
+      "stage": "TRACKER-5_SMOKE_TEST_AND_EXPORT_PACKAGING",
+      "status": "DONE",
+      "timestamp_utc": "20260429T113046Z"
+    },
+    {
+      "handoff_path": "receipts/inline_project_tracker/FL17_MERGE_3_20260430T014900Z/FL17_MERGE_3_HANDOFF.json",
+      "handoff_sha256": "1a854bffdeabd0ae6540455afc480772f4ff4c9f0dc64ea66a6fe7189729525b",
+      "handoff_status": "PASS",
+      "receipt_path": "receipts/inline_project_tracker/FL17_MERGE_3_20260430T014900Z/FL17_MERGE_3_RECEIPT.json",
+      "receipt_sha256": "2c2afab7fcb7642d4d4f5a9d3fc77e1e3d4bac88a0e00e2843776c3bcf0a8929",
+      "stage": "FL17-MERGE-3_TRACKER_LIFECYCLE_REPAIR",
+      "status": "DONE",
+      "timestamp_utc": "20260430T014900Z"
+    },
+    {
+      "handoff_path": "receipts/failure_learning/FL17_MERGE_5R_20260430T014908Z/FL17_MERGE_5R_HANDOFF.json",
+      "receipt_path": "receipts/failure_learning/FL17_MERGE_5R_20260430T014908Z/FL17_MERGE_5R_RECEIPT.json",
+      "stage": "FL17-MERGE-5R_RECOVERY_PROOF_REPAIR",
+      "status": "DONE",
+      "timestamp_utc": "20260430T014908Z"
+    },
+    {
+      "handoff_path": "receipts/failure_learning/FL17_MERGE_5R2_20260430T015018Z/FL17_MERGE_5R2_HANDOFF.json",
+      "receipt_path": "receipts/failure_learning/FL17_MERGE_5R2_20260430T015018Z/FL17_MERGE_5R2_RECEIPT.json",
+      "stage": "FL17-MERGE-5R2_INTERNAL_PROOF_SIDECAR_BINDING_REPAIR",
+      "status": "DONE",
+      "timestamp_utc": "20260430T015018Z"
+    },
+    {
+      "evidence_path": "0_kernel/registry/H0C2_GOVERNANCE_SURVIVAL_PROMOTION_RECEIPT_v1.json",
+      "handoff_path": "0_kernel/registry/H0C2_GOVERNANCE_SURVIVAL_PROMOTION_HANDOFF_v1.json",
+      "stage": "H0C2_GOVERNANCE_SURVIVAL_AND_PROMOTION_BLOCKER_AUDIT",
+      "status": "PASS_CLEAN_AUTHORITY_EXPORTED",
+      "timestamp_utc": "2026-04-30T20:40:22Z"
+    },
+    {
+      "handoff_path": "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_HANDOFF_LATEST.json",
+      "receipt_path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION_20260502T164424Z/STAGE_RECEIPT.json",
+      "stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION",
+      "status": "PASS",
+      "timestamp_utc": "20260502T164424Z"
+    }
+  ],
+  "last_updated_utc": "20260502T164424Z",
+  "latest_handoff": "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_HANDOFF_LATEST.json",
+  "latest_receipt": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION_20260502T164424Z/STAGE_RECEIPT.json",
+  "mode": "governed_project",
+  "next_allowed_action": "Run OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE3_TRACKER_CAUSAL_TIMELINE_BINDING as one bounded governed stage.",
+  "now": "external authority artifacts internalized in repaired full OS export",
+  "progress_label": "3/5 tracker stages complete",
+  "progress_mode": "determinate",
+  "project_id": "metablooms_inline_project_tracker",
+  "project_name": "MetaBlooms Baseline Internalization",
+  "schema_version": "TRACKER_STATE_v1",
+  "stage_index": 1,
+  "stage_total": 1,
+  "status": "DONE",
+  "stop_rule": "stopped before further feature work",
+  "tracker_id": "inline_project_tracker_v1",
+  "validation": {
+    "mobile_safe_width_chars": 64,
+    "percent_rule": "determinate_allowed",
+    "schema_validated": true,
+    "state_validated": true
+  }
+}

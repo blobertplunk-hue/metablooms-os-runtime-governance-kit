@@ -1,0 +1,165 @@
+{
+  "harness": "test_workflow_generalization_router_v1",
+  "results": [
+    {
+      "fixture": "evidence_missing_defer_candidate.json",
+      "pass": true,
+      "failures": [],
+      "result": {
+        "task_text": "Import old transcript",
+        "auto_include": [
+          "TRANSCRIPT_LESSON_IMPORT_GATE",
+          "WORKFLOW_GENERALIZATION_ENGINE"
+        ],
+        "routing_reasons": [
+          {
+            "match": "\\b(old transcript|transcript|chat log|previous chat|conversation export)\\b",
+            "include": [
+              "TRANSCRIPT_LESSON_IMPORT_GATE",
+              "WORKFLOW_GENERALIZATION_ENGINE"
+            ]
+          }
+        ],
+        "candidate_adoptions": [],
+        "candidate_rejections": [],
+        "candidate_deferrals": [
+          {
+            "lesson_id": "vague_old_chat_claim",
+            "decision": "defer_for_more_evidence",
+            "reason": "missing_evidence_summary",
+            "current_total": 3.0,
+            "candidate_total": 5.0,
+            "flags": []
+          }
+        ],
+        "honesty": "candidate transcript lessons only affect routing when better_than_current passes"
+      }
+    },
+    {
+      "fixture": "html_visual_task.json",
+      "pass": true,
+      "failures": [],
+      "result": {
+        "task_text": "Build a Google Sites compatible HTML student activity with a visual tracker",
+        "auto_include": [
+          "VISUAL_PRESENTATION_QUALITY_GATE",
+          "BROWSER_RENDER_CAPABILITY_RESOLVER"
+        ],
+        "routing_reasons": [
+          {
+            "match": "\\b(html|visual|tracker|dashboard|landing page|student activity|teacher tool)\\b",
+            "include": [
+              "VISUAL_PRESENTATION_QUALITY_GATE",
+              "BROWSER_RENDER_CAPABILITY_RESOLVER"
+            ]
+          },
+          {
+            "match": "\\b(screenshot|render|browser|mobile smoke|google sites|weasyprint|chromium|playwright)\\b",
+            "include": [
+              "BROWSER_RENDER_CAPABILITY_RESOLVER"
+            ]
+          }
+        ],
+        "candidate_adoptions": [],
+        "candidate_rejections": [],
+        "candidate_deferrals": [],
+        "honesty": "candidate transcript lessons only affect routing when better_than_current passes"
+      }
+    },
+    {
+      "fixture": "old_transcript_better_candidate.json",
+      "pass": true,
+      "failures": [],
+      "result": {
+        "task_text": "Import this old transcript and mine lessons",
+        "auto_include": [
+          "TRANSCRIPT_LESSON_IMPORT_GATE",
+          "WORKFLOW_GENERALIZATION_ENGINE",
+          "GOOGLE_SITES_MOBILE_PACKAGING_CHECKLIST"
+        ],
+        "routing_reasons": [
+          {
+            "match": "\\b(old transcript|transcript|chat log|previous chat|conversation export)\\b",
+            "include": [
+              "TRANSCRIPT_LESSON_IMPORT_GATE",
+              "WORKFLOW_GENERALIZATION_ENGINE"
+            ]
+          }
+        ],
+        "candidate_adoptions": [
+          {
+            "lesson_id": "old_transcript_has_better_mobile_packaging",
+            "decision": "adopt",
+            "reason": "candidate_scores_higher_than_current_and_no_hard_regression",
+            "current_total": 8.0,
+            "candidate_total": 13.0,
+            "flags": []
+          }
+        ],
+        "candidate_rejections": [],
+        "candidate_deferrals": [],
+        "honesty": "candidate transcript lessons only affect routing when better_than_current passes"
+      }
+    },
+    {
+      "fixture": "old_transcript_not_better_candidate.json",
+      "pass": true,
+      "failures": [],
+      "result": {
+        "task_text": "Import this old transcript and mine lessons",
+        "auto_include": [
+          "TRANSCRIPT_LESSON_IMPORT_GATE",
+          "WORKFLOW_GENERALIZATION_ENGINE"
+        ],
+        "routing_reasons": [
+          {
+            "match": "\\b(old transcript|transcript|chat log|previous chat|conversation export)\\b",
+            "include": [
+              "TRANSCRIPT_LESSON_IMPORT_GATE",
+              "WORKFLOW_GENERALIZATION_ENGINE"
+            ]
+          }
+        ],
+        "candidate_adoptions": [],
+        "candidate_rejections": [
+          {
+            "lesson_id": "old_transcript_pc_only_browser_requirement",
+            "decision": "reject",
+            "reason": "hard_regression_flags_present",
+            "current_total": 13.0,
+            "candidate_total": 7.0,
+            "flags": [
+              "pc_only_blocks_sandbox_primary"
+            ]
+          }
+        ],
+        "candidate_deferrals": [],
+        "honesty": "candidate transcript lessons only affect routing when better_than_current passes"
+      }
+    },
+    {
+      "fixture": "repair_failure_task.json",
+      "pass": true,
+      "failures": [],
+      "result": {
+        "task_text": "Repair the false positive validator failure and prevent recurrence",
+        "auto_include": [
+          "WORKFLOW_GENERALIZATION_ENGINE"
+        ],
+        "routing_reasons": [
+          {
+            "match": "\\b(repair|fix|failed|failure|blocked|stuck|regression|false positive)\\b",
+            "include": [
+              "WORKFLOW_GENERALIZATION_ENGINE"
+            ]
+          }
+        ],
+        "candidate_adoptions": [],
+        "candidate_rejections": [],
+        "candidate_deferrals": [],
+        "honesty": "candidate transcript lessons only affect routing when better_than_current passes"
+      }
+    }
+  ],
+  "overall": "PASS"
+}

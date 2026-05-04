@@ -1,0 +1,6 @@
+stage=R1_CLASSIFICATION_AND_DISPOSITION_BINDING
+timestamp_utc=20260428T024157Z
+root=/mnt/data/Metablooms_OS
+r0_manifest=/mnt/data/Metablooms_OS/receipts/refactor_program/R0_SOURCE_INTAKE_MANIFEST_20260428T023844Z.json
+r0_path_map=/mnt/data/Metablooms_OS/receipts/refactor_program/R0_PATH_MAP_20260428T023844Z.json
+risk_register=/mnt/data/Metablooms_OS/runtime/governance/risk/refactor_program_risk_register_v1.json

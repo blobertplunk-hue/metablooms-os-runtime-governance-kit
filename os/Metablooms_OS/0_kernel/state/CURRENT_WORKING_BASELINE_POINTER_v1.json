@@ -1,0 +1,15 @@
+{
+  "artifact_type": "CURRENT_WORKING_BASELINE_POINTER_v1",
+  "canonical_working_root": "/mnt/data/Metablooms_OS",
+  "current_stage": "READY_FOR_NEXT_BOUNDED_GOVERNED_TASK",
+  "external_sidecar_required": true,
+  "last_completed_stage": "OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_EXPORT_INTEGRATION_AND_BOOT_SURFACE_BINDING",
+  "next_required_input": "bounded governed task name or user decision",
+  "operator_visual_tracker_boot_surface": "OPEN_OPERATOR_VISUAL_TRACKER.html",
+  "selected_authority_sha256": "EXTERNAL_SIDECAR_REQUIRED_AFTER_EXPORT",
+  "selected_authority_sidecar": "/mnt/data/METABLOOMS_OS_OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_FULL_AUTHORITY_REPAIRED_20260502T154025Z.zip.sha256",
+  "selected_authority_zip": "/mnt/data/METABLOOMS_OS_OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_FULL_AUTHORITY_REPAIRED_20260502T154025Z.zip",
+  "stage": "OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_EXPORT_INTEGRATION_AND_BOOT_SURFACE_BINDING",
+  "updated_utc": "2026-05-02T15:38:08Z",
+  "verdict": "ACTIVE"
+}

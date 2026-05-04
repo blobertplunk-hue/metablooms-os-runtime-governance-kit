@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "STAGE_DAG_SCHEMA_v1",
+  "title": "MetaBlooms Stage DAG v1",
+  "type": "object",
+  "required": [
+    "version",
+    "created_at",
+    "dag_id",
+    "status",
+    "nodes",
+    "edges",
+    "stage_classes",
+    "verdict"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": [
+        "number",
+        "string"
+      ]
+    },
+    "updated_at": {
+      "type": [
+        "number",
+        "string"
+      ]
+    },
+    "dag_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "nodes": {
+      "type": "array"
+    },
+    "edges": {
+      "type": "array"
+    },
+    "stage_classes": {
+      "type": "array"
+    },
+    "verdict": {
+      "type": "string"
+    }
+  }
+}

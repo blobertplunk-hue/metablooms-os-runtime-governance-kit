@@ -1,0 +1,43 @@
+{
+  "argv_redacted": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "-c",
+    "import sys; print(\"bad\"); sys.exit(7)"
+  ],
+  "argv_resolved": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "-c",
+    "import sys; print(\"bad\"); sys.exit(7)"
+  ],
+  "artifact_type": "METABLOOMS_BOUNDED_COMMAND_DECISION_PACKET_v1",
+  "attempts": [
+    {
+      "attempt_index": 0,
+      "elapsed_ms": 18,
+      "returncode": 7,
+      "started_utc": "20260502T135430Z",
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_truncated": false,
+      "stdout": "bad\n",
+      "stdout_bytes": 4,
+      "stdout_sha256": "1d7a363ce12430881ec56c9cf1409c49c491043618e598c356e2959040872f5a",
+      "stdout_truncated": false,
+      "timeout_seconds": 5.0
+    }
+  ],
+  "created_utc": "20260502T135430Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "failure_class": "NONZERO_EXIT",
+  "failure_event_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135430Z/fixture_receipts/nonzero_exit/SUBPROCESS_FAILURE_EVENT_fixture_nonzero_exit_20260502T135430Z_a8b109df8b38.json",
+  "operation_type": "fixture_nonzero_exit",
+  "policy_matches": [],
+  "pre_spawn_receipt_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135430Z/fixture_receipts/nonzero_exit/pre_spawn_receipt.json",
+  "receipt_dir": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135430Z/fixture_receipts/nonzero_exit",
+  "result_class": "ALLOW_NONZERO",
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES",
+  "total_elapsed_ms": 19
+}

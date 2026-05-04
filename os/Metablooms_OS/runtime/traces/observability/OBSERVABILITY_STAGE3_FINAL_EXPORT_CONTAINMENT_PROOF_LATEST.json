@@ -1,0 +1,20 @@
+{
+  "artifact_type": "OBSERVABILITY_STAGE3_FINAL_EXPORT_CONTAINMENT_PROOF.v1",
+  "created_utc": "20260502T164830Z",
+  "duplicate_members": 0,
+  "entry_count": 6033,
+  "required": {
+    "Metablooms_OS/0_kernel/lib/operator_surface/build_operator_tracker_causal_timeline_v1.py": true,
+    "Metablooms_OS/0_kernel/registry/operator_surface/MB_OPERATOR_TRACKER_CAUSAL_TIMELINE_BINDING_SPEC_v1.json": true,
+    "Metablooms_OS/0_kernel/validators/validate_observability_trace_span_ledger_stage3_tracker_binding_v1.py": true,
+    "Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html": true,
+    "Metablooms_OS/runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE3_HANDOFF_LATEST.json": true,
+    "Metablooms_OS/runtime/state/operator_surface/OPERATOR_CAUSAL_TIMELINE_LATEST.json": true,
+    "Metablooms_OS/runtime/state/operator_surface/OPERATOR_CAUSAL_TIMELINE_PREVIEW_LATEST.md": true,
+    "Metablooms_OS/runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE3_TRACKER_BINDING_VALIDATION_LATEST.json": true
+  },
+  "verdict": "PASS",
+  "zip_path": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE3_TRACKER_CAUSAL_TIMELINE_BINDING_20260502T164811Z.zip",
+  "zip_sha256": "456ddd954a07c3297e2c83365ef03953f27b4e8f25860c2a061fc097bfa9ac85",
+  "zip_testzip": null
+}

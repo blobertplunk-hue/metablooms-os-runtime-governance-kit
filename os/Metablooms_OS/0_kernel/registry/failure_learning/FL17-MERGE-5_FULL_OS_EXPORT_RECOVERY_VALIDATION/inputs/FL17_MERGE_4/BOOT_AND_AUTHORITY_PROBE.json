@@ -1,0 +1,31 @@
+{
+  "created_utc": "20260430T015900Z",
+  "fl17_zip": "/mnt/data/METABLOOMS_OS_STABLE_v0.8.0_FL17_REPACKED_FROM_FL15_20260430T003638Z.zip",
+  "fl17_zip_exists": true,
+  "required_inputs": [
+    {
+      "exists": true,
+      "path": "/mnt/data/MB_GOV_REPAIR_SEE_CE_0_20260430T010558Z/GOV_REPAIR_SEE_CE_0_REPORT.json",
+      "sha256": "f6ee3612655c29eec78074e053330366f339c63ec28db3925ff0550706c32714"
+    },
+    {
+      "exists": true,
+      "path": "/mnt/data/MB_FL17_MERGE_1_STAGING_DIFF_20260430T012800Z/FL17_DELTA_REPORT_v1.json",
+      "sha256": "3c11264f795dde06f68cb1cf7e85f7ecfc51e8759143c6a02e6fd1e6f5e85880"
+    },
+    {
+      "exists": true,
+      "path": "/mnt/data/MB_FL17_MERGE_2_QUARANTINED_IMPORT_20260430T013700Z/FL17_QUARANTINED_IMPORT_MANIFEST_v1.json",
+      "sha256": "48a85cb0c9d5da05f0511f0a75bda90391ccf9b8cbde831999853be4047c345d"
+    },
+    {
+      "exists": true,
+      "path": "/mnt/data/MB_FL17_MERGE_3_TRACKER_LIFECYCLE_REPAIR_20260430T014900Z/FL17_MERGE_3_HANDOFF.json",
+      "sha256": "1a854bffdeabd0ae6540455afc480772f4ff4c9f0dc64ea66a6fe7189729525b"
+    }
+  ],
+  "root": "/mnt/data/Metablooms_OS",
+  "root_exists": true,
+  "stage": "FL17-MERGE-4_SEMANTIC_RECONCILIATION",
+  "write_probe": "PASS"
+}

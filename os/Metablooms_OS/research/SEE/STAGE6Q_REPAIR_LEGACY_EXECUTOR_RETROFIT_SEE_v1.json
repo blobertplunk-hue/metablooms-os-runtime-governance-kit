@@ -1,0 +1,29 @@
+{
+  "conclusion": "Repair should enforce direct-action authorization at the tool/executor boundary and require auditable wrapper/gate evidence for high-impact mutation/export actions.",
+  "created_at_utc": "2026-05-02T03:20:12.906625Z",
+  "schema": "MetaBloomsSEE_v1",
+  "sources": [
+    {
+      "ref": "turn112455search0",
+      "relevance": "Tool guardrails validate/block before and after tool execution.",
+      "url": "https://openai.github.io/openai-agents-python/guardrails/"
+    },
+    {
+      "ref": "turn112455search3",
+      "relevance": "Guardrails plus human review decide continue/pause/stop for sensitive actions.",
+      "url": "https://developers.openai.com/api/docs/guides/agents/guardrails-approvals"
+    },
+    {
+      "ref": "turn112455search7",
+      "relevance": "AI agents face tool abuse, privilege escalation, data exfiltration risk.",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html"
+    },
+    {
+      "ref": "turn112455search19",
+      "relevance": "Secondary industry interpretation: validate and authorize every high-impact tool action.",
+      "url": "https://www.paloaltonetworks.com/blog/cloud-security/owasp-agentic-ai-security/"
+    }
+  ],
+  "stage_id": "STAGE6Q_REPAIR_LEGACY_EXECUTOR_RETROFIT",
+  "web_run_required": true
+}

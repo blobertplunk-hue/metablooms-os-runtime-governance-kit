@@ -1,0 +1,25 @@
+{
+  "expected_profile": "governed_research",
+  "expected_required_gates": [
+    "research_plan",
+    "recursive_search",
+    "source_quality_filter",
+    "SEE",
+    "CE",
+    "citation_binding"
+  ],
+  "fixture_id": "profile_smoke_governed_research",
+  "forbidden_patterns": [
+    "unranked_options_at_decision_point",
+    "claim_without_artifact",
+    "chat_only_writeback"
+  ],
+  "input_task": "Research current prompt eval best practices and synthesize SEE/CE.",
+  "must_include_output_rules": [
+    "explicit_status",
+    "validation_evidence",
+    "next_step_when_relevant"
+  ],
+  "profile_id": "governed_research",
+  "status": "active"
+}

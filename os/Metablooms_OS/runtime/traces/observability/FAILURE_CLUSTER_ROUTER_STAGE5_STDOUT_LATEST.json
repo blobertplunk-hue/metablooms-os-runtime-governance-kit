@@ -1,0 +1,20 @@
+{
+  "artifact_type": "MB_FAILURE_CLUSTER_ROUTER_BUILD_REPORT.v1",
+  "created_utc": "20260502T165929Z",
+  "outputs": [
+    "runtime/traces/observability/FAILURE_CLUSTER_REPORT_LATEST.json",
+    "runtime/traces/observability/REPAIR_ROUTER_BINDING_LATEST.json",
+    "runtime/state/operator_surface/OPERATOR_FAILURE_ROUTER_SUMMARY_LATEST.json",
+    "OPEN_OPERATOR_VISUAL_TRACKER.html"
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING",
+  "summary": {
+    "active_cluster_count": 0,
+    "cluster_count": 2,
+    "monitor_cluster_count": 0,
+    "non_ok_record_count": 3,
+    "record_count": 220,
+    "resolved_or_suppressed_cluster_count": 2
+  },
+  "verdict": "PASS"
+}

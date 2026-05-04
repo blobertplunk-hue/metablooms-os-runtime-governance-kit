@@ -1,0 +1,31 @@
+{
+  "aliases": [
+    "append_jsonl_record"
+  ],
+  "artifact_type": "IMPLEMENTATION_MANIFEST",
+  "created_utc": "20260502T150805Z",
+  "durability_modes": [
+    "sync_always",
+    "sync_on_critical",
+    "sync_never_with_exception"
+  ],
+  "harness": "/mnt/data/Metablooms_OS/tests/evals/atomic_append_log_writer/test_atomic_append_log_writer_v1.py",
+  "harness_sha256": "437ee21662fe30da898822021f386f431e4cc77866aee279d187a1c453f0bf13",
+  "implemented_source": "/mnt/data/Metablooms_OS/0_kernel/lib/io/atomic_append_log_writer_v1.py",
+  "public_api": "append_governed_jsonl_record(envelope: dict) -> dict",
+  "security_controls": [
+    "allowed_root_canonicalization",
+    "path_escape_denial",
+    "symlink_target_denial",
+    "symlink_ancestor_denial",
+    "structured_record_required",
+    "allow_nan_false",
+    "raw_crlf_serialization_denial",
+    "max_record_bytes",
+    "max_file_bytes",
+    "unsafe_suffix_denial",
+    "durability_exception_policy"
+  ],
+  "source_sha256": "c9b285a40c4aa4d84557a55f01a90b9f2bf3357922e415687b31cfe141fc3615",
+  "stage": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES"
+}

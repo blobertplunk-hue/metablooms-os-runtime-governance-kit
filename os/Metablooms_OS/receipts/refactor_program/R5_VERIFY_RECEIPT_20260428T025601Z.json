@@ -1,0 +1,57 @@
+{
+  "stage": "R5_GATE_REGISTRY_AND_WIRING_REPLACEMENT",
+  "created_utc": "2026-04-28T02:58:11Z",
+  "verdict": "PASS",
+  "live_report": "runtime/evals/governance_regression_suite_v1/reports/R5_gate_registry_validation_live_20260428T025601Z.json",
+  "valid_fixture_report": "runtime/evals/governance_regression_suite_v1/reports/R5_gate_registry_validation_fixture_valid_20260428T025601Z.json",
+  "bad_fixture_report": "runtime/evals/governance_regression_suite_v1/reports/R5_gate_registry_validation_fixture_bad_20260428T025601Z.json",
+  "loader_report": "runtime/evals/governance_regression_suite_v1/reports/R5_gate_registry_loader_20260428T025601Z.json",
+  "alias_report": "runtime/evals/governance_regression_suite_v1/reports/R5_gate_registry_alias_20260428T025601Z.json",
+  "checks": [
+    {
+      "check": "live_registry_validation_passes",
+      "pass": true
+    },
+    {
+      "check": "valid_fixture_passes",
+      "pass": true
+    },
+    {
+      "check": "bad_fixture_fails",
+      "pass": true
+    },
+    {
+      "check": "loader_reads_registry",
+      "pass": true
+    },
+    {
+      "check": "alias_validator_passes",
+      "pass": true
+    },
+    {
+      "check": "enabled_gates_have_existing_entrypoints",
+      "pass": true,
+      "missing_enabled": []
+    },
+    {
+      "check": "p0a_deferred_until_r6",
+      "pass": true
+    },
+    {
+      "check": "p0py_deferred_until_r8",
+      "pass": true
+    },
+    {
+      "check": "legacy_memory_sync_retired",
+      "pass": true
+    },
+    {
+      "check": "all_decision_log_required_fields_boolean",
+      "pass": true
+    },
+    {
+      "check": "cool6_redirect_archive_only_after_r5",
+      "pass": true
+    }
+  ]
+}

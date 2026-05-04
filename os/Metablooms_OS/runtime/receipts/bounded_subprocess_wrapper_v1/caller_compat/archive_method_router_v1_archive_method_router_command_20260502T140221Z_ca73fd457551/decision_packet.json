@@ -1,0 +1,42 @@
+{
+  "argv_redacted": [
+    "/usr/bin/unzip",
+    "-tq",
+    "/mnt/data/stage3_tiny_test.zip"
+  ],
+  "argv_resolved": [
+    "/usr/bin/unzip",
+    "-tq",
+    "/mnt/data/stage3_tiny_test.zip"
+  ],
+  "artifact_type": "METABLOOMS_BOUNDED_COMMAND_DECISION_PACKET_v1",
+  "attempts": [
+    {
+      "attempt_index": 0,
+      "elapsed_ms": 7,
+      "returncode": 0,
+      "started_utc": "20260502T140221Z",
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_truncated": false,
+      "stdout": "No errors detected in compressed data of /mnt/data/stage3_tiny_test.zip.\n",
+      "stdout_bytes": 73,
+      "stdout_sha256": "a992399fd3bdaa07453287cc914ee13166926a12176995c0c2eaeaf0e60ae143",
+      "stdout_truncated": false,
+      "timeout_seconds": 5.0
+    }
+  ],
+  "created_utc": "20260502T140221Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision_packet_path": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/archive_method_router_v1_archive_method_router_command_20260502T140221Z_ca73fd457551/decision_packet.json",
+  "failure_class": null,
+  "failure_event_path": null,
+  "operation_type": "archive_method_router_command",
+  "policy_matches": [],
+  "pre_spawn_receipt_path": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/archive_method_router_v1_archive_method_router_command_20260502T140221Z_ca73fd457551/pre_spawn_receipt.json",
+  "receipt_dir": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/archive_method_router_v1_archive_method_router_command_20260502T140221Z_ca73fd457551",
+  "result_class": "ALLOW_SUCCESS",
+  "stage": "archive_method_router_v1",
+  "total_elapsed_ms": 9
+}

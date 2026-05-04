@@ -1,0 +1,30 @@
+{
+  "sentry_concerns": [
+    "EXPORT_LATENCY",
+    "LAYOUT_DRIFT"
+  ],
+  "sources": [
+    {
+      "claim": "Guardrail scope must explicitly cover non-tool pathways such as handoffs.",
+      "url": "https://openai.github.io/openai-agents-python/guardrails/"
+    },
+    {
+      "claim": "Agent runtime observability should trace LLM generations, tool calls, handoffs, guardrails, and custom events.",
+      "url": "https://openai.github.io/openai-agents-python/tracing/"
+    },
+    {
+      "claim": "GOVERN applies across AI risk-management processes and procedures.",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf"
+    },
+    {
+      "claim": "Agentic systems require mitigations across planning, tools, memory, orchestration, outputs, and identity surfaces.",
+      "url": "https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/"
+    },
+    {
+      "claim": "python -S disables automatic site module import at startup.",
+      "url": "https://docs.python.org/3/using/cmdline.html#cmdoption-S"
+    }
+  ],
+  "stage": "H0B2_SANDBOX_TOOL_GOVERNANCE_BOOTSTRAP_AND_LAYOUT_DRIFT_REPAIR",
+  "timestamp_utc": "2026-04-30T18:24:58Z"
+}

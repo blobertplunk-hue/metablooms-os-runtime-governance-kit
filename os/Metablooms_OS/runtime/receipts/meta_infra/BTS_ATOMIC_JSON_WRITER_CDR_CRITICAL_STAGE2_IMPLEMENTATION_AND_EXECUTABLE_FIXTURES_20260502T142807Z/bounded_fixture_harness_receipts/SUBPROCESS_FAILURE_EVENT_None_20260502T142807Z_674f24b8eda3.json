@@ -1,0 +1,18 @@
+{
+  "argv_redacted": [
+    "/usr/bin/python3",
+    "-S",
+    "/mnt/data/Metablooms_OS/tests/evals/atomic_json_writer/test_atomic_json_writer_v1.py"
+  ],
+  "artifact_type": "METABLOOMS_SUBPROCESS_FAILURE_LEARNING_EVENT_v1",
+  "attempts": [],
+  "created_utc": "20260502T142807Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "failure_class": "SCHEMA_INVALID",
+  "operation_type": null,
+  "policy_matches": [],
+  "recommendation": "Route future matching operations through bounded wrapper and method reliability policy before spawn.",
+  "result_class": "DENY_SCHEMA_INVALID",
+  "root": "/mnt/data/Metablooms_OS",
+  "stage": null
+}

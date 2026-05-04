@@ -1,0 +1,34 @@
+{
+  "receipt_type": "BUILD_RECEIPT",
+  "build_id": "BUILD-5",
+  "artifact": "claude_memory_sync_writer_v1.py",
+  "created_utc": "2026-04-26T10:49:51Z",
+  "sha256": "27600f4a273ced13bfc0e157be376cb15c3b0660acac60f0799f415b4bb0a49e",
+  "lines": 489,
+  "amendment_implemented": "AMEND-0007",
+  "target_path": "0_kernel/scripts/claude_memory_sync_writer_v1.py",
+  "see_evidence": [
+    "Build handoffs like a note to a colleague taking over — readable by human with text editor",
+    "Memory governance gap: systems fail when memory accumulates, context drifts",
+    "Session logs follow strict JSON schema with RFC 2119 compliance evidence"
+  ],
+  "validation_tests": [
+    {"test": "syntax check", "result": "PASS"},
+    {"test": "T1 build sync from real OS tree — 8 field checks", "result": "PASS"},
+    {"test": "T2 write sync file — file + history ledger created", "result": "PASS"},
+    {"test": "T3 SHA integrity verify on clean file", "result": "PASS"},
+    {"test": "T4 tamper detection — modified file fails verify", "result": "PASS"},
+    {"test": "T5 partial sync on non-existent root — no crash", "result": "PASS"},
+    {"test": "T6 new scripts detected from build_receipts", "result": "PASS"}
+  ],
+  "new_capabilities": [
+    "CAPABILITY: CLAUDE_MEMORY_SYNC_v1.json written at end of session — ChatGPT cold-start eliminated",
+    "CAPABILITY: SHA self-hash in every sync file — tampering detected immediately on verify",
+    "CAPABILITY: History JSONL ledger — all syncs tracked across sessions for audit",
+    "CAPABILITY: Auto-reads OS state: baseline_sha, current_stage, amendments, IC triggers, scripts",
+    "CAPABILITY: Partial sync with _sync_complete=false — never crashes, always produces output",
+    "CAPABILITY: CLI: write, verify, show, history subcommands"
+  ],
+  "overall_verdict": "PASS",
+  "next_correct_stage": "BUILD-6 — registry patch for arb_shell_safe_sidecar namespace"
+}

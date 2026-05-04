@@ -1,0 +1,5 @@
+# CURRENT_WORKING_BASELINE_POINTER_CONTRACT_v1
+
+Restore must prefer `0_kernel/state/CURRENT_WORKING_BASELINE_POINTER_v1.json` before any release ZIP.
+
+Next Correct Command: `EXECUTE F2 — STAGE DAG + DEPENDENCY LEDGER CONTRACT`

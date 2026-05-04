@@ -1,0 +1,13 @@
+{
+  "authorized_next_stage": "WORKFLOW_GENERALIZATION_ENGINE_STAGE3_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF",
+  "verdict": "PASS_IMPLEMENTED_EXPORT_BINDING_NOT_FULL_EXPORTED",
+  "required_replay_paths": [
+    "0_kernel/importers/transcript_lesson_importer_v1.py",
+    "0_kernel/registry/workflow_generalization_engine/TRANSCRIPT_LESSON_IMPORT_GATE_POLICY_v1.json",
+    "0_kernel/registry/workflow_generalization_engine/TRANSCRIPT_LESSON_IMPORT_CANDIDATE_SCHEMA_v1.json",
+    "0_kernel/registry/workflow_generalization_engine/WORKFLOW_GENERALIZATION_STAGE2_EXPORT_BINDING_v1.json",
+    "runtime/ledgers/workflow_generalization/WORKFLOW_TRANSCRIPT_IMPORT_LEDGER_v1.json",
+    "tests/evals/workflow_generalization/test_transcript_lesson_importer_v1.py",
+    "runtime/state/WORKFLOW_GENERALIZATION_ENGINE_TRACKER_PREVIEW.txt"
+  ]
+}

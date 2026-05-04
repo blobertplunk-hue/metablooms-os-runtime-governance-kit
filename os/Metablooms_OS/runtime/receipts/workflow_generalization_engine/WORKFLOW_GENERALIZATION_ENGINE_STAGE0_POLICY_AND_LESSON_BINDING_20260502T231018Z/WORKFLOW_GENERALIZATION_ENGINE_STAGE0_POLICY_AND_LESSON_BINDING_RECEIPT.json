@@ -1,0 +1,35 @@
+{
+  "stage": "WORKFLOW_GENERALIZATION_ENGINE_STAGE0_POLICY_AND_LESSON_BINDING",
+  "timestamp_utc": "20260502T231018Z",
+  "verdict": "PASS",
+  "root": "/mnt/data/Metablooms_OS",
+  "summary": "Installed policy, recent lesson bindings, routing binding, and tracker preview for converting chat workflow lessons into durable OS behavior.",
+  "evidence_basis": [
+    "direct /mnt/data filesystem probe",
+    "existing VPQ and browser resolver workflow receipts",
+    "web research: double-loop learning, SRE postmortem action items, continuous improvement standard work"
+  ],
+  "artifacts": [
+    {
+      "path": "/mnt/data/Metablooms_OS/0_kernel/registry/workflow_generalization_engine/WORKFLOW_GENERALIZATION_ENGINE_POLICY_v1.json",
+      "sha256": "69cd57557175584e41f97e10a87995c927efcd5ed9e044f2446fa9587e699983",
+      "bytes": 2977
+    },
+    {
+      "path": "/mnt/data/Metablooms_OS/0_kernel/registry/workflow_generalization_engine/WORKFLOW_GENERALIZATION_RECENT_LESSON_BINDINGS_20260502.json",
+      "sha256": "2c26960ed4b634eb6bd448283a4303f1f28a74aa54de7d2070420cd8770fbd69",
+      "bytes": 2079
+    },
+    {
+      "path": "/mnt/data/Metablooms_OS/0_kernel/registry/workflow_generalization_engine/WORKFLOW_GENERALIZATION_ROUTING_BINDING_v1.json",
+      "sha256": "7a19f3f8da7b236c76bc5d609e9e5bb964f418607a246e0b48c15d0c88d94446",
+      "bytes": 1129
+    },
+    {
+      "path": "/mnt/data/Metablooms_OS/runtime/state/WORKFLOW_GENERALIZATION_ENGINE_TRACKER_PREVIEW.txt",
+      "sha256": "c7affefc96a35880c637625b0ed2adf7ba8082fd8c0285d1b81fe1f78f6777b9",
+      "bytes": 971
+    }
+  ],
+  "next_stage": "WORKFLOW_GENERALIZATION_ENGINE_STAGE1_IMPLEMENT_ROUTER_AND_LESSON_LEDGER_EVALS"
+}

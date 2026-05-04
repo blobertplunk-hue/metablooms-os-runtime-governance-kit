@@ -1,0 +1,18 @@
+{
+  "artifact_type": "AtomicAppendLogWriterCallsitePolicyStage4.v1",
+  "policy_id": "ATOMIC_APPEND_LOG_WRITER_CALLSITE_POLICY_STAGE4_v1",
+  "scope": "live governance append-stream and hash-chain append callers",
+  "canonical_writer": "0_kernel/lib/io/atomic_append_log_writer_v1.py",
+  "compat_adapter": "0_kernel/lib/io/atomic_append_log_compat_v1.py",
+  "stage3_validator": "0_kernel/validators/validate_atomic_append_log_writer_callsite_policy_stage3_v1.py",
+  "stage4_validator": "0_kernel/validators/validate_atomic_append_log_writer_callsite_policy_stage4_v1.py",
+  "blocking_patterns": [
+    "direct open(..., append mode) in live governance code",
+    "direct file.write(line) append in hash-chain loggers not routed through compat adapter"
+  ],
+  "allowed_exemptions": {
+    "runtime/governance/legacy_archives/claude_memory_sync_writer_v1.py": "legacy archive; not live governance execution"
+  },
+  "hash_chain_preservation_rule": "Callers must compute prior/hash-chain fields before invoking the append writer, and update in-memory prior pointers from the exact serialized line emitted by the governed writer.",
+  "verdict_rule": "PASS only when no blocking live append-open call sites remain. Legacy archive exemptions are warning-only."
+}

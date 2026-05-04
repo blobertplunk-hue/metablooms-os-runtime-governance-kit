@@ -1,0 +1,11 @@
+{
+  "artifact_type": "CE_SYNTHESIS.v1",
+  "created_utc": "20260502T190150Z",
+  "decision": "Add a promotion script, receipt schema, export binding manifest, tracker panel, and validator.",
+  "internal_evidence": [
+    "Stage 13 created browser-local pinning but no formal receipt promotion.",
+    "Stage 12 created a searchable evidence index that can feed promoted evidence receipts.",
+    "Stage exports already require containment proofs and external SHA-256 sidecars."
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING"
+}

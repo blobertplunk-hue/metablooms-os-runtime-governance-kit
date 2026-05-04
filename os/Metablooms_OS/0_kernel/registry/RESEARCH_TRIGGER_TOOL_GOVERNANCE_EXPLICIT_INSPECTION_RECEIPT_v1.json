@@ -1,0 +1,342 @@
+{
+  "version": "1.0",
+  "created_at": 1776997281.5100112,
+  "status": "complete",
+  "purpose": "Explicitly inspect and promote research-trigger enforcement and sandbox tool governance artifacts rather than merging nested bundle contents blindly.",
+  "files": {
+    "research_trigger_rule_v1.json": {
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/research_trigger/research_trigger_rule_v1.json",
+      "exists": true,
+      "size": 1105,
+      "sha256": "32423dfb41c76823faae877602075540844dc8b960d9c3368eb3287340489c5c",
+      "valid_json": true,
+      "top_keys": [
+        "artifact_id",
+        "status",
+        "created_at",
+        "purpose",
+        "triggers",
+        "overrides",
+        "required_stage",
+        "required_tool",
+        "min_passes",
+        "source_requirements",
+        "required_receipts",
+        "fail_conditions"
+      ],
+      "marker_hits": {
+        "research": true,
+        "web_run": true,
+        "fail_closed": true,
+        "tool": false,
+        "boot": false,
+        "receipt": true,
+        "mandatory": true
+      },
+      "summary": "Valid JSON governance/support artifact."
+    },
+    "interceptor_research_trigger_patch_v1.json": {
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/research_trigger/interceptor_research_trigger_patch_v1.json",
+      "exists": true,
+      "size": 843,
+      "sha256": "fc1af3c8003e13b35a1c511b98c9c76e9d2443289fdab77637d09462ff8d3e01",
+      "valid_json": true,
+      "top_keys": [
+        "artifact_id",
+        "status",
+        "created_at",
+        "pre_execution_checks",
+        "integration_targets",
+        "notes"
+      ],
+      "marker_hits": {
+        "research": true,
+        "web_run": true,
+        "fail_closed": false,
+        "tool": false,
+        "boot": true,
+        "receipt": true,
+        "mandatory": true
+      },
+      "summary": "Valid JSON governance/support artifact."
+    },
+    "verifier_research_trigger_patch_v1.json": {
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/research_trigger/verifier_research_trigger_patch_v1.json",
+      "exists": true,
+      "size": 914,
+      "sha256": "8c7f083ddcff06de48c397ebac036b5e9b75c6f646a94fa9656846abb41b1b32",
+      "valid_json": true,
+      "top_keys": [
+        "artifact_id",
+        "status",
+        "created_at",
+        "verification_checks",
+        "output_contract"
+      ],
+      "marker_hits": {
+        "research": true,
+        "web_run": true,
+        "fail_closed": true,
+        "tool": false,
+        "boot": false,
+        "receipt": true,
+        "mandatory": true
+      },
+      "summary": "Valid JSON governance/support artifact."
+    },
+    "research_trigger_validation_receipt.schema.json": {
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/research_trigger/research_trigger_validation_receipt.schema.json",
+      "exists": true,
+      "size": 682,
+      "sha256": "5f9783c62a8bbc9f9069e2c8aad8f2bebba60934d34a6828d7fc01f77ff271bd",
+      "valid_json": true,
+      "top_keys": [
+        "$schema",
+        "title",
+        "type",
+        "required",
+        "properties"
+      ],
+      "marker_hits": {
+        "research": true,
+        "web_run": true,
+        "fail_closed": true,
+        "tool": false,
+        "boot": false,
+        "receipt": true,
+        "mandatory": true
+      },
+      "summary": "Schema artifact."
+    },
+    "research_trigger_integration_v1.md": {
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/research_trigger/research_trigger_integration_v1.md",
+      "exists": true,
+      "size": 892,
+      "sha256": "3fdcd6cdbfd4e0d72baad8a7be7a878ceae7b3597e5aa93352f84966825e75a7",
+      "valid_json": null,
+      "top_keys": [],
+      "marker_hits": {
+        "research": true,
+        "web_run": true,
+        "fail_closed": true,
+        "tool": true,
+        "boot": false,
+        "receipt": true,
+        "mandatory": true
+      },
+      "summary": "Markdown/TSV governance documentation or inventory.",
+      "first_nonempty_lines": [
+        "# Research Trigger Integration v1",
+        "Created: 2026-04-24T00:58:30Z",
+        "## Hard invariant",
+        "If the user says **research** and has not explicitly requested no web search, the runtime must execute SEE through `web.run` before substantive output. Missing `web.run` is a fail-closed violation.",
+        "## Installed artifacts",
+        "- `research_trigger_rule_v1.json`",
+        "- `interceptor_research_trigger_patch_v1.json`",
+        "- `verifier_research_trigger_patch_v1.json`"
+      ]
+    },
+    "sandbox_tool_governance_v1.md": {
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/tool_governance/sandbox_tool_governance_v1.md",
+      "exists": true,
+      "size": 1153,
+      "sha256": "947a3e5f1e1c088c928642918ff075d0baa957b97570f90150fdaf001fbc6ac2",
+      "valid_json": null,
+      "top_keys": [],
+      "marker_hits": {
+        "research": false,
+        "web_run": false,
+        "fail_closed": false,
+        "tool": true,
+        "boot": true,
+        "receipt": true,
+        "mandatory": false
+      },
+      "summary": "Markdown/TSV governance documentation or inventory.",
+      "first_nonempty_lines": [
+        "# Sandbox Tool Governance v1",
+        "## Purpose",
+        "Prevent useful sandbox tools from being ignored. Route work by capability, not model habit.",
+        "## Invariant",
+        "Before claiming a task cannot be done, probe the sandbox tool surface and route through the best available safe capability.",
+        "## Routing loop",
+        "1. Classify task capability need.",
+        "2. Check artifact-specific constraints first."
+      ]
+    },
+    "sandbox_tool_capability_registry_v1.json": {
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/tool_governance/sandbox_tool_capability_registry_v1.json",
+      "exists": true,
+      "size": 8859,
+      "sha256": "75e9c589d9955d9c423e05db2d4c42681e1c6f7ac1b1042e8192887be6c7c53b",
+      "valid_json": true,
+      "top_keys": [
+        "registry_id",
+        "created_at",
+        "rule",
+        "tools"
+      ],
+      "marker_hits": {
+        "research": false,
+        "web_run": false,
+        "fail_closed": false,
+        "tool": true,
+        "boot": false,
+        "receipt": true,
+        "mandatory": true
+      },
+      "summary": "Tool/capability registry artifact."
+    },
+    "sandbox_tool_probe_inventory_v1.json": {
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/tool_governance/sandbox_tool_probe_inventory_v1.json",
+      "exists": true,
+      "size": 5333,
+      "sha256": "5e844e85fd59237445f9b786b5cac027e8c242e540d3c34842f55bf2bcb0fb8b",
+      "valid_json": true,
+      "top_keys": [
+        "created_at",
+        "platform",
+        "tools"
+      ],
+      "marker_hits": {
+        "research": false,
+        "web_run": false,
+        "fail_closed": false,
+        "tool": true,
+        "boot": false,
+        "receipt": false,
+        "mandatory": false
+      },
+      "summary": "Tool/capability registry artifact."
+    },
+    "sandbox_tool_probe_inventory_v1.tsv": {
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/tool_governance/sandbox_tool_probe_inventory_v1.tsv",
+      "exists": true,
+      "size": 1851,
+      "sha256": "3c3893bcb1d3aeeb45a874104953fd7136359f7eb22a037a3870ad40597cc714",
+      "valid_json": null,
+      "top_keys": [],
+      "marker_hits": {
+        "research": false,
+        "web_run": false,
+        "fail_closed": false,
+        "tool": true,
+        "boot": false,
+        "receipt": false,
+        "mandatory": false
+      },
+      "summary": "Markdown/TSV governance documentation or inventory.",
+      "first_nonempty_lines": [
+        "tool\tavailable\tpath\tprobe_status\tversion\terror",
+        "python3\tTrue\t/opt/pyvenv/bin/python3\tpass\tPython 3.13.5",
+        "python\tTrue\t/opt/pyvenv/bin/python\tpass\tPython 3.13.5",
+        "node\tTrue\t/opt/nvm/versions/node/v22.16.0/bin/node\tpass\tv22.16.0",
+        "npm\tTrue\t/opt/nvm/versions/node/v22.16.0/bin/npm\tpass\t10.9.2",
+        "ruby\tTrue\t/usr/bin/ruby\tpass\truby 3.3.8 (2025-04-09 revision b200bad6cd) [x86_64-linux-gnu]",
+        "perl\tTrue\t/usr/bin/perl\tpass",
+        "java\tTrue\t/usr/bin/java\tpass\topenjdk version \"21.0.10\" 2026-01-20"
+      ]
+    },
+    "sandbox_tool_governance_integration_receipt_v1.json": {
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/tool_governance/sandbox_tool_governance_integration_receipt_v1.json",
+      "exists": true,
+      "size": 444,
+      "sha256": "9d1a868d6f6698ba143c4da620cc6671eca0bc4251aea169258d2c72b455e1cb",
+      "valid_json": true,
+      "top_keys": [
+        "stage",
+        "status",
+        "os_root",
+        "artifacts"
+      ],
+      "marker_hits": {
+        "research": false,
+        "web_run": false,
+        "fail_closed": false,
+        "tool": true,
+        "boot": false,
+        "receipt": false,
+        "mandatory": false
+      },
+      "summary": "Valid JSON governance/support artifact."
+    }
+  },
+  "cross_reference_checks": {
+    "boot_manifest_exists": true,
+    "artifact_registry_exists": true,
+    "integration_contract_exists": true,
+    "research_trigger_rule_v1.json": {
+      "in_boot_manifest": true,
+      "in_artifact_registry_by_id": true,
+      "in_artifact_registry_text": true,
+      "in_integration_contract": true
+    },
+    "interceptor_research_trigger_patch_v1.json": {
+      "in_boot_manifest": false,
+      "in_artifact_registry_by_id": true,
+      "in_artifact_registry_text": true,
+      "in_integration_contract": true
+    },
+    "verifier_research_trigger_patch_v1.json": {
+      "in_boot_manifest": false,
+      "in_artifact_registry_by_id": true,
+      "in_artifact_registry_text": true,
+      "in_integration_contract": true
+    },
+    "research_trigger_validation_receipt.schema.json": {
+      "in_boot_manifest": false,
+      "in_artifact_registry_by_id": true,
+      "in_artifact_registry_text": true,
+      "in_integration_contract": true
+    },
+    "research_trigger_integration_v1.md": {
+      "in_boot_manifest": false,
+      "in_artifact_registry_by_id": true,
+      "in_artifact_registry_text": true,
+      "in_integration_contract": true
+    },
+    "sandbox_tool_governance_v1.md": {
+      "in_boot_manifest": true,
+      "in_artifact_registry_by_id": true,
+      "in_artifact_registry_text": true,
+      "in_integration_contract": true
+    },
+    "sandbox_tool_capability_registry_v1.json": {
+      "in_boot_manifest": true,
+      "in_artifact_registry_by_id": true,
+      "in_artifact_registry_text": true,
+      "in_integration_contract": true
+    },
+    "sandbox_tool_probe_inventory_v1.json": {
+      "in_boot_manifest": false,
+      "in_artifact_registry_by_id": true,
+      "in_artifact_registry_text": true,
+      "in_integration_contract": true
+    },
+    "sandbox_tool_probe_inventory_v1.tsv": {
+      "in_boot_manifest": false,
+      "in_artifact_registry_by_id": true,
+      "in_artifact_registry_text": true,
+      "in_integration_contract": true
+    },
+    "sandbox_tool_governance_integration_receipt_v1.json": {
+      "in_boot_manifest": false,
+      "in_artifact_registry_by_id": true,
+      "in_artifact_registry_text": true,
+      "in_integration_contract": true
+    },
+    "duplicate_hash_groups_among_integrated_files": {}
+  },
+  "semantic_findings": [],
+  "issues": [
+    {
+      "severity": "high",
+      "file": "research_trigger_integration_v1.md",
+      "issue": "critical governance artifact not referenced by boot manifest"
+    }
+  ],
+  "recommendations": [
+    "Repair listed issues before treating the modules as fully clean."
+  ],
+  "promotion_verdict": "PROMOTED_WITH_REPAIR_REQUIRED"
+}

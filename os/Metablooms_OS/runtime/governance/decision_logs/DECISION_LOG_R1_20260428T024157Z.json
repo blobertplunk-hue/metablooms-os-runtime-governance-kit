@@ -1,0 +1,26 @@
+{
+  "decision_log_id": "DECISION_LOG_R1_20260428T024157Z",
+  "stage": "R1_CLASSIFICATION_AND_DISPOSITION_BINDING",
+  "timestamp_utc": "20260428T024157Z",
+  "decision_context": "Disposition binding for 13 imported Claude-originated artifacts from repaired full-OS bundle.",
+  "decision_class": "Class B",
+  "candidate_options": [
+    "Keep all source artifacts in place and promote wholesale",
+    "Split rationale-heavy artifacts while promoting executable artifacts into successor paths",
+    "Archive most artifacts and rebuild successors from scratch"
+  ],
+  "selection_rule": "Choose dispositions that minimize ambiguity, preserve rationale in ADR/archive targets, and route executable value into explicit successor artifacts.",
+  "chosen_option": "Split rationale-heavy artifacts while promoting executable artifacts into successor paths",
+  "rejected_options": [
+    "Keep all source artifacts in place and promote wholesale",
+    "Archive most artifacts and rebuild successors from scratch"
+  ],
+  "time_bound_minutes": 10,
+  "split_artifacts": [
+    "CLAUDE_MEMORY_SYNC_v1.json",
+    "0_kernel/scripts/claude_memory_sync_writer_v1.py",
+    "1_governance/cool_overlays/COOL_6_RUNTIME_GATE_WIRING_PLAN_v1.json",
+    "1_governance/workflow_v6/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.json"
+  ],
+  "live_conflicts": []
+}

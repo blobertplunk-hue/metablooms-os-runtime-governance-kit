@@ -1,0 +1,11 @@
+{
+  "reconstruction": "RECONSTRUCTED_FROM_CHAT_SUMMARY",
+  "required_checks": [
+    "source_file_inventory",
+    "module_contract_presence",
+    "fixture_coverage",
+    "eval_coverage",
+    "blocking_findings_zero_or_handoff"
+  ],
+  "schema": "CDRSourceLevelSelfAuditProtocol_v1"
+}

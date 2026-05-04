@@ -1,0 +1,28 @@
+{
+  "actions": [
+    "loaded source handoff",
+    "copied hardened router/enforcer/latest evidence into internalization stage",
+    "wrote current authority internalization pointer",
+    "packaged root-level bundle"
+  ],
+  "artifact_type": "metablooms_stage_receipt",
+  "heavy_export_repair_run": false,
+  "internalization_pointer": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZATION_LATEST.json",
+  "root_bundle": "/mnt/data/METABLOOMS_SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6_20260430T141800Z.zip",
+  "root_bundle_sha256_binding": "external_sidecar_required; see root-level .zip.sha256 generated after final ZIP closure",
+  "source_handoff": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_BINDING_RECHECK_5_HANDOFF.json",
+  "stage": "SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6",
+  "stage_dir": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6_20260430T141800Z",
+  "status": "PASS",
+  "timestamp_utc": "20260430T141800Z",
+  "validation": {
+    "all_required_components_present": true,
+    "bundle_delivery_required": true,
+    "handoff_sha256": "PASS",
+    "heavy_export_repair_not_run": true,
+    "missing_components": [],
+    "required_component_count": 14
+  },
+  "zip_hash_embedding_policy": "not embedded to avoid circular hash mutation",
+  "zip_testzip": "PASS"
+}

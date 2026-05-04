@@ -1,0 +1,7 @@
+{
+  "id": "CDR_LINT_SECURITY_SCANNER_BASELINE_REQUIRED_v1",
+  "rule": "Runtime-significant CDR code acceptance requires a current lint/security scanner baseline, tool availability/fallback proof, source hashes, test binding, and denial of zero-tolerance findings.",
+  "schema": "MetaBloomsInvariant_v1",
+  "stage": "CDR_STAGE9_LINT_SECURITY_SCANNER_INTEGRATION_AND_BASELINE_REPORTING",
+  "status": "ACTIVE"
+}

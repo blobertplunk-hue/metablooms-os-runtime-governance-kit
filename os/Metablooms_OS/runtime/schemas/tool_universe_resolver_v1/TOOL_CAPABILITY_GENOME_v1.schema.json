@@ -1,0 +1,115 @@
+{
+  "$id": "https://metablooms.local/schemas/TOOL_CAPABILITY_GENOME_v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "capabilities": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "denied_replacements": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "evidence_refs": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "execution_route": {
+      "type": "string"
+    },
+    "fallbacks": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "install_state": {
+      "enum": [
+        "DISCOVERED",
+        "INSTALLABLE",
+        "INSTALLED",
+        "SMOKE_TESTED",
+        "GOVERNED_PROFILE",
+        "PROMOTED",
+        "DENIED"
+      ],
+      "type": "string"
+    },
+    "job_types": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "known_failure_classes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "known_strengths": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "preferred_when": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "requires_approval": {
+      "type": "boolean"
+    },
+    "risk_tier": {
+      "enum": [
+        "read",
+        "write",
+        "export",
+        "network_install",
+        "see",
+        "critical",
+        "denied"
+      ],
+      "type": "string"
+    },
+    "schema": {
+      "const": "TOOL_CAPABILITY_GENOME_v1"
+    },
+    "source_registry_paths": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "tool_id": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema",
+    "tool_id",
+    "capabilities",
+    "job_types",
+    "risk_tier",
+    "install_state",
+    "execution_route",
+    "preferred_when",
+    "fallbacks",
+    "denied_replacements"
+  ],
+  "title": "MetaBlooms Tool Capability Genome v1",
+  "type": "object"
+}

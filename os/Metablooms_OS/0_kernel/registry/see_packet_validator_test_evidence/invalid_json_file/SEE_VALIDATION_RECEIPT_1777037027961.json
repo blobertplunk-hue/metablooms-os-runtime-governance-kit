@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "created_at": 1777037027.9609706,
+  "stage": "SEE_VALIDATION",
+  "schema_validation": {
+    "passed": false,
+    "issues": [
+      "parse_error:JSONDecodeError('Expecting property name enclosed in double quotes: line 1 column 2 (char 1)')"
+    ]
+  },
+  "web_run_evidence_validation": {
+    "passed": false,
+    "issues": []
+  },
+  "source_binding_validation": {
+    "passed": false,
+    "issues": []
+  },
+  "semantic_validation": {
+    "passed": false,
+    "issues": []
+  },
+  "verdict": "FAIL",
+  "issues": [
+    "parse_error:JSONDecodeError('Expecting property name enclosed in double quotes: line 1 column 2 (char 1)')"
+  ],
+  "next_stage": "BLOCK_WITH_SEE_VALIDATION_RECEIPT",
+  "packet_source": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/see_packet_validator_test_evidence/invalid_json_file/bad_packet.json",
+  "schema_path": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/SEE_PACKET_SCHEMA_v1.json",
+  "receipt_path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/see_packet_validator_test_evidence/invalid_json_file/SEE_VALIDATION_RECEIPT_1777037027961.json"
+}

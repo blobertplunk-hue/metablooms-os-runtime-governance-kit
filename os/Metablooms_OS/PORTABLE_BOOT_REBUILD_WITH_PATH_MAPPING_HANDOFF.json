@@ -1,0 +1,11 @@
+{
+  "artifact": "PORTABLE_BOOT_REBUILD_WITH_PATH_MAPPING_HANDOFF.json",
+  "created_utc": "20260430T163503Z",
+  "current_bundle": "/mnt/data/METABLOOMS_OS_PORTABLE_BOOT_REBUILD_WITH_PATH_MAPPING_FINAL_20260430T163503Z.zip",
+  "current_root": "/mnt/data/Metablooms_OS",
+  "done_state": "PORTABLE_BOOT_REBUILD_WITH_PATH_MAPPING_COMPLETE",
+  "next_valid_stage": "Continue from /mnt/data/Metablooms_OS. Load PORTABLE_BOOT_REBUILD_WITH_PATH_MAPPING_FINAL_RECEIPT.json and PORTABLE_BOOT_REBUILD_WITH_PATH_MAPPING_HANDOFF.json. Run exactly one bounded governed next stage, verify paths against PORTABILITY_RENAMES_v1.json, write receipt/handoff, and return one bundle plus checksum.",
+  "warnings": [
+    "Original source ZIP contained long archive paths; final bundle has all >200-char paths renamed and mapped."
+  ]
+}

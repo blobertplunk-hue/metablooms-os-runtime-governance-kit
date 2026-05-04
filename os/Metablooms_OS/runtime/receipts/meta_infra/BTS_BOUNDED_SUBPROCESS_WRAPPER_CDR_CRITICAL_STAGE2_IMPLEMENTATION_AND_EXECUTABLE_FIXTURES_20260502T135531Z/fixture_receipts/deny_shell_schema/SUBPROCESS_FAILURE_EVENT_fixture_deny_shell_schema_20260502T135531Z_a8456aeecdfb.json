@@ -1,0 +1,17 @@
+{
+  "argv_redacted": [
+    "echo",
+    "unsafe"
+  ],
+  "artifact_type": "METABLOOMS_SUBPROCESS_FAILURE_LEARNING_EVENT_v1",
+  "attempts": [],
+  "created_utc": "20260502T135531Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "failure_class": "SCHEMA_INVALID",
+  "operation_type": "fixture_deny_shell_schema",
+  "policy_matches": [],
+  "recommendation": "Route future matching operations through bounded wrapper and method reliability policy before spawn.",
+  "result_class": "DENY_SCHEMA_INVALID",
+  "root": "/mnt/data/Metablooms_OS",
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES"
+}

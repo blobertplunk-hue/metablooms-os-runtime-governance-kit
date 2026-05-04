@@ -1,0 +1,20 @@
+{
+  "created_utc": "2026-04-30T21:58:35.929924Z",
+  "pre_export_validator_runs": [
+    {
+      "returncode": 0,
+      "script": "runtime/governance/governance_scatter_prevention_v1.py",
+      "stderr": "",
+      "stdout": "{\n  \"decision\": \"ALLOW\",\n  \"errors\": [],\n  \"current_controlled_count\": 1878,\n  \"registered_count\": 1878,\n  \"index_status\": \"active\",\n  \"mode\": \"controlled_artifact_index\"\n}\n"
+    },
+    {
+      "returncode": 0,
+      "script": "runtime/governance/banned_pattern_enforcer_v1.py",
+      "stderr": "",
+      "stdout": "{\n  \"decision\": \"ALLOW\",\n  \"hit_count\": 0,\n  \"hits\": [],\n  \"replacement\": \"runtime/governance/safe_walk_v1.py::safe_walk\"\n}\n"
+    }
+  ],
+  "scatter_pre_export": "ALLOW",
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_6_FULL_RECOVERY_PROOF_AND_GOVERNANCE_REPAIR",
+  "type": "STAGE_VALIDATION_PACKET"
+}

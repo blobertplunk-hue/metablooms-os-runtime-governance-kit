@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-04-28T03:24:02.452911Z",
+  "decision_id": "R4-614670b5213396a4",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"contract_id\": \"validate_session_state_export_v1\", \"errors\": [], \"field_count\": 10, \"validated_path\": \"/mnt/data/Metablooms_OS/runtime/governance/state_exports/SESSION_STATE_EXPORT_LATEST_v1.json\", \"verdict\": \"PASS\"}",
+  "reasons": [],
+  "record_id": "R4_VALIDATION_REPORT_20260428T025317Z",
+  "record_kind": "stage_receipt",
+  "result": "pass",
+  "source_record": {
+    "path": "receipts/refactor_program/R4_VALIDATION_REPORT_20260428T025317Z.json",
+    "sha256": "614670b5213396a4e02f8a98c607eb88a6983b7de76166b914f010893bd2c437",
+    "size_bytes": 230
+  },
+  "span_id": "77fa815a2f5cd74c",
+  "stage_id": "R4",
+  "summary": "Canonical wrapper for R4_VALIDATION_REPORT_20260428T025317Z.json",
+  "trace_id": "b37a2184aa6d97d3164204152e9f8532"
+}

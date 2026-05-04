@@ -1,0 +1,23 @@
+{
+  "artifact_type": "SEE_EVIDENCE_PACKET_STAGE3_ATOMIC_JSON_WRITER_v1",
+  "created_utc": "20260502T143651Z",
+  "sources": [
+    {
+      "claim": "Same-directory temporary write plus atomic replace and fsync/parent fsync is the durable write pattern used by atomicwrites guidance.",
+      "url": "https://python-atomicwrites.readthedocs.io/"
+    },
+    {
+      "claim": "Path traversal prevention requires canonicalizing paths and ensuring the resolved path remains under an intended allowed directory.",
+      "url": "https://portswigger.net/web-security/file-path-traversal"
+    },
+    {
+      "claim": "OWASP describes traversal via ../ and absolute path manipulation as access outside intended directories.",
+      "url": "https://owasp.org/www-community/attacks/Path_Traversal"
+    },
+    {
+      "claim": "Strict JSON should deny non-finite values; Python json exposes allow_nan=False to reject them.",
+      "url": "https://docs.python.org/3/library/json.html"
+    }
+  ],
+  "stage": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z"
+}

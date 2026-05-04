@@ -1,0 +1,29 @@
+{
+  "artifact_type": "METABLOOMS_BOOT_RECEIPT.v1",
+  "authority_sidecar": "/mnt/data/METABLOOMS_OS_PROMOTION_AUTHORITY_COHERENCE_GATE_PAC7_FULL_AUTHORITY_LOCKED_20260502T212700Z.zip.sha256",
+  "authority_sidecar_declared_sha256": "cd15cf5b81f23c92ce82abed697c384f33e540d955e304d78194d62423886be6",
+  "authority_zip": "/mnt/data/METABLOOMS_OS_PROMOTION_AUTHORITY_COHERENCE_GATE_PAC7_FULL_AUTHORITY_LOCKED_20260502T212700Z.zip",
+  "authority_zip_sha256_actual": "cd15cf5b81f23c92ce82abed697c384f33e540d955e304d78194d62423886be6",
+  "authority_zip_size_bytes": 80515544,
+  "boot_surface": "OPEN_OPERATOR_VISUAL_TRACKER.html",
+  "canonical_root": "/mnt/data/Metablooms_OS",
+  "created_utc": "2026-05-02T21:50:00Z",
+  "extraction": "extracted_to_canonical_root_after_sidecar_verification",
+  "id": "BOOT_RECEIPT_PAC7_RETRY_SUCCESS_20260502T215000Z",
+  "next_allowed_action": "Accept a new job and execute exactly one bounded governed stage with receipt and handoff.",
+  "notes": [
+    "First-turn boot was blocked because uploaded ZIP was not visible to /mnt/data yet; retry found ZIP and sidecar visible."
+  ],
+  "required_gate_result_dir": "/mnt/data/Metablooms_OS/receipts/boot_20260502T2150Z",
+  "required_gate_results": {
+    "boot_critical_governance_loader_result.json": "ALLOW",
+    "fresh_chat_boot_rehearsal_result.json": "ALLOW",
+    "governance_scatter_prevention_result.json": "ALLOW",
+    "new_chat_start_contract_validator_result.json": "ALLOW",
+    "runtime_starter_smoke_wrapper_result.json": "ALLOW"
+  },
+  "root_file_count": 6160,
+  "root_size_bytes": 78408813,
+  "sha256_match": true,
+  "verdict": "BOOT_READY"
+}

@@ -1,0 +1,509 @@
+{
+  "authority_zip": "/mnt/data/METABLOOMS_OS_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_AUTHORITY_EXPORT_20260502T230140Z_STORED.zip",
+  "authority_zip_sha256": "43dac2e1ce547c23c95d4738c819b7cd57d474c007e596367aabd804a0240fec",
+  "authority_zip_size_bytes": 98063049,
+  "created_utc": "20260502T230140Z",
+  "local_stage4_decision": {
+    "android_sandbox_primary": true,
+    "artifact_type": "operator_tracker",
+    "attempt_evidence": [
+      {
+        "artifacts": [],
+        "failure_class": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "playwright_managed_browser",
+        "prior_failure": {
+          "failure_class": "PLAYWRIGHT_BROWSER_BUNDLE_ABSENT",
+          "retry_recommendation": "retry_only_if_conditions_change",
+          "source_ledger": "/mnt/data/Metablooms_OS/runtime/state/BROWSER_RENDER_METHOD_RELIABILITY_LEDGER_LATEST.json"
+        },
+        "skipped": true,
+        "started_utc": "20260502T230141Z",
+        "success": false
+      },
+      {
+        "artifacts": [],
+        "failure_class": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "system_chromium_headless",
+        "prior_failure": {
+          "failure_class": "CHROMIUM_SANDBOX_HANG",
+          "retry_recommendation": "skip_same_stage_after_timeout",
+          "source_ledger": "/mnt/data/Metablooms_OS/runtime/state/BROWSER_RENDER_METHOD_RELIABILITY_LEDGER_LATEST.json"
+        },
+        "skipped": true,
+        "started_utc": "20260502T230141Z",
+        "success": false
+      },
+      {
+        "artifacts": [],
+        "failure_class": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "xvfb_chromium",
+        "prior_failure": {
+          "failure_class": "XVFB_CHROMIUM_HANG",
+          "retry_recommendation": "skip_same_stage_after_timeout",
+          "source_ledger": "/mnt/data/Metablooms_OS/runtime/state/BROWSER_RENDER_METHOD_RELIABILITY_LEDGER_LATEST.json"
+        },
+        "skipped": true,
+        "started_utc": "20260502T230141Z",
+        "success": false
+      },
+      {
+        "artifacts": [],
+        "failure_class": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "firefox_or_other_installed_browser",
+        "prior_failure": {
+          "failure_class": "OTHER_BROWSER_ABSENT",
+          "retry_recommendation": "retry_only_if_conditions_change",
+          "source_ledger": "/mnt/data/Metablooms_OS/runtime/state/BROWSER_RENDER_METHOD_RELIABILITY_LEDGER_LATEST.json"
+        },
+        "skipped": true,
+        "started_utc": "20260502T230141Z",
+        "success": false
+      },
+      {
+        "artifacts": [],
+        "failure_class": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "wkhtmltoimage_or_equivalent",
+        "prior_failure": {
+          "failure_class": "WKHTMLTOIMAGE_ABSENT",
+          "retry_recommendation": "retry_only_if_conditions_change",
+          "source_ledger": "/mnt/data/Metablooms_OS/runtime/state/BROWSER_RENDER_METHOD_RELIABILITY_LEDGER_LATEST.json"
+        },
+        "skipped": true,
+        "started_utc": "20260502T230141Z",
+        "success": false
+      },
+      {
+        "artifacts": [
+          "/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF_20260502T230140Z/local_stage4_replay/weasyprint_proxy.pdf",
+          "/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF_20260502T230140Z/local_stage4_replay/weasyprint_proxy.png"
+        ],
+        "command_result": {
+          "pdftoppm": {
+            "command": [
+              "/usr/bin/pdftoppm",
+              "-png",
+              "-singlefile",
+              "/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF_20260502T230140Z/local_stage4_replay/weasyprint_proxy.pdf",
+              "/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF_20260502T230140Z/local_stage4_replay/weasyprint_proxy"
+            ],
+            "duration_seconds": 0.78,
+            "exit_code": 0,
+            "stderr_tail": "",
+            "stdout_tail": "",
+            "timed_out": false
+          },
+          "weasyprint": {
+            "command": [
+              "/opt/pyvenv/bin/weasyprint",
+              "/mnt/data/Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html",
+              "/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF_20260502T230140Z/local_stage4_replay/weasyprint_proxy.pdf"
+            ],
+            "duration_seconds": 4.37,
+            "exit_code": 0,
+            "stderr_tail": "WARNING: Ignored `box-shadow:var(--shadow)` at 5:233, unknown property.\nWARNING: Ignored `place-items:center` at 5:435, invalid value.\nWARNING: Ignored `box-shadow:var(--shadow)` at 6:173, unknown property.\nWARNING: Ignored `box-shadow:0 0 0 5px rgba(100,116,139,.14)` at 9:206, unknown property.\nWARNING: Expected a media type, got '(max-width:720px)'\nWARNING: Invalid media type '(max-width:720px)' the whole @media rule was ignored at 11:1.\nWARNING: Expected a media type, got '(prefers-reduced-motion: reduce)'\nWARNING: Invalid media type ' (prefers-reduced-motion: reduce)' the whole @media rule was ignored at 15:1.\nWARNING: Ignored `box-shadow:0 18px 44px rgba(0,0,0,.42)` at 17:60, unknown property.\nWARNING: Expected a media type, got '(max-width:520px)'\nWARNING: Invalid media type '(max-width:520px)' the whole @media rule was ignored at 19:1.\nWARNING: Invalid math function at 4:241: clamp(1.6rem,6vw,3.2rem)\nWARNING: \"auto-fit\" and \"auto-fill\" are unsupported in repeat()\n",
+            "stdout_tail": "",
+            "timed_out": false
+          }
+        },
+        "failure_class": "NONE",
+        "image_check": {
+          "exists": true,
+          "extrema": [
+            [
+              6,
+              255
+            ],
+            [
+              11,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "height": 1754,
+          "mean_rgb": [
+            81.99,
+            89.55,
+            102.08
+          ],
+          "nonblank": true,
+          "size_bytes": 236196,
+          "width": 1241
+        },
+        "method_id": "weasyprint_pdf_png_proxy",
+        "started_utc": "20260502T230141Z",
+        "success": true
+      },
+      {
+        "artifacts": [],
+        "failure_class": "NONE",
+        "method_id": "static_vpq_accessibility_checks",
+        "started_utc": "20260502T230146Z",
+        "static_checks": {
+          "focus_visible": true,
+          "reduced_motion": true,
+          "teacher_professional": true,
+          "viewport": true,
+          "vpq_binding": true
+        },
+        "success": true
+      }
+    ],
+    "decision": "ALLOW_RENDER_PROXY_WITH_LIMITATION",
+    "environment": "android_chatgpt_sandbox",
+    "honesty_label": "sandbox_render_proxy",
+    "html_path": "/mnt/data/Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html",
+    "html_sha256": "9fdb5000f48af4d5cfa830e2912e1f830b6586d0c4848f7cb4c166aa099b2f47",
+    "method_attempts": [
+      {
+        "attempt_policy": "try_if_bundle_present",
+        "failure_class_if_failed": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "playwright_managed_browser",
+        "priority": 1,
+        "success_criteria": [
+          "bounded_timeout",
+          "artifact_or_explicit_skip",
+          "failure_class_recorded"
+        ]
+      },
+      {
+        "attempt_policy": "try_if_binary_present",
+        "failure_class_if_failed": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "system_chromium_headless",
+        "priority": 2,
+        "success_criteria": [
+          "bounded_timeout",
+          "artifact_or_explicit_skip",
+          "failure_class_recorded"
+        ]
+      },
+      {
+        "attempt_policy": "try_if_binary_present",
+        "failure_class_if_failed": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "xvfb_chromium",
+        "priority": 3,
+        "success_criteria": [
+          "bounded_timeout",
+          "artifact_or_explicit_skip",
+          "failure_class_recorded"
+        ]
+      },
+      {
+        "attempt_policy": "try_if_binary_present",
+        "failure_class_if_failed": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "firefox_or_other_installed_browser",
+        "priority": 4,
+        "success_criteria": [
+          "bounded_timeout",
+          "artifact_or_explicit_skip",
+          "failure_class_recorded"
+        ]
+      },
+      {
+        "attempt_policy": "try_if_binary_present",
+        "failure_class_if_failed": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "wkhtmltoimage_or_equivalent",
+        "priority": 5,
+        "success_criteria": [
+          "bounded_timeout",
+          "artifact_or_explicit_skip",
+          "failure_class_recorded"
+        ]
+      },
+      {
+        "attempt_policy": "try_if_binary_present",
+        "failure_class_if_failed": "NONE",
+        "method_id": "weasyprint_pdf_png_proxy",
+        "priority": 6,
+        "success_criteria": [
+          "bounded_timeout",
+          "artifact_or_explicit_skip",
+          "failure_class_recorded"
+        ]
+      },
+      {
+        "attempt_policy": "always_available_static",
+        "failure_class_if_failed": "NONE",
+        "method_id": "static_vpq_accessibility_checks",
+        "priority": 7,
+        "success_criteria": [
+          "bounded_timeout",
+          "artifact_or_explicit_skip",
+          "failure_class_recorded"
+        ]
+      }
+    ],
+    "pc_addendum_available": true,
+    "requested_proof_tier": "browser_screenshot_preferred",
+    "resolver_version": "browser_render_capability_resolver_v1",
+    "selected_method": "weasyprint_pdf_png_proxy",
+    "timestamp_utc": "20260502T230146Z"
+  },
+  "pass_conditions": {
+    "duplicate_members_zero": true,
+    "pre_required_paths_present": true,
+    "replay_export_metadata_present": true,
+    "replay_honesty_label_present": true,
+    "replay_required_paths_present": true,
+    "replay_resolver_allowed": true,
+    "sandbox_first_preserved": true,
+    "vpq_invalid_deny": true,
+    "vpq_tracker_allow": true,
+    "vpq_valid_allow": true,
+    "zip_created": true,
+    "zip_integrity_testzip_none": true
+  },
+  "proof_path": "/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF_20260502T230140Z/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF_REPLAY_PROOF.json",
+  "receipt_dir": "/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF_20260502T230140Z",
+  "replay_decision": {
+    "android_sandbox_primary": true,
+    "artifact_type": "operator_tracker",
+    "attempt_evidence": [
+      {
+        "artifacts": [],
+        "failure_class": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "playwright_managed_browser",
+        "prior_failure": {
+          "failure_class": "PLAYWRIGHT_BROWSER_BUNDLE_ABSENT",
+          "retry_recommendation": "retry_only_if_conditions_change",
+          "source_ledger": "/mnt/data/replay_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_20260502T230140Z/Metablooms_OS/runtime/state/BROWSER_RENDER_METHOD_RELIABILITY_LEDGER_LATEST.json"
+        },
+        "skipped": true,
+        "started_utc": "20260502T230159Z",
+        "success": false
+      },
+      {
+        "artifacts": [],
+        "failure_class": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "system_chromium_headless",
+        "prior_failure": {
+          "failure_class": "CHROMIUM_SANDBOX_HANG",
+          "retry_recommendation": "skip_same_stage_after_timeout",
+          "source_ledger": "/mnt/data/replay_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_20260502T230140Z/Metablooms_OS/runtime/state/BROWSER_RENDER_METHOD_RELIABILITY_LEDGER_LATEST.json"
+        },
+        "skipped": true,
+        "started_utc": "20260502T230159Z",
+        "success": false
+      },
+      {
+        "artifacts": [],
+        "failure_class": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "xvfb_chromium",
+        "prior_failure": {
+          "failure_class": "XVFB_CHROMIUM_HANG",
+          "retry_recommendation": "skip_same_stage_after_timeout",
+          "source_ledger": "/mnt/data/replay_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_20260502T230140Z/Metablooms_OS/runtime/state/BROWSER_RENDER_METHOD_RELIABILITY_LEDGER_LATEST.json"
+        },
+        "skipped": true,
+        "started_utc": "20260502T230159Z",
+        "success": false
+      },
+      {
+        "artifacts": [],
+        "failure_class": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "firefox_or_other_installed_browser",
+        "prior_failure": {
+          "failure_class": "OTHER_BROWSER_ABSENT",
+          "retry_recommendation": "retry_only_if_conditions_change",
+          "source_ledger": "/mnt/data/replay_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_20260502T230140Z/Metablooms_OS/runtime/state/BROWSER_RENDER_METHOD_RELIABILITY_LEDGER_LATEST.json"
+        },
+        "skipped": true,
+        "started_utc": "20260502T230159Z",
+        "success": false
+      },
+      {
+        "artifacts": [],
+        "failure_class": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "wkhtmltoimage_or_equivalent",
+        "prior_failure": {
+          "failure_class": "WKHTMLTOIMAGE_ABSENT",
+          "retry_recommendation": "retry_only_if_conditions_change",
+          "source_ledger": "/mnt/data/replay_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_20260502T230140Z/Metablooms_OS/runtime/state/BROWSER_RENDER_METHOD_RELIABILITY_LEDGER_LATEST.json"
+        },
+        "skipped": true,
+        "started_utc": "20260502T230159Z",
+        "success": false
+      },
+      {
+        "artifacts": [
+          "/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF_20260502T230140Z/replay_extracted_resolver_run/weasyprint_proxy.pdf",
+          "/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF_20260502T230140Z/replay_extracted_resolver_run/weasyprint_proxy.png"
+        ],
+        "command_result": {
+          "pdftoppm": {
+            "command": [
+              "/usr/bin/pdftoppm",
+              "-png",
+              "-singlefile",
+              "/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF_20260502T230140Z/replay_extracted_resolver_run/weasyprint_proxy.pdf",
+              "/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF_20260502T230140Z/replay_extracted_resolver_run/weasyprint_proxy"
+            ],
+            "duration_seconds": 0.693,
+            "exit_code": 0,
+            "stderr_tail": "",
+            "stdout_tail": "",
+            "timed_out": false
+          },
+          "weasyprint": {
+            "command": [
+              "/opt/pyvenv/bin/weasyprint",
+              "/mnt/data/replay_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_20260502T230140Z/Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html",
+              "/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF_20260502T230140Z/replay_extracted_resolver_run/weasyprint_proxy.pdf"
+            ],
+            "duration_seconds": 3.557,
+            "exit_code": 0,
+            "stderr_tail": "WARNING: Ignored `box-shadow:var(--shadow)` at 5:233, unknown property.\nWARNING: Ignored `place-items:center` at 5:435, invalid value.\nWARNING: Ignored `box-shadow:var(--shadow)` at 6:173, unknown property.\nWARNING: Ignored `box-shadow:0 0 0 5px rgba(100,116,139,.14)` at 9:206, unknown property.\nWARNING: Expected a media type, got '(max-width:720px)'\nWARNING: Invalid media type '(max-width:720px)' the whole @media rule was ignored at 11:1.\nWARNING: Expected a media type, got '(prefers-reduced-motion: reduce)'\nWARNING: Invalid media type ' (prefers-reduced-motion: reduce)' the whole @media rule was ignored at 15:1.\nWARNING: Ignored `box-shadow:0 18px 44px rgba(0,0,0,.42)` at 17:60, unknown property.\nWARNING: Expected a media type, got '(max-width:520px)'\nWARNING: Invalid media type '(max-width:520px)' the whole @media rule was ignored at 19:1.\nWARNING: Invalid math function at 4:241: clamp(1.6rem,6vw,3.2rem)\nWARNING: \"auto-fit\" and \"auto-fill\" are unsupported in repeat()\n",
+            "stdout_tail": "",
+            "timed_out": false
+          }
+        },
+        "failure_class": "NONE",
+        "image_check": {
+          "exists": true,
+          "extrema": [
+            [
+              6,
+              255
+            ],
+            [
+              11,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "height": 1754,
+          "mean_rgb": [
+            81.99,
+            89.55,
+            102.08
+          ],
+          "nonblank": true,
+          "size_bytes": 236196,
+          "width": 1241
+        },
+        "method_id": "weasyprint_pdf_png_proxy",
+        "started_utc": "20260502T230159Z",
+        "success": true
+      },
+      {
+        "artifacts": [],
+        "failure_class": "NONE",
+        "method_id": "static_vpq_accessibility_checks",
+        "started_utc": "20260502T230203Z",
+        "static_checks": {
+          "focus_visible": true,
+          "reduced_motion": true,
+          "teacher_professional": true,
+          "viewport": true,
+          "vpq_binding": true
+        },
+        "success": true
+      }
+    ],
+    "decision": "ALLOW_RENDER_PROXY_WITH_LIMITATION",
+    "environment": "android_chatgpt_sandbox",
+    "honesty_label": "sandbox_render_proxy",
+    "html_path": "/mnt/data/replay_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_20260502T230140Z/Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html",
+    "html_sha256": "9fdb5000f48af4d5cfa830e2912e1f830b6586d0c4848f7cb4c166aa099b2f47",
+    "method_attempts": [
+      {
+        "attempt_policy": "try_if_bundle_present",
+        "failure_class_if_failed": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "playwright_managed_browser",
+        "priority": 1,
+        "success_criteria": [
+          "bounded_timeout",
+          "artifact_or_explicit_skip",
+          "failure_class_recorded"
+        ]
+      },
+      {
+        "attempt_policy": "try_if_binary_present",
+        "failure_class_if_failed": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "system_chromium_headless",
+        "priority": 2,
+        "success_criteria": [
+          "bounded_timeout",
+          "artifact_or_explicit_skip",
+          "failure_class_recorded"
+        ]
+      },
+      {
+        "attempt_policy": "try_if_binary_present",
+        "failure_class_if_failed": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "xvfb_chromium",
+        "priority": 3,
+        "success_criteria": [
+          "bounded_timeout",
+          "artifact_or_explicit_skip",
+          "failure_class_recorded"
+        ]
+      },
+      {
+        "attempt_policy": "try_if_binary_present",
+        "failure_class_if_failed": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "firefox_or_other_installed_browser",
+        "priority": 4,
+        "success_criteria": [
+          "bounded_timeout",
+          "artifact_or_explicit_skip",
+          "failure_class_recorded"
+        ]
+      },
+      {
+        "attempt_policy": "try_if_binary_present",
+        "failure_class_if_failed": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "wkhtmltoimage_or_equivalent",
+        "priority": 5,
+        "success_criteria": [
+          "bounded_timeout",
+          "artifact_or_explicit_skip",
+          "failure_class_recorded"
+        ]
+      },
+      {
+        "attempt_policy": "try_if_binary_present",
+        "failure_class_if_failed": "NONE",
+        "method_id": "weasyprint_pdf_png_proxy",
+        "priority": 6,
+        "success_criteria": [
+          "bounded_timeout",
+          "artifact_or_explicit_skip",
+          "failure_class_recorded"
+        ]
+      },
+      {
+        "attempt_policy": "always_available_static",
+        "failure_class_if_failed": "NONE",
+        "method_id": "static_vpq_accessibility_checks",
+        "priority": 7,
+        "success_criteria": [
+          "bounded_timeout",
+          "artifact_or_explicit_skip",
+          "failure_class_recorded"
+        ]
+      }
+    ],
+    "pc_addendum_available": true,
+    "requested_proof_tier": "browser_screenshot_preferred",
+    "resolver_version": "browser_render_capability_resolver_v1",
+    "selected_method": "weasyprint_pdf_png_proxy",
+    "timestamp_utc": "20260502T230203Z"
+  },
+  "root": "/mnt/data/Metablooms_OS",
+  "self_healing_observations": [
+    "Stage 3 repair correctly prevented repeat hangs by using reliability-ledger skip behavior.",
+    "Stage 4 retained sandbox-first proxy proof without making false true-browser claims.",
+    "Export proof validated both policy artifacts and executable resolver behavior after replay extraction."
+  ],
+  "sidecar": "/mnt/data/METABLOOMS_OS_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_AUTHORITY_EXPORT_20260502T230140Z_STORED.zip.sha256",
+  "stage": "BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF",
+  "stage3_handoff": "/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE3_VISUAL_GATE_BINDING_AND_EXPORT_PREP_20260502T225725Z/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE3_VISUAL_GATE_BINDING_AND_EXPORT_PREP_HANDOFF.json",
+  "verdict": "PASS",
+  "zip_entry_count": 7051
+}

@@ -1,0 +1,21 @@
+{
+  "artifact_type": "SEEEvidencePacket.v1",
+  "created_utc": "2026-05-02T15:18:24Z",
+  "sources": [
+    {
+      "citation_ref": "turn784629search0",
+      "claim": "Python os provides low-level file descriptor primitives such as os.open, os.write, and os.fsync used by the append-log writer.",
+      "source": "https://docs.python.org/3/library/os.html"
+    },
+    {
+      "citation_ref": "turn784629search1",
+      "claim": "Tamper-evident append-only logs use cryptographic proof of integrity, provenance, and sequence.",
+      "source": "https://transparency.dev/"
+    },
+    {
+      "citation_ref": "turn784629search7",
+      "claim": "Append-only ledger designs provide tamper-evidence and digital forensics by allowing insertions while blocking updates/deletions.",
+      "source": "https://learn.microsoft.com/en-us/sql/relational-databases/security/ledger/ledger-overview?view=sql-server-ver17"
+    }
+  ]
+}

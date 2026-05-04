@@ -1,0 +1,16 @@
+{
+  "schema_version":"ToolCallEnvelope_v1",
+  "envelope_id":"stage6q_audit_static_scan_001",
+  "stage_id":"STAGE6Q_LEGACY_EXECUTOR_RETROFIT_AUDIT",
+  "action_type":"shell",
+  "tool_name":"bash+python3-S_static_scan",
+  "command_summary":"bounded audit-only static scan for legacy executor bypasses; writes only audit artifacts/receipts/handoff/support proof",
+  "intent":"audit executor code paths for bypasses around Tool Universe Resolver, BTS wrappers, pre-tool gates, post-tool validation, HITL, and checkpoint controls",
+  "risk_tier":"low",
+  "requested_at_utc":"2026-05-02T03:16:00Z",
+  "requires_see":true,
+  "see_evidence_refs":["turn239252search0","turn239252search1","turn239252search2","turn239252search3","turn239252search9"],
+  "limits":{"timeout_seconds":90,"max_files":2500,"max_bytes":50000000,"max_steps":20},
+  "artifacts":{"read_paths":["/mnt/data/Metablooms_OS/runtime/governance","/mnt/data/Metablooms_OS/governance","/mnt/data/Metablooms_OS/0_kernel/registry"],"write_paths":["/mnt/data/Metablooms_OS/runtime/stage_work/STAGE6Q","/mnt/data/Metablooms_OS/runtime/receipts","/mnt/data/Metablooms_OS/runtime/handoffs"],"receipt_path":"/mnt/data/Metablooms_OS/runtime/stage_work/STAGE6Q/pre_tool_decision.json"},
+  "metadata":{"stage_scope":"audit_only_no_repair_no_export"}
+}

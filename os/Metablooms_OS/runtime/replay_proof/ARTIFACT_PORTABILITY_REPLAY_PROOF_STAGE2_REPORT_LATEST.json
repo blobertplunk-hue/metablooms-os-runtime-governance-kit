@@ -1,0 +1,6 @@
+{
+  "created_utc": "20260501T180434Z",
+  "mode": "internal_report_external_final_validation_required",
+  "schema_version": "ARTIFACT_PORTABILITY_REPLAY_PROOF_STAGE2_REPORT_v1",
+  "verdict": "REPLAY_PROOF_PASS"
+}

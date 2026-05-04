@@ -1,0 +1,214 @@
+{
+  "created_at": "2026-04-24T00:50:58Z",
+  "platform": "Linux-4.4.0-x86_64-with-glibc2.41",
+  "tools": [
+    {
+      "tool": "python3",
+      "available": true,
+      "path": "/opt/pyvenv/bin/python3",
+      "version": "Python 3.13.5",
+      "probe_status": "pass",
+      "error": null
+    },
+    {
+      "tool": "python",
+      "available": true,
+      "path": "/opt/pyvenv/bin/python",
+      "version": "Python 3.13.5",
+      "probe_status": "pass",
+      "error": null
+    },
+    {
+      "tool": "node",
+      "available": true,
+      "path": "/opt/nvm/versions/node/v22.16.0/bin/node",
+      "version": "v22.16.0",
+      "probe_status": "pass",
+      "error": null
+    },
+    {
+      "tool": "npm",
+      "available": true,
+      "path": "/opt/nvm/versions/node/v22.16.0/bin/npm",
+      "version": "10.9.2",
+      "probe_status": "pass",
+      "error": null
+    },
+    {
+      "tool": "ruby",
+      "available": true,
+      "path": "/usr/bin/ruby",
+      "version": "ruby 3.3.8 (2025-04-09 revision b200bad6cd) [x86_64-linux-gnu]",
+      "probe_status": "pass",
+      "error": null
+    },
+    {
+      "tool": "perl",
+      "available": true,
+      "path": "/usr/bin/perl",
+      "version": "",
+      "probe_status": "pass",
+      "error": null
+    },
+    {
+      "tool": "java",
+      "available": true,
+      "path": "/usr/bin/java",
+      "version": "openjdk version \"21.0.10\" 2026-01-20",
+      "probe_status": "pass",
+      "error": null
+    },
+    {
+      "tool": "javac",
+      "available": true,
+      "path": "/usr/bin/javac",
+      "version": "javac 21.0.10",
+      "probe_status": "pass",
+      "error": null
+    },
+    {
+      "tool": "go",
+      "available": true,
+      "path": "/usr/local/go/bin/go",
+      "version": "flag provided but not defined: -version",
+      "probe_status": "return_2",
+      "error": null
+    },
+    {
+      "tool": "php",
+      "available": true,
+      "path": "/usr/bin/php",
+      "version": "PHP 8.4.16 (cli) (built: Dec 18 2025 21:19:25) (NTS)",
+      "probe_status": "pass",
+      "error": null
+    },
+    {
+      "tool": "gcc",
+      "available": true,
+      "path": "/usr/bin/gcc",
+      "version": "gcc (Debian 14.2.0-19) 14.2.0",
+      "probe_status": "pass",
+      "error": null
+    },
+    {
+      "tool": "g++",
+      "available": true,
+      "path": "/usr/bin/g++",
+      "version": "g++ (Debian 14.2.0-19) 14.2.0",
+      "probe_status": "pass",
+      "error": null
+    },
+    {
+      "tool": "make",
+      "available": true,
+      "path": "/usr/bin/make",
+      "version": "GNU Make 4.4.1",
+      "probe_status": "pass",
+      "error": null
+    },
+    {
+      "tool": "git",
+      "available": true,
+      "path": "/usr/bin/git",
+      "version": "git version 2.47.3",
+      "probe_status": "pass",
+      "error": null
+    },
+    {
+      "tool": "pandoc",
+      "available": true,
+      "path": "/usr/bin/pandoc",
+      "version": "pandoc 3.1.11.1",
+      "probe_status": "pass",
+      "error": null
+    },
+    {
+      "tool": "libreoffice",
+      "available": true,
+      "path": "/usr/bin/libreoffice",
+      "version": "LibreOffice 25.2.3.2 520(Build:2)",
+      "probe_status": "pass",
+      "error": null
+    },
+    {
+      "tool": "soffice",
+      "available": true,
+      "path": "/usr/bin/soffice",
+      "version": "LibreOffice 25.2.3.2 520(Build:2)",
+      "probe_status": "pass",
+      "error": null
+    },
+    {
+      "tool": "pdftotext",
+      "available": true,
+      "path": "/usr/bin/pdftotext",
+      "version": "I/O Error: Couldn't open file '--version': No such file or directory.",
+      "probe_status": "pass",
+      "error": null
+    },
+    {
+      "tool": "convert",
+      "available": true,
+      "path": "/opt/imagemagick/bin/convert",
+      "version": "Version: ImageMagick 7.1.2-1 Q16-HDRI x86_64 23308 https://imagemagick.org",
+      "probe_status": "pass",
+      "error": null
+    },
+    {
+      "tool": "magick",
+      "available": true,
+      "path": "/opt/imagemagick/bin/magick",
+      "version": "Version: ImageMagick 7.1.2-1 Q16-HDRI x86_64 23308 https://imagemagick.org",
+      "probe_status": "pass",
+      "error": null
+    },
+    {
+      "tool": "ffmpeg",
+      "available": true,
+      "path": "/usr/bin/ffmpeg",
+      "version": "ffmpeg version 7.1.3-0+deb13u1 Copyright (c) 2000-2025 the FFmpeg developers",
+      "probe_status": "return_8",
+      "error": null
+    },
+    {
+      "tool": "zip",
+      "available": true,
+      "path": "/usr/bin/zip",
+      "version": "Copyright (c) 1990-2008 Info-ZIP - Type 'zip \"-L\"' for software license.",
+      "probe_status": "pass",
+      "error": null
+    },
+    {
+      "tool": "unzip",
+      "available": true,
+      "path": "/usr/bin/unzip",
+      "version": "caution:  both -n and -o specified; ignoring -o",
+      "probe_status": "return_10",
+      "error": null
+    },
+    {
+      "tool": "tar",
+      "available": true,
+      "path": "/usr/bin/tar",
+      "version": "tar (GNU tar) 1.35",
+      "probe_status": "pass",
+      "error": null
+    },
+    {
+      "tool": "jq",
+      "available": true,
+      "path": "/usr/bin/jq",
+      "version": "jq-1.7",
+      "probe_status": "pass",
+      "error": null
+    },
+    {
+      "tool": "sqlite3",
+      "available": false,
+      "path": null,
+      "version": null,
+      "probe_status": "not_available",
+      "error": null
+    }
+  ]
+}

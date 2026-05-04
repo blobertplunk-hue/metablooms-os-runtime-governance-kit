@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "artifact_id": "WORKFLOW_TRANSCRIPT_IMPORT_LEDGER_v1",
+  "events": [
+    {
+      "timestamp_utc": "20260502T232116Z",
+      "lesson_id": "transcript_candidate_6b755560af01",
+      "source_sha256": "0a21c14892d7e3cfd7214a7a33185c43d00a51eb3792ec5644a844989a689b70",
+      "evidence_strength": 0.72,
+      "tags": [
+        "directive",
+        "sandbox",
+        "visual_browser"
+      ],
+      "regression_flags": [],
+      "router_decision": {},
+      "status": "candidate_logged"
+    },
+    {
+      "timestamp_utc": "20260502T232119Z",
+      "lesson_id": "transcript_candidate_7073bbbad31a",
+      "source_sha256": "beeae56860fb3876eaf690f92440d1115709119fffb178aa3dfcdb2fc77856c8",
+      "evidence_strength": 0.46,
+      "tags": [
+        "directive",
+        "sandbox",
+        "visual_browser"
+      ],
+      "regression_flags": [
+        "evidence_tier_overclaim",
+        "pc_only_blocks_sandbox_primary",
+        "removes_existing_gate"
+      ],
+      "router_decision": {},
+      "status": "candidate_logged"
+    },
+    {
+      "timestamp_utc": "20260502T232122Z",
+      "lesson_id": "transcript_candidate_abfd5d8a2c06",
+      "source_sha256": "f4106a263d28cd30c8beb9541acbd75a097d2b996cdd0d71594939c3fb29a2e9",
+      "evidence_strength": 0.35,
+      "tags": [
+        "directive"
+      ],
+      "regression_flags": [],
+      "router_decision": {},
+      "status": "candidate_logged"
+    }
+  ],
+  "updated_utc": "20260502T232122Z"
+}

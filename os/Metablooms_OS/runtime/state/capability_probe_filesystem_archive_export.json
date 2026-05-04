@@ -1,0 +1,23 @@
+{
+  "candidate_methods": [
+    "shell_zip"
+  ],
+  "capability_need": "filesystem_archive_export",
+  "decision": "ALLOW_PRIMARY",
+  "evidence_paths": [],
+  "limitation_label": null,
+  "probe_records": [
+    {
+      "method_id": "shell_zip",
+      "probe": {
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "Copyright (c) 1990-2008 Info-ZIP - Type 'zip \"-L\"' for software license.\nThis is Zip 3.0 (July 5th 2008), by Info-ZIP.\nCurrently maintained by E. Gordon.  Please send bug reports to\nthe authors using the web page at www.info-zip.org; see README for details.\n\nLatest sources and executables are at ftp://ftp.info-zip.org/pub/infozip,\nas of above date; see http://www.info-zip.org/ for other sites.\n\nCompiled with gcc 14.2.0 for Unix (Linux ELF).\n\nZip special compilation options:\n\tUSE_EF_UT_TIME      "
+      },
+      "rank": 1
+    }
+  ],
+  "selected_method": "shell_zip",
+  "task_id": "wc6_fixture",
+  "timestamp_utc": "2026-05-03T00:53:23Z"
+}

@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "stages": [
+    "BOOT",
+    "RESEARCH_TRIGGER_CHECK",
+    "TOOL_GOVERNANCE_CHECK",
+    "CE_COMPREHENSION_PASS",
+    "SEE_PASS",
+    "PLAN",
+    "EXECUTE_ONE_STAGE",
+    "VERIFY",
+    "RECEIPT",
+    "GIT_COMMIT"
+  ]
+}

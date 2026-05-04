@@ -1,0 +1,86 @@
+{
+  "version": "1.0",
+  "created_at": 1777044025.936174,
+  "stage": "LOCK_SEE_VALIDATOR_D4_AS_CURRENT_STABLE_BASELINE",
+  "status": "locked",
+  "verdict": "PASS",
+  "canonical_baseline": {
+    "name": "Metablooms_OS_refined_SEE_PACKET_VALIDATOR_BOOT_RECOVERY_PROVEN_D4.zip",
+    "path": "/mnt/data/Metablooms_OS_refined_SEE_PACKET_VALIDATOR_BOOT_RECOVERY_PROVEN_D4.zip",
+    "size_bytes": 34780513,
+    "sha256": "2562be265ca4b698dec182575fced96537df781dcbba35b470572882baf5ff6f",
+    "manifest_path": "/mnt/data/Metablooms_OS_refined_SEE_PACKET_VALIDATOR_BOOT_RECOVERY_PROVEN_D4.zip.sha256.json",
+    "manifest_verified": true,
+    "boot_recovery_proven": true,
+    "boot_recovery_receipt": "/mnt/data/BOOT_RECOVERY_PROOF_FROM_SEE_VALIDATOR_D4_RERUN_RECEIPT.json",
+    "git_head_at_export": "3abbbe9 ADD rerun boot recovery proof from SEE validator D4 export"
+  },
+  "promotion": {
+    "restore_dir": "/mnt/data/_lock_restore_SEE_D4_1777044017",
+    "embedded_root": "/mnt/data/_lock_restore_SEE_D4_1777044017/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined",
+    "active_root": "/mnt/data/Metablooms_OS_refined",
+    "backup_of_previous_root": null,
+    "core_filemode_before": {
+      "cmd": [
+        "git",
+        "config",
+        "--get",
+        "core.filemode"
+      ],
+      "returncode": 0,
+      "stdout": "false",
+      "stderr": ""
+    },
+    "core_filemode_after": {
+      "cmd": [
+        "git",
+        "config",
+        "--get",
+        "core.filemode"
+      ],
+      "returncode": 0,
+      "stdout": "false",
+      "stderr": ""
+    }
+  },
+  "checks": {
+    "source_manifest_verified": true,
+    "restored_root_promoted": true,
+    "git_core_filemode_false": true,
+    "active_root_git_clean": true,
+    "active_root_git_fsck_clean": true,
+    "boot_executor_present": true,
+    "trigger_router_evaluator_present": true,
+    "ce_packet_validator_present": true,
+    "see_packet_validator_present": true,
+    "see_schema_present": true,
+    "see_contract_present": true,
+    "see_integration_proof_present": true,
+    "see_recovery_proof_present": true,
+    "runaway_turn_breaker_present": true,
+    "tracked_cache_invariant_present": true,
+    "boot_manifest_has_see_packet_validator": true,
+    "boot_manifest_requires_see_when_research_triggered": true,
+    "registry_indexes_see_validator": true,
+    "registry_indexes_see_schema": true,
+    "registry_indexes_see_contract": true
+  },
+  "locked_capabilities": [
+    "boot runtime executor",
+    "trigger router evaluator",
+    "CE packet validator",
+    "SEE packet validator",
+    "research-trigger SEE validation contract",
+    "runaway-turn breaker invariant",
+    "tracked-cache export/recovery invariant",
+    "boot recovery proof from SEE validator D4 export"
+  ],
+  "governance_lock_rules": [
+    "Treat the SEE-validator D4 recovery-proven bundle as the current canonical baseline.",
+    "When research is required, SEE packet validation is available through 0_kernel/scripts/see_packet_validator_v1.py.",
+    "Do not promote future baselines without recovery proof and SHA-256 manifest verification.",
+    "Keep git core.filemode=false for this sandbox runtime to avoid executable-bit restore dirtiness.",
+    "Preserve tracked files during exports; exclude only explicitly allowed runtime cache paths."
+  ],
+  "next_correct_command": "BEGIN NEXT IMPROVEMENT PASS"
+}

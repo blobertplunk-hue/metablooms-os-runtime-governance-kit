@@ -1,0 +1,5 @@
+{"validation":"policy_loader","status":"PASS","exit_code":0}
+{"validation":"boot_probe","status":"PASS","exit_code":0}
+{"validation":"json_transform","status":"PASS","exit_code":0}
+{"validation":"delivery_probe","status":"PASS","exit_code":0}
+{"validation":"blocked_hardlink","status":"PASS_BLOCKED_EXPECTED","exit_code":7}

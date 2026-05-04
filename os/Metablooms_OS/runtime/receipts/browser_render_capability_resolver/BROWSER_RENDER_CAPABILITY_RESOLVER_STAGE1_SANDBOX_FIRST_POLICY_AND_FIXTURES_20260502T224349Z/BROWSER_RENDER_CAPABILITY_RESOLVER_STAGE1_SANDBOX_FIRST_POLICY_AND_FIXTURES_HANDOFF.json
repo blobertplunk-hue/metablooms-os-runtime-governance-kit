@@ -1,0 +1,17 @@
+{
+  "authorized_next_stage": "BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE2_IMPLEMENT_RESOLVER_AND_LOCAL_METHOD_REPLAY",
+  "from_stage": "BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE1_SANDBOX_FIRST_POLICY_AND_FIXTURES",
+  "required_inputs": [
+    "0_kernel/registry/browser_render_capability/BROWSER_RENDER_CAPABILITY_RESOLVER_POLICY_v1.json",
+    "0_kernel/registry/browser_render_capability/browser_render_capability_resolver_decision_schema_v1.json",
+    "tests/fixtures/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_FIXTURE_INDEX_v1.json"
+  ],
+  "stage2_requirements": [
+    "Implement bounded resolver script with per-method timeout and hard-fail cache.",
+    "Replay fixtures and at least one real local HTML sample.",
+    "Attempt only non-hanging probes first; if Chromium is attempted, cap timeout tightly and record stderr.",
+    "Write method reliability ledger so failed sandbox paths are not retried indefinitely."
+  ],
+  "timestamp_utc": "20260502T224349Z",
+  "verdict": "READY_FOR_STAGE2"
+}

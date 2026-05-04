@@ -1,0 +1,16 @@
+{
+  "do_not_do": [
+    "Do not overwrite SEE v2 with the uploaded generic SEE stage.",
+    "Do not advance to implementation without MMD critical-gap blocking."
+  ],
+  "from_stage": "MPP_R0_AUTHORITY_AND_SCHEMA_LOCK",
+  "handoff_id": "MPP_R0_TO_R1_HANDOFF_v1",
+  "instructions": "Implement a validator/packet writer for RESEARCH_PLANNER_PACKET_SCHEMA_v1, produce pass/fail fixtures, and update MPP runtime adapter only after validator smoke passes.",
+  "receipt": "0_kernel/registry/mpp_v3/MPP_R0_AUTHORITY_AND_SCHEMA_LOCK_RECEIPT_v1.json",
+  "required_inputs": [
+    "0_kernel/schemas/mpp_v3/RESEARCH_PLANNER_PACKET_SCHEMA_v1.json",
+    "0_kernel/registry/mpp_v3/MPP_V3_AUTHORITY_AND_SCHEMA_LOCK_v1.json"
+  ],
+  "status": "READY",
+  "to_stage": "MPP_R1_RESEARCH_PLANNER_VALIDATOR_AND_PACKET_WRITER"
+}

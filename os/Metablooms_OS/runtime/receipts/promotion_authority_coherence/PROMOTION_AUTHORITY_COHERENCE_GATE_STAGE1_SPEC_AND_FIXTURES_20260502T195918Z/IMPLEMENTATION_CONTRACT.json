@@ -1,0 +1,203 @@
+{
+  "artifact_plan": [
+    {
+      "artifact_id": "ART-001",
+      "purpose": "Stage 1 gate specification/fixture artifact",
+      "relative_path": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_LIFECYCLE_STATES_v1.json",
+      "validation": "sha256 sidecar plus parse/readback where applicable"
+    },
+    {
+      "artifact_id": "ART-002",
+      "purpose": "Stage 1 gate specification/fixture artifact",
+      "relative_path": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_SPEC_v1.json",
+      "validation": "sha256 sidecar plus parse/readback where applicable"
+    },
+    {
+      "artifact_id": "ART-003",
+      "purpose": "Stage 1 gate specification/fixture artifact",
+      "relative_path": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE1_SPEC.md",
+      "validation": "sha256 sidecar plus parse/readback where applicable"
+    },
+    {
+      "artifact_id": "ART-004",
+      "purpose": "Stage 1 gate specification/fixture artifact",
+      "relative_path": "runtime/evals/promotion_authority_coherence/fixtures/PAC-FIX-001.json",
+      "validation": "sha256 sidecar plus parse/readback where applicable"
+    },
+    {
+      "artifact_id": "ART-005",
+      "purpose": "Stage 1 gate specification/fixture artifact",
+      "relative_path": "runtime/evals/promotion_authority_coherence/fixtures/PAC-FIX-002.json",
+      "validation": "sha256 sidecar plus parse/readback where applicable"
+    },
+    {
+      "artifact_id": "ART-006",
+      "purpose": "Stage 1 gate specification/fixture artifact",
+      "relative_path": "runtime/evals/promotion_authority_coherence/fixtures/PAC-FIX-003.json",
+      "validation": "sha256 sidecar plus parse/readback where applicable"
+    },
+    {
+      "artifact_id": "ART-007",
+      "purpose": "Stage 1 gate specification/fixture artifact",
+      "relative_path": "runtime/evals/promotion_authority_coherence/fixtures/PAC-FIX-004.json",
+      "validation": "sha256 sidecar plus parse/readback where applicable"
+    },
+    {
+      "artifact_id": "ART-008",
+      "purpose": "Stage 1 gate specification/fixture artifact",
+      "relative_path": "runtime/evals/promotion_authority_coherence/fixtures/PAC-FIX-005.json",
+      "validation": "sha256 sidecar plus parse/readback where applicable"
+    },
+    {
+      "artifact_id": "ART-009",
+      "purpose": "Stage 1 gate specification/fixture artifact",
+      "relative_path": "runtime/evals/promotion_authority_coherence/fixtures/PAC-FIX-006.json",
+      "validation": "sha256 sidecar plus parse/readback where applicable"
+    },
+    {
+      "artifact_id": "ART-010",
+      "purpose": "Stage 1 gate specification/fixture artifact",
+      "relative_path": "runtime/evals/promotion_authority_coherence/fixtures/FIXTURE_MANIFEST_v1.json",
+      "validation": "sha256 sidecar plus parse/readback where applicable"
+    }
+  ],
+  "created_at": "2026-05-02T19:59:18.342997+00:00",
+  "implementation_targets": [
+    {
+      "artifact_type": "json_or_markdown",
+      "expected_hash_mode": "sha256_required",
+      "operation": "create",
+      "owner": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE1_SPEC_AND_FIXTURES",
+      "path": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_LIFECYCLE_STATES_v1.json",
+      "target_id": "IMPL-001"
+    },
+    {
+      "artifact_type": "json_or_markdown",
+      "expected_hash_mode": "sha256_required",
+      "operation": "create",
+      "owner": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE1_SPEC_AND_FIXTURES",
+      "path": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_SPEC_v1.json",
+      "target_id": "IMPL-002"
+    },
+    {
+      "artifact_type": "json_or_markdown",
+      "expected_hash_mode": "sha256_required",
+      "operation": "create",
+      "owner": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE1_SPEC_AND_FIXTURES",
+      "path": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE1_SPEC.md",
+      "target_id": "IMPL-003"
+    },
+    {
+      "artifact_type": "json_or_markdown",
+      "expected_hash_mode": "sha256_required",
+      "operation": "create",
+      "owner": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE1_SPEC_AND_FIXTURES",
+      "path": "runtime/evals/promotion_authority_coherence/fixtures/PAC-FIX-001.json",
+      "target_id": "IMPL-004"
+    },
+    {
+      "artifact_type": "json_or_markdown",
+      "expected_hash_mode": "sha256_required",
+      "operation": "create",
+      "owner": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE1_SPEC_AND_FIXTURES",
+      "path": "runtime/evals/promotion_authority_coherence/fixtures/PAC-FIX-002.json",
+      "target_id": "IMPL-005"
+    },
+    {
+      "artifact_type": "json_or_markdown",
+      "expected_hash_mode": "sha256_required",
+      "operation": "create",
+      "owner": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE1_SPEC_AND_FIXTURES",
+      "path": "runtime/evals/promotion_authority_coherence/fixtures/PAC-FIX-003.json",
+      "target_id": "IMPL-006"
+    },
+    {
+      "artifact_type": "json_or_markdown",
+      "expected_hash_mode": "sha256_required",
+      "operation": "create",
+      "owner": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE1_SPEC_AND_FIXTURES",
+      "path": "runtime/evals/promotion_authority_coherence/fixtures/PAC-FIX-004.json",
+      "target_id": "IMPL-007"
+    },
+    {
+      "artifact_type": "json_or_markdown",
+      "expected_hash_mode": "sha256_required",
+      "operation": "create",
+      "owner": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE1_SPEC_AND_FIXTURES",
+      "path": "runtime/evals/promotion_authority_coherence/fixtures/PAC-FIX-005.json",
+      "target_id": "IMPL-008"
+    },
+    {
+      "artifact_type": "json_or_markdown",
+      "expected_hash_mode": "sha256_required",
+      "operation": "create",
+      "owner": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE1_SPEC_AND_FIXTURES",
+      "path": "runtime/evals/promotion_authority_coherence/fixtures/PAC-FIX-006.json",
+      "target_id": "IMPL-009"
+    },
+    {
+      "artifact_type": "json_or_markdown",
+      "expected_hash_mode": "sha256_required",
+      "operation": "create",
+      "owner": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE1_SPEC_AND_FIXTURES",
+      "path": "runtime/evals/promotion_authority_coherence/fixtures/FIXTURE_MANIFEST_v1.json",
+      "target_id": "IMPL-010"
+    }
+  ],
+  "objective_id": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE1_SPEC_AND_FIXTURES",
+  "packet_id": "IMPL-PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE1_SPEC_AND_FIXTURES-20260502T195918Z",
+  "post_write_checks": [
+    "json parse all generated fixtures/specs",
+    "sha256 sidecars written",
+    "delta bundle created with checksum"
+  ],
+  "pre_write_checks": [
+    "verify /mnt/data authority zip sidecar",
+    "run same-turn SEE for provenance/promotion standards",
+    "classify outputs before writing"
+  ],
+  "provenance": {
+    "builder": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE1_SPEC_AND_FIXTURES",
+    "expected_outputs": [
+      "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_LIFECYCLE_STATES_v1.json",
+      "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_SPEC_v1.json",
+      "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE1_SPEC.md",
+      "runtime/evals/promotion_authority_coherence/fixtures/PAC-FIX-001.json",
+      "runtime/evals/promotion_authority_coherence/fixtures/PAC-FIX-002.json",
+      "runtime/evals/promotion_authority_coherence/fixtures/PAC-FIX-003.json",
+      "runtime/evals/promotion_authority_coherence/fixtures/PAC-FIX-004.json",
+      "runtime/evals/promotion_authority_coherence/fixtures/PAC-FIX-005.json",
+      "runtime/evals/promotion_authority_coherence/fixtures/PAC-FIX-006.json",
+      "runtime/evals/promotion_authority_coherence/fixtures/FIXTURE_MANIFEST_v1.json"
+    ],
+    "inputs": [
+      "/mnt/data Stage18 ZIP and sidecar",
+      "same-turn SEE search results",
+      "prior boot stuck diagnosis"
+    ],
+    "verification_expectations": [
+      "all generated JSON parses",
+      "fixtures cover known failure classes",
+      "receipt and handoff written"
+    ]
+  },
+  "result_hash": "dd71388b25cd44e93313a28a01ec7703535d817a66e40fef1aa6dc6868c240c1",
+  "schema_version": "mpp.implementation_contract_packet.v1",
+  "source_rrp_packet_id": "USER_REQUEST_PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE1",
+  "stage": "IMPLEMENTATION",
+  "write_policy": {
+    "allowed_roots": [
+      "/mnt/data/Metablooms_OS"
+    ],
+    "forbidden_path_patterns": [
+      "..",
+      "~",
+      "\u0000",
+      "//"
+    ],
+    "requires_atomic_write": true,
+    "requires_parent_creation": true,
+    "requires_probe": true,
+    "requires_receipt": true
+  }
+}

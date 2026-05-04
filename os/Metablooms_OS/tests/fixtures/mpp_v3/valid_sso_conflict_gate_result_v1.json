@@ -1,0 +1,12 @@
+{
+  "conflicts": [],
+  "created_at": "2026-04-30T22:40:54.714296+00:00",
+  "gate_id": "SSO-GATE-20260430T224054Z",
+  "packet_id": "SSO-20260430T224054Z",
+  "result_hash": "745685376d42ec9439b300f6fcf2e8bb6f6fb70d054e741d3c9a7ec2e7d8f302",
+  "schema_version": "mpp.sso_conflict_gate_result.v1",
+  "stage": "SSO_CONFLICT_GATE",
+  "verdict": "PASS",
+  "violations": [],
+  "warnings": []
+}

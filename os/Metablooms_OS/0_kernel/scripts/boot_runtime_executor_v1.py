@@ -1,0 +1,141 @@
+#!/usr/bin/env python3
+"""
+MetaBlooms boot runtime executor v1.2.
+
+H0C1 change: boot now invokes BOOT_REQUIRED_GATES_v1 through the
+boot-critical governance loader. This converts scattered governance artifacts
+into a promotion-blocking runtime check.
+"""
+from __future__ import annotations
+import argparse, importlib.util, json, sys, time, os
+from pathlib import Path
+from typing import Any, Dict, List, Optional
+
+
+# Reconstructed compatibility helper: the exported Stage 3 executor referenced
+# _mb_write_json_file/_MBAJWPath without defining them. This helper is local,
+# bounded, and preserves the existing call contract.
+_MBAJWPath = Path
+
+def _mb_write_json_file(path, obj, operation_id=None, create_parent=True, allowed_roots=None,
+                        indent=2, sort_keys=False, ensure_ascii=True, max_bytes=20000000):
+    target = Path(path).resolve()
+    if create_parent:
+        target.parent.mkdir(parents=True, exist_ok=True)
+    if allowed_roots:
+        roots = [Path(r).resolve() for r in allowed_roots]
+        if not any(str(target).startswith(str(r) + os.sep) or target == r for r in roots):
+            raise PermissionError(f"target outside allowed_roots: {target}")
+    data = json.dumps(obj, indent=indent, sort_keys=sort_keys, ensure_ascii=ensure_ascii).encode('utf-8')
+    if len(data) > max_bytes:
+        raise ValueError(f"json payload exceeds max_bytes: {len(data)} > {max_bytes}")
+    tmp = target.with_name(target.name + f".tmp.{os.getpid()}")
+    with tmp.open('wb') as f:
+        f.write(data)
+        f.write(b"\n")
+        f.flush()
+        os.fsync(f.fileno())
+    os.replace(tmp, target)
+    try:
+        dfd = os.open(str(target.parent), os.O_DIRECTORY)
+        try: os.fsync(dfd)
+        finally: os.close(dfd)
+    except Exception:
+        pass
+    return target
+
+DEFAULT_ROOT = Path("/mnt/data/Metablooms_OS")
+DEFAULT_RECEIPT_DIR = DEFAULT_ROOT / "0_kernel/registry/boot_receipts"
+REQUIRED_RELATIVE_PATHS = ["boot_manifest_v1.json", "artifact_registry.json", "0_kernel/scripts/boot_runtime_executor_v1.py"]
+BOOT_LOADER_REL = "runtime/governance/boot_critical_governance_loader_v1.py"
+
+def resolve_root(start: str | Path) -> Path:
+    p = Path(start).resolve()
+    if p.is_file(): p = p.parent
+    candidates = [p, p / "Metablooms_OS", p.parent]
+    cur = p
+    for _ in range(8):
+        candidates.append(cur); cur = cur.parent
+    for c in candidates:
+        if (c / "0_kernel").exists() and (c / "runtime").exists(): return c
+    return p
+
+def load_json(path: Path) -> Dict[str, Any]:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+def check_path(root: Path, rel: str) -> Dict[str, Any]:
+    p = root / rel
+    return {"relative_path":rel,"path":str(p),"exists":p.exists(),"is_file":p.is_file(),"size_bytes":p.stat().st_size if p.exists() and p.is_file() else None}
+
+def _load_module(path: Path, name: str):
+    spec=importlib.util.spec_from_file_location(name,path); mod=importlib.util.module_from_spec(spec); assert spec and spec.loader; spec.loader.exec_module(mod); return mod
+
+def run_boot(root: Path) -> Dict[str, Any]:
+    root = resolve_root(root)
+    checks: List[Dict[str, Any]] = []
+    issues: List[str] = []
+    warnings: List[str] = []
+    root_check={"name":"root_exists","passed":root.exists() and root.is_dir(),"observed":{"root":str(root),"exists":root.exists(),"is_dir":root.is_dir()}}
+    checks.append(root_check)
+    if not root_check["passed"]:
+        issues.append("root_missing_or_not_directory")
+        return make_packet(root, checks, issues, warnings, {}, None)
+    git_exists=(root/".git").exists()
+    checks.append({"name":"git_dir_exists","passed":git_exists,"observed":{"path":str(root/".git"),"exists":git_exists}})
+    if not git_exists:
+        warnings.append("git_dir_missing")
+    for rel in REQUIRED_RELATIVE_PATHS:
+        observed=check_path(root, rel); passed=bool(observed["exists"] and observed["is_file"])
+        checks.append({"name":"required_path:"+rel,"passed":passed,"observed":observed})
+        if not passed: issues.append("required_path_missing:"+rel)
+    boot_manifest: Dict[str, Any] = {}
+    try:
+        boot_manifest=load_json(root/"boot_manifest_v1.json")
+        checks.append({"name":"boot_manifest_parseable","passed":True,"observed":{"keys":sorted(boot_manifest.keys())[:50]}})
+    except Exception as exc:
+        checks.append({"name":"boot_manifest_parseable","passed":False,"observed":{"error":repr(exc)}}); issues.append("boot_manifest_not_parseable")
+    loader_result = None
+    loader_path = root / BOOT_LOADER_REL
+    if not loader_path.exists():
+        issues.append("boot_critical_governance_loader_missing")
+        checks.append({"name":"boot_critical_loader_present","passed":False,"observed":{"path":str(loader_path)}})
+    else:
+        checks.append({"name":"boot_critical_loader_present","passed":True,"observed":{"path":str(loader_path)}})
+        try:
+            loader=_load_module(loader_path,"boot_critical_governance_loader_v1_boot")
+            loader_result=loader.validate_boot_critical_governance(root)
+            passed=loader_result.get("decision")=="ALLOW"
+            checks.append({"name":"boot_critical_governance_loader_allows","passed":passed,"observed":loader_result})
+            if not passed:
+                issues += ["boot_loader:"+e for e in loader_result.get("errors", [])]
+        except Exception as exc:
+            issues.append("boot_critical_governance_loader_exception:"+repr(exc))
+            checks.append({"name":"boot_critical_governance_loader_allows","passed":False,"observed":{"error":repr(exc)}})
+    return make_packet(root, checks, issues, warnings, boot_manifest, loader_result)
+
+def make_packet(root: Path, checks: List[Dict[str, Any]], issues: List[str], warnings: List[str], boot_manifest: Dict[str, Any], loader_result: Any) -> Dict[str, Any]:
+    required_ok = all(c.get("passed") for c in checks if c["name"].startswith(("root_","required_path","boot_manifest_parseable","boot_critical_loader_present","boot_critical_governance_loader_allows")))
+    if issues or not required_ok:
+        verdict="FAIL"
+    elif warnings:
+        verdict="PASS_WITH_WARNINGS"
+    else:
+        verdict="PASS"
+    return {"version":"1.2","created_at":time.time(),"stage":"BOOT_RUNTIME_EXECUTOR_H0C1","root":str(root),"checks":checks,"check_count":len(checks),"pass_count":sum(1 for c in checks if c.get("passed")),"issues":issues,"warnings":warnings,"verdict":verdict,"boot_manifest_summary":{"current_stable_baseline":boot_manifest.get("current_stable_baseline") if isinstance(boot_manifest,dict) else None,"boot_required_gates":boot_manifest.get("boot_required_gates") if isinstance(boot_manifest,dict) else None},"boot_critical_loader_result":loader_result}
+
+def write_receipt(packet: Dict[str, Any], receipt_dir: Path) -> Path:
+    receipt_dir.mkdir(parents=True, exist_ok=True)
+    path = receipt_dir / f"BOOT_RECEIPT_{int(time.time()*1000)}.json"
+    packet["receipt_path"] = str(path)
+    _mb_write_json_file(path, packet, operation_id='STAGE4_ATOMIC_JSON_0_kernel_scripts_boot_runtime_executor_v1_py_L97', create_parent=True, allowed_roots=[str(_MBAJWPath('/mnt/data').resolve())], indent=2, sort_keys=False, ensure_ascii=True, max_bytes=20000000)
+    return path
+
+def main(argv: Optional[List[str]]=None) -> int:
+    parser=argparse.ArgumentParser(description="MetaBlooms boot runtime executor v1.2")
+    parser.add_argument("--root", default=str(DEFAULT_ROOT)); parser.add_argument("--receipt-dir", default=str(DEFAULT_RECEIPT_DIR)); parser.add_argument("--json", action="store_true")
+    args=parser.parse_args(argv); root=resolve_root(args.root); packet=run_boot(root); receipt=write_receipt(packet, Path(args.receipt_dir))
+    out = packet if args.json else {"verdict":packet["verdict"],"issues":packet["issues"],"warnings":packet["warnings"],"receipt_path":str(receipt),"pass_count":packet["pass_count"],"check_count":packet["check_count"]}
+    print(json.dumps(out, indent=2))
+    return 0 if packet["verdict"] in {"PASS","PASS_WITH_WARNINGS"} else 1
+if __name__=="__main__":
+    raise SystemExit(main())

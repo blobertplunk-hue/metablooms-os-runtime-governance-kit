@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "CURRENT_WORKING_BASELINE_POINTER_SCHEMA_v1",
+  "title": "MetaBlooms Current Working Baseline Pointer v1",
+  "type": "object",
+  "required": [
+    "version",
+    "status",
+    "pointer_id",
+    "active_root",
+    "git",
+    "restore_selection_order",
+    "last_stage",
+    "verdict"
+  ]
+}

@@ -1,27 +1,19 @@
 {
   "schema_version": "1.0.0",
-  "recovery_index_id": "RECOVERY_INDEX_STAGE43A2_v1",
-  "updated_at_utc": "20260504T034041Z",
-  "repo": {
-    "full_name": "blobertplunk-hue/metablooms-os-runtime-governance-kit",
-    "default_branch": "main",
-    "remote_coordination_scaffold": {
-      "status": "merged_to_main",
-      "pr": 6,
-      "merge_commit": "5d355fa15e5a8fe7dc873f5831732aae07f2d22e"
-    }
-  },
+  "recovery_index_id": "RECOVERY_INDEX_STAGE43B_CLEANED_v1",
+  "updated_at_utc": "20260504T035531Z",
+  "repo": {"full_name": "blobertplunk-hue/metablooms-os-runtime-governance-kit", "default_branch": "main"},
   "latest_boot_authority": {
     "name": "WC13_REPAIRED2",
     "sha256": "2a1d96759f71eff45acefe3eb8658e3a3518456867e3b64a763272e85a7a18ed",
-    "portable_boot_verify_status": "PASS"
+    "repo_tree_path": "os/Metablooms_OS/",
+    "repo_import_file_count": "6856",
+    "repo_import_manifest_sha256": "3a3e1ca039b463a3855a9f0b55103c3c44fac1c101b1fe7e39a56404235633f6",
+    "structural_repo_verifier_status": "PASS"
   },
-  "current_stage": {
-    "stage_id": "PROFESSIONALIZATION_CONVERGENCE_STAGE43A2_RECOVERY_INDEX_AND_ARTIFACT_LOCATOR_HARDENING",
-    "status": "PR_SYNC_CANDIDATE"
-  },
-  "next_authorized_stage": "PROFESSIONALIZATION_CONVERGENCE_STAGE43B_IMPORT_OS_TREE_TO_REPO_BRANCH",
-  "repo_os_tree_status": "not_imported_until_stage43B",
+  "current_stage": {"stage_id": "PROFESSIONALIZATION_CONVERGENCE_STAGE43B_IMPORT_OS_TREE_TO_REPO_BRANCH", "status": "IMPORT_PR_CANDIDATE"},
+  "next_authorized_stage": "PROFESSIONALIZATION_CONVERGENCE_STAGE43C_REPO_OS_SYNC_CARTRIDGE_INSTALL",
+  "repo_os_tree_status": "imported_to_pr_branch_after_forbidden_cleanup",
   "deferred_or_not_allowed_claims": [
     "WC14 exists",
     "multi-human review proven",

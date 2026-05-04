@@ -1,0 +1,167 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/OFM_OUTCOME_FRAME_PACKET_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "created_at": {
+      "minLength": 10,
+      "type": "string"
+    },
+    "failure_criteria": {
+      "items": {
+        "minLength": 8,
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "measurement_plan": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_required": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "minimum_measurable_success_count": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "when_measured": {
+          "minLength": 4,
+          "type": "string"
+        }
+      },
+      "required": [
+        "when_measured",
+        "evidence_required",
+        "minimum_measurable_success_count"
+      ],
+      "type": "object"
+    },
+    "objective_id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "outcomes": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "description": {
+            "minLength": 15,
+            "type": "string"
+          },
+          "outcome_id": {
+            "pattern": "^OUT-[0-9]{3}$",
+            "type": "string"
+          },
+          "quality_model_refs": {
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "stakeholder_value": {
+            "minLength": 10,
+            "type": "string"
+          }
+        },
+        "required": [
+          "outcome_id",
+          "description",
+          "stakeholder_value",
+          "quality_model_refs"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "packet_id": {
+      "minLength": 8,
+      "type": "string"
+    },
+    "result_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "mpp.ofm_outcome_frame_packet.v1"
+    },
+    "source_cdr_packet_id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "stage": {
+      "const": "OFM"
+    },
+    "success_criteria": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "blocking": {
+            "type": "boolean"
+          },
+          "criterion": {
+            "minLength": 10,
+            "type": "string"
+          },
+          "criterion_id": {
+            "pattern": "^SC-[0-9]{3}$",
+            "type": "string"
+          },
+          "measurable": {
+            "type": "boolean"
+          },
+          "metric": {
+            "minLength": 2,
+            "type": "string"
+          },
+          "outcome_id": {
+            "pattern": "^OUT-[0-9]{3}$",
+            "type": "string"
+          },
+          "threshold": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "verification_method": {
+            "minLength": 4,
+            "type": "string"
+          }
+        },
+        "required": [
+          "criterion_id",
+          "outcome_id",
+          "criterion",
+          "measurable",
+          "metric",
+          "threshold",
+          "verification_method",
+          "blocking"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "packet_id",
+    "stage",
+    "created_at",
+    "objective_id",
+    "source_cdr_packet_id",
+    "outcomes",
+    "success_criteria",
+    "failure_criteria",
+    "measurement_plan",
+    "result_hash"
+  ],
+  "title": "MPP v3 OFM Outcome Frame Packet",
+  "type": "object"
+}

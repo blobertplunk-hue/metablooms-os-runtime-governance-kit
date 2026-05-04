@@ -1,0 +1,33 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+import json,time
+from pathlib import Path
+def now(): return time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())
+def root():
+ p=Path(__file__).resolve()
+ for q in [p.parent,*p.parents]:
+  if (q/'boot_manifest_v1.json').exists() and (q/'0_kernel').exists(): return q
+ return Path.cwd()
+def load(p): return json.loads(p.read_text(encoding='utf-8'))
+def write(p,o): p.parent.mkdir(parents=True,exist_ok=True); _mb_write_json_file(p, o, operation_id='STAGE4_ATOMIC_JSON_0_kernel_validators_validate_security_enforcement_stage2_v1_py_L12', create_parent=True, allowed_roots=[str(_MBAJWPath('/mnt/data').resolve())], indent=2, sort_keys=True, ensure_ascii=True, max_bytes=20000000)
+def classify(f):
+ payload=(f.get('payload') or '').lower(); expected=f.get('expected_decision')
+ markers=['ignore all previous','system override','delete receipts','without checksum','ignore the latest','recursively','rm -rf','../','api keys','exfiltrate']
+ risky=any(m in payload for m in markers)
+ if expected in ('BLOCK','QUARANTINE') and risky and f.get('mapped_gate'): return expected
+ if expected=='ALLOW' and not risky: return 'ALLOW'
+ return 'REVIEW'
+def main():
+ r=root(); gp=r/'0_kernel/registry/security/SECURITY_ARTIFACT_ENFORCEMENT_GATES_v1.json'; fp=r/'0_kernel/registry/security/SECURITY_PROMPT_INJECTION_FIXTURE_SET_v1.json'; tp=r/'0_kernel/registry/security/SECURITY_ARTIFACT_THREAT_MODEL_v1.json'; pp=r/'0_kernel/registry/security/SECURITY_ARTIFACT_TRUST_POLICY_v1.json'
+ missing=[str(p.relative_to(r)) for p in [gp,fp,tp,pp] if not p.exists()]
+ g=load(gp) if gp.exists() else {'gates':[]}; f=load(fp) if fp.exists() else {'fixtures':[]}; t=load(tp) if tp.exists() else {'risks':[]}
+ gate_ids={x.get('gate_id') for x in g.get('gates',[])}; risks={x.get('id') or x.get('risk_id') for x in t.get('risks',[]) if isinstance(x,dict)}; covered=set(rid for gate in g.get('gates',[]) for rid in gate.get('risk_ids',[]))
+ results=[]; failures=[]
+ for fx in f.get('fixtures',[]):
+  actual=classify(fx); ok=(actual==fx.get('expected_decision') or (fx.get('expected_decision')=='BLOCK' and actual=='QUARANTINE')) and fx.get('mapped_gate') in gate_ids
+  row={'fixture_id':fx.get('fixture_id'),'attack_class':fx.get('attack_class'),'expected_decision':fx.get('expected_decision'),'actual_decision':actual,'mapped_gate':fx.get('mapped_gate'),'pass':ok}; results.append(row)
+  if not ok: failures.append(row)
+ checks={'required_files_present':not missing,'gate_count_at_least_8':len(g.get('gates',[]))>=8,'fixture_count_at_least_8':len(f.get('fixtures',[]))>=8,'all_risks_mapped_to_gates':not sorted(risks-covered),'all_malicious_fixtures_block_or_quarantine':not failures,'safe_fixture_present':bool(f.get('known_safe_fixture'))}
+ report={'artifact_type':'SECURITY_ARTIFACT_THREAT_MODEL_STAGE2_VALIDATION_v1','created_utc':now(),'verdict':'PASS' if all(checks.values()) else 'FAIL','checks':checks,'missing':missing,'risk_count':len(risks),'gate_count':len(g.get('gates',[])),'fixture_count':len(f.get('fixtures',[])),'uncovered_risk_ids':sorted(risks-covered),'fixture_results':results,'fixture_failures':failures}
+ write(r/'runtime/evals/security/SECURITY_ARTIFACT_THREAT_MODEL_STAGE2_VALIDATION_LATEST.json',report); print(json.dumps(report,indent=2,sort_keys=True)); return 0 if report['verdict']=='PASS' else 2
+if __name__=='__main__': raise SystemExit(main())

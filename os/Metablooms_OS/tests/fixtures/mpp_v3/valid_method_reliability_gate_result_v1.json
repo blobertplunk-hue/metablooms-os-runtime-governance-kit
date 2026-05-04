@@ -1,0 +1,55 @@
+{
+  "created_at": "2026-05-01T00:40:42.746671+00:00",
+  "gate_id": "METHOD-GATE-20260501T004042Z",
+  "packet_id": "LEARN-20260501T004042Z",
+  "result_hash": "5adb4782914d663388ff71f9f40c256d7d78b6d02bda72f48563c58c31b0d1dc",
+  "routing_updates": [
+    {
+      "blocking": false,
+      "created_at": "2026-05-01T00:40:42.746507+00:00",
+      "decision": "PROMOTE",
+      "evidence_refs": [
+        "R20_FINAL_PASS"
+      ],
+      "method_id": "METHOD-001",
+      "reason": "reliability_score=1.0 status=promoted",
+      "result_hash": "736fc5371dc32ed45366c74fa242b2a58ec8a79f511e833188852a462f1067b0",
+      "schema_version": "mpp.method_router_update.v1",
+      "source_packet_id": "LEARN-20260501T004042Z",
+      "update_id": "METHOD-UPDATE-20260501T004042Z-METHOD-001"
+    },
+    {
+      "blocking": true,
+      "created_at": "2026-05-01T00:40:42.746579+00:00",
+      "decision": "FORBID",
+      "evidence_refs": [
+        "R20_INTERRUPTED_ATTEMPT"
+      ],
+      "method_id": "METHOD-002",
+      "reason": "reliability_score=0.0 status=forbidden",
+      "result_hash": "fc6a00ba939a9f83442936185d1c5df2caf384a5f27ef3576f0f4ccf08c7e543",
+      "schema_version": "mpp.method_router_update.v1",
+      "source_packet_id": "LEARN-20260501T004042Z",
+      "update_id": "METHOD-UPDATE-20260501T004042Z-METHOD-002"
+    },
+    {
+      "blocking": false,
+      "created_at": "2026-05-01T00:40:42.746628+00:00",
+      "decision": "WATCH",
+      "evidence_refs": [
+        "FULL_EXPORT_PASS"
+      ],
+      "method_id": "METHOD-003",
+      "reason": "reliability_score=1.0 status=watch",
+      "result_hash": "7abccfa425f24f1f49fef9ef4688c89906eb25c00ba09f3abb425ef3244c0e47",
+      "schema_version": "mpp.method_router_update.v1",
+      "source_packet_id": "LEARN-20260501T004042Z",
+      "update_id": "METHOD-UPDATE-20260501T004042Z-METHOD-003"
+    }
+  ],
+  "schema_version": "mpp.method_reliability_gate_result.v1",
+  "stage": "METHOD_RELIABILITY_GATE",
+  "verdict": "PASS",
+  "violations": [],
+  "warnings": []
+}

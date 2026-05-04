@@ -1,0 +1,412 @@
+{
+  "artifact_type": "AtomicJsonWriterExecutableFixtureResults.v1",
+  "passed": true,
+  "results": [
+    {
+      "actual": "ALLOW_SUCCESS",
+      "decision": {
+        "allowed_roots": [
+          "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed"
+        ],
+        "artifact_type": "AtomicJsonWriteDecisionPacket.v1",
+        "bytes_written": 23,
+        "created_utc": "2026-05-02T14:34:31Z",
+        "deny_reason": null,
+        "error_type": null,
+        "failure_event_path": null,
+        "fsync_file": true,
+        "fsync_parent": {
+          "attempted": true,
+          "error": null,
+          "ok": true
+        },
+        "ok": true,
+        "operation_id": "success_create_parent",
+        "readback_ok": true,
+        "receipt_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/receipts/success_create_parent/success_create_parent_decision_packet.json",
+        "resolved_target_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed/nested/ok.json",
+        "status": "ALLOW_SUCCESS",
+        "target_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed/nested/ok.json",
+        "target_sha256": "080d51f49b27c73d17f51f3b808515a425d16218aa40021eed2ca1d204e59224",
+        "temp_path_used": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed/nested/.ok.json.jsw7umh2.tmp",
+        "writer_version": "atomic_json_writer_v1"
+      },
+      "expected": "ALLOW_SUCCESS",
+      "extra": true,
+      "name": "success_create_parent",
+      "pass": true
+    },
+    {
+      "actual": "ALLOW_SUCCESS",
+      "decision": {
+        "allowed_roots": [
+          "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed"
+        ],
+        "artifact_type": "AtomicJsonWriteDecisionPacket.v1",
+        "bytes_written": 18,
+        "created_utc": "2026-05-02T14:34:31Z",
+        "deny_reason": null,
+        "error_type": null,
+        "failure_event_path": null,
+        "fsync_file": true,
+        "fsync_parent": {
+          "attempted": true,
+          "error": null,
+          "ok": true
+        },
+        "ok": true,
+        "operation_id": "success_replace_existing",
+        "readback_ok": true,
+        "receipt_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/receipts/success_replace_existing/success_replace_existing_decision_packet.json",
+        "resolved_target_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed/existing.json",
+        "status": "ALLOW_SUCCESS",
+        "target_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed/existing.json",
+        "target_sha256": "1fc4c6f771432eb325b22e0deea84bd6330e892ef68db4cbc47da253bdc2ffe4",
+        "temp_path_used": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed/.existing.json.abja891m.tmp",
+        "writer_version": "atomic_json_writer_v1"
+      },
+      "expected": "ALLOW_SUCCESS",
+      "extra": true,
+      "name": "success_replace_existing",
+      "pass": true
+    },
+    {
+      "actual": "DENY_PATH_ESCAPE",
+      "decision": {
+        "allowed_roots": [
+          "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed"
+        ],
+        "artifact_type": "AtomicJsonWriteDecisionPacket.v1",
+        "bytes_written": 0,
+        "created_utc": "2026-05-02T14:34:31Z",
+        "deny_reason": "resolved_target_outside_allowed_roots",
+        "error_type": "PathEscape",
+        "failure_event_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/receipts/deny_path_escape_dotdot/deny_path_escape_dotdot_failure_event.json",
+        "fsync_file": false,
+        "fsync_parent": {
+          "attempted": false,
+          "error": null,
+          "ok": false
+        },
+        "ok": false,
+        "operation_id": "deny_path_escape_dotdot",
+        "readback_ok": false,
+        "receipt_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/receipts/deny_path_escape_dotdot/deny_path_escape_dotdot_decision_packet.json",
+        "resolved_target_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/outside/evil.json",
+        "status": "DENY_PATH_ESCAPE",
+        "target_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed/../outside/evil.json",
+        "target_sha256": null,
+        "temp_path_used": null,
+        "writer_version": "atomic_json_writer_v1"
+      },
+      "expected": "DENY_PATH_ESCAPE",
+      "extra": null,
+      "name": "deny_path_escape_dotdot",
+      "pass": true
+    },
+    {
+      "actual": "DENY_SUFFIX",
+      "decision": {
+        "allowed_roots": [
+          "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed"
+        ],
+        "artifact_type": "AtomicJsonWriteDecisionPacket.v1",
+        "bytes_written": 0,
+        "created_utc": "2026-05-02T14:34:31Z",
+        "deny_reason": "suffix_not_allowed:.txt",
+        "error_type": "UnsafeSuffix",
+        "failure_event_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/receipts/deny_bad_suffix/deny_bad_suffix_failure_event.json",
+        "fsync_file": false,
+        "fsync_parent": {
+          "attempted": false,
+          "error": null,
+          "ok": false
+        },
+        "ok": false,
+        "operation_id": "deny_bad_suffix",
+        "readback_ok": false,
+        "receipt_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/receipts/deny_bad_suffix/deny_bad_suffix_decision_packet.json",
+        "resolved_target_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed/bad.txt",
+        "status": "DENY_SUFFIX",
+        "target_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed/bad.txt",
+        "target_sha256": null,
+        "temp_path_used": null,
+        "writer_version": "atomic_json_writer_v1"
+      },
+      "expected": "DENY_SUFFIX",
+      "extra": null,
+      "name": "deny_bad_suffix",
+      "pass": true
+    },
+    {
+      "actual": "DENY_EXISTS",
+      "decision": {
+        "allowed_roots": [
+          "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed"
+        ],
+        "artifact_type": "AtomicJsonWriteDecisionPacket.v1",
+        "bytes_written": 0,
+        "created_utc": "2026-05-02T14:34:31Z",
+        "deny_reason": "target_exists_overwrite_denied",
+        "error_type": "TargetExists",
+        "failure_event_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/receipts/deny_exists_create_new/deny_exists_create_new_failure_event.json",
+        "fsync_file": false,
+        "fsync_parent": {
+          "attempted": false,
+          "error": null,
+          "ok": false
+        },
+        "ok": false,
+        "operation_id": "deny_exists_create_new",
+        "readback_ok": false,
+        "receipt_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/receipts/deny_exists_create_new/deny_exists_create_new_decision_packet.json",
+        "resolved_target_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed/deny_exists.json",
+        "status": "DENY_EXISTS",
+        "target_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed/deny_exists.json",
+        "target_sha256": null,
+        "temp_path_used": null,
+        "writer_version": "atomic_json_writer_v1"
+      },
+      "expected": "DENY_EXISTS",
+      "extra": true,
+      "name": "deny_exists_create_new",
+      "pass": true
+    },
+    {
+      "actual": "DENY_SERIALIZATION",
+      "decision": {
+        "allowed_roots": [
+          "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed"
+        ],
+        "artifact_type": "AtomicJsonWriteDecisionPacket.v1",
+        "bytes_written": 0,
+        "created_utc": "2026-05-02T14:34:31Z",
+        "deny_reason": "payload_not_json_serializable_or_nonfinite",
+        "error_type": "TypeError: Object of type set is not JSON serializable",
+        "failure_event_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/receipts/deny_unserializable/deny_unserializable_failure_event.json",
+        "fsync_file": false,
+        "fsync_parent": {
+          "attempted": false,
+          "error": null,
+          "ok": false
+        },
+        "ok": false,
+        "operation_id": "deny_unserializable",
+        "readback_ok": false,
+        "receipt_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/receipts/deny_unserializable/deny_unserializable_decision_packet.json",
+        "resolved_target_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed/badpayload.json",
+        "status": "DENY_SERIALIZATION",
+        "target_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed/badpayload.json",
+        "target_sha256": null,
+        "temp_path_used": null,
+        "writer_version": "atomic_json_writer_v1"
+      },
+      "expected": "DENY_SERIALIZATION",
+      "extra": null,
+      "name": "deny_unserializable",
+      "pass": true
+    },
+    {
+      "actual": "DENY_SERIALIZATION",
+      "decision": {
+        "allowed_roots": [
+          "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed"
+        ],
+        "artifact_type": "AtomicJsonWriteDecisionPacket.v1",
+        "bytes_written": 0,
+        "created_utc": "2026-05-02T14:34:31Z",
+        "deny_reason": "payload_not_json_serializable_or_nonfinite",
+        "error_type": "ValueError: Out of range float values are not JSON compliant: nan",
+        "failure_event_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/receipts/deny_nonfinite_nan/deny_nonfinite_nan_failure_event.json",
+        "fsync_file": false,
+        "fsync_parent": {
+          "attempted": false,
+          "error": null,
+          "ok": false
+        },
+        "ok": false,
+        "operation_id": "deny_nonfinite_nan",
+        "readback_ok": false,
+        "receipt_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/receipts/deny_nonfinite_nan/deny_nonfinite_nan_decision_packet.json",
+        "resolved_target_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed/nan.json",
+        "status": "DENY_SERIALIZATION",
+        "target_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed/nan.json",
+        "target_sha256": null,
+        "temp_path_used": null,
+        "writer_version": "atomic_json_writer_v1"
+      },
+      "expected": "DENY_SERIALIZATION",
+      "extra": null,
+      "name": "deny_nonfinite_nan",
+      "pass": true
+    },
+    {
+      "actual": "DENY_SIZE_LIMIT",
+      "decision": {
+        "allowed_roots": [
+          "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed"
+        ],
+        "artifact_type": "AtomicJsonWriteDecisionPacket.v1",
+        "bytes_written": 0,
+        "created_utc": "2026-05-02T14:34:31Z",
+        "deny_reason": "serialized_size_exceeds_limit:114>20",
+        "error_type": "SizeLimit",
+        "failure_event_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/receipts/deny_size_limit/deny_size_limit_failure_event.json",
+        "fsync_file": false,
+        "fsync_parent": {
+          "attempted": false,
+          "error": null,
+          "ok": false
+        },
+        "ok": false,
+        "operation_id": "deny_size_limit",
+        "readback_ok": false,
+        "receipt_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/receipts/deny_size_limit/deny_size_limit_decision_packet.json",
+        "resolved_target_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed/huge.json",
+        "status": "DENY_SIZE_LIMIT",
+        "target_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed/huge.json",
+        "target_sha256": null,
+        "temp_path_used": null,
+        "writer_version": "atomic_json_writer_v1"
+      },
+      "expected": "DENY_SIZE_LIMIT",
+      "extra": null,
+      "name": "deny_size_limit",
+      "pass": true
+    },
+    {
+      "actual": "DENY_SYMLINK",
+      "decision": {
+        "allowed_roots": [
+          "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed"
+        ],
+        "artifact_type": "AtomicJsonWriteDecisionPacket.v1",
+        "bytes_written": 0,
+        "created_utc": "2026-05-02T14:34:31Z",
+        "deny_reason": "symlink_component:/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed/linkfile.json",
+        "error_type": "SymlinkBlocked",
+        "failure_event_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/receipts/deny_symlink_target/deny_symlink_target_failure_event.json",
+        "fsync_file": false,
+        "fsync_parent": {
+          "attempted": false,
+          "error": null,
+          "ok": false
+        },
+        "ok": false,
+        "operation_id": "deny_symlink_target",
+        "readback_ok": false,
+        "receipt_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/receipts/deny_symlink_target/deny_symlink_target_decision_packet.json",
+        "resolved_target_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed/linkfile.json",
+        "status": "DENY_SYMLINK",
+        "target_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed/linkfile.json",
+        "target_sha256": null,
+        "temp_path_used": null,
+        "writer_version": "atomic_json_writer_v1"
+      },
+      "expected": "DENY_SYMLINK",
+      "extra": null,
+      "name": "deny_symlink_target",
+      "pass": true
+    },
+    {
+      "actual": "DENY_SYMLINK",
+      "decision": {
+        "allowed_roots": [
+          "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed"
+        ],
+        "artifact_type": "AtomicJsonWriteDecisionPacket.v1",
+        "bytes_written": 0,
+        "created_utc": "2026-05-02T14:34:31Z",
+        "deny_reason": "symlink_component:/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed/linkdir",
+        "error_type": "SymlinkBlocked",
+        "failure_event_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/receipts/deny_symlink_ancestor/deny_symlink_ancestor_failure_event.json",
+        "fsync_file": false,
+        "fsync_parent": {
+          "attempted": false,
+          "error": null,
+          "ok": false
+        },
+        "ok": false,
+        "operation_id": "deny_symlink_ancestor",
+        "readback_ok": false,
+        "receipt_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/receipts/deny_symlink_ancestor/deny_symlink_ancestor_decision_packet.json",
+        "resolved_target_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed/linkdir/x.json",
+        "status": "DENY_SYMLINK",
+        "target_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed/linkdir/x.json",
+        "target_sha256": null,
+        "temp_path_used": null,
+        "writer_version": "atomic_json_writer_v1"
+      },
+      "expected": "DENY_SYMLINK",
+      "extra": null,
+      "name": "deny_symlink_ancestor",
+      "pass": true
+    },
+    {
+      "actual": "DENY_SCHEMA_INVALID",
+      "decision": {
+        "allowed_roots": [
+          "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed"
+        ],
+        "artifact_type": "AtomicJsonWriteDecisionPacket.v1",
+        "bytes_written": 0,
+        "created_utc": "2026-05-02T14:34:31Z",
+        "deny_reason": "parent_missing_and_create_parent_false",
+        "error_type": "ParentMissing",
+        "failure_event_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/receipts/deny_missing_parent/deny_missing_parent_failure_event.json",
+        "fsync_file": false,
+        "fsync_parent": {
+          "attempted": false,
+          "error": null,
+          "ok": false
+        },
+        "ok": false,
+        "operation_id": "deny_missing_parent",
+        "readback_ok": false,
+        "receipt_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/receipts/deny_missing_parent/deny_missing_parent_decision_packet.json",
+        "resolved_target_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed/missing_parent/x.json",
+        "status": "DENY_SCHEMA_INVALID",
+        "target_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed/missing_parent/x.json",
+        "target_sha256": null,
+        "temp_path_used": null,
+        "writer_version": "atomic_json_writer_v1"
+      },
+      "expected": "DENY_SCHEMA_INVALID",
+      "extra": null,
+      "name": "deny_missing_parent",
+      "pass": true
+    },
+    {
+      "actual": "DENY_SCHEMA_INVALID",
+      "decision": {
+        "allowed_roots": [],
+        "artifact_type": "AtomicJsonWriteDecisionPacket.v1",
+        "bytes_written": 0,
+        "created_utc": "2026-05-02T14:34:31Z",
+        "deny_reason": "allowed_roots_must_be_nonempty_list",
+        "error_type": "SchemaError",
+        "failure_event_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/receipts/deny_invalid_allowed_roots/deny_invalid_allowed_roots_failure_event.json",
+        "fsync_file": false,
+        "fsync_parent": {
+          "attempted": false,
+          "error": null,
+          "ok": false
+        },
+        "ok": false,
+        "operation_id": "deny_invalid_allowed_roots",
+        "readback_ok": false,
+        "receipt_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/receipts/deny_invalid_allowed_roots/deny_invalid_allowed_roots_decision_packet.json",
+        "resolved_target_path": null,
+        "status": "DENY_SCHEMA_INVALID",
+        "target_path": "/mnt/data/Metablooms_OS/runtime/tmp/atomic_json_writer_stage2_executable_harness/allowed/x.json",
+        "target_sha256": null,
+        "temp_path_used": null,
+        "writer_version": "atomic_json_writer_v1"
+      },
+      "expected": "DENY_SCHEMA_INVALID",
+      "extra": null,
+      "name": "deny_invalid_allowed_roots",
+      "pass": true
+    }
+  ]
+}

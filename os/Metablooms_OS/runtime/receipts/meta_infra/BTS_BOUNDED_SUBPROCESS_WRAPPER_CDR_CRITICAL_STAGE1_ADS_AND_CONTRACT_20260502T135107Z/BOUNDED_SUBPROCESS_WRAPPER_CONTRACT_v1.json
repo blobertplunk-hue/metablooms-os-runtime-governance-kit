@@ -1,0 +1,58 @@
+{
+  "artifact_type": "METABLOOMS_BOUNDED_SUBPROCESS_WRAPPER_CONTRACT_v1",
+  "contract_status": "PROMOTABLE_TO_IMPLEMENTATION_STAGE",
+  "post_execution_gates": [
+    "capture_exit_status_and_signal",
+    "capture_truncated_stdout_stderr_with_hashes",
+    "classify_result",
+    "write_decision_packet",
+    "write_failure_event_if_not_success",
+    "write_learning_candidate_if_recurrent_or_forbidden"
+  ],
+  "pre_execution_gates": [
+    "load_runtime_root_authority",
+    "load_forbidden_validation_methods",
+    "load_method_reliability_policy",
+    "validate_command_envelope_schema",
+    "resolve_executable_to_absolute_path",
+    "deny_shell_unless_exception_token_valid",
+    "validate_cwd_inside_allowed_roots",
+    "validate_arguments_against_command_policy",
+    "validate_timeout_retry_output_budgets",
+    "write_pre_spawn_receipt"
+  ],
+  "required_api": {
+    "function": "run_governed_command",
+    "input": "BoundedCommandEnvelope.v1",
+    "output": "BoundedCommandDecisionPacket.v1",
+    "side_effects": [
+      "writes command decision receipt",
+      "writes failure event when applicable",
+      "updates method reliability candidate ledger only through approved writer in later implementation"
+    ]
+  },
+  "result_classes": [
+    "ALLOW_SUCCESS",
+    "ALLOW_NONZERO",
+    "DENY_FORBIDDEN_METHOD",
+    "DENY_SCHEMA_INVALID",
+    "DENY_SHELL_UNAPPROVED",
+    "DENY_PATH_ESCAPE",
+    "TIMEOUT_TERMINATED",
+    "TIMEOUT_KILLED",
+    "SPAWN_ERROR",
+    "OUTPUT_LIMIT_EXCEEDED"
+  ],
+  "security_invariants": [
+    "argv must be list[str] with length >=1",
+    "shell must be false unless exception_token and policy_authority are both present",
+    "executable must resolve to absolute path via allowlist or resolver",
+    "arguments must be treated as data, never concatenated into a command string",
+    "cwd must be under an allowed root after realpath resolution",
+    "env must default to minimal deterministic values",
+    "stdout/stderr capture must be capped and hashed",
+    "failure must be visible as receipt, not just process stderr"
+  ],
+  "stage_id": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT",
+  "tier": "CDR_CRITICAL"
+}

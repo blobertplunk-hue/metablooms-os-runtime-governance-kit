@@ -1,0 +1,12 @@
+{
+  "archive_or_hash_work": true,
+  "coding_plan_artifact": "runtime/plans/H0B2_CODING_PLAN_v1.json",
+  "export_latency_controls": false,
+  "metablooms_turn": true,
+  "python_method": "python3 -S",
+  "sandbox_policy_loaded": true,
+  "sandbox_receipt_artifact": "runtime/receipts/H0B2_SANDBOX_RECEIPT.json",
+  "stdlib_only_task": true,
+  "will_code": true,
+  "will_modify_runtime": true
+}

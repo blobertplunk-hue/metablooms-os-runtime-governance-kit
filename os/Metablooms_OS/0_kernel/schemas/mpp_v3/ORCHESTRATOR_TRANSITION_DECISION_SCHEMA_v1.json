@@ -1,0 +1,29 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/ORCHESTRATOR_TRANSITION_DECISION_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "result_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "mpp.orchestrator_transition_decision.v1"
+    }
+  },
+  "required": [
+    "schema_version",
+    "decision_id",
+    "created_at",
+    "source_packet_id",
+    "from_stage",
+    "to_stage",
+    "decision",
+    "reason",
+    "evidence_refs",
+    "blocking",
+    "result_hash"
+  ],
+  "title": "MPP v3 Orchestrator Transition Decision",
+  "type": "object"
+}

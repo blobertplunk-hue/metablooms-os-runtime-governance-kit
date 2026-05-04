@@ -1,0 +1,7 @@
+MetaBlooms World-Class Tracker
+Current stage: WC_STAGE3_LESSON_PROMOTION_QUEUE_AND_FIXTURE_FACTORY
+Status: PASS pending export smoke
+Accepted durable lessons: 6
+Fixture factory: installed
+Next stage: WC_STAGE6_GENERAL_CAPABILITY_RESOLVER_FRAMEWORK
+Primary next boot authority: BOOTABLE_FULL_AUTHORITY_WC3.zip

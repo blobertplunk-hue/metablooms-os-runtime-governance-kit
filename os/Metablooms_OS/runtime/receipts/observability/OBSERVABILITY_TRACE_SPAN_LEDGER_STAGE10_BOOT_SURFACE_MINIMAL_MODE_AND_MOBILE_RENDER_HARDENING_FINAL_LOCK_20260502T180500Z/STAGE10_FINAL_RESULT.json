@@ -1,0 +1,11 @@
+{
+  "duplicate_members": 0,
+  "entries": 6430,
+  "final_export": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_MINIMAL_MOBILE_FINAL_AUTHORITY_LOCKED_20260502T180500Z.zip",
+  "handoff": "/mnt/data/Metablooms_OS/runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINAL_LOCK_20260502T180500Z/STAGE_HANDOFF.json",
+  "missing_required_members": [],
+  "proof": "/mnt/data/Metablooms_OS/runtime/traces/observability/OBSERVABILITY_STAGE10_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+  "receipt": "/mnt/data/Metablooms_OS/runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINAL_LOCK_20260502T180500Z/STAGE_RECEIPT.json",
+  "sha256": "4286e599a426d830a8806f6693e9ab9c399c8ede382c0fa1e7c2e66709b03c01",
+  "verdict": "PASS"
+}

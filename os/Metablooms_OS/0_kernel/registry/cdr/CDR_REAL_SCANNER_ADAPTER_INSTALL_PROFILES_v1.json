@@ -1,0 +1,131 @@
+{
+  "governed_install_requirements": [
+    "Tool Universe Resolver must classify action as scanner_adapter_install_or_scan",
+    "BTS tool evaluation and selection must pass",
+    "pre_tool_action_gate must allow package installation or scanner invocation",
+    "install/smoke receipt must capture command, version, exit code, stdout/stderr excerpt, and source hash",
+    "scanner output must be normalized into CDR_LINT_SECURITY_SCANNER_PACKET_SCHEMA_v1-compatible evidence",
+    "fallback scanner baseline remains mandatory when real scanner is unavailable"
+  ],
+  "profiles": [
+    {
+      "fail_closed_on": [
+        "syntax_error",
+        "fatal_scan_error",
+        "configuration_error",
+        "zero_tolerance_findings"
+      ],
+      "fallback": "stdlib_ast_baseline",
+      "official_basis": "Ruff is available as ruff on PyPI and can be installed with uv, pip, pipx, Homebrew, conda, or standalone installers.",
+      "outputs": [
+        "json findings",
+        "returncode"
+      ],
+      "preferred_install_order": [
+        "already_available",
+        "uvx ruff check",
+        "uv tool install ruff@latest",
+        "pip install ruff",
+        "pipx install ruff"
+      ],
+      "purpose": "fast Python lint/format quality scan",
+      "safe_default_command": [
+        "ruff",
+        "check",
+        "--output-format",
+        "json",
+        "."
+      ],
+      "tool_id": "ruff"
+    },
+    {
+      "fail_closed_on": [
+        "fatal_scan_error",
+        "high_confidence_high_severity",
+        "zero_tolerance_findings"
+      ],
+      "fallback": "stdlib_ast_security_baseline",
+      "official_basis": "Bandit is the Python security linter profile used for code-level security scanning; install only through governed profile when network/package manager is available.",
+      "outputs": [
+        "json findings",
+        "returncode"
+      ],
+      "preferred_install_order": [
+        "already_available",
+        "pip install bandit",
+        "pipx install bandit"
+      ],
+      "purpose": "Python security static analysis",
+      "safe_default_command": [
+        "bandit",
+        "-r",
+        ".",
+        "-f",
+        "json"
+      ],
+      "tool_id": "bandit"
+    },
+    {
+      "fail_closed_on": [
+        "fatal_scan_error",
+        "invalid_target_code",
+        "zero_tolerance_findings"
+      ],
+      "fallback": "stdlib_ast_semgrep_profile_baseline",
+      "official_basis": "Semgrep CLI supports scan/ci commands, JSON/SARIF/JUnit output, config selection, exit codes, and metrics controls.",
+      "outputs": [
+        "json findings",
+        "returncode"
+      ],
+      "preferred_install_order": [
+        "already_available",
+        "pip install semgrep",
+        "pipx install semgrep"
+      ],
+      "privacy_safe_command": [
+        "semgrep",
+        "scan",
+        "--config",
+        "p/python",
+        "--metrics",
+        "off",
+        "--json",
+        "."
+      ],
+      "purpose": "multi-language semantic/static security and pattern scanning",
+      "safe_default_command": [
+        "semgrep",
+        "scan",
+        "--config",
+        "auto",
+        "--json",
+        "."
+      ],
+      "tool_id": "semgrep"
+    }
+  ],
+  "rationale": "Stage 9 proved deterministic stdlib fallback. Stage 10 adds governed real-scanner adapter/install profiles so future environments can upgrade to ruff/bandit/semgrep without bypassing CDR or BTS.",
+  "scanner_availability_at_stage_run": [
+    {
+      "available": false,
+      "path": null,
+      "tool": "ruff",
+      "version": null
+    },
+    {
+      "available": false,
+      "path": null,
+      "tool": "bandit",
+      "version": null
+    },
+    {
+      "available": false,
+      "path": null,
+      "tool": "semgrep",
+      "version": null
+    }
+  ],
+  "schema": "CDRRealScannerAdapterInstallProfiles_v1",
+  "stage": "CDR_STAGE10_REAL_SCANNER_ADAPTER_INSTALL_PROFILES_OR_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE9",
+  "status": "INSTALL_PROFILES_ADDED_NOT_INSTALLED"
+}

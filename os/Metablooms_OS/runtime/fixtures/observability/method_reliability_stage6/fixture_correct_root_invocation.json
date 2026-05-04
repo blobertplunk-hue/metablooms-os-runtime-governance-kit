@@ -1,0 +1,9 @@
+{
+  "argv": [
+    "--root",
+    "/mnt/data/Metablooms_OS",
+    "--json"
+  ],
+  "expected_decision": "ALLOW",
+  "expected_target_shape": "--root"
+}

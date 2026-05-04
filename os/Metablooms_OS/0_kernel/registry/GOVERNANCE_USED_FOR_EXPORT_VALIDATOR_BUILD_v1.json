@@ -1,0 +1,78 @@
+{
+  "version": "1.0",
+  "created_at": 1777064935.780393,
+  "stage": "G3_EXPORT_RECOVERY_VALIDATOR_REGRESSION_FIXTURES",
+  "governance_items": [
+    {
+      "artifact": "boot_manifest_v1.json",
+      "role": "Registers active runtime governance and next-stage components."
+    },
+    {
+      "artifact": "artifact_registry.json",
+      "role": "Tracks artifacts, hashes, statuses, and lineage."
+    },
+    {
+      "artifact": "CURRENT_WORKING_BASELINE_POINTER_v1.json",
+      "role": "Prevents stale ZIP fallback by identifying current active root."
+    },
+    {
+      "artifact": "STAGE_STATE_LEDGER_v1.json",
+      "role": "Records PASS/BLOCK/repair state and latest_pass."
+    },
+    {
+      "artifact": "STAGE_DAG_v1.json",
+      "role": "Records stage dependencies and ordering."
+    },
+    {
+      "artifact": "AUTO_RUNAWAY_STAGE_SPLIT_CONTRACT_v1.json",
+      "role": "Forces bounded micro-stages instead of runaway turns."
+    },
+    {
+      "artifact": "TRANSACTIONAL_STAGE_RUNNER_CONTRACT_v1.json",
+      "role": "Defines staged preflight, verify, promote, commit, state-update semantics."
+    },
+    {
+      "artifact": "MANIFEST_PROVENANCE_EXPORT_CONTRACT_v1.json",
+      "role": "Defines manifest/provenance export requirements."
+    },
+    {
+      "artifact": "RESTORE_LADDER_CONTRACT_v1.json",
+      "role": "Defines restore precedence and Git filemode normalization."
+    },
+    {
+      "artifact": "BLOCKED_RECEIPT_HANDLING_RULE_v1.json",
+      "role": "Prevents failed-stage artifacts from dirtying future stages."
+    },
+    {
+      "artifact": "G0_EXPORT_RECOVERY_VALIDATOR_SCOPE_CONTRACT_v1.json",
+      "role": "Locks validator scope from audit and research."
+    },
+    {
+      "artifact": "G0_EXPORT_RECOVERY_VALIDATOR_GATE_MATRIX_v1.json",
+      "role": "Enumerates blocking gates."
+    },
+    {
+      "artifact": "EXPORT_RECOVERY_PROVEN_VALIDATOR_CONTRACT_v1.json",
+      "role": "Machine-readable validator contract."
+    },
+    {
+      "artifact": "export_recovery_proven_validator_v1.py",
+      "role": "Executable fail-closed validator."
+    },
+    {
+      "artifact": "SEE/CE packets",
+      "role": "Research-backed synthesis and comprehension framing."
+    },
+    {
+      "artifact": "stage receipts and handoffs",
+      "role": "Proof and continuity discipline for every stage."
+    }
+  ],
+  "summary": {
+    "primary_pattern": "artifact-governed staged execution",
+    "proof_policy": "no PASS without committed artifacts and validation receipts",
+    "runaway_policy": "one bounded stage at a time",
+    "validator_policy": "no recovery-proven export claim without PASS validator decision"
+  },
+  "verdict": "PASS"
+}

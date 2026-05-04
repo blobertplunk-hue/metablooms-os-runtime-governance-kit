@@ -1,0 +1,69 @@
+{
+  "artifact_type": "EXTERNAL_REVIEW_GAP_TO_CARTRIDGE_MAP_v1",
+  "created_utc": "20260501T040110Z",
+  "items": [
+    {
+      "cartridge_id": "EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE",
+      "lens": "Evals",
+      "path": "0_kernel/cartridges/external_review_lenses/EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_SPEC_v1.json",
+      "priority": "P1",
+      "score_before": 2.5
+    },
+    {
+      "cartridge_id": "STATE_CHECKPOINT_RESUME_AND_INTERRUPT_CARTRIDGE",
+      "lens": "State/checkpointing",
+      "path": "0_kernel/cartridges/external_review_lenses/STATE_CHECKPOINT_RESUME_AND_INTERRUPT_CARTRIDGE_SPEC_v1.json",
+      "priority": "P2",
+      "score_before": 3.0
+    },
+    {
+      "cartridge_id": "AGENT_HARNESS_STAGE_GRAPH_AND_WORKTREE_CARTRIDGE",
+      "lens": "Agent harness",
+      "path": "0_kernel/cartridges/external_review_lenses/AGENT_HARNESS_STAGE_GRAPH_AND_WORKTREE_CARTRIDGE_SPEC_v1.json",
+      "priority": "P1",
+      "score_before": 2.5
+    },
+    {
+      "cartridge_id": "SOFTWARE_QUALITY_CRITICAL_PATH_CLI_AND_TEST_CARTRIDGE",
+      "lens": "Software quality",
+      "path": "0_kernel/cartridges/external_review_lenses/SOFTWARE_QUALITY_CRITICAL_PATH_CLI_AND_TEST_CARTRIDGE_SPEC_v1.json",
+      "priority": "P2",
+      "score_before": 3.0
+    },
+    {
+      "cartridge_id": "SECURITY_ARTIFACT_THREAT_MODEL_AND_INJECTION_CARTRIDGE",
+      "lens": "Security",
+      "path": "0_kernel/cartridges/external_review_lenses/SECURITY_ARTIFACT_THREAT_MODEL_AND_INJECTION_CARTRIDGE_SPEC_v1.json",
+      "priority": "P1",
+      "score_before": 2.5
+    },
+    {
+      "cartridge_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_CARTRIDGE",
+      "lens": "Observability",
+      "path": "0_kernel/cartridges/external_review_lenses/OBSERVABILITY_TRACE_SPAN_LEDGER_CARTRIDGE_SPEC_v1.json",
+      "priority": "P1",
+      "score_before": 2.5
+    },
+    {
+      "cartridge_id": "EDUCATION_VALIDITY_LEARNING_EFFICACY_CARTRIDGE",
+      "lens": "Education validity",
+      "path": "0_kernel/cartridges/external_review_lenses/EDUCATION_VALIDITY_LEARNING_EFFICACY_CARTRIDGE_SPEC_v1.json",
+      "priority": "P1",
+      "score_before": 2.5
+    },
+    {
+      "cartridge_id": "UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE",
+      "lens": "UX/product simplicity",
+      "path": "0_kernel/cartridges/external_review_lenses/UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE_SPEC_v1.json",
+      "priority": "P0",
+      "score_before": 1.5
+    },
+    {
+      "cartridge_id": "ARTIFACT_PORTABILITY_REPLAY_PROOF_CARTRIDGE",
+      "lens": "Artifact portability",
+      "path": "0_kernel/cartridges/external_review_lenses/ARTIFACT_PORTABILITY_REPLAY_PROOF_CARTRIDGE_SPEC_v1.json",
+      "priority": "P3",
+      "score_before": 4.0
+    }
+  ]
+}

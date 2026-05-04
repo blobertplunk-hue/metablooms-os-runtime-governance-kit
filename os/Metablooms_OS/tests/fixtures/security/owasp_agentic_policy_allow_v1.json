@@ -1,0 +1,22 @@
+{
+  "action_class": "filesystem_export",
+  "controls_present": [
+    "Tool Universe Resolver",
+    "BTS wrapper",
+    "pre_tool_action_gate_v1",
+    "post_tool_result_validation_v1",
+    "CRC proof",
+    "SHA sidecar",
+    "fresh boot proof",
+    "delivery guard"
+  ],
+  "high_impact": true,
+  "name": "allow_filesystem_export",
+  "risk_ids": [
+    "ASI02",
+    "ASI04",
+    "ASI08",
+    "ASI09"
+  ],
+  "schema": "OWASPAgenticAIPolicyGateFixture_v1"
+}

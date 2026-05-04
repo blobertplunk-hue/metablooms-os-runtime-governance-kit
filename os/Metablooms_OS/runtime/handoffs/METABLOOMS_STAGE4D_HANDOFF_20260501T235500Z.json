@@ -1,0 +1,10 @@
+{
+  "handoff_type": "METABLOOMS_STAGE4D_HANDOFF",
+  "stage": "STAGE4D_POINTER_PROMOTION_AND_NEW_CHAT_BOOT_REHEARSAL",
+  "created_utc": "2026-05-01T23:55:00Z",
+  "status": "PENDING_FINAL_REHEARSAL",
+  "next_stage": "STAGE5_USE_PROMOTED_AUTHORITY_FOR_NEXT_GOVERNED_TASK",
+  "authority_zip": "/mnt/data/METABLOOMS_OS_STAGE4D_POINTER_PROMOTED_NEW_CHAT_REHEARSED_AUTHORITY_20260501T235500Z.zip",
+  "authority_sha256_sidecar": "/mnt/data/METABLOOMS_OS_STAGE4D_POINTER_PROMOTED_NEW_CHAT_REHEARSED_AUTHORITY_20260501T235500Z.zip.sha256",
+  "resume_rule": "On next MetaBlooms turn, verify the Stage4D authority sidecar first, extract to /mnt/data/Metablooms_OS only after verification, run runtime starter smoke and boot executor, then proceed one bounded stage."
+}

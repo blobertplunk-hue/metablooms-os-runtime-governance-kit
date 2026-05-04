@@ -1,0 +1,18 @@
+{
+  "action_type": "filesystem_write",
+  "decision": "ALLOW_SUCCESS_COMMIT",
+  "reason_code": "RESULT_MATCHES_INTENT_AND_EVIDENCE",
+  "reasons": [
+    "primary_path exists",
+    "receipt_path exists",
+    "filesystem target exists",
+    "filesystem target size/sha constraints passed"
+  ],
+  "required_next_action": "emit_BTS_TOOL_RESULT_success_and_commit",
+  "safe_to_commit_success": true,
+  "schema": "PostToolResultValidationDecision_v1",
+  "stage_id": "STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_20260502T035000Z",
+  "tool_id": "bts_wrapped_filesystem_write",
+  "validated_at_utc": "2026-05-02T02:49:24.689415Z",
+  "validation_id": "STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_20260502T035000Z_receipt_post_validation"
+}

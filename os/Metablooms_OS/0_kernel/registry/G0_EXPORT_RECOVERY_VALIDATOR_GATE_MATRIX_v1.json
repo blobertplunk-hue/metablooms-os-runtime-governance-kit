@@ -1,0 +1,69 @@
+{
+  "version": "1.0",
+  "created_at": 1777064295.6524572,
+  "matrix_id": "G0_EXPORT_RECOVERY_VALIDATOR_GATE_MATRIX_v1",
+  "status": "active_scope_matrix",
+  "gates": [
+    {
+      "gate_id": "G1_LEDGER_DECLARED_OUTPUTS_INSIDE_ZIP",
+      "severity": "blocking",
+      "validator_requirement": "Every ledger-declared output for the exported stage must exist inside the exported ZIP unless explicitly declared external_sidecar_required.",
+      "failure_prevented": "F7 ZIP missing F7_BOOT_RECOVERY_PROOF and baseline lock."
+    },
+    {
+      "gate_id": "G2_FINAL_PASS_RECEIPTS_INSIDE_ZIP",
+      "severity": "blocking",
+      "validator_requirement": "ZIP must contain final PASS receipts, not pending/export_ready receipts.",
+      "failure_prevented": "ZIP contained F7 receipt with pending/export-ready state."
+    },
+    {
+      "gate_id": "G3_NO_PLACEHOLDER_METADATA",
+      "severity": "blocking",
+      "validator_requirement": "Manifest/provenance must not contain <filled_after_zip>, TODO, pending verdicts, or size 0 placeholders.",
+      "failure_prevented": "Export manifest had placeholder SHA and size 0."
+    },
+    {
+      "gate_id": "G4_GIT_HEAD_LIFECYCLE_CONSISTENCY",
+      "severity": "blocking",
+      "validator_requirement": "Git heads must either match or be explicitly labeled as pre_export_head, exported_tree_head, metadata_commit_head, final_lock_head, and current_working_head.",
+      "failure_prevented": "Pointer, ledger, receipt, manifest, and provenance used divergent unlabeled heads."
+    },
+    {
+      "gate_id": "G5_SIDECAR_BINDING",
+      "severity": "blocking",
+      "validator_requirement": "External sidecar must exist, match ZIP SHA/size, and be referenced by internal manifest using an explicit external_sidecar_required policy when needed.",
+      "failure_prevented": "Sidecar existed externally but internal manifest did not bind cleanly."
+    },
+    {
+      "gate_id": "G6_DETERMINISTIC_ZIP_POLICY",
+      "severity": "blocking",
+      "validator_requirement": "ZIP entries must be sorted, duplicate-free, cache-free, no nested .git, and use normalized path/mode/timestamp policy.",
+      "failure_prevented": "Evidence packaging and nested Git repo regression class."
+    },
+    {
+      "gate_id": "G7_DAG_LEDGER_MAPPING",
+      "severity": "blocking",
+      "validator_requirement": "Stage DAG short IDs must map to full ledger entry IDs; do not infer ID equivalence.",
+      "failure_prevented": "DAG/ledger latest_pass and stage ID mismatch regressions."
+    },
+    {
+      "gate_id": "G8_POINTER_CONFLICT_RESOLUTION",
+      "severity": "blocking",
+      "validator_requirement": "Boot-critical pointers and registry entries must be unique or quarantined before stable export lock.",
+      "failure_prevented": "Known conflicting pointer remaining in artifact registry."
+    },
+    {
+      "gate_id": "G9_TRANSACTIONAL_STATE_ORDER",
+      "severity": "blocking",
+      "validator_requirement": "Pointer and ledger may advance only after commit and validation succeed; FAIL/BLOCK/repair entries may not advance latest_pass unless explicitly governed.",
+      "failure_prevented": "F6 precheck ledger latest_pass drift."
+    },
+    {
+      "gate_id": "G10_POLICY_AS_CODE_DECISION",
+      "severity": "blocking",
+      "validator_requirement": "Export PASS requires a machine-readable validator decision artifact with all gates PASS.",
+      "failure_prevented": "Prose-only success declaration after partial proof."
+    }
+  ],
+  "verdict": "PASS"
+}

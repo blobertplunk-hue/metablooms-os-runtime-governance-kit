@@ -1,0 +1,33 @@
+{
+  "status": "PROBED",
+  "finding": "python3 startup slowdown is caused by site startup hook chain, not core interpreter startup",
+  "fast_path": {
+    "command": "python3 -S -c 'print(\"ok\")'",
+    "elapsed_seconds": 0.07,
+    "maxrss_kb": 14176
+  },
+  "slow_path": {
+    "command": "python3 -c 'print(\"ok\")'",
+    "elapsed_seconds": 2.98,
+    "maxrss_kb": 272248
+  },
+  "controls": {
+    "-E": "still slow",
+    "-I": "still slow",
+    "-s": "still slow",
+    "-S": "fast"
+  },
+  "startup_chain": [
+    "/opt/pyvenv/lib/python3.13/site-packages/000_oai_py_sys_path_prepend.pth",
+    "oai_py_sys_path_prepend",
+    "/opt/python-hooks/sitecustomize.py",
+    "presentation_artifact_tool",
+    "presentation_artifact_tool.patches.record_artifact_tool_operations"
+  ],
+  "evidence_files": [
+    "/mnt/data/Metablooms_OS/receipts/python_probe/PYTHON_SANDBOX_PROBE_20260428T011640Z.txt",
+    "/mnt/data/Metablooms_OS/receipts/python_probe/PYTHON_STARTUP_HOOK_DETAIL_20260428T011707Z.txt",
+    "/mnt/data/Metablooms_OS/receipts/python_probe/PYTHON_IMPORTTIME_20260428T011720Z.txt",
+    "/mnt/data/Metablooms_OS/receipts/python_probe/PYTHON_CONTROL_FLAGS_20260428T011736Z.txt"
+  ]
+}

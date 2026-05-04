@@ -1,0 +1,11 @@
+{
+  "receipt_id": "T1-STAGE6I_FALLBACK_EXPORT_FIXTURE_20260502T012918Z_export_zip_artifact-20260502T012921Z",
+  "tier": "T1",
+  "artifact": "/mnt/data/STAGE6I_FALLBACK_EXPORT_FIXTURE.zip",
+  "sha256": "0e18c3083e72d3116d1d620a7bc495e6d5123816279c5da6f1dd338db5ba574f",
+  "bytes_size": 197,
+  "prior_sha256": "",
+  "stdout_proof": "",
+  "timestamp": "2026-05-02T01:29:21.083839Z",
+  "turn_id": "STAGE6I_FALLBACK_EXPORT_FIXTURE_20260502T012918Z"
+}

@@ -1,0 +1,11 @@
+{
+  "constraints": [
+    "boot from Stage 10 full authority ZIP",
+    "run task-start hook before implementation",
+    "full export whenever possible"
+  ],
+  "created_utc": "2026-05-01T00:25:00Z",
+  "next_recommended_stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_11_TASK_START_ROUTER_REHEARSAL_AND_CROSS_CARTRIDGE_BINDING",
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_10_PROMPT_ROUTE_PREEXECUTION_ENFORCER_AND_TASK_START_HOOK",
+  "status": "completed"
+}

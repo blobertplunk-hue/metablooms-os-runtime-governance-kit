@@ -1,0 +1,15 @@
+{
+  "artifact_type": "MB_POLICY.v1",
+  "policy": "Pinned evidence is a browser-local operator convenience. It must not mutate source artifacts or authority receipts. Each pin must include path and sha256. Minimal mode remains default; interactions live in optional evidence mode.",
+  "required_html_markers": [
+    "data-section='evidence_query_interactions'",
+    "data-section='evidence_result_pinning'",
+    "data-action='pin-result'",
+    "function pinEvidence",
+    "function toggleQuery",
+    "function copyPinnedManifest",
+    "localStorage",
+    "pin-manifest"
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_INTERACTIONS_AND_RESULT_PINNING"
+}

@@ -1,0 +1,7 @@
+{
+  "artifact_type": "STAGE_RECEIPT.v1",
+  "created_utc": "20260502T170000Z",
+  "verdict": "FAIL",
+  "stage_id": "FIXTURE_RECEIPT_FAILED",
+  "expected_trace_status": "ERROR"
+}

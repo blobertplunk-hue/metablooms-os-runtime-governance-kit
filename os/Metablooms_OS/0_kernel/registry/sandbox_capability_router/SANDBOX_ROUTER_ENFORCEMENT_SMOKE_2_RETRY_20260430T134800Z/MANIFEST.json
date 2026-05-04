@@ -1,0 +1,144 @@
+{
+  "files": [
+    {
+      "path": "SANDBOX_ROUTER_ENFORCEMENT_SMOKE_2_RETRY_HANDOFF.json",
+      "size": 950,
+      "sha256": "b3bf7fd840bdeeba6b1a02ab30dfe0568ce781394d809e8fce995115b0f656ef"
+    },
+    {
+      "path": "SANDBOX_ROUTER_ENFORCEMENT_SMOKE_2_RETRY_HANDOFF.json.sha256",
+      "size": 246,
+      "sha256": "9c1484b76d5ef290a5fa1f20a2feb0831f98ff7216536a48948e13afcebc3789"
+    },
+    {
+      "path": "SANDBOX_ROUTER_ENFORCEMENT_SMOKE_2_RETRY_RECEIPT.json",
+      "size": 3376,
+      "sha256": "c18475909d983ddd33dad5cd8ae1c108cb01cf67220abf84febd3eef43356ddb"
+    },
+    {
+      "path": "SANDBOX_ROUTER_ENFORCEMENT_SMOKE_2_RETRY_RECEIPT.json.sha256",
+      "size": 246,
+      "sha256": "00613c38c402fd6df5b245fcebe044ee8473ccac6893d43446b353a43745cdc6"
+    },
+    {
+      "path": "probes/blocked_hardlink_enforcer.err",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "probes/blocked_hardlink_enforcer.json",
+      "size": 315,
+      "sha256": "dbddf45e74ccadedfc4bc0d938302d03e97c6231caaaa1fc9ff4f7d95c0fb839"
+    },
+    {
+      "path": "probes/blocked_hardlink_exit_code.txt",
+      "size": 2,
+      "sha256": "10159baf262b43a92d95db59dae1f72c645127301661e0a3ce4e38b295a97c58"
+    },
+    {
+      "path": "probes/blocked_hardlink_policy_task.err",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "probes/blocked_hardlink_policy_task.json",
+      "size": 350,
+      "sha256": "b86389a671ea3b13b9b027a45cec3bb74593181a34d512b3c21d4f6a10cf8b05"
+    },
+    {
+      "path": "probes/blocked_hardlink_policy_task_exit_code.txt",
+      "size": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "probes/boot_probe_actual.txt",
+      "size": 55,
+      "sha256": "ce1aaf9ee9d22b675efa62c73b03dccb1c9f2f445ac1880a776b0a5906c088fb"
+    },
+    {
+      "path": "probes/boot_probe_enforcer.err",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "probes/boot_probe_enforcer.json",
+      "size": 368,
+      "sha256": "33b0c8c2af2e31added295a1537c0f7641333f639e1df09ec5d70157acdb1bf5"
+    },
+    {
+      "path": "probes/boot_probe_exit_code.txt",
+      "size": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "probes/delivery_payload/README.txt",
+      "size": 31,
+      "sha256": "11e819772a0ca6bfb8b1839162127777ad61d1907ea3ffdd20a7c95d66b91b0d"
+    },
+    {
+      "path": "probes/delivery_probe.zip",
+      "size": 201,
+      "sha256": "8ca2f1e078efdf56ecb37a47ab910cbb62f1bc908bb064082c8924b8a173ff05"
+    },
+    {
+      "path": "probes/delivery_probe.zip.sha256",
+      "size": 218,
+      "sha256": "61d2eae99d64c327bcf8814a85972a8860d6467c2415edfd08b1834d3af67720"
+    },
+    {
+      "path": "probes/delivery_probe_enforcer.err",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "probes/delivery_probe_enforcer.json",
+      "size": 403,
+      "sha256": "608801e951e998a4384b14fb8949de8de5ec5a57333958145a63e59551c40e25"
+    },
+    {
+      "path": "probes/delivery_probe_exit_code.txt",
+      "size": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "probes/delivery_probe_ziptest.txt",
+      "size": 397,
+      "sha256": "5709ebcb9b30ee1ddf79ae64e1bbebd1935827f811e160fd7eb0cb86f4386946"
+    },
+    {
+      "path": "probes/handoff_sha256_check.txt",
+      "size": 126,
+      "sha256": "36e858daa644880de9deda4d332e8145dbd6706618bce2ceb576d395f04c790b"
+    },
+    {
+      "path": "probes/json_transform_enforcer.err",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "probes/json_transform_enforcer.json",
+      "size": 351,
+      "sha256": "2f1db6f0f75889598fb5ea0a91ee63bd4012f7955437826d94bce0d86c21fd85"
+    },
+    {
+      "path": "probes/json_transform_exit_code.txt",
+      "size": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "probes/json_transform_input.json",
+      "size": 63,
+      "sha256": "798eb0814429c98918b5c0ee844ffaf7e9fc4ffceaad743783fe5d9df5c07ec8"
+    },
+    {
+      "path": "probes/json_transform_output.json",
+      "size": 124,
+      "sha256": "6a4bce99594f3aa4df046fbae693ebc84dc8762d4283d35ef74fa2b74c7c0150"
+    },
+    {
+      "path": "probes/json_transform_validation.txt",
+      "size": 5,
+      "sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+    }
+  ]
+}

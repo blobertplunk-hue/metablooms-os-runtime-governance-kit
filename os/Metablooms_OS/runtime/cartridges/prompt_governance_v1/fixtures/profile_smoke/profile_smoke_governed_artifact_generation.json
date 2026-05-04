@@ -1,0 +1,24 @@
+{
+  "expected_profile": "governed_artifact_generation",
+  "expected_required_gates": [
+    "source_parse",
+    "schema_or_template_lock",
+    "generation",
+    "render_or_format_validation",
+    "export_manifest"
+  ],
+  "fixture_id": "profile_smoke_governed_artifact_generation",
+  "forbidden_patterns": [
+    "unranked_options_at_decision_point",
+    "claim_without_artifact",
+    "chat_only_writeback"
+  ],
+  "input_task": "Create a standards-bound Blooket CSV from source lesson materials.",
+  "must_include_output_rules": [
+    "explicit_status",
+    "validation_evidence",
+    "next_step_when_relevant"
+  ],
+  "profile_id": "governed_artifact_generation",
+  "status": "active"
+}

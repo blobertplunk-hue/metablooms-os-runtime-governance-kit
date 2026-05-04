@@ -1,0 +1,49 @@
+{
+  "artifact_type": "CDR_CRITICAL_GATE_RESULTS_STAGE3_ATOMIC_JSON_WRITER_v1",
+  "created_utc": "20260502T143651Z",
+  "gates": [
+    {
+      "gate": "Stage2 handoff and canonical writer loaded",
+      "result": "PASS"
+    },
+    {
+      "gate": "External SEE evidence bound",
+      "result": "PASS"
+    },
+    {
+      "gate": "Compatibility adapter installed",
+      "result": "PASS"
+    },
+    {
+      "gate": "High-value caller patches applied",
+      "result": "PASS"
+    },
+    {
+      "gate": "Targeted policy validator installed",
+      "result": "PASS"
+    },
+    {
+      "gate": "Policy registry artifact installed",
+      "result": "PASS"
+    },
+    {
+      "gate": "Patched files compile",
+      "result": "PASS"
+    },
+    {
+      "gate": "Executable smokes pass",
+      "result": "PASS"
+    },
+    {
+      "gate": "Subprocess policy regression remains pass",
+      "result": "PASS"
+    },
+    {
+      "gate": "Handoff and stop after bounded stage",
+      "result": "PASS"
+    }
+  ],
+  "stage": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z",
+  "tier": "CRITICAL",
+  "verdict": "PASS"
+}

@@ -1,0 +1,110 @@
+{
+  "status": "PASS",
+  "results": [
+    {
+      "fixture": "transcript_better_sandbox_visual.txt",
+      "expected": "adopt",
+      "route": {
+        "task_text": "Import old transcript and improve workflow only if better than current",
+        "auto_include": [
+          "TRANSCRIPT_LESSON_IMPORT_GATE",
+          "WORKFLOW_GENERALIZATION_ENGINE",
+          "BROWSER_RENDER_CAPABILITY_RESOLVER",
+          "VISUAL_PRESENTATION_QUALITY_GATE"
+        ],
+        "routing_reasons": [
+          {
+            "match": "\\b(old transcript|transcript|chat log|previous chat|conversation export)\\b",
+            "include": [
+              "TRANSCRIPT_LESSON_IMPORT_GATE",
+              "WORKFLOW_GENERALIZATION_ENGINE"
+            ]
+          }
+        ],
+        "candidate_adoptions": [
+          {
+            "lesson_id": "transcript_candidate_6b755560af01",
+            "decision": "adopt",
+            "reason": "candidate_scores_higher_than_current_and_no_hard_regression",
+            "current_total": 17.0,
+            "candidate_total": 25.0,
+            "flags": []
+          }
+        ],
+        "candidate_rejections": [],
+        "candidate_deferrals": [],
+        "honesty": "candidate transcript lessons only affect routing when better_than_current passes"
+      }
+    },
+    {
+      "fixture": "transcript_pc_only_regression.txt",
+      "expected": "reject",
+      "route": {
+        "task_text": "Import old transcript and improve workflow only if better than current",
+        "auto_include": [
+          "TRANSCRIPT_LESSON_IMPORT_GATE",
+          "WORKFLOW_GENERALIZATION_ENGINE"
+        ],
+        "routing_reasons": [
+          {
+            "match": "\\b(old transcript|transcript|chat log|previous chat|conversation export)\\b",
+            "include": [
+              "TRANSCRIPT_LESSON_IMPORT_GATE",
+              "WORKFLOW_GENERALIZATION_ENGINE"
+            ]
+          }
+        ],
+        "candidate_adoptions": [],
+        "candidate_rejections": [
+          {
+            "lesson_id": "transcript_candidate_7073bbbad31a",
+            "decision": "reject",
+            "reason": "hard_regression_flags_present",
+            "current_total": 17.0,
+            "candidate_total": 14.0,
+            "flags": [
+              "evidence_tier_overclaim",
+              "pc_only_blocks_sandbox_primary",
+              "removes_existing_gate"
+            ]
+          }
+        ],
+        "candidate_deferrals": [],
+        "honesty": "candidate transcript lessons only affect routing when better_than_current passes"
+      }
+    },
+    {
+      "fixture": "transcript_vague.txt",
+      "expected": "defer_or_reject",
+      "route": {
+        "task_text": "Import old transcript and improve workflow only if better than current",
+        "auto_include": [
+          "TRANSCRIPT_LESSON_IMPORT_GATE",
+          "WORKFLOW_GENERALIZATION_ENGINE"
+        ],
+        "routing_reasons": [
+          {
+            "match": "\\b(old transcript|transcript|chat log|previous chat|conversation export)\\b",
+            "include": [
+              "TRANSCRIPT_LESSON_IMPORT_GATE",
+              "WORKFLOW_GENERALIZATION_ENGINE"
+            ]
+          }
+        ],
+        "candidate_adoptions": [],
+        "candidate_rejections": [
+          {
+            "lesson_id": "transcript_candidate_abfd5d8a2c06",
+            "decision": "reject",
+            "reason": "not_better_than_current",
+            "current_total": 17.0,
+            "candidate_total": 14.0,
+            "flags": []
+          }
+        ],
+        "candidate_deferrals": [],
+        "honesty": "candidate transcript lessons only affect routing when better_than_current passes"
+      }
+    }
+  ]
+}

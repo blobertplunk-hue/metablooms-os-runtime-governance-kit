@@ -1,0 +1,23 @@
+{
+  "artifact_type": "METABLOOMS_FORBIDDEN_VALIDATION_METHODS_v1",
+  "created_utc": "20260430T020500Z",
+  "forbidden_methods": [
+    {
+      "exception_policy": "Only allowed if explicitly authorized by a future stage, file-count/size threshold is bounded, timeout budget is declared, checkpoint receipt is written before and after, and failure cannot block smaller validation fallback.",
+      "forbidden_by_default": true,
+      "method_id": "FULL_ARCHIVE_RECURSIVE_EXTRACTION_FOR_LARGE_OS_VALIDATION_IN_CHATGPT_SANDBOX",
+      "observed_failure": "unzip -tqq and jar xf full recursive extraction timed out/stalled during FL17-MERGE-5 validation; user had to stop turn.",
+      "replacement_methods": [
+        "checksum sidecar verification",
+        "zipfile.ZipFile.testzip CRC/header validation",
+        "unsafe member path scan",
+        "central directory/member inventory",
+        "selective extraction/read of required boot-critical files",
+        "required semantic/tracker authority checks"
+      ],
+      "scope": "MetaBlooms full OS export/recovery validation in ChatGPT-style sandbox"
+    }
+  ],
+  "governance_rule": "Learned validation failures must become durable method denylist or bounded-use constraints, not ad hoc memory.",
+  "status": "ACTIVE"
+}

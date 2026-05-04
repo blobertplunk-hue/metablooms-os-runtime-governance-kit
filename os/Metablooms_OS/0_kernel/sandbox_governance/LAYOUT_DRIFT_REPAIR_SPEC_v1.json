@@ -1,0 +1,5 @@
+{
+  "id": "LAYOUT_DRIFT_REPAIR_SPEC_v1",
+  "observed_bug": "portable_full_os_boot_verify.py expected /00_BOOT but complete-system ZIP root is Metablooms_OS",
+  "repair": "root-resolving complete-system verifier using runtime/governance and 0_kernel anchors"
+}

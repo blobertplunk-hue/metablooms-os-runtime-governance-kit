@@ -1,0 +1,12 @@
+{
+  "paths": {
+    "0_kernel/sandbox_governance/SANDBOX_TOOL_USE_POLICY_v1.json": true,
+    "portable_full_os_boot_verify.py": true,
+    "runtime/evals/sandbox_governance/H0B2_test_sandbox_governance.py": true,
+    "runtime/governance/chat_governance_kernel_v1.py": true,
+    "runtime/governance/sandbox_tool_governance_v1.py": true
+  },
+  "stage": "H0B2_SANDBOX_TOOL_GOVERNANCE_BOOTSTRAP_AND_LAYOUT_DRIFT_REPAIR",
+  "status": "PASS",
+  "timestamp_utc": "2026-04-30T18:24:58Z"
+}

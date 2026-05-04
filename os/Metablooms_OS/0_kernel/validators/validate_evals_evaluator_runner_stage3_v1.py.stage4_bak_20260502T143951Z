@@ -1,0 +1,57 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+# MetaBlooms Stage4 bounded subprocess enforcement shim.
+from pathlib import Path as _MBPath
+import sys as _MBSys
+_MB_SELF = _MBPath(__file__).resolve()
+for _MB_PARENT in [_MB_SELF] + list(_MB_SELF.parents):
+    _MB_EXEC_LIB = _MB_PARENT / "0_kernel" / "lib" / "execution"
+    if (_MB_EXEC_LIB / "bounded_subprocess_compat_v1.py").exists():
+        if str(_MB_EXEC_LIB) not in _MBSys.path:
+            _MBSys.path.insert(0, str(_MB_EXEC_LIB))
+        break
+from bounded_subprocess_compat_v1 import run as bounded_subprocess_run
+import json,subprocess,time
+from pathlib import Path
+LABELS=['PASS','WARN','BLOCK']
+def now(): return time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())
+def root():
+ p=Path(__file__).resolve()
+ for q in [p.parent,*p.parents]:
+  if (q/'boot_manifest_v1.json').exists() and (q/'0_kernel').exists(): return q
+ return Path.cwd()
+def load(p): return json.loads(p.read_text(encoding='utf-8'))
+def write(p,o): p.parent.mkdir(parents=True,exist_ok=True); p.write_text(json.dumps(o,indent=2,sort_keys=True)+'\n',encoding='utf-8'); return str(p)
+def main():
+ r=root(); issues=[]; warnings=[]
+ paths={'runner':r/'0_kernel/scripts/evals_evaluator_runner_v1.py','runner_spec':r/'0_kernel/registry/evals/MB_EVALS_EVALUATOR_RUNNER_SPEC_v1.json','matrix_schema':r/'0_kernel/registry/evals/EVALS_CONFUSION_MATRIX_SCHEMA_v1.json','dataset':r/'runtime/evals/evals_trace_review/EVALS_REGRESSION_DATASET_v1.json','results':r/'runtime/evals/evals_trace_review/EVALS_EVALUATOR_RUN_STAGE3_RESULTS_LATEST.json','matrix':r/'runtime/evals/evals_trace_review/EVALS_CONFUSION_MATRIX_STAGE3_LATEST.json','scorecards':r/'0_kernel/registry/evals/MB_EVALS_SCORECARD_SPEC_v1.json'}
+ for k,p in paths.items():
+  if not p.exists(): issues.append({'reason':f'{k}_missing','path':str(p)})
+ if paths['runner'].exists():
+  try:
+   pr=bounded_subprocess_run(['python3','-S',str(paths['runner']),'--json'],cwd=str(r),text=True,capture_output=True,timeout=90)
+   if pr.returncode!=0: issues.append({'reason':'runner_nonzero','returncode':pr.returncode,'stdout_tail':pr.stdout[-1000:],'stderr_tail':pr.stderr[-1000:]})
+  except Exception as e: issues.append({'reason':'runner_exception','error':str(e)})
+ if paths['results'].exists() and paths['matrix'].exists() and paths['dataset'].exists():
+  try:
+   ds=load(paths['dataset']); res=load(paths['results']); cm=load(paths['matrix']); examples=ds.get('examples',[]); results=res.get('results',[])
+   if len(examples)<20: issues.append({'reason':'dataset_below_minimum','count':len(examples)})
+   if len(results)!=len(examples): issues.append({'reason':'result_count_mismatch','results':len(results),'examples':len(examples)})
+   expected={e.get('example_id') for e in examples}; got={x.get('example_id') for x in results}
+   if expected!=got: issues.append({'reason':'result_id_set_mismatch','missing':sorted(expected-got),'extra':sorted(got-expected)})
+   if cm.get('labels')!=LABELS: issues.append({'reason':'labels_mismatch','labels':cm.get('labels')})
+   total=sum(sum(row.values()) for row in cm.get('matrix',{}).values()) if isinstance(cm.get('matrix'),dict) else 0
+   if total!=len(examples): issues.append({'reason':'matrix_total_mismatch','matrix_total':total,'examples':len(examples)})
+   if cm.get('accuracy',0)<0.90: issues.append({'reason':'accuracy_below_threshold','accuracy':cm.get('accuracy')})
+   if cm.get('false_pass_example_ids',[]): issues.append({'reason':'false_pass_examples_present','example_ids':cm.get('false_pass_example_ids')})
+   covered={x.get('expected_decision') for x in results}
+   for label in LABELS:
+    if label not in covered: issues.append({'reason':'required_label_not_covered','label':label})
+   mismatches=[x.get('example_id') for x in results if not x.get('match')]
+   if mismatches: warnings.append({'reason':'evaluator_mismatches_present','example_ids':mismatches[:20]})
+  except Exception as e: issues.append({'reason':'validation_exception','error':str(e)})
+ out={'artifact_type':'EVALS_EVALUATOR_RUNNER_CONFUSION_MATRIX_STAGE3_VALIDATION_v1','created_utc':now(),'verdict':'PASS' if not issues else 'FAIL','root':str(r),'issues':issues,'warnings':warnings,'paths':{k:str(v) for k,v in paths.items()}}
+ out['validation_path']=write(r/'runtime/evals/evals_trace_review/EVALS_EVALUATOR_RUNNER_STAGE3_VALIDATION_LATEST.json',out)
+ print(json.dumps(out,indent=2,sort_keys=True)); return 0 if not issues else 2
+if __name__=='__main__': raise SystemExit(main())

@@ -1,0 +1,18 @@
+{
+  "from_stage": "FL17-MERGE-1_STAGING_AND_DIFF_CLASSIFICATION",
+  "to_stage": "FL17-MERGE-2_IMPORT_APPROVED_PROGRESS_AS_QUARANTINED_EVIDENCE_ONLY",
+  "status": "HANDOFF_READY",
+  "required_load": [
+    "GOV_REPAIR_SEE_CE_0_REPORT",
+    "FL17_DELTA_REPORT_v1.json",
+    "FL17_MERGE_1_RECEIPT.json"
+  ],
+  "rules": [
+    "target tracker-working OS remains baseline",
+    "do not import active runtime state from FL17",
+    "import FL17 progression only as quarantined evidence first",
+    "preserve FL16 blocked semantics",
+    "run SEE/CE preflight before action",
+    "stop before active promotion unless separately authorized"
+  ]
+}

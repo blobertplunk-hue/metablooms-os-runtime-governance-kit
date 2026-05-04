@@ -1,0 +1,160 @@
+#!/usr/bin/env python3
+"""MPP v3 R18: Enforced correction loop validator and regression gate."""
+from __future__ import annotations
+import argparse, hashlib, json
+from datetime import UTC, datetime
+from pathlib import Path
+from typing import Any
+
+class ECLValidationError(RuntimeError):
+    pass
+
+def stable_hash(payload: dict[str, Any]) -> str:
+    clone = json.loads(json.dumps(payload, sort_keys=True))
+    clone["result_hash"] = ""
+    return hashlib.sha256(json.dumps(clone, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+
+def require(cond: bool, code: str) -> None:
+    if not cond:
+        raise ECLValidationError(code)
+
+def validate_ecl_packet(packet: dict[str, Any]) -> dict[str, Any]:
+    required = ["schema_version","packet_id","stage","created_at","objective_id","source_debugging_packet_id","corrections","regression_tests","enforcement_hooks","promotion_criteria","closure_controls","result_hash"]
+    for key in required:
+        require(key in packet, f"ECL_MISSING_{key.upper()}")
+    require(packet["schema_version"] == "mpp.ecl_enforced_correction_packet.v1", "ECL_BAD_SCHEMA_VERSION")
+    require(packet["stage"] == "ECL", "ECL_BAD_STAGE")
+    corr = packet["corrections"]
+    tests = packet["regression_tests"]
+    hooks = packet["enforcement_hooks"]
+    require(corr, "ECL_NO_CORRECTIONS")
+    require(tests, "ECL_NO_REGRESSION_TESTS")
+    require(hooks, "ECL_NO_ENFORCEMENT_HOOKS")
+    fc_ids = set()
+    preventive_count = 0
+    for i, c in enumerate(corr):
+        for key in ["correction_id","failure_class_id","change_type","description","owner","priority","preventive","tracking_ref","status"]:
+            require(key in c, f"ECL_CORR_{i}_MISSING_{key.upper()}")
+        require(c["tracking_ref"].strip().lower() not in {"", "none", "tbd", "n/a"}, f"ECL_CORR_{i}_BAD_TRACKING_REF")
+        require(c["owner"].strip().lower() not in {"", "none", "tbd", "n/a"}, f"ECL_CORR_{i}_BAD_OWNER")
+        if c["preventive"] is True:
+            preventive_count += 1
+        fc_ids.add(c["failure_class_id"])
+    require(preventive_count >= 1, "ECL_NO_PREVENTIVE_CORRECTION")
+    test_fc_ids = set()
+    blocking_tests = 0
+    for i, t in enumerate(tests):
+        for key in ["test_id","failure_class_id","test_path","expected_pre_fix","expected_post_fix","command","blocking"]:
+            require(key in t, f"ECL_TEST_{i}_MISSING_{key.upper()}")
+        require(t["failure_class_id"] in fc_ids, f"ECL_TEST_{i}_UNKNOWN_FC")
+        require(t["expected_post_fix"] == "PASS", f"ECL_TEST_{i}_POST_FIX_MUST_PASS")
+        if t["blocking"] is True:
+            blocking_tests += 1
+        test_fc_ids.add(t["failure_class_id"])
+    require(fc_ids.issubset(test_fc_ids), "ECL_NOT_ALL_CORRECTIONS_HAVE_REGRESSION_TESTS")
+    require(blocking_tests >= 1, "ECL_NO_BLOCKING_REGRESSION_TEST")
+    blocking_hooks = 0
+    hook_types = set()
+    for i, h in enumerate(hooks):
+        for key in ["hook_id","hook_type","stage","condition","action","blocking"]:
+            require(key in h, f"ECL_HOOK_{i}_MISSING_{key.upper()}")
+        hook_types.add(h["hook_type"])
+        if h["blocking"] is True:
+            blocking_hooks += 1
+    require("regression_gate" in hook_types or "promotion_gate" in hook_types, "ECL_NO_REGRESSION_OR_PROMOTION_HOOK")
+    require(blocking_hooks >= 1, "ECL_NO_BLOCKING_ENFORCEMENT_HOOK")
+    closure = packet["closure_controls"]
+    for key in ["requires_owner","requires_tracking_ref","requires_regression_pass","requires_receipt","requires_learning_hook"]:
+        require(closure.get(key) is True, f"ECL_CLOSURE_CONTROL_NOT_TRUE_{key.upper()}")
+    require(packet["promotion_criteria"], "ECL_NO_PROMOTION_CRITERIA")
+    expected = stable_hash(packet)
+    require(packet["result_hash"] == expected, "ECL_HASH_MISMATCH")
+    return {"status":"PASS","packet_id":packet["packet_id"],"correction_count":len(corr),"result_hash":expected}
+
+def run_regression_gate(packet: dict[str, Any]) -> dict[str, Any]:
+    violations, warnings = [], []
+    try:
+        validate_ecl_packet(packet)
+    except ECLValidationError as e:
+        violations.append(str(e))
+    corrections = packet.get("corrections", [])
+    tests = packet.get("regression_tests", [])
+    hooks = packet.get("enforcement_hooks", [])
+    if not any(c.get("preventive") is True for c in corrections):
+        violations.append("ECL_GATE_NO_PREVENTIVE_ACTION")
+    if not any(t.get("blocking") is True for t in tests):
+        violations.append("ECL_GATE_NO_BLOCKING_REGRESSION")
+    if not any(h.get("blocking") is True for h in hooks):
+        violations.append("ECL_GATE_NO_BLOCKING_HOOK")
+    if any(c.get("status") == "blocked" for c in corrections):
+        violations.append("ECL_GATE_BLOCKED_CORRECTION_PRESENT")
+    if len(tests) < len(corrections):
+        warnings.append("ECL_WARN_FEWER_TESTS_THAN_CORRECTIONS")
+    verdict = "FAIL" if violations else "PASS"
+    result = {
+        "schema_version":"mpp.ecl_regression_gate_result.v1",
+        "gate_id":f"ECL-GATE-{datetime.now(UTC).strftime('%Y%m%dT%H%M%SZ')}",
+        "stage":"ECL_REGRESSION_GATE",
+        "created_at":datetime.now(UTC).isoformat(),
+        "packet_id":packet.get("packet_id","UNKNOWN"),
+        "verdict":verdict,
+        "violations":sorted(set(violations)),
+        "warnings":warnings,
+        "coverage":{
+            "corrections":len(corrections),
+            "regression_tests":len(tests),
+            "enforcement_hooks":len(hooks),
+            "preventive_corrections":sum(1 for c in corrections if c.get("preventive") is True),
+            "blocking_regression_tests":sum(1 for t in tests if t.get("blocking") is True),
+            "blocking_hooks":sum(1 for h in hooks if h.get("blocking") is True),
+        },
+        "result_hash":"",
+    }
+    result["result_hash"] = stable_hash(result)
+    return result
+
+def write_ecl_packet(source_debugging_packet_id: str, objective_id: str, out_path: Path) -> dict[str, Any]:
+    packet = {
+        "schema_version":"mpp.ecl_enforced_correction_packet.v1",
+        "packet_id":f"ECL-{datetime.now(UTC).strftime('%Y%m%dT%H%M%SZ')}",
+        "stage":"ECL",
+        "created_at":datetime.now(UTC).isoformat(),
+        "objective_id":objective_id,
+        "source_debugging_packet_id":source_debugging_packet_id,
+        "corrections":[
+            {"correction_id":"ECL-CORR-001","failure_class_id":"FC-001","change_type":"fixture_patch","description":"Add a regression fixture that reproduces the failure class and blocks recurrence.","owner":"MPP_R18","priority":"P1","preventive":True,"tracking_ref":"ECL-R18-FC-001","status":"verified"}
+        ],
+        "regression_tests":[
+            {"test_id":"ECL-REG-001","failure_class_id":"FC-001","test_path":"tests/fixtures/mpp_v3/invalid_ecl_no_preventive_correction_packet_v1.json","expected_pre_fix":"FAIL","expected_post_fix":"PASS","command":"python mpp_v3_ecl_enforced_correction_regression_gate_v1.py --gate valid_ecl_enforced_correction_packet_v1.json","blocking":True}
+        ],
+        "enforcement_hooks":[
+            {"hook_id":"ECL-HOOK-001","hook_type":"regression_gate","stage":"ECL","condition":"failure class has a correction","action":"require blocking regression fixture before promotion","blocking":True},
+            {"hook_id":"ECL-HOOK-002","hook_type":"promotion_gate","stage":"FIR_STAGE","condition":"ECL correction exists","action":"block FIR if regression gate fails","blocking":True}
+        ],
+        "promotion_criteria":["all corrections have owner/tracking_ref","at least one preventive correction exists","blocking regression test exists and passes","receipt and learning hook are written"],
+        "closure_controls":{"requires_owner":True,"requires_tracking_ref":True,"requires_regression_pass":True,"requires_receipt":True,"requires_learning_hook":True},
+        "result_hash":"",
+    }
+    packet["result_hash"] = stable_hash(packet)
+    validate_ecl_packet(packet)
+    _mb_write_json_file(out_path, packet, operation_id='STAGE4_ATOMIC_JSON_0_kernel_mpp_v3_mpp_v3_ecl_enforced_correction_regression_gate_v1_py_L140', create_parent=True, allowed_roots=[str(_MBAJWPath('/mnt/data').resolve())], indent=2, sort_keys=True, ensure_ascii=True, max_bytes=20000000)
+    return packet
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--validate")
+    parser.add_argument("--gate")
+    args = parser.parse_args()
+    if args.validate:
+        packet = json.loads(Path(args.validate).read_text(encoding="utf-8"))
+        print(json.dumps(validate_ecl_packet(packet), sort_keys=True))
+        return 0
+    if args.gate:
+        packet = json.loads(Path(args.gate).read_text(encoding="utf-8"))
+        result = run_regression_gate(packet)
+        print(json.dumps(result, sort_keys=True))
+        return 0 if result["verdict"] == "PASS" else 1
+    parser.error("provide --validate or --gate")
+
+if __name__ == "__main__":
+    raise SystemExit(main())

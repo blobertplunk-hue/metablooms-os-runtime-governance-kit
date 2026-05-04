@@ -1,0 +1,151 @@
+{
+  "coverage_rows": [
+    {
+      "blocking_gate": "pre_tool_action_gate_v1 + formal_hitl_approval_token_gate_v1",
+      "fixture_required": true,
+      "id": "ASI01",
+      "metablooms_binding": [
+        "intent_capsule_required",
+        "goal_shift_detection",
+        "HITL_for_goal_change",
+        "untrusted_content_filtering",
+        "behavioral_baseline_logging"
+      ],
+      "risk": "Agent Goal Hijack"
+    },
+    {
+      "blocking_gate": "tool_universe_resolver_v1 + post_tool_result_validation_v1",
+      "fixture_required": true,
+      "id": "ASI02",
+      "metablooms_binding": [
+        "Tool Universe Resolver",
+        "BTS_TOOL_EVALUATION",
+        "least_privilege_tool_scope",
+        "post_tool_result_validation_v1",
+        "cost_loop_limit"
+      ],
+      "risk": "Tool Misuse and Exploitation"
+    },
+    {
+      "blocking_gate": "formal_hitl_approval_token_gate_v1",
+      "fixture_required": true,
+      "id": "ASI03",
+      "metablooms_binding": [
+        "non_human_identity_scope",
+        "credential_inheritance_deny",
+        "approval_token_for_privileged_action",
+        "audit_subject_binding"
+      ],
+      "risk": "Identity and Privilege Abuse"
+    },
+    {
+      "blocking_gate": "installable_tools_governed_profile",
+      "fixture_required": true,
+      "id": "ASI04",
+      "metablooms_binding": [
+        "artifact_hash_pin",
+        "source_origin_manifest",
+        "install_profile_smoke",
+        "deny_unverified_mcp_or_tool_descriptor"
+      ],
+      "risk": "Agentic Supply Chain Vulnerabilities"
+    },
+    {
+      "blocking_gate": "pre_tool_action_gate_v1",
+      "fixture_required": true,
+      "id": "ASI05",
+      "metablooms_binding": [
+        "execution_contract_required",
+        "shell_write_path_boundary",
+        "argument_sanitization",
+        "dry_run_or_probe_before_mutation",
+        "dangerous_command_denylist"
+      ],
+      "risk": "Unexpected Code Execution (RCE)"
+    },
+    {
+      "blocking_gate": "boot_governance + context_integrity_gate",
+      "fixture_required": true,
+      "id": "ASI06",
+      "metablooms_binding": [
+        "artifact_precedence_over_memory",
+        "memory_write_requires_explicit_user_or_artifact",
+        "context_source_labeling",
+        "quarantine_untrusted_context"
+      ],
+      "risk": "Memory & Context Poisoning"
+    },
+    {
+      "blocking_gate": "handoff_contract_validator",
+      "fixture_required": true,
+      "id": "ASI07",
+      "metablooms_binding": [
+        "handoff_schema_required",
+        "delegated_context_filtering",
+        "capability_scope_on_handoff",
+        "cross_agent_message_authentication"
+      ],
+      "risk": "Insecure Inter-Agent Communication"
+    },
+    {
+      "blocking_gate": "runaway_turn_breaker + stage_budget_gate",
+      "fixture_required": true,
+      "id": "ASI08",
+      "metablooms_binding": [
+        "runaway_turn_breaker",
+        "stage_budget_limits",
+        "one_bounded_stage_per_turn",
+        "fail_closed_partial_receipt",
+        "dependency_blast_radius_map"
+      ],
+      "risk": "Cascading Failures"
+    },
+    {
+      "blocking_gate": "delivery_guard + artifact_disposition_contract",
+      "fixture_required": true,
+      "id": "ASI09",
+      "metablooms_binding": [
+        "download_label_guard",
+        "support_bundle_not_authority",
+        "explicit_uncertainty_and_evidence",
+        "HITL_denial_reasons_visible"
+      ],
+      "risk": "Human-Agent Trust Exploitation"
+    },
+    {
+      "blocking_gate": "authority_pointer_coherence + stage_stop_contract",
+      "fixture_required": true,
+      "id": "ASI10",
+      "metablooms_binding": [
+        "autonomy_minimization",
+        "least_agency_policy",
+        "kill_switch_or_stop_condition",
+        "drift_monitoring",
+        "authority_pointer_coherence"
+      ],
+      "risk": "Rogue Agents"
+    }
+  ],
+  "coverage_verdict": "PASS",
+  "notes": "Stage 6O maps every OWASP Agentic Top 10 category to concrete MetaBlooms invariants, gates, fixtures, and receipt obligations. This is a support/proof stage, not an authority export.",
+  "schema": "OWASPAgenticAICoverageMatrix_v1",
+  "source_basis": [
+    {
+      "evidence": "Defines globally peer-reviewed Top 10 for autonomous and agentic AI systems.",
+      "source": "OWASP Top 10 for Agentic Applications 2026",
+      "url": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/"
+    },
+    {
+      "evidence": "Provides threat-model-based reference for emerging agentic threats and mitigations.",
+      "source": "OWASP Agentic AI - Threats and Mitigations",
+      "url": "https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/"
+    },
+    {
+      "evidence": "Frames AI Exchange as comprehensive core framework for AI security fundamentals, controls, and standards alignment.",
+      "source": "OWASP AI Exchange overview",
+      "url": "https://owaspai.org/docs/ai_security_overview/"
+    }
+  ],
+  "stage_id": "STAGE6O_OWASP_AGENTIC_AI_COVERAGE_MATRIX_AND_POLICY_BINDINGS",
+  "timestamp_utc": "2026-05-02T02:53:05Z"
+}

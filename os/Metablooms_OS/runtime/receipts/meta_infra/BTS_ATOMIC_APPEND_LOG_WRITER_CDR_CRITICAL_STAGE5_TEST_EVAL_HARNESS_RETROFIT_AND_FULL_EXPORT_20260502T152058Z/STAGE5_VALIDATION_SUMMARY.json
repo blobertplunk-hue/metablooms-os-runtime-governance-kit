@@ -1,0 +1,157 @@
+{
+  "artifact_type": "AtomicAppendLogWriterStage5ValidationSummary.v1",
+  "compile_failures": [],
+  "compile_results": [
+    {
+      "file": "0_kernel/lib/io/atomic_append_log_writer_v1.py",
+      "ok": true
+    },
+    {
+      "file": "0_kernel/lib/io/atomic_append_log_compat_v1.py",
+      "ok": true
+    },
+    {
+      "file": "0_kernel/validators/validate_atomic_append_log_writer_callsite_policy_stage5_v1.py",
+      "ok": true
+    },
+    {
+      "file": "tests/evals/atomic_append_log_writer/test_atomic_append_log_writer_v1.py",
+      "ok": true
+    },
+    {
+      "file": "portable_full_os_boot_verify.py",
+      "ok": true
+    },
+    {
+      "file": "0_kernel/scripts/runtime_pulse_logger_v1.py",
+      "ok": true
+    },
+    {
+      "file": "runtime/governance/bts_v4/BTS.py",
+      "ok": true
+    }
+  ],
+  "created_utc": "2026-05-02T15:20:58Z",
+  "critical_smoke_failures": [],
+  "policy_gate": {
+    "artifact_type": "AtomicAppendLogWriterCallsitePolicyStage5Result.v1",
+    "blocking_count": 0,
+    "canonical_writer": "0_kernel/lib/io/atomic_append_log_writer_v1.py",
+    "compat_adapter": "0_kernel/lib/io/atomic_append_log_compat_v1.py",
+    "created_utc": "2026-05-02T15:21:01Z",
+    "policy_path": "0_kernel/registry/tool_governance/ATOMIC_APPEND_LOG_WRITER_CALLSITE_POLICY_STAGE5_v1.json",
+    "remaining": [
+      {
+        "classification": "legacy_archive_exempt",
+        "detail": "direct append-open call",
+        "file": "runtime/governance/legacy_archives/claude_memory_sync_writer_v1.py",
+        "line": 332
+      }
+    ],
+    "remaining_direct_append_open_count": 1,
+    "verdict": "PASS",
+    "warning_count": 1
+  },
+  "smoke_results": [
+    {
+      "cmd": [
+        "python3",
+        "-S",
+        "/mnt/data/Metablooms_OS/tests/evals/atomic_append_log_writer/test_atomic_append_log_writer_v1.py"
+      ],
+      "duration_s": 0.366,
+      "name": "append_writer_fixture_harness",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\n  \"ok\": true,\n  \"results\": [\n    {\n      \"id\": \"append_single_jsonl_record\",\n      \"status\": \"ALLOW_APPENDED\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"append_two_records_preserves_order\",\n      \"status\": \"ALLOW_APPENDED_AND_TWO_VALID_LINES\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"create_parent_when_authorized\",\n      \"status\": \"ALLOW_APPENDED\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"unicode_payload_roundtrip\",\n      \"status\": \"ALLOW_APPENDED\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"critical_fsync_path\",\n      \"status\": \"ALLOW_APPENDED\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"deny_path_escape_dotdot\",\n      \"status\": \"DENY_PATH_DENIED\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"deny_unsafe_suffix\",\n      \"status\": \"DENY_UNSAFE_SUFFIX\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"deny_raw_string_record\",\n      \"status\": \"DENY_RECORD_INVALID\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"deny_non_finite_json\",\n      \"status\": \"DENY_RECORD_INVALID\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"deny_record_too_large\",\n      \"status\": \"DENY_RECORD_TOO_LARGE\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"deny_no_fsync_without_exception_for_governance\",\n      \"status\": \"DENY_POLICY_DENIED\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"deny_symlink_target\",\n      \"status\": \"DENY_SYMLINK_DENIED\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"deny_symlink_ancestor\",\n      \"status\": \"DENY_SYMLINK_DENIED\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"multi_process_append_no_corrupt_lines\",\n      \"status\": \"ALL_LINES_PARSE_AND_COUNT_MATCHES\",\n      \"pass\": true\n    }\n  ],\n  \"workdir\": \"/mnt/data/mb_append_fixture_ovqkeswz\"\n}\n",
+      "timeout": false
+    },
+    {
+      "cmd": [
+        "python3",
+        "-S",
+        "/mnt/data/Metablooms_OS/0_kernel/validators/validate_atomic_append_log_writer_callsite_policy_stage5_v1.py"
+      ],
+      "duration_s": 3.047,
+      "name": "stage5_policy_gate",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\n  \"artifact_type\": \"AtomicAppendLogWriterCallsitePolicyStage5Result.v1\",\n  \"blocking_count\": 0,\n  \"canonical_writer\": \"0_kernel/lib/io/atomic_append_log_writer_v1.py\",\n  \"compat_adapter\": \"0_kernel/lib/io/atomic_append_log_compat_v1.py\",\n  \"created_utc\": \"2026-05-02T15:21:01Z\",\n  \"policy_path\": \"0_kernel/registry/tool_governance/ATOMIC_APPEND_LOG_WRITER_CALLSITE_POLICY_STAGE5_v1.json\",\n  \"remaining\": [\n    {\n      \"classification\": \"legacy_archive_exempt\",\n      \"detail\": \"direct append-open call\",\n      \"file\": \"runtime/governance/legacy_archives/claude_memory_sync_writer_v1.py\",\n      \"line\": 332\n    }\n  ],\n  \"remaining_direct_append_open_count\": 1,\n  \"verdict\": \"PASS\",\n  \"warning_count\": 1\n}\n",
+      "timeout": false
+    },
+    {
+      "cmd": [
+        "python3",
+        "-S",
+        "/mnt/data/Metablooms_OS/0_kernel/validators/validate_atomic_append_log_writer_callsite_policy_stage4_v1.py"
+      ],
+      "duration_s": 1.274,
+      "name": "stage4_policy_regression",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\n  \"artifact_type\": \"AtomicAppendLogWriterCallsitePolicyStage4Result.v1\",\n  \"blocking_count\": 0,\n  \"canonical_writer\": \"0_kernel/lib/io/atomic_append_log_writer_v1.py\",\n  \"compat_adapter\": \"0_kernel/lib/io/atomic_append_log_compat_v1.py\",\n  \"created_utc\": \"2026-05-02T15:21:02Z\",\n  \"policy_path\": \"0_kernel/registry/tool_governance/ATOMIC_APPEND_LOG_WRITER_CALLSITE_POLICY_STAGE4_v1.json\",\n  \"remaining\": [\n    {\n      \"classification\": \"legacy_archive_exempt\",\n      \"detail\": \"direct append-open call\",\n      \"file\": \"runtime/governance/legacy_archives/claude_memory_sync_writer_v1.py\",\n      \"line\": 332\n    }\n  ],\n  \"remaining_direct_append_open_count\": 1,\n  \"verdict\": \"PASS\",\n  \"warning_count\": 1\n}\n",
+      "timeout": false
+    },
+    {
+      "cmd": [
+        "python3",
+        "-S",
+        "/mnt/data/Metablooms_OS/portable_full_os_boot_verify.py"
+      ],
+      "duration_s": 0.067,
+      "name": "portable_boot_verify_root",
+      "returncode": 0,
+      "stderr": "/mnt/data/Metablooms_OS/portable_full_os_boot_verify.py:9: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n  def now(): return datetime.datetime.utcnow().replace(microsecond=0).isoformat()+'Z'\n",
+      "stdout": "{\n  \"stage\": \"PORTABLE_FULL_OS_BOOT_VERIFY_REPAIRED_H0B2\",\n  \"timestamp_utc\": \"2026-05-02T15:21:03Z\",\n  \"status\": \"PASS\",\n  \"root\": \"/mnt/data/Metablooms_OS\",\n  \"errors\": [],\n  \"sandbox_policy\": \"ALLOW\",\n  \"chat_kernel\": \"ALLOW\"\n}\n",
+      "timeout": false
+    },
+    {
+      "cmd": [
+        "python3",
+        "-S",
+        "/mnt/data/Metablooms_OS/runtime/governance/runtime_starter_smoke_v1.py",
+        "--root",
+        "/mnt/data/Metablooms_OS",
+        "--json"
+      ],
+      "duration_s": 0.068,
+      "name": "runtime_starter_smoke_root",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\n  \"decision\": \"ALLOW\",\n  \"invalid_json\": [],\n  \"missing\": [],\n  \"mode\": \"root\",\n  \"path\": \"/mnt/data/Metablooms_OS\",\n  \"read_errors\": []\n}\n",
+      "timeout": false
+    },
+    {
+      "cmd": [
+        "python3",
+        "-S",
+        "/mnt/data/Metablooms_OS/runtime/evals/post_tool_result_validation/test_post_tool_result_validation_v1.py"
+      ],
+      "duration_s": 0.258,
+      "name": "runtime_eval_runtime/evals/post_tool_result_validation/test_post_tool_result_validation_v1.py",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\n  \"verdict\": \"PASS\",\n  \"fixtures\": [\n    \"allow_valid_filesystem\",\n    \"deny_missing_artifact\",\n    \"deny_failed_implementation_reality\"\n  ]\n}\n",
+      "timeout": false
+    },
+    {
+      "cmd": [
+        "python3",
+        "-S",
+        "/mnt/data/Metablooms_OS/runtime/evals/sandbox_governance/H0B2_test_sandbox_governance.py"
+      ],
+      "duration_s": 0.102,
+      "name": "runtime_eval_runtime/evals/sandbox_governance/H0B2_test_sandbox_governance.py",
+      "returncode": 1,
+      "stderr": "Traceback (most recent call last):\n  File \"/mnt/data/Metablooms_OS/runtime/evals/sandbox_governance/H0B2_test_sandbox_governance.py\", line 27, in <module>\n    if __name__=='__main__': sys.exit(main(sys.argv[1]))\n                                           ~~~~~~~~^^^\nIndexError: list index out of range\n",
+      "stdout": "",
+      "timeout": false
+    }
+  ],
+  "stage4_handoff_status": "PASS_WITH_WARNINGS",
+  "status": "PASS",
+  "test_eval_harness_retrofit": {
+    "reason": "Stage4/Stage5 scan found no blocking direct append-open callsites in test/eval harnesses outside canonical append writer fixture internals.",
+    "safe_patches_applied": 0
+  }
+}

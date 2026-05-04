@@ -1,0 +1,124 @@
+{
+  "artifacts_written": [
+    {
+      "bytes": 2155,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T135107Z/SEE_EVIDENCE_PACKET.json",
+      "sha256": "c5961afa691095b85a553a4430f7a94abb5f4a1470eef855906ff74419dde780"
+    },
+    {
+      "bytes": 1003,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T135107Z/CE_SYNTHESIS.json",
+      "sha256": "ac1c2234931df07ae34507246f5eec4992ebe701243cf0c31a6b02b146c34eff"
+    },
+    {
+      "bytes": 2551,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T135107Z/ADS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_v1.json",
+      "sha256": "c7ed45601886a0673e69ecc96d535db3f257e8936ca02bb5d75f757e811dfa97"
+    },
+    {
+      "bytes": 2175,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T135107Z/BOUNDED_SUBPROCESS_WRAPPER_CONTRACT_v1.json",
+      "sha256": "3dbbeb024040733171287f3ffdfbe8267b52f4a6cb853903a55814719ac8f765"
+    },
+    {
+      "bytes": 4050,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T135107Z/BOUNDED_COMMAND_ENVELOPE_SCHEMA_v1.json",
+      "sha256": "a03a06ccf4e09dae6a4aa6956b6c0b7fc56f6f9b3fd8e4db9f0a369d96f3e426"
+    },
+    {
+      "bytes": 2272,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T135107Z/BOUNDED_COMMAND_DECISION_PACKET_SCHEMA_v1.json",
+      "sha256": "c31113783ca7d0ad2fc2ef35d3db09bc93b7fa38a17ef6dc2d8e5447cf1721f0"
+    },
+    {
+      "bytes": 1285,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T135107Z/SUBPROCESS_FAILURE_LEARNING_EVENT_SCHEMA_v1.json",
+      "sha256": "7e9281f3e0adfe81fa3b95161b802f8fbec4877ee35f2b3780b15cedfdaa2aa4"
+    },
+    {
+      "bytes": 2521,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T135107Z/FIXTURE_MATRIX_v1.json",
+      "sha256": "d94556040df57b4ecc43f98e3492a6a2b19383944886dc8b2bad600d808543f7"
+    },
+    {
+      "bytes": 2202,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T135107Z/CDR_CRITICAL_GATE_RESULTS_v1.json",
+      "sha256": "6a8c46bb8ef10ddadd9be01edde69bab6ac9f746856a07533b578c46a45fcfc0"
+    },
+    {
+      "bytes": 1824,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T135107Z/STAGE_RECEIPT.json",
+      "sha256": "d1078af8e38024f74af0f62444df502943f951df7fe9e5222e23eddbf1f90f0e"
+    }
+  ],
+  "bundle": {
+    "bytes": 20931,
+    "member_count": 23,
+    "path": "/mnt/data/Metablooms_OS/runtime/stage_bundles/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T135107Z.zip",
+    "sha256": "355c5b4684f71a8b7506975138aa3721f47f54bb337cf5d3e5c96c8a6ad47b74",
+    "testzip": "PASS"
+  },
+  "loaded_authorities": [
+    {
+      "path": "/mnt/data/Metablooms_OS/FORBIDDEN_VALIDATION_METHODS_v1.json",
+      "sha256": "d2a5777cf222dfb864de4bb720816c16cce13e09b61ba35c67f16b5723564f68"
+    },
+    {
+      "path": "/mnt/data/Metablooms_OS/METHOD_RELIABILITY_ROUTER_POLICY_v1.json",
+      "sha256": "49b5032187ecfa7bd403b206f94d4fd92abc7d251b80453b99802821efcd2cfa"
+    },
+    {
+      "path": "/mnt/data/Metablooms_OS/runtime/handoffs/meta_infra/META_INFRA_SELF_HARDENING_TOOL_ROADMAP_STAGE0_HANDOFF_LATEST.json",
+      "sha256": "174abf6be9ae1ead921d5bfe617db1f42dd0eab5a726852e875e8d2cb8542859"
+    }
+  ],
+  "next_stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES",
+  "operation": "ADS_AND_CONTRACT_ONLY_NO_IMPLEMENTATION",
+  "runtime_root": "/mnt/data/Metablooms_OS",
+  "schema_version": "metablooms.stage_receipt.v1",
+  "stage_id": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT",
+  "status": "PASS",
+  "tests": [
+    {
+      "name": "runtime_root_exists",
+      "status": "PASS"
+    },
+    {
+      "name": "stage0_handoff_loaded",
+      "status": "PASS"
+    },
+    {
+      "name": "external_research_bound",
+      "status": "PASS"
+    },
+    {
+      "name": "ads_written",
+      "status": "PASS"
+    },
+    {
+      "name": "contract_written",
+      "status": "PASS"
+    },
+    {
+      "name": "schemas_written",
+      "status": "PASS"
+    },
+    {
+      "name": "fixture_matrix_written",
+      "status": "PASS"
+    },
+    {
+      "name": "cdr_critical_packet_written",
+      "status": "PASS"
+    },
+    {
+      "name": "json_reload_validation",
+      "status": "PASS"
+    },
+    {
+      "name": "bundle_zip_testzip",
+      "status": "PASS"
+    }
+  ],
+  "timestamp_utc": "2026-05-02T13:51:07Z"
+}

@@ -1,0 +1,23 @@
+{
+  "contract_id": "unified_runtime_compatibility_contract_v1",
+  "authoritative_root": "/mnt/data/Metablooms_OS",
+  "accepted_source_tracks": [{"track_id": "GW"}, {"track_id": "OS"}],
+  "required_handoff_artifacts": [
+    {"artifact_id": "artifact_disposition_contract_v1", "path": "runtime/governance/contracts/artifact_disposition_contract_v1.json", "required": true},
+    {"artifact_id": "legacy_artifact_redirects_v1", "path": "runtime/governance/contracts/legacy_artifact_redirects_v1.json", "required": true},
+    {"artifact_id": "ADR-0001", "path": "0_kernel/docs/decisions/ADR-0001-split-rationale-from-runtime-contracts.md", "required": true},
+    {"artifact_id": "R2_verify_receipt", "path": "receipts/refactor_program/R2_VERIFY_RECEIPT_20260428T024446Z.json", "required": true}
+  ],
+  "compatibility_rules": [
+    {"rule_id": "a", "condition": {"type": "x"}},
+    {"rule_id": "b", "condition": {"type": "x"}},
+    {"rule_id": "c", "condition": {"type": "x"}},
+    {"rule_id": "d", "condition": {"type": "x"}},
+    {"rule_id": "e", "condition": {"type": "x"}}
+  ],
+  "stale_after_utc": "2026-07-01T00:00:00Z",
+  "supersedes": [
+    "1_governance/workflow_v6/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.json",
+    "1_governance/workflow_v6/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.redirect.json"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "receipt_id": "T1-STAGE6J_WRITE_BASELINE_POINTER_state_CURRENT_WORKING_BASELINE_POINTER_v1__filesystem_write_artifact-20260502T013906Z",
+  "tier": "T1",
+  "artifact": "/mnt/data/Metablooms_OS/0_kernel/state/CURRENT_WORKING_BASELINE_POINTER_v1.json",
+  "sha256": "5a4f125866e7bdd590cec831efad060d18d8805e46888a3fabd639a8d3a1661d",
+  "bytes_size": 1339,
+  "prior_sha256": "",
+  "stdout_proof": "",
+  "timestamp": "2026-05-02T01:39:06.968817Z",
+  "turn_id": "STAGE6J_WRITE_BASELINE_POINTER_state_CURRENT_WORKING_BASELINE_POINTER_v1_"
+}

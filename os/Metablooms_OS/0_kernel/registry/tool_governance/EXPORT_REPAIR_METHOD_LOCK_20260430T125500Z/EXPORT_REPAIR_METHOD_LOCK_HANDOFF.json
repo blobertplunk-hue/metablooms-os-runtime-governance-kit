@@ -1,0 +1,7 @@
+{
+  "artifact_type": "handoff",
+  "name": "EXPORT_REPAIR_METHOD_LOCK_HANDOFF",
+  "created_utc": "2026-04-30T12:55:00Z",
+  "status": "READY_FOR_NEXT_EXPORT_REPAIR",
+  "next_stage_instruction": "Before any future full MetaBlooms project-file ZIP repair/export, load 0_kernel/registry/tool_governance/EXPORT_REPAIR_METHOD_LOCK_LATEST.json. Use stream ZIP rebuild with python3 -S, deterministic overlong-path renames, no hard links, final sidecar verification, CRC/duplicate checks, and bounded extraction smoke."
+}

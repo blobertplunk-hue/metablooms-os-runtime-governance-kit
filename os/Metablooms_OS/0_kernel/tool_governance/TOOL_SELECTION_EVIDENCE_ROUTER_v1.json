@@ -1,0 +1,24 @@
+{
+  "artifact_type": "TOOL_SELECTION_EVIDENCE_ROUTER_v1",
+  "created_utc": "2026-04-30T19:57:32Z",
+  "hard_rules": [
+    "normal python denied unless directly probed and necessary",
+    "full extraction denied unless latency exception is justified",
+    "whole-system archive mutation forbidden until minimal overlay behavior tests pass",
+    "decision packet required before substantive tool use"
+  ],
+  "purpose": "Boot-critical deterministic tool/method selector requiring evidence-backed decision packets before tool use.",
+  "required_methods_considered": [
+    "shell/coreutils",
+    "python3 -S",
+    "normal python",
+    "zipinfo",
+    "unzip",
+    "zip -0",
+    "python zipfile",
+    "jq",
+    "node",
+    "artifact-specific libraries"
+  ],
+  "stage_id": "H0C1_TOOL_SELECTION_EVIDENCE_ROUTER_CONTINUED"
+}

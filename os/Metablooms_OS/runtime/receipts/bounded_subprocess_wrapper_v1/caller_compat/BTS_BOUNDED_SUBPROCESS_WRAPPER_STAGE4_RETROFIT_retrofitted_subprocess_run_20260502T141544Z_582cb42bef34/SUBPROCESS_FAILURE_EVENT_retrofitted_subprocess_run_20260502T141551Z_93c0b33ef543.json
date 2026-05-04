@@ -1,0 +1,34 @@
+{
+  "argv_redacted": [
+    "/opt/pyvenv/bin/python3",
+    "/mnt/data/Metablooms_OS/runtime/governance/mpp_stage_contract_code_bearing_declaration_gate_v1.py",
+    "/mnt/data/Metablooms_OS/tests/fixtures/mpp_v3/invalid_mpp_stage_contract_code_class_flag_false_v1.json"
+  ],
+  "artifact_type": "METABLOOMS_SUBPROCESS_FAILURE_LEARNING_EVENT_v1",
+  "attempts": [
+    {
+      "attempt_index": 0,
+      "elapsed_ms": 7094,
+      "returncode": 1,
+      "started_utc": "20260502T141544Z",
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_truncated": false,
+      "stdout": "{\n  \"code_artifact_classes\": [\n    \"policy\"\n  ],\n  \"effective_stage_contains_code\": true,\n  \"explicit_stage_contains_code\": false,\n  \"inferred_code_bearing\": true,\n  \"reasons\": [\n    \"code_classes_require_stage_contains_code_true\",\n    \"code_bearing_stage_requires_cdr_required_true\",\n    \"code_bearing_pass_requires_cdr_binding_packet_path\"\n  ],\n  \"schema\": \"MPP_CDR_STAGE_CONTRACT_CODE_BEARING_DECLARATION_GATE_RESULT_v1\",\n  \"stage_id\": \"EXAMPLE_MISMATCH\",\n  \"verdict\": \"DENY\"\n}\n",
+      "stdout_bytes": 481,
+      "stdout_sha256": "9935bd6ef8fa0a4bdbbf1be0a2f8a9189c82995c0f49cc1c5e88e03e1195f5b8",
+      "stdout_truncated": false,
+      "timeout_seconds": 10.0
+    }
+  ],
+  "created_utc": "20260502T141551Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "failure_class": "NONZERO_EXIT",
+  "operation_type": "retrofitted_subprocess_run",
+  "policy_matches": [],
+  "recommendation": "Route future matching operations through bounded wrapper and method reliability policy before spawn.",
+  "result_class": "ALLOW_NONZERO",
+  "root": "/mnt/data/Metablooms_OS",
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT"
+}

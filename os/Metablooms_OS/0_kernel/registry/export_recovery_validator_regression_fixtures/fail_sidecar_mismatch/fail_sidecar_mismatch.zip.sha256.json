@@ -1,0 +1,7 @@
+{
+  "version": "1.0",
+  "file": "fail_sidecar_mismatch.zip",
+  "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "size_bytes": 3809,
+  "verdict": "PASS"
+}

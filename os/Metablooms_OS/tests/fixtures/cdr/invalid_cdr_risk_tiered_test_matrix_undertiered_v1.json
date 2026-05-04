@@ -1,0 +1,11 @@
+{
+  "declared_tier": "MEDIUM",
+  "evidence_categories": [
+    "static_review",
+    "unit"
+  ],
+  "improvement_candidates": [],
+  "triggers": [
+    "export_authority"
+  ]
+}

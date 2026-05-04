@@ -1,0 +1,8 @@
+{
+  "stage": "FULL_OS_EXPORT_WITH_TRACKER_INTEGRATED",
+  "timestamp_utc": "2026-04-29T11:38:08Z",
+  "root": "/mnt/data/Metablooms_OS",
+  "base_export": "/mnt/data/MB_R13_FINAL_EXPORT_STAGE_20260429T104000Z/METABLOOMS_OS_R13_FINAL_EXPORT_20260429T104000Z.zip",
+  "reason": "User correctly identified TRACKER-5 was cartridge-only; this export updates the full R13 OS bundle with integrated tracker artifacts.",
+  "status": "IN_PROGRESS"
+}

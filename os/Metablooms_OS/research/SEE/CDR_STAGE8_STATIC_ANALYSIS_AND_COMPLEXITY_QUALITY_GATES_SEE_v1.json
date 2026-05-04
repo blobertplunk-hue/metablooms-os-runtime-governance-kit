@@ -1,0 +1,38 @@
+{
+  "applicability": "CDR static-analysis and complexity gates should combine measurable structural metrics, security checks, test evidence, and risk-tier thresholds.",
+  "method": "web.run evidence gathered before implementation",
+  "schema": "SEEPacket_v1",
+  "sources": [
+    {
+      "claims": [
+        "Review should evaluate design, functionality, complexity, tests, naming, comments, style, documentation, every line, and broader context."
+      ],
+      "name": "Google Engineering Practices - What to look for in a code review",
+      "url": "https://google.github.io/eng-practices/review/reviewer/looking-for.html"
+    },
+    {
+      "claims": [
+        "Secure coding checklists cover input validation, access control, error handling/logging, file management, memory management, and general coding practices."
+      ],
+      "name": "OWASP Secure Coding Practices Checklist",
+      "url": "https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/stable-en/02-checklist/"
+    },
+    {
+      "claims": [
+        "Cyclomatic complexity measures paths through code; cognitive complexity qualifies how hard control flow is to understand; both can be used in quality gates."
+      ],
+      "name": "SonarQube metric definitions",
+      "url": "https://docs.sonarsource.com/sonarqube-server/10.7/user-guide/code-metrics/metrics-definition/"
+    },
+    {
+      "claims": [
+        "Secure software development should reduce vulnerabilities, mitigate exploit impact, and address root causes to prevent recurrence."
+      ],
+      "name": "NIST SSDF SP 800-218",
+      "url": "https://www.nist.gov/publications/secure-software-development-framework-ssdf-version-11-recommendations-mitigating-risk"
+    }
+  ],
+  "stage": "CDR_STAGE8_STATIC_ANALYSIS_AND_COMPLEXITY_QUALITY_GATES",
+  "status": "PASS",
+  "timestamp_utc": "2026-05-02T12:12:32Z"
+}

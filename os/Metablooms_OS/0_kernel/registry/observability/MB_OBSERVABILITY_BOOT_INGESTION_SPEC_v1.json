@@ -1,0 +1,31 @@
+{
+  "artifact_type": "MB_OBSERVABILITY_BOOT_INGESTION_SPEC.v1",
+  "created_utc": "20260502T164238Z",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION",
+  "inputs": [
+    "0_kernel/registry/boot_receipts/**/*.json",
+    "runtime/receipts/**/*.json",
+    "runtime/handoffs/**/*.json",
+    "0_kernel/registry/roadmap/NEXT_BUILD_DECISION_LATEST.json",
+    "runtime/state/TRACKER_STATE_v1.json"
+  ],
+  "outputs": [
+    "runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl",
+    "runtime/traces/observability/TRACE_SPAN_LEDGER_INDEX_LATEST.json",
+    "runtime/traces/observability/CAUSAL_STAGE_GRAPH_LATEST.json",
+    "runtime/traces/observability/BOOT_INGESTION_REPORT_LATEST.json"
+  ],
+  "bounded_scan_policy": {
+    "max_files_per_glob": 80,
+    "newest_first": true,
+    "no_recursive_unbounded_payload_embedding": true,
+    "hash_source_artifacts": true
+  },
+  "event_mapping": {
+    "boot_receipt": "metablooms.boot.receipt",
+    "stage_receipt": "metablooms.stage.receipt",
+    "handoff": "metablooms.handoff.ready",
+    "decision": "metablooms.decision.next_build",
+    "tracker_state": "metablooms.tracker.state"
+  }
+}

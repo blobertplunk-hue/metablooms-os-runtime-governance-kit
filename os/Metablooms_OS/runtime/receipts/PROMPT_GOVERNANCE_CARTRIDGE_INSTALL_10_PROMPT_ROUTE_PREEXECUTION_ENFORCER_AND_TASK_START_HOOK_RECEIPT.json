@@ -1,0 +1,61 @@
+{
+  "created_utc": "2026-05-01T00:25:00Z",
+  "decision": "ALLOW",
+  "implemented": [
+    "preexecution enforcer",
+    "task start hook",
+    "task start ledger",
+    "fixtures",
+    "validator",
+    "boot gate binding",
+    "manifest binding"
+  ],
+  "source_sha256": "a2a1663e8facfb32c3265737d3b7281270afc9c4b154e64de5fc00867e32b23b",
+  "source_zip": "METABLOOMS_OS_PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_9_PROMPT_PATCH_REPLAY_AND_QUALITY_RANKER_FULL_AUTHORITY_20260501T001500Z.zip",
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_10_PROMPT_ROUTE_PREEXECUTION_ENFORCER_AND_TASK_START_HOOK",
+  "validator_report": {
+    "decision": "ALLOW",
+    "failed": 0,
+    "fixture_count": 5,
+    "ledger_write_ok": true,
+    "missing": [],
+    "passed": 5,
+    "results": [
+      {
+        "fixture": "preexecution_artifact_prompt.json",
+        "ok": true,
+        "profile": "governed_artifact_generation",
+        "task_type": "artifact_generation"
+      },
+      {
+        "fixture": "preexecution_audit_prompt.json",
+        "ok": true,
+        "profile": "governed_implementation",
+        "task_type": "audit"
+      },
+      {
+        "fixture": "preexecution_option_ordering_prompt.json",
+        "ok": true,
+        "profile": "governed_implementation",
+        "task_type": "governed_implementation"
+      },
+      {
+        "fixture": "preexecution_research_prompt.json",
+        "ok": true,
+        "profile": "governed_research",
+        "task_type": "research"
+      },
+      {
+        "fixture": "preexecution_stage_prompt.json",
+        "ok": true,
+        "profile": "governed_implementation",
+        "task_type": "governed_implementation"
+      }
+    ],
+    "validator": "validate_prompt_route_preexecution_enforcer_v1"
+  },
+  "web_evidence": [
+    "OpenAI prompt engineering guidance",
+    "OpenAI eval best practices guidance"
+  ]
+}

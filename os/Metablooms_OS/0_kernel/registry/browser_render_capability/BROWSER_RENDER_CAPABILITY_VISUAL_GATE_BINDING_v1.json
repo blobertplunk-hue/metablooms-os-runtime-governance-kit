@@ -1,0 +1,76 @@
+{
+  "created_utc": "20260502T225725Z",
+  "current_local_decision_summary": {
+    "android_sandbox_primary": true,
+    "decision": "ALLOW_RENDER_PROXY_WITH_LIMITATION",
+    "environment": "android_chatgpt_sandbox",
+    "honesty_label": "sandbox_render_proxy",
+    "requested_proof_tier": "browser_screenshot_preferred",
+    "selected_method": "weasyprint_pdf_png_proxy"
+  },
+  "forbidden_claims_without_true_browser_method": [
+    "full browser screenshot replay passed",
+    "Chromium screenshot proof passed",
+    "Playwright screenshot proof passed"
+  ],
+  "id": "BROWSER_RENDER_CAPABILITY_VISUAL_GATE_BINDING_v1",
+  "purpose": "Bind sandbox-first BrowserRenderCapabilityResolver as method-selection authority before VPQ render smoke, visual review, and export promotion.",
+  "required_decision_fields": [
+    "environment",
+    "android_sandbox_primary",
+    "requested_proof_tier",
+    "method_attempts",
+    "selected_method",
+    "decision",
+    "honesty_label",
+    "pc_addendum_available",
+    "resolver_version",
+    "timestamp_utc",
+    "html_sha256"
+  ],
+  "research_basis": [
+    {
+      "claim": "Playwright supports browser automation and managed browser installation; managed browsers must exist or be installable before Playwright screenshot proof can be claimed.",
+      "source": "Playwright official browser docs"
+    },
+    {
+      "claim": "Chrome headless supports unattended browser operation and screenshots, but local sandbox launch must still be empirically proven.",
+      "source": "Chrome official headless docs"
+    },
+    {
+      "claim": "WeasyPrint can render HTML/CSS to PDF and is suitable as a proxy render path when true browser screenshots are unavailable.",
+      "source": "WeasyPrint official documentation"
+    }
+  ],
+  "sandbox_first_policy": {
+    "normal_sandbox_allowed_decisions": [
+      "ALLOW_BROWSER_SCREENSHOT",
+      "ALLOW_RENDER_PROXY_WITH_LIMITATION",
+      "ALLOW_STATIC_ONLY_WITH_LIMITATION"
+    ],
+    "pc_ci_path": "enhancement_lane_not_default_blocker",
+    "primary_environment": "android_chatgpt_sandbox",
+    "production_required_blocker": "DENY_PRODUCTION_PROMOTION when requested_proof_tier is browser_screenshot_required and no true browser evidence exists"
+  },
+  "schema_version": "metablooms.browser_render.visual_gate_binding.v1",
+  "stage": "BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE3_VISUAL_GATE_BINDING_AND_EXPORT_PREP",
+  "status": "BOUND_LOCAL_EXPORT_PREP_READY",
+  "visual_gate_integration_points": [
+    {
+      "action": "Call resolver before screenshot/render proof; use selected method and honesty_label in review packet.",
+      "stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE4_RENDER_SMOKE_AND_VISUAL_REVIEW_PACKET"
+    },
+    {
+      "action": "Require resolver decision and include selected-method artifacts, limitation label, and reliability ledger in export manifest.",
+      "stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE5_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF"
+    },
+    {
+      "action": "Treat tracker as visual artifact; call resolver before claiming browser-render proof.",
+      "stage": "OPERATOR_VISUAL_TRACKER_POLISH_OR_BOOT_SURFACE_RENDER"
+    },
+    {
+      "action": "Use resolver for Google Sites/iPad/mobile render evidence tiers before promotion.",
+      "stage": "HTML_ACTIVITY_CARTRIDGE_RENDER_REVIEW"
+    }
+  ]
+}

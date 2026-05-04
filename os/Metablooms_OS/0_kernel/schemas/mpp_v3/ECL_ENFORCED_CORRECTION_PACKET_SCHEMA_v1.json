@@ -1,0 +1,257 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/ECL_ENFORCED_CORRECTION_PACKET_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "closure_controls": {
+      "additionalProperties": false,
+      "properties": {
+        "requires_learning_hook": {
+          "type": "boolean"
+        },
+        "requires_owner": {
+          "type": "boolean"
+        },
+        "requires_receipt": {
+          "type": "boolean"
+        },
+        "requires_regression_pass": {
+          "type": "boolean"
+        },
+        "requires_tracking_ref": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "requires_owner",
+        "requires_tracking_ref",
+        "requires_regression_pass",
+        "requires_receipt",
+        "requires_learning_hook"
+      ],
+      "type": "object"
+    },
+    "corrections": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "change_type": {
+            "enum": [
+              "code_patch",
+              "schema_patch",
+              "validator_patch",
+              "fixture_patch",
+              "policy_gate",
+              "workflow_change",
+              "documentation",
+              "rollback"
+            ],
+            "type": "string"
+          },
+          "correction_id": {
+            "pattern": "^ECL-CORR-[0-9]{3}$",
+            "type": "string"
+          },
+          "description": {
+            "minLength": 10,
+            "type": "string"
+          },
+          "failure_class_id": {
+            "pattern": "^FC-[0-9]{3}$",
+            "type": "string"
+          },
+          "owner": {
+            "minLength": 3,
+            "type": "string"
+          },
+          "preventive": {
+            "type": "boolean"
+          },
+          "priority": {
+            "enum": [
+              "P0",
+              "P1",
+              "P2",
+              "P3"
+            ],
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "proposed",
+              "implemented",
+              "verified",
+              "blocked"
+            ],
+            "type": "string"
+          },
+          "tracking_ref": {
+            "minLength": 3,
+            "type": "string"
+          }
+        },
+        "required": [
+          "correction_id",
+          "failure_class_id",
+          "change_type",
+          "description",
+          "owner",
+          "priority",
+          "preventive",
+          "tracking_ref",
+          "status"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "created_at": {
+      "minLength": 10,
+      "type": "string"
+    },
+    "enforcement_hooks": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action": {
+            "minLength": 5,
+            "type": "string"
+          },
+          "blocking": {
+            "type": "boolean"
+          },
+          "condition": {
+            "minLength": 5,
+            "type": "string"
+          },
+          "hook_id": {
+            "pattern": "^ECL-HOOK-[0-9]{3}$",
+            "type": "string"
+          },
+          "hook_type": {
+            "enum": [
+              "preflight",
+              "validator",
+              "regression_gate",
+              "promotion_gate",
+              "monitor"
+            ],
+            "type": "string"
+          },
+          "stage": {
+            "minLength": 2,
+            "type": "string"
+          }
+        },
+        "required": [
+          "hook_id",
+          "hook_type",
+          "stage",
+          "condition",
+          "action",
+          "blocking"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "objective_id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "packet_id": {
+      "minLength": 8,
+      "type": "string"
+    },
+    "promotion_criteria": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "regression_tests": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "blocking": {
+            "type": "boolean"
+          },
+          "command": {
+            "minLength": 3,
+            "type": "string"
+          },
+          "expected_post_fix": {
+            "enum": [
+              "PASS"
+            ],
+            "type": "string"
+          },
+          "expected_pre_fix": {
+            "enum": [
+              "FAIL",
+              "UNKNOWN"
+            ],
+            "type": "string"
+          },
+          "failure_class_id": {
+            "pattern": "^FC-[0-9]{3}$",
+            "type": "string"
+          },
+          "test_id": {
+            "pattern": "^ECL-REG-[0-9]{3}$",
+            "type": "string"
+          },
+          "test_path": {
+            "minLength": 3,
+            "type": "string"
+          }
+        },
+        "required": [
+          "test_id",
+          "failure_class_id",
+          "test_path",
+          "expected_pre_fix",
+          "expected_post_fix",
+          "command",
+          "blocking"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "result_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "mpp.ecl_enforced_correction_packet.v1"
+    },
+    "source_debugging_packet_id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "stage": {
+      "const": "ECL"
+    }
+  },
+  "required": [
+    "schema_version",
+    "packet_id",
+    "stage",
+    "created_at",
+    "objective_id",
+    "source_debugging_packet_id",
+    "corrections",
+    "regression_tests",
+    "enforcement_hooks",
+    "promotion_criteria",
+    "closure_controls",
+    "result_hash"
+  ],
+  "title": "MPP v3 ECL Enforced Correction Packet",
+  "type": "object"
+}

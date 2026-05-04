@@ -1,0 +1,14 @@
+{
+  "artifact_type": "MB_STAGE_HANDOFF.v1",
+  "continuation_prompt": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS",
+  "created_utc": "20260502T190307Z",
+  "must_preserve": [
+    "minimal mode remains default",
+    "browser-local pins are non-authoritative until promoted",
+    "promoted receipt must remain export-bound"
+  ],
+  "next_recommended_stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING",
+  "summary": "Stage 14 added formal pinned-evidence receipt promotion and export binding for selected proof sets.",
+  "verdict": "PASS"
+}

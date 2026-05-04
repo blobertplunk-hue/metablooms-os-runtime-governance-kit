@@ -1,0 +1,8 @@
+TRACKER PREVIEW — MPP_CDR_BINDING_STAGE15_RETROFIT_STAGE_CONTRACTS_TO_DECLARE_CODE_BEARING_FLAG
+Status: PASS
+Installed: MPP stage contract code-bearing declaration spec, policy, schema, gate, active invariant, registry, fixtures, eval, SEE/CE packets.
+Rule: every MPP stage contract must explicitly declare stage_contains_code and code_artifact_classes; code-bearing contracts require cdr_required=true and CDR binding evidence before PASS.
+Gate: PASS — code-bearing declared fixture allowed; missing flag denied; code-class/false-flag mismatch denied; explicit non-code fixture allowed.
+CDR eval continuity: 10/10 evals passed.
+Authority export: NOT PERFORMED.
+Next best stage: MPP_CDR_BINDING_STAGE16_FULL_AUTHORITY_EXPORT_AFTER_STAGE15.

@@ -1,0 +1,38 @@
+{
+  "artifact_id": "sample_html_activity",
+  "block_count": 0,
+  "blocks": [],
+  "decision_id": "512ae8e0-d99d-4a69-999e-9f8ae73e752e",
+  "input_summary": {
+    "declaration_path": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/fixtures/usefulness_surface.valid.json",
+    "declaration_sha256": "bb8a03abcae6006b230ad558b7f8c82b5a66b40159af5aab09d139e86e146f20"
+  },
+  "policy_path": "metablooms/governance/usefulness_surface/allow",
+  "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/decision_logs/usefulness_surface/test_20260428T031100Z/USEFULNESS_SURFACE_DECISION_1777345799090_512ae8e0.json",
+  "receipt_sha256": "34b4a78c5667fdba571e6f372b6d5292e45634f0b73ec634537b55e33f8a2941",
+  "receipt_type": "USEFULNESS_SURFACE_GATE_DECISION",
+  "result": "ALLOW",
+  "schema_version": "1.1-r7",
+  "summary": {
+    "artifact_type": "html_activity",
+    "covered_count": 5,
+    "covered_dimensions": [
+      "instruction",
+      "practice",
+      "realtime_feedback",
+      "teacher_telemetry",
+      "misconception_diagnosis"
+    ],
+    "not_applicable": [],
+    "required_for_type": [
+      "instruction",
+      "practice",
+      "realtime_feedback",
+      "teacher_telemetry",
+      "misconception_diagnosis"
+    ]
+  },
+  "timestamp_utc": "2026-04-28T03:09:59Z",
+  "warn_count": 0,
+  "warnings": []
+}

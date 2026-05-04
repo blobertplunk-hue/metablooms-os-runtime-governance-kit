@@ -1,0 +1,16 @@
+{
+  "artifact_type": "MB_POLICY.v1",
+  "fail_closed_if": [
+    "promoted receipt missing",
+    "pin path missing",
+    "pin SHA mismatch",
+    "final export missing promoted receipt"
+  ],
+  "policy": "Browser-local pins are not authoritative. A pin set becomes authoritative only when promoted into a SHA-bound receipt written under runtime/receipts/pinned_evidence and included in final export containment proof.",
+  "required_tracker_markers": [
+    "data-section='pinned_evidence_receipt_promotion'",
+    "data-section='pinned_evidence_export_binding'",
+    "promote_pinned_evidence_receipt_v1.py"
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING"
+}

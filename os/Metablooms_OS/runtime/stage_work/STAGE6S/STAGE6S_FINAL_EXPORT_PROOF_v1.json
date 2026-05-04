@@ -1,0 +1,73 @@
+{
+  "authority_label": "BOOTABLE FULL OS AUTHORITY ZIP \u2014 Stage 6S",
+  "authority_zip": "/mnt/data/METABLOOMS_OS_STAGE6S_FULL_AUTHORITY_AFTER_STAGE6N_TO_6R_BOOTABLE_FULL_OS_AUTHORITY_20260502T035000Z.zip",
+  "authority_zip_sha256": "652bd3aa50c10dd24394309329eab9362dcd1db191180b65cb1a3c03088f92e1",
+  "authority_zip_sidecar": "/mnt/data/METABLOOMS_OS_STAGE6S_FULL_AUTHORITY_AFTER_STAGE6N_TO_6R_BOOTABLE_FULL_OS_AUTHORITY_20260502T035000Z.zip.sha256",
+  "authority_zip_size_bytes": 22414940,
+  "external_sidecar_policy": "Final ZIP SHA-256 is external only; internal receipt uses explicit sidecar resolution.",
+  "fresh_extraction": {
+    "checks": [
+      {
+        "name": "fresh_final_portable_boot_verify",
+        "output_path": "/mnt/data/Metablooms_OS/runtime/stage_work/STAGE6S/fresh_final_portable_boot_verify.out",
+        "returncode": 0,
+        "stdout_tail": "/mnt/data/stage6s_fresh_extract_smoke_final/Metablooms_OS/portable_full_os_boot_verify.py:5: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n  def now(): return datetime.datetime.utcnow().replace(microsecond=0).isoformat()+'Z'\n{\n  \"stage\": \"PORTABLE_FULL_OS_BOOT_VERIFY_REPAIRED_H0B2\",\n  \"timestamp_utc\": \"2026-05-02T03:33:33Z\",\n  \"status\": \"PASS\",\n  \"root\": \"/mnt/data/stage6s_fresh_extract_smoke_final/Metablooms_OS\",\n  \"errors\": [],\n  \"sandbox_policy\": \"ALLOW\",\n  \"chat_kernel\": \"ALLOW\"\n}\n"
+      },
+      {
+        "name": "fresh_final_runtime_starter_smoke",
+        "output_path": "/mnt/data/Metablooms_OS/runtime/stage_work/STAGE6S/fresh_final_runtime_starter_smoke.out",
+        "returncode": 0,
+        "stdout_tail": "{\n  \"decision\": \"ALLOW\",\n  \"invalid_json\": [],\n  \"missing\": [],\n  \"mode\": \"root\",\n  \"path\": \"/mnt/data/stage6s_fresh_extract_smoke_final/Metablooms_OS\",\n  \"read_errors\": []\n}\n"
+      },
+      {
+        "name": "fresh_final_boot_executor_smoke",
+        "output_path": "/mnt/data/Metablooms_OS/runtime/stage_work/STAGE6S/fresh_final_boot_executor_smoke.out",
+        "returncode": 0,
+        "stdout_tail": "     \"path\": \"/mnt/data/stage6s_fresh_extract_smoke_final/Metablooms_OS/runtime/governance/runtime_starter_smoke_v1.py\"\n      },\n      {\n        \"name\": \"required_file:0_kernel/registry/RUNTIME_STARTER_SMOKE_CONTRACT_v1.json\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/stage6s_fresh_extract_smoke_final/Metablooms_OS/0_kernel/registry/RUNTIME_STARTER_SMOKE_CONTRACT_v1.json\"\n      },\n      {\n        \"name\": \"required_file:2_engines/runtime/mpp_pipeline_runner.py\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/stage6s_fresh_extract_smoke_final/Metablooms_OS/2_engines/runtime/mpp_pipeline_runner.py\"\n      },\n      {\n        \"name\": \"required_file:0_kernel/registry/mpp_v3/MPP_V3_AUTHORITY_AND_SCHEMA_LOCK_v1.json\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/stage6s_fresh_extract_smoke_final/Metablooms_OS/0_kernel/registry/mpp_v3/MPP_V3_AUTHORITY_AND_SCHEMA_LOCK_v1.json\"\n      },\n      {\n        \"name\": \"required_file:0_kernel/registry/mpp_v3/MPP_V3_STAGE12_INTEGRATION_AUTHORITY_BINDING_v1.json\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/stage6s_fresh_extract_smoke_final/Metablooms_OS/0_kernel/registry/mpp_v3/MPP_V3_STAGE12_INTEGRATION_AUTHORITY_BINDING_v1.json\"\n      },\n      {\n        \"name\": \"required_file:0_kernel/mpp_v3/mpp_v3_export_promotion_gate_v1.py\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/stage6s_fresh_extract_smoke_final/Metablooms_OS/0_kernel/mpp_v3/mpp_v3_export_promotion_gate_v1.py\"\n      },\n      {\n        \"name\": \"required_file:0_kernel/mpp_v3/mpp_v3_orchestrator_runtime_controller_v1.py\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/stage6s_fresh_extract_smoke_final/Metablooms_OS/0_kernel/mpp_v3/mpp_v3_orchestrator_runtime_controller_v1.py\"\n      },\n      {\n        \"name\": \"required_file:0_kernel/registry/mpp_v3/policy_gates/MPP_V3_EXPORT_PROMOTION_GATE_v1.json\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/stage6s_fresh_extract_smoke_final/Metablooms_OS/0_kernel/registry/mpp_v3/policy_gates/MPP_V3_EXPORT_PROMOTION_GATE_v1.json\"\n      },\n      {\n        \"name\": \"required_file:0_kernel/schemas/mpp_v3/EXPORT_PROMOTION_PACKET_SCHEMA_v1.json\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/stage6s_fresh_extract_smoke_final/Metablooms_OS/0_kernel/schemas/mpp_v3/EXPORT_PROMOTION_PACKET_SCHEMA_v1.json\"\n      },\n      {\n        \"name\": \"required_file:tests/fixtures/mpp_v3/valid_export_promotion_packet_v1.json\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/stage6s_fresh_extract_smoke_final/Metablooms_OS/tests/fixtures/mpp_v3/valid_export_promotion_packet_v1.json\"\n      },\n      {\n        \"name\": \"required_file:runtime/authority/CURRENT_EXPORT_AUTHORITY_v1.json\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/stage6s_fresh_extract_smoke_final/Metablooms_OS/runtime/authority/CURRENT_EXPORT_AUTHORITY_v1.json\"\n      }\n    ],\n    \"manifest_id\": \"BOOT_REQUIRED_GATES_v1\"\n  },\n  \"receipt_path\": \"/mnt/data/Metablooms_OS/0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777692813956.json\"\n}\n"
+      }
+    ],
+    "failed_checks": [],
+    "fresh_root": "/mnt/data/stage6s_fresh_extract_smoke_final/Metablooms_OS",
+    "path": "/mnt/data/stage6s_fresh_extract_smoke_final"
+  },
+  "included_prior_stages": [
+    "STAGE6N",
+    "STAGE6O",
+    "STAGE6P",
+    "STAGE6Q",
+    "STAGE6Q_REPAIR",
+    "STAGE6R"
+  ],
+  "pointer_coherence": {
+    "fresh_pointer": {
+      "boot_root_after_extract": "/mnt/data/Metablooms_OS",
+      "current_authority_label": "BOOTABLE FULL OS AUTHORITY ZIP \u2014 Stage 6S",
+      "current_authority_zip": "/mnt/data/METABLOOMS_OS_STAGE6S_FULL_AUTHORITY_AFTER_STAGE6N_TO_6R_BOOTABLE_FULL_OS_AUTHORITY_20260502T035000Z.zip",
+      "current_authority_zip_sha256_resolution": "external_sidecar_required",
+      "current_authority_zip_sidecar": "/mnt/data/METABLOOMS_OS_STAGE6S_FULL_AUTHORITY_AFTER_STAGE6N_TO_6R_BOOTABLE_FULL_OS_AUTHORITY_20260502T035000Z.zip.sha256",
+      "export_stage": "STAGE6S_FULL_AUTHORITY_EXPORT_AFTER_STAGE6N_TO_6R",
+      "last_included_stage": "STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS",
+      "pointer_coherence_rule": "Path and sidecar filename inside pointer must match exported artifacts; SHA is resolved from sidecar after ZIP close.",
+      "schema": "MetaBloomsCurrentFullAuthorityPointer_v1",
+      "stage": "STAGE6S_FULL_AUTHORITY_EXPORT_AFTER_STAGE6N_TO_6R",
+      "timestamp_utc": "2026-05-02T03:32:44Z"
+    },
+    "pointer_ok": true
+  },
+  "schema": "MetaBloomsStage6SFullAuthorityExportFinalProof_v1",
+  "sidecar_matches_zip": true,
+  "stage": "STAGE6S_FULL_AUTHORITY_EXPORT_AFTER_STAGE6N_TO_6R",
+  "timestamp_utc": "2026-05-02T03:33:33Z",
+  "verdict": "PASS",
+  "warnings": [
+    "git_dir_missing accepted for ZIP authority exports without .git"
+  ],
+  "zip_integrity": {
+    "declared_internal_outputs_present": true,
+    "duplicate_count": 0,
+    "entries": 3819,
+    "internal_receipt_has_stale_zip_hash_field": false,
+    "testzip": null,
+    "unsafe_path_count": 0
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "audit_cycles": [
+    "definition_quality",
+    "code_acceptance",
+    "risk_tiered_tests",
+    "source_level_self_audit",
+    "style_debuggability",
+    "interface_contract",
+    "security_observability",
+    "static_complexity",
+    "scanner_baseline",
+    "scanner_profiles"
+  ],
+  "eval_summary": {
+    "passed": "filled_after_eval",
+    "total": "filled_after_eval"
+  },
+  "gap_ledger": [
+    {
+      "benefit_score": 3,
+      "category": "authority_export_gap",
+      "description": "Stage 12 is support/proof only; CDR Stage 12 not yet in bootable authority ZIP.",
+      "id": "CDR12-GAP-001",
+      "next_stage": "CDR_STAGE13_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE12",
+      "risk_score": 1,
+      "scope_cost": 2,
+      "stage_fit": false,
+      "status": "scheduled"
+    },
+    {
+      "benefit_score": 3,
+      "category": "dashboard_gap",
+      "description": "CDR has gates and receipts but no human-readable dashboard for marvel-level inspection.",
+      "id": "CDR12-GAP-002",
+      "next_stage": "CDR_STAGE14_CDR_DASHBOARD_AND_SCORECARD",
+      "risk_score": 1,
+      "scope_cost": 2,
+      "stage_fit": false,
+      "status": "scheduled"
+    }
+  ],
+  "high_value_stop_rule": {
+    "defined": true,
+    "rule": "benefit_score>=3 and risk_score<=2 and scope_cost<=2 and stage_fit==true requires closure or next-stage scheduling"
+  },
+  "next_stage": "CDR_STAGE13_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE12",
+  "schema": "CDRLinchpinRecursiveAuditBaseline_v1",
+  "source_inventory": {
+    "cdr_files_scanned": 121,
+    "gate_files_scanned": 18,
+    "json_artifacts_scanned": 46,
+    "source_contract_gaps": [
+      {
+        "missing": [
+          "Purpose",
+          "Inputs",
+          "Outputs",
+          "Failure modes",
+          "Debuggability"
+        ],
+        "path": "tests/evals/cdr/test_cdr_adaptability_interface_contract_gate_v1.py"
+      },
+      {
+        "missing": [
+          "Purpose",
+          "Inputs",
+          "Outputs",
+          "Failure modes",
+          "Debuggability"
+        ],
+        "path": "tests/evals/cdr/test_cdr_code_acceptance_gate_v1.py"
+      },
+      {
+        "missing": [
+          "Purpose",
+          "Inputs",
+          "Outputs",
+          "Failure modes",
+          "Debuggability"
+        ],
+        "path": "tests/evals/cdr/test_cdr_lint_security_scanner_gate_v1.py"
+      },
+      {
+        "missing": [
+          "Purpose",
+          "Inputs",
+          "Outputs",
+          "Failure modes",
+          "Debuggability"
+        ],
+        "path": "tests/evals/cdr/test_cdr_real_scanner_adapter_gate_v1.py"
+      },
+      {
+        "missing": [
+          "Purpose",
+          "Inputs",
+          "Outputs",
+          "Failure modes",
+          "Debuggability"
+        ],
+        "path": "tests/evals/cdr/test_cdr_risk_tiered_test_matrix_gate_v1.py"
+      },
+      {
+        "missing": [
+          "Purpose",
+          "Inputs",
+          "Outputs",
+          "Failure modes",
+          "Debuggability"
+        ],
+        "path": "tests/evals/cdr/test_cdr_security_observability_gate_v1.py"
+      },
+      {
+        "missing": [
+          "Purpose",
+          "Inputs",
+          "Outputs",
+          "Failure modes",
+          "Debuggability"
+        ],
+        "path": "tests/evals/cdr/test_cdr_source_level_self_audit_gate_v1.py"
+      },
+      {
+        "missing": [
+          "Purpose",
+          "Inputs",
+          "Outputs",
+          "Failure modes",
+          "Debuggability"
+        ],
+        "path": "tests/evals/cdr/test_cdr_source_style_debuggability_gate_v1.py"
+      },
+      {
+        "missing": [
+          "Purpose",
+          "Inputs",
+          "Outputs",
+          "Failure modes",
+          "Debuggability"
+        ],
+        "path": "tests/evals/cdr/test_cdr_static_analysis_complexity_gate_v1.py"
+      }
+    ]
+  },
+  "stage": "CDR_STAGE12_CDR_LINCHPIN_RECURSIVE_AUDIT_DEEPENING",
+  "timestamp_utc": "20260502T124500Z",
+  "world_class_basis": [
+    "google_code_review",
+    "nist_ssdf",
+    "sonar_complexity",
+    "opentelemetry_semantic_conventions"
+  ]
+}

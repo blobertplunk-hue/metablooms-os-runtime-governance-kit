@@ -1,0 +1,9 @@
+{
+  "method": "recursive web.run search followed by SEE claim validation and CE design synthesis",
+  "questions": [
+    "What prompt structures are supported by current official guidance?",
+    "How should prompt versions/evals/regressions be governed?",
+    "How should reusable prompt assets be indexed and validated?"
+  ],
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_1"
+}

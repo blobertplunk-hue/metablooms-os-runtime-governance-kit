@@ -1,0 +1,8 @@
+{
+  "artifact_type": "EVALS_TRACE_REVIEW_VALIDATOR_ALIGNMENT_STAGE4_HANDOFF_v1",
+  "completed_stage": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_4_VALIDATOR_ALIGNMENT_GATE_PROMOTION",
+  "continuation_rule": "Run one bounded stage. If continuing evals, expand reviewed trace count and human alignment labels before adding more validators.",
+  "created_utc": "20260501T153500Z",
+  "next_stage": "IMPLEMENT_STATE_CHECKPOINT_RESUME_AND_INTERRUPT_CARTRIDGE_STAGE_1_OR_SECURITY_STAGE4_RED_TEAM_FIXTURES",
+  "status": "READY_FOR_NEXT_BOUNDED_STAGE_AFTER_VALIDATION"
+}

@@ -1,0 +1,17 @@
+{
+  "fixture_factory_result_path": "runtime/state/LESSON_FIXTURE_FACTORY_RESULT_v1.json",
+  "handoff_status": "READY_FOR_NEXT_BOUNDED_GOVERNED_STAGE",
+  "lesson_queue_path": "0_kernel/lessons/LESSON_PROMOTION_QUEUE_v1.json",
+  "must_load": [
+    "0_kernel/lessons/LESSON_PROMOTION_QUEUE_v1.json",
+    "0_kernel/registry/world_class_gap_plan/LESSON_PROMOTION_GATE_v1.json",
+    "runtime/state/NEXT_STAGE_COPY_PROMPT.md"
+  ],
+  "next_prompt_path": "runtime/state/NEXT_STAGE_COPY_PROMPT.md",
+  "next_stage": "WC_STAGE6_GENERAL_CAPABILITY_RESOLVER_FRAMEWORK",
+  "primary_bootable_authority": "BOOTABLE_FULL_AUTHORITY_WC3.zip",
+  "schema_version": "v1",
+  "sidecar": "BOOTABLE_FULL_AUTHORITY_WC3.zip.sha256",
+  "stage": "WC_STAGE3_LESSON_PROMOTION_QUEUE_AND_FIXTURE_FACTORY",
+  "timestamp": "20260503T004507Z"
+}

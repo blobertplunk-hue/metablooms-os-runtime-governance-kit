@@ -1,0 +1,9 @@
+{
+  "stage":"APPLY_PROJECT_FILES_BOOT_OVERLAY",
+  "status":"PASS_OVERLAY_APPLIED",
+  "timestamp_utc":"20260428T011552Z",
+  "overlay_root":"/mnt/data/.mb_boot_overlay/METABLOOMS_PROJECT_FILES_BOOT_OVERLAY",
+  "target_root":"/mnt/data/Metablooms_OS",
+  "backup_path":"/mnt/data/Metablooms_OS/METABLOOMS_OVERLAY_BACKUPS/20260428T011552Z",
+  "scoped_nonportable_overlay":true
+}

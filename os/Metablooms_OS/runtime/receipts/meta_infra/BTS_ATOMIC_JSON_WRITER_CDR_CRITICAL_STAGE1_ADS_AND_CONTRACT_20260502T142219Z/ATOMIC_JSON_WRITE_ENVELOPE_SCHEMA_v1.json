@@ -1,0 +1,103 @@
+{
+  "$id": "metablooms://schemas/AtomicJsonWriteEnvelope.v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "allow_symlink_ancestor": {
+      "default": false,
+      "type": "boolean"
+    },
+    "allow_symlink_target": {
+      "default": false,
+      "type": "boolean"
+    },
+    "allowed_roots": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "allowed_suffixes": {
+      "default": [
+        ".json"
+      ],
+      "items": {
+        "pattern": "^\\.[A-Za-z0-9_.-]+$",
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "create_parent_dirs": {
+      "default": true,
+      "type": "boolean"
+    },
+    "dry_run": {
+      "default": false,
+      "type": "boolean"
+    },
+    "ensure_ascii": {
+      "default": false,
+      "type": "boolean"
+    },
+    "failure_learning_dir": {
+      "type": "string"
+    },
+    "indent": {
+      "default": 2,
+      "maximum": 8,
+      "minimum": 0,
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "max_bytes": {
+      "default": 10485760,
+      "maximum": 104857600,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "operation_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9_.:-]+$",
+      "type": "string"
+    },
+    "overwrite": {
+      "enum": [
+        "replace",
+        "create_new",
+        "deny_if_exists"
+      ],
+      "type": "string"
+    },
+    "payload": {},
+    "receipt_dir": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "AtomicJsonWriteEnvelope.v1"
+    },
+    "sort_keys": {
+      "default": true,
+      "type": "boolean"
+    },
+    "target_path": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "operation_id",
+    "target_path",
+    "payload",
+    "allowed_roots",
+    "overwrite",
+    "receipt_dir"
+  ],
+  "title": "AtomicJsonWriteEnvelope.v1",
+  "type": "object"
+}

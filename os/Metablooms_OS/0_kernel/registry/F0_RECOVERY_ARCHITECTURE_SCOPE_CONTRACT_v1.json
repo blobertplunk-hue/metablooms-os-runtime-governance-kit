@@ -1,0 +1,35 @@
+{
+  "version": "1.0",
+  "created_at": 1777061460.116375,
+  "contract_id": "F0_RECOVERY_ARCHITECTURE_SCOPE_CONTRACT_v1",
+  "status": "active_scope_lock",
+  "stage": "F0_RECOVERY_ARCHITECTURE_SCOPE_LOCK",
+  "scope": "scope_lock_only",
+  "problem_classes": [
+    "baseline drift",
+    "missing manifests",
+    "dirty-tree loops",
+    "filemode drift",
+    "oversized stages",
+    "non-idempotent repair attempts"
+  ],
+  "architecture_targets": [
+    "CURRENT_WORKING_BASELINE_POINTER_v1",
+    "STAGE_DAG_v1",
+    "STAGE_STATE_LEDGER_v1",
+    "TRANSACTIONAL_STAGE_RUNNER_CONTRACT_v1",
+    "EXPORT_PROVENANCE_CONTRACT_v1",
+    "RESTORE_LADDER_CONTRACT_v1",
+    "BLOCKED_RECEIPT_HANDLING_RULE_v1"
+  ],
+  "F_arc_micro_stages": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5",
+    "F6",
+    "F7"
+  ],
+  "next_stage": "F1_CURRENT_WORKING_BASELINE_POINTER_CONTRACT"
+}

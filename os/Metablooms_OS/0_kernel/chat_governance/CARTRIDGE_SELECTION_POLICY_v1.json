@@ -1,0 +1,14 @@
+{
+  "id": "CARTRIDGE_SELECTION_POLICY_v1",
+  "status": "runtime_active",
+  "selection_order": [
+    "safety_policy",
+    "meta_task_detection",
+    "required_artifact_type",
+    "domain",
+    "evidence_requirement",
+    "output_validator_availability"
+  ],
+  "default_route": "governance_planning_or_blocked_receipt",
+  "router_may_not_bypass_kernel": true
+}

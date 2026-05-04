@@ -1,0 +1,55 @@
+{
+  "gap_taxonomy": [
+    "blocking_correctness",
+    "coverage_gap",
+    "enforceability_gap",
+    "source_quality_gap",
+    "fixture_gap",
+    "observability_gap",
+    "security_gap",
+    "adaptability_gap",
+    "regression_gap",
+    "authority_export_gap"
+  ],
+  "linchpin_standard": {
+    "definition": "CDR must be the coding-quality authority that people can inspect, trust, and emulate because it recursively hardens correctness, comprehensibility, debuggability, adaptability, security, observability, test evidence, integration proof, regression resistance, and improvement stop logic.",
+    "not_enough": [
+      "single checklist",
+      "aspirational definition",
+      "unverified gate",
+      "fixtures without negative tests",
+      "source not self-audited",
+      "no high-value stop rule"
+    ],
+    "world_class_conditions": [
+      "explicit pillar coverage",
+      "risk-tiered evidence",
+      "source-level self-audit",
+      "scanner baseline",
+      "interface contracts",
+      "security and observability controls",
+      "recursion ledger",
+      "gap queue",
+      "stop/continue rule",
+      "fresh eval proof"
+    ]
+  },
+  "purpose": "Make CDR self-recursive: CDR audits and improves CDR itself until no bounded high-value improvement remains.",
+  "required_recursive_audit_cycles": [
+    "definition_quality",
+    "code_acceptance",
+    "risk_tiered_tests",
+    "source_level_self_audit",
+    "style_debuggability",
+    "interface_contract",
+    "security_observability",
+    "static_complexity",
+    "scanner_baseline",
+    "scanner_profiles"
+  ],
+  "schema": "CDRLinchpinRecursiveAuditDeepeningSpec_v1",
+  "stage": "CDR_STAGE12_CDR_LINCHPIN_RECURSIVE_AUDIT_DEEPENING",
+  "status": "active",
+  "stop_condition": "Stop only when no open gap has benefit_score>=3, risk_score<=2, scope_cost<=2, and stage_fit=true; otherwise write next-stage handoff.",
+  "timestamp_utc": "20260502T124500Z"
+}

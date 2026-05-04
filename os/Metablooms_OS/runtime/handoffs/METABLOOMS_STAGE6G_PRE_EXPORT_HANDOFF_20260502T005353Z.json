@@ -1,0 +1,9 @@
+{
+  "schema": "METABLOOMS_STAGE_HANDOFF_v1",
+  "from_stage": "STAGE6G_FULL_AUTHORITY_EXPORT_WITH_EXPLICIT_BUDGET_APPROVAL_USING_BTS_NODE_ZIP_PROFILE",
+  "timestamp_utc": "2026-05-02T00:53:53Z",
+  "verdict": "PRE_EXPORT_READY",
+  "resume_root": "/mnt/data/Metablooms_OS",
+  "next_recommended_stage": "RUN_STAGE6G_EXPORT_AND_VERIFY",
+  "bounded_next_scope": "Run BTS-wrapped Node ZIP export, CRC proof, extraction smoke, boot smoke, delivery guard, and final receipt."
+}

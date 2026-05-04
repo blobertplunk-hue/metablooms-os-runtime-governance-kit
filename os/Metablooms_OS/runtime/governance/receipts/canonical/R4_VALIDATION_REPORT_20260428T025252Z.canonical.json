@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-04-28T03:24:02.452023Z",
+  "decision_id": "R4-99cf0dd3cbc56955",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"contract_id\": \"validate_session_state_export_v1\", \"errors\": [\"artifact hash mismatch: runtime/governance/state_exports/SESSION_STATE_EXPORT_LATEST_v1.json\"], \"field_count\": 10, \"validated_path\": \"/mnt/data/Metablooms_OS/runtime/governance/state_exports/SESSION_STATE_EXPORT_LATEST_v1.json\", \"verdict\": \"FAIL\"}",
+  "reasons": [],
+  "record_id": "R4_VALIDATION_REPORT_20260428T025252Z",
+  "record_kind": "stage_receipt",
+  "result": "fail",
+  "source_record": {
+    "path": "receipts/refactor_program/R4_VALIDATION_REPORT_20260428T025252Z.json",
+    "sha256": "99cf0dd3cbc56955c9b39ac5d097fd2a9a2f41ff62282b329eb4a02fd885b1e6",
+    "size_bytes": 332
+  },
+  "span_id": "1d4ce45ce3fcb804",
+  "stage_id": "R4",
+  "summary": "Canonical wrapper for R4_VALIDATION_REPORT_20260428T025252Z.json",
+  "trace_id": "41f760f6f2c7873bc9be027d98da8dc1"
+}

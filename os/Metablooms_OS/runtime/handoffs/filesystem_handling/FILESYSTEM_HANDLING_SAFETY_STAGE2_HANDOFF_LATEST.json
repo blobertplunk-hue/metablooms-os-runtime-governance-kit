@@ -1,0 +1,14 @@
+{
+  "artifact_type": "STAGE_HANDOFF",
+  "created_utc": "20260501T151900Z",
+  "from_stage": "HARD_WIRE_FILESYSTEM_SAFETY_INTO_ALL_EXPORT_AND_EXTRACTION_ROUTES_STAGE_2",
+  "recommended_next_stage": "FILESYSTEM_HANDLING_SAFETY_STAGE_3_ROUTE_COVERAGE_AUDIT_AND_RED_TEAM",
+  "required_next_checks": [
+    "fresh extract using mb extract --replace",
+    "run mb export from extracted root",
+    "run export promotion gate on produced archive",
+    "inject partial markers and verify promotion blocks"
+  ],
+  "schema_version": "FILESYSTEM_HANDLING_SAFETY_STAGE2_HANDOFF_v1",
+  "status": "READY"
+}

@@ -1,0 +1,7 @@
+{
+  "version": "1.0",
+  "stage": "TEST_EXPORT_STAGE",
+  "status": "export_ready",
+  "verdict": "PENDING_EXPORT",
+  "next_correct_command": "NONE"
+}

@@ -1,0 +1,5 @@
+{
+  "expected_decision": "ALLOW",
+  "fixture_id": "auto_patch_fix_export",
+  "raw_prompt": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_8 repair the OS, validate, export a full OS bundle with checksum"
+}

@@ -1,0 +1,12 @@
+{
+  "argv_resolved": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "/mnt/data/Metablooms_OS/runtime/governance/formal_hitl_approval_token_gate_v1.py",
+    "/mnt/data/Metablooms_OS/tests/fixtures/governance/hitl_approval_token_invalid_missing_scope_v1.json"
+  ],
+  "created_utc": "20260502T141841Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision": "ALLOW_SPAWN",
+  "timeout_seconds": 10
+}

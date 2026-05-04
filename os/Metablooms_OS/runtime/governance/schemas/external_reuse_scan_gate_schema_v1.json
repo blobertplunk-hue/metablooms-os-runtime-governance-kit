@@ -1,0 +1,102 @@
+{
+  "schema_id": "external_reuse_scan_gate_schema_v1",
+  "version": "1.0.0",
+  "created_utc": "2026-04-28T03:03:02.154783+00:00",
+  "description": "Evidence-bound external reuse scan gate request/decision contract for MetaBlooms.",
+  "decision_ladder": [
+    "adopt_existing",
+    "adapt_existing",
+    "compose_existing",
+    "build_new_with_evidence",
+    "defer_or_block"
+  ],
+  "request_contract": {
+    "required": [
+      "stage_name",
+      "asset_type",
+      "asset_name",
+      "reuse_decision",
+      "reuse_rationale",
+      "evidence_bundle",
+      "target_artifact"
+    ],
+    "asset_types": [
+      "schema",
+      "validator",
+      "component",
+      "html_engine",
+      "telemetry",
+      "dashboard",
+      "cartridge",
+      "workflow",
+      "runner_phase",
+      "gate",
+      "contract",
+      "registry",
+      "state_exporter"
+    ],
+    "evidence_item_required_fields": [
+      "source_url",
+      "source_title",
+      "retrieved_utc",
+      "claim_supported",
+      "source_type",
+      "query"
+    ],
+    "candidate_required_fields": [
+      "name",
+      "source_url",
+      "fit_summary",
+      "decision_relevance"
+    ]
+  },
+  "enforcement_rules": {
+    "python_launcher": "python3 -S required; normal Python is denied",
+    "evidence_bundle_path": "must exist and must include sha256 matching file contents when provided",
+    "target_artifact": "must exist and must include sha256 matching file contents when provided",
+    "decision_id": "every decision output must include UUID decision_id",
+    "minimum_evidence": {
+      "adopt_existing": {
+        "evidence_items": 1,
+        "candidate_refs": 1
+      },
+      "adapt_existing": {
+        "evidence_items": 2,
+        "candidate_refs": 1,
+        "requires_field": "adaptation_scope"
+      },
+      "compose_existing": {
+        "evidence_items": 2,
+        "candidate_refs": 2,
+        "requires_field": "composition_plan"
+      },
+      "build_new_with_evidence": {
+        "evidence_items": 2,
+        "candidate_refs": 0,
+        "requires_field": "gap_rationale"
+      },
+      "defer_or_block": {
+        "always_deny": true
+      }
+    },
+    "stale_evidence_days": 180,
+    "source_urls_required": true,
+    "raw_web_citations_required": true,
+    "decision_log_required": true,
+    "fail_closed_on_missing_or_malformed_inputs": true
+  },
+  "external_design_basis": [
+    {
+      "source": "Open Policy Agent decision logs",
+      "claim": "Decision logs should include decision_id, input, result, timestamp and context for audit/debugging."
+    },
+    {
+      "source": "SLSA v1.2 verifying artifacts",
+      "claim": "Provenance only helps if inspected against expectations; verification includes artifact/provenance expectations and hashes."
+    },
+    {
+      "source": "JSON Schema annotations",
+      "claim": "Title, description, and default are descriptive annotations, not enforcement."
+    }
+  ]
+}

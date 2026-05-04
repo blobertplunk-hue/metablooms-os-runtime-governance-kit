@@ -1,0 +1,100 @@
+{
+  "checks": [
+    {
+      "check_id": "PAC-001",
+      "decision": "PASS",
+      "defects": [],
+      "evidence": {
+        "inventory_count": 0,
+        "missing_from_registry": [],
+        "registry_count": 0
+      },
+      "name": "controlled_artifact_closure"
+    },
+    {
+      "check_id": "PAC-002",
+      "decision": "PASS",
+      "defects": [],
+      "evidence": {
+        "current_authority": null,
+        "stage_references": [],
+        "stale_references": []
+      },
+      "name": "stale_authority_sweep"
+    },
+    {
+      "check_id": "PAC-003",
+      "decision": "PASS",
+      "defects": [],
+      "evidence": {
+        "pointer_copies_equivalent": true
+      },
+      "name": "pointer_equivalence"
+    },
+    {
+      "check_id": "PAC-004",
+      "decision": "PASS",
+      "defects": [],
+      "evidence": {
+        "actual_supported_shape": null,
+        "declared_shape": null,
+        "validator": null
+      },
+      "name": "validator_cli_contract_map"
+    },
+    {
+      "check_id": "PAC-005",
+      "decision": "PASS",
+      "defects": [],
+      "evidence": {
+        "fresh_chat_replay": "PASS"
+      },
+      "name": "fresh_chat_replay"
+    },
+    {
+      "check_id": "PAC-006",
+      "decision": "DENY",
+      "defects": [
+        "manifest_declares_missing_member"
+      ],
+      "evidence": {
+        "missing_members": [
+          "runtime/traces/proof.json"
+        ],
+        "zip_self_consistency": "PASS"
+      },
+      "name": "export_self_consistency"
+    },
+    {
+      "check_id": "PAC-007",
+      "decision": "PASS",
+      "defects": [],
+      "evidence": {
+        "gate_result_hash_present": false,
+        "promotion_receipt_status": null
+      },
+      "name": "promotion_receipt_binding"
+    }
+  ],
+  "created_at": "2026-05-02T20:01:59.894673+00:00",
+  "decision": "DENY",
+  "declared_fixture_defects": [
+    "manifest_declares_missing_member"
+  ],
+  "defects": [
+    "manifest_declares_missing_member"
+  ],
+  "evidence": {
+    "fixture_schema_version": "metablooms.promotion_authority_coherence.fixture.v1"
+  },
+  "expected_decision": "DENY",
+  "fixture_id": "PAC-FIX-004",
+  "fixture_path": "/mnt/data/Metablooms_OS/runtime/evals/promotion_authority_coherence/fixtures/PAC-FIX-004.json",
+  "gate_id": "PROMOTION_AUTHORITY_COHERENCE_GATE_v1",
+  "matches_expected": true,
+  "mode": "fixture",
+  "result_hash": "d9edc26a1ea382e5778481d8b1e9e03bc92ecb0be3b624b8ce2fe945573f40e7",
+  "schema_version": "metablooms.promotion_authority_coherence_gate.result.v1",
+  "stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN",
+  "title": "deny_export_manifest_declares_missing_member"
+}

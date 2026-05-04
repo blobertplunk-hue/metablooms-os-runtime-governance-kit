@@ -1,0 +1,8 @@
+{
+  "artifact_type": "SECURITY_ARTIFACT_THREAT_MODEL_STAGE3_HANDOFF_v1",
+  "completed_stage": "IMPLEMENT_SECURITY_ARTIFACT_THREAT_MODEL_STAGE_3_HARD_WIRE_GATES_INTO_RUNNER_AND_EXPORT_PROMOTION",
+  "continuation_rule": "Boot from this exported authority, verify sidecar, run one bounded stage, keep security gates enabled before execution and export promotion.",
+  "created_utc": "20260501T123800Z",
+  "next_stage": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_1_OR_SECURITY_STAGE4_RED_TEAM_FIXTURES",
+  "status": "READY_FOR_NEXT_BOUNDED_STAGE"
+}

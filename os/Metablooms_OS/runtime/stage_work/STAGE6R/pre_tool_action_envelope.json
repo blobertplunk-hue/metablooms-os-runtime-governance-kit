@@ -1,0 +1,18 @@
+{
+  "schema_version":"ToolCallEnvelope_v1",
+  "envelope_id":"stage6r_trace_export_adapter_install",
+  "stage_id":"STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS",
+  "action_type":"shell",
+  "tool_name":"python3 -S stdlib bounded installer",
+  "intent":"Install trace export adapter artifacts, fixtures, smoke tests, receipts, handoff, and support/proof bundle only.",
+  "risk_tier":"medium",
+  "requested_at_utc":"2026-05-02T03:50:00Z",
+  "limits":{"timeout_seconds":45,"max_files":100,"max_steps":1,"max_bytes":50000000},
+  "artifacts":{
+    "read_paths":["/mnt/data/Metablooms_OS"],
+    "write_paths":["/mnt/data/Metablooms_OS/0_kernel/registry/observability","/mnt/data/Metablooms_OS/runtime/governance/observability_trace_export_adapter_v1.py","/mnt/data/Metablooms_OS/runtime/receipts","/mnt/data/Metablooms_OS/runtime/handoffs"],
+    "receipt_path":"/mnt/data/Metablooms_OS/runtime/stage_work/STAGE6R/pre_tool_action_decision.json"
+  },
+  "requires_see":true,
+  "see_evidence_refs":["openai_agents_tracing","opentelemetry_traces","langsmith_observability","langgraph_durable_execution","owasp_aivss_tool_monitoring"]
+}

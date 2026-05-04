@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "created_at": 1777061460.1167684,
+  "stage": "F0_RECOVERY_ARCHITECTURE_SCOPE_LOCK",
+  "status": "complete",
+  "outputs": {
+    "scope_doc": "/mnt/data/Metablooms_OS_refined/0_kernel/docs/F0_RECOVERY_ARCHITECTURE_SCOPE_LOCK_v1.md",
+    "scope_contract": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F0_RECOVERY_ARCHITECTURE_SCOPE_CONTRACT_v1.json",
+    "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F0_RECOVERY_ARCHITECTURE_SCOPE_LOCK_RECEIPT_v1.json",
+    "handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F0_TO_F1_HANDOFF_v1.json"
+  },
+  "verdict": "PASS",
+  "next_improvement_task": "F1 \u2014 Current Working Baseline Pointer Contract",
+  "why_next": "Baseline drift caused later work loss.",
+  "remaining_work": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5",
+    "F6",
+    "F7",
+    "Return to E4A\u2013E5D"
+  ],
+  "progress_estimate": {
+    "stages_remaining_before_return_to_E4": 7
+  },
+  "next_correct_command": "EXECUTE F1 \u2014 CURRENT WORKING BASELINE POINTER CONTRACT"
+}

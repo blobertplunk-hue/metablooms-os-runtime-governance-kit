@@ -1,0 +1,90 @@
+[
+  {
+    "cmd": [
+      "python3",
+      "-S",
+      "tests/evals/cdr/test_cdr_adaptability_interface_contract_gate_v1.py"
+    ],
+    "path": "tests/evals/cdr/test_cdr_adaptability_interface_contract_gate_v1.py",
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "PASS\n"
+  },
+  {
+    "cmd": [
+      "python3",
+      "-S",
+      "tests/evals/cdr/test_cdr_code_acceptance_gate_v1.py"
+    ],
+    "path": "tests/evals/cdr/test_cdr_code_acceptance_gate_v1.py",
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "test_cdr_code_acceptance_gate_v1.py: PASS\n"
+  },
+  {
+    "cmd": [
+      "python3",
+      "-S",
+      "tests/evals/cdr/test_cdr_lint_security_scanner_gate_v1.py"
+    ],
+    "path": "tests/evals/cdr/test_cdr_lint_security_scanner_gate_v1.py",
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\n  \"invalid\": {\n    \"decision\": \"DENY\",\n    \"denied_findings\": [\n      \"fixture:dynamic_exec\"\n    ],\n    \"reasons\": [\n      \"zero_tolerance_finding:dynamic_exec\"\n    ],\n    \"risk_tier\": \"CRITICAL\",\n    \"schema\": \"CDRLintSecurityScannerGateResult_v1\",\n    \"summary\": {\n      \"finding_count\": 1,\n      \"max_complexity\": 0,\n      \"todo_count\": 0\n    }\n  },\n  \"valid\": {\n    \"decision\": \"ALLOW\",\n    \"denied_findings\": [],\n    \"reasons\": [],\n    \"risk_tier\": \"HIGH\",\n    \"schema\": \"CDRLintSecurityScannerGateResult_v1\",\n    \"summary\": {\n      \"finding_count\": 0,\n      \"max_complexity\": 0,\n      \"todo_count\": 0\n    }\n  },\n  \"verdict\": \"PASS\"\n}\n"
+  },
+  {
+    "cmd": [
+      "python3",
+      "-S",
+      "tests/evals/cdr/test_cdr_risk_tiered_test_matrix_gate_v1.py"
+    ],
+    "path": "tests/evals/cdr/test_cdr_risk_tiered_test_matrix_gate_v1.py",
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "test_cdr_risk_tiered_test_matrix_gate_v1.py: PASS\n"
+  },
+  {
+    "cmd": [
+      "python3",
+      "-S",
+      "tests/evals/cdr/test_cdr_security_observability_gate_v1.py"
+    ],
+    "path": "tests/evals/cdr/test_cdr_security_observability_gate_v1.py",
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "test_cdr_security_observability_gate_v1.py: PASS\n"
+  },
+  {
+    "cmd": [
+      "python3",
+      "-S",
+      "tests/evals/cdr/test_cdr_source_level_self_audit_gate_v1.py"
+    ],
+    "path": "tests/evals/cdr/test_cdr_source_level_self_audit_gate_v1.py",
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "test_cdr_source_level_self_audit_gate_v1.py: PASS\n"
+  },
+  {
+    "cmd": [
+      "python3",
+      "-S",
+      "tests/evals/cdr/test_cdr_source_style_debuggability_gate_v1.py"
+    ],
+    "path": "tests/evals/cdr/test_cdr_source_style_debuggability_gate_v1.py",
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "test_cdr_source_style_debuggability_gate_v1.py: PASS\n"
+  },
+  {
+    "cmd": [
+      "python3",
+      "-S",
+      "tests/evals/cdr/test_cdr_static_analysis_complexity_gate_v1.py"
+    ],
+    "path": "tests/evals/cdr/test_cdr_static_analysis_complexity_gate_v1.py",
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "test_cdr_static_analysis_complexity_gate_v1.py: PASS\n"
+  }
+]

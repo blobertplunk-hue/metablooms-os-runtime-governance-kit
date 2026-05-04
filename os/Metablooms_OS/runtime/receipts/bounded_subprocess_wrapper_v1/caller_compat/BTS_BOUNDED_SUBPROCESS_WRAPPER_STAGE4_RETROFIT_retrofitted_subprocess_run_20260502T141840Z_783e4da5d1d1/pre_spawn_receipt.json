@@ -1,0 +1,14 @@
+{
+  "argv_resolved": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "/mnt/data/Metablooms_OS/runtime/governance/observability_trace_export_adapter_v1.py",
+    "/mnt/data/Metablooms_OS/tests/fixtures/observability/stage6r_trace_export_allow_v1.json",
+    "opentelemetry_span_json",
+    "/mnt/data/Metablooms_OS/runtime/evals/observability/stage6r/opentelemetry_span_json_allow.json"
+  ],
+  "created_utc": "20260502T141840Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision": "ALLOW_SPAWN",
+  "timeout_seconds": 10
+}

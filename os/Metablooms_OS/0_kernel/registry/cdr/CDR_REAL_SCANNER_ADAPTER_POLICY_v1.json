@@ -1,0 +1,28 @@
+{
+  "decision": "DO_NOT_EXPORT_AUTHORITY_YET__INSTALL_PROFILES_ONLY",
+  "rules": [
+    {
+      "id": "SCAN-001",
+      "rule": "Real scanners are additive upgrades, not replacements for deterministic stdlib fallback baselines."
+    },
+    {
+      "id": "SCAN-002",
+      "rule": "Network/package-manager install is forbidden unless governed install profile, BTS, pre-action, and HITL/budget gates allow it."
+    },
+    {
+      "id": "SCAN-003",
+      "rule": "Scanner unavailable is WARN if fallback baseline exists; BLOCK if no fallback baseline exists."
+    },
+    {
+      "id": "SCAN-004",
+      "rule": "Semgrep auto/config registry use must record metrics/privacy mode and may require no-network or metrics-off profile in restricted contexts."
+    },
+    {
+      "id": "SCAN-005",
+      "rule": "Any zero-tolerance scanner finding blocks CDR acceptance."
+    }
+  ],
+  "schema": "CDRRealScannerAdapterPolicy_v1",
+  "stage": "CDR_STAGE10_REAL_SCANNER_ADAPTER_INSTALL_PROFILES_OR_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE9",
+  "why": "CDR Stage 2-7 includes reconstructed artifacts and Stage 8-10 are support-only; a new authority export should happen after scanner adapter profiles and future real scanner smoke are stable or explicitly approved."
+}

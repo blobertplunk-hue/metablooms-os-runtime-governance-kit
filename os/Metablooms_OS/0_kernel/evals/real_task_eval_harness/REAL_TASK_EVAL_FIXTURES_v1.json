@@ -1,0 +1,56 @@
+{
+  "fixtures": [
+    {
+      "expected": "PASS",
+      "id": "HTML_STUDENT_ACTIVITY_DESIGN_SYSTEM_PROXY",
+      "input": {
+        "html": "<!doctype html><html lang=\"en\"><head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><style>:root{--mb-space-1:4px;--mb-focus-ring:3px solid currentColor}.tts span[aria-hidden=\"true\"]{}</style></head><body><main><section class=\"mb-card\" aria-live=\"polite\"><button class=\"tts\"><span aria-hidden=\"true\">\ud83d\udd0a</span><span>Read directions</span></button></section></main></body></html>"
+      },
+      "type": "educational_html"
+    },
+    {
+      "expected": "PASS",
+      "id": "BLOOKET_CSV_TEMPLATE_PROXY",
+      "input": {
+        "csv": "Question,Answer 1,Answer 2,Answer 3,Answer 4,Correct Answer\n,,,,,\nBuild the word with the prefix re-,redo,undo,preheat,misread,A\nBuild the word with the suffix -ful,careful,careless,replay,prefix,B"
+      },
+      "type": "blooket_csv"
+    },
+    {
+      "expected_paths": {
+        "fixture_factory": "0_kernel/lessons/lesson_fixture_factory_v1.py",
+        "queue": "0_kernel/lessons/LESSON_PROMOTION_QUEUE_v1.json"
+      },
+      "id": "LESSON_PROMOTION_QUEUE_PROXY",
+      "type": "lesson_workflow"
+    },
+    {
+      "expected": "PASS",
+      "id": "RESEARCH_WORKFLOW_SEE_GUARD_PROXY",
+      "input": {
+        "blocks_provisional_claims": true,
+        "requires_citations": true,
+        "see_requires_web_run": true
+      },
+      "type": "research_workflow"
+    },
+    {
+      "expected_paths": {
+        "bundle_label_contract": "0_kernel/registry/world_class_gap_plan/BOOTABLE_BUNDLE_LABELING_CONTRACT_v1.json",
+        "download_manifest": "runtime/state/LATEST_BOOT_HANDOFF.json"
+      },
+      "id": "ARTIFACT_EXPORT_LINK_PRECHECK_PROXY",
+      "type": "artifact_export"
+    },
+    {
+      "expected_paths": {
+        "prompt_contract": "0_kernel/registry/world_class_gap_plan/NEXT_STAGE_COPY_PROMPT_EXIT_GATE_CONTRACT_v1.json",
+        "prompt_gate": "0_kernel/validators/next_stage_copy_prompt_exit_gate_v1.py"
+      },
+      "id": "STAGE_EXIT_CONTINUATION_PROMPT_GATE_PROXY",
+      "type": "stage_exit_prompt_gate"
+    }
+  ],
+  "purpose": "Bounded real-task proxy fixtures for MetaBlooms task quality enforcement.",
+  "schema_version": "v1"
+}

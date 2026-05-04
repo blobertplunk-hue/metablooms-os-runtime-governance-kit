@@ -1,0 +1,48 @@
+{
+  "artifact_type": "CDR_CRITICAL_GATE_RESULTS",
+  "created_utc": "20260502T144842Z",
+  "gates": [
+    {
+      "gate": "Runtime root verified",
+      "result": "PASS"
+    },
+    {
+      "gate": "Atomic JSON Stage5 handoff loaded",
+      "result": "PASS"
+    },
+    {
+      "gate": "SEE evidence bound",
+      "result": "PASS"
+    },
+    {
+      "gate": "Append-stream inventory captured",
+      "result": "PASS"
+    },
+    {
+      "gate": "ADS written",
+      "result": "PASS"
+    },
+    {
+      "gate": "Contract written",
+      "result": "PASS"
+    },
+    {
+      "gate": "Input schema written",
+      "result": "PASS"
+    },
+    {
+      "gate": "Output schema written",
+      "result": "PASS"
+    },
+    {
+      "gate": "Failure schema written",
+      "result": "PASS"
+    },
+    {
+      "gate": "Fixture matrix written",
+      "result": "PASS"
+    }
+  ],
+  "stage": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT",
+  "verdict": "PASS"
+}

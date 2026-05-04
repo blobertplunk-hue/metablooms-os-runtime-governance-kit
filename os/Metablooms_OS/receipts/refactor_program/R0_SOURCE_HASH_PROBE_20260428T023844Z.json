@@ -1,0 +1,11 @@
+{
+  "source_zip": "/mnt/data/METABLOOMS_FULL_OS_v3_3_PHASE1_PHASE2_MERGED_REPAIRED.zip",
+  "observed_sha256": "7c4d8a128b34d1bf42486a212aa22633386b0c5a785730b0e7238642ac7d0df8",
+  "sidecar_status": "match",
+  "sidecar_sha256": "7c4d8a128b34d1bf42486a212aa22633386b0c5a785730b0e7238642ac7d0df8",
+  "status": "verified",
+  "required_targets_total": 13,
+  "required_targets_present": 13,
+  "required_targets_missing": [],
+  "zip_entry_count": 1068
+}

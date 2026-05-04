@@ -1,0 +1,31 @@
+{
+  "created_utc": "2026-04-30T22:18:07Z",
+  "packet_id": "SEE_PROMPT_GOVERNANCE_STAGE9_PATCH_REPLAY_RANKER_v1",
+  "sources": [
+    {
+      "claim": "Reusable prompts should be explicit, versioned/evaluable assets separated from code where possible.",
+      "ref": "turn661757search0",
+      "source": "OpenAI prompt engineering / reusable prompts documentation"
+    },
+    {
+      "claim": "Evaluation is required because generative outputs vary and conventional deterministic software tests are insufficient.",
+      "ref": "turn661757search4",
+      "source": "OpenAI evaluation best practices"
+    },
+    {
+      "claim": "Prompt optimization is a feedback loop using datasets/evals to improve prompts automatically.",
+      "refs": [
+        "turn661757search8",
+        "turn661757search12"
+      ],
+      "source": "OpenAI prompt optimizer and model optimization docs"
+    }
+  ],
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_9_PROMPT_PATCH_REPLAY_AND_QUALITY_RANKER",
+  "stage9_design_implications": [
+    "patches need replayable before/after evidence",
+    "candidate patches must be ranked before promotion",
+    "promotion must be fail-closed when quality score does not exceed baseline",
+    "ledger entries must retain rejected candidates for learning"
+  ]
+}

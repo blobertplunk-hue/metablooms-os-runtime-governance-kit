@@ -1,0 +1,63 @@
+{
+  "artifact_type": "STAGE4_TARGETED_SMOKE_RESULTS_v1",
+  "created_utc": "20260502T140635Z",
+  "results": [
+    {
+      "name": "adapter_echo",
+      "passed": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "stage4-ok\n"
+    },
+    {
+      "name": "forbidden_unzip_tqq_denied",
+      "passed": true,
+      "returncode": 126,
+      "stderr": "METABLOOMS_BOUNDED_SUBPROCESS_RESULT=DENY_FORBIDDEN_METHOD FAILURE_CLASS=FORBIDDEN_METHOD DECISION_PACKET=/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/STAGE4_SMOKE_stage4_forbidden_unzip_smoke_20260502T140621Z_69e1a0f1f2f7/decision_packet.json\n"
+    },
+    {
+      "name": "timeout_enforced",
+      "passed": true,
+      "returncode": 124,
+      "stderr": "METABLOOMS_BOUNDED_SUBPROCESS_RESULT=TIMEOUT_TERMINATED FAILURE_CLASS=TIMEOUT DECISION_PACKET=/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/STAGE4_SMOKE_stage4_timeout_smoke_20260502T140621Z_8d406bde70cc/decision_packet.json\n"
+    },
+    {
+      "name": "policy_gate_wrapped",
+      "passed": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "wrapper internals; non-live snapshots/tests/vendor are warnings for later stages.\",\n  \"root\": \"/mnt/data/Metablooms_OS\",\n  \"summary_by_zone\": {\n    \"bounded_wrapper_internal_exempt\": 1,\n    \"snapshot_vendor_legacy_or_artifact_exempt\": 74,\n    \"test_eval_fixture_warn\": 19\n  },\n  \"verdict\": \"PASS\"\n}\n\n"
+    },
+    {
+      "name": "wrapped_py_compile_0_kernel/cartridges/inline_project_tracker/TRACKER_SMOKE_TEST_v1.py",
+      "passed": true,
+      "returncode": 0,
+      "stderr_tail": ""
+    },
+    {
+      "name": "wrapped_py_compile_0_kernel/scripts/agent_harness_diff_review_v1.py",
+      "passed": true,
+      "returncode": 0,
+      "stderr_tail": ""
+    },
+    {
+      "name": "wrapped_py_compile_0_kernel/scripts/artifact_replay_proof_v2.py",
+      "passed": true,
+      "returncode": 0,
+      "stderr_tail": ""
+    },
+    {
+      "name": "wrapped_py_compile_0_kernel/scripts/cartridge_executor_v1.py",
+      "passed": true,
+      "returncode": 0,
+      "stderr_tail": ""
+    },
+    {
+      "name": "wrapped_py_compile_0_kernel/scripts/ensure_libcst_available_v1.py",
+      "passed": true,
+      "returncode": 0,
+      "stderr_tail": ""
+    }
+  ],
+  "verdict": "PASS"
+}

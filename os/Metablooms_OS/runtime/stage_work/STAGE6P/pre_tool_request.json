@@ -1,0 +1,33 @@
+{
+  "task_class": "governed_execution",
+  "task_domain": "filesystem",
+  "stage_name": "STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM",
+  "request_text": "Install bounded durable checkpoint/replay minimum artifacts with SEE/CE evidence, tests, receipt, handoff, and support proof bundle.",
+  "web_run_sources": [
+    "https://docs.langchain.com/oss/python/langgraph/durable-execution",
+    "https://docs.langchain.com/oss/python/langgraph/interrupts",
+    "https://openai.github.io/openai-agents-python/human_in_the_loop/",
+    "https://docs.temporal.io/workflows"
+  ],
+  "SEE_summary": "Durable execution requires persisted per-step state; interrupts require checkpointers and JSON-serializable payloads; HITL resume needs serializable run state; replay should rely on event/checkpoint histories rather than chat claims.",
+  "CE_decision": "Implement a minimal artifact-backed checkpoint/replay gate with thread_id, checkpoint_id, hash-chain parent binding, interrupt/resume schema, atomic writes, and fail-closed validation.",
+  "explicit_user_authorized_python3_S": true,
+  "pre_tool_contract": {
+    "lane": "python3_S",
+    "single_purpose": true,
+    "broad_recursive_scan": false,
+    "zip_build": false,
+    "full_export": false,
+    "timeout_seconds": 25,
+    "kill_after_seconds": 5,
+    "max_tool_calls": 2,
+    "max_steps": 1,
+    "max_files": 60,
+    "max_bytes": 5000000,
+    "receipt_path": "runtime/receipts/METABLOOMS_STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM_RECEIPT_20260502T035000Z.json",
+    "fallback_lane": "shell_coreutils",
+    "all_in_one": false,
+    "retry_same_lane_count": 0,
+    "requires_timeout_wrapper": true
+  }
+}

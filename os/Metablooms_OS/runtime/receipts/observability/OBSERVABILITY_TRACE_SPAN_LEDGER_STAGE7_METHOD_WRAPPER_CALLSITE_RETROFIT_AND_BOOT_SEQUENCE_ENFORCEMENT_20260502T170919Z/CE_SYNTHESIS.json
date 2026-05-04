@@ -1,0 +1,50 @@
+{
+  "artifact_type": "MB_CE_SYNTHESIS.v1",
+  "created_utc": "20260502T170919Z",
+  "decision": "retrofit active boot docs and authority pointers to wrapper-first smoke execution; keep underlying runtime_starter_smoke_v1.py as required implementation dependency.",
+  "internal_scan": {
+    "0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md": {
+      "direct_run_phrase": true,
+      "exists": true,
+      "sha256": "90c0ef2fd7d3734579568b51f5df7e3b699b83904f6f9420a89f15f588c94d91",
+      "wrapper_mentions": 1
+    },
+    "0_kernel/registry/BOOT_REQUIRED_GATES_v1.json": {
+      "direct_run_phrase": false,
+      "exists": true,
+      "sha256": "e211b014b0bc4a30277eff531bf2623e3149b96abe3981e3f96aa85969faf9e3",
+      "wrapper_mentions": 0
+    },
+    "0_kernel/registry/RUNTIME_STARTER_SMOKE_CONTRACT_v1.json": {
+      "direct_run_phrase": false,
+      "exists": true,
+      "sha256": "12383fb4c246d7b5b1638f6591838266559a2cae954b08ef397e1c65fd8a3a53",
+      "wrapper_mentions": 0
+    },
+    "0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json": {
+      "direct_run_phrase": true,
+      "exists": true,
+      "sha256": "788270c82af869b115dfa4d372a04c995392250b6b26fe0b32479b82958f836f",
+      "wrapper_mentions": 2
+    },
+    "CURRENT_FULL_AUTHORITY_POINTER_v1.json": {
+      "direct_run_phrase": true,
+      "exists": true,
+      "sha256": "788270c82af869b115dfa4d372a04c995392250b6b26fe0b32479b82958f836f",
+      "wrapper_mentions": 2
+    },
+    "NEW_CHAT_START_HERE.md": {
+      "direct_run_phrase": true,
+      "exists": true,
+      "sha256": "bf694c689e889f69bf25dd06331ddf2786bc0ab313aee2938fd89f4f60c67f14",
+      "wrapper_mentions": 0
+    },
+    "runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json": {
+      "direct_run_phrase": true,
+      "exists": true,
+      "sha256": "788270c82af869b115dfa4d372a04c995392250b6b26fe0b32479b82958f836f",
+      "wrapper_mentions": 2
+    }
+  },
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE7_METHOD_WRAPPER_CALLSITE_RETROFIT_AND_BOOT_SEQUENCE_ENFORCEMENT"
+}

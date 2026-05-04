@@ -1,0 +1,445 @@
+{
+  "$id": "metablooms://schemas/visual_presentation_quality_declaration_schema_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "artifact_type": {
+      "enum": [
+        "html_activity",
+        "dashboard",
+        "landing_page",
+        "teacher_tool",
+        "student_tool",
+        "operator_tracker",
+        "other_visual_artifact"
+      ],
+      "type": "string"
+    },
+    "verification": {
+      "additionalProperties": false,
+      "properties": {
+        "human_review_prompts": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 3,
+          "type": "array"
+        },
+        "promotion_blockers": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 5,
+          "type": "array"
+        },
+        "render_checks": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 3,
+          "type": "array"
+        },
+        "static_checks": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 4,
+          "type": "array"
+        }
+      },
+      "required": [
+        "static_checks",
+        "render_checks",
+        "human_review_prompts",
+        "promotion_blockers"
+      ],
+      "type": "object"
+    },
+    "visual_presentation": {
+      "additionalProperties": false,
+      "properties": {
+        "accessibility": {
+          "additionalProperties": false,
+          "properties": {
+            "color_independent_meaning": {
+              "type": "boolean"
+            },
+            "drag_alternative": {
+              "type": "boolean"
+            },
+            "focus_visibility": {
+              "minLength": 5,
+              "type": "string"
+            },
+            "target_size": {
+              "minLength": 5,
+              "type": "string"
+            },
+            "wcag_target": {
+              "enum": [
+                "WCAG_2_2_AA",
+                "WCAG_2_2_AA_PLUS_SELECTED_AAA"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "wcag_target",
+            "focus_visibility",
+            "target_size",
+            "drag_alternative",
+            "color_independent_meaning"
+          ],
+          "type": "object"
+        },
+        "anti_patterns_blocked": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 4,
+          "type": "array"
+        },
+        "audience_profile": {
+          "additionalProperties": false,
+          "properties": {
+            "age_band_or_role": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "environment": {
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "primary_users": {
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "primary_users",
+            "age_band_or_role",
+            "environment"
+          ],
+          "type": "object"
+        },
+        "color_system": {
+          "additionalProperties": false,
+          "properties": {
+            "contrast_rule": {
+              "minLength": 5,
+              "type": "string"
+            },
+            "mode": {
+              "enum": [
+                "light",
+                "dark",
+                "adaptive",
+                "brand"
+              ],
+              "type": "string"
+            },
+            "palette_strategy": {
+              "minLength": 5,
+              "type": "string"
+            },
+            "semantic_colors": {
+              "items": {
+                "type": "string"
+              },
+              "minItems": 3,
+              "type": "array"
+            }
+          },
+          "required": [
+            "mode",
+            "palette_strategy",
+            "contrast_rule",
+            "semantic_colors"
+          ],
+          "type": "object"
+        },
+        "design_intent": {
+          "additionalProperties": false,
+          "properties": {
+            "credibility_target": {
+              "minLength": 5,
+              "type": "string"
+            },
+            "desired_impression": {
+              "minLength": 5,
+              "type": "string"
+            },
+            "engagement_strategy": {
+              "minLength": 5,
+              "type": "string"
+            },
+            "functional_mood": {
+              "minLength": 3,
+              "type": "string"
+            }
+          },
+          "required": [
+            "desired_impression",
+            "functional_mood",
+            "credibility_target",
+            "engagement_strategy"
+          ],
+          "type": "object"
+        },
+        "design_system": {
+          "additionalProperties": false,
+          "properties": {
+            "basis": {
+              "minLength": 3,
+              "type": "string"
+            },
+            "component_rules": {
+              "items": {
+                "type": "string"
+              },
+              "minItems": 3,
+              "type": "array"
+            },
+            "tokens_required": {
+              "items": {
+                "type": "string"
+              },
+              "minItems": 5,
+              "type": "array"
+            }
+          },
+          "required": [
+            "basis",
+            "tokens_required",
+            "component_rules"
+          ],
+          "type": "object"
+        },
+        "interaction_feedback": {
+          "additionalProperties": false,
+          "properties": {
+            "audio_visual_sync": {
+              "minLength": 5,
+              "type": "string"
+            },
+            "correct_incorrect_states": {
+              "minLength": 5,
+              "type": "string"
+            },
+            "hover_focus_active": {
+              "minLength": 5,
+              "type": "string"
+            },
+            "progress_state": {
+              "minLength": 5,
+              "type": "string"
+            }
+          },
+          "required": [
+            "hover_focus_active",
+            "correct_incorrect_states",
+            "progress_state",
+            "audio_visual_sync"
+          ],
+          "type": "object"
+        },
+        "layout": {
+          "additionalProperties": false,
+          "properties": {
+            "density": {
+              "enum": [
+                "low",
+                "medium",
+                "high",
+                "adaptive"
+              ],
+              "type": "string"
+            },
+            "empty_state_rule": {
+              "minLength": 5,
+              "type": "string"
+            },
+            "structure": {
+              "minLength": 5,
+              "type": "string"
+            },
+            "visual_hierarchy": {
+              "minLength": 5,
+              "type": "string"
+            }
+          },
+          "required": [
+            "structure",
+            "density",
+            "visual_hierarchy",
+            "empty_state_rule"
+          ],
+          "type": "object"
+        },
+        "mobile_first": {
+          "additionalProperties": false,
+          "properties": {
+            "breakpoints": {
+              "items": {
+                "type": "string"
+              },
+              "minItems": 2,
+              "type": "array"
+            },
+            "confirmed": {
+              "type": "boolean"
+            },
+            "thumb_reach_rule": {
+              "minLength": 5,
+              "type": "string"
+            }
+          },
+          "required": [
+            "confirmed",
+            "breakpoints",
+            "thumb_reach_rule"
+          ],
+          "type": "object"
+        },
+        "motion": {
+          "additionalProperties": false,
+          "properties": {
+            "level": {
+              "enum": [
+                "none",
+                "subtle",
+                "expressive",
+                "aurora_hero_only"
+              ],
+              "type": "string"
+            },
+            "purpose": {
+              "minLength": 5,
+              "type": "string"
+            },
+            "reduced_motion_support": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "level",
+            "purpose",
+            "reduced_motion_support"
+          ],
+          "type": "object"
+        },
+        "platform_constraints": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "purpose_profile": {
+          "enum": [
+            "3_5_student_learning_activity",
+            "teacher_dashboard",
+            "operator_governance_surface",
+            "parent_facing_showcase",
+            "landing_page",
+            "assessment_simulation",
+            "reference_tool",
+            "other"
+          ],
+          "type": "string"
+        },
+        "teacher_professional_presentation": {
+          "additionalProperties": false,
+          "properties": {
+            "dashboard_readability": {
+              "minLength": 8,
+              "type": "string"
+            },
+            "professional_language": {
+              "minLength": 8,
+              "type": "string"
+            },
+            "shareable_output_quality": {
+              "minLength": 8,
+              "type": "string"
+            },
+            "teacher_mode_separation": {
+              "minLength": 8,
+              "type": "string"
+            },
+            "teacher_public_credibility": {
+              "minLength": 8,
+              "type": "string"
+            }
+          },
+          "required": [
+            "teacher_public_credibility",
+            "teacher_mode_separation",
+            "shareable_output_quality",
+            "dashboard_readability",
+            "professional_language"
+          ],
+          "type": "object"
+        },
+        "typography": {
+          "additionalProperties": false,
+          "properties": {
+            "font_strategy": {
+              "minLength": 3,
+              "type": "string"
+            },
+            "readability_rule": {
+              "minLength": 5,
+              "type": "string"
+            },
+            "scale": {
+              "minLength": 3,
+              "type": "string"
+            }
+          },
+          "required": [
+            "font_strategy",
+            "scale",
+            "readability_rule"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "purpose_profile",
+        "audience_profile",
+        "design_intent",
+        "design_system",
+        "color_system",
+        "typography",
+        "layout",
+        "motion",
+        "interaction_feedback",
+        "accessibility",
+        "mobile_first",
+        "platform_constraints",
+        "anti_patterns_blocked",
+        "teacher_professional_presentation"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "artifact_id",
+    "artifact_type",
+    "visual_presentation",
+    "verification"
+  ],
+  "title": "MetaBlooms Visual Presentation Quality Declaration",
+  "type": "object"
+}

@@ -1,0 +1,13 @@
+{
+  "artifact_type": "UX_OPERATOR_SURFACE_STAGE_3_HANDOFF_v1",
+  "completed_stage": "IMPLEMENT_UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE_STAGE_3_STAGE_RUNNER_CONTRACT_AND_TRACKER_PREVIEW",
+  "continuation_rule": "Run one bounded governed stage from the exported authority; do not trust chat-only state.",
+  "created_utc": "20260501T111500Z",
+  "next_stage": "IMPLEMENT_UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE_STAGE_4_REAL_CARTRIDGE_EXECUTOR_WIRING_OR_OBSERVABILITY_TRACE_LEDGER",
+  "operator_commands": [
+    "mb tracker --json",
+    "mb run-stage NEXT_STAGE --dry-run --json",
+    "mb run-stage NEXT_STAGE --execute --json"
+  ],
+  "status": "READY_FOR_NEXT_BOUNDED_STAGE"
+}

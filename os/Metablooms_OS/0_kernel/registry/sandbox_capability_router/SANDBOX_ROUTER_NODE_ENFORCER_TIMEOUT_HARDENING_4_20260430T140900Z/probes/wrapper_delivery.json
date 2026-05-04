@@ -1,0 +1,25 @@
+{
+  "allowed": true,
+  "decision": "ALLOW",
+  "evaluator": "python3-S-policy-evaluator",
+  "fallback": [
+    "python3_S_zipfile"
+  ],
+  "method": "root_zip_sha256",
+  "preferred": [
+    "shell_coreutils",
+    "zip",
+    "sha256sum",
+    "root_zip_sha256",
+    "root_level_zip_plus_sha256"
+  ],
+  "reason": "route_allowed",
+  "required_gates": [
+    "root_level_mnt_data_zip",
+    "sha256_sidecar",
+    "zip_integrity_test",
+    "manifest_included"
+  ],
+  "router_path": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_CAPABILITY_ROUTER_CARTRIDGE_LATEST.json",
+  "task": "downloadable_artifact_delivery"
+}

@@ -1,0 +1,19 @@
+{
+  "agent_harness_stage2": "parallel workpackets are planning artifacts with scoped writes; diff review is required before export promotion; no unmanaged autonomous agents are launched",
+  "artifact_type": "MB_CLI_COMMAND_SPEC_v19",
+  "created_utc": "20260501T145002Z",
+  "new_commands": [
+    {
+      "command": "mb harness --parallel-plan --plan --stage <STAGE> --json",
+      "purpose": "write deterministic parallel workpacket plan"
+    },
+    {
+      "command": "mb harness --diff-review --stage <STAGE> --json",
+      "purpose": "run bounded diff review over the latest harness plan"
+    },
+    {
+      "command": "mb harness --check --json",
+      "purpose": "validate Stage 2 harness artifacts and smoke commands"
+    }
+  ]
+}

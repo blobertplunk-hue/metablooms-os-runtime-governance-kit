@@ -1,0 +1,28 @@
+{
+  "artifact_type": "PROMOTION_AUTHORITY_COHERENCE_FULL_EXPORT_LOCK_v1",
+  "canonical_working_root": "/mnt/data/Metablooms_OS",
+  "created_utc": "2026-05-02T21:27:00.763917+00:00",
+  "export_sha256": "external_sidecar_required_after_zip_creation",
+  "export_sha256_sidecar": "/mnt/data/METABLOOMS_OS_PROMOTION_AUTHORITY_COHERENCE_GATE_PAC7_FULL_AUTHORITY_LOCKED_20260502T212700Z.zip.sha256",
+  "export_zip": "/mnt/data/METABLOOMS_OS_PROMOTION_AUTHORITY_COHERENCE_GATE_PAC7_FULL_AUTHORITY_LOCKED_20260502T212700Z.zip",
+  "external_evidence_sources": {
+    "NIST_SSDF_800_218": "https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-218.pdf",
+    "OpenSSF_Scorecard": "https://openssf.org/projects/scorecard/",
+    "SLSA_verifying_artifacts": "https://slsa.dev/spec/v1.0/verifying-artifacts"
+  },
+  "external_sidecar_required": true,
+  "promotion_gate_required": "PROMOTION_AUTHORITY_COHERENCE_GATE_v1",
+  "required_replay_gates": [
+    "PAC_current_scan",
+    "governance_scatter_prevention",
+    "fresh_chat_boot_rehearsal",
+    "new_chat_start_contract_validator",
+    "runtime_starter_smoke_wrapper",
+    "zip_structural_test",
+    "fresh_extraction_replay"
+  ],
+  "stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_PAC7_FULL_EXPORT_AND_NEW_CHAT_REPLAY_LOCK",
+  "stage_sequence": 7,
+  "verdict": "PRE_ZIP_LOCK_PENDING_EXTERNAL_SHA256_SIDECAR",
+  "zip_hash_circularity_policy": "final archive hash is bound externally by sidecar and FINAL_LOCK.json"
+}

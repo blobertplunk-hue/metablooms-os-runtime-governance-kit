@@ -1,0 +1,104 @@
+{
+  "version": "1.0",
+  "created_at": 1777064295.65276,
+  "contract_id": "G0_EXPORT_RECOVERY_VALIDATOR_SCOPE_CONTRACT_v1",
+  "status": "active_scope_lock",
+  "stage": "G0_EXPORT_RECOVERY_VALIDATOR_SCOPE_LOCK",
+  "scope": "scope_lock_only",
+  "purpose": "Lock the scope for an executable validator that prevents false recovery-proven export claims.",
+  "seed_inputs": {
+    "audit_lessons": [
+      "missing ledger-declared outputs from ZIP",
+      "final proof/lock produced after ZIP",
+      "placeholder SHA/size metadata",
+      "unlabeled git head divergence",
+      "receipt inside ZIP not final PASS",
+      "DAG/ledger ID mismatch risk",
+      "conflicting boot-critical pointers"
+    ],
+    "research_receipt": "/mnt/data/PROACTIVE_GOVERNANCE_RESEARCH_SYNTHESIS_RECEIPT_v1.json",
+    "ce_packet": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G0_EXPORT_RECOVERY_VALIDATOR_CE_PACKET_v1.json",
+    "see_packet": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G0_EXPORT_RECOVERY_VALIDATOR_SEE_PACKET_v1.json"
+  },
+  "validator_target": "EXPORT_RECOVERY_PROVEN_VALIDATOR_v1",
+  "required_gate_families": [
+    "zip_content_ledger_consistency",
+    "final_receipt_verdict",
+    "placeholder_metadata",
+    "git_head_lifecycle",
+    "sidecar_binding",
+    "deterministic_zip_policy",
+    "dag_ledger_mapping",
+    "pointer_conflict_resolution",
+    "transactional_state_order",
+    "policy_as_code_decision"
+  ],
+  "G_arc_micro_stages": [
+    {
+      "id": "G0",
+      "name": "Export Recovery Validator Scope Lock",
+      "allowed_work": [
+        "scope_lock"
+      ]
+    },
+    {
+      "id": "G1",
+      "name": "Validator Schema + Contract",
+      "allowed_work": [
+        "spec"
+      ]
+    },
+    {
+      "id": "G2",
+      "name": "Validator Implementation",
+      "allowed_work": [
+        "implementation"
+      ]
+    },
+    {
+      "id": "G3",
+      "name": "Validator Regression Fixtures",
+      "allowed_work": [
+        "tests"
+      ]
+    },
+    {
+      "id": "G4",
+      "name": "Run Validator Against F7 Export",
+      "allowed_work": [
+        "proof"
+      ]
+    },
+    {
+      "id": "G5",
+      "name": "Repaired Recovery-Proven Export",
+      "allowed_work": [
+        "export"
+      ]
+    },
+    {
+      "id": "G6",
+      "name": "Recovery Proof + Baseline Lock",
+      "allowed_work": [
+        "boot_recovery",
+        "baseline_lock"
+      ]
+    },
+    {
+      "id": "G7",
+      "name": "Return to E4B",
+      "allowed_work": [
+        "handoff"
+      ]
+    }
+  ],
+  "disallowed_in_G0": [
+    "validator implementation",
+    "regression fixture implementation",
+    "new export",
+    "boot recovery proof",
+    "baseline lock",
+    "cleanup"
+  ],
+  "next_stage": "G1_EXPORT_RECOVERY_VALIDATOR_SCHEMA_AND_CONTRACT"
+}

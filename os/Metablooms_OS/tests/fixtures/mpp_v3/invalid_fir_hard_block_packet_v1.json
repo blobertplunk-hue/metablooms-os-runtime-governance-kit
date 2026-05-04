@@ -1,0 +1,208 @@
+{
+  "created_at": "2026-04-30T23:50:15.864362+00:00",
+  "fitness_checks": [
+    {
+      "check_id": "FIR-CHECK-001",
+      "description": "R18 bundle checksum and ZIP integrity passed.",
+      "dimension": "artifact_integrity",
+      "evidence_refs": [
+        "R18_PREDECESSOR_VERIFICATION"
+      ],
+      "metric": "sha256_and_testzip",
+      "observed": "match + None",
+      "score": 1.0,
+      "status": "PASS",
+      "threshold": "match + None"
+    },
+    {
+      "check_id": "FIR-CHECK-002",
+      "description": "FIR schemas and packet validate under stdlib gate contract.",
+      "dimension": "schema_compliance",
+      "evidence_refs": [
+        "FIR_SCHEMA_VALIDATION"
+      ],
+      "metric": "schema_contract",
+      "observed": "PASS",
+      "score": 1.0,
+      "status": "PASS",
+      "threshold": "PASS"
+    },
+    {
+      "check_id": "FIR-CHECK-003",
+      "description": "All R19 smoke tests passed.",
+      "dimension": "test_pass_rate",
+      "evidence_refs": [
+        "R19_TEST_RECEIPT"
+      ],
+      "metric": "test_pass_rate",
+      "observed": "100%",
+      "score": 1.0,
+      "status": "PASS",
+      "threshold": "100%"
+    },
+    {
+      "check_id": "FIR-CHECK-004",
+      "description": "FIR invalid fixtures block low score, hard block, and non-promote decisions.",
+      "dimension": "regression_coverage",
+      "evidence_refs": [
+        "invalid_fir_low_score_packet",
+        "invalid_fir_hard_block_packet"
+      ],
+      "metric": "blocking_fixture_count",
+      "observed": "3",
+      "score": 1.0,
+      "status": "PASS",
+      "threshold": ">=3"
+    },
+    {
+      "check_id": "FIR-CHECK-005",
+      "description": "RRP and ECL gates are predecessor-verified before FIR promotion.",
+      "dimension": "recovery_readiness",
+      "evidence_refs": [
+        "R12_RRP",
+        "R18_ECL"
+      ],
+      "metric": "recovery_gate_chain",
+      "observed": "R12/R18 verified",
+      "score": 1.0,
+      "status": "PASS",
+      "threshold": "verified"
+    },
+    {
+      "check_id": "FIR-CHECK-006",
+      "description": "Trace analysis predecessor bundle passed checksum and integrity.",
+      "dimension": "trace_health",
+      "evidence_refs": [
+        "R15_TRACE"
+      ],
+      "metric": "trace_predecessor_verified",
+      "observed": "PASS",
+      "score": 1.0,
+      "status": "PASS",
+      "threshold": "PASS"
+    },
+    {
+      "check_id": "FIR-CHECK-007",
+      "description": "Analysis evaluation predecessor passed gate.",
+      "dimension": "reasoning_quality",
+      "evidence_refs": [
+        "R16_ANALYSIS"
+      ],
+      "metric": "reasoning_gate_verified",
+      "observed": "PASS",
+      "score": 1.0,
+      "status": "PASS",
+      "threshold": "PASS"
+    },
+    {
+      "check_id": "FIR-CHECK-008",
+      "description": "One bounded stage produced one bundle and sidecar.",
+      "dimension": "delivery_stability",
+      "evidence_refs": [
+        "R19_RECEIPT"
+      ],
+      "metric": "stage_delivery_shape",
+      "observed": "1 zip + 1 sidecar",
+      "score": 1.0,
+      "status": "PASS",
+      "threshold": "1 zip + 1 sidecar"
+    }
+  ],
+  "fitness_dimensions": [
+    {
+      "blocking": true,
+      "dimension_id": "FIR-DIM-001",
+      "minimum_score": 1.0,
+      "name": "artifact_integrity",
+      "weight": 0.2
+    },
+    {
+      "blocking": true,
+      "dimension_id": "FIR-DIM-002",
+      "minimum_score": 1.0,
+      "name": "schema_compliance",
+      "weight": 0.2
+    },
+    {
+      "blocking": true,
+      "dimension_id": "FIR-DIM-003",
+      "minimum_score": 1.0,
+      "name": "test_pass_rate",
+      "weight": 0.2
+    },
+    {
+      "blocking": true,
+      "dimension_id": "FIR-DIM-004",
+      "minimum_score": 1.0,
+      "name": "regression_coverage",
+      "weight": 0.15
+    },
+    {
+      "blocking": true,
+      "dimension_id": "FIR-DIM-005",
+      "minimum_score": 0.9,
+      "name": "recovery_readiness",
+      "weight": 0.1
+    },
+    {
+      "blocking": false,
+      "dimension_id": "FIR-DIM-006",
+      "minimum_score": 0.9,
+      "name": "trace_health",
+      "weight": 0.05
+    },
+    {
+      "blocking": false,
+      "dimension_id": "FIR-DIM-007",
+      "minimum_score": 0.9,
+      "name": "reasoning_quality",
+      "weight": 0.05
+    },
+    {
+      "blocking": false,
+      "dimension_id": "FIR-DIM-008",
+      "minimum_score": 0.85,
+      "name": "delivery_stability",
+      "weight": 0.05
+    }
+  ],
+  "integration_evidence": {
+    "hard_blocks": [
+      "ECL regression gate unresolved"
+    ],
+    "predecessor_stages": [
+      "R12_RRP",
+      "R13_IMPLEMENTATION",
+      "R14_VERIFICATION",
+      "R15_TRACE_ANALYSIS",
+      "R16_ANALYSIS_EVALUATION",
+      "R17_DEBUGGING",
+      "R18_ECL"
+    ],
+    "required_bundles_verified": [
+      "MPP_R18_ECL_ENFORCED_CORRECTION_LOOP_SCHEMA_AND_REGRESSION_GATE_20260501T023500Z.zip"
+    ],
+    "required_gates_passed": [
+      "ECL_REGRESSION_GATE",
+      "DEBUGGING_REPAIR_ROUTER",
+      "ANALYSIS_REASONING_GATE",
+      "TRACE_ANOMALY_GATE",
+      "VERIFICATION_TEST_RECEIPT_GATE"
+    ]
+  },
+  "objective_id": "OBJ-MPP-R19",
+  "packet_id": "FIR-BAD-HARD",
+  "promotion_decision": "BLOCK",
+  "result_hash": "dbc8bcacd9217774d19e88b1634a751eaf100ef953992df343f4cd6ad0830d36",
+  "schema_version": "mpp.fir_fitness_integration_packet.v1",
+  "score_summary": {
+    "blocking_failures": 1,
+    "failed_checks": 0,
+    "minimum_promotion_score": 0.95,
+    "pass_checks": 8,
+    "warn_checks": 0,
+    "weighted_score": 1.0
+  },
+  "source_ecl_packet_id": "ECL-R18-SMOKE",
+  "stage": "FIR_STAGE"
+}

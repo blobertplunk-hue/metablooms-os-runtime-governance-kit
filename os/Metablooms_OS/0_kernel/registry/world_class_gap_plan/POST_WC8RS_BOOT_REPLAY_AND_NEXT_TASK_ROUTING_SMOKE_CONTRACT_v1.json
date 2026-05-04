@@ -1,0 +1,31 @@
+{
+  "concrete_next_task_supplied": false,
+  "decision": "run_smoke_only_when_no_concrete_task",
+  "exit_requirements": [
+    "receipt",
+    "handoff",
+    "next_stage_copy_prompt",
+    "short_phone_safe_bootable_full_authority",
+    "exact_file_link_precheck"
+  ],
+  "must_not_invent_domain_work": true,
+  "previous_stage": "POST_WC8R_BOOT_REPLAY_AND_NEXT_TASK_ROUTING_SMOKE",
+  "purpose": "Bounded replay smoke when no concrete next MetaBlooms task is supplied; verifies boot authority, routing discipline, automatic tracker, and no invented domain work.",
+  "required_authorities": {
+    "automatic_tracker_contract": "0_kernel/cartridges/automatic_process_tracker/AUTOMATIC_MULTI_STEP_TRACKER_CONTRACT_v1.json",
+    "automatic_tracker_emitter": "0_kernel/cartridges/automatic_process_tracker/automatic_process_tracker_emitter_v1.py",
+    "boot_manifest_root": "BOOT_AUTHORITY_MANIFEST_v1.json",
+    "dora_metrics": "runtime/state/DORA_STYLE_OS_METRICS_BASELINE_v1.json",
+    "educational_html_design_system": "0_kernel/cartridges/educational_html_design_system/EDUCATIONAL_HTML_DESIGN_SYSTEM_CARTRIDGE_SPEC_v1.json",
+    "general_capability_resolver": "0_kernel/capability_resolver/general_capability_resolver_v1.py",
+    "general_capability_resolver_contract": "0_kernel/registry/general_capability_resolver/GENERAL_CAPABILITY_RESOLVER_CONTRACT_v1.json",
+    "latest_handoff_pointer": "runtime/state/LATEST_BOOT_HANDOFF.json",
+    "lesson_fixture_factory": "0_kernel/lessons/lesson_fixture_factory_v1.py",
+    "lesson_queue": "0_kernel/lessons/LESSON_PROMOTION_QUEUE_v1.json",
+    "operator_polish_contract": "0_kernel/registry/world_class_gap_plan/OPERATOR_EXPERIENCE_POLISH_CONTRACT_v1.json",
+    "world_class_scorecard": "0_kernel/registry/world_class_gap_plan/WORLD_CLASS_MEASURED_SCORECARD_BASELINE_v1.json"
+  },
+  "schema_version": "v1",
+  "stage": "POST_WC8RS_BOOT_REPLAY_AND_NEXT_TASK_ROUTING_SMOKE",
+  "stage_type": "bounded_boot_routing_smoke"
+}

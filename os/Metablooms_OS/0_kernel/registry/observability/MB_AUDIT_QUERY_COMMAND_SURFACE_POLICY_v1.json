@@ -1,0 +1,29 @@
+{
+  "artifact_type": "MB_AUDIT_QUERY_COMMAND_SURFACE_POLICY.v1",
+  "created_utc": "20260502T191921Z",
+  "fail_closed_if": [
+    "missing_required_command",
+    "command_source_pack_missing",
+    "artifact_binding_missing_or_sha_mismatch",
+    "tracker_command_surface_missing",
+    "operator_export_packet_validation_denied"
+  ],
+  "operator_surface_contract": [
+    "Every command maps to an existing audit query pack or current boot/action artifact.",
+    "Every export packet binds current artifact bytes by SHA-256.",
+    "Command surface is advisory/operator-facing but validator-enforced.",
+    "Browser-local pins remain non-authoritative unless promoted by receipt."
+  ],
+  "required_command_ids": [
+    "show_audit_promoted_evidence_recovery",
+    "show_audit_export_binding",
+    "show_audit_blocker_or_failure",
+    "show_audit_boot_guidance",
+    "show_audit_stage_validation",
+    "show_audit_trace_waterfall",
+    "export_promoted_evidence_packet",
+    "export_boot_guidance_packet",
+    "export_stage_validation_packet"
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET"
+}

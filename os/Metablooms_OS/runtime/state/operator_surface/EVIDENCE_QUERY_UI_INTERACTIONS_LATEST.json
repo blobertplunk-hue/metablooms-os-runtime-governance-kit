@@ -1,0 +1,821 @@
+{
+  "artifact_type": "MB_EVIDENCE_QUERY_UI_INTERACTIONS.v1",
+  "created_utc": "20260502T183045Z",
+  "interaction_contract": {
+    "artifact_links_remain_relative": true,
+    "default_mode": "minimal",
+    "evidence_mode": "optional",
+    "phone_safe": true,
+    "pin_button_copies_result_to_pinned_tray": true,
+    "pinned_results_persist_in_browser_local_storage": true,
+    "static_no_backend_required": true,
+    "tap_query_expands_ranked_results": true
+  },
+  "queries": [
+    {
+      "intent": "Find blocker/failure evidence and repair route.",
+      "label": "Blocker evidence",
+      "query": "blocked blocker error failure repair router",
+      "query_id": "q_blocker",
+      "result_count": 8,
+      "results": [
+        {
+          "matched_terms": [
+            "blocked",
+            "error"
+          ],
+          "path": "runtime/state/operator_surface/VISUAL_TRACE_WATERFALL_LATEST.json",
+          "pin_id": "pin_q_blocker_1",
+          "query_id": "q_blocker",
+          "rank": 1,
+          "score": 11,
+          "sha256": "2bb0a5a8439f692fa1abe4b7cae710e4773806db4f24cf812976e51622058b64",
+          "title": "MB_VISUAL_TRACE_WATERFALL_EVIDENCE_FILTERS.v1",
+          "verdict": "PASS"
+        },
+        {
+          "matched_terms": [
+            "blocked",
+            "error"
+          ],
+          "path": "runtime/traces/observability/CAUSAL_STAGE_GRAPH_LATEST.json",
+          "pin_id": "pin_q_blocker_2",
+          "query_id": "q_blocker",
+          "rank": 2,
+          "score": 9,
+          "sha256": "8eede3e3aff80591721dfc3113f1a7215bb517a3dc5ede6ff0b94f55a160db5d",
+          "title": "MB_CAUSAL_STAGE_GRAPH.v1",
+          "verdict": null
+        },
+        {
+          "matched_terms": [
+            "blocked",
+            "error"
+          ],
+          "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl",
+          "pin_id": "pin_q_blocker_3",
+          "query_id": "q_blocker",
+          "rank": 3,
+          "score": 7,
+          "sha256": "872eadf9bcbb2acd55efe404fcfc49975cd437470c506f80a0eb4b1c1bb420d7",
+          "title": "TRACE_SPAN_LEDGER_LATEST.jsonl",
+          "verdict": null
+        },
+        {
+          "matched_terms": [
+            "blocked",
+            "error"
+          ],
+          "path": "runtime/traces/observability/FAILURE_CLUSTER_REPORT_LATEST.json",
+          "pin_id": "pin_q_blocker_4",
+          "query_id": "q_blocker",
+          "rank": 4,
+          "score": 6,
+          "sha256": "358dac3c020087f30d28923d69b21866e546281b75abaf9ef15440622abaa8e2",
+          "title": "MB_FAILURE_CLUSTER_REPORT.v1",
+          "verdict": null
+        },
+        {
+          "matched_terms": [
+            "blocked",
+            "failure",
+            "repair",
+            "router"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE5_TRACE_INGESTION_CLASSIFIER_REPAIR_AND_REGRESSION_FIXTURES_20260502T165923Z/STAGE_RECEIPT.json",
+          "pin_id": "pin_q_blocker_5",
+          "query_id": "q_blocker",
+          "rank": 5,
+          "score": 6,
+          "sha256": "52613c0ce591fa96a565fbca7d4a562f42bb707b05bf1f720f1d1b6a29bbc429",
+          "title": "STAGE_RECEIPT.v1",
+          "verdict": "PASS"
+        },
+        {
+          "matched_terms": [
+            "error",
+            "failure"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE5_TRACE_INGESTION_CLASSIFIER_REPAIR_AND_REGRESSION_FIXTURES_20260502T165923Z/CE_SYNTHESIS.json",
+          "pin_id": "pin_q_blocker_6",
+          "query_id": "q_blocker",
+          "rank": 6,
+          "score": 6,
+          "sha256": "177e4849cf4cf6c7d378fab4c34ad36f0feed1f9249b2a1814c43a823fb94dcf",
+          "title": "CE_SYNTHESIS.v1",
+          "verdict": "Patch trace ingestion status inference so evidence packets are not marked ERROR because their prose contains words like failure; add regression fixtures and validator coverage."
+        },
+        {
+          "matched_terms": [
+            "blocked",
+            "error"
+          ],
+          "path": "runtime/traces/observability/MB_TRACE_STAGE2_SUMMARY_STDOUT_LATEST.json",
+          "pin_id": "pin_q_blocker_7",
+          "query_id": "q_blocker",
+          "rank": 7,
+          "score": 5,
+          "sha256": "287ed25ecffaa62b87b19578cc4efe9e365f2efcade59bb8ee319f5856bc8da4",
+          "title": "MB_TRACE_STAGE2_SUMMARY_STDOUT_LATEST.json",
+          "verdict": "TRACE_LEDGER_READY"
+        },
+        {
+          "matched_terms": [
+            "failure",
+            "repair",
+            "router"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING_20260502T165302Z/CE_SYNTHESIS.json",
+          "pin_id": "pin_q_blocker_8",
+          "query_id": "q_blocker",
+          "rank": 8,
+          "score": 5,
+          "sha256": "3aabbb3ef2c249b69db6d22e7f7a6e5b7553ea7619d4f0354361fc6eeedd7a42",
+          "title": "CE_SYNTHESIS.v1",
+          "verdict": "Implement failure clustering and repair-router binding over existing trace ledger records, classify stale/resolved vs active issues, and surface cluster cards in the operator tracker."
+        }
+      ]
+    },
+    {
+      "intent": "Find stage receipts, validations, and handoffs.",
+      "label": "Stage evidence",
+      "query": "stage validation receipt handoff verdict pass fail",
+      "query_id": "q_stage",
+      "result_count": 8,
+      "results": [
+        {
+          "matched_terms": [
+            "fail",
+            "handoff",
+            "pass",
+            "receipt",
+            "stage",
+            "verdict"
+          ],
+          "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl",
+          "pin_id": "pin_q_stage_1",
+          "query_id": "q_stage",
+          "rank": 1,
+          "score": 413,
+          "sha256": "872eadf9bcbb2acd55efe404fcfc49975cd437470c506f80a0eb4b1c1bb420d7",
+          "title": "TRACE_SPAN_LEDGER_LATEST.jsonl",
+          "verdict": null
+        },
+        {
+          "matched_terms": [
+            "handoff",
+            "receipt",
+            "stage"
+          ],
+          "path": "runtime/traces/observability/CAUSAL_STAGE_GRAPH_LATEST.json",
+          "pin_id": "pin_q_stage_2",
+          "query_id": "q_stage",
+          "rank": 2,
+          "score": 140,
+          "sha256": "8eede3e3aff80591721dfc3113f1a7215bb517a3dc5ede6ff0b94f55a160db5d",
+          "title": "MB_CAUSAL_STAGE_GRAPH.v1",
+          "verdict": null
+        },
+        {
+          "matched_terms": [
+            "handoff",
+            "pass",
+            "receipt",
+            "stage",
+            "verdict"
+          ],
+          "path": "runtime/state/operator_surface/VISUAL_TRACE_WATERFALL_LATEST.json",
+          "pin_id": "pin_q_stage_3",
+          "query_id": "q_stage",
+          "rank": 3,
+          "score": 54,
+          "sha256": "2bb0a5a8439f692fa1abe4b7cae710e4773806db4f24cf812976e51622058b64",
+          "title": "MB_VISUAL_TRACE_WATERFALL_EVIDENCE_FILTERS.v1",
+          "verdict": "PASS"
+        },
+        {
+          "matched_terms": [
+            "handoff",
+            "pass",
+            "receipt",
+            "verdict"
+          ],
+          "path": "runtime/traces/observability/MB_TRACE_STAGE2_SUMMARY_STDOUT_LATEST.json",
+          "pin_id": "pin_q_stage_4",
+          "query_id": "q_stage",
+          "rank": 4,
+          "score": 32,
+          "sha256": "287ed25ecffaa62b87b19578cc4efe9e365f2efcade59bb8ee319f5856bc8da4",
+          "title": "MB_TRACE_STAGE2_SUMMARY_STDOUT_LATEST.json",
+          "verdict": "TRACE_LEDGER_READY"
+        },
+        {
+          "matched_terms": [
+            "fail",
+            "pass",
+            "receipt",
+            "stage",
+            "verdict"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/stage9_validator.json",
+          "pin_id": "pin_q_stage_5",
+          "query_id": "q_stage",
+          "rank": 5,
+          "score": 18,
+          "sha256": "ee57178357e691b1fcc03ef99c0e6f3e4cbcd51f24f07289a82a507dbc6b7626",
+          "title": "stage9_validator.json",
+          "verdict": null
+        },
+        {
+          "matched_terms": [
+            "fail",
+            "pass",
+            "verdict"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS_20260502T180849Z/stage11_validation_stdout.json",
+          "pin_id": "pin_q_stage_6",
+          "query_id": "q_stage",
+          "rank": 6,
+          "score": 15,
+          "sha256": "80b0b1db74806c2836e57e82c1179fad215c6cec3f0fde82d3a883200b5a23e1",
+          "title": "stage11_validation_stdout.json",
+          "verdict": null
+        },
+        {
+          "matched_terms": [
+            "pass",
+            "stage",
+            "validation",
+            "verdict"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE6_METHOD_RELIABILITY_LEDGER_AND_SUPPRESSED_FAILURE_LESSON_BINDING_20260502T170503Z/STAGE_RECEIPT.json",
+          "pin_id": "pin_q_stage_7",
+          "query_id": "q_stage",
+          "rank": 7,
+          "score": 13,
+          "sha256": "a955c315a1e1785aeb6a64752fb2b0b2cac5523037089b6a6419cf8bdd743555",
+          "title": "MB_STAGE_RECEIPT.v1",
+          "verdict": "PASS"
+        },
+        {
+          "matched_terms": [
+            "pass",
+            "receipt",
+            "stage",
+            "verdict"
+          ],
+          "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_VALIDATION_LATEST.json",
+          "pin_id": "pin_q_stage_8",
+          "query_id": "q_stage",
+          "rank": 8,
+          "score": 12,
+          "sha256": "0003d142c2ea535487ab8e23c2d063d732738946ef33ff84adce50d4d72ddb3d",
+          "title": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_VALIDATION.v1",
+          "verdict": "PASS"
+        }
+      ]
+    },
+    {
+      "intent": "Find export containment and hash evidence.",
+      "label": "Export proof",
+      "query": "export containment proof zip sha256 duplicate members required artifacts",
+      "query_id": "q_export",
+      "result_count": 8,
+      "results": [
+        {
+          "matched_terms": [
+            "sha256"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/stage9_validator.json",
+          "pin_id": "pin_q_export_1",
+          "query_id": "q_export",
+          "rank": 1,
+          "score": 147,
+          "sha256": "ee57178357e691b1fcc03ef99c0e6f3e4cbcd51f24f07289a82a507dbc6b7626",
+          "title": "stage9_validator.json",
+          "verdict": null
+        },
+        {
+          "matched_terms": [
+            "sha256"
+          ],
+          "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE8_HISTORICAL_CALLSITE_QUARANTINE_VALIDATION_LATEST.json",
+          "pin_id": "pin_q_export_2",
+          "query_id": "q_export",
+          "rank": 2,
+          "score": 143,
+          "sha256": "094d16f803df097599fe85b4bb0e57b70d1a52c0487e179e4a1952e592e6dd25",
+          "title": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_HISTORICAL_CALLSITE_QUARANTINE_VALIDATION.v1",
+          "verdict": "FAIL"
+        },
+        {
+          "matched_terms": [
+            "sha256"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINALIZED_20260502T175839Z/STAGE10_FINALIZATION_BLOCKED.json",
+          "pin_id": "pin_q_export_3",
+          "query_id": "q_export",
+          "rank": 3,
+          "score": 143,
+          "sha256": "234af89ae599990f40576a87539abd341f668b28676faad49c1aa2700c1a3569",
+          "title": "STAGE10_FINALIZATION_BLOCKED.json",
+          "verdict": null
+        },
+        {
+          "matched_terms": [
+            "sha256"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/stage8_validator.json",
+          "pin_id": "pin_q_export_4",
+          "query_id": "q_export",
+          "rank": 4,
+          "score": 141,
+          "sha256": "fe8bdf5eef673d785f2e2165e206ca0b899c166edbafe68045d971b903272e58",
+          "title": "stage8_validator.json",
+          "verdict": null
+        },
+        {
+          "matched_terms": [
+            "sha256"
+          ],
+          "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_VALIDATION_LATEST.json",
+          "pin_id": "pin_q_export_5",
+          "query_id": "q_export",
+          "rank": 5,
+          "score": 140,
+          "sha256": "0003d142c2ea535487ab8e23c2d063d732738946ef33ff84adce50d4d72ddb3d",
+          "title": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_VALIDATION.v1",
+          "verdict": "PASS"
+        },
+        {
+          "matched_terms": [
+            "sha256"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/stage9_validator.json",
+          "pin_id": "pin_q_export_6",
+          "query_id": "q_export",
+          "rank": 6,
+          "score": 140,
+          "sha256": "04a00943c92b0b390a11528c06d386feb474680d1a3977b93d9585916bb08e5c",
+          "title": "stage9_validator.json",
+          "verdict": null
+        },
+        {
+          "matched_terms": [
+            "sha256"
+          ],
+          "path": "runtime/traces/observability/HISTORICAL_CALLSITE_QUARANTINE_INDEX_LATEST.json",
+          "pin_id": "pin_q_export_7",
+          "query_id": "q_export",
+          "rank": 7,
+          "score": 138,
+          "sha256": "d7fb174936132eebb15f3847dd22d00c454bb952a47b6acb88b9c2286dd31ab5",
+          "title": "MB_HISTORICAL_CALLSITE_QUARANTINE_INDEX.v1",
+          "verdict": "PASS"
+        },
+        {
+          "matched_terms": [
+            "sha256"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/scanner.json",
+          "pin_id": "pin_q_export_8",
+          "query_id": "q_export",
+          "rank": 8,
+          "score": 132,
+          "sha256": "5f604a2b0425c0e5c0a9ab02257d64de01f1dca97445b371bde7848c8e40a1ba",
+          "title": "scanner.json",
+          "verdict": null
+        }
+      ]
+    },
+    {
+      "intent": "Find current boot guidance and wrapper validation.",
+      "label": "Boot path",
+      "query": "live boot guidance wrapper root new chat validator allow",
+      "query_id": "q_boot",
+      "result_count": 8,
+      "results": [
+        {
+          "matched_terms": [
+            "boot",
+            "validator"
+          ],
+          "path": "runtime/traces/observability/CAUSAL_STAGE_GRAPH_LATEST.json",
+          "pin_id": "pin_q_boot_1",
+          "query_id": "q_boot",
+          "rank": 1,
+          "score": 79,
+          "sha256": "8eede3e3aff80591721dfc3113f1a7215bb517a3dc5ede6ff0b94f55a160db5d",
+          "title": "MB_CAUSAL_STAGE_GRAPH.v1",
+          "verdict": null
+        },
+        {
+          "matched_terms": [
+            "boot",
+            "validator"
+          ],
+          "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl",
+          "pin_id": "pin_q_boot_2",
+          "query_id": "q_boot",
+          "rank": 2,
+          "score": 78,
+          "sha256": "872eadf9bcbb2acd55efe404fcfc49975cd437470c506f80a0eb4b1c1bb420d7",
+          "title": "TRACE_SPAN_LEDGER_LATEST.jsonl",
+          "verdict": null
+        },
+        {
+          "matched_terms": [
+            "boot",
+            "new",
+            "validator"
+          ],
+          "path": "runtime/state/operator_surface/VISUAL_TRACE_WATERFALL_LATEST.json",
+          "pin_id": "pin_q_boot_3",
+          "query_id": "q_boot",
+          "rank": 3,
+          "score": 24,
+          "sha256": "2bb0a5a8439f692fa1abe4b7cae710e4773806db4f24cf812976e51622058b64",
+          "title": "MB_VISUAL_TRACE_WATERFALL_EVIDENCE_FILTERS.v1",
+          "verdict": "PASS"
+        },
+        {
+          "matched_terms": [
+            "allow",
+            "boot",
+            "guidance",
+            "live",
+            "root",
+            "validator",
+            "wrapper"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/stage9_validator.json",
+          "pin_id": "pin_q_boot_4",
+          "query_id": "q_boot",
+          "rank": 4,
+          "score": 15,
+          "sha256": "ee57178357e691b1fcc03ef99c0e6f3e4cbcd51f24f07289a82a507dbc6b7626",
+          "title": "stage9_validator.json",
+          "verdict": null
+        },
+        {
+          "matched_terms": [
+            "boot",
+            "guidance",
+            "live",
+            "validator",
+            "wrapper"
+          ],
+          "path": "runtime/state/operator_surface/LIVE_BOOT_GUIDANCE_LATEST.md",
+          "pin_id": "pin_q_boot_5",
+          "query_id": "q_boot",
+          "rank": 5,
+          "score": 14,
+          "sha256": "255ac27761d10bf7826b38ff92528be571b5e34fda9b6182c09cf915b86cba1c",
+          "title": "LIVE_BOOT_GUIDANCE_LATEST.md",
+          "verdict": null
+        },
+        {
+          "matched_terms": [
+            "boot",
+            "guidance",
+            "live",
+            "root",
+            "wrapper"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/pre_patch_backups/0_kernel__boot_contracts__NEW_CHAT_START_CONTRACT_v1.md",
+          "pin_id": "pin_q_boot_6",
+          "query_id": "q_boot",
+          "rank": 6,
+          "score": 13,
+          "sha256": "3baf132c544c5eb3d0e7d45053ad09d08b4541f3183371e019246e6199320a03",
+          "title": "0_kernel__boot_contracts__NEW_CHAT_START_CONTRACT_v1.md",
+          "verdict": null
+        },
+        {
+          "matched_terms": [
+            "boot",
+            "guidance",
+            "live",
+            "root",
+            "wrapper"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/pre_patch_backups/NEW_CHAT_START_HERE.md",
+          "pin_id": "pin_q_boot_7",
+          "query_id": "q_boot",
+          "rank": 7,
+          "score": 12,
+          "sha256": "74a66b857a566ac3af9491da67b86f7e8ad273b4c046209b49c69204f7cebb4e",
+          "title": "NEW_CHAT_START_HERE.md",
+          "verdict": null
+        },
+        {
+          "matched_terms": [
+            "boot",
+            "guidance",
+            "live",
+            "validator",
+            "wrapper"
+          ],
+          "path": "runtime/state/operator_surface/BOOT_SURFACE_MINIMAL_MODE_LATEST.json",
+          "pin_id": "pin_q_boot_8",
+          "query_id": "q_boot",
+          "rank": 8,
+          "score": 11,
+          "sha256": "1ab950344e11fc725bd7c13ba8cc27c3e7cf9ae1191e70297945af4e7062c6c1",
+          "title": "MB_BOOT_SURFACE_MINIMAL_MODE.v1",
+          "verdict": "PASS"
+        }
+      ]
+    },
+    {
+      "intent": "Find tracker UI evidence.",
+      "label": "Tracker surface",
+      "query": "operator tracker minimal mode visual waterfall evidence filters",
+      "query_id": "q_tracker",
+      "result_count": 8,
+      "results": [
+        {
+          "matched_terms": [
+            "evidence",
+            "operator",
+            "tracker",
+            "visual"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/pre_patch_backups/NEW_CHAT_START_HERE.md",
+          "pin_id": "pin_q_tracker_1",
+          "query_id": "q_tracker",
+          "rank": 1,
+          "score": 14,
+          "sha256": "74a66b857a566ac3af9491da67b86f7e8ad273b4c046209b49c69204f7cebb4e",
+          "title": "NEW_CHAT_START_HERE.md",
+          "verdict": null
+        },
+        {
+          "matched_terms": [
+            "operator",
+            "tracker",
+            "visual"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE7_METHOD_WRAPPER_CALLSITE_RETROFIT_AND_BOOT_SEQUENCE_ENFORCEMENT_20260502T170919Z/pre_patch_backups/NEW_CHAT_START_HERE.md",
+          "pin_id": "pin_q_tracker_2",
+          "query_id": "q_tracker",
+          "rank": 2,
+          "score": 12,
+          "sha256": "bf694c689e889f69bf25dd06331ddf2786bc0ab313aee2938fd89f4f60c67f14",
+          "title": "NEW_CHAT_START_HERE.md",
+          "verdict": null
+        },
+        {
+          "matched_terms": [
+            "operator",
+            "tracker",
+            "visual"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_20260502T171707Z/pre_patch_backups/NEW_CHAT_START_HERE.md",
+          "pin_id": "pin_q_tracker_3",
+          "query_id": "q_tracker",
+          "rank": 3,
+          "score": 12,
+          "sha256": "e39cd0f443e6bde73986dd80b780f9a1396cb87a2bd851f7024b5210fec3bff6",
+          "title": "NEW_CHAT_START_HERE.md",
+          "verdict": null
+        },
+        {
+          "matched_terms": [
+            "evidence",
+            "operator",
+            "tracker",
+            "visual"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/pre_patch_backups/0_kernel__boot_contracts__NEW_CHAT_START_CONTRACT_v1.md",
+          "pin_id": "pin_q_tracker_4",
+          "query_id": "q_tracker",
+          "rank": 4,
+          "score": 8,
+          "sha256": "3baf132c544c5eb3d0e7d45053ad09d08b4541f3183371e019246e6199320a03",
+          "title": "0_kernel__boot_contracts__NEW_CHAT_START_CONTRACT_v1.md",
+          "verdict": null
+        },
+        {
+          "matched_terms": [
+            "evidence",
+            "minimal",
+            "mode",
+            "operator",
+            "tracker"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_20260502T175629Z/CE_SYNTHESIS.json",
+          "pin_id": "pin_q_tracker_5",
+          "query_id": "q_tracker",
+          "rank": 5,
+          "score": 8,
+          "sha256": "054bc3f7522220cf0a8bc1460e130fb00b2dfff1fc93dd97d9df37b8e816543e",
+          "title": "CE_SYNTHESIS.v1",
+          "verdict": "PASS"
+        },
+        {
+          "matched_terms": [
+            "evidence",
+            "minimal",
+            "mode",
+            "operator",
+            "tracker"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINALIZED_20260502T175839Z/CE_SYNTHESIS.json",
+          "pin_id": "pin_q_tracker_6",
+          "query_id": "q_tracker",
+          "rank": 6,
+          "score": 8,
+          "sha256": "054bc3f7522220cf0a8bc1460e130fb00b2dfff1fc93dd97d9df37b8e816543e",
+          "title": "CE_SYNTHESIS.v1",
+          "verdict": "PASS"
+        },
+        {
+          "matched_terms": [
+            "evidence",
+            "minimal",
+            "mode",
+            "operator",
+            "tracker"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINALIZED_20260502T175921Z/CE_SYNTHESIS.json",
+          "pin_id": "pin_q_tracker_7",
+          "query_id": "q_tracker",
+          "rank": 7,
+          "score": 8,
+          "sha256": "054bc3f7522220cf0a8bc1460e130fb00b2dfff1fc93dd97d9df37b8e816543e",
+          "title": "CE_SYNTHESIS.v1",
+          "verdict": "PASS"
+        },
+        {
+          "matched_terms": [
+            "evidence",
+            "filters",
+            "minimal",
+            "waterfall"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS_20260502T180849Z/SEE_PACKET.json",
+          "pin_id": "pin_q_tracker_8",
+          "query_id": "q_tracker",
+          "rank": 8,
+          "score": 8,
+          "sha256": "222aaea6f50f18e877241dc021e4a6b4d3d7f7212846e0085a896143c3f25163",
+          "title": "SEE_PACKET.v1",
+          "verdict": null
+        }
+      ]
+    },
+    {
+      "intent": "Find historical/live callsite classification evidence.",
+      "label": "Callsite quarantine",
+      "query": "historical callsite quarantine direct runtime starter smoke wrapper only",
+      "query_id": "q_callsite",
+      "result_count": 8,
+      "results": [
+        {
+          "matched_terms": [
+            "callsite",
+            "direct",
+            "historical",
+            "quarantine",
+            "runtime",
+            "smoke",
+            "starter",
+            "wrapper"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/pre_patch_backups/0_kernel__boot_contracts__NEW_CHAT_START_CONTRACT_v1.md",
+          "pin_id": "pin_q_callsite_1",
+          "query_id": "q_callsite",
+          "rank": 1,
+          "score": 21,
+          "sha256": "3baf132c544c5eb3d0e7d45053ad09d08b4541f3183371e019246e6199320a03",
+          "title": "0_kernel__boot_contracts__NEW_CHAT_START_CONTRACT_v1.md",
+          "verdict": null
+        },
+        {
+          "matched_terms": [
+            "callsite",
+            "direct",
+            "historical",
+            "quarantine",
+            "runtime",
+            "smoke",
+            "starter",
+            "wrapper"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/pre_patch_backups/NEW_CHAT_START_HERE.md",
+          "pin_id": "pin_q_callsite_2",
+          "query_id": "q_callsite",
+          "rank": 2,
+          "score": 17,
+          "sha256": "74a66b857a566ac3af9491da67b86f7e8ad273b4c046209b49c69204f7cebb4e",
+          "title": "NEW_CHAT_START_HERE.md",
+          "verdict": null
+        },
+        {
+          "matched_terms": [
+            "direct",
+            "runtime",
+            "smoke",
+            "starter",
+            "wrapper"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_20260502T171707Z/pre_patch_backups/0_kernel__boot_contracts__NEW_CHAT_START_CONTRACT_v1.md",
+          "pin_id": "pin_q_callsite_3",
+          "query_id": "q_callsite",
+          "rank": 3,
+          "score": 14,
+          "sha256": "cee2e6809c504773daa10ba5ac14f8c9f61e6f2c47d5fa8d13e104d2c627340c",
+          "title": "0_kernel__boot_contracts__NEW_CHAT_START_CONTRACT_v1.md",
+          "verdict": null
+        },
+        {
+          "matched_terms": [
+            "historical",
+            "runtime",
+            "smoke",
+            "starter",
+            "wrapper"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/pre_patch_backups/0_kernel__registry__current_authority__CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+          "pin_id": "pin_q_callsite_4",
+          "query_id": "q_callsite",
+          "rank": 4,
+          "score": 12,
+          "sha256": "7de349e916f69f36cfb318d36d2e31d279309f938a32bf6bf2f9ffd773cbf2cd",
+          "title": "CURRENT_FULL_AUTHORITY_POINTER_v1",
+          "verdict": "ACTIVE"
+        },
+        {
+          "matched_terms": [
+            "historical",
+            "runtime",
+            "smoke",
+            "starter",
+            "wrapper"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/pre_patch_backups/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+          "pin_id": "pin_q_callsite_5",
+          "query_id": "q_callsite",
+          "rank": 5,
+          "score": 12,
+          "sha256": "7de349e916f69f36cfb318d36d2e31d279309f938a32bf6bf2f9ffd773cbf2cd",
+          "title": "CURRENT_FULL_AUTHORITY_POINTER_v1",
+          "verdict": "ACTIVE"
+        },
+        {
+          "matched_terms": [
+            "historical",
+            "runtime",
+            "smoke",
+            "starter",
+            "wrapper"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/pre_patch_backups/runtime__authority__CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+          "pin_id": "pin_q_callsite_6",
+          "query_id": "q_callsite",
+          "rank": 6,
+          "score": 12,
+          "sha256": "7de349e916f69f36cfb318d36d2e31d279309f938a32bf6bf2f9ffd773cbf2cd",
+          "title": "CURRENT_FULL_AUTHORITY_POINTER_v1",
+          "verdict": "ACTIVE"
+        },
+        {
+          "matched_terms": [
+            "runtime",
+            "smoke",
+            "starter",
+            "wrapper"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_20260502T171707Z/pre_patch_backups/0_kernel__registry__current_authority__CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+          "pin_id": "pin_q_callsite_7",
+          "query_id": "q_callsite",
+          "rank": 7,
+          "score": 11,
+          "sha256": "c749686d90babff255891cf1f6c0403b08918fcdfc755d4619573d8de575bf7a",
+          "title": "CURRENT_FULL_AUTHORITY_POINTER_v1",
+          "verdict": "ACTIVE"
+        },
+        {
+          "matched_terms": [
+            "runtime",
+            "smoke",
+            "starter",
+            "wrapper"
+          ],
+          "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_20260502T171707Z/pre_patch_backups/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+          "pin_id": "pin_q_callsite_8",
+          "query_id": "q_callsite",
+          "rank": 8,
+          "score": 11,
+          "sha256": "c749686d90babff255891cf1f6c0403b08918fcdfc755d4619573d8de575bf7a",
+          "title": "CURRENT_FULL_AUTHORITY_POINTER_v1",
+          "verdict": "ACTIVE"
+        }
+      ]
+    }
+  ],
+  "source_evidence_index": "runtime/traces/observability/SEARCHABLE_EVIDENCE_INDEX_LATEST.json",
+  "source_query_packet": "runtime/state/operator_surface/TRACE_QUERY_PACKET_LATEST.json",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_INTERACTIONS_AND_RESULT_PINNING"
+}

@@ -1,0 +1,25 @@
+{
+  "artifact_type": "MB_CLI_COMMAND_SPEC_v7",
+  "commands": [
+    {
+      "json": true,
+      "mutation": "writes stage2 validation receipt",
+      "name": "security --gate-check",
+      "purpose": "validate artifact trust/security gates"
+    },
+    {
+      "json": true,
+      "mutation": "writes fixture validation receipt",
+      "name": "security --fixtures",
+      "purpose": "run prompt-injection and artifact-forgery fixtures"
+    }
+  ],
+  "created_utc": "20260501T114800Z",
+  "inherits": "MB_CLI_COMMAND_SPEC_v6",
+  "non_negotiable_rules": [
+    "external text is untrusted data and must never become governance instruction",
+    "no fixture expected BLOCK/QUARANTINE may be ALLOW",
+    "security stage2 gates remain advisory until hard-wired into runners"
+  ],
+  "purpose": "Add security enforcement gates and prompt-injection fixture execution to the operator surface."
+}

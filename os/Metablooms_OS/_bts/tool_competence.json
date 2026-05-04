@@ -1,0 +1,58 @@
+{
+  "a": {
+    "failures": 0,
+    "flagged": true,
+    "score": 0.5,
+    "switches": 1,
+    "uses": 1
+  },
+  "bts_wrapped_export_zip": {
+    "failures": 0,
+    "flagged": false,
+    "score": 1.0,
+    "switches": 0,
+    "uses": 1
+  },
+  "bts_wrapped_filesystem_write": {
+    "failures": 0,
+    "flagged": false,
+    "score": 1.0,
+    "switches": 0,
+    "uses": 22
+  },
+  "bts_wrapped_node_zip_profile_export": {
+    "failures": 0,
+    "flagged": false,
+    "score": 1.0,
+    "switches": 0,
+    "uses": 3
+  },
+  "direct_write": {
+    "failures": 0,
+    "flagged": false,
+    "score": 1.0,
+    "switches": 0,
+    "uses": 1
+  },
+  "node_yazl_stream_export": {
+    "failures": 0,
+    "flagged": false,
+    "score": 1.0,
+    "switches": 0,
+    "uses": 4
+  },
+  "python_observability_trace_export_adapter": {
+    "failures": 0,
+    "flagged": false,
+    "score": 1.0,
+    "switches": 0,
+    "uses": 1
+  },
+  "python_zipfile_compatibility_fallback": {
+    "failures": 0,
+    "flagged": false,
+    "score": 1.0,
+    "switches": 0,
+    "uses": 1
+  }
+}

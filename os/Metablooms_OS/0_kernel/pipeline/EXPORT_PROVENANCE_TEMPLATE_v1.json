@@ -1,0 +1,50 @@
+{
+  "version": "1.0",
+  "created_at": "<timestamp>",
+  "provenance_id": "<provenance_id>",
+  "builder": {
+    "environment": "ChatGPT sandbox /mnt/data",
+    "governance": "MetaBlooms governed staged workflow"
+  },
+  "source": {
+    "root": "/mnt/data/Metablooms_OS_refined",
+    "git_head": "<git_head>",
+    "branch": "<branch>",
+    "git_status": "clean"
+  },
+  "materials": [
+    "0_kernel/state/CURRENT_WORKING_BASELINE_POINTER_v1.json",
+    "0_kernel/state/STAGE_STATE_LEDGER_v1.json",
+    "0_kernel/pipeline/STAGE_DAG_v1.json",
+    "boot_manifest_v1.json",
+    "artifact_registry.json"
+  ],
+  "recipe": {
+    "export_policy": "preserve tracked files; exclude runtime __pycache__ only where explicitly allowed",
+    "restore_validation": "staging extraction + hash + git fsck + capability checks"
+  },
+  "subject": [
+    {
+      "name": "<zip_name>",
+      "sha256": "<sha256>",
+      "size_bytes": 0
+    }
+  ],
+  "capability_set": [
+    "boot runtime executor",
+    "trigger router evaluator",
+    "CE packet validator",
+    "SEE packet validator",
+    "research failure blocker",
+    "auto-runaway breaker",
+    "current working baseline pointer",
+    "stage DAG",
+    "stage state ledger",
+    "transactional stage runner contract",
+    "export provenance contract"
+  ],
+  "verification_summary": {
+    "all_required_checks_passed": true
+  },
+  "verdict": "PASS"
+}

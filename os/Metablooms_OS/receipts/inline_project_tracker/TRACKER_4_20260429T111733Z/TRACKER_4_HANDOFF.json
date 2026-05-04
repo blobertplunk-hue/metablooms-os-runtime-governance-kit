@@ -1,0 +1,17 @@
+{
+  "handoff_id": "TRACKER_4_TO_TRACKER_5_20260429T111733Z",
+  "from_stage": "TRACKER-4_HANDOFF_UPDATE_WIRING",
+  "to_stage_authorized": "TRACKER-5_SMOKE_TEST_AND_EXPORT_PACKAGING",
+  "status": "READY_FOR_BOUNDED_SMOKE_TEST_EXPORT_PACKAGING_STAGE",
+  "root": "/mnt/data/Metablooms_OS",
+  "state_path": "runtime/state/TRACKER_STATE_v1.json",
+  "receipt_path": "receipts/inline_project_tracker/TRACKER_4_20260429T111733Z/TRACKER_4_RECEIPT.json",
+  "required_preconditions": [
+    "Load TRACKER_STATE_v1.json before governed action.",
+    "Render inline tracker first.",
+    "Verify TRACKER-4 handoff-update validation report PASS.",
+    "Do not patch earlier tracker stages unless a blocker is proven.",
+    "Run only smoke-test/export packaging in TRACKER-5."
+  ],
+  "next_command": "Continue MetaBlooms from /mnt/data/Metablooms_OS. Load TRACKER-4 handoff-update wiring receipt and handoff. Run exactly one bounded TRACKER-5 smoke-test and export packaging stage: run tracker boot/state/render/gate/handoff-update smoke tests, validate the tracker renders first, package the tracker cartridge/export bundle only if tests pass, write receipt and final handoff, return one bundle plus checksum, and stop."
+}

@@ -1,0 +1,12 @@
+{
+  "decision": "IMPLEMENT_SANDBOX_BOOTSTRAP_AND_LAYOUT_REPAIR",
+  "findings": [
+    "Sandbox tool governance must load before planning, coding, archive/hash, export, and final response decisions.",
+    "Coding stages require a coding plan before modification and tests after each slice.",
+    "Use python3 -S for stdlib-only OS work; normal python requires probe/justification.",
+    "Export latency must be controlled with bounded archive/hash checks and receipts.",
+    "Replace stale /00_BOOT verifier assumption with root-resolving complete-system smoke verifier."
+  ],
+  "stage": "H0B2_SANDBOX_TOOL_GOVERNANCE_BOOTSTRAP_AND_LAYOUT_DRIFT_REPAIR",
+  "timestamp_utc": "2026-04-30T18:24:58Z"
+}

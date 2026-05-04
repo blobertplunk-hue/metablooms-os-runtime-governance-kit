@@ -1,0 +1,17 @@
+{
+  "schema": "METABLOOMS_STAGE6C_HANDOFF_v1",
+  "stage_id": "STAGE6C_BTS_V4_CANONICAL_AUDIT_AND_INTEGRATION_PLAN",
+  "timestamp_utc": "2026-05-02T00:19:38.729739Z",
+  "verdict": "AUDIT_PASS_INSTALL_DEFERRED",
+  "continue_with": "STAGE6D_BTS_V4_GATE_WRAPPED_INSTALL_SCAFFOLD",
+  "required_inputs": [
+    "/mnt/data/BTS_v4_canonical.py",
+    "/mnt/data/Metablooms_OS/runtime/plans/METABLOOMS_STAGE6C_BTS_V4_CANONICAL_AUDIT_AND_INTEGRATION_PLAN_20260502T013800Z.json",
+    "/mnt/data/Metablooms_OS/runtime/receipts/METABLOOMS_STAGE6C_BTS_V4_CANONICAL_AUDIT_RECEIPT_20260502T013800Z.json"
+  ],
+  "blocked_from": [
+    "canonical BTS install without Stage6B gate wrapper",
+    "full OS export before BTS install tests pass"
+  ],
+  "summary": "BTS v4 candidate passed self-test and core custom tests but canonical install is deferred until subprocess/file write paths route through Stage6B per-action gate and switch lifecycle is hardened."
+}

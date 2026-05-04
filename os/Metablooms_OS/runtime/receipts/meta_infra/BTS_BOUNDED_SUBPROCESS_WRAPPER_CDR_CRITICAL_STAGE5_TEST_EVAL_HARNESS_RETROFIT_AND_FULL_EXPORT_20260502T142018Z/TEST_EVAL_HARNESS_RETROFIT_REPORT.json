@@ -1,0 +1,69 @@
+{
+  "artifact_type": "TEST_EVAL_HARNESS_RETROFIT_REPORT_v1",
+  "created_utc": "20260502T142018Z",
+  "direct_subprocess_ast_hits_in_patched_test_eval_files_after": [],
+  "patched_files": [
+    {
+      "path": "runtime/evals/tool_universe/test_tool_universe_resolver_v1.py",
+      "sha256": "6203d4f6311fda0164ecf45513d3164da415d9cfb21e2be234c1a145bafafc2b",
+      "verdict": "PASS"
+    },
+    {
+      "path": "tests/evals/mpp_v3/test_mpp_stage_contract_code_bearing_declaration_gate_v1.py",
+      "sha256": "8d1c299d12cd83be03c6f73f25df9d98dcad5e64241f81cbe46eed1bcd23fc83",
+      "verdict": "PASS"
+    },
+    {
+      "path": "tests/evals/security/test_owasp_agentic_ai_policy_gate_v1.py",
+      "sha256": "6d7784e649b249da2080113da94d8fe23a43c43919a9b401266af14f244b4bcc",
+      "verdict": "PASS"
+    },
+    {
+      "path": "tests/evals/mpp_v3/test_mpp_cdr_binding_gate_v1.py",
+      "sha256": "f133be9eaa22f3dbe613017e6f4bc71cd37252c3314d44147a0d6346e64b5dea",
+      "verdict": "PASS"
+    },
+    {
+      "path": "tests/evals/tool_universe/test_stage6t_trace_export_resolver_coverage_v1.py",
+      "sha256": "f93bb38c77877c211067cc29bbae95fa33ef0bdb84623f1e31bc8f5e7d8e1449",
+      "verdict": "PASS"
+    },
+    {
+      "path": "tests/evals/observability/test_stage6r_trace_export_adapter_v1.py",
+      "sha256": "864049d538a7f68c08efbff794a7e98fcc8afef459e019e2887de9b87e4eba52",
+      "verdict": "PASS"
+    },
+    {
+      "path": "tests/evals/governance/test_formal_hitl_approval_token_gate_v1.py",
+      "sha256": "7c1f96722d3f037b9ec666058f333bc164d16904e3cd8ee304f741247180fad6",
+      "verdict": "PASS"
+    },
+    {
+      "path": "tests/evals/cdr/test_cdr_linchpin_recursive_audit_gate_v1.py",
+      "sha256": "0d06e89396134e5a681304be2c9ea66a2997ca42eabd816d9ff61d3a30c656b5",
+      "verdict": "PASS"
+    },
+    {
+      "path": "runtime/evals/post_tool_result_validation/test_post_tool_result_validation_v1.py",
+      "sha256": "0b64583601e1fdce076cde80ebeb47191f37d71fb8a5236f9a45741fe6717c2c",
+      "verdict": "PASS"
+    },
+    {
+      "path": "tests/evals/cdr/test_cdr_real_scanner_adapter_gate_v1.py",
+      "sha256": "9624372f3b43e751bacd811f5cf48ce29ea076cfbe77ca8ff629e892d50b03c7",
+      "verdict": "PASS"
+    },
+    {
+      "path": "tests/evals/state_checkpoint/test_stage6p_durable_checkpoint_replay_gate_v1.py",
+      "sha256": "2e342fbab40e1ad769f489abf18776cc7767ff5034f3272bf5abb1e182828185",
+      "verdict": "PASS"
+    },
+    {
+      "path": "tests/evals/tool_governance/test_stage6q_repair_legacy_executor_retrofit_gate_v1.py",
+      "sha256": "6f16a1465cee9913a605edfbc14d487eb61b9e6a3e8a0f33d9abfc0511907880",
+      "verdict": "PASS"
+    }
+  ],
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT",
+  "verdict": "PASS"
+}

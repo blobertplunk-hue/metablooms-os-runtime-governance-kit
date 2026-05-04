@@ -1,0 +1,15 @@
+{
+  "created_utc": "20260502T230140Z",
+  "expected_export_path": "/mnt/data/METABLOOMS_OS_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_AUTHORITY_EXPORT_20260502T230140Z_STORED.zip",
+  "expected_sha256_sidecar": "/mnt/data/METABLOOMS_OS_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_AUTHORITY_EXPORT_20260502T230140Z_STORED.zip.sha256",
+  "export_filename": "METABLOOMS_OS_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_AUTHORITY_EXPORT_20260502T230140Z_STORED.zip",
+  "id": "CURRENT_BROWSER_RENDER_CAPABILITY_RESOLVER_EXPORT_AUTHORITY_v1",
+  "local_stage4_decision": "ALLOW_RENDER_PROXY_WITH_LIMITATION",
+  "local_stage4_honesty_label": "sandbox_render_proxy",
+  "local_stage4_selected_method": "weasyprint_pdf_png_proxy",
+  "pc_addendum_non_blocking": true,
+  "sandbox_first": true,
+  "source_root": "/mnt/data/Metablooms_OS",
+  "stage": "BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF",
+  "stage3_handoff_relative_path": "runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE3_VISUAL_GATE_BINDING_AND_EXPORT_PREP_20260502T225725Z/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE3_VISUAL_GATE_BINDING_AND_EXPORT_PREP_HANDOFF.json"
+}

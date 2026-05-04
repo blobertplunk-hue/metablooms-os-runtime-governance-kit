@@ -1,0 +1,12 @@
+{
+  "authority_export_performed": false,
+  "last_receipt": "/mnt/data/Metablooms_OS/runtime/receipts/METABLOOMS_STAGE6T_TOOL_UNIVERSE_RESOLVER_COVERAGE_REPAIR_FOR_TRACE_EXPORT_RECEIPT_20260502T035000Z.json",
+  "next_best_stage": "STAGE6U_SOURCE_LEVEL_RETROFIT_PRIORITY_BATCH_1_OR_AUTHORITY_EXPORT_AFTER_6T",
+  "notes": [
+    "Stage 6T is support/proof only; run a full authority export stage if you want Stage 6T integrated into a bootable OS ZIP."
+  ],
+  "schema": "MetaBloomsStageHandoff_v1",
+  "stage_id": "STAGE6T_TOOL_UNIVERSE_RESOLVER_COVERAGE_REPAIR_FOR_TRACE_EXPORT",
+  "status": "READY_FOR_NEXT_STAGE",
+  "timestamp_utc": "2026-05-02T03:36:48.369837Z"
+}

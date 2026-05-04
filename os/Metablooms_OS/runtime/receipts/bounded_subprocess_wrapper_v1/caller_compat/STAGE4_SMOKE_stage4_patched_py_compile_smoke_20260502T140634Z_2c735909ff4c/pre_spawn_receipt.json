@@ -1,0 +1,13 @@
+{
+  "argv_resolved": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "-m",
+    "py_compile",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/agent_harness_diff_review_v1.py"
+  ],
+  "created_utc": "20260502T140634Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision": "ALLOW_SPAWN",
+  "timeout_seconds": 10
+}

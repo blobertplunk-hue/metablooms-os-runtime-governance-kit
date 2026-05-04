@@ -1,0 +1,23 @@
+{
+  "created_utc": "2026-04-30T23:23:00Z",
+  "fail_closed_if": [
+    "source_checksum_mismatch",
+    "zip_integrity_fails",
+    "duplicate_member_detected",
+    "unsafe_member_path_detected",
+    "starter_smoke_denies",
+    "pointer_not_promoted"
+  ],
+  "id": "RUNTIME_STARTER_SMOKE_CONTRACT_v1",
+  "mode": "stream_or_targeted_root",
+  "purpose": "Targeted boot/start proof without full OS materialization.",
+  "required_members": [
+    "CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "0_kernel/registry/BOOT_REQUIRED_GATES_v1.json",
+    "runtime/governance/runtime_starter_smoke_v1.py",
+    "runtime/governance/task_start_hook_v1.py",
+    "runtime/governance/prompt_route_preexecution_enforcer_v1.py",
+    "runtime/cartridges/prompt_governance_v1/CARTRIDGE_MANIFEST.json"
+  ],
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_12_POINTER_PROMOTION_AND_RUNTIME_STARTER_SMOKE"
+}

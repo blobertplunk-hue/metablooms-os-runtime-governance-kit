@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-04-28T03:04:56.418970+00:00",
+  "decision_id": "R6_EVIDENCE_BOUND_EXTERNAL_REUSE_SCAN_GATE-7aa0bda18ee2f37b",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"blocked\": false, \"blockers\": [], \"created_utc\": \"2026-04-28T03:04:56.418970+00:00\", \"next_stage\": \"R7_USEFULNESS_VALIDATOR_PROMOTION\", \"no_gap_assertions\": [\"P0A no longer deferred\", \"missing evidence denies\", \"stale evidence denies\", \"valid evidence allows\", \"gate registry validates after enablement\", \"script enforces python3 -S by checking site module not loaded\"], \"receipt_type\": \"R6_HANDOFF\", \"required_next_inputs\": [\"runtime/governance/registries/gate_registry_v1.json\", \"0_kernel/scripts/p0a_external_reuse_scan_precheck_v1.py\", \"runtime/governance/schemas/external_reuse_scan_gate_schema_v1.json\"], \"stage\": \"R6_EVIDENCE_BOUND_EXTERNAL_REUSE_SCAN_GATE\", \"verdict\": \"PASS\"}",
+  "reasons": [],
+  "record_id": "R6_HANDOFF_20260428T030301Z",
+  "record_kind": "handoff",
+  "result": "pass",
+  "source_record": {
+    "path": "receipts/refactor_program/R6_HANDOFF_20260428T030301Z.json",
+    "sha256": "7aa0bda18ee2f37ba9d61ccb42ae758a584f33305295a28574992669a069390e",
+    "size_bytes": 749
+  },
+  "span_id": "964ebdb2c9d4c4c3",
+  "stage_id": "R6_EVIDENCE_BOUND_EXTERNAL_REUSE_SCAN_GATE",
+  "summary": "Canonical wrapper for R6_HANDOFF_20260428T030301Z.json",
+  "trace_id": "d776cc0244e97234afa6efc45be01754"
+}

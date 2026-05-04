@@ -1,0 +1,23 @@
+{
+  "artifact_type": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_VALIDATION.v1",
+  "created_utc": "20260502T164425Z",
+  "graph_node_count": 220,
+  "index_record_count": 220,
+  "issues": [],
+  "record_count": 220,
+  "required_checks": {
+    "0_kernel/registry/observability/MB_CAUSAL_STAGE_GRAPH_SCHEMA_v1.json": true,
+    "0_kernel/registry/observability/MB_OBSERVABILITY_BOOT_INGESTION_SPEC_v1.json": true,
+    "0_kernel/registry/observability/MB_TRACE_SPAN_EVENT_SCHEMA_v1.json": true,
+    "0_kernel/scripts/observability_boot_ingest_v1.py": true,
+    "0_kernel/validators/validate_observability_trace_span_ledger_stage2_v1.py": true,
+    "docs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2.md": true,
+    "runtime/traces/observability/BOOT_INGESTION_REPORT_LATEST.json": true,
+    "runtime/traces/observability/CAUSAL_STAGE_GRAPH_LATEST.json": true,
+    "runtime/traces/observability/TRACE_SPAN_LEDGER_INDEX_LATEST.json": true,
+    "runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl": true
+  },
+  "root": "/mnt/data/Metablooms_OS",
+  "span_count": 220,
+  "verdict": "PASS"
+}

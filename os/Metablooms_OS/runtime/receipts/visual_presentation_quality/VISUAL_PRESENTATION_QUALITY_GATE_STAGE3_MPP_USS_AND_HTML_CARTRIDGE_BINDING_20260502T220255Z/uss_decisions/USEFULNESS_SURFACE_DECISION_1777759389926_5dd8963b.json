@@ -1,0 +1,39 @@
+{
+  "artifact_id": "invalid_missing_visual_dimension",
+  "block_count": 1,
+  "blocks": [
+    "Required dimension visual_presentation missing for artifact_type=html_activity"
+  ],
+  "decision_id": "5dd8963b-5a5b-4d8c-9fac-e285622fe2ee",
+  "input_summary": {
+    "declaration_path": "/mnt/data/Metablooms_OS/tests/fixtures/usefulness_surface/invalid_usefulness_html_activity_missing_visual_presentation_v1.json",
+    "declaration_sha256": "6b61f84f67b9942675b4d7b02ad46833b4397cd3ce74cbeb05bdb904d4f83bc1"
+  },
+  "policy_path": "metablooms/governance/usefulness_surface/allow",
+  "receipt_type": "USEFULNESS_SURFACE_GATE_DECISION",
+  "result": "DENY",
+  "schema_version": "1.2-vpq-stage3",
+  "summary": {
+    "artifact_type": "html_activity",
+    "covered_count": 5,
+    "covered_dimensions": [
+      "instruction",
+      "misconception_diagnosis",
+      "practice",
+      "realtime_feedback",
+      "teacher_telemetry"
+    ],
+    "not_applicable": [],
+    "required_for_type": [
+      "instruction",
+      "practice",
+      "realtime_feedback",
+      "teacher_telemetry",
+      "misconception_diagnosis",
+      "visual_presentation"
+    ]
+  },
+  "timestamp_utc": "2026-05-02T22:03:09Z",
+  "warn_count": 0,
+  "warnings": []
+}

@@ -1,0 +1,1 @@
+{"allowed":true,"decision":"ALLOW","evaluator":"python3-S-policy-evaluator","task":"boot_probe","method":"shell_coreutils","note":"wrapper structure verified; direct route decisions used for bounded recheck"}

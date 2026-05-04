@@ -1,0 +1,20 @@
+{
+  "id": "BTS_WRAPPED_EXPORT_AND_FILESYSTEM_EXECUTORS_REQUIRED_v1",
+  "schema": "MetaBloomsInvariant_v1",
+  "status": "active",
+  "stage_installed": "STAGE6E_BTS_WRAP_EXPORT_AND_FILESYSTEM_EXECUTORS",
+  "description": "Governed filesystem mutation and export creation must route through BTS-wrapped executors that run the Stage6B pre-action gate, emit BTS tool-pipeline records, create T1 receipts, and record implementation_reality before any file-change or export claim is accepted.",
+  "gate": "BTS_WRAPPED_EXECUTOR_GATE",
+  "validator_path": "runtime/governance/executors/bts_wrapped_executors_v1.py",
+  "failure_action": "DENY_GOVERNED_FILE_OR_EXPORT_CLAIM",
+  "required_receipt_surface": "runtime/governance/receipts/bts_wrapped_executors_v1",
+  "requirements": [
+    "filesystem writes performed as governed OS execution must use bts_wrapped_filesystem_write or a wrapper with equivalent receipts",
+    "export ZIP creation performed as governed OS execution must use bts_wrapped_export_zip or a wrapper with equivalent receipts",
+    "every wrapper action must produce a PolicyDecision_v1 receipt before execution",
+    "every wrapper action must produce a BTS turn record with INTENT, EVALUATION, SELECTION, EXECUTION, RESULT, and COMMIT events",
+    "every wrapper action must produce implementation_reality with PASS before success is claimed",
+    "full export actions require a scoped approval_token before execution"
+  ],
+  "installed_at_utc": "2026-05-02T02:08:00Z"
+}

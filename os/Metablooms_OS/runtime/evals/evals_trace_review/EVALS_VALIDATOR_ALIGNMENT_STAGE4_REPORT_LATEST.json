@@ -1,0 +1,24 @@
+{
+  "artifact_type": "EVALS_VALIDATOR_ALIGNMENT_GATE_STAGE4_REPORT_v1",
+  "created_utc": "20260501T153500Z",
+  "stage_name": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_4_VALIDATOR_ALIGNMENT_GATE_PROMOTION",
+  "verdict": "VALIDATOR_ALIGNMENT_GATE_PASS",
+  "promotion_decision": "PROMOTE",
+  "checks": [
+    {"id":"EVAL-GATE-001_minimum_dataset_size","ok": true, "details":{"example_count":24,"minimum":20}},
+    {"id":"EVAL-GATE-002_required_label_coverage","ok": true, "details":{"label_support":{"PASS":10,"WARN":4,"BLOCK":10}}},
+    {"id":"EVAL-GATE-003_minimum_accuracy","ok": true, "details":{"accuracy":0.9583,"minimum":0.90}},
+    {"id":"EVAL-GATE-004_zero_false_pass","ok": true, "details":{"false_pass_count":0,"tolerance":0}},
+    {"id":"EVAL-GATE-005_stage3_runner_complete","ok": true, "details":{"stage3_runner":"present"}},
+    {"id":"EVAL-GATE-006_promotion_matrix_pass","ok": true, "details":{"confusion_matrix_promotion_decision":"PASS"}},
+    {"id":"EVAL-GATE-007_conservative_mismatch_only","ok": true, "details":{"policy":"WARN->BLOCK is allowed; WARN/BLOCK->PASS is not allowed"}}
+  ],
+  "failed_checks": [],
+  "metrics": {
+    "example_count": 24,
+    "accuracy": 0.9583,
+    "false_pass_count": 0,
+    "label_support": {"PASS":10,"WARN":4,"BLOCK":10}
+  },
+  "policy": "Promotion requires enough examples, PASS/WARN/BLOCK coverage, minimum accuracy, no false passes, and completed Stage 3 runner evidence."
+}

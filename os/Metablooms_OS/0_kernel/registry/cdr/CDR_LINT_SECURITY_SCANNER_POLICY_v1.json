@@ -1,0 +1,51 @@
+{
+  "acceptance_rules": [
+    "baseline_schema_valid",
+    "baseline_hashes_present",
+    "required_scanner_or_fallback_present",
+    "no_zero_tolerance_findings",
+    "risk_tier_threshold_satisfied",
+    "test_binding_present_for_runtime_code"
+  ],
+  "failure_state": "DENY with explicit reasons, finding ids, and remediation hints",
+  "risk_tier_thresholds": {
+    "CRITICAL": {
+      "max_complexity": 8,
+      "max_findings": "no_zero_tolerance_no_high_no_medium",
+      "max_todo": 0
+    },
+    "HIGH": {
+      "max_complexity": 10,
+      "max_findings": "no_zero_tolerance_no_high",
+      "max_todo": 1
+    },
+    "LOW": {
+      "max_complexity": 15,
+      "max_findings": "warn_only",
+      "max_todo": 5
+    },
+    "MEDIUM": {
+      "max_complexity": 12,
+      "max_findings": "no_zero_tolerance",
+      "max_todo": 3
+    }
+  },
+  "scanner_baseline_required_fields": [
+    "source_root",
+    "generated_at_utc",
+    "tool_availability",
+    "files_scanned",
+    "findings",
+    "summary",
+    "source_hashes"
+  ],
+  "schema": "CDRLintSecurityScannerPolicy_v1",
+  "stage": "CDR_STAGE9_LINT_SECURITY_SCANNER_INTEGRATION_AND_BASELINE_REPORTING",
+  "zero_tolerance_finding_types": [
+    "syntax_error",
+    "dynamic_exec",
+    "shell_true_subprocess",
+    "secret_literal",
+    "unsafe_path_traversal_pattern"
+  ]
+}

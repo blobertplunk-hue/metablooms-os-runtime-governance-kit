@@ -1,0 +1,5 @@
+{
+  "remove_paths": [
+    "0_kernel/sandbox_governance/SANDBOX_TOOL_USE_POLICY_v1.json"
+  ]
+}

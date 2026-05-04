@@ -1,0 +1,60 @@
+{
+  "argv_redacted": [
+    "python3",
+    "-S",
+    "/mnt/data/Metablooms_OS/0_kernel/lib/archive_method_router_v1.py",
+    "/mnt/data/stage3_tiny_test.zip",
+    "--root",
+    "/mnt/data/Metablooms_OS",
+    "--mode",
+    "validate",
+    "--timeout-s",
+    "5",
+    "--json-out",
+    "/mnt/data/stage3_archive_router_smoke.json"
+  ],
+  "argv_resolved": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "/mnt/data/Metablooms_OS/0_kernel/lib/archive_method_router_v1.py",
+    "/mnt/data/stage3_tiny_test.zip",
+    "--root",
+    "/mnt/data/Metablooms_OS",
+    "--mode",
+    "validate",
+    "--timeout-s",
+    "5",
+    "--json-out",
+    "/mnt/data/stage3_archive_router_smoke.json"
+  ],
+  "artifact_type": "METABLOOMS_BOUNDED_COMMAND_DECISION_PACKET_v1",
+  "attempts": [
+    {
+      "attempt_index": 0,
+      "elapsed_ms": 98,
+      "returncode": 0,
+      "started_utc": "20260502T140156Z",
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_truncated": false,
+      "stdout": "{\n  \"archive\": \"/mnt/data/stage3_tiny_test.zip\",\n  \"artifact_type\": \"ARCHIVE_METHOD_ROUTER_EVIDENCE_v1\",\n  \"attempts\": [\n    {\n      \"cmd\": [\n        \"/usr/bin/unzip\",\n        \"-tq\",\n        \"/mnt/data/stage3_tiny_test.zip\"\n      ],\n      \"elapsed_sec\": 0.01,\n      \"rc\": 0,\n      \"stderr\": \"\",\n      \"stdout\": \"No errors detected in compressed data of /mnt/data/stage3_tiny_test.zip.\\n\"\n    }\n  ],\n  \"checks\": [\n    {\n      \"name\": \"unzip_integrity\",\n      \"passed\": true\n    }\n  ],\n  \"created_utc\": \"20260502T140156Z\",\n  \"issues\": [],\n  \"mode\": \"validate\",\n  \"verdict\": \"PASS\",\n  \"warnings\": [\n    \"7zz_missing\"\n  ]\n}\n",
+      "stdout_bytes": 620,
+      "stdout_sha256": "58d75976467f177345c8bbf9ba752f7a4bd94eadaa6b2246fe549e9446b1e080",
+      "stdout_truncated": false,
+      "timeout_seconds": 10.0
+    }
+  ],
+  "created_utc": "20260502T140156Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision_packet_path": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/decision_packet.json",
+  "failure_class": null,
+  "failure_event_path": null,
+  "operation_type": "stage3_archive_router_script_smoke",
+  "policy_matches": [],
+  "pre_spawn_receipt_path": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/pre_spawn_receipt.json",
+  "receipt_dir": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat",
+  "result_class": "ALLOW_SUCCESS",
+  "stage": "stage3_smoke",
+  "total_elapsed_ms": 98
+}

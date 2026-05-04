@@ -1,0 +1,35 @@
+{
+  "authorized_by": "receipts/inline_project_tracker/TRACKER_4R_20260429T112238Z/TRACKER_4R_HANDOFF.json",
+  "checks": {
+    "compact_tracker_renders_first": "PASS",
+    "fake_percent_rejection": "PASS",
+    "gate_validator_passes": "PASS",
+    "handoff_update_validator_passes": "PASS",
+    "mobile_width_lte_64": "PASS",
+    "no_box_drawing_or_pipe_table_layout": "PASS",
+    "renderer_validator_passes": "PASS",
+    "tracker_4r_handoff_loaded": "PASS"
+  },
+  "compatibility_patches": [
+    {
+      "backup": "TRACKER_GATE_VALIDATOR_v1.py.before_TRACKER_5",
+      "current_file": "0_kernel/cartridges/inline_project_tracker/TRACKER_GATE_VALIDATOR_v1.py"
+    },
+    {
+      "backup": "TRACKER_HANDOFF_UPDATE_VALIDATOR_v1.py.before_TRACKER_5",
+      "current_file": "0_kernel/cartridges/inline_project_tracker/TRACKER_HANDOFF_UPDATE_VALIDATOR_v1.py"
+    },
+    {
+      "backup": "TRACKER_STATE_UPDATER_v1.py.before_TRACKER_5",
+      "current_file": "0_kernel/cartridges/inline_project_tracker/TRACKER_STATE_UPDATER_v1.py"
+    }
+  ],
+  "export_sha256": "external_sidecar_required_after_zip",
+  "external_hardening": "WCAG reflow-informed compact-line/no-box packaging gate retained",
+  "root": "/mnt/data/Metablooms_OS",
+  "smoke_report": "receipts/inline_project_tracker/TRACKER_5_20260429T113046Z/TRACKER_5_SMOKE_TEST_REPORT.json",
+  "smoke_report_sha256": "6038de7721520946a81fc3caa3276a03ccb58cdc13263756fd3d620b8d8b9d8f",
+  "stage": "TRACKER-5_SMOKE_TEST_AND_EXPORT_PACKAGING",
+  "status": "PASS",
+  "timestamp_utc": "20260429T113046Z"
+}

@@ -1,0 +1,20 @@
+{
+  "handoff_type": "R11_HANDOFF",
+  "stage": "R11_LEGACY_QUARANTINE_REDIRECTS_AND_CLEANUP",
+  "created_utc": "2026-04-28T03:27:45Z",
+  "verdict": "PASS",
+  "next_stage": "R12_REGRESSION_SUITE_EXPANSION",
+  "key_artifacts": [
+    "receipts/refactor_program/R11_LEGACY_QUARANTINE_RECEIPT_20260428T032630Z.json",
+    "receipts/refactor_program/R11_VERIFY_RECEIPT_20260428T032630Z.json",
+    "runtime/governance/contracts/legacy_quarantine_redirects_contract_v1.json",
+    "0_kernel/scripts/validate_legacy_quarantine_v1.py",
+    "runtime/governance/registries/gate_registry_v1.json"
+  ],
+  "must_not_skip": [
+    "run legacy quarantine validator before export",
+    "keep quarantined originals in runtime/governance/legacy_quarantine",
+    "do not treat tombstoned Claude-specific files as runtime authority",
+    "rerun gate registry integrity after any cleanup"
+  ]
+}

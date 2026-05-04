@@ -1,0 +1,7 @@
+{
+  "schema_version": "v1",
+  "stage": "WC_STAGE4_OPERATOR_EXPERIENCE_AND_BOOT_AUTHORITY_POLISH",
+  "rule": "Every successful governed stage should export a clearly labeled BOOTABLE_FULL_AUTHORITY bundle when possible; blocked/diagnostic bundles must be labeled NOT_FULL_AUTHORITY.",
+  "required_manifest": "BOOT_AUTHORITY_MANIFEST_v1.json",
+  "provenance": "RECONSTRUCTED_FROM_CHAT_SUMMARY_AND_BASE_AUTHORITY_20260503"
+}

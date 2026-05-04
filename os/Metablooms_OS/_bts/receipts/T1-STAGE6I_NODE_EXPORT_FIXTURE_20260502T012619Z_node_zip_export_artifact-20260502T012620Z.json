@@ -1,0 +1,11 @@
+{
+  "receipt_id": "T1-STAGE6I_NODE_EXPORT_FIXTURE_20260502T012619Z_node_zip_export_artifact-20260502T012620Z",
+  "tier": "T1",
+  "artifact": "/mnt/data/STAGE6I_NODE_EXPORT_FIXTURE.zip",
+  "sha256": "f527582f93b51b82ad79dc379bee2409f1c6e450d9c37c54dd551b6a35929247",
+  "bytes_size": 323,
+  "prior_sha256": "",
+  "stdout_proof": "",
+  "timestamp": "2026-05-02T01:26:20.179922Z",
+  "turn_id": "STAGE6I_NODE_EXPORT_FIXTURE_20260502T012619Z"
+}

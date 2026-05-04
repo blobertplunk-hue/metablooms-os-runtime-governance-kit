@@ -1,0 +1,10 @@
+{
+  "id": "H0B1_FRESH_EXTRACT_PROOF",
+  "timestamp_utc": "2026-04-30T17:55:38Z",
+  "status": "PASS",
+  "validated_zip": "/mnt/data/METABLOOMS_OS_H0B1_CHAT_GOVERNANCE_KERNEL_COMPLETE_SYSTEM_FINAL_20260430T175600Z.zip",
+  "validated_zip_sha256": "b653d1dd227327385b09e178faf86f3cf7cd9945182d565e7937162c09ca6fbb",
+  "fresh_extract_root": "/mnt/data/H0B1_FINAL_FRESH_EXTRACT/Metablooms_OS",
+  "fresh_behavior_test_output": "{\n  \"status\": \"PASS\",\n  \"fixture_results\": {\n    \"valid_full_promotion\": \"ALLOW\",\n    \"deny_missing_router\": \"DENY\",\n    \"deny_missing_see_ce\": \"DENY\",\n    \"deny_final_without_tracker\": \"DENY\",\n    \"deny_promotion_without_export\": \"DENY\"\n  },\n  \"invariants_loaded\": 15,\n  \"errors\": []\n}\n",
+  "promotion_decision": "PASS_EXPORT_SURVIVED_FRESH_EXTRACT_AND_RUNTIME_TEST"
+}

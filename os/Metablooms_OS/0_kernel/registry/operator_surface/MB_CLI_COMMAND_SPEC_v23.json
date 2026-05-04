@@ -1,0 +1,12 @@
+{
+  "schema_version": "MB_CLI_COMMAND_SPEC_v23",
+  "created_utc": "20260501T182900Z",
+  "commands": {
+    "education": [
+      "--gate",
+      "--scorecard",
+      "--promotion-gate",
+      "--check"
+    ]
+  }
+}

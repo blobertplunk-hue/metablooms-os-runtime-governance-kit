@@ -1,0 +1,45 @@
+{
+  "version": "1.0",
+  "created_at": 1777062946.213825,
+  "stage": "F6_BLOCKED_RECEIPT_HANDLING_RULE",
+  "status": "complete",
+  "outputs": {
+    "blocked_schema": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/BLOCKED_RECEIPT_HANDLING_RULE_SCHEMA_v1.json",
+    "blocked_rule": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/BLOCKED_RECEIPT_HANDLING_RULE_v1.json",
+    "blocked_doc": "/mnt/data/Metablooms_OS_refined/0_kernel/docs/BLOCKED_RECEIPT_HANDLING_RULE_v1.md",
+    "blocked_template": "/mnt/data/Metablooms_OS_refined/0_kernel/pipeline/BLOCKED_RECEIPT_TEMPLATE_v1.json",
+    "blocked_proof": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/BLOCKED_RECEIPT_HANDLING_RULE_PROOF_v1.json",
+    "synthetic_blocked_receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/blockers/F6_SYNTHETIC_BLOCKED_RECEIPT_v1.json",
+    "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F6_BLOCKED_RECEIPT_HANDLING_RULE_RECEIPT_v1.json",
+    "handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F6_TO_F7_HANDOFF_v1.json"
+  },
+  "checks": {
+    "f5_handoff_ready": true,
+    "f5_receipt_passed": true,
+    "f5_repair_passed": true,
+    "f6_declared_target": true,
+    "ledger_latest_pass_is_f5": true,
+    "pointer_active": true
+  },
+  "proof_cases": {
+    "canonical_blocker_dir_exists": true,
+    "synthetic_blocker_written": true,
+    "blocked_template_pointer_false": true,
+    "blocked_template_latest_pass_false": true,
+    "nested_git_evidence_forbidden": true,
+    "broad_git_clean_forbidden": true,
+    "repair_entries_do_not_advance_latest_pass": true
+  },
+  "verdict": "PASS",
+  "next_improvement_task": "F7 \u2014 Stable Export + Boot Recovery Proof",
+  "why_next": "Blocked-receipt handling is defined; next create a recovery-proven stable export and verify boot recovery.",
+  "remaining_work": [
+    "F7 \u2014 Stable Export + Boot Recovery Proof",
+    "Return to E4A\u2013E5D"
+  ],
+  "progress_estimate": {
+    "stages_remaining_before_return_to_E4": 1,
+    "major_arcs_remaining_after_recovery_arc": 2
+  },
+  "next_correct_command": "EXECUTE F7 \u2014 STABLE EXPORT + BOOT RECOVERY PROOF"
+}

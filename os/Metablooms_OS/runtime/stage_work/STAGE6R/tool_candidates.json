@@ -1,0 +1,60 @@
+{
+  "candidate_set_id": "tool_candidates_35fcae52b96b661e",
+  "candidates": [
+    {
+      "competence_score": null,
+      "decision_status": "DENIED",
+      "denied_replacements": [
+        "node_yauzl_crc_proof",
+        "zipinfo_metadata_scan"
+      ],
+      "display_name": "unzip -tqq full test",
+      "evidence_refs": [
+        "FORBIDDEN_VALIDATION_METHODS_v1.json"
+      ],
+      "execution_route": "DENIED",
+      "fallbacks": [],
+      "install_state": "DENIED",
+      "known_failure_classes": [
+        "timeout_large_archive_validation"
+      ],
+      "reasons": [
+        "denied by risk tier / forbidden-method memory"
+      ],
+      "requires_approval": true,
+      "risk_tier": "denied",
+      "score": -100.0,
+      "tool_id": "unzip_tqq_full_test"
+    }
+  ],
+  "classified_job_type": "implementation",
+  "created_utc": "2026-05-02T03:26:46.246050Z",
+  "resolver_version": "TOOL_UNIVERSE_RESOLVER_v1",
+  "schema": "TOOL_CANDIDATE_SET_v1",
+  "selection_gate": {
+    "requires_why_not_better_if_selected_not_top": true,
+    "rule": "BTS_TOOL_EVALUATION must cover resolver candidates or explain exclusions; selected tool should be top_allowed_tool_id unless WHY_NOT_BETTER_TOOL justification passes."
+  },
+  "source_registries": [
+    "0_kernel/registry/tool_governance/TOOL_CAPABILITY_GENOME_BASELINE_v1.json",
+    "0_kernel/registry/tool_governance/sandbox_tool_probe_inventory_v1.json",
+    "0_kernel/registry/tool_governance/GOVERNED_TOOL_INSTALL_PROFILE_REGISTRY_v1.json",
+    "_bts/tool_competence.json",
+    "FORBIDDEN_VALIDATION_METHODS_v1.json",
+    "runtime/authority/FORBIDDEN_VALIDATION_METHODS_v1.json"
+  ],
+  "stage_id": "STAGE6R",
+  "sufficiency": {
+    "allowed_count": 0,
+    "candidate_count": 1,
+    "coverage_score": 0.0,
+    "reasons": [
+      "too few candidates for governed comparison",
+      "no allowed candidates"
+    ],
+    "score_spread": 0.0,
+    "verdict": "FAIL"
+  },
+  "task": "Install observability trace export adapters for BTS spans, OpenTelemetry-compatible JSONL, Agents-SDK-compatible event mapping, checkpoint links, and security audit fields. Write support proof only.",
+  "top_allowed_tool_id": null
+}

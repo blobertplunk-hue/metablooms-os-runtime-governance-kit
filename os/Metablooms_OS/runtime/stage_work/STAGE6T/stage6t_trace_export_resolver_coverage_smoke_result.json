@@ -1,0 +1,18 @@
+{
+  "allowed_count": 3,
+  "candidate_count": 4,
+  "classified_job_type": "observability_trace_export",
+  "reasons": [],
+  "returncode": 0,
+  "schema": "Stage6TTraceExportResolverCoverageSmoke_v1",
+  "stderr_tail": "",
+  "stdout_tail": "explain exclusions; selected tool should be top_allowed_tool_id unless WHY_NOT_BETTER_TOOL justification passes.\"\n  },\n  \"source_registries\": [\n    \"0_kernel/registry/tool_governance/TOOL_CAPABILITY_GENOME_BASELINE_v1.json\",\n    \"0_kernel/registry/tool_governance/sandbox_tool_probe_inventory_v1.json\",\n    \"0_kernel/registry/tool_governance/GOVERNED_TOOL_INSTALL_PROFILE_REGISTRY_v1.json\",\n    \"_bts/tool_competence.json\",\n    \"FORBIDDEN_VALIDATION_METHODS_v1.json\",\n    \"runtime/authority/FORBIDDEN_VALIDATION_METHODS_v1.json\"\n  ],\n  \"stage_id\": \"STAGE6T_SMOKE\",\n  \"sufficiency\": {\n    \"allowed_count\": 3,\n    \"candidate_count\": 4,\n    \"coverage_score\": 1.0,\n    \"reasons\": [],\n    \"score_spread\": 24.997,\n    \"verdict\": \"PASS\"\n  },\n  \"task\": \"STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS install observability trace export adapters for MetaBlooms JSONL OpenTelemetry span JSON OpenAI Agents SDK event JSON LangGraph run JSON\",\n  \"top_allowed_tool_id\": \"python_observability_trace_export_adapter\"\n}\n",
+  "sufficiency_verdict": "PASS",
+  "top_allowed_tool_id": "python_observability_trace_export_adapter",
+  "verdict": "PASS",
+  "zip_export_regression": {
+    "classified_job_type": "zip_export",
+    "returncode": 0,
+    "top_allowed_tool_id": "node_yazl_stream_export"
+  }
+}

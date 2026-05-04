@@ -1,0 +1,198 @@
+{
+  "created_utc": "20260502T140451Z",
+  "patched_count": 32,
+  "patched_files": [
+    {
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_SMOKE_TEST_v1.py",
+      "replacements": 4,
+      "sha256_after": "abf808c67bbd838ce5a8d58a4961dc87caf44e1d73d69589973490eb3005b056",
+      "sha256_before": "5f0036656f5589df269ab012bc3b209bec595ef9a19479282b96e157df4d36f7"
+    },
+    {
+      "path": "0_kernel/scripts/agent_harness_diff_review_v1.py",
+      "replacements": 1,
+      "sha256_after": "3d08ab4ce4372a4478120f3a2ac511aa7616906c91d15212e853e6aa87118be7",
+      "sha256_before": "25fd20890bc36f67a7236fe6822dd46a81c18b88f8470c6066332447ea1d021b"
+    },
+    {
+      "path": "0_kernel/scripts/artifact_replay_proof_v2.py",
+      "replacements": 1,
+      "sha256_after": "e3317e8ef4deccce9c15ad2e8e45cef0983973088878f3060b0f42f176415dc6",
+      "sha256_before": "fc63e6494da8267f71128ff0c48ddb3a55a88b95e84c3679750c0e34c2d4a754"
+    },
+    {
+      "path": "0_kernel/scripts/cartridge_executor_v1.py",
+      "replacements": 11,
+      "sha256_after": "e3ff7bd4099334f0c819f48a240d5ff2ac599aa30f02ec788e8cb470fd2a0b79",
+      "sha256_before": "f95c5c90dd8032dc2e989384e0626cc9c028e196a7090df5ae255fcb18d9d0bd"
+    },
+    {
+      "path": "0_kernel/scripts/ensure_libcst_available_v1.py",
+      "replacements": 1,
+      "sha256_after": "0000360d2700c681a147d2f7f4c846c71eccf62dae29b558de93eaca180cc581",
+      "sha256_before": "242f6315cc2fbbf56c593c01811e3a493dd2a62dcb6d2031414dd1c38cb0945e"
+    },
+    {
+      "path": "0_kernel/scripts/ensure_ruff_available_v1.py",
+      "replacements": 1,
+      "sha256_after": "eb4cfc50c027f15504293015535da286314b1eb57d9f4ed7efd7a0c004ca09de",
+      "sha256_before": "c8cf6c80cafff5628a264ca5efcf18b0eea989b520e760bfef92b52adbafda62"
+    },
+    {
+      "path": "0_kernel/scripts/governed_run.py",
+      "replacements": 1,
+      "sha256_after": "a6df892433a36516a6d88539253601fc21e78a968cb50cdaabb1ac7e7c557f4a",
+      "sha256_before": "77c06b1f1b62f507a0651964d2925828db170893b677ec9766b88a69eb9f4c48"
+    },
+    {
+      "path": "0_kernel/scripts/p0py_python_health_governance_v1.py",
+      "replacements": 1,
+      "sha256_after": "d6e5ac588fa5cec0e4cd9b574a0d8ffc144748b6ee66342367a3a84dfbd45169",
+      "sha256_before": "7e5b09853fe94bcd56c3a32cd0c110a090c9e75cbd05af3c13c8ce46e13c8320"
+    },
+    {
+      "path": "0_kernel/scripts/registry_mutation_engine_v2_lite_final.py",
+      "replacements": 1,
+      "sha256_after": "b6957fb7ca0113445b0c366d17e597ece4bef2d05538d0412e08efc95ef393c7",
+      "sha256_before": "6bcd7dcc4db5f7b5025e4eeb32b72d8a3d1b16f197b2b5e49ed7ac886c7fd7c1"
+    },
+    {
+      "path": "0_kernel/scripts/run_governance_regression_suite_v1.py",
+      "replacements": 1,
+      "sha256_after": "d18345cf6f444212475634d1c9fa4d40db10827dadd971d82f7ba05115ca413c",
+      "sha256_before": "817953842f1c38e8983f526ac80063ed5936db6f7a4d457078f6e694b22f15b3"
+    },
+    {
+      "path": "0_kernel/scripts/stage_runner_v1.py",
+      "replacements": 4,
+      "sha256_after": "1c082a6ff6da608cf05bc08d1f33a037cac02390ae6f8fee271248a7f65c9d84",
+      "sha256_before": "722a71aa19a2967d3f556f023154551da8bc429706c761573de208b4d98ce061"
+    },
+    {
+      "path": "0_kernel/scripts/sync_writer_baseline_sha_patch_v1.py",
+      "replacements": 2,
+      "sha256_after": "f80b4e7c1c725436bd9dd627352b6421da4d43ed35293a76ccdaa8405ff6733e",
+      "sha256_before": "bc18dd2a9852ff5d2000678949aa9fff5222d297eaf30e2267482058d0fb2777"
+    },
+    {
+      "path": "0_kernel/scripts/transactional_stage_runner_v1.py",
+      "replacements": 1,
+      "sha256_after": "de1ca31dc3afbe3a84a9f4f4eb5e41a65f8ba157c7e0eb756dcd7a46984b1416",
+      "sha256_before": "774cc14755b73e91556a3c49adaa48194b2254de9da7586400cae8adc6f0323c"
+    },
+    {
+      "path": "0_kernel/validators/validate_agent_harness_stage1_v1.py",
+      "replacements": 1,
+      "sha256_after": "83d043f355aefa3b2db03d17930e16662647b59efa0bd2bfa2e8d59a788f60d3",
+      "sha256_before": "ed2f6a5df972c907a7f20c2a5a5a58bb628db154c45986128954bd631bcd269b"
+    },
+    {
+      "path": "0_kernel/validators/validate_agent_harness_stage2_v1.py",
+      "replacements": 2,
+      "sha256_after": "690d77017812c37e42d5a07d0ae9da0f788914ef9db2ec0dd37231d4d18c2cbb",
+      "sha256_before": "eb8e2583dd17d9dc4d6411cc51dee8a16916e3f17d3d332a52b8727e7a4ba866"
+    },
+    {
+      "path": "0_kernel/validators/validate_agent_harness_stage3_v1.py",
+      "replacements": 1,
+      "sha256_after": "2c81573d788fe642013650695bb8a42ee650d3b3c8e417600551d6220a0fa2c1",
+      "sha256_before": "711ae869e9a23266318a32383c841fc93bdbf3f037bac384cb6114fed8149489"
+    },
+    {
+      "path": "0_kernel/validators/validate_education_validity_stage1_v1.py",
+      "replacements": 1,
+      "sha256_after": "19191f97d0b8bdf2c94e8744d81f4a85d51793b8e12f36bd1b065564c5d93386",
+      "sha256_before": "a39ac470bd3ef5327f456a55ce50eda48fcf0a1d5750127700ff4800ef491ccd"
+    },
+    {
+      "path": "0_kernel/validators/validate_education_validity_stage2_v1.py",
+      "replacements": 2,
+      "sha256_after": "e932c42876f7790936cf49327eb09b266974aa704389e913f9735ee87b3e6e32",
+      "sha256_before": "bb71cd32d4f9896df7dd2a28faf0a693d4cc06057d4164614cfefe5009eaa43c"
+    },
+    {
+      "path": "0_kernel/validators/validate_evals_evaluator_runner_stage3_v1.py",
+      "replacements": 1,
+      "sha256_after": "8883e99785bd754bad4b6ee15fb9e3d09ef5743e3f3d30255fcdf2e7dcfc1afa",
+      "sha256_before": "ec5a95ab2973f62d8e7030eab3af4f4fc1198b8f140082ca8875e6a1b6cd203f"
+    },
+    {
+      "path": "0_kernel/validators/validate_evals_validator_alignment_stage4_v1.py",
+      "replacements": 1,
+      "sha256_after": "95cdccdd27f8a6cb655728cffb044aaf669d1995502511d1acfc6831fa88de36",
+      "sha256_before": "d273a627a0471d0383258d4924af5a8f88138124a90342a69f65fc4d6c41f4de"
+    },
+    {
+      "path": "0_kernel/validators/validate_filesystem_handling_safety_stage1_v1.py",
+      "replacements": 1,
+      "sha256_after": "fefd1af11a5539ca19cc226d2eb3e6ec6a3cd9656c64bb1a53360733267f3743",
+      "sha256_before": "55ed478514653f86c9a973cb1b92cc31cc274797e3133765401ac08a660fc785"
+    },
+    {
+      "path": "0_kernel/validators/validate_filesystem_handling_safety_stage2_v1.py",
+      "replacements": 1,
+      "sha256_after": "e72d75a2e78e843918f2dea5c1bc2303d55ac6161d46e5c3dfc321e53b52c70b",
+      "sha256_before": "362da817c39589dc4794fa301bf7596ec546ea5b4195e72ebc0ae3c67c19dd64"
+    },
+    {
+      "path": "0_kernel/validators/validate_operator_surface_stage3_v1.py",
+      "replacements": 1,
+      "sha256_after": "90017035c31ca2debf98325009442a52ee91ae75a03400edb4184e1eeca23db0",
+      "sha256_before": "12d3675bfccf64d691fb39fbd6c476f8a3eb0ff3348483de8039bd9f9f6e96bc"
+    },
+    {
+      "path": "0_kernel/validators/validate_operator_surface_v1.py",
+      "replacements": 1,
+      "sha256_after": "7aaa3797f3760bf546976e48ed2f776b135ec397a2748ba1736c5b90f3eda5ea",
+      "sha256_before": "4feafe7774d91b2c90d076c6a41715225666087ff76d1f3bc1af313c037636d0"
+    },
+    {
+      "path": "0_kernel/validators/validate_runaway_turn_breaker_stage0_v1.py",
+      "replacements": 1,
+      "sha256_after": "5848189ff52578c030a65d29804a0231ffdd05d191c359b06f4dc5f5ed5526e9",
+      "sha256_before": "622c0ce50e50b76efbe3ff71b5cd303787fb716ec5887870b462675df3da3514"
+    },
+    {
+      "path": "0_kernel/validators/validate_security_hardwired_stage3_v1.py",
+      "replacements": 2,
+      "sha256_after": "111e42e220fa092b0e235266d7d0c3781efe2ec03fe43b7cd771bc5c3faf72d8",
+      "sha256_before": "d6a36d16e7e468e89698cbc36cdd2e2c626289388aad9bd647f44d4cdc044d03"
+    },
+    {
+      "path": "0_kernel/validators/validate_security_red_team_stage4_v1.py",
+      "replacements": 1,
+      "sha256_after": "9c79d291319ad8e5821d5ff2d038a5f03403f6c599da750792305e2e3c9e9c14",
+      "sha256_before": "2309304ccc079eccf9ce10de92cbb256aa8c9b64d8b96f011d0a08378b751c83"
+    },
+    {
+      "path": "0_kernel/validators/validate_software_quality_stage2_v1.py",
+      "replacements": 1,
+      "sha256_after": "4eceac8cf9cfd0932e9f7811c64744c8424cd8f97020b25b3357c9c0631b100f",
+      "sha256_before": "667ca81200f83936fbcb6d66483329eca9e25b19113fe5170c6188c3cd82cb59"
+    },
+    {
+      "path": "0_kernel/validators/validate_state_checkpoint_stage2_v1.py",
+      "replacements": 1,
+      "sha256_after": "40be3160363605122195e4d9208a6aef07a6b96b4daa3873d811593fdfcc0c4a",
+      "sha256_before": "58f010feb074c085e51de14789ab5b6eb81f8923960ed73354cefc6d479947c9"
+    },
+    {
+      "path": "runtime/governance/bts_v4/BTS.py",
+      "replacements": 2,
+      "sha256_after": "b4eb3aa982d965936c4b2f44f094c62db124981d2156e5dd3f28a3a65a7bb9f1",
+      "sha256_before": "2a52131e3334152e7e8c396412ca71084d0549cf033f301a51f3277b89b30433"
+    },
+    {
+      "path": "runtime/governance/executors/bts_wrapped_executors_v1.py",
+      "replacements": 2,
+      "sha256_after": "19dfa7badff61ca7b5747dabe9fb08ab23733069d5c3d8b2f6dbd0233781c49c",
+      "sha256_before": "836d0d5715a386577590d71576e13c3d7c8c05564be384dfaae5f8ce6af799cf"
+    },
+    {
+      "path": "runtime/governance/full_os_recovery_replay_validator_v1.py",
+      "replacements": 1,
+      "sha256_after": "7f54a6785afdf71ba6c06242b373d5d436c84711674027c7114b8fe244f73335",
+      "sha256_before": "977d49917a3eedcf6a769b78246fd01cb52e19694ef511e522c123f95e947e9d"
+    }
+  ]
+}

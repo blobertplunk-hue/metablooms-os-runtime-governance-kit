@@ -1,0 +1,89 @@
+{
+  "artifact_hashes": {
+    "0_kernel/scripts/session_state_exporter_v1.py": "d4be2231bb52a2cddde600640f015acbc27eaf476c38786da1bd1c56c2402b09",
+    "0_kernel/scripts/validate_session_state_export_v1.py": "5e05025296fc35c554f1ebb8436d5277d306af0474435b37b99cf630fedc4fe0",
+    "runtime/governance/schemas/session_state_export_schema_v1.json": "7e774f56c7b58274da8f6939897309c83aec50cf9f155d95a7e9a258e7c59e72"
+  },
+  "authoritative_root": "/mnt/data/Metablooms_OS_refined",
+  "created_utc": "2026-04-28T03:32:56Z",
+  "deferred_work": [
+    "Promote gate registry replacement in R5.",
+    "Bind evidence-bound external reuse scan gate in R6.",
+    "Promote usefulness validator into registered gate in R7.",
+    "Unify python health governance into registry-backed lane in R8.",
+    "Convert telemetry assets into cartridge-grade contract in R9."
+  ],
+  "open_work": {
+    "blockers": [],
+    "next_actions": [
+      "Resume from latest refactor handoff receipt."
+    ],
+    "next_stage": "R12_REGRESSION_SUITE_EXPANSION"
+  },
+  "recent_receipts": [
+    {
+      "path": "receipts/refactor_program/R12_COMPAT_VALIDATOR_R11_STATUS_REPAIR_20260428T033120Z.json",
+      "sha256": "420649c6508f39694bf66e562cb5b5d839ae3f021da0dbb639a1a7472478aecd"
+    },
+    {
+      "path": "receipts/refactor_program/R11_HANDOFF_20260428T032630Z.json",
+      "sha256": "de81c13703053411ac4420e4f724c67a91b0af29cb4e220fbf9feae0532ca827"
+    },
+    {
+      "path": "receipts/refactor_program/R11_VERIFY_RECEIPT_20260428T032630Z.json",
+      "sha256": "edeb6c0c7dadd8d538407eb5afbf7ecd6e2a94393c84aee9f70c704d77cd3b4d"
+    },
+    {
+      "path": "receipts/refactor_program/R11_LEGACY_QUARANTINE_RECEIPT_20260428T032630Z.json",
+      "sha256": "eaa497202b504ce60a942a6b6df25912fd68113eb7518831a312c5f2cc01cfe6"
+    },
+    {
+      "path": "receipts/refactor_program/R10_HANDOFF_20260428T032439Z.json",
+      "sha256": "a762e0d5d249780974c00d06b2af644a21e56244e9adb84a7a1017d22b1b3057"
+    },
+    {
+      "path": "receipts/refactor_program/R10_VERIFY_RECEIPT_20260428T032439Z.json",
+      "sha256": "0d73e09eb0f4e8a9e1c427f449b27e2acd9cdc253bdab1fa79035c5a1e5c71df"
+    },
+    {
+      "path": "receipts/refactor_program/R10_DECISION_LOGGING_UNIFICATION_RECEIPT_20260428T032439Z.json",
+      "sha256": "d2994dc19379461736d6aae45a6a2d03825ea6537ce05e06025447c6c49a1e8c"
+    },
+    {
+      "path": "receipts/refactor_program/R9_HANDOFF_20260428T032105Z.json",
+      "sha256": "6b245360d380e838151339b6bd5efe3b29ce67dfcd820504a672442a016e4a88"
+    }
+  ],
+  "runtime_facts": {
+    "active_contracts": [
+      "runtime/governance/contracts/artifact_disposition_contract_v1.json",
+      "runtime/governance/contracts/legacy_artifact_redirects_v1.json",
+      "runtime/governance/contracts/legacy_quarantine_redirects_contract_v1.json",
+      "runtime/governance/contracts/telemetry_cartridge_contract_v1.json",
+      "runtime/governance/contracts/unified_runtime_compatibility_contract_v1.json"
+    ],
+    "active_invariants": [
+      "governance/invariants/FULL_OS_PORTABLE_EXPORT_MUST_INCLUDE_BASELINE_v1.json",
+      "governance/invariants/GOVERNANCE_REGRESSION_SUITE_v1.json",
+      "governance/invariants/NO_NORMAL_PYTHON_FOR_OS_WORK_v1.json",
+      "governance/invariants/PRE_TOOL_EXECUTION_CONTRACT_v1.json",
+      "governance/invariants/PROJECT_FILES_BOOT_OVERLAY_MUST_APPLY_GOVERNANCE_v1.json",
+      "governance/invariants/PYTHON_RESILIENT_EXECUTION_POLICY_v1.json",
+      "governance/invariants/RESEARCH_SEE_CE_GATE_v1.json",
+      "governance/invariants/RUNAWAY_TURN_BREAKER_v2.json",
+      "governance/invariants/RUNTIME_GOVERNANCE_REQUESTS_MUST_PROMOTE_THROUGH_GPC_v1.json",
+      "governance/invariants/RUNTIME_WRITE_ROLLBACK_GATE_v1.json",
+      "governance/invariants/SHELL_FIRST_CHUNKED_EXECUTION_v1.json",
+      "governance/invariants/TRACKER_CLASSIFICATION_GATE_v1.json",
+      "governance/invariants/TRACKER_RELEASE_GATE_v1.json",
+      "governance/invariants/WEBRUN_REQUIRED_FOR_GOVERNANCE_REPAIR_v1.json"
+    ],
+    "baseline_pointer": "0_kernel/state/CURRENT_WORKING_BASELINE_POINTER_v1.json",
+    "current_stage_hint": "R12_REGRESSION_SUITE_EXPANSION",
+    "python_lane": "runtime/governance/python3_S_lane_exec_v1.sh",
+    "risk_register": "runtime/governance/risk/refactor_program_risk_register_v1.json"
+  },
+  "schema_id": "session_state_export_schema_v1",
+  "transfer_note": "bad fixture includes Claude vendor-specific field to trigger denial",
+  "version": "1.0"
+}

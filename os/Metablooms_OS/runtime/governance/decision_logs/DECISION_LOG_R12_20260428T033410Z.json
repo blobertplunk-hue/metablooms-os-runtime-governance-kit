@@ -1,0 +1,23 @@
+{
+  "case_count": 17,
+  "created_utc": "2026-04-28T03:34:10.801693Z",
+  "decision": "allow_next_stage",
+  "decision_id": "R12-20260428T033410Z",
+  "decision_log_type": "R12_DECISION_LOG",
+  "repairs": [
+    {
+      "id": "R12_COMPAT_REDIRECT_STATUS_DRIFT",
+      "repair": "unified runtime compatibility validator now accepts R11 confirmed archive status while still requiring forbidden machine-use status and successor contract"
+    },
+    {
+      "id": "R12_SESSION_STATE_STALE_HASH",
+      "repair": "session state export refreshed after exporter hash drift"
+    },
+    {
+      "id": "R12_SESSION_STATE_SELF_HASH_CIRCULARITY",
+      "repair": "session_state_exporter_v1.py no longer includes output snapshot in artifact_hashes"
+    }
+  ],
+  "result": "PASS",
+  "stage": "R12_REGRESSION_SUITE_EXPANSION"
+}

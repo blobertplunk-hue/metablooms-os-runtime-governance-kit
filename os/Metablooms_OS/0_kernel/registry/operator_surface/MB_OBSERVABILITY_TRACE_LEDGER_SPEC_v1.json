@@ -1,0 +1,16 @@
+{
+  "artifact_type": "MB_OBSERVABILITY_TRACE_LEDGER_SPEC_v1",
+  "created_utc": "20260501T115500Z",
+  "ledger_path": "runtime/traces/operator_surface/TRACE_LEDGER_LATEST.jsonl",
+  "span_fields": [
+    "trace_id",
+    "span_id",
+    "parent_span_id",
+    "name",
+    "stage_name",
+    "event",
+    "status",
+    "timestamp_utc",
+    "attributes"
+  ]
+}

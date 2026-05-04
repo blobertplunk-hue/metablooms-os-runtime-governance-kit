@@ -1,0 +1,16 @@
+{
+  "artifact_type": "EVALS_TRACE_REVIEW_VALIDATOR_ALIGNMENT_STAGE1_RECEIPT_v1",
+  "created_utc": "20260501T130400Z",
+  "implemented": [
+    "evals spec",
+    "trace review dataset schema",
+    "validator alignment policy",
+    "minimum viable eval loop",
+    "seed trace sample set",
+    "mb evals command",
+    "registered executor handler"
+  ],
+  "next_stage": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_2_SCORECARDS_AND_REGRESSION_DATASET",
+  "stage_name": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_1_OR_SECURITY_STAGE4_RED_TEAM_FIXTURES",
+  "verdict": "PASS"
+}

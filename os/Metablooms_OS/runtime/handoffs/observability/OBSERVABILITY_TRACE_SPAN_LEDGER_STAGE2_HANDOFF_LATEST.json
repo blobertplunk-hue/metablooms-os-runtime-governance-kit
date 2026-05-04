@@ -1,0 +1,16 @@
+{
+  "artifact_type": "STAGE_HANDOFF.v1",
+  "completed_stage_receipt": "/mnt/data/Metablooms_OS/runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION_20260502T164424Z/STAGE_RECEIPT.json",
+  "completed_stage_receipt_sha256": "918af61fdf97d996a2502ffb7c416a52da2998db33a7fa75e2c92ccb0d1e828b",
+  "created_utc": "20260502T164424Z",
+  "next_recommended_stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE3_TRACKER_CAUSAL_TIMELINE_BINDING",
+  "required_preconditions": [
+    "/mnt/data/Metablooms_OS/runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE2_VALIDATION_LATEST.json",
+    "/mnt/data/Metablooms_OS/runtime/traces/observability/TRACE_SPAN_LEDGER_INDEX_LATEST.json",
+    "/mnt/data/Metablooms_OS/runtime/traces/observability/CAUSAL_STAGE_GRAPH_LATEST.json"
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION",
+  "status": "READY_FOR_NEXT_BOUNDED_STAGE",
+  "stop_rule": "Stop after Stage 2 receipt, handoff, validation, and final export. Do not begin Stage 3 in the same turn.",
+  "why_next": "The ledger and causal graph now exist; the visual tracker should consume the index/graph so the operator sees cause, blocker, evidence, and next action without reading raw receipts."
+}

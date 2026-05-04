@@ -1,0 +1,242 @@
+{
+  "artifact_type": "TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_PROMOTION_VALIDATION.v1",
+  "checks": [
+    {
+      "exists_nonempty": true,
+      "path": "0_kernel/registry/observability/MB_PINNED_EVIDENCE_RECEIPT_PROMOTION_SCHEMA_v1.json",
+      "sha256": "63aaaf38b611bfe81beb416661b23a7287db2cbdd1f128a2a91381c21efa15e4"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "0_kernel/registry/observability/MB_PINNED_EVIDENCE_EXPORT_BINDING_SCHEMA_v1.json",
+      "sha256": "4067525bd595c4eae414f1ee06b9db9db439b5fb036d5d408ac66d9720d70aae"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "0_kernel/registry/observability/MB_PINNED_EVIDENCE_RECEIPT_PROMOTION_POLICY_v1.json",
+      "sha256": "133264946c661bcdf201f1eec96dd34041a0263a48e7b1a703fc926133a0f6e7"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "0_kernel/scripts/promote_pinned_evidence_receipt_v1.py",
+      "sha256": "88bf4539b34fd6ad0b172ec8a87da7cb08acb8aad3a26774504fc5bb9ff2e6af"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "runtime/receipts/pinned_evidence/PINNED_EVIDENCE_RECEIPT_LATEST.json",
+      "sha256": "ce9ec39de9adf3862e34219a280ff867e9b87b2de006ba20aa0197c7054c3265"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "runtime/state/operator_surface/PINNED_EVIDENCE_RECEIPT_PROMOTION_LATEST.json",
+      "sha256": "5e5fef461572c813cff4e88d672786be47d19a2d14d6b4c0f3e7186cb1f9f9d0"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "runtime/traces/observability/PINNED_EVIDENCE_EXPORT_BINDING_LATEST.json",
+      "sha256": "f28ddfa3b40d64c20770ea43e45775293ba903db4b42229915171482149eba23"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "OPEN_OPERATOR_VISUAL_TRACKER.html",
+      "sha256": "f07d9bf1fe14116855f7894175996d7cc001760432afb848284b8f598facca76"
+    }
+  ],
+  "created_utc": "20260502T190324Z",
+  "issues": [],
+  "smoke_checks": [
+    {
+      "name": "promoter",
+      "pass": true,
+      "result": {
+        "cmd": [
+          "/opt/pyvenv/bin/python3",
+          "/mnt/data/Metablooms_OS/0_kernel/scripts/promote_pinned_evidence_receipt_v1.py",
+          "--root",
+          "/mnt/data/Metablooms_OS",
+          "--json"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": {
+          "artifact_type": "MB_PROMOTED_PINNED_EVIDENCE_RECEIPT.v1",
+          "created_utc": "20260502T190315Z",
+          "issues": [],
+          "pin_count": 3,
+          "pins": [
+            {
+              "actual_sha256": "2bb0a5a8439f692fa1abe4b7cae710e4773806db4f24cf812976e51622058b64",
+              "declared_sha256": "2bb0a5a8439f692fa1abe4b7cae710e4773806db4f24cf812976e51622058b64",
+              "exists": true,
+              "matched_terms": [
+                "blocked",
+                "error"
+              ],
+              "ordinal": 1,
+              "path": "runtime/state/operator_surface/VISUAL_TRACE_WATERFALL_LATEST.json",
+              "pin_id": "pin_q_blocker_1",
+              "query_id": "q_blocker",
+              "rank": 1,
+              "sha256_matches_artifact": true,
+              "title": "MB_VISUAL_TRACE_WATERFALL_EVIDENCE_FILTERS.v1",
+              "verdict": "PASS"
+            },
+            {
+              "actual_sha256": "bdad6b4dc7c934931b6f00c899c2a5b3f693d30dc2d082bce5e145200b3abc9d",
+              "declared_sha256": "872eadf9bcbb2acd55efe404fcfc49975cd437470c506f80a0eb4b1c1bb420d7",
+              "exists": true,
+              "matched_terms": [
+                "fail",
+                "handoff",
+                "pass",
+                "receipt",
+                "stage",
+                "verdict"
+              ],
+              "ordinal": 2,
+              "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl",
+              "pin_id": "pin_q_stage_1",
+              "query_id": "q_stage",
+              "rank": 1,
+              "sha256_matches_artifact": false,
+              "title": "TRACE_SPAN_LEDGER_LATEST.jsonl",
+              "verdict": null
+            },
+            {
+              "actual_sha256": "ee57178357e691b1fcc03ef99c0e6f3e4cbcd51f24f07289a82a507dbc6b7626",
+              "declared_sha256": "ee57178357e691b1fcc03ef99c0e6f3e4cbcd51f24f07289a82a507dbc6b7626",
+              "exists": true,
+              "matched_terms": [
+                "sha256"
+              ],
+              "ordinal": 3,
+              "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/stage9_validator.json",
+              "pin_id": "pin_q_export_1",
+              "query_id": "q_export",
+              "rank": 1,
+              "sha256_matches_artifact": true,
+              "title": "stage9_validator.json",
+              "verdict": null
+            }
+          ],
+          "promotion_mode": "operator_selected_pin_manifest",
+          "source_manifest": "runtime/state/operator_surface/EVIDENCE_RESULT_PINNING_MODEL_LATEST.json",
+          "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING",
+          "verdict": "PASS"
+        }
+      }
+    },
+    {
+      "name": "new_chat_validator",
+      "pass": true,
+      "result": {
+        "cmd": [
+          "/opt/pyvenv/bin/python3",
+          "/mnt/data/Metablooms_OS/runtime/governance/new_chat_start_contract_validator_v1.py",
+          "/mnt/data/Metablooms_OS"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": {
+          "checks": [
+            {
+              "name": "exists:CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+              "passed": true
+            },
+            {
+              "name": "exists:0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+              "passed": true
+            },
+            {
+              "name": "exists:0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+              "passed": true
+            },
+            {
+              "name": "exists:NEW_CHAT_START_HERE.md",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/governance/new_chat_start_contract_validator_v1.py",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/governance/boot_critical_governance_loader_v1.py",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/governance/governance_scatter_prevention_v1.py",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/governance/fresh_chat_boot_rehearsal_v1.py",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/cartridges/prompt_governance_v1/validate_prompt_governance_cartridge_v1.py",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+              "passed": true
+            },
+            {
+              "name": "exists:0_kernel/registry/observability/MB_BOOT_SEQUENCE_WRAPPER_ENFORCEMENT_v1.json",
+              "passed": true
+            },
+            {
+              "name": "exists:0_kernel/registry/observability/MB_HISTORICAL_CALLSITE_QUARANTINE_POLICY_v1.json",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/traces/observability/HISTORICAL_CALLSITE_QUARANTINE_INDEX_LATEST.json",
+              "passed": true
+            },
+            {
+              "name": "exists:0_kernel/validators/validate_observability_trace_span_ledger_stage8_historical_callsite_quarantine_v1.py",
+              "passed": true
+            }
+          ],
+          "decision": "ALLOW",
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "runtime_wrapper",
+      "pass": true,
+      "result": {
+        "cmd": [
+          "/opt/pyvenv/bin/python3",
+          "/mnt/data/Metablooms_OS/runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+          "--root",
+          "/mnt/data/Metablooms_OS",
+          "--json"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": {
+          "artifact_type": "MB_RUNTIME_STARTER_SMOKE_CONTRACT_WRAPPER_RESULT.v1",
+          "created_utc": "20260502T190324Z",
+          "decision": "ALLOW",
+          "method_reliability_lesson": "METHOD_RUNTIME_STARTER_SMOKE_CLI_SHAPE_v1",
+          "target_shape": "--root",
+          "underlying_gate": "runtime/governance/runtime_starter_smoke_v1.py",
+          "underlying_result": {
+            "decision": "ALLOW",
+            "invalid_json": [],
+            "missing": [],
+            "mode": "root",
+            "path": "/mnt/data/Metablooms_OS",
+            "read_errors": []
+          }
+        }
+      }
+    }
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING",
+  "verdict": "PASS"
+}

@@ -1,0 +1,28 @@
+{
+  "authority_checks": [
+    {
+      "actual": "20efbba58e5bd68872f372c7d0d563229d5da1772b74c2c00f38317cbc2d6803",
+      "expected": "20efbba58e5bd68872f372c7d0d563229d5da1772b74c2c00f38317cbc2d6803",
+      "path": "/mnt/data/METABLOOMS_OS_H0C2_GOVERNANCE_SURVIVAL_PROMOTION_BLOCKERS_CLEAN_AUTHORITY_FINAL_20260430T204500Z.zip",
+      "size": 47158035,
+      "status": "PASS"
+    },
+    {
+      "actual": "239f20400c88af474afd80f75a99ca1a0b9bc35cd1e62fa08fe952fc9df49c66",
+      "expected": "239f20400c88af474afd80f75a99ca1a0b9bc35cd1e62fa08fe952fc9df49c66",
+      "path": "/mnt/data/PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_1_DELTA_ARTIFACTS_20260430T211000Z.zip",
+      "size": 64152,
+      "status": "PASS"
+    },
+    {
+      "actual": "81c09d6525134d885b0afd3c57f6b28809504f3c6a59baa77a73566402dfaa1c",
+      "expected": "81c09d6525134d885b0afd3c57f6b28809504f3c6a59baa77a73566402dfaa1c",
+      "path": "/mnt/data/PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_2_DELTA_ARTIFACTS_20260430T214500Z.zip",
+      "size": 570076,
+      "status": "PASS"
+    }
+  ],
+  "canonical_strategy": "base full authority + stage1 delta + stage2 delta + stage3 packets",
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_3_FULL_EXPORT_STREAM_ROUTE_REPAIR_AND_FRESH_EXTRACT_REPLAY",
+  "status": "READY"
+}

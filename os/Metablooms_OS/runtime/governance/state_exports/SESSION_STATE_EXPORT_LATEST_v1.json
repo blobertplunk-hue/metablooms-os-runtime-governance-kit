@@ -1,0 +1,87 @@
+{
+  "schema_id": "session_state_export_schema_v1",
+  "version": "1.0",
+  "created_utc": "2026-04-28T02:53:17Z",
+  "authoritative_root": "/mnt/data/Metablooms_OS",
+  "runtime_facts": {
+    "baseline_pointer": "0_kernel/state/CURRENT_WORKING_BASELINE_POINTER_v1.json",
+    "current_stage_hint": "UNKNOWN",
+    "active_contracts": [
+      "runtime/governance/contracts/artifact_disposition_contract_v1.json",
+      "runtime/governance/contracts/legacy_artifact_redirects_v1.json",
+      "runtime/governance/contracts/unified_runtime_compatibility_contract_v1.json"
+    ],
+    "active_invariants": [
+      "governance/invariants/FULL_OS_PORTABLE_EXPORT_MUST_INCLUDE_BASELINE_v1.json",
+      "governance/invariants/GOVERNANCE_REGRESSION_SUITE_v1.json",
+      "governance/invariants/NO_NORMAL_PYTHON_FOR_OS_WORK_v1.json",
+      "governance/invariants/PRE_TOOL_EXECUTION_CONTRACT_v1.json",
+      "governance/invariants/PROJECT_FILES_BOOT_OVERLAY_MUST_APPLY_GOVERNANCE_v1.json",
+      "governance/invariants/PYTHON_RESILIENT_EXECUTION_POLICY_v1.json",
+      "governance/invariants/RESEARCH_SEE_CE_GATE_v1.json",
+      "governance/invariants/RUNAWAY_TURN_BREAKER_v2.json",
+      "governance/invariants/RUNTIME_GOVERNANCE_REQUESTS_MUST_PROMOTE_THROUGH_GPC_v1.json",
+      "governance/invariants/RUNTIME_WRITE_ROLLBACK_GATE_v1.json",
+      "governance/invariants/SHELL_FIRST_CHUNKED_EXECUTION_v1.json",
+      "governance/invariants/TRACKER_CLASSIFICATION_GATE_v1.json",
+      "governance/invariants/TRACKER_RELEASE_GATE_v1.json",
+      "governance/invariants/WEBRUN_REQUIRED_FOR_GOVERNANCE_REPAIR_v1.json"
+    ],
+    "python_lane": "runtime/governance/python3_S_lane_exec_v1.sh",
+    "risk_register": "runtime/governance/risk/refactor_program_risk_register_v1.json"
+  },
+  "open_work": {
+    "next_stage": "UNKNOWN",
+    "next_actions": [
+      "Resume from latest refactor handoff receipt."
+    ],
+    "blockers": []
+  },
+  "deferred_work": [
+    "Promote gate registry replacement in R5.",
+    "Bind evidence-bound external reuse scan gate in R6.",
+    "Promote usefulness validator into registered gate in R7.",
+    "Unify python health governance into registry-backed lane in R8.",
+    "Convert telemetry assets into cartridge-grade contract in R9."
+  ],
+  "recent_receipts": [
+    {
+      "path": "receipts/refactor_program/R4_VALIDATION_REPORT_20260428T025252Z.json",
+      "sha256": "99cf0dd3cbc56955c9b39ac5d097fd2a9a2f41ff62282b329eb4a02fd885b1e6"
+    },
+    {
+      "path": "receipts/refactor_program/R3_HANDOFF_20260428T025200Z.json",
+      "sha256": "8371a66b60faacfb93ea3fbddf6143a9c3948b0014fcbc0520190851f0b62ada"
+    },
+    {
+      "path": "receipts/refactor_program/R3_VERIFY_RECEIPT_20260428T025200Z.json",
+      "sha256": "c52c11ab73852e34f093b2f4267cd215e1ed64608d4cc700dcdd1c29d31d97d0"
+    },
+    {
+      "path": "receipts/refactor_program/R3_COMPATIBILITY_CONTRACT_RECEIPT_20260428T025200Z.json",
+      "sha256": "68a60b1ca5135b15ec3afedae1ec060b5a8b87391b62f1fb6420b0157d947091"
+    },
+    {
+      "path": "receipts/refactor_program/R2_HANDOFF_20260428T024446Z.json",
+      "sha256": "87477aa2a14ad37fda30f8634978ddac6883ed2af8288cdd508bf06a4ae143b3"
+    },
+    {
+      "path": "receipts/refactor_program/R2_ADR_EXTRACTION_RECEIPT_20260428T024446Z.json",
+      "sha256": "34295b3b243f5bb37f00fd96c35000faf1859297fa9c8b0abb49ba80a82c2fd1"
+    },
+    {
+      "path": "receipts/refactor_program/R2_VERIFY_RECEIPT_20260428T024446Z.json",
+      "sha256": "52f7a818f376c12cf29238097772285fb849450bc54de3e52edeff80e7d1669b"
+    },
+    {
+      "path": "receipts/refactor_program/R1_HANDOFF_20260428T024157Z.json",
+      "sha256": "066e3caa38b26ebedb8ebce7f5f2f092db3701163c8f1abdbda603c481f6f810"
+    }
+  ],
+  "transfer_note": "Portable session-state export for governed continuation. Use the latest handoff, keep the python3 -S lane, and resume at the declared next stage only after validating this export.",
+  "artifact_hashes": {
+    "runtime/governance/schemas/session_state_export_schema_v1.json": "7e774f56c7b58274da8f6939897309c83aec50cf9f155d95a7e9a258e7c59e72",
+    "0_kernel/scripts/session_state_exporter_v1.py": "2a499402d1d1a4f157af2ed91fbb91b2d3047e251828e3b991561d064475ed9f",
+    "0_kernel/scripts/validate_session_state_export_v1.py": "5e05025296fc35c554f1ebb8436d5277d306af0474435b37b99cf630fedc4fe0"
+  }
+}

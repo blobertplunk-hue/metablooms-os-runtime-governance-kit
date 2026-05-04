@@ -1,0 +1,25 @@
+{
+  "artifact_type": "OBSERVABILITY_STAGE10_FINAL_EXPORT_CONTAINMENT_PROOF.v1",
+  "created_utc": "20260502T180237Z",
+  "duplicate_members": 0,
+  "external_sidecar": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_MINIMAL_MOBILE_FINAL_AUTHORITY_LOCKED_20260502T180500Z.zip.sha256",
+  "missing_required_members": [],
+  "required_members": [
+    "Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html",
+    "Metablooms_OS/runtime/state/operator_surface/BOOT_SURFACE_MINIMAL_MODE_LATEST.json",
+    "Metablooms_OS/runtime/state/operator_surface/BOOT_SURFACE_MINIMAL_MODE_LATEST.md",
+    "Metablooms_OS/runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE10_MINIMAL_MOBILE_VALIDATION_LATEST.json",
+    "Metablooms_OS/0_kernel/validators/validate_observability_trace_span_ledger_stage10_minimal_mobile_v1.py",
+    "Metablooms_OS/0_kernel/registry/observability/MB_BOOT_SURFACE_MINIMAL_MODE_POLICY_v1.json",
+    "Metablooms_OS/runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINAL_LOCK_20260502T180500Z/STAGE_RECEIPT.json",
+    "Metablooms_OS/runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINAL_LOCK_20260502T180500Z/STAGE_HANDOFF.json"
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING",
+  "verdict": "PASS",
+  "zip_entries": 6430,
+  "zip_integrity": "PASS",
+  "zip_name": "METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_MINIMAL_MOBILE_FINAL_AUTHORITY_LOCKED_20260502T180500Z.zip",
+  "zip_path": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_MINIMAL_MOBILE_FINAL_AUTHORITY_LOCKED_20260502T180500Z.zip",
+  "zip_sha256": "4286e599a426d830a8806f6693e9ab9c399c8ede382c0fa1e7c2e66709b03c01",
+  "zip_size_bytes": 73194184
+}

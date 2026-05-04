@@ -1,0 +1,23 @@
+{
+  "expected_profile": "wit",
+  "expected_required_gates": [
+    "tone_control",
+    "audience_fit",
+    "accuracy_constraints",
+    "safety_bounds"
+  ],
+  "fixture_id": "profile_smoke_wit",
+  "forbidden_patterns": [
+    "unranked_options_at_decision_point",
+    "claim_without_artifact",
+    "chat_only_writeback"
+  ],
+  "input_task": "Create a concise, lightly humorous classroom-facing explanation without sacrificing accuracy.",
+  "must_include_output_rules": [
+    "explicit_status",
+    "validation_evidence",
+    "next_step_when_relevant"
+  ],
+  "profile_id": "wit",
+  "status": "active"
+}

@@ -1,0 +1,17 @@
+{
+  "artifact_type": "FL17_MERGE_2_VALIDATION_REPORT",
+  "created_utc": "20260430T013700Z",
+  "checks": {
+    "target_zip_present": true,
+    "fl17_zip_present": true,
+    "archives_testzip_pass": true,
+    "unsafe_member_paths_zero": true,
+    "imported_files_have_sha256": true,
+    "missing_approved_zero": true,
+    "active_runtime_state_not_changed": true,
+    "promotion_performed_false": true,
+    "tracker_repair_performed_false": true,
+    "fl16_blocked_semantics_preserved": true
+  },
+  "status": "PASS"
+}

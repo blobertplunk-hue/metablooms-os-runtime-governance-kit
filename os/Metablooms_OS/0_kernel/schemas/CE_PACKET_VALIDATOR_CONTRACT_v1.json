@@ -1,0 +1,13 @@
+{
+  "version": "1.0",
+  "created_at": 1777036623.7084026,
+  "contract_id": "CE_PACKET_VALIDATOR_CONTRACT_v1",
+  "future_script": "0_kernel/scripts/ce_packet_validator_v1.py",
+  "schema": "0_kernel/schemas/CE_PACKET_SCHEMA_v1.json",
+  "must_reject": [
+    "context_summary_only_packet",
+    "missing_intent_model",
+    "missing_misinterpretation_traps",
+    "invalid_json"
+  ]
+}

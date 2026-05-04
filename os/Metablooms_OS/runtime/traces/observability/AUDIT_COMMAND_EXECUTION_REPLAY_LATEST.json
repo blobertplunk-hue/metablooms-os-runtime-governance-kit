@@ -1,0 +1,287 @@
+{
+  "artifact_type": "MB_AUDIT_COMMAND_EXECUTION_REPLAY.v1",
+  "command_count": 9,
+  "command_replays": [
+    {
+      "action": "show_audit_pack",
+      "command_id": "show_audit_promoted_evidence_recovery",
+      "missing_paths": [],
+      "operator_phrase": "Show audit pack: promoted evidence recovery",
+      "required_paths": [
+        "runtime/traces/observability/PINNED_EVIDENCE_EXPORT_BINDING_LATEST.json",
+        "runtime/traces/observability/TRACE_SPAN_LEDGER_INDEX_LATEST.json",
+        "runtime/receipts/pinned_evidence/PINNED_EVIDENCE_RECEIPT_LATEST.json",
+        "runtime/traces/observability/PROMOTED_EVIDENCE_RECOVERY_REPLAY_LATEST.json",
+        "runtime/traces/observability/FAILURE_CLUSTER_REPORT_LATEST.json",
+        "runtime/state/operator_surface/VISUAL_TRACE_WATERFALL_LATEST.json"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "action": "show_audit_pack",
+      "command_id": "show_audit_export_binding",
+      "missing_paths": [],
+      "operator_phrase": "Show audit pack: export binding",
+      "required_paths": [
+        "runtime/traces/observability/OBSERVABILITY_STAGE3_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.json",
+        "runtime/traces/observability/OBSERVABILITY_STAGE3_REPAIRED_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+        "runtime/traces/observability/OBSERVABILITY_STAGE4_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+        "runtime/traces/observability/OBSERVABILITY_STAGE4_REPAIRED_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+        "runtime/traces/observability/OBSERVABILITY_STAGE5_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "action": "show_blocker_evidence",
+      "command_id": "show_audit_blocker_or_failure",
+      "missing_paths": [],
+      "operator_phrase": "Show audit pack: blocker or failure",
+      "required_paths": [
+        "runtime/traces/observability/METHOD_RELIABILITY_LEDGER_LATEST.json",
+        "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE5_CLASSIFIER_REPAIR_VALIDATION_LATEST.json",
+        "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE5_VALIDATION_POST_RECEIPT_STDOUT_LATEST.json",
+        "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE5_VALIDATION_STDOUT_LATEST.json",
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING_20260502T165302Z/SEE_PACKET.json"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "action": "show_current_boot_guidance",
+      "command_id": "show_audit_boot_guidance",
+      "missing_paths": [],
+      "operator_phrase": "Show audit pack: boot guidance",
+      "required_paths": [
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_20260502T175629Z/CE_SYNTHESIS.json",
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINALIZED_20260502T175839Z/CE_SYNTHESIS.json",
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINALIZED_20260502T175921Z/CE_SYNTHESIS.json",
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/SEE_PACKET.json",
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/pre_patch_backups/0_kernel__boot_contracts__NEW_CHAT_START_CONTRACT_v1.md"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "action": "show_stage_validation",
+      "command_id": "show_audit_stage_validation",
+      "missing_paths": [],
+      "operator_phrase": "Show audit pack: stage validation",
+      "required_paths": [
+        "runtime/traces/observability/OBSERVABILITY_STAGE10_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+        "runtime/traces/observability/OBSERVABILITY_STAGE11_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+        "runtime/traces/observability/OBSERVABILITY_STAGE3_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.json",
+        "runtime/traces/observability/OBSERVABILITY_STAGE5_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+        "runtime/traces/observability/OBSERVABILITY_STAGE6_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "action": "show_trace_waterfall",
+      "command_id": "show_audit_trace_waterfall",
+      "missing_paths": [],
+      "operator_phrase": "Show audit pack: trace waterfall",
+      "required_paths": [
+        "runtime/traces/observability/TRACE_SPAN_LEDGER_INDEX_LATEST.json",
+        "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE11_VISUAL_WATERFALL_VALIDATION_LATEST.json",
+        "runtime/state/operator_surface/VISUAL_TRACE_WATERFALL_LATEST.json",
+        "runtime/traces/observability/OBSERVABILITY_STAGE11_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+        "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_HANDOFF_LATEST.json"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "action": "export_evidence_packet",
+      "command_id": "export_promoted_evidence_packet",
+      "missing_paths": [],
+      "operator_phrase": "Export evidence packet: promoted evidence recovery",
+      "required_paths": [
+        "runtime/traces/observability/PINNED_EVIDENCE_EXPORT_BINDING_LATEST.json",
+        "runtime/traces/observability/TRACE_SPAN_LEDGER_INDEX_LATEST.json",
+        "runtime/receipts/pinned_evidence/PINNED_EVIDENCE_RECEIPT_LATEST.json",
+        "runtime/traces/observability/PROMOTED_EVIDENCE_RECOVERY_REPLAY_LATEST.json",
+        "runtime/traces/observability/FAILURE_CLUSTER_REPORT_LATEST.json",
+        "runtime/state/operator_surface/VISUAL_TRACE_WATERFALL_LATEST.json",
+        "runtime/state/operator_surface/OPERATOR_EXPORT_PACKET_LATEST.json"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "action": "export_evidence_packet",
+      "command_id": "export_boot_guidance_packet",
+      "missing_paths": [],
+      "operator_phrase": "Export evidence packet: current boot guidance",
+      "required_paths": [
+        "runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+        "runtime/state/operator_surface/LIVE_BOOT_GUIDANCE_LATEST.md",
+        "runtime/state/operator_surface/LIVE_BOOT_GUIDANCE_LATEST.json",
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_20260502T175629Z/CE_SYNTHESIS.json",
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINALIZED_20260502T175839Z/CE_SYNTHESIS.json",
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINALIZED_20260502T175921Z/CE_SYNTHESIS.json",
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/SEE_PACKET.json",
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/pre_patch_backups/0_kernel__boot_contracts__NEW_CHAT_START_CONTRACT_v1.md",
+        "runtime/state/operator_surface/OPERATOR_EXPORT_PACKET_LATEST.json"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "action": "export_evidence_packet",
+      "command_id": "export_stage_validation_packet",
+      "missing_paths": [],
+      "operator_phrase": "Export evidence packet: stage validation",
+      "required_paths": [
+        "runtime/state/operator_surface/AUDIT_QUERY_PACKS_LATEST.json",
+        "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE15_RECOVERY_REPLAY_AUDIT_QUERY_VALIDATION_LATEST.json",
+        "runtime/traces/observability/OBSERVABILITY_STAGE10_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+        "runtime/traces/observability/OBSERVABILITY_STAGE11_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+        "runtime/traces/observability/OBSERVABILITY_STAGE3_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.json",
+        "runtime/traces/observability/OBSERVABILITY_STAGE5_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+        "runtime/traces/observability/OBSERVABILITY_STAGE6_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+        "runtime/state/operator_surface/OPERATOR_EXPORT_PACKET_LATEST.json"
+      ],
+      "verdict": "PASS"
+    }
+  ],
+  "created_utc": "20260502T192650Z",
+  "issues": [],
+  "packet_binding_checks": [
+    {
+      "actual_sha256": "f28ddfa3b40d64c20770ea43e45775293ba903db4b42229915171482149eba23",
+      "expected_sha256": "f28ddfa3b40d64c20770ea43e45775293ba903db4b42229915171482149eba23",
+      "path": "runtime/traces/observability/PINNED_EVIDENCE_EXPORT_BINDING_LATEST.json",
+      "verdict": "PASS"
+    },
+    {
+      "actual_sha256": "450c16c88f11ff6b95c2ffe8140b5dd33c3c365c56643da1ff8f36e7fac43498",
+      "expected_sha256": "450c16c88f11ff6b95c2ffe8140b5dd33c3c365c56643da1ff8f36e7fac43498",
+      "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_INDEX_LATEST.json",
+      "verdict": "PASS"
+    },
+    {
+      "actual_sha256": "a7e1839df938c5f0e87a5fe15f1eb2af2d8b278c27ba0647716a47c05505cd2d",
+      "expected_sha256": "a7e1839df938c5f0e87a5fe15f1eb2af2d8b278c27ba0647716a47c05505cd2d",
+      "path": "runtime/receipts/pinned_evidence/PINNED_EVIDENCE_RECEIPT_LATEST.json",
+      "verdict": "PASS"
+    },
+    {
+      "actual_sha256": "5f340a789eceda401b056d6515bcc37a55dfae587e0b39bf7c3517eef253fbba",
+      "expected_sha256": "5f340a789eceda401b056d6515bcc37a55dfae587e0b39bf7c3517eef253fbba",
+      "path": "runtime/traces/observability/PROMOTED_EVIDENCE_RECOVERY_REPLAY_LATEST.json",
+      "verdict": "PASS"
+    },
+    {
+      "actual_sha256": "201ca659ca1d73d49ba02021f4cee93d3c08f8fdce09fbcc4b5e82830218cf24",
+      "expected_sha256": "358dac3c020087f30d28923d69b21866e546281b75abaf9ef15440622abaa8e2",
+      "path": "runtime/traces/observability/FAILURE_CLUSTER_REPORT_LATEST.json",
+      "verdict": "WARN_MUTABLE_OR_DIFFERENT_EXPORT_CONTEXT"
+    },
+    {
+      "actual_sha256": "2bb0a5a8439f692fa1abe4b7cae710e4773806db4f24cf812976e51622058b64",
+      "expected_sha256": "2bb0a5a8439f692fa1abe4b7cae710e4773806db4f24cf812976e51622058b64",
+      "path": "runtime/state/operator_surface/VISUAL_TRACE_WATERFALL_LATEST.json",
+      "verdict": "PASS"
+    },
+    {
+      "actual_sha256": "f8b75581917cc5b34b7cf375d4fbe8113c043b7bf125f17af9d65d9fb16c9faf",
+      "expected_sha256": "f8b75581917cc5b34b7cf375d4fbe8113c043b7bf125f17af9d65d9fb16c9faf",
+      "path": "runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+      "verdict": "PASS"
+    },
+    {
+      "actual_sha256": "255ac27761d10bf7826b38ff92528be571b5e34fda9b6182c09cf915b86cba1c",
+      "expected_sha256": "255ac27761d10bf7826b38ff92528be571b5e34fda9b6182c09cf915b86cba1c",
+      "path": "runtime/state/operator_surface/LIVE_BOOT_GUIDANCE_LATEST.md",
+      "verdict": "PASS"
+    },
+    {
+      "actual_sha256": "022d6126aaacec2fa6ef5ee9f2ccf71ce26c0bd977a68b39e66d0eab5e00f504",
+      "expected_sha256": "022d6126aaacec2fa6ef5ee9f2ccf71ce26c0bd977a68b39e66d0eab5e00f504",
+      "path": "runtime/state/operator_surface/LIVE_BOOT_GUIDANCE_LATEST.json",
+      "verdict": "PASS"
+    },
+    {
+      "actual_sha256": "054bc3f7522220cf0a8bc1460e130fb00b2dfff1fc93dd97d9df37b8e816543e",
+      "expected_sha256": "054bc3f7522220cf0a8bc1460e130fb00b2dfff1fc93dd97d9df37b8e816543e",
+      "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_20260502T175629Z/CE_SYNTHESIS.json",
+      "verdict": "PASS"
+    },
+    {
+      "actual_sha256": "054bc3f7522220cf0a8bc1460e130fb00b2dfff1fc93dd97d9df37b8e816543e",
+      "expected_sha256": "054bc3f7522220cf0a8bc1460e130fb00b2dfff1fc93dd97d9df37b8e816543e",
+      "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINALIZED_20260502T175839Z/CE_SYNTHESIS.json",
+      "verdict": "PASS"
+    },
+    {
+      "actual_sha256": "054bc3f7522220cf0a8bc1460e130fb00b2dfff1fc93dd97d9df37b8e816543e",
+      "expected_sha256": "054bc3f7522220cf0a8bc1460e130fb00b2dfff1fc93dd97d9df37b8e816543e",
+      "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINALIZED_20260502T175921Z/CE_SYNTHESIS.json",
+      "verdict": "PASS"
+    },
+    {
+      "actual_sha256": "c3ffd51d0848d984a183b300a185a1c1469ee1b663931d0dc040f3f1cf493d70",
+      "expected_sha256": "c3ffd51d0848d984a183b300a185a1c1469ee1b663931d0dc040f3f1cf493d70",
+      "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/SEE_PACKET.json",
+      "verdict": "PASS"
+    },
+    {
+      "actual_sha256": "3baf132c544c5eb3d0e7d45053ad09d08b4541f3183371e019246e6199320a03",
+      "expected_sha256": "3baf132c544c5eb3d0e7d45053ad09d08b4541f3183371e019246e6199320a03",
+      "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/pre_patch_backups/0_kernel__boot_contracts__NEW_CHAT_START_CONTRACT_v1.md",
+      "verdict": "PASS"
+    },
+    {
+      "actual_sha256": "40b947ebd559b4c8023efd8875b7a3f16194feeb5d77dff2fa3b7f4d1aa25614",
+      "expected_sha256": "40b947ebd559b4c8023efd8875b7a3f16194feeb5d77dff2fa3b7f4d1aa25614",
+      "path": "runtime/state/operator_surface/AUDIT_QUERY_PACKS_LATEST.json",
+      "verdict": "PASS"
+    },
+    {
+      "actual_sha256": "8e3ed81c46568551de58461a56249efc971cdbb65192c5c9180362bebe1a718a",
+      "expected_sha256": "8e3ed81c46568551de58461a56249efc971cdbb65192c5c9180362bebe1a718a",
+      "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE15_RECOVERY_REPLAY_AUDIT_QUERY_VALIDATION_LATEST.json",
+      "verdict": "PASS"
+    },
+    {
+      "actual_sha256": "4134bd1ed2d78169b7b61dc08a4dffef29e3bafa4a4b6b8b4d6fdef11118c19d",
+      "expected_sha256": "4134bd1ed2d78169b7b61dc08a4dffef29e3bafa4a4b6b8b4d6fdef11118c19d",
+      "path": "runtime/traces/observability/OBSERVABILITY_STAGE10_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+      "verdict": "PASS"
+    },
+    {
+      "actual_sha256": "f27a6ede06e70807c9900a4008ae8b883124348a67e24b957117fbfc0564bbf2",
+      "expected_sha256": "f27a6ede06e70807c9900a4008ae8b883124348a67e24b957117fbfc0564bbf2",
+      "path": "runtime/traces/observability/OBSERVABILITY_STAGE11_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+      "verdict": "PASS"
+    },
+    {
+      "actual_sha256": "c36a304f4f3d8dee91b7f35c2e183bf00575be76b183779f8ec5259d7aa4df00",
+      "expected_sha256": "c36a304f4f3d8dee91b7f35c2e183bf00575be76b183779f8ec5259d7aa4df00",
+      "path": "runtime/traces/observability/OBSERVABILITY_STAGE3_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.json",
+      "verdict": "PASS"
+    },
+    {
+      "actual_sha256": "7b9e0cdb676d69dfb99592ae155311da58ea39a26b9cd838596110bf53abb615",
+      "expected_sha256": "7b9e0cdb676d69dfb99592ae155311da58ea39a26b9cd838596110bf53abb615",
+      "path": "runtime/traces/observability/OBSERVABILITY_STAGE5_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+      "verdict": "PASS"
+    },
+    {
+      "actual_sha256": "31aa749712c97d5c1c56cd1ac505edd837a30dab46a4b601c8dbae0fbc34fa4f",
+      "expected_sha256": "31aa749712c97d5c1c56cd1ac505edd837a30dab46a4b601c8dbae0fbc34fa4f",
+      "path": "runtime/traces/observability/OBSERVABILITY_STAGE6_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+      "verdict": "PASS"
+    }
+  ],
+  "repaired_from": "initial Stage17 replay targeted Stage16 export that did not contain later command evidence; repaired replay targets Stage17 current authority export",
+  "source_authority_zip": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE17_AUDIT_COMMAND_REPLAY_OPERATOR_PACKET_FINAL_AUTHORITY_LOCKED_20260502T192542Z.zip",
+  "source_authority_zip_sha256": "221c937354409f67a02e40a29125e05fc97073c128483320084ecb0aa5afa835",
+  "source_zip_bad_member": null,
+  "source_zip_duplicate_members": 0,
+  "stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE17_AUDIT_COMMAND_EXECUTION_REPLAY_AND_BUNDLE_PARTITIONING",
+  "verdict": "PASS",
+  "warnings": [
+    {
+      "actual_sha256": "201ca659ca1d73d49ba02021f4cee93d3c08f8fdce09fbcc4b5e82830218cf24",
+      "expected_sha256": "358dac3c020087f30d28923d69b21866e546281b75abaf9ef15440622abaa8e2",
+      "path": "runtime/traces/observability/FAILURE_CLUSTER_REPORT_LATEST.json",
+      "verdict": "WARN_MUTABLE_OR_DIFFERENT_EXPORT_CONTEXT"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "stage": "H0B1",
+  "completed": [
+    "contracts written",
+    "runtime kernel written",
+    "always-on invariant registered",
+    "fixtures written",
+    "behavior tests passed",
+    "locations verified",
+    "long path renamed",
+    "whole-system export built",
+    "fresh extract retested successfully"
+  ],
+  "pending": [],
+  "next": "H0B2 only after user requests it",
+  "export_status": "PASS",
+  "whole_system_export_sha256": "b653d1dd227327385b09e178faf86f3cf7cd9945182d565e7937162c09ca6fbb"
+}

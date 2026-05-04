@@ -1,0 +1,23 @@
+{
+  "pointer_name": "current_best_engine",
+  "created_at": "2026-04-23T15:40:00+00:00",
+  "current_best_candidate": {
+    "path": "/mnt/data/REBUILD_CANDIDATE_RBG1_integrated_from_q2_fixed.html",
+    "sha256": "bd197cdc6a5bcade994a2cae44f10f477cd6dd64bf8e473ac36a8fb74b203a8e",
+    "status": "validated_integrated_candidate",
+    "source_lineage": "/mnt/data/REPAIR_CANDIDATE_R2_pictograph_alignment_q2_fixed.html"
+  },
+  "current_best_download": {
+    "path": "/mnt/data/DOWNLOAD_3_8A_engine_v2.html",
+    "sha256": "bd197cdc6a5bcade994a2cae44f10f477cd6dd64bf8e473ac36a8fb74b203a8e",
+    "status": "download_parity_verified",
+    "derived_from": "/mnt/data/REBUILD_CANDIDATE_RBG1_integrated_from_q2_fixed.html"
+  },
+  "blocked_stale_sources": [
+    {
+      "path": "/mnt/data/DOWNLOAD_3_8A_engine.html",
+      "reason": "stale baseline superseded by rebuilt/verified v2 lineage"
+    }
+  ],
+  "selection_rule": "New feature or repair stages for this runtime must start from current_best_candidate unless a newer validated candidate exists."
+}

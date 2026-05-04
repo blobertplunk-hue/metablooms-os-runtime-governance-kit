@@ -1,0 +1,67 @@
+{
+  "$id": "CDR_ADAPTABILITY_INTERFACE_CONTRACT_PACKET_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "adaptability_checks": {
+      "type": "object"
+    },
+    "changed_modules": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "eval_evidence": {
+      "type": "array"
+    },
+    "fixture_evidence": {
+      "type": "array"
+    },
+    "interface_contracts": {
+      "items": {
+        "properties": {},
+        "required": [
+          "interface_id",
+          "owner_module",
+          "version",
+          "stability",
+          "purpose",
+          "inputs",
+          "outputs",
+          "error_contract",
+          "side_effects",
+          "compatibility_policy",
+          "extension_points",
+          "deprecation_policy",
+          "migration_notes",
+          "examples",
+          "test_evidence"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "no_interface_change_proof": {
+      "type": "object"
+    },
+    "schema": {
+      "const": "CDRAdaptabilityInterfaceContractPacket_v1"
+    },
+    "stage": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema",
+    "stage",
+    "changed_modules",
+    "interface_contracts",
+    "adaptability_checks",
+    "fixture_evidence",
+    "eval_evidence"
+  ],
+  "title": "CDR Adaptability Interface Contract Packet",
+  "type": "object"
+}

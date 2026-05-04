@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>STAAR Engine v2</title>
+<style>
+:root { --bg:#0b1220; --panel:#0f172a; --ink:#e5e7eb; --muted:#9ca3af; --accent:#22c55e; }
+body { margin:0; font-family: system-ui; background:var(--bg); color:var(--ink); }
+.topbar { display:flex; justify-content:space-between; padding:10px; background:#020617; gap:10px; align-items:center; }
+.btn { padding:10px 12px; border-radius:10px; border:1px solid #374151; background:#1f2937; color:white; cursor:pointer; }
+.btn:hover { filter:brightness(1.08); }
+.container { max-width:1000px; margin:auto; padding:12px; }
+.card { background:var(--panel); border-radius:12px; padding:14px; margin-bottom:10px; }
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.choice { padding:10px; border:1px solid #374151; border-radius:10px; cursor:pointer; }
+.choice.selected { outline:2px solid var(--accent); }
+.bottom { display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; }
+.palette { display:flex; flex-wrap:wrap; gap:6px; }
+.palette button { width:36px; height:36px; border-radius:6px; }
+.flagged { background:#f59e0b !important; }
+.correct { background:#065f46 !important; }
+textarea, input, select { width:100%; min-height:40px; box-sizing:border-box; border-radius:8px; border:1px solid #374151; background:#111827; color:white; padding:8px; }
+input { min-height:unset; }
+.pill { display:inline-block; background:#111827; border:1px solid #374151; border-radius:999px; padding:4px 10px; font-size:12px; }
+.panel { border:1px solid #374151; border-radius:10px; padding:12px; background:#111827; }
+.leaderboard-row { display:grid; grid-template-columns:36px 1fr auto; gap:8px; padding:6px 0; border-bottom:1px solid #374151; }
+small.muted { color:var(--muted); }
+@media (max-width: 700px){
+  .grid { grid-template-columns:1fr; }
+  .topbar { flex-wrap:wrap; }
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute;left:-9999px;top:-9999px;overflow:hidden" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="pictograph-person" viewBox="0 0 24 24">
+      <circle cx="12" cy="6" r="3.2" fill="currentColor"></circle>
+      <rect x="10.3" y="9.5" width="3.4" height="6.2" rx="1.2" fill="currentColor"></rect>
+      <rect x="6.7" y="10.2" width="3.1" height="2.2" rx="1" transform="rotate(-18 8.25 11.3)" fill="currentColor"></rect>
+      <rect x="14.2" y="10.2" width="3.1" height="2.2" rx="1" transform="rotate(18 15.75 11.3)" fill="currentColor"></rect>
+      <rect x="9.2" y="15.1" width="2.4" height="6.8" rx="1" transform="rotate(8 10.4 18.5)" fill="currentColor"></rect>
+      <rect x="12.4" y="15.1" width="2.4" height="6.8" rx="1" transform="rotate(-8 13.6 18.5)" fill="currentColor"></rect>
+    </symbol>
+  </defs>
+</svg>
+
+
+<div class="topbar">
+  <div>
+    <button class="btn" onclick="ttsRead()">🔊 Read</button>
+    <button class="btn" onclick="toggleFlag()">🚩 Flag</button>
+  </div>
+  <div id="progress">Q1</div>
+</div>
+
+<div class="container">
+  <div id="questionCard" class="card"></div>
+  <div id="interventionCard" class="card" style="display:none;"></div>
+
+  <div class="card bottom">
+    <button class="btn" onclick="prevQ()">Prev</button>
+    <button class="btn" onclick="submitAnswer()">Submit</button>
+    <button class="btn" onclick="nextQ()">Next</button>
+  </div>
+
+  <div class="card">
+    <div class="palette" id="palette"></div>
+  </div>
+
+  <div class="card"><div id="debugStatus" class="debug-status">Status: ready</div></div>
+</div>
+
+<script>
+// ---------------- LOCAL TELEMETRY ----------------
+const TelemetryStore = (() => {
+  const KEY = "STAAR_TELEMETRY_V1";
+
+  function load(){
+    return JSON.parse(localStorage.getItem(KEY) || "[]");
+  }
+
+  function save(data){
+    localStorage.setItem(KEY, JSON.stringify(data));
+  }
+
+  function log(entry){
+    const data = load();
+    data.push({
+      ...entry,
+      timestamp: Date.now()
+    });
+    save(data);
+  }
+
+  function clear(){
+    localStorage.removeItem(KEY);
+  }
+
+  return { log, load, clear };
+})();
+
+// ---------------- LIGHTWEIGHT GAS CONFIG ----------------
+const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbya6arS17uIZN04bPikDZviJpYN7k_5JhPft5lLURSQiYS2RuTsVKrtxVpXJa-D0gZ-cQ/exec';
+const GOOGLE_SHEET_ID = '1kw9eUPfmXVnjq38-J1Ci9ryqJVZxu0e8gUEzhzOG_gs'; // pinned backend sheet
+const LEADERBOARD_LIMIT = 5;
+const DEFAULT_CLASS_CODE = 'CLASS_A';
+const ALLOWED_DISPLAY_NAMES = ["Ahilin", "Sophia", "Kathy", "Liam", "Danny", "Priscila", "Thiago", "Jhon", "Chris", "Stephanie", "Dylan", "Axel", "Melanie", "Kevin", "Vanessa", "Grace", "Juan", "Luna", "Brandon", "Esther", "Jose", "Jimena", "Martha", "Angel", "Nathan", "Kimberly", "Ailyn", "Cesar", "San Juana", "Adrianis", "Estefania", "Allyson", "Paula"];
+
+// ---------------- STUDENT SESSION ----------------
+const StudentSession = {
+  classCode: '',
+  studentKey: '',
+  displayName: '',
+  score: 0,
+  mastered: {}
+};
+
+function slugifyStudentKey(name) {
+  return String(name || '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 40);
+}
+
+function persistStudentSession() {
+  sessionStorage.setItem('staarStudentSession', JSON.stringify(StudentSession));
+}
+
+function restoreStudentSession() {
+  try {
+    const raw = sessionStorage.getItem('staarStudentSession');
+    if (!raw) return false;
+    const saved = JSON.parse(raw);
+    Object.assign(StudentSession, saved || {});
+    StudentSession.classCode = DEFAULT_CLASS_CODE;
+    return !!(StudentSession.studentKey);
+  } catch (err) {
+    return false;
+  }
+}
+
+
+function populateAllowedStudentNames_(selectId = 'studentNameSelect') {
+  const el = document.getElementById(selectId);
+  if (!el) return;
+  el.innerHTML = '';
+  const ph = document.createElement('option');
+  ph.value = '';
+  ph.textContent = 'Select your name';
+  el.appendChild(ph);
+  ALLOWED_DISPLAY_NAMES.forEach(name => {
+    const opt = document.createElement('option');
+    opt.value = name;
+    opt.textContent = name;
+    el.appendChild(opt);
+  });
+}
+
+function openStudentEntry() {
+  const div = document.getElementById("interventionCard");
+  div.style.display = "block";
+  div.innerHTML = `
+    <div class="panel">
+      <div><b>Select your name</b></div>
+      <small class="muted">Your class is already set for this activity.</small>
+      <select id="studentNameSelect" style="margin-top:8px;width:100%;min-height:40px;border-radius:8px;border:1px solid #374151;background:#111827;color:white;padding:8px;"></select>
+      <button class="btn" id="studentEntrySave" style="margin-top:8px;">Start</button>
+    </div>
+  `;
+  populateAllowedStudentNames_('studentNameSelect');
+  document.getElementById('studentEntrySave').onclick = () => {
+    const displayName = document.getElementById('studentNameSelect').value.trim();
+    if (!ALLOWED_DISPLAY_NAMES.includes(displayName)) {
+      setDebugStatus("Choose a student from the approved list.", "leaderboard-error");
+      return;
+    }
+    StudentSession.classCode = DEFAULT_CLASS_CODE;
+    StudentSession.displayName = displayName;
+    StudentSession.studentKey = slugifyStudentKey(displayName);
+    persistStudentSession();
+    div.style.display = "none";
+    renderLeaderboardCard();
+    updateStudentScoreLine();
+    refreshLeaderboard();
+  };
+}
+
+function gasUrlReady() {
+  return GAS_WEB_APP_URL && !GAS_WEB_APP_URL.includes('PASTE_YOUR_DEPLOYED');
+}
+
+function gasBeacon(params) {
+  if (!gasUrlReady()) return;
+  const url = new URL(GAS_WEB_APP_URL);
+  Object.entries(params).forEach(([k, v]) => url.searchParams.set(k, String(v)));
+  const img = new Image();
+  img.src = url.toString();
+}
+
+function jsonp(url, callbackName) {
+  return new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    const cleanup = () => {
+      try { delete window[callbackName]; } catch (e) {}
+      if (script.parentNode) script.parentNode.removeChild(script);
+    };
+    window[callbackName] = (data) => {
+      cleanup();
+      resolve(data);
+    };
+    script.onerror = () => {
+      cleanup();
+      reject(new Error('Leaderboard request failed.'));
+    };
+    script.src = url;
+    document.body.appendChild(script);
+  });
+}
+
+function escapeHtml(text) {
+  return String(text || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+function renderLeaderboardCard() {
+  if (document.getElementById('leaderboardCard')) return;
+  const container = document.querySelector('.container');
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.id = 'leaderboardCard';
+  card.innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;">
+      <div>
+        <div class="pill">Class Leaderboard</div>
+        <div id="studentScoreLine" style="margin-top:6px;font-weight:600;"></div>
+      </div>
+      <button class="btn" id="refreshLeaderboardBtn">Refresh</button>
+    </div>
+    <div id="leaderboardBody" style="margin-top:10px;">Leaderboard will load automatically.</div>
+  `;
+  container.appendChild(card);
+  document.getElementById('refreshLeaderboardBtn').onclick = refreshLeaderboard;
+}
+
+function updateStudentScoreLine() {
+  const line = document.getElementById('studentScoreLine');
+  if (!line) return;
+  if (!StudentSession.displayName) {
+    line.textContent = 'No student loaded yet.';
+    return;
+  }
+  line.textContent = `${StudentSession.displayName}: ${StudentSession.score} pts`;
+}
+
+async function refreshLeaderboard() {
+  renderLeaderboardCard();
+  updateStudentScoreLine();
+  const body = document.getElementById('leaderboardBody');
+  if (!StudentSession.classCode || !gasUrlReady()) {
+    body.textContent = 'Set the deployed GAS URL first.';
+    return;
+  }
+  body.textContent = 'Loading leaderboard…';
+  const callbackName = 'leaderboardCb_' + Math.random().toString(36).slice(2, 8);
+  const url = new URL(GAS_WEB_APP_URL);
+  url.searchParams.set('action', 'leaderboard');
+  url.searchParams.set('class_code', StudentSession.classCode);
+  url.searchParams.set('limit', LEADERBOARD_LIMIT);
+  url.searchParams.set('callback', callbackName);
+  try {
+    const payload = await jsonp(url.toString(), callbackName);
+    const rows = (payload.top || []).map((row, index) => {
+      return `<div class="leaderboard-row">
+        <div>${index + 1}.</div>
+        <div>${escapeHtml(row.display_name || row.student_key)}</div>
+        <div>${row.total_points} pts</div>
+      </div>`;
+    }).join('');
+    body.innerHTML = rows || 'No scores yet.';
+  } catch (err) {
+    body.textContent = 'Could not load leaderboard.';
+  }
+}
+
+// ---------------- STATE ----------------
+let current = 0;
+let selected = null;
+let flags = {};
+let answers = {};
+
+function setDebugStatus(message, level){
+  try {
+    const el = document.getElementById("debugStatus");
+    if (!el) return;
+    el.textContent = "Status: " + message;
+    el.className = "debug-status" + (level ? " " + level : "");
+  } catch (err) {
+    console.error("setDebugStatus failed", err);
+  }
+}
+
+function safeJSONParse(raw, fallback){
+  try {
+    return JSON.parse(raw);
+  } catch (err) {
+    console.error("JSON parse failed", err, raw);
+    setDebugStatus("Session data was corrupt and was reset.", "warning-text");
+    return fallback;
+  }
+}
+
+function showFallbackMessage(containerId, message, className){
+  try {
+    const el = document.getElementById(containerId);
+    if (!el) return;
+    const msg = document.createElement("div");
+    msg.className = className || "warning-text";
+    msg.textContent = message;
+    el.appendChild(msg);
+  } catch (err) {
+    console.error("showFallbackMessage failed", err);
+  }
+}
+
+let attemptCounts = {};
+
+// ---------------- TTS ----------------
+function ttsRead(){
+  try {
+    if (!("speechSynthesis" in window) || typeof SpeechSynthesisUtterance === "undefined") {
+      console.warn("TTS unavailable in this browser");
+      setDebugStatus("Read-aloud is unavailable on this device.", "warning-text");
+      return;
+    }
+    const card = document.getElementById("questionCard");
+    const text = card ? card.innerText : "";
+    if (!text.trim()) {
+      console.warn("TTS requested with empty question text");
+      setDebugStatus("Nothing available to read aloud.", "warning-text");
+      return;
+    }
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.onerror = (e) => {
+      console.error("TTS error", e);
+      setDebugStatus("Read-aloud failed. You can still continue the activity.", "warning-text");
+    };
+    speechSynthesis.cancel();
+    speechSynthesis.speak(utter);
+  } catch (err) {
+    console.error("ttsRead failed", err);
+    setDebugStatus("Read-aloud failed. You can still continue the activity.", "warning-text");
+  }
+}
+
+// ---------------- NAV ----------------
+function prevQ(){ if(current>0){ current--; render(); } }
+function nextQ(){ if(current<QUESTIONS.length-1){ current++; render(); } }
+
+// ---------------- FLAG ----------------
+function toggleFlag(){
+  flags[current] = !flags[current];
+  renderPalette();
+}
+
+// ---------------- PALETTE ----------------
+function renderPalette(){
+  const p = document.getElementById("palette");
+  p.innerHTML = "";
+  QUESTIONS.forEach((q,i)=>{
+    const btn = document.createElement("button");
+    btn.innerText = i+1;
+    if(flags[i]) btn.classList.add("flagged");
+    if(answers[i]) btn.classList.add("correct");
+    btn.onclick = ()=>{ current=i; render(); };
+    p.appendChild(btn);
+  });
+}
+
+// ---------------- RENDER ----------------
+function render(){
+  try {
+    const q = QUESTIONS[current];
+    if (!q) {
+      console.error("render: missing question at index", current);
+      setDebugStatus("Question data is missing.", "leaderboard-error");
+      return;
+    }
+    document.getElementById("progress").innerText = `Q ${current+1}`;
+    selected = null;
+
+    let html = `<div>${q.prompt}</div>`;
+    html += renderStimulus(q);
+
+    html += `<div class="grid">`;
+    q.choices.forEach(c=>{
+      html += `<div class="choice" onclick="selectChoice('${c.id}', this)">
+                <b>${c.id}</b>
+                ${renderChoice(c)}
+              </div>`;
+    });
+    html += `</div>`;
+
+    document.getElementById("questionCard").innerHTML = html;
+    renderPalette();
+    setDebugStatus("Question rendered.");
+  } catch (err) {
+    console.error("render failed", err);
+    setDebugStatus("Display failed to load correctly.", "leaderboard-error");
+  }
+}
+
+function selectChoice(id, el){
+  document.querySelectorAll('.choice').forEach(c=>c.classList.remove('selected'));
+  el.classList.add('selected');
+  selected = id;
+}
+
+function currentAttemptsFor(questionId) {
+  if (!attemptCounts[questionId]) attemptCounts[questionId] = 0;
+  return attemptCounts[questionId];
+}
+
+function incrementAttemptsFor(questionId) {
+  if (!attemptCounts[questionId]) attemptCounts[questionId] = 0;
+  attemptCounts[questionId] += 1;
+  return attemptCounts[questionId];
+}
+
+function awardMastery(questionId, attemptsUsed) {
+  if (StudentSession.mastered[questionId]) return 0;
+  let award = 10;
+  if (attemptsUsed > 1) award = 7;
+  if (attemptsUsed > 2) award = 5;
+  StudentSession.mastered[questionId] = true;
+  StudentSession.score += award;
+  persistStudentSession();
+  return award;
+}
+
+function logAttempt(question, correct, extra={}) {
+  const attemptCount = extra.attemptCount || currentAttemptsFor(question.question_id);
+  const localEntry = {
+    student_id: StudentSession.studentKey || "student_1",
+    student_name: StudentSession.displayName || "",
+    class_code: StudentSession.classCode || "",
+    teks: qSafe(question.teks),
+    question_id: qSafe(question.question_id),
+    misconception: extra.misconception || "",
+    correct: !!correct,
+    attempt_count: attemptCount,
+    score_award: extra.scoreAward || 0
+  };
+  TelemetryStore.log(localEntry);
+
+  if (StudentSession.classCode && StudentSession.studentKey) {
+    gasBeacon({
+      action: 'log',
+      event_id: (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(36).slice(2,8)}`,
+      class_code: StudentSession.classCode,
+      student_key: StudentSession.studentKey,
+      display_name: StudentSession.displayName,
+      question_id: question.question_id,
+      teks: question.teks,
+      misconception: extra.misconception || '',
+      correct: String(!!correct),
+      attempt_count: attemptCount,
+      score_award: extra.scoreAward || 0,
+      display_type: (question.stimulus && question.stimulus.type) ? question.stimulus.type : '',
+      scale_correct: String(!!extra.scaleCorrect),
+      category_correct: String(!!extra.categoryCorrect),
+      operation_correct: String(!!extra.operationCorrect),
+      source: 'student_engine'
+    });
+  }
+}
+
+function qSafe(v) { return (v === undefined || v === null) ? "" : v; }
+
+// ---------------- SUBMIT ----------------
+function submitAnswer(){
+  try {
+    const q = QUESTIONS[current];
+    if (!q) {
+      console.error("submitAnswer: missing question", current);
+      setDebugStatus("Cannot submit because question data is missing.", "leaderboard-error");
+      return;
+    }
+    if(!selected) {
+      setDebugStatus("Choose an answer first.", "warning-text");
+      return;
+    }
+
+    const attemptsUsed = incrementAttemptsFor(q.question_id);
+
+    if(selected === q.answer){
+      answers[current] = true;
+      const award = awardMastery(q.question_id, attemptsUsed);
+      logAttempt(q, true, {
+        misconception: "none",
+        scoreAward: award
+      });
+      try {
+        document.getElementById("interventionCard").style.display = "none";
+      } catch (e) {}
+      refreshLeaderboard();
+      renderPalette();
+      updateStudentScoreLine();
+      setDebugStatus("Correct.");
+    } else {
+      logAttempt(q, false, {
+        misconception: "incorrect_choice",
+        scoreAward: 0
+      });
+      triggerIntervention(q);
+      setDebugStatus("Incorrect. Showing help.");
+      renderPalette();
+    }
+  } catch (err) {
+    console.error("submitAnswer failed", err);
+    setDebugStatus("Submit failed. Try again.", "leaderboard-error");
+  }
+}
+
+// ---------------- JUSTIFICATION ----------------
+function requireJustification(){
+  try {
+    document.getElementById("interventionCard").style.display = "none";
+  } catch (err) {
+    console.error("requireJustification failed", err);
+  }
+}
+
+function finishJust(){
+  try {
+    document.getElementById("interventionCard").style.display = "none";
+  } catch (err) {
+    console.error("finishJust failed", err);
+  }
+}
+
+// ---------------- INTERVENTION ----------------
+function triggerIntervention(q){
+  try {
+    const div = document.getElementById("interventionCard");
+    div.style.display = "block";
+    div.innerHTML = `
+      <div><b>Let's learn this:</b></div>
+      <div>Check the scale and labels carefully.</div>
+      <button class="btn" onclick="closeIntervention()">Retry</button>
+    `;
+  } catch (err) {
+    console.error("triggerIntervention failed", err);
+    setDebugStatus("Help could not be displayed.", "leaderboard-error");
+  }
+}
+
+function closeIntervention(){
+  try {
+    document.getElementById("interventionCard").style.display = "none";
+    setDebugStatus("Retry ready.");
+  } catch (err) {
+    console.error("closeIntervention failed", err);
+  }
+}
+
+
+// ---------------- RENDERERS + QUESTION BANK ----------------
+function renderList(data){
+  return `<div class="panel">[ ${data.join(', ')} ]</div>`;
+}
+
+function renderTable({cats, values}){
+  const rows = cats.map((c,i)=>`<tr><td style="padding:6px 8px;border-bottom:1px solid #374151;">${c}</td><td style="padding:6px 8px;border-bottom:1px solid #374151;text-align:center;">${values[i]}</td></tr>`).join('');
+  return `<table class="panel" style="width:100%; border-collapse:collapse; margin-top:8px;">
+    <tr><th style="text-align:left;padding:6px 8px;border-bottom:1px solid #374151;">Category</th><th style="padding:6px 8px;border-bottom:1px solid #374151;">Value</th></tr>${rows}
+  </table>`;
+}
+
+function addYAxisTicks(max, pad, height){
+  const step = Math.max(1, Math.ceil(max/5));
+  let ticks = '';
+  for(let i=0;i<=5;i++){
+    const val = i*step;
+    const y = height - pad - (val/max)*(height-pad*2);
+    ticks += `<line x1="${pad-4}" y1="${y}" x2="${pad}" y2="${y}" stroke="#94a3b8"/>`;
+    ticks += `<text x="${pad-8}" y="${y+3}" font-size="9" text-anchor="end" fill="#cbd5e1">${val}</text>`;
+    ticks += `<line x1="${pad}" y1="${y}" x2="${360-pad}" y2="${y}" stroke="#1f2937"/>`;
+  }
+  return ticks;
+}
+
+function renderBarGraph({cats, values}){
+  const max = Math.max(...values);
+  const w = 360, h = 220, pad = 28;
+  const slot = (w - pad*2) / cats.length;
+  const bw = slot * 0.65;
+  let bars = addYAxisTicks(max, pad, h);
+  cats.forEach((c,i)=>{
+    const x = pad + i*slot + (slot-bw)/2;
+    const bh = (values[i]/max) * (h - pad*2);
+    const y = h - pad - bh;
+    bars += `<rect x="${x}" y="${y}" width="${bw}" height="${bh}" rx="3" fill="#22c55e"></rect>
+             <text x="${x+bw/2}" y="${h-pad+14}" text-anchor="middle" font-size="10" fill="#e5e7eb">${c}</text>`;
+  });
+  return `<svg viewBox="0 0 ${w} ${h}" aria-label="bar graph">
+    <rect x="0" y="0" width="${w}" height="${h}" fill="#020617"></rect>
+    <line x1="${pad}" y1="${h-pad}" x2="${w-pad}" y2="${h-pad}" stroke="#64748b"/>
+    <line x1="${pad}" y1="${pad}" x2="${pad}" y2="${h-pad}" stroke="#64748b"/>
+    ${bars}
+  </svg>`;
+}
+
+function renderDotPlot(values){
+  const counts = {};
+  values.forEach(v=>counts[v]=(counts[v]||0)+1);
+  const xs = Object.keys(counts).map(Number).sort((a,b)=>a-b);
+  const w=360, h=220, pad=28, colW=(w-pad*2)/Math.max(xs.length,1);
+  let dots='';
+  xs.forEach((x,i)=>{
+    for(let j=0;j<counts[x];j++){
+      const cx = pad + i*colW + colW/2;
+      const cy = h - pad - (j+1)*16;
+      dots += `<circle cx="${cx}" cy="${cy}" r="5.5" fill="#60a5fa"></circle>`;
+    }
+    dots += `<text x="${pad + i*colW + colW/2}" y="${h-pad+14}" text-anchor="middle" font-size="10" fill="#e5e7eb">${x}</text>`;
+  });
+  return `<svg viewBox="0 0 ${w} ${h}" aria-label="dot plot">
+    <rect x="0" y="0" width="${w}" height="${h}" fill="#020617"></rect>
+    <line x1="${pad}" y1="${h-pad}" x2="${w-pad}" y2="${h-pad}" stroke="#64748b"/>
+    ${dots}
+  </svg>`;
+}
+
+function renderPictograph({cats, counts, iconValue}){
+  const iconStep = 18;
+  const iconSize = 16;
+  const rowH = 40;
+
+  const longestLabel = Math.max(...cats.map(c => String(c).length), 0);
+  const labelArea = Math.max(96, Math.min(170, longestLabel * 15));
+  const leftPad = labelArea + 18;
+
+  const normalizedCounts = counts.map(v => Number(v) || 0);
+  const maxUnits = Math.max(...normalizedCounts, 0);
+  const maxIcons = Math.ceil(maxUnits);
+  const w = leftPad + Math.max(100, maxIcons * iconStep) + 24;
+
+  function iconUse(x, y, fraction, clipId) {
+    if (fraction >= 1) {
+      return `<use href="#pictograph-person" x="${x}" y="${y}" width="${iconSize}" height="${iconSize}" style="color:#f59e0b"></use>`;
+    }
+    if (fraction >= 0.5) {
+      return `<g>
+        <use href="#pictograph-person" x="${x}" y="${y}" width="${iconSize}" height="${iconSize}" style="color:#f59e0b" clip-path="url(#${clipId})"></use>
+      </g>`;
+    }
+    return '';
+  }
+
+  let defs = '';
+  let rows = '';
+  cats.forEach((c, i) => {
+    let remaining = normalizedCounts[i];
+    let icons = '';
+    let slot = 0;
+    while (remaining >= 1) {
+      icons += iconUse(leftPad + slot * iconStep, i * rowH + 10, 1, '');
+      remaining -= 1;
+      slot += 1;
+    }
+    if (remaining >= 0.5) {
+      const clipId = `halfPic_${i}_${slot}`;
+      defs += `<clipPath id="${clipId}"><rect x="${leftPad + slot * iconStep}" y="${i * rowH + 10}" width="${iconSize / 2}" height="${iconSize}"></rect></clipPath>`;
+      icons += iconUse(leftPad + slot * iconStep, i * rowH + 10, 0.5, clipId);
+    }
+
+    rows += `<g>
+      <text x="8" y="${i * rowH + 23}" font-size="10" fill="#e5e7eb">${c}</text>
+      ${icons}
+    </g>`;
+  });
+
+  const keyIcon = `<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="vertical-align:-3px;margin:0 4px;color:#f59e0b"><use href="#pictograph-person"></use></svg>`;
+
+  return `<div class="panel" style="margin-top:8px;">
+    <div class="pill">Each ${keyIcon} = ${iconValue}</div>
+    <svg viewBox="0 0 ${w} ${cats.length * rowH + 24}" aria-label="pictograph">
+      <defs>${defs}</defs>
+      ${rows}
+    </svg>
+  </div>`;
+}
+
+function renderStimulus(q){
+  const s = q.stimulus || {};
+  if(s.type==="list") return renderList(s.data);
+  if(s.type==="table") return renderTable(s.data);
+  if(s.type==="bar_graph") return renderBarGraph(s.data);
+  if(s.type==="dot_plot") return renderDotPlot(s.data);
+  if(s.type==="pictograph") return renderPictograph(s.data);
+  return `<div class="panel">Unsupported stimulus</div>`;
+}
+
+function renderChoice(c){
+  if(c.type==="dot_plot") return renderDotPlot(c.data);
+  if(c.type==="table") return renderTable(c.data);
+  if(c.type==="bar_graph") return renderBarGraph(c.data);
+  if(c.type==="pictograph") return renderPictograph(c.data);
+  if(c.type==="list") return renderList(c.data||[]);
+  return `<div class="panel">${c.html || ''}</div>`;
+}
+
+const QUESTIONS = [
+  {
+    question_id: "Q1",
+    teks: "3.8A",
+    prompt: "The numbers listed show the speed in miles per hour Henry pitched a baseball. Which dot plot represents the speed of Henry's pitches?",
+    stimulus: { type:"list", data:[30,32,38,30,33,34,32,35,38,36,35,32,30,32,35] },
+    choices: [
+      {id:"F", type:"dot_plot", data:[30,30,30,32,32,32,33,34,35,35,35,36,38,38]},
+      {id:"G", type:"dot_plot", data:[30,30,32,32,32,33,34,34,35,35,36,36,38,38,38]},
+      {id:"H", type:"dot_plot", data:[30,30,30,32,32,32,32,33,34,35,35,35,36,38,38]},
+      {id:"J", type:"dot_plot", data:[30,31,32,33,34,35,36,37,38,39]}
+    ],
+    answer: "H"
+  },
+  {
+    question_id: "Q2",
+    teks: "3.8A",
+    prompt: "Which table represents the data in the pictograph?",
+    stimulus: { type:"pictograph", data:{cats:["Spikes","Aces","Stars","Nets","Digs"], counts:[2,1.5,1,2.5,0.5], iconValue:6} },
+    choices: [
+      {id:"A", type:"table", data:{cats:["Spikes","Aces","Stars","Nets","Digs"], values:[12,9,6,15,3]}},
+      {id:"B", type:"table", data:{cats:["Spikes","Aces","Stars","Nets","Digs"], values:[4,3,2,5,1]}},
+      {id:"C", type:"table", data:{cats:["Spikes","Aces","Stars","Nets","Digs"], values:[8,6,4,10,2]}},
+      {id:"D", type:"table", data:{cats:["Spikes","Aces","Stars","Nets","Digs"], values:[15,12,9,6,3]}}
+    ],
+    answer: "A"
+  },
+  {
+    question_id: "Q3",
+    teks: "3.8A",
+    prompt: "Which list matches the bar graph?",
+    stimulus: { type:"bar_graph", data:{cats:["Jeff","Amber","Gary","Farrah","Steve"], values:[5,3,4,2,6]} },
+    choices:[
+      {id:"F", type:"list", data:[5,3,4,2,6]},
+      {id:"G", type:"list", data:[5,4,4,2,6]},
+      {id:"H", type:"list", data:[3,5,4,2,6]},
+      {id:"J", type:"list", data:[5,3,2,4,6]}
+    ],
+    answer:"F"
+  },
+  {
+    question_id: "Q4",
+    teks: "3.8A",
+    prompt: "Each picture = 2. Which table is correct?",
+    stimulus:{ type:"pictograph", data:{cats:["Dog","Monkey","Rabbit","Bear"], counts:[3,4,2,5], iconValue:2} },
+    choices:[
+      {id:"A", type:"table", data:{cats:["Dog","Monkey","Rabbit","Bear"], values:[6,8,4,10]}},
+      {id:"B", type:"table", data:{cats:["Dog","Monkey","Rabbit","Bear"], values:[3,4,2,5]}},
+      {id:"C", type:"table", data:{cats:["Dog","Monkey","Rabbit","Bear"], values:[5,6,4,8]}},
+      {id:"D", type:"table", data:{cats:["Dog","Monkey","Rabbit","Bear"], values:[6,6,4,10]}}
+    ],
+    answer:"A"
+  },
+  {
+    question_id:"Q5",
+    teks:"3.8A",
+    prompt:"Which dot plot represents the table?",
+    stimulus:{ type:"table", data:{cats:["1","1.5","2","2.5","3"], values:[2,3,4,2,1]} },
+    choices:[
+      {id:"A", type:"dot_plot", data:[1,1,1.5,1.5,1.5,2,2,2,2,2.5,2.5,3]},
+      {id:"B", type:"dot_plot", data:[1,1.5,2,2.5,3]},
+      {id:"C", type:"dot_plot", data:[1,1,1,2,2,2,3]},
+      {id:"D", type:"dot_plot", data:[1,2,3]}
+    ],
+    answer:"A"
+  },
+  {
+    question_id:"Q6",
+    teks:"3.8A",
+    prompt:"Which answer choice does NOT represent the information in the table?",
+    stimulus:{ type:"table", data:{cats:["White","Yellow","Blue","Red"], values:[48,24,42,18]} },
+    choices:[
+      {id:"F", type:"bar_graph", data:{cats:["White","Yellow","Blue","Red"], values:[48,24,42,18]}},
+      {id:"G", type:"pictograph", data:{cats:["White","Yellow","Blue","Red"], counts:[4,2,3.5,1.5], iconValue:12}},
+      {id:"H", type:"table", data:{cats:["White","Yellow","Blue","Red"], values:[48,24,42,18]}},
+      {id:"J", type:"pictograph", data:{cats:["White","Yellow","Blue","Red"], counts:[4,2,3,1.5], iconValue:12}}
+    ],
+    answer:"J"
+  },
+  {
+    question_id:"Q7",
+    teks:"3.8A",
+    prompt:"The list shows the number of ribbons of each color that a school ordered for a science fair. Which pictograph best represents the information in the list?",
+    stimulus:{ type:"list", data:[12,18,36,60] },
+    choices:[
+      {id:"A", type:"pictograph", data:{cats:["Blue","Red","Green","Purple"], counts:[3,4.5,9,15], iconValue:4}},
+      {id:"B", type:"pictograph", data:{cats:["Blue","Red","Green","Purple"], counts:[2,3,6,10], iconValue:6}},
+      {id:"C", type:"pictograph", data:{cats:["Blue","Red","Green","Purple"], counts:[1,1.5,3,5], iconValue:12}},
+      {id:"D", type:"pictograph", data:{cats:["Blue","Red","Green","Purple"], counts:[2,2,4,7], iconValue:9}}
+    ],
+    answer:"B"
+  },
+  {
+    question_id:"Q8",
+    teks:"3.8A",
+    prompt:"Which dot plot represents the value in cents of each coin?",
+    stimulus:{ type:"list", data:[1,5,10,25,10,5,1] },
+    choices:[
+      {id:"A", type:"dot_plot", data:[1,1,5,5,10,10,25]},
+      {id:"B", type:"dot_plot", data:[1,5,10,25]},
+      {id:"C", type:"dot_plot", data:[1,1,1,5,10,25]},
+      {id:"D", type:"dot_plot", data:[5,10,25]}
+    ],
+    answer:"A"
+  },
+  {
+    question_id:"Q9",
+    teks:"3.8A",
+    prompt:"Which dot plot represents the numbers?",
+    stimulus:{ type:"list", data:[8,7,12,1,8,9,12,0,7,8,10,4,5,8,12,4,0,8] },
+    choices:[
+      {id:"F", type:"dot_plot", data:[0,0,1,4,4,5,7,7,8,8,8,8,8,9,10,12,12,12]},
+      {id:"G", type:"dot_plot", data:[0,1,4,5,7,8,9,10,12]},
+      {id:"H", type:"dot_plot", data:[8,8,8,8,8]},
+      {id:"J", type:"dot_plot", data:[0,0,1,4,4,5,7,7,8,8,9,10,12]}
+    ],
+    answer:"F"
+  },
+  {
+    question_id:"Q10",
+    teks:"3.8A",
+    prompt:"Which table matches the graph?",
+    stimulus:{ type:"bar_graph", data:{cats:["Mon","Tue","Wed","Thu","Fri"], values:[2,4,3,5,6]} },
+    choices:[
+      {id:"A", type:"table", data:{cats:["Mon","Tue","Wed","Thu","Fri"], values:[2,4,3,5,6]}},
+      {id:"B", type:"table", data:{cats:["Mon","Tue","Wed","Thu","Fri"], values:[2,3,3,5,6]}},
+      {id:"C", type:"table", data:{cats:["Mon","Tue","Wed","Thu","Fri"], values:[2,4,5,5,6]}},
+      {id:"D", type:"table", data:{cats:["Mon","Tue","Wed","Thu","Fri"], values:[1,4,3,5,6]}}
+    ],
+    answer:"A"
+  },
+  {
+    question_id:"Q11",
+    teks:"3.8A",
+    prompt:"Which dot plot represents the data in the table?",
+    stimulus:{ type:"table", data:{cats:["1","2","3","4"], values:[3,4,2,1]} },
+    choices:[
+      {id:"A", type:"dot_plot", data:[1,1,1,2,2,2,2,3,3,4]},
+      {id:"B", type:"dot_plot", data:[1,2,3,4]},
+      {id:"C", type:"dot_plot", data:[1,1,2,2,3,4]},
+      {id:"D", type:"dot_plot", data:[2,2,2,2]}
+    ],
+    answer:"A"
+  },
+  {
+    question_id:"Q12",
+    teks:"3.8A",
+    prompt:"Which table matches the bike graph?",
+    stimulus:{ type:"bar_graph", data:{cats:["W1","W2","W3","W4","W5","W6"], values:[3,5,4,6,2,7]} },
+    choices:[
+      {id:"F", type:"table", data:{cats:["W1","W2","W3","W4","W5","W6"], values:[3,5,4,6,2,7]}},
+      {id:"G", type:"table", data:{cats:["W1","W2","W3","W4","W5","W6"], values:[3,4,4,6,2,7]}},
+      {id:"H", type:"table", data:{cats:["W1","W2","W3","W4","W5","W6"], values:[3,5,4,5,2,7]}},
+      {id:"J", type:"table", data:{cats:["W1","W2","W3","W4","W5","W6"], values:[3,5,4,6,3,7]}}
+    ],
+    answer:"F"
+  },
+  {
+    question_id:"Q13",
+    teks:"3.8A",
+    prompt:"Which table matches the wrapping paper graph?",
+    stimulus:{ type:"bar_graph", data:{cats:["Ari","Evan","Quinn","Tori"], values:[6,4,7,5]} },
+    choices:[
+      {id:"A", type:"table", data:{cats:["Ari","Evan","Quinn","Tori"], values:[6,4,7,5]}},
+      {id:"B", type:"table", data:{cats:["Ari","Evan","Quinn","Tori"], values:[6,5,7,5]}},
+      {id:"C", type:"table", data:{cats:["Ari","Evan","Quinn","Tori"], values:[5,4,7,5]}},
+      {id:"D", type:"table", data:{cats:["Ari","Evan","Quinn","Tori"], values:[6,4,6,5]}}
+    ],
+    answer:"A"
+  }
+];
+
+// ---------------- INIT ----------------
+if (!restoreStudentSession()) {
+  render();
+  openStudentEntry();
+} else {
+  render();
+  refreshLeaderboard();
+}
+
+</script>
+</body>
+</html>

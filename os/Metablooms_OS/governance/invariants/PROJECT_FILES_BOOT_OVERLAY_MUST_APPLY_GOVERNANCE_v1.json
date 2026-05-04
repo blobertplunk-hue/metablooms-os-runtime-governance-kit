@@ -1,0 +1,9 @@
+{
+  "id":"PROJECT_FILES_BOOT_OVERLAY_MUST_APPLY_GOVERNANCE_v1",
+  "status":"active",
+  "gate":"PROJECT_BOOT_OVERLAY_GATE",
+  "description":"Project-file boot overlay must be verifiable, scoped, backed up before install, and must not claim to replace the full OS.",
+  "failure_action":"DENY_STAGE_EXECUTION",
+  "source":"project-files boot overlay",
+  "scope":"runtime_governance_overlay"
+}

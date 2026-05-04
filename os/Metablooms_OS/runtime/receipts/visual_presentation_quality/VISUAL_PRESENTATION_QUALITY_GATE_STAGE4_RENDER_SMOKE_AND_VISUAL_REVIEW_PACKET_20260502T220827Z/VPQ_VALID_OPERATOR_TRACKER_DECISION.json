@@ -1,0 +1,27 @@
+{
+  "artifact_id": "open_operator_visual_tracker_vpq_binding_v1",
+  "artifact_type": "operator_tracker",
+  "created_utc": "2026-05-02T22:09:24Z",
+  "decision": "ALLOW",
+  "evidence": {
+    "checks": [
+      "json_schema_draft_2020_12",
+      "default_browser_style_block",
+      "design_system_required",
+      "mobile_first_required",
+      "wcag_2_2_aa_required",
+      "reduced_motion_required",
+      "render_static_human_review_lists_required",
+      "html_activity_google_sites_single_file_constraints"
+    ],
+    "payload_sha256": "97aa43d219765d278e1d5469d8a6db9abae49107442d50e570cf61f314b25dd3",
+    "schema_path": "/mnt/data/Metablooms_OS/0_kernel/registry/visual_presentation_quality/visual_presentation_quality_declaration_schema_v1.json",
+    "schema_sha256": "cca7d35922c5de1071a6ccb4d596b6d186cfa1ced82348c35a6fa5c203c273be"
+  },
+  "ok": true,
+  "result_sha256": "a375c70342b75efeac2f7436af2f4cfbabf49ec976bc5b7eb7f236d5eb7844d4",
+  "schema_version": "visual_presentation_quality_gate_decision.v1",
+  "validator_version": "visual_presentation_quality_gate_validator_v1",
+  "violations": [],
+  "warnings": []
+}

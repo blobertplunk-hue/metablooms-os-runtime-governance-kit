@@ -1,0 +1,24 @@
+{
+  "bounded_scope": [
+    "install pointer lock",
+    "install new-chat start contract",
+    "install validator",
+    "update boot gates",
+    "update controlled artifact index",
+    "validate and full-export"
+  ],
+  "created_utc": "2026-04-30T21:22:57.454512Z",
+  "fail_closed_conditions": [
+    "sidecar mismatch",
+    "validator denial",
+    "scatter denial",
+    "fresh extract replay failure",
+    "zip integrity failure"
+  ],
+  "out_of_scope": [
+    "prompt cartridge redesign",
+    "broad OS refactor",
+    "logic-changing runtime migration"
+  ],
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_4_FULL_AUTHORITY_POINTER_LOCK_AND_NEW_CHAT_START_CONTRACT"
+}

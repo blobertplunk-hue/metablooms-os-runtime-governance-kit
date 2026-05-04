@@ -1,0 +1,52 @@
+{
+  "cli": "python3 /mnt/data/Metablooms_OS/0_kernel/validators/validate_visual_presentation_quality_gate_v1.py --validate <declaration.json> --expect ALLOW|DENY",
+  "created_utc": "2026-05-02T21:57:50Z",
+  "implemented_artifacts": [
+    {
+      "bytes": 11320,
+      "path": "/mnt/data/Metablooms_OS/0_kernel/validators/validate_visual_presentation_quality_gate_v1.py",
+      "sha256": "3dc3831630e031246fc2caa5a6cd2d60836df5630c803c9414ea1487449c81e1",
+      "sidecar": "/mnt/data/Metablooms_OS/0_kernel/validators/validate_visual_presentation_quality_gate_v1.py.sha256"
+    },
+    {
+      "bytes": 2378,
+      "path": "/mnt/data/Metablooms_OS/tests/evals/visual_presentation_quality/test_visual_presentation_quality_gate_v1.py",
+      "sha256": "0b22508e1b465ef711af959e99d7d99bcaba9b2b64f9007ffe6306951f49c52f",
+      "sidecar": "/mnt/data/Metablooms_OS/tests/evals/visual_presentation_quality/test_visual_presentation_quality_gate_v1.py.sha256"
+    }
+  ],
+  "preconditions": [
+    {
+      "bytes": 10288,
+      "path": "/mnt/data/Metablooms_OS/0_kernel/registry/visual_presentation_quality/visual_presentation_quality_declaration_schema_v1.json",
+      "sha256": "50d7f508917ad30ec1eb0590ca3ebbd2640d295945ef1810d39ae7c8485073b7"
+    },
+    {
+      "bytes": 1914,
+      "path": "/mnt/data/Metablooms_OS/0_kernel/registry/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_CONTRACT_v1.json",
+      "sha256": "e5e74affefcf800942c00aa5c38bc2ea6afc22652a1913dabda10e78a1c1de0a"
+    },
+    {
+      "bytes": 4537,
+      "path": "/mnt/data/Metablooms_OS/tests/fixtures/visual_presentation_quality/valid_visual_presentation_quality_html_activity_v1.json",
+      "sha256": "763ebf0aa54f1e7eff517f28303a399c81a6790e7d0cb963fe2992c6dbadbb2d"
+    },
+    {
+      "bytes": 279,
+      "path": "/mnt/data/Metablooms_OS/tests/fixtures/visual_presentation_quality/invalid_visual_presentation_quality_default_browser_styles_v1.json",
+      "sha256": "9aa9110d98b97cd3e5083ef7ac3997d7075fe8657bc001bca25395f497f96bee"
+    }
+  ],
+  "schema_version": "visual_presentation_quality_stage2_implementation_manifest.v1",
+  "semantic_blockers": [
+    "default browser styles / unstyled presentation",
+    "missing design system or token plan",
+    "missing mobile-first confirmation",
+    "missing WCAG 2.2 AA target/focus/touch/drag/color-independent support",
+    "motion without functional purpose or reduced-motion support",
+    "missing render/static/human review verification lists",
+    "html_activity without Google Sites/single-file constraints"
+  ],
+  "stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE2_VALIDATOR_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN",
+  "validator_entrypoint": "validate_payload(payload: dict, schema_path: Path) -> dict"
+}

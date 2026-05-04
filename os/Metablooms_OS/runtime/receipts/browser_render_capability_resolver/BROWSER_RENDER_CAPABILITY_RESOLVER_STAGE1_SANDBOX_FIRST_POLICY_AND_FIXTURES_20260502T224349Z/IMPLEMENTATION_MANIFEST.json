@@ -1,0 +1,56 @@
+{
+  "files": [
+    {
+      "path": "0_kernel/registry/browser_render_capability/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE1_SEE_PACKET_v1.json",
+      "sha256": "81db92b1bd0d0ec7cdcdd59be6bf184f781fd2e72f4ace277a4b5c6e2989fc61",
+      "size": 1424
+    },
+    {
+      "path": "0_kernel/registry/browser_render_capability/browser_render_capability_resolver_decision_schema_v1.json",
+      "sha256": "968390418cf9c5fed55021265bebd0a94ac1ff6744bfb0736fd5a22a5ffc6e3b",
+      "size": 2343
+    },
+    {
+      "path": "0_kernel/registry/browser_render_capability/BROWSER_RENDER_CAPABILITY_RESOLVER_POLICY_v1.json",
+      "sha256": "48086a34e5dd11405a65a32b8da8e72db6df61e7c5b2d133303adcba72a30583",
+      "size": 4678
+    },
+    {
+      "path": "tests/fixtures/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_FIXTURE_INDEX_v1.json",
+      "sha256": "e2b2f9cb1a12048791d8001b798232ea7624db471bf820c55c999c6566f11b8c",
+      "size": 754
+    },
+    {
+      "path": "runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE1_SANDBOX_FIRST_POLICY_AND_FIXTURES_20260502T224349Z/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE1_FIXTURE_VALIDATION.json",
+      "sha256": "214144a50d45dcbff6d7a241ffc22fcd81355bd4d521178bcac8cd897945dae0",
+      "size": 1561
+    },
+    {
+      "path": "runtime/state/BROWSER_RENDER_CAPABILITY_RESOLVER_TRACKER_PREVIEW.txt",
+      "sha256": "6addd6d36d5033f44d7f96524eeec5a7c40907d9cfdae29c90e599f9fef6e009",
+      "size": 786
+    },
+    {
+      "path": "tests/fixtures/browser_render_capability_resolver/fixture_01_playwright_full_success.json",
+      "sha256": "698526601dba0555d25225bb2b6645adac4770449291fecd3a8b3a0700334647",
+      "size": 676
+    },
+    {
+      "path": "tests/fixtures/browser_render_capability_resolver/fixture_02_current_sandbox_weasy_fallback.json",
+      "sha256": "87c58e5797472b746511dfc9026c6713b252d0ca8e47e56e394de1684f542edd",
+      "size": 1233
+    },
+    {
+      "path": "tests/fixtures/browser_render_capability_resolver/fixture_03_production_browser_required_denied.json",
+      "sha256": "44eb6d93e6782632867c496a186e72ca68b3a31f64dfac8d819d1f74e40e6686",
+      "size": 876
+    },
+    {
+      "path": "tests/fixtures/browser_render_capability_resolver/fixture_04_static_only_preimplementation_allowed.json",
+      "sha256": "026a4d66f961b52b2ea89260f196a51a1a12f60d98fa2dc316d912da945a308e",
+      "size": 704
+    }
+  ],
+  "stage": "BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE1_SANDBOX_FIRST_POLICY_AND_FIXTURES",
+  "timestamp_utc": "20260502T224349Z"
+}

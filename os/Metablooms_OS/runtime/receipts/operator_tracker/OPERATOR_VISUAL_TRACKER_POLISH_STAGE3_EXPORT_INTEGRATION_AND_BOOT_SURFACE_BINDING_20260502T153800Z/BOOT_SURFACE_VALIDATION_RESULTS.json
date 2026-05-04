@@ -1,0 +1,32 @@
+{
+  "boot_surface_validator": {
+    "manifest": "/mnt/data/Metablooms_OS/runtime/operator_tracker/OPERATOR_VISUAL_TRACKER_BOOT_SURFACE_LATEST.json",
+    "root_html": "/mnt/data/Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html",
+    "root_html_sha256": "369fd9996ad5cb7ae28d165d8816fa8fd4ef570104a6f2bce57d2f21933f4375",
+    "runtime_html": "/mnt/data/Metablooms_OS/runtime/operator_tracker/operator_visual_tracker_latest.html",
+    "status": "PASS"
+  },
+  "compile_results": [
+    {
+      "path": "/mnt/data/Metablooms_OS/0_kernel/lib/operator_surface/render_operator_visual_tracker_v2.py",
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "path": "/mnt/data/Metablooms_OS/0_kernel/validators/validate_operator_visual_tracker_boot_surface_stage3_v1.py",
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "path": "/mnt/data/Metablooms_OS/0_kernel/validators/validate_operator_visual_tracker_render_v2.py",
+      "returncode": 0,
+      "stderr": ""
+    }
+  ],
+  "render_validator": {
+    "html": "/mnt/data/Metablooms_OS/runtime/operator_tracker/operator_visual_tracker_latest.html",
+    "latest_export_sha256": "08f90b2a788831462aa7e1d72957f7ce21201174f4ea3663527fa96e7c623be9",
+    "markdown": "/mnt/data/Metablooms_OS/runtime/handoffs/operator_tracker/CURRENT_OPERATOR_TRACKER_PREVIEW_LATEST.md",
+    "status": "PASS"
+  }
+}

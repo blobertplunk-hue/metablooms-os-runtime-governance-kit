@@ -1,0 +1,29 @@
+{
+  "schema_id": "python_health_gate_decision_schema_v1",
+  "version": "1.0.0",
+  "type": "object",
+  "required": [
+    "decision_id",
+    "gate_id",
+    "created_utc",
+    "decision",
+    "python_health_status",
+    "blocks",
+    "warnings",
+    "routing_recommendation",
+    "launched_with_no_site",
+    "probe"
+  ],
+  "properties": {
+    "decision_id": {"type": "string", "minLength": 8},
+    "gate_id": {"const": "P0PY_PYTHON_HEALTH"},
+    "decision": {"enum": ["allow_with_route_controls", "deny"]},
+    "python_health_status": {"type": "string"},
+    "blocks": {"type": "array", "items": {"type": "string"}},
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "routing_recommendation": {"type": "object"},
+    "launched_with_no_site": {"const": true},
+    "probe": {"type": "object"}
+  },
+  "enforcement_note": "Schema describes required decision shape; p0py_python_health_governance_v1.py performs threshold and route enforcement."
+}

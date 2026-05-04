@@ -1,0 +1,12 @@
+{
+  "artifact_type": "MB_TRACE_INGESTION_CLASSIFIER_POLICY.v1",
+  "created_utc": "20260502T170000Z",
+  "policy": {
+    "status_detection": "Use exact or structured prefix parsing for status fields; never classify long prose by substring matches.",
+    "decision_field": "Treat decision as a status only when it is compact and status-like, such as ALLOW or DENY.",
+    "evidence_packets": ["CE_SYNTHESIS.v1", "SEE_PACKET.v1", "INTERNAL_OS_EVIDENCE.v1", "MB_NEXT_BUILD_DECISION.v1"],
+    "evidence_default": "Evidence packets without explicit failure fields classify as OK.",
+    "explicit_failure_fields": ["error", "exception", "traceback", "blocked_reason", "failure_reason"],
+    "regression_fixture_directory": "runtime/fixtures/observability/trace_ingestion_classifier_stage5"
+  }
+}

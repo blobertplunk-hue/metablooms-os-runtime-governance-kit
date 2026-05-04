@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "compact_tracker_renders_first": "PASS",
+    "fake_percent_rejection": "PASS",
+    "gate_validator_passes": "PASS",
+    "handoff_update_validator_passes": "PASS",
+    "mobile_width_lte_64": "PASS",
+    "no_box_drawing_or_pipe_table_layout": "PASS",
+    "renderer_validator_passes": "PASS",
+    "tracker_4r_handoff_loaded": "PASS"
+  },
+  "component_reports": {
+    "gate_validator": "receipts/inline_project_tracker/TRACKER_5_20260429T113046Z/test_gate.json",
+    "handoff_update_validator": "receipts/inline_project_tracker/TRACKER_5_20260429T113046Z/test_handoff_update.json",
+    "renderer_validator": "receipts/inline_project_tracker/TRACKER_5_20260429T113046Z/test_validator.json"
+  },
+  "errors": [],
+  "rendered_preview": "TRACKER \u25b8 Inline Project Tracker\n[\u2588\u2588\u2588\u2588\u2588\u2591] 5/6 complete\nStatus: DONE\nStage: TRACKER-4R_MOBILE_REFLOW_RENDERER_REPAIR\nNow: TRACKER-4R complete; compact visual tracker repa\u2026\nEvidence: TRACKER-4R handoff 98d94a73896a\nBlocker: none\nNext: TRACKER-5 smoke-test/export packaging only.\nStop: Stopped after TRACKER-4R; smoke-test/export pack\u2026",
+  "status": "PASS",
+  "validator": "TRACKER_5_SMOKE_TEST_COMBINED"
+}

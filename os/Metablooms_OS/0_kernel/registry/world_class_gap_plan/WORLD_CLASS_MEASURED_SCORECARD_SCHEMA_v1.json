@@ -1,0 +1,22 @@
+{
+  "schema_version": "v1",
+  "provenance": "RECONSTRUCTED_FROM_CHAT_SUMMARY_AND_BASE_AUTHORITY_20260503",
+  "required_fields": [
+    "benchmark_domain",
+    "criterion_id",
+    "criterion_text",
+    "external_basis_citation_label",
+    "artifact_evidence_path",
+    "decision",
+    "raw_score",
+    "weight",
+    "weighted_score",
+    "scoring_rationale"
+  ],
+  "allowed_decisions": [
+    "pass",
+    "partial",
+    "fail",
+    "not_applicable"
+  ]
+}

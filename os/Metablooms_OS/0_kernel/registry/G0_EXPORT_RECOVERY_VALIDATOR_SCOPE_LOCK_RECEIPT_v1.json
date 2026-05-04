@@ -1,0 +1,60 @@
+{
+  "version": "1.0",
+  "created_at": 1777064295.676428,
+  "stage": "G0_EXPORT_RECOVERY_VALIDATOR_SCOPE_LOCK",
+  "status": "complete",
+  "inputs": {
+    "research_receipt": "/mnt/data/PROACTIVE_GOVERNANCE_RESEARCH_SYNTHESIS_RECEIPT_v1.json",
+    "ce_packet": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G0_EXPORT_RECOVERY_VALIDATOR_CE_PACKET_v1.json",
+    "see_packet": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G0_EXPORT_RECOVERY_VALIDATOR_SEE_PACKET_v1.json",
+    "e4a_receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/E4A_MASTER_PIPELINE_PROOF_SCOPE_LOCK_RECEIPT_v1.json",
+    "f7_baseline_lock": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F7_RECOVERY_PROVEN_STABLE_BASELINE_LOCK_v1.json"
+  },
+  "outputs": {
+    "scope_doc": "/mnt/data/Metablooms_OS_refined/0_kernel/docs/G0_EXPORT_RECOVERY_VALIDATOR_SCOPE_LOCK_v1.md",
+    "scope_contract": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G0_EXPORT_RECOVERY_VALIDATOR_SCOPE_CONTRACT_v1.json",
+    "gate_matrix": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G0_EXPORT_RECOVERY_VALIDATOR_GATE_MATRIX_v1.json",
+    "ce_packet": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G0_EXPORT_RECOVERY_VALIDATOR_CE_PACKET_v1.json",
+    "see_packet": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G0_EXPORT_RECOVERY_VALIDATOR_SEE_PACKET_v1.json",
+    "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G0_EXPORT_RECOVERY_VALIDATOR_SCOPE_LOCK_RECEIPT_v1.json",
+    "handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G0_TO_G1_HANDOFF_v1.json"
+  },
+  "checks": {
+    "required_paths_present": true,
+    "git_clean_before_g0": true,
+    "git_fsck_clean_before_g0": true,
+    "g0_prechecks": {
+      "research_receipt_present": true,
+      "pointer_active": true,
+      "ledger_latest_pass_available": true,
+      "dag_active": true,
+      "f7_baseline_lock_passed": true,
+      "e4a_receipt_passed": true,
+      "e4a_handoff_ready": true
+    }
+  },
+  "runaway_turn_guard": {
+    "scope_lock_only": true,
+    "implementation_performed": false,
+    "export_performed": false,
+    "boot_recovery_performed": false,
+    "cleanup_performed": false
+  },
+  "verdict": "PASS",
+  "next_improvement_task": "G1 \u2014 Export Recovery Validator Schema + Contract",
+  "why_next": "The validator scope is locked; next convert the gates into machine-readable schema and contract before implementation.",
+  "remaining_work": [
+    "G1 \u2014 Validator Schema + Contract",
+    "G2 \u2014 Validator Implementation",
+    "G3 \u2014 Regression Fixtures",
+    "G4 \u2014 Run Validator Against F7 Export",
+    "G5 \u2014 Repaired Recovery-Proven Export",
+    "G6 \u2014 Recovery Proof + Baseline Lock",
+    "G7 \u2014 Return to E4B"
+  ],
+  "progress_estimate": {
+    "stages_remaining_before_return_to_E4B": 7,
+    "current_arc": "G export-recovery validator hardening"
+  },
+  "next_correct_command": "EXECUTE G1 \u2014 EXPORT RECOVERY VALIDATOR SCHEMA + CONTRACT"
+}

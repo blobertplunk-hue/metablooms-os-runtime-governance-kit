@@ -1,0 +1,23 @@
+{
+  "decision_id": "R2-20260428T024446Z",
+  "stage": "R2_ADR_EXTRACTION_AND_ARCHIVAL_CONVERSION",
+  "decisions": [
+    {
+      "artifact": "CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.json",
+      "result": "archive_to_adr_plus_legacy"
+    },
+    {
+      "artifact": "CLAUDE_MEMORY_SYNC_v1.json",
+      "result": "archive_to_adr_plus_legacy"
+    },
+    {
+      "artifact": "claude_memory_sync_writer_v1.py",
+      "result": "archive_to_adr_plus_legacy"
+    },
+    {
+      "artifact": "COOL_6_RUNTIME_GATE_WIRING_PLAN_v1.json",
+      "result": "archive_to_adr_plus_legacy"
+    }
+  ],
+  "status": "PASS"
+}

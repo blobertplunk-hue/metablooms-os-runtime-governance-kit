@@ -1,0 +1,21 @@
+{
+  "artifact_type": "ATOMIC_JSON_WRITER_CALLSITE_POLICY_STAGE3_v1",
+  "blocked_patterns": [
+    "json.dump(",
+    "Path.write_text(json.dumps(...)",
+    "open(...,'w') for JSON file output"
+  ],
+  "created_utc": "20260502T143600Z",
+  "next_scope": "Stage4 should expand from target caller policy to full-tree classified audit and broader safe retrofits.",
+  "required_import": "atomic_json_compat_v1",
+  "scope": "High-value Stage3 retrofitted callers only; full-tree JSON-write sweep deferred to Stage4.",
+  "target_paths": [
+    "0_kernel/lib/filesystem_safety_v1.py",
+    "0_kernel/lib/execution/bounded_subprocess_wrapper_v1.py",
+    "0_kernel/cartridges/inline_project_tracker/TRACKER_STAGE_FINALIZATION_HOOK_v1.py",
+    "0_kernel/cartridges/inline_project_tracker/TRACKER_STATE_UPDATER_v1.py",
+    "0_kernel/lib/trace_diff_logger_v1.py",
+    "0_kernel/lib/archive_method_router_v1.py",
+    "0_kernel/validators/validate_bounded_subprocess_callsite_policy_stage4_v1.py"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "artifact_type": "EVALS_CONFUSION_MATRIX_SCHEMA_v1",
+  "created_utc": "20260501T122230Z",
+  "labels": [
+    "PASS",
+    "WARN",
+    "BLOCK"
+  ],
+  "matrix_shape": "actual_decision rows by predicted_decision columns",
+  "promotion_thresholds": {
+    "false_pass_tolerance": 0,
+    "minimum_accuracy": 0.9,
+    "minimum_examples": 20
+  },
+  "required_fields": [
+    "labels",
+    "matrix",
+    "total",
+    "correct",
+    "accuracy",
+    "per_label",
+    "false_pass_example_ids",
+    "promotion_decision"
+  ]
+}

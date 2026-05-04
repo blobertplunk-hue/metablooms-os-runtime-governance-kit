@@ -1,0 +1,128 @@
+{
+  "artifact_type": "ATOMIC_JSON_WRITER_STAGE3_VALIDATION_SUMMARY_v1",
+  "checks": {
+    "atomic_json_callsite_policy": true,
+    "atomic_writer_harness_passed": true,
+    "bounded_subprocess_policy_still_passes": true,
+    "bounded_subprocess_wrapper_receipts_still_work": true,
+    "filesystem_safety_mark_finalized": true,
+    "patched_files_py_compile": true,
+    "stage2_handoff_loaded": true,
+    "trace_diff_logger_smoke_outputs_exist": true
+  },
+  "created_utc": "20260502T143651Z",
+  "smoke_files": {
+    "archive_router_result.json": {
+      "bytes": 1032,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/smoke/archive_router_result.json",
+      "sha256": "96ea951c37ab74634b039699005f85a220c47e5d538a88e71a15ec2058c99d14"
+    },
+    "archive_router_stdout.json": {
+      "bytes": 1032,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/smoke/archive_router_stdout.json",
+      "sha256": "96ea951c37ab74634b039699005f85a220c47e5d538a88e71a15ec2058c99d14"
+    },
+    "atomic_json_callsite_policy.final.json": {
+      "bytes": 878,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/smoke/atomic_json_callsite_policy.final.json",
+      "sha256": "0f4ef9627776b55adad6350d19532c49a312188e27e6e5703367929ea15dae8c"
+    },
+    "atomic_json_callsite_policy.json": {
+      "bytes": 878,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/smoke/atomic_json_callsite_policy.json",
+      "sha256": "6af3bec3b618bb0486c60fc9ea7ed09282dafb2615ff886a2030dbd4a64eca97"
+    },
+    "atomic_json_callsite_policy.stdout.final.json": {
+      "bytes": 879,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/smoke/atomic_json_callsite_policy.stdout.final.json",
+      "sha256": "3d7280254e0dacd20c5a4d60c9060cdac7162dab59b6464789c43d5aac0f459a"
+    },
+    "atomic_writer_harness.final.json": {
+      "bytes": 19189,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/smoke/atomic_writer_harness.final.json",
+      "sha256": "36bcc9069f769d186222bb8490cf65045486c1e2f773fe348b359a6483e278a5"
+    },
+    "atomic_writer_harness.out.json": {
+      "bytes": 19189,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/smoke/atomic_writer_harness.out.json",
+      "sha256": "7b900bf39e561a74d4de2c1cb1482e32ce00a6ef11525b2010c9b99c67032812"
+    },
+    "bounded_subprocess_policy_gate.final.json": {
+      "bytes": 25864,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/smoke/bounded_subprocess_policy_gate.final.json",
+      "sha256": "3c1f782e3b6d21e5b2ef28fd491a1bd52e6216894868b6d6bbfe2c370b9ef1fa"
+    },
+    "bounded_subprocess_policy_gate.json": {
+      "bytes": 25864,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/smoke/bounded_subprocess_policy_gate.json",
+      "sha256": "40c759f8f6e48abb46417639a228a05dc4c34b15ccf5cd111a6a625d9868e7a9"
+    },
+    "bounded_subprocess_policy_gate.stdout.final.json": {
+      "bytes": 25865,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/smoke/bounded_subprocess_policy_gate.stdout.final.json",
+      "sha256": "82a93ae8fa8af0259adb6e82da81eddf4b158a8dfed7f45cc334b14b44b2d2fd"
+    },
+    "bounded_subprocess_policy_gate.stdout.json": {
+      "bytes": 25865,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/smoke/bounded_subprocess_policy_gate.stdout.json",
+      "sha256": "9cfc8ca428a3e0e5e9b22b4203dc7ae0d50abc4edc2f1dbd1bc28ad4c6fb568e"
+    },
+    "bounded_wrapper_import_smoke.final.json": {
+      "bytes": 171,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/smoke/bounded_wrapper_import_smoke.final.json",
+      "sha256": "27219156fdfaff41783e3cafff1ca22de32eca38a3d75a57d0d05398dad067fe"
+    },
+    "bounded_wrapper_import_smoke.json": {
+      "bytes": 171,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/smoke/bounded_wrapper_import_smoke.json",
+      "sha256": "b42a6b08e0635f146db518d0393d0c33face57fe1dfa44d47e2582e167936382"
+    },
+    "filesystem_mark_finalized.final.json": {
+      "bytes": 1036,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/smoke/filesystem_mark_finalized.final.json",
+      "sha256": "3e06eeceb1315c40bb6878dc8dc121e9c77e402ba0d5ca9b0887dd9d6110faef"
+    },
+    "filesystem_mark_finalized.out.json": {
+      "bytes": 1033,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/smoke/filesystem_mark_finalized.out.json",
+      "sha256": "a68168c21cace8087454f98326d20161748914c23b9b41e40d1027c1bd3ab7e4"
+    },
+    "smoke.zip": {
+      "bytes": 174,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/smoke/smoke.zip",
+      "sha256": "26b1d36047b4c54f584f5d7e47305af7d71d6d1776c5dec3ddff4b32723b0cc6"
+    },
+    "trace_baseline.final.json": {
+      "bytes": 458,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/smoke/trace_baseline.final.json",
+      "sha256": "77328d45e6136d85a29d46f058954eeeab0d55e6258aba39ab5f0ff24496335b"
+    },
+    "trace_baseline.json": {
+      "bytes": 457,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/smoke/trace_baseline.json",
+      "sha256": "f4ffb8cde005b3e81bb67a2079e0cae9bd59d54aa2c5225f92074a0ba3235712"
+    },
+    "trace_diff_stdout.final.json": {
+      "bytes": 702,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/smoke/trace_diff_stdout.final.json",
+      "sha256": "d7f3e60cf669a091ad5bcfbbc253f4ad48bae183a2ddcf7f8e37edf12f626a77"
+    },
+    "trace_diff_stdout.json": {
+      "bytes": 702,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/smoke/trace_diff_stdout.json",
+      "sha256": "81f8787fc825513fa4bdad282661e214c6dc811c65a47a86c14d8e2f57cdc605"
+    },
+    "trace_summary.final.json": {
+      "bytes": 702,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/smoke/trace_summary.final.json",
+      "sha256": "d7f3e60cf669a091ad5bcfbbc253f4ad48bae183a2ddcf7f8e37edf12f626a77"
+    },
+    "trace_summary.json": {
+      "bytes": 702,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/smoke/trace_summary.json",
+      "sha256": "81f8787fc825513fa4bdad282661e214c6dc811c65a47a86c14d8e2f57cdc605"
+    }
+  },
+  "stage": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z",
+  "verdict": "PASS"
+}

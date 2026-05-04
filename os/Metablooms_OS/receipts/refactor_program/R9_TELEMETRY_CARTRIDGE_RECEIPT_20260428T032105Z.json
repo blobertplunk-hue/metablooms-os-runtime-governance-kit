@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-04-28T03:21:05.629674+00:00",
+  "gate_registry_updated": true,
+  "next_stage": "R10_DECISION_LOGGING_AND_RECEIPT_UNIFICATION",
+  "node_smoke_report": "runtime/evals/governance_regression_suite_v1/reports/R9_node_smoke_20260428T032105Z.json",
+  "receipt_type": "R9_TELEMETRY_CARTRIDGE_CONTRACT_PROMOTION_RECEIPT",
+  "registry_report": "runtime/evals/governance_regression_suite_v1/reports/R9_gate_registry_integrity_20260428T032105Z.json",
+  "source_hashes": {
+    "demo": "a3cb0506bd114741b2ac00c01a9cf37217e1efb91c0c66f6740ddadf992104b8",
+    "engine": "0724edf8628d898557cff0ea61193472fd4e71fe7b1846f8cd59dcf9cfa7c9b8",
+    "schema": "985e053c612a0c84fa2f48360e43d1a1d1f06868f11f4e098fc4a4a162f5e139"
+  },
+  "stage": "R9_TELEMETRY_CARTRIDGE_CONTRACT_PROMOTION",
+  "target_hashes": {
+    "adapter": "412267e4a6e7bfd0730f192c9b4ec3ec6fe6dee970e016caf56f328e6f500d67",
+    "contract": "50b713eba53d9149764644466772d593209332fc090ff957b74bc48293e204b1",
+    "demo": "a3cb0506bd114741b2ac00c01a9cf37217e1efb91c0c66f6740ddadf992104b8",
+    "domain_schema": "985e053c612a0c84fa2f48360e43d1a1d1f06868f11f4e098fc4a4a162f5e139",
+    "engine": "0724edf8628d898557cff0ea61193472fd4e71fe7b1846f8cd59dcf9cfa7c9b8",
+    "event_schema": "333385d6c66c0c4eafdce85cc797d78fe1c997d31cc444dbc38190d54cf7f744",
+    "manifest": "d18ca3e14df73f56b5e21de66b8f23942a7e88aeb118fa9a5fb555f8f577d481",
+    "validator": "c2b294b041097b2c4c2c20bfadf88a9b6299b060da0f2e193579484c1da7ae39"
+  },
+  "validator_report": "runtime/evals/governance_regression_suite_v1/reports/R9_telemetry_validator_stdout_20260428T032105Z.json",
+  "verdict": "PASS"
+}

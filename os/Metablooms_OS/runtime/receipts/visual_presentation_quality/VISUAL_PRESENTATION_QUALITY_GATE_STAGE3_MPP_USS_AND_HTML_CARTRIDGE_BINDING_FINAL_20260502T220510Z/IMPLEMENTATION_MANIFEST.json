@@ -1,0 +1,45 @@
+{
+  "artifact_hashes": {
+    "0_kernel/mpp_v3/VISUAL_PRESENTATION_QUALITY_GATE_MPP_BINDING_v1.json": "07389f047975c69b42e24c18c6719c3cea6c36892bc3b5cf9df83b889c00422c",
+    "0_kernel/registry/visual_presentation_quality/VISUAL_PRESENTATION_MPP_USS_HTML_BINDING_v1.json": "a3b03d028b48173200d9d655b02d9821d01fba3f1454d68e6f8ffa9d8b5beefc",
+    "0_kernel/registry/visual_presentation_quality/visual_presentation_quality_declaration_schema_v1.json": "cca7d35922c5de1071a6ccb4d596b6d186cfa1ced82348c35a6fa5c203c273be",
+    "0_kernel/scripts/usefulness_surface_validator_v1.py": "cffcaaf60e13bf779dca94c6be989a2c6abaeaf534ddf7c3fc13455f56b01aec",
+    "0_kernel/validators/validate_visual_presentation_quality_gate_v1.py": "4731450310ef80649aab797040223a223ace44589adc8c5afc924534742a9fae",
+    "runtime/cartridges/html_activity_visual_presentation_quality_v1/CARTRIDGE_MANIFEST.json": "5b0c736f74f618b18b25c528bcc04b8c9e9e4c09baa9cb02a38e811aeb7d3d0b",
+    "runtime/cartridges/html_activity_visual_presentation_quality_v1/TEACHER_PROFESSIONAL_SURFACE_PROFILE_v1.json": "66cac8b6fc535804f3ec5c226b6dcbddbc3d67c4a0fc1e32e4683aa2e8617b23",
+    "runtime/governance/schemas/usefulness_surface_declaration_schema_v1.json": "98fadea7b278365b34e8f9a54ca4ba5c8cf6613e56eef4f6d7a0fe16464aa9c4",
+    "tests/fixtures/usefulness_surface/invalid_usefulness_html_activity_missing_visual_presentation_v1.json": "6b61f84f67b9942675b4d7b02ad46833b4397cd3ce74cbeb05bdb904d4f83bc1",
+    "tests/fixtures/usefulness_surface/valid_usefulness_html_activity_with_visual_presentation_v1.json": "673ad7f813077b95f5e9a3c77f98eaa4cec5735b3adf2b8b13cbe1afe2313535",
+    "tests/fixtures/visual_presentation_quality/valid_visual_presentation_quality_html_activity_v1.json": "dbf5c0b33b5f9c13cf060ddb9031e0035d33cde394a7676e12c5833db55ca20e"
+  },
+  "binding_summary": {
+    "html_activity_cartridge": "teacher_professional_surface profile installed",
+    "mpp": "visual artifacts require VPQ gate before promotion",
+    "teacher_professional_requirement": "teacher-facing surfaces must look organized, credible, shareable, and free of debug/placeholder language",
+    "uss": "visual_presentation required dimension for HTML and other visual artifacts"
+  },
+  "created_utc": "2026-05-02T22:05:46Z",
+  "modified_artifacts": [
+    "0_kernel/registry/visual_presentation_quality/visual_presentation_quality_declaration_schema_v1.json",
+    "0_kernel/validators/validate_visual_presentation_quality_gate_v1.py",
+    "runtime/governance/schemas/usefulness_surface_declaration_schema_v1.json",
+    "0_kernel/scripts/usefulness_surface_validator_v1.py",
+    "0_kernel/registry/visual_presentation_quality/VISUAL_PRESENTATION_MPP_USS_HTML_BINDING_v1.json",
+    "0_kernel/mpp_v3/VISUAL_PRESENTATION_QUALITY_GATE_MPP_BINDING_v1.json",
+    "runtime/cartridges/html_activity_visual_presentation_quality_v1/CARTRIDGE_MANIFEST.json",
+    "runtime/cartridges/html_activity_visual_presentation_quality_v1/TEACHER_PROFESSIONAL_SURFACE_PROFILE_v1.json",
+    "tests/fixtures/visual_presentation_quality/valid_visual_presentation_quality_html_activity_v1.json",
+    "tests/fixtures/usefulness_surface/valid_usefulness_html_activity_with_visual_presentation_v1.json",
+    "tests/fixtures/usefulness_surface/invalid_usefulness_html_activity_missing_visual_presentation_v1.json"
+  ],
+  "schema_version": "metablooms.stage3.implementation_manifest.v1",
+  "stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE3_MPP_USS_AND_HTML_CARTRIDGE_BINDING",
+  "test_evidence": [
+    "VPQ_FIXTURE_RESULTS.json",
+    "USS_VALID_DECISION.json",
+    "USS_INVALID_DECISION.json",
+    "TEST_SUMMARY.json"
+  ],
+  "verdict": "PASS",
+  "work_dir": "/mnt/data/Metablooms_OS/runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE3_MPP_USS_AND_HTML_CARTRIDGE_BINDING_FINAL_20260502T220510Z"
+}

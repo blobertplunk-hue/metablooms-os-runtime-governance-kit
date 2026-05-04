@@ -1,0 +1,23 @@
+{
+  "artifact_type": "MB_METHOD_RELIABILITY_ROUTER_UPDATE.v1",
+  "created_utc": "20260502T170503Z",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE6_METHOD_RELIABILITY_LEDGER_AND_SUPPRESSED_FAILURE_LESSON_BINDING",
+  "updates": [
+    {
+      "decision": "BOUND_AS_DURABLE_LESSON",
+      "evidence_binding": [
+        "runtime/traces/observability/FAILURE_CLUSTER_REPORT_LATEST.json",
+        "runtime/traces/observability/REPAIR_ROUTER_BINDING_LATEST.json",
+        "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_20260502T162918Z/STAGE_RECEIPT.json",
+        "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_AMENDED_20260502T162944Z/STAGE_RECEIPT.json"
+      ],
+      "failure_class": "cli_invocation_or_amended_receipt_superseded",
+      "forbidden_pattern": "runtime_starter_smoke_v1 positional root argument",
+      "method_id": "METHOD_RUNTIME_STARTER_SMOKE_CLI_SHAPE_v1",
+      "preferred_wrapper": "runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+      "route_id": "route_method_reliability_cli_shape",
+      "target_workflow": "METHOD_RELIABILITY_LEDGER"
+    }
+  ],
+  "verdict": "PASS"
+}

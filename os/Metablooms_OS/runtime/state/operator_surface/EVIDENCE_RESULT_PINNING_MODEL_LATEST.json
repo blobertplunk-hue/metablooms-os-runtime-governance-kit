@@ -1,0 +1,75 @@
+{
+  "artifact_type": "MB_EVIDENCE_RESULT_PINNING_MODEL.v1",
+  "controls": [
+    "pin",
+    "unpin",
+    "clear_all",
+    "copy_manifest"
+  ],
+  "created_utc": "20260502T183045Z",
+  "fail_closed_static_rules": [
+    "Every rendered result must have a path and sha256.",
+    "Pinned manifest must include stage_id and created_utc.",
+    "Pinned state must be client-side only; OS artifacts remain immutable evidence."
+  ],
+  "pin_fields": [
+    "pin_id",
+    "query_id",
+    "rank",
+    "title",
+    "path",
+    "sha256",
+    "score",
+    "matched_terms",
+    "verdict"
+  ],
+  "pin_seed": [
+    {
+      "matched_terms": [
+        "blocked",
+        "error"
+      ],
+      "path": "runtime/state/operator_surface/VISUAL_TRACE_WATERFALL_LATEST.json",
+      "pin_id": "pin_q_blocker_1",
+      "query_id": "q_blocker",
+      "rank": 1,
+      "score": 11,
+      "sha256": "2bb0a5a8439f692fa1abe4b7cae710e4773806db4f24cf812976e51622058b64",
+      "title": "MB_VISUAL_TRACE_WATERFALL_EVIDENCE_FILTERS.v1",
+      "verdict": "PASS"
+    },
+    {
+      "matched_terms": [
+        "fail",
+        "handoff",
+        "pass",
+        "receipt",
+        "stage",
+        "verdict"
+      ],
+      "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl",
+      "pin_id": "pin_q_stage_1",
+      "query_id": "q_stage",
+      "rank": 1,
+      "score": 413,
+      "sha256": "872eadf9bcbb2acd55efe404fcfc49975cd437470c506f80a0eb4b1c1bb420d7",
+      "title": "TRACE_SPAN_LEDGER_LATEST.jsonl",
+      "verdict": null
+    },
+    {
+      "matched_terms": [
+        "sha256"
+      ],
+      "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/stage9_validator.json",
+      "pin_id": "pin_q_export_1",
+      "query_id": "q_export",
+      "rank": 1,
+      "score": 147,
+      "sha256": "ee57178357e691b1fcc03ef99c0e6f3e4cbcd51f24f07289a82a507dbc6b7626",
+      "title": "stage9_validator.json",
+      "verdict": null
+    }
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_INTERACTIONS_AND_RESULT_PINNING",
+  "storage_key": "metablooms_evidence_pins_v1"
+}

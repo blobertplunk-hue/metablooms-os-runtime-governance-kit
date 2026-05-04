@@ -1,0 +1,57 @@
+{
+  "authority_export_performed": false,
+  "decision": "INSTALL_PROFILES_NOT_AUTHORITY_EXPORT",
+  "external_evidence": [
+    "https://docs.astral.sh/ruff/installation/",
+    "https://semgrep.dev/docs/cli-reference",
+    "https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/stable-en/02-checklist/"
+  ],
+  "installed_artifacts": [
+    "0_kernel/registry/cdr/CDR_REAL_SCANNER_ADAPTER_INSTALL_PROFILES_v1.json",
+    "0_kernel/registry/cdr/CDR_REAL_SCANNER_ADAPTER_POLICY_v1.json",
+    "0_kernel/schemas/cdr/CDR_REAL_SCANNER_ADAPTER_PACKET_SCHEMA_v1.json",
+    "runtime/governance/cdr_real_scanner_adapter_gate_v1.py",
+    "governance/invariants/CDR_REAL_SCANNER_ADAPTER_INSTALL_PROFILES_REQUIRED_v1.json",
+    "tests/fixtures/cdr/valid_cdr_real_scanner_adapter_packet_v1.json",
+    "tests/fixtures/cdr/invalid_cdr_real_scanner_adapter_missing_fallback_v1.json",
+    "tests/evals/cdr/test_cdr_real_scanner_adapter_gate_v1.py",
+    "research/SEE/CDR_STAGE10_REAL_SCANNER_ADAPTER_INSTALL_PROFILES_OR_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE9_SEE_v1.json",
+    "research/CE/CDR_STAGE10_REAL_SCANNER_ADAPTER_INSTALL_PROFILES_OR_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE9_CE_v1.json"
+  ],
+  "next_best_stage": "CDR_STAGE11_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE2_TO_STAGE10_RECONSTRUCTED_CHAIN",
+  "scanner_availability": [
+    {
+      "available": false,
+      "path": null,
+      "tool": "ruff",
+      "version": null
+    },
+    {
+      "available": false,
+      "path": null,
+      "tool": "bandit",
+      "version": null
+    },
+    {
+      "available": false,
+      "path": null,
+      "tool": "semgrep",
+      "version": null
+    }
+  ],
+  "schema": "MetaBloomsStageReceipt_v1",
+  "stage": "CDR_STAGE10_REAL_SCANNER_ADAPTER_INSTALL_PROFILES_OR_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE9",
+  "stage9_continuity_required": [
+    "runtime/receipts/METABLOOMS_CDR_STAGE9_LINT_SECURITY_SCANNER_INTEGRATION_AND_BASELINE_REPORTING_RECEIPT_20260502T121900Z.json",
+    "runtime/governance/cdr_lint_security_scanner_gate_v1.py",
+    "runtime/quality/cdr/CDR_LINT_SECURITY_BASELINE_LATEST.json"
+  ],
+  "timestamp_utc": "20260502T122700Z",
+  "validation": {
+    "all_cdr_evals_passed": 9,
+    "new_gate_test": "PASS",
+    "portable_boot_verify": "NOT_RERUN_FULL_BOOT_IN_SCRIPT",
+    "support_bundle_pending": true
+  },
+  "verdict": "PASS"
+}

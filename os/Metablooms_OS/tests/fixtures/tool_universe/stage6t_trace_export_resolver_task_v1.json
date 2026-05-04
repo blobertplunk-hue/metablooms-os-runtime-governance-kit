@@ -1,0 +1,7 @@
+{
+  "expected_job_type": "observability_trace_export",
+  "expected_top_allowed_tool_id": "python_observability_trace_export_adapter",
+  "schema": "ToolResolverFixture_v1",
+  "stage_id": "STAGE6T_TOOL_UNIVERSE_RESOLVER_COVERAGE_REPAIR_FOR_TRACE_EXPORT",
+  "task": "STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS install observability trace export adapters for MetaBlooms JSONL OpenTelemetry span JSON OpenAI Agents SDK event JSON LangGraph run JSON"
+}

@@ -1,0 +1,11 @@
+{
+  "automatic_tracker_required": true,
+  "bootable_full_authority_zip": "BOOTABLE_FULL_AUTHORITY_WC8.zip",
+  "handoff_status": "READY_FOR_NEXT_BOUNDED_GOVERNED_TASK_AFTER_EXPORT",
+  "next_prompt_path": "runtime/state/NEXT_STAGE_COPY_PROMPT.md",
+  "next_stage": "NEXT_REQUESTED_METABLOOMS_TASK",
+  "previous_stage": "WC_STAGE6_GENERAL_CAPABILITY_RESOLVER_FRAMEWORK",
+  "schema_version": "v1",
+  "stage": "WC_STAGE8_FULL_WORLD_CLASS_EXPORT_AND_NEW_CHAT_REPLAY_LOCK",
+  "timestamp": "20260503T010600Z"
+}

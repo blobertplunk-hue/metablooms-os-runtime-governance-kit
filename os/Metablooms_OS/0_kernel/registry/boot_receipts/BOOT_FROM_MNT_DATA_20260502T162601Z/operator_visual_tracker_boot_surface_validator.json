@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "root_html": "/mnt/data/Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html",
+  "runtime_html": "/mnt/data/Metablooms_OS/runtime/operator_tracker/operator_visual_tracker_latest.html",
+  "manifest": "/mnt/data/Metablooms_OS/runtime/operator_tracker/OPERATOR_VISUAL_TRACKER_BOOT_SURFACE_LATEST.json",
+  "root_html_sha256": "369fd9996ad5cb7ae28d165d8816fa8fd4ef570104a6f2bce57d2f21933f4375"
+}

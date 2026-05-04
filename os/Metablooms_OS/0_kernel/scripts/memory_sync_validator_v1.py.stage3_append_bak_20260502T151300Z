@@ -1,0 +1,680 @@
+#!/usr/bin/env python3
+### GOVERNANCE HEADER
+# artifact_id: memory_sync_validator_v1
+# purpose: Validate CLAUDE_MEMORY_SYNC_v1.json before it is loaded into the
+#          Claude memory system. Guards against ASI06 (Memory & Context
+#          Poisoning) — the highest-priority OWASP Agentic AI 2026 risk for
+#          MetaBlooms. Performs three passes:
+#            PASS 1 — Schema compliance  (required fields, types, _sha integrity)
+#            PASS 2 — Content integrity  (SHA format, amendment count, stage logic)
+#            PASS 3 — Drift detection    (cross-session delta scoring vs history)
+#          Fail-closed: any BLOCK result prevents the sync from being loaded.
+#          Writes a validation receipt regardless of outcome.
+# mutation_scope: read-only (writes validation receipt only)
+# risk_level: governance-layer
+# owasp_risk_addressed: ASI06 Memory & Context Poisoning
+# see_evidence:
+#   - "Drift detection tracks four primary signals: validator compliance,
+#     length drift, semantic similarity, regression detection —
+#     composite score 0.0–1.0"  (Dev|Journal 2026)
+#   - "Tracks schema changes, detects distribution shifts, flags changes in
+#     data ranges, maintains change history, generates drift reports with
+#     severity levels"  (KDnuggets Apr 2026)
+#   - "Memory poisoning reshaped behaviour long after initial interaction —
+#     Gemini Memory Attack showed persistent corruption of agent memory."
+#     (OWASP Agentic Top 10 2026, ASI06)
+###
+
+from __future__ import annotations
+
+import hashlib
+import json
+import os
+import re
+import time
+from dataclasses import dataclass, field
+from enum import Enum
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Tuple
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CONSTANTS
+# ─────────────────────────────────────────────────────────────────────────────
+VERSION = "1.0"
+OWASP_RISK = "ASI06_MEMORY_CONTEXT_POISONING"
+
+DEFAULT_SYNC_PATH    = Path("/mnt/data/CLAUDE_MEMORY_SYNC_v1.json")
+DEFAULT_HISTORY_PATH = Path("/mnt/data/CLAUDE_MEMORY_SYNC_HISTORY_v1.jsonl")
+DEFAULT_RECEIPT_DIR  = Path("/mnt/data/Metablooms_OS_refined/0_kernel/registry/sync_validation_receipts")
+
+# SHA-256 hex pattern
+SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
+
+# Known-good anchor SHAs (ground truth from this session — expand over time)
+KNOWN_GOOD_BASELINE_SHAS = {
+    "c7981682ca5978683cb977f4db56344c273113ba8d5da7ace850fd1ac427e2ae",  # MERGE-S9 candidate
+    "cd8cf8a7e887f6bf522b6d79e2278ad5032412ff48d6749d3d82ed4e08a4ff26",  # FINAL integrated ZIP
+    "a1fa6eaf985bd1218f74cf98c6d9a7b13a814feb67a10f8a8718351e4fae5567",  # OS ZIP v4
+    "b1b82d7765c49db8f4368c4267b9002c141869f103660c4acee07fda7486187b",  # SIR25 original
+    "aa8b45d9bb2ec854ff4182ece7b4302f500e21bcc1fbf4524243f6b308a253e4",  # OS ZIP v2
+    "0e164bb442be2fa8b48c41747358f9f5257d320b693ee6433f06ca8ded20a826",  # GPC merged
+}
+
+REQUIRED_FIELDS = [
+    "schema_version", "sync_utc", "bundle_version", "current_stage",
+    "baseline_sha", "active_amendments", "active_success_patterns",
+    "regression_checklist_version", "session_note", "_sha",
+]
+
+EXPECTED_SCHEMA_VERSION = "CLAUDE_MEMORY_SYNC_v1"
+MIN_AMENDMENTS  = 4    # any fewer than this suggests regression
+MAX_AMENDMENTS  = 30   # more than this suggests corruption/injection
+MIN_NOTE_WORDS  = 3    # session_note must be meaningful
+MAX_DRIFT_SCORE = 0.75 # composite drift above this = BLOCK
+
+VALID_CHECKLIST_VERSIONS = {"v1", "v2", "v3", "v4", "v5", "v6"}
+VALID_WORKFLOW_VERSIONS  = {"v1", "v2", "v3", "v4", "v5", "v6", "v6.1"}
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# DATA CLASSES
+# ─────────────────────────────────────────────────────────────────────────────
+
+class Severity(str, Enum):
+    BLOCK = "BLOCK"    # fail-closed — do not load
+    WARN  = "WARN"     # log but continue
+    INFO  = "INFO"     # informational
+
+
+@dataclass
+class Finding:
+    check_id: str
+    severity: Severity
+    message: str
+    evidence: str = ""
+    field: str = ""
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "check_id": self.check_id,
+            "severity": self.severity.value,
+            "message": self.message,
+            "evidence": self.evidence,
+            "field": self.field,
+        }
+
+
+@dataclass
+class ValidationResult:
+    verdict: str            # "PASS" | "WARN" | "BLOCK"
+    sync_path: str
+    created_at: float = field(default_factory=time.time)
+    pass1_findings: List[Finding] = field(default_factory=list)
+    pass2_findings: List[Finding] = field(default_factory=list)
+    pass3_findings: List[Finding] = field(default_factory=list)
+    drift_score: float = 0.0
+    receipt_path: Optional[str] = None
+    receipt_sha: Optional[str] = None
+
+    @property
+    def all_findings(self) -> List[Finding]:
+        return self.pass1_findings + self.pass2_findings + self.pass3_findings
+
+    @property
+    def blocks(self) -> List[Finding]:
+        return [f for f in self.all_findings if f.severity == Severity.BLOCK]
+
+    @property
+    def warns(self) -> List[Finding]:
+        return [f for f in self.all_findings if f.severity == Severity.WARN]
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# UTILITIES
+# ─────────────────────────────────────────────────────────────────────────────
+
+def sha256_bytes(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+
+def sha256_str(s: str) -> str:
+    return sha256_bytes(s.encode())
+
+
+def load_json(path: Path) -> Optional[Dict]:
+    if not path.exists():
+        return None
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return None
+
+
+def write_json_atomic(path: Path, data: Dict) -> str:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(".tmp")
+    _mb_write_json_file(tmp, data, operation_id='STAGE4_ATOMIC_JSON_0_kernel_scripts_memory_sync_validator_v1_py_L156', create_parent=True, allowed_roots=[str(_MBAJWPath('/mnt/data').resolve())], indent=2, sort_keys=False, ensure_ascii=True, max_bytes=20000000)
+    os.replace(tmp, path)
+    return sha256_bytes(path.read_bytes())
+
+
+def is_sha256(s: str) -> bool:
+    return bool(SHA256_RE.match(str(s).strip().lower()))
+
+
+def is_path_not_sha(s: str) -> bool:
+    """Detect when a SHA field contains a file path instead of a hex digest."""
+    return str(s).startswith("/") or str(s).startswith("./") or "\\" in str(s)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# PASS 1 — SCHEMA COMPLIANCE
+# ─────────────────────────────────────────────────────────────────────────────
+
+def pass1_schema(sync: Dict) -> List[Finding]:
+    findings: List[Finding] = []
+
+    # Required fields present
+    for field_name in REQUIRED_FIELDS:
+        if field_name not in sync:
+            findings.append(Finding(
+                "P1_MISSING_FIELD", Severity.BLOCK,
+                f"Required field '{field_name}' is absent",
+                field=field_name,
+            ))
+
+    # schema_version correct
+    sv = sync.get("schema_version", "")
+    if sv != EXPECTED_SCHEMA_VERSION:
+        findings.append(Finding(
+            "P1_SCHEMA_VERSION", Severity.BLOCK,
+            f"schema_version '{sv}' ≠ expected '{EXPECTED_SCHEMA_VERSION}'",
+            field="schema_version",
+        ))
+
+    # _sha integrity (self-hash)
+    stored_sha = sync.get("_sha", "")
+    if stored_sha:
+        payload = json.dumps(
+            {k: v for k, v in sync.items() if k != "_sha"}, sort_keys=True
+        )
+        computed = sha256_str(payload)
+        if stored_sha != computed:
+            findings.append(Finding(
+                "P1_SHA_INTEGRITY", Severity.BLOCK,
+                "Self-hash (_sha) does not match recomputed hash — file may be tampered",
+                evidence=f"stored={stored_sha[:16]}... computed={computed[:16]}...",
+                field="_sha",
+            ))
+    else:
+        findings.append(Finding(
+            "P1_SHA_MISSING", Severity.BLOCK,
+            "_sha field absent — cannot verify integrity",
+            field="_sha",
+        ))
+
+    # active_amendments is a list
+    amendments = sync.get("active_amendments")
+    if not isinstance(amendments, list):
+        findings.append(Finding(
+            "P1_AMENDMENTS_TYPE", Severity.BLOCK,
+            f"active_amendments must be a list, got {type(amendments).__name__}",
+            field="active_amendments",
+        ))
+
+    # active_success_patterns is a list
+    patterns = sync.get("active_success_patterns")
+    if not isinstance(patterns, list):
+        findings.append(Finding(
+            "P1_PATTERNS_TYPE", Severity.BLOCK,
+            f"active_success_patterns must be a list, got {type(patterns).__name__}",
+            field="active_success_patterns",
+        ))
+
+    # session_note is non-empty string
+    note = sync.get("session_note", "")
+    if not isinstance(note, str) or len(note.strip().split()) < MIN_NOTE_WORDS:
+        findings.append(Finding(
+            "P1_SESSION_NOTE", Severity.WARN,
+            f"session_note too short ({len(note.strip().split())} words, min {MIN_NOTE_WORDS})",
+            field="session_note",
+        ))
+
+    # sync_utc is a plausible ISO timestamp
+    utc = sync.get("sync_utc", "")
+    if not (isinstance(utc, str) and utc.startswith("20") and "T" in utc):
+        findings.append(Finding(
+            "P1_SYNC_UTC", Severity.WARN,
+            f"sync_utc '{utc}' does not look like an ISO 8601 timestamp",
+            field="sync_utc",
+        ))
+
+    # regression_checklist_version is known
+    cv = sync.get("regression_checklist_version", "")
+    if cv not in VALID_CHECKLIST_VERSIONS:
+        findings.append(Finding(
+            "P1_CHECKLIST_VERSION", Severity.WARN,
+            f"regression_checklist_version '{cv}' not in known set {VALID_CHECKLIST_VERSIONS}",
+            field="regression_checklist_version",
+        ))
+
+    return findings
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# PASS 2 — CONTENT INTEGRITY
+# ─────────────────────────────────────────────────────────────────────────────
+
+def pass2_content(sync: Dict) -> List[Finding]:
+    findings: List[Finding] = []
+
+    # baseline_sha: must be a 64-char hex, not a file path
+    baseline_sha = sync.get("baseline_sha", "")
+    if is_path_not_sha(str(baseline_sha)):
+        findings.append(Finding(
+            "P2_BASELINE_SHA_IS_PATH", Severity.BLOCK,
+            "baseline_sha contains a file path instead of a SHA-256 hex digest — "
+            "sync writer resolved the wrong field. This sync is unsafe to load.",
+            evidence=str(baseline_sha)[:80],
+            field="baseline_sha",
+        ))
+    elif not is_sha256(str(baseline_sha)):
+        findings.append(Finding(
+            "P2_BASELINE_SHA_FORMAT", Severity.WARN,
+            f"baseline_sha '{str(baseline_sha)[:40]}...' is not a valid 64-char hex digest",
+            evidence="May be a deferred reference — verify before accepting",
+            field="baseline_sha",
+        ))
+    elif str(baseline_sha).lower() not in KNOWN_GOOD_BASELINE_SHAS:
+        findings.append(Finding(
+            "P2_BASELINE_SHA_UNKNOWN", Severity.WARN,
+            "baseline_sha is a valid hex but not in the known-good anchor set — "
+            "new baseline or potential substitution. Verify before accepting.",
+            evidence=f"{str(baseline_sha)[:16]}... (not in {len(KNOWN_GOOD_BASELINE_SHAS)} anchors)",
+            field="baseline_sha",
+        ))
+
+    # amendment count sanity
+    amendments = sync.get("active_amendments", [])
+    if isinstance(amendments, list):
+        count = len(amendments)
+        if count < MIN_AMENDMENTS:
+            findings.append(Finding(
+                "P2_AMENDMENT_REGRESSION", Severity.BLOCK,
+                f"active_amendments count {count} < minimum {MIN_AMENDMENTS} — "
+                "possible regression or data loss",
+                evidence=f"Found: {count}, expected ≥ {MIN_AMENDMENTS}",
+                field="active_amendments",
+            ))
+        elif count > MAX_AMENDMENTS:
+            findings.append(Finding(
+                "P2_AMENDMENT_OVERFLOW", Severity.WARN,
+                f"active_amendments count {count} > maximum {MAX_AMENDMENTS} — "
+                "possible injection or corruption",
+                evidence=f"Found: {count}, expected ≤ {MAX_AMENDMENTS}",
+                field="active_amendments",
+            ))
+
+    # Every amendment entry should start with AMEND- or SP-
+    if isinstance(amendments, list):
+        for i, amend in enumerate(amendments[:20]):
+            if isinstance(amend, str):
+                stripped = amend.strip()
+                if not (stripped.startswith("AMEND-") or stripped.startswith("SP-") or
+                        stripped.startswith("GW") or stripped.startswith("SUCCESS")):
+                    findings.append(Finding(
+                        "P2_AMENDMENT_FORMAT", Severity.WARN,
+                        f"active_amendments[{i}] has unexpected prefix: '{stripped[:40]}'",
+                        field="active_amendments",
+                    ))
+
+    # success patterns non-empty
+    patterns = sync.get("active_success_patterns", [])
+    if isinstance(patterns, list) and len(patterns) == 0:
+        findings.append(Finding(
+            "P2_NO_PATTERNS", Severity.WARN,
+            "active_success_patterns is empty — expected at least SP-0001 and SP-0002",
+            field="active_success_patterns",
+        ))
+
+    # workflow_version present and known (if provided)
+    wv = sync.get("workflow_version", "")
+    if wv and wv not in VALID_WORKFLOW_VERSIONS:
+        findings.append(Finding(
+            "P2_WORKFLOW_VERSION", Severity.WARN,
+            f"workflow_version '{wv}' not in known set {VALID_WORKFLOW_VERSIONS}",
+            field="workflow_version",
+        ))
+
+    # _sync_complete should be True
+    complete = sync.get("_sync_complete")
+    if complete is False:
+        missing = sync.get("_missing_required", [])
+        findings.append(Finding(
+            "P2_INCOMPLETE_SYNC", Severity.WARN,
+            f"_sync_complete is False — missing fields: {missing}",
+            field="_sync_complete",
+        ))
+
+    return findings
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# PASS 3 — DRIFT DETECTION
+# ─────────────────────────────────────────────────────────────────────────────
+
+def pass3_drift(sync: Dict, history_path: Path) -> Tuple[List[Finding], float]:
+    """
+    Compare current sync against last entry in history ledger.
+    Returns (findings, drift_score 0.0–1.0).
+    """
+    findings: List[Finding] = []
+
+    if not history_path.exists():
+        findings.append(Finding(
+            "P3_NO_HISTORY", Severity.INFO,
+            "No sync history file found — cannot detect drift. "
+            "This is normal for a first-run validation.",
+        ))
+        return findings, 0.0
+
+    # Load last history entry
+    lines = [l for l in history_path.read_text(encoding="utf-8").strip().split("\n") if l.strip()]
+    if not lines:
+        return findings, 0.0
+
+    try:
+        last = json.loads(lines[-1])
+    except json.JSONDecodeError:
+        findings.append(Finding(
+            "P3_HISTORY_CORRUPT", Severity.WARN,
+            "Last history entry could not be parsed — drift check skipped",
+        ))
+        return findings, 0.0
+
+    signals: List[float] = []
+
+    # Signal 1: amendment count delta
+    curr_amends = len(sync.get("active_amendments", []))
+    last_amends = last.get("amendment_count", curr_amends)
+    if isinstance(last_amends, int) and curr_amends < last_amends:
+        drop = last_amends - curr_amends
+        score_1 = min(1.0, drop / max(last_amends, 1))
+        signals.append(score_1)
+        sev = Severity.BLOCK if drop > 2 else Severity.WARN
+        findings.append(Finding(
+            "P3_AMENDMENT_DROP", sev,
+            f"Amendment count dropped {last_amends} → {curr_amends} (delta={drop}) — "
+            "possible regression or memory poisoning",
+            evidence=f"drift_signal={score_1:.2f}",
+        ))
+    else:
+        signals.append(0.0)
+
+    # Signal 2: baseline SHA changed
+    curr_sha = str(sync.get("baseline_sha", ""))
+    last_sha = last.get("baseline_sha_prefix", "")
+    if last_sha and curr_sha and not curr_sha.startswith(last_sha[:16]) and not is_path_not_sha(curr_sha):
+        signals.append(0.5)
+        findings.append(Finding(
+            "P3_BASELINE_CHANGED", Severity.WARN,
+            f"baseline_sha changed from last sync "
+            f"({last_sha[:16]}... → {curr_sha[:16]}...) — "
+            "new deployment or unexpected change. Verify intent.",
+            evidence="drift_signal=0.50",
+        ))
+    else:
+        signals.append(0.0)
+
+    # Signal 3: sync_utc regression (current older than last)
+    curr_utc = sync.get("sync_utc", "")
+    last_utc = last.get("sync_utc", "")
+    if curr_utc and last_utc and curr_utc < last_utc:
+        signals.append(0.8)
+        findings.append(Finding(
+            "P3_UTC_REGRESSION", Severity.BLOCK,
+            f"sync_utc '{curr_utc}' is older than last recorded sync '{last_utc}' — "
+            "possible replay attack or clock manipulation",
+            evidence="drift_signal=0.80",
+        ))
+    else:
+        signals.append(0.0)
+
+    # Signal 4: session_note drastically shorter
+    curr_note_words = len(sync.get("session_note", "").split())
+    last_note_words = last.get("session_note_words", curr_note_words)
+    if isinstance(last_note_words, int) and last_note_words > 0 and curr_note_words < last_note_words * 0.3:
+        score_4 = min(1.0, 1.0 - (curr_note_words / last_note_words))
+        signals.append(score_4)
+        findings.append(Finding(
+            "P3_NOTE_TRUNCATED", Severity.WARN,
+            f"session_note shrank significantly ({last_note_words} → {curr_note_words} words) — "
+            "possible truncation or substitution",
+            evidence=f"drift_signal={score_4:.2f}",
+        ))
+    else:
+        signals.append(0.0)
+
+    # Composite drift score
+    drift_score = sum(signals) / len(signals) if signals else 0.0
+
+    if drift_score >= MAX_DRIFT_SCORE:
+        findings.append(Finding(
+            "P3_DRIFT_THRESHOLD", Severity.BLOCK,
+            f"Composite drift score {drift_score:.2f} ≥ threshold {MAX_DRIFT_SCORE} — "
+            "sync file has changed too much from baseline to be safely loaded",
+            evidence=f"signals={[f'{s:.2f}' for s in signals]}",
+        ))
+    elif drift_score >= 0.3:
+        findings.append(Finding(
+            "P3_DRIFT_ELEVATED", Severity.WARN,
+            f"Composite drift score {drift_score:.2f} is elevated — review changes before loading",
+            evidence=f"signals={[f'{s:.2f}' for s in signals]}",
+        ))
+
+    return findings, drift_score
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# RECEIPT WRITER
+# ─────────────────────────────────────────────────────────────────────────────
+
+def write_receipt(result: ValidationResult, receipt_dir: Path) -> Tuple[str, str]:
+    ts = int(time.time() * 1000)
+    receipt_id = f"SYNC_VALIDATION_{ts}"
+    receipt = {
+        "receipt_type": "MEMORY_SYNC_VALIDATION_RECEIPT",
+        "receipt_id": receipt_id,
+        "validator_version": VERSION,
+        "owasp_risk": OWASP_RISK,
+        "sync_path": result.sync_path,
+        "created_at": result.created_at,
+        "verdict": result.verdict,
+        "drift_score": round(result.drift_score, 4),
+        "block_count": len(result.blocks),
+        "warn_count": len(result.warns),
+        "pass1_findings": [f.to_dict() for f in result.pass1_findings],
+        "pass2_findings": [f.to_dict() for f in result.pass2_findings],
+        "pass3_findings": [f.to_dict() for f in result.pass3_findings],
+        "must_stop": result.verdict == "BLOCK",
+        "load_instruction": (
+            "APPROVED — load into Claude memory system"
+            if result.verdict == "PASS"
+            else "CONDITIONAL — review warnings before loading"
+            if result.verdict == "WARN"
+            else "BLOCKED — do NOT load. Resolve blocks and re-run validator."
+        ),
+    }
+    receipt_path = receipt_dir / f"{receipt_id}.json"
+    receipt_sha = write_json_atomic(receipt_path, receipt)
+    return str(receipt_path), receipt_sha
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# HISTORY UPDATER
+# ─────────────────────────────────────────────────────────────────────────────
+
+def append_history(sync: Dict, result: ValidationResult, history_path: Path):
+    """Append a compact summary of this validation to the history ledger."""
+    entry = {
+        "sync_utc": sync.get("sync_utc"),
+        "bundle_version": sync.get("bundle_version"),
+        "current_stage": sync.get("current_stage"),
+        "baseline_sha_prefix": str(sync.get("baseline_sha", ""))[:16],
+        "amendment_count": len(sync.get("active_amendments", [])),
+        "session_note_words": len(sync.get("session_note", "").split()),
+        "validation_verdict": result.verdict,
+        "drift_score": round(result.drift_score, 4),
+        "validated_at": time.time(),
+    }
+    history_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(history_path, "a", encoding="utf-8") as f:
+        f.write(json.dumps(entry) + "\n")
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# MAIN VALIDATOR
+# ─────────────────────────────────────────────────────────────────────────────
+
+def validate(
+    sync_path: Path,
+    history_path: Path,
+    receipt_dir: Path,
+    update_history: bool = True,
+) -> ValidationResult:
+    """
+    Run all three passes and produce a ValidationResult.
+    Writes a receipt regardless of outcome.
+    """
+    result = ValidationResult(verdict="PASS", sync_path=str(sync_path))
+
+    # Load sync file
+    sync_raw = sync_path.read_bytes() if sync_path.exists() else None
+    if sync_raw is None:
+        result.verdict = "BLOCK"
+        result.pass1_findings.append(Finding(
+            "P1_FILE_NOT_FOUND", Severity.BLOCK,
+            f"Sync file not found: {sync_path}",
+        ))
+        receipt_path, receipt_sha = write_receipt(result, receipt_dir)
+        result.receipt_path = receipt_path
+        result.receipt_sha = receipt_sha
+        return result
+
+    try:
+        sync = json.loads(sync_raw.decode("utf-8"))
+    except (json.JSONDecodeError, UnicodeDecodeError) as e:
+        result.verdict = "BLOCK"
+        result.pass1_findings.append(Finding(
+            "P1_JSON_INVALID", Severity.BLOCK,
+            f"Sync file is not valid JSON: {e}",
+        ))
+        receipt_path, receipt_sha = write_receipt(result, receipt_dir)
+        result.receipt_path = receipt_path
+        result.receipt_sha = receipt_sha
+        return result
+
+    # Pass 1
+    result.pass1_findings = pass1_schema(sync)
+
+    # Pass 2
+    result.pass2_findings = pass2_content(sync)
+
+    # Pass 3
+    p3_findings, drift_score = pass3_drift(sync, history_path)
+    result.pass3_findings = p3_findings
+    result.drift_score = drift_score
+
+    # Determine verdict
+    all_blocks = result.blocks
+    all_warns  = result.warns
+    if all_blocks:
+        result.verdict = "BLOCK"
+    elif all_warns:
+        result.verdict = "WARN"
+    else:
+        result.verdict = "PASS"
+
+    # Write receipt
+    receipt_path, receipt_sha = write_receipt(result, receipt_dir)
+    result.receipt_path = receipt_path
+    result.receipt_sha  = receipt_sha
+
+    # Update history ledger (only on non-blocked results to avoid poisoning history)
+    if update_history and result.verdict != "BLOCK":
+        append_history(sync, result, history_path)
+
+    return result
+
+
+def print_result(result: ValidationResult):
+    icon = {"PASS": "✓", "WARN": "⚠", "BLOCK": "✗"}[result.verdict]
+    print(f"\n{'='*60}")
+    print(f"[{icon}] MEMORY SYNC VALIDATION: {result.verdict}")
+    print(f"{'='*60}")
+    print(f"  Sync:        {result.sync_path}")
+    print(f"  Drift score: {result.drift_score:.2f}  (threshold: {MAX_DRIFT_SCORE})")
+    print(f"  Blocks: {len(result.blocks)}   Warns: {len(result.warns)}")
+
+    if result.blocks:
+        print(f"\n  BLOCKS ({len(result.blocks)}):")
+        for f in result.blocks:
+            print(f"    [{f.check_id}] {f.message}")
+            if f.evidence:
+                print(f"      evidence: {f.evidence[:80]}")
+
+    if result.warns:
+        print(f"\n  WARNINGS ({len(result.warns)}):")
+        for f in result.warns:
+            print(f"    [{f.check_id}] {f.message}")
+
+    print(f"\n  Receipt: {result.receipt_path}")
+    print(f"  SHA:     {result.receipt_sha[:16]}..." if result.receipt_sha else "")
+
+    instruction = {
+        "PASS":  "APPROVED — safe to load into Claude memory system",
+        "WARN":  "CONDITIONAL — review warnings before loading",
+        "BLOCK": "BLOCKED — do NOT load. Resolve blocks and re-run.",
+    }[result.verdict]
+    print(f"\n  → {instruction}\n")
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CLI
+# ─────────────────────────────────────────────────────────────────────────────
+
+def main(argv=None):
+    import argparse, sys
+
+    ap = argparse.ArgumentParser(
+        description="MetaBlooms Memory Sync Validator v1 — ASI06 guard"
+    )
+    ap.add_argument("--sync",       default=str(DEFAULT_SYNC_PATH))
+    ap.add_argument("--history",    default=str(DEFAULT_HISTORY_PATH))
+    ap.add_argument("--receipt-dir", default=str(DEFAULT_RECEIPT_DIR))
+    ap.add_argument("--no-history-update", action="store_true")
+    ap.add_argument("--json-output", action="store_true")
+    args = ap.parse_args(argv)
+
+    result = validate(
+        sync_path=Path(args.sync),
+        history_path=Path(args.history),
+        receipt_dir=Path(args.receipt_dir),
+        update_history=not args.no_history_update,
+    )
+    print_result(result)
+
+    if args.json_output:
+        print(json.dumps({
+            "verdict": result.verdict,
+            "drift_score": result.drift_score,
+            "blocks": [f.to_dict() for f in result.blocks],
+            "warns":  [f.to_dict() for f in result.warns],
+            "receipt_path": result.receipt_path,
+        }, indent=2))
+
+    sys.exit(0 if result.verdict in ("PASS", "WARN") else 1)
+
+
+if __name__ == "__main__":
+    main()

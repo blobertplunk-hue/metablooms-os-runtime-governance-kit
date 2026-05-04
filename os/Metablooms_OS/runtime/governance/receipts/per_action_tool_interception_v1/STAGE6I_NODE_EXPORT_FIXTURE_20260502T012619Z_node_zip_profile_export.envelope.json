@@ -1,0 +1,29 @@
+{
+  "action_type": "export",
+  "approval_token": "STAGE6G_BUDGET_APPROVAL_TOKEN",
+  "artifacts": {
+    "read_paths": [
+      "/mnt/data/Metablooms_OS/runtime/tmp/stage6i_node_export_fixture_src",
+      "/mnt/data/Metablooms_OS/runtime/tooling/governed_install_profiles/node_zip_authority_repair_v1",
+      "/mnt/data/metablooms_stage4c_node_stream_rebuild_20260501T233500Z"
+    ],
+    "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/STAGE6I_NODE_EXPORT_FIXTURE_20260502T012619Z_node_zip_profile_export.decision.json",
+    "write_paths": [
+      "/mnt/data/STAGE6I_NODE_EXPORT_FIXTURE.zip"
+    ]
+  },
+  "envelope_id": "STAGE6I_NODE_EXPORT_FIXTURE_20260502T012619Z_node_zip_profile_export",
+  "intent": "Create ZIP export through resolver-backed BTS Node ZIP profile",
+  "limits": {
+    "max_bytes": 11,
+    "max_files": 2,
+    "max_steps": 40,
+    "timeout_seconds": 90
+  },
+  "requested_at_utc": "2026-05-02T01:26:19.816706Z",
+  "requires_see": false,
+  "risk_tier": "critical",
+  "schema_version": "ToolCallEnvelope_v1",
+  "stage_id": "STAGE6I",
+  "tool_name": "bts_wrapped_node_zip_profile_export"
+}

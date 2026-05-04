@@ -1,0 +1,17 @@
+{
+  "claims": [
+    {
+      "applicability": "direct",
+      "claim": "ZIP validation should include integrity checks, duplicate/path safety checks, and safe fresh extraction before promotion.",
+      "confidence": "high",
+      "sources": [
+        "Python zipfile documentation",
+        "PyPI ZIP parser confusion protections"
+      ]
+    }
+  ],
+  "created_utc": "2026-04-30T21:56:29.826443Z",
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_6_FULL_RECOVERY_PROOF_AND_GOVERNANCE_REPAIR",
+  "type": "SEE_PACKET",
+  "web_run_called": true
+}

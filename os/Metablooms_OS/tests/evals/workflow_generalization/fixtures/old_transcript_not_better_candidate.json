@@ -1,0 +1,35 @@
+{
+  "task": "Import this old transcript and mine lessons",
+  "candidates": [
+    {
+      "lesson_id": "old_transcript_pc_only_browser_requirement",
+      "evidence": {
+        "summary": "Transcript suggests requiring PC browser screenshots for all visual tasks."
+      },
+      "baseline_comparison": {
+        "score_current": {
+          "sandbox_fit": 5,
+          "automation": 4,
+          "quality": 4
+        },
+        "score_candidate": {
+          "sandbox_fit": 1,
+          "automation": 2,
+          "quality": 4
+        },
+        "regression_flags": [
+          "pc_only_blocks_sandbox_primary"
+        ]
+      },
+      "auto_include": [
+        "PC_ONLY_BROWSER_SCREENSHOT_REQUIREMENT"
+      ]
+    }
+  ],
+  "expect_reject": [
+    "old_transcript_pc_only_browser_requirement"
+  ],
+  "expect_absent": [
+    "PC_ONLY_BROWSER_SCREENSHOT_REQUIREMENT"
+  ]
+}

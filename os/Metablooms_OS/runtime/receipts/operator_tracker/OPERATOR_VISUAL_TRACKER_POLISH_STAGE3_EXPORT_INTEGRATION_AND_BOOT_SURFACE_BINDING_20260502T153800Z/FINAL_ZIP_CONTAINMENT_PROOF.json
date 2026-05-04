@@ -1,0 +1,10 @@
+{
+  "contains_boot_surface_manifest": true,
+  "contains_handoff": true,
+  "contains_new_chat_start": true,
+  "contains_root_html": true,
+  "contains_stage_receipt": true,
+  "duplicate_members": 0,
+  "members": 5142,
+  "zip_testzip": "PASS"
+}

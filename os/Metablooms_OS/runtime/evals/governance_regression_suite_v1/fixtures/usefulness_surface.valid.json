@@ -1,0 +1,12 @@
+{
+  "artifact_id": "sample_html_activity",
+  "artifact_type": "html_activity",
+  "promotion_required": false,
+  "dimensions_covered": {
+    "instruction": {"covered": true, "note": "Explains the learning target before practice", "evidence": ["student-facing instructions"]},
+    "practice": {"covered": true, "note": "Provides repeated practice with immediate attempts", "evidence": ["interactive task loop"]},
+    "realtime_feedback": {"covered": true, "note": "Provides response-specific feedback after choices", "evidence": ["feedback handler"]},
+    "teacher_telemetry": {"covered": true, "note": "Records attempts for teacher review later", "evidence": ["telemetry event sink"]},
+    "misconception_diagnosis": {"covered": true, "note": "Maps wrong answers to named misconceptions", "evidence": ["misconception map"]}
+  }
+}

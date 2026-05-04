@@ -1,0 +1,7 @@
+{
+  "argv": [
+    "--json"
+  ],
+  "expected_decision": "DENY",
+  "expected_error_code": "MB_CLI_CONTRACT_DENY_EXACTLY_ONE_TARGET"
+}

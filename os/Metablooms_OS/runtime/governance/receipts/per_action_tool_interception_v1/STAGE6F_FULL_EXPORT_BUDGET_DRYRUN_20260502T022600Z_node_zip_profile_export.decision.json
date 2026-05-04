@@ -1,0 +1,18 @@
+{
+  "schema_version": "PolicyDecision_v1",
+  "decision_id": "decision_1777682913603_c3867155",
+  "envelope_id": "STAGE6F_FULL_EXPORT_BUDGET_DRYRUN_20260502T022600Z_node_zip_profile_export",
+  "stage_id": "STAGE6F",
+  "decision": "DEFER",
+  "reason_code": "RUNAWAY_BUDGET_REVIEW_REQUIRED",
+  "rationale": "Requested action exceeds Stage6B default bounded budget and requires chunking or approval.",
+  "decided_at_utc": "2026-05-02T00:48:33Z",
+  "enforced_by": "pre_tool_action_gate_v1",
+  "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/STAGE6F_FULL_EXPORT_BUDGET_DRYRUN_20260502T022600Z_node_zip_profile_export.decision.json",
+  "safe_to_execute": false,
+  "required_next_action": "chunk_action_or_request_budget_approval",
+  "matched_rules": [
+    "runaway.breaker"
+  ],
+  "envelope_sha256": "4338b28d5bafeb959812b1794d95a83225d30835e188172f0fda041eefefbdfe"
+}

@@ -1,0 +1,9 @@
+{
+  "contract_id": "validate_session_state_export_v1",
+  "validated_path": "/mnt/data/Metablooms_OS/runtime/governance/state_exports/SESSION_STATE_EXPORT_LATEST_v1.json",
+  "verdict": "FAIL",
+  "errors": [
+    "artifact hash mismatch: runtime/governance/state_exports/SESSION_STATE_EXPORT_LATEST_v1.json"
+  ],
+  "field_count": 10
+}

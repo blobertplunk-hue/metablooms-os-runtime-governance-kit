@@ -1,0 +1,25 @@
+{
+  "checks": {
+    "fake_percent_rejection": "PASS",
+    "mobile_width_max_chars": 55,
+    "no_box_drawing_or_pipe_table_layout": "PASS",
+    "required_fields": "PASS",
+    "required_render_labels": [
+      "TRACKER \u25b8",
+      "Status:",
+      "Stage:",
+      "Now:",
+      "Evidence:",
+      "Blocker:",
+      "Next:",
+      "Stop:"
+    ],
+    "top_of_response_marker": "PASS"
+  },
+  "errors": [],
+  "rendered_preview": "TRACKER \u25b8 Inline Project Tracker\n[\u2588\u2588\u2588\u2588\u2588\u2591] 5/6 complete\nStatus: DONE\nStage: TRACKER-4R_MOBILE_REFLOW_RENDERER_REPAIR\nNow: TRACKER-4R complete; compact visual tracker repa\u2026\nEvidence: mobile screenshot evidence 2 a3fc67b7b354\nBlocker: none\nNext: TRACKER-5 smoke-test/export packaging only.\nStop: Stopped after TRACKER-4R; smoke-test/export pack\u2026",
+  "renderer_path": "/mnt/data/Metablooms_OS/0_kernel/cartridges/inline_project_tracker/TRACKER_RENDERER_v1.py",
+  "state_path": "/mnt/data/Metablooms_OS/runtime/state/TRACKER_STATE_v1.json",
+  "status": "PASS",
+  "validator": "TRACKER_VALIDATOR_v1_TRACKER_4R_MOBILE_REFLOW"
+}

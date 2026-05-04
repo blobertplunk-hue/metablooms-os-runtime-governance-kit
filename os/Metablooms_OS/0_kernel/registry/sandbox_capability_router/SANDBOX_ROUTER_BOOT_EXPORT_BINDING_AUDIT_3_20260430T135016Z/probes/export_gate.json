@@ -1,0 +1,17 @@
+{
+  "allowed": true,
+  "decision": "ALLOW",
+  "reason": "route_allowed",
+  "task": "zip_repair",
+  "method": "python3_S_zipfile_stream_rebuild",
+  "required_gates": [
+    "source_sidecar_valid",
+    "member_path_audit",
+    "duplicate_member_scan",
+    "no_hardlink_candidate",
+    "deterministic_portability_renames",
+    "testzip_or_equivalent",
+    "bounded_extraction_smoke"
+  ],
+  "router_path": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_CAPABILITY_ROUTER_CARTRIDGE_LATEST.json"
+}

@@ -1,0 +1,10 @@
+{
+  "legacy_artifact": "1_governance/workflow_v6/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.json",
+  "status": "archive_only_after_r3_confirmed_after_r11",
+  "adr": "0_kernel/docs/decisions/ADR-0001-split-rationale-from-runtime-contracts.md",
+  "archive_path": "runtime/governance/legacy_archives/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.json",
+  "successor_contract": "runtime/governance/contracts/unified_runtime_compatibility_contract_v1.json",
+  "machine_use_status": "forbidden_as_runtime_authority",
+  "created_utc": "2026-04-28T02:52:00Z",
+  "r11_confirmed_utc": "2026-04-28T03:26:30Z"
+}

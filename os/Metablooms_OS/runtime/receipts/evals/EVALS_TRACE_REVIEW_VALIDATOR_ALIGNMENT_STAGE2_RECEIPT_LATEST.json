@@ -1,0 +1,21 @@
+{
+  "artifact_type": "EVALS_SCORECARDS_STAGE2_RECEIPT_v1",
+  "created_utc": "20260501T132500Z",
+  "implemented": [
+    "scorecard_spec",
+    "24_example_regression_dataset",
+    "failure_mode_catalog",
+    "baseline",
+    "stage2_validator",
+    "mb evals --scorecards",
+    "registered_stage2_handler"
+  ],
+  "next_stage": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_3_EVALUATOR_RUNNER_AND_CONFUSION_MATRIX",
+  "research_basis": [
+    "Hamel/Shreya trace review and error analysis",
+    "OpenAI eval task-test-analyze-iterate loop",
+    "LangSmith dataset/evaluator/experiment model"
+  ],
+  "stage_name": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_2_SCORECARDS_AND_REGRESSION_DATASET",
+  "verdict": "PASS_PENDING_EXPORT_VALIDATION"
+}

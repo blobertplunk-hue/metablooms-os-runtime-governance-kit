@@ -1,0 +1,77 @@
+{
+  "action_type": "filesystem_write",
+  "artifact_count": 11,
+  "artifacts": [
+    {
+      "bytes": 4167,
+      "path": "/mnt/data/Metablooms_OS/0_kernel/schemas/governance/HITL_APPROVAL_TOKEN_SCHEMA_v1.json",
+      "relative_path": "0_kernel/schemas/governance/HITL_APPROVAL_TOKEN_SCHEMA_v1.json",
+      "sha256": "bce6579d39c2b44c74925bfa678464bcd170b74261d1b5fa9399a7231151271e"
+    },
+    {
+      "bytes": 2522,
+      "path": "/mnt/data/Metablooms_OS/0_kernel/registry/governance/FORMAL_HITL_APPROVAL_TOKEN_GATE_v1.json",
+      "relative_path": "0_kernel/registry/governance/FORMAL_HITL_APPROVAL_TOKEN_GATE_v1.json",
+      "sha256": "b39710946f1fce186570904fc95b59ce12dd65f575670a7c8f04cdeb7633329c"
+    },
+    {
+      "bytes": 2287,
+      "path": "/mnt/data/Metablooms_OS/tests/fixtures/governance/hitl_approval_token_valid_v1.json",
+      "relative_path": "tests/fixtures/governance/hitl_approval_token_valid_v1.json",
+      "sha256": "88c727b72459409c755ef36633fe94734b0cdd293ef7fa65dbc04fa2c8a2e0b1"
+    },
+    {
+      "bytes": 2242,
+      "path": "/mnt/data/Metablooms_OS/tests/fixtures/governance/hitl_approval_token_invalid_missing_scope_v1.json",
+      "relative_path": "tests/fixtures/governance/hitl_approval_token_invalid_missing_scope_v1.json",
+      "sha256": "ef85037228cb7fd77c0d886c6fb63c3a76f00a00b35d6fafc0feefe98f994426"
+    },
+    {
+      "bytes": 814,
+      "path": "/mnt/data/Metablooms_OS/governance/invariants/FORMAL_HITL_APPROVAL_TOKEN_REQUIRED_v1.json",
+      "relative_path": "governance/invariants/FORMAL_HITL_APPROVAL_TOKEN_REQUIRED_v1.json",
+      "sha256": "93bdce21cfca961a809cfba2f1ae74fa1329af78f4445b0706681621969490d3"
+    },
+    {
+      "bytes": 1739,
+      "path": "/mnt/data/Metablooms_OS/research/SEE/STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_SEE_v1.json",
+      "relative_path": "research/SEE/STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_SEE_v1.json",
+      "sha256": "a8ee86ffe8f84b06e6549045d7a1c627264ee9ccf6d30c29e230bdf9886cb9ae"
+    },
+    {
+      "bytes": 741,
+      "path": "/mnt/data/Metablooms_OS/research/CE/STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_CE_v1.json",
+      "relative_path": "research/CE/STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_CE_v1.json",
+      "sha256": "c6a31c34fa6e064bdb58424cd6f2bdd9985c957d6e9193924038a3f67e0072e0"
+    },
+    {
+      "bytes": 4873,
+      "path": "/mnt/data/Metablooms_OS/runtime/governance/formal_hitl_approval_token_gate_v1.py",
+      "relative_path": "runtime/governance/formal_hitl_approval_token_gate_v1.py",
+      "sha256": "8524bbf575ea8cc5021cf78e725e31448b1da76d6931be7eea9aae5fcf619f88"
+    },
+    {
+      "bytes": 1069,
+      "path": "/mnt/data/Metablooms_OS/tests/evals/governance/test_formal_hitl_approval_token_gate_v1.py",
+      "relative_path": "tests/evals/governance/test_formal_hitl_approval_token_gate_v1.py",
+      "sha256": "a68b50241ced3a46a96621cc7d952a4c85deab854f75fd0f745653acd5335f8b"
+    },
+    {
+      "bytes": 310,
+      "path": "/mnt/data/Metablooms_OS/runtime/evals/governance/STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_SMOKE_RESULT.json",
+      "relative_path": "runtime/evals/governance/STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_SMOKE_RESULT.json",
+      "sha256": "b216fc04c39e65f1a5155039463f5bdbbc0002d72da4db4de73ab2f9f33b5d8c"
+    },
+    {
+      "bytes": 714,
+      "path": "/mnt/data/Metablooms_OS/receipts/failure_learning/STAGE6N_PYTHON_EMBEDDED_STRING_NEWLINE_ESCAPE_REGRESSION.json",
+      "relative_path": "receipts/failure_learning/STAGE6N_PYTHON_EMBEDDED_STRING_NEWLINE_ESCAPE_REGRESSION.json",
+      "sha256": "6a8a0408c41f0838727ec6ff87d05de6f14ac8662b3b0db54e829297d3838ec9"
+    }
+  ],
+  "created_at_utc": "2026-05-02T02:49:24.423878Z",
+  "schema": "BTS_T1_FilesystemWriteReceipt_v1",
+  "stage_id": "STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_20260502T035000Z",
+  "tool_id": "bts_wrapped_filesystem_write",
+  "verdict": "PASS"
+}

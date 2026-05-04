@@ -1,0 +1,20 @@
+{
+  "authorized_next_stage": "BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF",
+  "from_stage": "BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE3_VISUAL_GATE_BINDING_AND_EXPORT_PREP",
+  "required_inputs": [
+    "0_kernel/registry/browser_render_capability/BROWSER_RENDER_CAPABILITY_VISUAL_GATE_BINDING_v1.json",
+    "0_kernel/registry/browser_render_capability/BROWSER_RENDER_CAPABILITY_EXPORT_PREP_MANIFEST_v1.json",
+    "runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE3_VISUAL_GATE_BINDING_AND_EXPORT_PREP_20260502T225725Z/export_prep_replay/EXPORT_PREP_RESOLVER_DECISION_OPERATOR_TRACKER.json",
+    "runtime/state/BROWSER_RENDER_CAPABILITY_RESOLVER_TRACKER_PREVIEW.txt",
+    "tools/pc_addenda/browser_render_replay/run_browser_render_replay.ps1"
+  ],
+  "stage4_requirements": [
+    "Build full authority OS export including resolver artifacts and PC addendum",
+    "Replay-extract clean ZIP and verify required export-prep paths",
+    "Run resolver decision replay from extracted copy",
+    "Verify sidecar SHA-256 and duplicate-member checks",
+    "Do not claim true browser proof unless selected method is true browser and screenshot evidence exists"
+  ],
+  "timestamp_utc": "20260502T225725Z",
+  "verdict": "READY_FOR_STAGE4"
+}

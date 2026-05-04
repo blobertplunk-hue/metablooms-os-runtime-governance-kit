@@ -1,0 +1,46 @@
+{
+  "recursive_improvement": {
+    "candidates": [
+      {
+        "benefit_score": 2,
+        "decision": "defer_not_high_value",
+        "id": "split_evaluate_when_complexity_exceeds_threshold",
+        "risk_score": 1,
+        "scope_cost": 2,
+        "stage_fit": true
+      }
+    ]
+  },
+  "risk_tier": "HIGH",
+  "schema": "CDRStaticAnalysisComplexityPacket_v1",
+  "static_analysis": {
+    "ast_parse": true,
+    "complexity_scan": true,
+    "file_reports": [
+      {
+        "broad_exception_handlers": 0,
+        "dynamic_exec_count": 0,
+        "file": "runtime/governance/cdr_static_analysis_complexity_gate_v1.py",
+        "max_cognitive_complexity_proxy": 11,
+        "max_cyclomatic_complexity": 9,
+        "max_function_lines": 38,
+        "max_nesting_depth": 3,
+        "secret_literal_count": 0,
+        "syntax_errors": 0,
+        "todo_count": 0,
+        "unsafe_path_pattern_count": 0
+      }
+    ],
+    "security_grep": true,
+    "style_scan": true
+  },
+  "target_files": [
+    "runtime/governance/cdr_static_analysis_complexity_gate_v1.py"
+  ],
+  "test_binding": {
+    "eval_test": "tests/evals/cdr/test_cdr_static_analysis_complexity_gate_v1.py",
+    "negative_fixture": "tests/fixtures/cdr/invalid_cdr_static_analysis_complexity_over_complex_v1.json",
+    "positive_fixture": "tests/fixtures/cdr/valid_cdr_static_analysis_complexity_packet_v1.json",
+    "regression_binding": "CDR_STAGE8_STATIC_ANALYSIS_AND_COMPLEXITY_QUALITY_GATES"
+  }
+}

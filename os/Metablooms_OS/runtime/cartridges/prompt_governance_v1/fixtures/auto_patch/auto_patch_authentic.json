@@ -1,0 +1,5 @@
+{
+  "expected_decision": "ALLOW",
+  "fixture_id": "auto_patch_authentic",
+  "raw_prompt": "Rewrite this in an authentic human voice without AI slop"
+}

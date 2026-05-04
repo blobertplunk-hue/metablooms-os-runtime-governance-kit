@@ -1,0 +1,11 @@
+{
+  "receipt_id": "T1-STAGE6J_WRITE_FULL_POINTER_current_authority_CURRENT_FULL_AUTHORITY_POINTER_v1__filesystem_write_artifact-20260502T013903Z",
+  "tier": "T1",
+  "artifact": "/mnt/data/Metablooms_OS/0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+  "sha256": "aa36b2b46906d404715479a87c9b7c0b6a9b185ed07988a91cba3e3038c1d34c",
+  "bytes_size": 2234,
+  "prior_sha256": "",
+  "stdout_proof": "",
+  "timestamp": "2026-05-02T01:39:03.109439Z",
+  "turn_id": "STAGE6J_WRITE_FULL_POINTER_current_authority_CURRENT_FULL_AUTHORITY_POINTER_v1_"
+}

@@ -1,0 +1,33 @@
+{
+  "candidate_methods": [
+    "playwright_managed_browser",
+    "system_chromium_headless"
+  ],
+  "capability_need": "browser_render",
+  "decision": "ALLOW_PRIMARY",
+  "evidence_paths": [],
+  "limitation_label": null,
+  "probe_records": [
+    {
+      "method_id": "playwright_managed_browser",
+      "probe": {
+        "exit_code": 1,
+        "stderr": "",
+        "stdout": ""
+      },
+      "rank": 1
+    },
+    {
+      "method_id": "system_chromium_headless",
+      "probe": {
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "/usr/bin/chromium\n"
+      },
+      "rank": 2
+    }
+  ],
+  "selected_method": "system_chromium_headless",
+  "task_id": "wc6_fixture",
+  "timestamp_utc": "2026-05-03T00:53:23Z"
+}

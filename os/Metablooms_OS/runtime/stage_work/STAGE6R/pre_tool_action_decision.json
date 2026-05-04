@@ -1,0 +1,21 @@
+{
+  "schema_version": "PolicyDecision_v1",
+  "decision_id": "decision_1777692515903_95e9ac7e",
+  "envelope_id": "stage6r_trace_export_adapter_install",
+  "stage_id": "STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS",
+  "decision": "ALLOW",
+  "reason_code": "LOW_RISK_BOUNDED_ACTION",
+  "rationale": "Envelope passed schema, method, path, SEE, approval, and bounded-budget checks.",
+  "decided_at_utc": "2026-05-02T03:28:35Z",
+  "enforced_by": "pre_tool_action_gate_v1",
+  "receipt_path": "/mnt/data/Metablooms_OS/runtime/stage_work/STAGE6R/pre_tool_action_decision.json",
+  "safe_to_execute": true,
+  "required_next_action": "execute_action_and_write_action_receipt",
+  "matched_rules": [
+    "schema.required",
+    "path.safety",
+    "runaway.breaker",
+    "method.reliability"
+  ],
+  "envelope_sha256": "720bbfd267909b223f4b93e9afc9d0bed352593c32e6b7073352ca57aab156fa"
+}

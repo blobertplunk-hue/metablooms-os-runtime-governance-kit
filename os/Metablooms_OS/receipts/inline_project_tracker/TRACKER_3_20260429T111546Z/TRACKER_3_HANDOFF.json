@@ -1,0 +1,19 @@
+{
+  "from_stage": "TRACKER-3_BOOT_AND_STAGE_GATES",
+  "gate_validator_path": "0_kernel/cartridges/inline_project_tracker/TRACKER_GATE_VALIDATOR_v1.py",
+  "handoff_id": "TRACKER_3_TO_TRACKER_4_20260429T111546Z",
+  "next_command": "Continue MetaBlooms from /mnt/data/Metablooms_OS. Load TRACKER-3 boot/stage/evidence/stop gate receipt and handoff. Run exactly one bounded TRACKER-4 handoff-update wiring implementation stage: create tracker state update/handoff binding artifacts, validate state transition after receipt/handoff writes, validate tracker renders first after update, write receipt and handoff, update bundle, and stop before smoke-test/export packaging.",
+  "receipt_path": "receipts/inline_project_tracker/TRACKER_3_20260429T111546Z/TRACKER_3_RECEIPT.json",
+  "receipt_sha256": "0a80d15cc8eda2a892753a95c3467c5c9e5a024be09f00e5cb0c3af679ccf2bb",
+  "required_preconditions": [
+    "Load TRACKER_STATE_v1.json before governed action.",
+    "Render inline tracker first.",
+    "Use TRACKER_BOOT_GATE/STAGE_GATE/EVIDENCE_GATE/STOP_GATE as preconditions.",
+    "Do not implement smoke-test/export packaging in TRACKER-4.",
+    "Stop after writing TRACKER-4 receipt and handoff."
+  ],
+  "root": "/mnt/data/Metablooms_OS",
+  "state_path": "runtime/state/TRACKER_STATE_v1.json",
+  "status": "READY_FOR_BOUNDED_HANDOFF_UPDATE_WIRING_STAGE",
+  "to_stage_authorized": "TRACKER-4_HANDOFF_UPDATE_WIRING"
+}

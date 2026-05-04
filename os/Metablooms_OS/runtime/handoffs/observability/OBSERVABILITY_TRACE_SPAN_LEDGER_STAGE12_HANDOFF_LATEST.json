@@ -1,0 +1,12 @@
+{
+  "artifact_type": "MB_STAGE_HANDOFF.v1",
+  "continuation_prompt": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_INTERACTIONS_AND_RESULT_PINNING",
+  "created_utc": "20260502T181632Z",
+  "finalized_utc": "20260502T181724Z",
+  "next_recommended_stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_INTERACTIONS_AND_RESULT_PINNING",
+  "searchable_evidence_index_sha256": "3114cbb475308b5defcc5ef6f17a6e298ba1351b8594e0707ad37ca195407ca0",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE12_TRACE_QUERY_PACKET_AND_SEARCHABLE_EVIDENCE_INDEX",
+  "summary": "Stage 12 created a searchable evidence index and trace query packet so tracker evidence questions can resolve to SHA-bound OS artifacts.",
+  "trace_query_packet_sha256": "038c81582299303e3220c85eaa50ea91a6dda41dbf4375595ec616f61394465b",
+  "verdict": "PASS"
+}

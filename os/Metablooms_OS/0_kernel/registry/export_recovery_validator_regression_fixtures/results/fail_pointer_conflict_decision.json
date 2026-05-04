@@ -1,0 +1,252 @@
+{
+  "version": "1.0",
+  "created_at": 1777064935.7530963,
+  "validator_id": "EXPORT_RECOVERY_PROVEN_VALIDATOR_v1",
+  "stage": "EXPORT_RECOVERY_VALIDATION",
+  "input": {
+    "version": "1.0",
+    "export_zip": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/fail_pointer_conflict/fail_pointer_conflict.zip",
+    "sidecar_manifest": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/fail_pointer_conflict/fail_pointer_conflict.zip.sha256.json",
+    "active_root": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/fail_pointer_conflict/Metablooms_OS_refined",
+    "expected_stage": "TEST_EXPORT_STAGE",
+    "expected_ledger_entry_id": "TEST_EXPORT_STAGE",
+    "expected_dag_node_id": "TEST",
+    "ledger_path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/fail_pointer_conflict/Metablooms_OS_refined/0_kernel/state/STAGE_STATE_LEDGER_v1.json",
+    "dag_path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/fail_pointer_conflict/Metablooms_OS_refined/0_kernel/pipeline/STAGE_DAG_v1.json",
+    "pointer_path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/fail_pointer_conflict/Metablooms_OS_refined/0_kernel/state/CURRENT_WORKING_BASELINE_POINTER_v1.json",
+    "boot_manifest_path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/fail_pointer_conflict/Metablooms_OS_refined/boot_manifest_v1.json",
+    "artifact_registry_path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/fail_pointer_conflict/Metablooms_OS_refined/artifact_registry.json",
+    "external_sidecar_policy": {
+      "external_sidecar_required": true,
+      "sidecar_must_match_zip": true,
+      "internal_manifest_must_reference_sidecar": true
+    },
+    "git_head_policy": {
+      "allow_lifecycle_heads": true,
+      "required_labels": [
+        "pre_export_head",
+        "exported_tree_head",
+        "metadata_commit_head",
+        "final_lock_head",
+        "current_working_head"
+      ]
+    },
+    "gate_policy": {
+      "fail_closed": true,
+      "required_gates": [
+        "G1_LEDGER_DECLARED_OUTPUTS_INSIDE_ZIP",
+        "G2_FINAL_PASS_RECEIPTS_INSIDE_ZIP",
+        "G3_NO_PLACEHOLDER_METADATA",
+        "G4_GIT_HEAD_LIFECYCLE_CONSISTENCY",
+        "G5_SIDECAR_BINDING",
+        "G6_DETERMINISTIC_ZIP_POLICY",
+        "G7_DAG_LEDGER_MAPPING",
+        "G8_POINTER_CONFLICT_RESOLUTION",
+        "G9_TRANSACTIONAL_STATE_ORDER",
+        "G10_POLICY_AS_CODE_DECISION"
+      ]
+    }
+  },
+  "gate_results": [
+    {
+      "gate_id": "G1_LEDGER_DECLARED_OUTPUTS_INSIDE_ZIP",
+      "severity": "blocking",
+      "passed": true,
+      "evidence": {
+        "expected_stage": "TEST_EXPORT_STAGE",
+        "expected_entry_id": "TEST_EXPORT_STAGE",
+        "declared_outputs": [
+          "0_kernel/registry/TEST_EXPORT_STAGE_RECEIPT_v1.json",
+          "0_kernel/registry/TEST_LOCK_v1.json",
+          "EXPORT_MANIFEST_v1.json",
+          "EXPORT_PROVENANCE_v1.json",
+          "RESTORE_CONTRACT_v1.json",
+          "CAPABILITY_SET_v1.json"
+        ],
+        "missing_outputs": []
+      },
+      "message": "all ledger-declared outputs are inside ZIP"
+    },
+    {
+      "gate_id": "G2_FINAL_PASS_RECEIPTS_INSIDE_ZIP",
+      "severity": "blocking",
+      "passed": true,
+      "evidence": {
+        "checked_receipts": [
+          "0_kernel/registry/TEST_EXPORT_STAGE_RECEIPT_v1.json"
+        ],
+        "bad_receipts": []
+      },
+      "message": "final PASS receipts inside ZIP"
+    },
+    {
+      "gate_id": "G3_NO_PLACEHOLDER_METADATA",
+      "severity": "blocking",
+      "passed": true,
+      "evidence": {
+        "placeholder_hits": [],
+        "internal_present": {
+          "EXPORT_MANIFEST_v1.json": true,
+          "EXPORT_PROVENANCE_v1.json": true,
+          "RESTORE_CONTRACT_v1.json": true,
+          "CAPABILITY_SET_v1.json": true
+        }
+      },
+      "message": "no placeholder metadata found"
+    },
+    {
+      "gate_id": "G4_GIT_HEAD_LIFECYCLE_CONSISTENCY",
+      "severity": "blocking",
+      "passed": true,
+      "evidence": {
+        "heads": {
+          "pointer:git.head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "ledger_entry:git_head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "manifest:git_heads.pre_export_head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "manifest:git_heads.exported_tree_head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "manifest:git_heads.metadata_commit_head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "manifest:git_heads.final_lock_head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "manifest:git_heads.current_working_head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "provenance:source.pre_export_head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "provenance:source.exported_tree_head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "provenance:source.metadata_commit_head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "provenance:source.final_lock_head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "provenance:source.current_working_head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "unique_heads": [
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        ],
+        "required_labels": [
+          "pre_export_head",
+          "metadata_commit_head",
+          "current_working_head",
+          "final_lock_head",
+          "exported_tree_head"
+        ],
+        "labeled_ok": true
+      },
+      "message": "git heads consistent or lifecycle-labeled"
+    },
+    {
+      "gate_id": "G5_SIDECAR_BINDING",
+      "severity": "blocking",
+      "passed": true,
+      "evidence": {
+        "actual_sha": "bd2dd278730cc50accf7e5405926de965154d40a7318f3ca8533b5a6051c60e9",
+        "sidecar_sha": "bd2dd278730cc50accf7e5405926de965154d40a7318f3ca8533b5a6051c60e9",
+        "actual_size": 3831,
+        "sidecar_size": 3831,
+        "sidecar_bound": true
+      },
+      "message": "sidecar matches and is bound"
+    },
+    {
+      "gate_id": "G6_DETERMINISTIC_ZIP_POLICY",
+      "severity": "blocking",
+      "passed": true,
+      "evidence": {
+        "duplicate_entries": [],
+        "bad_entries": [],
+        "sorted_ok": true,
+        "entry_count": 11
+      },
+      "message": "ZIP packaging is deterministic enough for current policy"
+    },
+    {
+      "gate_id": "G7_DAG_LEDGER_MAPPING",
+      "severity": "blocking",
+      "passed": true,
+      "evidence": {
+        "expected_dag_node_id": "TEST",
+        "dag_node": {
+          "id": "TEST",
+          "name": "TEST_EXPORT_STAGE",
+          "class": "export",
+          "status": "complete",
+          "produces": [
+            "0_kernel/registry/TEST_EXPORT_STAGE_RECEIPT_v1.json",
+            "0_kernel/registry/TEST_LOCK_v1.json",
+            "EXPORT_MANIFEST_v1.json",
+            "EXPORT_PROVENANCE_v1.json",
+            "RESTORE_CONTRACT_v1.json",
+            "CAPABILITY_SET_v1.json"
+          ]
+        },
+        "ledger_entry_id": "TEST_EXPORT_STAGE"
+      },
+      "message": "DAG node maps to ledger entry"
+    },
+    {
+      "gate_id": "G8_POINTER_CONFLICT_RESOLUTION",
+      "severity": "blocking",
+      "passed": false,
+      "evidence": {
+        "pointer_like_count": 2,
+        "role_counts": {
+          "current_pointer": 2
+        },
+        "conflicts": {
+          "current_pointer": 2
+        }
+      },
+      "message": "active pointer conflict detected"
+    },
+    {
+      "gate_id": "G9_TRANSACTIONAL_STATE_ORDER",
+      "severity": "blocking",
+      "passed": true,
+      "evidence": {
+        "latest_pass": {
+          "entry_id": "TEST_EXPORT_STAGE",
+          "stage": "TEST_EXPORT_STAGE",
+          "verdict": "PASS",
+          "git_head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "receipt": "0_kernel/registry/TEST_EXPORT_STAGE_RECEIPT_v1.json",
+          "outputs": [
+            "0_kernel/registry/TEST_EXPORT_STAGE_RECEIPT_v1.json",
+            "0_kernel/registry/TEST_LOCK_v1.json",
+            "EXPORT_MANIFEST_v1.json",
+            "EXPORT_PROVENANCE_v1.json",
+            "RESTORE_CONTRACT_v1.json",
+            "CAPABILITY_SET_v1.json"
+          ],
+          "dependencies": [],
+          "supersedes": [],
+          "advances_latest_pass": true
+        },
+        "pointer_status": "active_current_working_baseline"
+      },
+      "message": "transactional state ordering appears valid"
+    },
+    {
+      "gate_id": "G10_POLICY_AS_CODE_DECISION",
+      "severity": "blocking",
+      "passed": false,
+      "evidence": {
+        "represented_gates": [
+          "G1_LEDGER_DECLARED_OUTPUTS_INSIDE_ZIP",
+          "G2_FINAL_PASS_RECEIPTS_INSIDE_ZIP",
+          "G3_NO_PLACEHOLDER_METADATA",
+          "G4_GIT_HEAD_LIFECYCLE_CONSISTENCY",
+          "G5_SIDECAR_BINDING",
+          "G6_DETERMINISTIC_ZIP_POLICY",
+          "G7_DAG_LEDGER_MAPPING",
+          "G8_POINTER_CONFLICT_RESOLUTION",
+          "G9_TRANSACTIONAL_STATE_ORDER"
+        ],
+        "missing_required": [],
+        "prior_ok": false
+      },
+      "message": "missing or failing machine-readable gate decision"
+    }
+  ],
+  "summary": {
+    "passed_count": 8,
+    "failed_count": 2,
+    "blocking_failed_count": 2,
+    "warnings_count": 0,
+    "elapsed_seconds": 0.055774
+  },
+  "verdict": "FAIL",
+  "next_correct_command": "REPAIR EXPORT \u2014 VALIDATOR BLOCKED RECOVERY-PROVEN CLAIM"
+}

@@ -1,0 +1,19 @@
+{
+  "cartridge_id": "html_activity_visual_presentation_quality_v1",
+  "created_utc": "2026-05-02T22:02:55Z",
+  "design_profiles": [
+    "3_5_student_learning_activity",
+    "teacher_professional_surface",
+    "google_sites_single_file_activity"
+  ],
+  "promotion_required_evidence": [
+    "VPQ validator ALLOW",
+    "USS visual_presentation covered",
+    "render smoke pending Stage4",
+    "teacher_professional_presentation declaration"
+  ],
+  "purpose": "Apply purpose-fit, student-friendly, teacher-professional visual presentation governance to HTML activities.",
+  "status": "installed_pending_stage4_render_smoke",
+  "type": "validation",
+  "validator": "0_kernel/validators/validate_visual_presentation_quality_gate_v1.py"
+}

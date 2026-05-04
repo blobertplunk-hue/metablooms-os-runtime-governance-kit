@@ -1,0 +1,18 @@
+{
+  "forbidden": [
+    "chat-only prompt lessons",
+    "unregistered reusable prompt assets",
+    "claiming integration without file and registry evidence"
+  ],
+  "id": "PROMPT_PATCH_WRITEBACK_PROTOCOL_v1",
+  "status": "active",
+  "steps": [
+    "identify weakness",
+    "classify failure",
+    "rank repair options",
+    "apply smallest valid patch",
+    "validate artifact readback",
+    "register reusable asset",
+    "write receipt/handoff"
+  ]
+}

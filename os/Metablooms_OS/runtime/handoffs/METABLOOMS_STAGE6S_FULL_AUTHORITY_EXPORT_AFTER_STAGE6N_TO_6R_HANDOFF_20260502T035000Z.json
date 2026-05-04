@@ -1,0 +1,11 @@
+{
+  "current_authority_label": "BOOTABLE FULL OS AUTHORITY ZIP \u2014 Stage 6S",
+  "current_authority_zip": "/mnt/data/METABLOOMS_OS_STAGE6S_FULL_AUTHORITY_AFTER_STAGE6N_TO_6R_BOOTABLE_FULL_OS_AUTHORITY_20260502T035000Z.zip",
+  "current_authority_zip_sidecar": "/mnt/data/METABLOOMS_OS_STAGE6S_FULL_AUTHORITY_AFTER_STAGE6N_TO_6R_BOOTABLE_FULL_OS_AUTHORITY_20260502T035000Z.zip.sha256",
+  "next_best_stage": "STAGE6T_TOOL_UNIVERSE_RESOLVER_COVERAGE_REPAIR_FOR_TRACE_EXPORT",
+  "resume_prompt": "Continue from /mnt/data using the Stage 6S BOOTABLE FULL OS AUTHORITY ZIP and sidecar. Verify sidecar, extract to /mnt/data/Metablooms_OS, run portable boot verify and boot executor, then run one bounded governed stage.",
+  "schema": "MetaBloomsStageHandoff_v1",
+  "stage": "STAGE6S_FULL_AUTHORITY_EXPORT_AFTER_STAGE6N_TO_6R",
+  "status": "READY_AFTER_EXTERNAL_FINAL_PROOF",
+  "timestamp_utc": "2026-05-02T03:32:44Z"
+}

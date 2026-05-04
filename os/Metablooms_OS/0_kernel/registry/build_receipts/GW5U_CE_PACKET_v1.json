@@ -1,0 +1,35 @@
+{
+  "stage": "GW5U_VALIDATE_CARTRIDGE_REGISTRY_MERGE_CANDIDATES",
+  "created_utc": "2026-04-26T10:59:40Z",
+  "ce_synthesis": {
+    "cartridge_registry_current_state": {
+      "total_entries": 3,
+      "entries": [
+        {
+          "id": "MB_PREFLIGHT_PLANNER_CARTRIDGE_v2.json",
+          "type": "json_artifact",
+          "authority": "low",
+          "status": "active",
+          "assessment": "VALID \u2014 well-formed, in 1_governance/logic_gates/, task_types + platform defined"
+        },
+        {
+          "id": "stage_cartridges_bundle.zip",
+          "type": "bundle",
+          "authority": "medium",
+          "status": "candidate_stage_cartridge_bundle",
+          "assessment": "DECISION REQUIRED \u2014 status is candidate, not active. Contains SEE_STAGE_CARTRIDGE_V2.md, CE_STAGE_CARTRIDGE_V2.md, AIE_STAGE_CARTRIDGE_V1.md. Cannot verify SHA or unzip from Claude environment (file is at /mnt/data path). Recommend: ChatGPT verifies contents, promotes to active if valid, or rejects with reason."
+        },
+        {
+          "id": "video_classifier_heuristic_cartridge_v1.md",
+          "type": "spec",
+          "authority": "low",
+          "status": "active",
+          "assessment": "VALID \u2014 spec file present in 1_governance/specs/"
+        }
+      ]
+    },
+    "queue_state": "EMPTY \u2014 all GW5T artifacts processed, no queued items remain",
+    "key_finding": "The cartridge registry is in a transitional state. Two of three entries are active and valid. One (stage_cartridges_bundle.zip) has status=candidate_stage_cartridge_bundle and requires a promotion decision by ChatGPT after verifying contents at /mnt/data. The registry does not yet contain the 5 new scripts built this session (transactional_stage_runner, interrupt_checker, pulse_logger, sidecar_generator, memory_sync_writer) \u2014 these are not cartridges, they are kernel scripts. No new cartridge merge candidates were found in the GW5T queue.",
+    "see_finding": "AWS Agent Registry: every record follows an approval workflow \u2014 draft \u2192 pending \u2192 active. Records are versioned; organizations deprecate records no longer in use. The stage_cartridges_bundle should follow this lifecycle to reach active status."
+  }
+}

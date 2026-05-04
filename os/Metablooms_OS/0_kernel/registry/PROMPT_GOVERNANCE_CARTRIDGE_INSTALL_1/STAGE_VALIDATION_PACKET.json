@@ -1,0 +1,8 @@
+{
+  "asset_index_contains_prompt_governance_v1": true,
+  "boot_verdict": "PASS_WITH_WARNINGS",
+  "full_export_valid": null,
+  "notes": "Full export attempted after this packet using zipfile; fresh-extract smoke performed separately.",
+  "prompt_cartridge_decision": "ALLOW",
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_1"
+}

@@ -1,0 +1,13 @@
+{
+  "amended_utc": "20260502T164811Z",
+  "artifact_type": "MB_STAGE_HANDOFF.v1",
+  "continue_prompt": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING",
+  "created_utc": "20260502T164756Z",
+  "handoff_status": "READY_FOR_NEXT_BOUNDED_STAGE",
+  "latest_model": "runtime/state/operator_surface/OPERATOR_CAUSAL_TIMELINE_LATEST.json",
+  "latest_tracker": "OPEN_OPERATOR_VISUAL_TRACKER.html",
+  "latest_validation": "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE3_TRACKER_BINDING_VALIDATION_LATEST.json",
+  "next_recommended_stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE3_TRACKER_CAUSAL_TIMELINE_BINDING",
+  "verdict": "PASS"
+}

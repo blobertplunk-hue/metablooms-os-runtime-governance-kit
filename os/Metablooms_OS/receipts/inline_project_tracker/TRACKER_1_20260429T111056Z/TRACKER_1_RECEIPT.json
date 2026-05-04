@@ -1,0 +1,44 @@
+{
+  "receipt_id": "TRACKER_1_SCHEMA_AND_STATE_SEED_20260429T111056Z",
+  "timestamp_utc": "20260429T111056Z",
+  "stage": "TRACKER-1 SCHEMA AND STATE SEED IMPLEMENTATION",
+  "root": "/mnt/data/Metablooms_OS",
+  "status": "PASS_SCHEMA_AND_STATE_SEEDED_STOPPED_BEFORE_RENDERER_GATE_IMPLEMENTATION",
+  "authorized_by": "receipts/inline_project_tracker/TRACKER_0_20260429T110735Z/TRACKER_0_HANDOFF.json",
+  "loaded_authorities": [
+    "receipts/inline_project_tracker/TRACKER_0_20260429T110735Z/TRACKER_0_RECEIPT.json",
+    "receipts/inline_project_tracker/TRACKER_0_20260429T110735Z/TRACKER_0_HANDOFF.json",
+    "0_kernel/docs/inline_project_tracker/TRACKER_IMPLEMENTATION_PLAN_v1.md",
+    "0_kernel/docs/inline_project_tracker/TRACKER_DESIGN_CONSTRAINTS_v1.json",
+    "0_kernel/docs/inline_project_tracker/TRACKER_INLINE_RENDER_SPEC_v1.md",
+    "/mnt/data/PROMPT_ENGINE_v2.md"
+  ],
+  "implementation_scope": "schema and state seed only",
+  "outputs": [
+    "0_kernel/schemas/TRACKER_STATE_SCHEMA_v1.json",
+    "runtime/state/TRACKER_STATE_v1.json",
+    "receipts/inline_project_tracker/TRACKER_1_20260429T111056Z/TRACKER_1_VALIDATION_REPORT.json",
+    "receipts/inline_project_tracker/TRACKER_1_20260429T111056Z/TRACKER_1_RECEIPT.json",
+    "receipts/inline_project_tracker/TRACKER_1_20260429T111056Z/TRACKER_1_HANDOFF.json"
+  ],
+  "validation": {
+    "validation_id": "TRACKER_1_VALIDATION_20260429T111056Z",
+    "timestamp_utc": "20260429T111056Z",
+    "schema_path": "0_kernel/schemas/TRACKER_STATE_SCHEMA_v1.json",
+    "state_path": "runtime/state/TRACKER_STATE_v1.json",
+    "schema_json_parse": true,
+    "state_json_parse": true,
+    "schema_shape_validated": true,
+    "state_shape_validated": true,
+    "determinate_progress_allowed": true,
+    "denominator_source": "0_kernel/docs/inline_project_tracker/TRACKER_IMPLEMENTATION_PLAN_v1.md lists TRACKER-1 through TRACKER-5.",
+    "renderer_or_gate_implementation_performed": false,
+    "errors": []
+  },
+  "stopped_before": [
+    "TRACKER-2 renderer and validator",
+    "TRACKER-3 boot/stage gates",
+    "TRACKER-4 handoff wiring",
+    "TRACKER-5 smoke audit"
+  ]
+}

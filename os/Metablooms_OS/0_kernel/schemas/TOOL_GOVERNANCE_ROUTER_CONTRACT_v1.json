@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "created_at": 1777063362.4523299,
+  "contract_id": "TOOL_GOVERNANCE_ROUTER_CONTRACT_v1",
+  "status": "active",
+  "purpose": "Route /mnt/data, export, registry mutation, and code patch work through tool governance checks.",
+  "sensitive_task_classes": [
+    "mnt_data_filesystem",
+    "export_bundle",
+    "registry_mutation",
+    "code_mutation"
+  ],
+  "next_stage": "E4_MASTER_PIPELINE_ENFORCEMENT_PROOF"
+}

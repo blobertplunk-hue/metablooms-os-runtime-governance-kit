@@ -1,0 +1,62 @@
+{
+  "artifact_type": "PROMOTION_BLOCKERS_v1",
+  "blockers": [
+    {
+      "deny_if": "0_kernel/registry/BOOT_REQUIRED_GATES_v1.json missing or invalid",
+      "id": "missing_boot_required_gate_manifest",
+      "severity": "critical"
+    },
+    {
+      "deny_if": "runtime/governance/chat_governance_kernel_v1.py missing",
+      "id": "missing_chat_governance_kernel",
+      "severity": "critical"
+    },
+    {
+      "deny_if": "runtime/governance/tool_selection_evidence_router_v1.py missing",
+      "id": "missing_tool_selection_router",
+      "severity": "critical"
+    },
+    {
+      "deny_if": "0_kernel/sandbox_governance/SANDBOX_TOOL_USE_POLICY_v1.json missing",
+      "id": "missing_sandbox_policy",
+      "severity": "critical"
+    },
+    {
+      "deny_if": "runtime/governance/governance_survival_promotion_gate_v1.py missing",
+      "id": "missing_governance_survival_gate",
+      "severity": "critical"
+    },
+    {
+      "deny_if": "final response lacks tracker preview",
+      "id": "missing_tracker_for_final_response",
+      "severity": "high"
+    },
+    {
+      "deny_if": "SEE required but no web.run evidence or SEE artifact",
+      "id": "missing_see_when_required",
+      "severity": "high"
+    },
+    {
+      "deny_if": "SEE complete but CE synthesis missing",
+      "id": "missing_ce_after_see",
+      "severity": "high"
+    },
+    {
+      "deny_if": "stage finalization lacks receipt/handoff artifacts",
+      "id": "missing_receipt_handoff",
+      "severity": "high"
+    },
+    {
+      "deny_if": "new governance/runtime-gate file exists outside manifest, quarantine, or approved docs",
+      "id": "unregistered_governance_file",
+      "severity": "high"
+    },
+    {
+      "deny_if": "promotion requested without duplicate-free ZIP validation, ZIP test, targeted fresh extract behavior test, checksum sidecar, and complete OS export",
+      "id": "promotion_without_fresh_extract_smoke",
+      "severity": "critical"
+    }
+  ],
+  "created_utc": "2026-04-30T20:29:16Z",
+  "stage_id": "H0C2_GOVERNANCE_SURVIVAL_AND_PROMOTION_BLOCKER_AUDIT"
+}

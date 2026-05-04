@@ -1,0 +1,34 @@
+{
+  "claims": [
+    {
+      "claim": "Prompt instructions should be explicit, separated from context, and include output format/constraints.",
+      "confidence": "high",
+      "sources": [
+        "OpenAI prompt engineering guide",
+        "Anthropic prompting best practices"
+      ]
+    },
+    {
+      "claim": "Prompt changes need eval/regression testing because LLM output is variable and prompt improvements may not generalize.",
+      "confidence": "high",
+      "sources": [
+        "OpenAI evals guide",
+        "OpenAI evaluation best practices",
+        "OpenAI regression cookbook"
+      ]
+    },
+    {
+      "claim": "Prompt libraries should be versioned, testable, and rollback-capable.",
+      "confidence": "medium-high",
+      "sources": [
+        "LangSmith prompt concepts",
+        "Humanloop prompt docs",
+        "Braintrust prompt versioning article"
+      ]
+    }
+  ],
+  "limits": [
+    "Vendor docs differ by model family; cartridge therefore stores profile selection and validation rather than one universal prompt template."
+  ],
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_1"
+}

@@ -1,0 +1,29 @@
+{
+  "stage_id": "SANDBOX_ROUTER_ENFORCEMENT_SMOKE_2",
+  "status": "BLOCKED_PREREQUISITE_MISSING",
+  "timestamp_utc": "20260430T130500Z",
+  "root": "/mnt/data/Metablooms_OS",
+  "requested_handoff": "0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_WIRING_LATEST_HANDOFF.json",
+  "blocker": "The requested latest enforcement-wiring handoff and enforcer files are not present in /mnt/data/Metablooms_OS, and verified attached authority ZIPs available in /mnt/data do not contain the missing SANDBOX_ROUTER_ENFORCEMENT_WIRING artifacts.",
+  "required_but_missing": [
+    "0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_WIRING_LATEST_HANDOFF.json",
+    "0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_WIRING_LATEST.json",
+    "0_kernel/lib/sandbox_router_enforcer_v1.mjs",
+    "0_kernel/lib/sandbox_router_policy_loader_v1.py",
+    "0_kernel/scripts/sandbox_router/enforce_sandbox_route.sh"
+  ],
+  "attempted_methods": [
+    "direct filesystem probe under /mnt/data/Metablooms_OS",
+    "search for sandbox router files under /mnt/data",
+    "checksum verification of available authority ZIP sidecars",
+    "zip member scans for SANDBOX_ROUTER/SANDBOX_CAPABILITY/router artifacts"
+  ],
+  "did_not_run": [
+    "boot probe through missing enforcer",
+    "json transform probe through missing enforcer",
+    "downloadable artifact delivery probe through missing enforcer",
+    "blocked hardlink export request through missing enforcer",
+    "heavy export repair"
+  ],
+  "safe_next_step": "Run one bounded recovery stage to reconstruct or re-run SANDBOX_CAPABILITY_ROUTER_CARTRIDGE_1 and SANDBOX_ROUTER_ENFORCEMENT_WIRING_1 from current verified authority artifacts, then rerun SANDBOX_ROUTER_ENFORCEMENT_SMOKE_2."
+}

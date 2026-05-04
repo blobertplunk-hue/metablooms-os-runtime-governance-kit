@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "cdr_binding_packet_path": {
+      "type": "string"
+    },
+    "cdr_required": {
+      "type": "boolean"
+    },
+    "code_artifact_classes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "declaration_source": {
+      "type": "string"
+    },
+    "declared_by": {
+      "type": "string"
+    },
+    "mpp_cdr_binding_policy_version": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "stage_contains_code": {
+      "type": "boolean"
+    },
+    "stage_id": {
+      "type": "string"
+    },
+    "stage_verdict_requested": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "stage_id",
+    "stage_contains_code",
+    "code_artifact_classes",
+    "cdr_required",
+    "mpp_cdr_binding_policy_version",
+    "declaration_source",
+    "declared_by",
+    "stage_verdict_requested"
+  ],
+  "title": "MPP CDR Stage Contract Code-Bearing Declaration Packet",
+  "type": "object"
+}

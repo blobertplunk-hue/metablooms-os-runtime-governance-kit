@@ -1,0 +1,21 @@
+{
+  "schema_version": "v1",
+  "provenance": "RECONSTRUCTED_FROM_CHAT_SUMMARY_AND_BASE_AUTHORITY_20260503",
+  "components": [
+    "app_shell",
+    "student_card",
+    "answer_choice",
+    "feedback_panel",
+    "tts_button",
+    "teacher_panel",
+    "progress_tracker",
+    "mode_toggle"
+  ],
+  "requirements": [
+    "aria-live feedback",
+    "visible focus state",
+    "student-friendly touch targets",
+    "teacher/student mode split",
+    "no external CDN"
+  ]
+}

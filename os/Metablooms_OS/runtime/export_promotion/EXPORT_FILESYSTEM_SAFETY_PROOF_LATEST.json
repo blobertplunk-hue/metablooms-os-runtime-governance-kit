@@ -1,0 +1,68 @@
+{
+  "artifact_type": "EXPORT_FILESYSTEM_SAFETY_PROOF",
+  "created_utc": "20260502T164438Z",
+  "diff_summary": {
+    "artifact_type": "DIFFERENTIAL_TRACE_SUMMARY",
+    "base_bytes": 66648482,
+    "base_file_count": 5060,
+    "base_root_hash": "a511412b11e1f8f5ecc11fb324ee93faa85eba793a0f45c1c74aa8616a3e29c1",
+    "created_utc": "20260502T164438Z",
+    "delta_counts": {
+      "added": 23,
+      "changed": 10,
+      "removed": 0
+    },
+    "new_bytes": 67846660,
+    "new_file_count": 5083,
+    "new_root_hash": "37b5c5eaecbc05bb519ea7833a2715f4bc28fde6917ba8488d108682df934b9e",
+    "omitted_counts": {
+      "added": 8,
+      "changed": 0,
+      "removed": 0
+    },
+    "policy": "Traces emit counts/root hash/bounded samples; full hash manifests remain artifacts.",
+    "samples": {
+      "added": [
+        "0_kernel/registry/observability/MB_CAUSAL_STAGE_GRAPH_SCHEMA_v1.json.sha256",
+        "0_kernel/registry/observability/MB_OBSERVABILITY_BOOT_INGESTION_SPEC_v1.json.sha256",
+        "0_kernel/registry/observability/MB_TRACE_SPAN_EVENT_SCHEMA_v1.json.sha256",
+        "0_kernel/scripts/observability_boot_ingest_v1.py.sha256",
+        "0_kernel/validators/validate_observability_trace_span_ledger_stage2_v1.py.sha256",
+        "docs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2.md.sha256",
+        "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_HANDOFF_LATEST.json",
+        "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_HANDOFF_LATEST.json.sha256",
+        "runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/filesystem_safety_v1_filesystem_df_probe_20260502T164359Z_b3ac5b86ac43/decision_packet.json",
+        "runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/filesystem_safety_v1_filesystem_df_probe_20260502T164359Z_b3ac5b86ac43/pre_spawn_receipt.json",
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION_20260502T164424Z/STAGE_RECEIPT.json",
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION_20260502T164424Z/STAGE_RECEIPT.json.sha256",
+        "runtime/state/TRACKER_STATE_v1.json.sha256",
+        "runtime/state/operator_surface/OBSERVABILITY_STAGE2_TRACKER_PREVIEW.txt",
+        "runtime/state/operator_surface/OBSERVABILITY_STAGE2_TRACKER_PREVIEW.txt.sha256"
+      ],
+      "changed": [
+        "runtime/export_promotion/EXPORT_FILESYSTEM_SAFETY_PROOF_LATEST.json",
+        "runtime/state/TRACKER_STATE_v1.json",
+        "runtime/traces/observability/BOOT_INGESTION_REPORT_LATEST.json",
+        "runtime/traces/observability/BOOT_INGESTION_STDOUT_LATEST.json",
+        "runtime/traces/observability/CAUSAL_STAGE_GRAPH_LATEST.json",
+        "runtime/traces/observability/MB_EXPORT_STAGE2_STDOUT_LATEST.json",
+        "runtime/traces/observability/TRACE_SPAN_LEDGER_INDEX_LATEST.json",
+        "runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl",
+        "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE2_VALIDATION_LATEST.json",
+        "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE2_VALIDATION_STDOUT_LATEST.json"
+      ],
+      "removed": []
+    },
+    "schema_version": "TRACE_DIFF_LOGGER_v1"
+  },
+  "output": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_FINAL_20260502T164433Z.zip",
+  "required_gates": [
+    "same_mount_atomic_replace_preflight",
+    "zip_integrity",
+    "promotion_gate",
+    "bounded_differential_logging"
+  ],
+  "root": "/mnt/data/Metablooms_OS",
+  "schema_version": "EXPORT_FILESYSTEM_SAFETY_PROOF_v1",
+  "tmp_policy": "tmp archive and sidecar are created in the destination directory; no /tmp publication path is allowed"
+}

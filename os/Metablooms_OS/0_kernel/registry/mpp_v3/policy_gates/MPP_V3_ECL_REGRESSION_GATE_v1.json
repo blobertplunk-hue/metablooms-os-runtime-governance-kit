@@ -1,0 +1,18 @@
+{
+  "locked_at": "20260501T023500Z",
+  "policy_id": "MPP_V3_ECL_REGRESSION_GATE_v1",
+  "research_basis": [
+    "Google SRE postmortems emphasize preventive action items, clear owners, priorities, tracking bugs, and measurable closeout.",
+    "SRE learning-from-failure guidance emphasizes actions that prevent recurrence.",
+    "ISO/IEC/IEEE 29119 specifies governed software test processes applicable across lifecycle models."
+  ],
+  "rules": [
+    "Every correction must bind to a failure class, owner, priority, tracking reference, and status.",
+    "At least one correction must be preventive.",
+    "Every correction failure class must have a regression test.",
+    "At least one blocking regression test is required.",
+    "At least one blocking enforcement hook is required.",
+    "Closure controls must require owner, tracking reference, regression pass, receipt, and learning hook."
+  ],
+  "stage": "ECL"
+}

@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "EXPORT_RECOVERY_VALIDATOR_INPUT_SCHEMA_v1",
+  "title": "MetaBlooms Export Recovery Validator Input v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "export_zip",
+    "sidecar_manifest",
+    "active_root",
+    "expected_stage",
+    "ledger_path",
+    "dag_path",
+    "pointer_path",
+    "boot_manifest_path",
+    "artifact_registry_path",
+    "gate_policy"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "export_zip": {
+      "type": "string"
+    },
+    "sidecar_manifest": {
+      "type": "string"
+    },
+    "active_root": {
+      "type": "string"
+    },
+    "expected_stage": {
+      "type": "string"
+    },
+    "ledger_path": {
+      "type": "string"
+    },
+    "dag_path": {
+      "type": "string"
+    },
+    "pointer_path": {
+      "type": "string"
+    },
+    "boot_manifest_path": {
+      "type": "string"
+    },
+    "artifact_registry_path": {
+      "type": "string"
+    },
+    "expected_ledger_entry_id": {
+      "type": "string"
+    },
+    "expected_dag_node_id": {
+      "type": "string"
+    },
+    "external_sidecar_policy": {
+      "type": "object",
+      "properties": {
+        "external_sidecar_required": {
+          "type": "boolean"
+        },
+        "sidecar_must_match_zip": {
+          "type": "boolean"
+        },
+        "internal_manifest_must_reference_sidecar": {
+          "type": "boolean"
+        }
+      }
+    },
+    "git_head_policy": {
+      "type": "object",
+      "properties": {
+        "allow_lifecycle_heads": {
+          "type": "boolean"
+        },
+        "required_labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "gate_policy": {
+      "type": "object",
+      "required": [
+        "fail_closed",
+        "required_gates"
+      ],
+      "properties": {
+        "fail_closed": {
+          "type": "boolean"
+        },
+        "required_gates": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "version": "1.0",
+  "created_at": 1777127086.9428003,
+  "stage": "SIR19_PACKAGE_CONTROL_SAFETY_RUNTIME_EXPORT",
+  "status": "embedded_pre_zip_manifest",
+  "activation_root": "/mnt/data/SIR10_activation_package",
+  "source_file_count_before_embedding": 8,
+  "source_files_before_embedding": [
+    {
+      "relpath": "0_kernel/registry/SIR10_EXPERIMENTAL_RUNTIME_REGISTRY_DELTA_v1.json",
+      "size_bytes": 3377,
+      "sha256": "a02c71a4c49474cb17e7764451d79c99f25f7d03eeca6d10672366565da7c927"
+    },
+    {
+      "relpath": "0_kernel/registry/SIR15_EXPERIMENTAL_SIGNAL_CONTRACTS_REGISTRY_DELTA_v1.json",
+      "size_bytes": 2123,
+      "sha256": "930ba423d9943ac9577935156b51c05e13e78eaea832aecff99d0a13354fbd74"
+    },
+    {
+      "relpath": "0_kernel/registry/SIR16_EXPERIMENTAL_LOOP_CONTROLLER_REGISTRY_DELTA_v1.json",
+      "size_bytes": 4801,
+      "sha256": "edc9cb36009fbb99bf76af224548250a952663cb9e39987800bf0247c5d975e4"
+    },
+    {
+      "relpath": "0_kernel/registry/SIR17_EXPERIMENTAL_MPP_PIPELINE_RUNNER_REGISTRY_DELTA_v1.json",
+      "size_bytes": 5138,
+      "sha256": "106c00e85c84fc7c37f3ce95d6f264d9704f9c7a3237d6484d05fbc3a8d5e7c4"
+    },
+    {
+      "relpath": "2_engines/runtime/loop_controller.py",
+      "size_bytes": 7694,
+      "sha256": "422a1799146a094e9e3409c0ec77940a90ec85044456a3a7c6086e119ceeddfd"
+    },
+    {
+      "relpath": "2_engines/runtime/mpp_pipeline_runner.py",
+      "size_bytes": 5109,
+      "sha256": "cb08ee481f8c5c8581e27bdaae97a8b69c036eb4b25946d765cccc5830c42359"
+    },
+    {
+      "relpath": "2_engines/runtime/regression_tracker.py",
+      "size_bytes": 4051,
+      "sha256": "26eee6a3a4f57eca06f9e6ac36e2b054bc3a4b98e9acc010c384c27231f9bf71"
+    },
+    {
+      "relpath": "2_engines/runtime/signal_contracts_v1.json",
+      "size_bytes": 588,
+      "sha256": "3554dee7e88dfe0d2bec408f94885476cd1e6b290be7258f60caf8c2f8959750"
+    }
+  ],
+  "baseline_lock": false,
+  "baseline_export": false,
+  "export_type": "verified_activation_package"
+}

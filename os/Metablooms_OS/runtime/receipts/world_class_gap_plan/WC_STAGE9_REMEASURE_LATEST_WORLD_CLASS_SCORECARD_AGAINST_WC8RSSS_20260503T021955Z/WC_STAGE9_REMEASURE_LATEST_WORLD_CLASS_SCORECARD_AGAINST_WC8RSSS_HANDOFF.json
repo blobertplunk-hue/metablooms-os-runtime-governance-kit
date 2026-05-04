@@ -1,0 +1,14 @@
+{
+  "handoff_type": "bounded_stage_handoff",
+  "stage": "WC_STAGE9_REMEASURE_LATEST_WORLD_CLASS_SCORECARD_AGAINST_WC8RSSS",
+  "verdict": "PASS",
+  "next_stage": "WC_STAGE10_REAL_TASK_EVAL_HARNESS_AND_ENFORCEMENT_PROOF",
+  "source_authority_for_next": "BOOTABLE_FULL_AUTHORITY_WC9.zip",
+  "must_do": [
+    "Boot WC9 full authority",
+    "Run exactly one bounded governed stage",
+    "Validate NEXT_STAGE_COPY_PROMPT with hard gate before final/export",
+    "Run real-task eval harness rather than another no-task smoke if a task is supplied"
+  ],
+  "measured_latest_percent": 81.25
+}

@@ -1,0 +1,704 @@
+{
+  "artifact_type": "MB_VISUAL_TRACE_WATERFALL_EVIDENCE_FILTERS.v1",
+  "created_utc": "20260502T180916Z",
+  "evidence_sources": {
+    "causal_graph": "runtime/traces/observability/CAUSAL_STAGE_GRAPH_LATEST.json",
+    "minimal_mode": "runtime/state/operator_surface/BOOT_SURFACE_MINIMAL_MODE_LATEST.json",
+    "trace_index": "runtime/traces/observability/TRACE_SPAN_LEDGER_INDEX_LATEST.json",
+    "trace_ledger": "runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl"
+  },
+  "filters": {
+    "event_kind": [
+      "boot",
+      "decision",
+      "export",
+      "handoff",
+      "receipt",
+      "stage",
+      "tracker",
+      "validator"
+    ],
+    "quick_filters": [
+      "all",
+      "issues",
+      "validators",
+      "exports",
+      "receipts",
+      "handoffs",
+      "boot"
+    ],
+    "status": [
+      "BLOCKED",
+      "ERROR",
+      "OK"
+    ]
+  },
+  "mode_policy": {
+    "evidence_waterfall_optional": true,
+    "filter_behavior": "client-side CSS class filtering with no external dependencies",
+    "minimal_mode_default": true,
+    "preserve_phone_safe_minimal_surface": true
+  },
+  "next_recommended_stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE12_TRACE_QUERY_PACKET_AND_SEARCHABLE_EVIDENCE_INDEX",
+  "prior_stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING",
+  "see_basis": [
+    {
+      "claim": "Trace waterfalls expose parent/child span flow and help locate context for latency/errors.",
+      "source": "New Relic trace details UI",
+      "url": "https://docs.newrelic.com/docs/distributed-tracing/ui-data/trace-details/"
+    },
+    {
+      "claim": "OpenTelemetry traces are composed of spans that carry operation information and can be exported for analysis.",
+      "source": "OpenTelemetry traces documentation",
+      "url": "https://opentelemetry.io/docs/concepts/signals/traces/"
+    },
+    {
+      "claim": "Observability backends commonly visualize traces as waterfall diagrams showing parent/child relationships.",
+      "source": "OpenTelemetry observability primer",
+      "url": "https://opentelemetry.io/docs/concepts/observability-primer/"
+    },
+    {
+      "claim": "Trace waterfall filtering by tags or error status is a standard observability interaction pattern.",
+      "source": "Splunk Observability Cloud trace waterfall filtering",
+      "url": "https://help.splunk.com/splunk-observability-cloud/monitor-application-performance/manage-services-spans-and-traces-in-splunk-apm/view-and-filter-for-spans-within-a-trace"
+    },
+    {
+      "claim": "Progressive disclosure keeps essential content primary and advanced evidence secondary.",
+      "source": "Nielsen Norman Group progressive disclosure",
+      "url": "https://www.nngroup.com/articles/progressive-disclosure/"
+    }
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS",
+  "summary": {
+    "event_kind_counts": {
+      "boot": 57,
+      "decision": 2,
+      "export": 5,
+      "handoff": 87,
+      "receipt": 51,
+      "stage": 1,
+      "tracker": 1,
+      "validator": 16
+    },
+    "graph_edges": 219,
+    "graph_nodes": 220,
+    "latest_window_records": 32,
+    "ledger_records": 220,
+    "status_counts": {
+      "BLOCKED": 1,
+      "ERROR": 4,
+      "OK": 215
+    }
+  },
+  "verdict": "PASS",
+  "waterfall_rows": [
+    {
+      "bar_start_pct": 0.0,
+      "bar_width_pct": 12,
+      "event": "metablooms.handoff.ready",
+      "evidence_href": "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_HANDOFF_LATEST.json",
+      "filter_tokens": [
+        "OK",
+        "handoff",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "handoff",
+      "ordinal": 1,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_HANDOFF_LATEST.json",
+      "span_id": "361843d5058093cd",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS",
+      "status": "OK",
+      "timestamp_utc": "20260502T175102Z"
+    },
+    {
+      "bar_start_pct": 2.77,
+      "bar_width_pct": 12,
+      "event": "metablooms.handoff.ready",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/STAGE_HANDOFF.json",
+      "filter_tokens": [
+        "OK",
+        "handoff",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "handoff",
+      "ordinal": 2,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/STAGE_HANDOFF.json",
+      "span_id": "b093e3c69343dd57",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS",
+      "status": "OK",
+      "timestamp_utc": "20260502T175102Z"
+    },
+    {
+      "bar_start_pct": 5.55,
+      "bar_width_pct": 12,
+      "event": "metablooms.stage.receipt",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/STAGE_RECEIPT.json",
+      "filter_tokens": [
+        "OK",
+        "receipt",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "receipt",
+      "ordinal": 3,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/STAGE_RECEIPT.json",
+      "span_id": "c98c23de8c381aad",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS",
+      "status": "OK",
+      "timestamp_utc": "20260502T175102Z"
+    },
+    {
+      "bar_start_pct": 8.32,
+      "bar_width_pct": 12,
+      "event": "metablooms.stage.receipt",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/wrapper_good.json",
+      "filter_tokens": [
+        "OK",
+        "receipt",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "receipt",
+      "ordinal": 4,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/wrapper_good.json",
+      "span_id": "1f019778432b08ad",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T175128Z"
+    },
+    {
+      "bar_start_pct": 11.1,
+      "bar_width_pct": 12,
+      "event": "metablooms.validator.result",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/new_chat_validator.json",
+      "filter_tokens": [
+        "OK",
+        "validator",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "validator",
+      "ordinal": 5,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/new_chat_validator.json",
+      "span_id": "e3874ac7452d4039",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T175128Z"
+    },
+    {
+      "bar_start_pct": 13.87,
+      "bar_width_pct": 12,
+      "event": "metablooms.validator.result",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/stage9_validator.json",
+      "filter_tokens": [
+        "OK",
+        "validator",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "validator",
+      "ordinal": 6,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/stage9_validator.json",
+      "span_id": "c214e891b8c3a20f",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T175128Z"
+    },
+    {
+      "bar_start_pct": 16.65,
+      "bar_width_pct": 12,
+      "event": "metablooms.stage.receipt",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/scanner.json",
+      "filter_tokens": [
+        "OK",
+        "receipt",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "receipt",
+      "ordinal": 7,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/scanner.json",
+      "span_id": "bb2ff0514b57e854",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T175128Z"
+    },
+    {
+      "bar_start_pct": 19.42,
+      "bar_width_pct": 12,
+      "event": "metablooms.stage.receipt",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/guidance_extractor.json",
+      "filter_tokens": [
+        "OK",
+        "receipt",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "receipt",
+      "ordinal": 8,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/guidance_extractor.json",
+      "span_id": "7e9bf6a84bfc05bd",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T175128Z"
+    },
+    {
+      "bar_start_pct": 22.19,
+      "bar_width_pct": 12,
+      "event": "metablooms.handoff.ready",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/STAGE_HANDOFF.json",
+      "filter_tokens": [
+        "ERROR",
+        "handoff",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "handoff",
+      "ordinal": 9,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/STAGE_HANDOFF.json",
+      "span_id": "82bf0ce80ff1f6ae",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS",
+      "status": "ERROR",
+      "timestamp_utc": "20260502T174908Z"
+    },
+    {
+      "bar_start_pct": 24.97,
+      "bar_width_pct": 12,
+      "event": "metablooms.stage.receipt",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/STAGE_RECEIPT.json",
+      "filter_tokens": [
+        "ERROR",
+        "receipt",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "receipt",
+      "ordinal": 10,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/STAGE_RECEIPT.json",
+      "span_id": "38abc05ce5981474",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS",
+      "status": "ERROR",
+      "timestamp_utc": "20260502T174908Z"
+    },
+    {
+      "bar_start_pct": 27.74,
+      "bar_width_pct": 12,
+      "event": "metablooms.stage.receipt",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/wrapper_good.json",
+      "filter_tokens": [
+        "OK",
+        "receipt",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "receipt",
+      "ordinal": 11,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/wrapper_good.json",
+      "span_id": "69150d94a26c2781",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T174933Z"
+    },
+    {
+      "bar_start_pct": 30.52,
+      "bar_width_pct": 12,
+      "event": "metablooms.validator.result",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/new_chat_validator.json",
+      "filter_tokens": [
+        "OK",
+        "validator",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "validator",
+      "ordinal": 12,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/new_chat_validator.json",
+      "span_id": "7a787681cce6aaca",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T174931Z"
+    },
+    {
+      "bar_start_pct": 33.29,
+      "bar_width_pct": 12,
+      "event": "metablooms.validator.result",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/stage8_validator.json",
+      "filter_tokens": [
+        "OK",
+        "validator",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "validator",
+      "ordinal": 13,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/stage8_validator.json",
+      "span_id": "f9ef7d194efddf6d",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T174930Z"
+    },
+    {
+      "bar_start_pct": 36.06,
+      "bar_width_pct": 12,
+      "event": "metablooms.validator.result",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/stage9_validator.json",
+      "filter_tokens": [
+        "OK",
+        "validator",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "validator",
+      "ordinal": 14,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/stage9_validator.json",
+      "span_id": "4a13cd0268fde0f4",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T174923Z"
+    },
+    {
+      "bar_start_pct": 38.84,
+      "bar_width_pct": 12,
+      "event": "metablooms.stage.receipt",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/live_boot_guidance_extractor_after_tracker.json",
+      "filter_tokens": [
+        "OK",
+        "receipt",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "receipt",
+      "ordinal": 15,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/live_boot_guidance_extractor_after_tracker.json",
+      "span_id": "74768b0add1d97db",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T174911Z"
+    },
+    {
+      "bar_start_pct": 41.61,
+      "bar_width_pct": 12,
+      "event": "metablooms.stage.receipt",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/live_boot_guidance_extractor_initial.json",
+      "filter_tokens": [
+        "OK",
+        "receipt",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "receipt",
+      "ordinal": 16,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/live_boot_guidance_extractor_initial.json",
+      "span_id": "8fca5c2023a54efe",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T174910Z"
+    },
+    {
+      "bar_start_pct": 44.39,
+      "bar_width_pct": 12,
+      "event": "metablooms.stage.receipt",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/CE_SYNTHESIS.json",
+      "filter_tokens": [
+        "OK",
+        "receipt",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "receipt",
+      "ordinal": 17,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/CE_SYNTHESIS.json",
+      "span_id": "336f12700f984281",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS",
+      "status": "OK",
+      "timestamp_utc": "20260502T174908Z"
+    },
+    {
+      "bar_start_pct": 47.16,
+      "bar_width_pct": 12,
+      "event": "metablooms.stage.receipt",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/SEE_PACKET.json",
+      "filter_tokens": [
+        "OK",
+        "receipt",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "receipt",
+      "ordinal": 18,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/SEE_PACKET.json",
+      "span_id": "5cac62a7597a0f39",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS",
+      "status": "OK",
+      "timestamp_utc": "20260502T174908Z"
+    },
+    {
+      "bar_start_pct": 49.94,
+      "bar_width_pct": 12,
+      "event": "metablooms.stage.receipt",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/pre_patch_backups/0_kernel__registry__current_authority__CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+      "filter_tokens": [
+        "OK",
+        "receipt",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "receipt",
+      "ordinal": 19,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/pre_patch_backups/0_kernel__registry__current_authority__CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+      "span_id": "803309fe437bb920",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE",
+      "status": "OK",
+      "timestamp_utc": "20260502T174908Z"
+    },
+    {
+      "bar_start_pct": 52.71,
+      "bar_width_pct": 12,
+      "event": "metablooms.stage.receipt",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/pre_patch_backups/runtime__authority__CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+      "filter_tokens": [
+        "OK",
+        "receipt",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "receipt",
+      "ordinal": 20,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/pre_patch_backups/runtime__authority__CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+      "span_id": "5a0d37bdcaa861f3",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE",
+      "status": "OK",
+      "timestamp_utc": "20260502T174908Z"
+    },
+    {
+      "bar_start_pct": 55.48,
+      "bar_width_pct": 12,
+      "event": "metablooms.stage.receipt",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/pre_patch_backups/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+      "filter_tokens": [
+        "OK",
+        "receipt",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "receipt",
+      "ordinal": 21,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/pre_patch_backups/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+      "span_id": "a5e267ecd4a40518",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE",
+      "status": "OK",
+      "timestamp_utc": "20260502T174908Z"
+    },
+    {
+      "bar_start_pct": 58.26,
+      "bar_width_pct": 12,
+      "event": "metablooms.handoff.ready",
+      "evidence_href": "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_HANDOFF_LATEST.json",
+      "filter_tokens": [
+        "OK",
+        "handoff",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "handoff",
+      "ordinal": 22,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_HANDOFF_LATEST.json",
+      "span_id": "2185df59a63bba86",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE",
+      "status": "OK",
+      "timestamp_utc": "20260502T171821Z"
+    },
+    {
+      "bar_start_pct": 61.03,
+      "bar_width_pct": 12,
+      "event": "metablooms.stage.receipt",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z/STAGE_RECEIPT.json",
+      "filter_tokens": [
+        "OK",
+        "receipt",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "receipt",
+      "ordinal": 23,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z/STAGE_RECEIPT.json",
+      "span_id": "76ba10bbf617b106",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE",
+      "status": "OK",
+      "timestamp_utc": "20260502T171821Z"
+    },
+    {
+      "bar_start_pct": 63.81,
+      "bar_width_pct": 12,
+      "event": "metablooms.stage.receipt",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z/trace_ingestion_post_receipt.json",
+      "filter_tokens": [
+        "OK",
+        "receipt",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "receipt",
+      "ordinal": 24,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z/trace_ingestion_post_receipt.json",
+      "span_id": "50a6569d60bc8d3f",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T172102Z"
+    },
+    {
+      "bar_start_pct": 66.58,
+      "bar_width_pct": 12,
+      "event": "metablooms.stage.receipt",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z/wrapper_bad.json",
+      "filter_tokens": [
+        "OK",
+        "receipt",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "receipt",
+      "ordinal": 25,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z/wrapper_bad.json",
+      "span_id": "47ad03014b910451",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T172039Z"
+    },
+    {
+      "bar_start_pct": 69.35,
+      "bar_width_pct": 12,
+      "event": "metablooms.stage.receipt",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z/wrapper_good.json",
+      "filter_tokens": [
+        "OK",
+        "receipt",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "receipt",
+      "ordinal": 26,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z/wrapper_good.json",
+      "span_id": "31006edd02cf3645",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T171950Z"
+    },
+    {
+      "bar_start_pct": 72.13,
+      "bar_width_pct": 12,
+      "event": "metablooms.validator.result",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z/new_chat_validator.json",
+      "filter_tokens": [
+        "OK",
+        "validator",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "validator",
+      "ordinal": 27,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z/new_chat_validator.json",
+      "span_id": "ceea2b5216b1cd6b",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T171945Z"
+    },
+    {
+      "bar_start_pct": 74.9,
+      "bar_width_pct": 12,
+      "event": "metablooms.validator.result",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z/stage6_validator.json",
+      "filter_tokens": [
+        "OK",
+        "validator",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "validator",
+      "ordinal": 28,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z/stage6_validator.json",
+      "span_id": "2da553384b096298",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T171941Z"
+    },
+    {
+      "bar_start_pct": 77.68,
+      "bar_width_pct": 12,
+      "event": "metablooms.validator.result",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z/stage7_validator.json",
+      "filter_tokens": [
+        "OK",
+        "validator",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "validator",
+      "ordinal": 29,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z/stage7_validator.json",
+      "span_id": "9b4469cd874d4e47",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T171851Z"
+    },
+    {
+      "bar_start_pct": 80.45,
+      "bar_width_pct": 12,
+      "event": "metablooms.validator.result",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z/stage8_validator.json",
+      "filter_tokens": [
+        "OK",
+        "validator",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "validator",
+      "ordinal": 30,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z/stage8_validator.json",
+      "span_id": "e3e3d2cc12dad211",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T171839Z"
+    },
+    {
+      "bar_start_pct": 83.23,
+      "bar_width_pct": 12,
+      "event": "metablooms.stage.receipt",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z/quarantine_scanner_repair.json",
+      "filter_tokens": [
+        "OK",
+        "receipt",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "receipt",
+      "ordinal": 31,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z/quarantine_scanner_repair.json",
+      "span_id": "d53c27d84f7efd80",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T171825Z"
+    },
+    {
+      "bar_start_pct": 86.0,
+      "bar_width_pct": 12,
+      "event": "metablooms.stage.receipt",
+      "evidence_href": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_20260502T171707Z/STAGE_RECEIPT.json",
+      "filter_tokens": [
+        "ERROR",
+        "receipt",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER"
+      ],
+      "kind": "receipt",
+      "ordinal": 32,
+      "parent_span_id": "e89f7cc6690947d5",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_20260502T171707Z/STAGE_RECEIPT.json",
+      "span_id": "a34e0bd1757dcf41",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE",
+      "status": "ERROR",
+      "timestamp_utc": "20260502T171707Z"
+    }
+  ]
+}

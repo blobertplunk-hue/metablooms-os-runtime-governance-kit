@@ -1,0 +1,12 @@
+{
+  "from_stage": "MPP_R17_DEBUGGING_FAILURE_CLASS_SCHEMA_AND_REPAIR_ROUTER",
+  "notes": "R18 should turn recurrent failure classes into enforced corrections and regression gates.",
+  "required_inputs": [
+    "0_kernel/schemas/mpp_v3/DEBUGGING_FAILURE_CLASS_PACKET_SCHEMA_v1.json",
+    "0_kernel/mpp_v3/mpp_v3_debugging_failure_class_repair_router_v1.py",
+    "tests/fixtures/mpp_v3/valid_debugging_failure_class_packet_v1.json"
+  ],
+  "root": "/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z",
+  "status": "READY",
+  "to_stage": "MPP_R18_ECL_ENFORCED_CORRECTION_LOOP_SCHEMA_AND_REGRESSION_GATE"
+}

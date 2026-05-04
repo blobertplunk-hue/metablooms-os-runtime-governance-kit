@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "created_at": 1777068405.2310023,
+  "stage": "G6_RECOVERY_PROVEN_BASELINE_LOCK",
+  "status": "locked",
+  "export_zip": "/mnt/data/exports/MetaBlooms_OS_refined_G6_SELF_CONSISTENT_BASELINE_LOCK_1777068405.zip",
+  "download_copy": "/mnt/data/MetaBlooms_OS_refined_G6_SELF_CONSISTENT_BASELINE_LOCK_1777068405.zip",
+  "sidecar": "/mnt/data/exports/MetaBlooms_OS_refined_G6_SELF_CONSISTENT_BASELINE_LOCK_1777068405.zip.sha256.json",
+  "download_sidecar": "/mnt/data/MetaBlooms_OS_refined_G6_SELF_CONSISTENT_BASELINE_LOCK_1777068405.zip.sha256.json",
+  "sha256_policy": "external_sidecar_required",
+  "size_policy": "external_sidecar_required",
+  "recovery_proof": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G6_RECOVERY_PROOF_v1.json",
+  "validator_decision": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_G6_EXTERNAL_DECISION_v1.json",
+  "g5_audit_issues_resolved": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G6_G5_AUDIT_OPEN_ISSUES_RESOLUTION_v1.json",
+  "verdict": "PASS",
+  "next_correct_command": "EXECUTE G7 \u2014 RETURN TO E4B"
+}

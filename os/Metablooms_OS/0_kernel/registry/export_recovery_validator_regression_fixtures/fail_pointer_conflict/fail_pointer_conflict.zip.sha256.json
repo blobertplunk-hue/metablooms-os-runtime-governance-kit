@@ -1,0 +1,7 @@
+{
+  "version": "1.0",
+  "file": "fail_pointer_conflict.zip",
+  "sha256": "bd2dd278730cc50accf7e5405926de965154d40a7318f3ca8533b5a6051c60e9",
+  "size_bytes": 3831,
+  "verdict": "PASS"
+}

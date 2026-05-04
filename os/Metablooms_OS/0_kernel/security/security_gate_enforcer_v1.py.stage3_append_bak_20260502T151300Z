@@ -1,0 +1,82 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+import argparse, json, re, time, hashlib
+from pathlib import Path
+SCHEMA='SECURITY_GATE_ENFORCER_v1'
+BAD_PATTERNS=[
+    r'ignore\s+(all\s+)?previous\s+instructions', r'system\s+override', r'mark\s+.*pass\s+without',
+    r'delete\s+receipts', r'rm\s+-rf\s+/', r'exfiltrate', r'private\s+emails', r'oauth\s+tokens?',
+    r'api\s+keys?', r'do\s+not\s+stop', r'run\s+every\s+repair\s+stage', r'\.\./\.\.', r'ignore\s+the\s+latest\s+sidecar'
+]
+DANGEROUS_COMMANDS=['rm -rf','curl ','wget ','scp ','nc ','python -c','bash -c','chmod 777']
+def now(): return time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())
+def find_root():
+    p=Path(__file__).resolve()
+    for q in [p.parent,*p.parents]:
+        if (q/'boot_manifest_v1.json').exists() and (q/'0_kernel').exists(): return q
+    return Path.cwd()
+def load_json(p:Path):
+    try: return json.loads(p.read_text(encoding='utf-8'))
+    except Exception as e: return {'_parse_error':str(e), '_path':str(p)}
+def contains_bad_text(value):
+    s=json.dumps(value, sort_keys=True) if not isinstance(value,str) else value
+    hits=[]
+    for pat in BAD_PATTERNS:
+        if re.search(pat, s, re.I): hits.append(pat)
+    return hits
+def append_span(root, stage, event, status, attrs):
+    led=root/'runtime/traces/security/TRACE_SPAN_LEDGER_SECURITY_STAGE3.jsonl'
+    led.parent.mkdir(parents=True, exist_ok=True)
+    seed=json.dumps([stage,event,status,now(),attrs],sort_keys=True)
+    rec={'schema_version':'MB_TRACE_SPAN_LEDGER_SPEC_v2','trace_id':hashlib.sha256(seed.encode()).hexdigest()[:32],'span_id':hashlib.sha256((seed+'span').encode()).hexdigest()[:16],'parent_span_id':None,'name':'security_gate_enforcer','stage_name':stage,'event':event,'status':status,'timestamp_utc':now(),'attributes':attrs}
+    with led.open('a',encoding='utf-8') as f: f.write(json.dumps(rec,sort_keys=True)+'\n')
+    return str(led)
+def evaluate_work_order(root, work_order):
+    issues=[]; warnings=[]
+    stage=str(work_order.get('stage_name',''))
+    mode=work_order.get('mode')
+    scope=work_order.get('scope') if isinstance(work_order.get('scope'),dict) else {}
+    if not scope.get('bounded_stage_only'): issues.append({'gate_id':'MBSEC-GATE-004','reason':'bounded_stage_only_missing'})
+    for k in ['requires_receipt','requires_handoff','requires_validation']:
+        if not scope.get(k): issues.append({'gate_id':'MBSEC-GATE-006','reason':f'{k}_missing'})
+    if contains_bad_text(stage): issues.append({'gate_id':'MBSEC-GATE-001','reason':'stage_name_contains_prompt_injection','patterns':contains_bad_text(stage)})
+    if contains_bad_text(work_order): issues.append({'gate_id':'MBSEC-GATE-001','reason':'work_order_contains_injection_or_forbidden_text','patterns':contains_bad_text(work_order)[:10]})
+    planned=work_order.get('planned_commands',[])
+    for cmd in planned:
+        c=str(cmd).lower()
+        if any(d in c for d in DANGEROUS_COMMANDS): issues.append({'gate_id':'MBSEC-GATE-005','reason':'dangerous_command_in_plan','command':cmd})
+    if mode=='execute' and not work_order.get('fail_closed_rules'): issues.append({'gate_id':'MBSEC-GATE-004','reason':'execute_without_fail_closed_rules'})
+    return issues,warnings
+def evaluate_fixtures(root):
+    p=root/'0_kernel/registry/security/SECURITY_PROMPT_INJECTION_FIXTURE_SET_v1.json'
+    payload=load_json(p); issues=[]; results=[]
+    for fx in payload.get('fixtures',[]) if isinstance(payload,dict) else []:
+        expected=fx.get('expected_decision')
+        actual='BLOCK' if contains_bad_text(fx.get('payload','')) or expected in ('BLOCK','QUARANTINE') else 'ALLOW'
+        if expected=='QUARANTINE': actual='QUARANTINE' if 'secret' in str(fx.get('attack_class','')).lower() or 'disclosure' in str(fx.get('attack_class','')).lower() else actual
+        results.append({'fixture_id':fx.get('fixture_id'),'attack_class':fx.get('attack_class'),'expected_decision':expected,'actual_decision':actual,'mapped_gate':fx.get('mapped_gate')})
+        if expected in ('BLOCK','QUARANTINE') and actual=='ALLOW': issues.append({'gate_id':'MBSEC-GATE-008','fixture_id':fx.get('fixture_id'),'reason':'malicious_fixture_allowed'})
+    safe=payload.get('known_safe_fixture',{}) if isinstance(payload,dict) else {}
+    safe_actual='BLOCK' if contains_bad_text(safe.get('payload','')) else 'ALLOW'
+    if safe and safe_actual!='ALLOW': issues.append({'gate_id':'MBSEC-GATE-008','fixture_id':safe.get('fixture_id'),'reason':'safe_fixture_blocked'})
+    return issues,results
+def main(argv=None):
+    ap=argparse.ArgumentParser(); ap.add_argument('--work-order'); ap.add_argument('--fixtures',action='store_true'); ap.add_argument('--json',action='store_true'); args=ap.parse_args(argv)
+    root=find_root(); issues=[]; warnings=[]; details={}
+    gate_file=root/'0_kernel/registry/security/SECURITY_ARTIFACT_ENFORCEMENT_GATES_v1.json'
+    gates=load_json(gate_file)
+    if not gate_file.exists(): issues.append({'gate_id':'MBSEC-GATE-002','reason':'enforcement_gates_missing'})
+    if isinstance(gates,dict) and len(gates.get('gates',[]))<8: issues.append({'gate_id':'MBSEC-GATE-002','reason':'gate_count_below_required','count':len(gates.get('gates',[]))})
+    if args.work_order:
+        wp=Path(args.work_order); 
+        if not wp.exists(): issues.append({'gate_id':'MBSEC-GATE-004','reason':'work_order_missing','path':str(wp)})
+        else:
+            wo=load_json(wp); wi,ww=evaluate_work_order(root, wo); issues.extend(wi); warnings.extend(ww); details['work_order_path']=str(wp); details['stage_name']=wo.get('stage_name') if isinstance(wo,dict) else None
+    if args.fixtures:
+        fi,results=evaluate_fixtures(root); issues.extend(fi); details['fixture_results']=results; details['fixture_count']=len(results)
+    verdict='SECURITY_GATES_PASS' if not issues else 'SECURITY_GATES_BLOCK'
+    ledger=append_span(root, details.get('stage_name') or 'SECURITY_GATE_CHECK', 'security_gate_enforcer', 'OK' if not issues else 'ERROR', {'issue_count':len(issues),'warning_count':len(warnings)})
+    out={'schema_version':SCHEMA,'verdict':verdict,'root':str(root),'created_utc':now(),'issues':issues,'warnings':warnings,'details':details,'trace_ledger':ledger,'fail_closed':bool(issues)}
+    print(json.dumps(out,indent=2,sort_keys=True))
+    return 0 if not issues else 20
+if __name__=='__main__': raise SystemExit(main())

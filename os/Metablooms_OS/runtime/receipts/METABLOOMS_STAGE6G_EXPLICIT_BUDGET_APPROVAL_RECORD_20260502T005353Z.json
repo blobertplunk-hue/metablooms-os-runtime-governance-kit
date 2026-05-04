@@ -1,0 +1,16 @@
+{
+  "schema": "METABLOOMS_STAGE6G_EXPLICIT_BUDGET_APPROVAL_RECORD_v1",
+  "stage": "STAGE6G_FULL_AUTHORITY_EXPORT_WITH_EXPLICIT_BUDGET_APPROVAL_USING_BTS_NODE_ZIP_PROFILE",
+  "timestamp_utc": "2026-05-02T00:53:53Z",
+  "approval_token": "STAGE6G_EXPLICIT_BUDGET_APPROVAL_BUDGET_APPROVED_BY_USER_20260502T005353Z",
+  "approved_by": "Robert via explicit STAGE6G command in chat",
+  "approved_scope": "Full authority export using BTS-wrapped Node ZIP profile after Stage6F retrofit",
+  "budget": {
+    "max_files_hard_cap": 10000,
+    "max_bytes_hard_cap": 200000000,
+    "max_steps_hard_cap": 100,
+    "timeout_seconds_hard_cap": 180
+  },
+  "rationale": "Stage6F dry-run showed the full OS root exceeded the default 2500-file gate. This approval permits only this bounded Stage6G authority export and keeps hard caps active.",
+  "status": "APPROVED_FOR_STAGE6G_ONLY"
+}

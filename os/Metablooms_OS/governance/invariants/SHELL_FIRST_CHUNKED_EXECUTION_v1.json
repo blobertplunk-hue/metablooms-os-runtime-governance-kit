@@ -1,0 +1,9 @@
+{
+  "id":"SHELL_FIRST_CHUNKED_EXECUTION_v1",
+  "status":"active",
+  "gate":"SHELL_FIRST_GATE",
+  "description":"Filesystem/archive/hash/export work must default to shell/coreutils; jq/node only for bounded JSON; no all-in-one scripts.",
+  "failure_action":"DENY_STAGE_EXECUTION",
+  "source":"project-files boot overlay",
+  "scope":"runtime_governance_overlay"
+}

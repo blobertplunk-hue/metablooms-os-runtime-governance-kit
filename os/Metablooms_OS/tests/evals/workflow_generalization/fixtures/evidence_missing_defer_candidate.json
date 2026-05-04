@@ -1,0 +1,27 @@
+{
+  "task": "Import old transcript",
+  "candidates": [
+    {
+      "lesson_id": "vague_old_chat_claim",
+      "evidence": {},
+      "baseline_comparison": {
+        "score_current": {
+          "quality": 3
+        },
+        "score_candidate": {
+          "quality": 5
+        },
+        "regression_flags": []
+      },
+      "auto_include": [
+        "VAGUE_CLAIM_GATE"
+      ]
+    }
+  ],
+  "expect_defer": [
+    "vague_old_chat_claim"
+  ],
+  "expect_absent": [
+    "VAGUE_CLAIM_GATE"
+  ]
+}

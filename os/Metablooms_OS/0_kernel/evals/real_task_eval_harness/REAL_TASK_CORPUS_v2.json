@@ -1,0 +1,245 @@
+{
+  "fixtures": [
+    {
+      "domain": "educational_html",
+      "expected_checks": [
+        "doctype",
+        "lang",
+        "viewport",
+        "tokens",
+        "focus_style",
+        "reduced_motion",
+        "aria_live",
+        "tts_hidden_icon",
+        "no_external_cdn"
+      ],
+      "id": "HTML_ACTIVITY_FULL_STRUCTURE_001",
+      "input": {
+        "html": "<!doctype html><html lang=\"en\"><head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>Fraction Builder</title><style>:root{--mb-space-1:4px;--mb-color-bg:#fff;--mb-focus-ring:3px solid currentColor}.choice:focus{outline:var(--mb-focus-ring)}@media (prefers-reduced-motion: reduce){*{animation:none}}</style></head><body><main><section class=\"mb-card\" aria-live=\"polite\"><h1>Build the fraction</h1><button class=\"tts\"><span aria-hidden=\"true\">\ud83d\udd0a</span><span>Read directions</span></button><button class=\"choice\">1/2</button></section></main></body></html>"
+      }
+    },
+    {
+      "domain": "educational_html",
+      "expected_checks": [
+        "self_contained",
+        "no_module_import",
+        "no_external_cdn",
+        "aria_live",
+        "viewport",
+        "tokens"
+      ],
+      "id": "HTML_ACTIVITY_GOOGLE_SITES_SAFE_002",
+      "input": {
+        "html": "<!doctype html><html lang=\"en\"><head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><style>:root{--mb-space-2:8px;--mb-focus-ring:2px solid currentColor}</style></head><body><main><button aria-label=\"Check answer\">Check</button><section aria-live=\"polite\">Feedback</section><script>const state={score:0};</script></main></body></html>"
+      }
+    },
+    {
+      "domain": "blooket_csv",
+      "expected_checks": [
+        "header_exact",
+        "spacer_row",
+        "four_answers",
+        "correct_answer_present",
+        "answer_distribution"
+      ],
+      "id": "BLOOKET_WORD_BUILDING_CSV_001",
+      "input": {
+        "csv": "Question,Answer 1,Answer 2,Answer 3,Answer 4,Correct Answer\n,,,,,\nBuild a word using re-,redo,undo,preheat,misread,A\nBuild a word using -ful,careful,careless,replay,prefix,B\nBuild a word using pre-,preview,redo,helpful,misspell,A\nBuild a word using mis-,misread,preheat,redo,careful,A"
+      }
+    },
+    {
+      "domain": "blooket_csv",
+      "expected_checks": [
+        "header_exact",
+        "spacer_row",
+        "no_extra_columns",
+        "question_rows_present"
+      ],
+      "id": "BLOOKET_TEMPLATE_NO_LAYOUT_DRIFT_002",
+      "input": {
+        "csv": "Question,Answer 1,Answer 2,Answer 3,Answer 4,Correct Answer\n,,,,,\nWhich word means to read again?,reread,unread,preheat,careless,A\nWhich word means full of care?,careful,careless,redo,preview,A"
+      }
+    },
+    {
+      "domain": "lesson_plan",
+      "expected_checks": [
+        "grade",
+        "standard",
+        "objective",
+        "steps",
+        "evidence_requirement",
+        "eb_supports",
+        "exit_check"
+      ],
+      "id": "LESSON_PLAN_TEKS_EVIDENCE_001",
+      "input": {
+        "lesson": {
+          "checks_for_understanding": [
+            "Which clue supports your inference?"
+          ],
+          "eb_supports": [
+            "sentence stem: I infer ___ because ___"
+          ],
+          "grade": 3,
+          "materials": [
+            "short passage",
+            "evidence cards"
+          ],
+          "objective": "Students infer character feelings using text evidence.",
+          "standard": "3.6F",
+          "steps": [
+            "model inference",
+            "highlight evidence",
+            "partner practice",
+            "exit ticket"
+          ]
+        }
+      }
+    },
+    {
+      "domain": "lesson_plan",
+      "expected_checks": [
+        "standard",
+        "misconceptions",
+        "reteach",
+        "exit_ticket"
+      ],
+      "id": "LESSON_PLAN_MASTERY_RETEACH_002",
+      "input": {
+        "lesson": {
+          "exit_ticket": "Order 345, 354, 435 from least to greatest.",
+          "grade": 3,
+          "misconceptions": [
+            "compares only first digit",
+            "ignores zeros"
+          ],
+          "objective": "Students compare and order numbers using place value.",
+          "reteach": "Use place-value chart and number line.",
+          "standard": "3.2D"
+        }
+      }
+    },
+    {
+      "domain": "research_see",
+      "expected_checks": [
+        "requires_web_run",
+        "requires_citations",
+        "blocks_provisional_percentages",
+        "evidence_binding"
+      ],
+      "id": "RESEARCH_SEE_CURRENT_CITATIONS_001",
+      "input": {
+        "workflow": {
+          "blocks_provisional_percentages": true,
+          "requires_citations": true,
+          "requires_claim_evidence_binding": true,
+          "requires_web_run": true
+        }
+      }
+    },
+    {
+      "domain": "research_see",
+      "expected_checks": [
+        "minimum_sources",
+        "minimum_domains",
+        "official_sources_preferred",
+        "record_search_query"
+      ],
+      "id": "RESEARCH_SEE_SOURCE_DIVERSITY_002",
+      "input": {
+        "workflow": {
+          "minimum_domains": 2,
+          "minimum_sources": 3,
+          "official_sources_preferred": true,
+          "record_search_query": true
+        }
+      }
+    },
+    {
+      "domain": "artifact_export",
+      "expected_checks": [
+        "primary_bundle",
+        "sidecar",
+        "stat",
+        "zip_test",
+        "sha256_check",
+        "clean_extract_smoke",
+        "boot_smoke"
+      ],
+      "id": "ARTIFACT_EXPORT_FULL_AUTHORITY_001",
+      "input": {
+        "export": {
+          "primary_bundle": "BOOTABLE_FULL_AUTHORITY_STAGE.zip",
+          "requires_boot_smoke": true,
+          "requires_clean_extract_smoke": true,
+          "requires_sha256_check": true,
+          "requires_stat": true,
+          "requires_zip_test": true,
+          "sidecar": "BOOTABLE_FULL_AUTHORITY_STAGE.zip.sha256"
+        }
+      }
+    },
+    {
+      "domain": "artifact_export",
+      "expected_checks": [
+        "phone_safe_name",
+        "no_forbidden_words",
+        "download_manifest"
+      ],
+      "id": "ARTIFACT_EXPORT_PHONE_SAFE_NAMES_002",
+      "input": {
+        "export": {
+          "download_manifest": true,
+          "filename": "BOOTABLE_FULL_AUTHORITY_WC11.zip",
+          "forbidden": [
+            "temporary",
+            "maybe",
+            "latest_only"
+          ],
+          "max_name_length": 64
+        }
+      }
+    },
+    {
+      "domain": "repair_debugging",
+      "expected_checks": [
+        "read_before_patch",
+        "root_cause",
+        "minimal_fix",
+        "regression_test",
+        "receipt"
+      ],
+      "id": "REPAIR_DEBUGGING_ROOT_CAUSE_001",
+      "input": {
+        "debug": {
+          "requires_minimal_fix": true,
+          "requires_read_before_patch": true,
+          "requires_receipt": true,
+          "requires_regression_test": true,
+          "requires_root_cause": true
+        }
+      }
+    },
+    {
+      "domain": "repair_debugging",
+      "expected_checks": [
+        "do_not_assume_missing",
+        "probe_filesystem",
+        "record_failed_methods",
+        "fallback_selector"
+      ],
+      "id": "REPAIR_DEBUGGING_CAPABILITY_PROBE_002",
+      "input": {
+        "debug": {
+          "do_not_assume_missing": true,
+          "fallback_selector": true,
+          "probe_filesystem": true,
+          "record_failed_methods": true
+        }
+      }
+    }
+  ],
+  "honesty_label": "Task-shaped regression corpus; validates structure and gates, not full human instructional quality.",
+  "purpose": "Real-task corpus for MetaBlooms governed task quality. Fixtures are bounded, deterministic, and enforce artifacts over claims.",
+  "schema_version": "v2"
+}

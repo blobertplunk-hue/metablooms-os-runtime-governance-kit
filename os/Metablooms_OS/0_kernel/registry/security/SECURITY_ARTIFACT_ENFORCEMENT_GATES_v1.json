@@ -1,0 +1,123 @@
+{
+  "artifact_type": "SECURITY_ARTIFACT_ENFORCEMENT_GATES_v1",
+  "created_utc": "20260501T114800Z",
+  "enforcement_lifecycle": {
+    "stage2": "advisory validator and fixture suite installed",
+    "stage3": "wire hard enforcement into stage_runner/cartridge_executor"
+  },
+  "gates": [
+    {
+      "decision": "BLOCK_IF_EXTERNAL_TEXT_CONTAINS_EXECUTION_DIRECTIVES",
+      "gate_id": "MBSEC-GATE-001",
+      "name": "external_text_demotion_gate",
+      "required_evidence": [
+        "source_path",
+        "trust_boundary",
+        "demotion_marker"
+      ],
+      "risk_ids": [
+        "MBSEC-001"
+      ]
+    },
+    {
+      "decision": "BLOCK_IF_CHECKSUM_OR_REQUIRED_PATHS_MISSING",
+      "gate_id": "MBSEC-GATE-002",
+      "name": "authority_manifest_integrity_gate",
+      "required_evidence": [
+        "sha256_sidecar",
+        "zip_test",
+        "required_path_manifest"
+      ],
+      "risk_ids": [
+        "MBSEC-002",
+        "MBSEC-003"
+      ]
+    },
+    {
+      "decision": "BLOCK_IF_ABSOLUTE_PARENT_TRAVERSAL_DUPLICATE_CRITICAL_OR_SYMLINK_AMBIGUITY",
+      "gate_id": "MBSEC-GATE-003",
+      "name": "archive_safety_gate",
+      "required_evidence": [
+        "unsafe_path_scan",
+        "duplicate_scan",
+        "critical_path_scan"
+      ],
+      "risk_ids": [
+        "MBSEC-003"
+      ]
+    },
+    {
+      "decision": "BLOCK_IF_STAGE_SCOPE_TIMEOUT_OR_MUTATION_TARGET_UNDECLARED",
+      "gate_id": "MBSEC-GATE-004",
+      "name": "excessive_agency_stage_scope_gate",
+      "required_evidence": [
+        "stage_name",
+        "allowed_mutations",
+        "timeout_budget",
+        "stop_condition"
+      ],
+      "risk_ids": [
+        "MBSEC-004",
+        "MBSEC-006"
+      ]
+    },
+    {
+      "decision": "BLOCK_IF_GENERATED_COMMAND_UNBOUNDED_OR_UNQUOTED_DANGEROUS_PATH",
+      "gate_id": "MBSEC-GATE-005",
+      "name": "output_handling_shell_gate",
+      "required_evidence": [
+        "command_preview",
+        "bounded_timeout",
+        "target_paths"
+      ],
+      "risk_ids": [
+        "MBSEC-005"
+      ]
+    },
+    {
+      "decision": "BLOCK_IF_SUCCESS_WITHOUT_RECEIPT_HANDOFF_TRACE_AND_VALIDATION",
+      "gate_id": "MBSEC-GATE-006",
+      "name": "receipt_trace_provenance_gate",
+      "required_evidence": [
+        "receipt",
+        "handoff",
+        "trace_span",
+        "validation_report"
+      ],
+      "risk_ids": [
+        "MBSEC-002",
+        "MBSEC-007"
+      ]
+    },
+    {
+      "decision": "QUARANTINE_IF_SECRET_PATTERN_OR_PRIVATE_DATA_IN_EXPORT",
+      "gate_id": "MBSEC-GATE-007",
+      "name": "sensitive_artifact_export_gate",
+      "required_evidence": [
+        "secret_scan_summary",
+        "redaction_decision",
+        "export_manifest"
+      ],
+      "risk_ids": [
+        "MBSEC-008"
+      ]
+    },
+    {
+      "decision": "BLOCK_IF_ANY_FIXTURE_EXPECTED_BLOCK_IS_ALLOWED",
+      "gate_id": "MBSEC-GATE-008",
+      "name": "prompt_injection_fixture_gate",
+      "required_evidence": [
+        "fixture_id",
+        "attack_class",
+        "expected_decision",
+        "actual_decision"
+      ],
+      "risk_ids": [
+        "MBSEC-001",
+        "MBSEC-004",
+        "MBSEC-005"
+      ]
+    }
+  ],
+  "status": "ADVISORY_ENFORCEMENT_GATES_INSTALLED_STAGE2"
+}

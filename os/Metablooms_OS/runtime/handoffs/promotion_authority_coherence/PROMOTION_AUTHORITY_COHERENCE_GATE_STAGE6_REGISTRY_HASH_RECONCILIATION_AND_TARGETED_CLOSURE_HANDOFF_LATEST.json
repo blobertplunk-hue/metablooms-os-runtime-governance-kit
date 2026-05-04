@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-05-02T21:19:38.654025+00:00",
+  "from_stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE6_REGISTRY_HASH_RECONCILIATION_AND_TARGETED_CLOSURE",
+  "latest_receipt": "/mnt/data/Metablooms_OS/runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE6_REGISTRY_HASH_RECONCILIATION_AND_TARGETED_CLOSURE_20260502T211727Z/STAGE_RECEIPT.json",
+  "next_stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE7_FULL_EXPORT_AND_NEW_CHAT_REPLAY_LOCK",
+  "required_next_checks": [
+    "export complete OS bundle",
+    "verify exported ZIP self-consistency",
+    "run fresh-chat boot replay from exported bundle",
+    "only then update current authority pointer/baseline lock"
+  ],
+  "result_hash": "aac2d0acd9c8e618129edeb48a87f6890a4a2874ecd32447639b951c1f7ad51e",
+  "root": "/mnt/data/Metablooms_OS",
+  "schema_version": "metablooms.stage_handoff.v1",
+  "status": "READY_FOR_STAGE7_FULL_EXPORT",
+  "summary": "Stage 6 closed PAC/scatter registry and hash defects without promoting a new full authority export."
+}

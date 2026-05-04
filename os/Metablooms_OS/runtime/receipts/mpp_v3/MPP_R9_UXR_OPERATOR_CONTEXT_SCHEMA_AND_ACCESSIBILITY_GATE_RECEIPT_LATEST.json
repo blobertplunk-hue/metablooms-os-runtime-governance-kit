@@ -1,0 +1,73 @@
+{
+  "artifacts_written": [],
+  "next_stage": "MPP_R10_NUF_NONFUNCTIONAL_REQUIREMENTS_SCHEMA_AND_BUDGET_GATE",
+  "predecessor_verification": {
+    "r8": {
+      "actual_sha256": "618356f1a0123cf88ace49aa426ebb314af57487e616f53c4a71464cb31a090b",
+      "checksum_match": true,
+      "exists": true,
+      "sha_sidecar_exists": true,
+      "sidecar_sha256": "618356f1a0123cf88ace49aa426ebb314af57487e616f53c4a71464cb31a090b",
+      "zip": "/mnt/data/MPP_R8_ADS_ARCHITECTURE_DAG_SCHEMA_AND_OWNERSHIP_GATE_20260501T000300Z.zip",
+      "zip_testzip": null
+    }
+  },
+  "research_sources": [
+    {
+      "ref": "turn198986search2",
+      "source": "W3C WCAG 2.2 Guidelines"
+    },
+    {
+      "ref": "turn198986search5",
+      "source": "W3C What's New in WCAG 2.2"
+    }
+  ],
+  "root": "/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z",
+  "root_probe": {
+    "/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z": {
+      "exists": true,
+      "is_dir": true,
+      "writable": true
+    }
+  },
+  "stage_id": "MPP_R9_UXR_OPERATOR_CONTEXT_SCHEMA_AND_ACCESSIBILITY_GATE",
+  "status": "PASS",
+  "tests": [
+    {
+      "cmd": "/opt/pyvenv/bin/python -m py_compile /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_uxr_operator_context_accessibility_gate_v1.py",
+      "expected": 0,
+      "returncode": 0,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.",
+      "stdout": ""
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_uxr_operator_context_accessibility_gate_v1.py --validate /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/tests/fixtures/mpp_v3/valid_uxr_operator_context_packet_v1.json",
+      "expected": 0,
+      "returncode": 0,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.",
+      "stdout": "{\"packet_id\": \"UXR-20260430T223351Z\", \"result_hash\": \"ac8d5ec5a190d9a4cdd71a7b0934b35b0ac64ff80ba885606a0cba3eb690251a\", \"status\": \"PASS\"}"
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_uxr_operator_context_accessibility_gate_v1.py --gate /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/tests/fixtures/mpp_v3/valid_uxr_operator_context_packet_v1.json",
+      "expected": 0,
+      "returncode": 0,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.",
+      "stdout": "{\"coverage\": {\"blocking_accessibility_requirements\": 4, \"platforms\": [\"ChatGPT mobile app / phone\", \"iPad / touch classroom use\"], \"wcag_2_2_core_present\": [\"2.1.1 Keyboard\", \"2.4.11 Focus Not Obscured\", \"2.5.7 Dragging Movements\", \"2.5.8 Target Size\", \"3.2.6 Consistent Help\", \"3.3.7 Redundant Entry\"], \"wcag_2_2_core_required\": [\"2.1.1 Keyboard\", \"2.4.11 Focus Not Obscured\", \"2.5.7 Dragging Movements\", \"2.5.8 Target Size\", \"3.2.6 Consistent Help\", \"3.3.7 Redundant Entry\"]}, \"created_at\": \"2026-04-30T22:34:19.001471+00:00\", \"gate_id\": \"UXR-GATE-20260430T223419Z\", \"packet_id\": \"UXR-20260430T223351Z\", \"result_hash\": \"3d862f6642920470d3f4c2e54432febb028bcf4971f795739ed73dc5935753f3\", \"schema_version\": \"mpp.uxr_accessibility_gate_result.v1\", \"stage\": \"UXR_ACCESSIBILITY_GATE\", \"verdict\": \"PASS\", \"violations\": [], \"warnings\": []}"
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_uxr_operator_context_accessibility_gate_v1.py --gate /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/tests/fixtures/mpp_v3/invalid_uxr_missing_wcag_core_packet_v1.json",
+      "expected": 1,
+      "returncode": 1,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.",
+      "stdout": "{\"coverage\": {\"blocking_accessibility_requirements\": 3, \"platforms\": [\"ChatGPT mobile app / phone\", \"iPad / touch classroom use\"], \"wcag_2_2_core_present\": [\"2.1.1 Keyboard\", \"2.4.11 Focus Not Obscured\", \"2.5.7 Dragging Movements\", \"3.2.6 Consistent Help\", \"3.3.7 Redundant Entry\"], \"wcag_2_2_core_required\": [\"2.1.1 Keyboard\", \"2.4.11 Focus Not Obscured\", \"2.5.7 Dragging Movements\", \"2.5.8 Target Size\", \"3.2.6 Consistent Help\", \"3.3.7 Redundant Entry\"]}, \"created_at\": \"2026-04-30T22:34:28.384590+00:00\", \"gate_id\": \"UXR-GATE-20260430T223428Z\", \"packet_id\": \"UXR-BAD-MISSING-WCAG\", \"result_hash\": \"25dbec836f042d075ffbaeec7939cd95e0d5c286eb41bfb9d9b51673df570a87\", \"schema_version\": \"mpp.uxr_accessibility_gate_result.v1\", \"stage\": \"UXR_ACCESSIBILITY_GATE\", \"verdict\": \"FAIL\", \"violations\": [\"UXR_MISSING_WCAG_2_2_CORE_2.5.8_Target_Size\"], \"warnings\": []}"
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_uxr_operator_context_accessibility_gate_v1.py --gate /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/tests/fixtures/mpp_v3/invalid_uxr_no_blocking_accessibility_packet_v1.json",
+      "expected": 1,
+      "returncode": 1,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.",
+      "stdout": "{\"coverage\": {\"blocking_accessibility_requirements\": 0, \"platforms\": [\"ChatGPT mobile app / phone\", \"iPad / touch classroom use\"], \"wcag_2_2_core_present\": [\"2.1.1 Keyboard\", \"2.4.11 Focus Not Obscured\", \"2.5.7 Dragging Movements\", \"2.5.8 Target Size\", \"3.2.6 Consistent Help\", \"3.3.7 Redundant Entry\"], \"wcag_2_2_core_required\": [\"2.1.1 Keyboard\", \"2.4.11 Focus Not Obscured\", \"2.5.7 Dragging Movements\", \"2.5.8 Target Size\", \"3.2.6 Consistent Help\", \"3.3.7 Redundant Entry\"]}, \"created_at\": \"2026-04-30T22:34:36.966800+00:00\", \"gate_id\": \"UXR-GATE-20260430T223436Z\", \"packet_id\": \"UXR-BAD-NO-BLOCK\", \"result_hash\": \"65d53e370fb5cfc150c0519fce0b676697987fde8539c23abf7adb32f508666c\", \"schema_version\": \"mpp.uxr_accessibility_gate_result.v1\", \"stage\": \"UXR_ACCESSIBILITY_GATE\", \"verdict\": \"FAIL\", \"violations\": [\"UXR_NO_BLOCKING_ACCESSIBILITY_REQUIREMENT\"], \"warnings\": []}"
+    }
+  ],
+  "timestamp": "20260501T001700Z"
+}

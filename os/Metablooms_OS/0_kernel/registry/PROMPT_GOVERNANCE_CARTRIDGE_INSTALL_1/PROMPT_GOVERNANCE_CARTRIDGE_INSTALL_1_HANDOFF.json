@@ -1,0 +1,10 @@
+{
+  "constraints": [
+    "do not broaden until fresh extract validates",
+    "then reduce anti-scatter threshold and reconcile historical unregistered controlled files"
+  ],
+  "continuation_prompt": "Continue from the prompt-governance repaired OS bundle. Load PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_1 receipt/handoff. Run exactly one bounded stage: fresh-chat rehearsal and anti-scatter cleanup plan, without broad refactor.",
+  "done": true,
+  "next_recommended_stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_2_FRESH_CHAT_REHEARSAL_AND_SCATTER_CLEANUP",
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_1"
+}

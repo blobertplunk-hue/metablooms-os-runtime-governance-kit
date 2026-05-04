@@ -1,0 +1,9 @@
+{
+  "schema_version": "v1",
+  "provenance": "RECONSTRUCTED_FROM_CHAT_SUMMARY_AND_BASE_AUTHORITY_20260503",
+  "required_exit_artifacts": [
+    "runtime/state/NEXT_STAGE_COPY_PROMPT.md",
+    "runtime/state/NEXT_STAGE_COPY_PROMPT.json"
+  ],
+  "purpose": "Reduce operator cognitive load and prevent missing next-stage boot instructions."
+}

@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-04-28T03:03:02.161965+00:00",
+  "decision_id": "R6_EVIDENCE_BOUND_EXTERNAL_REUSE_SCAN_GATE-9ae29d49904b9f4e",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"created_utc\": \"2026-04-28T03:03:02.161965+00:00\", \"decision_log\": \"/mnt/data/Metablooms_OS/runtime/governance/decision_logs/DECISION_LOG_R6_20260428T030301Z.json\", \"fixtures\": [\"/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/fixtures/R6_external_reuse_scan_request_valid.json\", \"/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/fixtures/R6_external_reuse_scan_request_missing_evidence.json\", \"/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/fixtures/R6_external_reuse_scan_request_stale.json\"], \"handoff\": \"/mnt/data/Metablooms_OS/receipts/refactor_program/R6_HANDOFF_20260428T030301Z.json\", \"legacy_archives\": [\"/mnt/data/Metablooms_OS/runtime/governance/legacy_archives/R6_external_reuse_scan_gate/p0a_external_reuse_scan_precheck_v1.legacy.py\", \"/mnt/data/Metablooms_OS/runtime/governance/legacy_archives/R6_external_reuse_scan_gate/COOL_5_EXTERNAL_REUSE_SCAN_GATE_SCHEMA_v1.legacy.json\"], \"next_stage\": \"R7_USEFULNESS_VALIDATOR_PROMOTION\", \"promoted_files\": [\"/mnt/data/Metablooms_OS/0_kernel/scripts/p0a_external_reuse_scan_precheck_v1.py\", \"/mnt/data/Metablooms_OS/runtime/governance/schemas/external_reuse_scan_gate_schema_v1.json\"], \"receipt_type\": \"R6_EXTERNAL_REUSE_SCAN_GATE_RECEIPT\", \"registry_updated\": true, \"reports\": {\"missing\": \"/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R6_external_reuse_scan_missing_20260428T030301Z.json\", \"registry\": \"/mnt/data/Metablooms_OS/runtime/evals/govern",
+  "reasons": [],
+  "record_id": "R6_EXTERNAL_REUSE_SCAN_GATE_RECEIPT_20260428T030301Z",
+  "record_kind": "stage_receipt",
+  "result": "pass",
+  "source_record": {
+    "path": "receipts/refactor_program/R6_EXTERNAL_REUSE_SCAN_GATE_RECEIPT_20260428T030301Z.json",
+    "sha256": "9ae29d49904b9f4e95e7c141c4f7254bbc130a4b417308d435a866409ef12344",
+    "size_bytes": 2137
+  },
+  "span_id": "0e29146f56537835",
+  "stage_id": "R6_EVIDENCE_BOUND_EXTERNAL_REUSE_SCAN_GATE",
+  "summary": "Canonical wrapper for R6_EXTERNAL_REUSE_SCAN_GATE_RECEIPT_20260428T030301Z.json",
+  "trace_id": "0eaf26c4ccdbb9afc7321e60c3d9109a"
+}

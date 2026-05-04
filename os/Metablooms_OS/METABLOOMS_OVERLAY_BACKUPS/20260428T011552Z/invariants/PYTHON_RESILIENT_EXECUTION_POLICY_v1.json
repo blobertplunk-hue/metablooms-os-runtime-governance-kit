@@ -1,0 +1,75 @@
+{
+  "id": "PYTHON_RESILIENT_EXECUTION_POLICY_v1",
+  "status": "active",
+  "gate": "PYTHON_RESILIENT_EXECUTION_GATE",
+  "description": "Runtime-enforced execution policy for operating near full capacity when normal Python is unstable: shell/coreutils first, jq/node second, python3 -S bounded third, normal Python quarantined.",
+  "failure_action": "DENY_GOVERNED_STAGE_UNLESS_POLICY_CONTEXT_PRESENT",
+  "activation_requirements": [
+    "positive test must ALLOW",
+    "negative test must DENY",
+    "promotion receipt must be written",
+    "active status only after test proof"
+  ],
+  "source_request": {
+    "id": "PYTHON_RESILIENT_EXECUTION_POLICY_v1",
+    "governance_text": "Runtime-enforced execution policy for operating near full capacity when normal Python is unstable: shell/coreutils first, jq/node second, python3 -S bounded third, normal Python quarantined.",
+    "target_gate": "PYTHON_RESILIENT_EXECUTION_GATE",
+    "failure_action": "DENY_GOVERNED_STAGE_UNLESS_POLICY_CONTEXT_PRESENT"
+  },
+  "policy_hard_rules": [
+    "tool probe before each governed stage",
+    "normal python requires timeout and cannot be only verifier",
+    "filesystem/archive work defaults to shell/coreutils",
+    "json validation defaults to jq or node before python",
+    "large recursive jobs must be chunked and receipted",
+    "failure must switch lanes rather than repeat same failing tool",
+    "full OS exports must pass FULL_OS_PORTABLE_EXPORT_MUST_INCLUDE_BASELINE_v1"
+  ],
+  "lane_order": [
+    {
+      "rank": 1,
+      "name": "shell_coreutils",
+      "uses": [
+        "find",
+        "sort",
+        "comm",
+        "diff",
+        "grep",
+        "sed",
+        "awk",
+        "sha256sum",
+        "zip",
+        "unzip",
+        "tar"
+      ]
+    },
+    {
+      "rank": 2,
+      "name": "jq_node",
+      "uses": [
+        "jq",
+        "node"
+      ]
+    },
+    {
+      "rank": 3,
+      "name": "python3_dash_S_stdlib",
+      "uses": [
+        "json",
+        "hashlib",
+        "zipfile",
+        "pathlib"
+      ],
+      "timeout_required": true
+    },
+    {
+      "rank": 4,
+      "name": "normal_python_quarantine",
+      "timeout_required": true,
+      "allowed_only_if": "external_package_required"
+    }
+  ],
+  "source_policy_path": "runtime/governance/PYTHON_RESILIENT_EXECUTION_POLICY_v1.json",
+  "gpc_promotion_status": "ACTIVE",
+  "gpc_promotion_result_path": "/mnt/data/PROMOTE_PY_RESILIENCE_POLICY_GPC_REPAIR_20260427T110426Z/GPC_POLICY_PROMOTION_ACTIVE_RESULT.json"
+}

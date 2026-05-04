@@ -1,0 +1,9 @@
+{
+  "artifact_type": "STAGE_HANDOFF.v1",
+  "created_utc": "20260502T174908Z",
+  "next_recommended_stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING",
+  "operator_action": "Use LIVE_BOOT_GUIDANCE_LATEST.md for current boot steps; use historical quarantine index only for provenance searches.",
+  "resume_from": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS",
+  "verdict": "FAIL"
+}

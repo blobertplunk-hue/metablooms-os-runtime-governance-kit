@@ -1,0 +1,5 @@
+valid_mmd_gap_ledger_pass_v1.json {"blocking_open": [], "critical_open_count": 0, "ledger_id": "MMD-20260430T220345Z", "status": "PASS", "verdict": "PASS"}
+valid_mmd_gap_ledger_warn_v1.json {"blocking_open": [], "critical_open_count": 0, "ledger_id": "MMD-20260430T220345Z", "status": "PASS", "verdict": "PASS_WITH_WARNINGS"}
+valid_mmd_gap_ledger_blocked_v1.json {"blocking_open": ["GAP-001"], "critical_open_count": 1, "ledger_id": "MMD-20260430T220345Z", "status": "PASS", "verdict": "BLOCKED"}
+invalid_mmd_gap_ledger_unblocked_critical_v1.json BLOCKED MMD_ESCALATION_NOT_BLOCKED
+py_compile PASS

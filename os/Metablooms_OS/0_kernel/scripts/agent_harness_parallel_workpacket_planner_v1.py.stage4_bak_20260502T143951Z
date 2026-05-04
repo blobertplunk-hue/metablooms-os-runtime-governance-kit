@@ -1,0 +1,65 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+import argparse, json, time, hashlib
+from pathlib import Path
+
+def now(): return time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())
+def h(s): return hashlib.sha256(s.encode()).hexdigest()[:16]
+def root():
+    p=Path(__file__).resolve()
+    for q in [p.parent,*p.parents]:
+        if (q/'boot_manifest_v1.json').exists() and (q/'0_kernel').exists(): return q
+    return Path.cwd()
+def wj(p,o): p.parent.mkdir(parents=True,exist_ok=True); p.write_text(json.dumps(o,indent=2,sort_keys=True)+'\n'); return str(p)
+def aj(p,o): p.parent.mkdir(parents=True,exist_ok=True); p.open('a',encoding='utf-8').write(json.dumps(o,sort_keys=True)+'\n'); return str(p)
+def load(p): return json.loads(Path(p).read_text(encoding='utf-8'))
+def overlaps(a,b):
+    def norm(x): return str(x).strip('/ ')
+    aa=[norm(x) for x in a]; bb=[norm(x) for x in b]
+    for x in aa:
+        for y in bb:
+            if x==y or x.startswith(y.rstrip('/')+'/') or y.startswith(x.rstrip('/')+'/'):
+                return True
+    return False
+
+def make_packets(spec, stage):
+    packets=[]; tid='stage::'+stage; cid=h(stage+'|parallel_workpackets')
+    parallel_sets=[set(g) for g in spec['stage_graph'].get('parallelizable_groups',[])]
+    for node in spec['stage_graph']['nodes']:
+        group='serial'
+        for i,g in enumerate(parallel_sets, start=1):
+            if node['id'] in g: group='parallel_group_'+str(i)
+        packets.append({
+            'workpacket_id':'WP-'+node['id'].upper()+'-'+h(stage+node['id']),
+            'stage_name':stage,
+            'role':node['role'],
+            'node_id':node['id'],
+            'thread_id':tid,
+            'checkpoint_id':cid,
+            'parallel_group':group,
+            'input_artifacts':[],
+            'output_artifacts':node.get('writes',[]),
+            'write_scope':node.get('writes',[]),
+            'gates':node.get('required_gates',[]),
+            'status':'READY',
+            'diff_review_required': node['role'] in ('implementation_agent','validation_agent','adversarial_auditor','export_promotion_agent')
+        })
+    conflicts=[]
+    for i,a in enumerate(packets):
+        for b in packets[i+1:]:
+            if a['parallel_group'] != 'serial' and a['parallel_group'] == b['parallel_group'] and overlaps(a['write_scope'], b['write_scope']):
+                conflicts.append({'parallel_group':a['parallel_group'],'workpackets':[a['workpacket_id'],b['workpacket_id']],'shared_scope':[x for x in a['write_scope'] if x in b['write_scope']]})
+    return packets, conflicts
+
+def main(argv=None):
+    pa=argparse.ArgumentParser(); pa.add_argument('--stage',default='IMPLEMENT_AGENT_HARNESS_STAGE_2_PARALLEL_WORKPACKETS_AND_DIFF_REVIEW'); pa.add_argument('--write-plan',action='store_true'); pa.add_argument('--parallel-plan',action='store_true'); pa.add_argument('--json',action='store_true'); a=pa.parse_args(argv)
+    r=root(); spec_path=r/'0_kernel/registry/agent_harness/MB_AGENT_HARNESS_STAGE_GRAPH_SPEC_v2.json'
+    if not spec_path.exists(): spec_path=r/'0_kernel/registry/agent_harness/MB_AGENT_HARNESS_STAGE_GRAPH_SPEC_v1.json'
+    spec=load(spec_path); packets, conflicts=make_packets(spec,a.stage)
+    plan={'artifact_type':'AGENT_HARNESS_STAGE2_PARALLEL_WORKPACKET_PLAN_v1','created_utc':now(),'verdict':'AGENT_HARNESS_PARALLEL_PLAN_READY' if not conflicts else 'AGENT_HARNESS_PARALLEL_PLAN_CONFLICT','stage_name':a.stage,'thread_id':'stage::'+a.stage,'checkpoint_id':h(a.stage+'|parallel_workpackets'),'workpacket_count':len(packets),'parallel_groups':spec['stage_graph'].get('parallelizable_groups',[]),'serialization_points':spec['stage_graph'].get('serialization_points',[]),'conflicts':conflicts,'workpackets':packets}
+    plan_path=r/'runtime/agent_harness/AGENT_HARNESS_STAGE2_PARALLEL_WORKPACKET_PLAN_LATEST.json'
+    if a.write_plan: wj(plan_path, plan)
+    aj(r/'runtime/traces/agent_harness/TRACE_SPAN_LEDGER_AGENT_HARNESS_STAGE2.jsonl',{'schema_version':'MB_TRACE_SPAN_LEDGER_SPEC_v2','trace_id':h(a.stage),'span_id':h(a.stage+'stage2planner'+now()),'parent_span_id':None,'name':'agent_harness.stage2.parallel_plan','stage_name':a.stage,'event':'end','status':'OK' if not conflicts else 'WARN','timestamp_utc':now(),'attributes':{'workpacket_count':len(packets),'conflict_count':len(conflicts),'plan_path':str(plan_path) if a.write_plan else None}})
+    print(json.dumps(plan,indent=2,sort_keys=True) if a.json else plan['verdict'])
+    return 0 if not conflicts else 4
+if __name__=='__main__': raise SystemExit(main())

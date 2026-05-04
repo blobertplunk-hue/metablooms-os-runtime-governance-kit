@@ -1,0 +1,248 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/FIR_FITNESS_INTEGRATION_PACKET_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "created_at": {
+      "minLength": 10,
+      "type": "string"
+    },
+    "fitness_checks": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "check_id": {
+            "pattern": "^FIR-CHECK-[0-9]{3}$",
+            "type": "string"
+          },
+          "description": {
+            "minLength": 8,
+            "type": "string"
+          },
+          "dimension": {
+            "type": "string"
+          },
+          "evidence_refs": {
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "metric": {
+            "minLength": 3,
+            "type": "string"
+          },
+          "observed": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "score": {
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          },
+          "status": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "WARN"
+            ],
+            "type": "string"
+          },
+          "threshold": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "check_id",
+          "dimension",
+          "description",
+          "metric",
+          "observed",
+          "threshold",
+          "score",
+          "status",
+          "evidence_refs"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "fitness_dimensions": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "blocking": {
+            "type": "boolean"
+          },
+          "dimension_id": {
+            "pattern": "^FIR-DIM-[0-9]{3}$",
+            "type": "string"
+          },
+          "minimum_score": {
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          },
+          "name": {
+            "enum": [
+              "artifact_integrity",
+              "schema_compliance",
+              "test_pass_rate",
+              "regression_coverage",
+              "recovery_readiness",
+              "trace_health",
+              "reasoning_quality",
+              "operator_fit",
+              "delivery_stability"
+            ],
+            "type": "string"
+          },
+          "weight": {
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          }
+        },
+        "required": [
+          "dimension_id",
+          "name",
+          "weight",
+          "minimum_score",
+          "blocking"
+        ],
+        "type": "object"
+      },
+      "minItems": 5,
+      "type": "array"
+    },
+    "integration_evidence": {
+      "additionalProperties": false,
+      "properties": {
+        "hard_blocks": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "predecessor_stages": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "required_bundles_verified": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "required_gates_passed": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "predecessor_stages",
+        "required_bundles_verified",
+        "required_gates_passed",
+        "hard_blocks"
+      ],
+      "type": "object"
+    },
+    "objective_id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "packet_id": {
+      "minLength": 8,
+      "type": "string"
+    },
+    "promotion_decision": {
+      "enum": [
+        "PROMOTE_TO_MONITOR",
+        "BLOCK",
+        "REPAIR_REQUIRED"
+      ],
+      "type": "string"
+    },
+    "result_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "mpp.fir_fitness_integration_packet.v1"
+    },
+    "score_summary": {
+      "additionalProperties": false,
+      "properties": {
+        "blocking_failures": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "failed_checks": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "minimum_promotion_score": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "pass_checks": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "warn_checks": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "weighted_score": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        }
+      },
+      "required": [
+        "weighted_score",
+        "blocking_failures",
+        "failed_checks",
+        "warn_checks",
+        "pass_checks",
+        "minimum_promotion_score"
+      ],
+      "type": "object"
+    },
+    "source_ecl_packet_id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "stage": {
+      "const": "FIR_STAGE"
+    }
+  },
+  "required": [
+    "schema_version",
+    "packet_id",
+    "stage",
+    "created_at",
+    "objective_id",
+    "source_ecl_packet_id",
+    "fitness_dimensions",
+    "fitness_checks",
+    "integration_evidence",
+    "score_summary",
+    "promotion_decision",
+    "result_hash"
+  ],
+  "title": "MPP v3 FIR Fitness Integration Packet",
+  "type": "object"
+}

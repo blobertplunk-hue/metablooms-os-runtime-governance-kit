@@ -1,0 +1,17 @@
+{
+  "artifact_type": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE1_RECEIPT_v1",
+  "created_utc": "20260501T121800Z",
+  "fail_closed": "Trace summaries are non-authoritative unless raw JSONL and receipt/handoff validate.",
+  "implemented": [
+    "canonical_jsonl_trace_span_ledger",
+    "trace_schema_v2",
+    "mb_trace_filters_and_summary_write",
+    "stage1_validator",
+    "observability_docs",
+    "cartridge_registry_binding"
+  ],
+  "source_authority_zip": "/mnt/data/METABLOOMS_OS_UX_OPERATOR_SURFACE_STAGE4_EXECUTOR_TRACE_LEDGER_20260501T115500Z.zip",
+  "stage": "IMPLEMENT_OBSERVABILITY_TRACE_SPAN_LEDGER_CARTRIDGE_STAGE_1",
+  "trace_id": "eb5cbbf3fbb6178a91aa2891ad37e0b1",
+  "verdict": "PASS"
+}

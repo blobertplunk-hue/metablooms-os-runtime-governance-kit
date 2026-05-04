@@ -1,0 +1,9 @@
+{
+  "artifact_type": "STAGE_HANDOFF.v1",
+  "created_utc": "20260502T180900Z",
+  "next_recommended_stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE12_TRACE_QUERY_PACKET_AND_SEARCHABLE_EVIDENCE_INDEX",
+  "operator_surface": "OPEN_OPERATOR_VISUAL_TRACKER.html",
+  "resume_from": "/mnt/data/Metablooms_OS",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS",
+  "verdict": "FAIL"
+}

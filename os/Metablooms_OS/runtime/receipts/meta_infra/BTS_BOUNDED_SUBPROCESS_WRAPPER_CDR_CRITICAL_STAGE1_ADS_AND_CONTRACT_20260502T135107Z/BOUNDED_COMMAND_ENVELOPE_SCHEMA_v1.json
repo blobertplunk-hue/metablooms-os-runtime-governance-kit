@@ -1,0 +1,193 @@
+{
+  "$id": "metablooms://schemas/BoundedCommandEnvelope.v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "allowed_roots": {
+      "items": {
+        "maxLength": 4096,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 8,
+      "minItems": 1,
+      "type": "array"
+    },
+    "argv": {
+      "items": {
+        "maxLength": 4096,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 64,
+      "minItems": 1,
+      "type": "array"
+    },
+    "capture": {
+      "additionalProperties": false,
+      "properties": {
+        "stderr_max_bytes": {
+          "maximum": 1048576,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "stdin_mode": {
+          "enum": [
+            "none",
+            "bytes",
+            "text"
+          ]
+        },
+        "stdout_max_bytes": {
+          "maximum": 1048576,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "stdout_max_bytes",
+        "stderr_max_bytes",
+        "stdin_mode"
+      ],
+      "type": "object"
+    },
+    "cwd": {
+      "maxLength": 4096,
+      "minLength": 1,
+      "type": "string"
+    },
+    "env_overlay": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "operation_id": {
+      "maxLength": 160,
+      "minLength": 3,
+      "pattern": "^[A-Za-z0-9_.:-]+$",
+      "type": "string"
+    },
+    "policy": {
+      "additionalProperties": false,
+      "properties": {
+        "argument_policy": {
+          "enum": [
+            "strict_allowlist",
+            "path_safe_allowlist",
+            "fixed_argv_only"
+          ]
+        },
+        "command_policy_id": {
+          "type": "string"
+        },
+        "forbidden_methods_required": {
+          "const": true
+        },
+        "method_reliability_required": {
+          "const": true
+        }
+      },
+      "required": [
+        "command_policy_id",
+        "forbidden_methods_required",
+        "method_reliability_required",
+        "argument_policy"
+      ],
+      "type": "object"
+    },
+    "purpose": {
+      "maxLength": 500,
+      "minLength": 8,
+      "type": "string"
+    },
+    "retry": {
+      "additionalProperties": false,
+      "properties": {
+        "backoff_sec": {
+          "maximum": 5,
+          "minimum": 0,
+          "type": "number"
+        },
+        "max_attempts": {
+          "maximum": 3,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "retryable_result_classes": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 8,
+          "type": "array"
+        }
+      },
+      "required": [
+        "max_attempts",
+        "retryable_result_classes",
+        "backoff_sec"
+      ],
+      "type": "object"
+    },
+    "schema_version": {
+      "const": "BoundedCommandEnvelope.v1"
+    },
+    "shell": {
+      "default": false,
+      "type": "boolean"
+    },
+    "shell_exception_token": {
+      "maxLength": 220,
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "stage_id": {
+      "maxLength": 220,
+      "minLength": 3,
+      "type": "string"
+    },
+    "timeout": {
+      "additionalProperties": false,
+      "properties": {
+        "kill_grace_sec": {
+          "maximum": 5,
+          "minimum": 0,
+          "type": "number"
+        },
+        "per_attempt_sec": {
+          "exclusiveMinimum": 0,
+          "maximum": 30,
+          "type": "number"
+        },
+        "total_sec": {
+          "exclusiveMinimum": 0,
+          "maximum": 30,
+          "type": "number"
+        }
+      },
+      "required": [
+        "per_attempt_sec",
+        "total_sec",
+        "kill_grace_sec"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "operation_id",
+    "stage_id",
+    "purpose",
+    "argv",
+    "cwd",
+    "allowed_roots",
+    "timeout",
+    "retry",
+    "capture",
+    "policy"
+  ],
+  "title": "BoundedCommandEnvelope.v1",
+  "type": "object"
+}

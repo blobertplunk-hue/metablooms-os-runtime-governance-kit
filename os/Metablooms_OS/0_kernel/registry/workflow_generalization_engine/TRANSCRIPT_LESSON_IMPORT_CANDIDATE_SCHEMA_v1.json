@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "artifact_id": "TRANSCRIPT_LESSON_IMPORT_CANDIDATE_SCHEMA_v1",
+  "type": "object",
+  "required": ["lesson_id", "source", "evidence", "baseline_comparison", "auto_include", "artifactization"],
+  "properties": {
+    "lesson_id": {"type": "string"},
+    "source": {"type": "object"},
+    "evidence": {
+      "type": "object",
+      "required": ["summary", "strength", "excerpt_count"],
+      "properties": {
+        "summary": {"type": "string"},
+        "strength": {"type": "number", "minimum": 0, "maximum": 1},
+        "excerpt_count": {"type": "integer", "minimum": 0}
+      }
+    },
+    "baseline_comparison": {
+      "type": "object",
+      "required": ["current_behavior", "proposed_behavior", "score_current", "score_candidate", "regression_flags"],
+      "properties": {
+        "current_behavior": {"type": "string"},
+        "proposed_behavior": {"type": "string"},
+        "score_current": {"type": "object"},
+        "score_candidate": {"type": "object"},
+        "regression_flags": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "auto_include": {"type": "array", "items": {"type": "string"}},
+    "artifactization": {"type": "object"},
+    "import_decision_hint": {"type": "string"}
+  }
+}

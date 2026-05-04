@@ -1,0 +1,14 @@
+{
+  "artifact_type": "METABLOOMS_IMPLEMENTED_SOURCE_MANIFEST_v1",
+  "created_utc": "20260502T135531Z",
+  "implementation_note": "Repaired before finalization so failure events are written before decision packets, preserving failure_event_path inside the packet.",
+  "source_files": [
+    {
+      "bytes": 18523,
+      "line_count": 384,
+      "path": "/mnt/data/Metablooms_OS/0_kernel/lib/execution/bounded_subprocess_wrapper_v1.py",
+      "sha256": "1303f3ee59f478a3f61d69e82b817668c30afe6aac2476b667fa9080c69b821f"
+    }
+  ],
+  "stage_id": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES"
+}

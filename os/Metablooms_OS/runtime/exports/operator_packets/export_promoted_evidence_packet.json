@@ -1,0 +1,48 @@
+{
+  "artifact_bindings": [
+    {
+      "exists": true,
+      "path": "runtime/traces/observability/PINNED_EVIDENCE_EXPORT_BINDING_LATEST.json",
+      "sha256": "f28ddfa3b40d64c20770ea43e45775293ba903db4b42229915171482149eba23",
+      "size_bytes": 1671
+    },
+    {
+      "exists": true,
+      "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_INDEX_LATEST.json",
+      "sha256": "450c16c88f11ff6b95c2ffe8140b5dd33c3c365c56643da1ff8f36e7fac43498",
+      "size_bytes": 13641
+    },
+    {
+      "exists": true,
+      "path": "runtime/receipts/pinned_evidence/PINNED_EVIDENCE_RECEIPT_LATEST.json",
+      "sha256": "a7e1839df938c5f0e87a5fe15f1eb2af2d8b278c27ba0647716a47c05505cd2d",
+      "size_bytes": 2329
+    },
+    {
+      "exists": true,
+      "path": "runtime/traces/observability/PROMOTED_EVIDENCE_RECOVERY_REPLAY_LATEST.json",
+      "sha256": "5f340a789eceda401b056d6515bcc37a55dfae587e0b39bf7c3517eef253fbba",
+      "size_bytes": 2757
+    },
+    {
+      "exists": true,
+      "path": "runtime/traces/observability/FAILURE_CLUSTER_REPORT_LATEST.json",
+      "sha256": "358dac3c020087f30d28923d69b21866e546281b75abaf9ef15440622abaa8e2",
+      "size_bytes": 4824
+    },
+    {
+      "exists": true,
+      "path": "runtime/state/operator_surface/VISUAL_TRACE_WATERFALL_LATEST.json",
+      "sha256": "2bb0a5a8439f692fa1abe4b7cae710e4773806db4f24cf812976e51622058b64",
+      "size_bytes": 33769
+    }
+  ],
+  "command_id": "export_promoted_evidence_packet",
+  "created_utc": "20260502T191943Z",
+  "issues": [],
+  "label": "Export promoted evidence packet",
+  "manifest_sha256": "6aaac26f0d457f3ee6c1d69afa5789d777542cd88603ce0b930281547e0933aa",
+  "packet_id": "export_promoted_evidence_packet",
+  "source_pack_id": "audit_promoted_evidence_recovery",
+  "verdict": "PASS"
+}

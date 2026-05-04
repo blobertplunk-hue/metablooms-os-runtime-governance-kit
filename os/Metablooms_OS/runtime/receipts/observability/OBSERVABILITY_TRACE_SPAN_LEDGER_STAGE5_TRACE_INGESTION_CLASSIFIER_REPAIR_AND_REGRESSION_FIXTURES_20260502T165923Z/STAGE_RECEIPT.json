@@ -1,0 +1,34 @@
+{
+  "artifact_type": "STAGE_RECEIPT.v1",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE5_TRACE_INGESTION_CLASSIFIER_REPAIR_AND_REGRESSION_FIXTURES",
+  "created_utc": "20260502T165945Z",
+  "verdict": "PASS",
+  "root": "/mnt/data/Metablooms_OS",
+  "root_cause": "Trace ingestion status inference used substring matching against long prose decision fields; prose containing words like failure was misclassified as ERROR.",
+  "changes": [
+    "Patched observability_boot_ingest_v1.py infer_status to use exact/prefix status parsing instead of substring matching.",
+    "Added MB_TRACE_INGESTION_CLASSIFIER_POLICY_v1.json.",
+    "Added Stage 5 regression fixtures for CE, SEE, DENY, FAIL, and issues/WARN behavior.",
+    "Added executable Stage 5 classifier repair validator.",
+    "Reran trace ingestion, causal tracker build, failure cluster router, and Stage 5 validator.",
+    "Patched Stage 4 validator compatibility so Stage 5 validated repair supersedes the old derived-packet cluster expectation."
+  ],
+  "validation": {
+    "stage5_validator": "PASS",
+    "fixture_count": 5,
+    "fixture_failures": 0,
+    "ledger_by_status_after_repair": {"OK": 217, "BLOCKED": 3},
+    "derived_packet_missing_status_contract_cluster_present": false,
+    "trace_ingestion_classifier_repair_route_present": false
+  },
+  "outputs": [
+    "0_kernel/scripts/observability_boot_ingest_v1.py",
+    "0_kernel/registry/observability/MB_TRACE_INGESTION_CLASSIFIER_POLICY_v1.json",
+    "0_kernel/validators/validate_observability_trace_span_ledger_stage5_classifier_repair_v1.py",
+    "runtime/fixtures/observability/trace_ingestion_classifier_stage5/",
+    "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE5_CLASSIFIER_REPAIR_VALIDATION_LATEST.json",
+    "runtime/traces/observability/FAILURE_CLUSTER_REPORT_LATEST.json",
+    "runtime/traces/observability/REPAIR_ROUTER_BINDING_LATEST.json",
+    "OPEN_OPERATOR_VISUAL_TRACKER.html"
+  ]
+}

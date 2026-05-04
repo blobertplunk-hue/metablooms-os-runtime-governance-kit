@@ -1,0 +1,15 @@
+{
+  "approval_token": "APPROVED_STAGE6M_FULL_AUTHORITY_EXPORT_AFTER_POST_TOOL_GATE",
+  "approved_at_utc": "2026-05-02T02:13:11.811279Z",
+  "approved_by": "user_stage_command",
+  "max_bytes_hard_cap": 200000000,
+  "max_files_hard_cap": 10000,
+  "requires_bts_wrapped_node_zip_profile": true,
+  "requires_delivery_guard": true,
+  "requires_fresh_extract_boot_proof": true,
+  "requires_post_tool_result_validation": true,
+  "schema": "MetaBloomsExplicitBudgetApproval_v1",
+  "scope": "Export full bootable OS authority ZIP after Stage6L post-tool gate integration using BTS-wrapped Node ZIP profile.",
+  "stage_id": "STAGE6M_FULL_AUTHORITY_EXPORT_AFTER_POST_TOOL_GATE",
+  "verdict": "APPROVED"
+}

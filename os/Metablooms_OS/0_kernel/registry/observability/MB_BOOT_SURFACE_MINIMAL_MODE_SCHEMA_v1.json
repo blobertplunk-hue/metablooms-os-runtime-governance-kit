@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "artifact_type": {
+      "const": "MB_BOOT_SURFACE_MINIMAL_MODE.v1"
+    },
+    "created_utc": {
+      "type": "string"
+    },
+    "deep_links": {
+      "type": "array"
+    },
+    "evidence_sources": {
+      "type": "array"
+    },
+    "minimal_mode": {
+      "type": "object"
+    },
+    "mobile_hardening": {
+      "type": "object"
+    },
+    "primary_action": {
+      "type": "object"
+    },
+    "stage_id": {
+      "const": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING"
+    },
+    "verdict": {
+      "enum": [
+        "PASS",
+        "FAIL"
+      ]
+    }
+  },
+  "required": [
+    "artifact_type",
+    "stage_id",
+    "verdict",
+    "created_utc",
+    "minimal_mode",
+    "mobile_hardening",
+    "primary_action",
+    "deep_links",
+    "evidence_sources"
+  ],
+  "title": "MB_BOOT_SURFACE_MINIMAL_MODE.v1",
+  "type": "object"
+}

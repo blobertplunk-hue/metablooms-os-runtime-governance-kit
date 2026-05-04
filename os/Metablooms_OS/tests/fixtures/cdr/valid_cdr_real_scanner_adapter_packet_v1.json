@@ -1,0 +1,105 @@
+{
+  "availability": [
+    {
+      "status": "UNAVAILABLE_WITH_FALLBACK",
+      "tool_id": "ruff"
+    },
+    {
+      "status": "UNAVAILABLE_WITH_FALLBACK",
+      "tool_id": "bandit"
+    },
+    {
+      "status": "UNAVAILABLE_WITH_FALLBACK",
+      "tool_id": "semgrep"
+    }
+  ],
+  "evidence": [
+    "Stage 9 fallback baseline exists",
+    "Official scanner profile research captured",
+    "No ungoverned package install performed"
+  ],
+  "fallback_baseline": {
+    "exists": true,
+    "path": "runtime/quality/cdr/CDR_LINT_SECURITY_BASELINE_LATEST.json",
+    "sha256": "9c4a70f165e4a5f02d1d971822fa62784eac3005d110f6a390b0a4dd9b4586a9"
+  },
+  "install_decision": {
+    "mode": "NOT_INSTALLED_PROFILE_ONLY",
+    "reason": "No real scanners available in sandbox; no package installation authorized in this stage."
+  },
+  "normalization_contract": {
+    "finding_severity_map": {
+      "bandit": "security",
+      "ruff": "lint",
+      "semgrep": "semantic_security"
+    },
+    "normalized_packet_path": "runtime/quality/cdr/scanner_normalized_packets/",
+    "raw_output_path": "runtime/quality/cdr/scanner_raw_outputs/",
+    "source_hash_binding": true
+  },
+  "scanner_profiles": [
+    {
+      "fail_closed_on": [
+        "syntax_error",
+        "fatal_scan_error",
+        "configuration_error",
+        "zero_tolerance_findings"
+      ],
+      "fallback": "stdlib_ast_baseline",
+      "outputs": [
+        "json findings",
+        "returncode"
+      ],
+      "safe_default_command": [
+        "ruff",
+        "check",
+        "--output-format",
+        "json",
+        "."
+      ],
+      "tool_id": "ruff"
+    },
+    {
+      "fail_closed_on": [
+        "fatal_scan_error",
+        "high_confidence_high_severity",
+        "zero_tolerance_findings"
+      ],
+      "fallback": "stdlib_ast_security_baseline",
+      "outputs": [
+        "json findings",
+        "returncode"
+      ],
+      "safe_default_command": [
+        "bandit",
+        "-r",
+        ".",
+        "-f",
+        "json"
+      ],
+      "tool_id": "bandit"
+    },
+    {
+      "fail_closed_on": [
+        "fatal_scan_error",
+        "invalid_target_code",
+        "zero_tolerance_findings"
+      ],
+      "fallback": "stdlib_ast_semgrep_profile_baseline",
+      "outputs": [
+        "json findings",
+        "returncode"
+      ],
+      "safe_default_command": [
+        "semgrep",
+        "scan",
+        "--config",
+        "auto",
+        "--json",
+        "."
+      ],
+      "tool_id": "semgrep"
+    }
+  ],
+  "stage": "CDR_STAGE10_REAL_SCANNER_ADAPTER_INSTALL_PROFILES_OR_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE9"
+}

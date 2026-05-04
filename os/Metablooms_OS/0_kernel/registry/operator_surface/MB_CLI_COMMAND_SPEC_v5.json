@@ -1,0 +1,33 @@
+{
+  "artifact_type": "MB_CLI_COMMAND_SPEC_v5",
+  "commands": {
+    "run-stage": {
+      "observability_requirement": "writes checkpointed work order; execution path must emit trace spans"
+    },
+    "trace": {
+      "flags": [
+        "--json",
+        "--limit",
+        "--stage",
+        "--status",
+        "--write-summary"
+      ],
+      "outputs": [
+        "records",
+        "summary",
+        "parse_errors",
+        "summary_path when requested"
+      ],
+      "summary": "render filtered trace/span ledger preview"
+    },
+    "verify": {
+      "requires": [
+        "MB_TRACE_SPAN_LEDGER_SPEC_v2",
+        "validate_observability_trace_span_ledger_stage1_v1.py",
+        "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE1.md"
+      ]
+    }
+  },
+  "compatibility": "Keeps Stage 4 trace command behavior while adding canonical observability ledger support.",
+  "created_utc": "20260501T121800Z"
+}

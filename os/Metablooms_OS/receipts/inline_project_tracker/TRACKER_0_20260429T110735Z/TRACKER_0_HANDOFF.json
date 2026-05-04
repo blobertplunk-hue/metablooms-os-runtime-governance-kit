@@ -1,0 +1,15 @@
+{
+  "handoff_id": "TRACKER_0_TO_TRACKER_1_20260429T110735Z",
+  "timestamp_utc": "20260429T110735Z",
+  "from_stage": "TRACKER-0 INLINE PROJECT TRACKER RESEARCH AND DESIGN LOCK",
+  "to_stage_authorized": "TRACKER-1 SCHEMA_AND_STATE_SEED",
+  "status": "READY_FOR_BOUNDED_IMPLEMENTATION_STAGE",
+  "root": "/mnt/data/Metablooms_OS",
+  "required_preconditions": [
+    "Load TRACKER_0 receipt and design artifacts.",
+    "Do not change renderer/enforcement scope without a new design-lock receipt.",
+    "Implement only schema and seed state in TRACKER-1.",
+    "Stop after writing receipt and handoff."
+  ],
+  "next_command": "Continue MetaBlooms from /mnt/data/Metablooms_OS. Load TRACKER-0 design-lock artifacts and handoff. Run exactly one bounded TRACKER-1 schema and state seed implementation stage: create TRACKER_STATE_SCHEMA_v1.json and initial TRACKER_STATE_v1.json, validate JSON/schema shape, write receipt and handoff, update bundle, and stop before renderer/gate implementation."
+}

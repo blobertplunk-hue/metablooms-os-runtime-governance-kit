@@ -1,0 +1,13 @@
+{
+  "accuracy": 1.0,
+  "decisions_covered": [
+    "BLOCK",
+    "PASS",
+    "WARN"
+  ],
+  "false_pass_count": 0,
+  "fixture_count": 16,
+  "overall_score": 1.0,
+  "promotion_decision": "PROMOTE",
+  "schema_version": "EDUCATION_VALIDITY_STAGE2_SCORECARD_v1"
+}

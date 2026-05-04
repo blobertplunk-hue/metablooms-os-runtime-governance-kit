@@ -1,0 +1,12 @@
+{
+  "artifact_type": "VALIDATOR_ALIGNMENT_POLICY_v1",
+  "created_utc": "20260501T130400Z",
+  "purpose": "Prevent validators from becoming unchecked authority.",
+  "rules": [
+    "Validators must return machine-readable verdicts.",
+    "Validators must expose false positive and false negative examples.",
+    "Promotion requires no critical false negatives in malicious/blocking fixtures.",
+    "Validator changes must add or update regression examples.",
+    "Human/domain expert review remains authoritative for ambiguous learning-quality and UX judgments."
+  ]
+}

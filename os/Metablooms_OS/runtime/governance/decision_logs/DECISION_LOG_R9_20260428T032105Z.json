@@ -1,0 +1,29 @@
+{
+  "created_artifacts": [
+    "2_engines/telemetry/telemetry_event_adapter_v1.js",
+    "runtime/governance/contracts/telemetry_cartridge_contract_v1.json",
+    "runtime/governance/schemas/misconception_telemetry_event_schema_v1.json",
+    "runtime/cartridges/telemetry_misconception_v1/CARTRIDGE_MANIFEST.json",
+    "0_kernel/scripts/validate_telemetry_cartridge_v1.py"
+  ],
+  "created_utc": "2026-04-28T03:21:05.628911+00:00",
+  "decision": "pass",
+  "decision_id": "R9-20260428T032105Z",
+  "decision_log_type": "R9_TELEMETRY_CARTRIDGE_DECISION_LOG",
+  "external_evidence": [
+    {
+      "claim": "events require unique event names and structured attributes",
+      "source": "OpenTelemetry semantic conventions for events"
+    },
+    {
+      "claim": "traceparent/tracestate provide common trace propagation context",
+      "source": "W3C Trace Context"
+    }
+  ],
+  "promoted_artifacts": {
+    "demo": "3_data/html_activities/fractions_number_line_telemetry_v1.html",
+    "engine": "2_engines/telemetry/MISCONCEPTION_TELEMETRY_ENGINE_v1.js",
+    "legacy_schema": "runtime/governance/schemas/misconception_telemetry_source_schema_v1.json"
+  },
+  "stage": "R9_TELEMETRY_CARTRIDGE_CONTRACT_PROMOTION"
+}

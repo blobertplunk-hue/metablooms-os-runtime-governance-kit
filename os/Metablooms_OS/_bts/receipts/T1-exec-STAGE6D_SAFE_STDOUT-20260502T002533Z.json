@@ -1,0 +1,11 @@
+{
+  "receipt_id": "T1-exec-STAGE6D_SAFE_STDOUT-20260502T002533Z",
+  "tier": "T1",
+  "artifact": "subprocess:python3 -S -c print(\"stage6d-safe\")",
+  "sha256": "17b29c1305b8c14bee787c51d51a1b66979c7b62b993e2dc990a84e2de994cb8",
+  "bytes_size": 0,
+  "prior_sha256": "",
+  "stdout_proof": "stage6d-safe",
+  "timestamp": "2026-05-02T00:25:33.978772Z",
+  "turn_id": "STAGE6D-TEST"
+}

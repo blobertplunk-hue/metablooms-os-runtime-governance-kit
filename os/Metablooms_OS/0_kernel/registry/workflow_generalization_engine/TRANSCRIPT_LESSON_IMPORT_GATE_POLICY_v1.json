@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "artifact_id": "TRANSCRIPT_LESSON_IMPORT_GATE_POLICY_v1",
+  "purpose": "Govern cumulative lesson mining from old chat transcripts without allowing stale, vague, or weaker practices to overwrite current MetaBlooms behavior.",
+  "authority_rule": "Transcript-derived lessons are candidate evidence only. They may influence routing or ledger state only after a better-than-current comparison passes and no hard regression flags are present.",
+  "default_mode": "sandbox_first_cumulative_learning",
+  "required_import_steps": [
+    "parse transcript into candidate lessons",
+    "classify evidence strength",
+    "map candidate to reusable workflow class",
+    "compare candidate against current OS baseline",
+    "reject or defer candidates with hard regression flags or weak evidence",
+    "emit router-compatible candidate JSON",
+    "write import receipt and append-only candidate ledger event"
+  ],
+  "hard_regression_flags": [
+    "pc_only_blocks_sandbox_primary",
+    "evidence_tier_overclaim",
+    "removes_existing_gate",
+    "no_fixture_for_recurring_claim",
+    "unsafe_or_policy_invalid",
+    "stale_transcript_overrides_current_export",
+    "chat_memory_only_no_artifactization"
+  ],
+  "adoption_threshold": {
+    "minimum_evidence_strength": 0.55,
+    "requires_positive_score_delta": true,
+    "requires_artifactization_plan": true
+  },
+  "output_contract": "Importer emits candidates compatible with workflow_generalization_router_v1.py --candidate-json.",
+  "pc_addendum_policy": "PC-derived transcript lessons may be adopted only as enhancement lanes unless they preserve the Android/ChatGPT sandbox primary path."
+}

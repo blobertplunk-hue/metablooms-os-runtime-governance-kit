@@ -1,0 +1,27 @@
+{
+  "action_type": "export",
+  "approval_token": "STAGE6E_FIXTURE_APPROVAL",
+  "artifacts": {
+    "read_paths": [
+      "/mnt/data/Metablooms_OS/runtime/governance/executors/fixtures/stage6e/source_dir"
+    ],
+    "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/STAGE6E_FIXTURE_EXPORT_export_zip.decision.json",
+    "write_paths": [
+      "/mnt/data/Metablooms_OS/runtime/governance/executors/fixtures/stage6e/stage6e_fixture_export.zip"
+    ]
+  },
+  "envelope_id": "STAGE6E_FIXTURE_EXPORT_export_zip",
+  "intent": "Stage6E fixture: BTS-wrapped export zip",
+  "limits": {
+    "max_bytes": 25000000,
+    "max_files": 250,
+    "max_steps": 20,
+    "timeout_seconds": 60
+  },
+  "requested_at_utc": "2026-05-02T00:30:16.072200Z",
+  "requires_see": false,
+  "risk_tier": "critical",
+  "schema_version": "ToolCallEnvelope_v1",
+  "stage_id": "STAGE6E_BTS_WRAP_EXPORT_AND_FILESYSTEM_EXECUTORS",
+  "tool_name": "bts_wrapped_export_zip"
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "PolicyDecision_v1",
+  "decision_id": "decision_1777685989201_5c86d218",
+  "envelope_id": "bts_write_competence_20260502T013949Z",
+  "stage_id": "BTS_V4_OS_GATED_WRITE",
+  "decision": "ALLOW",
+  "reason_code": "LOW_RISK_BOUNDED_ACTION",
+  "rationale": "Envelope passed schema, method, path, SEE, approval, and bounded-budget checks.",
+  "decided_at_utc": "2026-05-02T01:39:49Z",
+  "enforced_by": "pre_tool_action_gate_v1",
+  "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/bts_write_competence_20260502T013949Z.decision.json",
+  "safe_to_execute": true,
+  "required_next_action": "execute_action_and_write_action_receipt",
+  "matched_rules": [
+    "schema.required",
+    "path.safety",
+    "runaway.breaker",
+    "method.reliability"
+  ],
+  "envelope_sha256": "d5789fb052429b5337a89f182cb45f6a0e61545714871617a4035a6f75596d04"
+}

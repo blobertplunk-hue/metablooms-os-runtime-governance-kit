@@ -1,0 +1,41 @@
+{
+  "artifact_id": "research_trigger_rule_v1",
+  "status": "active",
+  "created_at": "2026-04-24T00:58:30Z",
+  "purpose": "Hard policy: if user text contains keyword research outside quoted/code override contexts, SEE_recursive_v1 and web.run are mandatory before substantive output.",
+  "triggers": [
+    {
+      "match": "research",
+      "mode": "case_insensitive_keyword",
+      "scope": "user_request_nonquoted_non_code"
+    }
+  ],
+  "overrides": [
+    {
+      "condition": "user_explicitly_says_no_web_search_or_do_not_research",
+      "action": "allow_skip_with_warning_receipt"
+    }
+  ],
+  "required_stage": "SEE_recursive_v1",
+  "required_tool": "web.run",
+  "min_passes": {
+    "default": 1,
+    "system_design_or_governance": 2
+  },
+  "source_requirements": {
+    "min_sources_total": 3,
+    "min_domains_total": 2,
+    "citations_required": true
+  },
+  "required_receipts": [
+    "SEE_EVIDENCE",
+    "GAP_REPORT",
+    "VALIDATION_STATUS"
+  ],
+  "fail_conditions": [
+    "missing_webrun_call",
+    "missing_see_evidence",
+    "missing_citations",
+    "no_gap_analysis_for_system_design"
+  ]
+}

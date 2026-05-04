@@ -1,0 +1,42 @@
+{
+  "created_at": "2026-04-30T21:46:00Z",
+  "decision": {
+    "allowed_next_stage": "DRS",
+    "critical_open_count": 0,
+    "verdict": "PASS_WITH_WARNINGS"
+  },
+  "gaps": [
+    {
+      "blocks_stage": [
+        "R3"
+      ],
+      "description": "CE implementation path needs exact verification before R3 implementation.",
+      "dimension": "implementation",
+      "evidence_status": "partial",
+      "gap_id": "GAP-001",
+      "linked_claims": [
+        "CE binding"
+      ],
+      "owner": "MPP_R3",
+      "resolution_strategy": "resolve_from_artifact",
+      "severity": "high",
+      "status": "open"
+    }
+  ],
+  "handoff": {
+    "conditions": [
+      "No critical gaps remain open"
+    ],
+    "next_stage": "DRS"
+  },
+  "inputs": {
+    "ce_packet": "CE_PACKET.json",
+    "normalized_evidence": "NORMALIZED_EVIDENCE.json",
+    "research_planner_packet": "RP-SMOKE-001.json",
+    "see_packet": "SEE_PACKET.json"
+  },
+  "ledger_id": "MMD-SMOKE-001",
+  "objective_id": "MPP-R0",
+  "schema_version": "mmd_gap_ledger.v1",
+  "stage": "MMD"
+}

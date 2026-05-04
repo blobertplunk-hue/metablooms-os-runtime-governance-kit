@@ -1,0 +1,31 @@
+{
+  "stage": "BROWSER_RENDER_CAPABILITY_PROBE_FOR_VISUAL_REPLAY",
+  "timestamp_utc": "20260502T223422Z",
+  "verdict": "BROWSER_SCREENSHOT_REPLAY_BLOCKED_IN_CURRENT_SANDBOX_WITH_INSTALL_DOWNLOAD_BLOCKED",
+  "observed_tools": {
+    "chromium": "/usr/bin/chromium",
+    "chromium_version": "Chromium 144.0.7559.96 built on Debian GNU/Linux 13 (trixie)",
+    "playwright_cli": "/opt/pyvenv/bin/playwright",
+    "playwright_version": "1.57.0",
+    "xvfb_run": "/usr/bin/xvfb-run",
+    "weasyprint": "/opt/pyvenv/bin/weasyprint"
+  },
+  "attempted_workarounds": [
+    {"method": "chromium --headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu --screenshot", "result": "timeout/hang", "evidence_dir": "/mnt/data/browser_probe_20260502T223204Z"},
+    {"method": "chromium --headless=old", "result": "unsupported_removed_from_chrome_binary", "evidence_dir": "/mnt/data/browser_probe_20260502T223204Z"},
+    {"method": "xvfb-run chromium --screenshot", "result": "timeout/hang", "evidence_dir": "/mnt/data/browser_probe_20260502T223204Z"},
+    {"method": "chromium with single-process/no-zygote/disable-crash-reporter flags", "result": "timeout/hang", "evidence_dir": "/mnt/data/browser_probe2_20260502T223250Z"},
+    {"method": "python3 -m playwright install chromium", "result": "failed_dns_EAI_AGAIN_for_playwright_cdn", "evidence_dir": "/mnt/data/browser_install_probe_20260502T223342Z"}
+  ],
+  "root_cause_assessment": [
+    "Playwright Python package is installed but managed browser bundle is absent.",
+    "Installing Playwright browsers requires outbound DNS/network access to Playwright CDN, which failed with EAI_AGAIN.",
+    "System Chromium exists but cannot complete screenshots in this sandbox; stderr shows missing DBus, netlink permission denial, inotify proc read failure, and crashpad socket errors, followed by timeout.",
+    "WeasyPrint render proxy remains the working local fallback for static HTML visual evidence."
+  ],
+  "recommended_next_actions": [
+    "For ChatGPT sandbox: retain WeasyPrint/static/VPQ replay path and mark browser screenshot replay as opportunistic, not required, unless browser can be proven working in that turn.",
+    "For PC/Termux/CI: install Playwright browsers and dependencies outside the sandbox and run a portability replay there.",
+    "Add a BrowserRenderCapabilityResolver cartridge so future stages auto-detect browser capability and route to chromium, playwright, or render-proxy without hanging."
+  ]
+}

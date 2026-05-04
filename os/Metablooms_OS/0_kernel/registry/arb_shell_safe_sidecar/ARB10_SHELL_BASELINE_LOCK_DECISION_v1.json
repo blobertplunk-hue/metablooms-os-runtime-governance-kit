@@ -1,0 +1,28 @@
+{
+  "stage": "ARB10-SHELL",
+  "verdict": "PASS_LOCK_DECISION",
+  "runner": "shell_only",
+  "python_used": false,
+  "baseline_lock_type": "candidate_lock_decision_not_full_os_rebaseline",
+  "decision": "LOCK_ARB_RUNTIME_WIRING_CANDIDATE_AS_RECOVERY_PROVEN_MICRO_BASELINE",
+  "locked_candidate_zip": "/mnt/data/ARB8B_ARB_RUNTIME_WIRING_CANDIDATE_v1.zip",
+  "locked_candidate_zip_sha256": "580316ccb829d1dea634248870ac7dc4b8fe5172e6a0d1f023643ca35f3cd9fb",
+  "evidence": {
+    "arb9b_pass_reverified_from_visible_files": true,
+    "zip_unzip_test": "PASS",
+    "zip_sha_match": true,
+    "reextracted_arb6s_sha256": "8fdd447ffc7896567111f876b414ec1d10cc91543e64eb0f55d12a96f967ca07",
+    "reextracted_arb7_plan_sha256": "596c3ae393ed6bfbdefd1a7e036a9889b982d7afa6cd4b433550d1e6c56316d0",
+    "reextracted_manifest_sha256": "02b3366ad86e57fd90910ee3efc06248df10d0a3c54180574ea2aa1b3d6bb51b",
+    "arb6s_final_done_marker_verified": true,
+    "arb6s_cursor_4_marker_verified": true
+  },
+  "constraints": {
+    "normal_python_blocked_this_session": true,
+    "shell_only_governance": true,
+    "full_SIR25_OS_baseline_not_replaced": true,
+    "no_export_beyond_existing_ARB8B_candidate_zip": true
+  },
+  "must_stop": true,
+  "next_correct_command": "EXECUTE ARB11-SHELL — PREPARE TURN-BASED HANDOFF SUMMARY AND DOWNLOAD LINKS"
+}

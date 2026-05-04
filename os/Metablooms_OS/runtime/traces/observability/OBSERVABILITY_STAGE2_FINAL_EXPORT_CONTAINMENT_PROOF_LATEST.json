@@ -1,0 +1,11 @@
+{
+  "artifact_type": "OBSERVABILITY_STAGE2_FINAL_EXPORT_CONTAINMENT_PROOF.v1",
+  "bad_member": null,
+  "duplicate_member_count": 0,
+  "entry_count": 5228,
+  "export_path": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_FINAL_20260502T164433Z.zip",
+  "export_sha256": "2a4d632524c00c895db7dd174fcbff68e88e2dfd717fbfb997dbbccbc00bb9b1",
+  "missing": [],
+  "required_present": true,
+  "verdict": "PASS"
+}

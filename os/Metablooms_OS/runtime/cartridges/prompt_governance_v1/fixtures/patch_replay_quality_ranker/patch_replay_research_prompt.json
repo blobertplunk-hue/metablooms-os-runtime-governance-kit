@@ -1,0 +1,7 @@
+{
+  "expected_decision": "ALLOW",
+  "fixture_id": "patch_replay_research_prompt",
+  "min_top_score": 0.8,
+  "raw_prompt": "Research the best current way to improve this prompt using web.run, SEE, CE, and then create a governed plan.",
+  "task_hint": "governed_research"
+}

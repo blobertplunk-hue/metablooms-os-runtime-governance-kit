@@ -1,0 +1,17 @@
+{
+  "created_at": "20260503T004507Z",
+  "gate_id": "LESSON_PROMOTION_QUEUE_AND_FIXTURE_FACTORY_GATE",
+  "pass_conditions": [
+    "Queue has at least six accepted lessons.",
+    "Every accepted lesson has artifact evidence and fixture_path.",
+    "Fixture factory result verdict is PASS.",
+    "NEXT_STAGE_COPY_PROMPT.md exists and references the latest short-name full authority.",
+    "A BOOTABLE_FULL_AUTHORITY short-name export and sidecar are produced for successful stage exit."
+  ],
+  "requires": [
+    "0_kernel/lessons/LESSON_PROMOTION_QUEUE_v1.json",
+    "0_kernel/lessons/lesson_fixture_factory_v1.py",
+    "0_kernel/registry/world_class_gap_plan/LESSON_PROMOTION_QUEUE_CONTRACT_v1.json"
+  ],
+  "schema_version": "v1"
+}

@@ -1,0 +1,22 @@
+{
+  "decision_id": "DECISION_LOG_R4_20260428T025318Z",
+  "stage": "R4_SESSION_STATE_EXPORT_REPLACEMENT",
+  "created_utc": "2026-04-28T02:53:18Z",
+  "decision": "Adopt model-agnostic session state export and retire vendor-specific sync writer.",
+  "drivers": [
+    "portable continuity",
+    "python3 -S enforcement",
+    "no vendor-specific field names",
+    "avoid self-hash circularity"
+  ],
+  "chosen_outputs": [
+    "runtime/governance/schemas/session_state_export_schema_v1.json",
+    "0_kernel/scripts/session_state_exporter_v1.py",
+    "0_kernel/scripts/validate_session_state_export_v1.py",
+    "runtime/governance/state_exports/SESSION_STATE_EXPORT_LATEST_v1.json"
+  ],
+  "supersedes": [
+    "CLAUDE_MEMORY_SYNC_v1.json",
+    "0_kernel/scripts/claude_memory_sync_writer_v1.py"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "amended_utc": "20260502T165438Z",
+  "artifact_type": "StageHandoff.v1",
+  "continue_prompt": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE5_TRACE_INGESTION_CLASSIFIER_REPAIR_AND_REGRESSION_FIXTURES",
+  "created_utc": "20260502T165330Z",
+  "final_export": {
+    "duplicate_members": 0,
+    "entry_count": 5305,
+    "external_containment_proof": "runtime/traces/observability/OBSERVABILITY_STAGE4_REPAIRED_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+    "note": "Final repaired export proof is external because embedding a proof with the final ZIP hash would mutate the ZIP.",
+    "required_members_present": true,
+    "sidecar_path": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_ROUTER_BINDING_REPAIRED_20260502T165547Z.zip.sha256",
+    "verdict": "PASS",
+    "zip_integrity": "PASS",
+    "zip_name": "METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_ROUTER_BINDING_REPAIRED_20260502T165547Z.zip",
+    "zip_path": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_ROUTER_BINDING_REPAIRED_20260502T165547Z.zip",
+    "zip_sha256": "166b955782aa5ac7a4340a1b0037729d6766e539650b9c85c8095efbc2ec2518"
+  },
+  "latest_failure_cluster_report": "runtime/traces/observability/FAILURE_CLUSTER_REPORT_LATEST.json",
+  "latest_repair_router_binding": "runtime/traces/observability/REPAIR_ROUTER_BINDING_LATEST.json",
+  "latest_validation": "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE4_FAILURE_ROUTER_VALIDATION_LATEST.json",
+  "new_chat_validator_decision": "ALLOW",
+  "next_recommended_stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE5_TRACE_INGESTION_CLASSIFIER_REPAIR_AND_REGRESSION_FIXTURES",
+  "operator_tracker": "OPEN_OPERATOR_VISUAL_TRACKER.html",
+  "stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING",
+  "status": "READY_FOR_NEXT_BOUNDED_STAGE",
+  "verdict": "PASS"
+}

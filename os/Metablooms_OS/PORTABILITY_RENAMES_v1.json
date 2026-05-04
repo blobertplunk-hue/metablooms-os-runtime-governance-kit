@@ -1,0 +1,144 @@
+{
+  "artifact": "PORTABILITY_RENAMES_v1.json",
+  "created_utc": "20260430T163424Z",
+  "rename_count": 18,
+  "rename_threshold_chars": 200,
+  "renames": [
+    {
+      "original_length": 228,
+      "original_zip_path": "Metablooms_OS/3_data/vault/sandbox/--Simon Willison╬ô├▓┬╝Γö£Γöñ╬ô├╢┬úΓö£┬║╬ô├╢┬úΓö£Γòùs complete analysis of ChatGPT╬ô├▓┬╝Γö£Γöñ╬ô├╢┬úΓö£┬║╬ô├╢┬úΓö£Γòùs sandboxed code interpreter - container environment (January 26, 2026)--.pdf",
+      "portable_length": 82,
+      "portable_zip_path": "Metablooms_OS/3_data/vault/sandbox/Simon_Willison_Sandbox_db54f8d336d76c56f037.pdf",
+      "reason": "archive path length > 200"
+    },
+    {
+      "original_length": 265,
+      "original_zip_path": "Metablooms_OS/0_kernel/registry/governed_continuation/CURRENT_AUTHORITY_FULL_OS_INTEGRATED_EXPORT_18_SIZE_CORRECTED_BASELINE_PLUS_ROUTER_OVERLAY_20260430T163800Z/CURRENT_AUTHORITY_FULL_OS_INTEGRATED_EXPORT_18_SIZE_CORRECTED_BASELINE_PLUS_ROUTER_OVERLAY_RECEIPT.json",
+      "portable_length": 96,
+      "portable_zip_path": "Metablooms_OS/0_kernel/registry/portable_long_paths/PORTABLE_LONG_PATH_d6d1f0aba8710c2af10d.json",
+      "reason": "archive path length > 200"
+    },
+    {
+      "original_length": 265,
+      "original_zip_path": "Metablooms_OS/0_kernel/registry/governed_continuation/CURRENT_AUTHORITY_FULL_OS_INTEGRATED_EXPORT_18_SIZE_CORRECTED_BASELINE_PLUS_ROUTER_OVERLAY_20260430T163800Z/CURRENT_AUTHORITY_FULL_OS_INTEGRATED_EXPORT_18_SIZE_CORRECTED_BASELINE_PLUS_ROUTER_OVERLAY_HANDOFF.json",
+      "portable_length": 96,
+      "portable_zip_path": "Metablooms_OS/0_kernel/registry/portable_long_paths/PORTABLE_LONG_PATH_5b89b832da58827d1bc5.json",
+      "reason": "archive path length > 200"
+    },
+    {
+      "original_length": 205,
+      "original_zip_path": "Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_RECOVERY_0_OR_RECREATE_WIRING_1_20260430T132400Z/SANDBOX_ROUTER_ENFORCEMENT_RECOVERY_0_OR_RECREATE_WIRING_1_HANDOFF.json",
+      "portable_length": 96,
+      "portable_zip_path": "Metablooms_OS/0_kernel/registry/portable_long_paths/PORTABLE_LONG_PATH_6c82b31b38d47037a1e4.json",
+      "reason": "archive path length > 200"
+    },
+    {
+      "original_length": 212,
+      "original_zip_path": "Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_RECOVERY_0_OR_RECREATE_WIRING_1_20260430T132400Z/SANDBOX_ROUTER_ENFORCEMENT_RECOVERY_0_OR_RECREATE_WIRING_1_HANDOFF.json.sha256",
+      "portable_length": 98,
+      "portable_zip_path": "Metablooms_OS/0_kernel/registry/portable_long_paths/PORTABLE_LONG_PATH_fb1c9d01d34372689d03.sha256",
+      "reason": "archive path length > 200"
+    },
+    {
+      "original_length": 205,
+      "original_zip_path": "Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_RECOVERY_0_OR_RECREATE_WIRING_1_20260430T132400Z/SANDBOX_ROUTER_ENFORCEMENT_RECOVERY_0_OR_RECREATE_WIRING_1_RECEIPT.json",
+      "portable_length": 96,
+      "portable_zip_path": "Metablooms_OS/0_kernel/registry/portable_long_paths/PORTABLE_LONG_PATH_7ebc726b66fe916b1163.json",
+      "reason": "archive path length > 200"
+    },
+    {
+      "original_length": 212,
+      "original_zip_path": "Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_RECOVERY_0_OR_RECREATE_WIRING_1_20260430T132400Z/SANDBOX_ROUTER_ENFORCEMENT_RECOVERY_0_OR_RECREATE_WIRING_1_RECEIPT.json.sha256",
+      "portable_length": 98,
+      "portable_zip_path": "Metablooms_OS/0_kernel/registry/portable_long_paths/PORTABLE_LONG_PATH_373bbfe576a0d17a9d5a.sha256",
+      "reason": "archive path length > 200"
+    },
+    {
+      "original_length": 228,
+      "original_zip_path": "Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6_20260430T141800Z/internalized_copies/0_kernel/registry/sandbox_capability_router/PORTABLE_LONG_PATH_2551c6bcc668f7d888c2.json",
+      "portable_length": 96,
+      "portable_zip_path": "Metablooms_OS/0_kernel/registry/portable_long_paths/PORTABLE_LONG_PATH_a3afa9deae7349e288fb.json",
+      "reason": "archive path length > 200"
+    },
+    {
+      "original_length": 228,
+      "original_zip_path": "Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6_20260430T141800Z/internalized_copies/0_kernel/registry/sandbox_capability_router/PORTABLE_LONG_PATH_9f484589f4e8752a3af2.json",
+      "portable_length": 96,
+      "portable_zip_path": "Metablooms_OS/0_kernel/registry/portable_long_paths/PORTABLE_LONG_PATH_c2d0ba2de8e5771e9eb3.json",
+      "reason": "archive path length > 200"
+    },
+    {
+      "original_length": 228,
+      "original_zip_path": "Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6_20260430T141800Z/internalized_copies/0_kernel/registry/sandbox_capability_router/PORTABLE_LONG_PATH_a45684eceb359ef07a72.json",
+      "portable_length": 96,
+      "portable_zip_path": "Metablooms_OS/0_kernel/registry/portable_long_paths/PORTABLE_LONG_PATH_2e6f90a55d4f74a23a25.json",
+      "reason": "archive path length > 200"
+    },
+    {
+      "original_length": 231,
+      "original_zip_path": "Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6_20260430T141800Z/internalized_copies/0_kernel/registry/sandbox_capability_router/SANDBOX_CAPABILITY_ROUTER_CARTRIDGE_LATEST.json",
+      "portable_length": 96,
+      "portable_zip_path": "Metablooms_OS/0_kernel/registry/portable_long_paths/PORTABLE_LONG_PATH_ce39e0ce6276b2906cf2.json",
+      "reason": "archive path length > 200"
+    },
+    {
+      "original_length": 238,
+      "original_zip_path": "Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6_20260430T141800Z/internalized_copies/0_kernel/registry/sandbox_capability_router/SANDBOX_CAPABILITY_ROUTER_CARTRIDGE_LATEST.json.sha256",
+      "portable_length": 98,
+      "portable_zip_path": "Metablooms_OS/0_kernel/registry/portable_long_paths/PORTABLE_LONG_PATH_f2c9bf5b890f8ef9edd1.sha256",
+      "reason": "archive path length > 200"
+    },
+    {
+      "original_length": 238,
+      "original_zip_path": "Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6_20260430T141800Z/internalized_copies/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_BOOT_EXPORT_BINDING_AUDIT_3_LATEST.json",
+      "portable_length": 96,
+      "portable_zip_path": "Metablooms_OS/0_kernel/registry/portable_long_paths/PORTABLE_LONG_PATH_ec98fbb0e396194ecea8.json",
+      "reason": "archive path length > 200"
+    },
+    {
+      "original_length": 240,
+      "original_zip_path": "Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6_20260430T141800Z/internalized_copies/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_BINDING_RECHECK_5_LATEST.json",
+      "portable_length": 96,
+      "portable_zip_path": "Metablooms_OS/0_kernel/registry/portable_long_paths/PORTABLE_LONG_PATH_66a1e356e22d50e9f8b7.json",
+      "reason": "archive path length > 200"
+    },
+    {
+      "original_length": 236,
+      "original_zip_path": "Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6_20260430T141800Z/internalized_copies/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_SMOKE_2_RETRY_LATEST.json",
+      "portable_length": 96,
+      "portable_zip_path": "Metablooms_OS/0_kernel/registry/portable_long_paths/PORTABLE_LONG_PATH_6b80815a827d5794d3ed.json",
+      "reason": "archive path length > 200"
+    },
+    {
+      "original_length": 229,
+      "original_zip_path": "Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6_20260430T141800Z/internalized_copies/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_WIRING_LATEST.json",
+      "portable_length": 96,
+      "portable_zip_path": "Metablooms_OS/0_kernel/registry/portable_long_paths/PORTABLE_LONG_PATH_67637e8a2487263dc94a.json",
+      "reason": "archive path length > 200"
+    },
+    {
+      "original_length": 236,
+      "original_zip_path": "Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6_20260430T141800Z/internalized_copies/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_WIRING_LATEST.json.sha256",
+      "portable_length": 98,
+      "portable_zip_path": "Metablooms_OS/0_kernel/registry/portable_long_paths/PORTABLE_LONG_PATH_ca1511d0c66b08293c79.sha256",
+      "reason": "archive path length > 200"
+    },
+    {
+      "original_length": 237,
+      "original_zip_path": "Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6_20260430T141800Z/internalized_copies/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_WIRING_LATEST_HANDOFF.json",
+      "portable_length": 96,
+      "portable_zip_path": "Metablooms_OS/0_kernel/registry/portable_long_paths/PORTABLE_LONG_PATH_3ca73caf3ee031147136.json",
+      "reason": "archive path length > 200"
+    },
+    {
+      "reason": "H0B1 filesystem/export portability path shortening",
+      "original_path": "3_data/vault/sandbox/--Simon WillisonΓò¼├┤Γö£├ºΓö£├╗s complete analysis of ChatGPTΓò¼├┤Γö£├ºΓö£├╗s sandboxed code interpreter - container environment (January 26, 2026)--.pdf",
+      "safe_path": "3_data/vault/sandbox/Simon_Willison_Sandboxed_Code_Interpreter_20260126.pdf",
+      "action": "renamed",
+      "timestamp_utc": "2026-04-30T17:54:11Z"
+    }
+  ],
+  "source_sha256": "a7baebf1b73e2202aad2b8b5190da2cee0a86660eb309fe655397af74131e55a",
+  "source_zip": "/mnt/data/METABLOOMS_OS_COMPLETE_INTEGRATED_AUTHORITY_SIZE_CORRECTED_20260430T164800Z.zip",
+  "stage": "PORTABLE_BOOT_REBUILD_WITH_PATH_MAPPING"
+}

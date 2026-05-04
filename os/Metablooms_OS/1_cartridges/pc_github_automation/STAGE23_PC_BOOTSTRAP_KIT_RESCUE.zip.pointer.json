@@ -1,0 +1,7 @@
+{
+  "artifact": "STAGE23_PC_BOOTSTRAP_KIT_RESCUE.zip",
+  "sha256": "1dce177e3db3ab7bc5421c4589801da0be63fb6447ce2e07764eb965ed17130a",
+  "release_url": "https://github.com/blobertplunk-hue/metablooms-os-runtime-governance-kit/releases/tag/metablooms-wc12-stage23-20260503",
+  "local_pc_path": "C:\\MetaBlooms\\Scripts\\pc-bootstrap-kit-releases\\STAGE23_PC_BOOTSTRAP_KIT_RESCUE.zip",
+  "not_embedded_reason": "Stage28 staging build follows Stage27 plan: pointer only, no companion ZIP embedding in WC13 staging."
+}

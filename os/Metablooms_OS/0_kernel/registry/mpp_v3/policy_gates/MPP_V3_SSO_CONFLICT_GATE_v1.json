@@ -1,0 +1,16 @@
+{
+  "locked_at": "20260501T004200Z",
+  "policy_id": "MPP_V3_SSO_CONFLICT_GATE_v1",
+  "research_basis": [
+    "Scope management defines what work is required and ensures only that work is done.",
+    "Explicit inclusions and exclusions reduce scope creep and ambiguity."
+  ],
+  "rules": [
+    "In-scope and out-of-scope lists are both required.",
+    "No normalized item may appear in both lists.",
+    "At least one blocking acceptance boundary is required.",
+    "Scope changes require a new governed stage and receipt.",
+    "SSO cannot implement downstream RRP or export-promotion work."
+  ],
+  "stage": "SSO"
+}

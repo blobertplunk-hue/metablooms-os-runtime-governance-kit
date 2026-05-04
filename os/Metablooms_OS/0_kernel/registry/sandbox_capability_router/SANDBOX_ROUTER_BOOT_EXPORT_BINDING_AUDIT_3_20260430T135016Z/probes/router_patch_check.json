@@ -1,0 +1,32 @@
+{
+  "preferred": [
+    "shell_coreutils",
+    "jq",
+    "node",
+    "python3_S"
+  ],
+  "fallback": [
+    "go_after_fresh_execution_probe"
+  ],
+  "required_gates": [
+    "route_selected",
+    "denylist_checked",
+    "probe_gate_passed",
+    "bounded_stage_declared",
+    "receipt_path_declared",
+    "handoff_path_declared"
+  ]
+}
+{
+  "timestamp_utc": "2026-04-30T13:50:56.889Z",
+  "stage": "SANDBOX_ROUTER_BOOT_EXPORT_BINDING_AUDIT_3",
+  "binding_points_required": [
+    "boot_probe",
+    "zip_repair",
+    "governed_execution",
+    "downloadable_artifact_delivery"
+  ],
+  "gate_enforcer": "0_kernel/scripts/sandbox_router/enforce_sandbox_route.sh",
+  "heavy_export_repair_run": false,
+  "patch_scope": "metadata_only"
+}

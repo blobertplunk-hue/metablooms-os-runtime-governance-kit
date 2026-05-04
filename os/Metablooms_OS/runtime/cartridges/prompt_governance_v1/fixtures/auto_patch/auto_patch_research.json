@@ -1,0 +1,5 @@
+{
+  "expected_decision": "ALLOW",
+  "fixture_id": "auto_patch_research",
+  "raw_prompt": "Use web.run, SEE, and CE to research best path for prompt governance"
+}

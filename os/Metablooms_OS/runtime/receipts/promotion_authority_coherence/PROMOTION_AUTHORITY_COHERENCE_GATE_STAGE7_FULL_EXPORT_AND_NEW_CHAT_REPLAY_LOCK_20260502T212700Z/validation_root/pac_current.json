@@ -1,0 +1,89 @@
+{
+  "checks": [
+    {
+      "check_id": "PAC-001",
+      "decision": "PASS",
+      "defects": [],
+      "evidence": {
+        "controlled_count": 2166,
+        "hash_mismatch_sample": [],
+        "missing_from_registry_count": 0,
+        "missing_from_registry_sample": [],
+        "registered_count": 2116,
+        "registered_hash_mismatch_count": 0,
+        "registered_noncurrent_count": 0,
+        "registered_noncurrent_sample": []
+      },
+      "name": "controlled_artifact_closure"
+    },
+    {
+      "check_id": "PAC-002",
+      "decision": "PASS",
+      "defects": [],
+      "evidence": {
+        "current_authority_token": "STAGE18",
+        "stale_reference_count": 0,
+        "stale_reference_sample": []
+      },
+      "name": "stale_authority_sweep"
+    },
+    {
+      "check_id": "PAC-003",
+      "decision": "PASS",
+      "defects": [],
+      "evidence": {
+        "status": "not_evaluated_in_report_only_stage2"
+      },
+      "name": "pointer_equivalence"
+    },
+    {
+      "check_id": "PAC-004",
+      "decision": "PASS",
+      "defects": [],
+      "evidence": {
+        "status": "not_evaluated_in_report_only_stage2"
+      },
+      "name": "validator_cli_contract_map"
+    },
+    {
+      "check_id": "PAC-005",
+      "decision": "PASS",
+      "defects": [],
+      "evidence": {
+        "status": "not_evaluated_in_report_only_stage2"
+      },
+      "name": "fresh_chat_replay"
+    },
+    {
+      "check_id": "PAC-006",
+      "decision": "PASS",
+      "defects": [],
+      "evidence": {
+        "status": "not_evaluated_in_report_only_stage2"
+      },
+      "name": "export_self_consistency"
+    },
+    {
+      "check_id": "PAC-007",
+      "decision": "PASS",
+      "defects": [],
+      "evidence": {
+        "status": "not_evaluated_in_report_only_stage2"
+      },
+      "name": "promotion_receipt_binding"
+    }
+  ],
+  "created_at": "2026-05-02T21:27:16.074202+00:00",
+  "decision": "PASS",
+  "defects": [],
+  "evidence": {
+    "root": "/mnt/data/Metablooms_OS",
+    "sample_limit": 50
+  },
+  "gate_id": "PROMOTION_AUTHORITY_COHERENCE_GATE_v1",
+  "mode": "current_os_report_only",
+  "report_only": true,
+  "result_hash": "54c1277df32402e5482566b94e39c2a5e8a5c734ee36a8c9db37b27a3d4fa2e0",
+  "schema_version": "metablooms.promotion_authority_coherence_gate.result.v1",
+  "stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN"
+}

@@ -1,0 +1,33 @@
+{
+  "artifact_type": "ARTIFACT_PORTABILITY_REPLAY_PROOF_STAGE2_RECONCILED_BOOT_REPLAY_VALIDATION_v1",
+  "created_utc": "2026-05-01T19:43:30Z",
+  "verdict": "PASS",
+  "export_zip": "/mnt/data/METABLOOMS_OS_ARTIFACT_PORTABILITY_REPLAY_PROOF_STAGE2_RECONCILED_BOOT_REPLAY_20260501T194300Z.zip",
+  "entries": 2982,
+  "fresh_extract_file_count": 2903,
+  "duplicate_entry_count": 0,
+  "unsafe_member_count": 0,
+  "sidecar_sha256_check": "PASS",
+  "fresh_extract_root": "/tmp/mb_replay_final_194300_c/Metablooms_OS",
+  "boot_replay": {
+    "stage": "PORTABLE_FULL_OS_BOOT_VERIFY_REPAIRED_H0B2",
+    "timestamp_utc": "2026-05-01T19:43:25Z",
+    "status": "PASS",
+    "root": "/tmp/mb_replay_final_194300_c/Metablooms_OS",
+    "errors": [],
+    "sandbox_policy": "ALLOW",
+    "chat_kernel": "ALLOW"
+  },
+  "boot_replay_rc": 0,
+  "repair_applied": "portable_full_os_boot_verify decision packet updated for current governance kernel: router=os_governance; tool_selection_decision_packet_written=true; no stale used_tool mismatch",
+  "validation_mode": "sha256_sidecar_plus_central_directory_duplicate_unsafe_scan_plus_full_fresh_extract_to_tmp_plus_boot_verifier_replay",
+  "runaway_control": {
+    "broad_extract_to_mnt_data": false,
+    "fresh_extract_destination": "/tmp",
+    "bounded_timeouts_seconds": [
+      25,
+      15
+    ]
+  },
+  "next_recommended_stage": "RUNAWAY_TURN_BREAKER_STAGE_0_OR_FINAL_BASELINE_LOCK"
+}

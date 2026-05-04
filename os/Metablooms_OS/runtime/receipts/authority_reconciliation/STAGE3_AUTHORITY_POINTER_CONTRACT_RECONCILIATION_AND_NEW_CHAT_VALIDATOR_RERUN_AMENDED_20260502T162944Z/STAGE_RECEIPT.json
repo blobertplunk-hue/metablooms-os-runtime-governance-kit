@@ -1,0 +1,155 @@
+{
+  "artifact_type": "StageReceipt.v1",
+  "canonical_root": "/mnt/data/Metablooms_OS",
+  "changed_artifacts": [
+    "No additional pointer or contract edits in amended stage; validation-only amended receipt and handoff written."
+  ],
+  "created_utc": "2026-05-02T16:29:45Z",
+  "decision": "PASS",
+  "next_stage": "Run the next requested bounded governed stage from the reconciled Stage 3 authority.",
+  "objective": "Amend prior reconciliation receipt by rerunning runtime starter smoke with the correct --root invocation and preserving the successful pointer/contract reconciliation.",
+  "prior_receipt_note": "The previous receipt had new_chat validator ALLOW but marked DENY because runtime_starter_smoke_v1.py was invoked with a positional root instead of --root.",
+  "stage": "STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_AMENDED",
+  "validation": {
+    "new_chat_start_contract_validator": {
+      "cmd": [
+        "python3",
+        "-S",
+        "/mnt/data/Metablooms_OS/runtime/governance/new_chat_start_contract_validator_v1.py",
+        "/mnt/data/Metablooms_OS"
+      ],
+      "parsed_stdout": {
+        "checks": [
+          {
+            "name": "exists:CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+            "passed": true
+          },
+          {
+            "name": "exists:runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+            "passed": true
+          },
+          {
+            "name": "exists:0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+            "passed": true
+          },
+          {
+            "name": "exists:0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+            "passed": true
+          },
+          {
+            "name": "exists:NEW_CHAT_START_HERE.md",
+            "passed": true
+          },
+          {
+            "name": "exists:runtime/governance/new_chat_start_contract_validator_v1.py",
+            "passed": true
+          },
+          {
+            "name": "exists:runtime/governance/boot_critical_governance_loader_v1.py",
+            "passed": true
+          },
+          {
+            "name": "exists:runtime/governance/governance_scatter_prevention_v1.py",
+            "passed": true
+          },
+          {
+            "name": "exists:runtime/governance/fresh_chat_boot_rehearsal_v1.py",
+            "passed": true
+          },
+          {
+            "name": "exists:runtime/cartridges/prompt_governance_v1/validate_prompt_governance_cartridge_v1.py",
+            "passed": true
+          }
+        ],
+        "decision": "ALLOW",
+        "errors": []
+      },
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\n  \"decision\": \"ALLOW\",\n  \"errors\": [],\n  \"checks\": [\n    {\n      \"name\": \"exists:CURRENT_FULL_AUTHORITY_POINTER_v1.json\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:NEW_CHAT_START_HERE.md\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:runtime/governance/new_chat_start_contract_validator_v1.py\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:runtime/governance/boot_critical_governance_loader_v1.py\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:runtime/governance/governance_scatter_prevention_v1.py\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:runtime/governance/fresh_chat_boot_rehearsal_v1.py\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:runtime/cartridges/prompt_governance_v1/validate_prompt_governance_cartridge_v1.py\",\n      \"passed\": true\n    }\n  ]\n}\n"
+    },
+    "operator_visual_tracker_boot_surface_validator": {
+      "cmd": [
+        "python3",
+        "-S",
+        "/mnt/data/Metablooms_OS/0_kernel/validators/validate_operator_visual_tracker_boot_surface_stage3_v1.py",
+        "/mnt/data/Metablooms_OS"
+      ],
+      "parsed_stdout": {
+        "manifest": "/mnt/data/Metablooms_OS/runtime/operator_tracker/OPERATOR_VISUAL_TRACKER_BOOT_SURFACE_LATEST.json",
+        "root_html": "/mnt/data/Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html",
+        "root_html_sha256": "369fd9996ad5cb7ae28d165d8816fa8fd4ef570104a6f2bce57d2f21933f4375",
+        "runtime_html": "/mnt/data/Metablooms_OS/runtime/operator_tracker/operator_visual_tracker_latest.html",
+        "status": "PASS"
+      },
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"root_html\": \"/mnt/data/Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html\",\n  \"runtime_html\": \"/mnt/data/Metablooms_OS/runtime/operator_tracker/operator_visual_tracker_latest.html\",\n  \"manifest\": \"/mnt/data/Metablooms_OS/runtime/operator_tracker/OPERATOR_VISUAL_TRACKER_BOOT_SURFACE_LATEST.json\",\n  \"root_html_sha256\": \"369fd9996ad5cb7ae28d165d8816fa8fd4ef570104a6f2bce57d2f21933f4375\"\n}\n"
+    },
+    "pointer_semantic_identity": {
+      "decision": "ALLOW",
+      "returncode": 0
+    },
+    "runtime_starter_smoke_root": {
+      "cmd": [
+        "python3",
+        "-S",
+        "/mnt/data/Metablooms_OS/runtime/governance/runtime_starter_smoke_v1.py",
+        "--root",
+        "/mnt/data/Metablooms_OS",
+        "--json"
+      ],
+      "parsed_stdout": {
+        "decision": "ALLOW",
+        "invalid_json": [],
+        "missing": [],
+        "mode": "root",
+        "path": "/mnt/data/Metablooms_OS",
+        "read_errors": []
+      },
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\n  \"decision\": \"ALLOW\",\n  \"invalid_json\": [],\n  \"missing\": [],\n  \"mode\": \"root\",\n  \"path\": \"/mnt/data/Metablooms_OS\",\n  \"read_errors\": []\n}\n"
+    },
+    "sidecar_checks": {
+      "checks": [
+        {
+          "path": "/mnt/data/Metablooms_OS/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+          "sha256": "f703dafa2e345f83d221b3e8bd4603c04e6dd7b282ac9b84be782bb4d3a75c52",
+          "sidecar": "/mnt/data/Metablooms_OS/CURRENT_FULL_AUTHORITY_POINTER_v1.json.sha256",
+          "sidecar_matches": true,
+          "sidecar_text": "f703dafa2e345f83d221b3e8bd4603c04e6dd7b282ac9b84be782bb4d3a75c52  CURRENT_FULL_AUTHORITY_POINTER_v1.json"
+        },
+        {
+          "path": "/mnt/data/Metablooms_OS/runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+          "sha256": "f703dafa2e345f83d221b3e8bd4603c04e6dd7b282ac9b84be782bb4d3a75c52",
+          "sidecar": "/mnt/data/Metablooms_OS/runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json.sha256",
+          "sidecar_matches": true,
+          "sidecar_text": "f703dafa2e345f83d221b3e8bd4603c04e6dd7b282ac9b84be782bb4d3a75c52  CURRENT_FULL_AUTHORITY_POINTER_v1.json"
+        },
+        {
+          "path": "/mnt/data/Metablooms_OS/0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+          "sha256": "f703dafa2e345f83d221b3e8bd4603c04e6dd7b282ac9b84be782bb4d3a75c52",
+          "sidecar": "/mnt/data/Metablooms_OS/0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json.sha256",
+          "sidecar_matches": true,
+          "sidecar_text": "f703dafa2e345f83d221b3e8bd4603c04e6dd7b282ac9b84be782bb4d3a75c52  CURRENT_FULL_AUTHORITY_POINTER_v1.json"
+        },
+        {
+          "path": "/mnt/data/Metablooms_OS/0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+          "sha256": "34488828d1ff2c8b82ffc913472cc530d6d648a7df5f11ebcf567e6ceb1128ce",
+          "sidecar": "/mnt/data/Metablooms_OS/0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md.sha256",
+          "sidecar_matches": true,
+          "sidecar_text": "34488828d1ff2c8b82ffc913472cc530d6d648a7df5f11ebcf567e6ceb1128ce  NEW_CHAT_START_CONTRACT_v1.md"
+        },
+        {
+          "path": "/mnt/data/Metablooms_OS/NEW_CHAT_START_HERE.md",
+          "sha256": "072b9319818a3a61ceaf27cbc5bb8768dc080fa4995e8b075557592d75e3de51",
+          "sidecar": "/mnt/data/Metablooms_OS/NEW_CHAT_START_HERE.md.sha256",
+          "sidecar_matches": true,
+          "sidecar_text": "072b9319818a3a61ceaf27cbc5bb8768dc080fa4995e8b075557592d75e3de51  NEW_CHAT_START_HERE.md"
+        }
+      ],
+      "returncode": 0
+    }
+  }
+}

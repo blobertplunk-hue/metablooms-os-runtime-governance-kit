@@ -1,0 +1,48 @@
+{
+  "artifact_type": "CDR_CRITICAL_GATE_RESULTS_STAGE4_v1",
+  "created_utc": "20260502T140719Z",
+  "results": [
+    {
+      "gate": "Stage3 handoff loaded",
+      "result": "PASS"
+    },
+    {
+      "gate": "SEE evidence bound",
+      "result": "PASS"
+    },
+    {
+      "gate": "Compat adapter facade installed",
+      "result": "PASS"
+    },
+    {
+      "gate": "Production caller sweep patched files",
+      "result": "PASS"
+    },
+    {
+      "gate": "Patched files py_compile",
+      "result": "PASS"
+    },
+    {
+      "gate": "Policy gate installed",
+      "result": "PASS"
+    },
+    {
+      "gate": "Policy gate no live blocking hits",
+      "result": "PASS"
+    },
+    {
+      "gate": "Targeted smoke tests",
+      "result": "PASS"
+    },
+    {
+      "gate": "Stage policy registry artifact written",
+      "result": "PASS"
+    },
+    {
+      "gate": "Receipt and handoff export ready",
+      "result": "PASS"
+    }
+  ],
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP",
+  "verdict": "PASS"
+}

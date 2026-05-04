@@ -1,0 +1,212 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/ADS_ARCHITECTURE_DAG_PACKET_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "architecture_decisions": {
+      "items": {
+        "minLength": 3,
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "components": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "component_id": {
+            "pattern": "^CMP-[0-9]{3}$",
+            "type": "string"
+          },
+          "name": {
+            "minLength": 3,
+            "type": "string"
+          },
+          "owned_outputs": {
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "purpose": {
+            "minLength": 10,
+            "type": "string"
+          },
+          "risk_class": {
+            "enum": [
+              "low",
+              "medium",
+              "high",
+              "critical"
+            ],
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "schema",
+              "validator",
+              "gate",
+              "writer",
+              "runner",
+              "fixture",
+              "receipt",
+              "handoff",
+              "adapter",
+              "policy"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "component_id",
+          "name",
+          "type",
+          "purpose",
+          "owned_outputs",
+          "risk_class"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "created_at": {
+      "minLength": 10,
+      "type": "string"
+    },
+    "dependency_edges": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "from": {
+            "pattern": "^CMP-[0-9]{3}$",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "validates",
+              "reads",
+              "writes",
+              "gates",
+              "depends_on",
+              "emits"
+            ],
+            "type": "string"
+          },
+          "to": {
+            "pattern": "^CMP-[0-9]{3}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "from",
+          "to",
+          "kind"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "objective_id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "outcome_traceability": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "component_ids": {
+            "items": {
+              "pattern": "^CMP-[0-9]{3}$",
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "outcome_id": {
+            "pattern": "^OUT-[0-9]{3}$",
+            "type": "string"
+          },
+          "success_criterion_ids": {
+            "items": {
+              "pattern": "^SC-[0-9]{3}$",
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          }
+        },
+        "required": [
+          "outcome_id",
+          "component_ids",
+          "success_criterion_ids"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "ownership_map": {
+      "additionalProperties": {
+        "additionalProperties": false,
+        "properties": {
+          "accountability": {
+            "minLength": 5,
+            "type": "string"
+          },
+          "authority": {
+            "minLength": 5,
+            "type": "string"
+          },
+          "owner": {
+            "minLength": 3,
+            "type": "string"
+          }
+        },
+        "required": [
+          "owner",
+          "authority",
+          "accountability"
+        ],
+        "type": "object"
+      },
+      "type": "object"
+    },
+    "packet_id": {
+      "minLength": 8,
+      "type": "string"
+    },
+    "result_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "mpp.ads_architecture_dag_packet.v1"
+    },
+    "source_ofm_packet_id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "stage": {
+      "const": "ADS"
+    }
+  },
+  "required": [
+    "schema_version",
+    "packet_id",
+    "stage",
+    "created_at",
+    "objective_id",
+    "source_ofm_packet_id",
+    "components",
+    "dependency_edges",
+    "ownership_map",
+    "outcome_traceability",
+    "architecture_decisions",
+    "result_hash"
+  ],
+  "title": "MPP v3 ADS Architecture DAG Packet",
+  "type": "object"
+}

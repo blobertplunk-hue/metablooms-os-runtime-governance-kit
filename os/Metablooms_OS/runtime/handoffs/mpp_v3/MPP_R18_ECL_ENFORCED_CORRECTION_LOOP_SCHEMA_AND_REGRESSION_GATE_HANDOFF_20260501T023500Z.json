@@ -1,0 +1,12 @@
+{
+  "from_stage": "MPP_R18_ECL_ENFORCED_CORRECTION_LOOP_SCHEMA_AND_REGRESSION_GATE",
+  "notes": "R19 should consume ECL correction/regression status before FIR fitness scoring and promotion decisions.",
+  "required_inputs": [
+    "0_kernel/schemas/mpp_v3/ECL_ENFORCED_CORRECTION_PACKET_SCHEMA_v1.json",
+    "0_kernel/mpp_v3/mpp_v3_ecl_enforced_correction_regression_gate_v1.py",
+    "tests/fixtures/mpp_v3/valid_ecl_enforced_correction_packet_v1.json"
+  ],
+  "root": "/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z",
+  "status": "READY",
+  "to_stage": "MPP_R19_FIR_FITNESS_INTEGRATION_SCHEMA_AND_GATE"
+}

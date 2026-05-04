@@ -1,0 +1,22 @@
+{
+  "version": "1.0",
+  "created_at": 1777068405.2305677,
+  "stage": "G6_RECOVERY_PROOF",
+  "status": "complete",
+  "export_zip": "/mnt/data/exports/MetaBlooms_OS_refined_G6_SELF_CONSISTENT_BASELINE_LOCK_1777068405.zip",
+  "sidecar": "/mnt/data/exports/MetaBlooms_OS_refined_G6_SELF_CONSISTENT_BASELINE_LOCK_1777068405.zip.sha256.json",
+  "restore_stage": "external_concrete_restore_recorded_in_G6_TWO_PASS_EXTERNAL_RECOVERY_PROOF_RESULT_v1",
+  "restore_checks": {
+    "zip_sha_matches_sidecar": true,
+    "zip_size_matches_sidecar": true,
+    "required_g6_files_inside_zip": true,
+    "restored_pointer_last_stage_g6": true,
+    "dag_ledger_map_present": true,
+    "audit_resolution_present": true,
+    "embedded_external_decision_present": true
+  },
+  "external_validator_decision": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_G6_EXTERNAL_DECISION_v1.json",
+  "external_validator_verdict": "PASS",
+  "two_pass_note": "Final ZIP contains all ledger-declared G6 proof/lock/decision artifacts; concrete post-zip restore proof is external.",
+  "verdict": "PASS"
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "SEEPacket_v1",
+  "source_mode": "web.run",
+  "sources": [
+    {
+      "claim": "Ruff is installable via PyPI/pip/uv/pipx and supports ruff check / ruff format commands.",
+      "url": "https://docs.astral.sh/ruff/installation/"
+    },
+    {
+      "claim": "Semgrep CLI supports scan/ci commands, JSON/SARIF/JUnit output, config selection, metrics controls, and exit codes.",
+      "url": "https://semgrep.dev/docs/cli-reference"
+    },
+    {
+      "claim": "OWASP Secure Coding Practices provides checklist categories covering validation, access control, logging, data protection, file management, memory management, and general coding.",
+      "url": "https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/stable-en/02-checklist/"
+    }
+  ],
+  "stage": "CDR_STAGE10_REAL_SCANNER_ADAPTER_INSTALL_PROFILES_OR_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE9",
+  "summary": "Stage 10 installs scanner profiles rather than ungoverned scanner packages; real scanner availability remains optional if deterministic fallback baseline exists."
+}

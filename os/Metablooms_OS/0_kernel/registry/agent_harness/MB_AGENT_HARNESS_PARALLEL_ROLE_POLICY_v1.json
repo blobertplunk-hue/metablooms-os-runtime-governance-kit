@@ -1,0 +1,76 @@
+{
+  "artifact_type": "MB_AGENT_HARNESS_PARALLEL_ROLE_POLICY_v1",
+  "created_utc": "20260501T145002Z",
+  "parallelism_model": "deterministic_workpackets_not_unbounded_agents",
+  "roles": [
+    {
+      "may_not_write": [
+        "Metablooms_OS/0_kernel"
+      ],
+      "may_write": [
+        "runtime/agent_harness/work_orders"
+      ],
+      "role": "task_intake"
+    },
+    {
+      "may_not_write": [
+        "Metablooms_OS/0_kernel",
+        "runtime/export_promotion"
+      ],
+      "may_write": [
+        "runtime/agent_harness/evidence_packets"
+      ],
+      "role": "evidence_researcher"
+    },
+    {
+      "may_not_write": [
+        "Metablooms_OS/0_kernel/scripts"
+      ],
+      "may_write": [
+        "runtime/agent_harness/plans"
+      ],
+      "role": "stage_planner"
+    },
+    {
+      "may_not_write": [
+        "authority_zip_directly",
+        "runtime/export_promotion"
+      ],
+      "may_write": [
+        "overlay_files_declared_in_workpacket"
+      ],
+      "role": "implementation_agent"
+    },
+    {
+      "may_not_write": [
+        "implementation_files"
+      ],
+      "may_write": [
+        "runtime/evals",
+        "runtime/agent_harness/validation"
+      ],
+      "role": "validation_agent"
+    },
+    {
+      "may_not_write": [
+        "implementation_files"
+      ],
+      "may_write": [
+        "runtime/agent_harness/diff_reviews",
+        "runtime/agent_harness/audits"
+      ],
+      "role": "adversarial_auditor"
+    },
+    {
+      "may_not_write": [
+        "unvalidated_authority"
+      ],
+      "may_write": [
+        "promoted_export",
+        "checksum_sidecar",
+        "runtime/export_promotion"
+      ],
+      "role": "export_promotion_agent"
+    }
+  ]
+}

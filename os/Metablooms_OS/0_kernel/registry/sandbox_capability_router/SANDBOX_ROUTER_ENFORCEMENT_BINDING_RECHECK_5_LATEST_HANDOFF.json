@@ -1,0 +1,11 @@
+{
+  "artifact_type": "metablooms_stage_handoff",
+  "authorized_next_stage": "SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6",
+  "continuation_prompt": "Continue from /mnt/data/Metablooms_OS. Load SANDBOX_ROUTER_ENFORCEMENT_BINDING_RECHECK_5_HANDOFF.json. Run exactly one bounded stage: SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6. Internalize the hardened sandbox router, enforcement wiring, smoke evidence, and binding recheck into the current project-file authority without heavy export repair; write receipt/handoff and return one root-level downloadable bundle plus checksum.",
+  "heavy_export_repair_allowed": false,
+  "load_this_handoff": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_BINDING_RECHECK_5_20260430T140200Z/SANDBOX_ROUTER_ENFORCEMENT_BINDING_RECHECK_5_HANDOFF.json",
+  "load_this_receipt": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_BINDING_RECHECK_5_20260430T140200Z/SANDBOX_ROUTER_ENFORCEMENT_BINDING_RECHECK_5_RECEIPT.json",
+  "stage": "SANDBOX_ROUTER_ENFORCEMENT_BINDING_RECHECK_5",
+  "status": "PASS",
+  "timestamp_utc": "20260430T140200Z"
+}

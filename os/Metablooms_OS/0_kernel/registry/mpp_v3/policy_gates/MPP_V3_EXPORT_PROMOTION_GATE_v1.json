@@ -1,0 +1,24 @@
+{
+  "locked_at": "20260501T081500Z",
+  "policy_id": "MPP_V3_EXPORT_PROMOTION_GATE_v1",
+  "promotion_authority_coherence_gate_required": true,
+  "promotion_authority_coherence_gate_runner": "0_kernel/mpp_v3/promotion_authority_coherence_gate_v1.py --root <root> --report-current --json-out <evidence>",
+  "promotion_authority_coherence_gate_stage3_binding": "HARD_BLOCKER_ACTIVE_FOR_NEW_EXPORT_PROMOTION_PACKETS",
+  "research_basis": [
+    "SLSA verification requires artifact identity and provenance/expectation checks.",
+    "Supply-chain promotion should be based on explicit, reproducible validation rather than informal claims.",
+    "Prior MetaBlooms export invariants require sidecar-bound full OS bundles with no duplicate members and required internal markers."
+  ],
+  "rules": [
+    "Candidate ZIP checksum and sidecar must verify.",
+    "ZIP integrity must pass and duplicate member count must be zero.",
+    "All R0-R23 required markers must be present.",
+    "Every blocking promotion check must PASS.",
+    "Bundle inventory must include schemas, implementations, fixtures, receipts, handoffs, and stage bundles.",
+    "Promotion must emit an authority pointer with stable hash.",
+    "Promotion packet must include a blocking PASS result from PROMOTION_AUTHORITY_COHERENCE_GATE_v1 before any export can be labeled current, full_authority, bootable, baseline, promotion_locked, or latest."
+  ],
+  "stage": "EXPORT_PROMOTION",
+  "updated_by": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE3_PROMOTION_BINDING_AND_CURRENT_OS_REPAIR_PLAN",
+  "updated_utc": "2026-05-02T20:08:15.471106+00:00"
+}

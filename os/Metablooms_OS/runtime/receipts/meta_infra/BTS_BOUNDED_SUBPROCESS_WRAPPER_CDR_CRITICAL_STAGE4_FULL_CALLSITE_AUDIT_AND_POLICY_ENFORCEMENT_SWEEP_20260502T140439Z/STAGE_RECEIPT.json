@@ -1,0 +1,40 @@
+{
+  "artifact_type": "METABLOOMS_STAGE_RECEIPT_v1",
+  "artifacts": {
+    "callsite_audit_after": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/CALLSITE_AUDIT_AFTER_RETROFIT.json",
+    "cdr_gate_results": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/CDR_CRITICAL_GATE_RESULTS_STAGE4.json",
+    "compile_results": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/PY_COMPILE_RESULTS.json",
+    "patch_manifest": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/PATCH_MANIFEST_STAGE4.json",
+    "patched_files": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/PATCHED_FILES_STAGE4.json",
+    "policy_gate_result": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/CALLSITE_POLICY_GATE_RESULT.json",
+    "see_packet": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/SEE_EVIDENCE_PACKET_STAGE4.json",
+    "targeted_smoke_results": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/TARGETED_SMOKE_RESULTS.json"
+  },
+  "compile_failures": [],
+  "created_utc": "20260502T140719Z",
+  "next_recommended_stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT",
+  "patched_file_count": 32,
+  "patched_subprocess_run_replacements": 54,
+  "policy_gate_blocking_count": 0,
+  "policy_gate_verdict": "PASS",
+  "post_retrofit_ast_summary": {
+    "bounded_wrapper_internal_exempt": 1,
+    "snapshot_vendor_legacy_or_artifact_exempt": 74,
+    "test_eval_fixture_warn": 19
+  },
+  "runtime_root": "/mnt/data/Metablooms_OS",
+  "scope": "full callsite audit plus policy enforcement sweep; production live code patched where safe; non-production snapshots/tests/vendor classified rather than rewritten",
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP",
+  "status": "PASS",
+  "stop_rule": "Stop after one bounded Stage4 sweep; do not rewrite vendored/snapshot/test-eval code in this stage.",
+  "targeted_smoke_verdict": "PASS",
+  "text_scan_summary_after": {
+    "artifact_receipt_or_bundle": 57,
+    "bounded_wrapper_internal_exempt": 3,
+    "failure_learning_snapshot": 1,
+    "legacy_archive": 4,
+    "live_governance_code": 1,
+    "test_eval_fixture": 19,
+    "vendored_third_party": 11
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "deny_if_high_value_candidate_rejected_without_handoff": true,
+  "deny_if_under_tiered": true,
+  "reconstruction": "RECONSTRUCTED_FROM_CHAT_SUMMARY",
+  "schema": "CDRRiskTieredAcceptancePolicy_v1"
+}

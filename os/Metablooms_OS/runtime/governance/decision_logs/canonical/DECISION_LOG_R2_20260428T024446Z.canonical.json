@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-04-28T03:24:02.421670Z",
+  "decision_id": "R2-20260428T024446Z",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"decision_id\": \"R2-20260428T024446Z\", \"decisions\": [{\"artifact\": \"CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.json\", \"result\": \"archive_to_adr_plus_legacy\"}, {\"artifact\": \"CLAUDE_MEMORY_SYNC_v1.json\", \"result\": \"archive_to_adr_plus_legacy\"}, {\"artifact\": \"claude_memory_sync_writer_v1.py\", \"result\": \"archive_to_adr_plus_legacy\"}, {\"artifact\": \"COOL_6_RUNTIME_GATE_WIRING_PLAN_v1.json\", \"result\": \"archive_to_adr_plus_legacy\"}], \"stage\": \"R2_ADR_EXTRACTION_AND_ARCHIVAL_CONVERSION\", \"status\": \"PASS\"}",
+  "reasons": [],
+  "record_id": "DECISION_LOG_R2_20260428T024446Z",
+  "record_kind": "decision_log",
+  "result": "pass",
+  "source_record": {
+    "path": "runtime/governance/decision_logs/DECISION_LOG_R2_20260428T024446Z.json",
+    "sha256": "8f8b0e783fa13a0471c0219c0e47ffd78ec84332b934f1ab189484fedc22f50f",
+    "size_bytes": 594
+  },
+  "span_id": "c96731cd530f3d54",
+  "stage_id": "R2_ADR_EXTRACTION_AND_ARCHIVAL_CONVERSION",
+  "summary": "Canonical wrapper for DECISION_LOG_R2_20260428T024446Z.json",
+  "trace_id": "dcf4936ebfcf1c2ed1561aae2b10c45f"
+}

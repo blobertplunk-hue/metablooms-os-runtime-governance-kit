@@ -1,0 +1,41 @@
+{
+  "decision": "ALLOW",
+  "failed": 0,
+  "fixture_count": 5,
+  "ledger_write_ok": true,
+  "missing": [],
+  "passed": 5,
+  "results": [
+    {
+      "fixture": "preexecution_artifact_prompt.json",
+      "ok": true,
+      "profile": "governed_artifact_generation",
+      "task_type": "artifact_generation"
+    },
+    {
+      "fixture": "preexecution_audit_prompt.json",
+      "ok": true,
+      "profile": "governed_implementation",
+      "task_type": "audit"
+    },
+    {
+      "fixture": "preexecution_option_ordering_prompt.json",
+      "ok": true,
+      "profile": "governed_implementation",
+      "task_type": "governed_implementation"
+    },
+    {
+      "fixture": "preexecution_research_prompt.json",
+      "ok": true,
+      "profile": "governed_research",
+      "task_type": "research"
+    },
+    {
+      "fixture": "preexecution_stage_prompt.json",
+      "ok": true,
+      "profile": "governed_implementation",
+      "task_type": "governed_implementation"
+    }
+  ],
+  "validator": "validate_prompt_route_preexecution_enforcer_v1"
+}

@@ -1,0 +1,224 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/VERIFICATION_EVIDENCE_PACKET_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_checks": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_id": {
+            "pattern": "^ART-[0-9]{3}$",
+            "type": "string"
+          },
+          "exists": {
+            "type": "boolean"
+          },
+          "expected_sha256": {
+            "type": "string"
+          },
+          "path": {
+            "minLength": 3,
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string"
+          },
+          "size_bytes": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "status": {
+            "enum": [
+              "PASS",
+              "FAIL"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "artifact_id",
+          "path",
+          "exists",
+          "sha256",
+          "expected_sha256",
+          "size_bytes",
+          "status"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "coverage_summary": {
+      "additionalProperties": false,
+      "properties": {
+        "passed_artifacts": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "passed_gates": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "passed_tests": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "required_artifacts": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "required_gates": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "required_tests": {
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "required_artifacts",
+        "passed_artifacts",
+        "required_tests",
+        "passed_tests",
+        "required_gates",
+        "passed_gates"
+      ],
+      "type": "object"
+    },
+    "created_at": {
+      "minLength": 10,
+      "type": "string"
+    },
+    "gate_results": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "evidence": {
+            "minLength": 3,
+            "type": "string"
+          },
+          "gate_id": {
+            "pattern": "^GATE-[0-9]{3}$",
+            "type": "string"
+          },
+          "gate_name": {
+            "minLength": 3,
+            "type": "string"
+          },
+          "verdict": {
+            "enum": [
+              "PASS",
+              "FAIL"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "gate_id",
+          "gate_name",
+          "verdict",
+          "evidence"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "objective_id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "packet_id": {
+      "minLength": 8,
+      "type": "string"
+    },
+    "result_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "mpp.verification_evidence_packet.v1"
+    },
+    "source_implementation_contract_id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "stage": {
+      "const": "VERIFICATION"
+    },
+    "test_receipts": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "actual_returncode": {
+            "type": "integer"
+          },
+          "command": {
+            "minLength": 3,
+            "type": "string"
+          },
+          "expected_returncode": {
+            "type": "integer"
+          },
+          "status": {
+            "enum": [
+              "PASS",
+              "FAIL"
+            ],
+            "type": "string"
+          },
+          "stderr_hash": {
+            "pattern": "^[a-f0-9]{64}$",
+            "type": "string"
+          },
+          "stdout_hash": {
+            "pattern": "^[a-f0-9]{64}$",
+            "type": "string"
+          },
+          "test_id": {
+            "pattern": "^TEST-[0-9]{3}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "test_id",
+          "command",
+          "expected_returncode",
+          "actual_returncode",
+          "status",
+          "stdout_hash",
+          "stderr_hash"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "verdict": {
+      "enum": [
+        "PASS",
+        "FAIL"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "packet_id",
+    "stage",
+    "created_at",
+    "objective_id",
+    "source_implementation_contract_id",
+    "artifact_checks",
+    "test_receipts",
+    "gate_results",
+    "coverage_summary",
+    "verdict",
+    "result_hash"
+  ],
+  "title": "MPP v3 Verification Evidence Packet",
+  "type": "object"
+}

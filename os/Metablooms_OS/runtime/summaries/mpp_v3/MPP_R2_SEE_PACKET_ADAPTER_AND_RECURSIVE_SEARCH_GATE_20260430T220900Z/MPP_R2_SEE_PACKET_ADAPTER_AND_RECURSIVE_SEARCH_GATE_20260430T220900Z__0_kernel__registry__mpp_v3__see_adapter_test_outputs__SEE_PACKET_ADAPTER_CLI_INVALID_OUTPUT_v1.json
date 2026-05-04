@@ -1,0 +1,50 @@
+{
+  "claim_source_bindings": [],
+  "created_at": "2026-04-30T21:50:03Z",
+  "gaps_and_contradictions": {
+    "contradictions": [],
+    "gaps": []
+  },
+  "limitations": [],
+  "mpp_v3_adapter": {
+    "adapter": "see_packet_adapter_recursive_gate_v1",
+    "next_stage": "NORMALIZE_EVIDENCE",
+    "research_packet_hash": "2c33b5632e58aa58b26c788739f1ecebf07715f89317114e4b9b2d215c27eb0f"
+  },
+  "original_request": "Improve MPP research pipeline",
+  "query_plan": [
+    {
+      "expected_source_type": "technical_docs",
+      "purpose": "Select schema dialect",
+      "query": "JSON Schema 2020-12 official validation",
+      "research_planner_query_id": "Q-001"
+    },
+    {
+      "expected_source_type": "official",
+      "purpose": "Bind artifact provenance model",
+      "query": "SLSA provenance current specification",
+      "research_planner_query_id": "Q-002"
+    }
+  ],
+  "research_trigger": {
+    "required": true,
+    "research_planner_packet_id": "RP-SMOKE-001",
+    "trigger_reason": "MPP v3 Research Planner required SEE before downstream CE/MMD stages.",
+    "trigger_terms": [
+      "governed research pipeline",
+      "Improve MPP research pipeline"
+    ]
+  },
+  "see_verdict": "PASS",
+  "sources": [],
+  "stage": "SEE_PASS",
+  "synthesis": "No web evidence was collected.",
+  "version": "see_packet.v1",
+  "web_run_evidence": {
+    "call_count": 0,
+    "query_refs": [],
+    "research_rounds": [],
+    "tool_reference_required": true,
+    "web_run_called": false
+  }
+}

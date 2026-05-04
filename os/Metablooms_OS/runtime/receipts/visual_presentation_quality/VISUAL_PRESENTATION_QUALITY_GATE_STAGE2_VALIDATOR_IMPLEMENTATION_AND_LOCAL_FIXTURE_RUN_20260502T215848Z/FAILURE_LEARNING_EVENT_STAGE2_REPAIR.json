@@ -1,0 +1,16 @@
+{
+  "created_utc": "2026-05-02T21:59:02Z",
+  "failure_class": "OVERBROAD_SEMANTIC_SCANNER_FALSE_POSITIVE_AND_EXPECTED_DENY_EXIT_CODE_MISMATCH",
+  "initial_failed_receipt": "/mnt/data/Metablooms_OS/runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE2_VALIDATOR_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T215737Z/VISUAL_PRESENTATION_QUALITY_GATE_STAGE2_VALIDATOR_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_RECEIPT.json",
+  "regression_prevention": "Harness now requires valid fixture ALLOW and invalid fixture DENY with returncode 0 for both expected outcomes.",
+  "repair": [
+    "Restrict default-style scan to declaration/intent fields plus explicit note.",
+    "Treat --expect DENY as successful when the decision is DENY."
+  ],
+  "root_cause": [
+    "Validator scanned anti-pattern/promotion-blocker strings as declaration strings.",
+    "CLI returned nonzero for an expected DENY, causing negative fixture pass logic to fail."
+  ],
+  "schema_version": "metablooms_failure_learning_event.v1",
+  "stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE2_VALIDATOR_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN"
+}

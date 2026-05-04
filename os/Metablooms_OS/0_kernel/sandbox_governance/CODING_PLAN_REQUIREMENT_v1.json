@@ -1,0 +1,12 @@
+{
+  "id": "CODING_PLAN_REQUIREMENT_v1",
+  "required_fields": [
+    "files_to_change",
+    "smallest_valid_change",
+    "tests_to_run",
+    "location_proof",
+    "behavior_proof",
+    "export_proof"
+  ],
+  "rule": "Implementation stages must create a coding plan before modifying code and test each slice before promotion."
+}

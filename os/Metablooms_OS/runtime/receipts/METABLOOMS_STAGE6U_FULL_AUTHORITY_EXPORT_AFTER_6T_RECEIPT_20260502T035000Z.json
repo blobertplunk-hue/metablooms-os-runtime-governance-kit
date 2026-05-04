@@ -1,0 +1,45 @@
+{
+  "authority_label": "BOOTABLE FULL OS AUTHORITY ZIP \u2014 Stage 6U",
+  "export_sha256": "EXTERNAL_SIDECAR_REQUIRED_AFTER_EXPORT",
+  "export_sha256_sidecar": "/mnt/data/METABLOOMS_OS_STAGE6U_FULL_AUTHORITY_AFTER_6T_BOOTABLE_FULL_OS_AUTHORITY_20260502T035000Z.zip.sha256",
+  "export_zip": "/mnt/data/METABLOOMS_OS_STAGE6U_FULL_AUTHORITY_AFTER_6T_BOOTABLE_FULL_OS_AUTHORITY_20260502T035000Z.zip",
+  "external_sidecar_required": true,
+  "incorporates_stage6n_to_6r_from_stage6s": true,
+  "incorporates_stage6t": true,
+  "known_accepted_warning": "git_dir_missing",
+  "non_circular_hash_policy": "ZIP SHA-256 is bound by external sidecar and final proof; internal receipt intentionally does not embed final ZIP digest.",
+  "outputs_written_before_export": [
+    "/mnt/data/Metablooms_OS/runtime/receipts/METABLOOMS_STAGE6U_FULL_AUTHORITY_EXPORT_AFTER_6T_RECEIPT_20260502T035000Z.json",
+    "/mnt/data/Metablooms_OS/runtime/handoffs/METABLOOMS_STAGE6U_FULL_AUTHORITY_EXPORT_AFTER_6T_HANDOFF_20260502T035000Z.json",
+    "/mnt/data/Metablooms_OS/runtime/state/STAGE6U_TRACKER_PREVIEW.txt",
+    "/mnt/data/Metablooms_OS/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "/mnt/data/Metablooms_OS/runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "/mnt/data/Metablooms_OS/0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "/mnt/data/Metablooms_OS/CURRENT_EXPORT_AUTHORITY_v1.json",
+    "/mnt/data/Metablooms_OS/runtime/authority/CURRENT_EXPORT_AUTHORITY_v1.json"
+  ],
+  "pre_checks": {
+    "boot_executor_returncode": 0,
+    "missing_stage6t_required_artifacts": [],
+    "portable_boot_returncode": 0,
+    "runtime_starter_returncode": 0,
+    "stage6s_sidecar": {
+      "actual": "652bd3aa50c10dd24394309329eab9362dcd1db191180b65cb1a3c03088f92e1",
+      "expected": "652bd3aa50c10dd24394309329eab9362dcd1db191180b65cb1a3c03088f92e1",
+      "ok": true,
+      "sidecar": "/mnt/data/METABLOOMS_OS_STAGE6S_FULL_AUTHORITY_AFTER_STAGE6N_TO_6R_BOOTABLE_FULL_OS_AUTHORITY_20260502T035000Z.zip.sha256",
+      "target": "/mnt/data/METABLOOMS_OS_STAGE6S_FULL_AUTHORITY_AFTER_STAGE6N_TO_6R_BOOTABLE_FULL_OS_AUTHORITY_20260502T035000Z.zip"
+    },
+    "stage6t_support_sidecar": {
+      "actual": "22ef86ec7ac5ab4e2315b0d9c0fc104e6ff2086250c9910046b67dcef74fff68",
+      "expected": "22ef86ec7ac5ab4e2315b0d9c0fc104e6ff2086250c9910046b67dcef74fff68",
+      "ok": true,
+      "sidecar": "/mnt/data/METABLOOMS_STAGE6T_TOOL_UNIVERSE_RESOLVER_COVERAGE_REPAIR_FOR_TRACE_EXPORT_SUPPORT_PROOF_BUNDLE_NOT_OS_20260502T035000Z.zip.sha256",
+      "target": "/mnt/data/METABLOOMS_STAGE6T_TOOL_UNIVERSE_RESOLVER_COVERAGE_REPAIR_FOR_TRACE_EXPORT_SUPPORT_PROOF_BUNDLE_NOT_OS_20260502T035000Z.zip"
+    }
+  },
+  "schema": "MetaBloomsStageReceipt_v1",
+  "stage": "STAGE6U_FULL_AUTHORITY_EXPORT_AFTER_6T",
+  "timestamp_utc": "2026-05-02T03:38:39Z",
+  "verdict": "PRE_EXPORT_RECEIPT_EXTERNAL_SIDECAR_REQUIRED"
+}

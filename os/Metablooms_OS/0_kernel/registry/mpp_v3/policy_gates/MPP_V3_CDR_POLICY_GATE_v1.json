@@ -1,0 +1,16 @@
+{
+  "locked_at": "20260430T233000Z",
+  "policy_id": "MPP_V3_CDR_POLICY_GATE_v1",
+  "research_basis": [
+    "ADR guidance: capture context, options, outcome, tradeoffs, confidence, consequences.",
+    "Policy-as-code guidance: requirements should be encoded as testable policies with tests."
+  ],
+  "rules": [
+    "CDR packet must satisfy all seven CDR pillars.",
+    "module_name must be semantic and cannot be UTILS.py, HELPERS.py, MISC.py, COMMON.py, or SHARED.py.",
+    "policy_checks must all PASS before implementation.",
+    "failure modes must include safe_state, strategy, detection, and severity.",
+    "integration_contract must declare inputs and outputs."
+  ],
+  "stage": "CDR"
+}

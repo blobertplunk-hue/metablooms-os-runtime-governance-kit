@@ -1,0 +1,71 @@
+{
+  "artifact_type": "FIXTURE_MATRIX",
+  "name": "ATOMIC_APPEND_LOG_WRITER_FIXTURE_MATRIX_v1",
+  "negative_fixtures": [
+    {
+      "expected": "DENY_PATH_DENIED",
+      "id": "deny_path_escape_dotdot"
+    },
+    {
+      "expected": "DENY_SYMLINK_DENIED",
+      "id": "deny_symlink_target"
+    },
+    {
+      "expected": "DENY_SYMLINK_DENIED",
+      "id": "deny_symlink_ancestor"
+    },
+    {
+      "expected": "DENY_RECORD_INVALID",
+      "id": "deny_raw_string_record"
+    },
+    {
+      "expected": "DENY_RECORD_INVALID_OR_ESCAPED_SINGLE_LINE_PROOF",
+      "id": "deny_newline_multirecord_injection"
+    },
+    {
+      "expected": "DENY_RECORD_INVALID",
+      "id": "deny_non_finite_json"
+    },
+    {
+      "expected": "DENY_RECORD_TOO_LARGE",
+      "id": "deny_record_too_large"
+    },
+    {
+      "expected": "DENY_UNSAFE_SUFFIX",
+      "id": "deny_unsafe_suffix"
+    },
+    {
+      "expected": "DENY_POLICY_DENIED",
+      "id": "deny_no_fsync_without_exception_for_governance"
+    }
+  ],
+  "positive_fixtures": [
+    {
+      "expected": "ALLOW_APPENDED",
+      "id": "append_single_jsonl_record"
+    },
+    {
+      "expected": "ALLOW_APPENDED_AND_TWO_VALID_LINES",
+      "id": "append_two_records_preserves_order"
+    },
+    {
+      "expected": "ALLOW_APPENDED",
+      "id": "create_parent_when_authorized"
+    },
+    {
+      "expected": "ALLOW_APPENDED",
+      "id": "unicode_payload_roundtrip"
+    },
+    {
+      "expected": "ALLOW_APPENDED_WITH_FSYNC_TRUE",
+      "id": "critical_fsync_path"
+    }
+  ],
+  "stage": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT",
+  "stress_fixtures": [
+    {
+      "expected": "ALL_LINES_PARSE_AND_COUNT_MATCHES",
+      "id": "multi_process_append_no_corrupt_lines"
+    }
+  ]
+}

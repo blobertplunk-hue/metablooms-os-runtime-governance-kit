@@ -1,0 +1,32 @@
+{
+  "receipt_type": "BUILD_RECEIPT",
+  "build_id": "BUILD-6",
+  "artifact": "artifact_registry.json (patch)",
+  "created_utc": "2026-04-26T10:55:31Z",
+  "mutation_id": "BUILD6_ARB_SIDECAR_NAMESPACE_REGISTRY_PATCH",
+  "pre_patch_sha": "c583d5e8496891c8333b47b960683c6825106d5226381cbb6cd4fbf841403726",
+  "post_patch_sha": "46291489d69a74ddb90a0ae849ccb30c198ee89714ffcfd5a6892408a887dc6d",
+  "pre_patch_count": 199,
+  "post_patch_count": 204,
+  "entries_added": 5,
+  "entries_skipped": 0,
+  "closes_follow_on": "MERGE-S9 known follow-on: arb_shell_safe_sidecar namespace not in registry",
+
+  "entries_added_detail": [
+    {"artifact_id": "ARB6S_RUNAWAY_PROOF_STATE_v1",                  "type": "governance", "authority": "high",   "sha": "8fdd447ffc7896567111f876b414ec1d10cc91543e64eb0f55d12a96f967ca07"},
+    {"artifact_id": "ARB7_SHELL_ARB_RUNTIME_WIRING_EXPORT_PLAN_v1",  "type": "plan",       "authority": "high",   "sha": "596c3ae393ed6bfbdefd1a7e036a9889b982d7afa6cd4b433550d1e6c56316d0"},
+    {"artifact_id": "ARB8B_ARB_RUNTIME_WIRING_CANDIDATE_v1",         "type": "bundle",     "authority": "medium", "sha": "580316ccb829d1dea634248870ac7dc4b8fe5172e6a0d1f023643ca35f3cd9fb"},
+    {"artifact_id": "ARB10_SHELL_BASELINE_LOCK_DECISION_v1",         "type": "decision",   "authority": "high",   "sha": "30224c410c8680521ddc61cdf7da271e80b847ebd45993531f49d703bc0d3bf3"},
+    {"artifact_id": "MERGE_SIDECAR_INTEGRATION_MANIFEST_v1",         "type": "manifest",   "authority": "high",   "sha": "f6b743495ad72ae765a809bbc838edd61129ed78bb0ba5c62c32d68277191112"}
+  ],
+
+  "new_capabilities": [
+    "CAPABILITY: All 5 arb_shell_safe_sidecar namespace files are now first-class registered artifacts",
+    "CAPABILITY: registry_mutation_engine can now validate referential integrity against these entries",
+    "CAPABILITY: artifact_registry.json is now self-consistent with the MERGE-S9 integrated OS tree",
+    "CAPABILITY: MERGE-S9 known follow-on item CLOSED — registry and filesystem now in sync"
+  ],
+
+  "overall_verdict": "PASS",
+  "next_correct_stage": "GW5U — Cartridge registry merge candidates or CROSS-LINK handoff"
+}

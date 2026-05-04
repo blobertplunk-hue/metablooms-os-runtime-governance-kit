@@ -1,0 +1,29 @@
+{
+  "artifact_type": "MB_OBSERVABILITY_STAGE17_REPAIRED2_FINAL_EXPORT_CONTAINMENT_PROOF.external.v1",
+  "bad_member": null,
+  "created_utc": "20260502T192738Z",
+  "duplicate_members": 0,
+  "entry_count": 5777,
+  "external_sidecar_required": true,
+  "missing_required_members": [],
+  "operator_packet_sha256": "b8c4cab8d85dd68af14be46e3141e0dc77f0d02e656c4cfdd9c7486cdd54c180",
+  "operator_packet_zip": "/mnt/data/METABLOOMS_OS_STAGE17_OPERATOR_AUDIT_PACKET_REPAIRED_20260502T192650Z.zip",
+  "required_members": [
+    "CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "OPEN_OPERATOR_VISUAL_TRACKER.html",
+    "runtime/traces/observability/AUDIT_COMMAND_EXECUTION_REPLAY_LATEST.json",
+    "runtime/state/operator_surface/OPERATOR_ONLY_AUDIT_PACKET_MANIFEST_LATEST.json",
+    "runtime/traces/observability/OPERATOR_ONLY_AUDIT_PACKET_CONTAINMENT_PROOF_LATEST.external.json",
+    "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE17_AUDIT_COMMAND_REPLAY_VALIDATION_LATEST.json",
+    "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE17_HANDOFF_LATEST.json",
+    "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE17_AUDIT_COMMAND_EXECUTION_REPLAY_AND_BUNDLE_PARTITIONING/STAGE_RECEIPT.json",
+    "runtime/governance/validate_observability_trace_span_ledger_stage17_v1.py"
+  ],
+  "stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE17_AUDIT_COMMAND_EXECUTION_REPLAY_AND_BUNDLE_PARTITIONING",
+  "verdict": "PASS",
+  "zip_path": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE17_AUDIT_COMMAND_REPLAY_OPERATOR_PACKET_FINAL_AUTHORITY_REPAIRED2_20260502T192738Z.zip",
+  "zip_sha256": "213f5cbc071d2619b243e6921022b4f0e7c4103f4899728069932c635ec3865f",
+  "zip_size_bytes": 26078745
+}

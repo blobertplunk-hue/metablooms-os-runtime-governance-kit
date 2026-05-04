@@ -1,0 +1,28 @@
+{
+  "auto_include_when_task_mentions": [
+    "tool",
+    "capability",
+    "resolver",
+    "sandbox",
+    "zip",
+    "export",
+    "download",
+    "browser",
+    "render",
+    "python",
+    "unavailable",
+    "missing",
+    "blocked",
+    "fallback",
+    "probe"
+  ],
+  "created_utc": "20260503T005700Z",
+  "purpose": "Bind GENERAL_CAPABILITY_RESOLVER_FRAMEWORK into governed task intake and stage exit checks.",
+  "required_stage_exit_artifacts": [
+    "runtime/state/GENERAL_CAPABILITY_RELIABILITY_LEDGER_v1.jsonl",
+    "runtime/state/NEXT_STAGE_COPY_PROMPT.md"
+  ],
+  "router_patch_policy": "Existing routers may import or consult this binding; do not replace task-specific routers. General resolver is mandatory when task requires uncertain/flaky tool capability.",
+  "schema_version": "v1",
+  "stage": "WC_STAGE6_GENERAL_CAPABILITY_RESOLVER_FRAMEWORK"
+}

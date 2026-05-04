@@ -1,0 +1,18 @@
+{
+  "do_not_do": [
+    "Do not weaken web.run requirement when research_trigger.required is true.",
+    "Do not treat a context summary as SEE evidence.",
+    "Do not advance to CE/MMD until SEE packet validation passes."
+  ],
+  "from_stage": "MPP_R1_RESEARCH_PLANNER_VALIDATOR_AND_PACKET_WRITER",
+  "handoff_id": "MPP_R1_TO_R2_HANDOFF_v1",
+  "instructions": "Bind the Research Planner packet output to the existing SEE v2 packet validator and implement the recursive search gate. Do not replace SEE v2; adapt to it.",
+  "required_inputs": [
+    "0_kernel/tools/mpp_v3/research_planner_packet_writer_v1.py",
+    "0_kernel/schemas/mpp_v3/RESEARCH_PLANNER_PACKET_SCHEMA_v1.json",
+    "0_kernel/docs/SEE_PACKET_VALIDATOR_SPEC_v1.md",
+    "0_kernel/registry/mpp_v3/MPP_R1_RESEARCH_PLANNER_VALIDATOR_AND_PACKET_WRITER_RECEIPT_v1.json"
+  ],
+  "status": "READY",
+  "to_stage": "MPP_R2_SEE_PACKET_ADAPTER_AND_RECURSIVE_SEARCH_GATE"
+}

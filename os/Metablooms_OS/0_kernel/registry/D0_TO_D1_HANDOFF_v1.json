@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "created_at": 1777036855.3049455,
+  "from_stage": "D0_VERIFY_BASELINE_AND_LOCK_D1_SCOPE_ONLY",
+  "to_stage": "D1_SEE_PACKET_VALIDATOR_SPEC",
+  "status": "ready",
+  "scope": "/mnt/data/Metablooms_OS_refined/0_kernel/docs/NEXT_IMPROVEMENT_PASS_D0_SCOPE_LOCK_v1.md",
+  "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/NEXT_IMPROVEMENT_PASS_D0_SCOPE_LOCK_RECEIPT_v1.json",
+  "spec_only": true,
+  "implementation_allowed": false,
+  "next_command": "EXECUTE STAGE D1 \u2014 SEE PACKET VALIDATOR SPEC"
+}

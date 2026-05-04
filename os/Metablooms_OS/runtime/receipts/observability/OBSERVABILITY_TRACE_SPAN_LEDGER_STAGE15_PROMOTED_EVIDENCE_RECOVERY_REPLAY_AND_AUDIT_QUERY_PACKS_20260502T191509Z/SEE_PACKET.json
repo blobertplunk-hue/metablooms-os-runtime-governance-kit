@@ -1,0 +1,24 @@
+{
+  "artifact_type": "MB_SEE_PACKET.v1",
+  "created_utc": "20260502T191509Z",
+  "design_decision": "Promoted evidence must be replayable from the exported ZIP and surfaced through audit query packs with explicit artifact paths, digests, and trace/evidence correlation keys.",
+  "sources": [
+    {
+      "claim": "SLSA provenance is only useful if inspected/verified, and verification checks artifact digests against provenance subjects.",
+      "url": "https://slsa.dev/spec/v1.0/verifying-artifacts"
+    },
+    {
+      "claim": "SLSA provenance tracks where, when, and how an artifact was produced.",
+      "url": "https://slsa.dev/provenance"
+    },
+    {
+      "claim": "OpenTelemetry correlation commonly binds logs/traces with trace_id and span_id as top-level fields.",
+      "url": "https://docs.datadoghq.com/tracing/other_telemetry/connect_logs_and_traces/opentelemetry/"
+    },
+    {
+      "claim": "OpenTelemetry traces are correlated with logs and metrics, supporting evidence linkage across signals.",
+      "url": "https://opentelemetry.io/docs/languages/dotnet/traces/best-practices/"
+    }
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS"
+}

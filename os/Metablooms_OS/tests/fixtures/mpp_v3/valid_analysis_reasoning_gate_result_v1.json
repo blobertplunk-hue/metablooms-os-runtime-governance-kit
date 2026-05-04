@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-04-30T23:24:47.711381+00:00",
+  "gate_id": "AE-GATE-20260430T232447Z",
+  "packet_id": "AE-20260430T232447Z",
+  "result_hash": "415702f292e790f6684afbe7e5d68956369eab500a205f648f6e72515110571d",
+  "routing": {
+    "blocking_failures": 0,
+    "repair_required": false,
+    "routes_to": [],
+    "weighted_score": 0.9425
+  },
+  "schema_version": "mpp.analysis_reasoning_gate_result.v1",
+  "stage": "ANALYSIS_REASONING_GATE",
+  "verdict": "PASS",
+  "violations": [],
+  "warnings": []
+}

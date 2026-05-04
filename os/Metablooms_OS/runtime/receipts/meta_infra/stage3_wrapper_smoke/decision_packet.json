@@ -1,0 +1,23 @@
+{
+  "argv_redacted": [
+    "/bin/echo",
+    "ok"
+  ],
+  "artifact_type": "METABLOOMS_BOUNDED_COMMAND_DECISION_PACKET_v1",
+  "attempts": [],
+  "created_utc": "20260502T143431Z",
+  "cwd": "/mnt/data",
+  "decision_packet_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/stage3_wrapper_smoke/decision_packet.json",
+  "failure_class": "SCHEMA_INVALID",
+  "failure_event_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/stage3_wrapper_smoke/SUBPROCESS_FAILURE_EVENT_None_20260502T143431Z_6e4ab4f976f1.json",
+  "operation_type": null,
+  "policy_matches": [],
+  "pre_spawn_receipt_path": null,
+  "receipt_dir": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/stage3_wrapper_smoke",
+  "result_class": "DENY_SCHEMA_INVALID",
+  "schema_errors": [
+    "operation_type_required"
+  ],
+  "stage": null,
+  "total_elapsed_ms": null
+}

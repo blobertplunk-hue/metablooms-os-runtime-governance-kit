@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "stage": "WC_STAGE9_REMEASURE_LATEST_WORLD_CLASS_SCORECARD_AGAINST_WC8RSSS",
+  "binding_name": "stage_exit_next_prompt_gate_binding",
+  "required_validator": "0_kernel/validators/next_stage_copy_prompt_exit_gate_v1.py",
+  "required_before_stage_success": true,
+  "required_before_export_link": true,
+  "required_in_receipt": true,
+  "blocks_on": [
+    "missing prompt",
+    "missing prompt json",
+    "sidecar mismatch",
+    "generic source authority",
+    "json/md mismatch",
+    "missing automatic tracker requirement"
+  ],
+  "reason": "Continuation prompts were generated but not hard-enforced. This binding makes the prompt a stage-exit gate."
+}

@@ -1,0 +1,44 @@
+{
+  "argv_redacted": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "/mnt/data/Metablooms_OS/runtime/governance/formal_hitl_approval_token_gate_v1.py",
+    "/mnt/data/Metablooms_OS/tests/fixtures/governance/hitl_approval_token_valid_v1.json"
+  ],
+  "argv_resolved": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "/mnt/data/Metablooms_OS/runtime/governance/formal_hitl_approval_token_gate_v1.py",
+    "/mnt/data/Metablooms_OS/tests/fixtures/governance/hitl_approval_token_valid_v1.json"
+  ],
+  "artifact_type": "METABLOOMS_BOUNDED_COMMAND_DECISION_PACKET_v1",
+  "attempts": [
+    {
+      "attempt_index": 0,
+      "elapsed_ms": 57,
+      "returncode": 0,
+      "started_utc": "20260502T141841Z",
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_truncated": false,
+      "stdout": "{\n  \"decided_at_utc\": \"2026-05-02T14:18:41.138552Z\",\n  \"decision\": \"ALLOW\",\n  \"gate_id\": \"FORMAL_HITL_APPROVAL_TOKEN_GATE_v1\",\n  \"reason_code\": \"HITL_APPROVAL_TOKEN_VALID\",\n  \"reasons\": [\n    \"token approved\",\n    \"stage/action/risk scope matched\",\n    \"authority binding matched\",\n    \"artifact roots and budgets matched\",\n    \"downstream gates required\"\n  ],\n  \"safe_to_execute\": true,\n  \"schema\": \"FormalHITLApprovalTokenGateDecision_v1\",\n  \"stage_id\": \"STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_20260502T035000Z\"\n}\n",
+      "stdout_bytes": 517,
+      "stdout_sha256": "700fe7651324d5f9e6bc163e746a44cbb1d20e35245692a6fbc735194fd19444",
+      "stdout_truncated": false,
+      "timeout_seconds": 10.0
+    }
+  ],
+  "created_utc": "20260502T141841Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision_packet_path": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT_retrofitted_subprocess_run_20260502T141841Z_7dbc734146f2/decision_packet.json",
+  "failure_class": null,
+  "failure_event_path": null,
+  "operation_type": "retrofitted_subprocess_run",
+  "policy_matches": [],
+  "pre_spawn_receipt_path": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT_retrofitted_subprocess_run_20260502T141841Z_7dbc734146f2/pre_spawn_receipt.json",
+  "receipt_dir": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT_retrofitted_subprocess_run_20260502T141841Z_7dbc734146f2",
+  "result_class": "ALLOW_SUCCESS",
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT",
+  "total_elapsed_ms": 58
+}

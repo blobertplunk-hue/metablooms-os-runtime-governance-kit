@@ -1,0 +1,7 @@
+{
+  "stage_id": "STAGE4C_NODE_YAUZL_YAZL_STREAM_REBUILD_AND_BOOT_PROOF",
+  "timestamp_utc": "20260501T233500Z",
+  "next_action": "Run Node yauzl/yazl stream rebuild, full CRC proof, targeted boot extract, boot smoke, and final promotion receipt.",
+  "selected_tool_profile": "A_ZIP_AUTHORITY_REPAIR",
+  "bounded_stop_rule": "Stop after one rebuilt authority ZIP plus proof receipts."
+}

@@ -1,0 +1,34 @@
+{
+  "artifact_type": "R13B_LEDGER_ABSOLUTE_OUTPUT_RECONCILIATION_RECEIPT",
+  "stage": "R13B_LEDGER_ABSOLUTE_OUTPUT_RECONCILIATION",
+  "created_utc": "2026-04-29T10:34:43Z",
+  "canonical_root": "/mnt/data/Metablooms_OS",
+  "verdict": "PASS",
+  "classification": "root_relative_reconciliation",
+  "changed_entries": [
+    "TEST_PROOF_STAGE_1777174263703"
+  ],
+  "old_output": "/home/claude/merge_staging/verify_reextract/Metablooms_OS_refined/0_kernel/registry/TEST_PROOF_ARTIFACT_v1.json",
+  "new_output": "0_kernel/registry/TEST_PROOF_ARTIFACT_v1.json",
+  "artifact_sha256": "b7285316a6976896e6ee2b82c76305a1c31d470573358c5e9638ea269a54e0d7",
+  "validation": {
+    "output_count": 104,
+    "absolute_output_count": 0,
+    "absolute_outputs": [],
+    "missing_root_relative_output_count": 0,
+    "missing_root_relative_outputs": [],
+    "old_output_present_in_active_outputs": [],
+    "new_output_present_in_active_outputs": true,
+    "canonical_artifact_exists": true,
+    "canonical_artifact_sha256": "b7285316a6976896e6ee2b82c76305a1c31d470573358c5e9638ea269a54e0d7",
+    "validation_scope": "active ledger outputs fields only; historical old_output fields in reconciliation_history are audit evidence and not export-declared outputs"
+  },
+  "mutated_files": [
+    "0_kernel/state/STAGE_STATE_LEDGER_v1.json",
+    "0_kernel/registry/TEST_PROOF_STAGE_HANDOFF_TEST_PROOF_STAGE_1777174263703.json"
+  ],
+  "decision_artifact": "0_kernel/registry/reconciliation/R13B_LEDGER_ABSOLUTE_OUTPUT_RECONCILIATION_DECISION.json",
+  "stopped_before_final_export": true,
+  "validation_corrected_utc": "2026-04-29T10:35:03Z",
+  "validation_correction_reason": "Initial in-stage validation occurred before receipt/handoff artifacts were written and searched historical audit fields; corrected to active ledger outputs only after artifacts existed."
+}

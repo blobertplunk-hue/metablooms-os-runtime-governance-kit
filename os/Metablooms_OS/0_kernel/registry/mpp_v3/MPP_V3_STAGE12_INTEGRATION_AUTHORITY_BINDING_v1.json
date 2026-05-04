@@ -1,0 +1,20 @@
+{
+  "authority_rule": "Stage 12 prompt-governance OS is base authority; MPP R23 is subsystem source only.",
+  "base_authority_sha256": "9163414f0ebb51830bf714d1af1a6e720f4d75fa944fb0908a2527a701ad55c2",
+  "base_authority_zip": "METABLOOMS_OS_PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_12_POINTER_PROMOTION_AND_RUNTIME_STARTER_SMOKE_FULL_AUTHORITY_20260501T010500Z.zip",
+  "conflict_policy": "preserve Stage 12 conflicts except governed Stage12-side integration patches",
+  "created_utc": "2026-05-01T01:59:04.613367Z",
+  "external_sidecar_required": true,
+  "id": "MPP_V3_STAGE12_INTEGRATION_AUTHORITY_BINDING_v1",
+  "integrated_authority_sidecar": "METABLOOMS_OS_STAGE12_PROMPT_GOVERNANCE_PLUS_MPP_R0_R23_INTEGRATED_20260501T015903Z.zip.sha256",
+  "integrated_authority_zip": "METABLOOMS_OS_STAGE12_PROMPT_GOVERNANCE_PLUS_MPP_R0_R23_INTEGRATED_20260501T015903Z.zip",
+  "mpp_source_sha256": "21803595bdbb513fa2d41b9681dcd3bf731950bb25407327de7962533f8c7126",
+  "mpp_source_zip": "METABLOOMS_OS_FULL_MPP_V3_R0_R23_PROMOTED_20260501T081500Z.zip",
+  "prompt_governance_preserved": true,
+  "runner_policy": [
+    "unloadable_modules_fail_closed",
+    "missing_mandatory_stages_fail_closed",
+    "Safe_Walk_bound_traversal_required"
+  ],
+  "stage": "MPP_PROMPT_OS_INTEGRATION_1B_STREAM_ONLY_NO_FULL_MATERIALIZATION"
+}

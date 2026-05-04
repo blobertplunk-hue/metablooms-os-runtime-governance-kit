@@ -1,0 +1,10 @@
+{
+  "artifact_type": "StageHandoff.v1",
+  "created_utc": "2026-05-02T15:18:24Z",
+  "from_stage": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE4_HASH_CHAIN_CALLER_RETROFIT_AND_FULL_POLICY_SWEEP",
+  "latest_tracker_state": "append-log Stage4 hash-chain sweep complete; Stage5 full export next",
+  "next_pointer": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT",
+  "optional": false,
+  "receipt": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE4_HASH_CHAIN_CALLER_RETROFIT_AND_FULL_POLICY_SWEEP_20260502T151652Z/STAGE_RECEIPT.json",
+  "status": "PASS_WITH_WARNINGS"
+}

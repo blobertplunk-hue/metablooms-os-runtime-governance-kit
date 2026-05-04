@@ -1,0 +1,40 @@
+{
+  "artifact_type": "EXTERNAL_REVIEW_MATRIX_STAGE_RECEIPT_v1",
+  "boot_reference": "boot_runtime_executor_v1.py PASS_WITH_WARNINGS accepted git_dir_missing",
+  "created_utc": "20260501T040110Z",
+  "matrix_summary": {
+    "cartridge_count": 9,
+    "lowest_scores": [
+      {
+        "current_os_evidence": "Power-user workflow is possible, but normal operation still depends on long prompt incantations and dense terminology.",
+        "gap": "No minimal operator surface such as mb boot/run/verify/export/replay, no one-screen critical path, and no plain-English state dashboard.",
+        "governed_cartridge": "UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE",
+        "lens": "UX/product simplicity",
+        "priority": "P0",
+        "score_0_to_5": 1.5,
+        "score_label": "critical_gap",
+        "source_lens": "langgraph_interrupts"
+      }
+    ],
+    "row_count": 9
+  },
+  "next_stage": "IMPLEMENT_P0_UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE_STAGE_1 or IMPLEMENT_P1_SECURITY_ARTIFACT_THREAT_MODEL_AND_INJECTION_CARTRIDGE_STAGE_1",
+  "stage": "EXTERNAL_REVIEW_MATRIX_AND_GOVERNED_CARTRIDGE_CONVERSION_1",
+  "verdict": "PASS",
+  "written_paths": [
+    "0_kernel/registry/external_review/EXTERNAL_REVIEW_MATRIX_v1.json",
+    "0_kernel/registry/external_review/EXTERNAL_REVIEW_MATRIX_v1.csv",
+    "docs/external_review/EXTERNAL_REVIEW_MATRIX_v1.md",
+    "0_kernel/registry/external_review/EXTERNAL_REVIEW_GAP_TO_CARTRIDGE_MAP_v1.json",
+    "0_kernel/cartridges/external_review_lenses/EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_SPEC_v1.json",
+    "0_kernel/cartridges/external_review_lenses/STATE_CHECKPOINT_RESUME_AND_INTERRUPT_CARTRIDGE_SPEC_v1.json",
+    "0_kernel/cartridges/external_review_lenses/AGENT_HARNESS_STAGE_GRAPH_AND_WORKTREE_CARTRIDGE_SPEC_v1.json",
+    "0_kernel/cartridges/external_review_lenses/SOFTWARE_QUALITY_CRITICAL_PATH_CLI_AND_TEST_CARTRIDGE_SPEC_v1.json",
+    "0_kernel/cartridges/external_review_lenses/SECURITY_ARTIFACT_THREAT_MODEL_AND_INJECTION_CARTRIDGE_SPEC_v1.json",
+    "0_kernel/cartridges/external_review_lenses/OBSERVABILITY_TRACE_SPAN_LEDGER_CARTRIDGE_SPEC_v1.json",
+    "0_kernel/cartridges/external_review_lenses/EDUCATION_VALIDITY_LEARNING_EFFICACY_CARTRIDGE_SPEC_v1.json",
+    "0_kernel/cartridges/external_review_lenses/UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE_SPEC_v1.json",
+    "0_kernel/cartridges/external_review_lenses/ARTIFACT_PORTABILITY_REPLAY_PROOF_CARTRIDGE_SPEC_v1.json",
+    "runtime/evals/external_review/EXTERNAL_REVIEW_MATRIX_VALIDATION_v1.json"
+  ]
+}

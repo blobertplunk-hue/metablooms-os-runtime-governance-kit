@@ -1,0 +1,9 @@
+{
+  "stage": "PORTABLE_FULL_OS_BOOT_VERIFY_REPAIRED_H0B2",
+  "timestamp_utc": "2026-05-02T02:57:00Z",
+  "status": "PASS",
+  "root": "/mnt/data/Metablooms_OS",
+  "errors": [],
+  "sandbox_policy": "ALLOW",
+  "chat_kernel": "ALLOW"
+}

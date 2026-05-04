@@ -1,0 +1,26 @@
+{
+  "artifact_type": "STAGE_MANIFEST_v1",
+  "created_utc": "20260501T031852Z",
+  "files": [
+    {
+      "path": "runtime/summaries/tool_governance/ARCHIVE_TOOL_ROUTER_INTEGRATION_1_FINALIZE_20260501T031852Z/ARCHIVE_TOOL_ROUTER_INTEGRATION_FINAL_RECEIPT.json",
+      "sha256": "e8372c96fddddab345514a779dd5379e331b1afe74327c973d0a8daf4fbaca3b",
+      "size_bytes": 2664
+    },
+    {
+      "path": "runtime/summaries/tool_governance/ARCHIVE_TOOL_ROUTER_INTEGRATION_1_FINALIZE_20260501T031852Z/ARCHIVE_TOOL_ROUTER_INTEGRATION_FINAL_RECEIPT.json.sha256",
+      "sha256": "43d779951a0c8efc283cfc4f7361326759a6f00ff1c9fc815b0f5785bc084c02",
+      "size_bytes": 117
+    },
+    {
+      "path": "runtime/summaries/tool_governance/ARCHIVE_TOOL_ROUTER_INTEGRATION_1_FINALIZE_20260501T031852Z/ARCHIVE_TOOL_ROUTER_INTEGRATION_FINAL_HANDOFF.json",
+      "sha256": "50cd8efe89897435c7cedf368f31801351a48f0e1bfc08e80316a67a0eb90225",
+      "size_bytes": 771
+    },
+    {
+      "path": "runtime/summaries/tool_governance/ARCHIVE_TOOL_ROUTER_INTEGRATION_1_FINALIZE_20260501T031852Z/ARCHIVE_TOOL_ROUTER_INTEGRATION_FINAL_HANDOFF.json.sha256",
+      "sha256": "5e4aae85c899f95624aa2ffd75772520492fb389b6b6d4e5c48e8a52447a532d",
+      "size_bytes": 117
+    }
+  ]
+}

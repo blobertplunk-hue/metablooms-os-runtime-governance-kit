@@ -1,0 +1,30 @@
+{
+  "artifact_type": "MB_METHOD_RELIABILITY_LESSON.v1",
+  "created_utc": "20260502T170503Z",
+  "evidence_refs": [
+    "runtime/traces/observability/FAILURE_CLUSTER_REPORT_LATEST.json",
+    "runtime/traces/observability/REPAIR_ROUTER_BINDING_LATEST.json",
+    "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_20260502T162918Z/STAGE_RECEIPT.json",
+    "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_AMENDED_20260502T162944Z/STAGE_RECEIPT.json"
+  ],
+  "failure_class": "cli_invocation_or_amended_receipt_superseded",
+  "fallback_direct_invocation": "python runtime/governance/runtime_starter_smoke_v1.py --root /mnt/data/Metablooms_OS --json",
+  "lesson_id": "METHOD_RELIABILITY_LESSON_RUNTIME_STARTER_SMOKE_CLI_SHAPE_v1",
+  "observed_bad_invocation": "python runtime/governance/runtime_starter_smoke_v1.py /mnt/data/Metablooms_OS --json",
+  "preferred_invocation": "python runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py --root /mnt/data/Metablooms_OS --json",
+  "prevention_artifacts": [
+    "runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+    "0_kernel/validators/validate_observability_trace_span_ledger_stage6_method_reliability_v1.py",
+    "runtime/fixtures/observability/method_reliability_stage6/SHA256SUMS.txt"
+  ],
+  "recommended_decision": "PROMOTE_WRAPPER_AND_WATCH_DIRECT_GATE",
+  "regression_expectations": {
+    "correct_named_root": "ALLOW",
+    "missing_target": "DENY",
+    "wrong_positional_root": "DENY"
+  },
+  "scope": "runtime/governance/runtime_starter_smoke_v1.py command invocation from boot/reconciliation stages",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE6_METHOD_RELIABILITY_LEDGER_AND_SUPPRESSED_FAILURE_LESSON_BINDING",
+  "status": "SUPPRESSED_LESSON_BOUND",
+  "summary": "A runtime starter smoke call was originally denied because the root path was supplied as a positional argument instead of through the supported --root option; the later amended receipt passed when invoked with --root."
+}

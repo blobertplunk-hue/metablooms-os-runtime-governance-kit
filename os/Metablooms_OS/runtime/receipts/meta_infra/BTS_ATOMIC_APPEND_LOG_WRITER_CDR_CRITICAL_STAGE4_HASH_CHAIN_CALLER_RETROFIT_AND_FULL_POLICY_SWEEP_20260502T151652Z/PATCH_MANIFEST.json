@@ -1,0 +1,38 @@
+{
+  "artifact_type": "AtomicAppendLogWriterStage4PatchManifest.v1",
+  "created_utc": "2026-05-02T15:18:24Z",
+  "deferred": [
+    {
+      "path": "runtime/governance/legacy_archives/claude_memory_sync_writer_v1.py",
+      "reason": "legacy_archive_exempt_warning_only"
+    }
+  ],
+  "patches": [
+    {
+      "change": "canonical root repaired; hash-chain append routed through atomic_append_log_compat after record normalization",
+      "path": "0_kernel/scripts/runtime_pulse_logger_v1.py",
+      "sha256": "6634541b61750b7f9d90ac7252251fdbb3ec24530a59a4f0c0ffaa5b069b30b2"
+    },
+    {
+      "change": "BTS hash-chain append routed through atomic_append_log_compat; prior sha updated from exact compact serialized line",
+      "path": "runtime/governance/bts_v4/BTS.py",
+      "sha256": "66a9f3fa4140869927ecd4d000e363e0d6bd33e5142f7db9cd488a7e6f19a66c"
+    },
+    {
+      "change": "standalone import fallback added so sys.path shim callers can import the adapter",
+      "path": "0_kernel/lib/io/atomic_append_log_compat_v1.py",
+      "sha256": "e0d933f397598a855fd3b2520d85316be7b0486b9fe2a3670c13f8e3c46f7a57"
+    },
+    {
+      "change": "Stage4 append-log callsite enforcement policy added",
+      "path": "0_kernel/registry/tool_governance/ATOMIC_APPEND_LOG_WRITER_CALLSITE_POLICY_STAGE4_v1.json",
+      "sha256": "129392a7aaba309a29992c042c49afe477a47cda7a76c4c446a7f9bf45583a5a"
+    },
+    {
+      "change": "Stage4 policy gate added; legacy archive is warning-only; live direct append-open blocks",
+      "path": "0_kernel/validators/validate_atomic_append_log_writer_callsite_policy_stage4_v1.py",
+      "sha256": "7797562d2bcc05ff41cb988821b5ae3abeb24c4d1720a7c84bd61039f88a49d0"
+    }
+  ],
+  "stage_id": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE4_HASH_CHAIN_CALLER_RETROFIT_AND_FULL_POLICY_SWEEP"
+}

@@ -1,0 +1,84 @@
+{
+  "version": "1.0",
+  "created_at": 1777037085.457906,
+  "stage": "SEE_PASS",
+  "original_request": "Research and validate SEE behavior for web_run_false.",
+  "research_trigger": {
+    "required": true,
+    "trigger_reason": "The request explicitly requires research and source-backed validation.",
+    "trigger_terms": [
+      "research",
+      "validate",
+      "sources"
+    ]
+  },
+  "query_plan": [
+    {
+      "query": "official documentation evidence validation",
+      "purpose": "Locate authoritative validation rules.",
+      "expected_source_type": "official"
+    },
+    {
+      "query": "source binding research synthesis",
+      "purpose": "Locate guidance for source-grounded synthesis.",
+      "expected_source_type": "reference"
+    }
+  ],
+  "web_run_evidence": {
+    "web_run_called": false,
+    "call_count": 0,
+    "tool_reference_required": true
+  },
+  "sources": [
+    {
+      "source_id": "S1",
+      "title": "Official validation docs",
+      "url_or_ref": "turn0search0",
+      "source_type": "official_docs",
+      "used_for": [
+        "validation structure",
+        "required fields"
+      ]
+    },
+    {
+      "source_id": "S2",
+      "title": "Evidence synthesis guidance",
+      "url_or_ref": "turn0search1",
+      "source_type": "reference",
+      "used_for": [
+        "source binding",
+        "limitations"
+      ]
+    }
+  ],
+  "claim_source_bindings": [
+    {
+      "claim": "SEE packets must prove web.run was called when research is required.",
+      "source_ids": [
+        "S1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "Source-grounded synthesis should bind claims to source identifiers.",
+      "source_ids": [
+        "S1",
+        "S2"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "gaps_and_contradictions": {
+    "gaps": [
+      "This integration packet uses synthetic tool refs rather than live web refs."
+    ],
+    "contradictions": []
+  },
+  "synthesis": "The research evidence supports validating SEE packets with web.run evidence, source lists, claim-source bindings, gaps, contradictions, and limitations.",
+  "limitations": [
+    "Synthetic integration proof packet; live web.run evidence is validated structurally, not fetched here."
+  ],
+  "see_verdict": "PASS",
+  "issues": [],
+  "receipt_path": ""
+}

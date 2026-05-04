@@ -1,0 +1,164 @@
+#!/usr/bin/env python3
+"""MetaBlooms MPP Pipeline Runner — complete end-to-end orchestrator."""
+from __future__ import annotations
+
+
+# SIR12B_PIPELINE_GUARD_START
+DEFAULT_MAX_STEPS = 25
+DEFAULT_PIPELINE_TIMEOUT_SECONDS = 30
+DEFAULT_DRY_RUN = True
+
+class PipelineBudgetGuardError(RuntimeError):
+    """Raised when mpp_pipeline_runner exceeds governed pipeline budget."""
+    pass
+
+def enforce_pipeline_budget(step_index, max_steps=DEFAULT_MAX_STEPS, *, label="mpp_pipeline_runner"):
+    """Fail closed when a pipeline step exceeds the explicit governed budget."""
+    if max_steps is None:
+        max_steps = DEFAULT_MAX_STEPS
+    if max_steps <= 0:
+        raise ValueError("max_steps must be positive")
+    if step_index >= max_steps:
+        raise PipelineBudgetGuardError(f"{label} exceeded max_steps={max_steps}")
+    return True
+
+def governed_write_text(path, text, *, dry_run=DEFAULT_DRY_RUN, allow_write=False):
+    """Govern write_text side effects; dry-run is default and writes require explicit allow_write=True."""
+    if dry_run or not allow_write:
+        return {"written": False, "dry_run": True, "path": str(path), "bytes": len(str(text).encode("utf-8"))}
+    target = Path(path)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(text, encoding="utf-8")
+    return {"written": True, "dry_run": False, "path": str(target), "bytes": len(str(text).encode("utf-8"))}
+# SIR12B_PIPELINE_GUARD_END
+
+import importlib.util, json, sys, time
+from pathlib import Path
+from typing import Any
+
+ENGINES_DIR = Path(__file__).parent
+STAGES_DIR = ENGINES_DIR.parent / "stages"
+
+
+class MPPModuleLoadError(RuntimeError):
+    """Raised when an MPP stage module cannot be loaded."""
+    pass
+
+class MPPMandatoryStageMissingError(RuntimeError):
+    """Raised when a mandatory MPP stage is absent from the registry."""
+    pass
+
+class Safe_Walk:
+    """Deterministic one-level Python module walker replacing broad glob/rglob traversal."""
+    def __init__(self, roots):
+        self.roots = [Path(r).resolve() for r in roots]
+
+    def iter_stage_modules(self):
+        for root in self.roots:
+            if not root.exists():
+                raise MPPModuleLoadError(f"required MPP module directory missing: {root}")
+            if not root.is_dir():
+                raise MPPModuleLoadError(f"required MPP module root is not a directory: {root}")
+            for child in sorted(root.iterdir(), key=lambda p: p.name):
+                resolved = child.resolve()
+                if resolved.parent != root:
+                    raise MPPModuleLoadError(f"unsafe non-child module path rejected: {child}")
+                if child.name.startswith('_') or child.name == 'mpp_pipeline_runner.py':
+                    continue
+                if child.suffix != '.py':
+                    continue
+                if '__pycache__' in child.parts:
+                    continue
+                yield child
+
+def load_module(path: Path):
+    spec = importlib.util.spec_from_file_location(path.stem, path)
+    if spec is None or spec.loader is None:
+        raise MPPModuleLoadError(f"cannot create module spec for {path}")
+    mod = importlib.util.module_from_spec(spec)
+    try:
+        spec.loader.exec_module(mod)
+    except Exception as exc:
+        raise MPPModuleLoadError(f"failed to load mandatory MPP module {path}: {exc!r}") from exc
+    return mod
+
+def build_registry() -> dict:
+    registry = {}
+    walker = Safe_Walk([ENGINES_DIR, STAGES_DIR])
+    for py_file in walker.iter_stage_modules():
+        mod = load_module(py_file)
+        fn = getattr(mod, "run_safe", None) or getattr(mod, "run", None)
+        if fn is None:
+            raise MPPModuleLoadError(f"mandatory MPP module has no run_safe/run entrypoint: {py_file}")
+        stage_id = getattr(mod, "STAGE_ID", py_file.stem.upper())
+        if stage_id in registry:
+            raise MPPModuleLoadError(f"duplicate MPP stage id: {stage_id}")
+        registry[stage_id] = fn
+    return registry
+
+def assert_mandatory_stages_present(registry: dict, stage_order) -> None:
+    missing = [stage for stage in stage_order if stage not in registry]
+    if missing:
+        raise MPPMandatoryStageMissingError(f"missing mandatory MPP stages: {missing}")
+
+def run_pipeline(task: str, initial_state: dict | None = None, output_dir: Path | None = None) -> dict[str, Any]:
+    from loop_controller import LoopController, STAGE_ORDER
+
+    output_dir = output_dir or Path("pipeline_output")
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    state = dict(initial_state or {})
+    state.update({
+        "task": task,
+        "pipeline_start": time.time(),
+        "control_doc_dir": str(output_dir),
+        "engines_dir": str(ENGINES_DIR),
+    })
+
+    registry = build_registry()
+    assert_mandatory_stages_present(registry, STAGE_ORDER)
+
+    controller = LoopController(state, registry)
+    result = controller.run_all()
+
+    receipt = {
+        "task": task,
+        "status": result["status"],
+        "executed_stages": result["executed_stages"],
+        "errors": result["errors"],
+        "missing_mandatory": result["missing_mandatory"],
+        "see_executed": result.get("see_executed", False),
+        "duration_seconds": result["duration_seconds"],
+        "timestamp": time.time(),
+    }
+    (output_dir / "pipeline_receipt.json").write_text(json.dumps(receipt, indent=2))
+
+    return {
+        "pipeline_result": result,
+        "state": state,
+        "receipt_path": str(output_dir / "pipeline_receipt.json"),
+        "certified": state.get("control_write_status") == "CERTIFIED",
+    }
+
+
+if __name__ == "__main__":
+    import argparse, tempfile
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--task", default="self-test")
+    parser.add_argument("--output-dir")
+    args = parser.parse_args()
+    output_dir = Path(args.output_dir) if args.output_dir else Path(tempfile.mkdtemp(prefix="mb_run_"))
+
+    print(f"MetaBlooms MPP Pipeline Runner")
+    print(f"Task: {args.task}")
+    result = run_pipeline(task=args.task, output_dir=output_dir)
+    pr = result["pipeline_result"]
+    print(f"Status:    {pr['status']}")
+    print(f"Stages:    {len(pr['executed_stages'])}")
+    print(f"SEE ran:   {pr.get('see_executed', False)}")
+    print(f"Certified: {result['certified']}")
+    if pr.get("errors"):
+        print("Errors:")
+        for e in pr["errors"][:10]:
+            print(f"  {e}")
+    print(f"Receipt:   {result['receipt_path']}")

@@ -1,0 +1,21 @@
+{
+  "schema_version": "PolicyDecision_v1",
+  "decision_id": "decision_1777685945295_30796cab",
+  "envelope_id": "STAGE6J_WRITE_FULL_POINTER_authority_CURRENT_FULL_AUTHORITY_POINTER_v1__filesystem_write",
+  "stage_id": "STAGE6J_FULL_AUTHORITY_EXPORT_AFTER_BTS_TOOL_UNIVERSE_RESOLVER_RETROFIT",
+  "decision": "ALLOW",
+  "reason_code": "LOW_RISK_BOUNDED_ACTION",
+  "rationale": "Envelope passed schema, method, path, SEE, approval, and bounded-budget checks.",
+  "decided_at_utc": "2026-05-02T01:39:05Z",
+  "enforced_by": "pre_tool_action_gate_v1",
+  "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/STAGE6J_WRITE_FULL_POINTER_authority_CURRENT_FULL_AUTHORITY_POINTER_v1__filesystem_write.decision.json",
+  "safe_to_execute": true,
+  "required_next_action": "execute_action_and_write_action_receipt",
+  "matched_rules": [
+    "schema.required",
+    "path.safety",
+    "runaway.breaker",
+    "method.reliability"
+  ],
+  "envelope_sha256": "f3b6ad6a534ab6cfc0d51024d23c44e1d067847802e1dde27a6c95dd2f475431"
+}

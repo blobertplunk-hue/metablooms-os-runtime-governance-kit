@@ -1,0 +1,29 @@
+{
+  "artifact_type": "MB_OBSERVABILITY_BOOT_INGESTION_REPORT.v1",
+  "by_kind": {
+    "boot": 57,
+    "decision": 12,
+    "export": 26,
+    "handoff": 87,
+    "receipt": 30,
+    "stage": 1,
+    "tracker": 1,
+    "validator": 6
+  },
+  "by_status": {
+    "BLOCKED": 3,
+    "OK": 217
+  },
+  "created_utc": "20260502T165955Z",
+  "input_file_count": 219,
+  "outputs": [
+    "/mnt/data/Metablooms_OS/runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl",
+    "/mnt/data/Metablooms_OS/runtime/traces/observability/TRACE_SPAN_LEDGER_INDEX_LATEST.json",
+    "/mnt/data/Metablooms_OS/runtime/traces/observability/CAUSAL_STAGE_GRAPH_LATEST.json"
+  ],
+  "record_count": 220,
+  "root": "/mnt/data/Metablooms_OS",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION",
+  "trace_id": "dd9e0c1a61955832054ef99a4361c232",
+  "verdict": "PASS"
+}

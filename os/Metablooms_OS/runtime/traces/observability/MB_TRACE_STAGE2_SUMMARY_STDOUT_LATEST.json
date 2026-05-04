@@ -1,0 +1,650 @@
+{
+  "parse_errors": [],
+  "records": [
+    {
+      "attributes": {
+        "artifact_type": null,
+        "source_sha256": "c62b832892dcc7d426a13113b4c98f5cc0ced24db78a40ff82444335c7d703b8",
+        "source_size_bytes": 2063,
+        "status_raw": null,
+        "verdict": null
+      },
+      "event": "metablooms.boot.receipt",
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "input_materials": [
+        "0_kernel/registry/boot_receipts/BOOT_FROM_MNT_DATA_20260502T162601Z/task_start_hook_boot_prompt.json"
+      ],
+      "name": "metablooms.boot.receipt",
+      "output_artifacts": [],
+      "parent_span_id": "42a0b1e1428d38fe",
+      "schema_version": "MB_TRACE_SPAN_EVENT.v1",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_FROM_MNT_DATA_20260502T162601Z/task_start_hook_boot_prompt.json",
+      "span_id": "0b726134e1a5891b",
+      "stage_id": "BOOT_FROM_MNT_DATA_20260502T162601Z",
+      "stage_name": "BOOT_FROM_MNT_DATA_20260502T162601Z",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T16:25:25Z",
+      "trace_id": "942ed54243d3aa223737438b5427f1c0"
+    },
+    {
+      "attributes": {
+        "artifact_type": null,
+        "source_sha256": "66d9cbea407ebd3e18417e0c0dbfe1f14db68723e1cebc57e5c09575ec2c876e",
+        "source_size_bytes": 410,
+        "status_raw": "PASS",
+        "verdict": null
+      },
+      "event": "metablooms.boot.receipt",
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "input_materials": [
+        "0_kernel/registry/boot_receipts/BOOT_FROM_MNT_DATA_20260502T162601Z/operator_visual_tracker_boot_surface_validator.json"
+      ],
+      "name": "metablooms.boot.receipt",
+      "output_artifacts": [],
+      "parent_span_id": "42a0b1e1428d38fe",
+      "schema_version": "MB_TRACE_SPAN_EVENT.v1",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_FROM_MNT_DATA_20260502T162601Z/operator_visual_tracker_boot_surface_validator.json",
+      "span_id": "935857ef1b5354fc",
+      "stage_id": "BOOT_FROM_MNT_DATA_20260502T162601Z",
+      "stage_name": "BOOT_FROM_MNT_DATA_20260502T162601Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T162601Z",
+      "trace_id": "942ed54243d3aa223737438b5427f1c0"
+    },
+    {
+      "attributes": {
+        "artifact_type": "BOOT_RECEIPT_v1",
+        "source_sha256": "6cdf18a8f5a30ff09f7e905bd5a787fa5c61c22aba85b37669543c5e9ec76a05",
+        "source_size_bytes": 10057,
+        "status_raw": null,
+        "verdict": null
+      },
+      "event": "metablooms.boot.receipt",
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "input_materials": [
+        "0_kernel/registry/boot_receipts/BOOT_FROM_MNT_DATA_20260502T162601Z/BOOT_RECEIPT.json"
+      ],
+      "name": "metablooms.boot.receipt",
+      "output_artifacts": [],
+      "parent_span_id": "42a0b1e1428d38fe",
+      "schema_version": "MB_TRACE_SPAN_EVENT.v1",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_FROM_MNT_DATA_20260502T162601Z/BOOT_RECEIPT.json",
+      "span_id": "7c3418923818af58",
+      "stage_id": "BOOT_FROM_MNT_DATA",
+      "stage_name": "BOOT_FROM_MNT_DATA",
+      "status": "OK",
+      "timestamp_utc": "20260502T162601Z",
+      "trace_id": "942ed54243d3aa223737438b5427f1c0"
+    },
+    {
+      "attributes": {
+        "artifact_type": "BOOT_HANDOFF_v1",
+        "source_sha256": "ba9a8f1a2e76e59af039c143dac108916d97b1f5968bb22b4577bd389da17316",
+        "source_size_bytes": 832,
+        "status_raw": "READY_FOR_POINTER_AND_START_CONTRACT_REPAIR_ONLY",
+        "verdict": null
+      },
+      "event": "metablooms.boot.receipt",
+      "event_kind": "boot",
+      "event_name": "metablooms.boot.receipt",
+      "input_materials": [
+        "0_kernel/registry/boot_receipts/BOOT_FROM_MNT_DATA_20260502T162601Z/BOOT_HANDOFF.json"
+      ],
+      "name": "metablooms.boot.receipt",
+      "output_artifacts": [],
+      "parent_span_id": "42a0b1e1428d38fe",
+      "schema_version": "MB_TRACE_SPAN_EVENT.v1",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_FROM_MNT_DATA_20260502T162601Z/BOOT_HANDOFF.json",
+      "span_id": "a3801babee6346db",
+      "stage_id": "RECONCILE_STAGE3_AUTHORITY_POINTER_AND_NEW_CHAT_START_CONTRACT",
+      "stage_name": "RECONCILE_STAGE3_AUTHORITY_POINTER_AND_NEW_CHAT_START_CONTRACT",
+      "status": "OK",
+      "timestamp_utc": "20260502T162601Z",
+      "trace_id": "942ed54243d3aa223737438b5427f1c0"
+    },
+    {
+      "attributes": {
+        "artifact_type": "StageReceipt.v1",
+        "reason": "source artifact status indicated non-pass state",
+        "source_sha256": "2c7d5b1763443c229beea445391e5c6f7b1370732edfccc2c3acf5e1e6f60da3",
+        "source_size_bytes": 9974,
+        "status_raw": null,
+        "verdict": null
+      },
+      "event": "metablooms.validator.result",
+      "event_kind": "validator",
+      "event_name": "metablooms.validator.result",
+      "input_materials": [
+        "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_20260502T162918Z/STAGE_RECEIPT.json"
+      ],
+      "name": "metablooms.validator.result",
+      "output_artifacts": [],
+      "parent_span_id": "42a0b1e1428d38fe",
+      "schema_version": "MB_TRACE_SPAN_EVENT.v1",
+      "source_artifact": "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_20260502T162918Z/STAGE_RECEIPT.json",
+      "span_id": "4235a6fc5444f18b",
+      "stage_id": "STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN",
+      "stage_name": "STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN",
+      "status": "BLOCKED",
+      "timestamp_utc": "2026-05-02T16:29:18Z",
+      "trace_id": "942ed54243d3aa223737438b5427f1c0"
+    },
+    {
+      "attributes": {
+        "artifact_type": "StageHandoff.v1",
+        "reason": "source artifact status indicated non-pass state",
+        "source_sha256": "46e4bf52104a70c8e3df01e6dc041b86b20af4ec371024b37640ae2de49ad097",
+        "source_size_bytes": 819,
+        "status_raw": "DENY",
+        "verdict": null
+      },
+      "event": "metablooms.handoff.ready",
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "input_materials": [
+        "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_20260502T162918Z/STAGE_HANDOFF.json"
+      ],
+      "name": "metablooms.handoff.ready",
+      "output_artifacts": [],
+      "parent_span_id": "42a0b1e1428d38fe",
+      "schema_version": "MB_TRACE_SPAN_EVENT.v1",
+      "source_artifact": "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_20260502T162918Z/STAGE_HANDOFF.json",
+      "span_id": "21ca0276d4081329",
+      "stage_id": "STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN",
+      "stage_name": "STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN",
+      "status": "BLOCKED",
+      "timestamp_utc": "2026-05-02T16:29:18Z",
+      "trace_id": "942ed54243d3aa223737438b5427f1c0"
+    },
+    {
+      "attributes": {
+        "artifact_type": "StageReceipt.v1",
+        "source_sha256": "37355c8a008442c0fe22618b846d3907989510233ee157d98bd3ac78286513df",
+        "source_size_bytes": 8435,
+        "status_raw": null,
+        "verdict": null
+      },
+      "event": "metablooms.validator.result",
+      "event_kind": "validator",
+      "event_name": "metablooms.validator.result",
+      "input_materials": [
+        "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_AMENDED_20260502T162944Z/STAGE_RECEIPT.json"
+      ],
+      "name": "metablooms.validator.result",
+      "output_artifacts": [],
+      "parent_span_id": "42a0b1e1428d38fe",
+      "schema_version": "MB_TRACE_SPAN_EVENT.v1",
+      "source_artifact": "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_AMENDED_20260502T162944Z/STAGE_RECEIPT.json",
+      "span_id": "201034b2d541448f",
+      "stage_id": "STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_AMENDED",
+      "stage_name": "STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_AMENDED",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T16:29:45Z",
+      "trace_id": "942ed54243d3aa223737438b5427f1c0"
+    },
+    {
+      "attributes": {
+        "artifact_type": "StageHandoff.v1",
+        "source_sha256": "4e45f17655fb1aeeff621adde4d5dfdbd7ea02af40a6361ab53dab248c5c4069",
+        "source_size_bytes": 869,
+        "status_raw": "PASS",
+        "verdict": null
+      },
+      "event": "metablooms.handoff.ready",
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "input_materials": [
+        "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_AMENDED_20260502T162944Z/STAGE_HANDOFF.json"
+      ],
+      "name": "metablooms.handoff.ready",
+      "output_artifacts": [],
+      "parent_span_id": "42a0b1e1428d38fe",
+      "schema_version": "MB_TRACE_SPAN_EVENT.v1",
+      "source_artifact": "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_AMENDED_20260502T162944Z/STAGE_HANDOFF.json",
+      "span_id": "9d43edd7cc7bcc32",
+      "stage_id": "STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_AMENDED",
+      "stage_name": "STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_AMENDED",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T16:29:45Z",
+      "trace_id": "942ed54243d3aa223737438b5427f1c0"
+    },
+    {
+      "attributes": {
+        "artifact_type": "FullAuthorityExportInternalNotice.v1",
+        "source_sha256": "dc7c7c0a51d6678967e0be3f0e5c5dda62b4a5f6a65f5b4899e6e19baab1da46",
+        "source_size_bytes": 727,
+        "status_raw": null,
+        "verdict": null
+      },
+      "event": "metablooms.export.receipt",
+      "event_kind": "export",
+      "event_name": "metablooms.export.receipt",
+      "input_materials": [
+        "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_RECONCILED_FULL_AUTHORITY_EXPORT_20260502T163016Z/FULL_AUTHORITY_EXPORT_INTERNAL_NOTICE.json"
+      ],
+      "name": "metablooms.export.receipt",
+      "output_artifacts": [],
+      "parent_span_id": "42a0b1e1428d38fe",
+      "schema_version": "MB_TRACE_SPAN_EVENT.v1",
+      "source_artifact": "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_RECONCILED_FULL_AUTHORITY_EXPORT_20260502T163016Z/FULL_AUTHORITY_EXPORT_INTERNAL_NOTICE.json",
+      "span_id": "45fb96b8ba849c4c",
+      "stage_id": "STAGE3_AUTHORITY_RECONCILED_FULL_AUTHORITY_EXPORT",
+      "stage_name": "STAGE3_AUTHORITY_RECONCILED_FULL_AUTHORITY_EXPORT",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T16:30:16Z",
+      "trace_id": "942ed54243d3aa223737438b5427f1c0"
+    },
+    {
+      "attributes": {
+        "artifact_type": "StageReceipt.v1",
+        "source_sha256": "6393d24b62c44790a442a965331ca00504f65d1f76e4fa5eac92bed634dd2f7b",
+        "source_size_bytes": 6447,
+        "status_raw": null,
+        "verdict": null
+      },
+      "event": "metablooms.export.receipt",
+      "event_kind": "export",
+      "event_name": "metablooms.export.receipt",
+      "input_materials": [
+        "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_RECONCILED_FULL_AUTHORITY_EXPORT_20260502T163016Z/STAGE_RECEIPT.json"
+      ],
+      "name": "metablooms.export.receipt",
+      "output_artifacts": [],
+      "parent_span_id": "42a0b1e1428d38fe",
+      "schema_version": "MB_TRACE_SPAN_EVENT.v1",
+      "source_artifact": "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_RECONCILED_FULL_AUTHORITY_EXPORT_20260502T163016Z/STAGE_RECEIPT.json",
+      "span_id": "4b41bc9b758ea20a",
+      "stage_id": "STAGE3_AUTHORITY_RECONCILED_FULL_AUTHORITY_EXPORT",
+      "stage_name": "STAGE3_AUTHORITY_RECONCILED_FULL_AUTHORITY_EXPORT",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T16:30:16Z",
+      "trace_id": "942ed54243d3aa223737438b5427f1c0"
+    },
+    {
+      "attributes": {
+        "artifact_type": "StageHandoff.v1",
+        "source_sha256": "1c209c21ca531a4bb8f79adde95e2f90809376245311f4561c961f173f138f17",
+        "source_size_bytes": 814,
+        "status_raw": "PASS",
+        "verdict": null
+      },
+      "event": "metablooms.handoff.ready",
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "input_materials": [
+        "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_RECONCILED_FULL_AUTHORITY_EXPORT_20260502T163016Z/STAGE_HANDOFF.json"
+      ],
+      "name": "metablooms.handoff.ready",
+      "output_artifacts": [],
+      "parent_span_id": "42a0b1e1428d38fe",
+      "schema_version": "MB_TRACE_SPAN_EVENT.v1",
+      "source_artifact": "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_RECONCILED_FULL_AUTHORITY_EXPORT_20260502T163016Z/STAGE_HANDOFF.json",
+      "span_id": "2dbedc11a07d8b8c",
+      "stage_id": "STAGE3_AUTHORITY_RECONCILED_FULL_AUTHORITY_EXPORT",
+      "stage_name": "STAGE3_AUTHORITY_RECONCILED_FULL_AUTHORITY_EXPORT",
+      "status": "OK",
+      "timestamp_utc": "2026-05-02T16:30:16Z",
+      "trace_id": "942ed54243d3aa223737438b5427f1c0"
+    },
+    {
+      "attributes": {
+        "artifact_type": "FinalZipContainmentProof.v1",
+        "source_sha256": "af594eeb6bb15717884c765cb304fefce528ca6035c92658afed06101f7c8dea",
+        "source_size_bytes": 628,
+        "status_raw": null,
+        "verdict": null
+      },
+      "event": "metablooms.export.receipt",
+      "event_kind": "export",
+      "event_name": "metablooms.export.receipt",
+      "input_materials": [
+        "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_RECONCILED_FULL_AUTHORITY_EXPORT_20260502T163016Z/FINAL_ZIP_CONTAINMENT_PROOF.external.json"
+      ],
+      "name": "metablooms.export.receipt",
+      "output_artifacts": [],
+      "parent_span_id": "42a0b1e1428d38fe",
+      "schema_version": "MB_TRACE_SPAN_EVENT.v1",
+      "source_artifact": "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_RECONCILED_FULL_AUTHORITY_EXPORT_20260502T163016Z/FINAL_ZIP_CONTAINMENT_PROOF.external.json",
+      "span_id": "d63f2b503d1eac3d",
+      "stage_id": "STAGE3_AUTHORITY_RECONCILED_FULL_AUTHORITY_EXPORT_20260502T163016Z",
+      "stage_name": "STAGE3_AUTHORITY_RECONCILED_FULL_AUTHORITY_EXPORT_20260502T163016Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T163027Z",
+      "trace_id": "942ed54243d3aa223737438b5427f1c0"
+    },
+    {
+      "attributes": {
+        "artifact_type": "SEE_PACKET.v1",
+        "source_sha256": "b0403ce6ba82ff2d01ca53945414e032783c8383ed2e9ac98fdd0e6ac4a29d3e",
+        "source_size_bytes": 1937,
+        "status_raw": null,
+        "verdict": null
+      },
+      "event": "metablooms.decision.next_build",
+      "event_kind": "decision",
+      "event_name": "metablooms.decision.next_build",
+      "input_materials": [
+        "runtime/receipts/roadmap_decision/NEXT_BUILD_INTERNAL_RESEARCH_SEE_CE_DECISION_20260502T163517Z/SEE_PACKET.json"
+      ],
+      "name": "metablooms.decision.next_build",
+      "output_artifacts": [],
+      "parent_span_id": "42a0b1e1428d38fe",
+      "schema_version": "MB_TRACE_SPAN_EVENT.v1",
+      "source_artifact": "runtime/receipts/roadmap_decision/NEXT_BUILD_INTERNAL_RESEARCH_SEE_CE_DECISION_20260502T163517Z/SEE_PACKET.json",
+      "span_id": "73d4f79c4c894854",
+      "stage_id": "NEXT_BUILD_INTERNAL_RESEARCH_SEE_CE_DECISION",
+      "stage_name": "NEXT_BUILD_INTERNAL_RESEARCH_SEE_CE_DECISION",
+      "status": "OK",
+      "timestamp_utc": "20260502T163517Z",
+      "trace_id": "942ed54243d3aa223737438b5427f1c0"
+    },
+    {
+      "attributes": {
+        "artifact_type": "InternalOSEvidence.v1",
+        "source_sha256": "be96ddac4c51da9182c796280c3d6f387f94935841047f3307281b3ad36616cb",
+        "source_size_bytes": 2171,
+        "status_raw": null,
+        "verdict": null
+      },
+      "event": "metablooms.decision.next_build",
+      "event_kind": "decision",
+      "event_name": "metablooms.decision.next_build",
+      "input_materials": [
+        "runtime/receipts/roadmap_decision/NEXT_BUILD_INTERNAL_RESEARCH_SEE_CE_DECISION_20260502T163517Z/INTERNAL_OS_EVIDENCE.json"
+      ],
+      "name": "metablooms.decision.next_build",
+      "output_artifacts": [],
+      "parent_span_id": "42a0b1e1428d38fe",
+      "schema_version": "MB_TRACE_SPAN_EVENT.v1",
+      "source_artifact": "runtime/receipts/roadmap_decision/NEXT_BUILD_INTERNAL_RESEARCH_SEE_CE_DECISION_20260502T163517Z/INTERNAL_OS_EVIDENCE.json",
+      "span_id": "70c143c6d1057951",
+      "stage_id": "NEXT_BUILD_INTERNAL_RESEARCH_SEE_CE_DECISION_20260502T163517Z",
+      "stage_name": "NEXT_BUILD_INTERNAL_RESEARCH_SEE_CE_DECISION_20260502T163517Z",
+      "status": "OK",
+      "timestamp_utc": "20260502T163517Z",
+      "trace_id": "942ed54243d3aa223737438b5427f1c0"
+    },
+    {
+      "attributes": {
+        "artifact_type": "CE_SYNTHESIS.v1",
+        "reason": "source artifact status indicated non-pass state",
+        "source_sha256": "cdab7a6f008f0b71c19f130697dcc5a0aa0fe7290ba5fee5e881d862ce39c332",
+        "source_size_bytes": 3575,
+        "status_raw": null,
+        "verdict": null
+      },
+      "event": "metablooms.decision.next_build",
+      "event_kind": "decision",
+      "event_name": "metablooms.decision.next_build",
+      "input_materials": [
+        "runtime/receipts/roadmap_decision/NEXT_BUILD_INTERNAL_RESEARCH_SEE_CE_DECISION_20260502T163517Z/CE_SYNTHESIS.json"
+      ],
+      "name": "metablooms.decision.next_build",
+      "output_artifacts": [],
+      "parent_span_id": "42a0b1e1428d38fe",
+      "schema_version": "MB_TRACE_SPAN_EVENT.v1",
+      "source_artifact": "runtime/receipts/roadmap_decision/NEXT_BUILD_INTERNAL_RESEARCH_SEE_CE_DECISION_20260502T163517Z/CE_SYNTHESIS.json",
+      "span_id": "d8f42c22eadb83c2",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION",
+      "stage_name": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION",
+      "status": "ERROR",
+      "timestamp_utc": "20260502T163517Z",
+      "trace_id": "942ed54243d3aa223737438b5427f1c0"
+    },
+    {
+      "attributes": {
+        "artifact_type": "NextBuildDecisionPointer.v1",
+        "source_sha256": "3dca6e274f20a754f74e965ccdc0c11e4b1f696d32856ddcf69b8dcd900d6aff",
+        "source_size_bytes": 891,
+        "status_raw": null,
+        "verdict": null
+      },
+      "event": "metablooms.decision.next_build",
+      "event_kind": "decision",
+      "event_name": "metablooms.decision.next_build",
+      "input_materials": [
+        "0_kernel/registry/roadmap/NEXT_BUILD_DECISION_LATEST.json"
+      ],
+      "name": "metablooms.decision.next_build",
+      "output_artifacts": [],
+      "parent_span_id": "42a0b1e1428d38fe",
+      "schema_version": "MB_TRACE_SPAN_EVENT.v1",
+      "source_artifact": "0_kernel/registry/roadmap/NEXT_BUILD_DECISION_LATEST.json",
+      "span_id": "91eb8cf821edffd5",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION",
+      "stage_name": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION",
+      "status": "OK",
+      "timestamp_utc": "20260502T163517Z",
+      "trace_id": "942ed54243d3aa223737438b5427f1c0"
+    },
+    {
+      "attributes": {
+        "artifact_type": "StageReceipt.v1",
+        "source_sha256": "a44dc20ebf3c0d4276fbbaa7edb463fada2009015fa846aedabdcb6dd30ce69e",
+        "source_size_bytes": 1449,
+        "status_raw": "PASS",
+        "verdict": null
+      },
+      "event": "metablooms.decision.next_build",
+      "event_kind": "decision",
+      "event_name": "metablooms.decision.next_build",
+      "input_materials": [
+        "runtime/receipts/roadmap_decision/NEXT_BUILD_INTERNAL_RESEARCH_SEE_CE_DECISION_20260502T163517Z/STAGE_RECEIPT.json"
+      ],
+      "name": "metablooms.decision.next_build",
+      "output_artifacts": [],
+      "parent_span_id": "42a0b1e1428d38fe",
+      "schema_version": "MB_TRACE_SPAN_EVENT.v1",
+      "source_artifact": "runtime/receipts/roadmap_decision/NEXT_BUILD_INTERNAL_RESEARCH_SEE_CE_DECISION_20260502T163517Z/STAGE_RECEIPT.json",
+      "span_id": "89684b60d04d3d68",
+      "stage_id": "NEXT_BUILD_INTERNAL_RESEARCH_SEE_CE_DECISION",
+      "stage_name": "NEXT_BUILD_INTERNAL_RESEARCH_SEE_CE_DECISION",
+      "status": "OK",
+      "timestamp_utc": "20260502T163517Z",
+      "trace_id": "942ed54243d3aa223737438b5427f1c0"
+    },
+    {
+      "attributes": {
+        "artifact_type": "StageHandoff.v1",
+        "source_sha256": "b7200ad722072b9c768f5a5b5284529098f34752482f1073f24804d46b3b84d0",
+        "source_size_bytes": 733,
+        "status_raw": "PASS",
+        "verdict": null
+      },
+      "event": "metablooms.handoff.ready",
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "input_materials": [
+        "runtime/receipts/roadmap_decision/NEXT_BUILD_INTERNAL_RESEARCH_SEE_CE_DECISION_20260502T163517Z/STAGE_HANDOFF.json"
+      ],
+      "name": "metablooms.handoff.ready",
+      "output_artifacts": [],
+      "parent_span_id": "42a0b1e1428d38fe",
+      "schema_version": "MB_TRACE_SPAN_EVENT.v1",
+      "source_artifact": "runtime/receipts/roadmap_decision/NEXT_BUILD_INTERNAL_RESEARCH_SEE_CE_DECISION_20260502T163517Z/STAGE_HANDOFF.json",
+      "span_id": "8641f1101b9896a3",
+      "stage_id": "NEXT_BUILD_INTERNAL_RESEARCH_SEE_CE_DECISION",
+      "stage_name": "NEXT_BUILD_INTERNAL_RESEARCH_SEE_CE_DECISION",
+      "status": "OK",
+      "timestamp_utc": "20260502T163517Z",
+      "trace_id": "942ed54243d3aa223737438b5427f1c0"
+    },
+    {
+      "attributes": {
+        "artifact_type": "SEE_PACKET.v1",
+        "source_sha256": "a596a42eda431acd7b2add9bd6d2133e7e407c101cef0269e6c813a12d551bb2",
+        "source_size_bytes": 2043,
+        "status_raw": null,
+        "verdict": null
+      },
+      "event": "metablooms.stage.receipt",
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "input_materials": [
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION_20260502T164222Z/SEE_PACKET.json"
+      ],
+      "name": "metablooms.stage.receipt",
+      "output_artifacts": [],
+      "parent_span_id": "42a0b1e1428d38fe",
+      "schema_version": "MB_TRACE_SPAN_EVENT.v1",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION_20260502T164222Z/SEE_PACKET.json",
+      "span_id": "84ab24cf503cd021",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION",
+      "stage_name": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION",
+      "status": "OK",
+      "timestamp_utc": "20260502T164222Z",
+      "trace_id": "942ed54243d3aa223737438b5427f1c0"
+    },
+    {
+      "attributes": {
+        "artifact_type": "CE_SYNTHESIS.v1",
+        "source_sha256": "aa38fff3d3b9542703074dae7e81123cebe10a88789f574b66a0ce0a5c09d9c0",
+        "source_size_bytes": 1297,
+        "status_raw": null,
+        "verdict": null
+      },
+      "event": "metablooms.stage.receipt",
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "input_materials": [
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION_20260502T164222Z/CE_SYNTHESIS.json"
+      ],
+      "name": "metablooms.stage.receipt",
+      "output_artifacts": [],
+      "parent_span_id": "42a0b1e1428d38fe",
+      "schema_version": "MB_TRACE_SPAN_EVENT.v1",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION_20260502T164222Z/CE_SYNTHESIS.json",
+      "span_id": "b2c68ae0ac8ffe4a",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION",
+      "stage_name": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION",
+      "status": "OK",
+      "timestamp_utc": "20260502T164222Z",
+      "trace_id": "942ed54243d3aa223737438b5427f1c0"
+    }
+  ],
+  "root": "/mnt/data/Metablooms_OS",
+  "schema_version": "MB_CLI_OUTPUT_v25",
+  "summary": {
+    "by_stage": {
+      "ARTIFACT_PORTABILITY_REPLAY_PROOF_STAGE_2_FRESH_EXTRACT_BOOT_REPLAY": 1,
+      "ARTIFACT_PORTABILITY_REPLAY_PROOF_STAGE_2_FRESH_EXTRACT_BOOT_REPLAY_ON_RECONCILED_AUTHORITY": 1,
+      "BOOT_FROM_MNT_DATA": 1,
+      "BOOT_FROM_MNT_DATA_20260502T162601Z": 6,
+      "BOOT_FROM_PROJECT_FILE": 1,
+      "BOOT_RUNTIME_EXECUTOR": 2,
+      "BOOT_RUNTIME_EXECUTOR_H0C1": 46,
+      "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT": 1,
+      "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES": 7,
+      "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T150744Z": 1,
+      "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T150805Z": 1,
+      "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING": 5,
+      "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T151051Z": 1,
+      "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE4_HASH_CHAIN_CALLER_RETROFIT_AND_FULL_POLICY_SWEEP": 3,
+      "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE4_HASH_CHAIN_CALLER_RETROFIT_AND_FULL_POLICY_SWEEP_20260502T151652Z": 3,
+      "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT": 4,
+      "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT_20260502T152058Z": 6,
+      "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT": 1,
+      "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES": 1,
+      "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z": 1,
+      "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T144330Z": 1,
+      "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT_20260502T145012Z": 1,
+      "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT": 1,
+      "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING": 1,
+      "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP": 1,
+      "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT": 1,
+      "BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT": 5,
+      "BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT_retrofitted_subprocess_run_20260502T152103Z_2e85b63a4e17": 1,
+      "BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT_retrofitted_subprocess_run_20260502T152103Z_2f2a8a4fb3c0": 1,
+      "BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT_retrofitted_subprocess_run_20260502T152103Z_77632ca3cb79": 1,
+      "CDR_REBUILD_STAGE2_TO_STAGE7_FROM_STAGE6U_PLUS_CHAT_SUMMARIES": 1,
+      "CDR_STAGE10_REAL_SCANNER_ADAPTER_INSTALL_PROFILES_OR_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE9": 1,
+      "CDR_STAGE11_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE2_TO_STAGE10_RECONSTRUCTED_CHAIN": 1,
+      "CDR_STAGE12_CDR_LINCHPIN_RECURSIVE_AUDIT_DEEPENING": 1,
+      "CDR_STAGE13_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE12": 1,
+      "CDR_STAGE6_ADAPTABILITY_AND_INTERFACE_CONTRACT_HARDENING": 1,
+      "CDR_STAGE8_STATIC_ANALYSIS_AND_COMPLEXITY_QUALITY_GATES": 1,
+      "CDR_STAGE9_LINT_SECURITY_SCANNER_INTEGRATION_AND_BASELINE_REPORTING": 1,
+      "EDUCATION_VALIDITY_STAGE_1": 1,
+      "EDUCATION_VALIDITY_STAGE_1_OR_ARTIFACT_PORTABILITY_REPLAY_PROOF_STAGE_1": 1,
+      "H0B2_SANDBOX_TOOL_GOVERNANCE_BOOTSTRAP_AND_LAYOUT_DRIFT_REPAIR": 1,
+      "IMPLEMENT_AGENT_HARNESS_STAGE_2_PARALLEL_WORKPACKETS_AND_DIFF_REVIEW_OR_SOFTWARE_QUALITY_STAGE_1": 2,
+      "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_2_SCORECARDS_AND_REGRESSION_DATASET": 1,
+      "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_3_EVALUATOR_RUNNER_AND_CONFUSION_MATRIX": 1,
+      "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_4_VALIDATOR_ALIGNMENT_GATE_PROMOTION": 1,
+      "IMPLEMENT_OBSERVABILITY_TRACE_SPAN_LEDGER_CARTRIDGE_STAGE_1_OR_SECURITY_ARTIFACT_THREAT_MODEL_STAGE_1": 1,
+      "IMPLEMENT_STATE_CHECKPOINT_RESUME_AND_INTERRUPT_CARTRIDGE_STAGE_1_OR_SECURITY_STAGE4_RED_TEAM_FIXTURES": 1,
+      "IMPLEMENT_UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE_STAGE_4_REAL_CARTRIDGE_EXECUTOR_WIRING_OR_OBSERVABILITY_TRACE_LEDGER": 1,
+      "METABLOOMS_STAGE6E_HANDOFF_20260502T020800Z": 1,
+      "METABLOOMS_STAGE6F_HANDOFF_20260502T022600Z": 1,
+      "METABLOOMS_STAGE6G_PRE_EXPORT_HANDOFF_20260502T005353Z": 1,
+      "METABLOOMS_STAGE6Q_REPAIR_LEGACY_EXECUTOR_RETROFIT_HANDOFF_20260502T035000Z": 1,
+      "META_INFRA_SELF_HARDENING_TOOL_ROADMAP_STAGE0": 1,
+      "MPP_CDR_BINDING_STAGE14_CODE_WORK_REQUIRES_CDR_IN_MPP": 1,
+      "MPP_CDR_BINDING_STAGE15_RETROFIT_STAGE_CONTRACTS_TO_DECLARE_CODE_BEARING_FLAG": 1,
+      "MPP_CDR_BINDING_STAGE16_FULL_AUTHORITY_EXPORT_AFTER_STAGE15": 1,
+      "NEXT_BUILD_INTERNAL_RESEARCH_SEE_CE_DECISION": 3,
+      "NEXT_BUILD_INTERNAL_RESEARCH_SEE_CE_DECISION_20260502T163517Z": 1,
+      "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION": 5,
+      "OPERATOR_TRACKER_RESTORED_20260502T145510Z": 1,
+      "OPERATOR_VISUAL_TRACKER_CHAT_RENDER_REPAIR": 1,
+      "OPERATOR_VISUAL_TRACKER_POLISH_STAGE2_RENDER_CONTRACT_AND_PHONE_SAFE_TEMPLATE": 6,
+      "OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_EXPORT_INTEGRATION_AND_BOOT_SURFACE_BINDING": 10,
+      "OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_EXPORT_INTEGRATION_AND_BOOT_SURFACE_BINDING_20260502T153800Z": 3,
+      "OPERATOR_VISUAL_TRACKER_RESTORE_AND_ENFORCEMENT_STAGE1": 5,
+      "OPERATOR_VISUAL_TRACKER_RESTORE_AND_ENFORCEMENT_STAGE1_20260502T145646Z": 1,
+      "OPERATOR_VISUAL_TRACKER_STATUS_STRIP_REPAIR": 1,
+      "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_10_PROMPT_ROUTE_PREEXECUTION_ENFORCER_AND_TASK_START_HOOK": 1,
+      "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_11_FULL_EXTRACT_REPLAY_FIX_AND_RECOVERY_PROOF": 1,
+      "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_12_POINTER_PROMOTION_AND_RUNTIME_STARTER_SMOKE": 1,
+      "RECONCILE_STAGE3_AUTHORITY_POINTER_AND_NEW_CHAT_START_CONTRACT": 1,
+      "STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN": 2,
+      "STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_AMENDED": 2,
+      "STAGE3_AUTHORITY_RECONCILED_FULL_AUTHORITY_EXPORT": 3,
+      "STAGE3_AUTHORITY_RECONCILED_FULL_AUTHORITY_EXPORT_20260502T163016Z": 1,
+      "STAGE4C_NODE_YAUZL_YAZL_STREAM_REBUILD_AND_BOOT_PROOF": 1,
+      "STAGE4D_POINTER_PROMOTION_AND_NEW_CHAT_BOOT_REHEARSAL": 1,
+      "STAGE5B_OS_BUNDLE_DELIVERY_FULL_BOOTABLE_AUTHORITY_HARDENING": 1,
+      "STAGE5D_MINIMAL_POINTER_AND_REHEARSAL_PACKET_COHERENCE_REPAIR_NO_BROAD_EXPORT_UNTIL_VERIFIED": 1,
+      "STAGE5E_FULL_AUTHORITY_EXPORT_AFTER_POINTER_COHERENCE_REPAIR": 1,
+      "STAGE5_USE_PROMOTED_AUTHORITY_FOR_NEXT_GOVERNED_TASK": 2,
+      "STAGE6A_SOTA_GAP_CLOSURE_PLAN_NO_IMPLEMENTATION": 1,
+      "STAGE6B_PER_ACTION_TOOL_INTERCEPTION_SCHEMA_AND_WRAPPER": 1,
+      "STAGE6C_BTS_V4_CANONICAL_AUDIT_AND_INTEGRATION_PLAN": 1,
+      "STAGE6D_BTS_V4_GATE_WRAPPED_INSTALL_SCAFFOLD": 1,
+      "STAGE6L_POST_TOOL_RESULT_VALIDATION_GATE": 1,
+      "STAGE6M_FULL_AUTHORITY_EXPORT_AFTER_POST_TOOL_GATE": 1,
+      "STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_20260502T035000Z": 1,
+      "STAGE6O_OWASP_AGENTIC_AI_COVERAGE_MATRIX_AND_POLICY_BINDINGS": 1,
+      "STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM": 1,
+      "STAGE6Q_LEGACY_EXECUTOR_RETROFIT_AUDIT": 1,
+      "STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS": 1,
+      "STAGE6S_FULL_AUTHORITY_EXPORT_AFTER_STAGE6N_TO_6R": 1,
+      "STAGE6T_TOOL_UNIVERSE_RESOLVER_COVERAGE_REPAIR_FOR_TRACE_EXPORT": 1,
+      "STAGE6U_FULL_AUTHORITY_EXPORT_AFTER_6T": 1,
+      "boot": 1,
+      "education_validity": 1,
+      "external_review": 3,
+      "filesystem_handling": 1,
+      "meta_infra": 6,
+      "operator_tracker": 1,
+      "runtime_pulse": 2,
+      "state": 1
+    },
+    "by_status": {
+      "BLOCKED": 3,
+      "ERROR": 1,
+      "OK": 216
+    },
+    "ledger_path": "/mnt/data/Metablooms_OS/runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl",
+    "parse_error_count": 0,
+    "record_count_returned": 20,
+    "total_matching_records": 220,
+    "unique_trace_count": 1
+  },
+  "summary_path": "/mnt/data/Metablooms_OS/runtime/traces/observability/TRACE_SUMMARY_LATEST.json",
+  "trace_ledger_path": "/mnt/data/Metablooms_OS/runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl",
+  "verdict": "TRACE_LEDGER_READY"
+}

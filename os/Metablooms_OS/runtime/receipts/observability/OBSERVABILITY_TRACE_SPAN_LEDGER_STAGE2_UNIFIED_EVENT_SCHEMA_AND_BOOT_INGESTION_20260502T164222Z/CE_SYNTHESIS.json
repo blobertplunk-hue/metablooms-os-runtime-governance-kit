@@ -1,0 +1,18 @@
+{
+  "artifact_type": "CE_SYNTHESIS.v1",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION",
+  "created_utc": "20260502T164222Z",
+  "internal_findings": [
+    "Stage 1 installed a raw JSONL trace/span ledger and mb trace preview command.",
+    "Existing boot, authority reconciliation, export, eval, security, filesystem, and operator-surface receipts are distributed across multiple directories.",
+    "The visual tracker can show status, but it lacks a normalized causal execution model for receipts, validators, handoffs, and blockers.",
+    "Security, eval, CDR, export, and recovery replay all benefit from a common trace/provenance substrate."
+  ],
+  "decision": "Implement Stage 2 as a canonical event schema plus boot-artifact ingestion that regenerates a compact index and causal graph from existing OS artifacts.",
+  "smallest_valid_change": [
+    "Add canonical event and causal graph schemas.",
+    "Add an ingestion script that scans bounded receipt/handoff/boot/roadmap evidence.",
+    "Add a validator that proves JSONL integrity, schema references, parent link validity, provenance fields, and derivative index consistency.",
+    "Write the generated ledger, index, graph, validation report, receipt, handoff, and tracker preview."
+  ]
+}

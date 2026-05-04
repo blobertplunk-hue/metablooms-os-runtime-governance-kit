@@ -1,0 +1,71 @@
+{
+  "artifacts": [
+    {
+      "bytes": 2288,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T144842Z/SEE_EVIDENCE_PACKET.json",
+      "sha256": "a004123fd7fd4aa97b9f31aebca3765e3f78f8116d09b1fd8fa03fb7586836ef"
+    },
+    {
+      "bytes": 1342,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T144842Z/CE_SYNTHESIS.json",
+      "sha256": "b2088d1729894a987b13e07faae79445a3cc4a8687b8776813d4905c6bb1e33f"
+    },
+    {
+      "bytes": 12801,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T144842Z/APPEND_STREAM_INVENTORY.json",
+      "sha256": "5883ba52911348433f45c6a604cff5dcde1ac7a5cea4b161ffa550c4a99f3ba1"
+    },
+    {
+      "bytes": 2099,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T144842Z/ADS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_v1.json",
+      "sha256": "322b55ad24f621efd60564c09d7c5dc7eccb3fc387be712b2d85c9204adcee89"
+    },
+    {
+      "bytes": 2041,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T144842Z/ATOMIC_APPEND_LOG_WRITER_CONTRACT_v1.json",
+      "sha256": "0e477911a84d70567a8952e41bb89c8ba89e33b5d4a9d32ce5d0ba1aca2f8d90"
+    },
+    {
+      "bytes": 1558,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T144842Z/ATOMIC_APPEND_LOG_ENVELOPE_SCHEMA_v1.json",
+      "sha256": "2f3d25cf404d10c574f8988af45b7cb99264174bdb77aaac8683aeec2ae3a176"
+    },
+    {
+      "bytes": 1173,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T144842Z/ATOMIC_APPEND_LOG_DECISION_PACKET_SCHEMA_v1.json",
+      "sha256": "f5bccab880a44fe8fc74d4b9a14ad9306e4040733f1d9edf94d5c26c7016f067"
+    },
+    {
+      "bytes": 1005,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T144842Z/ATOMIC_APPEND_LOG_FAILURE_EVENT_SCHEMA_v1.json",
+      "sha256": "aaae86f2b0e3893bb4c405c846a99f29c6f4b5eb3f800afb030cf206fd899bc6"
+    },
+    {
+      "bytes": 1741,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T144842Z/FIXTURE_MATRIX_v1.json",
+      "sha256": "60159e6ca8d00a5c0033295b0a61781e66924a48e6e89ddec73e7bab6fb52bf4"
+    },
+    {
+      "bytes": 962,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T144842Z/CDR_CRITICAL_GATE_RESULTS_STAGE1.json",
+      "sha256": "e76e878399239876fb3240d7a9fa034fb66718ead630cd035f0285130c7815d1"
+    }
+  ],
+  "candidate_append_stream_files_count": 179,
+  "created_utc": "20260502T144842Z",
+  "next_stage": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES",
+  "previous_handoff_loaded": true,
+  "root_checks": {
+    "latest_full_authority_sha256_sidecar_exists": true,
+    "latest_full_authority_sidecar_text": "66bba2bd61cb9a4b8335025a05bfd18cb3772fa1fc687eaeab1bacac4016de1e  METABLOOMS_OS_BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE5_FULL_AUTHORITY_20260502T145012Z.zip",
+    "latest_full_authority_zip": "/mnt/data/METABLOOMS_OS_BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE5_FULL_AUTHORITY_20260502T145012Z.zip",
+    "latest_full_authority_zip_exists": true,
+    "latest_full_authority_zip_sha256_computed": "66bba2bd61cb9a4b8335025a05bfd18cb3772fa1fc687eaeab1bacac4016de1e",
+    "root": "/mnt/data/Metablooms_OS",
+    "root_exists": true,
+    "stage5_atomic_json_handoff_loaded": true,
+    "stage5_atomic_json_handoff_path": "/mnt/data/Metablooms_OS/runtime/handoffs/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE5_HANDOFF_LATEST.json"
+  },
+  "stage": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT",
+  "status": "PASS"
+}

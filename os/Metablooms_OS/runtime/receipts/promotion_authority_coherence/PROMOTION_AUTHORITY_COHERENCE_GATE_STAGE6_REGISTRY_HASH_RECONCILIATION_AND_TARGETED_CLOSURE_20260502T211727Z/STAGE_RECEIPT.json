@@ -1,0 +1,96 @@
+{
+  "actions": [
+    {
+      "action": "normalized_controlled_artifact_candidate_model",
+      "result": "PAC and scatter now share lifecycle-aware active_authority/active_supporting semantics"
+    },
+    {
+      "action": "reconciled_registry_hashes",
+      "result": "CONTROLLED_GOVERNANCE_ARTIFACT_INDEX_v1 regenerated with current hashes for active controlled artifacts"
+    },
+    {
+      "action": "patched_fresh_chat_self_anchor",
+      "result": "fresh chat no longer requires self-referential registry index to be indexed inside itself"
+    }
+  ],
+  "counts": {
+    "controlled_count": 2164,
+    "hash_mismatch_sample": [],
+    "missing_from_registry_count": 0,
+    "missing_from_registry_sample": [],
+    "registered_count": 2114,
+    "registered_hash_mismatch_count": 0,
+    "registered_noncurrent_count": 0,
+    "registered_noncurrent_sample": []
+  },
+  "created_at": "2026-05-02T21:19:38.566369+00:00",
+  "delta_bundle": {
+    "external_final_lock_required": "/mnt/data/Metablooms_OS/runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE6_REGISTRY_HASH_RECONCILIATION_AND_TARGETED_CLOSURE_20260502T211727Z/STAGE6_DELTA_BUNDLE_FINAL_LOCK.json",
+    "member_count": 57,
+    "path": "/mnt/data/Metablooms_OS/runtime/stage_bundles/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE6_REGISTRY_HASH_RECONCILIATION_AND_TARGETED_CLOSURE_20260502T212004Z_VERIFIED_DELTA_REPAIRED.zip",
+    "receipt_included_in_bundle": "snapshot_only_final_receipt_bound_by_external_lock",
+    "sha256": "96d2c968266ad3a3e85f0afae1fc30e48e4aa90cbeb063b545f678f9089217ee",
+    "sidecar": "/mnt/data/Metablooms_OS/runtime/stage_bundles/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE6_REGISTRY_HASH_RECONCILIATION_AND_TARGETED_CLOSURE_20260502T212004Z_VERIFIED_DELTA_REPAIRED.zip.sha256"
+  },
+  "external_evidence": [
+    "SLSA verifying artifacts",
+    "NIST SSDF SP 800-218",
+    "OpenSSF Scorecard automated checks"
+  ],
+  "modified_artifacts": [
+    {
+      "path": "runtime/governance/controlled_artifact_registry_v1.py",
+      "sha256": "a5622329494b86f28f1534a531473f0e8bf681f669f91b8305d0b40be30f396e"
+    },
+    {
+      "path": "runtime/governance/controlled_artifact_registry_v1.py.sha256",
+      "sha256": "ebcdf9cb1d2d4a78bb01fdee7767032e930d5232c2780848c7aa090b7c5ef508"
+    },
+    {
+      "path": "runtime/governance/fresh_chat_boot_rehearsal_v1.py",
+      "sha256": "7e70c7fa3304e3655cf99307390125aabc89cc785ea6fd38ebf8898b93c62f1e"
+    },
+    {
+      "path": "runtime/governance/fresh_chat_boot_rehearsal_v1.py.sha256",
+      "sha256": "de0dee56211fcb0420f60d341bba793c1ecc04d539ff574ecc3a307ab7d45cd7"
+    },
+    {
+      "path": "0_kernel/mpp_v3/promotion_authority_coherence_gate_v1.py",
+      "sha256": "2254eb89b35c65c434ed5fa103bbb0b0460aa86ff3c287647a338aee4c0ed596"
+    },
+    {
+      "path": "0_kernel/mpp_v3/promotion_authority_coherence_gate_v1.py.sha256",
+      "sha256": "a97aee8689563d07fe9ae45972c205f8c3d0f7d0eb418144f29720e397447356"
+    },
+    {
+      "path": "0_kernel/registry/CONTROLLED_GOVERNANCE_ARTIFACT_INDEX_v1.json",
+      "sha256": "00cb088642d77d86639f82a1918a9af53ec88aa2ee4f2a3dbeb56163e299f0c2"
+    },
+    {
+      "path": "0_kernel/registry/CONTROLLED_GOVERNANCE_ARTIFACT_INDEX_v1.json.sha256",
+      "sha256": "13e8c4abfc80142c6da98958da27372f5750fc07cfe1b7432fd35cba7c879ac2"
+    }
+  ],
+  "next_stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE7_FULL_EXPORT_AND_NEW_CHAT_REPLAY_LOCK",
+  "not_done": [
+    "no full authority export promoted in Stage 6",
+    "no baseline lock advanced in Stage 6"
+  ],
+  "receipt_dir": "/mnt/data/Metablooms_OS/runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE6_REGISTRY_HASH_RECONCILIATION_AND_TARGETED_CLOSURE_20260502T211727Z",
+  "result_hash": "ddb5ecb6069dbbad88d907b1997ea4a8d75559a475b11902b40218dab6a32f49",
+  "root": "/mnt/data/Metablooms_OS",
+  "schema_version": "metablooms.stage_receipt.v1",
+  "stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE6_REGISTRY_HASH_RECONCILIATION_AND_TARGETED_CLOSURE",
+  "status": "PASS",
+  "verification_summary": {
+    "fixture_ledger": "PASS",
+    "fresh_chat_boot_rehearsal": "ALLOW",
+    "new_chat_start_contract": "ALLOW",
+    "pac_current_scan": "PASS",
+    "pac_defects": [],
+    "registry_verify_hashes": "ALLOW",
+    "runtime_starter_smoke": "ALLOW",
+    "scatter_prevention": "ALLOW",
+    "write_path_gate": "PASS"
+  }
+}

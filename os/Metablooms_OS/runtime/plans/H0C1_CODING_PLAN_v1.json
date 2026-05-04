@@ -1,0 +1,20 @@
+{
+  "artifact_type": "H0C1_CODING_PLAN_v1",
+  "created_utc": "2026-04-30T21:45:00Z",
+  "promotion_requires_full_system_export": true,
+  "sandbox_method_policy": "Use shell and python3 -S for stdlib-only filesystem/archive work; avoid normal python startup for the wrong issues.",
+  "stage_id": "H0C1_BOOT_CRITICAL_GOVERNANCE_CONSOLIDATION_AND_HOST_ENFORCEMENT_BRIDGE",
+  "steps": [
+    "Verify H0B2C source ZIP and sidecar.",
+    "Inventory existing governance files in boot-critical directories.",
+    "Create BOOT_REQUIRED_GATES_v1 as single manifest of required gates and critical governance files.",
+    "Implement boot_critical_governance_loader_v1.py.",
+    "Implement governance_scatter_prevention_v1.py.",
+    "Patch boot_runtime_executor_v1.py to invoke loader and scatter validator.",
+    "Create fixtures and tests for valid boot, missing required path, and unregistered governance scatter.",
+    "Run tests from a targeted fresh extract.",
+    "Stream rebuild duplicate-free whole-system ZIP.",
+    "Verify ZIP integrity, duplicate count, required files, behavior tests, sidecar."
+  ],
+  "test_as_you_go": true
+}

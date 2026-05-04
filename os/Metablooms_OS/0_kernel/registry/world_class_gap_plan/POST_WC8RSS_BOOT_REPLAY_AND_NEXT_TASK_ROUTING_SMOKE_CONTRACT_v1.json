@@ -1,0 +1,19 @@
+{
+  "schema_version": "v1",
+  "stage": "POST_WC8RSS_BOOT_REPLAY_AND_NEXT_TASK_ROUTING_SMOKE",
+  "created_utc": "20260503T015817Z",
+  "purpose": "Bounded boot/routing smoke because continuation prompt supplied no concrete next MetaBlooms task.",
+  "must_not_invent_domain_work": true,
+  "decision_rule": "If no concrete task is supplied, write handoff and export only.",
+  "required_authorities": [
+    "0_kernel/registry/world_class_gap_plan/WORLD_CLASS_MEASURED_SCORECARD_BASELINE_v1.json",
+    "runtime/state/DORA_STYLE_OS_METRICS_BASELINE_v1.json",
+    "0_kernel/cartridges/educational_html_design_system/EDUCATIONAL_HTML_DESIGN_SYSTEM_CARTRIDGE_SPEC_v1.json",
+    "BOOT_AUTHORITY_MANIFEST_v1.json",
+    "0_kernel/lessons/LESSON_PROMOTION_QUEUE_v1.json",
+    "0_kernel/registry/general_capability_resolver/GENERAL_CAPABILITY_RESOLVER_CONTRACT_v1.json",
+    "0_kernel/cartridges/automatic_process_tracker/AUTOMATIC_MULTI_STEP_TRACKER_CONTRACT_v1.json"
+  ],
+  "tracker_required": true,
+  "path_binding_correction": "Corrected general capability resolver contract path to 0_kernel/registry/general_capability_resolver/GENERAL_CAPABILITY_RESOLVER_CONTRACT_v1.json before final export."
+}

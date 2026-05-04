@@ -1,0 +1,18 @@
+{
+  "locked_at": "20260501T005900Z",
+  "policy_id": "MPP_V3_RRP_ROLLBACK_GATE_v1",
+  "research_basis": [
+    "AWS Reliability Pillar requires defining RTO/RPO, recovery strategies, testing DR implementation, managing drift, and automating recovery.",
+    "AWS cutover runbook guidance recommends rollback planning when migration exceeds outage windows and recording observations/troubleshooting.",
+    "NIST contingency planning describes recovery strategies, contingency plans, testing/training/exercises, and maintenance."
+  ],
+  "rules": [
+    "Recovery objectives must include RTO, RPO, rollback window, data loss tolerance, and success state.",
+    "At least one failure mode must require rollback.",
+    "Rollback plan must include trigger conditions, steps, owner, verification, and abort conditions.",
+    "Recovery runbook steps must include owner, expected result, and evidence.",
+    "At least one validation drill is required.",
+    "Drift controls and cleanup plan are mandatory."
+  ],
+  "stage": "RRP"
+}

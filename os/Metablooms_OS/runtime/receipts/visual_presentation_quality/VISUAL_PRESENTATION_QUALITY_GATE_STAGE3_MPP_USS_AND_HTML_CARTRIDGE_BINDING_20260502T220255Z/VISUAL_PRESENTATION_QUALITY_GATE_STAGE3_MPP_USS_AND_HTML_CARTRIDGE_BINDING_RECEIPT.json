@@ -1,0 +1,28 @@
+{
+  "citations": [
+    "turn933566search0",
+    "turn933566search1",
+    "turn933566search2",
+    "turn933566search12"
+  ],
+  "created_utc": "2026-05-02T22:03:09Z",
+  "modified_artifacts": [
+    "/mnt/data/Metablooms_OS/0_kernel/registry/visual_presentation_quality/visual_presentation_quality_declaration_schema_v1.json",
+    "/mnt/data/Metablooms_OS/tests/fixtures/visual_presentation_quality/valid_visual_presentation_quality_html_activity_v1.json",
+    "/mnt/data/Metablooms_OS/0_kernel/validators/validate_visual_presentation_quality_gate_v1.py",
+    "/mnt/data/Metablooms_OS/runtime/governance/schemas/usefulness_surface_declaration_schema_v1.json",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/usefulness_surface_validator_v1.py",
+    "/mnt/data/Metablooms_OS/0_kernel/registry/visual_presentation_quality/VISUAL_PRESENTATION_MPP_USS_HTML_BINDING_v1.json",
+    "/mnt/data/Metablooms_OS/0_kernel/mpp_v3/VISUAL_PRESENTATION_QUALITY_GATE_MPP_BINDING_v1.json",
+    "/mnt/data/Metablooms_OS/runtime/cartridges/html_activity_visual_presentation_quality_v1/CARTRIDGE_MANIFEST.json",
+    "/mnt/data/Metablooms_OS/runtime/cartridges/html_activity_visual_presentation_quality_v1/TEACHER_PROFESSIONAL_SURFACE_PROFILE_v1.json",
+    "/mnt/data/Metablooms_OS/tests/fixtures/usefulness_surface/valid_usefulness_html_activity_with_visual_presentation_v1.json",
+    "/mnt/data/Metablooms_OS/tests/fixtures/usefulness_surface/invalid_usefulness_html_activity_missing_visual_presentation_v1.json"
+  ],
+  "next_stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE4_RENDER_SMOKE_AND_VISUAL_REVIEW_PACKET",
+  "schema_version": "metablooms.stage_receipt.v1",
+  "stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE3_MPP_USS_AND_HTML_CARTRIDGE_BINDING",
+  "summary": "Bound VPQ into MPP, USS, and an HTML activity visual presentation cartridge; added teacher professional presentation enforcement.",
+  "tests_passed": false,
+  "verdict": "FAIL"
+}

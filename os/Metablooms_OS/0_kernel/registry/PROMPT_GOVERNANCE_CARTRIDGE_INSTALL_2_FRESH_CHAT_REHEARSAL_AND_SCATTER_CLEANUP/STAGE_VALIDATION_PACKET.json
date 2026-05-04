@@ -1,0 +1,35 @@
+{
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_2_FRESH_CHAT_REHEARSAL_AND_SCATTER_CLEANUP",
+  "status": "PASS",
+  "validation": {
+    "boot_loader": {
+      "checks_count": 13,
+      "decision": "ALLOW",
+      "errors": [],
+      "summary": {}
+    },
+    "fresh_chat": {
+      "checks_count": 9,
+      "decision": "ALLOW",
+      "errors": [],
+      "summary": {}
+    },
+    "prompt": {
+      "checks_count": 9,
+      "decision": "ALLOW",
+      "errors": [],
+      "summary": {}
+    },
+    "scatter": {
+      "checks_count": null,
+      "decision": "ALLOW",
+      "errors": [],
+      "summary": {
+        "current_controlled_count": 1776,
+        "index_status": "active",
+        "mode": "controlled_artifact_index",
+        "registered_count": 1776
+      }
+    }
+  }
+}

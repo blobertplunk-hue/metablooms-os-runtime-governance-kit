@@ -1,0 +1,12 @@
+{
+  "artifact_type": "StageHandoff.v1",
+  "created_utc": "2026-05-02T16:30:16Z",
+  "export_sha256_sidecar": "/mnt/data/METABLOOMS_OS_STAGE3_AUTHORITY_RECONCILED_NEW_CHAT_VALIDATOR_PASS_20260502T163016Z.zip.sha256",
+  "export_zip": "/mnt/data/METABLOOMS_OS_STAGE3_AUTHORITY_RECONCILED_NEW_CHAT_VALIDATOR_PASS_20260502T163016Z.zip",
+  "new_chat_validator_decision": "ALLOW",
+  "next_stage": "Run the next requested bounded governed stage from the exported reconciled authority.",
+  "operator_tracker": "/mnt/data/Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html",
+  "receipt": "/mnt/data/Metablooms_OS/runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_RECONCILED_FULL_AUTHORITY_EXPORT_20260502T163016Z/STAGE_RECEIPT.json",
+  "stage": "STAGE3_AUTHORITY_RECONCILED_FULL_AUTHORITY_EXPORT",
+  "status": "PASS"
+}

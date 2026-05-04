@@ -1,0 +1,72 @@
+{
+  "version": "1.0",
+  "created_at": 1777173600,
+  "artifact_id": "HEAVY_WORK_CLASS_ENUM_v1",
+  "amendment": "AMEND-0009",
+  "status": "active",
+  "purpose": "Machine-readable enum of heavy work classes for the auto-runaway breaker. Replaces the informal 'max 1 heavy work class' rule with a typed, enforceable taxonomy.",
+  "see_evidence": [
+    "Traefik TBAC (Tools/Tasks/Transactions-Based Access Control): access decisions require typed categories",
+    "Agentic AI architecture taxonomy: Perception/Brain/Planning/Action/Tool Use — taxonomy IS the control mechanism",
+    "ChatGPT CE+SEE verdict 2026-04-26: 'heavy work class gate becomes subjective without a machine-readable enum'"
+  ],
+  "supersedes_informal_rule": "AUTO_RUNAWAY_BREAKER_INVARIANT_v1.json heavy_work_classes list",
+  "enum": {
+    "RESEARCH": {
+      "description": "Web search passes, SEE execution, external source gathering",
+      "examples": ["web.run calls", "SEE_PASS stage", "multi-source evidence gathering"],
+      "runaway_risk": "high — can expand unboundedly if queries chain"
+    },
+    "ARCHIVE_EXTRACTION": {
+      "description": "Unzipping, extracting, recursively processing nested archives",
+      "examples": ["unzip of bundle ZIPs", "recursive nested archive expansion", "tar extraction"],
+      "runaway_risk": "high — nested ZIPs can trigger recursive expansion chains"
+    },
+    "CODE_PATCH": {
+      "description": "Writing, modifying, or replacing Python/JS/HTML source files",
+      "examples": ["script implementation", "AST patch via libcst", "HTML engine mutation"],
+      "runaway_risk": "high — mutations are hard to reverse; can corrupt active tree"
+    },
+    "BROWSER_VALIDATION": {
+      "description": "Launching browser, running accessibility checks, Playwright/Chromium automation",
+      "examples": ["browser harness execution", "ARIA tree validation", "DOM accessibility check"],
+      "runaway_risk": "medium — browser tier can hang indefinitely in sandbox"
+    },
+    "FULL_EXPORT": {
+      "description": "Creating, re-packaging, or exporting a complete bundle ZIP",
+      "examples": ["zip -r of full OS tree", "export recovery validator run", "baseline lock ZIP creation"],
+      "runaway_risk": "medium — large ZIPs can cause tool timeouts"
+    },
+    "REGISTRY_RECONCILIATION": {
+      "description": "Auditing, diffing, or mutating artifact_registry.json or boot_manifest_v1.json",
+      "examples": ["registry_mutation_engine run", "artifact registry patch", "boot manifest update"],
+      "runaway_risk": "high — corrupting registry breaks all subsequent stages"
+    },
+    "BOOT_RECOVERY": {
+      "description": "Running the boot executor, re-proving recovery, or restoring from baseline",
+      "examples": ["boot_runtime_executor_v1.py", "export_recovery_proven_validator run", "restore ladder execution"],
+      "runaway_risk": "high — can overwrite active root if unconstrained"
+    },
+    "PROOF": {
+      "description": "Formal proof stages: SHA chain verification, manifest cross-check, recovery proof",
+      "examples": ["manifest SHA256 verification runs", "G6 two-pass self-consistent proof", "MERGE-S8 re-extract verify"],
+      "runaway_risk": "low — read-only; runaway risk is mainly time"
+    }
+  },
+  "enforcement_rule": "A stage may contain AT MOST ONE class from this enum. If a proposed stage plan contains two or more, auto-split BEFORE execution. The split boundary is drawn between the two classes. Each sub-stage gets its own P-1 through P7 lifecycle.",
+  "pre_stage_classification_block": {
+    "description": "Every stage receipt must declare this block before P0 runs",
+    "schema": {
+      "heavy_work_class": "<one value from enum above>",
+      "classification_rationale": "<why this stage fits this class>",
+      "second_class_detected": "<class name or null>",
+      "split_required": "<true|false>",
+      "split_plan": "<description of how to split or null>"
+    }
+  },
+  "integration_targets": [
+    "TRANSACTIONAL_STAGE_RUNNER_CONTRACT_v2.json — runaway_breaker_integration.heavy_work_class_enum",
+    "AUTO_RUNAWAY_BREAKER_INVARIANT_v1.json — supersedes heavy_work_classes list",
+    "AUTO_RUNAWAY_STAGE_SPLIT_CONTRACT_v1.json — must reference this enum"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "created_utc": "20260502T220900Z",
+  "method": "web.run evidence synthesis; claims require citations in chat final",
+  "packet_id": "VISUAL_PRESENTATION_QUALITY_STAGE1_SEE_PACKET_v1",
+  "sources": [
+    {
+      "claim": "Attractive interfaces can increase perceived usability and tolerance for minor issues, but can also mask UX problems.",
+      "id": "nng_aesthetic_usability_effect_2024",
+      "url": "https://www.nngroup.com/articles/aesthetic-usability-effect/"
+    },
+    {
+      "claim": "Visual design should communicate and support function; clarity beats decorative excess.",
+      "id": "nng_aesthetic_minimalist_design_2021",
+      "url": "https://www.nngroup.com/articles/aesthetic-minimalist-design/"
+    },
+    {
+      "claim": "Visual design should be tested with methods such as 5-second, first-click, and preference tests.",
+      "id": "nng_testing_visual_design_2024",
+      "url": "https://www.nngroup.com/articles/testing-visual-design/"
+    },
+    {
+      "claim": "WCAG 2.2 adds focus visibility, target size, dragging alternatives, consistent help, and related criteria relevant to interactive HTML.",
+      "id": "w3c_wcag_2_2_2024",
+      "url": "https://www.w3.org/TR/WCAG22/"
+    },
+    {
+      "claim": "Material Design 3 provides a current open design system for color, typography, layout, components, and accessibility.",
+      "id": "material_design_3",
+      "url": "https://m3.material.io/"
+    },
+    {
+      "claim": "Typography decisions must support visual accessibility, including contrast between text and background.",
+      "id": "material_typography",
+      "url": "https://m3.material.io/styles/typography/applying-type"
+    },
+    {
+      "claim": "Expressive design uses color, shape, size, motion, and containment to communicate function and emotion.",
+      "id": "google_expressive_design",
+      "url": "https://design.google/library/expressive-material-design-google-research"
+    }
+  ],
+  "synthesis": [
+    "Visual quality is not a cosmetic afterthought; it affects trust, perceived usability, willingness to continue, and adult credibility judgments.",
+    "For MetaBlooms HTML activities, the correct gate is cross-cutting: MPP must require a visual contract for visual artifacts, while each artifact cartridge must instantiate a purpose-specific design profile.",
+    "The gate must block default-browser styling, unbounded animations, inaccessible contrast/focus/touch targets, and visual choices unsupported by purpose/audience/platform.",
+    "The gate must require both visual intent and verification evidence, not just a note saying the artifact looks good."
+  ]
+}

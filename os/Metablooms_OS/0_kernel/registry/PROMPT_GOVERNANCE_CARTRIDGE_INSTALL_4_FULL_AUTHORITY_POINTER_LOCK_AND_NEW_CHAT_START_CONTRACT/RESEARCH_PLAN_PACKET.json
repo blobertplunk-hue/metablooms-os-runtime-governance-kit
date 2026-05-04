@@ -1,0 +1,15 @@
+{
+  "created_utc": "2026-04-30T21:22:57.454496Z",
+  "evidence_targets": [
+    "clear instruction/output contracts",
+    "versioned reusable prompt assets",
+    "eval/regression gates for prompt changes",
+    "agent workflow validation"
+  ],
+  "queries": [
+    "official prompt guidance for reusable/versioned prompts",
+    "official eval guidance for prompt regression testing",
+    "agent workflow evals for governed tool workflows"
+  ],
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_4_FULL_AUTHORITY_POINTER_LOCK_AND_NEW_CHAT_START_CONTRACT"
+}

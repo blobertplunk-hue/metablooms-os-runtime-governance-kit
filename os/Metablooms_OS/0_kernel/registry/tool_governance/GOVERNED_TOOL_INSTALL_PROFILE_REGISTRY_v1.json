@@ -1,0 +1,49 @@
+{
+  "schema_id": "GOVERNED_TOOL_INSTALL_PROFILE_REGISTRY_v1",
+  "status": "active",
+  "purpose": "Select, install, verify, and promote external tools by governed job profile rather than ad hoc dependency use.",
+  "invariants": [
+    "Install only into isolated /mnt/data workspaces unless an OS promotion gate approves embedding.",
+    "Never mutate the canonical OS root with node_modules or package manager caches.",
+    "Every install profile must include package list, pinned versions where possible, lockfile hash, install log hash, smoke test, receipt, and rollback path.",
+    "A tool is usable only after require/command resolution and a task-specific smoke test pass.",
+    "Promotion into an authority ZIP requires archive safety scan, duplicate scan, CRC proof, checksum sidecar, and boot smoke when boot-critical.",
+    "If a package manager or network route fails, record the failure class and prefer already verified working routes."
+  ],
+  "profiles": {
+    "A_ZIP_AUTHORITY_REPAIR": {
+      "default": true,
+      "job_types": ["zip repair", "authority rebuild", "crc replay proof", "boot-critical archive recovery"],
+      "install_manager": "npm",
+      "workspace_policy": "/mnt/data/metablooms_<stage>_node_stream_rebuild_<timestamp>",
+      "required_packages": [
+        {"name": "yauzl", "version": "3.3.0", "role": "central-directory ZIP reader and stream opener"},
+        {"name": "yazl", "version": "3.3.1", "role": "stream ZIP writer/rebuilder"},
+        {"name": "crc-32", "version": "1.2.2", "role": "streamed CRC32 validation"},
+        {"name": "fflate", "version": "0.8.2", "role": "fallback pure-JS compression/decompression"}
+      ],
+      "verification_gates": ["npm install --save-exact", "require.resolve for each package", "package-lock hash", "full streamed CRC proof", "unsafe path scan", "duplicate scan", "targeted boot extract", "boot executor smoke"],
+      "fallback_packages": ["adm-zip", "unzipper", "jszip"],
+      "promotion_rule": "Promote only if rebuilt ZIP has sha256 sidecar, full streamed CRC proof PASS, and boot smoke PASS_WITH_WARNINGS or stronger."
+    },
+    "B_HTML_VALIDATION_ACCESSIBILITY": {
+      "job_types": ["interactive html audit", "tts validation", "accessibility smoke", "dom contract validation"],
+      "install_manager": "npm",
+      "required_packages": ["jsdom", "parse5", "axe-core", "aria-query", "dom-accessibility-api", "ajv"],
+      "verification_gates": ["package lock", "DOM parse smoke", "accessibility rule smoke", "fixture validation"]
+    },
+    "C_DOCUMENT_EXTRACTION": {
+      "job_types": ["pptx extraction", "docx extraction", "pdf extraction", "office xml parse"],
+      "install_manager": "npm-first, native-tools-if-present",
+      "required_packages": ["jszip", "fast-xml-parser"],
+      "optional_packages": ["mammoth", "pdf-parse", "pdfjs-dist"],
+      "verification_gates": ["sample fixture extract", "relationship map smoke", "text/media count receipt"]
+    },
+    "D_SCHEMA_DATA_GOVERNANCE": {
+      "job_types": ["schema validation", "csv build", "json ledger", "semver gating"],
+      "install_manager": "npm",
+      "required_packages": ["ajv", "csv-parse", "csv-stringify", "json-stable-stringify", "semver", "yaml"],
+      "verification_gates": ["schema fixture pass/fail", "round-trip CSV fixture", "stable hash fixture"]
+    }
+  }
+}

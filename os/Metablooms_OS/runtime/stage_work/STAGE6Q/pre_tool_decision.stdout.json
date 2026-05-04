@@ -1,0 +1,21 @@
+{
+  "schema_version": "PolicyDecision_v1",
+  "decision_id": "decision_1777691772214_cdb9caa9",
+  "envelope_id": "stage6q_audit_static_scan_001",
+  "stage_id": "STAGE6Q_LEGACY_EXECUTOR_RETROFIT_AUDIT",
+  "decision": "ALLOW",
+  "reason_code": "LOW_RISK_BOUNDED_ACTION",
+  "rationale": "Envelope passed schema, method, path, SEE, approval, and bounded-budget checks.",
+  "decided_at_utc": "2026-05-02T03:16:12Z",
+  "enforced_by": "pre_tool_action_gate_v1",
+  "receipt_path": "/mnt/data/Metablooms_OS/runtime/stage_work/STAGE6Q/pre_tool_decision.json",
+  "safe_to_execute": true,
+  "required_next_action": "execute_action_and_write_action_receipt",
+  "matched_rules": [
+    "schema.required",
+    "path.safety",
+    "runaway.breaker",
+    "method.reliability"
+  ],
+  "envelope_sha256": "92a6263349c3a5d6506afa774d78122b29fae34f6f7640b01c8740512a875205"
+}

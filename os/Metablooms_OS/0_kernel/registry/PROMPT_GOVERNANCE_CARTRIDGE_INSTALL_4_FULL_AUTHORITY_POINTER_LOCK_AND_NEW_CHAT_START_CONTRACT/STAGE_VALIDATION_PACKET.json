@@ -1,0 +1,232 @@
+{
+  "created_utc": "2026-04-30T21:27:16.461921Z",
+  "pre_export_passed": true,
+  "pre_export_runs": {
+    "boot_critical": {
+      "checks": [
+        {
+          "name": "boot_required_gates_parseable",
+          "passed": true,
+          "path": "/mnt/data/pg_stage4_work/Metablooms_OS/0_kernel/registry/BOOT_REQUIRED_GATES_v1.json"
+        },
+        {
+          "name": "required_file:0_kernel/chat_governance/CHAT_GOVERNANCE_KERNEL_v1.json",
+          "passed": true,
+          "path": "/mnt/data/pg_stage4_work/Metablooms_OS/0_kernel/chat_governance/CHAT_GOVERNANCE_KERNEL_v1.json"
+        },
+        {
+          "name": "required_file:0_kernel/chat_governance/CARTRIDGE_SELECTION_POLICY_v1.json",
+          "passed": true,
+          "path": "/mnt/data/pg_stage4_work/Metablooms_OS/0_kernel/chat_governance/CARTRIDGE_SELECTION_POLICY_v1.json"
+        },
+        {
+          "name": "required_file:0_kernel/chat_governance/TURN_LIFECYCLE_CONTRACT_v1.json",
+          "passed": true,
+          "path": "/mnt/data/pg_stage4_work/Metablooms_OS/0_kernel/chat_governance/TURN_LIFECYCLE_CONTRACT_v1.json"
+        },
+        {
+          "name": "required_file:0_kernel/chat_governance/FINAL_RESPONSE_GATE_v1.json",
+          "passed": true,
+          "path": "/mnt/data/pg_stage4_work/Metablooms_OS/0_kernel/chat_governance/FINAL_RESPONSE_GATE_v1.json"
+        },
+        {
+          "name": "required_file:0_kernel/registry/BOOT_REQUIRED_GATES_v1.json",
+          "passed": true,
+          "path": "/mnt/data/pg_stage4_work/Metablooms_OS/0_kernel/registry/BOOT_REQUIRED_GATES_v1.json"
+        },
+        {
+          "name": "required_file:runtime/governance/boot_critical_governance_loader_v1.py",
+          "passed": true,
+          "path": "/mnt/data/pg_stage4_work/Metablooms_OS/runtime/governance/boot_critical_governance_loader_v1.py"
+        },
+        {
+          "name": "required_file:runtime/governance/governance_scatter_prevention_v1.py",
+          "passed": true,
+          "path": "/mnt/data/pg_stage4_work/Metablooms_OS/runtime/governance/governance_scatter_prevention_v1.py"
+        },
+        {
+          "name": "required_file:0_kernel/registry/CONTROLLED_GOVERNANCE_ARTIFACT_INDEX_v1.json",
+          "passed": true,
+          "path": "/mnt/data/pg_stage4_work/Metablooms_OS/0_kernel/registry/CONTROLLED_GOVERNANCE_ARTIFACT_INDEX_v1.json"
+        },
+        {
+          "name": "required_file:runtime/governance/controlled_artifact_registry_v1.py",
+          "passed": true,
+          "path": "/mnt/data/pg_stage4_work/Metablooms_OS/runtime/governance/controlled_artifact_registry_v1.py"
+        },
+        {
+          "name": "required_file:runtime/governance/fresh_chat_boot_rehearsal_v1.py",
+          "passed": true,
+          "path": "/mnt/data/pg_stage4_work/Metablooms_OS/runtime/governance/fresh_chat_boot_rehearsal_v1.py"
+        },
+        {
+          "name": "required_file:runtime/cartridges/prompt_governance_v1/CARTRIDGE_MANIFEST.json",
+          "passed": true,
+          "path": "/mnt/data/pg_stage4_work/Metablooms_OS/runtime/cartridges/prompt_governance_v1/CARTRIDGE_MANIFEST.json"
+        },
+        {
+          "name": "required_file:runtime/cartridges/prompt_governance_v1/validate_prompt_governance_cartridge_v1.py",
+          "passed": true,
+          "path": "/mnt/data/pg_stage4_work/Metablooms_OS/runtime/cartridges/prompt_governance_v1/validate_prompt_governance_cartridge_v1.py"
+        },
+        {
+          "name": "required_file:CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+          "passed": true,
+          "path": "/mnt/data/pg_stage4_work/Metablooms_OS/CURRENT_FULL_AUTHORITY_POINTER_v1.json"
+        },
+        {
+          "name": "required_file:0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+          "passed": true,
+          "path": "/mnt/data/pg_stage4_work/Metablooms_OS/0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md"
+        },
+        {
+          "name": "required_file:runtime/governance/new_chat_start_contract_validator_v1.py",
+          "passed": true,
+          "path": "/mnt/data/pg_stage4_work/Metablooms_OS/runtime/governance/new_chat_start_contract_validator_v1.py"
+        }
+      ],
+      "decision": "ALLOW",
+      "errors": [],
+      "manifest_id": "BOOT_REQUIRED_GATES_v1",
+      "warnings": []
+    },
+    "fresh_chat": {
+      "checks": [
+        {
+          "name": "exists:0_kernel/registry/BOOT_REQUIRED_GATES_v1.json",
+          "passed": true
+        },
+        {
+          "name": "exists:0_kernel/registry/CONTROLLED_GOVERNANCE_ARTIFACT_INDEX_v1.json",
+          "passed": true
+        },
+        {
+          "name": "exists:runtime/governance/boot_critical_governance_loader_v1.py",
+          "passed": true
+        },
+        {
+          "name": "exists:runtime/governance/governance_scatter_prevention_v1.py",
+          "passed": true
+        },
+        {
+          "name": "exists:runtime/governance/controlled_artifact_registry_v1.py",
+          "passed": true
+        },
+        {
+          "name": "exists:runtime/governance/fresh_chat_boot_rehearsal_v1.py",
+          "passed": true
+        },
+        {
+          "name": "exists:runtime/cartridges/prompt_governance_v1/CARTRIDGE_MANIFEST.json",
+          "passed": true
+        },
+        {
+          "name": "exists:runtime/cartridges/prompt_governance_v1/validate_prompt_governance_cartridge_v1.py",
+          "passed": true
+        },
+        {
+          "name": "exists:0_kernel/registry/PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_2_FRESH_CHAT_REHEARSAL_AND_SCATTER_CLEANUP/FRESH_CHAT_BOOT_PROMPT_LOCK_v1.md",
+          "passed": true
+        }
+      ],
+      "decision": "ALLOW",
+      "errors": []
+    },
+    "new_chat_start_contract": {
+      "checks": [
+        {
+          "name": "exists:CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+          "passed": true
+        },
+        {
+          "name": "exists:runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+          "passed": true
+        },
+        {
+          "name": "exists:0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+          "passed": true
+        },
+        {
+          "name": "exists:0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+          "passed": true
+        },
+        {
+          "name": "exists:NEW_CHAT_START_HERE.md",
+          "passed": true
+        },
+        {
+          "name": "exists:runtime/governance/new_chat_start_contract_validator_v1.py",
+          "passed": true
+        },
+        {
+          "name": "exists:runtime/governance/boot_critical_governance_loader_v1.py",
+          "passed": true
+        },
+        {
+          "name": "exists:runtime/governance/governance_scatter_prevention_v1.py",
+          "passed": true
+        },
+        {
+          "name": "exists:runtime/governance/fresh_chat_boot_rehearsal_v1.py",
+          "passed": true
+        },
+        {
+          "name": "exists:runtime/cartridges/prompt_governance_v1/validate_prompt_governance_cartridge_v1.py",
+          "passed": true
+        }
+      ],
+      "decision": "ALLOW",
+      "errors": []
+    },
+    "prompt_cartridge": {
+      "checks": [
+        {
+          "name": "exists:CARTRIDGE_MANIFEST.json",
+          "passed": true
+        },
+        {
+          "name": "exists:PROMPT_ENGINE_CONTRACT_v1.json",
+          "passed": true
+        },
+        {
+          "name": "exists:PROMPT_PROFILE_REGISTRY_v1.json",
+          "passed": true
+        },
+        {
+          "name": "exists:PROMPT_FAILURE_TAXONOMY_v1.json",
+          "passed": true
+        },
+        {
+          "name": "exists:PROMPT_WEAKNESS_LEDGER_TEMPLATE_v1.json",
+          "passed": true
+        },
+        {
+          "name": "exists:PROMPT_PATCH_WRITEBACK_PROTOCOL_v1.json",
+          "passed": true
+        },
+        {
+          "name": "exists:PROMPT_OUTPUT_RULES_v1.json",
+          "passed": true
+        },
+        {
+          "name": "exists:PROMPT_REUSABLE_ASSET_INDEXING_RULES_v1.json",
+          "passed": true
+        },
+        {
+          "name": "exists:PROMPT_CARTRIDGE_INSTALLATION_METADATA_v1.json",
+          "passed": true
+        }
+      ],
+      "decision": "ALLOW",
+      "errors": []
+    },
+    "scatter_equivalent": {
+      "current_controlled_count": 1812,
+      "decision": "ALLOW",
+      "errors": [],
+      "index_status": "active",
+      "registered_count": 1812
+    }
+  },
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_4_FULL_AUTHORITY_POINTER_LOCK_AND_NEW_CHAT_START_CONTRACT"
+}

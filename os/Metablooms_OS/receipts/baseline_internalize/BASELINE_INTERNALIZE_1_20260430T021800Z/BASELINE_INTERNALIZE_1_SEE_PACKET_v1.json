@@ -1,0 +1,19 @@
+{
+  "artifact_type": "BASELINE_INTERNALIZE_1_SEE_PACKET_v1",
+  "created_utc": "20260430T021800Z",
+  "sources": [
+    {
+      "claim": "AI risk management should be governed systematically across design, development, use, and evaluation, supporting always-on governance rather than ad hoc choice.",
+      "id": "NIST_AI_RMF"
+    },
+    {
+      "claim": "Provenance/authority is useful only when verified against expectations, supporting internalization and validation of authority artifacts.",
+      "id": "SLSA_VERIFYING_ARTIFACTS"
+    },
+    {
+      "claim": "Archive-native CRC/header checks can validate ZIP members without full recursive extraction; unsafe paths still require separate member path scanning.",
+      "id": "PYTHON_ZIPFILE_TESTZIP"
+    }
+  ],
+  "stage": "BASELINE-INTERNALIZE-1"
+}

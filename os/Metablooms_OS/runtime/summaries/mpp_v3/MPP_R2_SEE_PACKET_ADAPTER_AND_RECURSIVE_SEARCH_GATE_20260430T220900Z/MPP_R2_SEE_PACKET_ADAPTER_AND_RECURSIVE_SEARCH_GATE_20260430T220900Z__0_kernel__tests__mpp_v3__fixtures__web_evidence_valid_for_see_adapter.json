@@ -1,0 +1,56 @@
+{
+  "web_run_called": true,
+  "call_count": 3,
+  "query_refs": ["turn712934search0", "turn712934search1", "turn712934search3"],
+  "research_rounds": [
+    {
+      "round": 1,
+      "purpose": "baseline standards and provenance requirements",
+      "queries": ["JSON Schema 2020-12 validation official specification", "SLSA provenance build artifact official specification"],
+      "new_gaps_found": [],
+      "decision": "sufficient_to_gate_schema_and_provenance"
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S1",
+      "title": "JSON Schema Specification",
+      "url_or_ref": "https://json-schema.org/specification",
+      "source_type": "official",
+      "used_for": ["schema dialect", "validation vocabulary"]
+    },
+    {
+      "source_id": "S2",
+      "title": "JSON Schema Draft 2020-12",
+      "url_or_ref": "https://json-schema.org/draft/2020-12",
+      "source_type": "official",
+      "used_for": ["current dialect confirmation"]
+    },
+    {
+      "source_id": "S3",
+      "title": "SLSA Provenance",
+      "url_or_ref": "https://slsa.dev/spec/v1.2-rc2/build-provenance",
+      "source_type": "official",
+      "used_for": ["artifact provenance requirements"]
+    }
+  ],
+  "claims": [
+    {
+      "claim": "JSON Schema 2020-12 is the correct dialect for MPP v3 packet schemas.",
+      "source_ids": ["S1", "S2"],
+      "confidence": "high"
+    },
+    {
+      "claim": "Governed runtime artifacts need provenance metadata for later verification.",
+      "source_ids": ["S3"],
+      "confidence": "high"
+    }
+  ],
+  "gaps_and_contradictions": {
+    "gaps": [],
+    "contradictions": []
+  },
+  "synthesis": "The source evidence supports a SEE adapter that validates JSON Schema 2020-12 packets and binds artifact provenance evidence before downstream MPP stages proceed.",
+  "limitations": ["Fixture evidence is representative; production runs must bind live web.run references for the current task."],
+  "see_verdict": "PASS"
+}

@@ -1,0 +1,8 @@
+{
+  "artifact_type": "STAGE_HANDOFF",
+  "created_utc": "20260430T010558Z",
+  "next_correct_command": "Run exactly one bounded FL17-MERGE-1 staging and diff classification stage with SEE/CE preflight: load GOV_REPAIR_SEE_CE_0_REPORT plus FL17-COMPARE-0 and FL17-MERGE-PLAN-0 artifacts, run current web.run research/improvement check appropriate to merge governance if needed, process SEE/CE, extract/probe target tracker-working OS and FL17 candidate to staging, compute hash-based file deltas, classify import/retain/exclude/conflict groups, write delta report, receipt, and handoff, and stop before importing or patching.",
+  "stage": "GOV-REPAIR-SEE-CE-0",
+  "status": "READY_FOR_FL17_MERGE_1_WITH_SEE_CE_PREFLIGHT",
+  "summary": "Governance drift confirmed and repaired by binding current-source SEE/CE constraints to the FL17 merge workflow. Prior compare/merge-plan artifacts remain materially useful but are amended as governance-incomplete; next stage must load this report and visibly run SEE/CE preflight before any staging diff work."
+}

@@ -1,0 +1,11 @@
+{
+  "created_utc": "2026-05-01T01:59:04.641753Z",
+  "safe_merge_plan": [
+    "copy Stage12 base authority as output base",
+    "materialize only MPP-only non-cache artifacts by explicit ZIP manifest",
+    "patch Stage12 runner fail-closed and Safe_Walk-bound",
+    "update boot gates/indexes/pointers",
+    "validate ZIP integrity, duplicates, unsafe paths, MPP static gates, prompt-governance markers, runtime starter smoke --zip"
+  ],
+  "stage": "MPP_PROMPT_OS_INTEGRATION_1B_STREAM_ONLY_NO_FULL_MATERIALIZATION"
+}

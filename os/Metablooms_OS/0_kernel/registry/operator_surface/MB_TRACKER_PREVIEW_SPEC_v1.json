@@ -1,0 +1,21 @@
+{
+  "artifact_type": "MB_TRACKER_PREVIEW_SPEC_v1",
+  "commands": [
+    "mb tracker",
+    "mb tracker --json",
+    "mb tracker --write --json"
+  ],
+  "created_utc": "20260501T111500Z",
+  "finalization_rule": "Every governed stage final response should include a compact tracker preview or state why it cannot render.",
+  "mobile_constraint": "Text-first, short lines, no wide tables required.",
+  "purpose": "Define the compact operator-facing tracker preview surfaced by mb tracker and stage finalization.",
+  "required_fields": [
+    "current_stage",
+    "completed_count",
+    "blocker",
+    "latest_receipt",
+    "latest_handoff",
+    "recent_history"
+  ],
+  "source": "runtime/state/TRACKER_STATE_v1.json"
+}

@@ -1,0 +1,27 @@
+{
+  "accepted_warning": "git_dir_missing",
+  "bts_wrapped_export_used": true,
+  "canonical_working_root": "/mnt/data/Metablooms_OS",
+  "created_utc": "2026-05-02T02:13:11.817058Z",
+  "decision": "READY_FOR_NEW_CHAT_BOOT_REHEARSAL_FROM_STAGE6M_AUTHORITY",
+  "expected_boot_verdict": "PASS_WITH_WARNINGS",
+  "expected_runtime_starter_decision": "ALLOW",
+  "explicit_budget_approval_recorded": true,
+  "input_sha256": "EXTERNAL_SIDECAR_REQUIRED_AFTER_EXPORT",
+  "input_sidecar": "METABLOOMS_OS_STAGE6M_FULL_AUTHORITY_AFTER_POST_TOOL_GATE_BOOTABLE_FULL_OS_AUTHORITY_20260502T033800Z.zip.sha256",
+  "input_zip": "METABLOOMS_OS_STAGE6M_FULL_AUTHORITY_AFTER_POST_TOOL_GATE_BOOTABLE_FULL_OS_AUTHORITY_20260502T033800Z.zip",
+  "next_stage": "NEXT_BOUNDED_GOVERNED_TASK",
+  "node_zip_profile_used": true,
+  "packet_type": "NEW_CHAT_BOOT_REHEARSAL_PACKET_v1",
+  "post_tool_result_validation_required": true,
+  "required_start_sequence": [
+    "verify Stage6M authority sidecar",
+    "run os_bundle_delivery_guard_v1.py before presenting any OS bundle",
+    "run runtime starter smoke",
+    "run boot runtime executor",
+    "write receipt/handoff/export only after verification"
+  ],
+  "stage": "STAGE6M_FULL_AUTHORITY_EXPORT_AFTER_POST_TOOL_GATE",
+  "tool_universe_resolver_required": true,
+  "user_facing_download_label_required": "BOOTABLE FULL OS AUTHORITY ZIP"
+}

@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+import json
+from pathlib import Path
+def find_root():
+    p=Path(__file__).resolve()
+    for q in [p.parent,*p.parents]:
+        if (q/'boot_manifest_v1.json').exists() and (q/'0_kernel').exists(): return q
+    return Path.cwd()
+def load(p): return json.loads(p.read_text(encoding='utf-8'))
+def main():
+    r=find_root(); issues=[]
+    paths={'spec':r/'0_kernel/registry/evals/MB_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_SPEC_v1.json','schema':r/'0_kernel/registry/evals/EVALS_TRACE_REVIEW_DATASET_SCHEMA_v1.json','policy':r/'0_kernel/registry/evals/VALIDATOR_ALIGNMENT_POLICY_v1.json','mve':r/'0_kernel/registry/evals/EVALS_MINIMUM_VIABLE_EVAL_LOOP_v1.json','samples':r/'runtime/evals/evals_trace_review/EVALS_TRACE_SAMPLE_SET_v1.json'}
+    for k,p in paths.items():
+        if not p.exists(): issues.append({'missing':k,'path':str(p)})
+    if issues:
+        print(json.dumps({'verdict':'FAIL','issues':issues},indent=2,sort_keys=True)); return 2
+    spec=load(paths['spec']); schema=load(paths['schema']); samples=load(paths['samples']); policy=load(paths['policy']); mve=load(paths['mve'])
+    if len(spec.get('quality_criteria',[]))<5: issues.append({'spec':'quality_criteria_lt_5'})
+    if len(spec.get('gates',[]))<5: issues.append({'spec':'gates_lt_5'})
+    req=schema.get('required_fields',[])
+    if len(req)<10: issues.append({'schema':'required_fields_lt_10'})
+    traces=samples.get('trace_samples',[])
+    if len(traces)<schema.get('minimum_trace_count_stage1',3): issues.append({'samples':'too_few_trace_samples'})
+    decisions={t.get('decision') for t in traces}
+    for needed in ('PASS','WARN','BLOCK'):
+        if needed not in decisions: issues.append({'samples':'missing_decision','decision':needed})
+    for i,t in enumerate(traces):
+        missing=[f for f in req if f not in t]
+        if missing: issues.append({'trace_index':i,'missing_fields':missing})
+    if len(policy.get('rules',[]))<5: issues.append({'policy':'rules_lt_5'})
+    if len(mve.get('loop',[]))<7: issues.append({'mve':'loop_lt_7'})
+    verdict='PASS' if not issues else 'FAIL'
+    out={'artifact_type':'EVALS_TRACE_REVIEW_STAGE1_VALIDATION_v1','verdict':verdict,'issues':issues,'trace_sample_count':len(traces),'quality_criteria_count':len(spec.get('quality_criteria',[])),'gate_count':len(spec.get('gates',[]))}
+    out_path=r/'runtime/evals/evals_trace_review/EVALS_TRACE_REVIEW_STAGE1_VALIDATION_LATEST.json'
+    out_path.parent.mkdir(parents=True, exist_ok=True); _mb_write_json_file(out_path, out, operation_id='STAGE4_ATOMIC_JSON_0_kernel_validators_validate_evals_trace_review_stage1_v1_py_L36', create_parent=True, allowed_roots=[str(_MBAJWPath('/mnt/data').resolve())], indent=2, sort_keys=True, ensure_ascii=True, max_bytes=20000000)
+    print(json.dumps(out,indent=2,sort_keys=True)); return 0 if verdict=='PASS' else 2
+if __name__=='__main__': raise SystemExit(main())

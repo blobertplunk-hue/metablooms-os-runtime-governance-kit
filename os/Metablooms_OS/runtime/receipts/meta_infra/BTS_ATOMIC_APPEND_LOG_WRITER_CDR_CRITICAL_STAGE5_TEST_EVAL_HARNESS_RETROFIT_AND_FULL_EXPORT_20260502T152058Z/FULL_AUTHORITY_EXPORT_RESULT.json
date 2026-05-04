@@ -1,0 +1,12 @@
+{
+  "artifact_type": "FullAuthorityExportResult.v1",
+  "created_utc": "2026-05-02T15:20:58Z",
+  "duplicate_members": 0,
+  "members": 5081,
+  "size_bytes": 25684695,
+  "stage": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT",
+  "status": "PASS",
+  "zip_path": "/mnt/data/METABLOOMS_OS_BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE5_FULL_AUTHORITY_20260502T152058Z.zip",
+  "zip_sha256": "f7bab1ae985d9fe661ceab8f5220c37f009f71fa0a190e54efcaab4fc295416b",
+  "zip_testzip": "PASS"
+}

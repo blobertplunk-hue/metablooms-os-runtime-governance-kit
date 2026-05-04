@@ -1,0 +1,15 @@
+{
+  "artifact_type": "MB_SCHEMA.v1",
+  "properties": {
+    "interaction_contract": "static tracker UI behavior contract",
+    "queries": "array of query cards with ranked pin-capable results"
+  },
+  "required": [
+    "artifact_type",
+    "stage_id",
+    "queries",
+    "interaction_contract"
+  ],
+  "schema_name": "MB_EVIDENCE_QUERY_UI_INTERACTIONS.v1",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_INTERACTIONS_AND_RESULT_PINNING"
+}

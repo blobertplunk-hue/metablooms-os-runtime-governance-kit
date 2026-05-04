@@ -1,0 +1,17 @@
+{
+  "locked_at": "20260501T011300Z",
+  "policy_id": "MPP_V3_IMPLEMENTATION_WRITE_PATH_GATE_v1",
+  "research_basis": [
+    "SLSA artifact verification requires checking provenance against expectations.",
+    "Pathlib concrete paths provide filesystem-path operations appropriate for the platform.",
+    "Path traversal defenses require validating and constraining paths to intended roots."
+  ],
+  "rules": [
+    "Implementation writes must use relative paths under declared allowed roots.",
+    "Absolute paths, parent traversal, home traversal, null bytes, and double slash patterns are blocked.",
+    "Write policy must require probe, parent creation, atomic write, and receipt.",
+    "Every implementation target declares operation, artifact type, hash mode, and owner.",
+    "Provenance must record builder, inputs, expected outputs, and verification expectations."
+  ],
+  "stage": "IMPLEMENTATION"
+}

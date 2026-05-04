@@ -1,0 +1,11 @@
+{
+  "validator": "assert_gate_registry_integrity_v1",
+  "created_utc": "2026-04-28T03:37:40Z",
+  "registry_path": "/mnt/data/Metablooms_OS/runtime/governance/registries/gate_registry_v1.json",
+  "decision": "pass",
+  "errors": [],
+  "warnings": [],
+  "registry_sha256": "2226c5abcbbf4e5b9aeb685c6ea5ccb7a46975f19f95bd9bdadec704353e45a2",
+  "gate_count": 21,
+  "enabled_count": 20
+}

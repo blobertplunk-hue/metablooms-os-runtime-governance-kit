@@ -1,0 +1,20 @@
+{
+  "artifact_type": "SECURITY_ARTIFACT_THREAT_MODEL_STAGE1_RECEIPT_v1",
+  "created_utc": "20260501T105650Z",
+  "implemented_paths": [
+    "0_kernel/registry/security/SECURITY_ARTIFACT_THREAT_MODEL_v1.json",
+    "0_kernel/registry/security/SECURITY_ARTIFACT_TRUST_POLICY_v1.json",
+    "0_kernel/validators/validate_security_artifact_threat_model_stage1_v1.py",
+    "docs/security/SECURITY_ARTIFACT_THREAT_MODEL_STAGE1.md",
+    "bin/mb"
+  ],
+  "next_stage": "IMPLEMENT_SECURITY_ARTIFACT_THREAT_MODEL_STAGE_2_ENFORCEMENT_GATES_OR_PROMPT_INJECTION_FIXTURES",
+  "research_basis_urls": [
+    "https://owasp.org/www-project-top-10-for-large-language-model-applications/",
+    "https://www.nist.gov/itl/ai-risk-management-framework",
+    "https://openssf.org/press-release/2023/04/19/openssf-announces-slsa-version-1-0-release/"
+  ],
+  "source_authority_zip": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE1_20260501T121800Z.zip",
+  "stage_id": "IMPLEMENT_SECURITY_ARTIFACT_THREAT_MODEL_STAGE_1",
+  "verdict": "PASS"
+}

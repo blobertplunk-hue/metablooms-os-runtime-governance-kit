@@ -1,0 +1,15 @@
+{
+  "artifact_type": "MB_CLI_COMMAND_SPEC_v21",
+  "commands_added": [
+    "mb education --json",
+    "mb education --gate --json",
+    "mb education --check --json"
+  ],
+  "created_utc": "20260501T173600Z",
+  "runaway_turn_budget": {
+    "max_wall_clock_seconds": 120,
+    "no_broad_extract": true,
+    "targeted_smoke_only": true
+  },
+  "stage": "EDUCATION_VALIDITY_STAGE_1"
+}

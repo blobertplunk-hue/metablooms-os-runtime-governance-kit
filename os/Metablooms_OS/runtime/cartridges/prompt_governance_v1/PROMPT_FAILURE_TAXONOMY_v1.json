@@ -1,0 +1,26 @@
+{
+  "failure_classes": [
+    {
+      "id": "missing_authority_binding",
+      "repair": "bind prompt to artifacts/sources before execution"
+    },
+    {
+      "id": "unranked_options",
+      "repair": "generate same-turn ranked options best-to-worst with selection rationale"
+    },
+    {
+      "id": "no_validation_plan",
+      "repair": "add measurable validation gates before implementation"
+    },
+    {
+      "id": "external_side_artifact_only",
+      "repair": "install into cartridge/registry or block"
+    },
+    {
+      "id": "memory_or_generic_best_practice_leak",
+      "repair": "replace with web/OS evidence and SEE/CE packet"
+    }
+  ],
+  "id": "PROMPT_FAILURE_TAXONOMY_v1",
+  "status": "active"
+}

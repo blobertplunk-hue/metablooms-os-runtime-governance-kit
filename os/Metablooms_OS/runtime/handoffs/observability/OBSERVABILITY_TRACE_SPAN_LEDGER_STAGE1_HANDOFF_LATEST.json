@@ -1,0 +1,8 @@
+{
+  "artifact_type": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE1_HANDOFF_v1",
+  "completed_stage": "IMPLEMENT_OBSERVABILITY_TRACE_SPAN_LEDGER_CARTRIDGE_STAGE_1",
+  "continuation_rule": "Boot from this complete OS export, run mb verify --json, run mb trace --write-summary --json, then execute exactly one bounded security threat-model stage.",
+  "created_utc": "20260501T121800Z",
+  "next_stage": "IMPLEMENT_SECURITY_ARTIFACT_THREAT_MODEL_STAGE_1",
+  "status": "READY_FOR_NEXT_BOUNDED_STAGE"
+}

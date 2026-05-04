@@ -1,0 +1,245 @@
+{
+  "android_sandbox_primary": true,
+  "artifact_type": "operator_tracker",
+  "attempt_evidence": [
+    {
+      "artifacts": [
+        "/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE3_VISUAL_GATE_BINDING_AND_EXPORT_PREP_20260502T225515Z/export_prep_replay/playwright_probe.py"
+      ],
+      "command_result": {
+        "command": [
+          "/opt/pyvenv/bin/python3",
+          "/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE3_VISUAL_GATE_BINDING_AND_EXPORT_PREP_20260502T225515Z/export_prep_replay/playwright_probe.py"
+        ],
+        "duration_seconds": 1.936,
+        "exit_code": 1,
+        "stderr_tail": "Traceback (most recent call last):\n  File \"/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE3_VISUAL_GATE_BINDING_AND_EXPORT_PREP_20260502T225515Z/export_prep_replay/playwright_probe.py\", line 3, in <module>\n    b=p.chromium.launch()\n  File \"/opt/pyvenv/lib/python3.13/site-packages/playwright/sync_api/_generated.py\", line 14568, in launch\n    self._sync(\n    ~~~~~~~~~~^\n        self._impl_obj.launch(\n        ^^^^^^^^^^^^^^^^^^^^^^\n    ...<17 lines>...\n        )\n        ^\n    )\n    ^\n  File \"/opt/pyvenv/lib/python3.13/site-packages/playwright/_impl/_sync_base.py\", line 115, in _sync\n    return task.result()\n           ~~~~~~~~~~~^^\n  File \"/opt/pyvenv/lib/python3.13/site-packages/playwright/_impl/_browser_type.py\", line 98, in launch\n    await self._channel.send(\n        \"launch\", TimeoutSettings.launch_timeout, params\n    )\n  File \"/opt/pyvenv/lib/python3.13/site-packages/playwright/_impl/_connection.py\", line 69, in send\n    return await self._connection.wrap_api_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<3 lines>...\n    )\n    ^\n  File \"/opt/pyvenv/lib/python3.13/site-packages/playwright/_impl/_connection.py\", line 559, in wrap_api_call\n    raise rewrite_error(error, f\"{parsed_st['apiName']}: {error}\") from None\nplaywright._impl._errors.Error: BrowserType.launch: Executable doesn't exist at /home/oai/.cache/ms-playwright/chromium_headless_shell-1200/chrome-headless-shell-linux64/chrome-headless-shell\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.       \u2551\n\u2551 Please run the following command to download new browsers: \u2551\n\u2551                                                            \u2551\n\u2551     playwright install                                     \u2551\n\u2551                                                            \u2551\n\u2551 <3 Playwright Team                                         \u2551\n\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d\n",
+        "stdout_tail": "",
+        "timed_out": false
+      },
+      "failure_class": "PLAYWRIGHT_BROWSER_BUNDLE_ABSENT",
+      "image_check": {
+        "exists": false,
+        "nonblank": false,
+        "reason": "missing"
+      },
+      "method_id": "playwright_managed_browser",
+      "started_utc": "20260502T225516Z",
+      "success": false
+    },
+    {
+      "artifacts": [],
+      "command_result": {
+        "command": [
+          "/usr/bin/chromium",
+          "--headless=new",
+          "--no-sandbox",
+          "--disable-gpu",
+          "--disable-dev-shm-usage",
+          "--disable-crash-reporter",
+          "--disable-extensions",
+          "--window-size=390,844",
+          "--screenshot=/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE3_VISUAL_GATE_BINDING_AND_EXPORT_PREP_20260502T225515Z/export_prep_replay/chromium_headless.png",
+          "file:///mnt/data/Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html"
+        ],
+        "duration_seconds": 4.018,
+        "exit_code": null,
+        "stderr_tail": "",
+        "stdout_tail": "",
+        "timed_out": true
+      },
+      "failure_class": "CHROMIUM_SANDBOX_HANG",
+      "image_check": {
+        "exists": false,
+        "nonblank": false,
+        "reason": "missing"
+      },
+      "method_id": "system_chromium_headless",
+      "started_utc": "20260502T225518Z",
+      "success": false
+    },
+    {
+      "artifacts": [],
+      "command_result": {
+        "command": [
+          "/usr/bin/xvfb-run",
+          "-a",
+          "/usr/bin/chromium",
+          "--headless=new",
+          "--no-sandbox",
+          "--disable-gpu",
+          "--disable-dev-shm-usage",
+          "--disable-crash-reporter",
+          "--disable-extensions",
+          "--window-size=390,844",
+          "--screenshot=/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE3_VISUAL_GATE_BINDING_AND_EXPORT_PREP_20260502T225515Z/export_prep_replay/xvfb_chromium.png",
+          "file:///mnt/data/Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html"
+        ],
+        "duration_seconds": 4.004,
+        "exit_code": null,
+        "stderr_tail": "",
+        "stdout_tail": "",
+        "timed_out": true
+      },
+      "failure_class": "XVFB_CHROMIUM_HANG",
+      "image_check": {
+        "exists": false,
+        "nonblank": false,
+        "reason": "missing"
+      },
+      "method_id": "xvfb_chromium",
+      "started_utc": "20260502T225522Z",
+      "success": false
+    },
+    {
+      "artifacts": [],
+      "failure_class": "OTHER_BROWSER_ABSENT",
+      "method_id": "firefox_or_other_installed_browser",
+      "skipped": true,
+      "started_utc": "20260502T225526Z",
+      "success": false
+    },
+    {
+      "artifacts": [],
+      "failure_class": "WKHTMLTOIMAGE_ABSENT",
+      "method_id": "wkhtmltoimage_or_equivalent",
+      "skipped": true,
+      "started_utc": "20260502T225526Z",
+      "success": false
+    },
+    {
+      "artifacts": [],
+      "command_result": {
+        "pdftoppm": {
+          "exit_code": null,
+          "stderr_tail": "pdf_missing",
+          "timed_out": false
+        },
+        "weasyprint": {
+          "command": [
+            "/opt/pyvenv/bin/weasyprint",
+            "/mnt/data/Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html",
+            "/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE3_VISUAL_GATE_BINDING_AND_EXPORT_PREP_20260502T225515Z/export_prep_replay/weasyprint_proxy.pdf"
+          ],
+          "duration_seconds": 4.018,
+          "exit_code": null,
+          "stderr_tail": "",
+          "stdout_tail": "",
+          "timed_out": true
+        }
+      },
+      "failure_class": "WEASYPRINT_PROXY_FAILED",
+      "image_check": {
+        "exists": false,
+        "nonblank": false,
+        "reason": "missing"
+      },
+      "method_id": "weasyprint_pdf_png_proxy",
+      "started_utc": "20260502T225526Z",
+      "success": false
+    },
+    {
+      "artifacts": [],
+      "failure_class": "NONE",
+      "method_id": "static_vpq_accessibility_checks",
+      "started_utc": "20260502T225530Z",
+      "static_checks": {
+        "focus_visible": true,
+        "reduced_motion": true,
+        "teacher_professional": true,
+        "viewport": true,
+        "vpq_binding": true
+      },
+      "success": true
+    }
+  ],
+  "decision": "DENY_PRODUCTION_PROMOTION",
+  "environment": "android_chatgpt_sandbox",
+  "honesty_label": "blocked",
+  "html_path": "/mnt/data/Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html",
+  "html_sha256": "9fdb5000f48af4d5cfa830e2912e1f830b6586d0c4848f7cb4c166aa099b2f47",
+  "method_attempts": [
+    {
+      "attempt_policy": "try_if_bundle_present",
+      "failure_class_if_failed": "PLAYWRIGHT_BROWSER_BUNDLE_ABSENT",
+      "method_id": "playwright_managed_browser",
+      "priority": 1,
+      "success_criteria": [
+        "bounded_timeout",
+        "artifact_or_explicit_skip",
+        "failure_class_recorded"
+      ]
+    },
+    {
+      "attempt_policy": "try_if_binary_present",
+      "failure_class_if_failed": "CHROMIUM_SANDBOX_HANG",
+      "method_id": "system_chromium_headless",
+      "priority": 2,
+      "success_criteria": [
+        "bounded_timeout",
+        "artifact_or_explicit_skip",
+        "failure_class_recorded"
+      ]
+    },
+    {
+      "attempt_policy": "try_if_binary_present",
+      "failure_class_if_failed": "XVFB_CHROMIUM_HANG",
+      "method_id": "xvfb_chromium",
+      "priority": 3,
+      "success_criteria": [
+        "bounded_timeout",
+        "artifact_or_explicit_skip",
+        "failure_class_recorded"
+      ]
+    },
+    {
+      "attempt_policy": "try_if_binary_present",
+      "failure_class_if_failed": "OTHER_BROWSER_ABSENT",
+      "method_id": "firefox_or_other_installed_browser",
+      "priority": 4,
+      "success_criteria": [
+        "bounded_timeout",
+        "artifact_or_explicit_skip",
+        "failure_class_recorded"
+      ]
+    },
+    {
+      "attempt_policy": "try_if_binary_present",
+      "failure_class_if_failed": "WKHTMLTOIMAGE_ABSENT",
+      "method_id": "wkhtmltoimage_or_equivalent",
+      "priority": 5,
+      "success_criteria": [
+        "bounded_timeout",
+        "artifact_or_explicit_skip",
+        "failure_class_recorded"
+      ]
+    },
+    {
+      "attempt_policy": "try_if_binary_present",
+      "failure_class_if_failed": "WEASYPRINT_PROXY_FAILED",
+      "method_id": "weasyprint_pdf_png_proxy",
+      "priority": 6,
+      "success_criteria": [
+        "bounded_timeout",
+        "artifact_or_explicit_skip",
+        "failure_class_recorded"
+      ]
+    },
+    {
+      "attempt_policy": "always_available_static",
+      "failure_class_if_failed": "NONE",
+      "method_id": "static_vpq_accessibility_checks",
+      "priority": 7,
+      "success_criteria": [
+        "bounded_timeout",
+        "artifact_or_explicit_skip",
+        "failure_class_recorded"
+      ]
+    }
+  ],
+  "pc_addendum_available": true,
+  "requested_proof_tier": "browser_screenshot_preferred",
+  "resolver_version": "browser_render_capability_resolver_v1",
+  "selected_method": "none",
+  "timestamp_utc": "20260502T225530Z"
+}

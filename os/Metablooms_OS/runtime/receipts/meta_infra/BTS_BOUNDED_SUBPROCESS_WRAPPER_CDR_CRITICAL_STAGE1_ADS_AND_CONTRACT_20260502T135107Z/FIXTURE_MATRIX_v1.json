@@ -1,0 +1,70 @@
+{
+  "artifact_type": "METABLOOMS_BOUNDED_SUBPROCESS_WRAPPER_FIXTURE_MATRIX_v1",
+  "fixture_generation_rule": "Stage2 implementation must materialize these as executable fixtures and record decision packets for every expected class before wrapper promotion.",
+  "negative_fixtures": [
+    {
+      "expected": "DENY_SHELL_UNAPPROVED",
+      "fixture_id": "NEG_SHELL_TRUE_NO_EXCEPTION",
+      "intent": "shell=True rejected without exception token"
+    },
+    {
+      "expected": "DENY_SCHEMA_INVALID",
+      "fixture_id": "NEG_COMMAND_STRING_WITH_METACHARS",
+      "intent": "single command string with '; rm -rf' rejected before spawn"
+    },
+    {
+      "expected": "DENY_FORBIDDEN_METHOD",
+      "fixture_id": "NEG_UNZIP_TQQ_FULL_ARCHIVE",
+      "intent": "active forbidden method blocks before spawn"
+    },
+    {
+      "expected": "TIMEOUT_TERMINATED",
+      "fixture_id": "NEG_TIMEOUT_SLEEP_99",
+      "intent": "long sleep terminates within timeout budget and writes failure event"
+    },
+    {
+      "expected": "DENY_PATH_ESCAPE",
+      "fixture_id": "NEG_CWD_PATH_ESCAPE",
+      "intent": "cwd outside allowed roots rejected after realpath"
+    },
+    {
+      "expected": "OUTPUT_LIMIT_EXCEEDED",
+      "fixture_id": "NEG_OUTPUT_OVERFLOW",
+      "intent": "stdout above byte cap is truncated and classified"
+    },
+    {
+      "expected": "DENY_SCHEMA_INVALID",
+      "fixture_id": "NEG_ARGUMENT_INJECTION_DASH_DASH_HELP",
+      "intent": "unexpected option argument to sensitive command rejected by strict argument allowlist"
+    },
+    {
+      "expected": "DENY_SCHEMA_INVALID",
+      "fixture_id": "NEG_MAX_ATTEMPTS_ZERO",
+      "intent": "unbounded/zero retry config rejected"
+    }
+  ],
+  "positive_fixtures": [
+    {
+      "expected": "ALLOW_SUCCESS",
+      "fixture_id": "POS_ECHO_FIXED_ARGV",
+      "intent": "fixed argv succeeds under 5s"
+    },
+    {
+      "expected": "ALLOW_SUCCESS",
+      "fixture_id": "POS_SHA256_ABSOLUTE_EXECUTABLE",
+      "intent": "hash a known small fixture through absolute executable path"
+    },
+    {
+      "expected": "ALLOW_SUCCESS",
+      "fixture_id": "POS_PYTHON3_S_STDLIB_SMALL_JSON",
+      "intent": "python3 -S small stdlib-only command with bounded output"
+    },
+    {
+      "expected": "ALLOW_SUCCESS",
+      "fixture_id": "POS_NODE_SMALL_HELPER_WHEN_ALLOWED",
+      "intent": "node helper execution only when command_policy_id allows it"
+    }
+  ],
+  "stage_id": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT",
+  "tier": "CDR_CRITICAL"
+}

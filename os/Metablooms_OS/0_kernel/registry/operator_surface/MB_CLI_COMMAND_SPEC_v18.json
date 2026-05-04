@@ -1,0 +1,34 @@
+{
+  "artifact_type": "MB_CLI_COMMAND_SPEC_v18",
+  "commands": {
+    "checkpoint": [
+      "--stage",
+      "--interrupt",
+      "--resume"
+    ],
+    "evals": [
+      "--alignment-gate",
+      "--runner",
+      "--scorecards"
+    ],
+    "harness": [
+      "--json",
+      "--plan",
+      "--check",
+      "--stage",
+      "--timeout"
+    ],
+    "run-stage": [
+      "--dry-run",
+      "--execute",
+      "--json"
+    ],
+    "security": [
+      "--red-team",
+      "--gate-check",
+      "--fixtures"
+    ]
+  },
+  "created_utc": "20260501T144521Z",
+  "new_in_v18": "mb harness command for agent harness stage graph/plan/check"
+}

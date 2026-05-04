@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "baseline": {
+      "type": "object"
+    },
+    "decision": {
+      "type": "string"
+    },
+    "required_checks": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "risk_tier": {
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH",
+        "CRITICAL"
+      ]
+    },
+    "schema": {
+      "const": "CDRLintSecurityScannerPacket_v1"
+    },
+    "stage": {
+      "type": "string"
+    },
+    "test_binding": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema",
+    "stage",
+    "risk_tier",
+    "baseline",
+    "required_checks",
+    "test_binding",
+    "decision"
+  ],
+  "title": "CDR_LINT_SECURITY_SCANNER_PACKET_SCHEMA_v1",
+  "type": "object"
+}

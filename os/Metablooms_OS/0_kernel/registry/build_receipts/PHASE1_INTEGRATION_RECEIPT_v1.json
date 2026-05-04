@@ -1,0 +1,43 @@
+{
+  "receipt_type": "PHASE1_INTEGRATION_RECEIPT",
+  "created_utc": "2026-04-26T22:45:38Z",
+  "baseline_sha_before": "2464d3dcab21f5dae0d3f6e4c68b9d04fe22754b89f83f3c85283ab335994467",
+  "items_integrated": 7,
+  "artifacts": [
+    {
+      "name": "p0a_external_reuse_scan_precheck_v1.py",
+      "sha256": "6da19d7974b3dbf0ff132f518d277da0dba15c14d0e78b794a276dc5d1c008fa"
+    },
+    {
+      "name": "p0py_python_health_governance_v1.py",
+      "sha256": "0dc2cb1a552b33bc6d7fb97e112a4eb0234b9074d3f897a127ae42d4e19d2cb5"
+    },
+    {
+      "name": "stage_base_resolver_v1.py",
+      "sha256": "873d67574a9e23ac83561e11f2bd3fdb43186a7496057449da94557c79dd386b"
+    },
+    {
+      "name": "dryrun_receipt_phase_accuracy_patch_v1.py",
+      "sha256": "fd2fca947fddf83fdd7f82e3847b4b62d90f7c8cfa9157ba614348cc2aab03f3"
+    },
+    {
+      "name": "OVERLAY_FIRST_EXPORT_POLICY_v1.json",
+      "sha256": "5aa1038abef83bd573f70ed982d48ecd4eea072aec288f3195198fbc7bec1aed"
+    },
+    {
+      "name": "COOL_5_EXTERNAL_REUSE_SCAN_GATE_SCHEMA_v1.json",
+      "sha256": "27919934cd67c335c68e2099b232bd0e6da862315bf1f2a39feaad96f1181730"
+    },
+    {
+      "name": "COOL_6_RUNTIME_GATE_WIRING_PLAN_v1.json",
+      "sha256": "bb90a63995473293f557035a3b2a7da073c101b0bb21a36a81bc065535075bfa"
+    }
+  ],
+  "see_evidence": [
+    "Build vs Buy 2026: repeatable decision process for where capabilities belong \u2014 adopt/adapt/compose/build_new/defer ladder",
+    "Governance as enabler: mature frameworks increase confidence to deploy agents \u2014 12x more projects into production (Databricks/Microsoft 2026)",
+    "Governance embedded from day one delivers better compliance than retrofitted after deployment (TechTarget 2026)"
+  ],
+  "new_gate_sequence": "P-1 \u2192 P0A \u2192 P0PY \u2192 P0 \u2192 P1 \u2192 [IC+Pulse per artifact] \u2192 P3 \u2192 session boundary",
+  "overall_verdict": "PASS"
+}

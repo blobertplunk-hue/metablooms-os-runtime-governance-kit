@@ -1,0 +1,419 @@
+{
+  "registry_id": "gate_registry_v1",
+  "version": "1.0",
+  "created_utc": "2026-04-28T02:56:01Z",
+  "status": "active",
+  "source_plan": {
+    "retired_plan_archive": "runtime/governance/legacy_archives/COOL_6_RUNTIME_GATE_WIRING_PLAN_v1.json",
+    "adr": "0_kernel/docs/decisions/ADR-0003-adopt-gate-registry-for-runtime-wiring.md",
+    "stage": "R5_GATE_REGISTRY_AND_WIRING_REPLACEMENT"
+  },
+  "governance_rules": {
+    "enabled_gate_must_resolve_to_existing_entrypoint": true,
+    "enabled_gate_must_define_launcher": true,
+    "enabled_gate_must_define_inputs_outputs": true,
+    "deferred_or_retired_gate_must_name_reason": true,
+    "decision_log_required_for_blocking_decisions": true,
+    "normal_python_for_registry_validation_forbidden": true
+  },
+  "external_evidence": [
+    {
+      "source": "Open Policy Agent decision logs",
+      "url": "https://www.openpolicyagent.org/docs/management-decision-logs",
+      "claim": "Decision logs should include enough information for audit/offline debugging and API decisions include decision_id when logging is enabled."
+    },
+    {
+      "source": "OpenTelemetry event semantics",
+      "url": "https://opentelemetry.io/docs/specs/semconv/general/events/",
+      "claim": "Events require stable names and structured attributes; event names uniquely identify event structure."
+    },
+    {
+      "source": "JSON Schema annotations",
+      "url": "https://json-schema.org/understanding-json-schema/reference/annotations",
+      "claim": "title, description, and default are annotations, not enforcement."
+    }
+  ],
+  "gates": [
+    {
+      "gate_id": "TOOL_ROUTE_GUARD",
+      "phase": "P-1",
+      "status": "active",
+      "enabled": true,
+      "blocking": true,
+      "entrypoint": "0_kernel/scripts/DOES_NOT_EXIST.py",
+      "launcher": "python3_S",
+      "applies_to": [
+        "all governed stages"
+      ],
+      "required_inputs": [
+        "stage_request",
+        "pre_tool_contract"
+      ],
+      "outputs": [
+        "allow_deny_decision",
+        "receipt"
+      ],
+      "decision_log_required": true,
+      "source": "COOL_6 migrated",
+      "reason": "script exists and is boot-critical routing guard",
+      "successor_gate": null,
+      "deferred_until_stage": null
+    },
+    {
+      "gate_id": "P0A_EXTERNAL_REUSE_SCAN",
+      "phase": "P0A",
+      "status": "deferred",
+      "enabled": false,
+      "blocking": true,
+      "entrypoint": "0_kernel/scripts/p0a_external_reuse_scan_precheck_v1.py",
+      "launcher": "python3_S",
+      "applies_to": [
+        "research/implementation planning"
+      ],
+      "required_inputs": [
+        "SEE evidence bundle",
+        "target artifact"
+      ],
+      "outputs": [
+        "reuse_scan_decision"
+      ],
+      "decision_log_required": true,
+      "source": "COOL_6 migrated",
+      "reason": "source artifact exists in intake but is not promoted/wired until R6 evidence-bound replacement",
+      "successor_gate": "R6_EXTERNAL_REUSE_SCAN_GATE",
+      "deferred_until_stage": "R6"
+    },
+    {
+      "gate_id": "P0PY_PYTHON_HEALTH",
+      "phase": "P0PY",
+      "status": "deferred",
+      "enabled": false,
+      "blocking": false,
+      "entrypoint": "0_kernel/scripts/p0py_python_health_governance_v1.py",
+      "launcher": "python3_S",
+      "applies_to": [
+        "python execution"
+      ],
+      "required_inputs": [
+        "sandbox probe"
+      ],
+      "outputs": [
+        "python_health_decision"
+      ],
+      "decision_log_required": true,
+      "source": "COOL_6 migrated",
+      "reason": "source artifact exists in intake but is not aligned with live python3 -S lane until R8",
+      "successor_gate": "PYTHON_RESILIENT_EXECUTION_GATE",
+      "deferred_until_stage": "R8"
+    },
+    {
+      "gate_id": "RESEARCH_SEE_CE_GATE",
+      "phase": "P0",
+      "status": "active",
+      "enabled": true,
+      "blocking": true,
+      "entrypoint": "runtime/governance/invariant_activation_engine_v1.py",
+      "launcher": "python3_S",
+      "applies_to": [
+        "research-required stages"
+      ],
+      "required_inputs": [
+        "stage_request",
+        "evidence contract"
+      ],
+      "outputs": [
+        "gate decision"
+      ],
+      "decision_log_required": true,
+      "source": "COOL_6 migrated",
+      "reason": "IAE path exists",
+      "successor_gate": null,
+      "deferred_until_stage": null
+    },
+    {
+      "gate_id": "RUNTIME_WRITE_ROLLBACK_GATE",
+      "phase": "P1",
+      "status": "active",
+      "enabled": true,
+      "blocking": true,
+      "entrypoint": "runtime/governance/invariant_activation_engine_v1.py",
+      "launcher": "python3_S",
+      "applies_to": [
+        "mutating stages"
+      ],
+      "required_inputs": [
+        "write plan",
+        "rollback plan"
+      ],
+      "outputs": [
+        "gate decision"
+      ],
+      "decision_log_required": true,
+      "source": "COOL_6 migrated",
+      "reason": "IAE path exists",
+      "successor_gate": null,
+      "deferred_until_stage": null
+    },
+    {
+      "gate_id": "IC_INTERRUPT_CHECKER",
+      "phase": "artifact boundary",
+      "status": "active",
+      "enabled": true,
+      "blocking": "defect_or_gap_only",
+      "entrypoint": "0_kernel/scripts/intra_chunk_interrupt_checker_v1.py",
+      "launcher": "python3_S",
+      "applies_to": [
+        "bounded chunk execution"
+      ],
+      "required_inputs": [
+        "chunk status"
+      ],
+      "outputs": [
+        "interrupt decision"
+      ],
+      "decision_log_required": true,
+      "source": "COOL_6 migrated",
+      "reason": "script exists",
+      "successor_gate": null,
+      "deferred_until_stage": null
+    },
+    {
+      "gate_id": "RUNTIME_PULSE_GATE",
+      "phase": "artifact boundary",
+      "status": "active",
+      "enabled": true,
+      "blocking": "T1_only",
+      "entrypoint": "0_kernel/scripts/runtime_pulse_logger_v1.py",
+      "launcher": "python3_S",
+      "applies_to": [
+        "bounded chunk execution"
+      ],
+      "required_inputs": [
+        "chunk status"
+      ],
+      "outputs": [
+        "pulse receipt"
+      ],
+      "decision_log_required": true,
+      "source": "COOL_6 migrated",
+      "reason": "script exists",
+      "successor_gate": null,
+      "deferred_until_stage": null
+    },
+    {
+      "gate_id": "TRACKER_RELEASE_GATE",
+      "phase": "P3",
+      "status": "active",
+      "enabled": true,
+      "blocking": true,
+      "entrypoint": "runtime/governance/invariant_activation_engine_v1.py",
+      "launcher": "python3_S",
+      "applies_to": [
+        "release/export stages"
+      ],
+      "required_inputs": [
+        "release manifest"
+      ],
+      "outputs": [
+        "gate decision"
+      ],
+      "decision_log_required": true,
+      "source": "COOL_6 migrated",
+      "reason": "IAE path exists",
+      "successor_gate": null,
+      "deferred_until_stage": null
+    },
+    {
+      "gate_id": "FULL_BUNDLE_EXPORT_GATE",
+      "phase": "P3 export",
+      "status": "active",
+      "enabled": true,
+      "blocking": true,
+      "entrypoint": "runtime/governance/full_bundle_export_guard_v1.py",
+      "launcher": "python3_S",
+      "applies_to": [
+        "export stages"
+      ],
+      "required_inputs": [
+        "export manifest",
+        "zip path"
+      ],
+      "outputs": [
+        "export gate decision"
+      ],
+      "decision_log_required": true,
+      "source": "COOL_6 migrated",
+      "reason": "script exists",
+      "successor_gate": null,
+      "deferred_until_stage": null
+    },
+    {
+      "gate_id": "CARTRIDGE_PROMOTION_GATE",
+      "phase": "P3 cartridge",
+      "status": "active",
+      "enabled": true,
+      "blocking": true,
+      "entrypoint": "0_kernel/scripts/cartridge_promotion_gate_v1.py",
+      "launcher": "python3_S",
+      "applies_to": [
+        "cartridge promotion"
+      ],
+      "required_inputs": [
+        "cartridge manifest"
+      ],
+      "outputs": [
+        "promotion decision"
+      ],
+      "decision_log_required": true,
+      "source": "COOL_6 migrated",
+      "reason": "script exists",
+      "successor_gate": null,
+      "deferred_until_stage": null
+    },
+    {
+      "gate_id": "MEMORY_SYNC_VALIDATION",
+      "phase": "session boundary",
+      "status": "retired",
+      "enabled": false,
+      "blocking": true,
+      "entrypoint": "0_kernel/scripts/memory_sync_validator_v1.py",
+      "launcher": "python3_S",
+      "applies_to": [
+        "legacy session handoff"
+      ],
+      "required_inputs": [
+        "CLAUDE_MEMORY_SYNC_v1.json"
+      ],
+      "outputs": [
+        "legacy validation decision"
+      ],
+      "decision_log_required": true,
+      "source": "COOL_6 migrated",
+      "reason": "retired by R4; use SESSION_STATE_EXPORT_VALIDATION",
+      "successor_gate": "SESSION_STATE_EXPORT_VALIDATION",
+      "deferred_until_stage": null
+    },
+    {
+      "gate_id": "UNIFIED_RUNTIME_COMPATIBILITY_VALIDATION",
+      "phase": "boot/refactor compatibility",
+      "status": "active",
+      "enabled": true,
+      "blocking": true,
+      "entrypoint": "0_kernel/scripts/validate_unified_runtime_compatibility_contract_v1.py",
+      "launcher": "python3_S",
+      "applies_to": [
+        "boot",
+        "compatibility audit",
+        "export"
+      ],
+      "required_inputs": [
+        "unified_runtime_compatibility_contract_v1.json"
+      ],
+      "outputs": [
+        "validation report"
+      ],
+      "decision_log_required": true,
+      "source": "R3 successor",
+      "reason": "validator exists and rejects stale compatibility contracts",
+      "successor_gate": null,
+      "deferred_until_stage": null
+    },
+    {
+      "gate_id": "SESSION_STATE_EXPORT_VALIDATION",
+      "phase": "session boundary",
+      "status": "active",
+      "enabled": true,
+      "blocking": true,
+      "entrypoint": "0_kernel/scripts/validate_session_state_export_v1.py",
+      "launcher": "python3_S",
+      "applies_to": [
+        "session handoff",
+        "boot continuity"
+      ],
+      "required_inputs": [
+        "SESSION_STATE_EXPORT_LATEST_v1.json"
+      ],
+      "outputs": [
+        "validation report"
+      ],
+      "decision_log_required": true,
+      "source": "R4 successor",
+      "reason": "vendor-specific memory sync replaced by model-agnostic export validator",
+      "successor_gate": null,
+      "deferred_until_stage": null
+    },
+    {
+      "gate_id": "SESSION_STATE_EXPORT_WRITE",
+      "phase": "session boundary",
+      "status": "active",
+      "enabled": true,
+      "blocking": true,
+      "entrypoint": "0_kernel/scripts/session_state_exporter_v1.py",
+      "launcher": "python3_S",
+      "applies_to": [
+        "session handoff",
+        "stage close"
+      ],
+      "required_inputs": [
+        "live runtime state"
+      ],
+      "outputs": [
+        "SESSION_STATE_EXPORT_LATEST_v1.json"
+      ],
+      "decision_log_required": true,
+      "source": "R4 successor",
+      "reason": "exporter requires python3 -S and validates current runtime facts R5 validator repair: state-writing gate records a decision log requirement.",
+      "successor_gate": null,
+      "deferred_until_stage": null
+    },
+    {
+      "gate_id": "PYTHON_RESILIENT_EXECUTION_GATE",
+      "phase": "pre-execution",
+      "status": "active",
+      "enabled": true,
+      "blocking": true,
+      "entrypoint": "runtime/governance/python_resilient_execution_gate_v1.py",
+      "launcher": "python3_S",
+      "applies_to": [
+        "python execution"
+      ],
+      "required_inputs": [
+        "python policy",
+        "launcher path"
+      ],
+      "outputs": [
+        "gate decision"
+      ],
+      "decision_log_required": true,
+      "source": "python workaround patch",
+      "reason": "live python resilient execution gate exists",
+      "successor_gate": null,
+      "deferred_until_stage": null
+    },
+    {
+      "gate_id": "GATE_REGISTRY_INTEGRITY",
+      "phase": "boot/refactor registry",
+      "status": "active",
+      "enabled": true,
+      "blocking": true,
+      "entrypoint": "0_kernel/scripts/assert_gate_registry_integrity_v1.py",
+      "launcher": "python3_S",
+      "applies_to": [
+        "boot",
+        "stage preflight",
+        "export"
+      ],
+      "required_inputs": [
+        "gate_registry_v1.json"
+      ],
+      "outputs": [
+        "integrity validation report"
+      ],
+      "decision_log_required": true,
+      "source": "R5 successor",
+      "reason": "registry must be self-validating and fail on enabled missing entrypoints",
+      "successor_gate": null,
+      "deferred_until_stage": null
+    }
+  ]
+}

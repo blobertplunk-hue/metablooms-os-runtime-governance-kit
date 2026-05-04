@@ -1,0 +1,122 @@
+{
+  "all_exist": true,
+  "file_count": 19,
+  "files": [
+    {
+      "exists": true,
+      "path": "0_kernel/mpp_v3/promotion_authority_repair_inventory_classifier_v1.py",
+      "sha256": "171b26803a180c8f2fe5bb6ffbce1d5db893577cd89ecb07e9ac505be066409a",
+      "size": 15873
+    },
+    {
+      "exists": true,
+      "path": "0_kernel/mpp_v3/promotion_authority_repair_inventory_classifier_v1.py.sha256",
+      "sha256": "05214b4f4769792df2f838e686ea4ced163340cfc764230cb53a3b865f90a585",
+      "size": 160
+    },
+    {
+      "exists": true,
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER_LATEST_CLASSIFIED_INVENTORY_POINTER.json",
+      "sha256": "6531c5e9f6a356761340a2a43639a5384df1f0b75cbb0a45c59d9724b3291787",
+      "size": 1012
+    },
+    {
+      "exists": true,
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER_LATEST_CLASSIFIED_INVENTORY_POINTER.json.sha256",
+      "sha256": "d14301a94c911be63155d13c94c39bb73cbaa3d0976dc42bb4a8e577147ab7ca",
+      "size": 181
+    },
+    {
+      "exists": true,
+      "path": "runtime/handoffs/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER_HANDOFF_LATEST.json",
+      "sha256": "e988f706f3f618b22b8b095e6349be52e17c3b87c7271522afca4ed346490f4a",
+      "size": 2348
+    },
+    {
+      "exists": true,
+      "path": "runtime/handoffs/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER_HANDOFF_LATEST.json.sha256",
+      "sha256": "75ae4278ad3abfb5855abfe45135a00d968402af86b06ba64edf774c22e50275",
+      "size": 160
+    },
+    {
+      "exists": true,
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER_20260502T201258Z/CURRENT_OS_REPORT_ONLY_SCAN_BEFORE_STAGE4.json",
+      "sha256": "1fa3ba98841b3fdfb68080a161282080f1c82af51393594909495a2793446553",
+      "size": 12923
+    },
+    {
+      "exists": true,
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER_20260502T201258Z/CURRENT_OS_REPORT_ONLY_SCAN_BEFORE_STAGE4.json.sha256",
+      "sha256": "2ae2fedffe4383d2ec1fb782e14c5b7e7237d3eae23f3b4e32449881a514e3e9",
+      "size": 113
+    },
+    {
+      "exists": true,
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER_20260502T201258Z/CURRENT_OS_REPORT_ONLY_SCAN_BEFORE_STAGE4.stdout.json",
+      "sha256": "1fa3ba98841b3fdfb68080a161282080f1c82af51393594909495a2793446553",
+      "size": 12923
+    },
+    {
+      "exists": true,
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER_20260502T201258Z/PROMOTION_AUTHORITY_REPAIR_CLASSIFIED_INVENTORY_v1.json",
+      "sha256": "5e41095532de0f4d7965caf731310daa5a399e97da06d58b78e6dd730ffacdd5",
+      "size": 515944
+    },
+    {
+      "exists": true,
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER_20260502T201258Z/PROMOTION_AUTHORITY_REPAIR_CLASSIFIED_INVENTORY_v1.json.sha256",
+      "sha256": "62cb5cb43a522caca91fa092be51c126a1a550cacfdca830d29a28f6e6ba4d1c",
+      "size": 122
+    },
+    {
+      "exists": true,
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER_20260502T201258Z/IMPLEMENTATION_CONTRACT.json",
+      "sha256": "23fceeb76f58d11fa10be92c2990dfd303aa62127cadecf027bd85d94ec85145",
+      "size": 3367
+    },
+    {
+      "exists": true,
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER_20260502T201258Z/IMPLEMENTATION_CONTRACT.json.sha256",
+      "sha256": "0581551af6354cef4c5b22cb45779d944fba65242778662045af819280ec9c0a",
+      "size": 95
+    },
+    {
+      "exists": true,
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER_20260502T201258Z/IMPLEMENTATION_CONTRACT_VALIDATE_RESULT.json",
+      "sha256": "a37bb25ab58f77d3eca8ac47d846b789ceaffe38ddbd2192a9e84d277016c3d5",
+      "size": 162
+    },
+    {
+      "exists": true,
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER_20260502T201258Z/IMPLEMENTATION_CONTRACT_VALIDATE_RESULT.json.sha256",
+      "sha256": "61c93c0e4f30a7ce807c5dcb2b51c88340f85165eb45075e08da9b481d793337",
+      "size": 273
+    },
+    {
+      "exists": true,
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER_20260502T201258Z/WRITE_PATH_GATE_RESULT.json",
+      "sha256": "dbabda2ecfb7fefa6f714b883780b173f790726476ec0f06894453a6e8754ba8",
+      "size": 1509
+    },
+    {
+      "exists": true,
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER_20260502T201258Z/WRITE_PATH_GATE_RESULT.json.sha256",
+      "sha256": "4137eb6a6bf6bf6077f47a127e7bec5d2fb7b833a9ff497bdbc7177ac54f7089",
+      "size": 256
+    },
+    {
+      "exists": true,
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER_20260502T201258Z/STAGE_RECEIPT.json",
+      "sha256": "41f9c25f64c2fdc9b5f13425315f392b662be221ec26e44298ea8d9c8080ff10",
+      "size": 2752
+    },
+    {
+      "exists": true,
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER_20260502T201258Z/STAGE_RECEIPT.json.sha256",
+      "sha256": "d2782d4d045fcdf4046511450862f2b5850b4617867b57a27ec3bf10e1ce3769",
+      "size": 85
+    }
+  ],
+  "schema_version": "metablooms.delta_bundle_manifest.v1",
+  "stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER"
+}

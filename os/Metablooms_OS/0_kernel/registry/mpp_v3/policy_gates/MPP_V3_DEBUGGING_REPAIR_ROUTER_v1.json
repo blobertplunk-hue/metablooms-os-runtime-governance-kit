@@ -1,0 +1,18 @@
+{
+  "locked_at": "20260501T021900Z",
+  "policy_id": "MPP_V3_DEBUGGING_REPAIR_ROUTER_v1",
+  "research_basis": [
+    "Google SRE postmortems capture trigger, root cause, impact, mitigation, and follow-up actions to prevent recurrence.",
+    "Google SRE postmortem analysis uses consistent root-cause categories to target systemic fixes.",
+    "OpenTelemetry error conventions record exception/error attributes on failing spans."
+  ],
+  "rules": [
+    "Every failure class must include category, trigger, symptom, severity, evidence refs, recurrence risk, and owner.",
+    "Every failure class must have root-cause analysis with at least three why steps and a preventive change.",
+    "Every failure class must have at least one repair route.",
+    "S4 critical failures require a blocking route.",
+    "STOP_BLOCKED routes must have max_attempts = 0.",
+    "Action items require owner, priority, and done definition."
+  ],
+  "stage": "DEBUGGING"
+}

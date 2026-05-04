@@ -1,0 +1,40 @@
+{
+  "artifacts_written": [
+    {
+      "bytes": 11570,
+      "path": "MPP_R20_BEST_IN_WORLD_DESIGN_AND_ENFORCED_WORKFLOW_PLAN.json",
+      "sha256": "b9e4ed87a14bddc8d64563e603e426539e7341d805bbd5dbe79f1a9aa14ef2e5"
+    },
+    {
+      "bytes": 7826,
+      "path": "MPP_R20_BEST_IN_WORLD_DESIGN_AND_ENFORCED_WORKFLOW_PLAN.md",
+      "sha256": "7953368a9c8923c99c46986e4f16d7036bb104becbe411fa434feebe6a2b7d86"
+    },
+    {
+      "bytes": 515,
+      "path": "MPP_R20_DESIGN_HANDOFF.json",
+      "sha256": "3c046df55fccf374e2fde6654cf089ae350d82a186a7ea5e8e146556f30a1741"
+    },
+    {
+      "bytes": 699,
+      "path": "MPP_R20_DESIGN_RECEIPT.json",
+      "sha256": "279bb9a23033dfe3606fd643d74a669d0a2f190b57f4b5fb6c14bf9ab4325151"
+    }
+  ],
+  "blocked": false,
+  "next_authorized_stage": "MPP_R20_MONITOR_TELEMETRY_SCHEMA_AND_FEEDBACK_GATE",
+  "predecessor_verification": {
+    "r19": {
+      "actual_sha256": "03ac0dee0d0ee7e3bfc9634bf1a1e3c45c3ab5d765c0dff086be1e3fe083b3ae",
+      "checksum_match": true,
+      "sidecar_exists": true,
+      "sidecar_sha256": "03ac0dee0d0ee7e3bfc9634bf1a1e3c45c3ab5d765c0dff086be1e3fe083b3ae",
+      "zip": "/mnt/data/MPP_R19_FIR_FITNESS_INTEGRATION_SCHEMA_AND_GATE_20260501T024900Z.zip",
+      "zip_exists": true,
+      "zip_testzip": null
+    }
+  },
+  "stage_id": "MPP_R20_DESIGN_ENFORCED_GOVERNED_WORKFLOW",
+  "status": "DESIGN_READY",
+  "timestamp": "20260501T031200Z"
+}

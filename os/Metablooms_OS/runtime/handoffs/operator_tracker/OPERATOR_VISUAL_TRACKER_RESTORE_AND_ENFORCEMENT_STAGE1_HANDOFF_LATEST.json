@@ -1,0 +1,28 @@
+{
+  "artifact_type": "OPERATOR_VISUAL_TRACKER_RESTORE_STAGE1_HANDOFF",
+  "created_utc": "20260502T145646Z",
+  "full_authority_export": {
+    "artifact_type": "FULL_AUTHORITY_EXPORT_RESULT",
+    "created_utc": "20260502T145646Z",
+    "full_export_path": "/mnt/data/METABLOOMS_OS_OPERATOR_VISUAL_TRACKER_RESTORE_STAGE1_FULL_AUTHORITY_20260502T145646Z.zip",
+    "full_export_sha256": "0c228a5cd4e6853f5ed6d27658fe8c0272b269fe1139a0839cb347c828c5cc36",
+    "stage": "OPERATOR_VISUAL_TRACKER_RESTORE_AND_ENFORCEMENT_STAGE1",
+    "stage_bundle_path": "/mnt/data/Metablooms_OS/runtime/stage_bundles/operator_tracker/OPERATOR_VISUAL_TRACKER_RESTORE_AND_ENFORCEMENT_STAGE1_20260502T145646Z.zip",
+    "stage_bundle_sha256": "93cd2cc6b51550c3ea423d672ebc0954674a4d40cf7bc62ee8f9e015081b56e6",
+    "stage_bundle_testzip": "PASS",
+    "status": "PASS",
+    "zip_testzip": "PASS"
+  },
+  "latest_bootable_authority": "/mnt/data/METABLOOMS_OS_BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE5_FULL_AUTHORITY_20260502T145012Z.zip",
+  "latest_bootable_authority_sha256": "66bba2bd61cb9a4b8335025a05bfd18cb3772fa1fc687eaeab1bacac4016de1e",
+  "next_recommended": "Show tracker first, then ask/continue only if user resumes optional append-log Stage2.",
+  "paused_optional_pointer": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES",
+  "policy_path": "/mnt/data/Metablooms_OS/0_kernel/registry/operator_surface/OPERATOR_TRACKER_ENFORCEMENT_POLICY_v1.json",
+  "receipt_path": "/mnt/data/Metablooms_OS/runtime/receipts/operator_tracker/OPERATOR_VISUAL_TRACKER_RESTORE_AND_ENFORCEMENT_STAGE1_20260502T145646Z/STAGE_RECEIPT.json",
+  "receipt_sha256": "3ff74de89a25a7aab6b7171587515d36061af9b95c7c3bea4c6dab1af63a1095",
+  "stage": "OPERATOR_VISUAL_TRACKER_RESTORE_AND_ENFORCEMENT_STAGE1",
+  "status": "PASS",
+  "stop_rule": "Stop after tracker enforcement proof and export.",
+  "tracker_preview_latest": "/mnt/data/Metablooms_OS/runtime/handoffs/operator_tracker/CURRENT_OPERATOR_TRACKER_PREVIEW_LATEST.md",
+  "validator_path": "/mnt/data/Metablooms_OS/0_kernel/validators/validate_operator_tracker_enforcement_stage1_v1.py"
+}

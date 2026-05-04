@@ -1,0 +1,8 @@
+{
+  "authority_status": "export_in_progress_internal_metadata_written",
+  "current_stage": "WORKFLOW_GENERALIZATION_ENGINE_STAGE3_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF",
+  "export_zip_name": "METABLOOMS_OS_WORKFLOW_GENERALIZATION_ENGINE_STAGE3_FULL_AUTHORITY_EXPORT_20260502T232100Z_STORED.zip",
+  "external_sidecar_required": true,
+  "latest_workflow_generalization_stage": "WORKFLOW_GENERALIZATION_ENGINE_STAGE3_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF",
+  "timestamp_utc": "20260502T232100Z"
+}

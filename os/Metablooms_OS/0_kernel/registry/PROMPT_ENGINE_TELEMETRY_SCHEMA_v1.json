@@ -1,0 +1,20 @@
+{
+  "optional_fields": [
+    "raw_prompt_hash",
+    "optimized_prompt_hash",
+    "failure_class",
+    "patch_id",
+    "drift_flags",
+    "latency_ms",
+    "route"
+  ],
+  "purpose": "JSONL event schema for prompt-engine execution telemetry and prompt-patch events.",
+  "required_fields": [
+    "event_utc",
+    "event_type",
+    "profile",
+    "validator_decision"
+  ],
+  "schema_id": "PROMPT_ENGINE_TELEMETRY_SCHEMA_v1",
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_8_AUTOMATED_PATCH_LOOP_AND_FAILURE_CLASS_CORRECTION"
+}

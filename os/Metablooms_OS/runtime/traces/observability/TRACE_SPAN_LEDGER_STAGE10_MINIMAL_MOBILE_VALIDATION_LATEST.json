@@ -1,0 +1,201 @@
+{
+  "artifact_type": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_MINIMAL_MOBILE_VALIDATION.v1",
+  "checks": [
+    {
+      "exists_nonempty": true,
+      "path": "0_kernel/registry/observability/MB_BOOT_SURFACE_MINIMAL_MODE_SCHEMA_v1.json",
+      "sha256": "756eba88358cadd032385a3f1797d26c5cd81196bb5fd04695e2502384c4e9f9"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "0_kernel/registry/observability/MB_BOOT_SURFACE_MINIMAL_MODE_POLICY_v1.json",
+      "sha256": "786f463d1d7668a6c2cb62be53acfa8f5090a0fbc85e566dad40ed55484435d4"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "0_kernel/scripts/observability_boot_surface_minimal_mode_renderer_v1.py",
+      "sha256": "d0388f23d662c386ca92d005bb36c3cd6b6869febbe12c5b17d9daffe25b4f3e"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "runtime/state/operator_surface/BOOT_SURFACE_MINIMAL_MODE_LATEST.json",
+      "sha256": "1ab950344e11fc725bd7c13ba8cc27c3e7cf9ae1191e70297945af4e7062c6c1"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "runtime/state/operator_surface/BOOT_SURFACE_MINIMAL_MODE_LATEST.md",
+      "sha256": "93b7b5e5a2df838ca3c22d5fe2cbcb6f9726a85f898c29a94a5ec052b049f647"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "OPEN_OPERATOR_VISUAL_TRACKER.html",
+      "sha256": "689af2400c0e032e343e2ef3e45a558ed606be7bd401843347918fd0ffca24b0"
+    },
+    {
+      "name": "mobile_static:viewport_meta",
+      "passed": true
+    },
+    {
+      "name": "mobile_static:overflow_x_hidden",
+      "passed": true
+    },
+    {
+      "name": "mobile_static:touch_target_48",
+      "passed": true
+    },
+    {
+      "name": "mobile_static:code_word_break",
+      "passed": true
+    },
+    {
+      "name": "mobile_static:single_column_breakpoint",
+      "passed": true
+    },
+    {
+      "name": "mobile_static:details_disclosure",
+      "passed": true
+    },
+    {
+      "name": "mobile_static:skip_link",
+      "passed": true
+    }
+  ],
+  "created_utc": "20260502T180157Z",
+  "issues": [],
+  "smoke_checks": [
+    {
+      "name": "renderer_passes",
+      "pass": true,
+      "result": {
+        "cmd": [
+          "/opt/pyvenv/bin/python3",
+          "/mnt/data/Metablooms_OS/0_kernel/scripts/observability_boot_surface_minimal_mode_renderer_v1.py",
+          "--root",
+          "/mnt/data/Metablooms_OS",
+          "--json"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": {
+          "artifact_type": "BOOT_SURFACE_MINIMAL_MODE_RENDER_SMOKE.v1",
+          "created_utc": "20260502T180149Z",
+          "guidance_steps": 8,
+          "tracker_bytes": 11861,
+          "verdict": "PASS"
+        }
+      }
+    },
+    {
+      "name": "new_chat_validator_allows",
+      "pass": true,
+      "result": {
+        "cmd": [
+          "/opt/pyvenv/bin/python3",
+          "/mnt/data/Metablooms_OS/runtime/governance/new_chat_start_contract_validator_v1.py",
+          "/mnt/data/Metablooms_OS"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": {
+          "checks": [
+            {
+              "name": "exists:CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+              "passed": true
+            },
+            {
+              "name": "exists:0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+              "passed": true
+            },
+            {
+              "name": "exists:0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+              "passed": true
+            },
+            {
+              "name": "exists:NEW_CHAT_START_HERE.md",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/governance/new_chat_start_contract_validator_v1.py",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/governance/boot_critical_governance_loader_v1.py",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/governance/governance_scatter_prevention_v1.py",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/governance/fresh_chat_boot_rehearsal_v1.py",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/cartridges/prompt_governance_v1/validate_prompt_governance_cartridge_v1.py",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+              "passed": true
+            },
+            {
+              "name": "exists:0_kernel/registry/observability/MB_BOOT_SEQUENCE_WRAPPER_ENFORCEMENT_v1.json",
+              "passed": true
+            },
+            {
+              "name": "exists:0_kernel/registry/observability/MB_HISTORICAL_CALLSITE_QUARANTINE_POLICY_v1.json",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/traces/observability/HISTORICAL_CALLSITE_QUARANTINE_INDEX_LATEST.json",
+              "passed": true
+            },
+            {
+              "name": "exists:0_kernel/validators/validate_observability_trace_span_ledger_stage8_historical_callsite_quarantine_v1.py",
+              "passed": true
+            }
+          ],
+          "decision": "ALLOW",
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "runtime_wrapper_allows",
+      "pass": true,
+      "result": {
+        "cmd": [
+          "/opt/pyvenv/bin/python3",
+          "/mnt/data/Metablooms_OS/runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+          "--root",
+          "/mnt/data/Metablooms_OS",
+          "--json"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": {
+          "artifact_type": "MB_RUNTIME_STARTER_SMOKE_CONTRACT_WRAPPER_RESULT.v1",
+          "created_utc": "20260502T180156Z",
+          "decision": "ALLOW",
+          "method_reliability_lesson": "METHOD_RUNTIME_STARTER_SMOKE_CLI_SHAPE_v1",
+          "target_shape": "--root",
+          "underlying_gate": "runtime/governance/runtime_starter_smoke_v1.py",
+          "underlying_result": {
+            "decision": "ALLOW",
+            "invalid_json": [],
+            "missing": [],
+            "mode": "root",
+            "path": "/mnt/data/Metablooms_OS",
+            "read_errors": []
+          }
+        }
+      }
+    }
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING",
+  "verdict": "PASS"
+}

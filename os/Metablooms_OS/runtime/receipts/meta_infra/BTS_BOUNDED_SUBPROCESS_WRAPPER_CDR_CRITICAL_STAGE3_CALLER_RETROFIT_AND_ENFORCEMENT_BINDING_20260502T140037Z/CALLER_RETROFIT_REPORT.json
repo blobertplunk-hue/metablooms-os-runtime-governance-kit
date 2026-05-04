@@ -1,0 +1,61 @@
+{
+  "added_adapter": "0_kernel/lib/execution/bounded_subprocess_compat_v1.py",
+  "artifact_type": "METABLOOMS_CALLER_RETROFIT_REPORT_v1",
+  "created_utc": "20260502T140253Z",
+  "deferred_reason": "Stage3 was bounded; exhaustive whole-tree conversion requires a separate Stage4 audit/retrofit sweep to avoid unsafe broad edits.",
+  "post_live_unretrofitted_count_excluding_registry_receipts_bundles": 74,
+  "post_live_unretrofitted_sample": [
+    "/mnt/data/Metablooms_OS/0_kernel/cartridges/inline_project_tracker/TRACKER_SMOKE_TEST_v1.py:39:            r=subprocess.run([sys.executable, str(validator_path), str(renderer_path), str(state_path), str(val_report)], text=True, capture_output=True)",
+    "/mnt/data/Metablooms_OS/0_kernel/cartridges/inline_project_tracker/TRACKER_SMOKE_TEST_v1.py:43:            r=subprocess.run([sys.executable, str(gate_validator), str(root), str(state_path), str(renderer_path), str(gate_report)], text=True, capture_output=True)",
+    "/mnt/data/Metablooms_OS/0_kernel/cartridges/inline_project_tracker/TRACKER_SMOKE_TEST_v1.py:52:                r=subprocess.run([sys.executable, str(updater),'--root',str(root),'--state',str(tmp_state),'--receipt',str(tmp_receipt),'--handoff',str(tmp_handoff),'--stage','TRACKER-5_TMP','--stage-index','6','--stage-total','6','--status','DONE','--now','temporary smoke update','--next','none','--stop-rule','test only','--timestamp-utc','SMOKE','--render-preview',str(tmp_preview)],text=True,capture_output=True)",
+    "/mnt/data/Metablooms_OS/0_kernel/cartridges/inline_project_tracker/TRACKER_SMOKE_TEST_v1.py:55:                    r2=subprocess.run([sys.executable, str(handoff_val),'--root',str(root),'--state',str(tmp_state),'--receipt',str(tmp_receipt),'--handoff',str(tmp_handoff),'--preview',str(tmp_preview),'--stage','TRACKER-5_TMP','--report',str(tmp_report)],text=True,capture_output=True)",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/agent_harness_diff_review_v1.py:23:        cp=subprocess.run(['python3','-S',str(planner),'--stage',a.stage,'--write-plan','--parallel-plan','--json'],cwd=str(r),text=True,capture_output=True,timeout=60)",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/artifact_replay_proof_v2.py:23:  p=subprocess.run(c,cwd=cwd,text=True,capture_output=True,timeout=timeout)",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/cartridge_executor_v1.py:24:  gp=subprocess.run(['python3','-S',str(gate),'--work-order',str(wp),'--fixtures','--json'],cwd=str(r),text=True,capture_output=True,timeout=90)",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/cartridge_executor_v1.py:29:  rg=subprocess.run(['python3','-S',str(review_gate),'--stage',stage,'--work-order',str(wp),'--strict','--json'],cwd=str(r),text=True,capture_output=True,timeout=60)",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/cartridge_executor_v1.py:41:  gr=subprocess.run(['python3','-S',str(gate),'--json'],cwd=str(r),text=True,capture_output=True,timeout=90) if gate.exists() else None",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/cartridge_executor_v1.py:42:  vp=subprocess.run(['python3','-S',str(validator)],cwd=str(r),text=True,capture_output=True,timeout=90) if validator.exists() else None",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/cartridge_executor_v1.py:52:  rr=subprocess.run(['python3','-S',str(runner),'--json'],cwd=str(r),text=True,capture_output=True,timeout=90) if runner.exists() else None",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/cartridge_executor_v1.py:53:  vp=subprocess.run(['python3','-S',str(validator)],cwd=str(r),text=True,capture_output=True,timeout=90) if validator.exists() else None",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/cartridge_executor_v1.py:62:  vp=subprocess.run(['python3','-S',str(validator)],cwd=str(r),text=True,capture_output=True,timeout=90) if validator.exists() else None",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/cartridge_executor_v1.py:72:  vp=subprocess.run(['python3','-S',str(validator)],cwd=str(r),text=True,capture_output=True,timeout=90) if validator.exists() else None",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/cartridge_executor_v1.py:82:  vp=subprocess.run(['python3','-S',str(validator)],cwd=str(r),text=True,capture_output=True,timeout=120) if validator.exists() else None",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/cartridge_executor_v1.py:95:  pr=subprocess.run(['python3','-S',str(planner),'--stage',stage,'--write-plan','--json'],cwd=str(r),text=True,capture_output=True,timeout=45) if planner.exists() else None",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/cartridge_executor_v1.py:96:  vp=subprocess.run(['python3','-S',str(validator)],cwd=str(r),text=True,capture_output=True,timeout=45) if validator.exists() else None",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/ensure_libcst_available_v1.py:33:    result = subprocess.run(cmd, capture_output=True, text=True)",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/ensure_ruff_available_v1.py:21:    r = subprocess.run(cmd, capture_output=True, text=True)",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/governed_run.py:20:    r = subprocess.run(cmd, capture_output=True, text=True)",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/p0py_python_health_governance_v1.py:74:        proc = subprocess.run(cmd, text=True, capture_output=True, timeout=timeout_s)",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/registry_mutation_engine_v2_lite_final.py:94:    return subprocess.run(",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/run_governance_regression_suite_v1.py:41:        p=subprocess.run(cmd, cwd=str(ROOT), text=True, capture_output=True, timeout=case.get('timeout_s', 12))",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/stage_runner_v1.py:29:    pr=subprocess.run(['python3','-S',str(cm),*args],cwd=str(root),text=True,capture_output=True,timeout=60)",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/stage_runner_v1.py:48:        br=subprocess.run(br_cmd,cwd=str(root),text=True,capture_output=True,timeout=min(max(a.timeout,5),20))",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/stage_runner_v1.py:67:    gp=subprocess.run(['python3','-S',str(gate),'--work-order',str(wp),'--fixtures','--json'],cwd=str(root),text=True,capture_output=True,timeout=min(a.timeout,90))",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/stage_runner_v1.py:83:    pr=subprocess.run(['python3','-S',str(exe),'--work-order',str(wp),'--security-gate-passed'],cwd=str(root),text=True,capture_output=True,timeout=a.timeout)",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/sync_writer_baseline_sha_patch_v1.py:83:        result = subprocess.run(",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/sync_writer_baseline_sha_patch_v1.py:123:        result = subprocess.run(",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/transactional_stage_runner_v1.py:89:        r = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)"
+  ],
+  "post_scan_lines_total": 267,
+  "pre_scan_lines_head_limited": 200,
+  "retrofitted_callers": [
+    {
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_STAGE_FINALIZATION_HOOK_v1.py",
+      "reason": "stage-finalization subprocesses are high-frequency governed-stage operations"
+    },
+    {
+      "path": "0_kernel/lib/filesystem_safety_v1.py",
+      "reason": "filesystem mount probe is used by extraction/finalization safety gates"
+    },
+    {
+      "path": "0_kernel/lib/archive_method_router_v1.py",
+      "reason": "archive validation command routing intersects forbidden unzip failure class"
+    },
+    {
+      "path": "0_kernel/lib/archive_extraction_route_v1.py",
+      "reason": "archive extraction spawn requires bounded envelope and allowed-root receipts"
+    }
+  ],
+  "scope": "smallest valid live-caller retrofit, not exhaustive whole-tree conversion",
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING"
+}

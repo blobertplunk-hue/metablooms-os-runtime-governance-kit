@@ -1,0 +1,86 @@
+{
+  "engine_id": "METABLOOMS_INVARIANT_ACTIVATION_ENGINE_v1",
+  "timestamp_utc": "2026-04-30T16:34:44Z",
+  "root": "/mnt/data/Metablooms_OS",
+  "invariants_loaded": 13,
+  "invariants": [
+    {
+      "id": "FULL_OS_PORTABLE_EXPORT_MUST_INCLUDE_BASELINE_v1",
+      "gate": "FULL_BUNDLE_EXPORT_GATE",
+      "path": "/mnt/data/Metablooms_OS/governance/invariants/FULL_OS_PORTABLE_EXPORT_MUST_INCLUDE_BASELINE_v1.json",
+      "sha256": "9751984b3b7c5e64354b32b1f274efe811139b608bdb9cda3a6114a6dc6ba827"
+    },
+    {
+      "id": "GOVERNANCE_REGRESSION_SUITE_v1",
+      "gate": "GOVERNANCE_REGRESSION_SUITE_GATE",
+      "path": "/mnt/data/Metablooms_OS/governance/invariants/GOVERNANCE_REGRESSION_SUITE_v1.json",
+      "sha256": "2a104aaa1cf485f3b2bf68adce2cd3ec512c7eb890bd1fd2de66c888ab819da1"
+    },
+    {
+      "id": "NO_NORMAL_PYTHON_FOR_OS_WORK_v1",
+      "gate": "PYTHON_QUARANTINE_GATE",
+      "path": "/mnt/data/Metablooms_OS/governance/invariants/NO_NORMAL_PYTHON_FOR_OS_WORK_v1.json",
+      "sha256": "dc115626aca1f05ce882b315b30b71465996f092af63550c606b737ca68c8efb"
+    },
+    {
+      "id": "PRE_TOOL_EXECUTION_CONTRACT_v1",
+      "gate": "PRE_TOOL_EXECUTION_GATE",
+      "path": "/mnt/data/Metablooms_OS/governance/invariants/PRE_TOOL_EXECUTION_CONTRACT_v1.json",
+      "sha256": "00040ead5e63ae6a2859d82bc76bb3117458d68005e78d792917186a389234fb"
+    },
+    {
+      "id": "PROJECT_FILES_BOOT_OVERLAY_MUST_APPLY_GOVERNANCE_v1",
+      "gate": "PROJECT_BOOT_OVERLAY_GATE",
+      "path": "/mnt/data/Metablooms_OS/governance/invariants/PROJECT_FILES_BOOT_OVERLAY_MUST_APPLY_GOVERNANCE_v1.json",
+      "sha256": "97804a0f38efd97e0b195bbf1a854ec993045e744e04bcc21d656862e1817b84"
+    },
+    {
+      "id": "PYTHON_RESILIENT_EXECUTION_POLICY_v1",
+      "gate": "PYTHON_RESILIENT_EXECUTION_GATE",
+      "path": "/mnt/data/Metablooms_OS/governance/invariants/PYTHON_RESILIENT_EXECUTION_POLICY_v1.json",
+      "sha256": "745700c25e3a097906b84fa47439f4725b62ed1d6bbac95fb7f803034c7e5a2e"
+    },
+    {
+      "id": "RESEARCH_SEE_CE_GATE_v1",
+      "gate": "RESEARCH_SEE_CE_GATE",
+      "path": "/mnt/data/Metablooms_OS/governance/invariants/RESEARCH_SEE_CE_GATE_v1.json",
+      "sha256": "d45595c9326213f8c5e6e176facdab2e8f3139526e89f8df21689f474aed0777"
+    },
+    {
+      "id": "RUNAWAY_TURN_BREAKER_v2",
+      "gate": "RUNAWAY_TURN_GATE",
+      "path": "/mnt/data/Metablooms_OS/governance/invariants/RUNAWAY_TURN_BREAKER_v2.json",
+      "sha256": "c68ddc4e148cdeb55d1ec5040e49b363aa79e2b889d0926ce1f31d763ff0ad4a"
+    },
+    {
+      "id": "RUNTIME_GOVERNANCE_REQUESTS_MUST_PROMOTE_THROUGH_GPC_v1",
+      "gate": "RESEARCH_SEE_CE_GATE",
+      "path": "/mnt/data/Metablooms_OS/governance/invariants/RUNTIME_GOVERNANCE_REQUESTS_MUST_PROMOTE_THROUGH_GPC_v1.json",
+      "sha256": "3d842f1ca527a31f7c23bd79c685de3651515aed53971221b436b85b864d0464"
+    },
+    {
+      "id": "RUNTIME_WRITE_ROLLBACK_GATE_v1",
+      "gate": "RUNTIME_WRITE_ROLLBACK_GATE",
+      "path": "/mnt/data/Metablooms_OS/governance/invariants/RUNTIME_WRITE_ROLLBACK_GATE_v1.json",
+      "sha256": "b79ecf1e607126221339803840880c0f9b908620f8a963328fef9bed9766ddbb"
+    },
+    {
+      "id": "SHELL_FIRST_CHUNKED_EXECUTION_v1",
+      "gate": "SHELL_FIRST_GATE",
+      "path": "/mnt/data/Metablooms_OS/governance/invariants/SHELL_FIRST_CHUNKED_EXECUTION_v1.json",
+      "sha256": "a862e24e4fe0ad2cb766fbd62a875072d48d65da5796d4957e1175c58f7f3136"
+    },
+    {
+      "id": "TRACKER_RELEASE_GATE_v1",
+      "gate": "TRACKER_RELEASE_GATE",
+      "path": "/mnt/data/Metablooms_OS/governance/invariants/TRACKER_RELEASE_GATE_v1.json",
+      "sha256": "1cc1f8270674effbd132a4d695b07f72d2d0099fc176c2b7a5a873f4b2055b2b"
+    },
+    {
+      "id": "WEBRUN_REQUIRED_FOR_GOVERNANCE_REPAIR_v1",
+      "gate": "WEBRUN_REQUIRED_GATE",
+      "path": "/mnt/data/Metablooms_OS/governance/invariants/WEBRUN_REQUIRED_FOR_GOVERNANCE_REPAIR_v1.json",
+      "sha256": "ee22fd21aca4f76b6bae2c68f7c0e00aafa8cfca28d6e0cf349a0676785101b6"
+    }
+  ]
+}

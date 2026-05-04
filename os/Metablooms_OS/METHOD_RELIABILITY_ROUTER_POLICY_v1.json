@@ -1,0 +1,90 @@
+{
+  "always_on_rule": "MetaBlooms core governance is mandatory for all MetaBlooms work; cartridge governance layers on top and never replaces baseline governance.",
+  "artifact_type": "METHOD_RELIABILITY_ROUTER_POLICY_v1",
+  "created_utc": "20260430T020900Z",
+  "current_forbidden_methods": [
+    {
+      "exception_policy": "Only allowed if explicitly authorized by a future stage, file-count/size threshold is bounded, timeout budget is declared, checkpoint receipt is written before and after, and failure cannot block smaller validation fallback.",
+      "forbidden_by_default": true,
+      "method_id": "FULL_ARCHIVE_RECURSIVE_EXTRACTION_FOR_LARGE_OS_VALIDATION_IN_CHATGPT_SANDBOX",
+      "observed_failure": "unzip -tqq and jar xf full recursive extraction timed out/stalled during FL17-MERGE-5 validation; user had to stop turn.",
+      "replacement_methods": [
+        "checksum sidecar verification",
+        "zipfile.ZipFile.testzip CRC/header validation",
+        "unsafe member path scan",
+        "central directory/member inventory",
+        "selective extraction/read of required boot-critical files",
+        "required semantic/tracker authority checks"
+      ],
+      "scope": "MetaBlooms full OS export/recovery validation in ChatGPT-style sandbox"
+    }
+  ],
+  "current_preferred_methods": [
+    {
+      "components": [
+        "sha256 sidecar verification",
+        "unsafe member path scan",
+        "ZipFile.testzip CRC/header validation",
+        "central directory inventory",
+        "selective read/extraction of boot-critical files",
+        "semantic/tracker authority checks"
+      ],
+      "evidence": [
+        "FL17-MERGE-5R2 validation PASS",
+        "BASELINE-PROMOTION-0 gates PASS"
+      ],
+      "method_id": "BOUNDED_ARCHIVE_NATIVE_RECOVERY_VALIDATION",
+      "scope": "large MetaBlooms OS bundle validation in ChatGPT sandbox",
+      "status": "PREFERRED_BY_EVIDENCE"
+    },
+    {
+      "components": [
+        "tools/7zip/7zz t",
+        "tools/7zip/7zz l",
+        "tools/7zip/7zz x -y -o<stage>"
+      ],
+      "evidence": [
+        "7zz t passed against current authority ZIP",
+        "single extract smoke passed",
+        "internal archive_method_router_v1.py installed"
+      ],
+      "method_id": "OFFICIAL_7ZZ_INDEPENDENT_ARCHIVE_VALIDATION_FALLBACK",
+      "scope": "MetaBlooms OS ZIP archive validation and bounded extraction fallback",
+      "status": "PREFERRED_FALLBACK_BY_LOCAL_SMOKE_EVIDENCE"
+    },
+    {
+      "components": [
+        "tools/metablooms_archive_tool/mb_archive_tool test/list/extract"
+      ],
+      "evidence": [
+        "local libarchive helper test passed against current authority ZIP"
+      ],
+      "method_id": "LIBARCHIVE_LOCAL_HELPER_ARCHIVE_SMOKE_FALLBACK",
+      "scope": "Secondary archive test/list/extract fallback",
+      "status": "SECONDARY_FALLBACK_BY_LOCAL_SMOKE_EVIDENCE"
+    }
+  ],
+  "denylist_rule": "A method with repeated timeout/stall, user-interrupted runaway behavior, or structural incompatibility with the sandbox becomes forbidden-by-default once evidence is recorded in a receipt or validation report.",
+  "evidence_thresholds": {
+    "forbid_after_pattern": [
+      "two or more timed-out bounded attempts",
+      "same failure class recurs across stages",
+      "method contradicts active forbidden-method artifact"
+    ],
+    "forbid_immediate": [
+      "causes unbounded/stalled turn requiring user stop",
+      "known unsafe path/traversal risk",
+      "corrupts active runtime state",
+      "violates fail-closed invariant"
+    ],
+    "promote_preferred": [
+      "passes repeated validation in current environment",
+      "is bounded/checkpointable and has receipts",
+      "has lower blast radius than alternatives",
+      "is aligned with external governance/provenance guidance"
+    ]
+  },
+  "prefer_rule": "A method becomes preferred only when evidence shows repeated successful use or a clearly safer bounded mechanism; promotion must name scope, evidence, replacement target, and rollback/exception conditions.",
+  "status": "ACTIVE_INTERNALIZED_WITH_7ZZ_AND_TOOLKIT_FALLBACKS",
+  "updated_utc": "20260501T031045Z"
+}

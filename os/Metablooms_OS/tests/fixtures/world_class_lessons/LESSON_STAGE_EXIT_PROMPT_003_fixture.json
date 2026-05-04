@@ -1,0 +1,20 @@
+{
+  "expected_decision": "pass_when_gate_artifacts_present_else_fail",
+  "fixture_type": "lesson_promotion_regression",
+  "gate_under_test": "NEXT_STAGE_COPY_PROMPT_GATE",
+  "lesson_id": "LESSON_STAGE_EXIT_PROMPT_003",
+  "must_block_if": [
+    "evidence_paths_empty",
+    "fixture_missing",
+    "stage_exit_prompt_missing",
+    "successful_stage_without_bootable_full_authority_when_possible"
+  ],
+  "must_require": {
+    "artifact_evidence_paths": [
+      "runtime/state/NEXT_STAGE_COPY_PROMPT.json"
+    ],
+    "prevention_claim": "Reduces stage-name burden and boot prompt drift."
+  },
+  "problem_class": "operator_cognitive_load",
+  "schema_version": "v1"
+}

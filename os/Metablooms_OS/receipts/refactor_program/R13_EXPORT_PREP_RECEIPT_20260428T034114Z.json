@@ -1,0 +1,9 @@
+{
+  "artifact_type": "QUARANTINED_ZERO_BYTE_RECEIPT_MARKER",
+  "created_utc": "2026-04-29T10:06:32.093704+00:00",
+  "original_path": "receipts/refactor_program/R13_EXPORT_PREP_RECEIPT_20260428T034114Z.json",
+  "quarantined_path": "receipts/quarantine/superseded_zero_byte/R13A_POINTER_ROOT_RECONCILE/R13_EXPORT_PREP_RECEIPT_20260428T034114Z.zero_byte.quarantined.json",
+  "reason": "Superseded zero-byte R13 receipt removed from active refactor_program receipts without deleting evidence.",
+  "replacement_policy": "Use nonzero R13_EXPORT_PREP_RECEIPT_20260428T034455Z.json as active/latest R13 prep evidence.",
+  "stage": "R13A_POINTER_ROOT_RECONCILIATION_AND_ZERO_BYTE_RECEIPT_QUARANTINE"
+}

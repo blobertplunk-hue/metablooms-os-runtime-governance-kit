@@ -1,0 +1,90 @@
+{
+  "$id": "metablooms://schemas/usefulness_surface_declaration_schema_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "artifact_type": {
+      "enum": [
+        "html_activity",
+        "dashboard",
+        "telemetry_engine",
+        "schema",
+        "governance_gate",
+        "runtime_contract",
+        "other",
+        "landing_page",
+        "teacher_tool",
+        "student_tool",
+        "operator_tracker",
+        "other_visual_artifact"
+      ],
+      "type": "string"
+    },
+    "dimensions_covered": {
+      "additionalProperties": false,
+      "minProperties": 1,
+      "patternProperties": {
+        "^(instruction|practice|assessment|realtime_feedback|teacher_telemetry|misconception_diagnosis|adaptive_support|export_reuse|future_improvement|visual_presentation)$": {
+          "additionalProperties": false,
+          "properties": {
+            "covered": {
+              "type": "boolean"
+            },
+            "evidence": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "note": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "covered"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "dimensions_not_applicable": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "promotion_context": {
+      "additionalProperties": false,
+      "properties": {
+        "promotion_stage": {
+          "type": "string"
+        },
+        "target_artifact_path": {
+          "type": "string"
+        },
+        "target_artifact_sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "promotion_required": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "artifact_id",
+    "artifact_type",
+    "dimensions_covered"
+  ],
+  "title": "MetaBlooms usefulness surface declaration",
+  "type": "object"
+}

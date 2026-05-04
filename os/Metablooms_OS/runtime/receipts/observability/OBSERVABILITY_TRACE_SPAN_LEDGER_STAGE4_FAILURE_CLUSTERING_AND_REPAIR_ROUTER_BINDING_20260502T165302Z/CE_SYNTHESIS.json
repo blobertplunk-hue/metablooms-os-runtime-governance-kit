@@ -1,0 +1,22 @@
+{
+  "artifact_type": "CE_SYNTHESIS.v1",
+  "created_utc": "20260502T165302Z",
+  "decision": "Implement failure clustering and repair-router binding over existing trace ledger records, classify stale/resolved vs active issues, and surface cluster cards in the operator tracker.",
+  "internal_findings": [
+    "TRACE_SPAN_LEDGER_LATEST.jsonl contains 220 records with 4 non-OK records.",
+    "Non-OK records are passive evidence in the tracker rather than actionable repair routes.",
+    "The visible tracker already has causal sections, so Stage 4 should add a compact failure cluster/repair router surface instead of replacing the tracker.",
+    "The smallest durable fix is a cluster report, router binding, validator, and tracker binding generated from the existing trace ledger and graph."
+  ],
+  "rejected_options": [
+    {
+      "option": "Rebuild trace ingestion from scratch",
+      "reason": "Too broad for bounded Stage 4 and unnecessary because Stage 2/3 artifacts validate."
+    },
+    {
+      "option": "Patch historical records in place",
+      "reason": "Would weaken provenance; preserve history and add a derived routing layer instead."
+    }
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING"
+}

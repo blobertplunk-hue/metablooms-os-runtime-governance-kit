@@ -1,0 +1,61 @@
+{
+  "authority_export_performed": false,
+  "bundle_type": "SUPPORT/PROOF BUNDLE \u2014 NOT THE OS BUNDLE",
+  "installed_paths": [
+    "0_kernel/registry/observability/TRACE_EXPORT_ADAPTER_SPEC_v1.json",
+    "0_kernel/registry/observability/TRACE_EXPORT_ADAPTER_SPEC_v1.json.sha256",
+    "0_kernel/registry/observability/TRACE_EXPORT_POLICY_BINDINGS_v1.json",
+    "0_kernel/registry/observability/TRACE_EXPORT_POLICY_BINDINGS_v1.json.sha256",
+    "governance/ACTIVE_INVARIANTS_INDEX.json",
+    "governance/ACTIVE_INVARIANTS_INDEX.json.sha256",
+    "governance/invariants/OBSERVABILITY_TRACE_EXPORT_ADAPTERS_REQUIRED_v1.json",
+    "governance/invariants/OBSERVABILITY_TRACE_EXPORT_ADAPTERS_REQUIRED_v1.json.sha256",
+    "research/CE/STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS_CE_v1.json",
+    "research/CE/STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS_CE_v1.json.sha256",
+    "research/SEE/STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS_SEE_v1.json",
+    "research/SEE/STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS_SEE_v1.json.sha256",
+    "runtime/evals/observability/STAGE6R_TRACE_EXPORT_ADAPTER_SMOKE_RESULT.json",
+    "runtime/evals/observability/STAGE6R_TRACE_EXPORT_ADAPTER_SMOKE_RESULT.json.sha256",
+    "runtime/governance/observability_trace_export_adapter_v1.py",
+    "runtime/governance/observability_trace_export_adapter_v1.py.sha256",
+    "runtime/state/STAGE6R_SMOKE_STDERR.txt",
+    "runtime/state/STAGE6R_SMOKE_STDERR.txt.sha256",
+    "runtime/state/STAGE6R_SMOKE_STDOUT.txt",
+    "runtime/state/STAGE6R_SMOKE_STDOUT.txt.sha256",
+    "runtime/state/STAGE6R_TRACKER_PREVIEW.txt",
+    "runtime/state/STAGE6R_TRACKER_PREVIEW.txt.sha256",
+    "tests/evals/observability/test_stage6r_trace_export_adapter_v1.py",
+    "tests/evals/observability/test_stage6r_trace_export_adapter_v1.py.sha256",
+    "tests/fixtures/observability/stage6r_trace_export_allow_v1.json",
+    "tests/fixtures/observability/stage6r_trace_export_allow_v1.json.sha256",
+    "tests/fixtures/observability/stage6r_trace_export_deny_v1.json",
+    "tests/fixtures/observability/stage6r_trace_export_deny_v1.json.sha256"
+  ],
+  "post_tool_validation_note": "Final post-tool validation rerun after final support-bundle rebuild; final decision kept outside bundle to avoid hash churn.",
+  "resolver_compensation": "bounded pre-tool contract and pre-action gate used; resolver coverage gap carried forward for repair",
+  "resolver_status": "FAIL_NO_ALLOWED_CANDIDATE_RECORDED",
+  "schema": "MetaBloomsStageReceipt_v1",
+  "stage_id": "STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS",
+  "support_bundle_path": "/mnt/data/METABLOOMS_STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS_SUPPORT_PROOF_BUNDLE_NOT_OS_20260502T035000Z.zip",
+  "support_bundle_sha256": "394665965e6a038f04ae2a66b6f500ba3b53daf1037632587ca62c5a43f7233a",
+  "timestamp_utc": "2026-05-02T03:28:17.380076Z",
+  "validation": {
+    "allow_formats": [
+      "metablooms_jsonl",
+      "opentelemetry_span_json",
+      "openai_agents_event_json",
+      "langgraph_run_json"
+    ],
+    "deny_decision": "DENY",
+    "smoke_verdict": "PASS"
+  },
+  "verdict": "PASS",
+  "web_evidence_bound": [
+    "https://openai.github.io/openai-agents-python/tracing/",
+    "https://opentelemetry.io/docs/concepts/signals/traces/",
+    "https://opentelemetry.io/docs/specs/semconv/general/trace/",
+    "https://docs.langchain.com/oss/python/langgraph/observability",
+    "https://docs.langchain.com/oss/python/langgraph/durable-execution",
+    "https://aivss.owasp.org/assets/publications/AIVSS%20Scoring%20System%20For%20OWASP%20Agentic%20AI%20Core%20Security%20Risks%20v0.8.pdf"
+  ]
+}

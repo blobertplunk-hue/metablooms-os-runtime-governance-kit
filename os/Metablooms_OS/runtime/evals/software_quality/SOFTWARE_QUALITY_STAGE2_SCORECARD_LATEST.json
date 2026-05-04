@@ -1,0 +1,9 @@
+{
+  "created_utc": "20260501T182011Z",
+  "false_pass_count": 0,
+  "gate_pass_ratio": 1.0,
+  "overall_score": 0.91,
+  "promotion_decision": "PROMOTE",
+  "restored_by": "RECONCILE_BRANCH_LINEAGE_STAGE_1",
+  "schema_version": "SOFTWARE_QUALITY_STAGE2_SCORECARD_v1"
+}

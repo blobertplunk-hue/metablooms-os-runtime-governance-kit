@@ -1,0 +1,54 @@
+{
+  "authorized_by": "receipts/inline_project_tracker/TRACKER_4_20260429T111733Z/TRACKER_4_HANDOFF.json plus user mobile screenshots",
+  "blocked": false,
+  "changes": [
+    "0_kernel/cartridges/inline_project_tracker/TRACKER_RENDERER_v1.py",
+    "0_kernel/cartridges/inline_project_tracker/TRACKER_VALIDATOR_v1.py",
+    "0_kernel/cartridges/inline_project_tracker/TRACKER_RENDER_SPEC_LOCK_v1.md",
+    "1_governance/tracker/TRACKER_MOBILE_REFLOW_POLICY_v1.md",
+    "runtime/state/TRACKER_STATE_v1.json",
+    "receipts/inline_project_tracker/TRACKER_4R_20260429T112238Z/TRACKER_4R_VALIDATION_REPORT.json",
+    "receipts/inline_project_tracker/TRACKER_4R_20260429T112238Z/TRACKER_4R_RENDERED_PREVIEW.txt",
+    "receipts/inline_project_tracker/TRACKER_4R_20260429T112238Z/TRACKER_4R_EXTERNAL_CHECK.md",
+    "receipts/inline_project_tracker/TRACKER_4R_20260429T112238Z/mobile_failure_screenshot_1.png",
+    "receipts/inline_project_tracker/TRACKER_4R_20260429T112238Z/mobile_failure_screenshot_2.png"
+  ],
+  "problem_classified": "box-drawing/fixed-width tracker failed under ChatGPT Android mobile wrapping",
+  "receipt_id": "TRACKER_4R_RECEIPT_20260429T112238Z",
+  "rendered_preview": "TRACKER \u25b8 Inline Project Tracker\n[\u2588\u2588\u2588\u2588\u2588\u2591] 5/6 complete\nStatus: DONE\nStage: TRACKER-4R_MOBILE_REFLOW_RENDERER_REPAIR\nNow: TRACKER-4R complete; compact visual tracker repa\u2026\nEvidence: TRACKER-4R handoff 98d94a73896a\nBlocker: none\nNext: TRACKER-5 smoke-test/export packaging only.\nStop: Stopped after TRACKER-4R; smoke-test/export pack\u2026\n",
+  "root": "/mnt/data/Metablooms_OS",
+  "stage": "TRACKER-4R_MOBILE_REFLOW_RENDERER_REPAIR",
+  "state_sha256_after_update": "b2b3d75a1ef62b78130193f85120d637900b8cca34ae37e8ba2e19e694a8c3d4",
+  "status": "PASS",
+  "stopped_before": "TRACKER-5_SMOKE_TEST_AND_EXPORT_PACKAGING",
+  "user_requested_variant": "slightly more visual compact stacked tracker",
+  "validation": {
+    "checks": {
+      "fake_percent_rejection": "PASS",
+      "mobile_width_max_chars": 55,
+      "no_box_drawing_or_pipe_table_layout": "PASS",
+      "required_fields": "PASS",
+      "required_render_labels": [
+        "TRACKER \u25b8",
+        "Status:",
+        "Stage:",
+        "Now:",
+        "Evidence:",
+        "Blocker:",
+        "Next:",
+        "Stop:"
+      ],
+      "top_of_response_marker": "PASS"
+    },
+    "errors": [],
+    "rendered_preview": "TRACKER \u25b8 Inline Project Tracker\n[\u2588\u2588\u2588\u2588\u2588\u2591] 5/6 complete\nStatus: DONE\nStage: TRACKER-4R_MOBILE_REFLOW_RENDERER_REPAIR\nNow: TRACKER-4R complete; compact visual tracker repa\u2026\nEvidence: TRACKER-4R handoff 98d94a73896a\nBlocker: none\nNext: TRACKER-5 smoke-test/export packaging only.\nStop: Stopped after TRACKER-4R; smoke-test/export pack\u2026",
+    "renderer_path": "/mnt/data/Metablooms_OS/0_kernel/cartridges/inline_project_tracker/TRACKER_RENDERER_v1.py",
+    "state_path": "/mnt/data/Metablooms_OS/runtime/state/TRACKER_STATE_v1.json",
+    "status": "PASS",
+    "validator": "TRACKER_VALIDATOR_v1_TRACKER_4R_MOBILE_REFLOW"
+  },
+  "web_evidence_summary": [
+    "W3C reflow: content should reflow at narrow width without loss of information/functionality or two-dimensional scrolling.",
+    "ARIA/progress: determinate progress semantics must not be used when denominator is unknown; explicit status text is needed."
+  ]
+}

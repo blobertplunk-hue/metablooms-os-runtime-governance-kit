@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-04-28T02:56:01Z",
+  "decision_id": "R5-bf04ff93a412ae17",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"alias\": \"0_kernel/scripts/validate_gate_registry_v1.py\", \"created_utc\": \"2026-04-28T02:56:01Z\", \"decision_log\": \"runtime/governance/decision_logs/DECISION_LOG_R5_20260428T025601Z.json\", \"loader\": \"runtime/governance/load_gate_registry_v1.py\", \"registry\": \"runtime/governance/registries/gate_registry_v1.json\", \"schema\": \"runtime/governance/schemas/gate_registry_schema_v1.json\", \"ts\": \"20260428T025601Z\", \"validator\": \"0_kernel/scripts/assert_gate_registry_integrity_v1.py\"}",
+  "reasons": [],
+  "record_id": "R5_PATHS_20260428T025601Z",
+  "record_kind": "stage_receipt",
+  "result": "wrapped",
+  "source_record": {
+    "path": "receipts/refactor_program/R5_PATHS_20260428T025601Z.json",
+    "sha256": "bf04ff93a412ae17377bf133be598374b7a1a4f33b74c09268c53632a6f14e2c",
+    "size_bytes": 495
+  },
+  "span_id": "da7fa1de6cd28498",
+  "stage_id": "R5",
+  "summary": "Canonical wrapper for R5_PATHS_20260428T025601Z.json",
+  "trace_id": "9f3273e7a4e664d2f75549db231c4932"
+}

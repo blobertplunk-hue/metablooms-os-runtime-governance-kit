@@ -1,0 +1,122 @@
+{
+  "$id": "metablooms://schemas/BoundedCommandDecisionPacket.v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "attempts": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "decision": {
+      "enum": [
+        "ALLOW",
+        "DENY"
+      ]
+    },
+    "failure_event_written": {
+      "type": "boolean"
+    },
+    "operation_id": {
+      "type": "string"
+    },
+    "receipt_path": {
+      "type": "string"
+    },
+    "result_class": {
+      "type": "string"
+    },
+    "returncode": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "schema_version": {
+      "const": "BoundedCommandDecisionPacket.v1"
+    },
+    "stage_id": {
+      "type": "string"
+    },
+    "stderr": {
+      "properties": {
+        "bytes_captured": {
+          "type": "integer"
+        },
+        "sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "truncated": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "bytes_captured",
+        "truncated",
+        "sha256"
+      ],
+      "type": "object"
+    },
+    "stdout": {
+      "properties": {
+        "bytes_captured": {
+          "type": "integer"
+        },
+        "sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "truncated": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "bytes_captured",
+        "truncated",
+        "sha256"
+      ],
+      "type": "object"
+    },
+    "timing": {
+      "properties": {
+        "elapsed_ms": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "finished_utc": {
+          "type": "string"
+        },
+        "started_utc": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "started_utc",
+        "finished_utc",
+        "elapsed_ms"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "operation_id",
+    "stage_id",
+    "decision",
+    "result_class",
+    "attempts",
+    "timing",
+    "stdout",
+    "stderr",
+    "failure_event_written",
+    "receipt_path"
+  ],
+  "title": "BoundedCommandDecisionPacket.v1",
+  "type": "object"
+}

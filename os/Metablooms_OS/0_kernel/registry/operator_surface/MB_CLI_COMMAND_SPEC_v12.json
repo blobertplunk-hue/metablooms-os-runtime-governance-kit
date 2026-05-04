@@ -1,0 +1,9 @@
+{
+  "commands": [
+    "mb fs-safety --json",
+    "mb fs-safety --preflight --tmp <tmp> --dst <dst> --json",
+    "mb fs-safety --diff --root <root> --json"
+  ],
+  "created_utc": "20260501T123011Z",
+  "schema_version": "MB_CLI_COMMAND_SPEC_v12"
+}

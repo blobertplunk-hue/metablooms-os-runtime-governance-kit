@@ -1,0 +1,24 @@
+{
+  "fail_closed_conditions": [
+    "missing_target_files",
+    "missing_static_analysis_report",
+    "missing_test_binding",
+    "threshold_violation_without_waiver",
+    "zero_tolerance_violation",
+    "waiver_missing_handoff"
+  ],
+  "gating_rule": "Deny code acceptance when any target file exceeds its risk-tier thresholds or contains zero-tolerance static-analysis violations.",
+  "outputs": [
+    "ALLOW/DENY verdict",
+    "risk_tier",
+    "thresholds",
+    "violations",
+    "waivers",
+    "metrics_by_file"
+  ],
+  "risk_tier_source": "Use CDR Stage 3 risk-tier classification; if absent, infer HIGH for runtime/governance code and CRITICAL for export or destructive paths.",
+  "schema": "CDRStaticAnalysisComplexityPolicy_v1",
+  "stage": "CDR_STAGE8_STATIC_ANALYSIS_AND_COMPLEXITY_QUALITY_GATES",
+  "status": "active",
+  "timestamp_utc": "2026-05-02T12:12:32Z"
+}

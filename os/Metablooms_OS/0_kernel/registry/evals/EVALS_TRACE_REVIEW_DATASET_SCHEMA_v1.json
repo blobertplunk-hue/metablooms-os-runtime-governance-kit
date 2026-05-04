@@ -1,0 +1,25 @@
+{
+  "allowed_decisions": [
+    "PASS",
+    "WARN",
+    "FAIL",
+    "BLOCK"
+  ],
+  "artifact_type": "EVALS_TRACE_REVIEW_DATASET_SCHEMA_v1",
+  "minimum_manual_review_count_future_stage": 20,
+  "minimum_trace_count_stage1": 3,
+  "notes": "Stage 1 installs schema and seed examples; Stage 2 should expand to 20-50 trace reviews before broad promotion.",
+  "required_fields": [
+    "trace_id",
+    "stage_name",
+    "input_summary",
+    "expected_behavior",
+    "actual_behavior",
+    "decision",
+    "review_notes",
+    "failure_class",
+    "validator_under_review",
+    "receipt_path",
+    "handoff_path"
+  ]
+}

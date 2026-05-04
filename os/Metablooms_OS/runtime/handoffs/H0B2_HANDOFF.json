@@ -1,0 +1,7 @@
+{
+  "blocker_policy": "Use this H0B2 full-system ZIP as next source authority.",
+  "next_recommended": "H0B3_ROUTER_CARTRIDGE_SELECTION_ENFORCEMENT",
+  "stage": "H0B2_SANDBOX_TOOL_GOVERNANCE_BOOTSTRAP_AND_LAYOUT_DRIFT_REPAIR",
+  "status": "READY_AFTER_COMPLETE_SYSTEM_EXPORT",
+  "timestamp_utc": "2026-04-30T18:24:58Z"
+}

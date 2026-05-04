@@ -1,0 +1,24 @@
+{
+  "artifact_type": "MB_OBSERVABILITY_STAGE18_FINAL_EXPORT_CONTAINMENT_PROOF.external.v1",
+  "bad_member": null,
+  "created_utc": "20260502T193414Z",
+  "duplicate_members": 0,
+  "entry_count": 5797,
+  "missing_required_members": [],
+  "operator_packet_sha256": "a758a1b4b6562ca78c35baf8cbcc0df45f7e693a87c5af7546912e0906ed66d9",
+  "operator_packet_zip": "/mnt/data/METABLOOMS_OS_STAGE18_OPERATOR_BOOTSTRAP_PACKET_20260502T193414Z.zip",
+  "required_members": [
+    "CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "OPEN_OPERATOR_VISUAL_TRACKER.html",
+    "runtime/traces/observability/OPERATOR_PACKET_BOOTSTRAP_SMOKE_LATEST.json",
+    "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE18_OPERATOR_PACKET_BOOTSTRAP_VALIDATION_LATEST.json",
+    "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE18_HANDOFF_LATEST.json",
+    "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE18_OPERATOR_PACKET_BOOTSTRAP_SMOKE_AND_SMALL_BUNDLE_FIRST_START/STAGE_RECEIPT.json",
+    "runtime/governance/operator_packet_bootstrap_smoke_v1.py"
+  ],
+  "stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE18_OPERATOR_PACKET_BOOTSTRAP_SMOKE_AND_SMALL_BUNDLE_FIRST_START",
+  "verdict": "PASS",
+  "zip_path": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE18_OPERATOR_PACKET_BOOTSTRAP_FINAL_AUTHORITY_LOCKED_20260502T193414Z.zip",
+  "zip_sha256": "a96fb99273fe201b268a45ae8652c6c17da8d6d74329e0a1deb8bb51b30bac69",
+  "zip_size_bytes": 26091280
+}

@@ -1,0 +1,8 @@
+{
+  "portable_returncode": 0,
+  "portable_stderr": "/mnt/data/Metablooms_OS/portable_full_os_boot_verify.py:9: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n  def now(): return datetime.datetime.utcnow().replace(microsecond=0).isoformat()+'Z'\n",
+  "portable_stdout": "{\n  \"stage\": \"PORTABLE_FULL_OS_BOOT_VERIFY_REPAIRED_H0B2\",\n  \"timestamp_utc\": \"2026-05-02T15:37:25Z\",\n  \"status\": \"PASS\",\n  \"root\": \"/mnt/data/Metablooms_OS\",\n  \"errors\": [],\n  \"sandbox_policy\": \"ALLOW\",\n  \"chat_kernel\": \"ALLOW\"\n}\n",
+  "runtime_root_returncode": 0,
+  "runtime_root_stderr": "",
+  "runtime_root_stdout": "{\n  \"decision\": \"ALLOW\",\n  \"invalid_json\": [],\n  \"missing\": [],\n  \"mode\": \"root\",\n  \"path\": \"/mnt/data/Metablooms_OS\",\n  \"read_errors\": []\n}\n"
+}

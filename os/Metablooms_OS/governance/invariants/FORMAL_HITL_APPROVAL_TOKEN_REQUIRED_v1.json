@@ -1,0 +1,24 @@
+{
+  "applies_to": [
+    "broad_repair",
+    "full_authority_export",
+    "pointer_promotion",
+    "privileged_filesystem_mutation",
+    "external_install",
+    "destructive_delete",
+    "network_side_effect",
+    "release_delivery"
+  ],
+  "created_at_utc": "2026-05-02T02:48:39.708141Z",
+  "enforced_by": [
+    "FORMAL_HITL_APPROVAL_TOKEN_GATE_v1",
+    "formal_hitl_approval_token_gate_v1.py",
+    "pre_tool_action_gate_v1",
+    "post_tool_result_validation_v1"
+  ],
+  "failure_mode": "fail_closed",
+  "invariant_id": "FORMAL_HITL_APPROVAL_TOKEN_REQUIRED_v1",
+  "rule": "High-impact actions must carry a scoped HITLApprovalToken_v1 before execution and must validate that token before side effects.",
+  "schema": "MetaBloomsInvariant_v1",
+  "stage_id": "STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_20260502T035000Z"
+}

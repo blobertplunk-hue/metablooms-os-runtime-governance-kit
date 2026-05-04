@@ -1,0 +1,14 @@
+{
+  "id": "STAGE23_PC_BOOTSTRAP_KIT_MANIFEST",
+  "status": "integrated_as_wc13_companion_cartridge_pointer",
+  "source_zip": "MetaBlooms_Stage23_Clean_PC_Bootstrap_Kit_20260503T155341Z.zip",
+  "sha256": "1dce177e3db3ab7bc5421c4589801da0be63fb6447ce2e07764eb965ed17130a",
+  "release_asset": "STAGE23_PC_BOOTSTRAP_KIT_RESCUE.zip",
+  "release_url": "https://github.com/blobertplunk-hue/metablooms-os-runtime-governance-kit/releases/tag/metablooms-wc12-stage23-20260503",
+  "embedded_in_wc13_staging": false,
+  "authority_files_promoted": [
+    "0_kernel/registry/environment/pc_powershell/ROBERT_PC_POWERSHELL_TARGET_v1.json",
+    "0_kernel/registry/operator_interface/POWERSHELL_UX_CARTRIDGE_RULES.md",
+    "0_kernel/registry/operator_interface/PASTEBACK_MARKER_STANDARD_v1.json"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "OS_BUNDLE_DELIVERY_MUST_BE_FULL_BOOTABLE_AUTHORITY_v1",
+  "status": "active",
+  "gate": "USER_FACING_OS_BUNDLE_DELIVERY_GATE",
+  "description": "Any user-facing artifact labeled or presented as an OS bundle must be the full bootable incorporated MetaBlooms OS authority ZIP, not a support bundle, proof bundle, overlay, receipt bundle, or tiny work slice.",
+  "failure_action": "DENY_DELIVERY_AND_LABEL_AS_SUPPORT_ARTIFACT",
+  "scope": "all_user_facing_os_bundle_links_and_exports",
+  "required_properties": [
+    "single Metablooms_OS/ archive root",
+    "matching external .sha256 sidecar",
+    "duplicate entry scan passes",
+    "unsafe path scan passes",
+    "full extraction or full streamed CRC proof passes",
+    "runtime starter smoke passes from fresh extraction",
+    "boot executor smoke passes from fresh extraction",
+    "contains current authority pointer copies",
+    "contains tracker or tracker preview/control surface state when present",
+    "contains stage receipt and handoff",
+    "contains all integrated governance/invariant/tool-install changes from the stage",
+    "support/proof bundles are explicitly labeled support/proof bundles and never called OS bundles"
+  ],
+  "rationale": "Prior workflow failures occurred when small governance/proof artifacts were delivered in a way that functioned as or resembled an OS bundle. This invariant closes the label/delivery gap that the older portable-baseline guard did not fully cover.",
+  "installed_by_stage": "STAGE5B_OS_BUNDLE_DELIVERY_FULL_BOOTABLE_AUTHORITY_HARDENING",
+  "installed_utc": "2026-05-01T23:08:38Z"
+}

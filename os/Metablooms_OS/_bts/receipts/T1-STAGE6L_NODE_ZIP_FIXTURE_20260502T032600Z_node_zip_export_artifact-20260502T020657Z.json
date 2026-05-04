@@ -1,0 +1,11 @@
+{
+  "receipt_id": "T1-STAGE6L_NODE_ZIP_FIXTURE_20260502T032600Z_node_zip_export_artifact-20260502T020657Z",
+  "tier": "T1",
+  "artifact": "/mnt/data/METABLOOMS_STAGE6L_NODE_ZIP_EXPORT_FIXTURE_20260502T032600Z.zip",
+  "sha256": "1e16c929ce6ea9847413d783697977d6a929f053f963cd1a9a1278f9de1ac30b",
+  "bytes_size": 181,
+  "prior_sha256": "",
+  "stdout_proof": "",
+  "timestamp": "2026-05-02T02:06:57.730989Z",
+  "turn_id": "STAGE6L_NODE_ZIP_FIXTURE_20260502T032600Z"
+}

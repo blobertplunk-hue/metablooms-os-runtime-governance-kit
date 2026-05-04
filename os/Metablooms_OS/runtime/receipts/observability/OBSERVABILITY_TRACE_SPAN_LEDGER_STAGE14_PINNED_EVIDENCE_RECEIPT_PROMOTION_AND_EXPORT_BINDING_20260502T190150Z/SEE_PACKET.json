@@ -1,0 +1,24 @@
+{
+  "artifact_type": "SEE_PACKET.v1",
+  "created_utc": "20260502T190150Z",
+  "design_decision": "Promote browser-local pinned evidence into a formal SHA-bound receipt and require that receipt in the next authority export.",
+  "sources": [
+    {
+      "claim": "SLSA provenance is verifiable information about software artifacts describing where, when, and how something was produced.",
+      "source": "https://slsa.dev/spec/draft/build-provenance"
+    },
+    {
+      "claim": "W3C trace context identifies requests with trace-id and parent-id fields, supporting evidence correlation by stable identifiers.",
+      "source": "https://www.w3.org/TR/trace-context/"
+    },
+    {
+      "claim": "Google SRE postmortem practice uses preventive action items to avoid recurrence, supporting promotion of informal findings into durable artifacts.",
+      "source": "https://sre.google/workbook/postmortem-culture/"
+    },
+    {
+      "claim": "OpenTelemetry semantic conventions standardize telemetry attributes so queries and evidence references are consistent.",
+      "source": "https://opentelemetry.io/docs/concepts/semantic-conventions/"
+    }
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING"
+}

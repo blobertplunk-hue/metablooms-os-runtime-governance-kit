@@ -1,0 +1,20 @@
+{
+  "created_at": "2026-05-02T19:59:18.342997+00:00",
+  "defects": [],
+  "expected_decision": "PASS",
+  "fixture_id": "PAC-FIX-005",
+  "result_hash": "6d10aa80809bef11504d0c45a2801454b5f975ede18ecf3877a268d879f56b87",
+  "schema_version": "metablooms.promotion_authority_coherence.fixture.v1",
+  "setup": {
+    "controlled_inventory": [
+      "0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json"
+    ],
+    "fresh_chat_replay": "PASS",
+    "pointer_copies_equivalent": true,
+    "registry_entries": [
+      "0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json"
+    ],
+    "zip_self_consistency": "PASS"
+  },
+  "title": "pass_coherent_candidate_authority"
+}

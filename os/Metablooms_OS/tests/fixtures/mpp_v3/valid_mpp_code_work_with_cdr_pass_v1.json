@@ -1,0 +1,40 @@
+{
+  "cdr_evidence": {
+    "cdr_eval_path": "tests/evals/cdr/test_cdr_code_acceptance_gate_v1.py",
+    "cdr_gate_path": "runtime/governance/cdr_code_acceptance_gate_v1.py",
+    "cdr_gate_sha256": "artifact-bound-placeholder",
+    "cdr_packet_path": "tests/fixtures/cdr/valid_cdr_code_acceptance_packet_v1.json",
+    "code_acceptance_dimensions": [
+      "correctness",
+      "completeness",
+      "comprehensibility",
+      "debuggability",
+      "adaptability",
+      "security",
+      "observability",
+      "testability",
+      "integration",
+      "regression_resistance",
+      "recursive_improvement"
+    ],
+    "risk_tier": "HIGH",
+    "test_summary": {
+      "failed": 0,
+      "passed": 9
+    }
+  },
+  "cdr_gate_result": {
+    "gate_id": "cdr_code_acceptance_gate_v1",
+    "packet_path": "tests/fixtures/cdr/valid_cdr_code_acceptance_packet_v1.json",
+    "verdict": "PASS"
+  },
+  "code_artifact_classes": [
+    "python",
+    "gate"
+  ],
+  "mpp_compliance_claimed": true,
+  "reconstruction_status": "CDR_CHAIN_STAGE13_AUTHORITY",
+  "stage_contains_code": true,
+  "stage_id": "EXAMPLE_CODE_STAGE",
+  "stage_verdict_requested": "PASS"
+}

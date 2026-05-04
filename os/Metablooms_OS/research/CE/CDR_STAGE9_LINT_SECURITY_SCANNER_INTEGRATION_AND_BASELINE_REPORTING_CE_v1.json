@@ -1,0 +1,5 @@
+{
+  "decision": "Install scanner integration with mandatory stdlib AST baseline and optional ruff/bandit/semgrep adapters; fail closed on missing baseline or zero-tolerance findings, not on unavailable optional tools.",
+  "schema": "CEPacket_v1",
+  "stage": "CDR_STAGE9_LINT_SECURITY_SCANNER_INTEGRATION_AND_BASELINE_REPORTING"
+}

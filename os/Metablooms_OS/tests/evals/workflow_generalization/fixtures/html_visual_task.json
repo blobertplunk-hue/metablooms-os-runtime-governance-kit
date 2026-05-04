@@ -1,0 +1,7 @@
+{
+  "task": "Build a Google Sites compatible HTML student activity with a visual tracker",
+  "expect_include": [
+    "VISUAL_PRESENTATION_QUALITY_GATE",
+    "BROWSER_RENDER_CAPABILITY_RESOLVER"
+  ]
+}

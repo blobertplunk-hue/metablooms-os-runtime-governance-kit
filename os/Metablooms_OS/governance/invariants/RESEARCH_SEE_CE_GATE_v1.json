@@ -1,0 +1,7 @@
+{
+  "id": "RESEARCH_SEE_CE_GATE_v1",
+  "status": "active",
+  "gate": "RESEARCH_SEE_CE_GATE",
+  "description": "Governed planning/execution requires web.run evidence, SEE synthesis, and CE decision unless exempt.",
+  "failure_action": "DENY_STAGE_EXECUTION"
+}

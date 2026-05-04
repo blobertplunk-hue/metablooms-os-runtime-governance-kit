@@ -1,0 +1,56 @@
+{
+  "argv_redacted": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "/mnt/data/Metablooms_OS/runtime/governance/tool_universe_resolver_v1.py",
+    "resolve",
+    "--task",
+    "STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS install observability trace export adapters for MetaBlooms JSONL OpenTelemetry span JSON OpenAI Agents SDK event JSON LangGraph run JSON",
+    "--stage-id",
+    "STAGE6T_SMOKE",
+    "--out",
+    "/mnt/data/Metablooms_OS/runtime/stage_work/STAGE6T/after_candidate_set.json"
+  ],
+  "argv_resolved": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "/mnt/data/Metablooms_OS/runtime/governance/tool_universe_resolver_v1.py",
+    "resolve",
+    "--task",
+    "STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS install observability trace export adapters for MetaBlooms JSONL OpenTelemetry span JSON OpenAI Agents SDK event JSON LangGraph run JSON",
+    "--stage-id",
+    "STAGE6T_SMOKE",
+    "--out",
+    "/mnt/data/Metablooms_OS/runtime/stage_work/STAGE6T/after_candidate_set.json"
+  ],
+  "artifact_type": "METABLOOMS_BOUNDED_COMMAND_DECISION_PACKET_v1",
+  "attempts": [
+    {
+      "attempt_index": 0,
+      "elapsed_ms": 267,
+      "returncode": 0,
+      "started_utc": "20260502T141839Z",
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_truncated": false,
+      "stdout": "{\n  \"candidate_set_id\": \"tool_candidates_5a397ed62e8953a2\",\n  \"candidates\": [\n    {\n      \"competence_score\": 1.0,\n      \"decision_status\": \"PREFERRED\",\n      \"denied_replacements\": [],\n      \"display_name\": \"Python stdlib observability trace export adapter\",\n      \"evidence_refs\": [\n        \"research/SEE/STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS_SEE_v1.json\",\n        \"runtime/evals/observability/STAGE6R_TRACE_EXPORT_ADAPTER_SMOKE_RESULT.json\"\n      ],\n      \"execution_route\": \"runtime/governance/observability_trace_export_adapter_v1.py\",\n      \"fallbacks\": [\n        \"bts_wrapped_filesystem_write\",\n        \"web_run_see_research\"\n      ],\n      \"install_state\": \"PROMOTED\",\n      \"known_failure_classes\": [],\n      \"reasons\": [\n        \"job_type match: observability_trace_export\",\n        \"governed/promoted route\",\n        \"preferred_when matches job family\",\n        \"BTS competence_score=1.0\"\n      ],\n      \"requires_approval\": false,\n      \"risk_tier\": \"write\",\n      \"score\": 90.003,\n      \"tool_id\": \"python_observability_trace_export_adapter\"\n    },\n    {\n      \"competence_score\": 1.0,\n      \"decision_status\": \"PREFERRED\",\n      \"denied_replacements\": [\n        \"ad_hoc_shell_redirection\"\n      ],\n      \"display_name\": \"BTS-wrapped filesystem write/copy\",\n      \"evidence_refs\": [\n        \"METABLOOMS_STAGE6E\"\n      ],\n      \"execution_route\": \"runtime/governance/executors/bts_wrapped_executors_v1.py write/copy\",\n      \"fallbacks\": [\n        \"direct_write_only_if_bootstrap_exception\"\n      ],\n      \"install_state\": \"PROMOTED\",\n      \"known_failure_classes\": [],\n      \"reasons\": [\n        \"job_type match: observability_trace_export\",\n        \"governed/promoted route\",\n        \"BTS competence_score=1.0\"\n      ],\n      \"requires_approval\": false,\n      \"risk_tier\": \"write\",\n      \"score\": 80.0,\n      \"tool_id\": \"bts_wrapped_filesystem_write\"\n    },\n    {\n      \"competence_score\": null,\n      \"decision_status\": \"PREFERRED\",\n      \"denied_replacements\": [\n        \"memory_only_current_claim\"\n      ],\n      \"display_name\": \"web.run SEE research\",\n      \"evidence_refs\": [\n        \"RESEARCH_SEE_CE_GATE_v1\"\n      ],\n      \"execution_route\": \"web.run with citations/evidence binding\",\n      \"fallbacks\": [\n        \"T3_advisory_only\"\n      ],\n      \"install_state\": \"PROMOTED\",\n      \"known_failure_classes\": [\n        \"no_see_without_web_run_invalid\"\n      ],\n      \"reasons\": [\n        \"job_type match: observability_trace_export\",\n        \"governed/promoted route\",\n        \"known failure classes lower rank\"\n      ],\n      \"requires_approval\": false,\n      \"risk_tier\": \"see\",\n      \"score\": 65.006,\n      \"tool_id\": \"web_run_see_research\"\n    },\n    {\n      \"competence_score\": null,\n      \"decision_status\": \"DENIED\",\n      \"denied_replacements\": [\n        \"node_yauzl_crc_proof\",\n        \"zipinfo_metadata_scan\"\n      ],\n      \"display_name\": \"unzip -tqq full test\",\n      \"evidence_refs\": [\n        \"FORBIDDEN_VALIDATION_METHODS_v1.json\"\n      ],\n      \"execution_route\": \"DENIED\",\n      \"fallbacks\": [],\n      \"install_state\": \"DENIED\",\n      \"known_failure_classes\": [\n        \"timeout_large_archive_validation\"\n      ],\n      \"reasons\": [\n        \"denied by risk tier / forbidden-method memory\"\n      ],\n      \"requires_approval\": true,\n      \"risk_tier\": \"denied\",\n      \"score\": -100.0,\n      \"tool_id\": \"unzip_tqq_full_test\"\n    }\n  ],\n  \"classified_job_type\": \"observability_trace_export\",\n  \"created_utc\": \"2026-05-02T14:18:39.559645Z\",\n  \"resolver_version\": \"TOOL_UNIVERSE_RESOLVER_v1\",\n  \"schema\": \"TOOL_CANDIDATE_SET_v1\",\n  \"selection_gate\": {\n    \"requires_why_not_better_if_selected_not_top\": true,\n    \"rule\": \"BTS_TOOL_EVALUATION must cover resolver candidates or explain exclusions; selected tool should be top_allowed_tool_id unless WHY_NOT_BETTER_TOOL justification passes.\"\n  },\n  \"source_registries\": [\n    \"0_kernel/registry/tool_governance/TOOL_CAPABILITY_GENOME_BASELINE_v1.json\",\n    \"0_kernel/registry/tool_governance/sandbox_tool_probe_inventory_v1.json\",\n    \"0_kernel/registry/tool_governance/GOVERNED_TOOL_INSTALL_PROFILE_REGISTRY_v1.json\",\n    \"_bts/tool_competence.json\",\n    \"FORBIDDEN_VALIDATION_METHODS_v1.json\",\n    \"runtime/authority/FORBIDDEN_VALIDATION_METHODS_v1.json\"\n  ],\n  \"stage_id\": \"STAGE6T_SMOKE\",\n  \"sufficiency\": {\n    \"allowed_count\": 3,\n    \"candidate_count\": 4,\n    \"coverage_score\": 1.0,\n    \"reasons\": [],\n    \"score_spread\": 24.997,\n    \"verdict\": \"PASS\"\n  },\n  \"task\": \"STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS install observability trace export adapters for MetaBlooms JSONL OpenTelemetry span JSON OpenAI Agents SDK event JSON LangGraph run JSON\",\n  \"top_allowed_tool_id\": \"python_observability_trace_export_adapter\"\n}\n",
+      "stdout_bytes": 4712,
+      "stdout_sha256": "ee30ab6dcaaa19c70e2c5ec6148f4b3add08f0cac0ea41c7d2b42acb2b61bffc",
+      "stdout_truncated": false,
+      "timeout_seconds": 10.0
+    }
+  ],
+  "created_utc": "20260502T141839Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision_packet_path": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT_retrofitted_subprocess_run_20260502T141839Z_aa61943f8d2f/decision_packet.json",
+  "failure_class": null,
+  "failure_event_path": null,
+  "operation_type": "retrofitted_subprocess_run",
+  "policy_matches": [],
+  "pre_spawn_receipt_path": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT_retrofitted_subprocess_run_20260502T141839Z_aa61943f8d2f/pre_spawn_receipt.json",
+  "receipt_dir": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT_retrofitted_subprocess_run_20260502T141839Z_aa61943f8d2f",
+  "result_class": "ALLOW_SUCCESS",
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT",
+  "total_elapsed_ms": 268
+}

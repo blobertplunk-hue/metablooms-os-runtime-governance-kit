@@ -1,0 +1,15 @@
+{
+  "id": "PER_ACTION_TOOL_INTERCEPTION_REQUIRED_v1",
+  "status": "active",
+  "gate": "pre_tool_action_gate_v1",
+  "description": "Eligible MetaBlooms-governed tool actions must be represented as ToolCallEnvelope_v1 and receive a PolicyDecision_v1 before execution. Actions not routed through the gate cannot be claimed as governed OS execution.",
+  "failure_action": "DENY_GOVERNED_EXECUTION_CLAIM",
+  "scope": ["shell", "node", "zip", "filesystem", "web_run", "export", "pointer_promotion", "tool_install", "validation"],
+  "accepted_decisions": ["ALLOW", "DENY", "DEFER", "REQUIRE_APPROVAL"],
+  "stage_introduced": "STAGE6B_PER_ACTION_TOOL_INTERCEPTION_SCHEMA_AND_WRAPPER",
+  "sota_basis": [
+    "per-action interception pattern from Microsoft Agent Governance Toolkit",
+    "tool/input/output guardrail pattern from OpenAI Agents SDK",
+    "agentic risk taxonomy from OWASP Top 10 for Agentic Applications 2026"
+  ]
+}

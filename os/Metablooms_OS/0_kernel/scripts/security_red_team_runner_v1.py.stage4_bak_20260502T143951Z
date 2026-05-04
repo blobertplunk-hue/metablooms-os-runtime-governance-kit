@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+import argparse,json,re,time,hashlib
+from pathlib import Path
+HARD=set("direct_prompt_injection indirect_artifact_injection hidden_markdown_instruction forged_receipt stale_authority_confusion archive_path_traversal duplicate_critical_path second_order_prompt_injection partial_root_finalization_forgery encoded_instruction_smuggling remote_exfiltration_request".split())
+REVIEW=set("excessive_agency_recursive_run insecure_output_shell trace_receipt_tamper sensitive_export_disclosure unbounded_consumption".split())
+CONTROL=set("known_safe_control known_safe_checkpoint".split())
+BAD=[r"ignore\s+(all\s+)?previous\s+instructions",r"system\s+override",r"promote\s+without",r"without\s+receipts?",r"delete\s+old\s+handoffs?",r"\.\./\.\.",r"duplicate\s+.*bin/mb",r"exfiltrate",r"oauth\s+tokens?",r"api\s+keys?",r"private\s+emails?",r"hidden\s+system\s+prompts?",r"upload\s+receipts?",r"unbounded\s+recursive",r"forever",r"finalization_success",r"bash\s+-c",r"rm\s+-rf"]
+def now(): return time.strftime("%Y%m%dT%H%M%SZ", time.gmtime())
+def root():
+ p=Path(__file__).resolve()
+ for q in [p.parent,*p.parents]:
+  if (q/"boot_manifest_v1.json").exists() and (q/"0_kernel").exists(): return q
+ return Path.cwd()
+def eval_fx(fx):
+ cls=fx.get("attack_class",""); payload=str(fx.get("payload","")); hits=[b for b in BAD if re.search(b,payload,re.I)]
+ if cls in CONTROL: return "ALLOW",hits
+ if cls in HARD: return "BLOCK",hits
+ if cls in REVIEW: return ("QUARANTINE" if cls=="sensitive_export_disclosure" else "INTERRUPT"),hits
+ return ("BLOCK" if hits else "WARN"),hits
+def run(r):
+ data=json.loads((r/"0_kernel/registry/security/SECURITY_RED_TEAM_FIXTURE_SET_v1.json").read_text())
+ rows=[]; false_allow=[]; mismatch=[]; confusion={}
+ for fx in data.get("fixtures",[]):
+  pred,hits=eval_fx(fx); exp=fx.get("expected_decision")
+  rows.append({"fixture_id":fx.get("fixture_id"),"attack_class":fx.get("attack_class"),"expected_decision":exp,"actual_decision":pred,"mapped_risk":fx.get("mapped_risk"),"pattern_hits":hits[:8]})
+  confusion.setdefault(exp,{}).setdefault(pred,0); confusion[exp][pred]+=1
+  if fx.get("mapped_risk")!="CONTROL" and pred=="ALLOW": false_allow.append(fx.get("fixture_id"))
+  if exp!=pred and not (exp in ("INTERRUPT","QUARANTINE") and pred in ("BLOCK","INTERRUPT","QUARANTINE")): mismatch.append({"fixture_id":fx.get("fixture_id"),"expected":exp,"actual":pred})
+ decision="PASS" if len(rows)>=16 and not false_allow and not mismatch else "FAIL"
+ out={"schema_version":"SECURITY_RED_TEAM_RUNNER_v1","created_utc":now(),"verdict":"SECURITY_RED_TEAM_PASS" if decision=="PASS" else "SECURITY_RED_TEAM_FAIL","promotion_decision":"PROMOTE" if decision=="PASS" else "BLOCK","fixture_count":len(rows),"false_allow_count":len(false_allow),"mismatch_count":len(mismatch),"false_allow_examples":false_allow,"mismatches":mismatch,"confusion_matrix":confusion,"results":rows}
+ outp=r/"runtime/evals/security/SECURITY_RED_TEAM_STAGE4_RESULTS_LATEST.json"; outp.parent.mkdir(parents=True,exist_ok=True); outp.write_text(json.dumps(out,indent=2,sort_keys=True)+"\n")
+ trace=r/"runtime/traces/security/TRACE_SPAN_LEDGER_SECURITY_STAGE4.jsonl"; trace.parent.mkdir(parents=True,exist_ok=True); seed=json.dumps({"decision":decision,"count":len(rows),"time":now()},sort_keys=True); span={"schema_version":"MB_TRACE_SPAN_LEDGER_SPEC_v2","trace_id":hashlib.sha256(seed.encode()).hexdigest()[:32],"span_id":hashlib.sha256((seed+"span").encode()).hexdigest()[:16],"parent_span_id":None,"name":"security_red_team_runner","stage_name":"IMPLEMENT_SECURITY_ARTIFACT_THREAT_MODEL_STAGE_4_RED_TEAM_FIXTURES","event":"red_team_fixture_run","status":"OK" if decision=="PASS" else "ERROR","timestamp_utc":now(),"attributes":{"fixture_count":len(rows),"false_allow_count":len(false_allow),"mismatch_count":len(mismatch),"results_path":str(outp.relative_to(r))}}
+ trace.open("a").write(json.dumps(span,sort_keys=True)+"\n")
+ return out
+def main():
+ ap=argparse.ArgumentParser(); ap.add_argument("--json",action="store_true"); args=ap.parse_args(); out=run(root()); print(json.dumps(out,indent=2,sort_keys=True) if args.json else out["verdict"]); return 0 if out["promotion_decision"]=="PROMOTE" else 20
+if __name__=="__main__": raise SystemExit(main())

@@ -1,0 +1,70 @@
+{
+  "created_utc": "2026-04-28T03:24:39.307635Z",
+  "decision_id": "R10-20260428T032439Z",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [
+    {
+      "claim": "Decision logs include decision_id, input, result, timestamp and metadata for audit/offline debugging.",
+      "source": "OPA decision logs",
+      "url": "https://www.openpolicyagent.org/docs/management-decision-logs"
+    },
+    {
+      "claim": "Events require stable id/source/specversion/type identity fields; MetaBlooms envelope borrows this identity discipline.",
+      "source": "CloudEvents spec",
+      "url": "https://github.com/cloudevents/spec/blob/main/cloudevents/spec.md"
+    },
+    {
+      "claim": "Schema annotations are descriptive, so validators must enforce behavior.",
+      "source": "JSON Schema annotations",
+      "url": "https://json-schema.org/understanding-json-schema/reference/annotations"
+    }
+  ],
+  "gate_id": "DECISION_RECEIPT_ENVELOPE_VALIDATION",
+  "input_artifacts": [
+    {
+      "path": "runtime/governance/receipts/canonical/DECISION_RECEIPT_CANONICALIZATION_MANIFEST_v1.json",
+      "sha256": "6905fce3a7b640205b0b1b983e33f6050b0156f023d5824a60fcaefc658466cd"
+    }
+  ],
+  "masked": [],
+  "normalization_status": "native",
+  "output_artifacts": [
+    {
+      "path": "runtime/governance/schemas/decision_receipt_envelope_schema_v1.json"
+    },
+    {
+      "path": "0_kernel/scripts/validate_decision_receipt_envelope_v1.py"
+    },
+    {
+      "path": "0_kernel/scripts/standardize_decision_receipts_v1.py"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/DECISION_RECEIPT_CANONICALIZATION_MANIFEST_v1.json"
+    }
+  ],
+  "policy_basis": [
+    {
+      "claim": "Decision and receipt records must be canonicalized without erasing legacy sources.",
+      "source": "R10 stage policy"
+    }
+  ],
+  "raw_excerpt": "",
+  "reasons": [
+    "Existing R-stage logs used inconsistent field names and shapes.",
+    "Canonical envelope closes audit ambiguity while preserving source records by hash.",
+    "Validation runs under python3 -S and denies missing decision_id/source hash mismatches."
+  ],
+  "record_id": "DECISION_LOG_R10_20260428T032439Z",
+  "record_kind": "decision_log",
+  "result": "pass",
+  "source_record": {
+    "path": "runtime/governance/schemas/decision_receipt_envelope_schema_v1.json",
+    "sha256": "a1815d64f04cce11a8c2646bdb5fe6621d8887389d49330e3ef276759705ce5f",
+    "size_bytes": 2952
+  },
+  "span_id": "1fc0e6ca1ad6b1a1",
+  "stage_id": "R10_DECISION_LOGGING_AND_RECEIPT_UNIFICATION",
+  "summary": "Adopt canonical decision/receipt envelope, wrap legacy R-stage logs and receipts, and activate validation gate.",
+  "trace_id": "61255247e22faf0c870d72b343a6a180"
+}

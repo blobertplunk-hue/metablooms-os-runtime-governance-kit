@@ -1,0 +1,18 @@
+{
+  "argv_resolved": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "/mnt/data/Metablooms_OS/runtime/governance/tool_universe_resolver_v1.py",
+    "validate-evaluation",
+    "--candidate-set",
+    "/mnt/data/stage6h_tool_universe_fixture_outputs/zip_export_candidate_set.json",
+    "--evaluation",
+    "/mnt/data/stage6h_tool_universe_fixture_outputs/bad_eval.json",
+    "--out",
+    "/mnt/data/stage6h_tool_universe_fixture_outputs/bad_eval_result.json"
+  ],
+  "created_utc": "20260502T141609Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision": "ALLOW_SPAWN",
+  "timeout_seconds": 10
+}

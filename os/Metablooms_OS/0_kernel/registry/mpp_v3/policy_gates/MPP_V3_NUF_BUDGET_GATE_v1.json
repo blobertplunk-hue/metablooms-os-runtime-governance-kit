@@ -1,0 +1,17 @@
+{
+  "locked_at": "20260501T003000Z",
+  "policy_id": "MPP_V3_NUF_BUDGET_GATE_v1",
+  "research_basis": [
+    "ISO/IEC 25010:2023 provides a quality model for specifying, measuring, and evaluating ICT/software product quality.",
+    "Google SRE uses SLIs/SLOs and error budgets to define measurable reliability targets and response actions."
+  ],
+  "rules": [
+    "NUF must map at least three quality characteristics.",
+    "Required categories: reliability, security, determinism, artifact_integrity.",
+    "At least one required category must be blocking.",
+    "Metrics, thresholds, measurement windows, and verification methods are mandatory.",
+    "Placeholder thresholds such as TBD, N/A, unknown, later, varies, or ~ are blocked.",
+    "Budget policy must define allowed budget, burn action, and escalation action."
+  ],
+  "stage": "NUF"
+}

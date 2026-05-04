@@ -1,0 +1,126 @@
+{
+  "artifact_type": "MB_STAGE_RECEIPT.v1",
+  "created_utc": "20260502T170503Z",
+  "export": {
+    "containment_proof": "runtime/traces/observability/OBSERVABILITY_STAGE6_REPAIRED_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+    "duplicate_members": 0,
+    "entry_count": 5397,
+    "repaired_after_post_receipt_trace_refresh": true,
+    "testzip_bad_member": null,
+    "zip_path": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE6_METHOD_RELIABILITY_REPAIRED_20260502T170554Z.zip",
+    "zip_sha256": "34f51d161977a193dea39a46792752c3c334172b7ea9d3812b6836f6d0489af3",
+    "zip_sidecar": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE6_METHOD_RELIABILITY_REPAIRED_20260502T170554Z.zip.sha256"
+  },
+  "external_evidence_sources": [
+    {
+      "claim": "OpenTelemetry semantic conventions standardize operation/data attribute naming across telemetry signals; Stage 6 uses stable method/failure attributes instead of prose-only lessons.",
+      "url": "https://opentelemetry.io/docs/concepts/semantic-conventions/"
+    },
+    {
+      "claim": "OpenTelemetry CICD semantic conventions recommend low-cardinality error.type and no error.type for successful operations; Stage 6 records one bounded CLI-shape error class and leaves successful wrapper runs non-error.",
+      "url": "https://opentelemetry.io/docs/specs/semconv/cicd/cicd-metrics/"
+    },
+    {
+      "claim": "SLSA provenance requirements include metadata useful for debugging/investigations such as timestamps and identifiers; Stage 6 binds the lesson to source artifacts, timestamps, and validation identifiers.",
+      "url": "https://slsa.dev/spec/v0.1/requirements"
+    },
+    {
+      "claim": "Google SRE postmortem practice emphasizes preventive action items to avoid recurrence; Stage 6 turns the suppressed failure into a wrapper and regression fixture.",
+      "url": "https://sre.google/workbook/postmortem-culture/"
+    }
+  ],
+  "outputs": [
+    "0_kernel/registry/observability/MB_METHOD_RELIABILITY_LEDGER_POLICY_v1.json",
+    "0_kernel/registry/observability/METHOD_RELIABILITY_LESSON_RUNTIME_STARTER_SMOKE_CLI_SHAPE_v1.json",
+    "runtime/traces/observability/METHOD_RELIABILITY_LEDGER_LATEST.json",
+    "runtime/traces/observability/METHOD_RELIABILITY_ROUTER_UPDATE_LATEST.json",
+    "runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+    "0_kernel/validators/validate_observability_trace_span_ledger_stage6_method_reliability_v1.py",
+    "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE6_METHOD_RELIABILITY_VALIDATION_LATEST.json",
+    "runtime/state/operator_surface/OPERATOR_METHOD_RELIABILITY_SUMMARY_LATEST.json",
+    "OPEN_OPERATOR_VISUAL_TRACKER.html"
+  ],
+  "post_receipt_trace_refresh": {
+    "boot_ingest_stdout": "runtime/traces/observability/OBSERVABILITY_STAGE6_POST_RECEIPT_BOOT_INGEST_STDOUT_LATEST.json",
+    "failure_cluster_report_sha256": "c38c390960fea8dac8a9230f1b37aa6b391b588dbde51a3524a0fdcdfa9e0cd7",
+    "failure_router_stdout": "runtime/traces/observability/FAILURE_CLUSTER_ROUTER_STAGE6_POST_RECEIPT_STDOUT_LATEST.json",
+    "stage6_validation_post_receipt_stdout": "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE6_VALIDATION_POST_RECEIPT_STDOUT_LATEST.json",
+    "trace_index_sha256": "e3fd29d9983b34040a2e23b01468e622c6178746297c1fbde6d283ea498e3d8c",
+    "trace_ledger_sha256": "f7594701770191bb4271c65e60cc6cb39125e60d76be559fd73cffe7ad990056"
+  },
+  "see_packet": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE6_METHOD_RELIABILITY_LEDGER_AND_SUPPRESSED_FAILURE_LESSON_BINDING_20260502T170503Z/SEE_PACKET.json",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE6_METHOD_RELIABILITY_LEDGER_AND_SUPPRESSED_FAILURE_LESSON_BINDING",
+  "validation": {
+    "artifact_type": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE6_METHOD_RELIABILITY_VALIDATION.v1",
+    "checks": [
+      {
+        "exists_nonempty": true,
+        "path": "0_kernel/registry/observability/MB_METHOD_RELIABILITY_LEDGER_POLICY_v1.json",
+        "sha256": "0f19aa345ff7663df475cef749b0a95bc7f52ce394fccee77dbc9fb0b5076c4d"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "0_kernel/registry/observability/METHOD_RELIABILITY_LESSON_RUNTIME_STARTER_SMOKE_CLI_SHAPE_v1.json",
+        "sha256": "fa7b5d7c1ae237e8e1b6ab8b77084765119d9122a4be4e675688bda6709104b6"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "runtime/traces/observability/METHOD_RELIABILITY_LEDGER_LATEST.json",
+        "sha256": "2c67cc22aa3ef7dc81e1cdc538a8541925c9e8c91644a126c5b142dae3bda4b5"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "runtime/traces/observability/METHOD_RELIABILITY_ROUTER_UPDATE_LATEST.json",
+        "sha256": "3e3f4d2e3ce6d053fec25bf88d5998c8c424f4d33c5be52c5c0ff2e8698e3893"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+        "sha256": "f8b75581917cc5b34b7cf375d4fbe8113c043b7bf125f17af9d65d9fb16c9faf"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "runtime/fixtures/observability/method_reliability_stage6/SHA256SUMS.txt",
+        "sha256": "79ee5218f28ea6739dd6d2d19ef6231b504e5cdd3f6cc40130d2a5afeb424ffd"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "runtime/state/operator_surface/OPERATOR_METHOD_RELIABILITY_SUMMARY_LATEST.json",
+        "sha256": "213543615991a96492d32f0c10fbb8eb5378c50a711140e80afb213954d44f68"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "OPEN_OPERATOR_VISUAL_TRACKER.html",
+        "sha256": "babd1b2ab0e25cdf486477590f75dab8582749a340f557a19df3859d85ab5bb8"
+      }
+    ],
+    "created_utc": "20260502T170512Z",
+    "fixture_results": [
+      {
+        "actual": "ALLOW",
+        "expected": "ALLOW",
+        "fixture": "correct_named_root",
+        "pass": true
+      },
+      {
+        "actual": "DENY",
+        "error_code": "MB_CLI_CONTRACT_DENY_POSITIONAL_ARGS",
+        "expected": "DENY",
+        "fixture": "wrong_positional_root",
+        "pass": true
+      },
+      {
+        "actual": "DENY",
+        "error_code": "MB_CLI_CONTRACT_DENY_EXACTLY_ONE_TARGET",
+        "expected": "DENY",
+        "fixture": "missing_target",
+        "pass": true
+      }
+    ],
+    "issues": [],
+    "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE6_METHOD_RELIABILITY_LEDGER_AND_SUPPRESSED_FAILURE_LESSON_BINDING",
+    "verdict": "PASS"
+  },
+  "verdict": "PASS",
+  "wrapper_smoke": "runtime/traces/observability/METHOD_RELIABILITY_STAGE6_WRAPPER_SMOKE_LATEST.json"
+}

@@ -1,0 +1,104 @@
+{
+  "artifact_type": "MB_FAILURE_CLUSTER_REPORT.v1",
+  "clusters": [
+    {
+      "cluster_id": "failure_cluster_001",
+      "evidence_records": [
+        {
+          "event_kind": "boot",
+          "event_name": "metablooms.boot.receipt",
+          "source_artifact": "0_kernel/registry/boot_receipts/BOOT_FROM_MNT_DATA_20260502T162601Z/new_chat_start_contract_validator.json",
+          "span_id": "e63c9a97c3296126",
+          "stage_id": "BOOT_FROM_MNT_DATA_20260502T162601Z",
+          "status": "BLOCKED",
+          "timestamp_utc": "20260502T162601Z"
+        }
+      ],
+      "failure_class": "authority_pointer_contract_mismatch",
+      "first_seen_utc": "20260502T162601Z",
+      "last_seen_utc": "20260502T162601Z",
+      "record_count": 1,
+      "route_id": "route_authority_reconciliation_recheck",
+      "severity": "low",
+      "status": "RESOLVED_REFERENCE"
+    },
+    {
+      "cluster_id": "failure_cluster_002",
+      "evidence_records": [
+        {
+          "event_kind": "validator",
+          "event_name": "metablooms.validator.result",
+          "source_artifact": "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_20260502T162918Z/STAGE_RECEIPT.json",
+          "span_id": "f0432613fb964849",
+          "stage_id": "STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN",
+          "status": "BLOCKED",
+          "timestamp_utc": "2026-05-02T16:29:18Z"
+        },
+        {
+          "event_kind": "handoff",
+          "event_name": "metablooms.handoff.ready",
+          "source_artifact": "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_20260502T162918Z/STAGE_HANDOFF.json",
+          "span_id": "74c796894b334718",
+          "stage_id": "STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN",
+          "status": "BLOCKED",
+          "timestamp_utc": "2026-05-02T16:29:18Z"
+        }
+      ],
+      "failure_class": "cli_invocation_or_amended_receipt_superseded",
+      "first_seen_utc": "2026-05-02T16:29:18Z",
+      "last_seen_utc": "2026-05-02T16:29:18Z",
+      "record_count": 2,
+      "route_id": "route_method_reliability_cli_shape",
+      "severity": "low",
+      "status": "SUPPRESSED_BY_LATER_PASS"
+    },
+    {
+      "cluster_id": "failure_cluster_003",
+      "evidence_records": [
+        {
+          "event_kind": "decision",
+          "event_name": "metablooms.decision.next_build",
+          "source_artifact": "runtime/receipts/roadmap_decision/NEXT_BUILD_INTERNAL_RESEARCH_SEE_CE_DECISION_20260502T163517Z/CE_SYNTHESIS.json",
+          "span_id": "e412aee4937f287c",
+          "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION",
+          "status": "ERROR",
+          "timestamp_utc": "20260502T163517Z"
+        },
+        {
+          "event_kind": "receipt",
+          "event_name": "metablooms.stage.receipt",
+          "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING_20260502T165302Z/CE_SYNTHESIS.json",
+          "span_id": "d7265cd5da431765",
+          "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING",
+          "status": "ERROR",
+          "timestamp_utc": "20260502T165302Z"
+        }
+      ],
+      "failure_class": "derived_packet_missing_status_contract",
+      "first_seen_utc": "20260502T163517Z",
+      "last_seen_utc": "20260502T165302Z",
+      "record_count": 2,
+      "route_id": "route_trace_ingestion_classifier_repair",
+      "severity": "medium",
+      "status": "MONITOR"
+    }
+  ],
+  "created_utc": "20260502T165331Z",
+  "source_inputs": {
+    "causal_graph": "runtime/traces/observability/CAUSAL_STAGE_GRAPH_LATEST.json",
+    "causal_graph_sha256": "17bf8a00d1baec6bf4b2525ec683178d8476fae4aa2bb5511118f1956169b802",
+    "index": "runtime/traces/observability/TRACE_SPAN_LEDGER_INDEX_LATEST.json",
+    "index_sha256": "77f7fe45893536b060cfd01d1d2d3a37503c56c1606f41c16d3bbc740d6b0e42",
+    "ledger": "runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl",
+    "ledger_sha256": "df239a04dd61eb398ec8cbac8a1db61ed064dd4658426142676ea53551bb199e"
+  },
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING",
+  "summary": {
+    "active_cluster_count": 0,
+    "cluster_count": 3,
+    "monitor_cluster_count": 1,
+    "non_ok_record_count": 5,
+    "record_count": 220,
+    "resolved_or_suppressed_cluster_count": 2
+  }
+}

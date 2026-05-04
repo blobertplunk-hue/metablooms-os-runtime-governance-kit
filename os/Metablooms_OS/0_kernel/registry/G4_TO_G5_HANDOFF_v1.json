@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "created_at": 1777065053.7160597,
+  "from_stage": "G4_RUN_VALIDATOR_AGAINST_F7_EXPORT",
+  "to_stage": "G5_REPAIRED_RECOVERY_PROVEN_EXPORT",
+  "status": "ready",
+  "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G4_RUN_VALIDATOR_AGAINST_F7_EXPORT_RECEIPT_v1.json",
+  "validator_decision": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_G4_F7_DECISION_v1.json",
+  "repair_plan": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G4_F7_EXPORT_REPAIR_PLAN_v1.json",
+  "source_export": "/mnt/data/MetaBlooms_OS_refined_F7_RECOVERY_PROVEN_1777063110.zip",
+  "source_sidecar": "/mnt/data/MetaBlooms_OS_refined_F7_RECOVERY_PROVEN_1777063110.zip.sha256.json",
+  "export_allowed": true,
+  "cleanup_allowed": false,
+  "next_command": "EXECUTE G5 \u2014 REPAIRED RECOVERY-PROVEN EXPORT"
+}

@@ -1,0 +1,198 @@
+{
+  "$id": "https://metablooms.local/schemas/mpp_v3/MMD_GAP_LEDGER_SCHEMA_v1.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "created_at": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "decision": {
+      "additionalProperties": false,
+      "properties": {
+        "allowed_next_stage": {
+          "type": "string"
+        },
+        "critical_open_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "verdict": {
+          "enum": [
+            "PASS",
+            "PASS_WITH_WARNINGS",
+            "BLOCKED"
+          ]
+        }
+      },
+      "required": [
+        "verdict",
+        "critical_open_count",
+        "allowed_next_stage"
+      ],
+      "type": "object"
+    },
+    "gaps": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "blocks_stage": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "description": {
+            "minLength": 5,
+            "type": "string"
+          },
+          "dimension": {
+            "enum": [
+              "theory",
+              "implementation",
+              "failure_modes",
+              "requirements",
+              "evidence_quality",
+              "source_conflict",
+              "scope",
+              "validation",
+              "user_context",
+              "provenance"
+            ]
+          },
+          "evidence_status": {
+            "enum": [
+              "missing",
+              "partial",
+              "contradictory",
+              "stale",
+              "sufficient"
+            ]
+          },
+          "gap_id": {
+            "pattern": "^GAP-[0-9]{3}$",
+            "type": "string"
+          },
+          "linked_claims": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "resolution_strategy": {
+            "enum": [
+              "research_more",
+              "ask_user",
+              "narrow_scope",
+              "convert_to_assumption",
+              "write_blocked_receipt",
+              "accept_with_risk",
+              "resolve_from_artifact"
+            ]
+          },
+          "severity": {
+            "enum": [
+              "critical",
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "status": {
+            "enum": [
+              "open",
+              "resolved",
+              "accepted_risk",
+              "blocked"
+            ]
+          }
+        },
+        "required": [
+          "gap_id",
+          "dimension",
+          "severity",
+          "description",
+          "evidence_status",
+          "blocks_stage",
+          "resolution_strategy",
+          "status"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "handoff": {
+      "additionalProperties": false,
+      "properties": {
+        "conditions": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "next_stage": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "next_stage",
+        "conditions"
+      ],
+      "type": "object"
+    },
+    "inputs": {
+      "additionalProperties": false,
+      "properties": {
+        "ce_packet": {
+          "type": "string"
+        },
+        "normalized_evidence": {
+          "type": "string"
+        },
+        "research_planner_packet": {
+          "type": "string"
+        },
+        "see_packet": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "research_planner_packet",
+        "see_packet",
+        "ce_packet",
+        "normalized_evidence"
+      ],
+      "type": "object"
+    },
+    "ledger_id": {
+      "minLength": 8,
+      "type": "string"
+    },
+    "objective_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "mmd_gap_ledger.v1"
+    },
+    "stage": {
+      "const": "MMD"
+    }
+  },
+  "required": [
+    "schema_version",
+    "ledger_id",
+    "stage",
+    "created_at",
+    "objective_id",
+    "inputs",
+    "gaps",
+    "decision",
+    "handoff"
+  ],
+  "title": "MetaBlooms MPP v3 MMD Gap Ledger",
+  "type": "object"
+}

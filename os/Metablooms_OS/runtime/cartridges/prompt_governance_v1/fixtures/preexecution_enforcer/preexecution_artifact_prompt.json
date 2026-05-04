@@ -1,0 +1,5 @@
+{
+  "expect_profile": "governed_artifact_generation",
+  "expect_task_type": "artifact_generation",
+  "prompt": "create a complete HTML artifact and export a bundle with checksum"
+}

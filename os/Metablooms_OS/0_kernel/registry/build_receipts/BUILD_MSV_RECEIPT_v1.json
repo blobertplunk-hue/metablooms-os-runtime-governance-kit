@@ -1,0 +1,39 @@
+{
+  "receipt_type": "BUILD_RECEIPT",
+  "build_id": "BUILD-MSV",
+  "artifact": "memory_sync_validator_v1.py",
+  "created_utc": "2026-04-26T17:28:54Z",
+  "sha256": "751fb669ab541127e3be72a341210ea826d0744200bcc705f9189370291f44ed",
+  "lines": 680,
+  "owasp_risk_addressed": "ASI06 Memory & Context Poisoning",
+  "see_evidence": [
+    "OWASP 2026 ASI06: Memory poisoning reshaped behaviour long after initial interaction",
+    "Dev|Journal drift detection: tracks validator compliance, length drift, semantic similarity, regression",
+    "KDnuggets Apr 2026: schema validation + drift scoring + severity-graded reports"
+  ],
+  "validation_tests": [
+    {"test": "syntax check", "result": "PASS"},
+    {"test": "T1 detect baseline_sha=file_path bug (real current bug caught)", "result": "PASS — BLOCK"},
+    {"test": "T2 clean valid sync passes all 3 passes", "result": "PASS"},
+    {"test": "T3 tampered file: P1_SHA_INTEGRITY BLOCK", "result": "PASS"},
+    {"test": "T4 amendment regression (<4 entries) BLOCK", "result": "PASS"},
+    {"test": "T5 UTC regression (replay attack) detected", "result": "PASS"},
+    {"test": "T6 unknown but valid SHA → WARN only, not BLOCK", "result": "PASS"}
+  ],
+  "real_bug_caught": {
+    "description": "Current CLAUDE_MEMORY_SYNC_v1.json has baseline_sha set to a file path instead of a SHA-256 hex digest. The sync_writer resolved CURRENT_WORKING_BASELINE_POINTER which pointed to a receipt file path. The validator blocks this immediately with P2_BASELINE_SHA_IS_PATH.",
+    "buggy_value": "/home/claude/test_stages/.../COMMIT_DEFERRED_RECEIPT_...",
+    "fix_needed_in": "claude_memory_sync_writer_v1.py — baseline_sha resolution must validate output is 64-char hex, not a path"
+  },
+  "new_capabilities": [
+    "CAPABILITY: Pass 1 — schema compliance: required fields, _sha self-hash integrity, type checks",
+    "CAPABILITY: Pass 2 — content integrity: baseline_sha format, path-vs-SHA detection, amendment count bounds",
+    "CAPABILITY: Pass 3 — drift detection: amendment regression, baseline change, UTC regression (replay), note truncation",
+    "CAPABILITY: Composite drift score 0.0–1.0 with configurable block threshold (0.75)",
+    "CAPABILITY: Validation receipt written on every run (PASS or BLOCK)",
+    "CAPABILITY: History ledger updated on non-blocked runs for future drift comparison",
+    "CAPABILITY: Fail-closed: BLOCK verdict exits 1 and prevents sync from being loaded"
+  ],
+  "overall_verdict": "PASS",
+  "next_correct_stage": "Fix baseline_sha resolution bug in claude_memory_sync_writer_v1.py"
+}

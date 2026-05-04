@@ -1,0 +1,42 @@
+{
+  "artifact_type": "SEE_PACKET.v1",
+  "stage": "NEXT_BUILD_INTERNAL_RESEARCH_SEE_CE_DECISION",
+  "purpose": "External evidence for deciding the next MetaBlooms OS build after Stage 3 tracker authority reconciliation.",
+  "sources": [
+    {
+      "id": "dora_2025_ai_assisted_software_development",
+      "url": "https://dora.dev/dora-report-2025/",
+      "claim_used": "Software delivery improvement depends on platform capabilities and conditions, not merely use of AI or isolated tooling.",
+      "confidence": "high"
+    },
+    {
+      "id": "opentelemetry_what_is_otel",
+      "url": "https://opentelemetry.io/docs/what-is-opentelemetry/",
+      "claim_used": "OpenTelemetry is an observability framework/toolkit for generating, exporting, and collecting telemetry data including traces, metrics, and logs.",
+      "confidence": "high"
+    },
+    {
+      "id": "opentelemetry_semantic_conventions",
+      "url": "https://opentelemetry.io/docs/concepts/semantic-conventions/",
+      "claim_used": "Semantic conventions standardize common names for operations and data across traces, metrics, logs, profiles, and resources.",
+      "confidence": "high"
+    },
+    {
+      "id": "slsa_provenance",
+      "url": "https://slsa.dev/provenance",
+      "claim_used": "Provenance is verifiable information describing where, when, and how an artifact was produced.",
+      "confidence": "high"
+    },
+    {
+      "id": "slsa_framework",
+      "url": "https://slsa.dev/",
+      "claim_used": "SLSA is a security framework/checklist of controls for preventing tampering and improving package/infrastructure integrity.",
+      "confidence": "high"
+    }
+  ],
+  "source_constraints": [
+    "Use official or primary sources where possible.",
+    "Treat secondary trend articles as weak unless corroborated by official sources.",
+    "Bind claims to URLs; do not treat external research as direct proof that internal artifacts are correct."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "blockers": [
+    "Stage 2 fixture run failed; repair validator before Stage 3."
+  ],
+  "created_utc": "2026-05-02T21:57:50Z",
+  "current_verdict": "FAIL",
+  "from_stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE2_VALIDATOR_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN",
+  "handoff_type": "NEXT_STAGE_HANDOFF",
+  "must_read_first": [
+    "/mnt/data/Metablooms_OS/runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE2_VALIDATOR_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T215737Z/VISUAL_PRESENTATION_QUALITY_GATE_STAGE2_VALIDATOR_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_RECEIPT.json",
+    "/mnt/data/Metablooms_OS/runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE2_VALIDATOR_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T215737Z/VISUAL_PRESENTATION_QUALITY_GATE_STAGE2_FIXTURE_RESULTS.json",
+    "/mnt/data/Metablooms_OS/0_kernel/validators/validate_visual_presentation_quality_gate_v1.py",
+    "/mnt/data/Metablooms_OS/tests/evals/visual_presentation_quality/test_visual_presentation_quality_gate_v1.py",
+    "/mnt/data/Metablooms_OS/0_kernel/registry/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_CONTRACT_v1.json"
+  ],
+  "next_stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE3_MPP_USS_AND_HTML_CARTRIDGE_BINDING",
+  "objective": "Bind the Stage 2 validator into the MPP cross-cutting promotion path, USS visual_presentation dimension, and HTML activity cartridge routing without full export.",
+  "schema_version": "metablooms_stage_handoff.v1",
+  "stop_condition": "Stop after binding plan and local binding smoke; do not full-export until Stage 5."
+}

@@ -1,0 +1,222 @@
+{
+  "cmd": [
+    "/opt/pyvenv/bin/python3",
+    "/mnt/data/Metablooms_OS/0_kernel/validators/validate_observability_trace_span_ledger_stage7_boot_sequence_enforcement_v1.py",
+    "--root",
+    "/mnt/data/Metablooms_OS",
+    "--json"
+  ],
+  "returncode": 2,
+  "stderr": "",
+  "stdout": {
+    "artifact_type": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE7_BOOT_SEQUENCE_ENFORCEMENT_VALIDATION.v1",
+    "checks": [
+      {
+        "exists_nonempty": true,
+        "path": "0_kernel/registry/observability/MB_BOOT_SEQUENCE_WRAPPER_ENFORCEMENT_v1.json",
+        "sha256": "7d831afe529a734b65fdbe7b06a026f3729704acdac516628e38903ff353be6b"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+        "sha256": "f8b75581917cc5b34b7cf375d4fbe8113c043b7bf125f17af9d65d9fb16c9faf"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py.sha256",
+        "sha256": "398d70d35567f17bbbf96d79636ff22ebf017a6fab4a1454c3aa9ab6236e2662"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "0_kernel/registry/BOOT_REQUIRED_GATES_v1.json",
+        "sha256": "beb0d01e9cb7310d5344ac89b245d0df56f41e1b744be468a781df5be4e75893"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "0_kernel/registry/RUNTIME_STARTER_SMOKE_CONTRACT_v1.json",
+        "sha256": "8010516a88008194df34188ed66b88543bba88a978bfd6cf06a74cea58251828"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "runtime/governance/new_chat_start_contract_validator_v1.py",
+        "sha256": "1a3e775e57e1eb4e33ddd2fccc7bb4eda59c45a66fffad6aa539986d37871cd9"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+        "sha256": "3baf132c544c5eb3d0e7d45053ad09d08b4541f3183371e019246e6199320a03"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "NEW_CHAT_START_HERE.md",
+        "sha256": "74a66b857a566ac3af9491da67b86f7e8ad273b4c046209b49c69204f7cebb4e"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+        "sha256": "7de349e916f69f36cfb318d36d2e31d279309f938a32bf6bf2f9ffd773cbf2cd"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+        "sha256": "7de349e916f69f36cfb318d36d2e31d279309f938a32bf6bf2f9ffd773cbf2cd"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+        "sha256": "7de349e916f69f36cfb318d36d2e31d279309f938a32bf6bf2f9ffd773cbf2cd"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "OPEN_OPERATOR_VISUAL_TRACKER.html",
+        "sha256": "7469cc018d8aa19456ec2594162d2ddfafcbcc7d85ba5e19d36a9742d6143f3d"
+      }
+    ],
+    "created_utc": "20260502T171723Z",
+    "issues": [
+      "pointer_not_stage7"
+    ],
+    "smoke_checks": [
+      {
+        "name": "wrapper_named_root_allows",
+        "pass": true,
+        "result": {
+          "cmd": [
+            "/opt/pyvenv/bin/python3",
+            "/mnt/data/Metablooms_OS/runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+            "--root",
+            "/mnt/data/Metablooms_OS",
+            "--json"
+          ],
+          "returncode": 0,
+          "stderr": "",
+          "stdout": {
+            "artifact_type": "MB_RUNTIME_STARTER_SMOKE_CONTRACT_WRAPPER_RESULT.v1",
+            "created_utc": "20260502T171720Z",
+            "decision": "ALLOW",
+            "method_reliability_lesson": "METHOD_RUNTIME_STARTER_SMOKE_CLI_SHAPE_v1",
+            "target_shape": "--root",
+            "underlying_gate": "runtime/governance/runtime_starter_smoke_v1.py",
+            "underlying_result": {
+              "decision": "ALLOW",
+              "invalid_json": [],
+              "missing": [],
+              "mode": "root",
+              "path": "/mnt/data/Metablooms_OS",
+              "read_errors": []
+            }
+          }
+        }
+      },
+      {
+        "name": "wrapper_positional_root_denies",
+        "pass": true,
+        "result": {
+          "cmd": [
+            "/opt/pyvenv/bin/python3",
+            "/mnt/data/Metablooms_OS/runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+            "/mnt/data/Metablooms_OS",
+            "--json"
+          ],
+          "returncode": 2,
+          "stderr": "",
+          "stdout": {
+            "allowed_shapes": [
+              "--root <path>",
+              "--zip <path>"
+            ],
+            "artifact_type": "MB_RUNTIME_STARTER_SMOKE_CONTRACT_WRAPPER_RESULT.v1",
+            "created_utc": "20260502T171722Z",
+            "decision": "DENY",
+            "error_code": "MB_CLI_CONTRACT_DENY_POSITIONAL_ARGS",
+            "message": "Positional or unknown arguments are forbidden. Use --root <path> or --zip <path>.",
+            "unknown_args": [
+              "/mnt/data/Metablooms_OS"
+            ]
+          }
+        }
+      },
+      {
+        "name": "new_chat_validator_allows",
+        "pass": true,
+        "result": {
+          "cmd": [
+            "/opt/pyvenv/bin/python3",
+            "/mnt/data/Metablooms_OS/runtime/governance/new_chat_start_contract_validator_v1.py",
+            "/mnt/data/Metablooms_OS"
+          ],
+          "returncode": 0,
+          "stderr": "",
+          "stdout": {
+            "checks": [
+              {
+                "name": "exists:CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+                "passed": true
+              },
+              {
+                "name": "exists:runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+                "passed": true
+              },
+              {
+                "name": "exists:0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+                "passed": true
+              },
+              {
+                "name": "exists:0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+                "passed": true
+              },
+              {
+                "name": "exists:NEW_CHAT_START_HERE.md",
+                "passed": true
+              },
+              {
+                "name": "exists:runtime/governance/new_chat_start_contract_validator_v1.py",
+                "passed": true
+              },
+              {
+                "name": "exists:runtime/governance/boot_critical_governance_loader_v1.py",
+                "passed": true
+              },
+              {
+                "name": "exists:runtime/governance/governance_scatter_prevention_v1.py",
+                "passed": true
+              },
+              {
+                "name": "exists:runtime/governance/fresh_chat_boot_rehearsal_v1.py",
+                "passed": true
+              },
+              {
+                "name": "exists:runtime/cartridges/prompt_governance_v1/validate_prompt_governance_cartridge_v1.py",
+                "passed": true
+              },
+              {
+                "name": "exists:runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+                "passed": true
+              },
+              {
+                "name": "exists:0_kernel/registry/observability/MB_BOOT_SEQUENCE_WRAPPER_ENFORCEMENT_v1.json",
+                "passed": true
+              },
+              {
+                "name": "exists:0_kernel/registry/observability/MB_HISTORICAL_CALLSITE_QUARANTINE_POLICY_v1.json",
+                "passed": true
+              },
+              {
+                "name": "exists:runtime/traces/observability/HISTORICAL_CALLSITE_QUARANTINE_INDEX_LATEST.json",
+                "passed": true
+              },
+              {
+                "name": "exists:0_kernel/validators/validate_observability_trace_span_ledger_stage8_historical_callsite_quarantine_v1.py",
+                "passed": true
+              }
+            ],
+            "decision": "ALLOW",
+            "errors": []
+          }
+        }
+      }
+    ],
+    "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE7_METHOD_WRAPPER_CALLSITE_RETROFIT_AND_BOOT_SEQUENCE_ENFORCEMENT",
+    "verdict": "FAIL"
+  }
+}

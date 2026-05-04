@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "created_at": 1777063362.450855,
+  "contract_id": "RESEARCH_FAILURE_BLOCKING_CONTRACT_v1",
+  "status": "active",
+  "purpose": "Block research-required execution unless a valid SEE validation receipt exists.",
+  "valid_see_receipt_requirements": [
+    "stage=SEE_VALIDATION",
+    "verdict=PASS",
+    "web_run_evidence_validation.passed=true",
+    "source_binding_validation.passed=true",
+    "semantic_validation.passed=true"
+  ],
+  "next_stage": "E3_TOOL_GOVERNANCE_ROUTER_PROOF"
+}

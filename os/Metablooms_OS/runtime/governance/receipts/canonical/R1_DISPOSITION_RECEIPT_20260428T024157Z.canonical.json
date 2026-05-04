@@ -1,0 +1,36 @@
+{
+  "created_utc": "20260428T024157Z",
+  "decision_id": "R1_CLASSIFICATION_AND_DISPOSITION_BINDING-823260f9038d8b38",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"contract_path\": \"/mnt/data/Metablooms_OS/runtime/governance/contracts/artifact_disposition_contract_v1.json\", \"decision_log_path\": \"/mnt/data/Metablooms_OS/runtime/governance/decision_logs/DECISION_LOG_R1_20260428T024157Z.json\", \"stage\": \"R1_CLASSIFICATION_AND_DISPOSITION_BINDING\", \"status\": \"PASS\", \"summary\": {\"ambiguous_count\": 0, \"archive_only_count\": 0, \"discard_count\": 0, \"live_runtime_conflict_count\": 0, \"promote_count\": 9, \"split_count\": 4, \"split_without_targets_count\": 0, \"total_items\": 13}, \"timestamp_utc\": \"20260428T024157Z\"}",
+  "reasons": [],
+  "record_id": "R1_DISPOSITION_RECEIPT_20260428T024157Z",
+  "record_kind": "stage_receipt",
+  "result": "pass",
+  "source_record": {
+    "path": "receipts/refactor_program/R1_DISPOSITION_RECEIPT_20260428T024157Z.json",
+    "sha256": "823260f9038d8b381cc445a7f292f096505e7fe2662ae207421acec907c0dc97",
+    "size_bytes": 594
+  },
+  "span_id": "1bf8e75d1f8ae3d5",
+  "stage_id": "R1_CLASSIFICATION_AND_DISPOSITION_BINDING",
+  "summary": "{'total_items': 13, 'promote_count': 9, 'split_count': 4, 'archive_only_count': 0, 'discard_count': 0, 'live_runtime_conflict_count': 0, 'ambiguous_count': 0, 'split_without_targets_count': 0}",
+  "trace_id": "daaff3e54284b672d19104d2e520fcc4"
+}

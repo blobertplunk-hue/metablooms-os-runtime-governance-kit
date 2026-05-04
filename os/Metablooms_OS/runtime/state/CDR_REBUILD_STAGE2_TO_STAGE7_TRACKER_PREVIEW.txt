@@ -1,0 +1,7 @@
+TRACKER PREVIEW — CDR_REBUILD_STAGE2_TO_STAGE7_FROM_STAGE6U_PLUS_CHAT_SUMMARIES
+Status: PASS_RECONSTRUCTED_CHAIN
+Reconstructed: CDR Stage 2, 3, 4, 5, and 7 from Stage 6U plus chat summaries.
+Verified original upload: CDR Stage 6 support bundle extracted and validated.
+Tests: PASS — reconstructed CDR gates allow valid fixtures and deny invalid fixtures.
+Authority export: NOT PERFORMED.
+Next best stage: CDR_STAGE8_STATIC_ANALYSIS_AND_COMPLEXITY_QUALITY_GATES.

@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "EXPORT_RECOVERY_VALIDATOR_DECISION_SCHEMA_v1",
+  "title": "MetaBlooms Export Recovery Validator Decision v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "created_at",
+    "validator_id",
+    "stage",
+    "input",
+    "gate_results",
+    "summary",
+    "verdict",
+    "next_correct_command"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": [
+        "number",
+        "string"
+      ]
+    },
+    "validator_id": {
+      "type": "string"
+    },
+    "stage": {
+      "type": "string"
+    },
+    "input": {
+      "type": "object"
+    },
+    "gate_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "gate_id",
+          "severity",
+          "passed",
+          "evidence",
+          "message"
+        ],
+        "properties": {
+          "gate_id": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string"
+          },
+          "passed": {
+            "type": "boolean"
+          },
+          "evidence": {
+            "type": "object"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "passed_count",
+        "failed_count",
+        "blocking_failed_count"
+      ],
+      "properties": {
+        "passed_count": {
+          "type": "integer"
+        },
+        "failed_count": {
+          "type": "integer"
+        },
+        "blocking_failed_count": {
+          "type": "integer"
+        },
+        "warnings_count": {
+          "type": "integer"
+        }
+      }
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "FAIL"
+      ]
+    },
+    "next_correct_command": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "case_count": 17,
+  "cases": [
+    {
+      "case_id": "R12_GATE_REGISTRY_LIVE_PASS",
+      "expected": "pass",
+      "gate_id": "GATE_REGISTRY_INTEGRITY",
+      "observed_rc": 0,
+      "ok": true
+    },
+    {
+      "case_id": "R12_GATE_REGISTRY_BAD_MISSING_ENTRYPOINT_DENY",
+      "expected": "fail",
+      "gate_id": "GATE_REGISTRY_INTEGRITY",
+      "observed_rc": 1,
+      "ok": true
+    },
+    {
+      "case_id": "R12_UNIFIED_RUNTIME_CONTRACT_LIVE_PASS",
+      "expected": "pass",
+      "gate_id": "UNIFIED_RUNTIME_COMPATIBILITY_VALIDATION",
+      "observed_rc": 0,
+      "ok": true
+    },
+    {
+      "case_id": "R12_UNIFIED_RUNTIME_CONTRACT_STALE_DENY",
+      "expected": "fail",
+      "gate_id": "UNIFIED_RUNTIME_COMPATIBILITY_VALIDATION",
+      "observed_rc": 1,
+      "ok": true
+    },
+    {
+      "case_id": "R12_SESSION_STATE_LATEST_PASS",
+      "expected": "pass",
+      "gate_id": "SESSION_STATE_EXPORT_VALIDATION",
+      "observed_rc": 0,
+      "ok": true
+    },
+    {
+      "case_id": "R12_SESSION_STATE_VENDOR_ROOT_DENY",
+      "expected": "fail",
+      "gate_id": "SESSION_STATE_EXPORT_VALIDATION",
+      "observed_rc": 1,
+      "ok": true
+    },
+    {
+      "case_id": "R12_P0A_VALID_ALLOW",
+      "expected": "pass",
+      "gate_id": "P0A_EXTERNAL_REUSE_SCAN",
+      "observed_rc": 0,
+      "ok": true
+    },
+    {
+      "case_id": "R12_P0A_MISSING_EVIDENCE_DENY",
+      "expected": "fail",
+      "gate_id": "P0A_EXTERNAL_REUSE_SCAN",
+      "observed_rc": 1,
+      "ok": true
+    },
+    {
+      "case_id": "R12_P0A_STALE_EVIDENCE_DENY",
+      "expected": "fail",
+      "gate_id": "P0A_EXTERNAL_REUSE_SCAN",
+      "observed_rc": 1,
+      "ok": true
+    },
+    {
+      "case_id": "R12_USEFULNESS_VALID_ALLOW",
+      "expected": "pass",
+      "gate_id": "USEFULNESS_SURFACE_VALIDATION",
+      "observed_rc": 0,
+      "ok": true
+    },
+    {
+      "case_id": "R12_USEFULNESS_TOO_FEW_DENY",
+      "expected": "fail",
+      "gate_id": "USEFULNESS_SURFACE_VALIDATION",
+      "observed_rc": 1,
+      "ok": true
+    },
+    {
+      "case_id": "R12_USEFULNESS_MISSING_REQUIRED_DENY",
+      "expected": "fail",
+      "gate_id": "USEFULNESS_SURFACE_VALIDATION",
+      "observed_rc": 1,
+      "ok": true
+    },
+    {
+      "case_id": "R12_PYTHON_HEALTH_LIVE_ROUTE_CONTROLS",
+      "expected": "pass",
+      "gate_id": "P0PY_PYTHON_HEALTH",
+      "observed_rc": 0,
+      "ok": true
+    },
+    {
+      "case_id": "R12_TELEMETRY_CARTRIDGE_PASS",
+      "expected": "pass",
+      "gate_id": "TELEMETRY_CARTRIDGE_VALIDATION",
+      "observed_rc": 0,
+      "ok": true
+    },
+    {
+      "case_id": "R12_DECISION_RECEIPT_MANIFEST_PASS",
+      "expected": "pass",
+      "gate_id": "DECISION_RECEIPT_ENVELOPE_VALIDATION",
+      "observed_rc": 0,
+      "ok": true
+    },
+    {
+      "case_id": "R12_DECISION_RECEIPT_INVALID_DENY",
+      "expected": "fail",
+      "gate_id": "DECISION_RECEIPT_ENVELOPE_VALIDATION",
+      "observed_rc": 1,
+      "ok": true
+    },
+    {
+      "case_id": "R12_LEGACY_QUARANTINE_PASS",
+      "expected": "pass",
+      "gate_id": "LEGACY_QUARANTINE_REDIRECTS",
+      "observed_rc": 0,
+      "ok": true
+    }
+  ],
+  "created_utc": "2026-04-28T03:34:10.801693Z",
+  "external_design_basis": [
+    {
+      "claim": "events require stable event names and structured attributes",
+      "source": "OpenTelemetry semantic conventions for events"
+    },
+    {
+      "claim": "convention groups carry stability/deprecation metadata and should preserve legacy compatibility",
+      "source": "OpenTelemetry semantic convention groups"
+    },
+    {
+      "claim": "suite must include positive and negative fixtures around changed behavior",
+      "source": "Regression testing practice"
+    }
+  ],
+  "failed_cases": [],
+  "launcher": "runtime/governance/python3_S_lane_exec_v1.sh",
+  "passed_cases": 17,
+  "regressions_caught_and_repaired": [
+    {
+      "id": "R12_COMPAT_REDIRECT_STATUS_DRIFT",
+      "repair": "unified runtime compatibility validator now accepts R11 confirmed archive status while still requiring forbidden machine-use status and successor contract"
+    },
+    {
+      "id": "R12_SESSION_STATE_STALE_HASH",
+      "repair": "session state export refreshed after exporter hash drift"
+    },
+    {
+      "id": "R12_SESSION_STATE_SELF_HASH_CIRCULARITY",
+      "repair": "session_state_exporter_v1.py no longer includes output snapshot in artifact_hashes"
+    }
+  ],
+  "report_type": "R12_REGRESSION_SUITE_EXPANSION_REPORT",
+  "runner": "0_kernel/scripts/run_governance_regression_suite_v1.py",
+  "stage": "R12_REGRESSION_SUITE_EXPANSION",
+  "verdict": "PASS"
+}

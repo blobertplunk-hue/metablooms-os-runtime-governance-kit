@@ -1,0 +1,9 @@
+{
+  "version": "1.0",
+  "created_at": 1777063362.4519842,
+  "from_stage": "E2_RESEARCH_FAILURE_BLOCKING_CONTRACT",
+  "to_stage": "E3_TOOL_GOVERNANCE_ROUTER_PROOF",
+  "status": "ready",
+  "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/RESEARCH_FAILURE_BLOCKING_CONTRACT_RECEIPT_v1.json",
+  "next_command": "EXECUTE STAGE E3 \u2014 TOOL GOVERNANCE_ROUTER_PROOF"
+}

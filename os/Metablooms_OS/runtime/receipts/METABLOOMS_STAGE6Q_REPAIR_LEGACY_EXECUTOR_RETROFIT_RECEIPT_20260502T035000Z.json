@@ -1,0 +1,41 @@
+{
+  "authority_export_performed": false,
+  "boot_verify": "PASS",
+  "created_or_updated_paths": [
+    "0_kernel/registry/tool_governance/LEGACY_EXECUTOR_RETROFIT_BINDINGS_v1.json",
+    "0_kernel/registry/tool_governance/LEGACY_EXECUTOR_DIRECT_INVOKE_POLICY_v1.json",
+    "governance/invariants/LEGACY_EXECUTOR_RETROFIT_ENFORCEMENT_REQUIRED_v1.json",
+    "runtime/governance/legacy_executor_retrofit_gate_v1.py",
+    "tests/fixtures/tool_governance/stage6q_repair_allow_wrapped_executor_v1.json",
+    "tests/fixtures/tool_governance/stage6q_repair_deny_direct_executor_v1.json",
+    "tests/evals/tool_governance/test_stage6q_repair_legacy_executor_retrofit_gate_v1.py",
+    "research/SEE/STAGE6Q_REPAIR_LEGACY_EXECUTOR_RETROFIT_SEE_v1.json",
+    "research/CE/STAGE6Q_REPAIR_LEGACY_EXECUTOR_RETROFIT_CE_v1.json",
+    "runtime/state/STAGE6Q_REPAIR_SMOKE_STDOUT.txt",
+    "runtime/state/STAGE6Q_REPAIR_SMOKE_STDERR.txt",
+    "governance/ACTIVE_INVARIANTS_INDEX.json"
+  ],
+  "repair_summary": {
+    "findings_bound": 264,
+    "mass_source_edit_performed": false,
+    "open_candidates_before": 242,
+    "policy_retrofit": "active invocation gate + sidecar bindings",
+    "unbound_candidates_after": 0
+  },
+  "research_refs": [
+    "turn112455search0",
+    "turn112455search3",
+    "turn112455search7",
+    "turn112455search19"
+  ],
+  "schema": "MetaBloomsStageReceipt_v1",
+  "source_audit_matrix": "0_kernel/registry/tool_governance/STAGE6Q_LEGACY_EXECUTOR_RETROFIT_AUDIT_MATRIX_v1.json",
+  "stage_id": "STAGE6Q_REPAIR_LEGACY_EXECUTOR_RETROFIT",
+  "support_bundle_not_os": true,
+  "timestamp_utc": "2026-05-02T03:20:13.216697Z",
+  "validation": {
+    "smoke_pass": true,
+    "smoke_returncode": 0
+  },
+  "verdict": "PASS"
+}

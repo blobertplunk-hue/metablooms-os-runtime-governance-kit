@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-04-30T21:49:56Z",
+  "existing_see_validator_verdict": "PASS",
+  "issues": [],
+  "max_recursion_rounds": 4,
+  "minimum_domain_diversity": 2,
+  "minimum_source_count": 3,
+  "next_stage": "NORMALIZE_EVIDENCE",
+  "observed_domain_diversity": 2,
+  "observed_recursion_rounds": 1,
+  "observed_source_count": 3,
+  "research_packet_hash": "2c33b5632e58aa58b26c788739f1ecebf07715f89317114e4b9b2d215c27eb0f",
+  "schema_version": "mpp_v3.see_recursive_gate_report.v1",
+  "see_packet_hash": "b2e5256eb28d6d9ba60d27aa5831eab8cf4b4dbd843a6570a76cf28e98ff4d24",
+  "stage": "SEE_RECURSIVE_SEARCH_GATE",
+  "verdict": "PASS"
+}

@@ -1,0 +1,706 @@
+{
+  "version": "1.2",
+  "created_at": 1777684854.925092,
+  "stage": "BOOT_RUNTIME_EXECUTOR_H0C1",
+  "root": "/mnt/data/Metablooms_OS",
+  "checks": [
+    {
+      "name": "root_exists",
+      "passed": true,
+      "observed": {
+        "root": "/mnt/data/Metablooms_OS",
+        "exists": true,
+        "is_dir": true
+      }
+    },
+    {
+      "name": "git_dir_exists",
+      "passed": false,
+      "observed": {
+        "path": "/mnt/data/Metablooms_OS/.git",
+        "exists": false
+      }
+    },
+    {
+      "name": "required_path:boot_manifest_v1.json",
+      "passed": true,
+      "observed": {
+        "relative_path": "boot_manifest_v1.json",
+        "path": "/mnt/data/Metablooms_OS/boot_manifest_v1.json",
+        "exists": true,
+        "is_file": true,
+        "size_bytes": 14206
+      }
+    },
+    {
+      "name": "required_path:artifact_registry.json",
+      "passed": true,
+      "observed": {
+        "relative_path": "artifact_registry.json",
+        "path": "/mnt/data/Metablooms_OS/artifact_registry.json",
+        "exists": true,
+        "is_file": true,
+        "size_bytes": 169141
+      }
+    },
+    {
+      "name": "required_path:0_kernel/scripts/boot_runtime_executor_v1.py",
+      "passed": true,
+      "observed": {
+        "relative_path": "0_kernel/scripts/boot_runtime_executor_v1.py",
+        "path": "/mnt/data/Metablooms_OS/0_kernel/scripts/boot_runtime_executor_v1.py",
+        "exists": true,
+        "is_file": true,
+        "size_bytes": 6507
+      }
+    },
+    {
+      "name": "boot_manifest_parseable",
+      "passed": true,
+      "observed": {
+        "keys": [
+          "boot_executor",
+          "boot_ready",
+          "boot_required_gates",
+          "ce_packet_validator",
+          "created_at",
+          "current_stable_baseline",
+          "entrypoints",
+          "execution_safety",
+          "export_recovery_validator",
+          "failures",
+          "governance_modules",
+          "host_enforcement_bridge",
+          "lessons_learned",
+          "master_pipeline_enforcement",
+          "notes",
+          "recovery_architecture",
+          "registry_path",
+          "registry_status",
+          "root",
+          "see_packet_validator",
+          "trigger_router_evaluator",
+          "updated_at",
+          "updated_at_utc",
+          "version"
+        ]
+      }
+    },
+    {
+      "name": "boot_critical_loader_present",
+      "passed": true,
+      "observed": {
+        "path": "/mnt/data/Metablooms_OS/runtime/governance/boot_critical_governance_loader_v1.py"
+      }
+    },
+    {
+      "name": "boot_critical_governance_loader_allows",
+      "passed": true,
+      "observed": {
+        "decision": "ALLOW",
+        "errors": [],
+        "warnings": [],
+        "checks": [
+          {
+            "name": "boot_required_gates_parseable",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/0_kernel/registry/BOOT_REQUIRED_GATES_v1.json"
+          },
+          {
+            "name": "required_file:0_kernel/chat_governance/CHAT_GOVERNANCE_KERNEL_v1.json",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/0_kernel/chat_governance/CHAT_GOVERNANCE_KERNEL_v1.json"
+          },
+          {
+            "name": "required_file:0_kernel/chat_governance/CARTRIDGE_SELECTION_POLICY_v1.json",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/0_kernel/chat_governance/CARTRIDGE_SELECTION_POLICY_v1.json"
+          },
+          {
+            "name": "required_file:0_kernel/chat_governance/TURN_LIFECYCLE_CONTRACT_v1.json",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/0_kernel/chat_governance/TURN_LIFECYCLE_CONTRACT_v1.json"
+          },
+          {
+            "name": "required_file:0_kernel/chat_governance/FINAL_RESPONSE_GATE_v1.json",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/0_kernel/chat_governance/FINAL_RESPONSE_GATE_v1.json"
+          },
+          {
+            "name": "required_file:0_kernel/registry/BOOT_REQUIRED_GATES_v1.json",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/0_kernel/registry/BOOT_REQUIRED_GATES_v1.json"
+          },
+          {
+            "name": "required_file:runtime/governance/boot_critical_governance_loader_v1.py",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/governance/boot_critical_governance_loader_v1.py"
+          },
+          {
+            "name": "required_file:runtime/governance/governance_scatter_prevention_v1.py",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/governance/governance_scatter_prevention_v1.py"
+          },
+          {
+            "name": "required_file:0_kernel/registry/CONTROLLED_GOVERNANCE_ARTIFACT_INDEX_v1.json",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/0_kernel/registry/CONTROLLED_GOVERNANCE_ARTIFACT_INDEX_v1.json"
+          },
+          {
+            "name": "required_file:runtime/governance/controlled_artifact_registry_v1.py",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/governance/controlled_artifact_registry_v1.py"
+          },
+          {
+            "name": "required_file:runtime/governance/fresh_chat_boot_rehearsal_v1.py",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/governance/fresh_chat_boot_rehearsal_v1.py"
+          },
+          {
+            "name": "required_file:runtime/cartridges/prompt_governance_v1/CARTRIDGE_MANIFEST.json",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/cartridges/prompt_governance_v1/CARTRIDGE_MANIFEST.json"
+          },
+          {
+            "name": "required_file:runtime/cartridges/prompt_governance_v1/validate_prompt_governance_cartridge_v1.py",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/cartridges/prompt_governance_v1/validate_prompt_governance_cartridge_v1.py"
+          },
+          {
+            "name": "required_file:CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/CURRENT_FULL_AUTHORITY_POINTER_v1.json"
+          },
+          {
+            "name": "required_file:0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md"
+          },
+          {
+            "name": "required_file:runtime/governance/new_chat_start_contract_validator_v1.py",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/governance/new_chat_start_contract_validator_v1.py"
+          },
+          {
+            "name": "required_file:runtime/governance/safe_walk_v1.py",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/governance/safe_walk_v1.py"
+          },
+          {
+            "name": "required_file:runtime/governance/banned_pattern_enforcer_v1.py",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/governance/banned_pattern_enforcer_v1.py"
+          },
+          {
+            "name": "required_file:runtime/governance/BANNED_KERNEL_PATTERNS_v1.json",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/governance/BANNED_KERNEL_PATTERNS_v1.json"
+          },
+          {
+            "name": "required_file:runtime/cartridges/prompt_governance_v1/PROMPT_ENGINE_REGRESSION_FIXTURE_SUITE_v1.json",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/cartridges/prompt_governance_v1/PROMPT_ENGINE_REGRESSION_FIXTURE_SUITE_v1.json"
+          },
+          {
+            "name": "required_file:runtime/cartridges/prompt_governance_v1/generate_prompt_engine_reliability_report_v1.py",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/cartridges/prompt_governance_v1/generate_prompt_engine_reliability_report_v1.py"
+          },
+          {
+            "name": "required_file:runtime/cartridges/prompt_governance_v1/validate_prompt_engine_profile_smoke_v1.py",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/cartridges/prompt_governance_v1/validate_prompt_engine_profile_smoke_v1.py"
+          },
+          {
+            "name": "required_file:runtime/governance/full_os_recovery_replay_validator_v1.py",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/governance/full_os_recovery_replay_validator_v1.py"
+          },
+          {
+            "name": "required_file:runtime/governance/full_os_recovery_replay_validator_v1.py.sha256",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/governance/full_os_recovery_replay_validator_v1.py.sha256"
+          },
+          {
+            "name": "required_file:runtime/governance/prompt_engine_telemetry_v1.py",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/governance/prompt_engine_telemetry_v1.py"
+          },
+          {
+            "name": "required_file:runtime/governance/prompt_engine_drift_gate_v1.py",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/governance/prompt_engine_drift_gate_v1.py"
+          },
+          {
+            "name": "required_file:0_kernel/registry/PROMPT_ENGINE_TELEMETRY_SCHEMA_v1.json",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/0_kernel/registry/PROMPT_ENGINE_TELEMETRY_SCHEMA_v1.json"
+          },
+          {
+            "name": "required_file:runtime/state/PROMPT_ENGINE_TELEMETRY_LOG_v1.jsonl",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/state/PROMPT_ENGINE_TELEMETRY_LOG_v1.jsonl"
+          },
+          {
+            "name": "required_file:runtime/governance/prompt_auto_improvement_loop_v1.py",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/governance/prompt_auto_improvement_loop_v1.py"
+          },
+          {
+            "name": "required_file:0_kernel/registry/PROMPT_AUTO_IMPROVEMENT_LOOP_CONTRACT_v1.json",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/0_kernel/registry/PROMPT_AUTO_IMPROVEMENT_LOOP_CONTRACT_v1.json"
+          },
+          {
+            "name": "required_file:runtime/state/PROMPT_PATCH_LEDGER_v1.jsonl",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/state/PROMPT_PATCH_LEDGER_v1.jsonl"
+          },
+          {
+            "name": "required_file:runtime/cartridges/prompt_governance_v1/validate_prompt_auto_improvement_loop_v1.py",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/cartridges/prompt_governance_v1/validate_prompt_auto_improvement_loop_v1.py"
+          },
+          {
+            "name": "required_file:runtime/governance/prompt_patch_replay_engine_v1.py",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/governance/prompt_patch_replay_engine_v1.py"
+          },
+          {
+            "name": "required_file:runtime/governance/prompt_quality_ranker_v1.py",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/governance/prompt_quality_ranker_v1.py"
+          },
+          {
+            "name": "required_file:runtime/cartridges/prompt_governance_v1/validate_prompt_patch_replay_quality_ranker_v1.py",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/cartridges/prompt_governance_v1/validate_prompt_patch_replay_quality_ranker_v1.py"
+          },
+          {
+            "name": "required_file:0_kernel/registry/PROMPT_PATCH_REPLAY_AND_QUALITY_RANKER_CONTRACT_v1.json",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/0_kernel/registry/PROMPT_PATCH_REPLAY_AND_QUALITY_RANKER_CONTRACT_v1.json"
+          },
+          {
+            "name": "required_file:runtime/state/PROMPT_PATCH_REPLAY_REPORT_v1.json",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/state/PROMPT_PATCH_REPLAY_REPORT_v1.json"
+          },
+          {
+            "name": "required_file:runtime/governance/prompt_route_preexecution_enforcer_v1.py",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/governance/prompt_route_preexecution_enforcer_v1.py"
+          },
+          {
+            "name": "required_file:runtime/governance/task_start_hook_v1.py",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/governance/task_start_hook_v1.py"
+          },
+          {
+            "name": "required_file:0_kernel/registry/PROMPT_ROUTE_PREEXECUTION_ENFORCER_CONTRACT_v1.json",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/0_kernel/registry/PROMPT_ROUTE_PREEXECUTION_ENFORCER_CONTRACT_v1.json"
+          },
+          {
+            "name": "required_file:runtime/state/PROMPT_TASK_START_LEDGER_v1.jsonl",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/state/PROMPT_TASK_START_LEDGER_v1.jsonl"
+          },
+          {
+            "name": "required_file:runtime/cartridges/prompt_governance_v1/validate_prompt_route_preexecution_enforcer_v1.py",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/cartridges/prompt_governance_v1/validate_prompt_route_preexecution_enforcer_v1.py"
+          },
+          {
+            "name": "required_file:runtime/state/PROMPT_ROUTE_PREEXECUTION_ENFORCER_VALIDATION_REPORT_v1.json",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/state/PROMPT_ROUTE_PREEXECUTION_ENFORCER_VALIDATION_REPORT_v1.json"
+          },
+          {
+            "name": "required_file:runtime/governance/full_extract_replay_recovery_proof_validator_v1.py",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/governance/full_extract_replay_recovery_proof_validator_v1.py"
+          },
+          {
+            "name": "required_file:0_kernel/registry/FULL_EXTRACT_REPLAY_RECOVERY_PROOF_CONTRACT_v1.json",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/0_kernel/registry/FULL_EXTRACT_REPLAY_RECOVERY_PROOF_CONTRACT_v1.json"
+          },
+          {
+            "name": "required_file:runtime/governance/runtime_starter_smoke_v1.py",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/governance/runtime_starter_smoke_v1.py"
+          },
+          {
+            "name": "required_file:0_kernel/registry/RUNTIME_STARTER_SMOKE_CONTRACT_v1.json",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/0_kernel/registry/RUNTIME_STARTER_SMOKE_CONTRACT_v1.json"
+          },
+          {
+            "name": "required_file:2_engines/runtime/mpp_pipeline_runner.py",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/2_engines/runtime/mpp_pipeline_runner.py"
+          },
+          {
+            "name": "required_file:0_kernel/registry/mpp_v3/MPP_V3_AUTHORITY_AND_SCHEMA_LOCK_v1.json",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/0_kernel/registry/mpp_v3/MPP_V3_AUTHORITY_AND_SCHEMA_LOCK_v1.json"
+          },
+          {
+            "name": "required_file:0_kernel/registry/mpp_v3/MPP_V3_STAGE12_INTEGRATION_AUTHORITY_BINDING_v1.json",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/0_kernel/registry/mpp_v3/MPP_V3_STAGE12_INTEGRATION_AUTHORITY_BINDING_v1.json"
+          },
+          {
+            "name": "required_file:0_kernel/mpp_v3/mpp_v3_export_promotion_gate_v1.py",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/0_kernel/mpp_v3/mpp_v3_export_promotion_gate_v1.py"
+          },
+          {
+            "name": "required_file:0_kernel/mpp_v3/mpp_v3_orchestrator_runtime_controller_v1.py",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/0_kernel/mpp_v3/mpp_v3_orchestrator_runtime_controller_v1.py"
+          },
+          {
+            "name": "required_file:0_kernel/registry/mpp_v3/policy_gates/MPP_V3_EXPORT_PROMOTION_GATE_v1.json",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/0_kernel/registry/mpp_v3/policy_gates/MPP_V3_EXPORT_PROMOTION_GATE_v1.json"
+          },
+          {
+            "name": "required_file:0_kernel/schemas/mpp_v3/EXPORT_PROMOTION_PACKET_SCHEMA_v1.json",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/0_kernel/schemas/mpp_v3/EXPORT_PROMOTION_PACKET_SCHEMA_v1.json"
+          },
+          {
+            "name": "required_file:tests/fixtures/mpp_v3/valid_export_promotion_packet_v1.json",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/tests/fixtures/mpp_v3/valid_export_promotion_packet_v1.json"
+          },
+          {
+            "name": "required_file:runtime/authority/CURRENT_EXPORT_AUTHORITY_v1.json",
+            "passed": true,
+            "path": "/mnt/data/Metablooms_OS/runtime/authority/CURRENT_EXPORT_AUTHORITY_v1.json"
+          }
+        ],
+        "manifest_id": "BOOT_REQUIRED_GATES_v1"
+      }
+    }
+  ],
+  "check_count": 8,
+  "pass_count": 7,
+  "issues": [],
+  "warnings": [
+    "git_dir_missing"
+  ],
+  "verdict": "PASS_WITH_WARNINGS",
+  "boot_manifest_summary": {
+    "current_stable_baseline": {
+      "baseline_export": "/mnt/data/METABLOOMS_OS_H0C1_BOOT_CRITICAL_GOVERNANCE_CONSOLIDATED_CLEAN_AUTHORITY_20260430T214500Z.zip",
+      "baseline_manifest": "/mnt/data/METABLOOMS_OS_H0C1_BOOT_CRITICAL_GOVERNANCE_CONSOLIDATED_CLEAN_AUTHORITY_20260430T214500Z.zip.sha256",
+      "boot_executor_integrated": true,
+      "boot_recovery_proven": true,
+      "boot_required_gates_integrated": true,
+      "chat_governance_integrated": true,
+      "governance_scatter_prevention_integrated": true,
+      "sandbox_governance_integrated": true,
+      "sha256_external_sidecar_required": true,
+      "status": "active_H0C1_boot_critical_governance_consolidated"
+    },
+    "boot_required_gates": {
+      "loader": "runtime/governance/boot_critical_governance_loader_v1.py",
+      "manifest": "0_kernel/registry/BOOT_REQUIRED_GATES_v1.json",
+      "must_run_before_governed_stage": true,
+      "scatter_validator": "runtime/governance/governance_scatter_prevention_v1.py",
+      "status": "active"
+    }
+  },
+  "boot_critical_loader_result": {
+    "decision": "ALLOW",
+    "errors": [],
+    "warnings": [],
+    "checks": [
+      {
+        "name": "boot_required_gates_parseable",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/0_kernel/registry/BOOT_REQUIRED_GATES_v1.json"
+      },
+      {
+        "name": "required_file:0_kernel/chat_governance/CHAT_GOVERNANCE_KERNEL_v1.json",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/0_kernel/chat_governance/CHAT_GOVERNANCE_KERNEL_v1.json"
+      },
+      {
+        "name": "required_file:0_kernel/chat_governance/CARTRIDGE_SELECTION_POLICY_v1.json",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/0_kernel/chat_governance/CARTRIDGE_SELECTION_POLICY_v1.json"
+      },
+      {
+        "name": "required_file:0_kernel/chat_governance/TURN_LIFECYCLE_CONTRACT_v1.json",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/0_kernel/chat_governance/TURN_LIFECYCLE_CONTRACT_v1.json"
+      },
+      {
+        "name": "required_file:0_kernel/chat_governance/FINAL_RESPONSE_GATE_v1.json",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/0_kernel/chat_governance/FINAL_RESPONSE_GATE_v1.json"
+      },
+      {
+        "name": "required_file:0_kernel/registry/BOOT_REQUIRED_GATES_v1.json",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/0_kernel/registry/BOOT_REQUIRED_GATES_v1.json"
+      },
+      {
+        "name": "required_file:runtime/governance/boot_critical_governance_loader_v1.py",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/governance/boot_critical_governance_loader_v1.py"
+      },
+      {
+        "name": "required_file:runtime/governance/governance_scatter_prevention_v1.py",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/governance/governance_scatter_prevention_v1.py"
+      },
+      {
+        "name": "required_file:0_kernel/registry/CONTROLLED_GOVERNANCE_ARTIFACT_INDEX_v1.json",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/0_kernel/registry/CONTROLLED_GOVERNANCE_ARTIFACT_INDEX_v1.json"
+      },
+      {
+        "name": "required_file:runtime/governance/controlled_artifact_registry_v1.py",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/governance/controlled_artifact_registry_v1.py"
+      },
+      {
+        "name": "required_file:runtime/governance/fresh_chat_boot_rehearsal_v1.py",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/governance/fresh_chat_boot_rehearsal_v1.py"
+      },
+      {
+        "name": "required_file:runtime/cartridges/prompt_governance_v1/CARTRIDGE_MANIFEST.json",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/cartridges/prompt_governance_v1/CARTRIDGE_MANIFEST.json"
+      },
+      {
+        "name": "required_file:runtime/cartridges/prompt_governance_v1/validate_prompt_governance_cartridge_v1.py",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/cartridges/prompt_governance_v1/validate_prompt_governance_cartridge_v1.py"
+      },
+      {
+        "name": "required_file:CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/CURRENT_FULL_AUTHORITY_POINTER_v1.json"
+      },
+      {
+        "name": "required_file:0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md"
+      },
+      {
+        "name": "required_file:runtime/governance/new_chat_start_contract_validator_v1.py",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/governance/new_chat_start_contract_validator_v1.py"
+      },
+      {
+        "name": "required_file:runtime/governance/safe_walk_v1.py",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/governance/safe_walk_v1.py"
+      },
+      {
+        "name": "required_file:runtime/governance/banned_pattern_enforcer_v1.py",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/governance/banned_pattern_enforcer_v1.py"
+      },
+      {
+        "name": "required_file:runtime/governance/BANNED_KERNEL_PATTERNS_v1.json",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/governance/BANNED_KERNEL_PATTERNS_v1.json"
+      },
+      {
+        "name": "required_file:runtime/cartridges/prompt_governance_v1/PROMPT_ENGINE_REGRESSION_FIXTURE_SUITE_v1.json",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/cartridges/prompt_governance_v1/PROMPT_ENGINE_REGRESSION_FIXTURE_SUITE_v1.json"
+      },
+      {
+        "name": "required_file:runtime/cartridges/prompt_governance_v1/generate_prompt_engine_reliability_report_v1.py",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/cartridges/prompt_governance_v1/generate_prompt_engine_reliability_report_v1.py"
+      },
+      {
+        "name": "required_file:runtime/cartridges/prompt_governance_v1/validate_prompt_engine_profile_smoke_v1.py",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/cartridges/prompt_governance_v1/validate_prompt_engine_profile_smoke_v1.py"
+      },
+      {
+        "name": "required_file:runtime/governance/full_os_recovery_replay_validator_v1.py",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/governance/full_os_recovery_replay_validator_v1.py"
+      },
+      {
+        "name": "required_file:runtime/governance/full_os_recovery_replay_validator_v1.py.sha256",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/governance/full_os_recovery_replay_validator_v1.py.sha256"
+      },
+      {
+        "name": "required_file:runtime/governance/prompt_engine_telemetry_v1.py",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/governance/prompt_engine_telemetry_v1.py"
+      },
+      {
+        "name": "required_file:runtime/governance/prompt_engine_drift_gate_v1.py",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/governance/prompt_engine_drift_gate_v1.py"
+      },
+      {
+        "name": "required_file:0_kernel/registry/PROMPT_ENGINE_TELEMETRY_SCHEMA_v1.json",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/0_kernel/registry/PROMPT_ENGINE_TELEMETRY_SCHEMA_v1.json"
+      },
+      {
+        "name": "required_file:runtime/state/PROMPT_ENGINE_TELEMETRY_LOG_v1.jsonl",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/state/PROMPT_ENGINE_TELEMETRY_LOG_v1.jsonl"
+      },
+      {
+        "name": "required_file:runtime/governance/prompt_auto_improvement_loop_v1.py",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/governance/prompt_auto_improvement_loop_v1.py"
+      },
+      {
+        "name": "required_file:0_kernel/registry/PROMPT_AUTO_IMPROVEMENT_LOOP_CONTRACT_v1.json",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/0_kernel/registry/PROMPT_AUTO_IMPROVEMENT_LOOP_CONTRACT_v1.json"
+      },
+      {
+        "name": "required_file:runtime/state/PROMPT_PATCH_LEDGER_v1.jsonl",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/state/PROMPT_PATCH_LEDGER_v1.jsonl"
+      },
+      {
+        "name": "required_file:runtime/cartridges/prompt_governance_v1/validate_prompt_auto_improvement_loop_v1.py",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/cartridges/prompt_governance_v1/validate_prompt_auto_improvement_loop_v1.py"
+      },
+      {
+        "name": "required_file:runtime/governance/prompt_patch_replay_engine_v1.py",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/governance/prompt_patch_replay_engine_v1.py"
+      },
+      {
+        "name": "required_file:runtime/governance/prompt_quality_ranker_v1.py",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/governance/prompt_quality_ranker_v1.py"
+      },
+      {
+        "name": "required_file:runtime/cartridges/prompt_governance_v1/validate_prompt_patch_replay_quality_ranker_v1.py",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/cartridges/prompt_governance_v1/validate_prompt_patch_replay_quality_ranker_v1.py"
+      },
+      {
+        "name": "required_file:0_kernel/registry/PROMPT_PATCH_REPLAY_AND_QUALITY_RANKER_CONTRACT_v1.json",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/0_kernel/registry/PROMPT_PATCH_REPLAY_AND_QUALITY_RANKER_CONTRACT_v1.json"
+      },
+      {
+        "name": "required_file:runtime/state/PROMPT_PATCH_REPLAY_REPORT_v1.json",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/state/PROMPT_PATCH_REPLAY_REPORT_v1.json"
+      },
+      {
+        "name": "required_file:runtime/governance/prompt_route_preexecution_enforcer_v1.py",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/governance/prompt_route_preexecution_enforcer_v1.py"
+      },
+      {
+        "name": "required_file:runtime/governance/task_start_hook_v1.py",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/governance/task_start_hook_v1.py"
+      },
+      {
+        "name": "required_file:0_kernel/registry/PROMPT_ROUTE_PREEXECUTION_ENFORCER_CONTRACT_v1.json",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/0_kernel/registry/PROMPT_ROUTE_PREEXECUTION_ENFORCER_CONTRACT_v1.json"
+      },
+      {
+        "name": "required_file:runtime/state/PROMPT_TASK_START_LEDGER_v1.jsonl",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/state/PROMPT_TASK_START_LEDGER_v1.jsonl"
+      },
+      {
+        "name": "required_file:runtime/cartridges/prompt_governance_v1/validate_prompt_route_preexecution_enforcer_v1.py",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/cartridges/prompt_governance_v1/validate_prompt_route_preexecution_enforcer_v1.py"
+      },
+      {
+        "name": "required_file:runtime/state/PROMPT_ROUTE_PREEXECUTION_ENFORCER_VALIDATION_REPORT_v1.json",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/state/PROMPT_ROUTE_PREEXECUTION_ENFORCER_VALIDATION_REPORT_v1.json"
+      },
+      {
+        "name": "required_file:runtime/governance/full_extract_replay_recovery_proof_validator_v1.py",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/governance/full_extract_replay_recovery_proof_validator_v1.py"
+      },
+      {
+        "name": "required_file:0_kernel/registry/FULL_EXTRACT_REPLAY_RECOVERY_PROOF_CONTRACT_v1.json",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/0_kernel/registry/FULL_EXTRACT_REPLAY_RECOVERY_PROOF_CONTRACT_v1.json"
+      },
+      {
+        "name": "required_file:runtime/governance/runtime_starter_smoke_v1.py",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/governance/runtime_starter_smoke_v1.py"
+      },
+      {
+        "name": "required_file:0_kernel/registry/RUNTIME_STARTER_SMOKE_CONTRACT_v1.json",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/0_kernel/registry/RUNTIME_STARTER_SMOKE_CONTRACT_v1.json"
+      },
+      {
+        "name": "required_file:2_engines/runtime/mpp_pipeline_runner.py",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/2_engines/runtime/mpp_pipeline_runner.py"
+      },
+      {
+        "name": "required_file:0_kernel/registry/mpp_v3/MPP_V3_AUTHORITY_AND_SCHEMA_LOCK_v1.json",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/0_kernel/registry/mpp_v3/MPP_V3_AUTHORITY_AND_SCHEMA_LOCK_v1.json"
+      },
+      {
+        "name": "required_file:0_kernel/registry/mpp_v3/MPP_V3_STAGE12_INTEGRATION_AUTHORITY_BINDING_v1.json",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/0_kernel/registry/mpp_v3/MPP_V3_STAGE12_INTEGRATION_AUTHORITY_BINDING_v1.json"
+      },
+      {
+        "name": "required_file:0_kernel/mpp_v3/mpp_v3_export_promotion_gate_v1.py",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/0_kernel/mpp_v3/mpp_v3_export_promotion_gate_v1.py"
+      },
+      {
+        "name": "required_file:0_kernel/mpp_v3/mpp_v3_orchestrator_runtime_controller_v1.py",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/0_kernel/mpp_v3/mpp_v3_orchestrator_runtime_controller_v1.py"
+      },
+      {
+        "name": "required_file:0_kernel/registry/mpp_v3/policy_gates/MPP_V3_EXPORT_PROMOTION_GATE_v1.json",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/0_kernel/registry/mpp_v3/policy_gates/MPP_V3_EXPORT_PROMOTION_GATE_v1.json"
+      },
+      {
+        "name": "required_file:0_kernel/schemas/mpp_v3/EXPORT_PROMOTION_PACKET_SCHEMA_v1.json",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/0_kernel/schemas/mpp_v3/EXPORT_PROMOTION_PACKET_SCHEMA_v1.json"
+      },
+      {
+        "name": "required_file:tests/fixtures/mpp_v3/valid_export_promotion_packet_v1.json",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/tests/fixtures/mpp_v3/valid_export_promotion_packet_v1.json"
+      },
+      {
+        "name": "required_file:runtime/authority/CURRENT_EXPORT_AUTHORITY_v1.json",
+        "passed": true,
+        "path": "/mnt/data/Metablooms_OS/runtime/authority/CURRENT_EXPORT_AUTHORITY_v1.json"
+      }
+    ],
+    "manifest_id": "BOOT_REQUIRED_GATES_v1"
+  },
+  "receipt_path": "/mnt/data/Metablooms_OS/0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777684854925.json"
+}

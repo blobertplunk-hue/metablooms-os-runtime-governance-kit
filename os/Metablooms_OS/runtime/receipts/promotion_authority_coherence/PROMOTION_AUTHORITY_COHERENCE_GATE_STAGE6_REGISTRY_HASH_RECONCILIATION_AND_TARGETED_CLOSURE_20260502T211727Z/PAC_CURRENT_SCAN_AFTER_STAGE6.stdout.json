@@ -1,0 +1,106 @@
+{
+  "checks": [
+    {
+      "check_id": "PAC-001",
+      "decision": "DENY",
+      "defects": [
+        "controlled_artifact_missing_from_index"
+      ],
+      "evidence": {
+        "controlled_count": 2086,
+        "hash_mismatch_sample": [],
+        "missing_from_registry_count": 12,
+        "missing_from_registry_sample": [
+          "runtime/governance/legacy_archives/CLAUDE_MEMORY_SYNC_v1.json",
+          "runtime/governance/legacy_archives/COOL_6_RUNTIME_GATE_WIRING_PLAN_v1.json",
+          "runtime/governance/legacy_archives/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.json",
+          "runtime/governance/legacy_archives/R6_external_reuse_scan_gate/COOL_5_EXTERNAL_REUSE_SCAN_GATE_SCHEMA_v1.legacy.json",
+          "runtime/governance/legacy_archives/R6_external_reuse_scan_gate/p0a_external_reuse_scan_precheck_v1.legacy.py",
+          "runtime/governance/legacy_archives/R7_usefulness_validator/python3_S_lane_exec_v1.pre_r7_root_default.sh",
+          "runtime/governance/legacy_archives/R7_usefulness_validator/usefulness_surface_validator_v1.staged_source.py",
+          "runtime/governance/legacy_archives/R8_python_health/p0py_python_health_governance_v1.staged_source.py",
+          "runtime/governance/legacy_archives/claude_memory_sync_writer_v1.py",
+          "runtime/governance/legacy_archives/validate_unified_runtime_compatibility_contract_v1.pre_R12_20260428T033100Z.py",
+          "runtime/governance/legacy_quarantine/R11_20260428T032630Z/CLAUDE_MEMORY_SEED_v1.json",
+          "runtime/governance/legacy_quarantine/R11_20260428T032630Z/CLAUDE_OPERATING_CONTRACT_v1.md"
+        ],
+        "registered_count": 2037,
+        "registered_hash_mismatch_count": 0,
+        "registered_noncurrent_count": 0,
+        "registered_noncurrent_sample": []
+      },
+      "name": "controlled_artifact_closure"
+    },
+    {
+      "check_id": "PAC-002",
+      "decision": "PASS",
+      "defects": [],
+      "evidence": {
+        "current_authority_token": "STAGE18",
+        "stale_reference_count": 0,
+        "stale_reference_sample": []
+      },
+      "name": "stale_authority_sweep"
+    },
+    {
+      "check_id": "PAC-003",
+      "decision": "PASS",
+      "defects": [],
+      "evidence": {
+        "status": "not_evaluated_in_report_only_stage2"
+      },
+      "name": "pointer_equivalence"
+    },
+    {
+      "check_id": "PAC-004",
+      "decision": "PASS",
+      "defects": [],
+      "evidence": {
+        "status": "not_evaluated_in_report_only_stage2"
+      },
+      "name": "validator_cli_contract_map"
+    },
+    {
+      "check_id": "PAC-005",
+      "decision": "PASS",
+      "defects": [],
+      "evidence": {
+        "status": "not_evaluated_in_report_only_stage2"
+      },
+      "name": "fresh_chat_replay"
+    },
+    {
+      "check_id": "PAC-006",
+      "decision": "PASS",
+      "defects": [],
+      "evidence": {
+        "status": "not_evaluated_in_report_only_stage2"
+      },
+      "name": "export_self_consistency"
+    },
+    {
+      "check_id": "PAC-007",
+      "decision": "PASS",
+      "defects": [],
+      "evidence": {
+        "status": "not_evaluated_in_report_only_stage2"
+      },
+      "name": "promotion_receipt_binding"
+    }
+  ],
+  "created_at": "2026-05-02T21:17:38.696679+00:00",
+  "decision": "DENY",
+  "defects": [
+    "controlled_artifact_missing_from_index"
+  ],
+  "evidence": {
+    "root": "/mnt/data/Metablooms_OS",
+    "sample_limit": 50
+  },
+  "gate_id": "PROMOTION_AUTHORITY_COHERENCE_GATE_v1",
+  "mode": "current_os_report_only",
+  "report_only": true,
+  "result_hash": "0c7a01848b7193c0a2ffaa8922cdfb8d5b849741a9395b27c0a68a71a123391f",
+  "schema_version": "metablooms.promotion_authority_coherence_gate.result.v1",
+  "stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN"
+}

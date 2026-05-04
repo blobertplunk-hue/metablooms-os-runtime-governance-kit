@@ -1,0 +1,13 @@
+{
+  "id": "TRACKER_RELEASE_GATE_v1",
+  "status": "active",
+  "gate": "TRACKER_RELEASE_GATE",
+  "description": "Trackers/control artifacts must be read back and validated before release.",
+  "required_sections": [
+    "Workflow Timeline",
+    "Next Valid Stage",
+    "Evidence Ledger",
+    "Permanent OS / Governance Improvements Ledger"
+  ],
+  "failure_action": "DENY_RELEASE_AND_WRITE_BLOCKER_REPORT"
+}

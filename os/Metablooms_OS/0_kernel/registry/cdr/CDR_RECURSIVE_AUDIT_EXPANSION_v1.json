@@ -1,0 +1,10 @@
+{
+  "high_value_rule": {
+    "benefit_score_min": 3,
+    "risk_score_max": 2,
+    "scope_cost_max": 2,
+    "stage_fit_required": true
+  },
+  "reconstruction": "RECONSTRUCTED_FROM_CHAT_SUMMARY",
+  "schema": "CDRRecursiveAuditExpansion_v1"
+}

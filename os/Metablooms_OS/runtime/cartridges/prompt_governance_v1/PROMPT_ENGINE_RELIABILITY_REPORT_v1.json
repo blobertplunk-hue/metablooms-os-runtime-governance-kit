@@ -1,0 +1,24 @@
+{
+  "errors": [],
+  "fixture_count": 6,
+  "fixtures": [
+    "profile_smoke_adaptive",
+    "profile_smoke_authentic",
+    "profile_smoke_governed_artifact_generation",
+    "profile_smoke_governed_implementation",
+    "profile_smoke_governed_research",
+    "profile_smoke_wit"
+  ],
+  "id": "PROMPT_ENGINE_RELIABILITY_REPORT_v1",
+  "profile_count": 7,
+  "report_id": "PROMPT_ENGINE_RELIABILITY_REPORT_v1",
+  "stage8_auto_patch_loop": {
+    "drift_gate": "required",
+    "fixture_count": 6,
+    "status": "installed",
+    "telemetry": "required",
+    "updated_utc": "2026-04-30T22:11:22Z"
+  },
+  "status": "PASS",
+  "summary": "Prompt engine profile smoke suite validates installed profiles, required gates, output rules, and banned-pattern compatibility."
+}

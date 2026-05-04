@@ -1,0 +1,53 @@
+{
+  "artifacts_written": [
+    {
+      "bytes": 246,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/META_INFRA_SELF_HARDENING_TOOL_ROADMAP_STAGE0_20260502T134747Z/BUNDLE_MANIFEST.json",
+      "sha256": "bb9111658144e7f4fd3ea0e8671a3f598f72af8c2d2870de4e34d0166b488837"
+    },
+    {
+      "bytes": 2928,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/META_INFRA_SELF_HARDENING_TOOL_ROADMAP_STAGE0_20260502T134747Z/CE_SYNTHESIS.json",
+      "sha256": "1edfdc00b609f930e3540f3fdebc9ce3ef6f75d9ea6c4325eef9d328efa7f718"
+    },
+    {
+      "bytes": 6689,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/META_INFRA_SELF_HARDENING_TOOL_ROADMAP_STAGE0_20260502T134747Z/INFRA_TOOLING_ROADMAP.json",
+      "sha256": "1bdb6cf66215bf9dccd031456d4a29eeeef62e69b8c54ded86b6603da1050756"
+    },
+    {
+      "bytes": 3070,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/META_INFRA_SELF_HARDENING_TOOL_ROADMAP_STAGE0_20260502T134747Z/SEE_PACKET.json",
+      "sha256": "2ebb95f727b1ca2800cf0a51ff2ade2b96b1d1167138f5171dd1ff594eec3b06"
+    }
+  ],
+  "next_stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT",
+  "operation": "research_and_reasoning_stage_only_no_code_retrofit",
+  "runtime_root": "/mnt/data/Metablooms_OS",
+  "schema_version": "metablooms.stage_receipt.v1",
+  "stage_id": "META_INFRA_SELF_HARDENING_TOOL_ROADMAP_STAGE0",
+  "status": "PASS",
+  "tests": [
+    {
+      "name": "runtime_root_exists",
+      "status": "PASS"
+    },
+    {
+      "name": "forbidden_validation_methods_loaded",
+      "status": "PASS"
+    },
+    {
+      "name": "method_reliability_policy_loaded",
+      "status": "PASS"
+    },
+    {
+      "name": "external_research_completed",
+      "status": "PASS"
+    },
+    {
+      "name": "roadmap_written",
+      "status": "PASS"
+    }
+  ],
+  "timestamp_utc": "20260502T134747Z"
+}

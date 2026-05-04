@@ -1,0 +1,24 @@
+{
+  "receipt_type": "R7_VERIFY_RECEIPT",
+  "stage": "R7_USEFULNESS_VALIDATOR_PROMOTION",
+  "created_utc": "2026-04-28T03:11:05Z",
+  "verdict": "PASS",
+  "checks": {
+    "validator_exists": true,
+    "schema_exists": true,
+    "registry_integrity_passed": true,
+    "valid_fixture_allowed": true,
+    "too_few_fixture_denied": true,
+    "missing_required_fixture_denied": true,
+    "launcher_site_suppression_verified": true,
+    "launcher_default_root_current": true
+  },
+  "closed_loopholes": [
+    "No usefulness validator path using normal Python",
+    "No promoted artifact can pass usefulness gate with fewer than three useful dimensions",
+    "No html_activity can pass without required feedback/telemetry/misconception dimensions",
+    "No telemetry_engine can pass without telemetry and misconception dimensions",
+    "No decisionless validation path; each run emits a decision receipt",
+    "No default launcher root ambiguity to Metablooms_OS_refined"
+  ]
+}

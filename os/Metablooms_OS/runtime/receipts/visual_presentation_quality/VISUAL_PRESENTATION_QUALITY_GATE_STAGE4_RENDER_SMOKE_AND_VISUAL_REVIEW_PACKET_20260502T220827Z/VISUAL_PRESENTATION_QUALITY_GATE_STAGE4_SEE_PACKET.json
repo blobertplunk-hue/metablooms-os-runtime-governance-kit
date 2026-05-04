@@ -1,0 +1,31 @@
+{
+  "created_utc": "2026-05-02T22:15:10Z",
+  "schema_version": "visual_presentation_quality_stage4_see_packet.v1",
+  "sources": [
+    {
+      "claim": "WCAG 2.2 is the normative accessibility basis for focus, target size, color-independent meaning, and other accessibility requirements.",
+      "source": "W3C Web Content Accessibility Guidelines (WCAG) 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/"
+    },
+    {
+      "claim": "W3C WAI explains focus appearance as ensuring keyboard focus indicators are clearly visible and discernible.",
+      "source": "W3C Understanding Success Criterion 2.4.13 Focus Appearance",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html"
+    },
+    {
+      "claim": "Visual design should be tested using methods such as 5-second testing, first-click testing, and preference testing.",
+      "source": "Nielsen Norman Group, Testing Visual Design: A Comprehensive Guide",
+      "url": "https://www.nngroup.com/articles/testing-visual-design/"
+    },
+    {
+      "claim": "Progress indicators should show real-time status of a process.",
+      "source": "Material Design 3 progress indicators overview",
+      "url": "https://m3.material.io/components/progress-indicators/overview"
+    },
+    {
+      "claim": "Material Design accessibility guidance links visual hierarchy and structure to accessible comprehension.",
+      "source": "Material Design 3 accessibility/designing structure",
+      "url": "https://m3.material.io/foundations/designing/structure"
+    }
+  ]
+}

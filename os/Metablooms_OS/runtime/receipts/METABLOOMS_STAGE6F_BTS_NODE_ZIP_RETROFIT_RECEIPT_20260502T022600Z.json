@@ -1,0 +1,101 @@
+{
+  "answer_to_user_question": "Stage6E was related but incomplete: it used BTS wrappers, but not the researched Node ZIP profile as the default ZIP authority route. Stage6F retrofitted the BTS wrapper to use the Node/yauzl/yazl/crc-32 profile and proved it on a fixture.",
+  "boot_checks": {
+    "boot_executor_smoke_path": "/mnt/data/stage6f_bts_node_zip_retrofit_20260502T022600Z/boot_executor_smoke.json",
+    "portable_boot_verify_path": "/mnt/data/stage6f_bts_node_zip_retrofit_20260502T022600Z/portable_boot_verify.json",
+    "runtime_starter_smoke_path": "/mnt/data/stage6f_bts_node_zip_retrofit_20260502T022600Z/runtime_starter_smoke.json"
+  },
+  "changed_file_sha256": {
+    "/mnt/data/Metablooms_OS/governance/ACTIVE_INVARIANTS_INDEX.json": "b7723b51be667630c8a7c7b17c1d9a834c5519d1dd67af1fc0675a7f32e8584e",
+    "/mnt/data/Metablooms_OS/governance/invariants/NODE_ZIP_PROFILE_REQUIRED_FOR_AUTHORITY_EXPORTS_v1.json": "9d65cd51d64dc0b0f6e8afc310069ecdfa425d06be29000d1f7070b77a79a9fa",
+    "/mnt/data/Metablooms_OS/runtime/governance/executors/bts_wrapped_executors_v1.py": "20c4b7a0125c37307b8789a6f250c4f27ee377201537569514fb9d7a56694052",
+    "/mnt/data/Metablooms_OS/runtime/tooling/governed_install_profiles/node_zip_authority_repair_v1/README.md": "3cba95ea48efe3a48f067c2ea617b8cb7a46c72bfca4db5da95d58722bf23909",
+    "/mnt/data/Metablooms_OS/runtime/tooling/governed_install_profiles/node_zip_authority_repair_v1/stream_export_directory.js": "80f03fa4cf488a68672cc6e574db4fd64ae626d878cec3f55f793bebd42ee6b9"
+  },
+  "changed_files": [
+    "/mnt/data/Metablooms_OS/runtime/governance/executors/bts_wrapped_executors_v1.py",
+    "/mnt/data/Metablooms_OS/runtime/tooling/governed_install_profiles/node_zip_authority_repair_v1/stream_export_directory.js",
+    "/mnt/data/Metablooms_OS/runtime/tooling/governed_install_profiles/node_zip_authority_repair_v1/README.md",
+    "/mnt/data/Metablooms_OS/governance/invariants/NODE_ZIP_PROFILE_REQUIRED_FOR_AUTHORITY_EXPORTS_v1.json",
+    "/mnt/data/Metablooms_OS/governance/ACTIVE_INVARIANTS_INDEX.json"
+  ],
+  "fixtures": {
+    "implementation_reality": {
+      "actual_files": [
+        "/mnt/data/Metablooms_OS/runtime/governance/executors/fixtures/stage6f_node_profile_fixture_truthful_budget.zip"
+      ],
+      "claimed_files": [
+        "/mnt/data/Metablooms_OS/runtime/governance/executors/fixtures/stage6f_node_profile_fixture_truthful_budget.zip"
+      ],
+      "unclaimed": [],
+      "unfulfilled": [],
+      "verdict": "PASS"
+    },
+    "node_profile_crc_verdict": "PASS",
+    "node_profile_export_fixture_verdict": "PASS",
+    "node_profile_export_sha256": "e40876f9ee1cd9fd41110efa4d38f33fff13b5cbe13c5d0477adb1b35ba7d300",
+    "policy_decision": "ALLOW"
+  },
+  "full_export_status": {
+    "created": false,
+    "dryrun_decision": {
+      "decided_at_utc": "2026-05-02T00:48:33Z",
+      "decision": "DEFER",
+      "decision_id": "decision_1777682913603_c3867155",
+      "enforced_by": "pre_tool_action_gate_v1",
+      "envelope_id": "STAGE6F_FULL_EXPORT_BUDGET_DRYRUN_20260502T022600Z_node_zip_profile_export",
+      "envelope_sha256": "4338b28d5bafeb959812b1794d95a83225d30835e188172f0fda041eefefbdfe",
+      "matched_rules": [
+        "runaway.breaker"
+      ],
+      "rationale": "Requested action exceeds Stage6B default bounded budget and requires chunking or approval.",
+      "reason_code": "RUNAWAY_BUDGET_REVIEW_REQUIRED",
+      "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/STAGE6F_FULL_EXPORT_BUDGET_DRYRUN_20260502T022600Z_node_zip_profile_export.decision.json",
+      "required_next_action": "chunk_action_or_request_budget_approval",
+      "safe_to_execute": false,
+      "schema_version": "PolicyDecision_v1",
+      "stage_id": "STAGE6F"
+    },
+    "dryrun_envelope_limits": {
+      "max_bytes": 58566624,
+      "max_files": 3111,
+      "max_steps": 40,
+      "timeout_seconds": 90
+    },
+    "dryrun_write_path": [
+      "/mnt/data/STAGE6F_DRYRUN_FULL_AUTHORITY_SHOULD_DEFER.zip"
+    ],
+    "reason": "The new truthful budget envelope for a full live-root export reported 3111 files and 58,566,624 bytes. Stage6B pre-action gate correctly DEFERRED it under RUNAWAY_BUDGET_REVIEW_REQUIRED before execution."
+  },
+  "installed_capabilities": [
+    "export-zip-node-profile CLI subcommand in bts_wrapped_executors_v1.py",
+    "stream_export_directory.js using yazl for stream-built directory ZIPs",
+    "stream_crc_proof.js bound as post-export yauzl/crc-32 proof path",
+    "NODE_ZIP_PROFILE_REQUIRED_FOR_AUTHORITY_EXPORTS_v1 active invariant",
+    "truthful source file/byte budget calculation before pre-action gate"
+  ],
+  "next_recommended_stage": "STAGE6G_FULL_AUTHORITY_EXPORT_WITH_EXPLICIT_BUDGET_APPROVAL_USING_BTS_NODE_ZIP_PROFILE",
+  "root": "/mnt/data/Metablooms_OS",
+  "schema": "METABLOOMS_STAGE_RECEIPT_v1",
+  "see_evidence_refs": [
+    {
+      "claim": "Tool guardrails run before every function-tool invocation and can reject calls before execution.",
+      "source": "OpenAI Agents SDK guardrails docs"
+    },
+    {
+      "claim": "Tracing records tool calls, guardrails, handoffs, LLM generations, and custom events.",
+      "source": "OpenAI Agents SDK tracing docs"
+    },
+    {
+      "claim": "yazl is designed for async ZIP creation without buffering whole files in memory.",
+      "source": "npm yazl docs"
+    }
+  ],
+  "stage": "STAGE6F_RETROFIT_EXPORT_AND_FILESYSTEM_CALLS_TO_BTS_WRAPPER_OR_EXPORT_FULL_AUTHORITY_AFTER_6E",
+  "timestamp_utc": "2026-05-02T02:26:00Z",
+  "verdict": "PASS_WITH_WARNINGS_NO_FULL_OS_EXPORT",
+  "warnings": [
+    "git_dir_missing remains expected in boot executor smoke",
+    "No full OS authority export was created in Stage6F because the truthful budget gate deferred it."
+  ]
+}

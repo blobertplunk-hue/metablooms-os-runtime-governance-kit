@@ -1,0 +1,10 @@
+{
+  "decisions": [
+    "Install executable fixtures, not doc-only guidance.",
+    "Add reliability report as reusable quality signal.",
+    "Ban non-vendor rglob and patch known runtime use.",
+    "Use stream/update export route for full bundle."
+  ],
+  "id": "CE_PACKET",
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_5_PROMPT_ENGINE_REGRESSION_FIXTURES_AND_PROFILE_SMOKE"
+}

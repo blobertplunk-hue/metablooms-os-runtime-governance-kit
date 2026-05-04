@@ -1,0 +1,75 @@
+{
+  "artifact_type": "metablooms.stage_receipt",
+  "changes": [
+    "sandbox_router_policy_loader_v1.py now evaluates route decisions with task/method args",
+    "enforce_sandbox_route.sh now wraps python3 -S first and Node fallback second with timeout --kill-after",
+    "delivery route aliases root_zip_sha256 and root_level_zip_plus_sha256 added",
+    "wiring metadata records timeout hardening"
+  ],
+  "diagnosis": {
+    "fix": "make python3 -S policy evaluator default and preserve Node as fallback under GNU timeout",
+    "observed_prior_failure": "same-turn direct Node/wrapper invocation timeout after earlier smoke pass",
+    "root_cause": "enforcement wrapper used direct Node by default and lacked a python3-S decision evaluator; direct runtime processes were not consistently bounded by outer shell timeout semantics"
+  },
+  "heavy_export_repair_run": false,
+  "source_handoff": "0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_BOOT_EXPORT_BINDING_AUDIT_3_HANDOFF.json",
+  "stage": "SANDBOX_ROUTER_NODE_ENFORCER_TIMEOUT_HARDENING_4",
+  "status": "PASS",
+  "timestamp_utc": "2026-04-30T14:09:00Z",
+  "validations": [
+    {
+      "actual_decision": "ALLOW",
+      "actual_exit": 0,
+      "evaluator": "python3-S-policy-evaluator",
+      "expected_decision": "ALLOW",
+      "expected_exit": 0,
+      "gate": "wrapper_boot",
+      "status": "PASS"
+    },
+    {
+      "actual_decision": "ALLOW",
+      "actual_exit": 0,
+      "evaluator": "python3-S-policy-evaluator",
+      "expected_decision": "ALLOW",
+      "expected_exit": 0,
+      "gate": "wrapper_json",
+      "status": "PASS"
+    },
+    {
+      "actual_decision": "ALLOW",
+      "actual_exit": 0,
+      "evaluator": "python3-S-policy-evaluator",
+      "expected_decision": "ALLOW",
+      "expected_exit": 0,
+      "gate": "wrapper_delivery",
+      "status": "PASS"
+    },
+    {
+      "actual_decision": "DENY",
+      "actual_exit": 7,
+      "evaluator": "python3-S-policy-evaluator",
+      "expected_decision": "DENY",
+      "expected_exit": 7,
+      "gate": "wrapper_hardlink_deny",
+      "status": "PASS"
+    },
+    {
+      "actual_decision": "ALLOW",
+      "actual_exit": 0,
+      "evaluator": "python3-S-policy-evaluator",
+      "expected_decision": "ALLOW",
+      "expected_exit": 0,
+      "gate": "python_eval_boot",
+      "status": "PASS"
+    },
+    {
+      "actual_decision": "ALLOW",
+      "actual_exit": 0,
+      "evaluator": "node-fallback",
+      "expected_decision": "ALLOW",
+      "expected_exit": 0,
+      "gate": "direct_node_boot",
+      "status": "PASS"
+    }
+  ]
+}

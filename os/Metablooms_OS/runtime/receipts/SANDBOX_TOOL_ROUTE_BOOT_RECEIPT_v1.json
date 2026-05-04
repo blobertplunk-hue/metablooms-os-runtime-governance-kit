@@ -1,0 +1,24 @@
+{
+  "stage": "SANDBOX_TOOL_ROUTE_RESEARCH_AND_BOOT_ROUTE_SELECTION",
+  "timestamp_utc": "2026-05-01T02:53:29Z",
+  "verdict": "PASS_WITH_WARNINGS",
+  "warning_accepted": "git_dir_missing only",
+  "zip": "/mnt/data/METABLOOMS_OS_STAGE12_PROMPT_GOVERNANCE_PLUS_MPP_R0_R23_PROMOTION_LOCK_INTERNALIZED_20260501T021500Z.zip",
+  "sidecar": "/mnt/data/METABLOOMS_OS_STAGE12_PROMPT_GOVERNANCE_PLUS_MPP_R0_R23_PROMOTION_LOCK_INTERNALIZED_20260501T021500Z.zip.sha256",
+  "root": "/mnt/data/Metablooms_OS",
+  "archive_entry_count": 2479,
+  "root_file_count": 2485,
+  "sha256_verified": true,
+  "zip_integrity_verified": true,
+  "boot_executor_rc": "0",
+  "boot_receipt_path": "/mnt/data/Metablooms_OS/0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777603985636.json",
+  "portable_verifier_rc": "1",
+  "artifact_dir": "/mnt/data/METABLOOMS_SANDBOX_TOOL_RESEARCH_20260501T025242Z",
+  "governance_enforced": {
+    "used_web_run_for_SEE": true,
+    "used_CE_synthesis": true,
+    "used_artifact_first_receipts": true,
+    "used_python3_dash_S_for_boot_smoke": true,
+    "used_timeout_bounds": true
+  }
+}

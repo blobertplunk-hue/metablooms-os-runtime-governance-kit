@@ -1,0 +1,83 @@
+{
+  "version": "1.0",
+  "created_at": 1777063362.477003,
+  "stage": "E4A_MASTER_PIPELINE_PROOF_SCOPE_LOCK",
+  "status": "complete",
+  "inputs": {
+    "f7_handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F7_TO_E4A_RETURN_HANDOFF_v1.json",
+    "f7_recovery_proof": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F7_BOOT_RECOVERY_PROOF_v1.json",
+    "f7_baseline_lock": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F7_RECOVERY_PROVEN_STABLE_BASELINE_LOCK_v1.json",
+    "e3_handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/E3_TO_E4_HANDOFF_v1.json"
+  },
+  "outputs": {
+    "scope_doc": "/mnt/data/Metablooms_OS_refined/0_kernel/docs/E4A_MASTER_PIPELINE_PROOF_SCOPE_LOCK_v1.md",
+    "scope_contract": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/E4A_MASTER_PIPELINE_PROOF_SCOPE_CONTRACT_v1.json",
+    "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/E4A_MASTER_PIPELINE_PROOF_SCOPE_LOCK_RECEIPT_v1.json",
+    "handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/E4A_TO_E4B_HANDOFF_v1.json"
+  },
+  "checks": {
+    "required_recovery_paths_present": true,
+    "git_clean_before_e4a_return": true,
+    "git_fsck_clean_before_e4a_return": true,
+    "f0_f7_receipts": {
+      "F0_RECOVERY_ARCHITECTURE_SCOPE_LOCK_RECEIPT_v1.json": true,
+      "F1_CURRENT_WORKING_BASELINE_POINTER_CONTRACT_RECEIPT_v1.json": true,
+      "F2_STAGE_DAG_AND_DEPENDENCY_LEDGER_CONTRACT_RECEIPT_v1.json": true,
+      "F3_TRANSACTIONAL_STAGE_RUNNER_CONTRACT_RECEIPT_v1.json": true,
+      "F4_MANIFEST_PROVENANCE_EXPORT_CONTRACT_RECEIPT_v1.json": true,
+      "F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF_RECEIPT_v1.json": true,
+      "F6_BLOCKED_RECEIPT_HANDLING_RULE_RECEIPT_v1.json": true,
+      "F7_STABLE_EXPORT_BOOT_RECOVERY_PROOF_RECEIPT_v1.json": true
+    },
+    "f7_recovery_prechecks": {
+      "f7_handoff_ready": true,
+      "f7_receipt_passed": true,
+      "f7_proof_passed": true,
+      "f7_baseline_locked": true,
+      "ledger_latest_pass_is_f7": true,
+      "pointer_active": true,
+      "all_f0_f7_receipts_pass": true,
+      "boot_has_recovery_architecture": true
+    },
+    "e2e3_present_initial": {
+      "e2_contract": false,
+      "e2_script": false,
+      "e2_receipt": false,
+      "e2_handoff": false,
+      "e3_contract": false,
+      "e3_proof": false,
+      "e3_handoff": false
+    },
+    "e2e3_after_recovery_checks": {
+      "e2_contract_active": true,
+      "e2_script_present": true,
+      "e2_receipt_passed": true,
+      "e2_handoff_ready": true,
+      "e3_contract_active": true,
+      "e3_proof_passed": true,
+      "e3_handoff_ready": true
+    }
+  },
+  "runaway_turn_guard": {
+    "scope_lock_only": true,
+    "implementation_performed": false,
+    "proof_performed": false,
+    "export_performed": false,
+    "cleanup_performed": false
+  },
+  "verdict": "PASS",
+  "next_improvement_task": "E4B \u2014 Execution Plan Packet Contract",
+  "why_next": "E4A scope is locked after recovery architecture stabilization; next define the execution-plan packet before assembler implementation.",
+  "remaining_work": [
+    "E4B \u2014 Execution Plan Packet Contract",
+    "E4C \u2014 Execution Plan Assembler Prototype",
+    "E4D \u2014 Mixed Task Enforcement Proof",
+    "E4E \u2014 E4 Handoff to E5",
+    "E5A\u2013E5D \u2014 Export, recovery proof, baseline lock"
+  ],
+  "progress_estimate": {
+    "stages_remaining_in_current_E_arc": 8,
+    "major_arcs_remaining_after_current_arc": 2
+  },
+  "next_correct_command": "EXECUTE STAGE E4B \u2014 EXECUTION PLAN PACKET CONTRACT"
+}

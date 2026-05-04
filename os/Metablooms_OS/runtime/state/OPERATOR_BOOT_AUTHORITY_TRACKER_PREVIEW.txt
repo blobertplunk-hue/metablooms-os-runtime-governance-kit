@@ -1,0 +1,5 @@
+META BLOOMS WORLD-CLASS TRACKER
+Status: WC Stage 4 complete
+Authority: BOOTABLE_FULL_AUTHORITY export available
+Included: Stage 1 scorecard | Stage 2 router/prompt | Stage 7 metrics | Stage 5 design cartridge | Stage 4 operator polish
+Next: WC_STAGE3_LESSON_PROMOTION_QUEUE_AND_FIXTURE_FACTORY

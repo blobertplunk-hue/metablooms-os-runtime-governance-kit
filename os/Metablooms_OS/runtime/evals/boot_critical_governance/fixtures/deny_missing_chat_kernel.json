@@ -1,0 +1,4 @@
+{
+  "expected": "DENY",
+  "missing": "runtime/governance/chat_governance_kernel_v1.py"
+}

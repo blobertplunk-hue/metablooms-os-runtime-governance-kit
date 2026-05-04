@@ -1,0 +1,31 @@
+{
+  "external_basis": [
+    {
+      "claim": "Teams should measure delivery and recovery outcomes to prioritize and validate improvement.",
+      "label": "DORA metrics"
+    },
+    {
+      "claim": "System behavior should be specified as eval tasks with inputs and expected outputs, then measured and iterated.",
+      "label": "OpenAI evals"
+    }
+  ],
+  "gate_requirement": {
+    "allowed_failures": 0,
+    "must_pass_before_stage_finished": true,
+    "requires_prompt_gate_pass": true,
+    "runtime_gate_path": "0_kernel/evals/real_task_eval_harness/real_task_eval_runtime_gate_v1.py"
+  },
+  "honesty_label": "bounded corpus fixtures with realistic task shapes; not yet full classroom field telemetry or external human review",
+  "minimum_fixtures": 12,
+  "purpose": "Expand the real-task eval harness from bounded synthetic proxies into a reusable real-task corpus and bind the corpus runner as a runtime stage-exit gate.",
+  "required_task_domains": [
+    "educational_html",
+    "blooket_csv",
+    "lesson_plan",
+    "research_see",
+    "artifact_export",
+    "repair_debugging"
+  ],
+  "schema_version": "v1",
+  "stage": "WC_STAGE11_REAL_TASK_CORPUS_EXPANSION_AND_RUNTIME_GATE_BINDING"
+}

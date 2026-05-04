@@ -1,0 +1,11 @@
+{
+  "execution_rule": "Implement exactly one bounded R20 stage using this plan; do not skip fixtures or silent-failure gate.",
+  "from_stage": "MPP_R20_DESIGN_ENFORCED_GOVERNED_WORKFLOW",
+  "required_inputs": [
+    "MPP_R20_BEST_IN_WORLD_DESIGN_AND_ENFORCED_WORKFLOW_PLAN.json",
+    "MPP_R20_BEST_IN_WORLD_DESIGN_AND_ENFORCED_WORKFLOW_PLAN.md",
+    "MPP_R19_FIR_FITNESS_INTEGRATION_SCHEMA_AND_GATE_20260501T024900Z.zip"
+  ],
+  "status": "READY",
+  "to_stage": "MPP_R20_MONITOR_TELEMETRY_SCHEMA_AND_FEEDBACK_GATE"
+}

@@ -1,0 +1,88 @@
+{
+  "approval_token_present": true,
+  "bts_receipt_id": "T1-STAGE6J_FULL_AUTHORITY_EXPORT_20260502T030200Z_node_zip_export_artifact-20260502T013948Z",
+  "bts_turn_committed": true,
+  "export_bytes": 22531375,
+  "export_path": "/mnt/data/METABLOOMS_OS_STAGE6J_FULL_AUTHORITY_AFTER_BTS_TOOL_UNIVERSE_RESOLVER_RETROFIT_BOOTABLE_FULL_OS_AUTHORITY_20260502T030200Z.zip",
+  "export_sha256": "455a78b429dd68b99562fa54158657425dd8d0095dc5d4d9763be3923c1f0343",
+  "implementation_reality": {
+    "actual_files": [
+      "/mnt/data/METABLOOMS_OS_STAGE6J_FULL_AUTHORITY_AFTER_BTS_TOOL_UNIVERSE_RESOLVER_RETROFIT_BOOTABLE_FULL_OS_AUTHORITY_20260502T030200Z.zip"
+    ],
+    "claimed_files": [
+      "/mnt/data/METABLOOMS_OS_STAGE6J_FULL_AUTHORITY_AFTER_BTS_TOOL_UNIVERSE_RESOLVER_RETROFIT_BOOTABLE_FULL_OS_AUTHORITY_20260502T030200Z.zip"
+    ],
+    "unclaimed": [],
+    "unfulfilled": [],
+    "verdict": "PASS"
+  },
+  "kind": "node_zip_profile_export",
+  "node_crc_summary": {
+    "bytes": 59221550,
+    "crc_failures": [],
+    "directories": 0,
+    "duplicates": [],
+    "duration_ms": 7696,
+    "entries": 3458,
+    "files": 3458,
+    "sha256": "455a78b429dd68b99562fa54158657425dd8d0095dc5d4d9763be3923c1f0343",
+    "stream_errors": [],
+    "unsafe_paths": [],
+    "verdict": "PASS",
+    "zip": "/mnt/data/METABLOOMS_OS_STAGE6J_FULL_AUTHORITY_AFTER_BTS_TOOL_UNIVERSE_RESOLVER_RETROFIT_BOOTABLE_FULL_OS_AUTHORITY_20260502T030200Z.zip"
+  },
+  "node_export_summary": {
+    "bytes_added": 59221550,
+    "duration_ms": 15504,
+    "files_added": 3458,
+    "output_sha256": "455a78b429dd68b99562fa54158657425dd8d0095dc5d4d9763be3923c1f0343",
+    "output_zip": "/mnt/data/METABLOOMS_OS_STAGE6J_FULL_AUTHORITY_AFTER_BTS_TOOL_UNIVERSE_RESOLVER_RETROFIT_BOOTABLE_FULL_OS_AUTHORITY_20260502T030200Z.zip.tmp",
+    "root_name": "Metablooms_OS",
+    "source_dir": "/mnt/data/Metablooms_OS",
+    "status": "PASS",
+    "unsafe_paths": []
+  },
+  "node_profile_dir": "/mnt/data/Metablooms_OS/runtime/tooling/governed_install_profiles/node_zip_authority_repair_v1",
+  "node_workspace": "/mnt/data/metablooms_stage4c_node_stream_rebuild_20260501T233500Z",
+  "policy_decision": {
+    "decided_at_utc": "2026-05-02T01:39:24Z",
+    "decision": "ALLOW",
+    "decision_id": "decision_1777685964971_7fec8c16",
+    "enforced_by": "pre_tool_action_gate_v1",
+    "envelope_id": "STAGE6J_FULL_AUTHORITY_EXPORT_20260502T030200Z_node_zip_profile_export",
+    "envelope_sha256": "bd097700871f47891142bb18285f58449b1455f79f2f218c67634de60730fdeb",
+    "matched_rules": [
+      "schema.required",
+      "path.safety",
+      "runaway.breaker",
+      "method.reliability"
+    ],
+    "rationale": "Envelope passed schema, method, path, SEE, approval, and bounded-budget checks.",
+    "reason_code": "LOW_RISK_BOUNDED_ACTION",
+    "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/STAGE6J_FULL_AUTHORITY_EXPORT_20260502T030200Z_node_zip_profile_export.decision.json",
+    "required_next_action": "execute_action_and_write_action_receipt",
+    "safe_to_execute": true,
+    "schema_version": "PolicyDecision_v1",
+    "stage_id": "STAGE6J_FULL_AUTHORITY_EXPORT_AFTER_BTS_TOOL_UNIVERSE_RESOLVER_RETROFIT"
+  },
+  "receipt_id": "bts_exec_20260502T013949Z_93c7b4eb",
+  "schema": "mb.bts_wrapped_executors.v1",
+  "sidecar_path": "/mnt/data/METABLOOMS_OS_STAGE6J_FULL_AUTHORITY_AFTER_BTS_TOOL_UNIVERSE_RESOLVER_RETROFIT_BOOTABLE_FULL_OS_AUTHORITY_20260502T030200Z.zip.sha256",
+  "source_dir": "/mnt/data/Metablooms_OS",
+  "stage_id": "STAGE6J_FULL_AUTHORITY_EXPORT_AFTER_BTS_TOOL_UNIVERSE_RESOLVER_RETROFIT",
+  "timestamp_utc": "2026-05-02T01:39:49.378098Z",
+  "tool_selection_sufficiency": {
+    "covered_candidate_count": 4,
+    "missing_candidates": [],
+    "reasons": [],
+    "required_candidate_count": 4,
+    "schema": "TOOL_SELECTION_SUFFICIENCY_GATE_RESULT_v1",
+    "selected_tool_id": "node_yazl_stream_export",
+    "timestamp_utc": "2026-05-02T01:39:23.387605Z",
+    "top_allowed_tool_id": "node_yazl_stream_export",
+    "verdict": "PASS"
+  },
+  "tool_universe_candidate_set_id": "tool_candidates_fefeddfcfe70ac0d",
+  "turn_id": "STAGE6J_FULL_AUTHORITY_EXPORT_20260502T030200Z",
+  "verdict": "PASS"
+}

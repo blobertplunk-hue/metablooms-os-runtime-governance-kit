@@ -1,0 +1,11 @@
+{
+  "schema_version": "v1",
+  "provenance": "RECONSTRUCTED_FROM_CHAT_SUMMARY_AND_BASE_AUTHORITY_20260503",
+  "metrics": [
+    "deployment_frequency_proxy",
+    "lead_time_proxy",
+    "change_failure_block_rate_proxy",
+    "recovery_time_proxy"
+  ],
+  "honesty_label": "MetaBlooms sandbox artifact proxies, not production service metrics."
+}

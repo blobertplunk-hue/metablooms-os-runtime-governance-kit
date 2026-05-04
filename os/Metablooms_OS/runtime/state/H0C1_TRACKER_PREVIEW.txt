@@ -1,0 +1,9 @@
+[MetaBlooms H0C1]
+✓ Boot-critical required-gates manifest implemented
+✓ Boot executor invokes governance loader
+✓ Sandbox governance remains boot-critical
+✓ Chat governance remains always-on contract
+✓ Scatter-prevention validator implemented
+✓ Behavior fixtures included
+✓ Whole-system export required before next stage
+NEXT: H0C2 router/cartridge runtime universalization

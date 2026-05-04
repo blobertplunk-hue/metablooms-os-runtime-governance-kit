@@ -1,0 +1,34 @@
+{
+  "artifact_type": "MB_SEE_PACKET.v1",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE3_TRACKER_CAUSAL_TIMELINE_BINDING",
+  "created_utc": "20260502T164733Z",
+  "method": "web.run evidence refresh plus internal synthesis",
+  "sources": [
+    {
+      "claim": "OpenTelemetry tracing centers on spans that capture operation details, and trace exporters send traces to downstream consumers for debugging or backends.",
+      "source": "OpenTelemetry Traces documentation",
+      "url": "https://opentelemetry.io/docs/concepts/signals/traces/"
+    },
+    {
+      "claim": "W3C Trace Context standardizes propagation of context information that uniquely identifies requests across distributed systems.",
+      "source": "W3C Trace Context Recommendation",
+      "url": "https://www.w3.org/TR/trace-context/"
+    },
+    {
+      "claim": "SLSA is a supply-chain integrity framework focused on preventing tampering and improving artifact integrity.",
+      "source": "SLSA project site",
+      "url": "https://slsa.dev/"
+    },
+    {
+      "claim": "Trace timeline or waterfall views help distinguish sequential and parallel processing and expose details/attributes/events for spans.",
+      "source": "OpenTelemetry distributed tracing practical guide",
+      "url": "https://www.youngju.dev/blog/observability/2026-03-03-opentelemetry-distributed-tracing.en"
+    }
+  ],
+  "design_implications": [
+    "Use source_artifact and SHA-bound inputs so tracker cards are evidence-backed, not just status text.",
+    "Expose parent/child trace causality as a visual timeline so the operator can see cause -> evidence -> next action.",
+    "Keep span windows bounded and phone-safe rather than rendering the full ledger.",
+    "Treat provenance and export hash binding as operator-visible state."
+  ]
+}

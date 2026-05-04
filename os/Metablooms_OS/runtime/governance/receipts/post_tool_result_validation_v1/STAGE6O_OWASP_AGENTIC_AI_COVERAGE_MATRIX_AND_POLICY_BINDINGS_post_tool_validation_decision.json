@@ -1,0 +1,12 @@
+{
+  "checks": {
+    "authority_export_absent_as_required": true,
+    "handoff_written": true,
+    "receipt_written": true,
+    "smoke_pass": true
+  },
+  "decision": "ALLOW_SUCCESS_COMMIT",
+  "schema": "PostToolResultValidationDecision_v1",
+  "stage_id": "STAGE6O_OWASP_AGENTIC_AI_COVERAGE_MATRIX_AND_POLICY_BINDINGS",
+  "timestamp_utc": "2026-05-02T02:53:05Z"
+}

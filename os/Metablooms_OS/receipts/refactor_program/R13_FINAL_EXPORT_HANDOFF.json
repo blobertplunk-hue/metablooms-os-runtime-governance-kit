@@ -1,0 +1,9 @@
+{
+  "artifact_type": "R13_FINAL_EXPORT_HANDOFF",
+  "authorized_next_action": "Use this final export as recovery artifact or run a bounded post-export smoke audit.",
+  "created_utc": "2026-04-29T10:39:56.215565Z",
+  "from_stage": "R13_FINAL_EXPORT_SELF_CONSISTENCY_AUDIT_AND_EXPORT",
+  "inner_export_zip": "METABLOOMS_OS_R13_FINAL_EXPORT_20260429T104000Z.zip",
+  "receipt": "receipts/refactor_program/R13_FINAL_EXPORT_RECEIPT.json",
+  "verdict": "PASS_FINAL_EXPORT_PACKAGED"
+}

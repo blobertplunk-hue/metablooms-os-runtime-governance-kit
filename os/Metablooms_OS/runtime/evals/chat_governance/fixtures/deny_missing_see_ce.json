@@ -1,0 +1,11 @@
+{
+  "turn_text": "Research and implement MetaBlooms governance kernel",
+  "explicit_meta_task": true,
+  "authority_boot_verified": true,
+  "router_decision": "os_governance",
+  "SEE_required": true,
+  "tracker_path": "/mnt/data/Metablooms_OS/Metablooms_OS/trackers/live/LIVE_CONTROL_SURFACE_PROJECT_FILES_BOOT_OVERLAY.html",
+  "baseline_path": "/mnt/data/Metablooms_OS/Metablooms_OS/trackers/live/LIVE_CONTROL_SURFACE_PROJECT_FILES_BOOT_OVERLAY.html",
+  "live_state_path": "/mnt/data/Metablooms_OS/Metablooms_OS/runtime/state/TRACKER_STATE_v1.json",
+  "pre_tool_contract_exempt": true
+}

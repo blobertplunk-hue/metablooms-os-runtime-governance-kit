@@ -1,0 +1,49 @@
+{
+  "created_utc": "2026-04-28T03:03:02.160271+00:00",
+  "decision_id": "ac07639e-5c97-4504-baef-34531ac8f7ba",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [
+    {
+      "claim": "decision logs include decision_id, input, result, timestamp and context",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "provenance and artifacts must be inspected against expectations",
+      "source": "SLSA v1.2 verifying artifacts"
+    },
+    {
+      "claim": "annotations are descriptive and not enforcement",
+      "source": "JSON Schema annotations"
+    }
+  ],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"created_utc\": \"2026-04-28T03:03:02.160271+00:00\", \"decision_id\": \"ac07639e-5c97-4504-baef-34531ac8f7ba\", \"external_basis\": [{\"claim\": \"decision logs include decision_id, input, result, timestamp and context\", \"source\": \"OPA decision logs\"}, {\"claim\": \"provenance and artifacts must be inspected against expectations\", \"source\": \"SLSA v1.2 verifying artifacts\"}, {\"claim\": \"annotations are descriptive and not enforcement\", \"source\": \"JSON Schema annotations\"}], \"input\": {\"legacy_schema_sha256\": \"27919934cd67c335c68e2099b232bd0e6da862315bf1f2a39feaad96f1181730\", \"legacy_script_sha256\": \"6da19d7974b3dbf0ff132f518d277da0dba15c14d0e78b794a276dc5d1c008fa\"}, \"outputs\": {\"registry\": \"/mnt/data/Metablooms_OS/runtime/governance/registries/gate_registry_v1.json\", \"schema\": \"/mnt/data/Metablooms_OS/runtime/governance/schemas/external_reuse_scan_gate_schema_v1.json\", \"script\": \"/mnt/data/Metablooms_OS/0_kernel/scripts/p0a_external_reuse_scan_precheck_v1.py\"}, \"receipt_type\": \"R6_DECISION_LOG\", \"result\": \"constructed\", \"stage\": \"R6_EVIDENCE_BOUND_EXTERNAL_REUSE_SCAN_GATE\"}",
+  "reasons": [],
+  "record_id": "DECISION_LOG_R6_20260428T030301Z",
+  "record_kind": "decision_log",
+  "result": "constructed",
+  "source_record": {
+    "path": "runtime/governance/decision_logs/DECISION_LOG_R6_20260428T030301Z.json",
+    "sha256": "13a93b6869d2f28f18a00eeb4cf7739c3cb68a6e7aa4becfe5b8cf8130faee69",
+    "size_bytes": 1190
+  },
+  "span_id": "0ef9699978a44dc2",
+  "stage_id": "R6_EVIDENCE_BOUND_EXTERNAL_REUSE_SCAN_GATE",
+  "summary": "Canonical wrapper for DECISION_LOG_R6_20260428T030301Z.json",
+  "trace_id": "9fec676b676fac2e48bfe73d8c1af4c3"
+}

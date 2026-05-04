@@ -1,0 +1,84 @@
+{
+  "version": "1.0",
+  "created_at": 1777062052.5879438,
+  "state_machine_id": "TRANSACTIONAL_STAGE_STATE_MACHINE_v1",
+  "status": "active_contract_model",
+  "states": [
+    "REQUEST_RECEIVED",
+    "AUTO_SCOPE_CLASSIFIED",
+    "PREFLIGHT_PASS",
+    "STAGE_ROOT_CREATED",
+    "OUTPUTS_WRITTEN",
+    "VERIFY_PASS",
+    "PROMOTED",
+    "COMMITTED",
+    "STATE_UPDATED",
+    "HANDOFF_WRITTEN",
+    "COMPLETE",
+    "BLOCKED"
+  ],
+  "transitions": [
+    {
+      "from": "REQUEST_RECEIVED",
+      "to": "AUTO_SCOPE_CLASSIFIED",
+      "guard": "auto_runaway_breaker_applied"
+    },
+    {
+      "from": "AUTO_SCOPE_CLASSIFIED",
+      "to": "PREFLIGHT_PASS",
+      "guard": "scope_single_heavy_class_or_split"
+    },
+    {
+      "from": "PREFLIGHT_PASS",
+      "to": "STAGE_ROOT_CREATED",
+      "guard": "git_clean_and_required_inputs_present"
+    },
+    {
+      "from": "STAGE_ROOT_CREATED",
+      "to": "OUTPUTS_WRITTEN",
+      "guard": "stage_root_isolated"
+    },
+    {
+      "from": "OUTPUTS_WRITTEN",
+      "to": "VERIFY_PASS",
+      "guard": "contract_checks_pass"
+    },
+    {
+      "from": "VERIFY_PASS",
+      "to": "PROMOTED",
+      "guard": "smallest_valid_change_set"
+    },
+    {
+      "from": "PROMOTED",
+      "to": "COMMITTED",
+      "guard": "git_commit_success"
+    },
+    {
+      "from": "COMMITTED",
+      "to": "STATE_UPDATED",
+      "guard": "pointer_and_ledger_updated"
+    },
+    {
+      "from": "STATE_UPDATED",
+      "to": "HANDOFF_WRITTEN",
+      "guard": "next_stage_defined"
+    },
+    {
+      "from": "HANDOFF_WRITTEN",
+      "to": "COMPLETE",
+      "guard": "receipt_committed_or_top_level_recorded"
+    },
+    {
+      "from": "*",
+      "to": "BLOCKED",
+      "guard": "any_required_check_fails"
+    }
+  ],
+  "blocked_state_rules": [
+    "write explicit blocker receipt",
+    "do not update current working pointer",
+    "do not advance latest_pass in ledger",
+    "report next repair command"
+  ],
+  "verdict": "PASS"
+}

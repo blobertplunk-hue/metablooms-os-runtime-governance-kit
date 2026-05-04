@@ -1,0 +1,15 @@
+{
+  "failure_action": "DENY_CODE_ACCEPTANCE_OR_WRITE_BLOCKED_RECEIPT",
+  "gate": "CDR_ADAPTABILITY_INTERFACE_CONTRACT_GATE",
+  "id": "CDR_ADAPTABILITY_AND_INTERFACE_CONTRACT_REQUIRED_v1",
+  "requires": [
+    "interface_contracts",
+    "compatibility_policy",
+    "change_impact_analysis",
+    "migration_or_deprecation_plan",
+    "negative_interface_fixture"
+  ],
+  "stage": "CDR_STAGE6_ADAPTABILITY_AND_INTERFACE_CONTRACT_HARDENING",
+  "status": "active",
+  "validator_path": "runtime/governance/cdr_adaptability_interface_contract_gate_v1.py"
+}

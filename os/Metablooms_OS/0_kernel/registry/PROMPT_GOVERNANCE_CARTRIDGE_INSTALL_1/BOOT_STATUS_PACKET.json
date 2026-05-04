@@ -1,0 +1,8 @@
+{
+  "bundle_checksum_verified": true,
+  "canonical_working_root": "/mnt/data/Metablooms_OS_stage_prompt/Metablooms_OS",
+  "initial_boot_issue": "boot_critical_governance_loader_missing",
+  "initial_boot_verdict": "FAIL",
+  "repair_applied": "installed boot critical loader, gates manifest, scatter validator",
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_1"
+}

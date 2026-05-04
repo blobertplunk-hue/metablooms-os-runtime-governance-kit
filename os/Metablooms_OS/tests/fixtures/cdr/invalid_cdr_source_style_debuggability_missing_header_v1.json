@@ -1,0 +1,10 @@
+{
+  "module_headers": {
+    "mod": {
+      "Purpose": "p"
+    }
+  },
+  "structured_denial_contract": {},
+  "warnings_after": 0,
+  "warnings_before": 0
+}
