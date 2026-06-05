@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mb.old_chat_github_registration.packet.v1",
+  "type": "object",
+  "required": ["schema", "chat_url", "source_chat_id", "artifacts"],
+  "properties": {
+    "schema": {"const": "mb.old_chat_github_registration.packet.v1"},
+    "chat_url": {"type": "string", "pattern": "^https://chatgpt\\.com/"},
+    "source_chat_id": {"type": "string", "minLength": 1},
+    "registered_at_utc": {"type": "string"},
+    "artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["label"],
+        "properties": {
+          "label": {"type": "string", "minLength": 1},
+          "declared_path": {"type": "string"},
+          "sha256": {"type": "string", "pattern": "^[a-fA-F0-9]{64}$"},
+          "bytes": {"type": "integer", "minimum": 0},
+          "local_evidence_path": {"type": "string"},
+          "notes": {"type": "string"}
+        },
+        "anyOf": [
+          {"required": ["declared_path"]},
+          {"required": ["sha256"]}
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
