@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mb.old_chat_github_registration.registry.v1",
+  "type": "object",
+  "required": ["schema", "updated_at_utc", "chats"],
+  "properties": {
+    "schema": {"const": "mb.old_chat_github_registration.registry.v1"},
+    "updated_at_utc": {"type": "string"},
+    "chats": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["chat_url", "source_chat_id", "registered_at_utc", "last_seen_at_utc"],
+        "properties": {
+          "chat_url": {"type": "string", "pattern": "^https://chatgpt\\.com/"},
+          "source_chat_id": {"type": "string"},
+          "registered_at_utc": {"type": "string"},
+          "last_seen_at_utc": {"type": "string"},
+          "last_decision": {"type": ["string", "null"]},
+          "report_paths": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
