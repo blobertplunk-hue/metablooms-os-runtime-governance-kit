@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mb.old_chat_github_registration.promotion_queue.v1",
+  "type": "object",
+  "required": ["schema", "updated_at_utc", "items"],
+  "properties": {
+    "schema": {"const": "mb.old_chat_github_registration.promotion_queue.v1"},
+    "updated_at_utc": {"type": "string"},
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["key", "chat_url", "source_chat_id", "status", "created_at_utc"],
+        "properties": {
+          "key": {"type": "string"},
+          "chat_url": {"type": "string", "pattern": "^https://chatgpt\\.com/"},
+          "source_chat_id": {"type": "string"},
+          "label": {"type": ["string", "null"]},
+          "declared_path": {"type": ["string", "null"]},
+          "sha256": {"type": ["string", "null"], "pattern": "^[a-fA-F0-9]{64}$"},
+          "local_evidence_path": {"type": ["string", "null"]},
+          "status": {"enum": ["READY_FOR_PROMOTION", "BLOCKED_MISSING_LOCAL_EVIDENCE", "BLOCKED_PATH_SHA_CONFLICT"]},
+          "created_at_utc": {"type": "string"},
+          "report_path": {"type": ["string", "null"]}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
