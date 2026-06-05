@@ -1,0 +1,84 @@
+name: MetaBlooms Complete Repository Manifest
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build-complete-manifest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Build complete SHA-256 path manifest
+        run: |
+          python3 - <<'PY'
+          import hashlib
+          import json
+          import os
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          root = Path('.').resolve()
+          excluded_dirs = {'.git'}
+          files = []
+          for path in sorted(root.rglob('*')):
+              rel = path.relative_to(root).as_posix()
+              if any(part in excluded_dirs for part in path.relative_to(root).parts):
+                  continue
+              if not path.is_file():
+                  continue
+              data = path.read_bytes()
+              files.append({
+                  'path': rel,
+                  'sha256': hashlib.sha256(data).hexdigest(),
+                  'bytes': len(data),
+              })
+
+          manifest = {
+              'schema': 'mb.github.complete_repository_manifest.v1',
+              'generated_at_utc': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+              'repository': os.environ.get('GITHUB_REPOSITORY'),
+              'ref': os.environ.get('GITHUB_REF'),
+              'sha': os.environ.get('GITHUB_SHA'),
+              'truncated': False,
+              'file_count': len(files),
+              'files': files,
+          }
+          Path('metablooms_github_manifest.json').write_text(json.dumps(manifest, indent=2, sort_keys=True) + '\n')
+          print('manifest_written files=%s' % len(files))
+          PY
+
+      - name: Verify manifest integrity fields
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          manifest = json.loads(Path('metablooms_github_manifest.json').read_text())
+          assert manifest['schema'] == 'mb.github.complete_repository_manifest.v1'
+          assert manifest['truncated'] is False
+          paths = [item['path'] for item in manifest['files']]
+          assert len(paths) == len(set(paths)), 'duplicate manifest paths'
+          for item in manifest['files']:
+              assert len(item['sha256']) == 64
+              int(item['sha256'], 16)
+              assert item['bytes'] >= 0
+          print('manifest_ok files=%s' % manifest['file_count'])
+          PY
+
+      - name: Upload complete manifest artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: metablooms-complete-repository-manifest
+          path: metablooms_github_manifest.json
+          retention-days: 7
+          compression-level: 9
