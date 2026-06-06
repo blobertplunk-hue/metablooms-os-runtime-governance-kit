@@ -1,0 +1,51 @@
+{
+  "evidence_basis": [
+    "LANGGRAPH_DURABLE_EXECUTION",
+    "LANGGRAPH_INTERRUPTS",
+    "OPENAI_AGENTS_HITL",
+    "TEMPORAL_WORKFLOWS"
+  ],
+  "failure_action": "FAILED_CLOSED_RECEIPT_AND_NO_EXECUTION",
+  "minimum_invariants": [
+    "checkpoint records are JSON objects and written atomically",
+    "resume is allowed only from status INTERRUPTED",
+    "resume packet thread_id must match checkpoint thread_id",
+    "resume payload must be JSON object",
+    "external/chat text is never authoritative resume state",
+    "new resume creates a child checkpoint instead of rewriting parent",
+    "THREAD_LATEST is updated only after child checkpoint write succeeds"
+  ],
+  "model": {
+    "checkpoint_id": "immutable checkpoint/event identifier",
+    "parent_checkpoint_id": "previous checkpoint hash-chain link or null",
+    "status_values": [
+      "CHECKPOINTED",
+      "INTERRUPTED",
+      "RESUMED",
+      "COMPLETED",
+      "FAILED_CLOSED"
+    ],
+    "storage_root": "runtime/checkpoints",
+    "thread_id": "durable resume cursor"
+  },
+  "purpose": "Minimum artifact-backed checkpoint/replay contract for interrupted or resumable governed stages.",
+  "required_record_fields": [
+    "schema",
+    "stage_id",
+    "thread_id",
+    "checkpoint_id",
+    "parent_checkpoint_id",
+    "status",
+    "state",
+    "interrupt",
+    "resume",
+    "next",
+    "metadata",
+    "created_at_utc",
+    "record_sha256"
+  ],
+  "schema": "MetaBloomsDurableCheckpointReplaySpec_v1",
+  "stage_id": "STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM",
+  "status": "active",
+  "timestamp_utc": "2026-05-02T02:56:33.705543Z"
+}

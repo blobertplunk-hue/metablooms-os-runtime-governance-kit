@@ -1,0 +1,23 @@
+{
+  "stage": "R3_COMPATIBILITY_CONTRACT_REPLACEMENT",
+  "created_utc": "2026-04-28T02:52:00Z",
+  "verdict": "PASS",
+  "contract_path": "/mnt/data/Metablooms_OS/runtime/governance/contracts/unified_runtime_compatibility_contract_v1.json",
+  "validator_path": "/mnt/data/Metablooms_OS/0_kernel/scripts/validate_unified_runtime_compatibility_contract_v1.py",
+  "fixtures": [
+    {
+      "path": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/fixtures/unified_runtime_compatibility_contract_v1.valid.json",
+      "expected": "pass",
+      "sha256": "9fd07a64c988b174d8507ddc54d9760ed81a4bf3905c99c7fb1ad4c48bdff4f7"
+    },
+    {
+      "path": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/fixtures/unified_runtime_compatibility_contract_v1.stale.json",
+      "expected": "fail",
+      "sha256": "f9e34d2df8d07a4db5a5d053a6b6cc10225e8e51d039e7fd8bc5cb0ffde375e3"
+    }
+  ],
+  "live_validation_report": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R3_contract_validation_live_20260428T025200Z.json",
+  "stale_validation_report": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R3_contract_validation_stale_20260428T025200Z.json",
+  "old_cross_link_status": "archive_only",
+  "next_stage": "R4_SESSION_STATE_EXPORT_REPLACEMENT"
+}

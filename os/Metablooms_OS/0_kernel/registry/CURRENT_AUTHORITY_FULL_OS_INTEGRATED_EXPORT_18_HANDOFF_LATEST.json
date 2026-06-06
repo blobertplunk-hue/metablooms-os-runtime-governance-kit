@@ -1,0 +1,11 @@
+{
+  "complete_os_export_expected": "/mnt/data/METABLOOMS_OS_COMPLETE_INTEGRATED_AUTHORITY_20260430T153000Z.zip",
+  "current_authority": "complete_os_export_verified_by_external_sidecar_after_zip_creation",
+  "final_zip_hash_policy": "external .sha256 sidecar is authoritative; hash is not embedded to avoid recursive mutation",
+  "load_next": "/mnt/data/Metablooms_OS/0_kernel/registry/CURRENT_AUTHORITY_FULL_OS_INTEGRATED_EXPORT_18_HANDOFF_LATEST.json",
+  "next_prompt": "Boot from /mnt/data/METABLOOMS_OS_COMPLETE_INTEGRATED_AUTHORITY_20260430T153000Z.zip. Verify the SHA-256 sidecar first. Extract to /mnt/data/Metablooms_OS and run one bounded boot sanity stage verifying sandbox router, export method lock, tracker preview, learning pointers, and current authority handoff. Do not run heavy export repair.",
+  "next_recommended_stage": "BOOT_FROM_COMPLETE_OS_INTEGRATED_EXPORT_19",
+  "stage_id": "CURRENT_AUTHORITY_FULL_OS_INTEGRATED_EXPORT_18",
+  "status": "HANDOFF_READY_FINAL_EXTERNAL_SIDECAR_REQUIRED",
+  "timestamp_utc": "20260430T153000Z"
+}

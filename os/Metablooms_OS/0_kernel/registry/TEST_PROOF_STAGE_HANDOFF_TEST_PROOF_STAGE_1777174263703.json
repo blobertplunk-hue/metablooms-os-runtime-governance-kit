@@ -1,0 +1,66 @@
+{
+  "receipt_type": "STAGE_HANDOFF",
+  "stage_id": "TEST_PROOF_STAGE_1777174263703",
+  "stage_name": "TEST_PROOF_STAGE",
+  "created_at": 1777174263.7234995,
+  "verdict": "PASS",
+  "next_stage": "BUILD-2",
+  "phases_summary": [
+    {
+      "phase": "P-1_TOOL_ROUTE_GUARD",
+      "verdict": "PASS"
+    },
+    {
+      "phase": "P0_PREFLIGHT",
+      "verdict": "PASS"
+    },
+    {
+      "phase": "P1_STAGE_ROOT",
+      "verdict": "PASS"
+    },
+    {
+      "phase": "P2_WRITE_OUTPUTS",
+      "verdict": "PASS"
+    },
+    {
+      "phase": "P3_VERIFY",
+      "verdict": "PASS"
+    },
+    {
+      "phase": "P4_PROMOTE",
+      "verdict": "PASS"
+    },
+    {
+      "phase": "P5_COMMIT",
+      "verdict": "DEFERRED"
+    },
+    {
+      "phase": "P6_UPDATE_STATE",
+      "verdict": "PASS"
+    }
+  ],
+  "promoted_outputs": [
+    {
+      "src": "/home/claude/test_stages/TEST_PROOF_STAGE_1777174263703/test_outputs/TEST_PROOF_ARTIFACT_v1.json",
+      "dst": "0_kernel/registry/TEST_PROOF_ARTIFACT_v1.json",
+      "sha256": "b7285316a6976896e6ee2b82c76305a1c31d470573358c5e9638ea269a54e0d7",
+      "dst_before_R13B": "/home/claude/merge_staging/verify_reextract/Metablooms_OS_refined/0_kernel/registry/TEST_PROOF_ARTIFACT_v1.json",
+      "dst_reconciled_by": "R13B_LEDGER_ABSOLUTE_OUTPUT_RECONCILIATION",
+      "dst_reconciled_utc": "2026-04-29T10:34:43Z"
+    }
+  ],
+  "promoted_shas": {
+    "0_kernel/registry/TEST_PROOF_ARTIFACT_v1.json": "b7285316a6976896e6ee2b82c76305a1c31d470573358c5e9638ea269a54e0d7"
+  },
+  "must_stop": true,
+  "reconciliation_history": [
+    {
+      "stage": "R13B_LEDGER_ABSOLUTE_OUTPUT_RECONCILIATION",
+      "created_utc": "2026-04-29T10:34:43Z",
+      "old_output": "/home/claude/merge_staging/verify_reextract/Metablooms_OS_refined/0_kernel/registry/TEST_PROOF_ARTIFACT_v1.json",
+      "new_output": "0_kernel/registry/TEST_PROOF_ARTIFACT_v1.json",
+      "classification": "root_relative_reconciliation",
+      "reason": "canonical artifact exists under reconstructed active root with matching recorded SHA-256"
+    }
+  ]
+}

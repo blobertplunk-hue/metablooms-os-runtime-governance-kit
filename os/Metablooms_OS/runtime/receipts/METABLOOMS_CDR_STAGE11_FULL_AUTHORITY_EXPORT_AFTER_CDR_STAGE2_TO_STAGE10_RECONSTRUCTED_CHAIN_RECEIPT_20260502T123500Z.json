@@ -1,0 +1,157 @@
+{
+  "authority_export_label": "BOOTABLE FULL OS AUTHORITY ZIP \u2014 CDR Stage 11",
+  "cdr_chain_status": "RECONSTRUCTED_CHAIN_EXPLICITLY_MARKED",
+  "cdr_eval_results": [
+    {
+      "file": "tests/evals/cdr/test_cdr_adaptability_interface_contract_gate_v1.py",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "PASS\n"
+    },
+    {
+      "file": "tests/evals/cdr/test_cdr_code_acceptance_gate_v1.py",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "test_cdr_code_acceptance_gate_v1.py: PASS\n"
+    },
+    {
+      "file": "tests/evals/cdr/test_cdr_lint_security_scanner_gate_v1.py",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\n  \"invalid\": {\n    \"decision\": \"DENY\",\n    \"denied_findings\": [\n      \"fixture:dynamic_exec\"\n    ],\n    \"reasons\": [\n      \"zero_tolerance_finding:dynamic_exec\"\n    ],\n    \"risk_tier\": \"CRITICAL\",\n    \"schema\": \"CDRLintSecurityScannerGateResult_v1\",\n    \"summary\": {\n      \"finding_count\": 1,\n      \"max_complexity\": 0,\n      \"todo_count\": 0\n    }\n  },\n  \"valid\": {\n    \"decision\": \"ALLOW\",\n    \"denied_findings\": [],\n    \"reasons\": [],\n    \"risk_tier\": \"HIGH\",\n    \"schema\": \"CDRLintSecurityScannerGateResult_v1\",\n    \"summary\": {\n      \"finding_count\": 0,\n      \"max_complexity\": 0,\n      \"todo_count\": 0\n    }\n  },\n  \"verdict\": \"PASS\"\n}\n"
+    },
+    {
+      "file": "tests/evals/cdr/test_cdr_real_scanner_adapter_gate_v1.py",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "PASS CDR real scanner adapter gate\n"
+    },
+    {
+      "file": "tests/evals/cdr/test_cdr_risk_tiered_test_matrix_gate_v1.py",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "test_cdr_risk_tiered_test_matrix_gate_v1.py: PASS\n"
+    },
+    {
+      "file": "tests/evals/cdr/test_cdr_security_observability_gate_v1.py",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "test_cdr_security_observability_gate_v1.py: PASS\n"
+    },
+    {
+      "file": "tests/evals/cdr/test_cdr_source_level_self_audit_gate_v1.py",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "test_cdr_source_level_self_audit_gate_v1.py: PASS\n"
+    },
+    {
+      "file": "tests/evals/cdr/test_cdr_source_style_debuggability_gate_v1.py",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "test_cdr_source_style_debuggability_gate_v1.py: PASS\n"
+    },
+    {
+      "file": "tests/evals/cdr/test_cdr_static_analysis_complexity_gate_v1.py",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "test_cdr_static_analysis_complexity_gate_v1.py: PASS\n"
+    }
+  ],
+  "cdr_evals_passed": 9,
+  "export_sha256": "EXTERNAL_SIDECAR_REQUIRED_AFTER_EXPORT",
+  "export_sha256_sidecar": "/mnt/data/METABLOOMS_OS_CDR_STAGE11_FULL_AUTHORITY_AFTER_CDR_STAGE2_TO_STAGE10_RECONSTRUCTED_CHAIN_BOOTABLE_FULL_OS_AUTHORITY_20260502T123500Z.zip.sha256",
+  "export_zip": "/mnt/data/METABLOOMS_OS_CDR_STAGE11_FULL_AUTHORITY_AFTER_CDR_STAGE2_TO_STAGE10_RECONSTRUCTED_CHAIN_BOOTABLE_FULL_OS_AUTHORITY_20260502T123500Z.zip",
+  "external_sidecar_required": true,
+  "included_cdr_stages": [
+    "CDR_STAGE2",
+    "CDR_STAGE3",
+    "CDR_STAGE4",
+    "CDR_STAGE5",
+    "CDR_STAGE6_VERIFIED_FROM_UPLOADED_SUPPORT",
+    "CDR_STAGE7_RECONSTRUCTED",
+    "CDR_STAGE8",
+    "CDR_STAGE9",
+    "CDR_STAGE10",
+    "CDR_STAGE11_EXPORT"
+  ],
+  "missing_required_artifacts": [],
+  "notes": [
+    "This authority incorporates reconstructed CDR Stage 2-7 chain plus CDR Stage 8-10 support-stage artifacts into a new bootable OS authority.",
+    "Original-vs-reconstructed status is preserved in CDR_RECONSTRUCTED_CHAIN_STAGE2_TO_STAGE7_MANIFEST_v1.json."
+  ],
+  "pre_boot_executor": {
+    "cmd": [
+      "python3",
+      "-S",
+      "/mnt/data/Metablooms_OS/0_kernel/scripts/boot_runtime_executor_v1.py",
+      "--root",
+      "/mnt/data/Metablooms_OS",
+      "--json"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "     {\n        \"name\": \"required_file:runtime/governance/full_os_recovery_replay_validator_v1.py.sha256\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/runtime/governance/full_os_recovery_replay_validator_v1.py.sha256\"\n      },\n      {\n        \"name\": \"required_file:runtime/governance/prompt_engine_telemetry_v1.py\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/runtime/governance/prompt_engine_telemetry_v1.py\"\n      },\n      {\n        \"name\": \"required_file:runtime/governance/prompt_engine_drift_gate_v1.py\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/runtime/governance/prompt_engine_drift_gate_v1.py\"\n      },\n      {\n        \"name\": \"required_file:0_kernel/registry/PROMPT_ENGINE_TELEMETRY_SCHEMA_v1.json\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/0_kernel/registry/PROMPT_ENGINE_TELEMETRY_SCHEMA_v1.json\"\n      },\n      {\n        \"name\": \"required_file:runtime/state/PROMPT_ENGINE_TELEMETRY_LOG_v1.jsonl\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/runtime/state/PROMPT_ENGINE_TELEMETRY_LOG_v1.jsonl\"\n      },\n      {\n        \"name\": \"required_file:runtime/governance/prompt_auto_improvement_loop_v1.py\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/runtime/governance/prompt_auto_improvement_loop_v1.py\"\n      },\n      {\n        \"name\": \"required_file:0_kernel/registry/PROMPT_AUTO_IMPROVEMENT_LOOP_CONTRACT_v1.json\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/0_kernel/registry/PROMPT_AUTO_IMPROVEMENT_LOOP_CONTRACT_v1.json\"\n      },\n      {\n        \"name\": \"required_file:runtime/state/PROMPT_PATCH_LEDGER_v1.jsonl\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/runtime/state/PROMPT_PATCH_LEDGER_v1.jsonl\"\n      },\n      {\n        \"name\": \"required_file:runtime/cartridges/prompt_governance_v1/validate_prompt_auto_improvement_loop_v1.py\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/runtime/cartridges/prompt_governance_v1/validate_prompt_auto_improvement_loop_v1.py\"\n      },\n      {\n        \"name\": \"required_file:runtime/governance/prompt_patch_replay_engine_v1.py\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/runtime/governance/prompt_patch_replay_engine_v1.py\"\n      },\n      {\n        \"name\": \"required_file:runtime/governance/prompt_quality_ranker_v1.py\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/runtime/governance/prompt_quality_ranker_v1.py\"\n      },\n      {\n        \"name\": \"required_file:runtime/cartridges/prompt_governance_v1/validate_prompt_patch_replay_quality_ranker_v1.py\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/runtime/cartridges/prompt_governance_v1/validate_prompt_patch_replay_quality_ranker_v1.py\"\n      },\n      {\n        \"name\": \"required_file:0_kernel/registry/PROMPT_PATCH_REPLAY_AND_QUALITY_RANKER_CONTRACT_v1.json\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/0_kernel/registry/PROMPT_PATCH_REPLAY_AND_QUALITY_RANKER_CONTRACT_v1.json\"\n      },\n      {\n        \"name\": \"required_file:runtime/state/PROMPT_PATCH_REPLAY_REPORT_v1.json\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/runtime/state/PROMPT_PATCH_REPLAY_REPORT_v1.json\"\n      },\n      {\n        \"name\": \"required_file:runtime/governance/prompt_route_preexecution_enforcer_v1.py\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/runtime/governance/prompt_route_preexecution_enforcer_v1.py\"\n      },\n      {\n        \"name\": \"required_file:runtime/governance/task_start_hook_v1.py\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/runtime/governance/task_start_hook_v1.py\"\n      },\n      {\n        \"name\": \"required_file:0_kernel/registry/PROMPT_ROUTE_PREEXECUTION_ENFORCER_CONTRACT_v1.json\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/0_kernel/registry/PROMPT_ROUTE_PREEXECUTION_ENFORCER_CONTRACT_v1.json\"\n      },\n      {\n        \"name\": \"required_file:runtime/state/PROMPT_TASK_START_LEDGER_v1.jsonl\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/runtime/state/PROMPT_TASK_START_LEDGER_v1.jsonl\"\n      },\n      {\n        \"name\": \"required_file:runtime/cartridges/prompt_governance_v1/validate_prompt_route_preexecution_enforcer_v1.py\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/runtime/cartridges/prompt_governance_v1/validate_prompt_route_preexecution_enforcer_v1.py\"\n      },\n      {\n        \"name\": \"required_file:runtime/state/PROMPT_ROUTE_PREEXECUTION_ENFORCER_VALIDATION_REPORT_v1.json\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/runtime/state/PROMPT_ROUTE_PREEXECUTION_ENFORCER_VALIDATION_REPORT_v1.json\"\n      },\n      {\n        \"name\": \"required_file:runtime/governance/full_extract_replay_recovery_proof_validator_v1.py\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/runtime/governance/full_extract_replay_recovery_proof_validator_v1.py\"\n      },\n      {\n        \"name\": \"required_file:0_kernel/registry/FULL_EXTRACT_REPLAY_RECOVERY_PROOF_CONTRACT_v1.json\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/0_kernel/registry/FULL_EXTRACT_REPLAY_RECOVERY_PROOF_CONTRACT_v1.json\"\n      },\n      {\n        \"name\": \"required_file:runtime/governance/runtime_starter_smoke_v1.py\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/runtime/governance/runtime_starter_smoke_v1.py\"\n      },\n      {\n        \"name\": \"required_file:0_kernel/registry/RUNTIME_STARTER_SMOKE_CONTRACT_v1.json\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/0_kernel/registry/RUNTIME_STARTER_SMOKE_CONTRACT_v1.json\"\n      },\n      {\n        \"name\": \"required_file:2_engines/runtime/mpp_pipeline_runner.py\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/2_engines/runtime/mpp_pipeline_runner.py\"\n      },\n      {\n        \"name\": \"required_file:0_kernel/registry/mpp_v3/MPP_V3_AUTHORITY_AND_SCHEMA_LOCK_v1.json\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/0_kernel/registry/mpp_v3/MPP_V3_AUTHORITY_AND_SCHEMA_LOCK_v1.json\"\n      },\n      {\n        \"name\": \"required_file:0_kernel/registry/mpp_v3/MPP_V3_STAGE12_INTEGRATION_AUTHORITY_BINDING_v1.json\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/0_kernel/registry/mpp_v3/MPP_V3_STAGE12_INTEGRATION_AUTHORITY_BINDING_v1.json\"\n      },\n      {\n        \"name\": \"required_file:0_kernel/mpp_v3/mpp_v3_export_promotion_gate_v1.py\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/0_kernel/mpp_v3/mpp_v3_export_promotion_gate_v1.py\"\n      },\n      {\n        \"name\": \"required_file:0_kernel/mpp_v3/mpp_v3_orchestrator_runtime_controller_v1.py\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/0_kernel/mpp_v3/mpp_v3_orchestrator_runtime_controller_v1.py\"\n      },\n      {\n        \"name\": \"required_file:0_kernel/registry/mpp_v3/policy_gates/MPP_V3_EXPORT_PROMOTION_GATE_v1.json\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/0_kernel/registry/mpp_v3/policy_gates/MPP_V3_EXPORT_PROMOTION_GATE_v1.json\"\n      },\n      {\n        \"name\": \"required_file:0_kernel/schemas/mpp_v3/EXPORT_PROMOTION_PACKET_SCHEMA_v1.json\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/0_kernel/schemas/mpp_v3/EXPORT_PROMOTION_PACKET_SCHEMA_v1.json\"\n      },\n      {\n        \"name\": \"required_file:tests/fixtures/mpp_v3/valid_export_promotion_packet_v1.json\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/tests/fixtures/mpp_v3/valid_export_promotion_packet_v1.json\"\n      },\n      {\n        \"name\": \"required_file:runtime/authority/CURRENT_EXPORT_AUTHORITY_v1.json\",\n        \"passed\": true,\n        \"path\": \"/mnt/data/Metablooms_OS/runtime/authority/CURRENT_EXPORT_AUTHORITY_v1.json\"\n      }\n    ],\n    \"manifest_id\": \"BOOT_REQUIRED_GATES_v1\"\n  },\n  \"receipt_path\": \"/mnt/data/Metablooms_OS/0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777724317465.json\"\n}\n"
+  },
+  "pre_portable_boot_verify": {
+    "cmd": [
+      "python3",
+      "-S",
+      "/mnt/data/Metablooms_OS/portable_full_os_boot_verify.py",
+      "/mnt/data/Metablooms_OS"
+    ],
+    "returncode": 0,
+    "stderr": "/mnt/data/Metablooms_OS/portable_full_os_boot_verify.py:5: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n  def now(): return datetime.datetime.utcnow().replace(microsecond=0).isoformat()+'Z'\n",
+    "stdout": "{\n  \"stage\": \"PORTABLE_FULL_OS_BOOT_VERIFY_REPAIRED_H0B2\",\n  \"timestamp_utc\": \"2026-05-02T12:18:37Z\",\n  \"status\": \"PASS\",\n  \"root\": \"/mnt/data/Metablooms_OS\",\n  \"errors\": [],\n  \"sandbox_policy\": \"ALLOW\",\n  \"chat_kernel\": \"ALLOW\"\n}\n"
+  },
+  "pre_runtime_starter_smoke": {
+    "cmd": [
+      "python3",
+      "-S",
+      "/mnt/data/Metablooms_OS/runtime/governance/runtime_starter_smoke_v1.py",
+      "--root",
+      "/mnt/data/Metablooms_OS",
+      "--json"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\n  \"decision\": \"ALLOW\",\n  \"invalid_json\": [],\n  \"missing\": [],\n  \"mode\": \"root\",\n  \"path\": \"/mnt/data/Metablooms_OS\",\n  \"read_errors\": []\n}\n"
+  },
+  "required_artifacts_checked": [
+    "0_kernel/registry/cdr/CDR_CODE_ACCEPTANCE_CONTRACT_v1.json",
+    "0_kernel/registry/cdr/CDR_RECURSIVE_AUDIT_LOOP_v1.json",
+    "0_kernel/registry/cdr/CDR_RISK_TIERED_TEST_MATRIX_v1.json",
+    "0_kernel/registry/cdr/CDR_RECURSIVE_AUDIT_EXPANSION_v1.json",
+    "0_kernel/registry/cdr/CDR_RISK_TIERED_ACCEPTANCE_POLICY_v1.json",
+    "0_kernel/registry/cdr/CDR_SOURCE_LEVEL_SELF_AUDIT_PROTOCOL_v1.json",
+    "0_kernel/registry/cdr/CDR_FIXTURE_GENERATION_POLICY_v1.json",
+    "0_kernel/registry/cdr/CDR_SOURCE_STYLE_AND_DEBUGGABILITY_RETROFIT_PROTOCOL_v1.json",
+    "0_kernel/registry/cdr/CDR_ADAPTABILITY_INTERFACE_CONTRACT_SPEC_v1.json",
+    "0_kernel/registry/cdr/CDR_ADAPTABILITY_INTERFACE_POLICY_v1.json",
+    "0_kernel/registry/cdr/CDR_SECURITY_OBSERVABILITY_DEEPENING_SPEC_v1.json",
+    "0_kernel/registry/cdr/CDR_SECURITY_OBSERVABILITY_POLICY_v1.json",
+    "0_kernel/registry/cdr/CDR_STATIC_ANALYSIS_COMPLEXITY_QUALITY_GATE_SPEC_v1.json",
+    "0_kernel/registry/cdr/CDR_STATIC_ANALYSIS_COMPLEXITY_POLICY_v1.json",
+    "0_kernel/registry/cdr/CDR_LINT_SECURITY_SCANNER_INTEGRATION_SPEC_v1.json",
+    "0_kernel/registry/cdr/CDR_LINT_SECURITY_SCANNER_POLICY_v1.json",
+    "0_kernel/registry/cdr/CDR_REAL_SCANNER_ADAPTER_INSTALL_PROFILES_v1.json",
+    "0_kernel/registry/cdr/CDR_REAL_SCANNER_ADAPTER_POLICY_v1.json",
+    "0_kernel/registry/cdr/CDR_RECONSTRUCTED_CHAIN_STAGE2_TO_STAGE7_MANIFEST_v1.json",
+    "runtime/quality/cdr/CDR_LINT_SECURITY_BASELINE_LATEST.json",
+    "runtime/governance/cdr_code_acceptance_gate_v1.py",
+    "runtime/governance/cdr_risk_tiered_test_matrix_gate_v1.py",
+    "runtime/governance/cdr_source_level_self_audit_gate_v1.py",
+    "runtime/governance/cdr_source_style_debuggability_gate_v1.py",
+    "runtime/governance/cdr_adaptability_interface_contract_gate_v1.py",
+    "runtime/governance/cdr_security_observability_gate_v1.py",
+    "runtime/governance/cdr_static_analysis_complexity_gate_v1.py",
+    "runtime/governance/cdr_lint_security_scanner_gate_v1.py",
+    "runtime/governance/cdr_real_scanner_adapter_gate_v1.py"
+  ],
+  "schema": "MetaBloomsStageReceipt_v1",
+  "source_authority": "/mnt/data/METABLOOMS_OS_STAGE6U_FULL_AUTHORITY_AFTER_6T_BOOTABLE_FULL_OS_AUTHORITY_20260502T035000Z.zip",
+  "source_authority_sidecar_ok": true,
+  "stage": "CDR_STAGE11_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE2_TO_STAGE10_RECONSTRUCTED_CHAIN",
+  "support_bundle_not_authority": false,
+  "timestamp_utc": "2026-05-02T12:35:00Z",
+  "verdict": "PASS_PRE_EXPORT_READY"
+}

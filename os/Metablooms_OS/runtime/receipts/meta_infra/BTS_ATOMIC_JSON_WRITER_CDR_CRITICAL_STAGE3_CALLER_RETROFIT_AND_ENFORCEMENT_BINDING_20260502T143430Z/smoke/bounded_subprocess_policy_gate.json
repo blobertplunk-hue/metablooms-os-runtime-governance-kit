@@ -1,0 +1,540 @@
+{
+  "all_hits": [
+    {
+      "blocking": false,
+      "kind": "subprocess.Popen",
+      "line": 286,
+      "path": "0_kernel/lib/execution/bounded_subprocess_wrapper_v1.py",
+      "zone": "bounded_wrapper_internal_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 50,
+      "path": "0_kernel/registry/failure_learning/FL17-MERGE-5_FULL_OS_EXPORT_RECOVERY_VALIDATION/inputs/FL17_MERGE_3/TRACKER_STAGE_FINALIZATION_HOOK_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.check_call",
+      "line": 28,
+      "path": "0_kernel/vendor/python/libcst/codegen/generate.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.check_call",
+      "line": 71,
+      "path": "0_kernel/vendor/python/libcst/codegen/generate.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.check_output",
+      "line": 61,
+      "path": "0_kernel/vendor/python/libcst/codemod/_cli.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 23,
+      "path": "0_kernel/vendor/python/libcst/codemod/tests/test_codemod_cli.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.check_output",
+      "line": 47,
+      "path": "0_kernel/vendor/python/libcst/codemod/tests/test_codemod_cli.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 72,
+      "path": "0_kernel/vendor/python/libcst/codemod/tests/test_codemod_cli.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 101,
+      "path": "0_kernel/vendor/python/libcst/codemod/tests/test_codemod_cli.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 66,
+      "path": "0_kernel/vendor/python/libcst/metadata/tests/test_type_inference_provider.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 70,
+      "path": "0_kernel/vendor/python/libcst/metadata/tests/test_type_inference_provider.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 69,
+      "path": "0_kernel/vendor/python/libcst/metadata/type_inference_provider.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 17,
+      "path": "0_kernel/vendor/python/ruff/__main__.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 56,
+      "path": "runtime/governance/legacy_archives/R8_python_health/p0py_python_health_governance_v1.staged_source.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 71,
+      "path": "runtime/governance/legacy_archives/R8_python_health/p0py_python_health_governance_v1.staged_source.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 86,
+      "path": "runtime/governance/legacy_archives/claude_memory_sync_writer_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 198,
+      "path": "runtime/governance/legacy_archives/claude_memory_sync_writer_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 50,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T140037Z/backups/0_kernel/cartridges/inline_project_tracker/TRACKER_STAGE_FINALIZATION_HOOK_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 58,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T140037Z/backups/0_kernel/lib/archive_extraction_route_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 14,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T140037Z/backups/0_kernel/lib/archive_method_router_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 12,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T140037Z/backups/0_kernel/lib/filesystem_safety_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 39,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/cartridges/inline_project_tracker/TRACKER_SMOKE_TEST_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 43,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/cartridges/inline_project_tracker/TRACKER_SMOKE_TEST_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 52,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/cartridges/inline_project_tracker/TRACKER_SMOKE_TEST_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 55,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/cartridges/inline_project_tracker/TRACKER_SMOKE_TEST_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 23,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/agent_harness_diff_review_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 23,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/artifact_replay_proof_v2.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 24,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/cartridge_executor_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 29,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/cartridge_executor_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 41,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/cartridge_executor_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 42,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/cartridge_executor_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 52,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/cartridge_executor_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 53,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/cartridge_executor_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 62,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/cartridge_executor_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 72,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/cartridge_executor_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 82,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/cartridge_executor_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 95,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/cartridge_executor_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 96,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/cartridge_executor_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 33,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/ensure_libcst_available_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 21,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/ensure_ruff_available_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 20,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/governed_run.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 74,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/p0py_python_health_governance_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 94,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/registry_mutation_engine_v2_lite_final.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 41,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/run_governance_regression_suite_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 29,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/stage_runner_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 67,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/stage_runner_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 83,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/stage_runner_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 48,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/stage_runner_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 83,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/sync_writer_baseline_sha_patch_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 123,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/sync_writer_baseline_sha_patch_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 89,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/transactional_stage_runner_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 34,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_agent_harness_stage1_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 35,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_agent_harness_stage2_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 39,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_agent_harness_stage2_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 20,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_agent_harness_stage3_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 37,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_education_validity_stage1_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 11,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_education_validity_stage2_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 11,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_education_validity_stage2_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 21,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_evals_evaluator_runner_stage3_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 27,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_evals_validator_alignment_stage4_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 11,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_filesystem_handling_safety_stage1_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 9,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_filesystem_handling_safety_stage2_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 14,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_operator_surface_stage3_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 13,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_operator_surface_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 11,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_runaway_turn_breaker_stage0_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 25,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_security_hardwired_stage3_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 26,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_security_hardwired_stage3_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 26,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_security_red_team_stage4_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 13,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_software_quality_stage2_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 14,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_state_checkpoint_stage2_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 186,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/runtime/governance/bts_v4/BTS.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 585,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/runtime/governance/bts_v4/BTS.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 138,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/runtime/governance/executors/bts_wrapped_executors_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 375,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/runtime/governance/executors/bts_wrapped_executors_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    },
+    {
+      "blocking": false,
+      "kind": "subprocess.run",
+      "line": 18,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/runtime/governance/full_os_recovery_replay_validator_v1.py",
+      "zone": "snapshot_vendor_legacy_or_artifact_exempt"
+    }
+  ],
+  "artifact_type": "METABLOOMS_BOUNDED_SUBPROCESS_CALLSITE_POLICY_GATE_STAGE4_v1",
+  "blocking_count": 0,
+  "blocking_hits": [],
+  "created_utc": "20260502T143437Z",
+  "policy": "Direct subprocess/os command invocation is blocked in live governance code outside bounded wrapper internals; non-live snapshots/tests/vendor are warnings for later stages.",
+  "root": "/mnt/data/Metablooms_OS",
+  "summary_by_zone": {
+    "bounded_wrapper_internal_exempt": 1,
+    "snapshot_vendor_legacy_or_artifact_exempt": 74
+  },
+  "verdict": "PASS"
+}

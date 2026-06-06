@@ -1,0 +1,7 @@
+{
+  "id": "CDR_LINCHPIN_RECURSIVE_AUDIT_DEEPENING_REQUIRED_v1",
+  "requires": "CDR linchpin recursive audit packets must pass cdr_linchpin_recursive_audit_gate_v1 before CDR can claim no further high-value improvement remains.",
+  "schema": "Invariant_v1",
+  "stage": "CDR_STAGE12_CDR_LINCHPIN_RECURSIVE_AUDIT_DEEPENING",
+  "status": "active"
+}

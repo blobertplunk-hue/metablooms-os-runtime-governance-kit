@@ -1,0 +1,29 @@
+{
+  "action_type": "export",
+  "approval_token": "STAGE6J_EXPLICIT_BUDGET_APPROVAL_BOOTABLE_FULL_OS_AUTHORITY_EXPORT_AFTER_RESOLVER_RETROFIT",
+  "artifacts": {
+    "read_paths": [
+      "/mnt/data/Metablooms_OS",
+      "/mnt/data/Metablooms_OS/runtime/tooling/governed_install_profiles/node_zip_authority_repair_v1",
+      "/mnt/data/metablooms_stage4c_node_stream_rebuild_20260501T233500Z"
+    ],
+    "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/STAGE6J_FULL_AUTHORITY_EXPORT_20260502T030200Z_node_zip_profile_export.decision.json",
+    "write_paths": [
+      "/mnt/data/METABLOOMS_OS_STAGE6J_FULL_AUTHORITY_AFTER_BTS_TOOL_UNIVERSE_RESOLVER_RETROFIT_BOOTABLE_FULL_OS_AUTHORITY_20260502T030200Z.zip"
+    ]
+  },
+  "envelope_id": "STAGE6J_FULL_AUTHORITY_EXPORT_20260502T030200Z_node_zip_profile_export",
+  "intent": "Create BOOTABLE FULL OS AUTHORITY ZIP after BTS Tool Universe Resolver retrofit and user-facing download label hardening",
+  "limits": {
+    "max_bytes": 59219128,
+    "max_files": 3456,
+    "max_steps": 40,
+    "timeout_seconds": 90
+  },
+  "requested_at_utc": "2026-05-02T01:39:24.786459Z",
+  "requires_see": false,
+  "risk_tier": "critical",
+  "schema_version": "ToolCallEnvelope_v1",
+  "stage_id": "STAGE6J_FULL_AUTHORITY_EXPORT_AFTER_BTS_TOOL_UNIVERSE_RESOLVER_RETROFIT",
+  "tool_name": "bts_wrapped_node_zip_profile_export"
+}

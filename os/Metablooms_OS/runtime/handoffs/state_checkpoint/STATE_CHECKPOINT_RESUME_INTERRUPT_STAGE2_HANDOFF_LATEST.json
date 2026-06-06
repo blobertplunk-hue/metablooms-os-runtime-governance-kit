@@ -1,0 +1,8 @@
+{
+  "artifact_type": "STATE_CHECKPOINT_RESUME_INTERRUPT_STAGE2_HANDOFF_v1",
+  "completed_stage": "IMPLEMENT_STATE_CHECKPOINT_RESUME_AND_INTERRUPT_CARTRIDGE_STAGE_2_WIRE_INTO_STAGE_RUNNER_AND_SECURITY_INTERRUPTS",
+  "continuation_rule": "Run one bounded stage; runner execution must use checkpoint+security gate path.",
+  "created_utc": "20260501T162800Z",
+  "next_stage": "IMPLEMENT_SECURITY_ARTIFACT_THREAT_MODEL_STAGE_4_RED_TEAM_FIXTURES_OR_AGENT_HARNESS_STAGE_1",
+  "status": "READY_FOR_VALIDATION"
+}

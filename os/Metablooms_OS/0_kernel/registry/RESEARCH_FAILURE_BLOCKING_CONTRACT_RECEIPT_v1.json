@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "created_at": 1777063362.4516106,
+  "stage": "E2_RESEARCH_FAILURE_BLOCKING_CONTRACT",
+  "status": "rematerialized_after_F7",
+  "contract": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/RESEARCH_FAILURE_BLOCKING_CONTRACT_v1.json",
+  "script": "/mnt/data/Metablooms_OS_refined/0_kernel/scripts/research_failure_blocker_v1.py",
+  "verdict": "PASS",
+  "next_correct_command": "EXECUTE STAGE E3 \u2014 TOOL GOVERNANCE ROUTER PROOF"
+}

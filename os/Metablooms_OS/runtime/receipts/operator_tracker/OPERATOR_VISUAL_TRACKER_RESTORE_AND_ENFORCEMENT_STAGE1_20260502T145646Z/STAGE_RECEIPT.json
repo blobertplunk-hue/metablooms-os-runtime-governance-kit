@@ -1,0 +1,42 @@
+{
+  "artifact_type": "STAGE_RECEIPT",
+  "artifacts": {
+    "handoff": "/mnt/data/Metablooms_OS/runtime/handoffs/operator_tracker/OPERATOR_VISUAL_TRACKER_RESTORE_AND_ENFORCEMENT_STAGE1_HANDOFF_LATEST.json",
+    "policy": "/mnt/data/Metablooms_OS/0_kernel/registry/operator_surface/OPERATOR_TRACKER_ENFORCEMENT_POLICY_v1.json",
+    "preview": "/mnt/data/Metablooms_OS/runtime/handoffs/operator_tracker/CURRENT_OPERATOR_TRACKER_PREVIEW_LATEST.md",
+    "see_evidence": "/mnt/data/Metablooms_OS/runtime/receipts/operator_tracker/OPERATOR_VISUAL_TRACKER_RESTORE_AND_ENFORCEMENT_STAGE1_20260502T145646Z/SEE_EVIDENCE_PACKET.json",
+    "state": "/mnt/data/Metablooms_OS/runtime/receipts/operator_tracker/OPERATOR_VISUAL_TRACKER_RESTORE_AND_ENFORCEMENT_STAGE1_20260502T145646Z/OPERATOR_TRACKER_STATE_v1.json",
+    "validation_report": "/mnt/data/Metablooms_OS/runtime/receipts/operator_tracker/OPERATOR_VISUAL_TRACKER_RESTORE_AND_ENFORCEMENT_STAGE1_20260502T145646Z/OPERATOR_TRACKER_ENFORCEMENT_VALIDATION.json",
+    "validator": "/mnt/data/Metablooms_OS/0_kernel/validators/validate_operator_tracker_enforcement_stage1_v1.py"
+  },
+  "checks": {
+    "latest_full_authority_exists": true,
+    "latest_full_authority_sha256": "66bba2bd61cb9a4b8335025a05bfd18cb3772fa1fc687eaeab1bacac4016de1e",
+    "policy_written": true,
+    "preview_written": true,
+    "root_exists": true,
+    "stage1_append_log_handoff_exists": true,
+    "stage5_atomic_json_handoff_exists": true,
+    "validator_execution": true,
+    "validator_py_compile": true,
+    "validator_written": true
+  },
+  "compile_stderr": "",
+  "created_utc": "20260502T145646Z",
+  "full_authority_export": {
+    "artifact_type": "FULL_AUTHORITY_EXPORT_RESULT",
+    "created_utc": "20260502T145646Z",
+    "full_export_path": "/mnt/data/METABLOOMS_OS_OPERATOR_VISUAL_TRACKER_RESTORE_STAGE1_FULL_AUTHORITY_20260502T145646Z.zip",
+    "full_export_sha256": "0c228a5cd4e6853f5ed6d27658fe8c0272b269fe1139a0839cb347c828c5cc36",
+    "stage": "OPERATOR_VISUAL_TRACKER_RESTORE_AND_ENFORCEMENT_STAGE1",
+    "stage_bundle_path": "/mnt/data/Metablooms_OS/runtime/stage_bundles/operator_tracker/OPERATOR_VISUAL_TRACKER_RESTORE_AND_ENFORCEMENT_STAGE1_20260502T145646Z.zip",
+    "stage_bundle_sha256": "93cd2cc6b51550c3ea423d672ebc0954674a4d40cf7bc62ee8f9e015081b56e6",
+    "stage_bundle_testzip": "PASS",
+    "status": "PASS",
+    "zip_testzip": "PASS"
+  },
+  "stage": "OPERATOR_VISUAL_TRACKER_RESTORE_AND_ENFORCEMENT_STAGE1",
+  "status": "PASS",
+  "validation_stderr": "",
+  "validation_stdout": "{\n  \"checks\": {\n    \"latest_bootable_exists\": \"PASS\",\n    \"latest_bootable_sha_matches\": \"PASS\",\n    \"policy_active\": \"PASS\",\n    \"policy_exists\": \"PASS\",\n    \"preview_contains_atomic_append-log_writer\": \"PASS\",\n    \"preview_contains_latest_bootable_full_os\": \"PASS\",\n    \"preview_contains_next_pointer\": \"PASS\",\n    \"preview_contains_optional\": \"PASS\",\n    \"preview_contains_workstream_map\": \"PASS\",\n    \"preview_exists\": \"PASS\",\n    \"root_exists\": \"PASS\"\n  },\n  \"errors\": [],\n  \"policy_path\": \"/mnt/data/Metablooms_OS/0_kernel/registry/operator_surface/OPERATOR_TRACKER_ENFORCEMENT_POLICY_v1.json\",\n  \"preview_path\": \"/mnt/data/Metablooms_OS/runtime/handoffs/operator_tracker/CURRENT_OPERATOR_TRACKER_PREVIEW_LATEST.md\",\n  \"status\": \"PASS\",\n  \"validator\": \"validate_operator_tracker_enforcement_stage1_v1\"\n}\n"
+}

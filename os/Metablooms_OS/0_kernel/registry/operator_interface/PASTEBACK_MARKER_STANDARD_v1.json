@@ -1,0 +1,11 @@
+{
+  "id": "PASTEBACK_MARKER_STANDARD_v1",
+  "status": "active",
+  "command_marker": "solid block header using █ characters",
+  "pasteback_marker": "🚨🚨🚨 COPY BACK TO CHAT — START/END 🚨🚨🚨",
+  "pasteback_color": "Cyan",
+  "fallback_color": "White",
+  "avoid_color": "Magenta",
+  "clipboard_copyback_required_for_powershell": true,
+  "updated_by_stage": "STAGE28_WC13_STAGING_BUILD"
+}

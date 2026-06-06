@@ -1,0 +1,21 @@
+{
+  "conflict_count": 1856,
+  "conflict_policy": "Stage12 wins; explicit Stage12-side patches only.",
+  "created_utc": "2026-05-01T01:59:04.641710Z",
+  "decision": "IMPLEMENTED_MINIMAL_SAFE_STEP",
+  "imported_mpp_only_non_cache_count": 403,
+  "patched_paths": [
+    "0_kernel/registry/BOOT_REQUIRED_GATES_v1.json",
+    "0_kernel/registry/CONTROLLED_GOVERNANCE_ARTIFACT_INDEX_v1.json",
+    "0_kernel/registry/REUSABLE_ASSET_INDEX_v1.json",
+    "0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "0_kernel/registry/mpp_v3/MPP_V3_STAGE12_INTEGRATION_AUTHORITY_BINDING_v1.json",
+    "2_engines/runtime/mpp_pipeline_runner.py",
+    "CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "runtime/authority/CURRENT_EXPORT_AUTHORITY_v1.json",
+    "runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "runtime/reusable_assets/REUSABLE_ASSET_INDEX_v1.json"
+  ],
+  "skipped_cache_or_dirs": 303,
+  "stage": "MPP_PROMPT_OS_INTEGRATION_1B_STREAM_ONLY_NO_FULL_MATERIALIZATION"
+}

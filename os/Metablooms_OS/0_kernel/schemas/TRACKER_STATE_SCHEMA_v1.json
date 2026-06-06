@@ -1,0 +1,302 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://metablooms.local/schemas/TRACKER_STATE_SCHEMA_v1.json",
+  "title": "MetaBlooms Inline Project Tracker State v1",
+  "description": "Durable state for the inline project tracker rendered at the top of governed project turns.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "tracker_id",
+    "project_id",
+    "project_name",
+    "mode",
+    "active_root",
+    "status",
+    "current_stage",
+    "stage_index",
+    "stage_total",
+    "progress_mode",
+    "completed_stages",
+    "now",
+    "evidence",
+    "blocker",
+    "next_allowed_action",
+    "stop_rule",
+    "authority",
+    "last_updated_utc",
+    "validation",
+    "history"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "TRACKER_STATE_v1"
+    },
+    "tracker_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "governed_project",
+        "general_project",
+        "research_project",
+        "implementation_project"
+      ]
+    },
+    "active_root": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "UNBOOTED",
+        "BOOTING",
+        "BOOTED",
+        "RUNNING",
+        "BLOCKED",
+        "DONE",
+        "FAILED_CLOSED"
+      ]
+    },
+    "current_stage": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stage_index": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "stage_total": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "progress_mode": {
+      "type": "string",
+      "enum": [
+        "determinate",
+        "indeterminate"
+      ]
+    },
+    "progress_label": {
+      "type": "string",
+      "minLength": 1
+    },
+    "completed_stages": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "now": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "label",
+          "path",
+          "sha256",
+          "kind"
+        ],
+        "properties": {
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "receipt",
+              "handoff",
+              "schema",
+              "state",
+              "manifest",
+              "bundle",
+              "source",
+              "probe"
+            ]
+          }
+        }
+      }
+    },
+    "blocker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "present",
+        "summary",
+        "evidence_path"
+      ],
+      "properties": {
+        "present": {
+          "type": "boolean"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "evidence_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "next_allowed_action": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stop_rule": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authority": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "last_updated_utc": {
+      "type": "string",
+      "pattern": "^[0-9]{8}T[0-9]{6}Z$"
+    },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_validated",
+        "state_validated",
+        "percent_rule",
+        "mobile_safe_width_chars"
+      ],
+      "properties": {
+        "schema_validated": {
+          "type": "boolean"
+        },
+        "state_validated": {
+          "type": "boolean"
+        },
+        "percent_rule": {
+          "type": "string",
+          "enum": [
+            "determinate_allowed",
+            "indeterminate_required"
+          ]
+        },
+        "mobile_safe_width_chars": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 80
+        }
+      }
+    },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "stage",
+          "status",
+          "timestamp_utc",
+          "evidence_path"
+        ],
+        "properties": {
+          "stage": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "timestamp_utc": {
+            "type": "string",
+            "pattern": "^[0-9]{8}T[0-9]{6}Z$"
+          },
+          "evidence_path": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "progress_mode": {
+            "const": "determinate"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "stage_index",
+          "stage_total"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "progress_mode": {
+            "const": "indeterminate"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "stage_index": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "stage_total": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema": "MetaBloomsFullAuthorityExportProvenance_v1",
+  "stage": "PROFESSIONALIZATION_CONVERGENCE_STAGE31_WC13_ROOT_AUTHORITY_NARRATIVE_REPAIR_AND_PREVENTION_LOCK",
+  "timestamp_utc": "2026-05-03T23:18:30Z",
+  "exporter": "stage31_root_authority_repair using python3 -S stdlib zipfile",
+  "source_authority_zip": "/mnt/data/METABLOOMS_WC13_FINAL_BOOTABLE_FULL_AUTHORITY_REPAIRED_20260503T222300Z.zip",
+  "source_authority_sha256": "a63e117eb253c45dc1bdbc7da92304cb0d3df5140d678ca74b3bab7095e9d143",
+  "root_exported": "/mnt/data/Metablooms_OS",
+  "hash_resolution": "external_sidecar_required_after_export",
+  "repair_cause": "External audit correctly found stale root identity/narrative/provenance files in WC13 final export.",
+  "repaired_files": [
+    "NEW_CHAT_START_HERE.md",
+    "BOOT_AUTHORITY_MANIFEST_v1.json",
+    "0_kernel/registry/boot_authority/BOOT_AUTHORITY_MANIFEST_v1.json",
+    "EXPORT_MANIFEST_v1.json",
+    "EXPORT_PROVENANCE_v1.json",
+    "CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "CURRENT_EXPORT_AUTHORITY_v1.json",
+    "BOOT_HANDOFF_WC13.md"
+  ],
+  "removed_root_debug_artifacts": [
+    ".write_probe_20260502T163408Z",
+    ".write_probe_stage13_20260502T183045Z",
+    ".write_probe_stage14_20260502T190150Z",
+    ".write_probe_stage15_20260502T191509Z",
+    ".write_probe_stage15_20260502T191509Z.sha256",
+    ".write_probe_stage16_20260502T191921Z",
+    ".write_probe_stage16_20260502T191921Z.sha256"
+  ],
+  "prevention_added": [
+    "0_kernel/validators/validate_current_authority_identity_v1.py",
+    "0_kernel/registry/boot_authority/CURRENT_AUTHORITY_IDENTITY_CONTRACT_v1.json"
+  ]
+}

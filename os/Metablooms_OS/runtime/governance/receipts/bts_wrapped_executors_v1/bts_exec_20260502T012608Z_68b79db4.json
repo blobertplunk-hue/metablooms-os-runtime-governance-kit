@@ -1,0 +1,58 @@
+{
+  "bts_receipt_id": "T1-STAGE6I_WRITE_FIXTURE_20260502T012608Z_filesystem_write_artifact-20260502T012608Z",
+  "bts_turn_committed": true,
+  "implementation_reality": {
+    "actual_files": [
+      "/mnt/data/Metablooms_OS/runtime/tmp/stage6i_resolver_write_fixture.txt"
+    ],
+    "claimed_files": [
+      "/mnt/data/Metablooms_OS/runtime/tmp/stage6i_resolver_write_fixture.txt"
+    ],
+    "unclaimed": [],
+    "unfulfilled": [],
+    "verdict": "PASS"
+  },
+  "kind": "filesystem_write",
+  "policy_decision": {
+    "decided_at_utc": "2026-05-02T01:26:08Z",
+    "decision": "ALLOW",
+    "decision_id": "decision_1777685168614_5af04d87",
+    "enforced_by": "pre_tool_action_gate_v1",
+    "envelope_id": "STAGE6I_WRITE_FIXTURE_20260502T012608Z_filesystem_write",
+    "envelope_sha256": "ede04cb1b0d0effb546248c47471067d1e4b2b8026ae51e9354c56d49046cbb1",
+    "matched_rules": [
+      "schema.required",
+      "path.safety",
+      "runaway.breaker",
+      "method.reliability"
+    ],
+    "rationale": "Envelope passed schema, method, path, SEE, approval, and bounded-budget checks.",
+    "reason_code": "LOW_RISK_BOUNDED_ACTION",
+    "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/STAGE6I_WRITE_FIXTURE_20260502T012608Z_filesystem_write.decision.json",
+    "required_next_action": "execute_action_and_write_action_receipt",
+    "safe_to_execute": true,
+    "schema_version": "PolicyDecision_v1",
+    "stage_id": "STAGE6I"
+  },
+  "receipt_id": "bts_exec_20260502T012608Z_68b79db4",
+  "schema": "mb.bts_wrapped_executors.v1",
+  "stage_id": "STAGE6I",
+  "target": "/mnt/data/Metablooms_OS/runtime/tmp/stage6i_resolver_write_fixture.txt",
+  "target_bytes": 37,
+  "target_sha256": "9aa29da703ac2c30899e574ef39db4cd40a312d8304d6607cfaacf2a84112d8a",
+  "timestamp_utc": "2026-05-02T01:26:08.797508Z",
+  "tool_selection_sufficiency": {
+    "covered_candidate_count": 1,
+    "missing_candidates": [],
+    "reasons": [],
+    "required_candidate_count": 1,
+    "schema": "TOOL_SELECTION_SUFFICIENCY_GATE_RESULT_v1",
+    "selected_tool_id": "bts_wrapped_filesystem_write",
+    "timestamp_utc": "2026-05-02T01:26:08.529338Z",
+    "top_allowed_tool_id": "bts_wrapped_filesystem_write",
+    "verdict": "PASS"
+  },
+  "tool_universe_candidate_set_id": null,
+  "turn_id": "STAGE6I_WRITE_FIXTURE_20260502T012608Z",
+  "verdict": "PASS"
+}

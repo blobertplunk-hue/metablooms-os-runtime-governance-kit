@@ -1,0 +1,19 @@
+{
+  "classifier_path": "0_kernel/mpp_v3/promotion_authority_repair_inventory_classifier_v1.py",
+  "classifier_sha256": "171b26803a180c8f2fe5bb6ffbce1d5db893577cd89ecb07e9ac505be066409a",
+  "counts": {
+    "controlled_files_scanned": 2086,
+    "missing_from_registry": 452,
+    "registered_entries": 3086,
+    "registered_hash_mismatches": 85,
+    "stale_live_authority_refs": 4,
+    "total_repair_items": 541
+  },
+  "created_at": "2026-05-02T20:14:02.789329+00:00",
+  "decision": "REPAIR_REQUIRED",
+  "latest_inventory_path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER_20260502T201258Z/PROMOTION_AUTHORITY_REPAIR_CLASSIFIED_INVENTORY_v1.json",
+  "latest_inventory_sha256": "5e41095532de0f4d7965caf731310daa5a399e97da06d58b78e6dd730ffacdd5",
+  "mutated_authority": false,
+  "schema_version": "metablooms.pac.stage4.latest_inventory_pointer.v1",
+  "stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER"
+}

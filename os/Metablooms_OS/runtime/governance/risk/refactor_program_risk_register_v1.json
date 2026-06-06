@@ -1,0 +1,110 @@
+{
+  "risk_register_id": "refactor_program_risk_register_v1",
+  "timestamp_utc": "20260428T024157Z",
+  "risks": [
+    {
+      "risk_id": "RISK-001",
+      "title": "Source bundle missing one or more named artifacts",
+      "description": "Required Claude-originated artifacts may be absent from the repaired source bundle.",
+      "trigger": "One or more target zip entries absent during R0 intake.",
+      "likelihood": "medium",
+      "impact": "high",
+      "detection_method": "Compare required target list to zip namelist during R0.",
+      "mitigation": "Mark absent entries explicitly; stage only present artifacts; block promotion of absent artifacts.",
+      "fallback_branch": "retry_after_reprobe",
+      "owner_artifact": "/mnt/data/Metablooms_OS/receipts/refactor_program/R0_SOURCE_INTAKE_MANIFEST_20260428T023844Z.json",
+      "status": "observed_clear"
+    },
+    {
+      "risk_id": "RISK-002",
+      "title": "Live runtime already contains conflicting successor artifacts",
+      "description": "The live runtime may already include files that would conflict with imported artifacts or successors.",
+      "trigger": "R1 or later detects overlapping destination paths or divergent successor files.",
+      "likelihood": "medium",
+      "impact": "high",
+      "detection_method": "Path-bind and hash live runtime targets before any promotion.",
+      "mitigation": "Use disposition contract and deterministic merge/refactor protocol.",
+      "fallback_branch": "quarantine_conflict_and_continue",
+      "owner_artifact": "/mnt/data/Metablooms_OS/runtime/governance/contracts/artifact_disposition_contract_v1.json",
+      "status": "observed_clear"
+    },
+    {
+      "risk_id": "RISK-003",
+      "title": "python3 -S lane incompatible with a needed import path",
+      "description": "Imported scripts may depend on site-initialized paths or imports unavailable under python3 -S.",
+      "trigger": "Promoted script fails under python3 -S.",
+      "likelihood": "medium",
+      "impact": "medium",
+      "detection_method": "Run promoted Python artifacts through python3 -S smoke tests.",
+      "mitigation": "Prefer shell-first; add explicit PYTHONPATH; quarantine incompatible branches.",
+      "fallback_branch": "defer_to_repair_backlog",
+      "owner_artifact": "/mnt/data/Metablooms_OS/receipts/refactor_program/R0_SOURCE_INTAKE_MANIFEST_20260428T023844Z.json",
+      "status": "open"
+    },
+    {
+      "risk_id": "RISK-004",
+      "title": "Stage produces archival ADR but no executable successor",
+      "description": "Narrative artifacts could be converted to ADRs without creating the needed machine-readable contract or validator.",
+      "trigger": "Split disposition lacks successor artifact ids or paths.",
+      "likelihood": "medium",
+      "impact": "high",
+      "detection_method": "R1 gate requiring successor targets for all split items.",
+      "mitigation": "Block split disposition until executable successor target is path-bound.",
+      "fallback_branch": "archive_without_promotion",
+      "owner_artifact": "/mnt/data/Metablooms_OS/runtime/governance/contracts/artifact_disposition_contract_v1.json",
+      "status": "observed_clear"
+    },
+    {
+      "risk_id": "RISK-005",
+      "title": "Registry enables a gate whose entrypoint does not exist",
+      "description": "A future gate registry may point to missing scripts/schemas.",
+      "trigger": "Enabled registry entry fails path existence check.",
+      "likelihood": "medium",
+      "impact": "high",
+      "detection_method": "Registry integrity validator.",
+      "mitigation": "Fail closed on missing entrypoints.",
+      "fallback_branch": "defer_to_repair_backlog",
+      "owner_artifact": "/mnt/data/Metablooms_OS/receipts/refactor_program/R0_SOURCE_INTAKE_MANIFEST_20260428T023844Z.json",
+      "status": "open"
+    },
+    {
+      "risk_id": "RISK-006",
+      "title": "Telemetry schema and engine drift structurally",
+      "description": "Telemetry JS and schema may evolve independently and diverge.",
+      "trigger": "Validator or fixtures fail against demo payloads.",
+      "likelihood": "medium",
+      "impact": "medium",
+      "detection_method": "Schema-engine conformance validation with replay fixtures.",
+      "mitigation": "Create fixtures and validator before promotion.",
+      "fallback_branch": "defer_to_repair_backlog",
+      "owner_artifact": "/mnt/data/Metablooms_OS/receipts/refactor_program/R0_SOURCE_INTAKE_MANIFEST_20260428T023844Z.json",
+      "status": "open"
+    },
+    {
+      "risk_id": "RISK-007",
+      "title": "Option-analysis overhead stalls simple stages",
+      "description": "Overly broad option analysis may slow bounded stages.",
+      "trigger": "Decision logging spends disproportionate time on Class B/C changes.",
+      "likelihood": "medium",
+      "impact": "medium",
+      "detection_method": "Compare logged decision class and time bound to actual stage scope.",
+      "mitigation": "Apply bounded decision classes with time limits.",
+      "fallback_branch": "retry_after_reprobe",
+      "owner_artifact": "/mnt/data/Metablooms_OS/runtime/governance/decision_logs/DECISION_LOG_R1_20260428T024157Z.json",
+      "status": "observed_clear"
+    },
+    {
+      "risk_id": "RISK-008",
+      "title": "Repaired bundle hash unavailable or mismatched",
+      "description": "The repaired source bundle may lack a trusted precommitted hash or sidecar match.",
+      "trigger": "Sidecar missing, unparseable, or mismatched during R0.",
+      "likelihood": "medium",
+      "impact": "medium",
+      "detection_method": "Compute SHA-256 and compare with sidecar if present.",
+      "mitigation": "Proceed only with observed hash + path-level checks if no precommitted hash is available.",
+      "fallback_branch": "retry_after_reprobe",
+      "owner_artifact": "/mnt/data/Metablooms_OS/receipts/refactor_program/R0_SOURCE_HASH_PROBE_20260428T023844Z.json",
+      "status": "observed_clear"
+    }
+  ]
+}

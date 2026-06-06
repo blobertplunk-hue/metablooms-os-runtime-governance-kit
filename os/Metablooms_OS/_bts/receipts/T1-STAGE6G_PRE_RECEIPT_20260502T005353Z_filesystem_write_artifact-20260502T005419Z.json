@@ -1,0 +1,11 @@
+{
+  "receipt_id": "T1-STAGE6G_PRE_RECEIPT_20260502T005353Z_filesystem_write_artifact-20260502T005419Z",
+  "tier": "T1",
+  "artifact": "/mnt/data/Metablooms_OS/runtime/receipts/METABLOOMS_STAGE6G_PRE_EXPORT_RECEIPT_20260502T005353Z.json",
+  "sha256": "4a5548057ad1abe01006c9d06579ef6331e17ee31d0e759a11235e53c3da4284",
+  "bytes_size": 900,
+  "prior_sha256": "",
+  "stdout_proof": "",
+  "timestamp": "2026-05-02T00:54:19.231108Z",
+  "turn_id": "STAGE6G_PRE_RECEIPT_20260502T005353Z"
+}

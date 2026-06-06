@@ -1,0 +1,16 @@
+{
+  "created_utc": "20260502T144842Z",
+  "stage": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT",
+  "synthesis": {
+    "concurrency_position": "Stage1 contract allows local filesystem append semantics and requires implementation fixtures for multi-writer stress; network filesystems are out-of-scope unless explicitly proven.",
+    "core_design": "Canonical path guard + structured JSON record serialization + single-record append using OS append semantics + optional fsync policy + line readback/tail validation + failure event emission.",
+    "durability_modes": [
+      "sync_always",
+      "sync_on_error_or_critical",
+      "sync_never_disallowed_for_governance_by_default"
+    ],
+    "record_format": "One JSON object per line, UTF-8, no raw newline outside JSON string escaping, bounded bytes, required schema_version/event_id/timestamp/source/event_type/payload/hash fields.",
+    "security_position": "Logs are security artifacts; reject unstructured strings, raw bytes, CR/LF record delimiters outside JSON serialization, path traversal, symlink targets/ancestors, and unsafe suffixes.",
+    "why_not_atomic_json_writer": "Append-only JSONL/log/ledger streams require preserving prior records and adding exactly one bounded record; replace-style atomic JSON document writing is wrong for append streams."
+  }
+}

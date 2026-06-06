@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"MetaBlooms Sandbox Capability Router","type":"object","required":["artifact_type","version","global_denylist","routes"],"properties":{"artifact_type":{"const":"metablooms.sandbox_capability_router"},"version":{"type":"string"},"global_denylist":{"type":"array"},"routes":{"type":"object"}}}

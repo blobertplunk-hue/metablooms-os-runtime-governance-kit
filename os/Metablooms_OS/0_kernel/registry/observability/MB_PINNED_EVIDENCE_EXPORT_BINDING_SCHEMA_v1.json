@@ -1,0 +1,16 @@
+{
+  "artifact_type": "MB_SCHEMA.v1",
+  "properties": {
+    "bound_evidence_sha256": "path to SHA-256 map",
+    "promoted_receipt": "formal receipt required inside the authority export"
+  },
+  "required": [
+    "artifact_type",
+    "stage_id",
+    "promoted_receipt",
+    "export_contract",
+    "bound_evidence_paths"
+  ],
+  "schema_name": "MB_PINNED_EVIDENCE_EXPORT_BINDING.v1",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING"
+}

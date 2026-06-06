@@ -1,0 +1,19 @@
+{
+  "artifact_type": "METABLOOMS_STAGE_RECEIPT_v1",
+  "artifacts": {
+    "CALLER_RETROFIT_REPORT.json": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/CALLER_RETROFIT_REPORT.json",
+    "CDR_CRITICAL_GATE_RESULTS_STAGE3.json": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/CDR_CRITICAL_GATE_RESULTS_STAGE3.json",
+    "PATCH_MANIFEST.json": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/PATCH_MANIFEST.json",
+    "SEE_EVIDENCE_PACKET.json": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/SEE_EVIDENCE_PACKET.json",
+    "STAGE3_VALIDATION_SUMMARY.json": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/STAGE3_VALIDATION_SUMMARY.json",
+    "STAGE_RECEIPT.json": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/STAGE_RECEIPT.json"
+  },
+  "cdr_verdict": "PASS",
+  "created_utc": "20260502T143651Z",
+  "runtime_root": "/mnt/data/Metablooms_OS",
+  "stage": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z",
+  "status": "PASS",
+  "summary": "Retrofitted high-value JSON state/receipt/output callers to canonical atomic_json_writer_v1 through atomic_json_compat_v1; installed targeted Stage3 policy gate; validated with executable smokes.",
+  "validation_verdict": "PASS",
+  "warning": "This is not a full-tree JSON write sweep; remaining direct JSON write patterns are inventoried and deferred."
+}

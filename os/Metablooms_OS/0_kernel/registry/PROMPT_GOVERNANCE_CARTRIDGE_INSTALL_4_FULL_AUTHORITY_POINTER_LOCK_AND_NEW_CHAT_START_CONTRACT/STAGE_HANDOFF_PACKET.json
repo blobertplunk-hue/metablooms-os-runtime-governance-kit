@@ -1,0 +1,11 @@
+{
+  "continuation_prompt": "Continue from /mnt/data/Metablooms_OS. Load CURRENT_FULL_AUTHORITY_POINTER_v1.json and the Stage 4 handoff. Run exactly one bounded stage: PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_5_PROMPT_ENGINE_REGRESSION_FIXTURES_AND_PROFILE_SMOKE. Add regression fixtures for the prompt engine profiles and failure taxonomy without broad redesign; validate boot, scatter, fresh-chat start contract, prompt cartridge, fixtures, full export, and fresh-extract replay; return one full OS bundle plus checksum and stop.",
+  "created_utc": "2026-04-30T21:27:16.463414Z",
+  "next_stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_5_PROMPT_ENGINE_REGRESSION_FIXTURES_AND_PROFILE_SMOKE",
+  "required_inputs": [
+    "CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "0_kernel/registry/PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_4_FULL_AUTHORITY_POINTER_LOCK_AND_NEW_CHAT_START_CONTRACT/STAGE_HANDOFF_PACKET.json"
+  ],
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_4_FULL_AUTHORITY_POINTER_LOCK_AND_NEW_CHAT_START_CONTRACT",
+  "verdict": "PASS"
+}

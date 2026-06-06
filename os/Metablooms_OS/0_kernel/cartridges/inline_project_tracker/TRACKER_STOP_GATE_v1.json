@@ -1,0 +1,16 @@
+{
+  "schema_version": "TRACKER_STOP_GATE_v1",
+  "gate_id": "inline_project_tracker.stop_gate.v1",
+  "purpose": "Force a clean handoff after each bounded stage and block continuing into the next stage without a new command.",
+  "rules": [
+    {
+      "id": "STOP-ONE-STAGE-001",
+      "rule": "After receipt and handoff are written for the current bounded stage, stop before next-stage work."
+    },
+    {
+      "id": "STOP-HANDOFF-001",
+      "rule": "The final response must include the next correct command from the handoff."
+    }
+  ],
+  "failure_status": "BLOCKED_TRACKER_STOP_GATE"
+}

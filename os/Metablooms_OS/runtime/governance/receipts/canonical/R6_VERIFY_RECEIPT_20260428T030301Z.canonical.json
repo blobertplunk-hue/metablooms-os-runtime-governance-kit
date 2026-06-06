@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-04-28T03:04:56.415876+00:00",
+  "decision_id": "R6_EVIDENCE_BOUND_EXTERNAL_REUSE_SCAN_GATE-1db52d997a01e507",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"checks\": {\"missing_fixture_result\": \"deny\", \"p0a_decision_log_required\": true, \"p0a_gate_enabled\": true, \"registry_decision\": \"pass\", \"stale_fixture_result\": \"deny\", \"valid_fixture_result\": \"allow\"}, \"created_utc\": \"2026-04-28T03:04:56.415876+00:00\", \"errors\": [], \"next_stage\": \"R7_USEFULNESS_VALIDATOR_PROMOTION\", \"promoted\": {\"registry\": \"runtime/governance/registries/gate_registry_v1.json\", \"schema\": \"runtime/governance/schemas/external_reuse_scan_gate_schema_v1.json\", \"script\": \"0_kernel/scripts/p0a_external_reuse_scan_precheck_v1.py\"}, \"receipt_type\": \"R6_VERIFY_RECEIPT\", \"report_sha256\": {\"missing\": \"724b37fb2c300e5f68ed9d0f1cd0c30cf33701407b2f4f5feed5577da50e473a\", \"registry\": \"06f46d3c6fda13cb5e2904e90bb7eb8cde7e93747290b2de8aee84e87f45d882\", \"stale\": \"6dfd8c273c6ae7de7f949712bd04b341810f553f9c4577a0cac50b35c5fe4e8e\", \"valid\": \"c3196e843c553d63c90b44877238f9ec945be8f20fa40b3489e532aa3b5ef4e2\"}, \"reports\": {\"missing\": \"/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R6_external_reuse_scan_missing_20260428T030301Z.json\", \"registry\": \"/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R6_gate_registry_integrity_20260428T030301Z.json\", \"stale\": \"/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R6_external_reuse_scan_stale_20260428T030301Z.json\", \"valid\": \"/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R6_external_reuse_scan_valid_20260428T030301Z.json\"}, \"stag",
+  "reasons": [],
+  "record_id": "R6_VERIFY_RECEIPT_20260428T030301Z",
+  "record_kind": "verify_receipt",
+  "result": "pass",
+  "source_record": {
+    "path": "receipts/refactor_program/R6_VERIFY_RECEIPT_20260428T030301Z.json",
+    "sha256": "1db52d997a01e507488cba64757c81f9b07a6fb77b9fb143b6421f018635c3df",
+    "size_bytes": 1674
+  },
+  "span_id": "40837616bb762f84",
+  "stage_id": "R6_EVIDENCE_BOUND_EXTERNAL_REUSE_SCAN_GATE",
+  "summary": "Canonical wrapper for R6_VERIFY_RECEIPT_20260428T030301Z.json",
+  "trace_id": "5c7773f6e66791f597cb69885ccf7604"
+}

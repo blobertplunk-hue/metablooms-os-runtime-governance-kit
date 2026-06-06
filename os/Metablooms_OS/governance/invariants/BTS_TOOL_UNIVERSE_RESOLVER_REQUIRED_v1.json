@@ -1,0 +1,15 @@
+{
+  "created_utc": "2026-05-02T01:21:41.967440Z",
+  "evidence_basis": [
+    "MCP dynamic tool discovery model",
+    "Agent Governance Toolkit per-action interception pattern",
+    "OpenAI Agents SDK tool guardrails/tracing pattern"
+  ],
+  "failure_action": "DENY_GOVERNED_TOOL_SELECTION_CLAIM",
+  "gate": "TOOL_UNIVERSE_RESOLVER_AND_SELECTION_SUFFICIENCY_GATE",
+  "id": "BTS_TOOL_UNIVERSE_RESOLVER_REQUIRED_v1",
+  "rule": "Before governed tool selection, BTS must receive a ranked candidate set from TOOL_UNIVERSE_RESOLVER_v1 that includes relevant sandbox tools, language runtimes, governed install profiles, competence scores, and forbidden/reliability history. BTS_TOOL_EVALUATION must cover resolver candidates or explain exclusions, and any non-top selection must pass WHY_NOT_BETTER_TOOL justification.",
+  "stage": "STAGE6H_BTS_TOOL_UNIVERSE_RESOLVER_AND_CANDIDATE_SELECTION_GATE",
+  "status": "active",
+  "validator_path": "runtime/governance/tool_universe_resolver_v1.py"
+}

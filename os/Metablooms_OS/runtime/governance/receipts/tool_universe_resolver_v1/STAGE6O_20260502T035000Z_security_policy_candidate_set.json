@@ -1,0 +1,12 @@
+{
+  "candidates": [
+    "shell_write",
+    "python3_-S_stdlib_write",
+    "node_write"
+  ],
+  "decision": "python3_-S_stdlib_write",
+  "reason": "bounded local JSON/Python artifact generation; no external install; no full export",
+  "schema": "ToolUniverseResolverCandidateSet_v1",
+  "selected_profile": "filesystem_security_policy_write",
+  "stage_id": "STAGE6O_OWASP_AGENTIC_AI_COVERAGE_MATRIX_AND_POLICY_BINDINGS"
+}

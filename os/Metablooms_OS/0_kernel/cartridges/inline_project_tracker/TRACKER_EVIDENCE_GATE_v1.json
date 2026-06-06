@@ -1,0 +1,20 @@
+{
+  "schema_version": "TRACKER_EVIDENCE_GATE_v1",
+  "gate_id": "inline_project_tracker.evidence_gate.v1",
+  "purpose": "Require artifact evidence for DONE, BLOCKED, export, validation, and blocker claims.",
+  "rules": [
+    {
+      "id": "EVIDENCE-DONE-001",
+      "rule": "Status DONE requires at least one evidence item with label, path, sha256, and kind."
+    },
+    {
+      "id": "EVIDENCE-BLOCKED-001",
+      "rule": "Blocked status or blocker.present=true requires a non-empty blocker summary and evidence_path or evidence item."
+    },
+    {
+      "id": "EVIDENCE-HASH-001",
+      "rule": "Receipt, handoff, bundle, and validation evidence should include SHA-256 when available."
+    }
+  ],
+  "failure_status": "BLOCKED_TRACKER_EVIDENCE_GATE"
+}

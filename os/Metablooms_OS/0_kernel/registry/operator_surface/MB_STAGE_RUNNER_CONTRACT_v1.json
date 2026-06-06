@@ -1,0 +1,46 @@
+{
+  "artifact_type": "MB_STAGE_RUNNER_CONTRACT_v1",
+  "checkpoint_model": {
+    "checkpoint_id": "single invocation checkpoint identifier",
+    "resume_rule": "same thread_id resumes/reviews the same bounded stage lineage; new thread_id starts a new stage lineage",
+    "thread_id": "stable stage-scoped resume key"
+  },
+  "created_utc": "20260501T111500Z",
+  "execution_modes": {
+    "dry_run": "write/review work order only",
+    "execute": "validate work order and delegate only to a real cartridge executor when present"
+  },
+  "fail_closed_rules": [
+    "no runner means no execution claim",
+    "missing receipt blocks success",
+    "missing handoff blocks continuation",
+    "missing tracker preview blocks finalization",
+    "critical doctor failure blocks execution"
+  ],
+  "non_goals": [
+    "This contract adapter is not a general arbitrary stage executor."
+  ],
+  "purpose": "Define the minimum executable contract for future mb run-stage execution without turning dry-run work orders into false execution claims.",
+  "required_outputs_after_real_execution": [
+    "receipt",
+    "handoff",
+    "validation_report",
+    "tracker_preview",
+    "optional_export"
+  ],
+  "required_work_order_fields": [
+    "artifact_type",
+    "contract_id",
+    "created_utc",
+    "stage_name",
+    "thread_id",
+    "checkpoint_id",
+    "root",
+    "mode",
+    "runner_contract_path",
+    "latest_handoff",
+    "scope",
+    "planned_commands",
+    "fail_closed_rules"
+  ]
+}

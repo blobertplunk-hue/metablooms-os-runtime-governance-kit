@@ -1,0 +1,11 @@
+{
+  "artifact_type": "STAGE_HANDOFF",
+  "stage_id": "FL17-MERGE-5_FULL_OS_EXPORT_AND_RECOVERY_VALIDATION",
+  "created_utc": "20260430T022600Z",
+  "status": "PASS_PENDING_EXTERNAL_ZIP_HASH",
+  "next_allowed_stage": "BASELINE-PROMOTION-0_ONLY_IF_USER_EXPLICITLY_REQUESTS_PROMOTION",
+  "must_load": ["FL17_MERGE_5_VALIDATION_REPORT.json", "FL17_MERGE_5_EXPORT_MANIFEST_v1.json", "external checksum sidecar", "runtime/state/TRACKER_STATE_v1.json"],
+  "blocked_actions": ["Do not treat FL17 export PASS as FL16 promotion success", "Do not skip always-on governance or SEE/CE preflight on future MetaBlooms stages", "Do not use box/pipe tracker layout"],
+  "promotion_performed": false,
+  "stop_rule": "Stop after FL17-MERGE-5; no baseline promotion unless explicitly requested and gates pass."
+}

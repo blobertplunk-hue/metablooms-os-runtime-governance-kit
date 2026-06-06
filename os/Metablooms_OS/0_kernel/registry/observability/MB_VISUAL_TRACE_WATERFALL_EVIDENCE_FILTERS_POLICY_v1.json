@@ -1,0 +1,22 @@
+{
+  "artifact_type": "MB_VISUAL_TRACE_WATERFALL_EVIDENCE_FILTERS_POLICY.v1",
+  "required_html_markers": [
+    "data-section=\"visual_trace_waterfall\"",
+    "data-section=\"evidence_filters\"",
+    "data-section=\"trace_waterfall_rows\"",
+    "data-section-stage11=\"visual_trace_waterfall_and_evidence_filters\""
+  ],
+  "required_json_paths": [
+    "runtime/state/operator_surface/VISUAL_TRACE_WATERFALL_LATEST.json",
+    "runtime/state/operator_surface/VISUAL_TRACE_WATERFALL_LATEST.md"
+  ],
+  "requirements": [
+    "minimal_mode_default",
+    "evidence_waterfall_optional",
+    "status/kind filters",
+    "source artifact deep links",
+    "no external JS/CSS dependencies",
+    "phone-safe rendering"
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS"
+}

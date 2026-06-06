@@ -1,0 +1,69 @@
+{
+  "ok": false,
+  "contract_path": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/fixtures/unified_runtime_compatibility_contract_v1.stale.json",
+  "root": "/mnt/data/Metablooms_OS",
+  "errors": [
+    "no_handoff_artifacts",
+    "stale_or_invalid_stale_after",
+    "bad_supersedes",
+    "invalid_compatibility_rules"
+  ],
+  "checks": [
+    {
+      "check": "required_top:contract_id",
+      "ok": true
+    },
+    {
+      "check": "required_top:authoritative_root",
+      "ok": true
+    },
+    {
+      "check": "required_top:accepted_source_tracks",
+      "ok": true
+    },
+    {
+      "check": "required_top:required_handoff_artifacts",
+      "ok": true
+    },
+    {
+      "check": "required_top:compatibility_rules",
+      "ok": true
+    },
+    {
+      "check": "required_top:stale_after_utc",
+      "ok": true
+    },
+    {
+      "check": "required_top:supersedes",
+      "ok": true
+    },
+    {
+      "check": "contract_id",
+      "ok": true
+    },
+    {
+      "check": "authoritative_root",
+      "ok": true
+    },
+    {
+      "check": "accepted_source_tracks",
+      "ok": true
+    },
+    {
+      "check": "stale_after_utc_future",
+      "ok": false
+    },
+    {
+      "check": "supersedes",
+      "ok": false
+    },
+    {
+      "check": "cross_link_redirect_status",
+      "ok": true
+    },
+    {
+      "check": "compatibility_rules",
+      "ok": false
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "created_at": 1777042881.1839898,
+  "stage": "CE_VALIDATION",
+  "schema_validation": {
+    "passed": true,
+    "issues": []
+  },
+  "semantic_validation": {
+    "passed": true,
+    "issues": []
+  },
+  "context_summary_only_check": {
+    "passed": true,
+    "context_summary_only": false
+  },
+  "verdict": "PASS",
+  "issues": [],
+  "next_stage": "PLAN",
+  "packet_source": "(see_d4_rerun_valid)",
+  "schema_path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/schemas/CE_PACKET_SCHEMA_v1.json",
+  "receipt_path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/registry/ce_validation_receipts/see_d4_recovery_rerun/valid/CE_VALIDATION_RECEIPT_1777042881184.json"
+}

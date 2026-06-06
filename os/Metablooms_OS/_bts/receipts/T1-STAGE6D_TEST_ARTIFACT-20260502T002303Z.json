@@ -1,0 +1,11 @@
+{
+  "receipt_id": "T1-STAGE6D_TEST_ARTIFACT-20260502T002303Z",
+  "tier": "T1",
+  "artifact": "/mnt/data/Metablooms_OS/_bts/stage6d_test_artifact.txt",
+  "sha256": "0230e03a36363c4431acc96b6084bb10e13cd642e737db5b5657f2c37f69da89",
+  "bytes_size": 17,
+  "prior_sha256": "",
+  "stdout_proof": "",
+  "timestamp": "2026-05-02T00:23:03.381358Z",
+  "turn_id": "STAGE6D-T1FILE"
+}

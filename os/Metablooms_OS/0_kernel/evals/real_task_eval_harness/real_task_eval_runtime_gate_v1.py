@@ -1,0 +1,59 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+import json, subprocess, sys, time, hashlib
+from pathlib import Path
+ROOT = Path(sys.argv[1]) if len(sys.argv)>1 else Path('/mnt/data/Metablooms_OS')
+
+def sha256(path: Path)->str:
+    h=hashlib.sha256()
+    with path.open('rb') as f:
+        for b in iter(lambda:f.read(1024*1024), b''):
+            h.update(b)
+    return h.hexdigest()
+
+def write_json(path: Path, obj):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(obj, indent=2, sort_keys=True), encoding='utf-8')
+    path.with_name(path.name+'.sha256').write_text(f'{sha256(path)}  {path.name}\n', encoding='utf-8')
+
+def run(root: Path=ROOT):
+    runner=root/'0_kernel/evals/real_task_eval_harness/real_task_corpus_runner_v2.py'
+    prompt_gate=root/'0_kernel/validators/next_stage_copy_prompt_exit_gate_v1.py'
+    errors=[]
+    eval_result={}
+    prompt_result={}
+    field_result={}
+    if not runner.exists(): errors.append('missing real_task_corpus_runner_v2.py')
+    else:
+        p=subprocess.run([sys.executable, str(runner), str(root)], text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        try: eval_result=json.loads(p.stdout)
+        except Exception: eval_result={'verdict':'FAIL','stdout':p.stdout,'stderr':p.stderr}
+        if p.returncode!=0 or eval_result.get('verdict')!='PASS': errors.append('real task corpus runner failed')
+    if not prompt_gate.exists(): errors.append('missing next_stage_copy_prompt_exit_gate_v1.py')
+    else:
+        p=subprocess.run([sys.executable, str(prompt_gate), str(root)], text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        try: prompt_result=json.loads(p.stdout)
+        except Exception: prompt_result={'verdict':'FAIL','stdout':p.stdout,'stderr':p.stderr}
+        if p.returncode!=0 or prompt_result.get('verdict')!='PASS': errors.append('next-stage copy prompt exit gate failed')
+    field_runner=root/'0_kernel/evals/field_task_fixtures/field_task_fixture_runner_v1.py'
+    if field_runner.exists():
+        p=subprocess.run([sys.executable, str(field_runner), str(root)], text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        try: field_result=json.loads(p.stdout)
+        except Exception: field_result={'verdict':'FAIL','stdout':p.stdout,'stderr':p.stderr}
+        if p.returncode!=0 or field_result.get('verdict')!='PASS': errors.append('field task fixture runner failed')
+    else:
+        errors.append('missing field_task_fixture_runner_v1.py')
+    required=[
+      '0_kernel/evals/real_task_eval_harness/REAL_TASK_CORPUS_v2.json',
+      '0_kernel/evals/real_task_eval_harness/real_task_corpus_runner_v2.py',
+      '0_kernel/registry/world_class_gap_plan/RUNTIME_STAGE_EXIT_EVAL_GATE_BINDING_v1.json'
+    ]
+    missing=[p for p in required if not (root/p).exists()]
+    if missing: errors.append('missing runtime gate binding artifacts: '+', '.join(missing))
+    result={'schema_version':'v1','checked_at_utc':time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),'verdict':'PASS' if not errors else 'FAIL','errors':errors,'eval_result':eval_result,'prompt_gate_result':prompt_result,'field_task_fixture_result':field_result}
+    write_json(root/'runtime/state/REAL_TASK_EVAL_RUNTIME_GATE_RESULT_v1.json', result)
+    return result
+if __name__=='__main__':
+    res=run(ROOT)
+    print(json.dumps(res, indent=2))
+    sys.exit(0 if res['verdict']=='PASS' else 1)

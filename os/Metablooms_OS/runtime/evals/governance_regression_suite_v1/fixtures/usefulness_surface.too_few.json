@@ -1,0 +1,8 @@
+{
+  "artifact_id": "weak_artifact",
+  "artifact_type": "html_activity",
+  "promotion_required": false,
+  "dimensions_covered": {
+    "instruction": {"covered": true, "note": "Has instructions", "evidence": ["header"]}
+  }
+}

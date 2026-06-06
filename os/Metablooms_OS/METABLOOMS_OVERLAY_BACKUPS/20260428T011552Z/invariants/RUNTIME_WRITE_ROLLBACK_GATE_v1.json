@@ -1,0 +1,7 @@
+{
+  "id": "RUNTIME_WRITE_ROLLBACK_GATE_v1",
+  "status": "active",
+  "gate": "RUNTIME_WRITE_ROLLBACK_GATE",
+  "description": "Runtime writes require rollback manifest and pre-write snapshot; registry patching requires post-copy hash validation.",
+  "failure_action": "DENY_RUNTIME_WRITE"
+}

@@ -1,0 +1,13 @@
+{
+  "gate": {
+    "path": "/mnt/data/mbos_audit_extract_4945/Metablooms_OS/0_kernel/registry/mpp_v3/see_adapter_test_outputs/SEE_RECURSIVE_GATE_CLI_VALID_REPORT_v1.json",
+    "sha256": "8564a4b94a84b709403445a2f65493ddcd61f0e3a326aef34884d3029e7a2e90"
+  },
+  "gate_verdict": "PASS",
+  "issues": [],
+  "see": {
+    "path": "/mnt/data/mbos_audit_extract_4945/Metablooms_OS/0_kernel/registry/mpp_v3/see_adapter_test_outputs/SEE_PACKET_ADAPTER_CLI_VALID_OUTPUT_v1.json",
+    "sha256": "a339ba3b77a52d88e42fae3b5c554733db0463cb6ce8614368a2b9ef26c16822"
+  },
+  "status": "PASS"
+}

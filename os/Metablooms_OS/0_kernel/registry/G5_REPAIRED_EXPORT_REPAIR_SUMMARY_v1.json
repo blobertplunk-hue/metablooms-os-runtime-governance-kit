@@ -1,0 +1,46 @@
+{
+  "version": "1.0",
+  "created_at": 1777065171.336396,
+  "stage": "G5_REPAIRED_EXPORT_REPAIR_SUMMARY",
+  "status": "complete",
+  "source_failure_decision": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_G4_F7_DECISION_v1.json",
+  "repair_plan": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G4_F7_EXPORT_REPAIR_PLAN_v1.json",
+  "repairs_applied": [
+    "all G5 ledger-declared outputs written before zipping",
+    "final PASS receipt written before zipping",
+    "internal metadata contains no SHA/size placeholders",
+    "git heads lifecycle-labeled",
+    "external sidecar explicitly referenced",
+    "deterministic ZIP policy applied",
+    "pointer conflicts quarantined before export",
+    "policy-as-code validator run after export"
+  ],
+  "pointer_conflict_changes": [
+    {
+      "artifact_id": "CURRENT_WORKING_BASELINE_POINTER_SCHEMA_v1.json",
+      "old_status": "active",
+      "new_status": "quarantined_pointer_conflict_resolved_before_g5_export"
+    },
+    {
+      "artifact_id": "CURRENT_WORKING_BASELINE_POINTER_CONTRACT_v1.json",
+      "old_status": "active",
+      "new_status": "quarantined_pointer_conflict_resolved_before_g5_export"
+    },
+    {
+      "artifact_id": "CURRENT_WORKING_BASELINE_POINTER_CONTRACT_v1.md",
+      "old_status": "active",
+      "new_status": "quarantined_pointer_conflict_resolved_before_g5_export"
+    },
+    {
+      "artifact_id": "F1_CURRENT_WORKING_BASELINE_POINTER_CONTRACT_RECEIPT_v1.json",
+      "old_status": "active",
+      "new_status": "quarantined_pointer_conflict_resolved_before_g5_export"
+    },
+    {
+      "artifact_id": "F1_TO_F2_HANDOFF_v1.json",
+      "old_status": "active",
+      "new_status": "quarantined_pointer_conflict_resolved_before_g5_export"
+    }
+  ],
+  "verdict": "PASS"
+}

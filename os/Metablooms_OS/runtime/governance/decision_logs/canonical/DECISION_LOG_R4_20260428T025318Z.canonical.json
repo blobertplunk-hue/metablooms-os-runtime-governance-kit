@@ -1,0 +1,54 @@
+{
+  "created_utc": "2026-04-28T02:53:18Z",
+  "decision_id": "DECISION_LOG_R4_20260428T025318Z",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [
+    {
+      "path": "runtime/governance/schemas/session_state_export_schema_v1.json"
+    },
+    {
+      "path": "0_kernel/scripts/session_state_exporter_v1.py"
+    },
+    {
+      "path": "0_kernel/scripts/validate_session_state_export_v1.py"
+    },
+    {
+      "path": "runtime/governance/state_exports/SESSION_STATE_EXPORT_LATEST_v1.json"
+    }
+  ],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"chosen_outputs\": [\"runtime/governance/schemas/session_state_export_schema_v1.json\", \"0_kernel/scripts/session_state_exporter_v1.py\", \"0_kernel/scripts/validate_session_state_export_v1.py\", \"runtime/governance/state_exports/SESSION_STATE_EXPORT_LATEST_v1.json\"], \"created_utc\": \"2026-04-28T02:53:18Z\", \"decision\": \"Adopt model-agnostic session state export and retire vendor-specific sync writer.\", \"decision_id\": \"DECISION_LOG_R4_20260428T025318Z\", \"drivers\": [\"portable continuity\", \"python3 -S enforcement\", \"no vendor-specific field names\", \"avoid self-hash circularity\"], \"stage\": \"R4_SESSION_STATE_EXPORT_REPLACEMENT\", \"supersedes\": [\"CLAUDE_MEMORY_SYNC_v1.json\", \"0_kernel/scripts/claude_memory_sync_writer_v1.py\"]}",
+  "reasons": [
+    "portable continuity",
+    "python3 -S enforcement",
+    "no vendor-specific field names",
+    "avoid self-hash circularity"
+  ],
+  "record_id": "DECISION_LOG_R4_20260428T025318Z",
+  "record_kind": "decision_log",
+  "result": "adopt model-agnostic session state export and retire vendor-specific sync writer.",
+  "source_record": {
+    "path": "runtime/governance/decision_logs/DECISION_LOG_R4_20260428T025318Z.json",
+    "sha256": "caf9cfd6d41486a3823e0116ac556b000d28d67d6af67cc97a1e635803c3c8f3",
+    "size_bytes": 792
+  },
+  "span_id": "4c107df242a5a54d",
+  "stage_id": "R4_SESSION_STATE_EXPORT_REPLACEMENT",
+  "summary": "Adopt model-agnostic session state export and retire vendor-specific sync writer.",
+  "trace_id": "6ac7bd006965cfaa15882122f4af6fa4"
+}

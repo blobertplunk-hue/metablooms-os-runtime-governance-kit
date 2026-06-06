@@ -1,0 +1,18 @@
+{
+  "decision_id": "R3-20260428T025200Z",
+  "stage": "R3_COMPATIBILITY_CONTRACT_REPLACEMENT",
+  "created_utc": "2026-04-28T02:52:00Z",
+  "decision_class": "Class B",
+  "options_considered": [
+    "Keep cross-link memo plus redirect only",
+    "Replace with minimal compatibility contract and validator",
+    "Fold compatibility details into artifact_disposition_contract_v1 only"
+  ],
+  "chosen_option": "Replace with minimal compatibility contract and validator",
+  "why": "Provides executable machine-checkable compatibility rules while preserving rationale in ADR/archive paths.",
+  "evidence": [
+    "/mnt/data/Metablooms_OS/runtime/governance/contracts/unified_runtime_compatibility_contract_v1.json",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/validate_unified_runtime_compatibility_contract_v1.py",
+    "/mnt/data/Metablooms_OS/receipts/refactor_program/R3_VERIFY_RECEIPT_20260428T025200Z.json"
+  ]
+}

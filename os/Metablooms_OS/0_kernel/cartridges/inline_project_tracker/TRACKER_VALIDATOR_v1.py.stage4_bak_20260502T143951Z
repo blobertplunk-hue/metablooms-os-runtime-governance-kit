@@ -1,0 +1,143 @@
+#!/usr/bin/env python3
+"""MetaBlooms Inline Project Tracker validator v1.
+
+TRACKER-4R mobile reflow repair validates the compact stacked renderer:
+- top marker starts with "TRACKER ▸"
+- no box-drawing border/table characters
+- max line width remains mobile-safe
+- indeterminate progress cannot render fake percent/bar
+"""
+from __future__ import annotations
+
+import importlib.util
+import json
+import sys
+from pathlib import Path
+from typing import Any, Dict, List
+
+MAX_WIDTH = 64
+TOP_MARKER = "TRACKER ▸"
+FORBIDDEN_LAYOUT_CHARS = set("╭╮╰╯│┌┐└┘├┤┬┴┼─")
+REQUIRED_RENDER_LABELS = [
+    "TRACKER ▸",
+    "Status:",
+    "Stage:",
+    "Now:",
+    "Evidence:",
+    "Blocker:",
+    "Next:",
+    "Stop:",
+]
+
+
+def load_renderer(renderer_path: Path):
+    spec = importlib.util.spec_from_file_location("tracker_renderer_v1", renderer_path)
+    if spec is None or spec.loader is None:
+        raise RuntimeError("could not load renderer")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)  # type: ignore[union-attr]
+    return module
+
+
+def validate_state_shape(state: Dict[str, Any]) -> List[str]:
+    errors: List[str] = []
+    required = [
+        "schema_version", "tracker_id", "project_id", "project_name", "mode", "active_root",
+        "status", "current_stage", "stage_index", "stage_total", "progress_mode",
+        "completed_stages", "now", "evidence", "blocker", "next_allowed_action",
+        "stop_rule", "authority", "last_updated_utc", "validation", "history",
+    ]
+    for key in required:
+        if key not in state:
+            errors.append(f"state missing {key}")
+    if state.get("progress_mode") == "determinate":
+        idx, total = state.get("stage_index"), state.get("stage_total")
+        if not isinstance(idx, int) or not isinstance(total, int) or not (0 <= idx <= total):
+            errors.append("determinate progress must have valid stage_index/stage_total")
+    if state.get("progress_mode") == "indeterminate":
+        rendered_label = str(state.get("progress_label", ""))
+        if "%" in rendered_label:
+            errors.append("indeterminate progress_label must not contain percent")
+    if not isinstance(state.get("evidence"), list) or not state.get("evidence"):
+        errors.append("state must include at least one evidence item")
+    return errors
+
+
+def validate_rendered(rendered: str) -> List[str]:
+    errors: List[str] = []
+    lines = rendered.splitlines()
+    if not lines or not lines[0].startswith(TOP_MARKER):
+        errors.append("rendered tracker must start with compact top-of-response marker")
+    over = [len(line) for line in lines if len(line) > MAX_WIDTH]
+    if over:
+        errors.append(f"rendered tracker exceeds mobile width {MAX_WIDTH}: {max(over)}")
+    forbidden_found = sorted({ch for ch in rendered if ch in FORBIDDEN_LAYOUT_CHARS})
+    if forbidden_found:
+        errors.append("rendered tracker uses forbidden box/table characters: " + "".join(forbidden_found))
+    for label in REQUIRED_RENDER_LABELS:
+        if label not in rendered:
+            errors.append(f"rendered tracker missing label {label}")
+    return errors
+
+
+def run_fake_percent_rejection(renderer, base_state: Dict[str, Any]) -> List[str]:
+    errors: List[str] = []
+    indeterminate = dict(base_state)
+    indeterminate.update({
+        "progress_mode": "indeterminate",
+        "stage_index": None,
+        "stage_total": None,
+        "progress_label": "unknown denominator",
+    })
+    rendered = renderer.render_tracker(indeterminate)
+    progress_line = rendered.splitlines()[1] if len(rendered.splitlines()) > 1 else ""
+    if "%" in progress_line:
+        errors.append("fake-percent rejection failed: indeterminate progress rendered percent")
+    if "█" in progress_line or "░" in progress_line:
+        errors.append("fake-percent rejection failed: indeterminate progress rendered determinate bar")
+    invalid = dict(base_state)
+    invalid.update({"progress_mode": "determinate", "stage_index": None, "stage_total": None})
+    validation_errors = renderer.validate_state_minimal(invalid)
+    if not any("determinate progress requires" in err for err in validation_errors):
+        errors.append("fake-percent rejection failed: determinate missing denominator not rejected")
+    return errors
+
+
+def main(argv: List[str]) -> int:
+    if len(argv) != 4:
+        print("usage: TRACKER_VALIDATOR_v1.py <renderer.py> <state.json> <report.json>", file=sys.stderr)
+        return 2
+    renderer_path = Path(argv[1])
+    state_path = Path(argv[2])
+    report_path = Path(argv[3])
+    renderer = load_renderer(renderer_path)
+    state = json.loads(state_path.read_text(encoding="utf-8"))
+    errors: List[str] = []
+    errors.extend(validate_state_shape(state))
+    rendered = renderer.render_tracker(state)
+    errors.extend(validate_rendered(rendered))
+    errors.extend(run_fake_percent_rejection(renderer, state))
+    lines = rendered.splitlines()
+    report = {
+        "validator": "TRACKER_VALIDATOR_v1_TRACKER_4R_MOBILE_REFLOW",
+        "state_path": str(state_path),
+        "renderer_path": str(renderer_path),
+        "status": "PASS" if not errors else "FAIL",
+        "errors": errors,
+        "checks": {
+            "required_fields": "PASS" if not validate_state_shape(state) else "FAIL",
+            "top_of_response_marker": "PASS" if lines and lines[0].startswith(TOP_MARKER) else "FAIL",
+            "mobile_width_max_chars": max(len(line) for line in lines) if lines else 0,
+            "no_box_drawing_or_pipe_table_layout": "PASS" if not any(ch in FORBIDDEN_LAYOUT_CHARS for ch in rendered) else "FAIL",
+            "required_render_labels": REQUIRED_RENDER_LABELS,
+            "fake_percent_rejection": "PASS" if not run_fake_percent_rejection(renderer, state) else "FAIL",
+        },
+        "rendered_preview": rendered,
+    }
+    report_path.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    print(json.dumps(report, indent=2, sort_keys=True))
+    return 0 if not errors else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(sys.argv))

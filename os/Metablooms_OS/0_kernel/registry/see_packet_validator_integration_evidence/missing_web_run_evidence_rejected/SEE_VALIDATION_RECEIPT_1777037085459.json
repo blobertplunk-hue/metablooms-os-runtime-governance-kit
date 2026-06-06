@@ -1,0 +1,39 @@
+{
+  "version": "1.0",
+  "created_at": 1777037085.4597535,
+  "stage": "SEE_VALIDATION",
+  "schema_validation": {
+    "passed": false,
+    "issues": [
+      "missing_required_field:web_run_evidence",
+      "web_run_evidence_missing_or_not_object"
+    ]
+  },
+  "web_run_evidence_validation": {
+    "passed": false,
+    "issues": [
+      "web_run_evidence_missing"
+    ]
+  },
+  "source_binding_validation": {
+    "passed": true,
+    "issues": []
+  },
+  "semantic_validation": {
+    "passed": false,
+    "issues": [
+      "pass_verdict_without_web_run_evidence"
+    ]
+  },
+  "verdict": "FAIL",
+  "issues": [
+    "missing_required_field:web_run_evidence",
+    "web_run_evidence_missing_or_not_object",
+    "web_run_evidence_missing",
+    "pass_verdict_without_web_run_evidence"
+  ],
+  "next_stage": "BLOCK_WITH_SEE_VALIDATION_RECEIPT",
+  "packet_source": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/see_packet_validator_integration_evidence/missing_web_run_evidence_rejected/packet.json",
+  "schema_path": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/SEE_PACKET_SCHEMA_v1.json",
+  "receipt_path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/see_packet_validator_integration_evidence/missing_web_run_evidence_rejected/SEE_VALIDATION_RECEIPT_1777037085459.json"
+}

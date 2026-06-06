@@ -1,0 +1,38 @@
+{
+  "receipt_type": "EXTERNAL_REUSE_SCAN_GATE_DECISION",
+  "version": "1.0.0",
+  "decision_id": "3c459c61-e3d1-442b-9a2b-c4d6a59c6a85",
+  "created_utc": "2026-04-28T03:03:21.772892Z",
+  "stage_name": "R6_TEST_MISSING_EVIDENCE",
+  "asset_type": "gate",
+  "asset_name": "external_reuse_scan_gate",
+  "reuse_decision": "compose_existing",
+  "result": "deny",
+  "blocks": [
+    "evidence_bundle.path does not exist: /mnt/data/Metablooms_OS/no_such_evidence.json",
+    "compose_existing requires at least 2 evidence items; found 0",
+    "compose_existing requires at least 2 candidate_refs; found 0"
+  ],
+  "warns": [],
+  "input_summary": {
+    "evidence_count": 0,
+    "candidate_count": 0,
+    "evidence_bundle": {
+      "path": "/mnt/data/Metablooms_OS/no_such_evidence.json",
+      "sha256": "bad"
+    },
+    "target_artifact": {
+      "path": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/fixtures/R6_target_artifact_fixture.json",
+      "sha256": "8c068a02b251edb3dc314ed22a3d8c092b62a4bc424cc15950e5b8617ccfb53e",
+      "resolved_path": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/fixtures/R6_target_artifact_fixture.json",
+      "actual_sha256": "8c068a02b251edb3dc314ed22a3d8c092b62a4bc424cc15950e5b8617ccfb53e"
+    }
+  },
+  "policy_basis": [
+    "OPA-style decision_id/input/result audit log",
+    "SLSA-style artifact/provenance expectation checks",
+    "JSON Schema annotations are not enforcement"
+  ],
+  "receipt_path": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R6_decisions/P0A_EXTERNAL_REUSE_SCAN_R6_TEST_MISSING_EVIDENCE_3c459c61-e3d1-442b-9a2b-c4d6a59c6a85.json",
+  "receipt_sha256": "a6cf26bec3945a1c65baa00e163b97566e5ba87071e59cd6c59b2aaf6dea753e"
+}

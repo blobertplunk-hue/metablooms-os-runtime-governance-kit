@@ -1,0 +1,19 @@
+{
+  "artifact_type": "MB_CLI_COMMAND_SPEC_v20",
+  "commands_added": [
+    "mb harness --executor-review --json",
+    "mb harness --review-gate --json"
+  ],
+  "commands_preserved": [
+    "mb harness --plan --parallel-plan --json",
+    "mb harness --diff-review --json",
+    "mb harness --check --json"
+  ],
+  "created_utc": "20260501T171620Z",
+  "runaway_turn_budget": {
+    "max_wall_clock_seconds": 120,
+    "no_broad_extract": true,
+    "targeted_smoke_only": true
+  },
+  "stage": "IMPLEMENT_AGENT_HARNESS_STAGE_3_EXECUTOR_REVIEW_GATE"
+}

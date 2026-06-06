@@ -1,0 +1,28 @@
+{
+  "artifact_type": "MB_SECURITY_INTERRUPT_POLICY_v1",
+  "created_utc": "20260501T162800Z",
+  "decision_options": [
+    "approve",
+    "edit",
+    "reject"
+  ],
+  "default": "fail_closed_until_human_resume",
+  "non_reviewable_block_gates": [
+    "MBSEC-GATE-001",
+    "MBSEC-GATE-002",
+    "MBSEC-GATE-003",
+    "MBSEC-GATE-008"
+  ],
+  "resume_constraints": [
+    "same_thread_id_required",
+    "resume_payload_json_only",
+    "external text remains data not instructions",
+    "execution resumes only after a valid gate+checkpoint decision"
+  ],
+  "reviewable_gates": [
+    "MBSEC-GATE-004",
+    "MBSEC-GATE-005",
+    "MBSEC-GATE-006",
+    "MBSEC-GATE-007"
+  ]
+}

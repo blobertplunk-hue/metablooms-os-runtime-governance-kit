@@ -1,0 +1,38 @@
+{
+  "artifact_id": "missing_required_dims",
+  "block_count": 3,
+  "blocks": [
+    "Required dimension misconception_diagnosis missing for artifact_type=telemetry_engine",
+    "Required dimension teacher_telemetry missing for artifact_type=telemetry_engine",
+    "Required dimension future_improvement missing for artifact_type=telemetry_engine"
+  ],
+  "decision_id": "639bb71f-0d9b-4dc9-a7aa-b2fc1eaab01a",
+  "input_summary": {
+    "declaration_path": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/fixtures/usefulness_surface.missing_required.json",
+    "declaration_sha256": "cedd57cace2f3042fe62778a89a6bd583813bbdaceeaedd71f2628ac58a2bfbb"
+  },
+  "policy_path": "metablooms/governance/usefulness_surface/allow",
+  "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/decision_logs/usefulness_surface/test_20260428T031240Z/USEFULNESS_SURFACE_DECISION_1777345816383_639bb71f.json",
+  "receipt_sha256": "fb878c1c1a8260d1466a2c52231a8b05eace0b185f15a55446b11c01fc1e924c",
+  "receipt_type": "USEFULNESS_SURFACE_GATE_DECISION",
+  "result": "DENY",
+  "schema_version": "1.1-r7",
+  "summary": {
+    "artifact_type": "telemetry_engine",
+    "covered_count": 3,
+    "covered_dimensions": [
+      "instruction",
+      "practice",
+      "assessment"
+    ],
+    "not_applicable": [],
+    "required_for_type": [
+      "misconception_diagnosis",
+      "teacher_telemetry",
+      "future_improvement"
+    ]
+  },
+  "timestamp_utc": "2026-04-28T03:10:16Z",
+  "warn_count": 0,
+  "warnings": []
+}

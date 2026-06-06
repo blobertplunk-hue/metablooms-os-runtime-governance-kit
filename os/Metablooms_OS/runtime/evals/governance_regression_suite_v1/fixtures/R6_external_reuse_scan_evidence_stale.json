@@ -1,0 +1,41 @@
+{
+  "bundle_id": "R6_external_reuse_scan_valid_bundle",
+  "created_utc": "2025-01-01T00:00:00Z",
+  "queries": [
+    "Open Policy Agent decision logs decision_id input result audit",
+    "SLSA verifying artifacts provenance expectations",
+    "JSON Schema annotations not validation"
+  ],
+  "evidence_items": [
+    {
+      "source_url": "https://www.openpolicyagent.org/docs/management-decision-logs",
+      "source_title": "Open Policy Agent Decision Logs",
+      "retrieved_utc": "2025-01-01T00:00:00Z",
+      "source_type": "official_docs",
+      "query": "Open Policy Agent decision logs decision_id input result audit",
+      "claim_supported": "Decision logs include decision_id input result timestamp and audit context."
+    },
+    {
+      "source_url": "https://slsa.dev/spec/v1.2/verifying-artifacts",
+      "source_title": "SLSA Build Verifying Artifacts",
+      "retrieved_utc": "2025-01-01T00:00:00Z",
+      "source_type": "official_spec",
+      "query": "SLSA verifying artifacts provenance expectations",
+      "claim_supported": "Artifact provenance must be inspected against trusted expectations before it is useful."
+    }
+  ],
+  "candidate_refs": [
+    {
+      "name": "OPA decision log pattern",
+      "source_url": "https://www.openpolicyagent.org/docs/management-decision-logs",
+      "fit_summary": "Adopt decision_id and input/result log structure for gate decisions.",
+      "decision_relevance": "Directly informs external reuse scan gate receipt shape."
+    },
+    {
+      "name": "SLSA verification pattern",
+      "source_url": "https://slsa.dev/spec/v1.2/verifying-artifacts",
+      "fit_summary": "Adopt artifact hash and expectation verification discipline.",
+      "decision_relevance": "Directly informs evidence bundle and target artifact hash checks."
+    }
+  ]
+}

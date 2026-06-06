@@ -1,0 +1,9 @@
+{
+  "contract_id": "unified_runtime_compatibility_contract_v1",
+  "authoritative_root": "/mnt/data/Metablooms_OS",
+  "accepted_source_tracks": [{"track_id": "GW"}, {"track_id": "OS"}],
+  "required_handoff_artifacts": [],
+  "compatibility_rules": [{"rule_id": "only", "condition": {"type": "x"}}],
+  "stale_after_utc": "2026-01-01T00:00:00Z",
+  "supersedes": ["1_governance/workflow_v6/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.json"]
+}

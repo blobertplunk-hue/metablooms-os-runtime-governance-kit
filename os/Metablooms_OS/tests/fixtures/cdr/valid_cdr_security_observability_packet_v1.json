@@ -1,0 +1,51 @@
+{
+  "observability_controls": {
+    "correlation": {
+      "evidence": "correlation_evidence",
+      "status": "PASS"
+    },
+    "error_attributes": {
+      "evidence": "error_attributes_evidence",
+      "status": "PASS"
+    },
+    "exportable_formats": {
+      "evidence": "exportable_formats_evidence",
+      "status": "PASS"
+    },
+    "log_integrity": {
+      "evidence": "log_integrity_evidence",
+      "status": "PASS"
+    },
+    "trace_span_contract": {
+      "evidence": "trace_span_contract_evidence",
+      "status": "PASS"
+    }
+  },
+  "risk_tier": "HIGH",
+  "security_controls": {
+    "access_control": {
+      "evidence": "access_control_evidence",
+      "status": "PASS"
+    },
+    "file_path_safety": {
+      "evidence": "file_path_safety_evidence",
+      "status": "PASS"
+    },
+    "input_validation": {
+      "evidence": "input_validation_evidence",
+      "status": "PASS"
+    },
+    "root_cause_recurrence": {
+      "evidence": "root_cause_recurrence_evidence",
+      "status": "PASS"
+    },
+    "safe_error_logging": {
+      "evidence": "safe_error_logging_evidence",
+      "status": "PASS"
+    },
+    "secret_data_protection": {
+      "evidence": "secret_data_protection_evidence",
+      "status": "PASS"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "artifact_type": "FULL_OS_EXPORT_MANIFEST",
+  "stage_id": "FL17-MERGE-5_FULL_OS_EXPORT_AND_RECOVERY_VALIDATION",
+  "created_utc": "20260430T022600Z",
+  "root_exported": "/mnt/data/Metablooms_OS",
+  "export_name": "METABLOOMS_OS_FL17_MERGED_TRACKER_WORKING_20260430T022600Z.zip",
+  "external_sidecar_required": true,
+  "contains": [
+    "tracker-working OS target baseline",
+    "FL17 quarantined progression evidence archive + manifest",
+    "FL17-MERGE-3 tracker lifecycle repair",
+    "FL17-MERGE-4 semantic authority",
+    "GOV_REPAIR_SEE_CE_0 governance repair evidence"
+  ],
+  "promotion_decision": "NOT_PROMOTED_IN_THIS_STAGE",
+  "semantic_decision": "FL16 remains BLOCKED_NOT_PROMOTED; FL17 export PASS means export/package pass only."
+}

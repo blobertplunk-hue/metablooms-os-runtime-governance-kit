@@ -1,0 +1,7 @@
+{
+  "repair_id": "R5_VALIDATOR_REPAIR_20260428T025625Z",
+  "created_utc": "2026-04-28T02:56:25Z",
+  "issue": "SESSION_STATE_EXPORT_WRITE was blocking while decision_log_required=false",
+  "fix": "Set decision_log_required=true in live registry and both fixtures",
+  "classification": "smallest_valid_change"
+}

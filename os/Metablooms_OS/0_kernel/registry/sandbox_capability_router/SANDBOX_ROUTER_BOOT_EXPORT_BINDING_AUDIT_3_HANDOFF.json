@@ -1,0 +1,14 @@
+{
+  "artifact_type": "metablooms.stage_handoff",
+  "stage": "SANDBOX_ROUTER_BOOT_EXPORT_BINDING_AUDIT_3",
+  "status": "PASS_WITH_WARNING",
+  "latest_receipt": "0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_BOOT_EXPORT_BINDING_AUDIT_3_20260430T135016Z/SANDBOX_ROUTER_BOOT_EXPORT_BINDING_AUDIT_3_RECEIPT.json",
+  "next_recommended_stage": "SANDBOX_ROUTER_NODE_ENFORCER_TIMEOUT_HARDENING_4",
+  "next_prompt": "Continue from /mnt/data/Metablooms_OS. Load SANDBOX_ROUTER_BOOT_EXPORT_BINDING_AUDIT_3_HANDOFF.json. Run exactly one bounded stage: SANDBOX_ROUTER_NODE_ENFORCER_TIMEOUT_HARDENING_4. Diagnose why same-turn direct Node enforcer invocation timed out after prior smoke passed; harden invocation with timeout-safe shell semantics or switch enforcement default to python3 -S policy evaluator while preserving Node as fallback. Do not run heavy export repair. Write receipt/handoff and return one root-level downloadable bundle plus checksum.",
+  "heavy_export_repair_run": false,
+  "required_next_inputs": [
+    "SANDBOX_ROUTER_BOOT_EXPORT_BINDING_AUDIT_3_RECEIPT.json",
+    "SANDBOX_ROUTER_BOOT_EXPORT_BINDING_AUDIT_3_BINDING_AUDIT.json"
+  ],
+  "binding_state": "boot, export repair, governed execution, and downloadable artifact delivery have explicit router-gate metadata bindings; governed_execution route was added as metadata."
+}

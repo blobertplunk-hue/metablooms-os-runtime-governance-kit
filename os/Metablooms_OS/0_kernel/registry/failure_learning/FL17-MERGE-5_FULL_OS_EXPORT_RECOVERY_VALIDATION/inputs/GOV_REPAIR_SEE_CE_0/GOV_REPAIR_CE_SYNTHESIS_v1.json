@@ -1,0 +1,15 @@
+{
+  "artifact_type": "CE_SYNTHESIS_v1",
+  "constraints": [
+    "All subsequent FL17 merge stages must explicitly include a SEE/CE preflight or a written applicability exception before execution.",
+    "Prior FL17-COMPARE-0 and FL17-MERGE-PLAN-0 artifacts are governance-incomplete because their visible receipts do not show SEE/CE preflight, but their core local artifact findings remain materially valid.",
+    "The next stage may proceed only if it loads this GOV repair report and treats it as an amendment to those prior stage receipts.",
+    "Do not promote or patch FL17 until tracker lifecycle enforcement, FL16/FL17 semantic split, and baseline authority conflict are validated with evidence.",
+    "Tracker status must remain compact, render-first, evidence-bound, and mobile-safe."
+  ],
+  "created_utc": "20260430T010558Z",
+  "decision": "AMEND_PRIOR_OUTPUTS_DO_NOT_RERUN_YET",
+  "rationale": "The prior compare/merge-plan conclusions are supported by direct archive/receipt evidence and are consistent with current governance research. The defect is missing governance preflight evidence, not necessarily wrong classification. This report repairs the process lineage by explicitly binding SEE/CE constraints before the next import/patch stage.",
+  "required_next_stage": "FL17-MERGE-1_STAGING_DIFF_CLASSIFICATION_WITH_SEE_CE_PREFLIGHT",
+  "stage": "GOV-REPAIR-SEE-CE-0"
+}

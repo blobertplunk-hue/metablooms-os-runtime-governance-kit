@@ -1,0 +1,79 @@
+{
+  "gate": {
+    "path": "/mnt/data/mbos_audit_extract_4945/Metablooms_OS/0_kernel/registry/mpp_v3/see_adapter_test_outputs/SEE_RECURSIVE_GATE_CLI_INVALID_REPORT_v1.json",
+    "sha256": "bcad05a9afdb4ff8deacaad2e93407a672e77b23fbe7089b0a050e936d64e105"
+  },
+  "gate_verdict": "FAIL",
+  "issues": [
+    {
+      "code": "MIN_SOURCE_COUNT",
+      "message": "requires at least 3 sources",
+      "path": "$.sources"
+    },
+    {
+      "code": "MIN_DOMAIN_DIVERSITY",
+      "message": "requires at least 2 source domains",
+      "path": "$.sources"
+    },
+    {
+      "code": "CLAIM_BINDING_REQUIRED",
+      "message": "at least one source-bound claim is required",
+      "path": "$.claim_source_bindings"
+    },
+    {
+      "code": "WEBRUN_REQUIRED",
+      "message": "web.run evidence must be true",
+      "path": "$.web_run_evidence.web_run_called"
+    },
+    {
+      "code": "RECURSION_ACCOUNTING_REQUIRED",
+      "message": "at least one research round record is required",
+      "path": "$.web_run_evidence.research_rounds"
+    },
+    {
+      "code": "OS_SEE_VALIDATOR",
+      "message": "web_run_called_false",
+      "path": "$.see_packet"
+    },
+    {
+      "code": "OS_SEE_VALIDATOR",
+      "message": "web_run_call_count_zero",
+      "path": "$.see_packet"
+    },
+    {
+      "code": "OS_SEE_VALIDATOR",
+      "message": "sources_missing_or_empty",
+      "path": "$.see_packet"
+    },
+    {
+      "code": "OS_SEE_VALIDATOR",
+      "message": "claim_source_bindings_missing_or_empty",
+      "path": "$.see_packet"
+    },
+    {
+      "code": "OS_SEE_VALIDATOR",
+      "message": "no_source_ids_available",
+      "path": "$.see_packet"
+    },
+    {
+      "code": "OS_SEE_VALIDATOR",
+      "message": "pass_verdict_without_web_run_evidence",
+      "path": "$.see_packet"
+    },
+    {
+      "code": "OS_SEE_VALIDATOR",
+      "message": "pass_verdict_without_sources",
+      "path": "$.see_packet"
+    },
+    {
+      "code": "OS_SEE_VALIDATOR",
+      "message": "pass_verdict_without_claim_bindings",
+      "path": "$.see_packet"
+    }
+  ],
+  "see": {
+    "path": "/mnt/data/mbos_audit_extract_4945/Metablooms_OS/0_kernel/registry/mpp_v3/see_adapter_test_outputs/SEE_PACKET_ADAPTER_CLI_INVALID_OUTPUT_v1.json",
+    "sha256": "8515a5f6852297deb603d7a0326bcdc3dadaafed96dd5e6e586a50faa340c8a9"
+  },
+  "status": "FAIL"
+}

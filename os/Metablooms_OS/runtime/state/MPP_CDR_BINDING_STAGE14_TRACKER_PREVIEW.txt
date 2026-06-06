@@ -1,0 +1,8 @@
+TRACKER PREVIEW — MPP_CDR_BINDING_STAGE14_CODE_WORK_REQUIRES_CDR_IN_MPP
+Status: PASS
+Installed: MPP/CDR binding spec, code-work-requires-CDR policy, packet schema, active invariant, gate, fixtures, eval, SEE/CE packets.
+Rule: all code-bearing MPP stages require CDR PASS before stage PASS.
+Gate: PASS — code work with CDR allowed; code work without CDR denied; non-code stage allowed without CDR.
+CDR eval continuity: 10/10 evals passed.
+Authority export: NOT PERFORMED.
+Next best stage: MPP_CDR_BINDING_STAGE15_RETROFIT_STAGE_CONTRACTS_TO_DECLARE_CODE_BEARING_FLAG_OR_FULL_AUTHORITY_EXPORT_AFTER_STAGE14.

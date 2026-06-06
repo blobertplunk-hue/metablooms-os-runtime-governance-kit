@@ -1,0 +1,89 @@
+{
+  "files_written": [
+    {
+      "bytes": 5072,
+      "path": "/mnt/data/Metablooms_OS/0_kernel/registry/security/OWASP_AGENTIC_AI_COVERAGE_MATRIX_v1.json",
+      "sha256": "7eca57f4c21b89626d52043f742edc37bfc5a9a041f441945ee172c61df414c7"
+    },
+    {
+      "bytes": 3655,
+      "path": "/mnt/data/Metablooms_OS/0_kernel/registry/security/OWASP_AGENTIC_AI_POLICY_BINDINGS_v1.json",
+      "sha256": "e09b944cec7b1a1f39f4328ebed476de6670a74790963e24f9585a897220c5fe"
+    },
+    {
+      "bytes": 785,
+      "path": "/mnt/data/Metablooms_OS/governance/invariants/OWASP_AGENTIC_AI_POLICY_BINDINGS_REQUIRED_v1.json",
+      "sha256": "3423633b04e0b4e26341475051885e3d6f581913723ae908cd351a551ca237f1"
+    },
+    {
+      "bytes": 2718,
+      "path": "/mnt/data/Metablooms_OS/runtime/governance/owasp_agentic_ai_policy_gate_v1.py",
+      "sha256": "784e8d31ba4826f4d87c4cd46bec4850dfc79759a70ef5abd9a52030cc27a9d4"
+    },
+    {
+      "bytes": 451,
+      "path": "/mnt/data/Metablooms_OS/tests/fixtures/security/owasp_agentic_policy_allow_v1.json",
+      "sha256": "a638e711c093b6682cd13819d3d21bf7c8fcaef32aabeb39978bf7de7e4d7603"
+    },
+    {
+      "bytes": 273,
+      "path": "/mnt/data/Metablooms_OS/tests/fixtures/security/owasp_agentic_policy_deny_missing_controls_v1.json",
+      "sha256": "478133318676ee8b022587339c8b8850a8fb6c32f0aab5575bee99935b3f65b5"
+    },
+    {
+      "bytes": 988,
+      "path": "/mnt/data/Metablooms_OS/tests/evals/security/test_owasp_agentic_ai_policy_gate_v1.py",
+      "sha256": "a60df7dbd5dede96d2ed9c03802a7b11c3b0bd00225d3e433513d67407616736"
+    },
+    {
+      "bytes": 1661,
+      "path": "/mnt/data/Metablooms_OS/research/SEE/STAGE6O_OWASP_AGENTIC_AI_COVERAGE_MATRIX_AND_POLICY_BINDINGS_SEE_v1.json",
+      "sha256": "a7671b37d865a51017bbf003e2a4288f778f1a03d1624cf2b74ad8a369dea758"
+    },
+    {
+      "bytes": 618,
+      "path": "/mnt/data/Metablooms_OS/research/CE/STAGE6O_OWASP_AGENTIC_AI_COVERAGE_MATRIX_AND_POLICY_BINDINGS_CE_v1.json",
+      "sha256": "2f05a2a1b507cd5baf55f9632cc6f971e1d1f7fe3f56085a5b74f02ed79a7a88"
+    },
+    {
+      "bytes": 418,
+      "path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/tool_universe_resolver_v1/STAGE6O_20260502T035000Z_security_policy_candidate_set.json",
+      "sha256": "18e537d34dcf6f51db868acecfa53fabf11c5e80b4ad795efa751027d99201e4"
+    },
+    {
+      "bytes": 232,
+      "path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/STAGE6O_20260502T035000Z_filesystem_write.decision.json",
+      "sha256": "3ffd2a94eb77506f9addfaaed054916d9104e943c8c6b3052cea60e58ee64ac0"
+    },
+    {
+      "bytes": 403,
+      "path": "/mnt/data/Metablooms_OS/runtime/evals/security/STAGE6O_OWASP_AGENTIC_AI_POLICY_GATE_SMOKE_RESULT.json",
+      "sha256": "152e66b1aa6d2e06f883a056bd8df02f3698efca6e98fb95fe1bceddbed24714"
+    },
+    {
+      "bytes": 407,
+      "path": "/mnt/data/Metablooms_OS/runtime/state/STAGE6O_TRACKER_PREVIEW.txt",
+      "sha256": "d804d723fa85cf8dee0e1139bcf3e8609bf5fa6af1dcb80a67e29a4155dfe541"
+    },
+    {
+      "bytes": 3580,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/METABLOOMS_STAGE6O_OWASP_AGENTIC_AI_COVERAGE_MATRIX_AND_POLICY_BINDINGS_RECEIPT_20260502T035000Z.json",
+      "sha256": "01d984f732e48a13456c3b7fce321ed1295a240d1fb3381b6bf73a0d077547b7"
+    },
+    {
+      "bytes": 839,
+      "path": "/mnt/data/Metablooms_OS/runtime/handoffs/METABLOOMS_STAGE6O_OWASP_AGENTIC_AI_COVERAGE_MATRIX_AND_POLICY_BINDINGS_HANDOFF_20260502T035000Z.json",
+      "sha256": "99aafdd88a57df39ebd27a6f88e19b7f7e8207c892ed15eb3b3ecd9a8242f209"
+    },
+    {
+      "bytes": 361,
+      "path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/post_tool_result_validation_v1/STAGE6O_OWASP_AGENTIC_AI_COVERAGE_MATRIX_AND_POLICY_BINDINGS_post_tool_validation_decision.json",
+      "sha256": "192d8ee45607f9f86d70ea583abfbf2b47c7d23f42ea89bd4b82a6aa7aedf04a"
+    }
+  ],
+  "files_written_count": 16,
+  "schema": "T1FilesystemWriteReceipt_v1",
+  "stage_id": "STAGE6O_OWASP_AGENTIC_AI_COVERAGE_MATRIX_AND_POLICY_BINDINGS",
+  "timestamp_utc": "2026-05-02T02:53:05Z",
+  "verdict": "PASS"
+}

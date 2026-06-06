@@ -1,0 +1,59 @@
+{
+  "version": "1.0",
+  "created_at": 1777061653.5836031,
+  "stage": "F2_STAGE_DAG_AND_DEPENDENCY_LEDGER_CONTRACT",
+  "status": "complete",
+  "inputs": {
+    "f1_handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F1_TO_F2_HANDOFF_v1.json",
+    "f1_receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F1_CURRENT_WORKING_BASELINE_POINTER_CONTRACT_RECEIPT_v1.json",
+    "current_working_pointer": "/mnt/data/Metablooms_OS_refined/0_kernel/state/CURRENT_WORKING_BASELINE_POINTER_v1.json"
+  },
+  "outputs": {
+    "dag_schema": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/STAGE_DAG_SCHEMA_v1.json",
+    "ledger_schema": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/STAGE_STATE_LEDGER_SCHEMA_v1.json",
+    "dag_contract": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/STAGE_DAG_AND_DEPENDENCY_LEDGER_CONTRACT_v1.json",
+    "dag_doc": "/mnt/data/Metablooms_OS_refined/0_kernel/docs/STAGE_DAG_AND_DEPENDENCY_LEDGER_CONTRACT_v1.md",
+    "dag_file": "/mnt/data/Metablooms_OS_refined/0_kernel/pipeline/STAGE_DAG_v1.json",
+    "ledger_file": "/mnt/data/Metablooms_OS_refined/0_kernel/state/STAGE_STATE_LEDGER_v1.json",
+    "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F2_STAGE_DAG_AND_DEPENDENCY_LEDGER_CONTRACT_RECEIPT_v1.json",
+    "handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F2_TO_F3_HANDOFF_v1.json"
+  },
+  "checks": {
+    "required_paths_present": true,
+    "git_clean_before_f2": true,
+    "git_fsck_clean_before_f2": true,
+    "f1_pointer_prechecks": {
+      "f1_handoff_ready": true,
+      "f1_receipt_passed": true,
+      "f2_declared_target": true,
+      "pointer_active": true,
+      "pointer_contract_active": true,
+      "pointer_head_available": true,
+      "current_git_head_available": true
+    }
+  },
+  "git_head_at_contract_write": "d4c7243ee0d61897de6c12c1c5e85e154d7b1e00",
+  "runaway_turn_guard": {
+    "contract_only": true,
+    "runner_implementation_performed": false,
+    "restore_performed": false,
+    "export_performed": false,
+    "cleanup_performed": false
+  },
+  "verdict": "PASS",
+  "next_improvement_task": "F3 \u2014 Transactional Stage Runner Contract",
+  "why_next": "The pointer and ledger now define current state; next we need the transaction semantics that future stages must follow.",
+  "remaining_work": [
+    "F3 \u2014 Transactional Stage Runner Contract",
+    "F4 \u2014 Manifest/Provenance Export Contract",
+    "F5 \u2014 Restore Ladder + Mode-Normalization Proof",
+    "F6 \u2014 Blocked Receipt Handling Rule",
+    "F7 \u2014 Stable Export + Boot Recovery Proof",
+    "Return to E4A\u2013E5D"
+  ],
+  "progress_estimate": {
+    "stages_remaining_before_return_to_E4": 5,
+    "major_arcs_remaining_after_recovery_arc": 2
+  },
+  "next_correct_command": "EXECUTE F3 \u2014 TRANSACTIONAL STAGE RUNNER CONTRACT"
+}

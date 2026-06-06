@@ -1,0 +1,27 @@
+{
+  "changed_paths": [
+    "0_kernel/registry/BOOT_REQUIRED_GATES_v1.json",
+    "0_kernel/registry/BOOT_REQUIRED_GATES_v1.json.sha256",
+    "0_kernel/registry/CONTROLLED_GOVERNANCE_ARTIFACT_INDEX_v1.json",
+    "0_kernel/registry/CONTROLLED_GOVERNANCE_ARTIFACT_INDEX_v1.json.sha256",
+    "0_kernel/registry/FULL_EXTRACT_REPLAY_RECOVERY_PROOF_CONTRACT_v1.json",
+    "0_kernel/registry/FULL_EXTRACT_REPLAY_RECOVERY_PROOF_CONTRACT_v1.json.sha256",
+    "runtime/governance/full_extract_replay_recovery_proof_validator_v1.py",
+    "runtime/governance/full_extract_replay_recovery_proof_validator_v1.py.sha256",
+    "runtime/handoffs/PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_11_FULL_EXTRACT_REPLAY_FIX_AND_RECOVERY_PROOF_HANDOFF.json",
+    "runtime/handoffs/PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_11_FULL_EXTRACT_REPLAY_FIX_AND_RECOVERY_PROOF_HANDOFF.json.sha256",
+    "runtime/receipts/PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_11_FULL_EXTRACT_REPLAY_FIX_AND_RECOVERY_PROOF_RECEIPT.json",
+    "runtime/receipts/PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_11_FULL_EXTRACT_REPLAY_FIX_AND_RECOVERY_PROOF_RECEIPT.json.sha256"
+  ],
+  "decision": "IMPLEMENTED",
+  "source_status": {
+    "actual_sha256": "18cab31e03a23321135b6e56252a9245969893e1d93c634500968ce615793dba",
+    "checksum_match": true,
+    "duplicates": 0,
+    "expected_sha256": "18cab31e03a23321135b6e56252a9245969893e1d93c634500968ce615793dba",
+    "member_count": 2046,
+    "testzip": null,
+    "unsafe_paths": 0
+  },
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_11_FULL_EXTRACT_REPLAY_FIX_AND_RECOVERY_PROOF"
+}

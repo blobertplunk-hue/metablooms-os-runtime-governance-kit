@@ -1,0 +1,1 @@
+{"probe":"shell_coreutils","status":"PASS","exit_code":0,"elapsed_sec":0,"cmd":"bash -lc command -v bash sh timeout find stat sha256sum cp mv rm mkdir cat wc sort uniq zip unzip tar jq >/dev/null && echo ok-shell"}

@@ -1,0 +1,57 @@
+{
+  "$id": "metablooms://schemas/AtomicJsonWriteFailureEvent.v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "created_utc": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "object"
+    },
+    "failure_class": {
+      "enum": [
+        "SCHEMA_INVALID",
+        "PATH_ESCAPE",
+        "SYMLINK_DENIED",
+        "SUFFIX_DENIED",
+        "OVERWRITE_DENIED",
+        "NON_SERIALIZABLE",
+        "PARENT_CREATE_DENIED",
+        "IO_ERROR",
+        "VERIFY_FAILED",
+        "OUTPUT_TOO_LARGE"
+      ],
+      "type": "string"
+    },
+    "operation_id": {
+      "type": "string"
+    },
+    "recommended_correction": {
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "AtomicJsonWriteFailureEvent.v1"
+    },
+    "stage": {
+      "type": "string"
+    },
+    "target_path": {
+      "type": "string"
+    },
+    "target_resolved": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "operation_id",
+    "created_utc",
+    "failure_class",
+    "target_path",
+    "stage",
+    "recommended_correction"
+  ],
+  "title": "AtomicJsonWriteFailureEvent.v1",
+  "type": "object"
+}

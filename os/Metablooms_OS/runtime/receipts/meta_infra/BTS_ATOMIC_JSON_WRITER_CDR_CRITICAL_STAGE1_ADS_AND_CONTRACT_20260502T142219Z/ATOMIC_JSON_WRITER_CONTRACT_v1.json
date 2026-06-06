@@ -1,0 +1,50 @@
+{
+  "artifact_type": "ATOMIC_JSON_WRITER_CONTRACT_v1",
+  "canonical_entrypoint": "write_atomic_json(envelope: dict) -> dict",
+  "canonical_module": "0_kernel/lib/io/atomic_json_writer_v1.py",
+  "compatibility_targets_stage2": [
+    "0_kernel/lib/filesystem_safety_v1.py atomic_write_json",
+    "0_kernel/lib/execution/bounded_subprocess_wrapper_v1.py atomic_write_json",
+    "0_kernel/cartridges/inline_project_tracker/TRACKER_STAGE_FINALIZATION_HOOK_v1.py _write_json_atomic"
+  ],
+  "created_utc": "2026-05-02T14:23:17Z",
+  "decision_enums": [
+    "ALLOW_WRITE_COMMITTED",
+    "DENY_SCHEMA_INVALID",
+    "DENY_PATH_ESCAPE",
+    "DENY_SYMLINK",
+    "DENY_SUFFIX",
+    "DENY_OVERWRITE_POLICY",
+    "DENY_NON_SERIALIZABLE",
+    "DENY_PARENT_CREATE",
+    "WRITE_IO_ERROR",
+    "WRITE_VERIFY_FAILED"
+  ],
+  "failure_schema": "ATOMIC_JSON_WRITE_FAILURE_EVENT_SCHEMA_v1.json",
+  "input_schema": "ATOMIC_JSON_WRITE_ENVELOPE_SCHEMA_v1.json",
+  "output_schema": "ATOMIC_JSON_WRITE_DECISION_PACKET_SCHEMA_v1.json",
+  "required_algorithm": [
+    "Load and validate AtomicJsonWriteEnvelope.v1.",
+    "Resolve runtime root and allowed roots from envelope/policy.",
+    "Canonicalize target path with pathlib.Path.resolve(strict=False).",
+    "Deny if target path is outside allowed roots.",
+    "Deny if target suffix is not in allowed suffixes, default .json.",
+    "Deny if target exists and overwrite mode forbids replacement.",
+    "Deny if target path or any existing ancestor is a symlink unless policy explicitly allows it.",
+    "Serialize payload with json.dumps(sort_keys=True, indent=2, ensure_ascii=False), then reparse to prove valid JSON before touching target.",
+    "Create destination parent if envelope permits parent creation and parent remains within allowed root.",
+    "Open same-directory temp file with exclusive/random name and restrictive permissions.",
+    "Write, flush, fsync temp file.",
+    "os.replace temp into target.",
+    "fsync parent directory where supported.",
+    "Read back target, parse JSON, hash bytes, emit decision packet and optional receipt.",
+    "On failure after temp creation, best-effort cleanup temp and emit structured failure event."
+  ],
+  "security_invariants": [
+    "No file descriptor is opened for an untrusted target before path/root/symlink checks pass.",
+    "Temp file is created in the target directory, never a global temp directory.",
+    "The final decision packet contains the target hash and byte length or a failure classification.",
+    "Failure-learning event is emitted for all deny/error outcomes except caller-declared dry-run validation."
+  ],
+  "stage": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT"
+}

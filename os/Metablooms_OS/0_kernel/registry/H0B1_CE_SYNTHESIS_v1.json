@@ -1,0 +1,12 @@
+{
+  "id": "H0B1_CE_SYNTHESIS_v1",
+  "created_utc": "2026-04-30T17:50:37Z",
+  "decision": "Implement chat governance as an upstream always-on kernel, with the router subordinate to the kernel and promotion blocked until fresh-export survival proof passes.",
+  "design": [
+    "contracts in 0_kernel/chat_governance",
+    "runtime validator in runtime/governance",
+    "active invariant in governance/invariants and registry mirror",
+    "fixtures in runtime/evals/chat_governance",
+    "IEA wrapper dispatch for meta_chat_turn/chat_governance_kernel task classes"
+  ]
+}

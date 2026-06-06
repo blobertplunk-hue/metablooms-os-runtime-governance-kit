@@ -1,0 +1,19 @@
+{
+  "allowed_internal_primitives": [
+    "0_kernel/lib/execution/bounded_subprocess_wrapper_v1.py",
+    "0_kernel/lib/execution/bounded_subprocess_compat_v1.py"
+  ],
+  "artifact_type": "METABLOOMS_BOUNDED_SUBPROCESS_CALLSITE_POLICY_STAGE4_v1",
+  "blocking_zones": [
+    "live_governance_code"
+  ],
+  "created_utc": "20260502T140719Z",
+  "gate": "0_kernel/validators/validate_bounded_subprocess_callsite_policy_stage4_v1.py",
+  "policy": "Direct subprocess/os command invocations are forbidden in live governance code outside bounded wrapper internals. Tests/evals, vendored code, legacy archives, failure-learning snapshots, receipts, and bundles are classified as warnings/exemptions for Stage4.",
+  "stage_receipt_dir": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z",
+  "warning_zones": [
+    "test_eval_fixture_warn",
+    "snapshot_vendor_legacy_or_artifact_exempt",
+    "other_warn"
+  ]
+}

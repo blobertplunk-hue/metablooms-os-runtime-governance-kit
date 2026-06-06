@@ -1,0 +1,49 @@
+{
+  "version": "1.0",
+  "created_at": 1776988437.1973667,
+  "status": "active",
+  "title": "Code Patching Safety Invariants",
+  "purpose": "Prevent silent patch failure, regex-only structural code mutation, and false success claims during governed code modification.",
+  "applies_to": [
+    "all generated Python scripts",
+    "all patch scripts",
+    "registry mutation engine patches",
+    "governed_run changes",
+    "validator changes",
+    "any code-modifying command in the sandbox"
+  ],
+  "mandatory_requirements": [
+    "no_regex_only_structural_code_patching",
+    "inspect_target_code_before_patch",
+    "deterministic_insertion_point_required",
+    "patch_must_report_actual_match_count_or_insert_count",
+    "post_write_verification_required",
+    "no_success_message_unless_post_write_verification_passes",
+    "git_diff_or_equivalent_required_after_code_mutation",
+    "direct_execution_test_required_when_execution_boundary_changes",
+    "wrapper_execution_test_required_when_wrapper_or_gate_changes",
+    "fail_closed_if_patch_marker_missing_after_write"
+  ],
+  "forbidden_patterns": [
+    "blind_text_replace_without_checking_count",
+    "regex_substitution_without_asserting_match_count",
+    "printing patched/success before re-reading file",
+    "assuming function signatures such as def main(): without inspection",
+    "patching multiple files from broad keyword scans without allowlist"
+  ],
+  "required_patch_flow": [
+    "1_probe_target_file_exists",
+    "2_read_target_file",
+    "3_locate_structural_target_deterministically",
+    "4_apply_smallest_valid_patch",
+    "5_re_read_target_file",
+    "6_verify_marker_and_behavior",
+    "7_show_git_diff_or_hash_delta",
+    "8_commit_only_after_verification"
+  ],
+  "root_cause_closed": {
+    "failure_class": "silent_code_patch_failure",
+    "example_failure": "Regex/string replacement looked for def main(): but target used def main() -> int:, causing no mutation while script claimed success.",
+    "permanent_fix": "All code patches must verify structural match count and post-write marker presence before any success claim."
+  }
+}

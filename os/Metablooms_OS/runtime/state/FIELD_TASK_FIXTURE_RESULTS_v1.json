@@ -1,0 +1,52 @@
+{
+  "checked_at_utc": "2026-05-03T02:55:37Z",
+  "errors": [],
+  "passed": 6,
+  "results": [
+    {
+      "artifact": "/mnt/data/Metablooms_OS/0_kernel/evals/field_task_fixtures/artifacts/educational_html_field_fixture.html",
+      "domain": "educational_html",
+      "errors": [],
+      "id": "field_educational_html_001",
+      "verdict": "PASS"
+    },
+    {
+      "artifact": "/mnt/data/Metablooms_OS/0_kernel/evals/field_task_fixtures/artifacts/blooket_field_fixture.csv",
+      "domain": "blooket_csv",
+      "errors": [],
+      "id": "field_blooket_csv_001",
+      "verdict": "PASS"
+    },
+    {
+      "artifact": "/mnt/data/Metablooms_OS/0_kernel/evals/field_task_fixtures/artifacts/lesson_plan_field_fixture.md",
+      "domain": "lesson_plan",
+      "errors": [],
+      "id": "field_lesson_plan_001",
+      "verdict": "PASS"
+    },
+    {
+      "artifact": "/mnt/data/Metablooms_OS/0_kernel/evals/field_task_fixtures/artifacts/research_see_field_fixture.json",
+      "domain": "research_see",
+      "errors": [],
+      "id": "field_research_see_001",
+      "verdict": "PASS"
+    },
+    {
+      "artifact": "/mnt/data/Metablooms_OS/0_kernel/evals/field_task_fixtures/artifacts/artifact_export_field_fixture_manifest.json",
+      "domain": "artifact_export",
+      "errors": [],
+      "id": "field_artifact_export_001",
+      "verdict": "PASS"
+    },
+    {
+      "artifact": "/mnt/data/Metablooms_OS/0_kernel/evals/field_task_fixtures/artifacts/repair_debugging_field_fixture_receipt.json",
+      "domain": "repair_debugging",
+      "errors": [],
+      "id": "field_repair_debugging_001",
+      "verdict": "PASS"
+    }
+  ],
+  "schema_version": "v1",
+  "total": 6,
+  "verdict": "PASS"
+}

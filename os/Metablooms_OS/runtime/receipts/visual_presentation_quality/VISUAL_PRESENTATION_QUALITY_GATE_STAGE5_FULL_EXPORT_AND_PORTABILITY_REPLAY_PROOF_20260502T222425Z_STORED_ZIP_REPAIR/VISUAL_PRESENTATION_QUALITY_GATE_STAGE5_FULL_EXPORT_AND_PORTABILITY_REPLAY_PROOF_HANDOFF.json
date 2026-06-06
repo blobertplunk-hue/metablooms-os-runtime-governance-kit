@@ -1,0 +1,7 @@
+{
+  "authorized_next_stage": "NEW_JOB_AFTER_VISUAL_PRESENTATION_GATE_EXPORT",
+  "blockers": [],
+  "created_utc": "2026-05-02T22:24:25Z",
+  "from_stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE5_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF",
+  "schema_version": "metablooms_stage_handoff.v1"
+}

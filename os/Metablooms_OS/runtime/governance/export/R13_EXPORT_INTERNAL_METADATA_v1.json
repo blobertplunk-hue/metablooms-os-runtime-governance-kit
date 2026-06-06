@@ -1,0 +1,13 @@
+{
+  "artifact_type": "R13_FULL_OS_EXPORT_INTERNAL_METADATA",
+  "base_zip": "/mnt/data/METABLOOMS_FULL_OS_v3_3_PHASE1_PHASE2_MERGED_REPAIRED.zip",
+  "created_utc": "2026-04-28T03:44:55.478392+00:00",
+  "export_root": "Metablooms_OS/",
+  "final_export_package_policy": "outer_bundle_contains_inner_os_zip_sha256_and_post_zip_validation_receipt",
+  "included_prep_receipt": "receipts/refactor_program/R13_EXPORT_PREP_RECEIPT_20260428T034455Z.json",
+  "source_root": "/mnt/data/Metablooms_OS",
+  "stage": "R13_FINAL_EXPORT_SELF_CONSISTENCY_AUDIT_AND_EXPORT",
+  "status": "READY_FOR_R13_FINAL_EXPORT",
+  "updated_utc": "2026-04-29T10:39:56.211537Z",
+  "zip_sha256_binding": "external_sidecar_required_no_internal_self_hash"
+}

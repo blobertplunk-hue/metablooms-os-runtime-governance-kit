@@ -1,0 +1,23 @@
+{
+  "candidate_methods": [
+    "short_phone_safe_sandbox_link"
+  ],
+  "capability_need": "download_link_exposure",
+  "decision": "ALLOW_PRIMARY",
+  "evidence_paths": [],
+  "limitation_label": null,
+  "probe_records": [
+    {
+      "method_id": "short_phone_safe_sandbox_link",
+      "probe": {
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "link-precheck-ok\n"
+      },
+      "rank": 1
+    }
+  ],
+  "selected_method": "short_phone_safe_sandbox_link",
+  "task_id": "wc6_fixture",
+  "timestamp_utc": "2026-05-03T00:53:23Z"
+}

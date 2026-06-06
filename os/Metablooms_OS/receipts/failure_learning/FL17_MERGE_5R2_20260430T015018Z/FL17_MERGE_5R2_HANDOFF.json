@@ -1,0 +1,22 @@
+{
+  "artifact_type": "STAGE_HANDOFF",
+  "baseline_promoted": false,
+  "blocked_actions": [
+    "Do not declare baseline promotion in this stage",
+    "Do not treat FL17 package/export pass as FL16 promotion pass",
+    "Do not skip always-on governance or SEE/CE preflight"
+  ],
+  "created_utc": "20260430T015018Z",
+  "external_sidecar_required": true,
+  "must_load": [
+    "external checksum sidecar",
+    "0_kernel/registry/failure_learning/FL17-MERGE-5R2_INTERNAL_PROOF_SIDECAR_BINDING_REPAIR/FL17_MERGE_5R2_INTERNAL_PROOF_REPAIR_REPORT.json",
+    "receipts/failure_learning/FL17_MERGE_5R2_20260430T015018Z/FL17_MERGE_5R2_RECEIPT.json",
+    "runtime/state/TRACKER_STATE_v1.json"
+  ],
+  "next_allowed_stage": "BASELINE-PROMOTION-0_ONLY_IF_USER_EXPLICITLY_REQUESTS_PROMOTION",
+  "promotion_performed": false,
+  "stage_id": "FL17-MERGE-5R2_INTERNAL_PROOF_SIDECAR_BINDING_REPAIR",
+  "status": "READY_FOR_EXPLICIT_BASELINE_PROMOTION_DECISION",
+  "stop_rule": "Stop after 5R2; promotion requires separate explicit stage."
+}

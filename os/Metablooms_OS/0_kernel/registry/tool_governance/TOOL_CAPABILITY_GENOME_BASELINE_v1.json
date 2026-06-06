@@ -1,0 +1,437 @@
+{
+  "created_utc": "2026-05-02T01:21:41.961936Z",
+  "genomes": [
+    {
+      "capabilities": [
+        "zip_create",
+        "streaming_export",
+        "low_memory_packaging"
+      ],
+      "denied_replacements": [
+        "unzip_tqq_full_test"
+      ],
+      "display_name": "Node/yazl streaming ZIP export",
+      "evidence_refs": [
+        "runtime/tooling/governed_install_profiles/node_zip_authority_repair_v1"
+      ],
+      "execution_route": "runtime/governance/executors/bts_wrapped_executors_v1.py export-zip-node-profile",
+      "fallbacks": [
+        "python_zipfile_compatibility_fallback",
+        "zip_cli_metadata_scan"
+      ],
+      "install_state": "GOVERNED_PROFILE",
+      "job_types": [
+        "zip_export",
+        "authority_export",
+        "artifact_packaging"
+      ],
+      "known_failure_classes": [],
+      "known_strengths": [
+        "streaming",
+        "avoids full materialization",
+        "paired with yauzl CRC proof"
+      ],
+      "preferred_when": [
+        "large_zip_export",
+        "authority_bundle",
+        "bootable_os_bundle"
+      ],
+      "requires_approval": true,
+      "risk_tier": "export",
+      "schema": "TOOL_CAPABILITY_GENOME_v1",
+      "source_registry_paths": [
+        "0_kernel/registry/tool_governance/GOVERNED_TOOL_INSTALL_PROFILE_REGISTRY_v1.json"
+      ],
+      "tool_id": "node_yazl_stream_export"
+    },
+    {
+      "capabilities": [
+        "zip_read",
+        "crc_proof",
+        "central_directory_scan"
+      ],
+      "denied_replacements": [
+        "unzip_tqq_full_test"
+      ],
+      "display_name": "Node/yauzl streamed CRC proof",
+      "evidence_refs": [
+        "METABLOOMS_STAGE4_NODE_YAUZL_FULL_STREAM_CRC_PROOF"
+      ],
+      "execution_route": "runtime/tooling/governed_install_profiles/node_zip_authority_repair_v1/stream_crc_proof.js",
+      "fallbacks": [
+        "zipinfo_metadata_scan",
+        "jar_list"
+      ],
+      "install_state": "GOVERNED_PROFILE",
+      "job_types": [
+        "zip_crc_proof",
+        "zip_export",
+        "authority_export"
+      ],
+      "known_failure_classes": [],
+      "known_strengths": [
+        "full streamed CRC proof",
+        "safe archive member inspection"
+      ],
+      "preferred_when": [
+        "zip_integrity_check",
+        "large_archive_validation"
+      ],
+      "requires_approval": false,
+      "risk_tier": "read",
+      "schema": "TOOL_CAPABILITY_GENOME_v1",
+      "source_registry_paths": [
+        "0_kernel/registry/tool_governance/GOVERNED_TOOL_INSTALL_PROFILE_REGISTRY_v1.json"
+      ],
+      "tool_id": "node_yauzl_crc_proof"
+    },
+    {
+      "capabilities": [
+        "zip_create",
+        "zip_read",
+        "stdlib"
+      ],
+      "denied_replacements": [
+        "unzip_tqq_full_test"
+      ],
+      "display_name": "Python zipfile compatibility fallback",
+      "evidence_refs": [],
+      "execution_route": "python3 -S stdlib zipfile fallback",
+      "fallbacks": [
+        "zip_cli_direct"
+      ],
+      "install_state": "INSTALLED",
+      "job_types": [
+        "zip_export",
+        "zip_crc_proof"
+      ],
+      "known_failure_classes": [
+        "broad_extract_timeout_risk",
+        "python_startup_expensive_if_not_-S"
+      ],
+      "known_strengths": [
+        "stdlib available",
+        "portable"
+      ],
+      "preferred_when": [
+        "node_profile_unavailable",
+        "small_zip"
+      ],
+      "requires_approval": true,
+      "risk_tier": "export",
+      "schema": "TOOL_CAPABILITY_GENOME_v1",
+      "source_registry_paths": [
+        "0_kernel/registry/tool_governance/sandbox_tool_probe_inventory_v1.json"
+      ],
+      "tool_id": "python_zipfile_compatibility_fallback"
+    },
+    {
+      "capabilities": [
+        "zip_metadata",
+        "archive_summary"
+      ],
+      "denied_replacements": [
+        "unzip_tqq_full_test"
+      ],
+      "display_name": "zipinfo metadata scan",
+      "evidence_refs": [],
+      "execution_route": "zipinfo -t / central directory metadata",
+      "fallbacks": [
+        "jar_list"
+      ],
+      "install_state": "SMOKE_TESTED",
+      "job_types": [
+        "zip_crc_proof",
+        "zip_export"
+      ],
+      "known_failure_classes": [],
+      "known_strengths": [
+        "quick metadata inspection"
+      ],
+      "preferred_when": [
+        "archive_metadata_summary"
+      ],
+      "requires_approval": false,
+      "risk_tier": "read",
+      "schema": "TOOL_CAPABILITY_GENOME_v1",
+      "source_registry_paths": [
+        "0_kernel/registry/tool_governance/sandbox_tool_probe_inventory_v1.json"
+      ],
+      "tool_id": "zipinfo_metadata_scan"
+    },
+    {
+      "capabilities": [
+        "zip_validation"
+      ],
+      "denied_replacements": [
+        "node_yauzl_crc_proof",
+        "zipinfo_metadata_scan"
+      ],
+      "display_name": "unzip -tqq full test",
+      "evidence_refs": [
+        "FORBIDDEN_VALIDATION_METHODS_v1.json"
+      ],
+      "execution_route": "DENIED",
+      "fallbacks": [],
+      "install_state": "DENIED",
+      "job_types": [
+        "zip_crc_proof"
+      ],
+      "known_failure_classes": [
+        "timeout_large_archive_validation"
+      ],
+      "known_strengths": [],
+      "preferred_when": [],
+      "requires_approval": true,
+      "risk_tier": "denied",
+      "schema": "TOOL_CAPABILITY_GENOME_v1",
+      "source_registry_paths": [
+        "FORBIDDEN_VALIDATION_METHODS_v1.json"
+      ],
+      "tool_id": "unzip_tqq_full_test"
+    },
+    {
+      "capabilities": [
+        "filesystem_write",
+        "implementation_reality",
+        "t1_file_receipt"
+      ],
+      "denied_replacements": [
+        "ad_hoc_shell_redirection"
+      ],
+      "display_name": "BTS-wrapped filesystem write/copy",
+      "evidence_refs": [
+        "METABLOOMS_STAGE6E"
+      ],
+      "execution_route": "runtime/governance/executors/bts_wrapped_executors_v1.py write/copy",
+      "fallbacks": [
+        "direct_write_only_if_bootstrap_exception"
+      ],
+      "install_state": "PROMOTED",
+      "job_types": [
+        "observability_trace_export",
+        "filesystem_repair",
+        "trace_export_adapter_install",
+        "source_patch",
+        "artifact_write"
+      ],
+      "known_failure_classes": [],
+      "known_strengths": [
+        "BTS records",
+        "pre-action gate",
+        "implementation reality"
+      ],
+      "preferred_when": [
+        "trace_export_adapter_source_patch",
+        "source_patch",
+        "filesystem_mutation"
+      ],
+      "requires_approval": false,
+      "risk_tier": "write",
+      "schema": "TOOL_CAPABILITY_GENOME_v1",
+      "source_registry_paths": [
+        "governance/invariants/BTS_WRAPPED_EXPORT_AND_FILESYSTEM_EXECUTORS_REQUIRED_v1.json"
+      ],
+      "tool_id": "bts_wrapped_filesystem_write"
+    },
+    {
+      "capabilities": [
+        "current_research",
+        "citations",
+        "source_evidence"
+      ],
+      "denied_replacements": [
+        "memory_only_current_claim"
+      ],
+      "display_name": "web.run SEE research",
+      "evidence_refs": [
+        "RESEARCH_SEE_CE_GATE_v1"
+      ],
+      "execution_route": "web.run with citations/evidence binding",
+      "fallbacks": [
+        "T3_advisory_only"
+      ],
+      "install_state": "PROMOTED",
+      "job_types": [
+        "see_web_research",
+        "legal_current",
+        "technical_current",
+        "observability_trace_export",
+        "current_best_practice"
+      ],
+      "known_failure_classes": [
+        "no_see_without_web_run_invalid"
+      ],
+      "known_strengths": [
+        "current information",
+        "citation binding"
+      ],
+      "preferred_when": [
+        "current_trace_observability_guidance",
+        "current_or_changed_facts",
+        "SOTA_research"
+      ],
+      "requires_approval": false,
+      "risk_tier": "see",
+      "schema": "TOOL_CAPABILITY_GENOME_v1",
+      "source_registry_paths": [
+        "0_kernel/chat_governance/ALWAYS_ON_INVARIANTS_v1.json"
+      ],
+      "tool_id": "web_run_see_research"
+    },
+    {
+      "capabilities": [
+        "html_parse",
+        "dom_validation",
+        "accessibility_check",
+        "tts_contract_probe"
+      ],
+      "denied_replacements": [
+        "source_string_presence_as_ui_proof"
+      ],
+      "display_name": "Node DOM/accessibility validation profile",
+      "evidence_refs": [
+        "GOVERNED_TOOL_INSTALL_PROFILE_REGISTRY_v1.json"
+      ],
+      "execution_route": "governed npm profile B_HTML_VALIDATION_ACCESSIBILITY",
+      "fallbacks": [
+        "node_parse5_minimal",
+        "browser_render_smoke_if_available"
+      ],
+      "install_state": "INSTALLABLE",
+      "job_types": [
+        "html_validation",
+        "interactive_html_audit",
+        "external_install_profile"
+      ],
+      "known_failure_classes": [],
+      "known_strengths": [
+        "DOM parsing",
+        "accessibility fixture checks"
+      ],
+      "preferred_when": [
+        "html_activity_validation",
+        "tts_regression"
+      ],
+      "requires_approval": false,
+      "risk_tier": "read",
+      "schema": "TOOL_CAPABILITY_GENOME_v1",
+      "source_registry_paths": [
+        "0_kernel/registry/tool_governance/GOVERNED_TOOL_INSTALL_PROFILE_REGISTRY_v1.json"
+      ],
+      "tool_id": "node_jsdom_html_validation_profile"
+    },
+    {
+      "capabilities": [
+        "pptx_extract",
+        "docx_extract",
+        "office_xml_parse"
+      ],
+      "denied_replacements": [
+        "ocr_first_for_text_documents"
+      ],
+      "display_name": "Node Office XML extraction profile",
+      "evidence_refs": [
+        "GOVERNED_TOOL_INSTALL_PROFILE_REGISTRY_v1.json"
+      ],
+      "execution_route": "governed npm profile C_DOCUMENT_EXTRACTION",
+      "fallbacks": [
+        "python_stdlib_zip_xml"
+      ],
+      "install_state": "INSTALLABLE",
+      "job_types": [
+        "document_extraction",
+        "pptx_extraction",
+        "docx_extraction",
+        "external_install_profile"
+      ],
+      "known_failure_classes": [],
+      "known_strengths": [
+        "zip+xml native office parsing"
+      ],
+      "preferred_when": [
+        "pptx_slide_text_media_extract",
+        "docx_extract"
+      ],
+      "requires_approval": false,
+      "risk_tier": "read",
+      "schema": "TOOL_CAPABILITY_GENOME_v1",
+      "source_registry_paths": [
+        "0_kernel/registry/tool_governance/GOVERNED_TOOL_INSTALL_PROFILE_REGISTRY_v1.json"
+      ],
+      "tool_id": "node_office_xml_extraction_profile"
+    },
+    {
+      "capabilities": [
+        "xlsx_create",
+        "spreadsheet_style",
+        "artifact_export"
+      ],
+      "denied_replacements": [
+        "libreoffice_for_spreadsheets_without_explicit_request"
+      ],
+      "display_name": "artifact_tool/openpyxl spreadsheet route",
+      "evidence_refs": [
+        "spreadsheets/SKILL.md"
+      ],
+      "execution_route": "artifact_tool/openpyxl per spreadsheet skill",
+      "fallbacks": [
+        "csv_stdlib"
+      ],
+      "install_state": "INSTALLED",
+      "job_types": [
+        "spreadsheet_generation",
+        "spreadsheet_audit"
+      ],
+      "known_failure_classes": [
+        "libreoffice_spreadsheet_route_forbidden_unless_explicit"
+      ],
+      "known_strengths": [
+        "native spreadsheet artifact support"
+      ],
+      "preferred_when": [
+        "xlsx_workbook_generation",
+        "spreadsheet_formatting"
+      ],
+      "requires_approval": false,
+      "risk_tier": "write",
+      "schema": "TOOL_CAPABILITY_GENOME_v1",
+      "source_registry_paths": [],
+      "tool_id": "openpyxl_artifact_tool_spreadsheet"
+    },
+    {
+      "denied_replacements": [],
+      "display_name": "Python stdlib observability trace export adapter",
+      "evidence_refs": [
+        "research/SEE/STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS_SEE_v1.json",
+        "runtime/evals/observability/STAGE6R_TRACE_EXPORT_ADAPTER_SMOKE_RESULT.json"
+      ],
+      "execution_route": "runtime/governance/observability_trace_export_adapter_v1.py",
+      "fallbacks": [
+        "bts_wrapped_filesystem_write",
+        "web_run_see_research"
+      ],
+      "install_state": "PROMOTED",
+      "job_types": [
+        "observability_trace_export",
+        "trace_export_adapter",
+        "trace_validation"
+      ],
+      "known_failure_classes": [],
+      "preferred_when": [
+        "observability_trace_export",
+        "trace_export_adapter",
+        "opentelemetry_span_json",
+        "openai_agents_event_json",
+        "langgraph_run_json"
+      ],
+      "requires_approval": false,
+      "risk_tier": "write",
+      "tool_id": "python_observability_trace_export_adapter"
+    }
+  ],
+  "last_stage": "STAGE6T_TOOL_UNIVERSE_RESOLVER_COVERAGE_REPAIR_FOR_TRACE_EXPORT",
+  "last_updated_utc": "2026-05-02T03:36:47.997169Z",
+  "schema": "TOOL_CAPABILITY_GENOME_BASELINE_v1",
+  "stage": "STAGE6H_BTS_TOOL_UNIVERSE_RESOLVER_AND_CANDIDATE_SELECTION_GATE"
+}

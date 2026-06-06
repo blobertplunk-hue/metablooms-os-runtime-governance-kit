@@ -1,0 +1,12 @@
+{
+  "from_stage": "MPP_R5_DRS_DECISION_RECORD_VALIDATOR_AND_RESEARCH_TO_DECISION_GATE",
+  "notes": "R5 converts normalized research into schema-validated DRS records with evidence bindings and alternatives.",
+  "required_inputs": [
+    "0_kernel/schemas/mpp_v3/DRS_DECISION_RECORD_SCHEMA_v1.json",
+    "0_kernel/mpp_v3/mpp_v3_drs_decision_gate_v1.py",
+    "tests/fixtures/mpp_v3/valid_drs_decision_record_v1.json"
+  ],
+  "root": "/mnt/data/mbos_audit_extract_4945/Metablooms_OS",
+  "status": "READY",
+  "to_stage": "MPP_R6_CDR_CONSTRAINTS_SCHEMA_AND_POLICY_GATE"
+}

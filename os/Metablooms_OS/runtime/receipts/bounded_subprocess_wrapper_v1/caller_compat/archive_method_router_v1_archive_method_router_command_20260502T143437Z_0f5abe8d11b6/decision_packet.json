@@ -1,0 +1,42 @@
+{
+  "argv_redacted": [
+    "/usr/bin/unzip",
+    "-tq",
+    "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/smoke/smoke.zip"
+  ],
+  "argv_resolved": [
+    "/usr/bin/unzip",
+    "-tq",
+    "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/smoke/smoke.zip"
+  ],
+  "artifact_type": "METABLOOMS_BOUNDED_COMMAND_DECISION_PACKET_v1",
+  "attempts": [
+    {
+      "attempt_index": 0,
+      "elapsed_ms": 57,
+      "returncode": 0,
+      "started_utc": "20260502T143437Z",
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_truncated": false,
+      "stdout": "No errors detected in compressed data of /mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/smoke/smoke.zip.\n",
+      "stdout_bytes": 210,
+      "stdout_sha256": "e52542c90fee3047e4055eaeac7a2dee639fb350561c2f84f6107add179f971e",
+      "stdout_truncated": false,
+      "timeout_seconds": 30.0
+    }
+  ],
+  "created_utc": "20260502T143437Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision_packet_path": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/archive_method_router_v1_archive_method_router_command_20260502T143437Z_0f5abe8d11b6/decision_packet.json",
+  "failure_class": null,
+  "failure_event_path": null,
+  "operation_type": "archive_method_router_command",
+  "policy_matches": [],
+  "pre_spawn_receipt_path": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/archive_method_router_v1_archive_method_router_command_20260502T143437Z_0f5abe8d11b6/pre_spawn_receipt.json",
+  "receipt_dir": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/archive_method_router_v1_archive_method_router_command_20260502T143437Z_0f5abe8d11b6",
+  "result_class": "ALLOW_SUCCESS",
+  "stage": "archive_method_router_v1",
+  "total_elapsed_ms": 59
+}

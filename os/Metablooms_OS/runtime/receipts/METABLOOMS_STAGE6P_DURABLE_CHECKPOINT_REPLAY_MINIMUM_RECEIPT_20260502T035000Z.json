@@ -1,0 +1,108 @@
+{
+  "authority_export_performed": false,
+  "boot_checks": {
+    "authority_sha256_sidecar": "OK",
+    "boot_executor": "PASS_WITH_ACCEPTED_WARNING_git_dir_missing",
+    "portable_boot_verify": "PASS",
+    "runtime_starter": "ALLOW"
+  },
+  "bts_commit": {
+    "decision": "COMMIT_SUCCESS",
+    "post_tool_validation": "ALLOW_SUCCESS_COMMIT",
+    "schema": "BTS_COMMIT_v1",
+    "stage_id": "STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM",
+    "timestamp_utc": "2026-05-02T02:57:00.124947Z"
+  },
+  "external_research_sources": [
+    "https://docs.langchain.com/oss/python/langgraph/durable-execution",
+    "https://docs.langchain.com/oss/python/langgraph/interrupts",
+    "https://openai.github.io/openai-agents-python/human_in_the_loop/",
+    "https://openai.github.io/openai-agents-python/tracing/",
+    "https://docs.temporal.io/workflows",
+    "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/"
+  ],
+  "installed_artifacts": [
+    {
+      "bytes": 2336,
+      "path": "/mnt/data/Metablooms_OS/research/SEE/STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM_SEE_v1.json",
+      "sha256": "be28b6f907cdf87dadca07523c97a7f0dca79b2409230bc3b91f915b904c6458"
+    },
+    {
+      "bytes": 1235,
+      "path": "/mnt/data/Metablooms_OS/research/CE/STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM_CE_v1.json",
+      "sha256": "512f63e7fe64154889444aa0a30e60540012f5bd69ca09125b504b12d8dc2245"
+    },
+    {
+      "bytes": 1600,
+      "path": "/mnt/data/Metablooms_OS/0_kernel/registry/state_checkpoint/DURABLE_CHECKPOINT_REPLAY_MINIMUM_SPEC_v1.json",
+      "sha256": "68799b76b36b80af6787c09d1b6607051045f2e3522765077131285d983d83b8"
+    },
+    {
+      "bytes": 1187,
+      "path": "/mnt/data/Metablooms_OS/0_kernel/registry/state_checkpoint/DURABLE_CHECKPOINT_REPLAY_POLICY_BINDINGS_v1.json",
+      "sha256": "1430973906a4591e0f9af4b20b2aede31ba0c65db3870c7343f6d34e15539cd3"
+    },
+    {
+      "bytes": 763,
+      "path": "/mnt/data/Metablooms_OS/governance/invariants/DURABLE_CHECKPOINT_REPLAY_MINIMUM_REQUIRED_v1.json",
+      "sha256": "ca7c6dd3aacc0720170b92a064a5500adc5e5b103cf101b1ad6dd31562507dbb"
+    },
+    {
+      "bytes": 7776,
+      "path": "/mnt/data/Metablooms_OS/runtime/governance/durable_checkpoint_replay_gate_v1.py",
+      "sha256": "b7c79c9ad7ef13a1775b93a29037e2432ae4899e06017d1e8d2a4dc53da2d424"
+    },
+    {
+      "bytes": 286,
+      "path": "/mnt/data/Metablooms_OS/tests/fixtures/state_checkpoint/stage6p_resume_allow_v1.json",
+      "sha256": "cc64bb2d949f983fcbf45fc0b9c7a16568c1168cd334a29bdaad73640861b53d"
+    },
+    {
+      "bytes": 187,
+      "path": "/mnt/data/Metablooms_OS/tests/fixtures/state_checkpoint/stage6p_resume_deny_payload_v1.json",
+      "sha256": "5bf670a199b1e65146a3e646c80882187d300d67e5e6d0a6dbaa05ef97013505"
+    },
+    {
+      "bytes": 1851,
+      "path": "/mnt/data/Metablooms_OS/tests/evals/state_checkpoint/test_stage6p_durable_checkpoint_replay_gate_v1.py",
+      "sha256": "df63c7b7b7405394ccd0765d781f2c16636ebff597a6ea65410cc01219a8a953"
+    },
+    {
+      "bytes": 5066,
+      "path": "/mnt/data/Metablooms_OS/governance/ACTIVE_INVARIANTS_INDEX.json",
+      "sha256": "1ce2741fdf6c70769339a35f9dfeebaf5444ef331435b3f9b395cf6100deb019"
+    },
+    {
+      "bytes": 1098,
+      "path": "/mnt/data/Metablooms_OS/runtime/evals/state_checkpoint/STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM_SMOKE_RESULT.json",
+      "sha256": "6e92662e4ddbd9dfe9b3049456d4b3b846aff4315998c25fb86eaf4240717da1"
+    },
+    {
+      "bytes": 437,
+      "path": "/mnt/data/Metablooms_OS/runtime/state/STAGE6P_TRACKER_PREVIEW.txt",
+      "sha256": "e4d558c71ab151ed3481afc9df5680eece99526897f926fd01bc9412913ecdeb"
+    }
+  ],
+  "next_stage": "STAGE6Q_LEGACY_EXECUTOR_RETROFIT_AUDIT",
+  "post_tool_validation_decision_path": "runtime/stage_work/STAGE6P/post_tool_validation_decision.json",
+  "schema": "MetaBloomsStageReceipt_v1",
+  "smoke_result_path": "/mnt/data/Metablooms_OS/runtime/evals/state_checkpoint/STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM_SMOKE_RESULT.json",
+  "stage_id": "STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM",
+  "status": "PASS",
+  "support_bundle": {
+    "entries": 45,
+    "label": "SUPPORT/PROOF BUNDLE \u2014 NOT THE OS BUNDLE",
+    "path": "/mnt/data/METABLOOMS_STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM_SUPPORT_PROOF_BUNDLE_NOT_OS_20260502T035000Z.zip",
+    "proof_path": "/mnt/data/METABLOOMS_STAGE6P_SUPPORT_BUNDLE_FINAL_PROOF_20260502T035000Z.json",
+    "sha256": "9cb42425aa2967433d829e684a0865fbd48aca91c2a09e13ea239ac7d2c84b42"
+  },
+  "support_bundle_not_os": true,
+  "timestamp_utc": "2026-05-02T02:56:34.160506Z",
+  "tool_governance": {
+    "bts_tool_evaluation": "PASS",
+    "post_tool_result_validation": "ALLOW_SUCCESS_COMMIT",
+    "pre_tool_action_gate": "ALLOW",
+    "resolver": "PASS"
+  },
+  "verdict": "PASS"
+}

@@ -1,0 +1,22 @@
+{
+  "candidate_set_id": "tool_candidates_aac41fdea664bb93",
+  "candidates": [
+    {
+      "assessment": "audit-only stage selects shell/python static scan route via governed receipts",
+      "decision_status": "PREFERRED",
+      "score": 80.0,
+      "tool_id": "bts_wrapped_filesystem_write"
+    },
+    {
+      "assessment": "considered by resolver",
+      "decision_status": "DENIED",
+      "score": -100.0,
+      "tool_id": "unzip_tqq_full_test"
+    }
+  ],
+  "created_at_utc": "2026-05-02T03:15:58.348116Z",
+  "schema": "BTS_TOOL_EVALUATION_v1",
+  "selected_tool_id": "bts_wrapped_filesystem_write",
+  "stage_id": "STAGE6Q_LEGACY_EXECUTOR_RETROFIT_AUDIT",
+  "why_not_better_tool": "selected top allowed candidate"
+}

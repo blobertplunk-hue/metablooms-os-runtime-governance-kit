@@ -1,0 +1,28 @@
+{
+  "stage": "R4_SESSION_STATE_EXPORT_REPLACEMENT",
+  "created_utc": "2026-04-28T02:53:18Z",
+  "verdict": "PASS",
+  "authoritative_root": "/mnt/data/Metablooms_OS",
+  "outputs": [
+    "runtime/governance/schemas/session_state_export_schema_v1.json",
+    "0_kernel/scripts/session_state_exporter_v1.py",
+    "0_kernel/scripts/validate_session_state_export_v1.py",
+    "runtime/governance/state_exports/SESSION_STATE_EXPORT_LATEST_v1.json",
+    "0_kernel/scripts/claude_memory_sync_writer_v1.py"
+  ],
+  "enforcement": {
+    "python_lane": "runtime/governance/python3_S_lane_exec_v1.sh",
+    "no_vendor_field_names": true,
+    "legacy_writer_retired": true,
+    "self_hash_excluded_to_avoid_circularity": true
+  },
+  "hashes": {
+    "runtime/governance/schemas/session_state_export_schema_v1.json": "7e774f56c7b58274da8f6939897309c83aec50cf9f155d95a7e9a258e7c59e72",
+    "0_kernel/scripts/session_state_exporter_v1.py": "2a499402d1d1a4f157af2ed91fbb91b2d3047e251828e3b991561d064475ed9f",
+    "0_kernel/scripts/validate_session_state_export_v1.py": "5e05025296fc35c554f1ebb8436d5277d306af0474435b37b99cf630fedc4fe0",
+    "runtime/governance/state_exports/SESSION_STATE_EXPORT_LATEST_v1.json": "54165c071dd7831f2daf1c3df747b197951e78047cbb319265ef687993c6aaf6",
+    "0_kernel/scripts/claude_memory_sync_writer_v1.py": "e42ed7b66254bbbdf38009ae8af055c5dd5a5a6c4e2f017005619f105a145e23"
+  },
+  "validation_report": "receipts/refactor_program/R4_VALIDATION_REPORT_20260428T025317Z.json",
+  "next_stage": "R5_GATE_REGISTRY_AND_WIRING_REPLACEMENT"
+}

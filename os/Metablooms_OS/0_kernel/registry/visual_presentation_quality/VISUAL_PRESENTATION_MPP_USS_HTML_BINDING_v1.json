@@ -1,0 +1,41 @@
+{
+  "binding_id": "VISUAL_PRESENTATION_MPP_USS_HTML_BINDING_v1",
+  "created_utc": "2026-05-02T22:02:55Z",
+  "next_stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE4_RENDER_SMOKE_AND_VISUAL_REVIEW_PACKET",
+  "research_basis": [
+    {
+      "claim": "dashboards should provide at-a-glance actionable information",
+      "source": "Nielsen Norman Group dashboard guidance"
+    },
+    {
+      "claim": "scale, hierarchy, balance, contrast, and Gestalt principles support objective critique",
+      "source": "Nielsen Norman Group visual design principles"
+    },
+    {
+      "claim": "design systems provide guidelines, styles, and components for user-friendly interfaces",
+      "source": "Material Design 3"
+    },
+    {
+      "claim": "visual artifacts must address current accessibility criteria including dragging movement and target size",
+      "source": "W3C WCAG 2.2"
+    }
+  ],
+  "schema_version": "metablooms.visual_presentation_binding.v1",
+  "scope": {
+    "html_activity_cartridge": "HTML activities must load the 3_5_student_learning_activity profile and teacher_professional_presentation requirements",
+    "mpp": "visual artifact promotion must include visual_presentation_quality declaration and validator ALLOW before implementation/promotion handoff",
+    "uss": "visual_presentation is now a usefulness dimension required for html_activity, dashboard, teacher_tool, student_tool, landing_page, operator_tracker, and other visual artifact declarations"
+  },
+  "stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE3_MPP_USS_AND_HTML_CARTRIDGE_BINDING",
+  "teacher_professional_requirement": {
+    "intent": "Artifacts should make the teacher look prepared, credible, organized, and professionally intentional to students, parents, teammates, and administrators.",
+    "required_evidence": [
+      "separated teacher/student modes",
+      "shareable clean summaries",
+      "at-a-glance teacher dashboard hierarchy",
+      "professional language/no debug copy",
+      "screenshot/projector-safe polish"
+    ]
+  },
+  "verdict": "BOUND_LOCAL_NOT_EXPORTED"
+}

@@ -1,0 +1,45 @@
+{
+  "artifact_type": "StageReceipt.v1",
+  "changed_files": [
+    "0_kernel/scripts/runtime_pulse_logger_v1.py",
+    "runtime/governance/bts_v4/BTS.py",
+    "0_kernel/lib/io/atomic_append_log_compat_v1.py",
+    "0_kernel/registry/tool_governance/ATOMIC_APPEND_LOG_WRITER_CALLSITE_POLICY_STAGE4_v1.json",
+    "0_kernel/validators/validate_atomic_append_log_writer_callsite_policy_stage4_v1.py"
+  ],
+  "created_utc": "2026-05-02T15:18:24Z",
+  "policy_gate": {
+    "artifact_type": "AtomicAppendLogWriterCallsitePolicyStage4Result.v1",
+    "blocking_count": 0,
+    "canonical_writer": "0_kernel/lib/io/atomic_append_log_writer_v1.py",
+    "compat_adapter": "0_kernel/lib/io/atomic_append_log_compat_v1.py",
+    "created_utc": "2026-05-02T15:17:52Z",
+    "policy_path": "0_kernel/registry/tool_governance/ATOMIC_APPEND_LOG_WRITER_CALLSITE_POLICY_STAGE4_v1.json",
+    "remaining": [
+      {
+        "classification": "legacy_archive_exempt",
+        "detail": "direct append-open call",
+        "file": "runtime/governance/legacy_archives/claude_memory_sync_writer_v1.py",
+        "line": 332
+      }
+    ],
+    "remaining_direct_append_open_count": 1,
+    "verdict": "PASS",
+    "warning_count": 1
+  },
+  "receipts_dir": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE4_HASH_CHAIN_CALLER_RETROFIT_AND_FULL_POLICY_SWEEP_20260502T151652Z",
+  "runtime_root": "/mnt/data/Metablooms_OS",
+  "stage_id": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE4_HASH_CHAIN_CALLER_RETROFIT_AND_FULL_POLICY_SWEEP",
+  "status": "PASS_WITH_WARNINGS",
+  "summary": "Hash-chain append callers were routed through the governed append-log writer while preserving caller-side hash semantics. Full live append-open policy sweep passes; one legacy archive append remains warning-only.",
+  "validation": {
+    "append_writer_fixture_count": 14,
+    "append_writer_fixture_harness": "PASS",
+    "artifact_type": "AtomicAppendLogWriterStage4SmokeResults.v1",
+    "bts_prior_sha_chain_smoke": "PASS",
+    "compile_changed_files": "PASS",
+    "created_utc": "2026-05-02T15:18:24Z",
+    "policy_gate_verdict": "PASS",
+    "runtime_pulse_hash_chain_smoke": "PASS"
+  }
+}

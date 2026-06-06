@@ -1,0 +1,25 @@
+{
+  "attributes": {
+    "answer.correct": false,
+    "artifact.id": "fractions_number_line_telemetry_v1",
+    "attempt.number": 1,
+    "fraction.target": "3/4",
+    "hint.used": false,
+    "question.id": "Q1",
+    "question.type": "fraction_number_line",
+    "response.time_ms": 900,
+    "session.id": "sess-demo",
+    "signal.id": "DENOMINATOR_SIZE_CONFUSION",
+    "signal.type": "conceptual",
+    "student.pseudonymous_id": "anon-001",
+    "student.response": "3/8",
+    "teacher.action": "Draw both on a number line.",
+    "teacher.flag": true
+  },
+  "event_time_unix_ms": 1777339000000,
+  "parent_span_id": null,
+  "severity_number": 13,
+  "span_id": "0123456789abcdef",
+  "trace_id": "0123456789abcdef0123456789abcdef",
+  "traceparent": "00-0123456789abcdef0123456789abcdef-0123456789abcdef-01"
+}

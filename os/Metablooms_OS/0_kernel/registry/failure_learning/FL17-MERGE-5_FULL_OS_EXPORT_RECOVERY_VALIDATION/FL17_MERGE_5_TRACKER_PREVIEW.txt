@@ -1,0 +1,9 @@
+TRACKER ▸ MetaBlooms FL17 merged OS
+[█████] 5/5 complete
+Status: DONE
+Stage: FL17-MERGE-5 export/validation
+Now: full OS export packaged and recovery-tested
+Evidence: receipt + handoff + checksum
+Blocker: none
+Next: explicit baseline promotion only
+Stop: no promotion in this stage

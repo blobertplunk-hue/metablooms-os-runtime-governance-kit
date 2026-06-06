@@ -1,0 +1,43 @@
+{
+  "argv_redacted": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "-c",
+    "print(\"hello bounded\")"
+  ],
+  "argv_resolved": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "-c",
+    "print(\"hello bounded\")"
+  ],
+  "artifact_type": "METABLOOMS_BOUNDED_COMMAND_DECISION_PACKET_v1",
+  "attempts": [
+    {
+      "attempt_index": 0,
+      "elapsed_ms": 19,
+      "returncode": 0,
+      "started_utc": "20260502T135430Z",
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_truncated": false,
+      "stdout": "hello bounded\n",
+      "stdout_bytes": 14,
+      "stdout_sha256": "4b7637ea17701770ff5128b70ff9faeda6998596f3a0d058ffa5e097238340d2",
+      "stdout_truncated": false,
+      "timeout_seconds": 5.0
+    }
+  ],
+  "created_utc": "20260502T135430Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "failure_class": null,
+  "failure_event_path": null,
+  "operation_type": "fixture_pass_echo",
+  "policy_matches": [],
+  "pre_spawn_receipt_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135430Z/fixture_receipts/pass_echo/pre_spawn_receipt.json",
+  "receipt_dir": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135430Z/fixture_receipts/pass_echo",
+  "result_class": "ALLOW_SUCCESS",
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES",
+  "total_elapsed_ms": 20
+}

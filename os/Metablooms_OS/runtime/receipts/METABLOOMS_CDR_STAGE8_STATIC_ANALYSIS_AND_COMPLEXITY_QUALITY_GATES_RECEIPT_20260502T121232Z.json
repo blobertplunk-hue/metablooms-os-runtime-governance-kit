@@ -1,0 +1,35 @@
+{
+  "authority_export_performed": false,
+  "bundle_type": "SUPPORT/PROOF BUNDLE \u2014 NOT THE OS BUNDLE",
+  "installed_paths": [
+    "0_kernel/registry/cdr/CDR_STATIC_ANALYSIS_COMPLEXITY_QUALITY_GATE_SPEC_v1.json",
+    "0_kernel/registry/cdr/CDR_STATIC_ANALYSIS_COMPLEXITY_POLICY_v1.json",
+    "0_kernel/schemas/cdr/CDR_STATIC_ANALYSIS_COMPLEXITY_PACKET_SCHEMA_v1.json",
+    "runtime/governance/cdr_static_analysis_complexity_gate_v1.py",
+    "governance/invariants/CDR_STATIC_ANALYSIS_AND_COMPLEXITY_QUALITY_GATES_REQUIRED_v1.json",
+    "tests/fixtures/cdr/valid_cdr_static_analysis_complexity_packet_v1.json",
+    "tests/fixtures/cdr/invalid_cdr_static_analysis_complexity_over_complex_v1.json",
+    "tests/evals/cdr/test_cdr_static_analysis_complexity_gate_v1.py",
+    "research/SEE/CDR_STAGE8_STATIC_ANALYSIS_AND_COMPLEXITY_QUALITY_GATES_SEE_v1.json",
+    "research/CE/CDR_STAGE8_STATIC_ANALYSIS_AND_COMPLEXITY_QUALITY_GATES_CE_v1.json"
+  ],
+  "next_best_stage": "CDR_STAGE9_LINT_SECURITY_SCANNER_INTEGRATION_AND_BASELINE_REPORTING",
+  "research_basis": [
+    "Google Engineering Practices code review guidance",
+    "OWASP Secure Coding Practices Checklist",
+    "SonarQube metrics definitions",
+    "NIST SSDF"
+  ],
+  "schema": "MetaBloomsStageReceipt_v1",
+  "stage": "CDR_STAGE8_STATIC_ANALYSIS_AND_COMPLEXITY_QUALITY_GATES",
+  "stage6u_sidecar_ok": true,
+  "timestamp_utc": "2026-05-02T12:12:32Z",
+  "validation_summary": {
+    "all_cdr_eval_count": 7,
+    "all_cdr_eval_pass_count": 7,
+    "boot_post_returncode": 0,
+    "boot_pre_returncode": 0,
+    "stage8_eval_returncode": 0
+  },
+  "verdict": "PASS"
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": "v1",
+  "stage": "WC_STAGE9_REMEASURE_LATEST_WORLD_CLASS_SCORECARD_AGAINST_WC8RSSS",
+  "purpose": "Make continuation prompts hard-enforced stage-exit artifacts rather than optional generated text.",
+  "root_cause": "The next-stage prompt generator and prompt artifacts existed, but no mandatory validator blocked stage exit when NEXT_STAGE_COPY_PROMPT was missing, stale, generic, or not tied to the current boot authority.",
+  "required_exit_artifacts": [
+    "runtime/state/NEXT_STAGE_COPY_PROMPT.md",
+    "runtime/state/NEXT_STAGE_COPY_PROMPT.json",
+    "runtime/state/NEXT_STAGE_COPY_PROMPT.md.sha256",
+    "runtime/state/NEXT_STAGE_COPY_PROMPT.json.sha256"
+  ],
+  "must_fail_if": [
+    "missing prompt markdown",
+    "missing prompt json",
+    "sidecar mismatch",
+    "generic/latest authority wording",
+    "json markdown mismatch",
+    "missing tracker requirement",
+    "missing short phone-safe export requirement"
+  ],
+  "enforcement_artifacts": [
+    "0_kernel/validators/next_stage_copy_prompt_exit_gate_v1.py",
+    "tests/world_class_gap_plan/test_next_stage_copy_prompt_exit_gate_v1.py"
+  ],
+  "external_basis": [
+    "SRE launch checklists/gates",
+    "DORA measured delivery and recovery metrics"
+  ]
+}

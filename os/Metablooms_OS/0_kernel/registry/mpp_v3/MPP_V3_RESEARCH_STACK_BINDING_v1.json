@@ -1,0 +1,18 @@
+{
+  "artifact_id": "MPP_V3_RESEARCH_STACK_BINDING_v1",
+  "bindings": {
+    "CE": "0_kernel/docs/CE_PACKET_VALIDATOR_SPEC_v1.md + future CE packet schema/validator",
+    "MMD": "0_kernel/schemas/mpp_v3/MMD_GAP_LEDGER_SCHEMA_v1.json",
+    "RESEARCH_PLANNER": "0_kernel/schemas/mpp_v3/RESEARCH_PLANNER_PACKET_SCHEMA_v1.json",
+    "SEE": "0_kernel/schemas/SEE_PACKET_SCHEMA_v1.json + 0_kernel/scripts/see_packet_validator_v1.py when present; fallback to documented SEE_PACKET_VALIDATOR_SPEC_v1 until implementation location is verified"
+  },
+  "created_at": "2026-04-30T21:46:00Z",
+  "improvement_targets": [
+    "R1 implement research planner packet writer/validator",
+    "R2 normalize SEE packet output into evidence atoms",
+    "R3 formalize CE packet schema/validator beyond short spec",
+    "R4 implement MMD gap ledger validator and blocker"
+  ],
+  "stage": "MPP_R0_AUTHORITY_AND_SCHEMA_LOCK",
+  "status": "ACTIVE"
+}

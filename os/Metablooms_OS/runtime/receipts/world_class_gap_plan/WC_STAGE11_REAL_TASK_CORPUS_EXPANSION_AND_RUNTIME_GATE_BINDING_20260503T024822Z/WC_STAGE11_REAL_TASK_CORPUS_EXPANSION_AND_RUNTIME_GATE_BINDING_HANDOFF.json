@@ -1,0 +1,10 @@
+{
+  "copy_prompt_path": "runtime/state/NEXT_STAGE_COPY_PROMPT.md",
+  "handoff_type": "stage_exit",
+  "must_run_runtime_eval_gate": true,
+  "must_validate_prompt_gate": true,
+  "next_stage": "WC_STAGE12_RUNTIME_ORCHESTRATOR_GATE_WIRING_AND_FIELD_TASK_FIXTURES",
+  "source_authority_zip": "BOOTABLE_FULL_AUTHORITY_WC11.zip",
+  "stage": "WC_STAGE11_REAL_TASK_CORPUS_EXPANSION_AND_RUNTIME_GATE_BINDING",
+  "status": "READY_FOR_NEXT_BOUNDED_GOVERNED_STAGE"
+}

@@ -1,0 +1,174 @@
+{
+  "canonical_records": [
+    {
+      "path": "runtime/governance/decision_logs/canonical/DECISION_LOG_R1_20260428T024157Z.canonical.json",
+      "sha256": "b9a09840b3e40331c3823dd4ae9582ce48c474a4256ec0664e586a84eedc0e3a"
+    },
+    {
+      "path": "runtime/governance/decision_logs/canonical/DECISION_LOG_R2_20260428T024446Z.canonical.json",
+      "sha256": "d7e9b4a5aa5ce96372f2d58d34bec5e39accb0c3da587c45ec7ede283c3dc03b"
+    },
+    {
+      "path": "runtime/governance/decision_logs/canonical/DECISION_LOG_R3_20260428T025200Z.canonical.json",
+      "sha256": "1582a8b66a999878fc58ac603c1f27115bad804858f33350b5e71dcb466e844a"
+    },
+    {
+      "path": "runtime/governance/decision_logs/canonical/DECISION_LOG_R4_20260428T025318Z.canonical.json",
+      "sha256": "ab1ab709fc79c3b1b1dea084575531c702999e8bcfc312d5441fc4b79585316a"
+    },
+    {
+      "path": "runtime/governance/decision_logs/canonical/DECISION_LOG_R5_20260428T025601Z.canonical.json",
+      "sha256": "872d14ad63a08b448943dcd85012901dd11e272fa28326bb1dc6d107a74b3cf3"
+    },
+    {
+      "path": "runtime/governance/decision_logs/canonical/DECISION_LOG_R6_20260428T030301Z.canonical.json",
+      "sha256": "705dc48567b7ebf83717ee361d734f416f5fcfa28b8f9f95984c702ef6b2f3f8"
+    },
+    {
+      "path": "runtime/governance/decision_logs/canonical/DECISION_LOG_R7_20260428T031105Z.canonical.json",
+      "sha256": "0d20538b46250fb9984803b22696abfd28e331d7e9662c1b98cc75f148a58933"
+    },
+    {
+      "path": "runtime/governance/decision_logs/canonical/DECISION_LOG_R8_20260428T031734Z.canonical.json",
+      "sha256": "1037d5317729db0ca758a915041517a7949916d853d70b28c624f76df35d57e5"
+    },
+    {
+      "path": "runtime/governance/decision_logs/canonical/DECISION_LOG_R9_20260428T032105Z.canonical.json",
+      "sha256": "7a176352b73be29fb51ce904ae7b8bb02aaba04ea5a82b5254c7e3320b2323ac"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R1_DISPOSITION_RECEIPT_20260428T024157Z.canonical.json",
+      "sha256": "2f71b050a8a28069ba2a753d9db779a7f8ad109d284ecda95bdbfed36dafede3"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R1_HANDOFF_20260428T024157Z.canonical.json",
+      "sha256": "ba4498449cd284c6b295b8e27d9f0e57627854a133a57e16423b65b86644ff87"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R1_VERIFY_RECEIPT_20260428T024157Z.canonical.json",
+      "sha256": "babf896a581869bbb579c4eddfbb7ea5a76a1daca3680bf39d30a986ce84e0bb"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R2_ADR_EXTRACTION_RECEIPT_20260428T024446Z.canonical.json",
+      "sha256": "622173696a2bc101f6ffd9082447391193e03f82a5dc026e37e598ee0fa72314"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R2_HANDOFF_20260428T024446Z.canonical.json",
+      "sha256": "01f1943315cff2605a1dcb92e912b70050b9fc01b8b8f8869757e5594048f333"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R2_VERIFY_RECEIPT_20260428T024446Z.canonical.json",
+      "sha256": "151424851c68c2a7fcb916ddb780e31f92107f48d154e414192827581d4ec97e"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R3_COMPATIBILITY_CONTRACT_RECEIPT_20260428T025200Z.canonical.json",
+      "sha256": "cb13523f8c8ccc5d84a12bf2488c8c2886855debb2d1a57dab9e27dcbff6f94e"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R3_HANDOFF_20260428T025200Z.canonical.json",
+      "sha256": "9a2718979a0054a575a01c897b879c7e39ed874e0304aba1e81fe95b490e71d1"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R3_VERIFY_RECEIPT_20260428T025200Z.canonical.json",
+      "sha256": "199df45e35e0f4b163328941eadc15fd0bc77e5dbde2255e314c3e0f1d766a3d"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R4_HANDOFF_20260428T025318Z.canonical.json",
+      "sha256": "fe66ca2735907c1b0840d5821cfcb6f778acf02a918b716e85dbcbf46c4cb84e"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R4_SESSION_STATE_EXPORT_RECEIPT_20260428T025318Z.canonical.json",
+      "sha256": "9c7373a185b3d899dc1084397237bdbeeb945c9e1734dc2c6a2a8c16def09894"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R4_VALIDATION_REPORT_20260428T025252Z.canonical.json",
+      "sha256": "6f85265c9441b19344646258e0d82cb3b3452748f3f69b2f5d6580d55768224e"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R4_VALIDATION_REPORT_20260428T025317Z.canonical.json",
+      "sha256": "fc55416b706982b219dfffe8f4f65bfc362359bf584107a72941d56ea273a5c2"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R4_VERIFY_RECEIPT_20260428T025318Z.canonical.json",
+      "sha256": "df2cd370e8150ba56ded7e62f2d65e59c0bf94568503c107d0c011456db41bd4"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R5_GATE_FIELD_TYPE_REPAIR_20260428T025750Z.canonical.json",
+      "sha256": "c212d968e869560505d330f05b4ccd83db8a299ca79f8cba6ba8129c351022c0"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R5_GATE_REGISTRY_RECEIPT_20260428T025601Z.canonical.json",
+      "sha256": "c8283981e3b44ab2be92e59efff665d08885c2954d8756af29a8879e6adc0fbd"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R5_HANDOFF_20260428T025601Z.canonical.json",
+      "sha256": "fd1c706d52501cca9a5ab35ee0540aa0e6d3a4c3225e76715f4d4cfcdffcdf04"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R5_PATHS_20260428T025601Z.canonical.json",
+      "sha256": "645f9f24617468f4fe4450001dc14940b1314ff6b9d8c107c00a2bbd8dd66fbd"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R5_VALIDATOR_REPAIR_20260428T025625Z.canonical.json",
+      "sha256": "f10d7dbaa1b835b98d0a44dae4976d579d4a98ec4dfeac2dcffa30179c3d8246"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R5_VERIFY_RECEIPT_20260428T025601Z.canonical.json",
+      "sha256": "b2cc9baac8da3dbe77f087dc7222d442fbf750ce8f8590b07b8e36762a54e842"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R6_EXTERNAL_REUSE_SCAN_GATE_RECEIPT_20260428T030301Z.canonical.json",
+      "sha256": "5e587a22a15d03443779d67f6d3ccfeca65f96996ad6ef2f79df301083e9e72d"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R6_HANDOFF_20260428T030301Z.canonical.json",
+      "sha256": "c657f39d804ef9a573bfbb4fdf74e21449f95058889fff453283f468337ae5e2"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R6_VERIFY_RECEIPT_20260428T030301Z.canonical.json",
+      "sha256": "530086d3b8d77c18f5e19baa71482aea1d3ac4ae1b0b2bf9fc2fc9d1f8f3c2d5"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R7_HANDOFF_20260428T031105Z.canonical.json",
+      "sha256": "ca590d7aa0a9972e34bc76fcdd85986b138bbb5198aca8d5f8341cce381987ac"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R7_USEFULNESS_VALIDATOR_RECEIPT_20260428T031105Z.canonical.json",
+      "sha256": "106788abee4c5f0a8ad84879c708d2e441e41d3ce541b0d50791dcb29cebb2da"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R7_VERIFY_RECEIPT_20260428T031105Z.canonical.json",
+      "sha256": "800080805862f13e0d24a270031621c515842c3cfa9308a57b1da8916c525522"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R8_HANDOFF_20260428T031734Z.canonical.json",
+      "sha256": "ffb3baee068da978a64d28c4f4c8ac0cf5e0efc4c732a300a2b52101857f4628"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R8_PYTHON_HEALTH_GOVERNANCE_RECEIPT_20260428T031734Z.canonical.json",
+      "sha256": "ae65c0fa8f808d45ece408b97ffda06a295afbd6a6a588a0e082a2895bcad008"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R8_VERIFY_RECEIPT_20260428T031734Z.canonical.json",
+      "sha256": "e50106b161aed765a8d25de6bf7ed98e085a1a8308055064b4b2481751dc133b"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R9_HANDOFF_20260428T032105Z.canonical.json",
+      "sha256": "4c1dee6da86650aba29da804a539e1f9d0edd57534dd6f4ffc034b2b5736a88c"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R9_TELEMETRY_CARTRIDGE_RECEIPT_20260428T032105Z.canonical.json",
+      "sha256": "1d5edfe4a250a347d2a26c902e5a539bedec59651ba3edc4ff2613d7dd73fe71"
+    },
+    {
+      "path": "runtime/governance/receipts/canonical/R9_VERIFY_RECEIPT_20260428T032105Z.canonical.json",
+      "sha256": "78f8719fff21c78eb48dd2c45e8676ee1ad39161fd64378f117ad745c0efc8fc"
+    }
+  ],
+  "created_utc": "2026-04-28T03:24:02.486939Z",
+  "manifest_type": "DECISION_RECEIPT_CANONICALIZATION_MANIFEST",
+  "source_counts": {
+    "decision_logs": 9,
+    "refactor_receipts": 32
+  }
+}

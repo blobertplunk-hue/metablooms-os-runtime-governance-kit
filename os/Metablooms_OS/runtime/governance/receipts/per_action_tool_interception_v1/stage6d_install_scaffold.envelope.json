@@ -1,0 +1,14 @@
+{
+  "schema_version":"ToolCallEnvelope_v1",
+  "envelope_id":"stage6d_bts_v4_gate_wrapped_install_scaffold",
+  "stage_id":"STAGE6D_BTS_V4_GATE_WRAPPED_INSTALL_SCAFFOLD",
+  "action_type":"filesystem_write",
+  "tool_name":"shell_python3_minus_S_patch_writer",
+  "intent":"Install patched BTS v4 scaffold into OS with Stage6B gate wrapping and fixture tests.",
+  "risk_tier":"medium",
+  "requested_at_utc":"20260502T015200Z",
+  "requires_see":true,
+  "see_evidence_refs":["turn497450search0","turn497450search2","turn497450search4"],
+  "limits":{"timeout_seconds":60,"max_files":80,"max_steps":20,"max_bytes":3000000},
+  "artifacts":{"read_paths":["/mnt/data/BTS_v4_canonical.py","/mnt/data/Metablooms_OS/runtime/governance/per_action_tool_interception_v1/pre_tool_action_gate_v1.js"],"write_paths":["/mnt/data/Metablooms_OS/runtime/governance/bts_v4","/mnt/data/Metablooms_OS/governance/invariants/BTS_V4_GATED_RECEIPT_ENGINE_REQUIRED_v1.json","/mnt/data/Metablooms_OS/governance/ACTIVE_INVARIANTS_INDEX.json"],"receipt_path":"/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/stage6d_install_scaffold.decision.json"}
+}

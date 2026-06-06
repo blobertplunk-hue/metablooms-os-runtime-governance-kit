@@ -1,0 +1,13 @@
+{
+  "stage": "R5_GATE_REGISTRY_AND_WIRING_REPLACEMENT",
+  "created_utc": "2026-04-28T02:58:11Z",
+  "verdict": "PASS",
+  "next_stage": "R6_EVIDENCE_BOUND_EXTERNAL_REUSE_SCAN_GATE",
+  "next_actions": [
+    "Promote/refactor P0A external reuse scan into evidence-bound gate.",
+    "Create external reuse scan input schema and policy contract.",
+    "Register the active R6 gate only after pass/fail/defer fixtures prove evidence binding."
+  ],
+  "blockers": [],
+  "registry": "runtime/governance/registries/gate_registry_v1.json"
+}

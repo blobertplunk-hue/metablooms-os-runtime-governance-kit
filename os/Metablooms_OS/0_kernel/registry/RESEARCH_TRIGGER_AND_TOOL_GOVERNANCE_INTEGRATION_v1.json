@@ -1,0 +1,207 @@
+{
+  "version": "1.0",
+  "created_at": 1776996997.2514024,
+  "status": "active",
+  "source_zip": "/mnt/data/MetaBlooms_governance_audit_runtime_export_20260424_011813.zip",
+  "source_zip_sha256": "22a7a6347ccbf8a412d42b880678f08aae829efc71017c5ae687ce1d12fd2549",
+  "purpose": "Integrate research-trigger enforcement and sandbox tool governance into the active MetaBlooms OS.",
+  "research_trigger_policy": {
+    "rule": "If the user explicitly requests research, external search, web.run, SEE, latest/current information, or source-backed verification, web.run use is mandatory unless unavailable and explicitly reported.",
+    "fail_closed_condition": "A response that claims SEE/research was performed without web.run evidence is invalid.",
+    "artifacts": [
+      "/mnt/data/Metablooms_OS_refined/0_kernel/registry/research_trigger/research_trigger_rule_v1.json",
+      "/mnt/data/Metablooms_OS_refined/0_kernel/registry/research_trigger/interceptor_research_trigger_patch_v1.json",
+      "/mnt/data/Metablooms_OS_refined/0_kernel/registry/research_trigger/verifier_research_trigger_patch_v1.json",
+      "/mnt/data/Metablooms_OS_refined/0_kernel/registry/research_trigger/research_trigger_validation_receipt.schema.json",
+      "/mnt/data/Metablooms_OS_refined/0_kernel/registry/research_trigger/research_trigger_integration_v1.md"
+    ]
+  },
+  "sandbox_tool_governance_policy": {
+    "rule": "Before claiming a sandbox task cannot be done, probe available safe tools/capabilities and route through the best available capability.",
+    "fail_closed_condition": "A capability failure claim without a direct probe or artifact-backed evidence is invalid.",
+    "artifacts": [
+      "/mnt/data/Metablooms_OS_refined/0_kernel/registry/tool_governance/sandbox_tool_governance_v1.md",
+      "/mnt/data/Metablooms_OS_refined/0_kernel/registry/tool_governance/sandbox_tool_capability_registry_v1.json",
+      "/mnt/data/Metablooms_OS_refined/0_kernel/registry/tool_governance/sandbox_tool_probe_inventory_v1.json",
+      "/mnt/data/Metablooms_OS_refined/0_kernel/registry/tool_governance/sandbox_tool_probe_inventory_v1.tsv",
+      "/mnt/data/Metablooms_OS_refined/0_kernel/registry/tool_governance/sandbox_tool_governance_integration_receipt_v1.json"
+    ]
+  },
+  "boot_integration": {
+    "required_on_boot": [
+      "0_kernel/registry/research_trigger/research_trigger_rule_v1.json",
+      "0_kernel/registry/research_trigger/research_trigger_integration_v1.md",
+      "0_kernel/registry/tool_governance/sandbox_tool_governance_v1.md",
+      "0_kernel/registry/tool_governance/sandbox_tool_capability_registry_v1.json"
+    ],
+    "note": "Active OS boot/preflight must load these modules as hard governance rules."
+  },
+  "integrated_files": [
+    {
+      "source_member": "Metablooms_OS/core/governance/research_trigger_rule_v1.json",
+      "dest": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/research_trigger/research_trigger_rule_v1.json",
+      "size": 1105,
+      "sha256": "32423dfb41c76823faae877602075540844dc8b960d9c3368eb3287340489c5c"
+    },
+    {
+      "source_member": "Metablooms_OS/core/governance/interceptor_research_trigger_patch_v1.json",
+      "dest": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/research_trigger/interceptor_research_trigger_patch_v1.json",
+      "size": 843,
+      "sha256": "fc1af3c8003e13b35a1c511b98c9c76e9d2443289fdab77637d09462ff8d3e01"
+    },
+    {
+      "source_member": "Metablooms_OS/core/governance/verifier_research_trigger_patch_v1.json",
+      "dest": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/research_trigger/verifier_research_trigger_patch_v1.json",
+      "size": 914,
+      "sha256": "8c7f083ddcff06de48c397ebac036b5e9b75c6f646a94fa9656846abb41b1b32"
+    },
+    {
+      "source_member": "Metablooms_OS/core/schemas/research_trigger_validation_receipt.schema.json",
+      "dest": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/research_trigger/research_trigger_validation_receipt.schema.json",
+      "size": 682,
+      "sha256": "5f9783c62a8bbc9f9069e2c8aad8f2bebba60934d34a6828d7fc01f77ff271bd"
+    },
+    {
+      "source_member": "Metablooms_OS/core/governance/research_trigger_integration_v1.md",
+      "dest": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/research_trigger/research_trigger_integration_v1.md",
+      "size": 892,
+      "sha256": "3fdcd6cdbfd4e0d72baad8a7be7a878ceae7b3597e5aa93352f84966825e75a7"
+    },
+    {
+      "source_member": "Metablooms_OS/core/governance/sandbox_tool_governance_v1.md",
+      "dest": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/tool_governance/sandbox_tool_governance_v1.md",
+      "size": 1153,
+      "sha256": "947a3e5f1e1c088c928642918ff075d0baa957b97570f90150fdaf001fbc6ac2"
+    },
+    {
+      "source_member": "Metablooms_OS/tooling/sandbox_tool_capability_registry_v1.json",
+      "dest": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/tool_governance/sandbox_tool_capability_registry_v1.json",
+      "size": 8859,
+      "sha256": "75e9c589d9955d9c423e05db2d4c42681e1c6f7ac1b1042e8192887be6c7c53b"
+    },
+    {
+      "source_member": "Metablooms_OS/tooling/sandbox_tool_probe_inventory_v1.json",
+      "dest": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/tool_governance/sandbox_tool_probe_inventory_v1.json",
+      "size": 5333,
+      "sha256": "5e844e85fd59237445f9b786b5cac027e8c242e540d3c34842f55bf2bcb0fb8b"
+    },
+    {
+      "source_member": "Metablooms_OS/tooling/sandbox_tool_probe_inventory_v1.tsv",
+      "dest": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/tool_governance/sandbox_tool_probe_inventory_v1.tsv",
+      "size": 1851,
+      "sha256": "3c3893bcb1d3aeeb45a874104953fd7136359f7eb22a037a3870ad40597cc714"
+    },
+    {
+      "source_member": "tool_governance_stage/sandbox_tool_governance_integration_receipt_v1.json",
+      "dest": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/tool_governance/sandbox_tool_governance_integration_receipt_v1.json",
+      "size": 444,
+      "sha256": "9d1a868d6f6698ba143c4da620cc6671eca0bc4251aea169258d2c72b455e1cb"
+    }
+  ],
+  "missing_files": [],
+  "validation": [
+    {
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/research_trigger/research_trigger_rule_v1.json",
+      "valid": true,
+      "issues": [],
+      "top_keys": [
+        "artifact_id",
+        "status",
+        "created_at",
+        "purpose",
+        "triggers",
+        "overrides",
+        "required_stage",
+        "required_tool",
+        "min_passes",
+        "source_requirements",
+        "required_receipts",
+        "fail_conditions"
+      ]
+    },
+    {
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/research_trigger/interceptor_research_trigger_patch_v1.json",
+      "valid": true,
+      "issues": [],
+      "top_keys": [
+        "artifact_id",
+        "status",
+        "created_at",
+        "pre_execution_checks",
+        "integration_targets",
+        "notes"
+      ]
+    },
+    {
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/research_trigger/verifier_research_trigger_patch_v1.json",
+      "valid": true,
+      "issues": [],
+      "top_keys": [
+        "artifact_id",
+        "status",
+        "created_at",
+        "verification_checks",
+        "output_contract"
+      ]
+    },
+    {
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/research_trigger/research_trigger_validation_receipt.schema.json",
+      "valid": true,
+      "issues": [],
+      "top_keys": [
+        "$schema",
+        "title",
+        "type",
+        "required",
+        "properties"
+      ]
+    },
+    {
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/research_trigger/research_trigger_integration_v1.md",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/tool_governance/sandbox_tool_governance_v1.md",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/tool_governance/sandbox_tool_capability_registry_v1.json",
+      "valid": true,
+      "issues": [],
+      "top_keys": [
+        "registry_id",
+        "created_at",
+        "rule",
+        "tools"
+      ]
+    },
+    {
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/tool_governance/sandbox_tool_probe_inventory_v1.json",
+      "valid": true,
+      "issues": [],
+      "top_keys": [
+        "created_at",
+        "platform",
+        "tools"
+      ]
+    },
+    {
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/tool_governance/sandbox_tool_probe_inventory_v1.tsv",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/tool_governance/sandbox_tool_governance_integration_receipt_v1.json",
+      "valid": true,
+      "issues": [],
+      "top_keys": [
+        "stage",
+        "status",
+        "os_root",
+        "artifacts"
+      ]
+    }
+  ]
+}

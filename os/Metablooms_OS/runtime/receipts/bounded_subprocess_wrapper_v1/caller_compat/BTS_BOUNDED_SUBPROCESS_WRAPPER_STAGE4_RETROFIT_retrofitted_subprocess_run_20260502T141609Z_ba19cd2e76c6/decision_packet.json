@@ -1,0 +1,56 @@
+{
+  "argv_redacted": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "/mnt/data/Metablooms_OS/runtime/governance/tool_universe_resolver_v1.py",
+    "validate-evaluation",
+    "--candidate-set",
+    "/mnt/data/stage6h_tool_universe_fixture_outputs/zip_export_candidate_set.json",
+    "--evaluation",
+    "/mnt/data/stage6h_tool_universe_fixture_outputs/good_eval.json",
+    "--out",
+    "/mnt/data/stage6h_tool_universe_fixture_outputs/good_eval_result.json"
+  ],
+  "argv_resolved": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "/mnt/data/Metablooms_OS/runtime/governance/tool_universe_resolver_v1.py",
+    "validate-evaluation",
+    "--candidate-set",
+    "/mnt/data/stage6h_tool_universe_fixture_outputs/zip_export_candidate_set.json",
+    "--evaluation",
+    "/mnt/data/stage6h_tool_universe_fixture_outputs/good_eval.json",
+    "--out",
+    "/mnt/data/stage6h_tool_universe_fixture_outputs/good_eval_result.json"
+  ],
+  "artifact_type": "METABLOOMS_BOUNDED_COMMAND_DECISION_PACKET_v1",
+  "attempts": [
+    {
+      "attempt_index": 0,
+      "elapsed_ms": 327,
+      "returncode": 0,
+      "started_utc": "20260502T141609Z",
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_truncated": false,
+      "stdout": "{\n  \"covered_candidate_count\": 4,\n  \"missing_candidates\": [],\n  \"reasons\": [],\n  \"required_candidate_count\": 4,\n  \"schema\": \"TOOL_SELECTION_SUFFICIENCY_GATE_RESULT_v1\",\n  \"selected_tool_id\": \"node_yazl_stream_export\",\n  \"timestamp_utc\": \"2026-05-02T14:16:10.143702Z\",\n  \"top_allowed_tool_id\": \"node_yazl_stream_export\",\n  \"verdict\": \"PASS\"\n}\n",
+      "stdout_bytes": 342,
+      "stdout_sha256": "05c17994f69c54085ee09980c6b497bf73771460e667a78655d5d50ae2875c65",
+      "stdout_truncated": false,
+      "timeout_seconds": 10.0
+    }
+  ],
+  "created_utc": "20260502T141609Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision_packet_path": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT_retrofitted_subprocess_run_20260502T141609Z_ba19cd2e76c6/decision_packet.json",
+  "failure_class": null,
+  "failure_event_path": null,
+  "operation_type": "retrofitted_subprocess_run",
+  "policy_matches": [],
+  "pre_spawn_receipt_path": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT_retrofitted_subprocess_run_20260502T141609Z_ba19cd2e76c6/pre_spawn_receipt.json",
+  "receipt_dir": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT_retrofitted_subprocess_run_20260502T141609Z_ba19cd2e76c6",
+  "result_class": "ALLOW_SUCCESS",
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT",
+  "total_elapsed_ms": 425
+}

@@ -1,0 +1,86 @@
+{
+  "accepted_warnings": [
+    "git_dir_missing"
+  ],
+  "boot_checks": {
+    "boot_executor": {
+      "check_count": 8,
+      "issues": [],
+      "pass_count": 7,
+      "receipt_path": "/mnt/data/Metablooms_OS/0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777687757675.json",
+      "verdict": "PASS_WITH_WARNINGS",
+      "warnings": [
+        "git_dir_missing"
+      ]
+    },
+    "portable_boot_verify": {
+      "chat_kernel": "ALLOW",
+      "errors": [],
+      "root": "/mnt/data/Metablooms_OS",
+      "sandbox_policy": "ALLOW",
+      "stage": "PORTABLE_FULL_OS_BOOT_VERIFY_REPAIRED_H0B2",
+      "status": "PASS",
+      "timestamp_utc": "2026-05-02T02:08:16Z"
+    },
+    "runtime_starter": {
+      "decision": "ALLOW",
+      "invalid_json": [],
+      "missing": [],
+      "mode": "root",
+      "path": "/mnt/data/Metablooms_OS",
+      "read_errors": []
+    }
+  },
+  "changed_files": [
+    {
+      "bytes": 1082,
+      "path": "/mnt/data/Metablooms_OS/runtime/schemas/post_tool_result_validation_v1/PostToolResultValidationEnvelope_v1.schema.json",
+      "sha256": "4cfa9694b13f83711bf0a70e8076239fdc496e60f924f0458a78f1ed657022af"
+    },
+    {
+      "bytes": 6424,
+      "path": "/mnt/data/Metablooms_OS/runtime/governance/post_tool_result_validation_v1.py",
+      "sha256": "f50b639eace1be81aad707369521718be787d1fc38f5e270414774f8ab3194c1"
+    },
+    {
+      "bytes": 689,
+      "path": "/mnt/data/Metablooms_OS/governance/invariants/POST_TOOL_RESULT_VALIDATION_REQUIRED_v1.json",
+      "sha256": "bc7db3452cbada1a542738f2a280a6e86a730f3bd810226c171265bdb57f398f"
+    },
+    {
+      "bytes": 31178,
+      "path": "/mnt/data/Metablooms_OS/runtime/governance/executors/bts_wrapped_executors_v1.py",
+      "sha256": "d4813dd873ca83ce596e2d2f43f82d825de39ec453df3f9a064d839ecd4143ea"
+    },
+    {
+      "bytes": 1766,
+      "path": "/mnt/data/Metablooms_OS/runtime/evals/post_tool_result_validation/test_post_tool_result_validation_v1.py",
+      "sha256": "3edc5f577b9789ffcfe745515f6506ca5408d66e3f5960d166b7893128e31194"
+    },
+    {
+      "bytes": 4644,
+      "path": "/mnt/data/Metablooms_OS/governance/ACTIVE_INVARIANTS_INDEX.json",
+      "sha256": "a840df125e673259fd98c8d34c644e9e1fefc3715d6963c32eed91ce67fd5b8b"
+    }
+  ],
+  "fixtures": {
+    "bts_wrapped_filesystem_write_post_validation": "PASS",
+    "bts_wrapped_node_zip_export_post_validation": "PASS_AFTER_NORMALIZATION_REPAIR",
+    "normalization_bug_repaired": "duplicates/unsafe_paths list values now normalized via countish()",
+    "post_tool_validator_static": "PASS"
+  },
+  "full_os_export_created": false,
+  "next_recommended_stage": "STAGE6M_FORMAL_HITL_APPROVAL_TOKEN_GATE_OR_STAGE6M_FULL_AUTHORITY_EXPORT_AFTER_POST_TOOL_GATE",
+  "objective": "Install a post-tool-result validation gate so BTS-wrapped tool outputs are checked against intent/evidence before success commit.",
+  "schema": "MetaBloomsStageReceipt_v1",
+  "sota_evidence_refs": [
+    "turn108260search0",
+    "turn108260search1",
+    "turn108260search2",
+    "turn108260search3",
+    "turn108260search4"
+  ],
+  "stage_id": "STAGE6L_POST_TOOL_RESULT_VALIDATION_GATE",
+  "timestamp_utc": "2026-05-02T03:26:00Z",
+  "verdict": "PASS_WITH_WARNINGS_NO_FULL_OS_EXPORT"
+}

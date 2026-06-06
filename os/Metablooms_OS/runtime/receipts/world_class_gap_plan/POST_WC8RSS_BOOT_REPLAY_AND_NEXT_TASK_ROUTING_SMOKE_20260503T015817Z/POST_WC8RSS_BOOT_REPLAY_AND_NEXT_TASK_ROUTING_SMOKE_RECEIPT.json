@@ -1,0 +1,58 @@
+{
+  "artifact_type": "stage_receipt",
+  "stage": "POST_WC8RSS_BOOT_REPLAY_AND_NEXT_TASK_ROUTING_SMOKE",
+  "timestamp": "20260503T015817Z",
+  "verdict": "PASS",
+  "previous_stage": "POST_WC8RS_BOOT_REPLAY_AND_NEXT_TASK_ROUTING_SMOKE",
+  "source_authority_zip": "BOOTABLE_FULL_AUTHORITY_WC8RSS.zip",
+  "concrete_next_task_supplied": false,
+  "decision": "bounded_boot_routing_smoke_only",
+  "required_authority_checks": [
+    {
+      "path": "0_kernel/registry/world_class_gap_plan/WORLD_CLASS_MEASURED_SCORECARD_BASELINE_v1.json",
+      "exists": true,
+      "size_bytes": 10607
+    },
+    {
+      "path": "runtime/state/DORA_STYLE_OS_METRICS_BASELINE_v1.json",
+      "exists": true,
+      "size_bytes": 431
+    },
+    {
+      "path": "0_kernel/cartridges/educational_html_design_system/EDUCATIONAL_HTML_DESIGN_SYSTEM_CARTRIDGE_SPEC_v1.json",
+      "exists": true,
+      "size_bytes": 537
+    },
+    {
+      "path": "BOOT_AUTHORITY_MANIFEST_v1.json",
+      "exists": true,
+      "size_bytes": 2733
+    },
+    {
+      "path": "0_kernel/lessons/LESSON_PROMOTION_QUEUE_v1.json",
+      "exists": true,
+      "size_bytes": 9417
+    },
+    {
+      "path": "0_kernel/registry/general_capability_resolver/GENERAL_CAPABILITY_RESOLVER_CONTRACT_v1.json",
+      "exists": true,
+      "size_bytes": 1935
+    },
+    {
+      "path": "0_kernel/cartridges/automatic_process_tracker/AUTOMATIC_MULTI_STEP_TRACKER_CONTRACT_v1.json",
+      "exists": true,
+      "size_bytes": 1682
+    }
+  ],
+  "tracker_preview_path": "runtime/state/ACTIVE_PROCESS_TRACKER_PREVIEW.txt",
+  "artifacts_written": [
+    "0_kernel/registry/world_class_gap_plan/POST_WC8RSS_BOOT_REPLAY_AND_NEXT_TASK_ROUTING_SMOKE_CONTRACT_v1.json",
+    "0_kernel/registry/world_class_gap_plan/POST_WC8RSS_BOOT_REPLAY_AND_NEXT_TASK_ROUTING_SMOKE_REPORT_v1.md",
+    "runtime/receipts/world_class_gap_plan/POST_WC8RSS_BOOT_REPLAY_AND_NEXT_TASK_ROUTING_SMOKE_20260503T015817Z/POST_WC8RSS_BOOT_REPLAY_AND_NEXT_TASK_ROUTING_SMOKE_RECEIPT.json",
+    "runtime/receipts/world_class_gap_plan/POST_WC8RSS_BOOT_REPLAY_AND_NEXT_TASK_ROUTING_SMOKE_20260503T015817Z/POST_WC8RSS_BOOT_REPLAY_AND_NEXT_TASK_ROUTING_SMOKE_HANDOFF.json",
+    "runtime/state/NEXT_STAGE_COPY_PROMPT.md",
+    "runtime/state/LATEST_BOOT_HANDOFF.json",
+    "runtime/state/ACTIVE_PROCESS_TRACKER_PREVIEW.txt"
+  ],
+  "path_binding_correction": "Corrected general capability resolver contract path to 0_kernel/registry/general_capability_resolver/GENERAL_CAPABILITY_RESOLVER_CONTRACT_v1.json before final export."
+}

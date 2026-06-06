@@ -1,0 +1,77 @@
+{
+  "created_at_utc": "2026-05-02T02:48:39.707919Z",
+  "evidence_basis": [
+    {
+      "claim": "Sensitive tool calls should pause until approved or rejected and be resumable.",
+      "ref": "turn281711search0",
+      "source": "OpenAI Agents SDK HITL"
+    },
+    {
+      "claim": "Validation must be placed next to the tool creating the side effect.",
+      "ref": "turn281711search3",
+      "source": "OpenAI API guardrails approvals"
+    },
+    {
+      "claim": "HITL workflows need persisted interruption/resume state.",
+      "ref": "turn281711search1,turn281711search19",
+      "source": "LangGraph interrupts/durable execution"
+    },
+    {
+      "claim": "High-impact agent actions require human approval and tool-abuse controls.",
+      "ref": "turn281711search5,turn281711search8",
+      "source": "OWASP AI Agent Security / Excessive Agency"
+    }
+  ],
+  "gate_rules": [
+    {
+      "id": "HITL-001",
+      "if": "action_type in protected_action_types or risk_tier in high/critical",
+      "then": "require HITLApprovalToken_v1 before execution"
+    },
+    {
+      "id": "HITL-002",
+      "if": "token.status != APPROVED or token expired",
+      "then": "deny execution"
+    },
+    {
+      "id": "HITL-003",
+      "if": "token scope does not match stage_id, action_type, risk_tier, artifact root, and authority hash",
+      "then": "deny execution"
+    },
+    {
+      "id": "HITL-004",
+      "if": "approved action completes",
+      "then": "require post_tool_result_validation_v1, receipt, handoff, and support proof before BTS_COMMIT"
+    },
+    {
+      "id": "HITL-005",
+      "if": "approval token is reused outside scope",
+      "then": "deny and record replay attempt"
+    }
+  ],
+  "integration_points": [
+    "pre_tool_action_gate_v1",
+    "tool_universe_resolver_v1",
+    "BTS_TOOL_EVALUATION",
+    "BTS_TOOL_SELECTION",
+    "post_tool_result_validation_v1",
+    "BTS_COMMIT"
+  ],
+  "non_goals": [
+    "Does not authorize execution by itself. It only unlocks the pre-action gate for otherwise valid bounded work.",
+    "Does not replace side-effect-specific validation."
+  ],
+  "policy_id": "FORMAL_HITL_APPROVAL_TOKEN_GATE_v1",
+  "protected_action_types": [
+    "broad_repair",
+    "full_authority_export",
+    "pointer_promotion",
+    "privileged_filesystem_mutation",
+    "external_install",
+    "destructive_delete",
+    "network_side_effect",
+    "release_delivery"
+  ],
+  "schema": "FormalHITLApprovalTokenGatePolicy_v1",
+  "stage_id": "STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_20260502T035000Z"
+}

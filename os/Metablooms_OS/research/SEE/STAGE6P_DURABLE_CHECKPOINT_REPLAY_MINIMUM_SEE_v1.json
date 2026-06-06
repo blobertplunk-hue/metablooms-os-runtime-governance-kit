@@ -1,0 +1,46 @@
+{
+  "requirements_derived": [
+    "checkpoint writes must be durable and artifact-backed",
+    "resume must bind to a thread_id and prior checkpoint_id",
+    "interrupt and resume payloads must be JSON serializable",
+    "replay must use stored artifacts, not chat memory",
+    "completed steps must not be reprocessed unless replay policy explicitly allows idempotent replay",
+    "checkpoint events should be traceable and receipt-bound"
+  ],
+  "research_question": "What minimum durable checkpoint/replay controls should MetaBlooms enforce for interrupted governed stages?",
+  "schema": "MetaBloomsSEEPacket_v1",
+  "sources": [
+    {
+      "claim": "LangGraph durable execution preserves completed workflow steps in a durable store so workflows can resume without reprocessing previous work.",
+      "id": "LANGGRAPH_DURABLE_EXECUTION",
+      "url": "https://docs.langchain.com/oss/python/langgraph/durable-execution"
+    },
+    {
+      "claim": "LangGraph interrupts pause execution, surface JSON-serializable payloads, save graph state with persistence, and wait until resume.",
+      "id": "LANGGRAPH_INTERRUPTS",
+      "url": "https://docs.langchain.com/oss/python/langgraph/interrupts"
+    },
+    {
+      "claim": "OpenAI Agents SDK HITL pauses sensitive tool calls and lets RunState be serialized and resumed after approval decisions.",
+      "id": "OPENAI_AGENTS_HITL",
+      "url": "https://openai.github.io/openai-agents-python/human_in_the_loop/"
+    },
+    {
+      "claim": "OpenAI Agents SDK tracing records tool calls, handoffs, guardrails, and custom events for debugging and monitoring.",
+      "id": "OPENAI_AGENTS_TRACING",
+      "url": "https://openai.github.io/openai-agents-python/tracing/"
+    },
+    {
+      "claim": "Temporal workflows persist event histories and can recreate pre-failure state to continue after infrastructure failure.",
+      "id": "TEMPORAL_WORKFLOWS",
+      "url": "https://docs.temporal.io/workflows"
+    },
+    {
+      "claim": "OWASP identifies agentic risks for systems that plan, act, and make decisions across complex workflows.",
+      "id": "OWASP_AGENTIC_TOP10",
+      "url": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/"
+    }
+  ],
+  "stage_id": "STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM",
+  "timestamp_utc": "2026-05-02T02:56:33.703699Z"
+}

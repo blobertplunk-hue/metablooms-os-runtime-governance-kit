@@ -1,0 +1,34 @@
+{
+  "artifact_type": "STAGE_RECEIPT",
+  "stage": "STAGE5E_FULL_AUTHORITY_EXPORT_AFTER_POINTER_COHERENCE_REPAIR",
+  "timestamp_utc": "2026-05-02T00:42:00Z",
+  "verdict": "PRE_EXPORT_READY",
+  "scope": "Full bootable authority export after Stage5D pointer coherence repair; no support bundle presented as OS bundle.",
+  "output_zip": "/mnt/data/METABLOOMS_OS_STAGE5E_FULL_AUTHORITY_EXPORT_AFTER_POINTER_COHERENCE_REPAIR_20260502T004200Z.zip",
+  "output_sidecar": "/mnt/data/METABLOOMS_OS_STAGE5E_FULL_AUTHORITY_EXPORT_AFTER_POINTER_COHERENCE_REPAIR_20260502T004200Z.zip.sha256",
+  "hash_policy": "external_sidecar_required_after_export",
+  "inputs": [
+    "/mnt/data/METABLOOMS_STAGE5D_MINIMAL_POINTER_AND_REHEARSAL_PACKET_COHERENCE_REPAIR_RECEIPT_20260502T002700Z.json",
+    "/mnt/data/METABLOOMS_STAGE5D_HANDOFF_20260502T002700Z.json",
+    "/mnt/data/METABLOOMS_OS_STAGE5B_FULL_BOOTABLE_BUNDLE_DELIVERY_HARDENED_AUTHORITY_20260502T000900Z.zip",
+    "/mnt/data/METABLOOMS_OS_STAGE5B_FULL_BOOTABLE_BUNDLE_DELIVERY_HARDENED_AUTHORITY_20260502T000900Z.zip.sha256"
+  ],
+  "patched_pointer_paths": [
+    "CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "0_kernel/state/CURRENT_WORKING_BASELINE_POINTER_v1.json",
+    "runtime/state/CURRENT_WORKING_BASELINE_POINTER_v1.json",
+    "0_kernel/registry/current_authority/NEW_CHAT_BOOT_REHEARSAL_PACKET_v1.json"
+  ],
+  "planned_gates": [
+    "delivery_guard",
+    "zipinfo_t",
+    "fresh_extract",
+    "runtime_starter_zip",
+    "runtime_starter_fresh_root",
+    "boot_executor_fresh_root",
+    "portable_boot_verify_fresh_root",
+    "pointer_coherence_scan"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "artifact_checks": [
+    {
+      "artifact_id": "ART-001",
+      "exists": true,
+      "expected_sha256": "b309692e3f5d68336615ee5a2774319ea1a84c6804db5dfa4f735e68edcd4830",
+      "path": "/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_verification_evidence_gate_v1.py",
+      "sha256": "b309692e3f5d68336615ee5a2774319ea1a84c6804db5dfa4f735e68edcd4830",
+      "size_bytes": 8098,
+      "status": "PASS"
+    }
+  ],
+  "coverage_summary": {
+    "passed_artifacts": 1,
+    "passed_gates": 1,
+    "passed_tests": 0,
+    "required_artifacts": 1,
+    "required_gates": 1,
+    "required_tests": 1
+  },
+  "created_at": "2026-04-30T23:09:36.201279+00:00",
+  "gate_results": [
+    {
+      "evidence": "R13 predecessor PASS and checksum verified",
+      "gate_id": "GATE-001",
+      "gate_name": "implementation_write_path_gate",
+      "verdict": "PASS"
+    }
+  ],
+  "objective_id": "OBJ-MPP-R14",
+  "packet_id": "VERIFY-BAD-TEST",
+  "result_hash": "3b2998a2d687d7a5110dc4f27953e458fa962e19e48e1d079adb1cae1e6e548e",
+  "schema_version": "mpp.verification_evidence_packet.v1",
+  "source_implementation_contract_id": "IMPL-R13-SMOKE",
+  "stage": "VERIFICATION",
+  "test_receipts": [
+    {
+      "actual_returncode": 1,
+      "command": "py_compile validator",
+      "expected_returncode": 0,
+      "status": "FAIL",
+      "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_id": "TEST-001"
+    }
+  ],
+  "verdict": "FAIL"
+}

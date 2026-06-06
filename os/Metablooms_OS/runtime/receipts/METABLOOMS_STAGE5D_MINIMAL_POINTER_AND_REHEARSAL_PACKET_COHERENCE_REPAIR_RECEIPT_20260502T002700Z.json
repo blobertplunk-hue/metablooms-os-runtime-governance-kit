@@ -1,0 +1,124 @@
+{
+  "artifact_type": "STAGE5D_MINIMAL_POINTER_AND_REHEARSAL_PACKET_COHERENCE_REPAIR_RECEIPT",
+  "stage": "STAGE5D_MINIMAL_POINTER_AND_REHEARSAL_PACKET_COHERENCE_REPAIR_NO_BROAD_EXPORT_UNTIL_VERIFIED",
+  "created_utc": "2026-05-02T00:27:00Z",
+  "verdict": "PASS_WITH_WARNINGS",
+  "scope": {
+    "allowed_writes": [
+      "0_kernel/state/CURRENT_WORKING_BASELINE_POINTER_v1.json",
+      "runtime/state/CURRENT_WORKING_BASELINE_POINTER_v1.json",
+      "0_kernel/registry/current_authority/NEW_CHAT_BOOT_REHEARSAL_PACKET_v1.json",
+      "runtime/receipts/*",
+      "runtime/handoffs/*"
+    ],
+    "broad_export_created": false,
+    "os_authority_export_created": false,
+    "reason_no_export": "Stage5D was limited to live-root pointer/rehearsal coherence repair and verification; no broad export was authorized inside this stage."
+  },
+  "source_audit": "/mnt/data/METABLOOMS_STAGE5C_AUDIT_ONLY_NO_EXPORT_RECEIPT_20260502T001900Z.json",
+  "selected_authority": {
+    "zip": "/mnt/data/METABLOOMS_OS_STAGE5B_FULL_BOOTABLE_BUNDLE_DELIVERY_HARDENED_AUTHORITY_20260502T000900Z.zip",
+    "sidecar": "/mnt/data/METABLOOMS_OS_STAGE5B_FULL_BOOTABLE_BUNDLE_DELIVERY_HARDENED_AUTHORITY_20260502T000900Z.zip.sha256",
+    "sha256": "d165d151f77ab7674ba0a66f11cea855cc4d2e4096a46fa5ab507b94f48716e9"
+  },
+  "patched_paths": [
+    "0_kernel/state/CURRENT_WORKING_BASELINE_POINTER_v1.json",
+    "runtime/state/CURRENT_WORKING_BASELINE_POINTER_v1.json",
+    "0_kernel/registry/current_authority/NEW_CHAT_BOOT_REHEARSAL_PACKET_v1.json"
+  ],
+  "verified_paths": {
+    "0_kernel/state/CURRENT_WORKING_BASELINE_POINTER_v1.json": {
+      "exists": true,
+      "sha256": "b519f0b8316ed49bfd87156cb31d4bc9a0e20c840e7fbfbcff0cd9fe83656002",
+      "stage": "STAGE5D_MINIMAL_POINTER_AND_REHEARSAL_PACKET_COHERENCE_REPAIR",
+      "selected_authority_zip": "/mnt/data/METABLOOMS_OS_STAGE5B_FULL_BOOTABLE_BUNDLE_DELIVERY_HARDENED_AUTHORITY_20260502T000900Z.zip",
+      "selected_authority_sha256": "d165d151f77ab7674ba0a66f11cea855cc4d2e4096a46fa5ab507b94f48716e9",
+      "export_zip": null,
+      "export_sha256": null,
+      "input_zip": null,
+      "input_sha256": null
+    },
+    "runtime/state/CURRENT_WORKING_BASELINE_POINTER_v1.json": {
+      "exists": true,
+      "sha256": "b519f0b8316ed49bfd87156cb31d4bc9a0e20c840e7fbfbcff0cd9fe83656002",
+      "stage": "STAGE5D_MINIMAL_POINTER_AND_REHEARSAL_PACKET_COHERENCE_REPAIR",
+      "selected_authority_zip": "/mnt/data/METABLOOMS_OS_STAGE5B_FULL_BOOTABLE_BUNDLE_DELIVERY_HARDENED_AUTHORITY_20260502T000900Z.zip",
+      "selected_authority_sha256": "d165d151f77ab7674ba0a66f11cea855cc4d2e4096a46fa5ab507b94f48716e9",
+      "export_zip": null,
+      "export_sha256": null,
+      "input_zip": null,
+      "input_sha256": null
+    },
+    "0_kernel/registry/current_authority/NEW_CHAT_BOOT_REHEARSAL_PACKET_v1.json": {
+      "exists": true,
+      "sha256": "b307ff5a6a0b22a39d5aec9f8e4874bbfab5b081e8d6c727c26bfa9a68cb0481",
+      "stage": "STAGE5D_MINIMAL_POINTER_AND_REHEARSAL_PACKET_COHERENCE_REPAIR_NO_BROAD_EXPORT_UNTIL_VERIFIED",
+      "selected_authority_zip": null,
+      "selected_authority_sha256": null,
+      "export_zip": null,
+      "export_sha256": null,
+      "input_zip": "METABLOOMS_OS_STAGE5B_FULL_BOOTABLE_BUNDLE_DELIVERY_HARDENED_AUTHORITY_20260502T000900Z.zip",
+      "input_sha256": "d165d151f77ab7674ba0a66f11cea855cc4d2e4096a46fa5ab507b94f48716e9"
+    },
+    "CURRENT_FULL_AUTHORITY_POINTER_v1.json": {
+      "exists": true,
+      "sha256": "60574e8afb9c51a90d167e07d2551a31e0f983e3fad73d502a94213a2a0a80e5",
+      "stage": "STAGE5B_OS_BUNDLE_DELIVERY_FULL_BOOTABLE_AUTHORITY_HARDENING",
+      "selected_authority_zip": null,
+      "selected_authority_sha256": null,
+      "export_zip": "/mnt/data/METABLOOMS_OS_STAGE5B_FULL_BOOTABLE_BUNDLE_DELIVERY_HARDENED_AUTHORITY_20260502T000900Z.zip",
+      "export_sha256": "EXTERNAL_SIDECAR_REQUIRED_AFTER_EXPORT",
+      "input_zip": null,
+      "input_sha256": null
+    },
+    "0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json": {
+      "exists": true,
+      "sha256": "60574e8afb9c51a90d167e07d2551a31e0f983e3fad73d502a94213a2a0a80e5",
+      "stage": "STAGE5B_OS_BUNDLE_DELIVERY_FULL_BOOTABLE_AUTHORITY_HARDENING",
+      "selected_authority_zip": null,
+      "selected_authority_sha256": null,
+      "export_zip": "/mnt/data/METABLOOMS_OS_STAGE5B_FULL_BOOTABLE_BUNDLE_DELIVERY_HARDENED_AUTHORITY_20260502T000900Z.zip",
+      "export_sha256": "EXTERNAL_SIDECAR_REQUIRED_AFTER_EXPORT",
+      "input_zip": null,
+      "input_sha256": null
+    },
+    "runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json": {
+      "exists": true,
+      "sha256": "60574e8afb9c51a90d167e07d2551a31e0f983e3fad73d502a94213a2a0a80e5",
+      "stage": "STAGE5B_OS_BUNDLE_DELIVERY_FULL_BOOTABLE_AUTHORITY_HARDENING",
+      "selected_authority_zip": null,
+      "selected_authority_sha256": null,
+      "export_zip": "/mnt/data/METABLOOMS_OS_STAGE5B_FULL_BOOTABLE_BUNDLE_DELIVERY_HARDENED_AUTHORITY_20260502T000900Z.zip",
+      "export_sha256": "EXTERNAL_SIDECAR_REQUIRED_AFTER_EXPORT",
+      "input_zip": null,
+      "input_sha256": null
+    }
+  },
+  "coherence": {
+    "baseline_pointers_stage5b": true,
+    "new_chat_packet_stage5b": true,
+    "full_authority_pointers_stage5b": true,
+    "known_sha256": "d165d151f77ab7674ba0a66f11cea855cc4d2e4096a46fa5ab507b94f48716e9",
+    "stage5b_zip": "/mnt/data/METABLOOMS_OS_STAGE5B_FULL_BOOTABLE_BUNDLE_DELIVERY_HARDENED_AUTHORITY_20260502T000900Z.zip",
+    "stage5b_sidecar": "/mnt/data/METABLOOMS_OS_STAGE5B_FULL_BOOTABLE_BUNDLE_DELIVERY_HARDENED_AUTHORITY_20260502T000900Z.zip.sha256"
+  },
+  "proof_files": {
+    "runtime_starter": "/mnt/data/METABLOOMS_STAGE5D_RUNTIME_STARTER_SMOKE_20260502T002700Z.json",
+    "boot_executor": "/mnt/data/METABLOOMS_STAGE5D_BOOT_EXECUTOR_SMOKE_20260502T002700Z.json",
+    "portable_verify": "/mnt/data/METABLOOMS_STAGE5D_PORTABLE_BOOT_VERIFY_20260502T002700Z.json",
+    "delivery_guard": "/mnt/data/METABLOOMS_STAGE5D_STAGE5B_OS_BUNDLE_DELIVERY_GUARD_20260502T002700Z.json"
+  },
+  "proof_summaries": {
+    "stage5b_delivery_guard_decision": "ALLOW",
+    "runtime_starter_decision": "ALLOW",
+    "boot_executor_verdict": "PASS_WITH_WARNINGS",
+    "boot_executor_warnings": [
+      "git_dir_missing"
+    ],
+    "portable_verify_status": "PASS"
+  },
+  "accepted_warnings": [
+    "git_dir_missing"
+  ],
+  "next_recommended_stage": "STAGE5E_OPTIONAL_FULL_AUTHORITY_EXPORT_AFTER_POINTER_COHERENCE_REPAIR"
+}

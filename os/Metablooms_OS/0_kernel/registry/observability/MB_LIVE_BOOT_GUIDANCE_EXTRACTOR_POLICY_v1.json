@@ -1,0 +1,19 @@
+{
+  "artifact_type": "MB_LIVE_BOOT_GUIDANCE_EXTRACTOR_POLICY.v1",
+  "created_utc": "20260502T174908Z",
+  "forbidden_live_fragments": [
+    "python runtime/governance/runtime_starter_smoke_v1.py",
+    "python3 runtime/governance/runtime_starter_smoke_v1.py",
+    "Run runtime/governance/runtime_starter_smoke_v1.py",
+    "Run `runtime/governance/runtime_starter_smoke_v1.py`"
+  ],
+  "live_surfaces": [
+    "NEW_CHAT_START_HERE.md",
+    "0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+    "OPEN_OPERATOR_VISUAL_TRACKER.html"
+  ],
+  "output_json": "runtime/state/operator_surface/LIVE_BOOT_GUIDANCE_LATEST.json",
+  "output_markdown": "runtime/state/operator_surface/LIVE_BOOT_GUIDANCE_LATEST.md",
+  "required_entrypoint": "runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py --root /mnt/data/Metablooms_OS --json",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS"
+}

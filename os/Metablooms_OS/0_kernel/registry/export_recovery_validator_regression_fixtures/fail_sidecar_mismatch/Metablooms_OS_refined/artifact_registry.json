@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "artifacts": [
+    {
+      "artifact_id": "CURRENT_WORKING_BASELINE_POINTER_v1.json",
+      "path": "0_kernel/state/CURRENT_WORKING_BASELINE_POINTER_v1.json",
+      "type": "current_pointer",
+      "status": "active"
+    },
+    {
+      "id": "PYTHON_RESILIENT_EXECUTION_POLICY_v1",
+      "type": "governance_invariant",
+      "path": "governance/invariants/PYTHON_RESILIENT_EXECUTION_POLICY_v1.json",
+      "sha256": "af130de001d6c426d8d438bb0a9bda20f2a6cc5b6b137b2b624dbf2f25c17d6a",
+      "status": "active",
+      "related_validator": "runtime/governance/python_resilient_execution_gate_v1.py",
+      "policy": "runtime/governance/PYTHON_RESILIENT_EXECUTION_POLICY_v1.json"
+    }
+  ]
+}

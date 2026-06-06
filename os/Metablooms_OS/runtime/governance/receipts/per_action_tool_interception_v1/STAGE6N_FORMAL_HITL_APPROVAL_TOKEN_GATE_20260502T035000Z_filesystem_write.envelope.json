@@ -1,0 +1,41 @@
+{
+  "schema_version": "ToolCallEnvelope_v1",
+  "envelope_id": "STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_20260502T035000Z_filesystem_write",
+  "stage_id": "STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_20260502T035000Z",
+  "action_type": "filesystem_write",
+  "tool_name": "bts_wrapped_filesystem_write",
+  "intent": "Write bounded Stage 6N governance artifacts: HITL approval token schema, gate policy, validator, fixtures, receipts, handoff, tracker preview, and support proof bundle manifest.",
+  "risk_tier": "medium",
+  "requested_at_utc": "2026-05-02T03:50:00Z",
+  "requires_see": true,
+  "see_evidence_refs": [
+    "turn281711search0",
+    "turn281711search1",
+    "turn281711search3",
+    "turn281711search5",
+    "turn281711search8",
+    "turn281711search19"
+  ],
+  "limits": {"timeout_seconds": 90, "max_files": 40, "max_steps": 20, "max_bytes": 2000000},
+  "artifacts": {
+    "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_20260502T035000Z_filesystem_write.decision.json",
+    "write_paths": [
+      "/mnt/data/Metablooms_OS/0_kernel/schemas/governance/HITL_APPROVAL_TOKEN_SCHEMA_v1.json",
+      "/mnt/data/Metablooms_OS/0_kernel/registry/governance/FORMAL_HITL_APPROVAL_TOKEN_GATE_v1.json",
+      "/mnt/data/Metablooms_OS/runtime/governance/formal_hitl_approval_token_gate_v1.py",
+      "/mnt/data/Metablooms_OS/tests/evals/governance/test_formal_hitl_approval_token_gate_v1.py",
+      "/mnt/data/Metablooms_OS/tests/fixtures/governance/hitl_approval_token_valid_v1.json",
+      "/mnt/data/Metablooms_OS/tests/fixtures/governance/hitl_approval_token_invalid_missing_scope_v1.json",
+      "/mnt/data/Metablooms_OS/governance/invariants/FORMAL_HITL_APPROVAL_TOKEN_REQUIRED_v1.json",
+      "/mnt/data/Metablooms_OS/research/SEE/STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_SEE_v1.json",
+      "/mnt/data/Metablooms_OS/research/CE/STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_CE_v1.json",
+      "/mnt/data/Metablooms_OS/runtime/receipts/METABLOOMS_STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_RECEIPT_20260502T035000Z.json",
+      "/mnt/data/Metablooms_OS/runtime/handoffs/METABLOOMS_STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_HANDOFF_20260502T035000Z.json"
+    ],
+    "read_paths": [
+      "/mnt/data/Metablooms_OS/runtime/governance/tool_universe_resolver_v1.py",
+      "/mnt/data/Metablooms_OS/runtime/governance/post_tool_result_validation_v1.py",
+      "/mnt/data/Metablooms_OS/runtime/governance/per_action_tool_interception_v1/pre_tool_action_gate_v1.js"
+    ]
+  }
+}

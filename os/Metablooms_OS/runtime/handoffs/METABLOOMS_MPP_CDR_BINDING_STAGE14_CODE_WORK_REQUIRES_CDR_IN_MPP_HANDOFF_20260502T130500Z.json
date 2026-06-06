@@ -1,0 +1,11 @@
+{
+  "authority_export_performed": false,
+  "receipt": "runtime/receipts/METABLOOMS_MPP_CDR_BINDING_STAGE14_CODE_WORK_REQUIRES_CDR_IN_MPP_RECEIPT_20260502T130500Z.json",
+  "required_next_action": "Run either Stage15 contract retrofit or full authority export after Stage14.",
+  "schema": "StageHandoff_v1",
+  "stage": "MPP_CDR_BINDING_STAGE14_CODE_WORK_REQUIRES_CDR_IN_MPP",
+  "status": "READY_FOR_NEXT_STAGE",
+  "summary": "MPP now has an explicit binding invariant and gate requiring CDR PASS for all code-bearing work before MPP stage PASS.",
+  "timestamp_utc": "2026-05-02T12:51:02Z",
+  "tracker": "runtime/state/MPP_CDR_BINDING_STAGE14_TRACKER_PREVIEW.txt"
+}

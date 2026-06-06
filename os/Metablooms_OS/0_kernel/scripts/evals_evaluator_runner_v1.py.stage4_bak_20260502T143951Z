@@ -1,0 +1,51 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+import argparse,json,time,hashlib
+from pathlib import Path
+LABELS=['PASS','WARN','BLOCK']
+HIGH_RISK={'FM-001','FM-003','FM-004','FM-005','FM-006','FM-007','FM-008','FM-010'}
+WARN_RISK={'FM-002','FM-009'}
+def now(): return time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())
+def h(s): return hashlib.sha256(s.encode()).hexdigest()[:16]
+def root():
+ p=Path(__file__).resolve()
+ for q in [p.parent,*p.parents]:
+  if (q/'boot_manifest_v1.json').exists() and (q/'0_kernel').exists(): return q
+ return Path.cwd()
+def load(p): return json.loads(p.read_text(encoding='utf-8'))
+def write(p,o): p.parent.mkdir(parents=True,exist_ok=True); p.write_text(json.dumps(o,indent=2,sort_keys=True)+'\n',encoding='utf-8'); return str(p)
+def append(p,o): p.parent.mkdir(parents=True,exist_ok=True); p.open('a',encoding='utf-8').write(json.dumps(o,sort_keys=True)+'\n'); return str(p)
+def predict(e):
+ modes=set(e.get('failure_mode_ids') or []); scores=e.get('expected_scorecard_scores') or {}
+ if modes & HIGH_RISK: return 'BLOCK',['high_risk_failure_mode']
+ if modes & WARN_RISK: return 'WARN',['warn_risk_failure_mode']
+ if any(v==0 for v in scores.values()): return 'BLOCK',['zero_scorecard_score']
+ return 'PASS',['no_blocking_failure_mode']
+def matrix(results):
+ m={a:{p:0 for p in LABELS} for a in LABELS}
+ for r in results:
+  if r.get('expected_decision') in LABELS and r.get('predicted_decision') in LABELS:
+   m[r['expected_decision']][r['predicted_decision']]+=1
+ total=sum(sum(row.values()) for row in m.values()); correct=sum(m[l][l] for l in LABELS)
+ per={}
+ for l in LABELS:
+  tp=m[l][l]; actual=sum(m[l].values()); pred=sum(m[a][l] for a in LABELS)
+  per[l]={'support':actual,'predicted_count':pred,'recall':round(tp/actual,4) if actual else None,'precision':round(tp/pred,4) if pred else None}
+ false_pass=[r['example_id'] for r in results if r.get('expected_decision') in ('BLOCK','WARN') and r.get('predicted_decision')=='PASS']
+ false_block=[r['example_id'] for r in results if r.get('expected_decision')=='PASS' and r.get('predicted_decision')=='BLOCK']
+ return {'artifact_type':'EVALS_CONFUSION_MATRIX_v1','created_utc':now(),'labels':LABELS,'matrix':m,'total':total,'correct':correct,'accuracy':round(correct/total,4) if total else 0,'per_label':per,'false_pass_example_ids':false_pass,'false_block_example_ids':false_block,'promotion_decision':'PASS' if total and (correct/total)>=0.90 and not false_pass else 'BLOCK','promotion_thresholds':{'minimum_accuracy':0.90,'false_pass_tolerance':0,'required_labels':LABELS,'minimum_examples':20}}
+def run(r):
+ ds_path=r/'runtime/evals/evals_trace_review/EVALS_REGRESSION_DATASET_v1.json'; sc_path=r/'0_kernel/registry/evals/MB_EVALS_SCORECARD_SPEC_v1.json'; cat_path=r/'0_kernel/registry/evals/EVALS_FAILURE_MODE_CATALOG_v1.json'
+ for p in [ds_path,sc_path,cat_path]:
+  if not p.exists(): return {'verdict':'EVALS_RUNNER_MISSING_INPUT','missing':str(p)}
+ ds=load(ds_path); sc=load(sc_path); cat=load(cat_path); results=[]
+ for e in ds.get('examples',[]):
+  pred,reasons=predict(e); results.append({'example_id':e.get('example_id'),'name':e.get('name'),'component':e.get('component'),'expected_decision':e.get('expected_decision'),'predicted_decision':pred,'match':pred==e.get('expected_decision'),'failure_mode_ids':e.get('failure_mode_ids',[]),'evaluator_reasons':reasons,'scorecard_scores':e.get('expected_scorecard_scores',{})})
+ cm=matrix(results); trace=h('evals-stage3|'+str(len(results))+'|'+cm.get('promotion_decision',''))
+ payload={'artifact_type':'EVALS_EVALUATOR_RUN_STAGE3_RESULTS_v1','stage_name':'IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_3_EVALUATOR_RUNNER_AND_CONFUSION_MATRIX','created_utc':now(),'verdict':'EVALUATOR_RUN_COMPLETE','trace_id':trace,'dataset':str(ds_path.relative_to(r)),'scorecard_spec':str(sc_path.relative_to(r)),'failure_mode_catalog':str(cat_path.relative_to(r)),'example_count':len(results),'scorecard_count':len(sc.get('scorecards',[])),'failure_mode_count':len(cat.get('failure_modes',[])),'results':results,'confusion_matrix_path':'runtime/evals/evals_trace_review/EVALS_CONFUSION_MATRIX_STAGE3_LATEST.json','notes':['Deterministic offline evaluator; no external model call.']}
+ rp=r/'runtime/evals/evals_trace_review/EVALS_EVALUATOR_RUN_STAGE3_RESULTS_LATEST.json'; mp=r/'runtime/evals/evals_trace_review/EVALS_CONFUSION_MATRIX_STAGE3_LATEST.json'; write(rp,payload); write(mp,cm)
+ ledger=r/'runtime/traces/evals/TRACE_SPAN_LEDGER_EVALS_STAGE3.jsonl'; append(ledger,{'schema_version':'MB_TRACE_SPAN_LEDGER_SPEC_v2','trace_id':trace,'span_id':h(trace+'start'),'parent_span_id':None,'name':'evals_stage3.evaluator_runner','stage_name':payload['stage_name'],'event':'start','status':'OK','timestamp_utc':now(),'attributes':{'example_count':len(results)}}); append(ledger,{'schema_version':'MB_TRACE_SPAN_LEDGER_SPEC_v2','trace_id':trace,'span_id':h(trace+'end'),'parent_span_id':None,'name':'evals_stage3.confusion_matrix','stage_name':payload['stage_name'],'event':'end','status':payload['verdict'],'timestamp_utc':now(),'attributes':{'accuracy':cm['accuracy'],'promotion_decision':cm['promotion_decision']}})
+ out=dict(payload); out['result_path']=str(rp); out['confusion_matrix']=cm; out['trace_ledger']=str(ledger); return out
+def main(argv=None):
+ ap=argparse.ArgumentParser(); ap.add_argument('--json',action='store_true'); ap.add_argument('--root'); args=ap.parse_args(argv); out=run(Path(args.root).resolve() if args.root else root()); print(json.dumps(out,indent=2,sort_keys=True) if args.json else f"{out.get('verdict')} examples={out.get('example_count')}"); return 0 if out.get('verdict') in ('PASS','EVALUATOR_RUN_COMPLETE') else 2
+if __name__=='__main__': raise SystemExit(main())

@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "created_at": 1777065653.898005,
+  "precondition_id": "G6_PRECONDITION_G5_AUDIT_OPEN_ISSUES_v1",
+  "status": "active_precondition",
+  "source_lessons": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/lessons_learned/G5_BUNDLE_AUDIT_LESSONS_LEARNED_v1.json",
+  "required_before_g6_baseline_lock": [
+    "Resolve validator decision path ambiguity by including decision inside main ZIP or changing manifest to explicit external artifact locator.",
+    "Update current working baseline pointer to G5/G6 lifecycle or mark stale explicitly.",
+    "Add STAGE_DAG_LEDGER_ID_MAP_v1.json or equivalent mapping."
+  ],
+  "fail_closed_rule": "Do not lock G6 baseline if any required_before_g6_baseline_lock item is unaddressed or explicitly deferred with proof.",
+  "verdict": "PASS"
+}

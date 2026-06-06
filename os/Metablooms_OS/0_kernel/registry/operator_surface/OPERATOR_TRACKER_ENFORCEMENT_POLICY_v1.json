@@ -1,0 +1,17 @@
+{
+  "artifact_type": "OPERATOR_TRACKER_ENFORCEMENT_POLICY_v1",
+  "created_utc": "20260502T145646Z",
+  "latest_bootable_authority": "/mnt/data/METABLOOMS_OS_BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE5_FULL_AUTHORITY_20260502T145012Z.zip",
+  "latest_bootable_authority_sha256": "66bba2bd61cb9a4b8335025a05bfd18cb3772fa1fc687eaeab1bacac4016de1e",
+  "latest_preview_path": "/mnt/data/Metablooms_OS/runtime/handoffs/operator_tracker/CURRENT_OPERATOR_TRACKER_PREVIEW_LATEST.md",
+  "problem": "MetaBlooms governed work became difficult to follow because stage responses did not consistently surface current bootable authority, active chain, completed chain, and next pointer.",
+  "requirements": [
+    "Before a governed stage final response, render or cite the current operator tracker preview.",
+    "Every final governed-stage response must state whether a full bootable OS export exists and identify the latest full authority ZIP/checksum.",
+    "Every final governed-stage response must distinguish required next work from optional branch work.",
+    "If the tracker cannot be rendered or located, fail closed and write a blocked receipt instead of continuing implementation.",
+    "Append-log stream classification remains optional until a user explicitly resumes that chain."
+  ],
+  "stage": "OPERATOR_VISUAL_TRACKER_RESTORE_AND_ENFORCEMENT_STAGE1",
+  "status": "ACTIVE"
+}

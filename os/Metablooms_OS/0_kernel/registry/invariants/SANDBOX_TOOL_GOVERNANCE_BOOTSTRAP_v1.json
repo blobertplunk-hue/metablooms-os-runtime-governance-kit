@@ -1,0 +1,12 @@
+{
+  "blocks": [
+    "planning_without_sandbox_policy",
+    "coding_without_coding_plan",
+    "normal_python_for_stdlib_without_exception",
+    "archive_hash_without_latency_controls"
+  ],
+  "enforcement": "mandatory_at_chat_start_before_planning",
+  "id": "SANDBOX_TOOL_GOVERNANCE_BOOTSTRAP_v1",
+  "status": "active",
+  "version": "1.0"
+}

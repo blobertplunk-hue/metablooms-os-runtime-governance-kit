@@ -1,0 +1,23 @@
+{
+  "current_authority_label": "BOOTABLE FULL OS AUTHORITY ZIP \u2014 Stage 6U",
+  "current_authority_zip": "/mnt/data/METABLOOMS_OS_STAGE6U_FULL_AUTHORITY_AFTER_6T_BOOTABLE_FULL_OS_AUTHORITY_20260502T035000Z.zip",
+  "current_authority_zip_sha256": "EXTERNAL_SIDECAR_REQUIRED_AFTER_EXPORT",
+  "current_authority_zip_sidecar": "/mnt/data/METABLOOMS_OS_STAGE6U_FULL_AUTHORITY_AFTER_6T_BOOTABLE_FULL_OS_AUTHORITY_20260502T035000Z.zip.sha256",
+  "next_best_stage": "STAGE6V_SOURCE_LEVEL_RETROFIT_PRIORITY_BATCH_1_OR_NEXT_GOVERNED_TASK",
+  "required_boot_sequence": [
+    "verify sidecar",
+    "extract to /mnt/data/Metablooms_OS or staging",
+    "runtime starter smoke",
+    "portable boot verify",
+    "boot executor smoke",
+    "run one bounded governed stage"
+  ],
+  "schema": "MetaBloomsStageHandoff_v1",
+  "stage": "STAGE6U_FULL_AUTHORITY_EXPORT_AFTER_6T",
+  "status": "READY_FOR_NEXT_STAGE",
+  "stop_conditions": [
+    "do not treat support/proof bundle as OS bundle",
+    "do not export again unless an export stage is explicitly requested"
+  ],
+  "timestamp_utc": "2026-05-02T03:38:39Z"
+}

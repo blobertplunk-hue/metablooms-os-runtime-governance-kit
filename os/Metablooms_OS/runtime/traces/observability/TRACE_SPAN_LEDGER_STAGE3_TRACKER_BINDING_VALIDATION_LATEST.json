@@ -1,0 +1,33 @@
+{
+  "artifact_type": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE3_TRACKER_BINDING_VALIDATION.v1",
+  "checks": [
+    {
+      "exists_nonempty": true,
+      "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_INDEX_LATEST.json"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "runtime/traces/observability/CAUSAL_STAGE_GRAPH_LATEST.json"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "runtime/state/operator_surface/OPERATOR_CAUSAL_TIMELINE_LATEST.json"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "runtime/state/operator_surface/OPERATOR_CAUSAL_TIMELINE_PREVIEW_LATEST.md"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "OPEN_OPERATOR_VISUAL_TRACKER.html"
+    }
+  ],
+  "created_utc": "20260502T164757Z",
+  "issues": [],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE3_TRACKER_CAUSAL_TIMELINE_BINDING",
+  "verdict": "PASS"
+}

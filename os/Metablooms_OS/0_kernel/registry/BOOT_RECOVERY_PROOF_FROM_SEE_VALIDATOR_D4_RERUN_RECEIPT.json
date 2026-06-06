@@ -1,0 +1,967 @@
+{
+  "version": "1.0",
+  "created_at": 1777042872.5199227,
+  "stage": "RERUN_BOOT_RECOVERY_PROOF_FROM_SEE_VALIDATOR_D4_EXPORT",
+  "source_bundle": "/mnt/data/Metablooms_OS_refined_SEE_PACKET_VALIDATOR_STABLE_D4.zip",
+  "source_manifest": "/mnt/data/Metablooms_OS_refined_SEE_PACKET_VALIDATOR_STABLE_D4.zip.sha256.json",
+  "checks": [
+    {
+      "name": "bundle_exists",
+      "passed": true,
+      "observed": {
+        "path": "/mnt/data/Metablooms_OS_refined_SEE_PACKET_VALIDATOR_STABLE_D4.zip",
+        "exists": true
+      },
+      "required": null
+    },
+    {
+      "name": "manifest_exists",
+      "passed": true,
+      "observed": {
+        "path": "/mnt/data/Metablooms_OS_refined_SEE_PACKET_VALIDATOR_STABLE_D4.zip.sha256.json",
+        "exists": true
+      },
+      "required": null
+    },
+    {
+      "name": "bundle_sha_matches_manifest",
+      "passed": true,
+      "observed": {
+        "manifest": "d46488ba1e3355ae84dfd79c387768034fa2b543c80701519769da7a92fbba75",
+        "computed": "d46488ba1e3355ae84dfd79c387768034fa2b543c80701519769da7a92fbba75"
+      },
+      "required": null
+    },
+    {
+      "name": "bundle_size_matches_manifest",
+      "passed": true,
+      "observed": {
+        "manifest": 34612946,
+        "actual": 34612946
+      },
+      "required": null
+    },
+    {
+      "name": "manifest_declares_contains_boot_executor",
+      "passed": true,
+      "observed": {
+        "contains_boot_executor": true
+      },
+      "required": null
+    },
+    {
+      "name": "manifest_declares_contains_trigger_router_evaluator",
+      "passed": true,
+      "observed": {
+        "contains_trigger_router_evaluator": true
+      },
+      "required": null
+    },
+    {
+      "name": "manifest_declares_contains_ce_packet_validator",
+      "passed": true,
+      "observed": {
+        "contains_ce_packet_validator": true
+      },
+      "required": null
+    },
+    {
+      "name": "manifest_declares_contains_see_packet_validator",
+      "passed": true,
+      "observed": {
+        "contains_see_packet_validator": true
+      },
+      "required": null
+    },
+    {
+      "name": "manifest_declares_contains_runaway_turn_breaker",
+      "passed": true,
+      "observed": {
+        "contains_runaway_turn_breaker": true
+      },
+      "required": null
+    },
+    {
+      "name": "manifest_declares_contains_tracked_cache_invariant",
+      "passed": true,
+      "observed": {
+        "contains_tracked_cache_invariant": true
+      },
+      "required": null
+    },
+    {
+      "name": "staged_root_exists",
+      "passed": true,
+      "observed": {
+        "path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined",
+        "exists": true
+      },
+      "required": null
+    },
+    {
+      "name": "staged_root_git_exists",
+      "passed": true,
+      "observed": {
+        "path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/.git",
+        "exists": true
+      },
+      "required": null
+    },
+    {
+      "name": "required_path_artifact_registry",
+      "passed": true,
+      "observed": {
+        "path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/artifact_registry.json",
+        "exists": true,
+        "size": 79223
+      },
+      "required": null
+    },
+    {
+      "name": "required_path_boot_manifest",
+      "passed": true,
+      "observed": {
+        "path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/boot_manifest_v1.json",
+        "exists": true,
+        "size": 5418
+      },
+      "required": null
+    },
+    {
+      "name": "required_path_boot_executor",
+      "passed": true,
+      "observed": {
+        "path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/scripts/boot_runtime_executor_v1.py",
+        "exists": true,
+        "size": 8037
+      },
+      "required": null
+    },
+    {
+      "name": "required_path_trigger_router_evaluator",
+      "passed": true,
+      "observed": {
+        "path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/scripts/trigger_router_evaluator_v1.py",
+        "exists": true,
+        "size": 3503
+      },
+      "required": null
+    },
+    {
+      "name": "required_path_ce_packet_validator",
+      "passed": true,
+      "observed": {
+        "path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/scripts/ce_packet_validator_v1.py",
+        "exists": true,
+        "size": 4877
+      },
+      "required": null
+    },
+    {
+      "name": "required_path_see_packet_validator",
+      "passed": true,
+      "observed": {
+        "path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/scripts/see_packet_validator_v1.py",
+        "exists": true,
+        "size": 14042
+      },
+      "required": null
+    },
+    {
+      "name": "required_path_ce_packet_schema",
+      "passed": true,
+      "observed": {
+        "path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/schemas/CE_PACKET_SCHEMA_v1.json",
+        "exists": true,
+        "size": 397
+      },
+      "required": null
+    },
+    {
+      "name": "required_path_see_packet_schema",
+      "passed": true,
+      "observed": {
+        "path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/schemas/SEE_PACKET_SCHEMA_v1.json",
+        "exists": true,
+        "size": 4904
+      },
+      "required": null
+    },
+    {
+      "name": "required_path_see_packet_contract",
+      "passed": true,
+      "observed": {
+        "path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/schemas/SEE_PACKET_VALIDATOR_CONTRACT_v1.json",
+        "exists": true,
+        "size": 2639
+      },
+      "required": null
+    },
+    {
+      "name": "required_path_see_packet_spec",
+      "passed": true,
+      "observed": {
+        "path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/docs/SEE_PACKET_VALIDATOR_SPEC_v1.md",
+        "exists": true,
+        "size": 3018
+      },
+      "required": null
+    },
+    {
+      "name": "required_path_see_packet_integration_proof",
+      "passed": true,
+      "observed": {
+        "path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/registry/SEE_PACKET_VALIDATOR_INTEGRATION_PROOF_v1.json",
+        "exists": true,
+        "size": 12981
+      },
+      "required": null
+    },
+    {
+      "name": "required_path_see_packet_stable_export_receipt",
+      "passed": true,
+      "observed": {
+        "path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/registry/SEE_PACKET_VALIDATOR_STABLE_EXPORT_RECEIPT_v1.json",
+        "exists": true,
+        "size": 2261
+      },
+      "required": null
+    },
+    {
+      "name": "required_path_trigger_router",
+      "passed": true,
+      "observed": {
+        "path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/schemas/TRIGGER_ROUTER_v1.json",
+        "exists": true,
+        "size": 2189
+      },
+      "required": null
+    },
+    {
+      "name": "required_path_pipeline_contract",
+      "passed": true,
+      "observed": {
+        "path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/schemas/MASTER_PIPELINE_CONTRACT_v1.json",
+        "exists": true,
+        "size": 240
+      },
+      "required": null
+    },
+    {
+      "name": "required_path_runaway_invariant",
+      "passed": true,
+      "observed": {
+        "path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/registry/lessons_learned/RUNAWAY_TURN_BREAKER_INVARIANT_v1.json",
+        "exists": true,
+        "size": 1185
+      },
+      "required": null
+    },
+    {
+      "name": "required_path_tracked_cache_invariant",
+      "passed": true,
+      "observed": {
+        "path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/registry/lessons_learned/EXPORT_RECOVERY_TRACKED_CACHE_INVARIANT_v1.json",
+        "exists": true,
+        "size": 725
+      },
+      "required": null
+    },
+    {
+      "name": "pre_repair_dirty_is_mode_only_or_clean",
+      "passed": true,
+      "observed": {
+        "git_status": {
+          "cmd": [
+            "git",
+            "status",
+            "--short"
+          ],
+          "returncode": 0,
+          "stdout": "M 0_kernel/scripts/boot_runtime_executor_v1.py\n M 0_kernel/scripts/ce_packet_validator_v1.py\n M 0_kernel/scripts/see_packet_validator_v1.py\n M 0_kernel/scripts/trigger_router_evaluator_v1.py",
+          "stderr": ""
+        },
+        "git_diff_numstat": {
+          "cmd": [
+            "git",
+            "diff",
+            "--numstat"
+          ],
+          "returncode": 0,
+          "stdout": "0\t0\t0_kernel/scripts/boot_runtime_executor_v1.py\n0\t0\t0_kernel/scripts/ce_packet_validator_v1.py\n0\t0\t0_kernel/scripts/see_packet_validator_v1.py\n0\t0\t0_kernel/scripts/trigger_router_evaluator_v1.py",
+          "stderr": ""
+        },
+        "git_diff_summary": {
+          "cmd": [
+            "git",
+            "diff",
+            "--summary"
+          ],
+          "returncode": 0,
+          "stdout": "mode change 100755 => 100644 0_kernel/scripts/boot_runtime_executor_v1.py\n mode change 100755 => 100644 0_kernel/scripts/ce_packet_validator_v1.py\n mode change 100755 => 100644 0_kernel/scripts/see_packet_validator_v1.py\n mode change 100755 => 100644 0_kernel/scripts/trigger_router_evaluator_v1.py",
+          "stderr": ""
+        }
+      },
+      "required": "clean status or numstat rows all 0/0 with mode-only summary"
+    },
+    {
+      "name": "git_core_filemode_false_after_repair",
+      "passed": true,
+      "observed": {
+        "cmd": [
+          "git",
+          "config",
+          "--get",
+          "core.filemode"
+        ],
+        "returncode": 0,
+        "stdout": "false",
+        "stderr": ""
+      },
+      "required": null
+    },
+    {
+      "name": "artifact_registry_parseable",
+      "passed": true,
+      "observed": {
+        "artifact_count": 69
+      },
+      "required": null
+    },
+    {
+      "name": "boot_manifest_parseable",
+      "passed": true,
+      "observed": {
+        "has_boot_executor": true,
+        "has_trigger_router_evaluator": true,
+        "has_ce_packet_validator": true,
+        "has_see_packet_validator": true,
+        "has_runaway_breaker": true
+      },
+      "required": null
+    },
+    {
+      "name": "boot_manifest_has_boot_executor",
+      "passed": true,
+      "observed": {
+        "status": "active",
+        "script": "0_kernel/scripts/boot_runtime_executor_v1.py",
+        "required": true,
+        "receipt_dir": "0_kernel/registry/boot_receipts"
+      },
+      "required": null
+    },
+    {
+      "name": "boot_manifest_has_trigger_router_evaluator",
+      "passed": true,
+      "observed": {
+        "status": "active",
+        "script": "0_kernel/scripts/trigger_router_evaluator_v1.py",
+        "router": "0_kernel/schemas/TRIGGER_ROUTER_v1.json",
+        "pipeline": "0_kernel/schemas/MASTER_PIPELINE_CONTRACT_v1.json"
+      },
+      "required": null
+    },
+    {
+      "name": "boot_manifest_has_ce_packet_validator",
+      "passed": true,
+      "observed": {
+        "status": "active",
+        "script": "0_kernel/scripts/ce_packet_validator_v1.py",
+        "schema": "0_kernel/schemas/CE_PACKET_SCHEMA_v1.json",
+        "contract": "0_kernel/schemas/CE_PACKET_VALIDATOR_CONTRACT_v1.json"
+      },
+      "required": null
+    },
+    {
+      "name": "boot_manifest_has_see_packet_validator",
+      "passed": true,
+      "observed": {
+        "status": "active",
+        "script": "0_kernel/scripts/see_packet_validator_v1.py",
+        "schema": "0_kernel/schemas/SEE_PACKET_SCHEMA_v1.json",
+        "contract": "0_kernel/schemas/SEE_PACKET_VALIDATOR_CONTRACT_v1.json",
+        "spec": "0_kernel/docs/SEE_PACKET_VALIDATOR_SPEC_v1.md",
+        "required_when_research_triggered": true
+      },
+      "required": null
+    },
+    {
+      "name": "boot_manifest_requires_see_when_research_triggered",
+      "passed": true,
+      "observed": {
+        "status": "active",
+        "script": "0_kernel/scripts/see_packet_validator_v1.py",
+        "schema": "0_kernel/schemas/SEE_PACKET_SCHEMA_v1.json",
+        "contract": "0_kernel/schemas/SEE_PACKET_VALIDATOR_CONTRACT_v1.json",
+        "spec": "0_kernel/docs/SEE_PACKET_VALIDATOR_SPEC_v1.md",
+        "required_when_research_triggered": true
+      },
+      "required": null
+    },
+    {
+      "name": "boot_manifest_has_runaway_breaker",
+      "passed": true,
+      "observed": {
+        "status": "active",
+        "invariant": "0_kernel/registry/lessons_learned/RUNAWAY_TURN_BREAKER_INVARIANT_v1.json",
+        "subprocess_timeout_required": true,
+        "partial_receipt_on_blocker_required": true,
+        "resume_from_verified_artifact_required": true,
+        "broad_recursive_scan_requires_filter": true
+      },
+      "required": null
+    },
+    {
+      "name": "registry_indexes_boot_runtime_executor_v1.py",
+      "passed": true,
+      "observed": {
+        "present": true
+      },
+      "required": null
+    },
+    {
+      "name": "registry_indexes_trigger_router_evaluator_v1.py",
+      "passed": true,
+      "observed": {
+        "present": true
+      },
+      "required": null
+    },
+    {
+      "name": "registry_indexes_ce_packet_validator_v1.py",
+      "passed": true,
+      "observed": {
+        "present": true
+      },
+      "required": null
+    },
+    {
+      "name": "registry_indexes_see_packet_validator_v1.py",
+      "passed": true,
+      "observed": {
+        "present": true
+      },
+      "required": null
+    },
+    {
+      "name": "registry_indexes_SEE_PACKET_SCHEMA_v1.json",
+      "passed": true,
+      "observed": {
+        "present": true
+      },
+      "required": null
+    },
+    {
+      "name": "registry_indexes_SEE_PACKET_VALIDATOR_CONTRACT_v1.json",
+      "passed": true,
+      "observed": {
+        "present": true
+      },
+      "required": null
+    },
+    {
+      "name": "registry_indexes_SEE_PACKET_VALIDATOR_INTEGRATION_PROOF_v1.json",
+      "passed": true,
+      "observed": {
+        "present": true
+      },
+      "required": null
+    },
+    {
+      "name": "registry_indexes_SEE_PACKET_VALIDATOR_STABLE_EXPORT_RECEIPT_v1.json",
+      "passed": true,
+      "observed": {
+        "present": true
+      },
+      "required": null
+    },
+    {
+      "name": "registry_indexes_RUNAWAY_TURN_BREAKER_INVARIANT_v1.json",
+      "passed": true,
+      "observed": {
+        "present": true
+      },
+      "required": null
+    },
+    {
+      "name": "registry_indexes_EXPORT_RECOVERY_TRACKED_CACHE_INVARIANT_v1.json",
+      "passed": true,
+      "observed": {
+        "present": true
+      },
+      "required": null
+    },
+    {
+      "name": "see_validator_has_cli",
+      "passed": true,
+      "observed": {
+        "missing_markers": [],
+        "path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/scripts/see_packet_validator_v1.py"
+      },
+      "required": {
+        "markers": [
+          "--packet",
+          "--packet-file",
+          "--receipt-dir",
+          "SEE_VALIDATION_RECEIPT_"
+        ]
+      }
+    },
+    {
+      "name": "see_validator_requires_web_run",
+      "passed": true,
+      "observed": {
+        "missing_markers": [],
+        "path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/scripts/see_packet_validator_v1.py"
+      },
+      "required": {
+        "markers": [
+          "web_run_evidence",
+          "web_run_called_false",
+          "web_run_call_count_zero"
+        ]
+      }
+    },
+    {
+      "name": "see_validator_requires_source_bindings",
+      "passed": true,
+      "observed": {
+        "missing_markers": [],
+        "path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/scripts/see_packet_validator_v1.py"
+      },
+      "required": {
+        "markers": [
+          "claim_source_bindings",
+          "source_binding_references_missing_source"
+        ]
+      }
+    },
+    {
+      "name": "see_spec_mentions_web_run",
+      "passed": true,
+      "observed": {
+        "missing_markers": [],
+        "path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/docs/SEE_PACKET_VALIDATOR_SPEC_v1.md"
+      },
+      "required": {
+        "markers": [
+          "web.run",
+          "claim_source_bindings",
+          "gaps_and_contradictions"
+        ]
+      }
+    },
+    {
+      "name": "runaway_invariant_has_timeout",
+      "passed": true,
+      "observed": {
+        "missing_markers": [],
+        "path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/registry/lessons_learned/RUNAWAY_TURN_BREAKER_INVARIANT_v1.json"
+      },
+      "required": {
+        "markers": [
+          "subprocess timeouts",
+          "partial receipt"
+        ]
+      }
+    },
+    {
+      "name": "tracked_cache_invariant_has_tracked_files",
+      "passed": true,
+      "observed": {
+        "missing_markers": [],
+        "path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/registry/lessons_learned/EXPORT_RECOVERY_TRACKED_CACHE_INVARIANT_v1.json"
+      },
+      "required": {
+        "markers": [
+          "preserve all tracked files"
+        ]
+      }
+    },
+    {
+      "name": "restored_boot_executor_runs_successfully",
+      "passed": true,
+      "observed": {
+        "cmd": [
+          "python",
+          "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/scripts/boot_runtime_executor_v1.py",
+          "--root",
+          "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined",
+          "--receipt-dir",
+          "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/registry/boot_receipts/see_d4_recovery_rerun",
+          "--json"
+        ],
+        "returncode": 0,
+        "stdout": "{\n  \"version\": \"1.0\",\n  \"created_at\": 1777042881.0076196,\n  \"stage\": \"BOOT_RUNTIME_EXECUTOR\",\n  \"root\": \"/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined\",\n  \"checks\": [\n    {\n      \"name\": \"root_exists\",\n      \"passed\": true,\n      \"observed\": {\n        \"root\": \"/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined\",\n        \"exists\": true,\n        \"is_dir\": true\n      }\n    },\n    {\n      \"name\": \"git_dir_exists\",\n      \"passed\": true,\n      \"observed\": {\n        \"path\": \"/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/.git\",\n        \"exists\": true\n      }\n    },\n    {\n      \"name\": \"required_path:boot_manifest_v1.json\",\n      \"passed\": true,\n      \"observed\": {\n        \"relative_path\": \"boot_manifest_v1.json\",\n        \"path\": \"/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/boot_manifest_v1.json\",\n        \"exists\": true,\n        \"is_file\": true,\n        \"size_bytes\": 5418\n      }\n    },\n    {\n      \"name\": \"required_path:artifact_registry.json\",\n      \"passed\": true,\n      \"observed\": {\n        \"relative_path\": \"artifact_registry.json\",\n        \"path\": \"/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/artifact_registry.json\",\n        \"exists\": true,\n        \"is_file\": true,\n        \"size_bytes\": 79223\n      }\n    },\n    {\n      \"name\": \"required_path:0_kernel/scripts/boot_runtime_executor_v1.py\",\n      \"passed\": true,\n      \"observed\": {\n        \"relative_path\": \"0_kernel/scripts/boot_runtime_executor_v1.py\",\n        \"path\": \"/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/scripts/boot_runtime_executor_v1.py\",\n        \"exists\": true,\n        \"is_file\": true,\n        \"size_bytes\": 8037\n      }\n    },\n    {\n      \"name\": \"boot_manifest_parseable\",\n      \"passed\": true,\n      \"observed\": {\n        \"keys\": [\n          \"boot_executor\",\n          \"boot_ready\",\n          \"ce_packet_validator\",\n          \"created_at\",\n          \"current_stable_baseline\",\n          \"entrypoints\",\n          \"execution_safety\",\n          \"failures\",\n          \"governance_modules\",\n          \"lessons_learned\",\n          \"notes\",\n          \"registry_path\",\n          \"registry_status\",\n          \"root\",\n          \"see_packet_validator\",\n          \"trigger_router_evaluator\",\n          \"updated_at\",\n          \"version\"\n        ]\n      }\n    },\n    {\n      \"name\": \"artifact_registry_parseable\",\n      \"passed\": true,\n      \"observed\": {\n        \"artifact_count\": 69\n      }\n    },\n    {\n      \"name\": \"capability_path:trigger_router_evaluator\",\n      \"passed\": true,\n      \"observed\": {\n        \"relative_path\": \"0_kernel/scripts/trigger_router_evaluator_v1.py\",\n        \"path\": \"/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/scripts/trigger_router_evaluator_v1.py\",\n        \"exists\": true,\n        \"is_file\": true,\n        \"size_bytes\": 3503\n      }\n    },\n    {\n      \"name\": \"capability_path:ce_packet_validator\",\n      \"passed\": true,\n      \"observed\": {\n        \"relative_path\": \"0_kernel/scripts/ce_packet_validator_v1.py\",\n        \"path\": \"/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/scripts/ce_packet_validator_v1.py\",\n        \"exists\": true,\n        \"is_file\": true,\n        \"size_bytes\": 4877\n      }\n    },\n    {\n      \"name\": \"capability_path:runaway_turn_breaker\",\n      \"passed\": true,\n      \"observed\": {\n        \"relative_path\": \"0_kernel/registry/lessons_learned/RUNAWAY_TURN_BREAKER_INVARIANT_v1.json\",\n        \"path\": \"/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/registry/lessons_learned/RUNAWAY_TURN_BREAKER_INVARIANT_v1.json\",\n        \"exists\": true,\n        \"is_file\": true,\n        \"size_bytes\": 1185\n      }\n    },\n    {\n      \"name\": \"capability_path:tracked_cache_invariant\",\n      \"passed\": true,\n      \"observed\": {\n        \"relative_path\": \"0_kernel/registry/lessons_learned/EXPORT_RECOVERY_TRACKED_CACHE_INVARIANT_v1.json\",\n        \"path\": \"/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/registry/lessons_learned/EXPORT_RECOVERY_TRACKED_CACHE_INVARIANT_v1.json\",\n        \"exists\": true,\n        \"is_file\": true,\n        \"size_bytes\": 725\n      }\n    },\n    {\n      \"name\": \"boot_manifest_trigger_router_reference\",\n      \"passed\": true,\n      \"observed\": {\n        \"script\": \"0_kernel/scripts/trigger_router_evaluator_v1.py\"\n      }\n    },\n    {\n      \"name\": \"boot_manifest_ce_validator_reference\",\n      \"passed\": true,\n      \"observed\": {\n        \"script\": \"0_kernel/scripts/ce_packet_validator_v1.py\"\n      }\n    },\n    {\n      \"name\": \"boot_manifest_runaway_breaker_active\",\n      \"passed\": true,\n      \"observed\": {\n        \"status\": \"active\"\n      }\n    }\n  ],\n  \"check_count\": 14,\n  \"pass_count\": 14,\n  \"issues\": [],\n  \"verdict\": \"PASS\",\n  \"boot_manifest_summary\": {\n    \"current_stable_baseline\": {\n      \"status\": \"active_recreated_current_before_D0\",\n      \"baseline_export\": \"/mnt/data/Metablooms_OS_refined_RECREATED_CURRENT_BASELINE_BEFORE_D0.zip\",\n      \"baseline_manifest\": \"/mnt/data/Metablooms_OS_refined_RECREATED_CURRENT_BASELINE_BEFORE_D0.zip.sha256.json\",\n      \"source_restored_from\": \"/mnt/data/Metablooms_OS_refined_research_tool_governed_bootfixed_v6.zip\",\n      \"boot_recovery_proven\": false,\n      \"trigger_router_evaluator_integrated\": true,\n      \"ce_packet_validator_integrated\": true,\n      \"runaway_turn_breaker_integrated\": true,\n      \"baseline_lock_receipt\": \"0_kernel/registry/BASELINE_LOCK_RECREATED_CURRENT_BEFORE_D0_RECEIPT.json\"\n    },\n    \"execution_safety\": {\n      \"runaway_turn_breaker\": {\n        \"status\": \"active\",\n        \"invariant\": \"0_kernel/registry/lessons_learned/RUNAWAY_TURN_BREAKER_INVARIANT_v1.json\",\n        \"subprocess_timeout_required\": true,\n        \"partial_receipt_on_blocker_required\": true,\n        \"resume_from_verified_artifact_required\": true,\n        \"broad_recursive_scan_requires_filter\": true\n      }\n    }\n  },\n  \"artifact_registry_summary\": {\n    \"artifact_count\": 69\n  },\n  \"receipt_path\": \"/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/registry/boot_receipts/see_d4_recovery_rerun/BOOT_RECEIPT_1777042881007.json\"\n}",
+        "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document."
+      },
+      "required": null
+    },
+    {
+      "name": "restored_boot_executor_writes_pass_receipt",
+      "passed": true,
+      "observed": {
+        "receipt": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/registry/boot_receipts/see_d4_recovery_rerun/BOOT_RECEIPT_1777042881007.json",
+        "issues": []
+      },
+      "required": null
+    },
+    {
+      "name": "restored_trigger_router_evaluator_runs_integration_case",
+      "passed": true,
+      "observed": {
+        "packet": {
+          "version": "1.0",
+          "created_at": 1777042881.177321,
+          "stage": "TRIGGER_ROUTER_EVALUATION",
+          "request": "research current best practices, audit /mnt/data, understand the root cause, patch code, update registry, and export zip",
+          "matched_routes": [
+            "research_required",
+            "sandbox_tool_required",
+            "ce_required",
+            "code_patch_required",
+            "registry_mutation_required",
+            "export_required"
+          ],
+          "required_stages": [
+            "BOOT",
+            "RESEARCH_TRIGGER_CHECK",
+            "SEE_PASS",
+            "TOOL_GOVERNANCE_CHECK",
+            "CE_COMPREHENSION_PASS",
+            "PLAN",
+            "EXECUTE_ONE_STAGE",
+            "VERIFY",
+            "RECEIPT",
+            "GIT_COMMIT"
+          ],
+          "required_modules": [
+            "research_trigger",
+            "sandbox_tool_governance",
+            "CE_stage_cartridge",
+            "script_quality_gate",
+            "registry_mutation_engine",
+            "export_guard"
+          ],
+          "pipeline_stage_validation": {
+            "missing": []
+          },
+          "verdict": "PASS",
+          "issues": [],
+          "receipt_path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/registry/router_receipts/see_d4_recovery_rerun/ROUTER_RECEIPT_1777042881177.json"
+        },
+        "receipt": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/registry/router_receipts/see_d4_recovery_rerun/ROUTER_RECEIPT_1777042881177.json"
+      },
+      "required": null
+    },
+    {
+      "name": "restored_ce_packet_validator_positive_negative_cases",
+      "passed": true,
+      "observed": {
+        "valid_receipt": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/registry/ce_validation_receipts/see_d4_recovery_rerun/valid/CE_VALIDATION_RECEIPT_1777042881184.json",
+        "summary_only_receipt": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/registry/ce_validation_receipts/see_d4_recovery_rerun/summary_only/CE_VALIDATION_RECEIPT_1777042881184.json",
+        "valid_result": {
+          "version": "1.0",
+          "created_at": 1777042881.1839898,
+          "stage": "CE_VALIDATION",
+          "schema_validation": {
+            "passed": true,
+            "issues": []
+          },
+          "semantic_validation": {
+            "passed": true,
+            "issues": []
+          },
+          "context_summary_only_check": {
+            "passed": true,
+            "context_summary_only": false
+          },
+          "verdict": "PASS",
+          "issues": [],
+          "next_stage": "PLAN",
+          "packet_source": "(see_d4_rerun_valid)",
+          "schema_path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/schemas/CE_PACKET_SCHEMA_v1.json",
+          "receipt_path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/registry/ce_validation_receipts/see_d4_recovery_rerun/valid/CE_VALIDATION_RECEIPT_1777042881184.json"
+        },
+        "bad_result": {
+          "version": "1.0",
+          "created_at": 1777042881.1845186,
+          "stage": "CE_VALIDATION",
+          "schema_validation": {
+            "passed": false,
+            "issues": [
+              "missing_required_field:intent_model",
+              "missing_required_field:hidden_goal_detection",
+              "missing_required_field:misinterpretation_traps",
+              "missing_required_field:trap_mitigation_plan",
+              "missing_required_field:fact_inference_uncertainty_map",
+              "missing_required_field:comprehension_readiness_decision"
+            ]
+          },
+          "semantic_validation": {
+            "passed": false,
+            "issues": [
+              "context_summary_only"
+            ]
+          },
+          "context_summary_only_check": {
+            "passed": false,
+            "context_summary_only": true
+          },
+          "verdict": "FAIL",
+          "issues": [
+            "missing_required_field:intent_model",
+            "missing_required_field:hidden_goal_detection",
+            "missing_required_field:misinterpretation_traps",
+            "missing_required_field:trap_mitigation_plan",
+            "missing_required_field:fact_inference_uncertainty_map",
+            "missing_required_field:comprehension_readiness_decision",
+            "context_summary_only"
+          ],
+          "next_stage": "BLOCK_WITH_CE_VALIDATION_RECEIPT",
+          "packet_source": "(see_d4_rerun_summary_only)",
+          "schema_path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/schemas/CE_PACKET_SCHEMA_v1.json",
+          "receipt_path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/registry/ce_validation_receipts/see_d4_recovery_rerun/summary_only/CE_VALIDATION_RECEIPT_1777042881184.json"
+        }
+      },
+      "required": null
+    },
+    {
+      "name": "restored_see_packet_validator_positive_negative_cases",
+      "passed": true,
+      "observed": {
+        "valid_receipt": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/registry/see_validation_receipts/see_d4_recovery_rerun/valid/SEE_VALIDATION_RECEIPT_1777042881198.json",
+        "missing_web_run_receipt": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/registry/see_validation_receipts/see_d4_recovery_rerun/missing_web_run/SEE_VALIDATION_RECEIPT_1777042881198.json",
+        "valid_result": {
+          "version": "1.0",
+          "created_at": 1777042881.1976135,
+          "stage": "SEE_VALIDATION",
+          "schema_validation": {
+            "passed": true,
+            "issues": []
+          },
+          "web_run_evidence_validation": {
+            "passed": true,
+            "issues": []
+          },
+          "source_binding_validation": {
+            "passed": true,
+            "issues": []
+          },
+          "semantic_validation": {
+            "passed": true,
+            "issues": []
+          },
+          "verdict": "PASS",
+          "issues": [],
+          "next_stage": "PLAN_OR_SYNTHESIS",
+          "packet_source": "(see_d4_rerun_valid)",
+          "schema_path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/schemas/SEE_PACKET_SCHEMA_v1.json",
+          "receipt_path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/registry/see_validation_receipts/see_d4_recovery_rerun/valid/SEE_VALIDATION_RECEIPT_1777042881198.json"
+        },
+        "bad_result": {
+          "version": "1.0",
+          "created_at": 1777042881.198498,
+          "stage": "SEE_VALIDATION",
+          "schema_validation": {
+            "passed": false,
+            "issues": [
+              "missing_required_field:web_run_evidence",
+              "web_run_evidence_missing_or_not_object"
+            ]
+          },
+          "web_run_evidence_validation": {
+            "passed": false,
+            "issues": [
+              "web_run_evidence_missing"
+            ]
+          },
+          "source_binding_validation": {
+            "passed": true,
+            "issues": []
+          },
+          "semantic_validation": {
+            "passed": false,
+            "issues": [
+              "pass_verdict_without_web_run_evidence"
+            ]
+          },
+          "verdict": "FAIL",
+          "issues": [
+            "missing_required_field:web_run_evidence",
+            "web_run_evidence_missing_or_not_object",
+            "web_run_evidence_missing",
+            "pass_verdict_without_web_run_evidence"
+          ],
+          "next_stage": "BLOCK_WITH_SEE_VALIDATION_RECEIPT",
+          "packet_source": "(see_d4_rerun_missing_web_run)",
+          "schema_path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/schemas/SEE_PACKET_SCHEMA_v1.json",
+          "receipt_path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/registry/see_validation_receipts/see_d4_recovery_rerun/missing_web_run/SEE_VALIDATION_RECEIPT_1777042881198.json"
+        }
+      },
+      "required": null
+    },
+    {
+      "name": "no_tracked_deletions_after_repair",
+      "passed": true,
+      "observed": {
+        "dirty_count": 4,
+        "dirty_sample": [
+          "?? 0_kernel/registry/boot_receipts/see_d4_recovery_rerun/",
+          "?? 0_kernel/registry/ce_validation_receipts/",
+          "?? 0_kernel/registry/router_receipts/",
+          "?? 0_kernel/registry/see_validation_receipts/"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "git_core_filemode_false_final",
+      "passed": true,
+      "observed": {
+        "cmd": [
+          "git",
+          "config",
+          "--get",
+          "core.filemode"
+        ],
+        "returncode": 0,
+        "stdout": "false",
+        "stderr": ""
+      },
+      "required": null
+    },
+    {
+      "name": "git_status_clean_or_only_new_recovery_receipts_final",
+      "passed": true,
+      "observed": {
+        "cmd": [
+          "git",
+          "status",
+          "--short"
+        ],
+        "returncode": 0,
+        "stdout": "?? 0_kernel/registry/boot_receipts/see_d4_recovery_rerun/\n?? 0_kernel/registry/ce_validation_receipts/\n?? 0_kernel/registry/router_receipts/\n?? 0_kernel/registry/see_validation_receipts/",
+        "stderr": ""
+      },
+      "required": null
+    },
+    {
+      "name": "git_log_readable",
+      "passed": true,
+      "observed": {
+        "cmd": [
+          "git",
+          "log",
+          "--oneline",
+          "-14"
+        ],
+        "returncode": 0,
+        "stdout": "3dedbd7 FINALIZE SEE packet validator stable export\ne861f3b ADD SEE packet validator integration proof\nc2c7e9f IMPLEMENT SEE packet validator\nea55e6a ADD SEE packet validator spec\n86845bb BEGIN D0 scope lock for SEE packet validator\nb51e004 REPAIR boot executor before D0\n10a0a40 RESTORE recreate and relock baseline before D0\nd9c658c ADD reinspection after research trigger boot patch\n3767b11 RECORD Pyright install failure and cleanup\nf1be133 VENDOR Ruff and add lint format policy\nef42583 ADD installable tool research recommendations\nb0ea5a2 ADD LibCST coding dependency bootstrap policy\n0761fe0 VENDOR LibCST for format-preserving code transforms\nc6de8b2 ADD toolbox research CE synthesis",
+        "stderr": ""
+      },
+      "required": null
+    },
+    {
+      "name": "git_fsck_clean",
+      "passed": true,
+      "observed": {
+        "cmd": [
+          "git",
+          "fsck",
+          "--no-progress"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "required": null
+    }
+  ],
+  "issues": [],
+  "repair_actions": [
+    {
+      "action": "clean_extract_source_bundle",
+      "path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN"
+    },
+    {
+      "action": "set_git_core_filemode_false",
+      "before": {
+        "cmd": [
+          "git",
+          "config",
+          "--get",
+          "core.filemode"
+        ],
+        "returncode": 0,
+        "stdout": "true",
+        "stderr": ""
+      },
+      "after": {
+        "cmd": [
+          "git",
+          "config",
+          "--get",
+          "core.filemode"
+        ],
+        "returncode": 0,
+        "stdout": "false",
+        "stderr": ""
+      }
+    }
+  ],
+  "cleanup_actions": [
+    {
+      "action": "removed_runtime_pycache",
+      "path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/scripts/__pycache__"
+    }
+  ],
+  "git_before_filemode_repair": {
+    "status": {
+      "cmd": [
+        "git",
+        "status",
+        "--short"
+      ],
+      "returncode": 0,
+      "stdout": "M 0_kernel/scripts/boot_runtime_executor_v1.py\n M 0_kernel/scripts/ce_packet_validator_v1.py\n M 0_kernel/scripts/see_packet_validator_v1.py\n M 0_kernel/scripts/trigger_router_evaluator_v1.py",
+      "stderr": ""
+    },
+    "diff_summary": {
+      "cmd": [
+        "git",
+        "diff",
+        "--summary"
+      ],
+      "returncode": 0,
+      "stdout": "mode change 100755 => 100644 0_kernel/scripts/boot_runtime_executor_v1.py\n mode change 100755 => 100644 0_kernel/scripts/ce_packet_validator_v1.py\n mode change 100755 => 100644 0_kernel/scripts/see_packet_validator_v1.py\n mode change 100755 => 100644 0_kernel/scripts/trigger_router_evaluator_v1.py",
+      "stderr": ""
+    },
+    "numstat": {
+      "cmd": [
+        "git",
+        "diff",
+        "--numstat"
+      ],
+      "returncode": 0,
+      "stdout": "0\t0\t0_kernel/scripts/boot_runtime_executor_v1.py\n0\t0\t0_kernel/scripts/ce_packet_validator_v1.py\n0\t0\t0_kernel/scripts/see_packet_validator_v1.py\n0\t0\t0_kernel/scripts/trigger_router_evaluator_v1.py",
+      "stderr": ""
+    }
+  },
+  "verdict": "PASS",
+  "pass_count": 64,
+  "check_count": 64,
+  "staged_root": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined",
+  "source_bundle_sha256": "d46488ba1e3355ae84dfd79c387768034fa2b543c80701519769da7a92fbba75",
+  "boot_receipt_path": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/registry/boot_receipts/see_d4_recovery_rerun/BOOT_RECEIPT_1777042881007.json",
+  "router_evaluator_recovery_receipt": "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/registry/router_receipts/see_d4_recovery_rerun/ROUTER_RECEIPT_1777042881177.json",
+  "ce_validator_recovery_receipts": [
+    "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/registry/ce_validation_receipts/see_d4_recovery_rerun/valid/CE_VALIDATION_RECEIPT_1777042881184.json",
+    "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/registry/ce_validation_receipts/see_d4_recovery_rerun/summary_only/CE_VALIDATION_RECEIPT_1777042881184.json"
+  ],
+  "see_validator_recovery_receipts": [
+    "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/registry/see_validation_receipts/see_d4_recovery_rerun/valid/SEE_VALIDATION_RECEIPT_1777042881198.json",
+    "/mnt/data/_boot_recovery_staging_SEE_D4_RERUN/Metablooms_OS_refined/0_kernel/registry/see_validation_receipts/see_d4_recovery_rerun/missing_web_run/SEE_VALIDATION_RECEIPT_1777042881198.json"
+  ]
+}

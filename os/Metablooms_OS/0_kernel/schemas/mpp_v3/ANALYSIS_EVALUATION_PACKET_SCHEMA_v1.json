@@ -1,0 +1,235 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/ANALYSIS_EVALUATION_PACKET_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "claim_evaluations": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "claim": {
+            "minLength": 10,
+            "type": "string"
+          },
+          "claim_id": {
+            "pattern": "^AE-CLAIM-[0-9]{3}$",
+            "type": "string"
+          },
+          "dimension_scores": {
+            "additionalProperties": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "type": "object"
+          },
+          "evidence_refs": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "NEEDS_REPAIR"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "claim_id",
+          "claim",
+          "dimension_scores",
+          "evidence_refs",
+          "status",
+          "notes"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "created_at": {
+      "minLength": 10,
+      "type": "string"
+    },
+    "evaluation_dimensions": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "blocking": {
+            "type": "boolean"
+          },
+          "dimension_id": {
+            "pattern": "^AE-DIM-[0-9]{3}$",
+            "type": "string"
+          },
+          "name": {
+            "enum": [
+              "groundedness",
+              "evidence_binding",
+              "scope_adherence",
+              "contradiction_handling",
+              "uncertainty_calibration",
+              "repair_routing",
+              "format_compliance",
+              "decision_quality"
+            ],
+            "type": "string"
+          },
+          "threshold": {
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          },
+          "weight": {
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          }
+        },
+        "required": [
+          "dimension_id",
+          "name",
+          "weight",
+          "threshold",
+          "blocking"
+        ],
+        "type": "object"
+      },
+      "minItems": 6,
+      "type": "array"
+    },
+    "objective_id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "packet_id": {
+      "minLength": 8,
+      "type": "string"
+    },
+    "reasoning_risks": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "mitigation": {
+            "minLength": 5,
+            "type": "string"
+          },
+          "risk": {
+            "minLength": 5,
+            "type": "string"
+          },
+          "risk_id": {
+            "pattern": "^AE-RISK-[0-9]{3}$",
+            "type": "string"
+          },
+          "routes_to": {
+            "enum": [
+              "DEBUGGING",
+              "ECL",
+              "FIR_STAGE",
+              "MONITOR",
+              "STOP_BLOCKED"
+            ],
+            "type": "string"
+          },
+          "severity": {
+            "enum": [
+              "S1_LOW",
+              "S2_MED",
+              "S3_HIGH",
+              "S4_CRITICAL"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "risk_id",
+          "risk",
+          "severity",
+          "mitigation",
+          "routes_to"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "result_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "mpp.analysis_evaluation_packet.v1"
+    },
+    "score_summary": {
+      "additionalProperties": false,
+      "properties": {
+        "blocking_failures": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "claim_count": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "failed_claim_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "repair_required": {
+          "type": "boolean"
+        },
+        "weighted_score": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        }
+      },
+      "required": [
+        "weighted_score",
+        "blocking_failures",
+        "claim_count",
+        "failed_claim_count",
+        "repair_required"
+      ],
+      "type": "object"
+    },
+    "source_trace_packet_id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "stage": {
+      "const": "ANALYSIS_EVALUATION"
+    },
+    "verdict": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "NEEDS_REPAIR"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "packet_id",
+    "stage",
+    "created_at",
+    "objective_id",
+    "source_trace_packet_id",
+    "evaluation_dimensions",
+    "claim_evaluations",
+    "reasoning_risks",
+    "score_summary",
+    "verdict",
+    "result_hash"
+  ],
+  "title": "MPP v3 Analysis Evaluation Packet",
+  "type": "object"
+}

@@ -1,0 +1,22 @@
+{
+  "applies_to": [
+    "tool_selection",
+    "filesystem_mutation",
+    "export",
+    "pointer_promotion",
+    "external_install",
+    "handoff",
+    "network_side_effect"
+  ],
+  "id": "OWASP_AGENTIC_AI_POLICY_BINDINGS_REQUIRED",
+  "required_artifacts": [
+    "OWASP_AGENTIC_AI_COVERAGE_MATRIX_v1.json",
+    "OWASP_AGENTIC_AI_POLICY_BINDINGS_v1.json",
+    "owasp_agentic_ai_policy_gate_v1.py"
+  ],
+  "rule": "Any agentic/high-impact action must be classified against OWASP Agentic AI risk categories and blocked unless mapped MetaBlooms controls are present or an explicit blocked receipt is written.",
+  "schema": "MetaBloomsInvariant_v1",
+  "stage_id": "STAGE6O_OWASP_AGENTIC_AI_COVERAGE_MATRIX_AND_POLICY_BINDINGS",
+  "status": "active",
+  "timestamp_utc": "2026-05-02T02:53:05Z"
+}

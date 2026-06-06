@@ -1,0 +1,9 @@
+{
+  "artifact_type": "STAGE_HANDOFF",
+  "stage": "STAGE5E_FULL_AUTHORITY_EXPORT_AFTER_POINTER_COHERENCE_REPAIR",
+  "timestamp_utc": "2026-05-02T00:42:00Z",
+  "status": "PRE_EXPORT_READY",
+  "next": "run post-export gates, then use this bundle for next bounded governed task",
+  "authority_zip": "/mnt/data/METABLOOMS_OS_STAGE5E_FULL_AUTHORITY_EXPORT_AFTER_POINTER_COHERENCE_REPAIR_20260502T004200Z.zip",
+  "authority_sidecar": "/mnt/data/METABLOOMS_OS_STAGE5E_FULL_AUTHORITY_EXPORT_AFTER_POINTER_COHERENCE_REPAIR_20260502T004200Z.zip.sha256"
+}

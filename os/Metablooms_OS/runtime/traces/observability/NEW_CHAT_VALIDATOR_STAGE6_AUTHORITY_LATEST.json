@@ -1,0 +1,57 @@
+{
+  "decision": "DENY",
+  "errors": [
+    "missing:CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "missing:runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "missing:0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "missing:0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+    "missing:NEW_CHAT_START_HERE.md",
+    "missing:runtime/governance/new_chat_start_contract_validator_v1.py",
+    "missing:runtime/governance/boot_critical_governance_loader_v1.py",
+    "missing:runtime/governance/governance_scatter_prevention_v1.py",
+    "missing:runtime/governance/fresh_chat_boot_rehearsal_v1.py",
+    "missing:runtime/cartridges/prompt_governance_v1/validate_prompt_governance_cartridge_v1.py"
+  ],
+  "checks": [
+    {
+      "name": "exists:CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+      "passed": false
+    },
+    {
+      "name": "exists:runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+      "passed": false
+    },
+    {
+      "name": "exists:0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+      "passed": false
+    },
+    {
+      "name": "exists:0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+      "passed": false
+    },
+    {
+      "name": "exists:NEW_CHAT_START_HERE.md",
+      "passed": false
+    },
+    {
+      "name": "exists:runtime/governance/new_chat_start_contract_validator_v1.py",
+      "passed": false
+    },
+    {
+      "name": "exists:runtime/governance/boot_critical_governance_loader_v1.py",
+      "passed": false
+    },
+    {
+      "name": "exists:runtime/governance/governance_scatter_prevention_v1.py",
+      "passed": false
+    },
+    {
+      "name": "exists:runtime/governance/fresh_chat_boot_rehearsal_v1.py",
+      "passed": false
+    },
+    {
+      "name": "exists:runtime/cartridges/prompt_governance_v1/validate_prompt_governance_cartridge_v1.py",
+      "passed": false
+    }
+  ]
+}

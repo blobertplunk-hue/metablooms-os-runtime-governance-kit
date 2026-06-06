@@ -1,0 +1,12 @@
+{
+  "completed_stage": "R9_TELEMETRY_CARTRIDGE_CONTRACT_PROMOTION",
+  "created_utc": "2026-04-28T03:21:05.640154+00:00",
+  "must_reload_before_next_stage": [
+    "receipts/refactor_program/R9_TELEMETRY_CARTRIDGE_RECEIPT_20260428T032105Z.json",
+    "receipts/refactor_program/R9_VERIFY_RECEIPT_20260428T032105Z.json",
+    "runtime/governance/registries/gate_registry_v1.json"
+  ],
+  "next_stage": "R10_DECISION_LOGGING_AND_RECEIPT_UNIFICATION",
+  "receipt_type": "R9_HANDOFF",
+  "verdict": "PASS"
+}

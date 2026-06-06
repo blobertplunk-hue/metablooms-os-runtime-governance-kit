@@ -1,0 +1,216 @@
+{
+  "artifact_type": "MB_AGENT_HARNESS_STAGE_GRAPH_SPEC_v2",
+  "created_utc": "20260501T145002Z",
+  "diff_review_requirements": {
+    "block_if": [
+      "unscoped_write",
+      "shared_write_scope_conflict",
+      "missing_validation_report",
+      "missing_receipt",
+      "missing_handoff"
+    ],
+    "full_manifest_location": "runtime/agent_harness/diff_reviews/",
+    "max_files_listed_in_trace": 25,
+    "required_before_export": true
+  },
+  "invariants": [
+    "parallel workpackets must not share writable paths unless explicitly serialized",
+    "implementation outputs require diff review before promotion",
+    "diff manifests are bounded summaries; full hashes and file lists remain artifacts",
+    "unknown roles or write scopes fail closed",
+    "human interrupt checkpoint is required before merging conflicting workpackets"
+  ],
+  "purpose": "Add deterministic parallel workpacket planning and bounded diff-review gates to the MetaBlooms agent harness.",
+  "research_basis": [
+    {
+      "principle": "agent workflows should expose guardrails, handoffs, tool boundaries, and traces for inspection",
+      "source": "OpenAI Agents SDK guardrails/tracing"
+    },
+    {
+      "principle": "thread/checkpoint identity enables resumable bounded execution",
+      "source": "LangGraph persistence/checkpoints"
+    },
+    {
+      "principle": "parallel implementation units require isolated write scopes and reviewable diffs before merge/promotion",
+      "source": "git/worktree parallel-agent engineering practice"
+    }
+  ],
+  "stage2_limit": "Creates workpackets, parallel groups, conflict checks, and diff review artifacts. It does not launch unmanaged autonomous agents or mutate source outside declared workpacket scopes.",
+  "stage_graph": {
+    "edges": [
+      [
+        "intake",
+        "research"
+      ],
+      [
+        "research",
+        "planner"
+      ],
+      [
+        "planner",
+        "implementer_a"
+      ],
+      [
+        "planner",
+        "implementer_b"
+      ],
+      [
+        "implementer_a",
+        "validator"
+      ],
+      [
+        "implementer_b",
+        "validator"
+      ],
+      [
+        "validator",
+        "auditor"
+      ],
+      [
+        "auditor",
+        "exporter"
+      ]
+    ],
+    "nodes": [
+      {
+        "id": "intake",
+        "must_not_write": [
+          "source_tree"
+        ],
+        "required_gates": [
+          "scope_gate",
+          "security_preflight"
+        ],
+        "role": "task_intake",
+        "writes": [
+          "work_order"
+        ]
+      },
+      {
+        "id": "research",
+        "must_not_write": [
+          "implementation_files"
+        ],
+        "required_gates": [
+          "citation_presence",
+          "recency_policy"
+        ],
+        "role": "evidence_researcher",
+        "writes": [
+          "SEE_packet"
+        ]
+      },
+      {
+        "id": "planner",
+        "must_not_write": [
+          "runtime_source"
+        ],
+        "required_gates": [
+          "one_stage_limit",
+          "dependency_map",
+          "parallel_conflict_check"
+        ],
+        "role": "stage_planner",
+        "writes": [
+          "bounded_stage_plan",
+          "parallel_workpacket_plan"
+        ]
+      },
+      {
+        "id": "implementer_a",
+        "must_not_write": [
+          "authority_zip_directly"
+        ],
+        "required_gates": [
+          "write_scope",
+          "atomic_publication_preflight"
+        ],
+        "role": "implementation_agent",
+        "writes": [
+          "overlay_files"
+        ]
+      },
+      {
+        "id": "implementer_b",
+        "must_not_write": [
+          "authority_zip_directly"
+        ],
+        "required_gates": [
+          "write_scope",
+          "atomic_publication_preflight"
+        ],
+        "role": "implementation_agent",
+        "writes": [
+          "docs",
+          "fixtures"
+        ]
+      },
+      {
+        "id": "validator",
+        "must_not_write": [
+          "implementation_files"
+        ],
+        "required_gates": [
+          "targeted_smoke",
+          "duplicate_scan",
+          "required_member_check"
+        ],
+        "role": "validation_agent",
+        "writes": [
+          "validation_report"
+        ]
+      },
+      {
+        "id": "auditor",
+        "must_not_write": [
+          "implementation_files"
+        ],
+        "required_gates": [
+          "false_success_check",
+          "prompt_injection_check",
+          "diff_review_gate"
+        ],
+        "role": "adversarial_auditor",
+        "writes": [
+          "audit_report",
+          "diff_review_report"
+        ]
+      },
+      {
+        "id": "exporter",
+        "must_not_write": [
+          "unvalidated_authority"
+        ],
+        "required_gates": [
+          "export_promotion_gate",
+          "sidecar_check",
+          "diff_review_gate"
+        ],
+        "role": "export_promotion_agent",
+        "writes": [
+          "promoted_export",
+          "checksum_sidecar"
+        ]
+      }
+    ],
+    "parallelizable_groups": [
+      [
+        "research"
+      ],
+      [
+        "implementer_a",
+        "implementer_b"
+      ],
+      [
+        "validator",
+        "auditor"
+      ]
+    ],
+    "serialization_points": [
+      "planner_approval",
+      "parallel_conflict_resolution",
+      "diff_review_approval",
+      "export_promotion"
+    ]
+  }
+}

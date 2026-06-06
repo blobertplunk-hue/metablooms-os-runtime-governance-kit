@@ -1,0 +1,13 @@
+{
+  "decision": "Install a stdlib static-analysis/complexity quality gate with positive and negative fixtures; do not require external packages in the sandbox baseline.",
+  "schema": "CEPacket_v1",
+  "stage": "CDR_STAGE8_STATIC_ANALYSIS_AND_COMPLEXITY_QUALITY_GATES",
+  "status": "PASS",
+  "synthesis": [
+    "Static analysis should be an acceptance gate, not a style suggestion.",
+    "Complexity thresholds must be risk-tiered and overrideable only through explicit CDR waiver evidence.",
+    "CDR should check parseability, forbidden dynamic execution, unsafe path patterns, broad exception handling, naming ambiguity, TODO debt, function size, cyclomatic/cognitive complexity, and nesting depth.",
+    "Quality gates should emit exact violations so code is debuggable and recursively improvable."
+  ],
+  "timestamp_utc": "2026-05-02T12:12:32Z"
+}

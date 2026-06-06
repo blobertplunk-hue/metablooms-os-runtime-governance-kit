@@ -1,0 +1,43 @@
+{
+  "artifact_type": "SEE_PACKET.v1",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION",
+  "created_utc": "20260502T164222Z",
+  "sources": [
+    {
+      "claim": "OpenTelemetry provides standards and tools to collect metrics, logs, and traces.",
+      "source": "OpenTelemetry docs",
+      "url": "https://opentelemetry.io/docs/what-is-opentelemetry/",
+      "web_ref": "turn433423search0"
+    },
+    {
+      "claim": "OpenTelemetry semantic conventions define common names for operations and data across telemetry signals.",
+      "source": "OpenTelemetry semantic conventions docs",
+      "url": "https://opentelemetry.io/docs/concepts/semantic-conventions/",
+      "web_ref": "turn433423search4"
+    },
+    {
+      "claim": "OpenTelemetry event semantics require event names that uniquely identify event structure and recommend attributes for context.",
+      "source": "OpenTelemetry semantic conventions for events",
+      "url": "https://opentelemetry.io/docs/specs/semconv/general/events/",
+      "web_ref": "turn433423search3"
+    },
+    {
+      "claim": "W3C Trace Context defines traceparent/tracestate for propagating trace identity across systems.",
+      "source": "W3C Trace Context Level 2",
+      "url": "https://www.w3.org/TR/trace-context-2/",
+      "web_ref": "turn433423search6"
+    },
+    {
+      "claim": "SLSA provenance is verifiable information describing where, when, and how an artifact was produced.",
+      "source": "SLSA provenance docs",
+      "url": "https://slsa.dev/provenance",
+      "web_ref": "turn433423search5"
+    }
+  ],
+  "design_decisions": [
+    "Model every boot/stage/validator/export/receipt/handoff as an event with a stable event_name and typed attributes.",
+    "Use trace_id/span_id/parent_span_id to allow causal grouping without requiring network headers.",
+    "Bind outputs to input_materials/provenance rather than summary-only state.",
+    "Keep raw JSONL as canonical evidence; generated indexes and graphs are derivative artifacts."
+  ]
+}

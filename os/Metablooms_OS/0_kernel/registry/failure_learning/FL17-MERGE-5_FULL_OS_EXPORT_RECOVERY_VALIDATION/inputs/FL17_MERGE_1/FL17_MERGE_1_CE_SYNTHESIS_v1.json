@@ -1,0 +1,11 @@
+{
+  "stage_id": "FL17-MERGE-1_CE_SYNTHESIS",
+  "constraints": [
+    "Always-on MetaBlooms governance is baseline; cartridge governance is additive",
+    "FL17 cannot be promoted because tracker/pointer/export authorities conflict",
+    "Active runtime state must be rebuilt from authority, not copied from stale branch",
+    "Import FL17 progression first as quarantined evidence only",
+    "Every next merge stage must visibly include SEE/CE preflight"
+  ],
+  "execution_decision": "Diff classification only; no import, patch, or promotion."
+}

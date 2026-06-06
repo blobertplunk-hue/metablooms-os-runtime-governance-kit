@@ -1,0 +1,16 @@
+{
+  "locked_at": "20260501T012800Z",
+  "policy_id": "MPP_V3_VERIFICATION_TEST_RECEIPT_GATE_v1",
+  "research_basis": [
+    "SLSA verification requires checking artifacts and provenance against expectations.",
+    "Test receipts must preserve reproducible command, return code, and output evidence."
+  ],
+  "rules": [
+    "Every required artifact must exist, be non-empty, and match expected SHA-256.",
+    "Every test receipt must have expected return code, actual return code, stdout/stderr hashes, and PASS status.",
+    "Every gate result must PASS before verification can PASS.",
+    "Coverage summary must reconcile with actual artifact, test, and gate counts.",
+    "Verification packet verdict must be PASS before downstream trace analysis."
+  ],
+  "stage": "VERIFICATION"
+}

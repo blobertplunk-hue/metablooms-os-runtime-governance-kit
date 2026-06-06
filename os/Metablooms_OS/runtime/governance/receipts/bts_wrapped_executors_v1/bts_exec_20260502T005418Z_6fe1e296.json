@@ -1,0 +1,46 @@
+{
+  "bts_receipt_id": "T1-STAGE6G_BASE_RUNTIME_20260502T005353Z_filesystem_write_artifact-20260502T005417Z",
+  "bts_turn_committed": true,
+  "implementation_reality": {
+    "actual_files": [
+      "/mnt/data/Metablooms_OS/runtime/state/CURRENT_WORKING_BASELINE_POINTER_v1.json"
+    ],
+    "claimed_files": [
+      "/mnt/data/Metablooms_OS/runtime/state/CURRENT_WORKING_BASELINE_POINTER_v1.json"
+    ],
+    "unclaimed": [],
+    "unfulfilled": [],
+    "verdict": "PASS"
+  },
+  "kind": "filesystem_write",
+  "policy_decision": {
+    "decided_at_utc": "2026-05-02T00:54:17Z",
+    "decision": "ALLOW",
+    "decision_id": "decision_1777683257887_b8187975",
+    "enforced_by": "pre_tool_action_gate_v1",
+    "envelope_id": "STAGE6G_BASE_RUNTIME_20260502T005353Z_filesystem_write",
+    "envelope_sha256": "bda6db9e35231b012bd52c32793a28fa00b09cf9414b158de5d1926a96345371",
+    "matched_rules": [
+      "schema.required",
+      "path.safety",
+      "runaway.breaker",
+      "method.reliability"
+    ],
+    "rationale": "Envelope passed schema, method, path, SEE, approval, and bounded-budget checks.",
+    "reason_code": "LOW_RISK_BOUNDED_ACTION",
+    "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/STAGE6G_BASE_RUNTIME_20260502T005353Z_filesystem_write.decision.json",
+    "required_next_action": "execute_action_and_write_action_receipt",
+    "safe_to_execute": true,
+    "schema_version": "PolicyDecision_v1",
+    "stage_id": "STAGE6G_FULL_AUTHORITY_EXPORT_WITH_EXPLICIT_BUDGET_APPROVAL_USING_BTS_NODE_ZIP_PROFILE"
+  },
+  "receipt_id": "bts_exec_20260502T005418Z_6fe1e296",
+  "schema": "mb.bts_wrapped_executors.v1",
+  "stage_id": "STAGE6G_FULL_AUTHORITY_EXPORT_WITH_EXPLICIT_BUDGET_APPROVAL_USING_BTS_NODE_ZIP_PROFILE",
+  "target": "/mnt/data/Metablooms_OS/runtime/state/CURRENT_WORKING_BASELINE_POINTER_v1.json",
+  "target_bytes": 1238,
+  "target_sha256": "3e5b88da05ada47532028593afeb4fc533489f4eda8b8b02bbf1dcf347004d17",
+  "timestamp_utc": "2026-05-02T00:54:18.087326Z",
+  "turn_id": "STAGE6G_BASE_RUNTIME_20260502T005353Z",
+  "verdict": "PASS"
+}

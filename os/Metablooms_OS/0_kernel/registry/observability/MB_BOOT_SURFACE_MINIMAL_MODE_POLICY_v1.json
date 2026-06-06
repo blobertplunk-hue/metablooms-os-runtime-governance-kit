@@ -1,0 +1,37 @@
+{
+  "artifact_type": "MB_BOOT_SURFACE_MINIMAL_MODE_POLICY.v1",
+  "created_utc": "20260502T175629Z",
+  "forbidden_minimal_mode_fragments": [
+    "runtime_starter_smoke_v1.py /mnt/data/Metablooms_OS",
+    "python runtime/governance/runtime_starter_smoke_v1.py",
+    "python3 runtime/governance/runtime_starter_smoke_v1.py"
+  ],
+  "mobile_static_requirements": {
+    "code_word_break": true,
+    "has_skip_to_evidence_link": true,
+    "overflow_x_hidden": true,
+    "single_column_breakpoint_px": 760,
+    "touch_target_min_px": 48,
+    "uses_details_disclosure": true,
+    "viewport_meta": true
+  },
+  "required_html_markers": [
+    "data-mode=\"minimal\"",
+    "data-section=\"boot_surface_minimal_mode\"",
+    "data-section=\"do_this_now\"",
+    "data-section=\"mobile_render_hardening\"",
+    "data-section=\"deep_evidence_drawers\"",
+    "LIVE_BOOT_GUIDANCE_LATEST.json",
+    "BOOT_SURFACE_MINIMAL_MODE_LATEST.json"
+  ],
+  "required_sections": [
+    "minimal_mode_header",
+    "do_this_now_card",
+    "mobile_command_card",
+    "current_authority_card",
+    "evidence_drawer",
+    "deep_links_drawer",
+    "trace_summary_drawer"
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING"
+}

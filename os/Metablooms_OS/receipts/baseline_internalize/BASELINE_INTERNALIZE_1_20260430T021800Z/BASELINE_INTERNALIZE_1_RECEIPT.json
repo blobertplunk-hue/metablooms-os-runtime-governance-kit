@@ -1,0 +1,40 @@
+{
+  "actions": [
+    "loaded external authority artifacts",
+    "internalized authority/method policy artifacts additively",
+    "updated tracker state to BASELINE-INTERNALIZE-1",
+    "built repaired full OS export",
+    "validated with bounded archive-native recovery checks"
+  ],
+  "artifact_type": "STAGE_RECEIPT",
+  "created_utc": "20260430T021800Z",
+  "forbidden_methods": [
+    {
+      "exception_policy": "Only allowed if explicitly authorized by a future stage, file-count/size threshold is bounded, timeout budget is declared, checkpoint receipt is written before and after, and failure cannot block smaller validation fallback.",
+      "forbidden_by_default": true,
+      "method_id": "FULL_ARCHIVE_RECURSIVE_EXTRACTION_FOR_LARGE_OS_VALIDATION_IN_CHATGPT_SANDBOX",
+      "observed_failure": "unzip -tqq and jar xf full recursive extraction timed out/stalled during FL17-MERGE-5 validation; user had to stop turn.",
+      "replacement_methods": [
+        "checksum sidecar verification",
+        "zipfile.ZipFile.testzip CRC/header validation",
+        "unsafe member path scan",
+        "central directory/member inventory",
+        "selective extraction/read of required boot-critical files",
+        "required semantic/tracker authority checks"
+      ],
+      "scope": "MetaBlooms full OS export/recovery validation in ChatGPT-style sandbox"
+    }
+  ],
+  "forbidden_validation_enforced": true,
+  "inputs": {
+    "authority": "/mnt/data/CURRENT_EXPORT_AUTHORITY_v1.json",
+    "base_zip": "/mnt/data/MB_FL17_MERGE_5R2_INTERNAL_PROOF_REPAIR_20260430T015018Z/METABLOOMS_OS_FL17_MERGED_TRACKER_WORKING_5R2_RECOVERY_PROVEN_20260430T015018Z.zip",
+    "base_zip_sha256": "95a3c18b258fb5aeafffddbd3715b4167bab7b76f53f6b089f0ba15258eb4fcb",
+    "forbidden": "/mnt/data/FORBIDDEN_VALIDATION_METHODS_v1.json",
+    "method_policy": "/mnt/data/MB_AUTHORITY_BOOT_AND_METHOD_POLICY_CHECK_20260430T020900Z/METHOD_RELIABILITY_ROUTER_POLICY_v1.json"
+  },
+  "no_project_logic_change": true,
+  "stage_id": "BASELINE-INTERNALIZE-1",
+  "target_baseline": "promoted 5R2 full OS ZIP",
+  "verdict": "PASS_PENDING_FINAL_SHA_SIDECAR"
+}

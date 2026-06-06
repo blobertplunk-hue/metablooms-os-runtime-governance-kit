@@ -1,0 +1,23 @@
+{
+  "android_sandbox_primary": true,
+  "artifact_type": "operator_tracker",
+  "decision": "ALLOW_BROWSER_SCREENSHOT",
+  "environment": "android_chatgpt_sandbox",
+  "honesty_label": "full_browser_replay",
+  "method_attempts": [
+    {
+      "attempt_policy": "try_if_bundle_present",
+      "failure_class_if_failed": "PLAYWRIGHT_BROWSER_BUNDLE_ABSENT",
+      "method_id": "playwright_managed_browser",
+      "priority": 1,
+      "success_criteria": [
+        "png_exists",
+        "exit_0",
+        "nonblank_image"
+      ]
+    }
+  ],
+  "pc_addendum_available": true,
+  "requested_proof_tier": "browser_screenshot_preferred",
+  "selected_method": "playwright_managed_browser"
+}

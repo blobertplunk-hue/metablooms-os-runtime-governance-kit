@@ -1,0 +1,37 @@
+{
+  "artifact_type": "MB_FULL_AUTHORITY_EXPORT_INTERNAL_RECEIPT.v1",
+  "created_utc": "20260502T164924Z",
+  "export_zip_lifecycle": "zip_sha256_bound_after_archive_creation_by_external_sidecar_and_external_containment_proof",
+  "external_sidecar_required": true,
+  "next_recommended_stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING",
+  "no_placeholder_sha_fields": true,
+  "required_artifacts": [
+    "OPEN_OPERATOR_VISUAL_TRACKER.html",
+    "runtime/state/operator_surface/OPERATOR_CAUSAL_TIMELINE_LATEST.json",
+    "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE3_TRACKER_BINDING_VALIDATION_LATEST.json",
+    "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE3_HANDOFF_LATEST.json",
+    "0_kernel/lib/operator_surface/build_operator_tracker_causal_timeline_v1.py",
+    "0_kernel/validators/validate_observability_trace_span_ledger_stage3_tracker_binding_v1.py"
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE3_TRACKER_CAUSAL_TIMELINE_BINDING",
+  "summary": {
+    "blocked_count": 3,
+    "error_count": 1,
+    "event_kinds": {
+      "boot": 57,
+      "decision": 12,
+      "export": 24,
+      "handoff": 85,
+      "receipt": 32,
+      "stage": 1,
+      "tracker": 1,
+      "validator": 8
+    },
+    "graph_edge_count": 219,
+    "graph_node_count": 220,
+    "ok_count": 216,
+    "record_count": 220,
+    "warn_count": 0
+  },
+  "verdict": "PASS"
+}

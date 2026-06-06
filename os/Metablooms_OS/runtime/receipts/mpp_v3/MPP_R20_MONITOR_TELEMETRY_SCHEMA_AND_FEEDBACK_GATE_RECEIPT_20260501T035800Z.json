@@ -1,0 +1,165 @@
+{
+  "alternate_next_stage": "MPP_R23_EXPORT_PROMOTION_GATE",
+  "artifacts_written": [
+    {
+      "bytes": 14530,
+      "path": "0_kernel/mpp_v3/mpp_v3_monitor_telemetry_feedback_gate_v1.py",
+      "sha256": "883b1e0a5c29354829f512b3c031d5a04c9778b2274bc50f1df767c8f9ef19b4"
+    },
+    {
+      "bytes": 1006,
+      "path": "0_kernel/registry/mpp_v3/policy_gates/MPP_V3_MONITOR_FEEDBACK_GATE_v1.json",
+      "sha256": "baecd39489f2def2a5607c2220285a4b0cb659913596f6d3f11a2f1191c25be9"
+    },
+    {
+      "bytes": 394,
+      "path": "0_kernel/schemas/mpp_v3/MONITOR_FEEDBACK_GATE_RESULT_SCHEMA_v1.json",
+      "sha256": "7967744851626e95cbdff6627d080c13d6807053756dc615386481b974192742"
+    },
+    {
+      "bytes": 416,
+      "path": "0_kernel/schemas/mpp_v3/MONITOR_ROUTING_DECISION_SCHEMA_v1.json",
+      "sha256": "853ee45099c1bfbc45d50d8fa5eb99695eefedca4c6b5cdb922fee6370ff7fb8"
+    },
+    {
+      "bytes": 523,
+      "path": "0_kernel/schemas/mpp_v3/MONITOR_TELEMETRY_PACKET_SCHEMA_v1.json",
+      "sha256": "f0e9efcdc0f1d31614c144b83a87ace6bbb408fc331191c90daf42bac5280975"
+    },
+    {
+      "bytes": 890,
+      "path": "MPP_R20_MONITOR_TELEMETRY_SCHEMA_AND_FEEDBACK_GATE_SUMMARY.md",
+      "sha256": "43c384eaecc839049af6d317225eea36bb0a5fbf226dcc4a84f6b3606bb0337b"
+    },
+    {
+      "bytes": 782,
+      "path": "runtime/handoffs/mpp_v3/MPP_R20_MONITOR_TELEMETRY_SCHEMA_AND_FEEDBACK_GATE_HANDOFF_20260501T035800Z.json",
+      "sha256": "256d43279766dace0a5dc36f601140e9b169764d9f846a04c8d146b3f5d3ceed"
+    },
+    {
+      "bytes": 782,
+      "path": "runtime/handoffs/mpp_v3/MPP_R20_MONITOR_TELEMETRY_SCHEMA_AND_FEEDBACK_GATE_HANDOFF_LATEST.json",
+      "sha256": "256d43279766dace0a5dc36f601140e9b169764d9f846a04c8d146b3f5d3ceed"
+    },
+    {
+      "bytes": 2599,
+      "path": "runtime/receipts/mpp_v3/MPP_R20_MONITOR_TELEMETRY_SCHEMA_AND_FEEDBACK_GATE_RECEIPT_20260501T035800Z.json",
+      "sha256": "8408225d0057ca3d504bd4ec72410ce28c35224c153e4a357afa23e4e6291c4d"
+    },
+    {
+      "bytes": 2599,
+      "path": "runtime/receipts/mpp_v3/MPP_R20_MONITOR_TELEMETRY_SCHEMA_AND_FEEDBACK_GATE_RECEIPT_LATEST.json",
+      "sha256": "8408225d0057ca3d504bd4ec72410ce28c35224c153e4a357afa23e4e6291c4d"
+    },
+    {
+      "bytes": 5546,
+      "path": "tests/fixtures/mpp_v3/invalid_monitor_console_only_logs_packet_v1.json",
+      "sha256": "e9b5522336ff1174937424c9e0832583c3fb029df40f0b2ff60092f4593874bb"
+    },
+    {
+      "bytes": 5549,
+      "path": "tests/fixtures/mpp_v3/invalid_monitor_drift_threshold_packet_v1.json",
+      "sha256": "c2f7593266443fb266a49b2d5480ac61bbd204b5ad7ed333f3d83cd8f3801bff"
+    },
+    {
+      "bytes": 5545,
+      "path": "tests/fixtures/mpp_v3/invalid_monitor_missing_feedback_route_packet_v1.json",
+      "sha256": "9add835b2a6e3cb0d0e973aa6f93d0e92775db2e6d83327e28602e9a31adad50"
+    },
+    {
+      "bytes": 5539,
+      "path": "tests/fixtures/mpp_v3/invalid_monitor_silent_failure_packet_v1.json",
+      "sha256": "734e6c51a26ff0e0768a3a9c5f3ec4769035c1b4429b03f24b12815ff9743d53"
+    },
+    {
+      "bytes": 976,
+      "path": "tests/fixtures/mpp_v3/valid_monitor_feedback_gate_result_v1.json",
+      "sha256": "1d7854b505b761d27a1ba02daf09dfc228cb6f3b0f00ea7c6dbd27cb774c003d"
+    },
+    {
+      "bytes": 503,
+      "path": "tests/fixtures/mpp_v3/valid_monitor_routing_decision_v1.json",
+      "sha256": "f07d0f4bbb7b87d7cc00f1bd6567677f66649a9e0a185d20fcbd13b794f4f6f7"
+    },
+    {
+      "bytes": 5547,
+      "path": "tests/fixtures/mpp_v3/valid_monitor_telemetry_packet_v1.json",
+      "sha256": "7310a2aad0f36836936167f0061f4dba4ccb6f0c3c619684d18ded070b4ce3e9"
+    }
+  ],
+  "next_stage": "MPP_R21_PERSISTENT_LEARNING_REGISTRY_AND_METHOD_RELIABILITY_GATE",
+  "predecessor_verification": {
+    "r19": {
+      "actual_sha256": "03ac0dee0d0ee7e3bfc9634bf1a1e3c45c3ab5d765c0dff086be1e3fe083b3ae",
+      "checksum_match": true,
+      "exists": true,
+      "sha_sidecar_exists": true,
+      "sidecar_sha256": "03ac0dee0d0ee7e3bfc9634bf1a1e3c45c3ab5d765c0dff086be1e3fe083b3ae",
+      "zip": "/mnt/data/MPP_R19_FIR_FITNESS_INTEGRATION_SCHEMA_AND_GATE_20260501T024900Z.zip",
+      "zip_testzip": null
+    },
+    "r20_design": {
+      "actual_sha256": "62488e551e46c454858c93aaaf0062d84066c7c839c1e3dccab90935296bd25e",
+      "checksum_match": true,
+      "exists": true,
+      "sha_sidecar_exists": true,
+      "sidecar_sha256": "62488e551e46c454858c93aaaf0062d84066c7c839c1e3dccab90935296bd25e",
+      "zip": "/mnt/data/MPP_R20_DESIGN_ENFORCED_GOVERNED_WORKFLOW_20260501T031200Z.zip",
+      "zip_testzip": null
+    }
+  },
+  "root": "/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z",
+  "root_probe": {
+    "/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z": {
+      "exists": true,
+      "is_dir": true,
+      "writable": true
+    }
+  },
+  "stage_id": "MPP_R20_MONITOR_TELEMETRY_SCHEMA_AND_FEEDBACK_GATE",
+  "status": "PASS",
+  "tests": [
+    {
+      "expected": "PASS",
+      "name": "py_compile",
+      "status": "PASS"
+    },
+    {
+      "detail": "{'status': 'PASS', 'packet_id': 'MONITOR-20260501T001057Z', 'result_hash': 'db6937d561247124144b1fcd2c236f3e1326f81a249970a8ef37e35739d4f45b'}",
+      "expected": "PASS",
+      "name": "valid_validate",
+      "status": "PASS"
+    },
+    {
+      "detail": "True",
+      "expected": "PASS",
+      "name": "valid_gate_pass",
+      "status": "PASS"
+    },
+    {
+      "detail": "True",
+      "expected": "PASS",
+      "name": "silent_failure_gate_blocks",
+      "status": "PASS"
+    },
+    {
+      "detail": "False",
+      "expected": "PASS",
+      "name": "drift_gate_routes_nonpass",
+      "status": "PASS"
+    },
+    {
+      "detail": "{'status': 'PASS', 'packet_id': 'MONITOR-BAD-MISSING-ROUTE', 'result_hash': '32871924d5c670209d4e5decc35760c120064f3232ea7aab3e1ea8068c79fb90'}",
+      "expected": "RAISE",
+      "name": "missing_feedback_route_validate_raises",
+      "status": "PASS"
+    },
+    {
+      "error": "MonitorValidationError:MONITOR_TELEMETRY_ARTIFACT_PERSISTENCE_REQUIRED",
+      "expected": "RAISE",
+      "name": "console_only_validate_raises",
+      "status": "RAISED"
+    }
+  ],
+  "timestamp": "20260501T035800Z"
+}

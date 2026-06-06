@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "created_at": 1777065653.8974922,
+  "delta_id": "EXPORT_RECOVERY_VALIDATOR_G5_AUDIT_DELTA_REQUIREMENTS_v1",
+  "status": "active_delta_requirements",
+  "source_audit": "/mnt/data/Pasted markdown.md",
+  "new_validator_requirements": [
+    {
+      "gate": "G5_SIDECAR_BINDING_OR_NEW_G11_EXTERNAL_ARTIFACT_BINDING",
+      "requirement": "If manifest marks validator_decision_external_required=true, validator_policy.validator_decision must not be an ambiguous internal relative path unless that file exists in the ZIP.",
+      "fail_condition": "validator_decision starts with 0_kernel/ or another relative in-bundle path and ZIP does not contain it."
+    },
+    {
+      "gate": "G7_DAG_LEDGER_MAPPING",
+      "requirement": "Require explicit STAGE_DAG_LEDGER_ID_MAP_v1.json or equivalent mapping for DAG short IDs to ledger full IDs.",
+      "fail_condition": "expected DAG node and expected ledger entry are matched only by inference."
+    },
+    {
+      "gate": "G9_TRANSACTIONAL_STATE_ORDER",
+      "requirement": "Current working baseline pointer must either reflect latest validated stage or declare lifecycle non-authoritative/stale role.",
+      "fail_condition": "pointer last_stage is older than latest validated export/baseline lock without explicit stale marker."
+    }
+  ],
+  "recommended_stage": "G6_OR_G7_VALIDATOR_PATCH",
+  "verdict": "PASS"
+}

@@ -1,0 +1,152 @@
+{
+  "accepted_count": 6,
+  "candidate_count": 6,
+  "created_at": "20260503T004507Z",
+  "honesty_label": "Stage 3 promotion queue generated from available OS artifacts and reconstructed WC4 authority; not a transcript-complete semantic parse.",
+  "lessons": [
+    {
+      "acceptance_gate": "EXPORT_LINK_PRECHECK_GATE",
+      "adopt_decision": "accept",
+      "evidence_paths": [
+        "runtime/receipts/browser_render_capability_probe_20260502T223422Z/BROWSER_RENDER_CAPABILITY_PROBE_RECEIPT.json",
+        "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT_20260502T142018Z/FULL_EXPORT_MANIFEST.json"
+      ],
+      "fixture_path": "tests/fixtures/world_class_lessons/LESSON_EXPORT_LINK_PRECHECK_001_fixture.json",
+      "lesson": "Never publish a download link until the exact ZIP and sidecar pass stat, hash check, ZIP integrity, and clean extraction/boot smoke where applicable.",
+      "lesson_id": "LESSON_EXPORT_LINK_PRECHECK_001",
+      "prevents_regression": "Prevents false claims of downloadable boot authorities.",
+      "priority": "critical",
+      "problem_class": "download_link_exposure_failure",
+      "source": "artifact_reconstructed_from_blocked_receipts_and_current_uploaded_bundle_audit"
+    },
+    {
+      "acceptance_gate": "BOOTABLE_FULL_AUTHORITY_EXPORT_GATE",
+      "adopt_decision": "accept",
+      "evidence_paths": [
+        "runtime/receipts/boot/BOOT_FROM_MNT_DATA_STAGE16_20260502T133901Z.json",
+        "runtime/receipts/mpp_v3/MPP_R23_EXPORT_PROMOTION_GATE_RECEIPT_20260501T081500Z.json",
+        "runtime/receipts/mpp_v3/MPP_R23_EXPORT_PROMOTION_GATE_RECEIPT_LATEST.json",
+        "runtime/receipts/world_class_gap_plan/WC_STAGE4_OPERATOR_EXPERIENCE_AND_BOOT_AUTHORITY_POLISH_20260503T002028Z/WC_STAGE4_OPERATOR_EXPERIENCE_AND_BOOT_AUTHORITY_POLISH_RECEIPT.json",
+        "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/STAGE_RECEIPT.json"
+      ],
+      "fixture_path": "tests/fixtures/world_class_lessons/LESSON_FULL_AUTHORITY_DEFAULT_002_fixture.json",
+      "lesson": "After each successful governed stage, prefer a short-name bootable full authority export over requiring the operator to preserve a chain of deltas.",
+      "lesson_id": "LESSON_FULL_AUTHORITY_DEFAULT_002",
+      "prevents_regression": "Prevents circular missing-delta continuation failures.",
+      "priority": "critical",
+      "problem_class": "missing_delta_authority",
+      "source": "artifact_reconstructed_from_stage4_blocked_and_repaired_authority"
+    },
+    {
+      "acceptance_gate": "NEXT_STAGE_COPY_PROMPT_GATE",
+      "adopt_decision": "accept",
+      "evidence_paths": [
+        "runtime/state/NEXT_STAGE_COPY_PROMPT.json"
+      ],
+      "fixture_path": "tests/fixtures/world_class_lessons/LESSON_STAGE_EXIT_PROMPT_003_fixture.json",
+      "lesson": "Every stage handoff must include a copy-ready next prompt that references the latest verified short-name boot authority.",
+      "lesson_id": "LESSON_STAGE_EXIT_PROMPT_003",
+      "prevents_regression": "Reduces stage-name burden and boot prompt drift.",
+      "priority": "high",
+      "problem_class": "operator_cognitive_load",
+      "source": "stage2_router_enforcement_and_stage4_operator_polish"
+    },
+    {
+      "acceptance_gate": "PHONE_SAFE_EXPORT_NAMING_GATE",
+      "adopt_decision": "accept",
+      "evidence_paths": [
+        "runtime/receipts/mpp_v3/MPP_R9_UXR_OPERATOR_CONTEXT_SCHEMA_AND_ACCESSIBILITY_GATE_RECEIPT_20260501T001700Z.json",
+        "runtime/receipts/mpp_v3/MPP_R9_UXR_OPERATOR_CONTEXT_SCHEMA_AND_ACCESSIBILITY_GATE_RECEIPT_LATEST.json",
+        "runtime/receipts/workflow_generalization_engine/WORKFLOW_GENERALIZATION_ENGINE_STAGE1_IMPLEMENT_ROUTER_AND_LESSON_LEDGER_EVALS_REPAIR1_CODEGEN_ESCAPE_CLOSURE_20260502T231352Z/WORKFLOW_GENERALIZATION_ENGINE_STAGE1_ROUTER_EVAL_REPORT.json",
+        "runtime/receipts/workflow_generalization_engine/WORKFLOW_GENERALIZATION_ENGINE_STAGE3_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF_20260502T232100Z/preflight/router_eval.json",
+        "runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE2_VALIDATOR_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T215737Z/IMPLEMENTATION_MANIFEST.json"
+      ],
+      "fixture_path": "tests/fixtures/world_class_lessons/LESSON_PHONE_SAFE_FILENAMES_004_fixture.json",
+      "lesson": "Publish short phone-safe aliases for primary boot authorities and checksums; preserve long provenance names only as internal metadata.",
+      "lesson_id": "LESSON_PHONE_SAFE_FILENAMES_004",
+      "prevents_regression": "Reduces Android/mobile ChatGPT link brittleness.",
+      "priority": "high",
+      "problem_class": "mobile_download_friction",
+      "source": "uploaded_wc4_bundle_audit_and_link_failure_repair"
+    },
+    {
+      "acceptance_gate": "BOOT_MANIFEST_DUAL_LOCATION_GATE",
+      "adopt_decision": "accept",
+      "evidence_paths": [
+        "BOOT_AUTHORITY_MANIFEST_v1.json",
+        "runtime/receipts/world_class_gap_plan/WC_STAGE4_OPERATOR_EXPERIENCE_AND_BOOT_AUTHORITY_POLISH_20260503T002028Z/WC_STAGE4_OPERATOR_EXPERIENCE_AND_BOOT_AUTHORITY_POLISH_RECEIPT.json",
+        "runtime/state/NEXT_STAGE_COPY_PROMPT.json"
+      ],
+      "fixture_path": "tests/fixtures/world_class_lessons/LESSON_BOOT_MANIFEST_LOCATION_005_fixture.json",
+      "lesson": "Boot authority manifest lookup must support the OS-root manifest and registry mirror, and exports should include both to avoid path ambiguity.",
+      "lesson_id": "LESSON_BOOT_MANIFEST_LOCATION_005",
+      "prevents_regression": "Avoids false missing-manifest blockers during boot.",
+      "priority": "medium",
+      "problem_class": "authority_manifest_path_ambiguity",
+      "source": "uploaded_wc4_bundle_audit_note"
+    },
+    {
+      "acceptance_gate": "RECONSTRUCTION_PROVENANCE_GATE",
+      "adopt_decision": "accept",
+      "evidence_paths": [
+        "BOOT_AUTHORITY_MANIFEST_v1.json"
+      ],
+      "fixture_path": "tests/fixtures/world_class_lessons/LESSON_RECONSTRUCTION_PROVENANCE_006_fixture.json",
+      "lesson": "Rebuilt authorities must be labeled as reconstructed and must not be represented as original lost artifacts.",
+      "lesson_id": "LESSON_RECONSTRUCTION_PROVENANCE_006",
+      "prevents_regression": "Preserves provenance honesty when recovering from artifact loss.",
+      "priority": "critical",
+      "problem_class": "lost_artifact_reconstruction",
+      "source": "stage4_rebuilt_authority_manifest"
+    }
+  ],
+  "scan_summary": {
+    "boot_manifest_location_normalization": {
+      "count": 3,
+      "sample_paths": [
+        "runtime/receipts/world_class_gap_plan/WC_STAGE4_OPERATOR_EXPERIENCE_AND_BOOT_AUTHORITY_POLISH_20260503T002028Z/WC_STAGE4_OPERATOR_EXPERIENCE_AND_BOOT_AUTHORITY_POLISH_RECEIPT.json",
+        "runtime/state/NEXT_STAGE_COPY_PROMPT.json",
+        "0_kernel/registry/world_class_gap_plan/BOOTABLE_BUNDLE_LABELING_CONTRACT_v1.json"
+      ]
+    },
+    "download_link_exposure_failure": {
+      "count": 2,
+      "sample_paths": [
+        "runtime/receipts/browser_render_capability_probe_20260502T223422Z/BROWSER_RENDER_CAPABILITY_PROBE_RECEIPT.json",
+        "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT_20260502T142018Z/FULL_EXPORT_MANIFEST.json"
+      ]
+    },
+    "full_authority_export_needed": {
+      "count": 0,
+      "sample_paths": []
+    },
+    "missing_delta_authority": {
+      "count": 10,
+      "sample_paths": [
+        "runtime/receipts/boot/BOOT_FROM_MNT_DATA_STAGE16_20260502T133901Z.json",
+        "runtime/receipts/mpp_v3/MPP_R23_EXPORT_PROMOTION_GATE_RECEIPT_20260501T081500Z.json",
+        "runtime/receipts/mpp_v3/MPP_R23_EXPORT_PROMOTION_GATE_RECEIPT_LATEST.json",
+        "runtime/receipts/world_class_gap_plan/WC_STAGE4_OPERATOR_EXPERIENCE_AND_BOOT_AUTHORITY_POLISH_20260503T002028Z/WC_STAGE4_OPERATOR_EXPERIENCE_AND_BOOT_AUTHORITY_POLISH_RECEIPT.json",
+        "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T200153Z/STAGE_RECEIPT.json"
+      ]
+    },
+    "mobile_short_filename": {
+      "count": 58,
+      "sample_paths": [
+        "runtime/receipts/mpp_v3/MPP_R9_UXR_OPERATOR_CONTEXT_SCHEMA_AND_ACCESSIBILITY_GATE_RECEIPT_20260501T001700Z.json",
+        "runtime/receipts/mpp_v3/MPP_R9_UXR_OPERATOR_CONTEXT_SCHEMA_AND_ACCESSIBILITY_GATE_RECEIPT_LATEST.json",
+        "runtime/receipts/workflow_generalization_engine/WORKFLOW_GENERALIZATION_ENGINE_STAGE1_IMPLEMENT_ROUTER_AND_LESSON_LEDGER_EVALS_REPAIR1_CODEGEN_ESCAPE_CLOSURE_20260502T231352Z/WORKFLOW_GENERALIZATION_ENGINE_STAGE1_ROUTER_EVAL_REPORT.json",
+        "runtime/receipts/workflow_generalization_engine/WORKFLOW_GENERALIZATION_ENGINE_STAGE3_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF_20260502T232100Z/preflight/router_eval.json",
+        "runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE2_VALIDATOR_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T215737Z/IMPLEMENTATION_MANIFEST.json"
+      ]
+    },
+    "next_prompt_required": {
+      "count": 1,
+      "sample_paths": [
+        "runtime/state/NEXT_STAGE_COPY_PROMPT.json"
+      ]
+    }
+  },
+  "schema_version": "v1",
+  "stage": "WC_STAGE3_LESSON_PROMOTION_QUEUE_AND_FIXTURE_FACTORY"
+}

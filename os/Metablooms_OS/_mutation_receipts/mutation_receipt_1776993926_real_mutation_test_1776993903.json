@@ -1,0 +1,20 @@
+{
+  "idempotency_key": "real_mutation_test_1776993903",
+  "commit_hash": "d830ad660a8871819af301b677b92c92c397f45d",
+  "mutated_artifacts": [
+    "--Simon Willison\u2019s complete analysis of ChatGPT\u2019s sandboxed code interpreter - container environment (January 26, 2026)--.pdf"
+  ],
+  "before_hash": "9c2bd510884640332dfc8ed25f61a2699fa08564ca48e3f4e184c8a89c973eba",
+  "after_hash": "9c2bd510884640332dfc8ed25f61a2699fa08564ca48e3f4e184c8a89c973eba",
+  "request_hash": "61eb6ae9747a09691f486ee1b70062dff0159636a3fdf45578e46ed5145daa1c",
+  "backup_path": "/mnt/data/Metablooms_OS_refined/_registry_backups/registry_backup_1776993925.json",
+  "diff": "--- before\n+++ after\n@@ -7,7 +7,7 @@\n       \"disk_size_bytes\": 75630,\n       \"hash_match\": true,\n       \"keep_separate_reason\": \"\",\n-      \"last_verified\": 1776976476.102589,\n+      \"last_verified\": 1776993903.0469654,\n       \"lineage_notes\": \"\",\n       \"materialization_status\": \"verified_on_disk\",\n       \"path\": \"/mnt/data/--Simon Willison\\u2019s complete analysis of ChatGPT\\u2019s sandboxed code interpreter - container environment (January 26, 2026)--.pdf\",",
+  "validation": {
+    "request": "passed",
+    "pre": "passed",
+    "post": "passed",
+    "temp": "passed",
+    "commit": "passed"
+  },
+  "timestamp": 1776993926.1582553
+}

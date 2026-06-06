@@ -1,0 +1,11 @@
+{
+  "allowed": true,
+  "decision": "ALLOW",
+  "reason": "route_allowed",
+  "task": "blocked_hardlink_export_request",
+  "method": "policy_deny",
+  "required_gates": [
+    "deny_DENY_HARDLINK_MUTABLE_ARCHIVE"
+  ],
+  "router_path": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_CAPABILITY_ROUTER_CARTRIDGE_LATEST.json"
+}

@@ -1,0 +1,18 @@
+{
+  "fail_closed_if_missing_index_for_reusable_asset": true,
+  "id": "PROMPT_REUSABLE_ASSET_INDEXING_RULES_v1",
+  "index_path": "runtime/reusable_assets/REUSABLE_ASSET_INDEX_v1.json",
+  "required_fields": [
+    "asset_id",
+    "path",
+    "type",
+    "purpose",
+    "version",
+    "sha256",
+    "authority_source",
+    "dependencies",
+    "validation_status",
+    "created_utc"
+  ],
+  "status": "active"
+}

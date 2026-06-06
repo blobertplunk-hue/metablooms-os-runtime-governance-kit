@@ -1,0 +1,107 @@
+{
+  "approval_token_present": true,
+  "bts_receipt_id": "T1-STAGE6L_NODE_ZIP_FIXTURE_RERUN_20260502T032600Z_node_zip_export_artifact-20260502T020747Z",
+  "bts_turn_committed": true,
+  "export_bytes": 187,
+  "export_path": "/mnt/data/METABLOOMS_STAGE6L_NODE_ZIP_EXPORT_FIXTURE_RERUN_20260502T032600Z.zip",
+  "export_sha256": "d526a20b1b17a15bc56453664b3f10c46ea3519fe03aebaa7ed8a281ff1392a2",
+  "implementation_reality": {
+    "actual_files": [
+      "/mnt/data/METABLOOMS_STAGE6L_NODE_ZIP_EXPORT_FIXTURE_RERUN_20260502T032600Z.zip"
+    ],
+    "claimed_files": [
+      "/mnt/data/METABLOOMS_STAGE6L_NODE_ZIP_EXPORT_FIXTURE_RERUN_20260502T032600Z.zip"
+    ],
+    "unclaimed": [],
+    "unfulfilled": [],
+    "verdict": "PASS"
+  },
+  "kind": "node_zip_profile_export",
+  "node_crc_summary": {
+    "bytes": 18,
+    "crc_failures": [],
+    "directories": 0,
+    "duplicates": [],
+    "duration_ms": 94,
+    "entries": 1,
+    "files": 1,
+    "sha256": "d526a20b1b17a15bc56453664b3f10c46ea3519fe03aebaa7ed8a281ff1392a2",
+    "stream_errors": [],
+    "unsafe_paths": [],
+    "verdict": "PASS",
+    "zip": "/mnt/data/METABLOOMS_STAGE6L_NODE_ZIP_EXPORT_FIXTURE_RERUN_20260502T032600Z.zip"
+  },
+  "node_export_summary": {
+    "bytes_added": 18,
+    "duration_ms": 85,
+    "files_added": 1,
+    "output_sha256": "d526a20b1b17a15bc56453664b3f10c46ea3519fe03aebaa7ed8a281ff1392a2",
+    "output_zip": "/mnt/data/METABLOOMS_STAGE6L_NODE_ZIP_EXPORT_FIXTURE_RERUN_20260502T032600Z.zip.tmp",
+    "root_name": "Metablooms_OS",
+    "source_dir": "/mnt/data/Metablooms_OS/runtime/tmp/stage6l_zip_src_rerun",
+    "status": "PASS",
+    "unsafe_paths": []
+  },
+  "node_profile_dir": "/mnt/data/Metablooms_OS/runtime/tooling/governed_install_profiles/node_zip_authority_repair_v1",
+  "node_workspace": "/mnt/data/metablooms_stage4c_node_stream_rebuild_20260501T233500Z",
+  "policy_decision": {
+    "decided_at_utc": "2026-05-02T02:07:46Z",
+    "decision": "ALLOW",
+    "decision_id": "decision_1777687666992_a54902c1",
+    "enforced_by": "pre_tool_action_gate_v1",
+    "envelope_id": "STAGE6L_NODE_ZIP_FIXTURE_RERUN_20260502T032600Z_node_zip_profile_export",
+    "envelope_sha256": "88ea695fbfe4ce788aa703c61e35183b7ecf7c9337a55d535a83fa94edd8d17c",
+    "matched_rules": [
+      "schema.required",
+      "path.safety",
+      "runaway.breaker",
+      "method.reliability"
+    ],
+    "rationale": "Envelope passed schema, method, path, SEE, approval, and bounded-budget checks.",
+    "reason_code": "LOW_RISK_BOUNDED_ACTION",
+    "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/STAGE6L_NODE_ZIP_FIXTURE_RERUN_20260502T032600Z_node_zip_profile_export.decision.json",
+    "required_next_action": "execute_action_and_write_action_receipt",
+    "safe_to_execute": true,
+    "schema_version": "PolicyDecision_v1",
+    "stage_id": "STAGE6L_POST_TOOL_RESULT_VALIDATION_GATE"
+  },
+  "post_tool_result_validation": {
+    "action_type": "node_zip_profile_export",
+    "decision": "ALLOW_SUCCESS_COMMIT",
+    "reason_code": "RESULT_MATCHES_INTENT_AND_EVIDENCE",
+    "reasons": [
+      "primary_path exists",
+      "receipt_path exists",
+      "zip exists",
+      "zip size/sha constraints passed",
+      "crc/duplicate/unsafe constraints passed"
+    ],
+    "required_next_action": "emit_BTS_TOOL_RESULT_success_and_commit",
+    "safe_to_commit_success": true,
+    "schema": "PostToolResultValidationDecision_v1",
+    "stage_id": "STAGE6L_POST_TOOL_RESULT_VALIDATION_GATE",
+    "tool_id": "node_yazl_stream_export",
+    "validated_at_utc": "2026-05-02T02:07:48.588136Z",
+    "validation_id": "STAGE6L_NODE_ZIP_FIXTURE_RERUN_20260502T032600Z_node_zip_profile_export_post_tool_validation"
+  },
+  "receipt_id": "bts_exec_20260502T020748Z_8cc8e45d",
+  "schema": "mb.bts_wrapped_executors.v1",
+  "sidecar_path": "/mnt/data/METABLOOMS_STAGE6L_NODE_ZIP_EXPORT_FIXTURE_RERUN_20260502T032600Z.zip.sha256",
+  "source_dir": "/mnt/data/Metablooms_OS/runtime/tmp/stage6l_zip_src_rerun",
+  "stage_id": "STAGE6L_POST_TOOL_RESULT_VALIDATION_GATE",
+  "timestamp_utc": "2026-05-02T02:07:48.929816Z",
+  "tool_selection_sufficiency": {
+    "covered_candidate_count": 4,
+    "missing_candidates": [],
+    "reasons": [],
+    "required_candidate_count": 4,
+    "schema": "TOOL_SELECTION_SUFFICIENCY_GATE_RESULT_v1",
+    "selected_tool_id": "node_yazl_stream_export",
+    "timestamp_utc": "2026-05-02T02:07:46.675170Z",
+    "top_allowed_tool_id": "node_yazl_stream_export",
+    "verdict": "PASS"
+  },
+  "tool_universe_candidate_set_id": "tool_candidates_191d094500042226",
+  "turn_id": "STAGE6L_NODE_ZIP_FIXTURE_RERUN_20260502T032600Z",
+  "verdict": "PASS"
+}

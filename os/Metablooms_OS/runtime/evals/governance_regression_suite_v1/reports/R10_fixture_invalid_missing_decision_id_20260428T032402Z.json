@@ -1,0 +1,13 @@
+{
+  "checked": 1,
+  "errors": [
+    {
+      "errors": [
+        "missing required field decision_id"
+      ],
+      "index": 0,
+      "record_id": "fixture_invalid_missing_decision_id"
+    }
+  ],
+  "result": "fail"
+}

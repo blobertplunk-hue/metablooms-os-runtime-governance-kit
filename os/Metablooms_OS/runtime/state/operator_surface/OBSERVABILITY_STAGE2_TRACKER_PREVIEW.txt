@@ -1,0 +1,5 @@
+🟢 Observability Stage 2: PASS
+Trace ledger: runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl
+Records indexed: 220
+Kinds: {'boot': 57, 'decision': 10, 'export': 25, 'handoff': 84, 'receipt': 32, 'stage': 1, 'tracker': 2, 'validator': 9}
+Next: bind causal timeline into operator visual tracker.

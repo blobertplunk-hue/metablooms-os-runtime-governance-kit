@@ -1,0 +1,12 @@
+{
+  "schema": "MetaBloomsCheckpointThreadIndex_v1",
+  "threads": {
+    "stage6p.demo": {
+      "latest_checkpoint_id": "ckpt_resumed",
+      "latest_path": "/mnt/data/Metablooms_OS/runtime/checkpoints/stage6p.demo/ckpt_resumed.json",
+      "status": "RESUMED",
+      "updated_at_utc": "2026-05-02T03:31:34.266380Z"
+    }
+  },
+  "updated_at_utc": "2026-05-02T03:31:34.266402Z"
+}

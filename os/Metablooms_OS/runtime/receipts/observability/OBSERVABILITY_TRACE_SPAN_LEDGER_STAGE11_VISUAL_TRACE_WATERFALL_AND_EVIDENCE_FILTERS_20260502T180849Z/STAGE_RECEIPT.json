@@ -1,0 +1,14 @@
+{
+  "artifact_type": "STAGE_RECEIPT.v1",
+  "created_utc": "20260502T180900Z",
+  "outputs": [
+    "runtime/state/operator_surface/VISUAL_TRACE_WATERFALL_LATEST.json",
+    "runtime/state/operator_surface/VISUAL_TRACE_WATERFALL_LATEST.md",
+    "OPEN_OPERATOR_VISUAL_TRACKER.html",
+    "0_kernel/validators/validate_observability_trace_span_ledger_stage11_visual_waterfall_v1.py"
+  ],
+  "see_packet": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS_20260502T180849Z/SEE_PACKET.json",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS",
+  "validation_report": "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE11_VISUAL_WATERFALL_VALIDATION_LATEST.json",
+  "verdict": "FAIL"
+}

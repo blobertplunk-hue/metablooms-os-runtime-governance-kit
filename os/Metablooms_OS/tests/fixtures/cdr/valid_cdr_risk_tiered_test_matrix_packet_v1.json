@@ -1,0 +1,31 @@
+{
+  "declared_tier": "CRITICAL",
+  "evidence_categories": [
+    "static_review",
+    "unit",
+    "negative",
+    "integration",
+    "regression",
+    "failure_mode",
+    "security",
+    "observability",
+    "rollback_recovery",
+    "performance_resource",
+    "fresh_extract_e2e",
+    "hitl_approval",
+    "export_integrity",
+    "adversarial_abuse"
+  ],
+  "improvement_candidates": [
+    {
+      "benefit_score": 2,
+      "decision": "rejected",
+      "risk_score": 1,
+      "scope_cost": 1,
+      "stage_fit": true
+    }
+  ],
+  "triggers": [
+    "export_authority"
+  ]
+}

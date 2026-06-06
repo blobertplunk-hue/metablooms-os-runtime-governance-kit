@@ -1,0 +1,13 @@
+{
+  "artifact_id": "bad_plain_html",
+  "artifact_type": "html_activity",
+  "verification": {
+    "human_review_prompts": [],
+    "promotion_blockers": [],
+    "render_checks": [],
+    "static_checks": []
+  },
+  "visual_presentation": {
+    "note": "default browser styles"
+  }
+}

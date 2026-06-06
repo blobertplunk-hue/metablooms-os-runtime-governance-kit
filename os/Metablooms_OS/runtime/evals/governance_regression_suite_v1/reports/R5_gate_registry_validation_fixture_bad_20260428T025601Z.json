@@ -1,0 +1,13 @@
+{
+  "validator": "assert_gate_registry_integrity_v1",
+  "created_utc": "2026-04-28T02:57:51Z",
+  "registry_path": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/fixtures/gate_registry_v1.enabled_missing_entrypoint.json",
+  "decision": "fail",
+  "errors": [
+    "TOOL_ROUTE_GUARD: enabled entrypoint missing: 0_kernel/scripts/DOES_NOT_EXIST.py"
+  ],
+  "warnings": [],
+  "registry_sha256": "db901e5d33530f4f97c54255f01c50111ea445848a9a789b444325214d084470",
+  "gate_count": 16,
+  "enabled_count": 13
+}

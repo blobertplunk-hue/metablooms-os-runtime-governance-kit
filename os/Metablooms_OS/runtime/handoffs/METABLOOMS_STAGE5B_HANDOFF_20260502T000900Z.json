@@ -1,0 +1,8 @@
+{
+  "id": "METABLOOMS_STAGE5B_HANDOFF",
+  "stage": "STAGE5B_OS_BUNDLE_DELIVERY_FULL_BOOTABLE_AUTHORITY_HARDENING",
+  "timestamp_utc": "2026-05-01T23:08:38Z",
+  "verdict": "READY_FOR_EXPORT_PROOF",
+  "next": "Use the Stage5B authority ZIP only as the OS bundle if os_bundle_delivery_guard, extraction, runtime starter, and boot executor pass. Support bundles must remain labeled support/proof bundles.",
+  "planned_export_zip": "/mnt/data/METABLOOMS_OS_STAGE5B_FULL_BOOTABLE_BUNDLE_DELIVERY_HARDENED_AUTHORITY_20260502T000900Z.zip"
+}

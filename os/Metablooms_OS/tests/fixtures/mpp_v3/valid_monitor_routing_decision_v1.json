@@ -1,0 +1,15 @@
+{
+  "blocking": false,
+  "created_at": "2026-05-01T00:10:57.537206+00:00",
+  "decision_id": "MON-ROUTE-20260501T001057Z-CONTINUE_NORMAL",
+  "evidence_refs": [
+    "MONITOR_PACKET"
+  ],
+  "next_stage": "R21_OR_R23",
+  "result_hash": "ee9a5b587b8f0ac5ebe927f8786ddad2ce13681dbc532a830d749eec589a470b",
+  "route_to": "CONTINUE_NORMAL",
+  "schema_version": "mpp.monitor_routing_decision.v1",
+  "severity": "INFO",
+  "source_packet_id": "MONITOR-20260501T001057Z",
+  "trigger": "all_monitor_checks_passed"
+}

@@ -1,0 +1,6 @@
+{
+  "artifact_type": "CE_SYNTHESIS.v1",
+  "created_utc": "20260502T174908Z",
+  "decision": "Extract live boot steps into JSON/Markdown and render deep links in the tracker while leaving historical evidence quarantined.",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS"
+}

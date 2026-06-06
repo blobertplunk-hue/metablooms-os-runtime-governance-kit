@@ -1,0 +1,41 @@
+{
+  "artifact_type": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_ROUTER_VALIDATION.v1",
+  "checks": [
+    {
+      "exists_nonempty": true,
+      "path": "0_kernel/registry/observability/MB_FAILURE_CLUSTER_SCHEMA_v1.json"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "0_kernel/registry/observability/MB_REPAIR_ROUTER_BINDING_SCHEMA_v1.json"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "0_kernel/registry/observability/MB_OBSERVABILITY_FAILURE_ROUTER_POLICY_v1.json"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "0_kernel/scripts/observability_failure_cluster_router_v1.py"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "runtime/traces/observability/FAILURE_CLUSTER_REPORT_LATEST.json"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "runtime/traces/observability/REPAIR_ROUTER_BINDING_LATEST.json"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "runtime/state/operator_surface/OPERATOR_FAILURE_ROUTER_SUMMARY_LATEST.json"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "OPEN_OPERATOR_VISUAL_TRACKER.html"
+    }
+  ],
+  "created_utc": "20260502T165331Z",
+  "issues": [],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING",
+  "verdict": "PASS"
+}

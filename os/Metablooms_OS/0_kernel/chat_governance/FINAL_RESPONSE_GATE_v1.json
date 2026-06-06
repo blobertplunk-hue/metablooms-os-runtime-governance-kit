@@ -1,0 +1,16 @@
+{
+  "id": "FINAL_RESPONSE_GATE_v1",
+  "status": "runtime_active",
+  "requires": [
+    "compact_tracker_preview",
+    "status",
+    "artifacts_or_blocker",
+    "receipt_reference",
+    "next_allowed_stage"
+  ],
+  "fail_closed_if": [
+    "claims_implementation_without_test_evidence",
+    "claims_export_without_bundle_sha256",
+    "claims_research_without_SEE_sources"
+  ]
+}

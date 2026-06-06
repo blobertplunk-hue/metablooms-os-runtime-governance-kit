@@ -1,0 +1,24 @@
+{
+  "stage_id": "STAGE4C_NODE_YAUZL_YAZL_STREAM_REBUILD_AND_BOOT_PROOF",
+  "timestamp_utc": "20260501T233500Z",
+  "verdict": "OS_TOOL_INSTALL_GOVERNANCE_INTEGRATED_PRE_REBUILD",
+  "selected_profile": "A_ZIP_AUTHORITY_REPAIR",
+  "workspace": "/mnt/data/metablooms_stage4c_node_stream_rebuild_20260501T233500Z",
+  "installed_packages": {
+    "yauzl": "3.3.0",
+    "yazl": "3.3.1",
+    "crc-32": "1.2.2",
+    "fflate": "0.8.2"
+  },
+  "os_paths_added": [
+    "0_kernel/registry/tool_governance/GOVERNED_TOOL_INSTALL_PROFILE_REGISTRY_v1.json",
+    "0_kernel/registry/tool_governance/GOVERNED_TOOL_INSTALL_ENFORCEMENT_GATE_v1.json",
+    "0_kernel/registry/tool_governance/GOVERNED_TOOL_INSTALL_OS_INTEGRATION_SHA256_STAGE4C.txt",
+    "runtime/tooling/governed_install_profiles/node_zip_authority_repair_v1/README.md",
+    "runtime/tooling/governed_install_profiles/node_zip_authority_repair_v1/stream_rebuild_authority.js",
+    "runtime/tooling/governed_install_profiles/node_zip_authority_repair_v1/stream_crc_proof.js"
+  ],
+  "non_promoted_paths": ["node_modules", "npm cache", "package manager temp files"],
+  "external_sidecar_required": true,
+  "notes": "This receipt is embedded before final ZIP hash exists; final hash is bound by external sidecar and Stage 4C final receipt."
+}

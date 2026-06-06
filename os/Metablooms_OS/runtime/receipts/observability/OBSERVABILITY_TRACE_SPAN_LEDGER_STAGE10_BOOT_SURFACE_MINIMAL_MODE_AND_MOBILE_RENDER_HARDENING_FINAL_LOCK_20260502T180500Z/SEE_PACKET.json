@@ -1,0 +1,13 @@
+{
+  "artifact_type": "SEE_PACKET.v1",
+  "created_utc": "20260502T180500Z",
+  "source_refs": [
+    "turn448217search0",
+    "turn448217search1",
+    "turn448217search12",
+    "turn448217search6",
+    "turn448217search3"
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING",
+  "verdict": "PASS"
+}

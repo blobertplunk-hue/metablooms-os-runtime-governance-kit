@@ -1,0 +1,172 @@
+{
+  "controller_summary": {
+    "blocked": false,
+    "ready_for_export_promotion": true,
+    "stage_count": 4
+  },
+  "created_at": "2026-05-01T00:44:31.741426+00:00",
+  "exit_handlers": [
+    {
+      "action": "write receipt and handoff or blocked receipt",
+      "always_runs": true,
+      "condition": "always",
+      "evidence_output": "runtime/receipts/mpp_v3/",
+      "handler_id": "ORCH-EXIT-001"
+    },
+    {
+      "action": "route to R17/R18/STOP_BLOCKED",
+      "always_runs": true,
+      "condition": "failure",
+      "evidence_output": "runtime/handoffs/mpp_v3/",
+      "handler_id": "ORCH-EXIT-002"
+    }
+  ],
+  "objective_id": "OBJ-MPP-R22",
+  "packet_id": "ORCH-BAD-RETRY",
+  "reconciliation_policy": {
+    "compare": "desired_state vs actual_state plus required markers",
+    "policy_id": "ORCH-RECON-001",
+    "repair_on_drift": true,
+    "stop_on_unrepairable": true,
+    "writes_receipt": true
+  },
+  "result_hash": "5c36f1d381c8a21e1dd3a7bf207c2bf806f28bd69098f75a4bbac38d853ffe63",
+  "retry_policy": {
+    "backoff_strategy": "bounded same-turn retry only after root cause identified",
+    "failure_budget": "0 non-retryable failures",
+    "max_attempts": 9,
+    "non_retryable_failures": [
+      "checksum_mismatch",
+      "missing_required_marker",
+      "duplicate_zip_member",
+      "unrouteable_signal"
+    ],
+    "retryable_failures": [
+      "transient_tool_interruption",
+      "validator_runtime_interrupt"
+    ]
+  },
+  "runtime_state": {
+    "actual_state": "RUNNING",
+    "attempt_count": 1,
+    "blocked": false,
+    "current_stage": "MPP_R22_ORCHESTRATOR_RUNTIME_CONTROLLER",
+    "desired_state": "RUNNING",
+    "last_completed_stage": "MPP_R21_PERSISTENT_LEARNING_REGISTRY_AND_METHOD_RELIABILITY_GATE"
+  },
+  "schema_version": "mpp.orchestrator_runtime_plan.v1",
+  "source_learning_packet_id": "LEARN-R21-SMOKE",
+  "stage": "ORCHESTRATOR",
+  "stage_graph": [
+    {
+      "handoff_path": "runtime/handoffs/mpp_v3/MPP_R20_MONITOR_TELEMETRY_SCHEMA_AND_FEEDBACK_GATE_HANDOFF_LATEST.json",
+      "order": 20,
+      "receipt_path": "runtime/receipts/mpp_v3/MPP_R20_MONITOR_TELEMETRY_SCHEMA_AND_FEEDBACK_GATE_RECEIPT_LATEST.json",
+      "repair_routes": [
+        "DEBUGGING_R17",
+        "ECL_R18",
+        "STOP_BLOCKED"
+      ],
+      "required_gates": [
+        "MPP_R20_MONITOR_TELEMETRY_SCHEMA_AND_FEEDBACK_GATE_GATE"
+      ],
+      "required_inputs": [
+        "MPP_R20_MONITOR_TELEMETRY_SCHEMA_AND_FEEDBACK_GATE_HANDOFF_LATEST.json"
+      ],
+      "retryable": true,
+      "stage_id": "MPP_R20_MONITOR_TELEMETRY_SCHEMA_AND_FEEDBACK_GATE",
+      "status": "COMPLETE"
+    },
+    {
+      "handoff_path": "runtime/handoffs/mpp_v3/MPP_R21_PERSISTENT_LEARNING_REGISTRY_AND_METHOD_RELIABILITY_GATE_HANDOFF_LATEST.json",
+      "order": 21,
+      "receipt_path": "runtime/receipts/mpp_v3/MPP_R21_PERSISTENT_LEARNING_REGISTRY_AND_METHOD_RELIABILITY_GATE_RECEIPT_LATEST.json",
+      "repair_routes": [
+        "DEBUGGING_R17",
+        "ECL_R18",
+        "STOP_BLOCKED"
+      ],
+      "required_gates": [
+        "MPP_R21_PERSISTENT_LEARNING_REGISTRY_AND_METHOD_RELIABILITY_GATE_GATE"
+      ],
+      "required_inputs": [
+        "MPP_R21_PERSISTENT_LEARNING_REGISTRY_AND_METHOD_RELIABILITY_GATE_HANDOFF_LATEST.json"
+      ],
+      "retryable": true,
+      "stage_id": "MPP_R21_PERSISTENT_LEARNING_REGISTRY_AND_METHOD_RELIABILITY_GATE",
+      "status": "COMPLETE"
+    },
+    {
+      "handoff_path": "runtime/handoffs/mpp_v3/MPP_R22_ORCHESTRATOR_RUNTIME_CONTROLLER_HANDOFF_LATEST.json",
+      "order": 22,
+      "receipt_path": "runtime/receipts/mpp_v3/MPP_R22_ORCHESTRATOR_RUNTIME_CONTROLLER_RECEIPT_LATEST.json",
+      "repair_routes": [
+        "DEBUGGING_R17",
+        "ECL_R18",
+        "STOP_BLOCKED"
+      ],
+      "required_gates": [
+        "MPP_R22_ORCHESTRATOR_RUNTIME_CONTROLLER_GATE"
+      ],
+      "required_inputs": [
+        "MPP_R22_ORCHESTRATOR_RUNTIME_CONTROLLER_HANDOFF_LATEST.json"
+      ],
+      "retryable": true,
+      "stage_id": "MPP_R22_ORCHESTRATOR_RUNTIME_CONTROLLER",
+      "status": "RUNNING"
+    },
+    {
+      "handoff_path": "runtime/handoffs/mpp_v3/MPP_R23_EXPORT_PROMOTION_GATE_HANDOFF_LATEST.json",
+      "order": 23,
+      "receipt_path": "runtime/receipts/mpp_v3/MPP_R23_EXPORT_PROMOTION_GATE_RECEIPT_LATEST.json",
+      "repair_routes": [
+        "DEBUGGING_R17",
+        "ECL_R18",
+        "STOP_BLOCKED"
+      ],
+      "required_gates": [
+        "MPP_R23_EXPORT_PROMOTION_GATE_GATE"
+      ],
+      "required_inputs": [
+        "MPP_R23_EXPORT_PROMOTION_GATE_HANDOFF_LATEST.json"
+      ],
+      "retryable": false,
+      "stage_id": "MPP_R23_EXPORT_PROMOTION_GATE",
+      "status": "READY"
+    }
+  ],
+  "transition_rules": [
+    {
+      "condition": "current stage PASS and handoff READY",
+      "decision": "ADVANCE",
+      "evidence_required": [
+        "receipt",
+        "handoff",
+        "gate_result"
+      ],
+      "from_state": "RUNNING",
+      "rule_id": "ORCH-RULE-001",
+      "to_stage": "next ordered stage"
+    },
+    {
+      "condition": "retryable failure and attempts within budget",
+      "decision": "RETRY",
+      "evidence_required": [
+        "failure receipt"
+      ],
+      "from_state": "RUNNING",
+      "rule_id": "ORCH-RULE-002",
+      "to_stage": "same stage"
+    },
+    {
+      "condition": "non-retryable or unrepairable failure",
+      "decision": "STOP_BLOCKED",
+      "evidence_required": [
+        "blocked receipt"
+      ],
+      "from_state": "BLOCKED",
+      "rule_id": "ORCH-RULE-003",
+      "to_stage": "STOP_BLOCKED"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "artifact_type": "METABLOOMS_CE_SYNTHESIS_v1",
+  "stage_id": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT",
+  "summary": "A bounded subprocess wrapper should be MetaBlooms' mandatory process-execution primitive. It must combine external subprocess hardening guidance with existing OS method reliability evidence and failure-learning policy.",
+  "synthesis_points": [
+    "Native subprocess timeout is necessary but insufficient because process creation may not interrupt immediately; MetaBlooms must add receipt, total-budget, and failure-class enforcement.",
+    "Security posture should be deny-by-default: no shell, no command strings, no implicit PATH trust, no unbounded cwd/env/output.",
+    "Existing OS policy already identifies full archive recursive unzip validation as forbidden-by-default; wrapper must load it before any spawn.",
+    "The wrapper must record denials and failures as structured events so the method reliability router compounds over time."
+  ]
+}

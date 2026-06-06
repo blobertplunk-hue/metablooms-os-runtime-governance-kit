@@ -1,0 +1,24 @@
+{
+  "artifact_type": "SEE_PACKET",
+  "created_utc": "2026-04-30T20:29:16Z",
+  "decision_impact": "Promotion must be blocked unless mandatory governance, evidence, routing, tracking, receipt/handoff, and export proof gates are present and tested.",
+  "sources": [
+    {
+      "claim": "NIST AI RMF is a framework for managing AI risks and supports lifecycle governance.",
+      "domain": "nist.gov",
+      "id": "turn523351search0"
+    },
+    {
+      "claim": "OWASP Agentic AI guidance treats agentic planning, tools, memory and orchestration as explicit threat surfaces.",
+      "domain": "genai.owasp.org",
+      "id": "turn523351search2"
+    },
+    {
+      "claim": "Recent NIST implementation commentary reiterates Govern/Map/Measure/Manage lifecycle governance.",
+      "domain": "underdefense.com",
+      "id": "turn523351search3"
+    }
+  ],
+  "stage": "H0C2_GOVERNANCE_SURVIVAL_AND_PROMOTION_BLOCKER_AUDIT",
+  "web_run_used": true
+}

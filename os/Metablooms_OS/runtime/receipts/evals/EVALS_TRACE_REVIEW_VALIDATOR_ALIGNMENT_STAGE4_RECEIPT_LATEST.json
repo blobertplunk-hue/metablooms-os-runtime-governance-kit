@@ -1,0 +1,19 @@
+{
+  "artifact_type": "EVALS_TRACE_REVIEW_VALIDATOR_ALIGNMENT_STAGE4_RECEIPT_v1",
+  "created_utc": "20260501T153500Z",
+  "implemented": [
+    "validator alignment gate spec",
+    "alignment gate runner",
+    "stage4 validator",
+    "mb evals --alignment-gate",
+    "mb evals --promotion",
+    "registered cartridge executor handler"
+  ],
+  "research_basis": [
+    "OpenAI evals: structured tests, metrics, regression and continuous evaluation",
+    "LangSmith: datasets/evaluators/experiments and regression catching",
+    "Hamel/Shreya: error analysis and representative trace review"
+  ],
+  "stage_name": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_4_VALIDATOR_ALIGNMENT_GATE_PROMOTION",
+  "verdict": "IMPLEMENTED_PENDING_VALIDATION"
+}

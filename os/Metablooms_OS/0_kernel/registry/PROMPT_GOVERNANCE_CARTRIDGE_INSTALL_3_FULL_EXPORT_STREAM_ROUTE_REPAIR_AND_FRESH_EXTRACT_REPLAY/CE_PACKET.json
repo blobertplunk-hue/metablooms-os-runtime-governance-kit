@@ -1,0 +1,7 @@
+{
+  "decisions": [
+    "Full export must be cumulative over Stage 1 and Stage 2 deltas.",
+    "Controlled index must include Stage 3 governance packet paths before validation."
+  ],
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_3_FULL_EXPORT_STREAM_ROUTE_REPAIR_AND_FRESH_EXTRACT_REPLAY"
+}

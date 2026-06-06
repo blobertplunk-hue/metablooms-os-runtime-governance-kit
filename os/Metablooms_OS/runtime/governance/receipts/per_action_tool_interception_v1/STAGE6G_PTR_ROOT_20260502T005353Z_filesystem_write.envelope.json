@@ -1,0 +1,24 @@
+{
+  "action_type": "filesystem_write",
+  "artifacts": {
+    "read_paths": [],
+    "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/STAGE6G_PTR_ROOT_20260502T005353Z_filesystem_write.decision.json",
+    "write_paths": [
+      "/mnt/data/Metablooms_OS/CURRENT_FULL_AUTHORITY_POINTER_v1.json"
+    ]
+  },
+  "envelope_id": "STAGE6G_PTR_ROOT_20260502T005353Z_filesystem_write",
+  "intent": "Stage6G governed pointer/approval pre-export write",
+  "limits": {
+    "max_bytes": 1822,
+    "max_files": 5,
+    "max_steps": 10,
+    "timeout_seconds": 30
+  },
+  "requested_at_utc": "2026-05-02T00:54:16.111988Z",
+  "requires_see": false,
+  "risk_tier": "medium",
+  "schema_version": "ToolCallEnvelope_v1",
+  "stage_id": "STAGE6G_FULL_AUTHORITY_EXPORT_WITH_EXPLICIT_BUDGET_APPROVAL_USING_BTS_NODE_ZIP_PROFILE",
+  "tool_name": "bts_wrapped_filesystem_write"
+}

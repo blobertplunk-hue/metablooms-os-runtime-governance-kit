@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Research Trigger Validation Receipt v1",
+  "type": "object",
+  "required": [
+    "artifact_id",
+    "timestamp",
+    "trigger_detected",
+    "web_run_required",
+    "web_run_executed",
+    "status"
+  ],
+  "properties": {
+    "artifact_id": { "type": "string" },
+    "timestamp": { "type": "string" },
+    "trigger_detected": { "type": "boolean" },
+    "web_run_required": { "type": "boolean" },
+    "web_run_executed": { "type": "boolean" },
+    "see_evidence": { "type": "array" },
+    "gap_report": { "type": "object" },
+    "status": { "enum": ["PASS", "FAIL"] },
+    "issues": { "type": "array" }
+  }
+}

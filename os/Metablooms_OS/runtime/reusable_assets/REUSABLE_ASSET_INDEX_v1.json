@@ -1,0 +1,70 @@
+{
+  "assets": [
+    {
+      "asset_id": "prompt_auto_improvement_loop_v1",
+      "created_utc": "2026-04-30T22:11:22Z",
+      "path": "runtime/governance/prompt_auto_improvement_loop_v1.py",
+      "purpose": "Automatically improve process-start prompts before execution and log patch rationale.",
+      "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_8_AUTOMATED_PATCH_LOOP_AND_FAILURE_CLASS_CORRECTION",
+      "type": "governance_runtime_code"
+    },
+    {
+      "asset_id": "prompt_patch_replay_engine_v1",
+      "created_utc": "2026-04-30T22:18:07Z",
+      "path": "runtime/governance/prompt_patch_replay_engine_v1.py",
+      "purpose": "Replay prompt patch candidates against fixtures before promotion.",
+      "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_9_PROMPT_PATCH_REPLAY_AND_QUALITY_RANKER",
+      "type": "governance_runtime_code"
+    },
+    {
+      "asset_id": "prompt_quality_ranker_v1",
+      "created_utc": "2026-04-30T22:18:07Z",
+      "path": "runtime/governance/prompt_quality_ranker_v1.py",
+      "purpose": "Rank prompt patch candidates by contract, evidence, validation, task fit, artifact discipline, and regression risk.",
+      "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_9_PROMPT_PATCH_REPLAY_AND_QUALITY_RANKER",
+      "type": "governance_runtime_code"
+    },
+    {
+      "asset_id": "prompt_patch_replay_quality_ranker_contract_v1",
+      "created_utc": "2026-04-30T22:18:07Z",
+      "path": "0_kernel/registry/PROMPT_PATCH_REPLAY_AND_QUALITY_RANKER_CONTRACT_v1.json",
+      "purpose": "Contract for prompt patch replay and quality ranker promotion gates.",
+      "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_9_PROMPT_PATCH_REPLAY_AND_QUALITY_RANKER",
+      "type": "governance_contract"
+    },
+    {
+      "asset_id": "mpp_v3_mandatory_process_spine",
+      "created_utc": "2026-05-01T01:59:04.613275Z",
+      "path": "0_kernel/registry/mpp_v3/MPP_V3_AUTHORITY_AND_SCHEMA_LOCK_v1.json",
+      "purpose": "Mandatory Process Pipeline R0-R23 authority spine integrated under Stage 12 prompt governance.",
+      "stage": "MPP_PROMPT_OS_INTEGRATION_1B_STREAM_ONLY_NO_FULL_MATERIALIZATION",
+      "type": "governance_contract"
+    },
+    {
+      "asset_id": "mpp_v3_fail_closed_runner",
+      "created_utc": "2026-05-01T01:59:04.613278Z",
+      "path": "2_engines/runtime/mpp_pipeline_runner.py",
+      "purpose": "MPP runner patched to fail closed on unloadable modules and missing mandatory stages; Safe_Walk-bound traversal.",
+      "stage": "MPP_PROMPT_OS_INTEGRATION_1B_STREAM_ONLY_NO_FULL_MATERIALIZATION",
+      "type": "governance_runtime_code"
+    },
+    {
+      "asset_id": "mpp_v3_export_promotion_gate",
+      "created_utc": "2026-05-01T01:59:04.613281Z",
+      "path": "0_kernel/mpp_v3/mpp_v3_export_promotion_gate_v1.py",
+      "purpose": "MPP R23 export promotion gate imported as subsystem source.",
+      "stage": "MPP_PROMPT_OS_INTEGRATION_1B_STREAM_ONLY_NO_FULL_MATERIALIZATION",
+      "type": "governance_runtime_code"
+    },
+    {
+      "asset_id": "mpp_v3_stage12_integration_authority_binding",
+      "created_utc": "2026-05-01T01:59:04.613283Z",
+      "path": "0_kernel/registry/mpp_v3/MPP_V3_STAGE12_INTEGRATION_AUTHORITY_BINDING_v1.json",
+      "purpose": "Binding record proving Stage 12 remains authority while MPP R23 is imported as subsystem source.",
+      "stage": "MPP_PROMPT_OS_INTEGRATION_1B_STREAM_ONLY_NO_FULL_MATERIALIZATION",
+      "type": "governance_contract"
+    }
+  ],
+  "index_id": "REUSABLE_ASSET_INDEX_v1",
+  "updated_utc": "2026-05-01T01:59:04.613286Z"
+}

@@ -1,0 +1,41 @@
+{
+  "completed": "Formal HITL approval token gate installed as schema/policy/validator/fixtures/invariant with smoke proof.",
+  "created_at_utc": "2026-05-02T02:49:24.485461Z",
+  "next_stage_options_best_to_worst": [
+    {
+      "rank": 1,
+      "stage": "STAGE6O_OWASP_AGENTIC_AI_COVERAGE_MATRIX_AND_POLICY_BINDINGS",
+      "why": "Now that HITL approval exists, map OWASP agentic AI risks into enforceable policy bindings."
+    },
+    {
+      "rank": 2,
+      "stage": "STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM",
+      "why": "Approval interrupts need durable checkpoint/replay position for interrupted stages."
+    },
+    {
+      "rank": 3,
+      "stage": "STAGE6Q_LEGACY_EXECUTOR_RETROFIT_AUDIT",
+      "why": "Find remaining execution paths bypassing resolver/BTS/pre/post gates."
+    },
+    {
+      "rank": 4,
+      "stage": "STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS",
+      "why": "Export BTS/approval/tool spans into trace-compatible formats."
+    }
+  ],
+  "receipt": "/mnt/data/Metablooms_OS/runtime/receipts/METABLOOMS_STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_RECEIPT_20260502T035000Z.json",
+  "required_gates": [
+    "Tool Universe Resolver",
+    "BTS_TOOL_EVALUATION",
+    "BTS_TOOL_SELECTION",
+    "pre_tool_action_gate_v1",
+    "formal_hitl_approval_token_gate_v1 when high-impact",
+    "post_tool_result_validation_v1",
+    "BTS_COMMIT"
+  ],
+  "resume_prompt": "Continue from /mnt/data/Metablooms_OS. Load runtime/handoffs/METABLOOMS_STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_HANDOFF_20260502T035000Z.json. Run exactly one bounded governed stage. Do not export the full OS unless the selected stage explicitly requires it and a HITLApprovalToken_v1 plus budget approval passes.",
+  "schema": "MetaBloomsStageHandoff_v1",
+  "stage_id": "STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_20260502T035000Z",
+  "status": "READY_FOR_NEXT_STAGE",
+  "support_bundle_label": "SUPPORT/PROOF BUNDLE \u2014 NOT THE OS BUNDLE"
+}

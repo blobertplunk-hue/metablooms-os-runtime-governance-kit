@@ -1,0 +1,84 @@
+{
+  "artifacts_written": [],
+  "next_stage": "MPP_R14_VERIFICATION_EVIDENCE_SCHEMA_AND_TEST_RECEIPT_GATE",
+  "predecessor_verification": {
+    "r12": {
+      "actual_sha256": "b4690b10e22cb62a91cf1475d608e8ae8a6eae940e9f9074cb802fc96db7a5c5",
+      "checksum_match": true,
+      "exists": true,
+      "sha_sidecar_exists": true,
+      "sidecar_sha256": "b4690b10e22cb62a91cf1475d608e8ae8a6eae940e9f9074cb802fc96db7a5c5",
+      "zip": "/mnt/data/MPP_R12_RRP_RECOVERY_PLAN_SCHEMA_AND_ROLLBACK_GATE_20260501T005900Z.zip",
+      "zip_testzip": null
+    }
+  },
+  "research_sources": [
+    {
+      "ref": "turn311877search0",
+      "source": "SLSA verifying artifacts"
+    },
+    {
+      "ref": "turn311877search1",
+      "source": "SLSA provenance"
+    },
+    {
+      "ref": "turn311877search6",
+      "source": "Python pathlib documentation"
+    }
+  ],
+  "root": "/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z",
+  "root_probe": {
+    "/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z": {
+      "exists": true,
+      "is_dir": true,
+      "writable": true
+    }
+  },
+  "stage_id": "MPP_R13_IMPLEMENTATION_CONTRACT_SCHEMA_AND_WRITE_PATH_GATE",
+  "status": "PASS",
+  "tests": [
+    {
+      "cmd": "/opt/pyvenv/bin/python -m py_compile /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_implementation_write_path_gate_v1.py",
+      "expected": 0,
+      "returncode": 0,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.",
+      "stdout": ""
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_implementation_write_path_gate_v1.py --validate /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/tests/fixtures/mpp_v3/valid_implementation_contract_packet_v1.json",
+      "expected": 0,
+      "returncode": 0,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.",
+      "stdout": "{\"packet_id\": \"IMPL-20260430T230637Z\", \"result_hash\": \"0d46bac534777a4a4158681fc4b8fc32e73677f70c2ed5796aa3058da4476fa8\", \"status\": \"PASS\"}"
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_implementation_write_path_gate_v1.py --gate /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/tests/fixtures/mpp_v3/valid_implementation_contract_packet_v1.json --base-root /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z --probe",
+      "expected": 0,
+      "returncode": 0,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.",
+      "stdout": "{\"checked_targets\": [{\"allowed\": true, \"path\": \"0_kernel/mpp_v3/mpp_v3_implementation_write_path_gate_v1.py\", \"reason\": null, \"resolved_path\": \"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_implementation_write_path_gate_v1.py\", \"target_id\": \"IMPL-001\"}, {\"allowed\": true, \"path\": \"0_kernel/schemas/mpp_v3/IMPLEMENTATION_CONTRACT_PACKET_SCHEMA_v1.json\", \"reason\": null, \"resolved_path\": \"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/schemas/mpp_v3/IMPLEMENTATION_CONTRACT_PACKET_SCHEMA_v1.json\", \"target_id\": \"IMPL-002\"}], \"created_at\": \"2026-04-30T23:07:06.666984+00:00\", \"gate_id\": \"IMPL-GATE-20260430T230706Z\", \"packet_id\": \"IMPL-20260430T230637Z\", \"result_hash\": \"a695d4535581c2bf0badcdf363c2c4d29e6f5dba168a4a31395ba136c731313b\", \"schema_version\": \"mpp.implementation_write_path_gate_result.v1\", \"stage\": \"IMPLEMENTATION_WRITE_PATH_GATE\", \"verdict\": \"PASS\", \"violations\": [], \"warnings\": []}"
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_implementation_write_path_gate_v1.py --validate /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/tests/fixtures/mpp_v3/invalid_implementation_path_traversal_packet_v1.json",
+      "expected": 1,
+      "returncode": 1,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.\nTraceback (most recent call last):\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_implementation_write_path_gate_v1.py\"\u001b[0m, line \u001b[35m244\u001b[0m, in \u001b[35m<module>\u001b[0m\n    raise SystemExit(\u001b[31mmain\u001b[0m\u001b[1;31m()\u001b[0m)\n                     \u001b[31m~~~~\u001b[0m\u001b[1;31m^^\u001b[0m\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_implementation_write_path_gate_v1.py\"\u001b[0m, line \u001b[35m233\u001b[0m, in \u001b[35mmain\u001b[0m\n    print(json.dumps(\u001b[31mvalidate_implementation_contract\u001b[0m\u001b[1;31m(packet)\u001b[0m, sort_keys=True))\n                     \u001b[31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\u001b[0m\u001b[1;31m^^^^^^^^\u001b[0m\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_implementation_write_path_gate_v1.py\"\u001b[0m, line \u001b[35m72\u001b[0m, in \u001b[35mvalidate_implementation_contract\u001b[0m\n    \u001b[31mrequire\u001b[0m\u001b[1;31m(bad is None, f\"IMPL_TARGET_{i}_{bad}\")\u001b[0m\n    \u001b[31m~~~~~~~\u001b[0m\u001b[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\u001b[0m\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_implementation_write_path_gate_v1.py\"\u001b[0m, line \u001b[35m30\u001b[0m, in \u001b[35mrequire\u001b[0m\n    raise ImplementationValidationError(code)\n\u001b[1;35mImplementationValidationError\u001b[0m: \u001b[35mIMPL_TARGET_0_BAD_PATH_SEGMENT\u001b[0m",
+      "stdout": ""
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_implementation_write_path_gate_v1.py --gate /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/tests/fixtures/mpp_v3/invalid_implementation_no_receipt_packet_v1.json --base-root /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z",
+      "expected": 1,
+      "returncode": 1,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.",
+      "stdout": "{\"checked_targets\": [{\"allowed\": true, \"path\": \"0_kernel/mpp_v3/mpp_v3_implementation_write_path_gate_v1.py\", \"reason\": null, \"resolved_path\": \"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_implementation_write_path_gate_v1.py\", \"target_id\": \"IMPL-001\"}, {\"allowed\": true, \"path\": \"0_kernel/schemas/mpp_v3/IMPLEMENTATION_CONTRACT_PACKET_SCHEMA_v1.json\", \"reason\": null, \"resolved_path\": \"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/schemas/mpp_v3/IMPLEMENTATION_CONTRACT_PACKET_SCHEMA_v1.json\", \"target_id\": \"IMPL-002\"}], \"created_at\": \"2026-04-30T23:07:25.857528+00:00\", \"gate_id\": \"IMPL-GATE-20260430T230725Z\", \"packet_id\": \"IMPL-BAD-NO-RECEIPT\", \"result_hash\": \"c4f000536b23d7bde9d2307ab3a9851fbd552a93060cb8326d9a5eadce859ef0\", \"schema_version\": \"mpp.implementation_write_path_gate_result.v1\", \"stage\": \"IMPLEMENTATION_WRITE_PATH_GATE\", \"verdict\": \"FAIL\", \"violations\": [\"IMPL_GATE_RECEIPT_REQUIRED\", \"IMPL_WRITE_POLICY_MUST_REQUIRE_RECEIPT\"], \"warnings\": []}"
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_implementation_write_path_gate_v1.py --gate /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/tests/fixtures/mpp_v3/invalid_implementation_absolute_path_packet_v1.json --base-root /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z",
+      "expected": 1,
+      "returncode": 1,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.",
+      "stdout": "{\"checked_targets\": [{\"allowed\": false, \"path\": \"/tmp/evil.py\", \"reason\": \"ABSOLUTE_PATH_FORBIDDEN\", \"target_id\": \"IMPL-001\"}, {\"allowed\": true, \"path\": \"0_kernel/schemas/mpp_v3/IMPLEMENTATION_CONTRACT_PACKET_SCHEMA_v1.json\", \"reason\": null, \"resolved_path\": \"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/schemas/mpp_v3/IMPLEMENTATION_CONTRACT_PACKET_SCHEMA_v1.json\", \"target_id\": \"IMPL-002\"}], \"created_at\": \"2026-04-30T23:07:35.390858+00:00\", \"gate_id\": \"IMPL-GATE-20260430T230735Z\", \"packet_id\": \"IMPL-BAD-ABSOLUTE\", \"result_hash\": \"4c9dce51dcb7c6ff516da3b61403c36c1d57294bc9e83fc70b785e34998a9474\", \"schema_version\": \"mpp.implementation_write_path_gate_result.v1\", \"stage\": \"IMPLEMENTATION_WRITE_PATH_GATE\", \"verdict\": \"FAIL\", \"violations\": [\"IMPL_GATE_BAD_PATH_IMPL-001:ABSOLUTE_PATH_FORBIDDEN\", \"IMPL_TARGET_0_ABSOLUTE_PATH_FORBIDDEN\"], \"warnings\": []}"
+    }
+  ],
+  "timestamp": "20260501T011300Z"
+}

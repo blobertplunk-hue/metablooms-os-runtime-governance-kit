@@ -1,0 +1,48 @@
+{
+  "artifact_type": "CDRCriticalGateResults.v1",
+  "created_utc": "2026-05-02T15:10:51Z",
+  "gates": [
+    {
+      "gate": "Runtime root verified",
+      "result": "PASS"
+    },
+    {
+      "gate": "Stage2 handoff loaded",
+      "result": "PASS"
+    },
+    {
+      "gate": "SEE evidence bound",
+      "result": "PASS"
+    },
+    {
+      "gate": "Compatibility adapter installed",
+      "result": "PASS"
+    },
+    {
+      "gate": "Safe caller retrofit complete",
+      "result": "PASS"
+    },
+    {
+      "gate": "Compile validation",
+      "result": "PASS"
+    },
+    {
+      "gate": "Executable smoke validation",
+      "result": "PASS"
+    },
+    {
+      "gate": "Policy validator installed",
+      "result": "PASS"
+    },
+    {
+      "gate": "Policy gate blocking count zero",
+      "result": "PASS"
+    },
+    {
+      "gate": "Handoff and stop",
+      "result": "PASS"
+    }
+  ],
+  "stage": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING",
+  "verdict": "PASS"
+}

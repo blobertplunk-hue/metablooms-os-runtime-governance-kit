@@ -1,0 +1,39 @@
+{
+  "version": "1.0",
+  "created_at": 1776997835.226107,
+  "status": "active",
+  "title": "Coding Dependency Bootstrap Policy",
+  "purpose": "Ensure coding/codemod stages use structural code tools instead of regex/string patching.",
+  "rules": [
+    {
+      "id": "coding_libcst_probe_required",
+      "when": "task_class includes coding, code patching, Python script repair, codemod, mutation engine patching, governed_run patching, validator patching, or OS script modification",
+      "must": [
+        "run 0_kernel/scripts/ensure_libcst_available_v1.py before structural Python code edits",
+        "prefer vendored LibCST for format-preserving Python code transforms",
+        "fallback to Python ast + safe_code_patch_helpers_v1.py only if LibCST bootstrap fails",
+        "record bootstrap receipt before patching"
+      ]
+    },
+    {
+      "id": "install_if_missing",
+      "when": "LibCST is missing from 0_kernel/vendor/python and pip/network are available",
+      "must": [
+        "install LibCST into 0_kernel/vendor/python, not global site-packages",
+        "verify import and parse behavior after install",
+        "commit vendor dependency and receipt before using it"
+      ]
+    },
+    {
+      "id": "no_regex_only_structural_patch",
+      "when": "any code structure is modified",
+      "must_not": [
+        "use regex-only or string replacement-only structural patching",
+        "print success before re-reading the file and verifying required markers/behavior"
+      ]
+    }
+  ],
+  "required_bootstrap_script": "0_kernel/scripts/ensure_libcst_available_v1.py",
+  "vendor_path": "0_kernel/vendor/python",
+  "receipt_path": "0_kernel/registry/LIBCST_BOOTSTRAP_RECEIPT_latest.json"
+}

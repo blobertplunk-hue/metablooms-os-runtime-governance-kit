@@ -1,0 +1,172 @@
+## live sandbox fingerprints
+utc_now=2026-04-28T01:23:38Z
+
+# python binary
+/opt/pyvenv/bin/python3
+Python 3.13.5
+
+# relevant env vars
+CUA_DD_CHROME_AUTO_RESTART=false
+CUA_DD_CHROME_USER=oai
+CUA_DD_CONTAINER_DAEMON_PORT=8085
+CUA_DD_ENABLE_APPLY_PATCH=true
+CUA_DD_ENABLE_CHROME=false
+CUA_DD_ENABLE_NOTEBOOK_SERVER=false
+CUA_DD_ENABLE_VNC=false
+CUA_DD_HIVE_CLIENT_LOG_LEVEL=WARN
+CUA_DD_HIVE_PORT=50939
+CUA_DD_INIT_ARTIFACT_TOOL_V2=true
+CUA_DD_INIT_ARTIFACT_TOOL_V2_ALIAS=
+CUA_DD_INIT_ARTIFACT_TOOL_V2_RECORD_OPERATIONS=true
+CUA_DD_INIT_CONATINER_DAEMON=false
+CUA_DD_INIT_CONTAINER_DAEMON=false
+CUA_DD_INIT_DBUS=false
+CUA_DD_INIT_EXTENSION_SERVER=false
+CUA_DD_INIT_HIVE=false
+CUA_DD_INIT_MULTIKERNEL_JUPYTER_SERVER=false
+CUA_DD_INIT_MULTIKERNEL_JUPYTER_SERVER_USER=oai
+CUA_DD_INIT_NEKO=false
+CUA_DD_INIT_NGINX=false
+CUA_DD_INIT_OPENBOX=false
+CUA_DD_INIT_PICOM=false
+CUA_DD_INIT_RSYNC_DAEMON=false
+CUA_DD_INIT_SYNC_SHARE=false
+CUA_DD_INIT_TERMINAL_SERVER=true
+CUA_DD_INIT_X11VNC=false
+CUA_DD_INIT_XFCE4=false
+CUA_DD_INIT_XVFB=false
+CUA_DD_MITMPROXY=false
+CUA_DD_NGINX_PORT=8080
+CUA_DD_PDF_READER_SERVICE=false
+CUA_DD_PYTHON_TOOL=true
+CUA_DD_PYTHON_TOOL_USER=oai
+CUA_DD_PYTHON_TOOL_WARM_SPREADSHEET_RUNTIME=true
+CUA_DD_STARTUP_LIBREOFFICE=false
+CUA_DD_TERMINAL_LOCAL_LOOPBACK=true
+CUA_DD_TERMINAL_MODE=false
+CUA_DD_TERMINAL_SERVER_USER=oai
+CUA_DD_VM_BUILD=openaiappliedcaasprod.azurecr.io/chrome-chatgpt-prod-5p4:alpaca-20260421212454-f3bf2ace07a4-linux-amd64
+CUA_DD_VM_COMMIT_SHA=f3bf2ace07a46a1470444427399c4e103076f4be
+CUA_DD_VM_COMMIT_TIMESTAMP=20260421212454
+PATH=/opt/apply_patch/bin:/opt/imagemagick/bin:/opt/pyvenv/bin:/usr/local/swift/usr/bin:/usr/local/go/bin:/opt/nvm/versions/node/v22.16.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/.sdkman/candidates/kotlin/current/bin
+
+# site hook files
+drwxr-xr-x 2 root root         80 2026-04-28 01:14:10.494617186 +0000 /opt/python-hooks
+-rw-r--r-- 1 root root       1007 2026-04-28 01:13:18.563047373 +0000 /opt/python-hooks/sitecustomize.py
+-rw-r--r-- 1 root oai_shared   31 2026-04-21 01:48:01.000000000 +0000 /opt/pyvenv/lib/python3.13/site-packages/000_oai_py_sys_path_prepend.pth
+-rw-r--r-- 1 root oai_shared  855 2026-04-21 01:48:01.000000000 +0000 /opt/pyvenv/lib/python3.13/site-packages/oai_py_sys_path_prepend.py
+
+# hook content snippets
+import oai_py_sys_path_prepend
+---
+"""
+Update `sys.path` to prioritize looking for python libs in other paths
+http://go/docs-link/cua-chrome-dynamic-pyvenv-libs
+"""
+
+import sys
+
+# last path wins
+PREPEND_PATH_LIST = [
+    # add Python hooks for global and user customization
+    "/opt/python-hooks",
+    #
+    # more public directory for dynamic libraries `/opt/pyvenv-libs`
+    # these are added dynamically to the container at runtime
+    # e.g. HivePythonToolConfig generates a python library and uploads it to this path
+    "/opt/pyvenv-libs",
+    #
+    # override libraries, e.g. `oai_agent`, `hive_client`, etc.
+    # we use this to ensure the latest code in monorepo is included in container
+    # http://go/docs-link/cua-chrome-oai-agent-docker-dependencies
+    "/opt/pyvenv-overrides",
+]
+
+for path in PREPEND_PATH_LIST:
+    if path not in sys.path:
+        sys.path.insert(0, path)
+---
+# CUA_DD_INIT_ARTIFACT_TOOL_V2_ALIAS - `artifact_tool` alias for `presentation_artifact_tool`
+import sys
+import presentation_artifact_tool
+
+sys.modules['artifact_tool'] = presentation_artifact_tool
+# CUA_DD_INIT_ARTIFACT_TOOL_V2_RECORD_OPERATIONS - add artifact tool operations callback patch
+import importlib
+
+importlib.import_module("presentation_artifact_tool.patches.record_artifact_tool_operations")
+# CUA_DD_PYTHON_TOOL_WARM_SPREADSHEET_RUNTIME - warm spreadsheet runtime in jupyter kernels
+import importlib
+import os
+import sys
+import traceback
+
+if os.getenv("OAI_IS_JUPYTER_KERNEL", "").strip().lower() in {"1", "true", "yes", "on"}:
+    try:
+        importlib.import_module("presentation_artifact_tool.patches.warm_spreadsheet_runtime_on_startup")
+    except Exception:
+        print(
+            "artifact_tool_v2.startup: failed to import "
+            "presentation_artifact_tool.patches.warm_spreadsheet_runtime_on_startup",
+            file=sys.stderr,
+        )
+        traceback.print_exc()
+
+# presentation_artifact_tool mtimes
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/__init__.pyc
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/bin
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/bin/artifact_tool_rpc_daemon
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/bin/artifact_tool_rpc_daemon-bun
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/bin/node_modules
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/bin/node_modules/@oai
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/bin/node_modules/agent-base
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/bin/node_modules/debug
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/bin/node_modules/detect-libc
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/bin/node_modules/follow-redirects
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/bin/node_modules/https-proxy-agent
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/bin/node_modules/ms
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/bin/node_modules/parenthesis
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/bin/node_modules/skia-canvas
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/bin/node_modules/string-split-by
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/generated
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/generated/__init__.pyc
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/generated/interface
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/generated/interface/__init__.pyc
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/generated/interface/enums.pyc
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/generated/interface/models.pyc
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/generated/interface/models.pyi
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/helpers.pyc
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/patches
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/patches/record_artifact_tool_operations.pyc
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.pyc
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/patches/warn_about_overlaps_on_export.pyc
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/py.typed
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/rpc
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/rpc/__init__.pyc
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/rpc/client.pyc
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/rpc/connection.pyc
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/rpc/daemon.pyc
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/rpc/remote.pyc
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/rpc/types.pyc
+2026-04-21T21:29:17.0000000000Z /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool/spreadsheet_warmup.pyc
+
+# previous sandbox authority docs present in /mnt/data
+total 82
+-rw-r--r-- 1 root root 75630 Apr 27 11:04 --Simon WillisonΓÇÖs complete analysis of ChatGPTΓÇÖs sandboxed code interpreter - container environment (January 26, 2026)--.pdf
+-rw-r--r-- 1 root root  2284 Apr 27 11:04 SANDBOX_AUTHORITATIVE_SPEC.md
+-rw-r--r-- 1 root root  2648 Apr 27 11:04 SANDBOX_COMPOSITE_LOAD_SUSTAINED_10S_STAGGERED.md
+-rw-r--r-- 1 root root   970 Apr 27 11:04 SANDBOX_MASTER_INDEX.md
+-rw-r--r-- 1 root root  1034 Apr 27 11:04 SANDBOX_OPERATING_RULES.md
+
+# previous/current probe artifacts
+2026-04-28T01:15:53.7821889500Z /mnt/data/Metablooms_OS/receipts/WRITE_PROBE_20260428T011550Z.txt
+2026-04-28T01:22:30.7771761090Z /mnt/data/Metablooms_OS/receipts/python_probe/PYTHON_SANDBOX_PROBE_20260428T011640Z.txt
+2026-04-28T01:22:30.8418102170Z /mnt/data/Metablooms_OS/receipts/python_probe/PYTHON_SANDBOX_FINDINGS_20260428T011802Z.json
+2026-04-28T01:22:30.8783414720Z /mnt/data/Metablooms_OS/receipts/python_probe/PYTHON_SANDBOX_FINDINGS_20260428T011802Z.md
+2026-04-28T01:22:30.9057286110Z /mnt/data/Metablooms_OS/receipts/python_probe/PYTHON_CONTROL_FLAGS_20260428T011736Z.txt
+2026-04-28T01:22:31.0181649630Z /mnt/data/Metablooms_OS/receipts/python_probe/PYTHON_STARTUP_HOOK_DETAIL_20260428T011707Z.txt
+2026-04-28T01:22:31.0724486260Z /mnt/data/Metablooms_OS/receipts/python_probe/PYTHON_IMPORTTIME_20260428T011720Z.txt
+2026-04-28T01:22:41.9390198640Z /mnt/data/Metablooms_OS/receipts/sandbox_release_probe/SANDBOX_RELEASE_PROBE_RAW.txt
+2026-04-28T01:22:41.9499399440Z /mnt/data/Metablooms_OS/receipts/sandbox_release_probe/SANDBOX_55_CHANGE_ASSESSMENT_20260428T012100Z.md
+2026-04-28T01:22:42.0553821640Z /mnt/data/Metablooms_OS/receipts/sandbox_release_probe/SANDBOX_RELEASE_PROBE_SUMMARY.json

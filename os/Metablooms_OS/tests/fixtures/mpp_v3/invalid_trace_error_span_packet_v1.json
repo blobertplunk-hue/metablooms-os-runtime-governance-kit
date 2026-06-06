@@ -1,0 +1,102 @@
+{
+  "anomaly_rules": [
+    {
+      "description": "No two spans may share an id.",
+      "name": "duplicate_span_id",
+      "rule_id": "TRACE-RULE-001",
+      "severity": "S4_CRITICAL"
+    },
+    {
+      "description": "Span end index must not precede start index.",
+      "name": "invalid_span_order",
+      "rule_id": "TRACE-RULE-002",
+      "severity": "S4_CRITICAL"
+    },
+    {
+      "description": "Error spans block trace promotion.",
+      "name": "error_span",
+      "rule_id": "TRACE-RULE-003",
+      "severity": "S4_CRITICAL"
+    },
+    {
+      "description": "Every non-skipped span must bind to an artifact reference.",
+      "name": "missing_artifact_refs",
+      "rule_id": "TRACE-RULE-004",
+      "severity": "S3_HIGH"
+    },
+    {
+      "description": "Parent spans must exist in the trace.",
+      "name": "unknown_parent_span",
+      "rule_id": "TRACE-RULE-005",
+      "severity": "S3_HIGH"
+    },
+    {
+      "description": "Stages must appear in expected order.",
+      "name": "stage_out_of_order",
+      "rule_id": "TRACE-RULE-006",
+      "severity": "S3_HIGH"
+    },
+    {
+      "description": "Expected stages must appear at least once.",
+      "name": "missing_expected_stage",
+      "rule_id": "TRACE-RULE-007",
+      "severity": "S3_HIGH"
+    }
+  ],
+  "created_at": "2026-04-30T23:18:27.860155+00:00",
+  "expected_stage_order": [
+    "TRACE_ANALYSIS",
+    "VERIFICATION"
+  ],
+  "objective_id": "OBJ-MPP-R15",
+  "packet_id": "TRACE-BAD-ERROR",
+  "result_hash": "c30fc97ae34d4661e11e8e3e910e334a5371c3d62fd09a901c0b277cb77eb449",
+  "schema_version": "mpp.trace_analysis_packet.v1",
+  "source_verification_packet_id": "VERIFY-R14-SMOKE",
+  "spans": [
+    {
+      "artifact_refs": [
+        "TRACE_ANALYSIS_PACKET_SCHEMA_v1.json"
+      ],
+      "attributes": {
+        "mpp.stage": "R15"
+      },
+      "duration_ms": 1.0,
+      "end_index": 1,
+      "name": "R15 trace analysis root",
+      "parent_span_id": null,
+      "span_id": "0aa7b6b8e1536524",
+      "stage_name": "TRACE_ANALYSIS",
+      "start_index": 0,
+      "status": "OK"
+    },
+    {
+      "artifact_refs": [
+        "MPP_R14_VERIFICATION_EVIDENCE_SCHEMA_AND_TEST_RECEIPT_GATE_20260501T012800Z.zip"
+      ],
+      "attributes": {
+        "mpp.predecessor": "R14"
+      },
+      "duration_ms": 1.0,
+      "end_index": 2,
+      "name": "R14 verification predecessor",
+      "parent_span_id": "0aa7b6b8e1536524",
+      "span_id": "668971be5f24bb6e",
+      "stage_name": "VERIFICATION",
+      "start_index": 1,
+      "status": "ERROR"
+    }
+  ],
+  "stage": "TRACE_ANALYSIS",
+  "trace_context": {
+    "root_span_id": "0aa7b6b8e1536524",
+    "trace_id": "134bb9c1facb52c8fa9510c39d9360d2",
+    "traceparent_format": "w3c_trace_context_v00"
+  },
+  "trace_summary": {
+    "error_count": 1,
+    "missing_artifact_span_count": 0,
+    "out_of_order_span_count": 0,
+    "span_count": 2
+  }
+}

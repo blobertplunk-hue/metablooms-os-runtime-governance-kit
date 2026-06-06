@@ -1,0 +1,23 @@
+{
+  "sandbox_first_interpretation": "MetaBlooms must prefer proven in-sandbox evidence paths for Android-phone workflows, while emitting PC/CI addenda as enhancement lanes rather than blockers.",
+  "sources": [
+    {
+      "claim": "Playwright uses managed browser installs such as `playwright install` and can install named browsers such as chromium/webkit/firefox; sandbox policy must treat this as unavailable unless the managed browser already exists or install network succeeds.",
+      "url": "https://playwright.dev/docs/browsers"
+    },
+    {
+      "claim": "Chrome headless supports command-line screenshots via `--headless --screenshot --window-size=...`, so system Chromium is a valid attempted resolver method when available.",
+      "url": "https://developer.chrome.com/docs/chromium/headless"
+    },
+    {
+      "claim": "WeasyPrint is an HTML/CSS rendering engine that exports to PDF; it is valid as a render proxy but not as proof of browser JavaScript interaction.",
+      "url": "https://weasyprint.org/"
+    },
+    {
+      "claim": "WeasyPrint can read normal files and URLs and render HTML/CSS to PDF; sandbox-first resolver can use local file rendering without browser install.",
+      "url": "https://doc.courtbouillon.org/weasyprint/stable/api_reference.html"
+    }
+  ],
+  "stage": "BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE1_SANDBOX_FIRST_POLICY_AND_FIXTURES",
+  "timestamp_utc": "20260502T224349Z"
+}

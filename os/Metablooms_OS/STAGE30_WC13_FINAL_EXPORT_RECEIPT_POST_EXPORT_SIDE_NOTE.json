@@ -1,0 +1,22 @@
+{
+  "allowed_claim_when_pass": "WC13 final bootable OS export exists and replay proof passed.",
+  "disallowed_claims": [
+    "Failing PRs are blocked",
+    "PR reviews are required",
+    "CODEOWNERS is enforced",
+    "Force-push/delete protection has been behavior-tested",
+    "Full professional repo governance is complete"
+  ],
+  "export_target": "/mnt/data/METABLOOMS_WC13_FINAL_BOOTABLE_FULL_AUTHORITY_20260503T222000Z.zip",
+  "export_zip_sha256": "5df821e20b471149d7400505596fda6b9de37c8de36ba7c8d6a53a3529264036",
+  "export_zip_size_bytes": 33117827,
+  "input_stage28_artifact": "/mnt/data/METABLOOMS_STAGE28_WC13_STAGING_BUILD_ARTIFACTS_20260503T214253Z.zip",
+  "input_stage29_artifact": "/mnt/data/METABLOOMS_STAGE29_WC13_STAGING_VALIDATION_20260503T221730Z.zip",
+  "manifest": "/mnt/data/METABLOOMS_WC13_FINAL_BOOTABLE_FULL_AUTHORITY_20260503T222000Z_MANIFEST.json",
+  "note": "Final receipt sidecars are authoritative for export; source-tree receipt was embedded before zipping.",
+  "replay_proof": "/mnt/data/METABLOOMS_WC13_FINAL_BOOTABLE_FULL_AUTHORITY_20260503T222000Z_REPLAY_PROOF.json",
+  "source_staging_root": "/mnt/data/stage28_wc13_staging_build_20260503T214253Z/extract_wc12/Metablooms_OS",
+  "stage": "PROFESSIONALIZATION_CONVERGENCE_STAGE30_WC13_FINAL_EXPORT_AND_REPLAY_PROOF",
+  "status": "FAIL",
+  "timestamp_utc": "2026-05-03T22:19:23Z"
+}

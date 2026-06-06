@@ -1,0 +1,32 @@
+{
+  "artifact_type": "AtomicJsonWriterImplementationManifest.v1",
+  "contract_loaded": true,
+  "created_utc": "20260502T142856Z",
+  "harness_path": "/mnt/data/Metablooms_OS/tests/evals/atomic_json_writer/test_atomic_json_writer_v1.py",
+  "harness_sha256": "850ef4a99803f7ffdfc15ad7519b91797ebe4c75c26afc80cd8d9e5e635b4986",
+  "implemented_api": [
+    "write_atomic_json(envelope: dict) -> dict",
+    "write_json_atomic alias"
+  ],
+  "safety_features": [
+    "required envelope fields",
+    "allowed root canonicalization",
+    "path escape denial",
+    "symlink target/ancestor denial",
+    "suffix allowlist",
+    "overwrite mode enforcement",
+    "json serialization before open",
+    "allow_nan_false",
+    "serialized size limit",
+    "same-directory mkstemp",
+    "file fsync",
+    "os.replace",
+    "parent directory fsync",
+    "final readback parse and payload comparison",
+    "decision/failure receipts"
+  ],
+  "source_path": "/mnt/data/Metablooms_OS/0_kernel/lib/io/atomic_json_writer_v1.py",
+  "source_sha256": "2eccfb2e366bae426a46eb9e9ecc3311217b27c208d94a51ba183e1d928f50f4",
+  "stage": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES",
+  "stage1_handoff": "/mnt/data/Metablooms_OS/runtime/handoffs/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_HANDOFF_LATEST.json"
+}

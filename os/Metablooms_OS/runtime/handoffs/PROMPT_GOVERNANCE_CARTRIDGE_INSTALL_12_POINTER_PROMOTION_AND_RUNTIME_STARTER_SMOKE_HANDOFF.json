@@ -1,0 +1,13 @@
+{
+  "constraints": [
+    "boot from Stage 12 full authority ZIP",
+    "verify sidecar before extraction",
+    "run runtime starter smoke before feature work",
+    "continue bounded one-stage execution"
+  ],
+  "created_utc": "2026-04-30T23:23:00Z",
+  "id": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_12_POINTER_PROMOTION_AND_RUNTIME_STARTER_SMOKE_HANDOFF",
+  "next_stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_13_CARTRIDGE_STARTER_ENFORCEMENT_AND_PROMPT_PATCH_TELEMETRY_REPLAY",
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_12_POINTER_PROMOTION_AND_RUNTIME_STARTER_SMOKE",
+  "status": "complete"
+}

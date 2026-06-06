@@ -1,0 +1,52 @@
+{
+  "schema": "METABLOOMS_BOOT_FROM_MNT_DATA_RECEIPT_v1",
+  "timestamp_utc": "20260502T133901Z",
+  "verdict": "BOOTED_WITH_ACCEPTED_WARNING",
+  "authority_zip": "/mnt/data/METABLOOMS_OS_MPP_CDR_STAGE16_FULL_AUTHORITY_AFTER_STAGE15_BOOTABLE_FULL_OS_AUTHORITY_20260502T132500Z.zip",
+  "authority_zip_sha256": "c1287eec39756bf57619a28ce622aef60760dfe97d8cbadf3cf0cb72cb9e775b",
+  "authority_sidecar": "/mnt/data/METABLOOMS_OS_MPP_CDR_STAGE16_FULL_AUTHORITY_AFTER_STAGE15_BOOTABLE_FULL_OS_AUTHORITY_20260502T132500Z.zip.sha256",
+  "authority_sidecar_status": "REGENERATED_THIS_TURN_FROM_COMPUTED_SHA256_BECAUSE_UPLOADED_SIDECAR_WAS_NOT_PRESENT",
+  "final_proof_json": "/mnt/data/METABLOOMS_MPP_CDR_STAGE16_FULL_AUTHORITY_EXPORT_FINAL_PROOF_20260502T132500Z.json",
+  "final_proof_sha256": "a0c693eb5a4ce42fefebd10d9385802727d5e47601a8313a58ebf5c48b273cac",
+  "canonical_runtime_root": "/mnt/data/Metablooms_OS",
+  "extraction": {
+    "method": "staged_unzip_then_promote_to_canonical_root",
+    "file_count": 4160,
+    "directory_size": "60M"
+  },
+  "verification": {
+    "zip_test": "PASS",
+    "runtime_starter_smoke_root": {
+  "decision": "ALLOW",
+  "invalid_json": [],
+  "missing": [],
+  "mode": "root",
+  "path": "/mnt/data/Metablooms_OS",
+  "read_errors": []
+},
+    "runtime_starter_smoke_zip": {
+  "decision": "ALLOW",
+  "invalid_json": [],
+  "missing": [],
+  "mode": "zip",
+  "path": "/mnt/data/METABLOOMS_OS_MPP_CDR_STAGE16_FULL_AUTHORITY_AFTER_STAGE15_BOOTABLE_FULL_OS_AUTHORITY_20260502T132500Z.zip",
+  "read_errors": []
+},
+    "portable_boot_verify": {
+  "stage": "PORTABLE_FULL_OS_BOOT_VERIFY_REPAIRED_H0B2",
+  "timestamp_utc": "2026-05-02T13:38:40Z",
+  "status": "PASS",
+  "root": "/mnt/data/Metablooms_OS",
+  "errors": [],
+  "sandbox_policy": "ALLOW",
+  "chat_kernel": "ALLOW"
+},
+    "boot_executor_receipt": "0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777729103336.json",
+    "boot_executor_verdict": "PASS_WITH_WARNINGS"
+  },
+  "warnings": [
+    "boot_executor reported git_dir_missing; accepted because exported ZIP is a portable authority archive and final proof explicitly accepts this warning",
+    "original .sha256 sidecar was not present in /mnt/data at boot start; regenerated sidecar is new evidence, not proof of original sidecar upload"
+  ],
+  "next_state": "READY_FOR_ONE_BOUNDED_GOVERNED_STAGE"
+}

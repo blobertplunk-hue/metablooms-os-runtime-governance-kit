@@ -1,0 +1,9 @@
+{
+  "checkpoint_id": "ckpt_resumed",
+  "file_sha256": "274192dc3b3b0f1ed3c34ae837af1bcb8949eefca0c5f47200a4377a995f88b3",
+  "path": "/mnt/data/Metablooms_OS/runtime/checkpoints/stage6p.demo/ckpt_resumed.json",
+  "record_sha256": "72852290ed2b521a46031e0018f969c6bebdb02652501b44a566bdf06096e70a",
+  "schema": "MetaBloomsCheckpointThreadLatest_v1",
+  "thread_id": "stage6p.demo",
+  "updated_at_utc": "2026-05-02T03:31:34.265215Z"
+}

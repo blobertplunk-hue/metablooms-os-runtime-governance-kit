@@ -1,0 +1,65 @@
+{
+  "after_smoke": {
+    "allowed_count": 3,
+    "candidate_count": 4,
+    "classified_job_type": "observability_trace_export",
+    "reasons": [],
+    "returncode": 0,
+    "schema": "Stage6TTraceExportResolverCoverageSmoke_v1",
+    "stderr_tail": "",
+    "stdout_tail": "explain exclusions; selected tool should be top_allowed_tool_id unless WHY_NOT_BETTER_TOOL justification passes.\"\n  },\n  \"source_registries\": [\n    \"0_kernel/registry/tool_governance/TOOL_CAPABILITY_GENOME_BASELINE_v1.json\",\n    \"0_kernel/registry/tool_governance/sandbox_tool_probe_inventory_v1.json\",\n    \"0_kernel/registry/tool_governance/GOVERNED_TOOL_INSTALL_PROFILE_REGISTRY_v1.json\",\n    \"_bts/tool_competence.json\",\n    \"FORBIDDEN_VALIDATION_METHODS_v1.json\",\n    \"runtime/authority/FORBIDDEN_VALIDATION_METHODS_v1.json\"\n  ],\n  \"stage_id\": \"STAGE6T_SMOKE\",\n  \"sufficiency\": {\n    \"allowed_count\": 3,\n    \"candidate_count\": 4,\n    \"coverage_score\": 1.0,\n    \"reasons\": [],\n    \"score_spread\": 24.997,\n    \"verdict\": \"PASS\"\n  },\n  \"task\": \"STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS install observability trace export adapters for MetaBlooms JSONL OpenTelemetry span JSON OpenAI Agents SDK event JSON LangGraph run JSON\",\n  \"top_allowed_tool_id\": \"python_observability_trace_export_adapter\"\n}\n",
+    "sufficiency_verdict": "PASS",
+    "top_allowed_tool_id": "python_observability_trace_export_adapter",
+    "verdict": "PASS",
+    "zip_export_regression": {
+      "classified_job_type": "zip_export",
+      "returncode": 0,
+      "top_allowed_tool_id": "node_yazl_stream_export"
+    }
+  },
+  "authority_export_performed": false,
+  "before": {
+    "classified_job_type": "zip_export",
+    "sufficiency": {
+      "allowed_count": 4,
+      "candidate_count": 5,
+      "coverage_score": 1.0,
+      "reasons": [],
+      "score_spread": 32.998,
+      "verdict": "PASS"
+    },
+    "top_allowed_tool_id": "node_yazl_stream_export"
+  },
+  "bundle_type": "SUPPORT/PROOF BUNDLE \u2014 NOT THE OS BUNDLE",
+  "installed_paths": [
+    "runtime/governance/tool_universe_resolver_v1.py",
+    "runtime/governance/tool_universe_resolver_v1.py.sha256",
+    "0_kernel/registry/tool_governance/TOOL_CAPABILITY_GENOME_BASELINE_v1.json",
+    "0_kernel/registry/tool_governance/TOOL_CAPABILITY_GENOME_BASELINE_v1.json.sha256",
+    "_bts/tool_competence.json",
+    "_bts/tool_competence.json.sha256",
+    "governance/invariants/TOOL_UNIVERSE_RESOLVER_TRACE_EXPORT_COVERAGE_REQUIRED_v1.json",
+    "tests/fixtures/tool_universe/stage6t_trace_export_resolver_task_v1.json",
+    "tests/evals/tool_universe/test_stage6t_trace_export_resolver_coverage_v1.py",
+    "research/SEE/STAGE6T_TOOL_UNIVERSE_RESOLVER_COVERAGE_REPAIR_FOR_TRACE_EXPORT_SEE_v1.json",
+    "research/CE/STAGE6T_TOOL_UNIVERSE_RESOLVER_COVERAGE_REPAIR_FOR_TRACE_EXPORT_CE_v1.json"
+  ],
+  "post_boot_returncode": 0,
+  "pre_boot": {
+    "portable_boot_returncode": 0,
+    "runtime_starter_returncode": 0
+  },
+  "repair_method": "specific observability_trace_export classifier + promoted trace-adapter genome candidate + BTS comparison candidates + regression fixture for generic zip_export",
+  "root": "/mnt/data/Metablooms_OS",
+  "root_cause": "Stage 6R trace export adapter work lacked a specific resolver job type/candidate, so generic token matching could misroute trace export adapter work to zip_export or fail allowed-candidate coverage.",
+  "schema": "MetaBloomsStageReceipt_v1",
+  "stage_id": "STAGE6T_TOOL_UNIVERSE_RESOLVER_COVERAGE_REPAIR_FOR_TRACE_EXPORT",
+  "timestamp_utc": "2026-05-02T03:36:48.368721Z",
+  "verdict": "PASS",
+  "web_evidence_bound": [
+    "https://openai.github.io/openai-agents-python/tracing/",
+    "https://openai.github.io/openai-agents-python/guardrails/",
+    "https://opentelemetry.io/docs/specs/semconv/general/trace/",
+    "https://docs.langchain.com/oss/python/langgraph/observability"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "argv_redacted": [
+    "/opt/pyvenv/bin/python3",
+    "/mnt/data/Metablooms_OS/runtime/governance/mpp_cdr_binding_gate_v1.py",
+    "/mnt/data/Metablooms_OS/tests/fixtures/mpp_v3/invalid_mpp_code_work_missing_cdr_v1.json"
+  ],
+  "artifact_type": "METABLOOMS_SUBPROCESS_FAILURE_LEARNING_EVENT_v1",
+  "attempts": [
+    {
+      "attempt_index": 0,
+      "elapsed_ms": 4520,
+      "returncode": 1,
+      "started_utc": "20260502T141829Z",
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_truncated": false,
+      "stdout": "{\n  \"reasons\": [\n    \"code_work_requires_cdr_pass\",\n    \"missing_cdr_evidence:cdr_packet_path,cdr_gate_path,cdr_eval_path,cdr_gate_sha256,code_acceptance_dimensions,risk_tier,test_summary\",\n    \"incomplete_cdr_dimension_coverage\",\n    \"pass_requested_despite_cdr_binding_failure\"\n  ],\n  \"schema\": \"MPP_CDR_BINDING_GATE_RESULT_v1\",\n  \"stage_contains_code_effective\": true,\n  \"stage_id\": \"EXAMPLE_BAD_CODE_STAGE\",\n  \"verdict\": \"DENY\"\n}\n",
+      "stdout_bytes": 434,
+      "stdout_sha256": "441311c08d5fcb683c6a4a3080506678b94a6eb69fb3259bf48e52561fe66c59",
+      "stdout_truncated": false,
+      "timeout_seconds": 10.0
+    }
+  ],
+  "created_utc": "20260502T141834Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "failure_class": "NONZERO_EXIT",
+  "operation_type": "retrofitted_subprocess_run",
+  "policy_matches": [],
+  "recommendation": "Route future matching operations through bounded wrapper and method reliability policy before spawn.",
+  "result_class": "ALLOW_NONZERO",
+  "root": "/mnt/data/Metablooms_OS",
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT"
+}

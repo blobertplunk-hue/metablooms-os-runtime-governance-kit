@@ -1,0 +1,18 @@
+{
+  "artifact_type": "MetaBloomsStageReceipt.v1",
+  "created_utc": "20260502T144121Z",
+  "external_evidence_bound": [
+    "atomic write same-directory temp + replace + fsync guidance",
+    "OWASP path traversal canonical path/allowlist mitigation"
+  ],
+  "manual_patch_count": 2,
+  "patched_files": 0,
+  "runtime_root": "/mnt/data/Metablooms_OS",
+  "stage": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP",
+  "status": "FAIL",
+  "warnings": [
+    "Append-only JSONL/log streams remain warnings and require a future atomic append-log primitive.",
+    "Binary writes are outside atomic JSON writer scope."
+  ],
+  "write_text_replacements": 0
+}

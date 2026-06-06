@@ -1,0 +1,62 @@
+{
+  "accuracy": 0.9583,
+  "artifact_type": "EVALS_CONFUSION_MATRIX_v1",
+  "correct": 23,
+  "created_utc": "20260501T122329Z",
+  "false_block_example_ids": [],
+  "false_pass_example_ids": [],
+  "labels": [
+    "PASS",
+    "WARN",
+    "BLOCK"
+  ],
+  "matrix": {
+    "BLOCK": {
+      "BLOCK": 10,
+      "PASS": 0,
+      "WARN": 0
+    },
+    "PASS": {
+      "BLOCK": 0,
+      "PASS": 10,
+      "WARN": 0
+    },
+    "WARN": {
+      "BLOCK": 1,
+      "PASS": 0,
+      "WARN": 3
+    }
+  },
+  "per_label": {
+    "BLOCK": {
+      "precision": 0.9091,
+      "predicted_count": 11,
+      "recall": 1.0,
+      "support": 10
+    },
+    "PASS": {
+      "precision": 1.0,
+      "predicted_count": 10,
+      "recall": 1.0,
+      "support": 10
+    },
+    "WARN": {
+      "precision": 1.0,
+      "predicted_count": 3,
+      "recall": 0.75,
+      "support": 4
+    }
+  },
+  "promotion_decision": "PASS",
+  "promotion_thresholds": {
+    "false_pass_tolerance": 0,
+    "minimum_accuracy": 0.9,
+    "minimum_examples": 20,
+    "required_labels": [
+      "PASS",
+      "WARN",
+      "BLOCK"
+    ]
+  },
+  "total": 24
+}

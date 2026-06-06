@@ -1,0 +1,17 @@
+{
+  "id": "H0B1_HANDOFF",
+  "stage": "H0B1_CHAT_GOVERNANCE_KERNEL_CONTRACTS_FIXTURES_AND_RUNTIME_GATE",
+  "timestamp_utc": "2026-04-30T17:52:37Z",
+  "status": "PASS_HANDOFF_READY",
+  "next_allowed_stage": "H0B2_INCREMENTAL_GATE_ENFORCEMENT_PROMOTION_OR_NEXT_USER_SELECTED_STAGE",
+  "required_before_next_stage": [
+    "export whole OS",
+    "verify checksum",
+    "fresh extract final export",
+    "run H0B1 behavior tests against extracted OS",
+    "write final proof"
+  ],
+  "completed_export_path": "/mnt/data/METABLOOMS_OS_H0B1_CHAT_GOVERNANCE_KERNEL_COMPLETE_SYSTEM_FINAL_20260430T175600Z.zip",
+  "completed_export_sha256": "b653d1dd227327385b09e178faf86f3cf7cd9945182d565e7937162c09ca6fbb",
+  "fresh_extract_proof": "0_kernel/registry/H0B1_FRESH_EXTRACT_PROOF.json"
+}

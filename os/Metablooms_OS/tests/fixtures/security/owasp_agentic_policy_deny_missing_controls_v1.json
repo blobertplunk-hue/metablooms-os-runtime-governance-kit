@@ -1,0 +1,13 @@
+{
+  "action_class": "external_install",
+  "controls_present": [
+    "sandbox smoke"
+  ],
+  "high_impact": true,
+  "name": "deny_external_install_missing_supply_chain_controls",
+  "risk_ids": [
+    "ASI04",
+    "ASI05"
+  ],
+  "schema": "OWASPAgenticAIPolicyGateFixture_v1"
+}

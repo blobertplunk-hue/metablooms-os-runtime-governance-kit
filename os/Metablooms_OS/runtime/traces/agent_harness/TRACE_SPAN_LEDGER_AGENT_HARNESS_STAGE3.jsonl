@@ -1,0 +1,1 @@
+{"attributes": {"files_added": 9, "no_broad_extract": true}, "event": "end", "name": "agent_harness.stage3.install", "parent_span_id": null, "schema_version": "MB_TRACE_SPAN_LEDGER_SPEC_v2", "span_id": "c3117782f4113ade", "stage_name": "IMPLEMENT_AGENT_HARNESS_STAGE_3_EXECUTOR_REVIEW_GATE", "status": "OK", "timestamp_utc": "20260501T171620Z", "trace_id": "1b4c446e509ab07e"}

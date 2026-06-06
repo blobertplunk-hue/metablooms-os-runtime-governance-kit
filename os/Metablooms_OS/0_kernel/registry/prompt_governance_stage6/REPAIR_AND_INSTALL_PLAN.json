@@ -1,0 +1,16 @@
+{
+  "bounded_scope": [
+    "install full_os_recovery_replay_validator_v1.py",
+    "bind validator into boot gates",
+    "refresh controlled artifact index",
+    "run fresh-extract replay",
+    "export full OS if pass"
+  ],
+  "created_utc": "2026-04-30T21:56:29.826449Z",
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_6_FULL_RECOVERY_PROOF_AND_GOVERNANCE_REPAIR",
+  "type": "REPAIR_AND_INSTALL_PLAN",
+  "unchanged": [
+    "prompt engine fixture semantics",
+    "profile registry content except lineage metadata"
+  ]
+}

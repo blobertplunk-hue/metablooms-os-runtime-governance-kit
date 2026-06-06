@@ -1,0 +1,46 @@
+{
+  "bts_receipt_id": "T1-STAGE6E_FIXTURE_WRITE_filesystem_write_artifact-20260502T003015Z",
+  "bts_turn_committed": true,
+  "implementation_reality": {
+    "actual_files": [
+      "/mnt/data/Metablooms_OS/runtime/governance/executors/fixtures/stage6e/wrapped_write.txt"
+    ],
+    "claimed_files": [
+      "/mnt/data/Metablooms_OS/runtime/governance/executors/fixtures/stage6e/wrapped_write.txt"
+    ],
+    "unclaimed": [],
+    "unfulfilled": [],
+    "verdict": "PASS"
+  },
+  "kind": "filesystem_write",
+  "policy_decision": {
+    "decided_at_utc": "2026-05-02T00:30:15Z",
+    "decision": "ALLOW",
+    "decision_id": "decision_1777681815313_e753bf86",
+    "enforced_by": "pre_tool_action_gate_v1",
+    "envelope_id": "STAGE6E_FIXTURE_WRITE_filesystem_write",
+    "envelope_sha256": "fb015e434a077abfbcf329a02e7fe5081f2f621eab72443b05a3ef4c99006c56",
+    "matched_rules": [
+      "schema.required",
+      "path.safety",
+      "runaway.breaker",
+      "method.reliability"
+    ],
+    "rationale": "Envelope passed schema, method, path, SEE, approval, and bounded-budget checks.",
+    "reason_code": "LOW_RISK_BOUNDED_ACTION",
+    "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/STAGE6E_FIXTURE_WRITE_filesystem_write.decision.json",
+    "required_next_action": "execute_action_and_write_action_receipt",
+    "safe_to_execute": true,
+    "schema_version": "PolicyDecision_v1",
+    "stage_id": "STAGE6E_BTS_WRAP_EXPORT_AND_FILESYSTEM_EXECUTORS"
+  },
+  "receipt_id": "bts_exec_20260502T003015Z_b3a964b2",
+  "schema": "mb.bts_wrapped_executors.v1",
+  "stage_id": "STAGE6E_BTS_WRAP_EXPORT_AND_FILESYSTEM_EXECUTORS",
+  "target": "/mnt/data/Metablooms_OS/runtime/governance/executors/fixtures/stage6e/wrapped_write.txt",
+  "target_bytes": 29,
+  "target_sha256": "0c20417d2a58f335b85390ae5140bb8b69c89a78c884fd5101fe3886503c38d2",
+  "timestamp_utc": "2026-05-02T00:30:15.762549Z",
+  "turn_id": "STAGE6E_FIXTURE_WRITE",
+  "verdict": "PASS"
+}

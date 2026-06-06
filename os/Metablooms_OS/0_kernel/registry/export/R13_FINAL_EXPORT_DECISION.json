@@ -1,0 +1,20 @@
+{
+  "archive_safety_policy": "reject absolute or traversal paths; validate declared outputs are members and hashes match",
+  "artifact_type": "R13_FINAL_EXPORT_DECISION",
+  "created_utc": "2026-04-29T10:39:56.215542Z",
+  "decision": "build final export and validate ledger-declared outputs in zip",
+  "stage": "R13_FINAL_EXPORT_SELF_CONSISTENCY_AUDIT_AND_EXPORT",
+  "validation": {
+    "absolute_ledger_output_count": 0,
+    "ledger_output_count_before_final_append": 99,
+    "metadata_mutations": [
+      "EXPORT_MANIFEST_v1.json",
+      "runtime/governance/export/R13_EXPORT_INTERNAL_METADATA_v1.json",
+      "EXPORT_PROVENANCE_v1.json"
+    ],
+    "missing_ledger_output_count": 0,
+    "pointer_active_root": "/mnt/data/Metablooms_OS",
+    "zero_active_r13_receipt_count": 0
+  },
+  "verdict": "PASS_PRE_EXPORT_SELF_CONSISTENCY"
+}

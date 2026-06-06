@@ -1,0 +1,84 @@
+{
+  "created_at": "2026-04-30T21:46:00Z",
+  "handoff": {
+    "next_stage": "SEE",
+    "required_artifacts": [
+      "research planner packet",
+      "query plan"
+    ]
+  },
+  "objective": {
+    "domain": "governed research pipeline",
+    "operator_context": "MetaBlooms OS in ChatGPT sandbox",
+    "request": "Improve MPP research pipeline",
+    "stakes": "high"
+  },
+  "packet_id": "RP-SMOKE-001",
+  "planning_basis": {
+    "assumptions": [
+      "MPP v3 should delegate to stronger OS tools"
+    ],
+    "known_facts": [
+      "OS already contains SEE and CE governance artifacts"
+    ],
+    "unknowns": [
+      "Exact final implementation paths for all validators"
+    ]
+  },
+  "quality_gates": {
+    "claim_binding_required": true,
+    "minimum_domain_diversity": 2,
+    "minimum_source_count": 3,
+    "mmd_required": true
+  },
+  "query_plan": [
+    {
+      "expected_evidence_type": "technical_docs",
+      "priority": "must",
+      "purpose": "Select schema dialect",
+      "query": "JSON Schema 2020-12 official validation",
+      "query_id": "Q-001"
+    },
+    {
+      "expected_evidence_type": "official",
+      "priority": "should",
+      "purpose": "Bind artifact provenance model",
+      "query": "SLSA provenance current specification",
+      "query_id": "Q-002"
+    }
+  ],
+  "recursion_policy": {
+    "enabled": true,
+    "expansion_triggers": [
+      "contradictory high-authority sources",
+      "unresolved critical gap"
+    ],
+    "max_rounds": 4,
+    "stop_conditions": [
+      "minimum evidence met",
+      "critical gaps resolved",
+      "timebox reached with blocked receipt"
+    ]
+  },
+  "research_trigger": {
+    "freshness_required": true,
+    "minimum_source_count": 3,
+    "must_use_web_run": true,
+    "required": true,
+    "trigger_reason": "User requested research/SEE/CE recursive improvement"
+  },
+  "schema_version": "research_planner_packet.v1",
+  "source_plan": {
+    "contradiction_handling": "record_and_resolve",
+    "date_capture_required": true,
+    "exclusion_rules": [
+      "SEO summaries without primary source links"
+    ],
+    "preferred_source_types": [
+      "official specifications",
+      "peer-reviewed methodology",
+      "OS artifacts"
+    ]
+  },
+  "stage": "RESEARCH_PLANNER"
+}

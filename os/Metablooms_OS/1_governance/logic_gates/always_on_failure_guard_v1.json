@@ -1,0 +1,168 @@
+{
+  "cartridge_id": "always_on_failure_guard_v1",
+  "name": "Always-On Failure Guard v1",
+  "type": "core_governance",
+  "purpose": "Continuously detect and block common system-level workflow violations such as skipped preflight, missing validation, implicit state assumptions, orchestration bypass, missing artifact gates, and incomplete continuity handling.",
+  "task_types": [
+    "always_on_monitoring",
+    "workflow_guarding",
+    "failure_detection",
+    "orchestration_enforcement",
+    "policy_enforcement"
+  ],
+  "platform": [
+    "robert",
+    "shaye",
+    "both"
+  ],
+  "input_contract": {
+    "required": [
+      "current_action",
+      "workflow_context"
+    ],
+    "optional": [
+      "current_stage",
+      "project_id",
+      "preflight_status",
+      "routing_status",
+      "validation_status",
+      "ledger_status",
+      "continuity_status",
+      "artifact_audit_status",
+      "export_guard_status",
+      "available_cartridges",
+      "prior_artifacts",
+      "tool_used",
+      "handoff_status"
+    ]
+  },
+  "output_contract": {
+    "artifacts": [
+      "failure_guard_report"
+    ],
+    "format": "structured_json_or_markdown",
+    "must_include": [
+      "guard_status",
+      "checks_run",
+      "violations_detected",
+      "severity",
+      "blocked_actions",
+      "required_fix",
+      "next_action"
+    ]
+  },
+  "handoff_contract": {
+    "structure": "structured_markdown_v1",
+    "fields": [
+      "artifact",
+      "summary",
+      "next_required_input",
+      "next_recommended_cartridge",
+      "execution_ready"
+    ]
+  },
+  "execution_mode": "guard",
+  "external_tools": [],
+  "validation_rules": [
+    "must_detect_skipped_preflight_before_execution",
+    "must_detect_missing_router_for_stage_selection_when_required",
+    "must_detect_missing_validation_before_stage_progression",
+    "must_detect_missing_ledger_update_before_continuity",
+    "must_detect_missing_continuity_packet_for_long_horizon_pause_or_resume",
+    "must_detect_implicit_state_assumptions",
+    "must_detect_orchestrator_bypass",
+    "must_detect_missing_artifact_audit_for_file_claims_or_exports",
+    "must_detect_missing_export_completeness_guard_for_shipping_actions",
+    "must_fail_closed_on_hard_violations"
+  ],
+  "failure_modes": [
+    "preflight_skipped",
+    "routing_skipped",
+    "validation_skipped",
+    "ledger_skipped",
+    "continuity_missing",
+    "implicit_state_assumption",
+    "orchestrator_bypass",
+    "artifact_claim_without_audit",
+    "export_without_completeness_guard",
+    "handoff_missing",
+    "multi_stage_execution_violation"
+  ],
+  "status": "active",
+  "guard_schema": {
+    "workflow_context": {
+      "required": [
+        "workflow_phase"
+      ],
+      "optional": [
+        "project_id",
+        "current_stage",
+        "tool_used",
+        "claimed_artifact",
+        "shipping_action"
+      ]
+    },
+    "checks": {
+      "preflight_check": "execution cannot begin without valid preflight when planning/execution path requires it",
+      "router_check": "stage selection requiring cartridge choice must pass through router",
+      "validation_check": "no stage can complete without validation",
+      "ledger_check": "no state progression without ledger update",
+      "continuity_check": "resume/pause/long-horizon handoff requires continuity packet",
+      "state_assumption_check": "must not assume prior files, paths, or state without explicit evidence",
+      "artifact_claim_check": "file/export claims require artifact auditor pass",
+      "export_gate_check": "shipping/download/export claims require export completeness pass when applicable",
+      "handoff_check": "next stage chaining requires valid handoff packet",
+      "stage_discipline_check": "one stage per turn unless explicitly scoped otherwise"
+    },
+    "failure_guard_report": {
+      "required": [
+        "guard_status",
+        "checks_run",
+        "violations_detected",
+        "severity",
+        "blocked_actions",
+        "required_fix",
+        "next_action"
+      ],
+      "optional": [
+        "notes",
+        "recommended_cartridge"
+      ]
+    }
+  },
+  "severity_model": {
+    "hard_fail": [
+      "preflight_skipped",
+      "validation_skipped",
+      "implicit_state_assumption",
+      "orchestrator_bypass",
+      "artifact_claim_without_audit",
+      "export_without_completeness_guard"
+    ],
+    "warning": [
+      "handoff_missing",
+      "ledger_skipped",
+      "continuity_missing",
+      "routing_skipped"
+    ]
+  },
+  "enforcement_rules": [
+    "if current_action implies execution and preflight_status != PASS when required -> BLOCK",
+    "if current_action implies stage selection and routing_status != PASS when required -> BLOCK",
+    "if stage completion claimed and validation_status != PASS -> BLOCK",
+    "if continuity or resume action claimed and continuity_status != PASS -> BLOCK",
+    "if file/export/download claim made and artifact_audit_status != PASS -> BLOCK",
+    "if shipping/export completion claim made and export_guard_status != PASS when applicable -> BLOCK",
+    "if workflow_context relies on unstated prior state -> BLOCK",
+    "if more than one stage is being executed in a single bounded stage request -> BLOCK"
+  ],
+  "guard_output_schema": {
+    "guard_status": "PASS | FAIL",
+    "checks_run": [],
+    "violations_detected": [],
+    "severity": "warning | hard_fail",
+    "blocked_actions": [],
+    "required_fix": [],
+    "next_action": "proceed | fix | halt"
+  }
+}

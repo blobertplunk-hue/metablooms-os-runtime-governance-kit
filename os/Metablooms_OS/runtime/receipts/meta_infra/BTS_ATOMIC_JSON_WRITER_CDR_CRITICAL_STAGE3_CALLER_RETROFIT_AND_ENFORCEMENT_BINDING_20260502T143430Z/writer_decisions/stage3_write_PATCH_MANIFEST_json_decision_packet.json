@@ -1,0 +1,28 @@
+{
+  "allowed_roots": [
+    "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z",
+    "/mnt/data"
+  ],
+  "artifact_type": "AtomicJsonWriteDecisionPacket.v1",
+  "bytes_written": 2400,
+  "created_utc": "2026-05-02T14:36:51Z",
+  "deny_reason": null,
+  "error_type": null,
+  "failure_event_path": null,
+  "fsync_file": true,
+  "fsync_parent": {
+    "attempted": true,
+    "error": null,
+    "ok": true
+  },
+  "ok": true,
+  "operation_id": "stage3_write_PATCH_MANIFEST.json",
+  "readback_ok": true,
+  "receipt_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/writer_decisions/stage3_write_PATCH_MANIFEST_json_decision_packet.json",
+  "resolved_target_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/PATCH_MANIFEST.json",
+  "status": "ALLOW_SUCCESS",
+  "target_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/PATCH_MANIFEST.json",
+  "target_sha256": "45f84b5ccc6e7741e2cb818ce8e0bbfd9cd74e2836037c7f7d52cbe73e871a40",
+  "temp_path_used": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/.PATCH_MANIFEST.json.4kfhm6dq.tmp",
+  "writer_version": "atomic_json_writer_v1"
+}

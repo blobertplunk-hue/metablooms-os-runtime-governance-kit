@@ -1,0 +1,16 @@
+{
+  "stage_name": "R6_TEST_VALID",
+  "asset_type": "gate",
+  "asset_name": "external_reuse_scan_gate",
+  "reuse_decision": "compose_existing",
+  "reuse_rationale": "Compose proven decision logging and artifact verification patterns into a MetaBlooms-specific evidence gate with receipts.",
+  "composition_plan": "Use OPA-like decision logs plus SLSA-like hash verification while keeping stdlib-only MetaBlooms execution.",
+  "evidence_bundle": {
+    "path": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/fixtures/R6_external_reuse_scan_evidence_valid.json",
+    "sha256": "3d11dcfd8eacb9544c7f77c2e56f92a21c76354a2c9e2b949da8e57ebdc857bb"
+  },
+  "target_artifact": {
+    "path": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/fixtures/R6_target_artifact_fixture.json",
+    "sha256": "8c068a02b251edb3dc314ed22a3d8c092b62a4bc424cc15950e5b8617ccfb53e"
+  }
+}

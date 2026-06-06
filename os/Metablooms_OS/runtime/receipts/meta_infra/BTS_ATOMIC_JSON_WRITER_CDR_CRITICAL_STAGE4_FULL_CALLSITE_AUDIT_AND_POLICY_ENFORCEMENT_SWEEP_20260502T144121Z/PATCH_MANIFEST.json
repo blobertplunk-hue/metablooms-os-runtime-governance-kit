@@ -1,0 +1,18 @@
+{
+  "artifact_type": "AtomicJsonWriterStage4PatchManifest.v1",
+  "created_utc": "20260502T144121Z",
+  "initial_candidates": 104,
+  "manual_patches": [
+    {
+      "file": "0_kernel/scripts/registry_mutation_engine_v2_lite_final.py",
+      "sha256": "20a7df01936e92f1162c52a50eca1590207e00edde36a79c74d2df0e43f9be48"
+    },
+    {
+      "file": "0_kernel/scripts/standardize_decision_receipts_v1.py",
+      "sha256": "25a93aecb972a2d4ec3028c96667ef2b1d1e45fb418cd6a38c9cc0ef4ac15a3e"
+    }
+  ],
+  "patched_files": 0,
+  "patches": [],
+  "write_text_replacements": 0
+}

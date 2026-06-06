@@ -1,0 +1,29 @@
+{
+  "artifact_type": "SEE_PACKET",
+  "created_utc": "20260430T015900Z",
+  "mandatory_governance": "always_on_metablooms_governance_baseline_with_cartridge_governance_additive",
+  "sources": [
+    {
+      "claim": "AI risk management is an explicit framework for incorporating trustworthiness into AI system design, development, use, and evaluation.",
+      "id": "NIST_AI_RMF",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+    },
+    {
+      "claim": "Provenance must be verified against expectations; unrecognized or unexpected provenance should not be silently accepted.",
+      "id": "SLSA_VERIFYING_ARTIFACTS",
+      "url": "https://slsa.dev/spec/v1.0/verifying-artifacts"
+    },
+    {
+      "claim": "Provenance describes where, when, and how artifacts were produced so consumers can verify builds against expectations and rebuild if desired.",
+      "id": "SLSA_PROVENANCE",
+      "url": "https://slsa.dev/spec/v1.2-rc2/build-provenance"
+    },
+    {
+      "claim": "Architecture descriptions use decisions, concerns, correspondences, and correspondence rules to express and check relationships between architecture elements.",
+      "id": "ISO_42010_CONCEPTUAL_MODEL",
+      "url": "https://www.iso-architecture.org/ieee-1471/cm/"
+    }
+  ],
+  "stage": "FL17-MERGE-4_SEMANTIC_RECONCILIATION",
+  "stage_interpretation": "Export PASS and promotion PASS are different architecture states and must be represented by separate authority terms and correspondence rules."
+}

@@ -1,0 +1,72 @@
+{
+  "created_utc": "2026-05-01T00:25:00Z",
+  "entrypoints": {
+    "ledger": "runtime/state/PROMPT_TASK_START_LEDGER_v1.jsonl",
+    "preexecution_enforcer": "runtime/governance/prompt_route_preexecution_enforcer_v1.py",
+    "task_start_hook": "runtime/governance/task_start_hook_v1.py",
+    "validator": "runtime/cartridges/prompt_governance_v1/validate_prompt_route_preexecution_enforcer_v1.py"
+  },
+  "evidence_basis": [
+    "OpenAI prompt engineering guidance: explicit instructions/context/format constraints",
+    "OpenAI eval guidance: prompt and agent changes require regression/eval validation"
+  ],
+  "fail_closed_conditions": [
+    "missing_user_prompt",
+    "unknown_profile",
+    "missing_improved_prompt",
+    "missing_required_gate",
+    "ranking_not_best_to_worst",
+    "unwritten_task_start_ledger",
+    "validator_denied"
+  ],
+  "id": "PROMPT_ROUTE_PREEXECUTION_ENFORCER_CONTRACT_v1",
+  "purpose": "Require every MetaBlooms task-start prompt to be converted into an improved governed execution contract before stage execution begins.",
+  "required_gates_by_task": {
+    "artifact_generation": [
+      "artifact_spec",
+      "prompt_auto_improvement",
+      "preexecution_route_enforcer",
+      "readback_validation",
+      "checksum",
+      "receipt_handoff"
+    ],
+    "audit": [
+      "boot_verify",
+      "source_integrity",
+      "evidence_table",
+      "gap_classification",
+      "receipt_handoff"
+    ],
+    "governed_implementation": [
+      "boot_verify",
+      "gap_audit",
+      "prompt_auto_improvement",
+      "preexecution_route_enforcer",
+      "artifact_write",
+      "validator_replay",
+      "receipt_handoff",
+      "export_attempt"
+    ],
+    "research": [
+      "research_plan",
+      "web_run_required",
+      "SEE",
+      "CE",
+      "evidence_binding",
+      "receipt_handoff"
+    ]
+  },
+  "required_preexecution_decision_fields": [
+    "decision",
+    "selected_profile",
+    "task_type",
+    "improved_prompt",
+    "required_gates",
+    "evidence_requirements",
+    "artifact_requirements",
+    "ranking_explanation",
+    "fail_closed_conditions",
+    "contract_hash"
+  ],
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_10_PROMPT_ROUTE_PREEXECUTION_ENFORCER_AND_TASK_START_HOOK"
+}

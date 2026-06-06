@@ -1,0 +1,110 @@
+{
+  "version": "1.0",
+  "created_at": 1777064523.0083878,
+  "stage": "G2_EXPORT_RECOVERY_VALIDATOR_IMPLEMENTATION",
+  "status": "complete",
+  "inputs": {
+    "g1_handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G1_TO_G2_HANDOFF_v1.json",
+    "validator_contract": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/EXPORT_RECOVERY_PROVEN_VALIDATOR_CONTRACT_v1.json",
+    "input_schema": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/EXPORT_RECOVERY_VALIDATOR_INPUT_SCHEMA_v1.json",
+    "decision_schema": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/EXPORT_RECOVERY_VALIDATOR_DECISION_SCHEMA_v1.json",
+    "gate_catalog": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_GATE_CATALOG_v1.json"
+  },
+  "outputs": {
+    "validator_script": "/mnt/data/Metablooms_OS_refined/0_kernel/scripts/export_recovery_proven_validator_v1.py",
+    "implementation_doc": "/mnt/data/Metablooms_OS_refined/0_kernel/docs/EXPORT_RECOVERY_PROVEN_VALIDATOR_IMPLEMENTATION_NOTES_v1.md",
+    "smoke_decision": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_SMOKE_DECISION_v1.json",
+    "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G2_EXPORT_RECOVERY_VALIDATOR_IMPLEMENTATION_RECEIPT_v1.json",
+    "handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G2_TO_G3_HANDOFF_v1.json"
+  },
+  "checks": {
+    "required_paths_present": true,
+    "git_clean_before_g2": true,
+    "git_fsck_clean_before_g2": true,
+    "g1_prechecks": {
+      "g1_handoff_ready": true,
+      "g1_receipt_passed": true,
+      "g2_declared_target": true,
+      "contract_active": true,
+      "gate_catalog_passed": true,
+      "required_gates_count": true,
+      "pointer_active": true,
+      "dag_active": true,
+      "ledger_latest_pass_is_g1": true
+    },
+    "smoke_checks": {
+      "py_compile_passed": true,
+      "help_passed": true,
+      "known_f7_run_performed": true,
+      "known_f7_run_nonzero_allowed": true
+    }
+  },
+  "smoke_results": {
+    "py_compile": {
+      "cmd": [
+        "python",
+        "-m",
+        "py_compile",
+        "/mnt/data/Metablooms_OS_refined/0_kernel/scripts/export_recovery_proven_validator_v1.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document."
+    },
+    "help": {
+      "returncode": 0,
+      "stdout_contains_validate": true,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document."
+    },
+    "known_f7_export_run": {
+      "returncode": 2,
+      "expected_nonzero_allowed": true,
+      "stdout_excerpt": "{\n  \"version\": \"1.0\",\n  \"created_at\": 1777064522.6964421,\n  \"validator_id\": \"EXPORT_RECOVERY_PROVEN_VALIDATOR_v1\",\n  \"stage\": \"EXPORT_RECOVERY_VALIDATION\",\n  \"input\": {\n    \"version\": \"1.0\",\n    \"export_zip\": \"/mnt/data/MetaBlooms_OS_refined_F7_RECOVERY_PROVEN_1777063110.zip\",\n    \"sidecar_manifest\": \"/mnt/data/MetaBlooms_OS_refined_F7_RECOVERY_PROVEN_1777063110.zip.sha256.json\",\n    \"active_root\": \"/mnt/data/Metablooms_OS_refined\",\n    \"expected_stage\": \"F7_STABLE_EXPORT_BOOT_RECOVERY_PROOF\",\n    \"expected_ledger_entry_id\": \"F7_STABLE_EXPORT_BOOT_RECOVERY_PROOF\",\n    \"expected_dag_node_id\": \"F7\",\n    \"ledger_path\": \"/mnt/data/Metablooms_OS_refined/0_kernel/state/STAGE_STATE_LEDGER_v1.json\",\n    \"dag_path\": \"/mnt/data/Metablooms_OS_refined/0_kernel/pipeline/STAGE_DAG_v1.json\",\n    \"pointer_path\": \"/mnt/data/Metablooms_OS_refined/0_kernel/state/CURRENT_WORKING_BASELINE_POINTER_v1.json\",\n    \"boot_manifest_path\": \"/mnt/data/Metablooms_OS_refined/boot_manifest_v1.json\",\n    \"artifact_registry_path\": \"/mnt/data/Metablooms_OS_refined/artifact_registry.json\",\n    \"external_sidecar_policy\": {\n      \"external_sidecar_required\": true,\n      \"sidecar_must_match_zip\": true,\n      \"internal_manifest_must_reference_sidecar\": true\n    },\n    \"git_head_policy\": {\n      \"allow_lifecycle_heads\": true,\n      \"required_labels\": [\n        \"pre_export_head\",\n        \"exported_tree_head\",\n        \"metadata_commit_head\",\n        \"final_lock_head\",\n        \"current_working_head\"\n      ]\n    },\n    \"gate_policy\": {\n      \"fail_closed\": true,\n      \"required_gates\": [\n        \"G1_LEDGER_DECLARED_OUTPUTS_INSIDE_ZIP\",\n        \"G2_FINAL_PASS_RECEIPTS_INSIDE_ZIP\",\n        \"G3_NO_PLACEHOLDER_METADATA\",\n        \"G4_GIT_HEAD_LIFECYCLE_CONSISTENCY\",\n        \"G5_SIDECAR_BINDING\",\n        \"G6_DETERMINISTIC_ZIP_POLICY\",\n        \"G7_DAG_LEDGER_MAPPING\",\n        \"G8_POINTER_CONFLICT_RESOLUTION\",\n        \"G9_TRANSACTIONAL_STATE_ORDER\",\n        \"G10_POLICY_AS_CODE_DECISION\"\n      ]\n    }\n  },\n  \"gate_resul",
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document."
+    },
+    "known_f7_export_decision": {
+      "verdict": "FAIL",
+      "blocking_failed_count": 8,
+      "failed_gates": [
+        "G1_LEDGER_DECLARED_OUTPUTS_INSIDE_ZIP",
+        "G2_FINAL_PASS_RECEIPTS_INSIDE_ZIP",
+        "G3_NO_PLACEHOLDER_METADATA",
+        "G4_GIT_HEAD_LIFECYCLE_CONSISTENCY",
+        "G5_SIDECAR_BINDING",
+        "G6_DETERMINISTIC_ZIP_POLICY",
+        "G8_POINTER_CONFLICT_RESOLUTION",
+        "G10_POLICY_AS_CODE_DECISION"
+      ]
+    }
+  },
+  "runaway_turn_guard": {
+    "implementation_only": true,
+    "regression_fixtures_performed": false,
+    "export_performed": false,
+    "cleanup_performed": false
+  },
+  "verdict": "PASS",
+  "next_improvement_task": "G3 \u2014 Export Recovery Validator Regression Fixtures",
+  "why_next": "The validator implementation exists and compiles; next create controlled fixtures that prove it catches known failures before running it against the real F7 export.",
+  "remaining_work": [
+    "G3 \u2014 Regression Fixtures",
+    "G4 \u2014 Run Validator Against F7 Export",
+    "G5 \u2014 Repaired Recovery-Proven Export",
+    "G6 \u2014 Recovery Proof + Baseline Lock",
+    "G7 \u2014 Return to E4B"
+  ],
+  "progress_estimate": {
+    "stages_remaining_before_return_to_E4B": 5,
+    "current_arc": "G export-recovery validator hardening"
+  },
+  "next_correct_command": "EXECUTE G3 \u2014 EXPORT RECOVERY VALIDATOR REGRESSION FIXTURES",
+  "repairs": [
+    {
+      "timestamp": 1777064615.7777264,
+      "stage": "REPAIR_G2_CLEAN_RUNTIME_PYCACHE_VERIFY_VALIDATOR_IMPLEMENTATION",
+      "repair_receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G2_RUNTIME_PYCACHE_REPAIR_RECEIPT_v1.json",
+      "issue": "runtime __pycache__ created during validator smoke checks",
+      "fix": "removed exact runtime scripts __pycache__; future validator checks should use python -B"
+    }
+  ]
+}

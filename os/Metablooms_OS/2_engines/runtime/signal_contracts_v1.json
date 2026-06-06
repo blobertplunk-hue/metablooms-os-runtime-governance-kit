@@ -1,0 +1,26 @@
+{
+  "ce_evidence_score": {
+    "declared": true,
+    "threshold": null
+  },
+  "activation_load_proof": {
+    "declared": true,
+    "threshold": null
+  },
+  "repeated_failure_count": {
+    "declared": true,
+    "threshold": null
+  },
+  "enforcement_priority_order": {
+    "declared": true,
+    "threshold": null
+  },
+  "version": "1.0",
+  "$schema": "metablooms.signal_contracts.v1",
+  "metadata": {
+    "patched_by": "SIR12C",
+    "patch_reason": "Add version/schema marker required for staged activation review.",
+    "semantic_change": false,
+    "created_at": 1777125547.2552137
+  }
+}

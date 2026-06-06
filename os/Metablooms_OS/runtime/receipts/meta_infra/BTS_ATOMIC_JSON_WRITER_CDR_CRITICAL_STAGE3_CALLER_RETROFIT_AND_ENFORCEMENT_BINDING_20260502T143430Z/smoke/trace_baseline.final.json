@@ -1,0 +1,16 @@
+{
+  "bytes": 370,
+  "created_utc": "20260502T143609Z",
+  "entries": [
+    {
+      "bytes": 370,
+      "path": ".MB_FINALIZATION_SUCCESS.json",
+      "sha256": "1b974cc772dfe38f8b0ce39971b7ba821fdf4be774c4d40d848c245ff7e4dc94"
+    }
+  ],
+  "file_count": 1,
+  "root": "/mnt/data/stage3_atomic_json_fs_smoke2",
+  "root_hash": "529359aed47e947b337d9dad01bd340a4dc4bc1d500cf94299d7e2e6b082de97",
+  "schema_version": "TRACE_DIFF_LOGGER_v1",
+  "truncated": false
+}

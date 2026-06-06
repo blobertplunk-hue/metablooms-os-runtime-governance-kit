@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "provenance_id": "EXPORT_PROVENANCE_v1",
+  "builder": {},
+  "source": {
+    "pre_export_head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "exported_tree_head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "metadata_commit_head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "final_lock_head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "current_working_head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "materials": [],
+  "recipe": {},
+  "subject": [
+    {
+      "name": "fail_pending_receipt.zip",
+      "sha256_policy": "external_sidecar_required",
+      "size_policy": "external_sidecar_required"
+    }
+  ],
+  "capability_set": [
+    "fixture"
+  ],
+  "verification_summary": {},
+  "verdict": "PASS"
+}

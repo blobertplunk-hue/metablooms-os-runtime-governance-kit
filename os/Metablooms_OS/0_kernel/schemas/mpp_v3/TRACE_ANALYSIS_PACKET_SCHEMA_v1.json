@@ -1,0 +1,216 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/TRACE_ANALYSIS_PACKET_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "anomaly_rules": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "description": {
+            "minLength": 10,
+            "type": "string"
+          },
+          "name": {
+            "minLength": 3,
+            "type": "string"
+          },
+          "rule_id": {
+            "pattern": "^TRACE-RULE-[0-9]{3}$",
+            "type": "string"
+          },
+          "severity": {
+            "enum": [
+              "S1_LOW",
+              "S2_MED",
+              "S3_HIGH",
+              "S4_CRITICAL"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "rule_id",
+          "name",
+          "severity",
+          "description"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "created_at": {
+      "minLength": 10,
+      "type": "string"
+    },
+    "expected_stage_order": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "objective_id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "packet_id": {
+      "minLength": 8,
+      "type": "string"
+    },
+    "result_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "mpp.trace_analysis_packet.v1"
+    },
+    "source_verification_packet_id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "spans": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_refs": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "attributes": {
+            "type": "object"
+          },
+          "duration_ms": {
+            "minimum": 0,
+            "type": "number"
+          },
+          "end_index": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "name": {
+            "minLength": 3,
+            "type": "string"
+          },
+          "parent_span_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "span_id": {
+            "pattern": "^[a-f0-9]{16}$",
+            "type": "string"
+          },
+          "stage_name": {
+            "minLength": 2,
+            "type": "string"
+          },
+          "start_index": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "status": {
+            "enum": [
+              "OK",
+              "ERROR",
+              "SKIPPED"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "span_id",
+          "parent_span_id",
+          "name",
+          "stage_name",
+          "start_index",
+          "end_index",
+          "duration_ms",
+          "status",
+          "artifact_refs",
+          "attributes"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "stage": {
+      "const": "TRACE_ANALYSIS"
+    },
+    "trace_context": {
+      "additionalProperties": false,
+      "properties": {
+        "root_span_id": {
+          "pattern": "^[a-f0-9]{16}$",
+          "type": "string"
+        },
+        "trace_id": {
+          "pattern": "^[a-f0-9]{32}$",
+          "type": "string"
+        },
+        "traceparent_format": {
+          "enum": [
+            "w3c_trace_context_v00",
+            "metablooms_internal"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "trace_id",
+        "traceparent_format",
+        "root_span_id"
+      ],
+      "type": "object"
+    },
+    "trace_summary": {
+      "additionalProperties": false,
+      "properties": {
+        "error_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "missing_artifact_span_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "out_of_order_span_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "span_count": {
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "span_count",
+        "error_count",
+        "missing_artifact_span_count",
+        "out_of_order_span_count"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "packet_id",
+    "stage",
+    "created_at",
+    "objective_id",
+    "source_verification_packet_id",
+    "trace_context",
+    "spans",
+    "expected_stage_order",
+    "anomaly_rules",
+    "trace_summary",
+    "result_hash"
+  ],
+  "title": "MPP v3 Trace Analysis Packet",
+  "type": "object"
+}

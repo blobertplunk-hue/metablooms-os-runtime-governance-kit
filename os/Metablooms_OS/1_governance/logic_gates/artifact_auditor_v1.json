@@ -1,0 +1,100 @@
+{
+  "cartridge_id": "artifact_auditor_v1",
+  "name": "Artifact Auditor v1",
+  "type": "core_governance",
+  "purpose": "Verify that artifacts (files, bundles, outputs) actually exist, are complete, correctly structured, and match their declared contracts before they are used or exported.",
+  "task_types": [
+    "artifact_verification",
+    "file_validation",
+    "export_validation",
+    "bundle_auditing",
+    "integrity_checking"
+  ],
+  "platform": [
+    "robert",
+    "shaye",
+    "both"
+  ],
+  "input_contract": {
+    "required": [
+      "artifact_reference"
+    ],
+    "optional": [
+      "expected_structure",
+      "expected_files",
+      "expected_size",
+      "root_path",
+      "manifest",
+      "hash_required"
+    ]
+  },
+  "output_contract": {
+    "artifacts": [
+      "audit_report"
+    ],
+    "format": "structured_json_or_markdown",
+    "must_include": [
+      "artifact_exists",
+      "path_verified",
+      "structure_valid",
+      "completeness_status",
+      "size_check",
+      "issues",
+      "status",
+      "next_action"
+    ]
+  },
+  "execution_mode": "audit",
+  "external_tools": [],
+  "validation_rules": [
+    "must_verify_artifact_exists_on_filesystem",
+    "must_verify_correct_path",
+    "must_check_required_files_if_provided",
+    "must_check_structure_if_provided",
+    "must_check_size_if_threshold_given",
+    "must_fail_closed_if_missing_or_invalid",
+    "must_not_claim_success_without_verification"
+  ],
+  "failure_modes": [
+    "artifact_missing",
+    "wrong_path",
+    "incomplete_structure",
+    "missing_required_files",
+    "size_below_threshold",
+    "manifest_mismatch",
+    "unverified_artifact_claim"
+  ],
+  "status": "active",
+  "audit_schema": {
+    "artifact_reference": {
+      "required": [
+        "path"
+      ]
+    },
+    "checks": {
+      "existence_check": "file or directory exists",
+      "path_check": "correct root path used",
+      "structure_check": "expected directory/files present",
+      "size_check": "file size meets minimum threshold",
+      "manifest_check": "matches declared contents",
+      "hash_check": "optional integrity verification"
+    },
+    "audit_output": {
+      "artifact_exists": "boolean",
+      "path_verified": "boolean",
+      "structure_valid": "boolean",
+      "completeness_status": "complete | partial | missing",
+      "size_check": "pass | fail | not_checked",
+      "issues": [],
+      "status": "PASS | FAIL",
+      "next_action": "proceed | fix | halt"
+    }
+  },
+  "enforcement_rules": [
+    "if artifact_exists == false \u2192 FAIL",
+    "if completeness_status != complete \u2192 FAIL",
+    "if structure_valid == false \u2192 FAIL",
+    "if size_check == fail \u2192 FAIL",
+    "no export allowed unless status == PASS"
+  ]
+}

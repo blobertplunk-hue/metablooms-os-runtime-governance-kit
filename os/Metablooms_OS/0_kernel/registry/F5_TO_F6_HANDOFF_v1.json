@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "created_at": 1777062487.870378,
+  "from_stage": "F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF",
+  "to_stage": "F6_BLOCKED_RECEIPT_HANDLING_RULE",
+  "status": "ready",
+  "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF_RECEIPT_v1.json",
+  "restore_contract": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/RESTORE_LADDER_CONTRACT_v1.json",
+  "restore_proof": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/RESTORE_LADDER_MODE_NORMALIZATION_PROOF_v1.json",
+  "dag": "/mnt/data/Metablooms_OS_refined/0_kernel/pipeline/STAGE_DAG_v1.json",
+  "ledger": "/mnt/data/Metablooms_OS_refined/0_kernel/state/STAGE_STATE_LEDGER_v1.json",
+  "spec_or_small_patch_allowed": true,
+  "export_allowed": false,
+  "cleanup_allowed": false,
+  "next_command": "EXECUTE F6 \u2014 BLOCKED RECEIPT HANDLING RULE"
+}

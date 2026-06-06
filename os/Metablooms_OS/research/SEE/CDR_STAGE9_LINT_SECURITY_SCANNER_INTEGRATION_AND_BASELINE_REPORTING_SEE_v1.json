@@ -1,0 +1,19 @@
+{
+  "schema": "SEEPacket_v1",
+  "sources": [
+    {
+      "claim": "OWASP secure coding checklist includes input validation, access control, error handling/logging, data protection, file management, memory management, and general coding practices.",
+      "url": "https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/stable-en/02-checklist/"
+    },
+    {
+      "claim": "Ruff is a Python linter/formatter ecosystem source used as an optional scanner if available.",
+      "url": "https://docs.astral.sh/ruff/"
+    },
+    {
+      "claim": "Bandit is a Python security linter source used as an optional scanner if available.",
+      "url": "https://bandit.readthedocs.io/"
+    }
+  ],
+  "stage": "CDR_STAGE9_LINT_SECURITY_SCANNER_INTEGRATION_AND_BASELINE_REPORTING",
+  "synthesis": "CDR should not require unavailable external tools in the ChatGPT sandbox, but must record availability and run a deterministic stdlib fallback baseline."
+}

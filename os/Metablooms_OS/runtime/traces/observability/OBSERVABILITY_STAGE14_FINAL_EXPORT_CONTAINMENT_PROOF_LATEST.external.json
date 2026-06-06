@@ -1,0 +1,26 @@
+{
+  "artifact_type": "MB_FINAL_EXPORT_CONTAINMENT_PROOF.external.v1",
+  "bad_member": null,
+  "created_utc": "20260502T190150Z",
+  "duplicate_member_count": 0,
+  "external_sidecar_required": true,
+  "missing_required_members": [],
+  "required_members": [
+    "Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html",
+    "Metablooms_OS/0_kernel/scripts/promote_pinned_evidence_receipt_v1.py",
+    "Metablooms_OS/0_kernel/validators/validate_observability_trace_span_ledger_stage14_pinned_evidence_promotion_v1.py",
+    "Metablooms_OS/runtime/receipts/pinned_evidence/PINNED_EVIDENCE_RECEIPT_LATEST.json",
+    "Metablooms_OS/runtime/state/operator_surface/PINNED_EVIDENCE_RECEIPT_PROMOTION_LATEST.json",
+    "Metablooms_OS/runtime/traces/observability/PINNED_EVIDENCE_EXPORT_BINDING_LATEST.json",
+    "Metablooms_OS/runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_PROMOTION_VALIDATION_LATEST.json",
+    "Metablooms_OS/runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_HANDOFF_LATEST.json"
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING",
+  "verdict": "PASS",
+  "zip_entry_count": 5800,
+  "zip_integrity": "PASS",
+  "zip_path": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_PROMOTION_FINAL_AUTHORITY_LOCKED_20260502T190150Z.zip",
+  "zip_sha256": "db248c200e80b350de03171f40078a8cdecc28fae970c1311a292bfd407f3eae",
+  "zip_sha256_sidecar": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_PROMOTION_FINAL_AUTHORITY_LOCKED_20260502T190150Z.zip.sha256",
+  "zip_size_bytes": 75020618
+}

@@ -1,0 +1,30 @@
+{
+  "blocks": [],
+  "canonical_event": {
+    "attributes": {
+      "answer.correct": false,
+      "artifact.id": "fractions_number_line_telemetry_v1",
+      "attempt.number": 1,
+      "fraction.target": "3/4",
+      "hint.used": false,
+      "question.id": "Q1",
+      "question.type": "fraction_number_line",
+      "response.time_ms": 900,
+      "session.id": "sess-r9",
+      "signal.id": "RAPID_SEQUENTIAL",
+      "signal.type": "behavioral",
+      "student.pseudonymous_id": "anon-001",
+      "student.response": "3/8",
+      "teacher.action": "Remind student to read the question carefully",
+      "teacher.flag": false
+    },
+    "event_name": "metablooms.learning.signal",
+    "event_time_unix_ms": 1777346465302,
+    "parent_span_id": null,
+    "severity_number": 9,
+    "span_id": "0c76b0e7edd06298",
+    "trace_id": "c2fe6f5fcf616f5ba9de413dd822599e",
+    "traceparent": "00-c2fe6f5fcf616f5ba9de413dd822599e-0c76b0e7edd06298-01"
+  },
+  "decision": "allow"
+}

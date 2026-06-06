@@ -1,0 +1,90 @@
+{
+  "schema_id": "COOL_5_EXTERNAL_REUSE_SCAN_GATE_SCHEMA_v1",
+  "version": "1.0",
+  "created_utc": "2026-04-26",
+  "decision_ladder": {
+    "rungs": [
+      {
+        "id": "adopt_existing",
+        "scan_evidence_minimum": 1,
+        "required_evidence": "1+ candidate_ref with source URL"
+      },
+      {
+        "id": "adapt_existing",
+        "scan_evidence_minimum": 2,
+        "required_evidence": "2+ evidence items; adaptation_scope field"
+      },
+      {
+        "id": "compose_existing",
+        "scan_evidence_minimum": 2,
+        "required_evidence": "2+ evidence items; composition_plan field"
+      },
+      {
+        "id": "build_new_with_evidence",
+        "scan_evidence_minimum": 2,
+        "required_evidence": "2+ evidence items showing gap; gap_rationale field"
+      },
+      {
+        "id": "defer_or_block",
+        "scan_evidence_minimum": 0,
+        "result": "P0A gate returns DENY immediately"
+      }
+    ]
+  },
+  "request_schema": {
+    "stage_name": {
+      "type": "string",
+      "required": true
+    },
+    "asset_type": {
+      "type": "string",
+      "required": true,
+      "enum": [
+        "schema",
+        "validator",
+        "component",
+        "html_engine",
+        "telemetry",
+        "dashboard",
+        "cartridge",
+        "workflow",
+        "runner_phase",
+        "gate"
+      ]
+    },
+    "asset_name": {
+      "type": "string",
+      "required": true
+    },
+    "reuse_decision": {
+      "type": "string",
+      "required": true,
+      "enum": [
+        "adopt_existing",
+        "adapt_existing",
+        "compose_existing",
+        "build_new_with_evidence",
+        "defer_or_block"
+      ]
+    },
+    "reuse_rationale": {
+      "type": "string",
+      "required": true,
+      "min_words": 5
+    },
+    "scan_evidence": {
+      "type": "array",
+      "required": true,
+      "items": {
+        "source": "string",
+        "finding": "string",
+        "query": "string"
+      }
+    },
+    "candidate_refs": {
+      "type": "array",
+      "required": false
+    }
+  },
+  "metablooms_improvement_rule": "Even when adopting external resources, MetaBlooms must improve them through: classroom constraints, iPad/Google Sites constraints, student privacy, accessibility/UDL, local telemetry, fail-closed validators, artifact receipts, future feedback loops."
+}

@@ -1,0 +1,11 @@
+{
+  "receipt_id": "T1-STAGE6J_WRITE_BUDGET_APPROVAL_filesystem_write_artifact-20260502T013901Z",
+  "tier": "T1",
+  "artifact": "/mnt/data/Metablooms_OS/runtime/authority/STAGE6J_EXPLICIT_BUDGET_APPROVAL_v1.json",
+  "sha256": "eebc2fe36da41b155d29fa9bd569a9aaedcac99fc9ac69602a9ac39907168da8",
+  "bytes_size": 960,
+  "prior_sha256": "",
+  "stdout_proof": "",
+  "timestamp": "2026-05-02T01:39:01.100169Z",
+  "turn_id": "STAGE6J_WRITE_BUDGET_APPROVAL"
+}

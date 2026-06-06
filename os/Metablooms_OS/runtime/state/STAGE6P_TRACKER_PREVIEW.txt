@@ -1,0 +1,6 @@
+TRACKER PREVIEW — STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM
+Status: PASS
+Installed: durable checkpoint/replay minimum spec, policy bindings, invariant, active index entry, checkpoint gate, fixtures, smoke test, SEE/CE packets.
+Smoke: PASS — interrupted checkpoint written, allow resume created child checkpoint, invalid resume payload denied.
+Authority export: NOT PERFORMED.
+Next best stage: STAGE6Q_LEGACY_EXECUTOR_RETROFIT_AUDIT.

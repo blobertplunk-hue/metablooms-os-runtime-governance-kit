@@ -1,0 +1,27 @@
+{
+  "artifact_type": "CDRGateResults.v1",
+  "created_utc": "20260502T144121Z",
+  "gates": [
+    {
+      "gate": "Stage3 handoff loaded",
+      "result": "PASS"
+    },
+    {
+      "gate": "Callsite patch sweep",
+      "result": "PASS"
+    },
+    {
+      "gate": "Patched files py_compile",
+      "result": "PASS"
+    },
+    {
+      "gate": "Stage4 policy gate",
+      "result": "FAIL"
+    },
+    {
+      "gate": "Direct writer smoke",
+      "result": "PASS"
+    }
+  ],
+  "verdict": "FAIL"
+}

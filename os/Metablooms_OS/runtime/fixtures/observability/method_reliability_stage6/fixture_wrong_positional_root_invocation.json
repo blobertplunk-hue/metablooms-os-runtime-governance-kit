@@ -1,0 +1,8 @@
+{
+  "argv": [
+    "/mnt/data/Metablooms_OS",
+    "--json"
+  ],
+  "expected_decision": "DENY",
+  "expected_error_code": "MB_CLI_CONTRACT_DENY_POSITIONAL_ARGS"
+}

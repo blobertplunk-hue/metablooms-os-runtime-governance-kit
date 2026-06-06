@@ -1,0 +1,55 @@
+{
+  "receipt_type": "BUILD_RECEIPT",
+  "build_id": "BUILD-2",
+  "artifact": "intra_chunk_interrupt_checker_v1.py",
+  "created_utc": "2026-04-26T10:25:19Z",
+  "sha256": "b50031c35b6ba53ee5dbacb3ccdf4a7c3e0ddb94ef59f9db7fe90461d0983dc8",
+  "lines": 665,
+  "amendment_implemented": "AMEND-0005",
+  "target_path": "0_kernel/scripts/intra_chunk_interrupt_checker_v1.py",
+
+  "see_evidence": [
+    "Circuit breakers monitor execution, count failures, and open when threshold exceeded — stops propagation",
+    "Interruptibility: agents can pause/override mid-execution without losing context (AG-UI protocol 2025)",
+    "Root cause of non-interruptible agents: sequential loop with no intercept (event-driven agent research)"
+  ],
+
+  "ic_conditions_implemented": [
+    "IC-1: tool_retry_count > 2 → friction → log_and_continue",
+    "IC-2: canmore_attempted=True → defect → pause_and_amend",
+    "IC-3: see_result_count == 0 → gap → pause_and_amend",
+    "IC-4: has_uncited_claims=True → defect → pause_and_amend",
+    "IC-5: recurring pattern across 2+ prior artifacts → gap → pause_and_amend",
+    "IC-6: T1 gate failures present → defect → pause_and_amend"
+  ],
+
+  "validation_tests": [
+    {"test": "syntax check", "result": "PASS"},
+    {"test": "import — all enums and constants correct", "result": "PASS"},
+    {"test": "T1_CLEAN — no triggers, action=continue", "result": "PASS"},
+    {"test": "T2_CANMORE — IC-2 defect, pause_and_amend", "result": "PASS"},
+    {"test": "T3_T1_FAIL — IC-6 defect, pause_and_amend", "result": "PASS"},
+    {"test": "T4_FRICTION — IC-1 friction, log_and_continue", "result": "PASS"},
+    {"test": "sidecar auto-generated at threshold=2", "result": "PASS"},
+    {"test": "chunk halts at first pause_and_amend", "result": "PASS"}
+  ],
+
+  "new_capabilities": [
+    "CAPABILITY: IC-1→IC-6 evaluated after every artifact, not end-of-chunk — failures caught immediately",
+    "CAPABILITY: INTRA_CHUNK_INTERRUPT_RECEIPT written on every trigger — full audit trail mid-chunk",
+    "CAPABILITY: W0 observe + W1 classify pipeline runs on every interrupt — structured learning from failures",
+    "CAPABILITY: Chunk halts on defect/gap; continues on friction — controlled, not silent",
+    "CAPABILITY: Autonomous sidecar generation at threshold=2 for same-class IC triggers (AMEND-0006 integrated)",
+    "CAPABILITY: All observations written to ISSUE_LESSON_LOG_v1.jsonl — learning loop closes in real time"
+  ],
+
+  "chatgpt_deployment": [
+    "Copy intra_chunk_interrupt_checker_v1.py to /mnt/data/Metablooms_OS_refined/0_kernel/scripts/",
+    "Verify SHA: b50031c35b6ba53ee5dbacb3ccdf4a7c3e0ddb94ef59f9db7fe90461d0983dc8",
+    "Call after each artifact: python intra_chunk_interrupt_checker_v1.py --stage-name STAGE --artifact-id ART --canmore-attempted / --see-result-count N / etc.",
+    "Check exit code: 0 = chunk clean or warns only; 1 = chunk halted, resolve interrupt before continuing"
+  ],
+
+  "overall_verdict": "PASS",
+  "next_correct_stage": "BUILD-3 — runtime_pulse_logger_v1.py"
+}

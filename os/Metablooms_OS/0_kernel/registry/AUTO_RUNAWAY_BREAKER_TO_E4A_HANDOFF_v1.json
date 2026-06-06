@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "created_at": 1777061460.1155813,
+  "from_stage": "PATCH_AUTO_RUNAWAY_BREAKER_INTO_OS_GOVERNANCE_PLAN",
+  "to_stage": "E4A_MASTER_PIPELINE_PROOF_SCOPE_LOCK",
+  "status": "ready",
+  "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/AUTO_RUNAWAY_BREAKER_GOVERNANCE_PATCH_RECEIPT_v1.json",
+  "auto_runaway_invariant": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/lessons_learned/AUTO_RUNAWAY_BREAKER_INVARIANT_v1.json",
+  "stage_split_contract": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/AUTO_RUNAWAY_STAGE_SPLIT_CONTRACT_v1.json",
+  "next_command": "EXECUTE STAGE E4A \u2014 MASTER PIPELINE PROOF SCOPE LOCK"
+}

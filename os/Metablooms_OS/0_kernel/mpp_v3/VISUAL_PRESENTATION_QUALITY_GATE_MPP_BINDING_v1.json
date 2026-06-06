@@ -1,0 +1,27 @@
+{
+  "blocks": [
+    "missing declaration",
+    "default/unstyled UI",
+    "missing teacher_professional_presentation",
+    "missing accessibility/mobile/motion/render checks"
+  ],
+  "created_utc": "2026-05-02T22:02:55Z",
+  "entrypoints": [
+    "pre_implementation_declaration",
+    "implementation_static_check",
+    "pre_promotion_render_evidence"
+  ],
+  "gate_id": "VISUAL_PRESENTATION_QUALITY_GATE_v1",
+  "required_for_artifact_types": [
+    "html_activity",
+    "dashboard",
+    "landing_page",
+    "teacher_tool",
+    "student_tool",
+    "operator_tracker",
+    "other_visual_artifact"
+  ],
+  "schema_version": "metablooms.mpp.cross_cutting_gate_binding.v1",
+  "status": "active_local_binding_pending_full_export",
+  "validator": "0_kernel/validators/validate_visual_presentation_quality_gate_v1.py"
+}

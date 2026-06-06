@@ -1,0 +1,21 @@
+{
+  "cartridge_id": "telemetry_misconception_v1",
+  "contracts": [
+    "runtime/governance/contracts/telemetry_cartridge_contract_v1.json",
+    "runtime/governance/schemas/misconception_telemetry_event_schema_v1.json"
+  ],
+  "created_utc": "2026-04-28T03:21:05.115957+00:00",
+  "entrypoints": {
+    "adapter": "2_engines/telemetry/telemetry_event_adapter_v1.js",
+    "demo": "3_data/html_activities/fractions_number_line_telemetry_v1.html",
+    "engine": "2_engines/telemetry/MISCONCEPTION_TELEMETRY_ENGINE_v1.js",
+    "validator": "0_kernel/scripts/validate_telemetry_cartridge_v1.py"
+  },
+  "event_names": [
+    "metablooms.learning.attempt",
+    "metablooms.learning.signal",
+    "metablooms.learning.session_summary"
+  ],
+  "status": "active",
+  "version": "1.0.0"
+}

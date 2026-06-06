@@ -1,0 +1,13 @@
+{
+  "fresh_extract_target": "isolated /tmp staging",
+  "required_checks": [
+    "sidecar_match",
+    "duplicate_scan",
+    "unsafe_member_scan",
+    "fresh_extract",
+    "py_compile",
+    "mb verify"
+  ],
+  "schema_version": "MB_ARTIFACT_PORTABILITY_REPLAY_PROOF_SPEC_v2",
+  "stage": "ARTIFACT_PORTABILITY_REPLAY_PROOF_STAGE_2_FRESH_EXTRACT_BOOT_REPLAY"
+}

@@ -1,0 +1,22 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/MONITOR_TELEMETRY_PACKET_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "packet_id",
+    "stage",
+    "created_at",
+    "objective_id",
+    "source_fir_packet_id",
+    "telemetry_context",
+    "metric_definitions",
+    "telemetry_events",
+    "drift_indicators",
+    "silent_failure_checks",
+    "feedback_routes",
+    "monitor_summary",
+    "result_hash"
+  ],
+  "type": "object"
+}

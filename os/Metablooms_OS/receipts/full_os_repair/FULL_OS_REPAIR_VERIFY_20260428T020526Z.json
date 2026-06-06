@@ -1,0 +1,15 @@
+{
+  "receipt_type": "FULL_OS_REPAIR_VERIFY",
+  "created_utc": "2026-04-28T02:05:26Z",
+  "output_zip": "METABLOOMS_FULL_OS_v3_3_PHASE1_PHASE2_MERGED_REPAIRED.zip",
+  "sha256": "7c4d8a128b34d1bf42486a212aa22633386b0c5a785730b0e7238642ac7d0df8",
+  "file_count": 890,
+  "checks": {
+    "has_overlay_dir": true,
+    "has_overlay_zip": true,
+    "has_python_workaround": true,
+    "has_cross_link": true,
+    "has_memory_sync": true
+  },
+  "verdict": "PASS"
+}

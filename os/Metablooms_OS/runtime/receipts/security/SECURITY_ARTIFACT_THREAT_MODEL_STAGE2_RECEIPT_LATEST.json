@@ -1,0 +1,13 @@
+{
+  "actions": [
+    "installed advisory enforcement gates",
+    "installed prompt-injection fixture set",
+    "installed stage2 validator",
+    "updated mb security --gate-check and --fixtures"
+  ],
+  "artifact_type": "SECURITY_ARTIFACT_THREAT_MODEL_STAGE2_RECEIPT_v1",
+  "created_utc": "20260501T114800Z",
+  "next_stage": "IMPLEMENT_SECURITY_ARTIFACT_THREAT_MODEL_STAGE_3_HARD_WIRE_GATES_INTO_RUNNER_AND_EXPORT_PROMOTION",
+  "stage": "IMPLEMENT_SECURITY_ARTIFACT_THREAT_MODEL_STAGE_2_ENFORCEMENT_GATES_OR_PROMPT_INJECTION_FIXTURES",
+  "verdict": "PASS"
+}

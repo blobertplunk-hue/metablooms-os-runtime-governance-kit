@@ -1,0 +1,29 @@
+{
+  "artifact_type": "CURRENT_FULL_AUTHORITY_POINTER_v1",
+  "authority_note": "MPP/CDR Stage16 exports a full bootable authority incorporating Stage14 code-work-requires-CDR binding and Stage15 stage-contract code-bearing declarations.",
+  "canonical_working_root": "/mnt/data/Metablooms_OS",
+  "cdr_chain_status": "RECONSTRUCTED_CHAIN_MARKED_NOT_ORIGINAL_FOR_STAGE2_3_4_5_7; STAGE6_VERIFIED_FROM_UPLOADED_SUPPORT",
+  "contains_cdr_stage2_to_stage12_chain": true,
+  "contains_mpp_cdr_stage14_code_work_requires_cdr": true,
+  "contains_mpp_cdr_stage15_code_bearing_stage_contract_flag": true,
+  "contains_stage6n_to_stage6r": true,
+  "contains_stage6t_tool_universe_resolver_trace_export_coverage_repair": true,
+  "export_sha256": "EXTERNAL_SIDECAR_REQUIRED_AFTER_EXPORT",
+  "export_sha256_sidecar": "/mnt/data/METABLOOMS_OS_MPP_CDR_STAGE16_FULL_AUTHORITY_AFTER_STAGE15_BOOTABLE_FULL_OS_AUTHORITY_20260502T132500Z.zip.sha256",
+  "export_zip": "/mnt/data/METABLOOMS_OS_MPP_CDR_STAGE16_FULL_AUTHORITY_AFTER_STAGE15_BOOTABLE_FULL_OS_AUTHORITY_20260502T132500Z.zip",
+  "external_sidecar_required": true,
+  "id": "CURRENT_FULL_AUTHORITY_POINTER_v1",
+  "required_start_sequence": [
+    "verify checksum sidecar",
+    "run runtime starter smoke",
+    "run portable boot verify",
+    "run boot runtime executor",
+    "load latest handoff",
+    "run one bounded governed stage"
+  ],
+  "required_user_facing_label": "BOOTABLE FULL OS AUTHORITY ZIP",
+  "stage": "MPP_CDR_BINDING_STAGE16_FULL_AUTHORITY_EXPORT_AFTER_STAGE15",
+  "support_bundle_label_rule": "Support/proof bundles must be labeled SUPPORT/PROOF BUNDLE - NOT THE OS BUNDLE.",
+  "updated_utc": "2026-05-02T13:03:18Z",
+  "verdict": "ACTIVE"
+}

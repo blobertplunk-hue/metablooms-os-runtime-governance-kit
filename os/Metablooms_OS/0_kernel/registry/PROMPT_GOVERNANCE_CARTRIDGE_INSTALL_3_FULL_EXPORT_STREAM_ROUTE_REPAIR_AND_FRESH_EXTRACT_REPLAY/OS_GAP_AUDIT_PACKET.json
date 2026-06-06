@@ -1,0 +1,14 @@
+{
+  "proven_gaps": [
+    "Stage 2 full export timeout",
+    "Stage 2 delta did not include Stage 1 receipt files even though controlled index referenced them",
+    "Stage 3 packets require controlled-index registration before scatter validation"
+  ],
+  "repairs": [
+    "stream ZIP_STORED full export",
+    "include Stage 1 and Stage 2 deltas cumulatively",
+    "patch controlled artifact index with Stage 3 packet paths"
+  ],
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_3_FULL_EXPORT_STREAM_ROUTE_REPAIR_AND_FRESH_EXTRACT_REPLAY",
+  "status": "REPAIRING"
+}

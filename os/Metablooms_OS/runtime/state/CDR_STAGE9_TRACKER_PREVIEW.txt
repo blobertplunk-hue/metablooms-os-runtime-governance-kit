@@ -1,0 +1,8 @@
+TRACKER PREVIEW — CDR_STAGE9_LINT_SECURITY_SCANNER_INTEGRATION_AND_BASELINE_REPORTING
+Status: PASS
+Installed: CDR lint/security scanner integration spec, policy, packet schema, active invariant, scanner gate, fixtures, eval, baseline report, SEE/CE packets.
+Scanner baseline: scanned 8 CDR governance files; findings=4; zero_tolerance=0; optional_tools_available=[]; fallback_used=['ruff', 'bandit', 'semgrep'].
+Gate: PASS — valid packet allowed; dynamic-exec fixture denied.
+All CDR evals: 8/8 passed.
+Authority export: NOT PERFORMED.
+Next best stage: CDR_STAGE10_REAL_SCANNER_ADAPTER_INSTALL_PROFILES_OR_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE9.

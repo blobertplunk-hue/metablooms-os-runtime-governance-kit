@@ -1,0 +1,12 @@
+{
+  "authority_sha256": "3e4903b137e05fc84c1ae08d0b705203dff3910fcaecf9174f72109591248011",
+  "authority_sidecar": "/mnt/data/METABLOOMS_OS_FULL_MPP_V3_R0_R23_PROMOTED_20260501T081500Z.zip.sha256",
+  "authority_zip": "/mnt/data/METABLOOMS_OS_FULL_MPP_V3_R0_R23_PROMOTED_20260501T081500Z.zip",
+  "created_at": "2026-05-01T00:58:05.010624+00:00",
+  "next_recommended_stage": "USE_AS_CURRENT_AUTHORITY_OR_START_NEW_TASK",
+  "pointer_id": "EXPORT-AUTHORITY-20260501T005805Z",
+  "result_hash": "5995079a6dc0c04230bfee3105a3ee3697664faffe68ce0c9ef84ca9b8430fed",
+  "schema_version": "mpp.export_authority_pointer.v1",
+  "stage_range": "R0-R23",
+  "status": "PROMOTED"
+}

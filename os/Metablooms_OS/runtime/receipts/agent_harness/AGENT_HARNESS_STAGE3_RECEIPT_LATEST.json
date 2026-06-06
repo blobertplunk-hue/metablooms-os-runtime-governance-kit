@@ -1,0 +1,15 @@
+{
+  "artifact_type": "AGENT_HARNESS_STAGE3_RECEIPT_v1",
+  "base_authority": "METABLOOMS_OS_AGENT_HARNESS_STAGE2_PARALLEL_WORKPACKETS_DIFF_REVIEW_20260501T153700Z.zip",
+  "created_utc": "20260501T171620Z",
+  "implemented": [
+    "executor_review_gate",
+    "mb_harness_executor_review",
+    "cartridge_executor_pre_execution_review_gate",
+    "stage3_validator",
+    "bounded_trace_span"
+  ],
+  "no_broad_extract": true,
+  "stage": "IMPLEMENT_AGENT_HARNESS_STAGE_3_EXECUTOR_REVIEW_GATE",
+  "verdict": "PASS"
+}

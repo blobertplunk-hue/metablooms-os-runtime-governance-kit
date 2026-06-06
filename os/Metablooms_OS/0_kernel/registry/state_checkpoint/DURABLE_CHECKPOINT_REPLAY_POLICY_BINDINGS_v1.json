@@ -1,0 +1,49 @@
+{
+  "applies_to": [
+    "interrupted_stage",
+    "long_running_stage",
+    "hitl_wait",
+    "multi_turn_repair",
+    "export_or_pointer_promotion_with_pause"
+  ],
+  "deny_conditions": [
+    "checkpoint_not_found",
+    "checkpoint_not_interrupted",
+    "thread_id_mismatch",
+    "resume_payload_not_object",
+    "resume_from_chat_claim_only",
+    "parent_hash_mismatch",
+    "unsafe_thread_id",
+    "missing_sidecar",
+    "latest_pointer_mismatch"
+  ],
+  "required_controls": [
+    "thread_id",
+    "checkpoint_id",
+    "parent_checkpoint_id",
+    "record_sha256",
+    "atomic_write",
+    "safe_thread_path",
+    "THREAD_LATEST",
+    "CHECKPOINT_THREAD_INDEX_LATEST",
+    "resume_packet_validation",
+    "post_tool_result_validation_v1"
+  ],
+  "resume_decisions": [
+    "approve",
+    "edit",
+    "reject",
+    "defer"
+  ],
+  "schema": "MetaBloomsDurableCheckpointReplayPolicy_v1",
+  "stage_id": "STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM",
+  "status": "active",
+  "timestamp_utc": "2026-05-02T02:56:33.705985Z",
+  "trace_binding": [
+    "checkpoint_created_event",
+    "interrupt_issued_event",
+    "resume_requested_event",
+    "resume_child_checkpoint_event",
+    "receipt_path"
+  ]
+}

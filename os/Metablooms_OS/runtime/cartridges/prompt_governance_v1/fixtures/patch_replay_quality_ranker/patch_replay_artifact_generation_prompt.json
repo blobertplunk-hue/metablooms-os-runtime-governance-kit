@@ -1,0 +1,7 @@
+{
+  "expected_decision": "ALLOW",
+  "fixture_id": "patch_replay_artifact_generation_prompt",
+  "min_top_score": 0.8,
+  "raw_prompt": "Create a classroom HTML artifact, validate it by readback, package the files, and provide checksum.",
+  "task_hint": "governed_artifact_generation"
+}

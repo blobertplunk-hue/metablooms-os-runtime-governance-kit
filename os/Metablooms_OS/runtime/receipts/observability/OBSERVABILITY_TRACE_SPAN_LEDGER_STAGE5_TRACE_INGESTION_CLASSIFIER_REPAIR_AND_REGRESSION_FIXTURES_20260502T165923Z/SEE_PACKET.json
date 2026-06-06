@@ -1,0 +1,23 @@
+{
+  "artifact_type": "SEE_PACKET.v1",
+  "created_utc": "20260502T170000Z",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE5_TRACE_INGESTION_CLASSIFIER_REPAIR_AND_REGRESSION_FIXTURES",
+  "sources": [
+    {
+      "url": "https://opentelemetry.io/docs/specs/semconv/exceptions/exceptions-logs/",
+      "claim": "OpenTelemetry defines stable semantic conventions for recording exceptions in logs, supporting structured exception classification instead of free-text substring guessing."
+    },
+    {
+      "url": "https://opentelemetry.io/docs/specs/semconv/general/events/",
+      "claim": "OpenTelemetry describes events as named occurrences at instants in time with additional specifics, supporting explicit event/status modeling."
+    },
+    {
+      "url": "https://slsa.dev/spec/v1.0-rc1/verifying-artifacts",
+      "claim": "SLSA emphasizes provenance verification by inspecting artifacts rather than trusting unverified claims."
+    },
+    {
+      "url": "https://www.testdevlab.com/blog/best-practices-of-regression-testing-a-comprehensive-handbook",
+      "claim": "Regression testing retests changed and unchanged parts to ensure stability after a fix."
+    }
+  ]
+}

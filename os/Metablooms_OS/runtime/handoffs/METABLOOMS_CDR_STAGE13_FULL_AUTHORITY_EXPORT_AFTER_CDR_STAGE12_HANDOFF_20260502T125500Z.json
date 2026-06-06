@@ -1,0 +1,21 @@
+{
+  "boot_sequence": [
+    "verify checksum sidecar",
+    "extract to /mnt/data/Metablooms_OS",
+    "run runtime starter smoke",
+    "run portable boot verify",
+    "run boot runtime executor",
+    "load latest handoff",
+    "run one bounded governed stage"
+  ],
+  "current_authority_label": "BOOTABLE FULL OS AUTHORITY ZIP \u2014 CDR Stage 13",
+  "current_authority_zip": "/mnt/data/METABLOOMS_OS_CDR_STAGE13_FULL_AUTHORITY_AFTER_CDR_STAGE12_BOOTABLE_FULL_OS_AUTHORITY_20260502T125500Z.zip",
+  "current_authority_zip_sha256": "EXTERNAL_SIDECAR_REQUIRED_AFTER_EXPORT",
+  "current_authority_zip_sidecar": "/mnt/data/METABLOOMS_OS_CDR_STAGE13_FULL_AUTHORITY_AFTER_CDR_STAGE12_BOOTABLE_FULL_OS_AUTHORITY_20260502T125500Z.zip.sha256",
+  "next_best_stage": "CDR_STAGE14_NEXT_LINCHPIN_RECURSIVE_AUDIT_DEEPENING_OR_USER_PRIORITY",
+  "reconstructed_chain_notice": "CDR Stage 2,3,4,5,7 were reconstructed from chat summaries; Stage 6 was verified from uploaded support bundle; Stages 8-12 were generated after reconstruction.",
+  "schema": "MetaBloomsHandoff_v1",
+  "stage": "CDR_STAGE13_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE12",
+  "status": "READY_AFTER_AUTHORITY_EXPORT_PENDING_EXTERNAL_PROOF",
+  "timestamp_utc": "2026-05-02T12:55:00Z"
+}

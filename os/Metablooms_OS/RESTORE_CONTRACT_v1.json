@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "created_at": 1777068405.2332644,
+  "restore_contract_id": "RESTORE_CONTRACT_v1",
+  "status": "active",
+  "selection_order": [
+    "sidecar_verified_zip",
+    "staging_extract",
+    "validator_decision",
+    "baseline_lock",
+    "pointer",
+    "ledger"
+  ],
+  "restore_rules": [
+    "verify sidecar sha256 and size",
+    "verify internal G6 validator decision exists",
+    "verify external G6 validator decision exists inside ZIP",
+    "verify STAGE_DAG_LEDGER_ID_MAP_v1.json exists",
+    "verify pointer last_stage is G6",
+    "extract into staging first before promotion"
+  ],
+  "verdict": "PASS"
+}

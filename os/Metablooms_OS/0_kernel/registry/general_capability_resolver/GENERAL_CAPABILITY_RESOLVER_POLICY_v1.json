@@ -1,0 +1,84 @@
+{
+  "created_utc": "20260503T005700Z",
+  "default_environment": "android_chatgpt_sandbox",
+  "method_classes": [
+    {
+      "fallbacks": [
+        "tar_gzip_if_zip_unavailable"
+      ],
+      "method_class": "filesystem_archive_export",
+      "primary_methods": [
+        "shell_zip",
+        "python3_S_zipfile"
+      ],
+      "required_proof": [
+        "stat",
+        "sha256sum",
+        "zip_test",
+        "clean_extract_smoke",
+        "boot_smoke"
+      ]
+    },
+    {
+      "fallbacks": [
+        "weasyprint_proxy",
+        "static_dom_validator"
+      ],
+      "method_class": "browser_render",
+      "primary_methods": [
+        "playwright_managed_browser",
+        "system_chromium_headless"
+      ],
+      "required_proof": [
+        "screenshot_or_limitation_label",
+        "nonblank_or_static_report",
+        "reliability_event"
+      ]
+    },
+    {
+      "fallbacks": [
+        "shell_jq_node_coreutils"
+      ],
+      "method_class": "python_execution",
+      "primary_methods": [
+        "python3 -S stdlib"
+      ],
+      "required_proof": [
+        "exit_code",
+        "stderr_capture",
+        "receipt"
+      ]
+    },
+    {
+      "fallbacks": [
+        "blocked_no_see"
+      ],
+      "method_class": "web_research_see",
+      "primary_methods": [
+        "web.run"
+      ],
+      "required_proof": [
+        "source_refs",
+        "claim_bindings"
+      ]
+    },
+    {
+      "fallbacks": [
+        "manifest_plus_reupload_audit"
+      ],
+      "method_class": "download_link_exposure",
+      "primary_methods": [
+        "short_phone_safe_sandbox_link"
+      ],
+      "required_proof": [
+        "exact_file_exists",
+        "sidecar_exists",
+        "hash_match",
+        "zip_test_before_link"
+      ]
+    }
+  ],
+  "operator_phone_safe_filename_rule": "Primary boot bundles use short names: BOOTABLE_FULL_AUTHORITY_<stage_abbrev>.zip plus .sha256.",
+  "resolver_id": "GENERAL_CAPABILITY_RESOLVER_FRAMEWORK_v1",
+  "schema_version": "v1"
+}

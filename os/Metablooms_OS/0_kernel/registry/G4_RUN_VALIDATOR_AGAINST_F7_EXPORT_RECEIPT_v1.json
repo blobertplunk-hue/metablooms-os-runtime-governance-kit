@@ -1,0 +1,63 @@
+{
+  "version": "1.0",
+  "created_at": 1777065053.7155373,
+  "stage": "G4_RUN_VALIDATOR_AGAINST_F7_EXPORT",
+  "status": "complete",
+  "inputs": {
+    "g3_handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G3_TO_G4_HANDOFF_v1.json",
+    "validator_script": "/mnt/data/Metablooms_OS_refined/0_kernel/scripts/export_recovery_proven_validator_v1.py",
+    "f7_export_zip": "/mnt/data/MetaBlooms_OS_refined_F7_RECOVERY_PROVEN_1777063110.zip",
+    "f7_sidecar": "/mnt/data/MetaBlooms_OS_refined_F7_RECOVERY_PROVEN_1777063110.zip.sha256.json"
+  },
+  "outputs": {
+    "validator_decision": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_G4_F7_DECISION_v1.json",
+    "repair_plan": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G4_F7_EXPORT_REPAIR_PLAN_v1.json",
+    "validation_doc": "/mnt/data/Metablooms_OS_refined/0_kernel/docs/G4_RUN_VALIDATOR_AGAINST_F7_EXPORT_v1.md",
+    "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G4_RUN_VALIDATOR_AGAINST_F7_EXPORT_RECEIPT_v1.json",
+    "handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G4_TO_G5_HANDOFF_v1.json"
+  },
+  "checks": {
+    "required_paths_present": true,
+    "git_clean_before_g4": true,
+    "git_fsck_clean_before_g4": true,
+    "g3_prechecks": {
+      "g3_handoff_ready": true,
+      "g3_receipt_passed": true,
+      "g3_regression_passed": true,
+      "g4_declared_target": true,
+      "ledger_latest_pass_is_g3": true,
+      "pointer_active": true
+    }
+  },
+  "validator_verdict": "FAIL",
+  "blocking_failed_count": 8,
+  "failed_gate_ids": [
+    "G1_LEDGER_DECLARED_OUTPUTS_INSIDE_ZIP",
+    "G2_FINAL_PASS_RECEIPTS_INSIDE_ZIP",
+    "G3_NO_PLACEHOLDER_METADATA",
+    "G4_GIT_HEAD_LIFECYCLE_CONSISTENCY",
+    "G5_SIDECAR_BINDING",
+    "G6_DETERMINISTIC_ZIP_POLICY",
+    "G8_POINTER_CONFLICT_RESOLUTION",
+    "G10_POLICY_AS_CODE_DECISION"
+  ],
+  "runaway_turn_guard": {
+    "validation_only": true,
+    "repair_performed": false,
+    "export_performed": false,
+    "cleanup_broad": false
+  },
+  "verdict": "PASS",
+  "next_improvement_task": "G5 \u2014 Repaired Recovery-Proven Export",
+  "why_next": "The validator proved the prior F7 export is not recovery-proven. G5 must rebuild the export so validator gates can pass.",
+  "remaining_work": [
+    "G5 \u2014 Repaired Recovery-Proven Export",
+    "G6 \u2014 Recovery Proof + Baseline Lock",
+    "G7 \u2014 Return to E4B"
+  ],
+  "progress_estimate": {
+    "stages_remaining_before_return_to_E4B": 3,
+    "current_arc": "G export-recovery validator hardening"
+  },
+  "next_correct_command": "EXECUTE G5 \u2014 REPAIRED RECOVERY-PROVEN EXPORT"
+}

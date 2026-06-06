@@ -1,0 +1,40 @@
+{
+  "created_utc": "2026-04-28T03:18:31Z",
+  "decision_id": "R8_PYTHON_HEALTH_GOVERNANCE_PROMOTION-f012a290652955de",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"created_utc\": \"2026-04-28T03:18:31Z\", \"decision\": \"promote P0PY gate as active route-control gate\", \"decision_log_type\": \"REFRACTOR_PROGRAM_DECISION_LOG\", \"reasons\": [\"Normal python startup hook chain is unsafe/expensive in this sandbox\", \"python3 -S is the enforced stdlib lane\", \"Live normal-python probing is forbidden by design because it can hang the caller through artifact-tool daemon/file-descriptor behavior\"], \"rejected_options\": [\"execute normal python every stage\", \"leave P0PY deferred\", \"allow untracked operator override\"], \"selected_option\": \"safe hook-chain inspection plus route-control decisions\", \"stage\": \"R8_PYTHON_HEALTH_GOVERNANCE_PROMOTION\"}",
+  "reasons": [
+    "Normal python startup hook chain is unsafe/expensive in this sandbox",
+    "python3 -S is the enforced stdlib lane",
+    "Live normal-python probing is forbidden by design because it can hang the caller through artifact-tool daemon/file-descriptor behavior"
+  ],
+  "record_id": "DECISION_LOG_R8_20260428T031734Z",
+  "record_kind": "decision_log",
+  "result": "promote p0py gate as active route-control gate",
+  "source_record": {
+    "path": "runtime/governance/decision_logs/DECISION_LOG_R8_20260428T031734Z.json",
+    "sha256": "f012a290652955de9762a5103cbffab0b321118ea39512fc829dcd9c563d03b5",
+    "size_bytes": 716
+  },
+  "span_id": "81b4f890737b4474",
+  "stage_id": "R8_PYTHON_HEALTH_GOVERNANCE_PROMOTION",
+  "summary": "promote P0PY gate as active route-control gate",
+  "trace_id": "42f181f746e337d30b9cb876b775e593"
+}

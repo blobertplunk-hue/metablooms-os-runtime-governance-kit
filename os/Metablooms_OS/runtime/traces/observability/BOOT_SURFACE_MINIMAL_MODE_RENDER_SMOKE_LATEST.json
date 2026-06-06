@@ -1,0 +1,7 @@
+{
+  "artifact_type": "BOOT_SURFACE_MINIMAL_MODE_RENDER_SMOKE.v1",
+  "created_utc": "20260502T180854Z",
+  "guidance_steps": 8,
+  "tracker_bytes": 38197,
+  "verdict": "PASS"
+}

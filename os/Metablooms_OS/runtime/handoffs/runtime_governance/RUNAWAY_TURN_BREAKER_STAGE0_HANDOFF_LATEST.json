@@ -1,0 +1,6 @@
+{
+  "artifact_type": "RUNAWAY_TURN_BREAKER_STAGE0_HANDOFF_v1",
+  "created_utc": "20260501T203116Z",
+  "next_stage": "FAILURE_LEARNING_RUNTIME_ENFORCEMENT_REPAIR_STAGE_1",
+  "verdict": "READY_FOR_NEXT_STAGE"
+}

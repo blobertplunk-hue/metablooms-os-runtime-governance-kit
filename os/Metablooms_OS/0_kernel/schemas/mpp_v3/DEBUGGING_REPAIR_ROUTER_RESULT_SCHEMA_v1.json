@@ -1,0 +1,69 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/DEBUGGING_REPAIR_ROUTER_RESULT_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "created_at": {
+      "minLength": 10,
+      "type": "string"
+    },
+    "gate_id": {
+      "minLength": 6,
+      "type": "string"
+    },
+    "packet_id": {
+      "minLength": 8,
+      "type": "string"
+    },
+    "result_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "routes": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "mpp.debugging_repair_router_result.v1"
+    },
+    "stage": {
+      "const": "DEBUGGING_REPAIR_ROUTER"
+    },
+    "verdict": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "STOP_BLOCKED"
+      ],
+      "type": "string"
+    },
+    "violations": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "warnings": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "gate_id",
+    "stage",
+    "created_at",
+    "packet_id",
+    "verdict",
+    "violations",
+    "warnings",
+    "routes",
+    "result_hash"
+  ],
+  "title": "MPP v3 Debugging Repair Router Result",
+  "type": "object"
+}

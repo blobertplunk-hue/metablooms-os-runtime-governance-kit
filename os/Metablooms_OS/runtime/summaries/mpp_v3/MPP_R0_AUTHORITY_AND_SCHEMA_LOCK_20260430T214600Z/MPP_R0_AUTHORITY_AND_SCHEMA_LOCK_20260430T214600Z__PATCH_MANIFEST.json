@@ -1,0 +1,60 @@
+{
+  "files": [
+    {
+      "path": "/mnt/data/mbos_audit_extract_4945/Metablooms_OS/0_kernel/registry/mpp_v3/MPP_V3_AUTHORITY_AND_SCHEMA_LOCK_v1.json",
+      "relative_to_runtime_root": "0_kernel/registry/mpp_v3/MPP_V3_AUTHORITY_AND_SCHEMA_LOCK_v1.json",
+      "sha256": "49e7ebc2d5f4181a9d1b11815db47ab2d8e2fb93c35465a4485d350d94bb1e24",
+      "size": 8406
+    },
+    {
+      "path": "/mnt/data/mbos_audit_extract_4945/Metablooms_OS/0_kernel/registry/mpp_v3/MPP_V3_RESEARCH_STACK_BINDING_v1.json",
+      "relative_to_runtime_root": "0_kernel/registry/mpp_v3/MPP_V3_RESEARCH_STACK_BINDING_v1.json",
+      "sha256": "c3575cfdd6150fc964534158625fa7e84d98413d1ecb4c6c902d08fe38fef288",
+      "size": 920
+    },
+    {
+      "path": "/mnt/data/mbos_audit_extract_4945/Metablooms_OS/0_kernel/schemas/mpp_v3/RESEARCH_PLANNER_PACKET_SCHEMA_v1.json",
+      "relative_to_runtime_root": "0_kernel/schemas/mpp_v3/RESEARCH_PLANNER_PACKET_SCHEMA_v1.json",
+      "sha256": "b8db5a7454f8461908bc38cbd47c786aefa05fd1f95396455bdbad8ce49f442e",
+      "size": 6294
+    },
+    {
+      "path": "/mnt/data/mbos_audit_extract_4945/Metablooms_OS/0_kernel/schemas/mpp_v3/MMD_GAP_LEDGER_SCHEMA_v1.json",
+      "relative_to_runtime_root": "0_kernel/schemas/mpp_v3/MMD_GAP_LEDGER_SCHEMA_v1.json",
+      "sha256": "16c85d0bfbb459e536a4c60a6b0fcb66335c70169331e83da822fd3f960818cc",
+      "size": 4364
+    },
+    {
+      "path": "/mnt/data/mbos_audit_extract_4945/Metablooms_OS/0_kernel/registry/mpp_v3/samples/RESEARCH_PLANNER_PACKET_SMOKE_v1.json",
+      "relative_to_runtime_root": "0_kernel/registry/mpp_v3/samples/RESEARCH_PLANNER_PACKET_SMOKE_v1.json",
+      "sha256": "e9d68c4c3fce15361bdc1b3e2f1d502d0532a8a718ff3189902747366fa087c8",
+      "size": 2232
+    },
+    {
+      "path": "/mnt/data/mbos_audit_extract_4945/Metablooms_OS/0_kernel/registry/mpp_v3/samples/MMD_GAP_LEDGER_SMOKE_v1.json",
+      "relative_to_runtime_root": "0_kernel/registry/mpp_v3/samples/MMD_GAP_LEDGER_SMOKE_v1.json",
+      "sha256": "79a1ab9a377d280710ab1a7f31c81d6d54507c223e7d33b60dc5d5402a23236a",
+      "size": 1043
+    },
+    {
+      "path": "/mnt/data/mbos_audit_extract_4945/Metablooms_OS/0_kernel/docs/mpp_v3/MPP_R0_AUTHORITY_AND_SCHEMA_LOCK_v1.md",
+      "relative_to_runtime_root": "0_kernel/docs/mpp_v3/MPP_R0_AUTHORITY_AND_SCHEMA_LOCK_v1.md",
+      "sha256": "3b03bcbef65032763ae9c1d839d4bf36c594f23b02638a2205be7dec8ab0dec1",
+      "size": 961
+    },
+    {
+      "path": "/mnt/data/mbos_audit_extract_4945/Metablooms_OS/0_kernel/registry/mpp_v3/MPP_R0_AUTHORITY_AND_SCHEMA_LOCK_RECEIPT_v1.json",
+      "relative_to_runtime_root": "0_kernel/registry/mpp_v3/MPP_R0_AUTHORITY_AND_SCHEMA_LOCK_RECEIPT_v1.json",
+      "sha256": "69b4af9c8a708bf4d66394e129f2acaa1ca7aa79eef78c39a3e8a94a4a6ede73",
+      "size": 3840
+    },
+    {
+      "path": "/mnt/data/mbos_audit_extract_4945/Metablooms_OS/0_kernel/registry/mpp_v3/MPP_R0_TO_R1_HANDOFF_v1.json",
+      "relative_to_runtime_root": "0_kernel/registry/mpp_v3/MPP_R0_TO_R1_HANDOFF_v1.json",
+      "sha256": "699eb49f3b61c0179f4c92d81c10672bfa1e75dfb4b02831219df054cb1983a0",
+      "size": 802
+    }
+  ],
+  "runtime_root": "/mnt/data/mbos_audit_extract_4945/Metablooms_OS",
+  "stage": "MPP_R0_AUTHORITY_AND_SCHEMA_LOCK"
+}

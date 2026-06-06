@@ -1,0 +1,48 @@
+{
+  "artifact_type": "METABLOOMS_CDR_CRITICAL_GATE_RESULTS_STAGE3_v1",
+  "created_utc": "20260502T140253Z",
+  "gates": [
+    {
+      "evidence": "Stage2 handoff present",
+      "gate": "stage2_handoff_loaded",
+      "passed": true
+    },
+    {
+      "evidence": "compat adapter present",
+      "gate": "adapter_installed",
+      "passed": true
+    },
+    {
+      "evidence": "four live callers contain run_compat",
+      "gate": "targeted_callers_patched",
+      "passed": true
+    },
+    {
+      "evidence": "patched callers no longer contain subprocess.run(",
+      "gate": "no_direct_subprocess_run_in_patched_callers",
+      "passed": true
+    },
+    {
+      "evidence": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T140037Z/TARGETED_SMOKE_RESULTS_FINAL.json",
+      "gate": "smoke_fixtures_pass",
+      "passed": true
+    },
+    {
+      "evidence": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T140037Z/RECEIPT_UNIQUENESS_SMOKE.json",
+      "gate": "unique_receipts_pass",
+      "passed": true
+    },
+    {
+      "evidence": "SEE_EVIDENCE_PACKET.json",
+      "gate": "external_evidence_bound",
+      "passed": true
+    },
+    {
+      "evidence": "exhaustive live scan recorded; remaining work deferred",
+      "gate": "bounded_scope_enforced",
+      "passed": true
+    }
+  ],
+  "result": "PASS",
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING"
+}

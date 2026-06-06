@@ -1,0 +1,261 @@
+{
+  "registry_id": "sandbox_tool_capability_registry_v1",
+  "created_at": "2026-04-24T00:50:58Z",
+  "rule": "Probe available tool surface before claiming inability; route tasks to the safest available specialized tool; validate outputs with receipts.",
+  "tools": [
+    {
+      "tool": "python3",
+      "available": true,
+      "path": "/opt/pyvenv/bin/python3",
+      "capabilities": [
+        "filesystem audit",
+        "hashing",
+        "json/schema validation",
+        "zip inspection",
+        "data processing",
+        "HTML static checks",
+        "PDF generation/inspection with libraries"
+      ],
+      "route_rule": "use when task requires listed capability and artifact-specific skill rules do not prohibit it",
+      "probe_required_before_claiming_unavailable": true
+    },
+    {
+      "tool": "node",
+      "available": true,
+      "path": "/opt/nvm/versions/node/v22.16.0/bin/node",
+      "capabilities": [
+        "JavaScript syntax checks",
+        "npm-based HTML/JS tooling",
+        "front-end build/test scripts"
+      ],
+      "route_rule": "use when task requires listed capability and artifact-specific skill rules do not prohibit it",
+      "probe_required_before_claiming_unavailable": true
+    },
+    {
+      "tool": "git",
+      "available": true,
+      "path": "/usr/bin/git",
+      "capabilities": [
+        "repo status",
+        "diff",
+        "commit history",
+        "version comparison",
+        "bundle provenance"
+      ],
+      "route_rule": "use when task requires listed capability and artifact-specific skill rules do not prohibit it",
+      "probe_required_before_claiming_unavailable": true
+    },
+    {
+      "tool": "zip",
+      "available": true,
+      "path": "/usr/bin/zip",
+      "capabilities": [
+        "archive creation",
+        "bundle packaging"
+      ],
+      "route_rule": "use when task requires listed capability and artifact-specific skill rules do not prohibit it",
+      "probe_required_before_claiming_unavailable": true
+    },
+    {
+      "tool": "unzip",
+      "available": true,
+      "path": "/usr/bin/unzip",
+      "capabilities": [
+        "archive inspection",
+        "bundle extraction"
+      ],
+      "route_rule": "use when task requires listed capability and artifact-specific skill rules do not prohibit it",
+      "probe_required_before_claiming_unavailable": true
+    },
+    {
+      "tool": "tar",
+      "available": true,
+      "path": "/usr/bin/tar",
+      "capabilities": [
+        "archive inspection/packaging"
+      ],
+      "route_rule": "use when task requires listed capability and artifact-specific skill rules do not prohibit it",
+      "probe_required_before_claiming_unavailable": true
+    },
+    {
+      "tool": "pdftotext",
+      "available": true,
+      "path": "/usr/bin/pdftotext",
+      "capabilities": [
+        "PDF text extraction and verification"
+      ],
+      "route_rule": "use when task requires listed capability and artifact-specific skill rules do not prohibit it",
+      "probe_required_before_claiming_unavailable": true
+    },
+    {
+      "tool": "pandoc",
+      "available": true,
+      "path": "/usr/bin/pandoc",
+      "capabilities": [
+        "document format conversion when available"
+      ],
+      "route_rule": "use when task requires listed capability and artifact-specific skill rules do not prohibit it",
+      "probe_required_before_claiming_unavailable": true
+    },
+    {
+      "tool": "libreoffice",
+      "available": true,
+      "path": "/usr/bin/libreoffice",
+      "capabilities": [
+        "office document conversion when explicitly appropriate"
+      ],
+      "route_rule": "use when task requires listed capability and artifact-specific skill rules do not prohibit it",
+      "probe_required_before_claiming_unavailable": true
+    },
+    {
+      "tool": "soffice",
+      "available": true,
+      "path": "/usr/bin/soffice",
+      "capabilities": [
+        "office document conversion when explicitly appropriate"
+      ],
+      "route_rule": "use when task requires listed capability and artifact-specific skill rules do not prohibit it",
+      "probe_required_before_claiming_unavailable": true
+    },
+    {
+      "tool": "ffmpeg",
+      "available": true,
+      "path": "/usr/bin/ffmpeg",
+      "capabilities": [
+        "audio/video inspection and conversion"
+      ],
+      "route_rule": "use when task requires listed capability and artifact-specific skill rules do not prohibit it",
+      "probe_required_before_claiming_unavailable": true
+    },
+    {
+      "tool": "convert",
+      "available": true,
+      "path": "/opt/imagemagick/bin/convert",
+      "capabilities": [
+        "image/PDF raster operations"
+      ],
+      "route_rule": "use when task requires listed capability and artifact-specific skill rules do not prohibit it",
+      "probe_required_before_claiming_unavailable": true
+    },
+    {
+      "tool": "magick",
+      "available": true,
+      "path": "/opt/imagemagick/bin/magick",
+      "capabilities": [
+        "image/PDF raster operations"
+      ],
+      "route_rule": "use when task requires listed capability and artifact-specific skill rules do not prohibit it",
+      "probe_required_before_claiming_unavailable": true
+    },
+    {
+      "tool": "gcc",
+      "available": true,
+      "path": "/usr/bin/gcc",
+      "capabilities": [
+        "C compile checks"
+      ],
+      "route_rule": "use when task requires listed capability and artifact-specific skill rules do not prohibit it",
+      "probe_required_before_claiming_unavailable": true
+    },
+    {
+      "tool": "g++",
+      "available": true,
+      "path": "/usr/bin/g++",
+      "capabilities": [
+        "C++ compile checks"
+      ],
+      "route_rule": "use when task requires listed capability and artifact-specific skill rules do not prohibit it",
+      "probe_required_before_claiming_unavailable": true
+    },
+    {
+      "tool": "go",
+      "available": true,
+      "path": "/usr/local/go/bin/go",
+      "capabilities": [
+        "Go build/test"
+      ],
+      "route_rule": "use when task requires listed capability and artifact-specific skill rules do not prohibit it",
+      "probe_required_before_claiming_unavailable": true
+    },
+    {
+      "tool": "java",
+      "available": true,
+      "path": "/usr/bin/java",
+      "capabilities": [
+        "Java runtime checks"
+      ],
+      "route_rule": "use when task requires listed capability and artifact-specific skill rules do not prohibit it",
+      "probe_required_before_claiming_unavailable": true
+    },
+    {
+      "tool": "javac",
+      "available": true,
+      "path": "/usr/bin/javac",
+      "capabilities": [
+        "Java compile checks"
+      ],
+      "route_rule": "use when task requires listed capability and artifact-specific skill rules do not prohibit it",
+      "probe_required_before_claiming_unavailable": true
+    },
+    {
+      "tool": "ruby",
+      "available": true,
+      "path": "/usr/bin/ruby",
+      "capabilities": [
+        "Ruby script execution checks"
+      ],
+      "route_rule": "use when task requires listed capability and artifact-specific skill rules do not prohibit it",
+      "probe_required_before_claiming_unavailable": true
+    },
+    {
+      "tool": "perl",
+      "available": true,
+      "path": "/usr/bin/perl",
+      "capabilities": [
+        "Perl script execution checks"
+      ],
+      "route_rule": "use when task requires listed capability and artifact-specific skill rules do not prohibit it",
+      "probe_required_before_claiming_unavailable": true
+    },
+    {
+      "tool": "php",
+      "available": true,
+      "path": "/usr/bin/php",
+      "capabilities": [
+        "PHP syntax/runtime checks"
+      ],
+      "route_rule": "use when task requires listed capability and artifact-specific skill rules do not prohibit it",
+      "probe_required_before_claiming_unavailable": true
+    },
+    {
+      "tool": "make",
+      "available": true,
+      "path": "/usr/bin/make",
+      "capabilities": [
+        "build orchestration when Makefile exists"
+      ],
+      "route_rule": "use when task requires listed capability and artifact-specific skill rules do not prohibit it",
+      "probe_required_before_claiming_unavailable": true
+    },
+    {
+      "tool": "jq",
+      "available": true,
+      "path": "/usr/bin/jq",
+      "capabilities": [
+        "JSON command-line validation/query"
+      ],
+      "route_rule": "use when task requires listed capability and artifact-specific skill rules do not prohibit it",
+      "probe_required_before_claiming_unavailable": true
+    },
+    {
+      "tool": "sqlite3",
+      "available": false,
+      "path": null,
+      "capabilities": [
+        "SQLite inspection/query"
+      ],
+      "route_rule": "use when task requires listed capability and artifact-specific skill rules do not prohibit it",
+      "probe_required_before_claiming_unavailable": true
+    }
+  ]
+}

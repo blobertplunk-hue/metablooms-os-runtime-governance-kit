@@ -1,0 +1,58 @@
+{
+  "bts_receipt_id": "T1-STAGE6J_WRITE_FULL_POINTER_current_authority_CURRENT_FULL_AUTHORITY_POINTER_v1__filesystem_write_artifact-20260502T013903Z",
+  "bts_turn_committed": true,
+  "implementation_reality": {
+    "actual_files": [
+      "/mnt/data/Metablooms_OS/0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json"
+    ],
+    "claimed_files": [
+      "/mnt/data/Metablooms_OS/0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json"
+    ],
+    "unclaimed": [],
+    "unfulfilled": [],
+    "verdict": "PASS"
+  },
+  "kind": "filesystem_write",
+  "policy_decision": {
+    "decided_at_utc": "2026-05-02T01:39:03Z",
+    "decision": "ALLOW",
+    "decision_id": "decision_1777685943093_f5b671e2",
+    "enforced_by": "pre_tool_action_gate_v1",
+    "envelope_id": "STAGE6J_WRITE_FULL_POINTER_current_authority_CURRENT_FULL_AUTHORITY_POINTER_v1__filesystem_write",
+    "envelope_sha256": "cdad574fa95a8521a935a754575e4b24ab295114cda3544ddecb842185bd8b67",
+    "matched_rules": [
+      "schema.required",
+      "path.safety",
+      "runaway.breaker",
+      "method.reliability"
+    ],
+    "rationale": "Envelope passed schema, method, path, SEE, approval, and bounded-budget checks.",
+    "reason_code": "LOW_RISK_BOUNDED_ACTION",
+    "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/STAGE6J_WRITE_FULL_POINTER_current_authority_CURRENT_FULL_AUTHORITY_POINTER_v1__filesystem_write.decision.json",
+    "required_next_action": "execute_action_and_write_action_receipt",
+    "safe_to_execute": true,
+    "schema_version": "PolicyDecision_v1",
+    "stage_id": "STAGE6J_FULL_AUTHORITY_EXPORT_AFTER_BTS_TOOL_UNIVERSE_RESOLVER_RETROFIT"
+  },
+  "receipt_id": "bts_exec_20260502T013903Z_8f178077",
+  "schema": "mb.bts_wrapped_executors.v1",
+  "stage_id": "STAGE6J_FULL_AUTHORITY_EXPORT_AFTER_BTS_TOOL_UNIVERSE_RESOLVER_RETROFIT",
+  "target": "/mnt/data/Metablooms_OS/0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+  "target_bytes": 2234,
+  "target_sha256": "aa36b2b46906d404715479a87c9b7c0b6a9b185ed07988a91cba3e3038c1d34c",
+  "timestamp_utc": "2026-05-02T01:39:03.498990Z",
+  "tool_selection_sufficiency": {
+    "covered_candidate_count": 1,
+    "missing_candidates": [],
+    "reasons": [],
+    "required_candidate_count": 1,
+    "schema": "TOOL_SELECTION_SUFFICIENCY_GATE_RESULT_v1",
+    "selected_tool_id": "bts_wrapped_filesystem_write",
+    "timestamp_utc": "2026-05-02T01:39:02.905011Z",
+    "top_allowed_tool_id": "bts_wrapped_filesystem_write",
+    "verdict": "PASS"
+  },
+  "tool_universe_candidate_set_id": "tool_candidates_d88a72f3c036d8f9",
+  "turn_id": "STAGE6J_WRITE_FULL_POINTER_current_authority_CURRENT_FULL_AUTHORITY_POINTER_v1_",
+  "verdict": "PASS"
+}

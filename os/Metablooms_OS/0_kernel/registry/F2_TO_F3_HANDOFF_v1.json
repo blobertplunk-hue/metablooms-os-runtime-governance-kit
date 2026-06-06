@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "created_at": 1777061653.5840373,
+  "from_stage": "F2_STAGE_DAG_AND_DEPENDENCY_LEDGER_CONTRACT",
+  "to_stage": "F3_TRANSACTIONAL_STAGE_RUNNER_CONTRACT",
+  "status": "ready",
+  "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F2_STAGE_DAG_AND_DEPENDENCY_LEDGER_CONTRACT_RECEIPT_v1.json",
+  "dag_file": "/mnt/data/Metablooms_OS_refined/0_kernel/pipeline/STAGE_DAG_v1.json",
+  "ledger_file": "/mnt/data/Metablooms_OS_refined/0_kernel/state/STAGE_STATE_LEDGER_v1.json",
+  "dag_contract": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/STAGE_DAG_AND_DEPENDENCY_LEDGER_CONTRACT_v1.json",
+  "spec_only": true,
+  "export_allowed": false,
+  "cleanup_allowed": false,
+  "next_command": "EXECUTE F3 \u2014 TRANSACTIONAL STAGE RUNNER CONTRACT"
+}

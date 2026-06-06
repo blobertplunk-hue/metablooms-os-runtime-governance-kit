@@ -1,0 +1,12 @@
+{
+  "schema_version": "v1",
+  "cartridge_id": "EDUCATIONAL_HTML_DESIGN_SYSTEM_CARTRIDGE",
+  "provenance": "RECONSTRUCTED_FROM_CHAT_SUMMARY_AND_BASE_AUTHORITY_20260503",
+  "purpose": "Require reusable tokens, components, accessibility checks, and Google Sites-safe standalone HTML for educational activities.",
+  "required_files": [
+    "EDUCATIONAL_HTML_DESIGN_TOKENS_v1.json",
+    "EDUCATIONAL_HTML_COMPONENT_CONTRACT_v1.json",
+    "educational_html_design_system_validator_v1.py",
+    "educational_html_starter_template_v1.html"
+  ]
+}

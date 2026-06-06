@@ -1,0 +1,36 @@
+{
+  "schema_version": "v1",
+  "provenance": "RECONSTRUCTED_FROM_CHAT_SUMMARY_AND_BASE_AUTHORITY_20260503",
+  "sources": [
+    {
+      "label": "google_sre_postmortem_culture",
+      "url": "https://sre.google/sre-book/postmortem-culture/",
+      "criterion_use": "recurrence prevention via root cause and preventive actions"
+    },
+    {
+      "label": "dora_metrics",
+      "url": "https://dora.dev/guides/dora-metrics/",
+      "criterion_use": "delivery/recovery measurement"
+    },
+    {
+      "label": "wcag22",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "criterion_use": "testable accessibility criteria"
+    },
+    {
+      "label": "material_design_tokens",
+      "url": "https://m3.material.io/foundations/design-tokens/",
+      "criterion_use": "reusable tokens and components"
+    },
+    {
+      "label": "playwright_visual_comparisons",
+      "url": "https://playwright.dev/docs/test-snapshots/",
+      "criterion_use": "visual regression evidence tier"
+    },
+    {
+      "label": "opentelemetry",
+      "url": "https://opentelemetry.io/",
+      "criterion_use": "portable metrics/logs/traces framing"
+    }
+  ]
+}

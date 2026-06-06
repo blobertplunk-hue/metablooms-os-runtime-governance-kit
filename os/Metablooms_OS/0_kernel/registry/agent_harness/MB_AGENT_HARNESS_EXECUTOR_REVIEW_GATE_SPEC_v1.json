@@ -1,0 +1,38 @@
+{
+  "artifact_type": "MB_AGENT_HARNESS_EXECUTOR_REVIEW_GATE_SPEC_v1",
+  "created_utc": "20260501T171620Z",
+  "gates": [
+    {
+      "decision": "BLOCK_ON_FAIL",
+      "gate_id": "AH-GATE-301",
+      "name": "diff_review_required_before_execution"
+    },
+    {
+      "decision": "BLOCK_ON_FAIL",
+      "gate_id": "AH-GATE-302",
+      "name": "bounded_write_scope_required"
+    },
+    {
+      "decision": "BLOCK_ON_FAIL",
+      "gate_id": "AH-GATE-303",
+      "name": "executor_review_trace_required"
+    },
+    {
+      "decision": "BLOCK_ON_FAIL",
+      "gate_id": "AH-GATE-304",
+      "name": "receipt_handoff_required_after_review"
+    }
+  ],
+  "limits": {
+    "max_blockers_listed": 25,
+    "max_trace_attributes_chars": 1200,
+    "max_write_scope_entries_per_packet": 25
+  },
+  "purpose": "Require bounded executor review evidence before cartridge execution or export promotion for agent-harness workpackets.",
+  "source_research": [
+    "OpenAI Agents SDK guardrails",
+    "OpenAI Agents SDK tracing",
+    "LangGraph persistence and interrupt model"
+  ],
+  "stage": "IMPLEMENT_AGENT_HARNESS_STAGE_3_EXECUTOR_REVIEW_GATE"
+}

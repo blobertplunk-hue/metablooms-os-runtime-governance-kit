@@ -1,0 +1,30 @@
+{
+  "schema_id": "GOVERNED_TOOL_INSTALL_ENFORCEMENT_GATE_v1",
+  "status": "active",
+  "gate_name": "external_tool_install_selection_and_promotion_gate",
+  "decision_order": [
+    "classify job type",
+    "select smallest matching install profile",
+    "install in isolated workspace",
+    "pin dependencies and lock versions",
+    "verify resolver/command availability",
+    "run task-specific smoke test",
+    "write install receipt and hashes",
+    "use tool only for the current bounded stage",
+    "promote policy/scripts/artifacts into OS only after validation",
+    "never promote caches, node_modules, or package manager temp files"
+  ],
+  "blocked_conditions": [
+    "unverified package resolution",
+    "missing lockfile for dependency-managed workspace",
+    "missing install log",
+    "no task-specific smoke test",
+    "broad OS mutation without promotion receipt",
+    "archive promotion without CRC proof and sidecar hash"
+  ],
+  "current_stage_binding": {
+    "stage_id": "STAGE4C_NODE_YAUZL_YAZL_STREAM_REBUILD_AND_BOOT_PROOF",
+    "selected_profile": "A_ZIP_AUTHORITY_REPAIR",
+    "reason": "boot-repaired authority archive requires streamed CRC proof and clean rebuild without full filesystem extraction"
+  }
+}

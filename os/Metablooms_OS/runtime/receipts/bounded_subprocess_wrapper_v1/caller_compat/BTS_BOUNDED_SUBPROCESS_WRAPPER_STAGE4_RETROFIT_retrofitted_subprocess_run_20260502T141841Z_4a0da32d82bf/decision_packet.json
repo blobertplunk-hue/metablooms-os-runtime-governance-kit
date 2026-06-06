@@ -1,0 +1,42 @@
+{
+  "argv_redacted": [
+    "/opt/pyvenv/bin/python3",
+    "/mnt/data/Metablooms_OS/runtime/governance/cdr_linchpin_recursive_audit_gate_v1.py",
+    "/mnt/data/Metablooms_OS/tests/fixtures/cdr/valid_cdr_linchpin_recursive_audit_packet_v1.json"
+  ],
+  "argv_resolved": [
+    "/opt/pyvenv/bin/python3",
+    "/mnt/data/Metablooms_OS/runtime/governance/cdr_linchpin_recursive_audit_gate_v1.py",
+    "/mnt/data/Metablooms_OS/tests/fixtures/cdr/valid_cdr_linchpin_recursive_audit_packet_v1.json"
+  ],
+  "artifact_type": "METABLOOMS_BOUNDED_COMMAND_DECISION_PACKET_v1",
+  "attempts": [
+    {
+      "attempt_index": 0,
+      "elapsed_ms": 6709,
+      "returncode": 0,
+      "started_utc": "20260502T141841Z",
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_truncated": false,
+      "stdout": "{\n  \"decision\": \"ALLOW\",\n  \"missing_cycles\": [],\n  \"reasons\": [],\n  \"stage\": \"CDR_STAGE12_CDR_LINCHPIN_RECURSIVE_AUDIT_DEEPENING\"\n}\n",
+      "stdout_bytes": 132,
+      "stdout_sha256": "e5bd602a6638899c9b99a85d6503027bf7b68be48f5681d48916a0b0ebb2641f",
+      "stdout_truncated": false,
+      "timeout_seconds": 10.0
+    }
+  ],
+  "created_utc": "20260502T141841Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision_packet_path": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT_retrofitted_subprocess_run_20260502T141841Z_4a0da32d82bf/decision_packet.json",
+  "failure_class": null,
+  "failure_event_path": null,
+  "operation_type": "retrofitted_subprocess_run",
+  "policy_matches": [],
+  "pre_spawn_receipt_path": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT_retrofitted_subprocess_run_20260502T141841Z_4a0da32d82bf/pre_spawn_receipt.json",
+  "receipt_dir": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT_retrofitted_subprocess_run_20260502T141841Z_4a0da32d82bf",
+  "result_class": "ALLOW_SUCCESS",
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT",
+  "total_elapsed_ms": 6738
+}

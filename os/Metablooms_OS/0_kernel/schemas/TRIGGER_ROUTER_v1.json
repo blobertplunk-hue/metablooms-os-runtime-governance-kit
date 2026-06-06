@@ -1,0 +1,110 @@
+{
+  "version": "1.0",
+  "routes": [
+    {
+      "route_id": "research_required",
+      "signals": [
+        "research",
+        "web.run",
+        "external",
+        "sources"
+      ],
+      "required_stages": [
+        "RESEARCH_TRIGGER_CHECK",
+        "SEE_PASS"
+      ],
+      "required_modules": [
+        "research_trigger"
+      ],
+      "fail_next": "BLOCK_WITH_RECEIPT"
+    },
+    {
+      "route_id": "sandbox_tool_required",
+      "signals": [
+        "/mnt/data",
+        "file",
+        "audit",
+        "export",
+        "zip",
+        "cleanup"
+      ],
+      "required_stages": [
+        "TOOL_GOVERNANCE_CHECK"
+      ],
+      "required_modules": [
+        "sandbox_tool_governance"
+      ],
+      "fail_next": "BLOCK_WITH_RECEIPT"
+    },
+    {
+      "route_id": "ce_required",
+      "signals": [
+        "understand",
+        "comprehension",
+        "intent",
+        "misinterpretation",
+        "root cause"
+      ],
+      "required_stages": [
+        "CE_COMPREHENSION_PASS"
+      ],
+      "required_modules": [
+        "CE_stage_cartridge"
+      ],
+      "fail_next": "BLOCK_WITH_RECEIPT"
+    },
+    {
+      "route_id": "code_patch_required",
+      "signals": [
+        "patch",
+        "implement",
+        "script",
+        "code"
+      ],
+      "required_stages": [
+        "PLAN",
+        "EXECUTE_ONE_STAGE",
+        "VERIFY"
+      ],
+      "required_modules": [
+        "script_quality_gate"
+      ],
+      "fail_next": "BLOCK_WITH_RECEIPT"
+    },
+    {
+      "route_id": "registry_mutation_required",
+      "signals": [
+        "registry",
+        "artifact_registry",
+        "boot_manifest"
+      ],
+      "required_stages": [
+        "VERIFY",
+        "RECEIPT",
+        "GIT_COMMIT"
+      ],
+      "required_modules": [
+        "registry_mutation_engine"
+      ],
+      "fail_next": "BLOCK_WITH_RECEIPT"
+    },
+    {
+      "route_id": "export_required",
+      "signals": [
+        "export",
+        "bundle",
+        "zip",
+        "download"
+      ],
+      "required_stages": [
+        "VERIFY",
+        "RECEIPT",
+        "GIT_COMMIT"
+      ],
+      "required_modules": [
+        "export_guard"
+      ],
+      "fail_next": "BLOCK_WITH_RECEIPT"
+    }
+  ]
+}

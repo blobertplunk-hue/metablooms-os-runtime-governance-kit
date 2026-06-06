@@ -1,0 +1,1 @@
+{"schema_version": "TRACE_SPAN_v1", "stage_name": "RECONCILE_BRANCH_LINEAGE_AND_REPAIR_CUMULATIVE_AUTHORITY_POINTERS_STAGE_1", "event": "stage_complete", "status": "PASS", "timestamp_utc": "20260501T182011Z", "attributes": {"branch_count": 12}}

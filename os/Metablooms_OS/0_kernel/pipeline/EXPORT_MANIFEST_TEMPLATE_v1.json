@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "created_at": "<timestamp>",
+  "export_id": "<export_id>",
+  "export_file": "<zip_name>",
+  "sha256": "<sha256>",
+  "size_bytes": 0,
+  "git_head": "<git_head>",
+  "source_root": "/mnt/data/Metablooms_OS_refined",
+  "included_required_capabilities": [
+    "boot runtime executor",
+    "trigger router evaluator",
+    "CE packet validator",
+    "SEE packet validator",
+    "research failure blocker",
+    "auto-runaway breaker",
+    "current working baseline pointer",
+    "stage DAG",
+    "stage state ledger",
+    "transactional stage runner contract",
+    "export provenance contract"
+  ],
+  "excluded_paths_policy": {
+    "always_exclude": [
+      "0_kernel/scripts/__pycache__",
+      ".pytest_cache",
+      "temporary stage roots under /mnt/data/_stage"
+    ],
+    "preserve_if_tracked": [
+      "tracked vendor cache files",
+      "tracked registry artifacts",
+      "tracked evidence receipts"
+    ]
+  },
+  "provenance": "EXPORT_PROVENANCE_v1.json",
+  "restore_contract": "RESTORE_CONTRACT_v1.json",
+  "verdict": "PASS"
+}

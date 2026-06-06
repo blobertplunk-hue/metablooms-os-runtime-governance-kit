@@ -1,0 +1,32 @@
+{
+  "completed": [
+    "PAC gate hard-bound into MPP export promotion gate",
+    "Policy binding record written",
+    "Current OS repair plan written",
+    "Regression proof: old export packet denied, patched PAC packet passes"
+  ],
+  "created_at": "2026-05-02T20:10:48.788554+00:00",
+  "current_os_defects_after_stage3": {
+    "decision": "DENY",
+    "defects": [
+      "controlled_artifact_missing_from_index",
+      "live_boot_file_names_noncurrent_authority",
+      "registered_hash_mismatch"
+    ],
+    "mismatches": 85,
+    "missing": 947,
+    "stale_refs": 4
+  },
+  "current_os_gate_state": "DENY_REPORT_ONLY",
+  "do_not_do": [
+    "Do not bulk-register missing controlled artifacts",
+    "Do not promote full authority export until PAC scan passes",
+    "Do not patch stale boot files without classifying historical vs live authority references"
+  ],
+  "receipt": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE3_PROMOTION_BINDING_AND_CURRENT_OS_REPAIR_PLAN_20260502T200709Z/STAGE_RECEIPT.json",
+  "repair_plan": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_CURRENT_OS_REPAIR_PLAN_v1.json",
+  "required_next_stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER",
+  "schema_version": "metablooms.stage_handoff.v1",
+  "stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE3_PROMOTION_BINDING_AND_CURRENT_OS_REPAIR_PLAN",
+  "status": "HANDOFF_READY"
+}

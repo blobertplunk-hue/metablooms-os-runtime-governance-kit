@@ -1,0 +1,14 @@
+{
+  "created_utc": "20260430T014900Z",
+  "extract_result": {
+    "extracted": true,
+    "reason": "target_zip_extracted"
+  },
+  "fl17_hook_exists": true,
+  "root_after_exists": true,
+  "root_before_exists": false,
+  "stage": "FL17-MERGE-3_TRACKER_LIFECYCLE_REPAIR",
+  "target_zip": "/mnt/data/MB_FULL_OS_WITH_TRACKER_INTEGRATED_20260429T113808Z/METABLOOMS_OS_FULL_WITH_INLINE_TRACKER_INTEGRATED_20260429T113808Z.zip",
+  "target_zip_exists": true,
+  "target_zip_sha256": "ec6e06f13ada966a17a0f72cd6a226c49508e2c076ad22054688027cfda25f97"
+}

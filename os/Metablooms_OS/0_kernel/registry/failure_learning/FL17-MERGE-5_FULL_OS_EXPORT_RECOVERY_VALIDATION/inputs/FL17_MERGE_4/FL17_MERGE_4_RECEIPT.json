@@ -1,0 +1,29 @@
+{
+  "artifact_type": "RECEIPT",
+  "created_utc": "20260430T015900Z",
+  "full_os_export_performed": false,
+  "governance": {
+    "always_on_governance": "mandatory",
+    "cartridge_governance": "additive",
+    "see_ce_preflight": "performed"
+  },
+  "inputs": [
+    "/mnt/data/MB_GOV_REPAIR_SEE_CE_0_20260430T010558Z/GOV_REPAIR_SEE_CE_0_REPORT.json",
+    "/mnt/data/MB_FL17_MERGE_1_STAGING_DIFF_20260430T012800Z/FL17_DELTA_REPORT_v1.json",
+    "/mnt/data/MB_FL17_MERGE_2_QUARANTINED_IMPORT_20260430T013700Z/FL17_QUARANTINED_IMPORT_MANIFEST_v1.json",
+    "/mnt/data/MB_FL17_MERGE_3_TRACKER_LIFECYCLE_REPAIR_20260430T014900Z/FL17_MERGE_3_HANDOFF.json",
+    "/mnt/data/METABLOOMS_OS_STABLE_v0.8.0_FL17_REPACKED_FROM_FL15_20260430T003638Z.zip"
+  ],
+  "outputs": [
+    "/mnt/data/Metablooms_OS/0_kernel/registry/failure_learning/FL17-MERGE-4_SEMANTIC_RECONCILIATION/FL16_FL17_SEMANTIC_AUTHORITY_v1.json",
+    "/mnt/data/Metablooms_OS/1_governance/failure_learning/FL17_EXPORT_PASS_NOT_PROMOTION_SUCCESS_POLICY_v1.md",
+    "/mnt/data/Metablooms_OS/0_kernel/registry/failure_learning/FL17-MERGE-4_SEMANTIC_RECONCILIATION/FL17_MERGE_4_VALIDATION_REPORT.json"
+  ],
+  "promotion_performed": false,
+  "scope": "semantic reconciliation only; no full OS export, no baseline promotion",
+  "semantic_decision": "FL16 remains BLOCKED_NOT_PROMOTED; FL17 PASS is export/package PASS only.",
+  "stage": "FL17-MERGE-4_SEMANTIC_RECONCILIATION",
+  "status": "PASS",
+  "validation_report": "/mnt/data/Metablooms_OS/0_kernel/registry/failure_learning/FL17-MERGE-4_SEMANTIC_RECONCILIATION/FL17_MERGE_4_VALIDATION_REPORT.json",
+  "verdict": "PASS"
+}

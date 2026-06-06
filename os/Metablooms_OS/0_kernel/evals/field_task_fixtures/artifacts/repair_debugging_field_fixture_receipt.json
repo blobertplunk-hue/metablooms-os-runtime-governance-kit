@@ -1,0 +1,7 @@
+{
+  "regression_fixture_added": true,
+  "root_cause": "path binding assumption",
+  "smallest_valid_fix": "bind paths from current artifact map before command generation",
+  "stage": "repair_debugging_field_fixture",
+  "verdict": "PASS"
+}

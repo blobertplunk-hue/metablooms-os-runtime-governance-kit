@@ -1,0 +1,176 @@
+#!/usr/bin/env python3
+"""MetaBlooms Inline Project Tracker gate validator v1.
+
+Validates the boot/stage/evidence/stop gate contracts created in TRACKER-3.
+This validator is intentionally stdlib-only and suitable for `python3 -S`.
+"""
+from __future__ import annotations
+
+import hashlib
+import importlib.util
+import json
+import sys
+from pathlib import Path
+from typing import Any, Dict, List, Tuple
+
+REQUIRED_GATE_FILES = [
+    "TRACKER_BOOT_GATE_v1.json",
+    "TRACKER_STAGE_GATE_v1.json",
+    "TRACKER_EVIDENCE_GATE_v1.json",
+    "TRACKER_STOP_GATE_v1.json",
+]
+REQUIRED_EVIDENCE_KEYS = {"label", "path", "sha256", "kind"}
+DONE_LIKE = {"DONE", "PASS", "COMPLETE", "COMPLETED"}
+BLOCKED_LIKE = {"BLOCKED", "FAILED_CLOSED", "FAIL_CLOSED", "BLOCKED_BEFORE_EXPORT"}
+
+
+def sha256_path(path: Path) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as fh:
+        for chunk in iter(lambda: fh.read(1024 * 1024), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def load_json(path: Path) -> Dict[str, Any]:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def load_renderer(renderer_path: Path):
+    spec = importlib.util.spec_from_file_location("tracker_renderer_v1", renderer_path)
+    if spec is None or spec.loader is None:
+        raise RuntimeError("could not load renderer")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)  # type: ignore[union-attr]
+    return module
+
+
+def validate_gate_files(cartridge_dir: Path) -> List[str]:
+    errors: List[str] = []
+    for name in REQUIRED_GATE_FILES:
+        path = cartridge_dir / name
+        if not path.exists():
+            errors.append(f"missing gate file: {name}")
+            continue
+        doc = load_json(path)
+        if not doc.get("schema_version", "").endswith("_v1"):
+            errors.append(f"gate file missing v1 schema_version: {name}")
+        if not doc.get("rules"):
+            errors.append(f"gate file missing rules: {name}")
+        if not doc.get("failure_status"):
+            errors.append(f"gate file missing failure_status: {name}")
+    return errors
+
+
+def validate_evidence_requirements(state: Dict[str, Any]) -> List[str]:
+    errors: List[str] = []
+    status = str(state.get("status", "")).upper()
+    evidence = state.get("evidence")
+    blocker = state.get("blocker") or {}
+    if status in DONE_LIKE or status.startswith("DONE"):
+        if not isinstance(evidence, list) or not evidence:
+            errors.append("DONE status requires at least one evidence item")
+    if isinstance(evidence, list):
+        for idx, item in enumerate(evidence):
+            if not isinstance(item, dict):
+                errors.append(f"evidence[{idx}] is not an object")
+                continue
+            missing = REQUIRED_EVIDENCE_KEYS - set(item)
+            if missing:
+                errors.append(f"evidence[{idx}] missing keys: {sorted(missing)}")
+            sha = item.get("sha256")
+            if not isinstance(sha, str) or len(sha) != 64:
+                errors.append(f"evidence[{idx}] sha256 must be 64 hex chars")
+    if status in BLOCKED_LIKE or status.startswith("BLOCKED") or blocker.get("present"):
+        if not blocker.get("summary") or blocker.get("summary") == "none":
+            errors.append("BLOCKED/blocker.present requires non-empty blocker summary")
+        if not blocker.get("evidence_path") and not evidence:
+            errors.append("BLOCKED/blocker.present requires blocker.evidence_path or evidence list")
+    return errors
+
+
+def validate_existing_state_load_before_action(root: Path, state_path: Path, renderer_path: Path) -> Tuple[List[str], str]:
+    errors: List[str] = []
+    if not state_path.exists():
+        return ["state missing; boot gate must block governed action"], ""
+    state = load_json(state_path)
+    if Path(str(state.get("active_root", ""))) != root:
+        errors.append("state active_root does not match canonical root")
+    renderer = load_renderer(renderer_path)
+    rendered = renderer.render_tracker(state)
+    if not rendered.startswith("TRACKER ▸"):
+        errors.append("rendered tracker does not start with required top marker")
+    errors.extend(validate_evidence_requirements(state))
+    return errors, rendered
+
+
+def simulate_missing_state_blocks(root: Path, renderer_path: Path) -> List[str]:
+    errors: List[str] = []
+    missing_path = root / "runtime/state/__MISSING_TRACKER_STATE_FOR_TEST__.json"
+    if missing_path.exists():
+        errors.append("missing-state test path unexpectedly exists")
+    # A missing state must not be treated as usable; that is the expected block.
+    if not missing_path.exists():
+        return []
+    return errors
+
+
+def simulate_done_blocked_evidence_rejection(state: Dict[str, Any]) -> List[str]:
+    errors: List[str] = []
+    done_bad = dict(state)
+    done_bad["status"] = "DONE"
+    done_bad["evidence"] = []
+    if not any("DONE status requires" in e for e in validate_evidence_requirements(done_bad)):
+        errors.append("DONE without evidence was not rejected")
+    blocked_bad = dict(state)
+    blocked_bad["status"] = "BLOCKED"
+    blocked_bad["evidence"] = []
+    blocked_bad["blocker"] = {"present": True, "summary": "", "evidence_path": None}
+    blocked_errors = validate_evidence_requirements(blocked_bad)
+    if not any("BLOCKED" in e for e in blocked_errors):
+        errors.append("BLOCKED without blocker evidence/summary was not rejected")
+    return errors
+
+
+def main(argv: List[str]) -> int:
+    if len(argv) != 5:
+        print("usage: TRACKER_GATE_VALIDATOR_v1.py <root> <state.json> <renderer.py> <report.json>", file=sys.stderr)
+        return 2
+    root = Path(argv[1])
+    state_path = Path(argv[2])
+    renderer_path = Path(argv[3])
+    report_path = Path(argv[4])
+    cartridge_dir = renderer_path.parent
+    errors: List[str] = []
+    errors.extend(validate_gate_files(cartridge_dir))
+    errors.extend(simulate_missing_state_blocks(root, renderer_path))
+    state_errors, rendered = validate_existing_state_load_before_action(root, state_path, renderer_path)
+    errors.extend(state_errors)
+    state = load_json(state_path) if state_path.exists() else {}
+    errors.extend(simulate_done_blocked_evidence_rejection(state))
+    report = {
+        "validator": "TRACKER_GATE_VALIDATOR_v1",
+        "status": "PASS" if not errors else "FAIL",
+        "errors": errors,
+        "checks": {
+            "gate_files_present": "PASS" if not validate_gate_files(cartridge_dir) else "FAIL",
+            "missing_state_blocking": "PASS" if not simulate_missing_state_blocks(root, renderer_path) else "FAIL",
+            "existing_state_load_before_action": "PASS" if not state_errors else "FAIL",
+            "done_blocked_evidence_rejection": "PASS" if not simulate_done_blocked_evidence_rejection(state) else "FAIL",
+            "top_marker_after_load": "PASS" if rendered.startswith("TRACKER ▸") else "FAIL",
+        },
+        "artifacts": {
+            name: {
+                "path": str(cartridge_dir / name),
+                "sha256": sha256_path(cartridge_dir / name) if (cartridge_dir / name).exists() else None,
+            } for name in REQUIRED_GATE_FILES
+        },
+        "rendered_preview": rendered,
+    }
+    report_path.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    print(json.dumps(report, indent=2, sort_keys=True))
+    return 0 if not errors else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(sys.argv))

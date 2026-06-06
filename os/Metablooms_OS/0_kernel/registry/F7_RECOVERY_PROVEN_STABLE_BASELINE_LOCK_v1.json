@@ -1,0 +1,30 @@
+{
+  "version": "1.0",
+  "created_at": 1777063115.0445704,
+  "stage": "F7_RECOVERY_PROVEN_STABLE_BASELINE_LOCK",
+  "status": "locked",
+  "export_zip": "/mnt/data/exports/MetaBlooms_OS_refined_F7_RECOVERY_PROVEN_1777063110.zip",
+  "download_copy": "/mnt/data/MetaBlooms_OS_refined_F7_RECOVERY_PROVEN_1777063110.zip",
+  "sidecar": "/mnt/data/exports/MetaBlooms_OS_refined_F7_RECOVERY_PROVEN_1777063110.zip.sha256.json",
+  "sha256": "6e3ef107850115fa3230a0af1e03e4efb360c7dcff9c52401daaa68d2e14bb90",
+  "size_bytes": 15148738,
+  "git_head": "66c02ea78aa786630ca9ba529ced50f8721add21",
+  "recovery_proof": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F7_BOOT_RECOVERY_PROOF_v1.json",
+  "capability_set": [
+    "boot runtime executor",
+    "trigger router evaluator",
+    "CE packet validator",
+    "SEE packet validator",
+    "auto-runaway breaker",
+    "current working baseline pointer",
+    "stage DAG",
+    "stage state ledger",
+    "transactional stage runner contract",
+    "manifest/provenance export contract",
+    "restore ladder and mode-normalization proof",
+    "blocked receipt handling rule",
+    "F0-F7 recovery architecture arc"
+  ],
+  "verdict": "PASS",
+  "next_correct_command": "RETURN TO E4A \u2014 MASTER PIPELINE PROOF SCOPE LOCK"
+}

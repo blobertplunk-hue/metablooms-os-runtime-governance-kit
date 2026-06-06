@@ -1,0 +1,26 @@
+{
+  "artifact_type": "AtomicAppendLogWriterCallsitePolicy.v1",
+  "stage": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING",
+  "policy_version": "stage3",
+  "blocking_patterns": [
+    "direct open(..., 'a') JSONL append in live non-hash-chain code",
+    "Path.open('a') JSONL append in live non-hash-chain code"
+  ],
+  "warning_deferrals": [
+    {
+      "file": "0_kernel/scripts/runtime_pulse_logger_v1.py",
+      "reason": "hash-chained append ledger; retrofit requires chain-hash contract preservation"
+    },
+    {
+      "file": "runtime/governance/bts_v4/BTS.py",
+      "reason": "hash-chained BTS ndjson ledger; retrofit requires prior-entry hash contract preservation"
+    },
+    {
+      "file": "runtime/governance/legacy_archives/claude_memory_sync_writer_v1.py",
+      "reason": "legacy archive; not live governance code"
+    }
+  ],
+  "canonical_writer": "0_kernel/lib/io/atomic_append_log_writer_v1.py",
+  "compat_adapter": "0_kernel/lib/io/atomic_append_log_compat_v1.py",
+  "verdict_rule": "PASS iff all remaining direct append-open call sites are explicitly warning-deferred or exempt"
+}

@@ -1,0 +1,51 @@
+{
+  "stage": "BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE1_SANDBOX_FIRST_POLICY_AND_FIXTURES",
+  "timestamp_utc": "20260502T224349Z",
+  "tool_snapshot": {
+    "tools": {
+      "chromium": "/usr/bin/chromium",
+      "firefox": null,
+      "playwright": "/opt/pyvenv/bin/playwright",
+      "weasyprint": "/opt/pyvenv/bin/weasyprint",
+      "wkhtmltoimage": null,
+      "xvfb-run": "/usr/bin/xvfb-run"
+    },
+    "versions": {
+      "chromium": "Chromium 144.0.7559.96 built on Debian GNU/Linux 13 (trixie)",
+      "playwright": "Version 1.57.0",
+      "weasyprint": "WeasyPrint version 68.0",
+      "xvfb-run": "Usage: xvfb-run [OPTION ...] COMMAND"
+    }
+  },
+  "validation": [
+    {
+      "decision": "ALLOW_BROWSER_SCREENSHOT",
+      "errors": [],
+      "fixture": "fixture_01_playwright_full_success.json",
+      "honesty_label": "full_browser_replay",
+      "valid": true
+    },
+    {
+      "decision": "ALLOW_RENDER_PROXY_WITH_LIMITATION",
+      "errors": [],
+      "fixture": "fixture_02_current_sandbox_weasy_fallback.json",
+      "honesty_label": "sandbox_render_proxy",
+      "valid": true
+    },
+    {
+      "decision": "DENY_PRODUCTION_PROMOTION",
+      "errors": [],
+      "fixture": "fixture_03_production_browser_required_denied.json",
+      "honesty_label": "blocked",
+      "valid": true
+    },
+    {
+      "decision": "ALLOW_STATIC_ONLY_WITH_LIMITATION",
+      "errors": [],
+      "fixture": "fixture_04_static_only_preimplementation_allowed.json",
+      "honesty_label": "static_only_limited",
+      "valid": true
+    }
+  ],
+  "verdict": "PASS"
+}

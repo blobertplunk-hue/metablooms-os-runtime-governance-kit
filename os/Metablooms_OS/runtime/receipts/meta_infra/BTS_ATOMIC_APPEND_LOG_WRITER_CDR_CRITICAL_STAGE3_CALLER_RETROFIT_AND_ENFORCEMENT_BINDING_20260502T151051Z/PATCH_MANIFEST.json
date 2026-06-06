@@ -1,0 +1,65 @@
+{
+  "added_files": [
+    {
+      "path": "0_kernel/lib/io/atomic_append_log_compat_v1.py",
+      "sha256": "e73bfd8ba35e349d7194fea8b4165ee0e5f055b28e603756f6e13e719218fc29"
+    },
+    {
+      "path": "0_kernel/validators/validate_atomic_append_log_writer_callsite_policy_stage3_v1.py",
+      "sha256": "ce2ffc1853c72f051cc02da53df63618bbcdf39805a6e896721e61745afc2411"
+    },
+    {
+      "path": "0_kernel/registry/tool_governance/ATOMIC_APPEND_LOG_WRITER_CALLSITE_POLICY_STAGE3_v1.json",
+      "sha256": "1ae5f6969e276e7185a72549c6e299b99c25451c2c172bb37fb49e94c2d69694"
+    }
+  ],
+  "artifact_type": "PatchManifest.v1",
+  "created_utc": "2026-05-02T15:10:51Z",
+  "deferred_files": [
+    {
+      "classification": "hash_chain_preservation_required",
+      "detail": "direct append-open call",
+      "file": "0_kernel/scripts/runtime_pulse_logger_v1.py",
+      "line": 333
+    },
+    {
+      "classification": "bts_hash_chain_preservation_required",
+      "detail": "direct append-open call",
+      "file": "runtime/governance/bts_v4/BTS.py",
+      "line": 536
+    },
+    {
+      "classification": "legacy_archive_exempt",
+      "detail": "direct append-open call",
+      "file": "runtime/governance/legacy_archives/claude_memory_sync_writer_v1.py",
+      "line": 332
+    }
+  ],
+  "patched_files": [
+    {
+      "path": "0_kernel/security/security_gate_enforcer_v1.py",
+      "sha256": "694097f241b81df8a3138d82c0a069321f93a1e16b1115e4cc4de97fe3ba6ba0"
+    },
+    {
+      "path": "runtime/governance/task_start_hook_v1.py",
+      "sha256": "cd7536848b07fdc35e01bf86737bb4b01c723d16c34df1211e9d9a8b691ed0c1"
+    },
+    {
+      "path": "0_kernel/scripts/security_red_team_runner_v1.py",
+      "sha256": "3f3da7c0789db072b9cfb61dbed4cd0e483549dcf5fa981d9d5d93fad3718f01"
+    },
+    {
+      "path": "0_kernel/scripts/autonomous_sidecar_generator_v1.py",
+      "sha256": "0e7667d9aa7df14dab585d26c2de223219e252c52f5157e7b5262f6faa57050a"
+    },
+    {
+      "path": "0_kernel/scripts/intra_chunk_interrupt_checker_v1.py",
+      "sha256": "1e0f63535655642cb372e8e5c422982ba49cb17eb2755dffb3ddb9e86c2e352a"
+    },
+    {
+      "path": "0_kernel/scripts/memory_sync_validator_v1.py",
+      "sha256": "abc8cc95cdab074afaeca3d4336b197536e73f48472cedd34021006e14f05556"
+    }
+  ],
+  "stage": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING"
+}

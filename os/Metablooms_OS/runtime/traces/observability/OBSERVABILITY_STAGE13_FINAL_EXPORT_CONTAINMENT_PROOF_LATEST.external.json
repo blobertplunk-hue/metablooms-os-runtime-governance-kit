@@ -1,0 +1,24 @@
+{
+  "artifact_type": "MB_FINAL_EXPORT_CONTAINMENT_PROOF.external.v1",
+  "bad_member": null,
+  "created_utc": "20260502T183345Z",
+  "duplicate_member_count": 0,
+  "external_sidecar_required": true,
+  "missing_required_members": [],
+  "required_members": [
+    "Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html",
+    "Metablooms_OS/runtime/state/operator_surface/EVIDENCE_QUERY_UI_INTERACTIONS_LATEST.json",
+    "Metablooms_OS/runtime/state/operator_surface/EVIDENCE_RESULT_PINNING_MODEL_LATEST.json",
+    "Metablooms_OS/runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_VALIDATION_LATEST.json",
+    "Metablooms_OS/runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_HANDOFF_LATEST.json",
+    "Metablooms_OS/runtime/traces/observability/OBSERVABILITY_STAGE13_PRE_EXPORT_CONTAINMENT_REQUIREMENTS_LATEST.json"
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_INTERACTIONS_AND_RESULT_PINNING",
+  "verdict": "PASS",
+  "zip_entry_count": 6554,
+  "zip_integrity": "PASS",
+  "zip_path": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_FINAL_AUTHORITY_LOCKED_20260502T183345Z.zip",
+  "zip_sha256": "93f300ad3d03b4da41380b96d4a6cd6c030fc295b821b013dd8d6a5e85ac93e4",
+  "zip_sha256_sidecar": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_FINAL_AUTHORITY_LOCKED_20260502T183345Z.zip.sha256",
+  "zip_size_bytes": 27759209
+}

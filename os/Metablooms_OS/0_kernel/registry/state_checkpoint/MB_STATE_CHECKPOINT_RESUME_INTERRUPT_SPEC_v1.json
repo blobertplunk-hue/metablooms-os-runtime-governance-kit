@@ -1,0 +1,39 @@
+{
+  "artifact_type": "MB_STATE_CHECKPOINT_RESUME_INTERRUPT_SPEC_v1",
+  "created_utc": "20260501T160500Z",
+  "invariants": [
+    "thread_id is the durable resume cursor",
+    "resume requires same thread_id as interrupted checkpoint",
+    "interrupt payload must be JSON serializable and artifact-demoted",
+    "checkpoint writes use destination-directory temp file plus os.replace",
+    "chat memory is never an authoritative checkpoint source"
+  ],
+  "model": "thread_id + checkpoint_id + interrupt payload + resume payload",
+  "required_record_fields": [
+    "schema_version",
+    "stage_name",
+    "thread_id",
+    "checkpoint_id",
+    "parent_checkpoint_id",
+    "status",
+    "state",
+    "interrupt",
+    "resume",
+    "next",
+    "metadata",
+    "created_utc"
+  ],
+  "stage_name": "IMPLEMENT_STATE_CHECKPOINT_RESUME_AND_INTERRUPT_CARTRIDGE_STAGE_1_OR_SECURITY_STAGE4_RED_TEAM_FIXTURES",
+  "statuses": [
+    "CHECKPOINTED",
+    "INTERRUPTED",
+    "RESUMED",
+    "COMPLETED",
+    "FAILED_CLOSED"
+  ],
+  "storage": {
+    "root": "runtime/checkpoints",
+    "thread_index": "runtime/checkpoints/CHECKPOINT_THREAD_INDEX_LATEST.json",
+    "thread_latest": "runtime/checkpoints/<safe_thread_id>/THREAD_LATEST.json"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "artifact_type": "MB_CARTRIDGE_EXECUTOR_CONTRACT_v1",
+  "created_utc": "20260501T115500Z",
+  "safety_rules": [
+    "registered_handlers_only",
+    "unknown_stages_fail_closed",
+    "no_arbitrary_shell_execution"
+  ]
+}

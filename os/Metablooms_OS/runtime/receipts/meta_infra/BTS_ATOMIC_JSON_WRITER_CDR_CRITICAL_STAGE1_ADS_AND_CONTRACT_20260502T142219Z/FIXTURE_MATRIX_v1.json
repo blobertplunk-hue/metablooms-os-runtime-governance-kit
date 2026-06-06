@@ -1,0 +1,70 @@
+{
+  "artifact_type": "ATOMIC_JSON_WRITER_FIXTURE_MATRIX_v1",
+  "created_utc": "2026-05-02T14:23:17Z",
+  "negative_fixtures": [
+    {
+      "expected": "DENY_PATH_ESCAPE",
+      "id": "AJW_NEG_001_path_traversal_dotdot"
+    },
+    {
+      "expected": "DENY_PATH_ESCAPE",
+      "id": "AJW_NEG_002_absolute_path_outside_root"
+    },
+    {
+      "expected": "DENY_SYMLINK",
+      "id": "AJW_NEG_003_symlink_target"
+    },
+    {
+      "expected": "DENY_SYMLINK",
+      "id": "AJW_NEG_004_symlink_ancestor"
+    },
+    {
+      "expected": "DENY_SUFFIX",
+      "id": "AJW_NEG_005_non_json_suffix"
+    },
+    {
+      "expected": "DENY_OVERWRITE_POLICY",
+      "id": "AJW_NEG_006_existing_file_create_new"
+    },
+    {
+      "expected": "DENY_NON_SERIALIZABLE",
+      "id": "AJW_NEG_007_non_serializable_payload"
+    },
+    {
+      "expected": "WRITE_IO_ERROR",
+      "id": "AJW_NEG_008_payload_exceeds_max_bytes"
+    },
+    {
+      "expected": "DENY_PARENT_CREATE",
+      "id": "AJW_NEG_009_parent_create_disabled"
+    },
+    {
+      "expected": "WRITE_VERIFY_FAILED",
+      "id": "AJW_NEG_010_verify_corruption_simulation"
+    }
+  ],
+  "positive_fixtures": [
+    {
+      "expected": "ALLOW_WRITE_COMMITTED",
+      "id": "AJW_POS_001_basic_receipt_write"
+    },
+    {
+      "expected": "ALLOW_WRITE_COMMITTED",
+      "id": "AJW_POS_002_nested_parent_create_inside_allowed_root"
+    },
+    {
+      "expected": "ALLOW_WRITE_COMMITTED",
+      "id": "AJW_POS_003_unicode_payload"
+    },
+    {
+      "expected": "ALLOW_WRITE_COMMITTED",
+      "id": "AJW_POS_004_replace_existing_json"
+    },
+    {
+      "expected": "ALLOW_WRITE_COMMITTED",
+      "id": "AJW_POS_005_large_payload_under_max_bytes"
+    }
+  ],
+  "stage": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT",
+  "stage2_execution_requirement": "All fixtures must be executable with temp directories under /mnt/data/Metablooms_OS/runtime/tmp and must leave receipts proving final file existence/non-existence as appropriate."
+}

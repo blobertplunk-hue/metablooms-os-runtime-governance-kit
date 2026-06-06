@@ -1,0 +1,9 @@
+{
+  "implemented": [
+    "cumulative overlay export",
+    "controlled index patch",
+    "fresh-extract replay route"
+  ],
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_3_FULL_EXPORT_STREAM_ROUTE_REPAIR_AND_FRESH_EXTRACT_REPLAY",
+  "status": "IMPLEMENTED_PENDING_VALIDATION"
+}

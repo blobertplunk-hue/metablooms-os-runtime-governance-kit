@@ -1,0 +1,1 @@
+{"schema_version":"MB_TRACE_SPAN_v1","trace_id":"state-stage1","span_id":"implement","parent_span_id":null,"name":"checkpoint_overlay","stage_name":"IMPLEMENT_STATE_CHECKPOINT_RESUME_AND_INTERRUPT_CARTRIDGE_STAGE_1_OR_SECURITY_STAGE4_RED_TEAM_FIXTURES","event":"overlay_write","status":"OK","timestamp_utc":"20260501T160500Z","attributes":{"files_added":9}}

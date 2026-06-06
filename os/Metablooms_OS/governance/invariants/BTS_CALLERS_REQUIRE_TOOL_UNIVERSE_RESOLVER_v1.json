@@ -1,0 +1,18 @@
+{
+  "description": "BTS-wrapped filesystem/export callers must resolve the tool universe and pass tool-selection sufficiency before BTS_TOOL_SELECTION and execution.",
+  "enforcement_summary": {
+    "export_zip_fallback": "emit_resolver_backed_tool_choice(... selected_tool_id=python_zipfile_compatibility_fallback with WHY_NOT_BETTER_TOOL)",
+    "export_zip_node_profile": "emit_resolver_backed_tool_choice(... job_type=zip_export ... selected_tool_id=node_yazl_stream_export)",
+    "filesystem_write": "emit_resolver_backed_tool_choice(... job_type=filesystem_repair ...)"
+  },
+  "failure_action": "DENY_STAGE_EXECUTION",
+  "invariant_id": "BTS_CALLERS_REQUIRE_TOOL_UNIVERSE_RESOLVER_v1",
+  "required_surfaces": [
+    "runtime/governance/tool_universe_resolver_v1.py",
+    "runtime/governance/executors/bts_wrapped_executors_v1.py",
+    "runtime/governance/receipts/tool_universe_resolver_v1"
+  ],
+  "schema": "MetaBloomsInvariant_v1",
+  "stage_installed": "STAGE6I_RETROFIT_BTS_CALLERS_TO_REQUIRE_TOOL_UNIVERSE_RESOLVER_OR_FULL_AUTHORITY_EXPORT_AFTER_6H",
+  "status": "active"
+}

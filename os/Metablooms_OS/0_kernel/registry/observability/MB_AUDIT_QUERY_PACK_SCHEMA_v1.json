@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "artifact_type": {
+      "const": "MB_AUDIT_QUERY_PACKS.v1"
+    },
+    "packs": {
+      "type": "array"
+    },
+    "stage_id": {
+      "type": "string"
+    },
+    "verdict": {
+      "enum": [
+        "PASS",
+        "FAIL"
+      ]
+    }
+  },
+  "required": [
+    "artifact_type",
+    "stage_id",
+    "packs",
+    "verdict"
+  ],
+  "title": "MB_AUDIT_QUERY_PACK_SCHEMA_v1",
+  "type": "object"
+}

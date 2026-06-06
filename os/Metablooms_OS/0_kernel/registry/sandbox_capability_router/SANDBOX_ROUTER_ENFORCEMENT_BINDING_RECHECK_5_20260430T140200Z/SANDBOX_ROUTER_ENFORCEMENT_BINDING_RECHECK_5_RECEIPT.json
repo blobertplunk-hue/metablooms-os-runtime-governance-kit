@@ -1,0 +1,97 @@
+{
+  "artifact_type": "metablooms_stage_receipt",
+  "binding_checks": [
+    {
+      "actual_allowed": true,
+      "check": "boot_binding",
+      "decision": "ALLOW",
+      "exit_code": "0",
+      "expected_allowed": true,
+      "runtime": "python3-S-policy-evaluator",
+      "status": "PASS"
+    },
+    {
+      "actual_allowed": true,
+      "check": "export_binding",
+      "decision": "ALLOW",
+      "exit_code": "0",
+      "expected_allowed": true,
+      "runtime": "python3-S-policy-evaluator",
+      "status": "PASS"
+    },
+    {
+      "actual_allowed": true,
+      "check": "governed_execution_binding",
+      "decision": "ALLOW",
+      "exit_code": "0",
+      "expected_allowed": true,
+      "runtime": "python3-S-policy-evaluator",
+      "status": "PASS"
+    },
+    {
+      "actual_allowed": true,
+      "check": "delivery_binding",
+      "decision": "ALLOW",
+      "exit_code": "0",
+      "expected_allowed": true,
+      "runtime": "python3-S-policy-evaluator",
+      "status": "PASS"
+    },
+    {
+      "actual_allowed": false,
+      "check": "hardlink_deny",
+      "decision": "DENY",
+      "exit_code": "7",
+      "expected_allowed": false,
+      "runtime": "python3-S-policy-evaluator",
+      "status": "PASS"
+    },
+    {
+      "check": "router_route_present:boot_probe",
+      "status": "PASS"
+    },
+    {
+      "check": "router_route_present:zip_repair",
+      "status": "PASS"
+    },
+    {
+      "check": "router_route_present:governed_execution",
+      "status": "PASS"
+    },
+    {
+      "check": "router_route_present:downloadable_artifact_delivery",
+      "status": "PASS"
+    },
+    {
+      "check": "wrapper_python3S_first",
+      "status": "PASS"
+    },
+    {
+      "check": "wrapper_internal_timeout_bounded",
+      "status": "PASS"
+    },
+    {
+      "check": "node_preserved_as_fallback",
+      "status": "PASS"
+    },
+    {
+      "check": "heavy_export_repair_not_run",
+      "status": "PASS"
+    }
+  ],
+  "enforcer_default": "python3-S-policy-evaluator via hardened wrapper",
+  "heavy_export_repair_run": false,
+  "next_stage": "SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6",
+  "node_role": "timeout-bounded fallback",
+  "observations": [
+    "Rechecked boot/export/governed-execution/downloadable-delivery route bindings using the hardened python3-S policy evaluator.",
+    "Validated wrapper metadata requires python3 -S first and Node fallback after timeout-bounded Python decision path.",
+    "Blocked hardlink export request produced expected DENY payload and exit 7 was recorded.",
+    "No heavy export repair was run."
+  ],
+  "root": "/mnt/data/Metablooms_OS",
+  "source_handoff": "SANDBOX_ROUTER_NODE_ENFORCER_TIMEOUT_HARDENING_4_HANDOFF.json",
+  "stage": "SANDBOX_ROUTER_ENFORCEMENT_BINDING_RECHECK_5",
+  "status": "PASS",
+  "timestamp_utc": "20260430T140200Z"
+}

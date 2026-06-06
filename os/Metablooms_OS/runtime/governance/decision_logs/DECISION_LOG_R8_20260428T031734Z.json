@@ -1,0 +1,17 @@
+{
+  "created_utc": "2026-04-28T03:18:31Z",
+  "decision": "promote P0PY gate as active route-control gate",
+  "decision_log_type": "REFRACTOR_PROGRAM_DECISION_LOG",
+  "reasons": [
+    "Normal python startup hook chain is unsafe/expensive in this sandbox",
+    "python3 -S is the enforced stdlib lane",
+    "Live normal-python probing is forbidden by design because it can hang the caller through artifact-tool daemon/file-descriptor behavior"
+  ],
+  "rejected_options": [
+    "execute normal python every stage",
+    "leave P0PY deferred",
+    "allow untracked operator override"
+  ],
+  "selected_option": "safe hook-chain inspection plus route-control decisions",
+  "stage": "R8_PYTHON_HEALTH_GOVERNANCE_PROMOTION"
+}

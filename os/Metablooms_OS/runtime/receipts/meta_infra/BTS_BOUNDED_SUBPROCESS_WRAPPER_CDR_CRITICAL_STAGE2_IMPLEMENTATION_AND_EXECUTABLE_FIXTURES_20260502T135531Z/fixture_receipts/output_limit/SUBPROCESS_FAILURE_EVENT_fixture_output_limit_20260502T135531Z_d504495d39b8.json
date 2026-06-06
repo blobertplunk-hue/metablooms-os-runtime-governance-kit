@@ -1,0 +1,35 @@
+{
+  "argv_redacted": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "-c",
+    "print(\"x\"*5000)"
+  ],
+  "artifact_type": "METABLOOMS_SUBPROCESS_FAILURE_LEARNING_EVENT_v1",
+  "attempts": [
+    {
+      "attempt_index": 0,
+      "elapsed_ms": 71,
+      "returncode": 0,
+      "started_utc": "20260502T135531Z",
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_truncated": false,
+      "stdout": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "stdout_bytes": 5001,
+      "stdout_sha256": "bf2321469469ab0936ac8563f3c01753e9916a63c685ae8b67982eae7fe88709",
+      "stdout_truncated": true,
+      "timeout_seconds": 5.0
+    }
+  ],
+  "created_utc": "20260502T135531Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "failure_class": "OUTPUT_LIMIT_EXCEEDED",
+  "operation_type": "fixture_output_limit",
+  "policy_matches": [],
+  "recommendation": "Route future matching operations through bounded wrapper and method reliability policy before spawn.",
+  "result_class": "OUTPUT_LIMIT_EXCEEDED",
+  "root": "/mnt/data/Metablooms_OS",
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES"
+}

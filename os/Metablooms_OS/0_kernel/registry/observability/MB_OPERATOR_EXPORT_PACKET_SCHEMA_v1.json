@@ -1,0 +1,28 @@
+{
+  "artifact_type": "MB_OPERATOR_EXPORT_PACKET_SCHEMA.v1",
+  "binding_required_fields": [
+    "path",
+    "sha256",
+    "size_bytes",
+    "exists"
+  ],
+  "created_utc": "20260502T191921Z",
+  "packet_required_fields": [
+    "packet_id",
+    "command_id",
+    "label",
+    "artifact_bindings",
+    "manifest_sha256",
+    "verdict"
+  ],
+  "required_fields": [
+    "artifact_type",
+    "stage_id",
+    "packet_id",
+    "created_utc",
+    "source_command_surface",
+    "packets",
+    "verdict"
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET"
+}

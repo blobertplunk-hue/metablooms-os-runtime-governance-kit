@@ -1,0 +1,14 @@
+{
+  "schema_version": "MB_EDUCATION_VALIDITY_PROMOTION_GATE_SPEC_v1",
+  "created_utc": "20260501T182900Z",
+  "hardwired_into": [
+    "export_promotion_gate_v1.py",
+    "bin/mb"
+  ],
+  "promotion_requirements": [
+    "report_exists",
+    "false_pass_count_zero",
+    "accuracy_at_least_0.95",
+    "PASS_WARN_BLOCK_coverage"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "cmd": [
+    "/opt/pyvenv/bin/python3",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/observability_boot_ingest_v1.py",
+    "--root",
+    "/mnt/data/Metablooms_OS",
+    "--json"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "stdout": {
+    "artifact_type": "MB_OBSERVABILITY_BOOT_INGESTION_REPORT.v1",
+    "by_kind": {
+      "boot": 57,
+      "decision": 1,
+      "export": 3,
+      "handoff": 87,
+      "receipt": 52,
+      "stage": 1,
+      "tracker": 1,
+      "validator": 18
+    },
+    "by_status": {
+      "BLOCKED": 1,
+      "ERROR": 6,
+      "OK": 213
+    },
+    "created_utc": "20260502T180929Z",
+    "input_file_count": 219,
+    "outputs": [
+      "/mnt/data/Metablooms_OS/runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl",
+      "/mnt/data/Metablooms_OS/runtime/traces/observability/TRACE_SPAN_LEDGER_INDEX_LATEST.json",
+      "/mnt/data/Metablooms_OS/runtime/traces/observability/CAUSAL_STAGE_GRAPH_LATEST.json"
+    ],
+    "record_count": 220,
+    "root": "/mnt/data/Metablooms_OS",
+    "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION",
+    "trace_id": "570273f9155d36b8a3aa8e769a039f7f",
+    "verdict": "PASS"
+  }
+}

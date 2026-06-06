@@ -1,0 +1,28 @@
+{
+  "case_count": 17,
+  "created_utc": "2026-04-28T03:34:10.801693Z",
+  "outputs": [
+    "runtime/evals/governance_regression_suite_v1/reports/R12_governance_regression_suite_final_20260428T033410Z.json",
+    "runtime/governance/regression/governance_regression_suite_manifest_v1.json",
+    "0_kernel/scripts/run_governance_regression_suite_v1.py",
+    "runtime/governance/registries/gate_registry_v1.json"
+  ],
+  "passed_cases": 17,
+  "receipt_type": "R12_REGRESSION_SUITE_EXPANSION_RECEIPT",
+  "repairs_performed": [
+    {
+      "id": "R12_COMPAT_REDIRECT_STATUS_DRIFT",
+      "repair": "unified runtime compatibility validator now accepts R11 confirmed archive status while still requiring forbidden machine-use status and successor contract"
+    },
+    {
+      "id": "R12_SESSION_STATE_STALE_HASH",
+      "repair": "session state export refreshed after exporter hash drift"
+    },
+    {
+      "id": "R12_SESSION_STATE_SELF_HASH_CIRCULARITY",
+      "repair": "session_state_exporter_v1.py no longer includes output snapshot in artifact_hashes"
+    }
+  ],
+  "stage": "R12_REGRESSION_SUITE_EXPANSION",
+  "verdict": "PASS"
+}

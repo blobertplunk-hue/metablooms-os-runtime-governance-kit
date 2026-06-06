@@ -1,0 +1,39 @@
+{
+  "artifact_type": "InternalOSEvidence.v1",
+  "created_utc": "20260502T163517Z",
+  "root": "/mnt/data/Metablooms_OS",
+  "boot_validators": {
+    "new_chat_start_contract_validator": "ALLOW when invoked with positional root argument",
+    "runtime_starter_smoke": "ALLOW when invoked with --root",
+    "operator_visual_tracker_boot_surface": "PASS"
+  },
+  "latest_authority_stage": "STAGE3_AUTHORITY_RECONCILED_NEW_CHAT_VALIDATOR_PASS_FULL_AUTHORITY_EXPORT",
+  "latest_handoff_next_stage": "Run the next requested bounded governed stage from the exported reconciled authority.",
+  "external_review_candidates": {
+    "UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE": {
+      "priority": "P0",
+      "internal_status": "has stage 1-4 receipts and current operator tracker/boot surface work just improved the operator surface",
+      "remaining_gap": "useful, but no longer the highest-leverage immediate missing foundation"
+    },
+    "OBSERVABILITY_TRACE_SPAN_LEDGER_CARTRIDGE": {
+      "priority": "P1",
+      "internal_status": "spec exists; stage1 receipt exists; no evidence found of full unified searchable trace/span causal graph implementation",
+      "remaining_gap": "cross-stage causal graph, normalized span schema, failure clustering, evidence-to-receipt-to-export lineage"
+    },
+    "EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE": {
+      "priority": "P1",
+      "internal_status": "stage1-stage4 receipts exist, more mature than observability",
+      "remaining_gap": "depends on better trace/lineage data for stronger validator meta-evals"
+    },
+    "SECURITY_ARTIFACT_THREAT_MODEL_AND_INJECTION_CARTRIDGE": {
+      "priority": "P1",
+      "internal_status": "many validators exist, but security decisions also depend on provenance/lineage observability",
+      "remaining_gap": "security hardening should consume trace/provenance events after observability substrate is reliable"
+    },
+    "STATE_CHECKPOINT_RESUME_AND_INTERRUPT_CARTRIDGE": {
+      "priority": "P2",
+      "internal_status": "stage1-stage2 receipts exist",
+      "remaining_gap": "benefits from trace/span ledger but not as broad a leverage point"
+    }
+  }
+}

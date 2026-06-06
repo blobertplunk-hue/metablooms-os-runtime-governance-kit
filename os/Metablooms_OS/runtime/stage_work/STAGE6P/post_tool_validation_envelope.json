@@ -1,0 +1,15 @@
+{
+  "schema_version": "PostToolResultValidationEnvelope_v1",
+  "validation_id": "STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM_POST_TOOL_VALIDATION",
+  "stage_id": "STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM",
+  "tool_id": "bts_wrapped_filesystem_write",
+  "action_type": "filesystem_write",
+  "intent": "Install durable checkpoint/replay minimum artifacts and prove with smoke test, receipt, handoff, and support bundle inputs.",
+  "expected": {"sha256": "797f7bed221eed7cd3290d78cf6fb110c80a4a52848b8884cc6387b2f7b473b9", "min_bytes": 1000, "require_receipt": true},
+  "actual": {"implementation_reality_verdict": "PASS", "smoke_verdict": "PASS"},
+  "artifacts": {
+    "primary_path": "/mnt/data/Metablooms_OS/runtime/receipts/METABLOOMS_STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM_RECEIPT_20260502T035000Z.json",
+    "receipt_path": "/mnt/data/Metablooms_OS/runtime/receipts/METABLOOMS_STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM_RECEIPT_20260502T035000Z.json"
+  },
+  "created_at_utc": "2026-05-02T03:50:00Z"
+}

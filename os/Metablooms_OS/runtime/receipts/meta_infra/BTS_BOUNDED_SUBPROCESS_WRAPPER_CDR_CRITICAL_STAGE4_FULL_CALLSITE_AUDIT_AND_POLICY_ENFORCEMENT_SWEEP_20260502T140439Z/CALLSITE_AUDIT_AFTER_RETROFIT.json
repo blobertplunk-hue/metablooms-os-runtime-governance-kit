@@ -1,0 +1,688 @@
+{
+  "artifact_type": "METABLOOMS_SUBPROCESS_CALLSITE_AUDIT_STAGE4_v1",
+  "created_utc": "20260502T140529Z",
+  "pattern": "direct subprocess/os command invocation excluding import-only",
+  "records": [
+    {
+      "line": 109,
+      "path": "0_kernel/lib/execution/bounded_subprocess_compat_v1.py",
+      "required_action": "INTERNAL_PRIMITIVE_EXEMPT",
+      "text": "# subprocess.run-compatible facade for Stage4 callsite sweep.",
+      "zone": "bounded_wrapper_internal_exempt"
+    },
+    {
+      "line": 132,
+      "path": "0_kernel/lib/execution/bounded_subprocess_compat_v1.py",
+      "required_action": "INTERNAL_PRIMITIVE_EXEMPT",
+      "text": "\"\"\"Compatibility subset of subprocess.run routed through MetaBlooms wrapper.",
+      "zone": "bounded_wrapper_internal_exempt"
+    },
+    {
+      "line": 289,
+      "path": "0_kernel/lib/execution/bounded_subprocess_wrapper_v1.py",
+      "required_action": "INTERNAL_PRIMITIVE_EXEMPT",
+      "text": "proc = subprocess.Popen(argv_resolved, cwd=str(cwd), env=env, shell=False, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, start_new_session=(os.name == \"posix\"))",
+      "zone": "bounded_wrapper_internal_exempt"
+    },
+    {
+      "line": 50,
+      "path": "0_kernel/registry/failure_learning/FL17-MERGE-5_FULL_OS_EXPORT_RECOVERY_VALIDATION/inputs/FL17_MERGE_3/TRACKER_STAGE_FINALIZATION_HOOK_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "return subprocess.run(cmd, text=True, capture_output=True, check=False, timeout=timeout_seconds)",
+      "zone": "failure_learning_snapshot"
+    },
+    {
+      "line": 32,
+      "path": "0_kernel/scripts/cartridge_promotion_gate_v1.py",
+      "required_action": "BLOCK_OR_RETROFIT",
+      "text": "FORBIDDEN_INVOCATIONS = [\"exec(\", \"eval(\", \"__import__\", \"subprocess.call\", \"os.system\"]",
+      "zone": "live_governance_code"
+    },
+    {
+      "line": 28,
+      "path": "0_kernel/vendor/python/libcst/codegen/generate.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "subprocess.check_call(",
+      "zone": "vendored_third_party"
+    },
+    {
+      "line": 71,
+      "path": "0_kernel/vendor/python/libcst/codegen/generate.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "subprocess.check_call(",
+      "zone": "vendored_third_party"
+    },
+    {
+      "line": 61,
+      "path": "0_kernel/vendor/python/libcst/codemod/_cli.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "subprocess.check_output(",
+      "zone": "vendored_third_party"
+    },
+    {
+      "line": 23,
+      "path": "0_kernel/vendor/python/libcst/codemod/tests/test_codemod_cli.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "rlt = subprocess.run(",
+      "zone": "vendored_third_party"
+    },
+    {
+      "line": 47,
+      "path": "0_kernel/vendor/python/libcst/codemod/tests/test_codemod_cli.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "output = subprocess.check_output(",
+      "zone": "vendored_third_party"
+    },
+    {
+      "line": 72,
+      "path": "0_kernel/vendor/python/libcst/codemod/tests/test_codemod_cli.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "output = subprocess.run(",
+      "zone": "vendored_third_party"
+    },
+    {
+      "line": 101,
+      "path": "0_kernel/vendor/python/libcst/codemod/tests/test_codemod_cli.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "output = subprocess.run(",
+      "zone": "vendored_third_party"
+    },
+    {
+      "line": 66,
+      "path": "0_kernel/vendor/python/libcst/metadata/tests/test_type_inference_provider.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "subprocess.run([\"pyre\", \"-n\", \"start\", \"--no-watchman\"])",
+      "zone": "vendored_third_party"
+    },
+    {
+      "line": 70,
+      "path": "0_kernel/vendor/python/libcst/metadata/tests/test_type_inference_provider.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "subprocess.run([\"pyre\", \"-n\", \"stop\"], cwd=TEST_SUITE_PATH)",
+      "zone": "vendored_third_party"
+    },
+    {
+      "line": 69,
+      "path": "0_kernel/vendor/python/libcst/metadata/type_inference_provider.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "result = subprocess.run(",
+      "zone": "vendored_third_party"
+    },
+    {
+      "line": 17,
+      "path": "0_kernel/vendor/python/ruff/__main__.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "completed_process = subprocess.run([ruff, *sys.argv[1:]])",
+      "zone": "vendored_third_party"
+    },
+    {
+      "line": 11,
+      "path": "runtime/evals/post_tool_result_validation/test_post_tool_result_validation_v1.py",
+      "required_action": "STAGE5_TEST_HARNESS_RETROFIT_RECOMMENDED",
+      "text": "r=subprocess.run(['python3','-S',str(VALIDATOR),str(ep),'--out',str(op)],capture_output=True,text=True)",
+      "zone": "test_eval_fixture"
+    },
+    {
+      "line": 21,
+      "path": "runtime/evals/tool_universe/test_tool_universe_resolver_v1.py",
+      "required_action": "STAGE5_TEST_HARNESS_RETROFIT_RECOMMENDED",
+      "text": "p=subprocess.run([sys.executable,'-S',str(RES),'resolve','--task',task,'--stage-id','STAGE6H_FIXTURE','--out',str(out)],capture_output=True,text=True)",
+      "zone": "test_eval_fixture"
+    },
+    {
+      "line": 32,
+      "path": "runtime/evals/tool_universe/test_tool_universe_resolver_v1.py",
+      "required_action": "STAGE5_TEST_HARNESS_RETROFIT_RECOMMENDED",
+      "text": "p=subprocess.run([sys.executable,'-S',str(RES),'validate-evaluation','--candidate-set',str(cs),'--evaluation',str(badp),'--out',str(badres)],capture_output=True,text=True)",
+      "zone": "test_eval_fixture"
+    },
+    {
+      "line": 37,
+      "path": "runtime/evals/tool_universe/test_tool_universe_resolver_v1.py",
+      "required_action": "STAGE5_TEST_HARNESS_RETROFIT_RECOMMENDED",
+      "text": "p=subprocess.run([sys.executable,'-S',str(RES),'validate-evaluation','--candidate-set',str(cs),'--evaluation',str(goodp),'--out',str(goodres)],capture_output=True,text=True)",
+      "zone": "test_eval_fixture"
+    },
+    {
+      "line": 56,
+      "path": "runtime/governance/legacy_archives/R8_python_health/p0py_python_health_governance_v1.staged_source.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "result = subprocess.run(",
+      "zone": "legacy_archive"
+    },
+    {
+      "line": 71,
+      "path": "runtime/governance/legacy_archives/R8_python_health/p0py_python_health_governance_v1.staged_source.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "result = subprocess.run(",
+      "zone": "legacy_archive"
+    },
+    {
+      "line": 86,
+      "path": "runtime/governance/legacy_archives/claude_memory_sync_writer_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "result = subprocess.run(",
+      "zone": "legacy_archive"
+    },
+    {
+      "line": 198,
+      "path": "runtime/governance/legacy_archives/claude_memory_sync_writer_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "result = subprocess.run(",
+      "zone": "legacy_archive"
+    },
+    {
+      "line": 50,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T140037Z/backups/0_kernel/cartridges/inline_project_tracker/TRACKER_STAGE_FINALIZATION_HOOK_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "return subprocess.run(cmd, text=True, capture_output=True, check=False, timeout=timeout_seconds)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 58,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T140037Z/backups/0_kernel/lib/archive_extraction_route_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "proc=subprocess.run(cmd, text=True, capture_output=True, timeout=timeout)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 14,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T140037Z/backups/0_kernel/lib/archive_method_router_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "cp=subprocess.run(cmd,text=True,capture_output=True,timeout=timeout)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 12,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T140037Z/backups/0_kernel/lib/filesystem_safety_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "p=subprocess.run([\"df\",\"-P\",str(target)],text=True,capture_output=True,timeout=10)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 39,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/cartridges/inline_project_tracker/TRACKER_SMOKE_TEST_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "r=subprocess.run([sys.executable, str(validator_path), str(renderer_path), str(state_path), str(val_report)], text=True, capture_output=True)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 43,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/cartridges/inline_project_tracker/TRACKER_SMOKE_TEST_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "r=subprocess.run([sys.executable, str(gate_validator), str(root), str(state_path), str(renderer_path), str(gate_report)], text=True, capture_output=True)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 52,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/cartridges/inline_project_tracker/TRACKER_SMOKE_TEST_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "r=subprocess.run([sys.executable, str(updater),'--root',str(root),'--state',str(tmp_state),'--receipt',str(tmp_receipt),'--handoff',str(tmp_handoff),'--stage','TRACKER-5_TMP','--stage-index','6','--stage-total','6','--status','DONE','--now'",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 55,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/cartridges/inline_project_tracker/TRACKER_SMOKE_TEST_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "r2=subprocess.run([sys.executable, str(handoff_val),'--root',str(root),'--state',str(tmp_state),'--receipt',str(tmp_receipt),'--handoff',str(tmp_handoff),'--preview',str(tmp_preview),'--stage','TRACKER-5_TMP','--report',str(tmp_report)],tex",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 23,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/agent_harness_diff_review_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "cp=subprocess.run(['python3','-S',str(planner),'--stage',a.stage,'--write-plan','--parallel-plan','--json'],cwd=str(r),text=True,capture_output=True,timeout=60)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 23,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/artifact_replay_proof_v2.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "p=subprocess.run(c,cwd=cwd,text=True,capture_output=True,timeout=timeout)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 24,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/cartridge_executor_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "gp=subprocess.run(['python3','-S',str(gate),'--work-order',str(wp),'--fixtures','--json'],cwd=str(r),text=True,capture_output=True,timeout=90)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 29,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/cartridge_executor_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "rg=subprocess.run(['python3','-S',str(review_gate),'--stage',stage,'--work-order',str(wp),'--strict','--json'],cwd=str(r),text=True,capture_output=True,timeout=60)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 41,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/cartridge_executor_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "gr=subprocess.run(['python3','-S',str(gate),'--json'],cwd=str(r),text=True,capture_output=True,timeout=90) if gate.exists() else None",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 42,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/cartridge_executor_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "vp=subprocess.run(['python3','-S',str(validator)],cwd=str(r),text=True,capture_output=True,timeout=90) if validator.exists() else None",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 52,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/cartridge_executor_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "rr=subprocess.run(['python3','-S',str(runner),'--json'],cwd=str(r),text=True,capture_output=True,timeout=90) if runner.exists() else None",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 53,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/cartridge_executor_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "vp=subprocess.run(['python3','-S',str(validator)],cwd=str(r),text=True,capture_output=True,timeout=90) if validator.exists() else None",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 62,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/cartridge_executor_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "vp=subprocess.run(['python3','-S',str(validator)],cwd=str(r),text=True,capture_output=True,timeout=90) if validator.exists() else None",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 72,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/cartridge_executor_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "vp=subprocess.run(['python3','-S',str(validator)],cwd=str(r),text=True,capture_output=True,timeout=90) if validator.exists() else None",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 82,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/cartridge_executor_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "vp=subprocess.run(['python3','-S',str(validator)],cwd=str(r),text=True,capture_output=True,timeout=120) if validator.exists() else None",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 95,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/cartridge_executor_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "pr=subprocess.run(['python3','-S',str(planner),'--stage',stage,'--write-plan','--json'],cwd=str(r),text=True,capture_output=True,timeout=45) if planner.exists() else None",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 96,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/cartridge_executor_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "vp=subprocess.run(['python3','-S',str(validator)],cwd=str(r),text=True,capture_output=True,timeout=45) if validator.exists() else None",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 33,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/ensure_libcst_available_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "result = subprocess.run(cmd, capture_output=True, text=True)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 21,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/ensure_ruff_available_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "r = subprocess.run(cmd, capture_output=True, text=True)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 20,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/governed_run.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "r = subprocess.run(cmd, capture_output=True, text=True)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 74,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/p0py_python_health_governance_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "proc = subprocess.run(cmd, text=True, capture_output=True, timeout=timeout_s)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 94,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/registry_mutation_engine_v2_lite_final.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "return subprocess.run(",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 41,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/run_governance_regression_suite_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "p=subprocess.run(cmd, cwd=str(ROOT), text=True, capture_output=True, timeout=case.get('timeout_s', 12))",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 29,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/stage_runner_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "pr=subprocess.run(['python3','-S',str(cm),*args],cwd=str(root),text=True,capture_output=True,timeout=60)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 48,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/stage_runner_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "br=subprocess.run(br_cmd,cwd=str(root),text=True,capture_output=True,timeout=min(max(a.timeout,5),20))",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 67,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/stage_runner_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "gp=subprocess.run(['python3','-S',str(gate),'--work-order',str(wp),'--fixtures','--json'],cwd=str(root),text=True,capture_output=True,timeout=min(a.timeout,90))",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 83,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/stage_runner_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "pr=subprocess.run(['python3','-S',str(exe),'--work-order',str(wp),'--security-gate-passed'],cwd=str(root),text=True,capture_output=True,timeout=a.timeout)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 83,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/sync_writer_baseline_sha_patch_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "result = subprocess.run(",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 123,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/sync_writer_baseline_sha_patch_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "result = subprocess.run(",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 89,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/scripts/transactional_stage_runner_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "r = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 34,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_agent_harness_stage1_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "cp=subprocess.run(['python3','-S',str(planner),'--stage','AGENT_HARNESS_STAGE1_VALIDATOR_SMOKE','--write-plan','--json'],cwd=str(r),text=True,capture_output=True,timeout=30)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 35,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_agent_harness_stage2_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "cp=subprocess.run(['python3','-S',str(planner),'--stage','AGENT_HARNESS_STAGE2_VALIDATOR_SMOKE','--write-plan','--parallel-plan','--json'],cwd=str(r),text=True,capture_output=True,timeout=60)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 39,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_agent_harness_stage2_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "cp=subprocess.run(['python3','-S',str(diff),'--stage','AGENT_HARNESS_STAGE2_VALIDATOR_SMOKE','--json'],cwd=str(r),text=True,capture_output=True,timeout=60)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 20,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_agent_harness_stage3_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "cp=subprocess.run(['python3','-S',str(r/'0_kernel/scripts/agent_harness_executor_review_gate_v1.py'),'--stage','IMPLEMENT_AGENT_HARNESS_STAGE_3_EXECUTOR_REVIEW_GATE','--json'],cwd=str(r),text=True,capture_output=True,timeout=30)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 37,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_education_validity_stage1_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "proc = subprocess.run([sys.executable, '-S', str(root / '0_kernel/scripts/education_validity_gate_v1.py'), '--json'], cwd=str(root), text=True, capture_output=True, timeout=20)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 11,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_education_validity_stage2_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "root=find_root(); required=['0_kernel/scripts/education_validity_gate_v2.py','0_kernel/security/education_promotion_gate_v1.py','0_kernel/registry/education_validity/MB_EDUCATION_VALIDITY_GATE_SPEC_v2.json','0_kernel/registry/education_vali",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 21,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_evals_evaluator_runner_stage3_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "pr=subprocess.run(['python3','-S',str(paths['runner']),'--json'],cwd=str(r),text=True,capture_output=True,timeout=90)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 27,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_evals_validator_alignment_stage4_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "proc=subprocess.run(['python3','-S',str(gate),'--json'],cwd=str(r),text=True,capture_output=True,timeout=90)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 11,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_filesystem_handling_safety_stage1_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "p=subprocess.run(cmd,cwd=cwd,text=True,capture_output=True,timeout=timeout)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 9,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_filesystem_handling_safety_stage2_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "p=subprocess.run(cmd,text=True,capture_output=True,timeout=timeout,cwd=str(cwd) if cwd else None)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 14,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_operator_surface_stage3_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "p=subprocess.run(cmd,cwd=str(cwd),text=True,capture_output=True,timeout=timeout)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 13,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_operator_surface_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "p = subprocess.run(args, cwd=str(ROOT), text=True, capture_output=True, timeout=timeout)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 11,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_runaway_turn_breaker_stage0_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "p=subprocess.run(cmd,cwd=str(root),text=True,capture_output=True,timeout=15)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 25,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_security_hardwired_stage3_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "ok=subprocess.run(['python3','-S',str(gate),'--work-order',str(safe),'--fixtures','--json'],cwd=str(root),text=True,capture_output=True,timeout=60)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 26,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_security_hardwired_stage3_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "block=subprocess.run(['python3','-S',str(gate),'--work-order',str(bad),'--fixtures','--json'],cwd=str(root),text=True,capture_output=True,timeout=60)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 26,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_security_red_team_stage4_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "p=subprocess.run([sys.executable,\"-S\",str(r/\"0_kernel/scripts/security_red_team_runner_v1.py\"),\"--json\"],cwd=str(r),text=True,capture_output=True,timeout=30)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 13,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_software_quality_stage2_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "proc=subprocess.run([sys.executable,'-S',str(root/'0_kernel/security/software_quality_gate_v1.py')],cwd=str(root),text=True,capture_output=True,timeout=10)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 14,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/0_kernel/validators/validate_state_checkpoint_stage2_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "pr=subprocess.run(cmd,cwd=str(root),text=True,capture_output=True,timeout=timeout)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 186,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/runtime/governance/bts_v4/BTS.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "result = subprocess.run(['node', str(gate), str(env_path)], capture_output=True, text=True, cwd=str(os_root), timeout=30)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 585,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/runtime/governance/bts_v4/BTS.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "result = subprocess.run(",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 138,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/runtime/governance/executors/bts_wrapped_executors_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "result = subprocess.run(cmd, cwd=str(cwd) if cwd else None, capture_output=True, text=True, timeout=timeout)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 375,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/runtime/governance/executors/bts_wrapped_executors_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "result = subprocess.run(cmd, cwd=str(cwd), capture_output=True, text=True, timeout=timeout, env=env)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 18,
+      "path": "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP_20260502T140439Z/backups/runtime/governance/full_os_recovery_replay_validator_v1.py",
+      "required_action": "EXEMPT_SNAPSHOT_OR_THIRD_PARTY",
+      "text": "cp=subprocess.run(cmd, cwd=cwd, text=True, capture_output=True, timeout=timeout)",
+      "zone": "artifact_receipt_or_bundle"
+    },
+    {
+      "line": 10,
+      "path": "tests/evals/cdr/test_cdr_linchpin_recursive_audit_gate_v1.py",
+      "required_action": "STAGE5_TEST_HARNESS_RETROFIT_RECOMMENDED",
+      "text": "cp=subprocess.run([sys.executable, str(GATE), str(p)], text=True, capture_output=True)",
+      "zone": "test_eval_fixture"
+    },
+    {
+      "line": 10,
+      "path": "tests/evals/cdr/test_cdr_real_scanner_adapter_gate_v1.py",
+      "required_action": "STAGE5_TEST_HARNESS_RETROFIT_RECOMMENDED",
+      "text": "r=subprocess.run([sys.executable,'-S',str(GATE),str(p)],cwd=str(ROOT),text=True,capture_output=True)",
+      "zone": "test_eval_fixture"
+    },
+    {
+      "line": 11,
+      "path": "tests/evals/governance/test_formal_hitl_approval_token_gate_v1.py",
+      "required_action": "STAGE5_TEST_HARNESS_RETROFIT_RECOMMENDED",
+      "text": "result = subprocess.run([sys.executable, '-S', str(validator), str(packet)], capture_output=True, text=True, cwd=str(ROOT))",
+      "zone": "test_eval_fixture"
+    },
+    {
+      "line": 13,
+      "path": "tests/evals/mpp_v3/test_mpp_cdr_binding_gate_v1.py",
+      "required_action": "STAGE5_TEST_HARNESS_RETROFIT_RECOMMENDED",
+      "text": "proc = subprocess.run([sys.executable, str(GATE), str(p)], text=True, capture_output=True)",
+      "zone": "test_eval_fixture"
+    },
+    {
+      "line": 9,
+      "path": "tests/evals/mpp_v3/test_mpp_stage_contract_code_bearing_declaration_gate_v1.py",
+      "required_action": "STAGE5_TEST_HARNESS_RETROFIT_RECOMMENDED",
+      "text": "r=subprocess.run([sys.executable, str(GATE), str(FIX/name)], text=True, capture_output=True)",
+      "zone": "test_eval_fixture"
+    },
+    {
+      "line": 15,
+      "path": "tests/evals/observability/test_stage6r_trace_export_adapter_v1.py",
+      "required_action": "STAGE5_TEST_HARNESS_RETROFIT_RECOMMENDED",
+      "text": "cp=subprocess.run([sys.executable,'-S',str(AD),str(ALLOW),fmt,str(p)],capture_output=True,text=True)",
+      "zone": "test_eval_fixture"
+    },
+    {
+      "line": 20,
+      "path": "tests/evals/observability/test_stage6r_trace_export_adapter_v1.py",
+      "required_action": "STAGE5_TEST_HARNESS_RETROFIT_RECOMMENDED",
+      "text": "cp=subprocess.run([sys.executable,'-S',str(AD),str(DENY),'opentelemetry_span_json',str(p)],capture_output=True,text=True)",
+      "zone": "test_eval_fixture"
+    },
+    {
+      "line": 7,
+      "path": "tests/evals/security/test_owasp_agentic_ai_policy_gate_v1.py",
+      "required_action": "STAGE5_TEST_HARNESS_RETROFIT_RECOMMENDED",
+      "text": "allow=subprocess.run([sys.executable, str(GATE), str(ALLOW)], text=True, capture_output=True)",
+      "zone": "test_eval_fixture"
+    },
+    {
+      "line": 8,
+      "path": "tests/evals/security/test_owasp_agentic_ai_policy_gate_v1.py",
+      "required_action": "STAGE5_TEST_HARNESS_RETROFIT_RECOMMENDED",
+      "text": "deny=subprocess.run([sys.executable, str(GATE), str(DENY)], text=True, capture_output=True)",
+      "zone": "test_eval_fixture"
+    },
+    {
+      "line": 8,
+      "path": "tests/evals/state_checkpoint/test_stage6p_durable_checkpoint_replay_gate_v1.py",
+      "required_action": "STAGE5_TEST_HARNESS_RETROFIT_RECOMMENDED",
+      "text": "write=subprocess.run(cmd,capture_output=True,text=True)",
+      "zone": "test_eval_fixture"
+    },
+    {
+      "line": 10,
+      "path": "tests/evals/state_checkpoint/test_stage6p_durable_checkpoint_replay_gate_v1.py",
+      "required_action": "STAGE5_TEST_HARNESS_RETROFIT_RECOMMENDED",
+      "text": "resume=subprocess.run([sys.executable,'-S',str(GATE),'resume','--root',str(ROOT),'--resume-packet',str(allow)],capture_output=True,text=True)",
+      "zone": "test_eval_fixture"
+    },
+    {
+      "line": 12,
+      "path": "tests/evals/state_checkpoint/test_stage6p_durable_checkpoint_replay_gate_v1.py",
+      "required_action": "STAGE5_TEST_HARNESS_RETROFIT_RECOMMENDED",
+      "text": "deny_run=subprocess.run([sys.executable,'-S',str(GATE),'resume','--root',str(ROOT),'--resume-packet',str(deny)],capture_output=True,text=True)",
+      "zone": "test_eval_fixture"
+    },
+    {
+      "line": 8,
+      "path": "tests/evals/tool_governance/test_stage6q_repair_legacy_executor_retrofit_gate_v1.py",
+      "required_action": "STAGE5_TEST_HARNESS_RETROFIT_RECOMMENDED",
+      "text": "r=subprocess.run([sys.executable,'-S',str(gate),'--root',str(root)]+args,text=True,capture_output=True)",
+      "zone": "test_eval_fixture"
+    },
+    {
+      "line": 12,
+      "path": "tests/evals/tool_universe/test_stage6t_trace_export_resolver_coverage_v1.py",
+      "required_action": "STAGE5_TEST_HARNESS_RETROFIT_RECOMMENDED",
+      "text": "p=subprocess.run([sys.executable,'-S',str(RES),'resolve','--task',fixture['task'],'--stage-id','STAGE6T_SMOKE','--out',str(out)],capture_output=True,text=True)",
+      "zone": "test_eval_fixture"
+    },
+    {
+      "line": 24,
+      "path": "tests/evals/tool_universe/test_stage6t_trace_export_resolver_coverage_v1.py",
+      "required_action": "STAGE5_TEST_HARNESS_RETROFIT_RECOMMENDED",
+      "text": "zp=subprocess.run([sys.executable,'-S',str(RES),'resolve','--task',zip_task,'--stage-id','STAGE6T_ZIP_REGRESSION','--out',str(zip_out)],capture_output=True,text=True)",
+      "zone": "test_eval_fixture"
+    }
+  ],
+  "summary_by_zone": {
+    "artifact_receipt_or_bundle": 57,
+    "bounded_wrapper_internal_exempt": 3,
+    "failure_learning_snapshot": 1,
+    "legacy_archive": 4,
+    "live_governance_code": 1,
+    "test_eval_fixture": 19,
+    "vendored_third_party": 11
+  }
+}

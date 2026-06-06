@@ -1,0 +1,103 @@
+{
+  "artifact_plan": [
+    {
+      "artifact_id": "ART-001",
+      "purpose": "classify PAC DENY defects without mutation",
+      "relative_path": "0_kernel/mpp_v3/promotion_authority_repair_inventory_classifier_v1.py",
+      "validation": "py_compile and report generation"
+    },
+    {
+      "artifact_id": "ART-002",
+      "purpose": "full classified repair inventory",
+      "relative_path": "runtime/receipts/promotion_authority_coherence/*/PROMOTION_AUTHORITY_REPAIR_CLASSIFIED_INVENTORY_v1.json",
+      "validation": "JSON parse, counts, SHA sidecar"
+    },
+    {
+      "artifact_id": "ART-003",
+      "purpose": "portable delta bundle",
+      "relative_path": "runtime/stage_bundles/promotion_authority_coherence/*_VERIFIED_DELTA.zip",
+      "validation": "zip test and sidecar"
+    }
+  ],
+  "created_at": "2026-05-02T20:13:46.460321+00:00",
+  "implementation_targets": [
+    {
+      "artifact_type": "python",
+      "expected_hash_mode": "sha256_required",
+      "operation": "create",
+      "owner": "PAC_STAGE4",
+      "path": "0_kernel/mpp_v3/promotion_authority_repair_inventory_classifier_v1.py",
+      "target_id": "IMPL-001"
+    },
+    {
+      "artifact_type": "json",
+      "expected_hash_mode": "sha256_required",
+      "operation": "create",
+      "owner": "PAC_STAGE4",
+      "path": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER_LATEST_CLASSIFIED_INVENTORY_POINTER.json",
+      "target_id": "IMPL-002"
+    },
+    {
+      "artifact_type": "json",
+      "expected_hash_mode": "sha256_required",
+      "operation": "create",
+      "owner": "PAC_STAGE4",
+      "path": "runtime/handoffs/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER_HANDOFF_LATEST.json",
+      "target_id": "IMPL-003"
+    }
+  ],
+  "objective_id": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER",
+  "packet_id": "IMPL-PAC-STAGE4-REPAIR-INVENTORY-CLASSIFIER",
+  "post_write_checks": [
+    "compile classifier",
+    "run classifier",
+    "parse inventory",
+    "write receipt/handoff",
+    "package verified delta"
+  ],
+  "pre_write_checks": [
+    "verify Stage 3 handoff",
+    "verify current Stage 18 sidecar",
+    "run PAC current OS report-only scan"
+  ],
+  "provenance": {
+    "builder": "PAC_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER",
+    "expected_outputs": [
+      "classifier",
+      "classified inventory",
+      "receipt",
+      "handoff",
+      "delta bundle"
+    ],
+    "inputs": [
+      "Stage 3 handoff",
+      "PAC gate runner",
+      "current OS registry index",
+      "SLSA/NIST/OpenSSF SEE"
+    ],
+    "verification_expectations": [
+      "no authority mutation",
+      "full defect classification",
+      "bundle hash sidecar"
+    ]
+  },
+  "result_hash": "6c5f8a34569676fa7810b287fad92a41b3b9b60f009f2ff836bfe7601a552c1e",
+  "schema_version": "mpp.implementation_contract_packet.v1",
+  "source_rrp_packet_id": "PROMOTION_AUTHORITY_COHERENCE_CURRENT_OS_REPAIR_PLAN_v1",
+  "stage": "IMPLEMENTATION",
+  "write_policy": {
+    "allowed_roots": [
+      "/mnt/data/Metablooms_OS"
+    ],
+    "forbidden_path_patterns": [
+      "..",
+      "~",
+      "\u0000",
+      "//"
+    ],
+    "requires_atomic_write": true,
+    "requires_parent_creation": true,
+    "requires_probe": true,
+    "requires_receipt": true
+  }
+}

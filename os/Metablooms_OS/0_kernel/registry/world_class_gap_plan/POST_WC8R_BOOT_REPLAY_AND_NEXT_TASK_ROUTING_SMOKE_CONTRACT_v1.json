@@ -1,0 +1,29 @@
+{
+  "authority": "BOOTABLE_FULL_AUTHORITY_WC8R.zip",
+  "decision_rule": "If no explicit task is supplied and latest handoff next_stage is NEXT_REQUESTED_METABLOOMS_TASK, run a bounded routing smoke only and do not invent domain work.",
+  "exit_requirements": [
+    "automatic tracker preview emitted",
+    "receipt written",
+    "handoff written",
+    "next prompt written",
+    "short BOOTABLE_FULL_AUTHORITY export",
+    "exact-file link precheck"
+  ],
+  "previous_stage": "POST_WC8_BOOT_REPLAY_AND_AUTOTRACKER_ENFORCEMENT_SMOKE",
+  "purpose": "Bounded replay/routing smoke when no concrete next MetaBlooms task is supplied after WC8R.",
+  "required_prior_authorities": [
+    "0_kernel/registry/world_class_gap_plan/WORLD_CLASS_MEASURED_SCORECARD_BASELINE_v1.json",
+    "runtime/state/DORA_STYLE_OS_METRICS_BASELINE_v1.json",
+    "0_kernel/cartridges/educational_html_design_system/EDUCATIONAL_HTML_DESIGN_SYSTEM_CARTRIDGE_SPEC_v1.json",
+    "0_kernel/registry/world_class_gap_plan/OPERATOR_EXPERIENCE_POLISH_CONTRACT_v1.json",
+    "0_kernel/lessons/LESSON_PROMOTION_QUEUE_v1.json",
+    "0_kernel/lessons/lesson_fixture_factory_v1.py",
+    "0_kernel/registry/general_capability_resolver/GENERAL_CAPABILITY_RESOLVER_CONTRACT_v1.json",
+    "0_kernel/cartridges/automatic_process_tracker/AUTOMATIC_MULTI_STEP_TRACKER_CONTRACT_v1.json",
+    "0_kernel/cartridges/automatic_process_tracker/automatic_process_tracker_emitter_v1.py",
+    "BOOT_AUTHORITY_MANIFEST_v1.json",
+    "runtime/state/LATEST_BOOT_HANDOFF.json"
+  ],
+  "schema_version": "v1",
+  "stage": "POST_WC8R_BOOT_REPLAY_AND_NEXT_TASK_ROUTING_SMOKE"
+}

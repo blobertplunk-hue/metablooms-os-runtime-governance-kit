@@ -1,0 +1,19 @@
+{
+  "id": "GOVERNANCE_PROMOTION_REQUEST_SCHEMA_v1",
+  "required_fields": [
+    "governance_text"
+  ],
+  "optional_fields": [
+    "id",
+    "target_gate",
+    "failure_action",
+    "test_positive",
+    "test_negative"
+  ],
+  "output_contract": [
+    "proposed_invariant.json",
+    "gate_tests.json",
+    "promotion_result.json"
+  ],
+  "activation_rule": "Only mark active if positive test ALLOW and negative test DENY through IAE."
+}

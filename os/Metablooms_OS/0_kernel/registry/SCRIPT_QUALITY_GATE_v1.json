@@ -1,0 +1,22 @@
+{
+  "version": "1.1",
+  "created_at": 1776988437.1989036,
+  "status": "active",
+  "requirements": [
+    "code_patch_post_write_verification_required",
+    "code_patch_actual_match_count_required",
+    "git_diff_required_after_code_mutation",
+    "no_regex_only_structural_code_patching"
+  ],
+  "script_output_contract": [],
+  "rejection_rules": [
+    "silent_patch_success_claim",
+    "regex_patch_without_match_count_assertion",
+    "code_patch_without_post_write_marker_verification",
+    "broad_repo_patch_without_allowlist"
+  ],
+  "notes": [
+    "v1.1 integrates CODE_PATCHING_SAFETY_INVARIANTS_v1 to prevent silent code patch failures and false success claims."
+  ],
+  "updated_at": 1776988437.198969
+}

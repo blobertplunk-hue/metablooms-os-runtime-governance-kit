@@ -1,0 +1,226 @@
+{
+  "checked_at_utc": "2026-05-03T02:55:37Z",
+  "errors": [],
+  "eval_result": {
+    "domains": [
+      "artifact_export",
+      "blooket_csv",
+      "educational_html",
+      "lesson_plan",
+      "repair_debugging",
+      "research_see"
+    ],
+    "pass_rate": 1.0,
+    "passed": 12,
+    "results": [
+      {
+        "checks": {
+          "aria_live": true,
+          "doctype": true,
+          "focus_style": true,
+          "lang": true,
+          "no_external_cdn": true,
+          "reduced_motion": true,
+          "tokens": true,
+          "tts_hidden_icon": true,
+          "viewport": true
+        },
+        "domain": "educational_html",
+        "fixture_id": "HTML_ACTIVITY_FULL_STRUCTURE_001",
+        "verdict": "PASS"
+      },
+      {
+        "checks": {
+          "aria_live": true,
+          "no_external_cdn": true,
+          "no_module_import": true,
+          "self_contained": true,
+          "tokens": true,
+          "viewport": true
+        },
+        "domain": "educational_html",
+        "fixture_id": "HTML_ACTIVITY_GOOGLE_SITES_SAFE_002",
+        "verdict": "PASS"
+      },
+      {
+        "checks": {
+          "answer_distribution": true,
+          "correct_answer_present": true,
+          "four_answers": true,
+          "header_exact": true,
+          "spacer_row": true
+        },
+        "domain": "blooket_csv",
+        "fixture_id": "BLOOKET_WORD_BUILDING_CSV_001",
+        "verdict": "PASS"
+      },
+      {
+        "checks": {
+          "header_exact": true,
+          "no_extra_columns": true,
+          "question_rows_present": true,
+          "spacer_row": true
+        },
+        "domain": "blooket_csv",
+        "fixture_id": "BLOOKET_TEMPLATE_NO_LAYOUT_DRIFT_002",
+        "verdict": "PASS"
+      },
+      {
+        "checks": {
+          "eb_supports": true,
+          "evidence_requirement": true,
+          "exit_check": true,
+          "grade": true,
+          "objective": true,
+          "standard": true,
+          "steps": true
+        },
+        "domain": "lesson_plan",
+        "fixture_id": "LESSON_PLAN_TEKS_EVIDENCE_001",
+        "verdict": "PASS"
+      },
+      {
+        "checks": {
+          "exit_ticket": true,
+          "misconceptions": true,
+          "reteach": true,
+          "standard": true
+        },
+        "domain": "lesson_plan",
+        "fixture_id": "LESSON_PLAN_MASTERY_RETEACH_002",
+        "verdict": "PASS"
+      },
+      {
+        "checks": {
+          "blocks_provisional_percentages": true,
+          "evidence_binding": true,
+          "requires_citations": true,
+          "requires_web_run": true
+        },
+        "domain": "research_see",
+        "fixture_id": "RESEARCH_SEE_CURRENT_CITATIONS_001",
+        "verdict": "PASS"
+      },
+      {
+        "checks": {
+          "minimum_domains": true,
+          "minimum_sources": true,
+          "official_sources_preferred": true,
+          "record_search_query": true
+        },
+        "domain": "research_see",
+        "fixture_id": "RESEARCH_SEE_SOURCE_DIVERSITY_002",
+        "verdict": "PASS"
+      },
+      {
+        "checks": {
+          "boot_smoke": true,
+          "clean_extract_smoke": true,
+          "primary_bundle": true,
+          "sha256_check": true,
+          "sidecar": true,
+          "stat": true,
+          "zip_test": true
+        },
+        "domain": "artifact_export",
+        "fixture_id": "ARTIFACT_EXPORT_FULL_AUTHORITY_001",
+        "verdict": "PASS"
+      },
+      {
+        "checks": {
+          "download_manifest": true,
+          "no_forbidden_words": true,
+          "phone_safe_name": true
+        },
+        "domain": "artifact_export",
+        "fixture_id": "ARTIFACT_EXPORT_PHONE_SAFE_NAMES_002",
+        "verdict": "PASS"
+      },
+      {
+        "checks": {
+          "minimal_fix": true,
+          "read_before_patch": true,
+          "receipt": true,
+          "regression_test": true,
+          "root_cause": true
+        },
+        "domain": "repair_debugging",
+        "fixture_id": "REPAIR_DEBUGGING_ROOT_CAUSE_001",
+        "verdict": "PASS"
+      },
+      {
+        "checks": {
+          "do_not_assume_missing": true,
+          "fallback_selector": true,
+          "probe_filesystem": true,
+          "record_failed_methods": true
+        },
+        "domain": "repair_debugging",
+        "fixture_id": "REPAIR_DEBUGGING_CAPABILITY_PROBE_002",
+        "verdict": "PASS"
+      }
+    ],
+    "schema_version": "v2",
+    "total": 12,
+    "verdict": "PASS"
+  },
+  "field_task_fixture_result": {
+    "checked_at_utc": "2026-05-03T02:55:37Z",
+    "errors": [],
+    "passed": 6,
+    "results": [
+      {
+        "artifact": "/mnt/data/Metablooms_OS/0_kernel/evals/field_task_fixtures/artifacts/educational_html_field_fixture.html",
+        "domain": "educational_html",
+        "errors": [],
+        "id": "field_educational_html_001",
+        "verdict": "PASS"
+      },
+      {
+        "artifact": "/mnt/data/Metablooms_OS/0_kernel/evals/field_task_fixtures/artifacts/blooket_field_fixture.csv",
+        "domain": "blooket_csv",
+        "errors": [],
+        "id": "field_blooket_csv_001",
+        "verdict": "PASS"
+      },
+      {
+        "artifact": "/mnt/data/Metablooms_OS/0_kernel/evals/field_task_fixtures/artifacts/lesson_plan_field_fixture.md",
+        "domain": "lesson_plan",
+        "errors": [],
+        "id": "field_lesson_plan_001",
+        "verdict": "PASS"
+      },
+      {
+        "artifact": "/mnt/data/Metablooms_OS/0_kernel/evals/field_task_fixtures/artifacts/research_see_field_fixture.json",
+        "domain": "research_see",
+        "errors": [],
+        "id": "field_research_see_001",
+        "verdict": "PASS"
+      },
+      {
+        "artifact": "/mnt/data/Metablooms_OS/0_kernel/evals/field_task_fixtures/artifacts/artifact_export_field_fixture_manifest.json",
+        "domain": "artifact_export",
+        "errors": [],
+        "id": "field_artifact_export_001",
+        "verdict": "PASS"
+      },
+      {
+        "artifact": "/mnt/data/Metablooms_OS/0_kernel/evals/field_task_fixtures/artifacts/repair_debugging_field_fixture_receipt.json",
+        "domain": "repair_debugging",
+        "errors": [],
+        "id": "field_repair_debugging_001",
+        "verdict": "PASS"
+      }
+    ],
+    "schema_version": "v1",
+    "total": 6,
+    "verdict": "PASS"
+  },
+  "prompt_gate_result": {
+    "errors": [],
+    "verdict": "PASS",
+    "warnings": []
+  },
+  "schema_version": "v1",
+  "verdict": "PASS"
+}

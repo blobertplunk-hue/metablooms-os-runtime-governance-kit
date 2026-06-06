@@ -1,0 +1,27 @@
+{
+  "allowed_roots": [
+    "/mnt/data/Metablooms_OS"
+  ],
+  "artifact_type": "AtomicJsonWriteDecisionPacket.v1",
+  "bytes_written": 1627,
+  "created_utc": "2026-05-02T21:57:50Z",
+  "deny_reason": null,
+  "error_type": null,
+  "failure_event_path": null,
+  "fsync_file": true,
+  "fsync_parent": {
+    "attempted": true,
+    "error": null,
+    "ok": true
+  },
+  "ok": true,
+  "operation_id": "VPQ_STAGE2_HANDOFF",
+  "readback_ok": true,
+  "receipt_path": "/mnt/data/Metablooms_OS/runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE2_VALIDATOR_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T215737Z/atomic_write_decisions/VPQ_STAGE2_HANDOFF_decision_packet.json",
+  "resolved_target_path": "/mnt/data/Metablooms_OS/runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE2_VALIDATOR_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T215737Z/VISUAL_PRESENTATION_QUALITY_GATE_STAGE2_VALIDATOR_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_HANDOFF.json",
+  "status": "ALLOW_SUCCESS",
+  "target_path": "/mnt/data/Metablooms_OS/runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE2_VALIDATOR_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T215737Z/VISUAL_PRESENTATION_QUALITY_GATE_STAGE2_VALIDATOR_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_HANDOFF.json",
+  "target_sha256": "502916cddf70e2e59944a5818d9e49e864a3d27e343a3baebfaaace0b30937f3",
+  "temp_path_used": "/mnt/data/Metablooms_OS/runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE2_VALIDATOR_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T215737Z/.VISUAL_PRESENTATION_QUALITY_GATE_STAGE2_VALIDATOR_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_HANDOFF.json.me0ib1ty.tmp",
+  "writer_version": "atomic_json_writer_v1"
+}

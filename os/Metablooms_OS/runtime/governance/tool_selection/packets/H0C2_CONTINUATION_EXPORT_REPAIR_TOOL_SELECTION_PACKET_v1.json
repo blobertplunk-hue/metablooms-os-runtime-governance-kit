@@ -1,0 +1,25 @@
+{
+  "stage": "H0C2_GOVERNANCE_SURVIVAL_EXPORT_REPAIR_CONTINUATION",
+  "decision_packet_type": "TOOL_SELECTION_EVIDENCE_ROUTER",
+  "created_before_export_mutation": true,
+  "constraints": {
+    "avoid_full_extraction": true,
+    "avoid_normal_python": true,
+    "do_not_redo_overlay_unless_corrupt": true,
+    "promote_only_if_duplicate_free_zip_integrity_targeted_smoke_behavior_tests_tracker_receipt_handoff_checksum_pass": true
+  },
+  "routes_considered": [
+    {"route":"shell/coreutils","use":"probe, copy, sha256, mkdir, find, grep","observed_fit":"high","latency_risk":"low","decision":"allow"},
+    {"route":"python3 -S","use":"zip stream rebuild, zip integrity, duplicate scan, targeted extraction, JSON checks","observed_fit":"high","latency_risk":"medium","decision":"allow_for_bounded_zip_ops"},
+    {"route":"normal python","use":"none","observed_fit":"low_for_this_stage","latency_risk":"unknown_or_high","decision":"deny_unless_probed_later"},
+    {"route":"zipinfo","use":"metadata listing if present","observed_fit":"medium","latency_risk":"low","decision":"allow_probe_only"},
+    {"route":"unzip","use":"targeted extraction only","observed_fit":"medium","latency_risk":"high_for_full_extract","decision":"deny_full_extraction_allow_targeted_only"},
+    {"route":"zip -0","use":"possible low-latency archive creation from small overlay only","observed_fit":"medium","latency_risk":"medium","decision":"fallback_only"},
+    {"route":"python zipfile","use":"duplicate-free source+overlay rebuild preserving last occurrence","observed_fit":"high","latency_risk":"medium","decision":"primary_export_route_with_python3_dash_S"},
+    {"route":"jq","use":"JSON inspection if present","observed_fit":"medium","latency_risk":"low","decision":"allow_probe_only"},
+    {"route":"node","use":"not needed for zip/json stdlib ops","observed_fit":"low","latency_risk":"unknown","decision":"deny_for_this_stage"},
+    {"route":"artifact-specific libraries","use":"not needed; no docx/pdf/spreadsheet task","observed_fit":"low","latency_risk":"unknown","decision":"deny_for_this_stage"}
+  ],
+  "selected_route": "python3 -S zipfile stream rebuild plus shell/coreutils checks",
+  "selection_reason": "Need duplicate-free whole-system ZIP without full extraction; Python stdlib zipfile can stream source and overlay changes deterministically while shell handles low-latency probes/checks."
+}

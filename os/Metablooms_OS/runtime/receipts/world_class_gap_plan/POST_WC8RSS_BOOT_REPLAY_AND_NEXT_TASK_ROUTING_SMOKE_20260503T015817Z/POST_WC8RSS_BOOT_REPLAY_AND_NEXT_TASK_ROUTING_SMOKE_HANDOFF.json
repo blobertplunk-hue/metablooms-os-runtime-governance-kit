@@ -1,0 +1,10 @@
+{
+  "stage": "POST_WC8RSS_BOOT_REPLAY_AND_NEXT_TASK_ROUTING_SMOKE",
+  "timestamp": "20260503T015817Z",
+  "verdict": "PASS",
+  "next_stage": "NEXT_REQUESTED_METABLOOMS_TASK",
+  "bootable_full_authority_zip": "BOOTABLE_FULL_AUTHORITY_WC8RSSS.zip",
+  "handoff_path": "/mnt/data/Metablooms_OS/runtime/receipts/world_class_gap_plan/POST_WC8RSS_BOOT_REPLAY_AND_NEXT_TASK_ROUTING_SMOKE_20260503T015817Z/POST_WC8RSS_BOOT_REPLAY_AND_NEXT_TASK_ROUTING_SMOKE_HANDOFF.json",
+  "instruction": "Await a concrete MetaBlooms task. If none is supplied, run only bounded boot/routing smoke.",
+  "must_show_tracker_automatically": true
+}

@@ -1,0 +1,27 @@
+R5 prestate 20260428T025600Z
+root=/mnt/data/Metablooms_OS
+r4_handoff=/mnt/data/Metablooms_OS/receipts/refactor_program/R4_HANDOFF_20260428T025318Z.json
+cool6_archive=/mnt/data/Metablooms_OS/runtime/governance/legacy_archives/COOL_6_RUNTIME_GATE_WIRING_PLAN_v1.json
+existing registries:
+existing relevant scripts:
+/mnt/data/Metablooms_OS/0_kernel/scripts/cartridge_promotion_gate_v1.py
+/mnt/data/Metablooms_OS/0_kernel/scripts/ce_packet_validator_v1.py
+/mnt/data/Metablooms_OS/0_kernel/scripts/claude_memory_sync_writer_v1.py
+/mnt/data/Metablooms_OS/0_kernel/scripts/claude_memory_sync_writer_v1.redirect.json
+/mnt/data/Metablooms_OS/0_kernel/scripts/export_recovery_proven_validator_v1.py
+/mnt/data/Metablooms_OS/0_kernel/scripts/intra_chunk_interrupt_checker_v1.py
+/mnt/data/Metablooms_OS/0_kernel/scripts/memory_sync_validator_v1.py
+/mnt/data/Metablooms_OS/0_kernel/scripts/runtime_pulse_logger_v1.py
+/mnt/data/Metablooms_OS/0_kernel/scripts/see_finding_consistency_gate_v1.py
+/mnt/data/Metablooms_OS/0_kernel/scripts/see_packet_validator_v1.py
+/mnt/data/Metablooms_OS/0_kernel/scripts/session_state_exporter_v1.py
+/mnt/data/Metablooms_OS/0_kernel/scripts/transactional_stage_runner_v1.py
+/mnt/data/Metablooms_OS/0_kernel/scripts/validate_script_v2.py
+/mnt/data/Metablooms_OS/0_kernel/scripts/validate_session_state_export_v1.py
+/mnt/data/Metablooms_OS/0_kernel/scripts/validate_unified_runtime_compatibility_contract_v1.py
+/mnt/data/Metablooms_OS/runtime/governance/full_bundle_export_guard_v1.py
+/mnt/data/Metablooms_OS/runtime/governance/governance_regression_suite_gate_v1.sh
+/mnt/data/Metablooms_OS/runtime/governance/invariant_activation_engine_v1.py
+/mnt/data/Metablooms_OS/runtime/governance/pre_tool_execution_contract_gate_v1.py
+/mnt/data/Metablooms_OS/runtime/governance/python3_S_lane_exec_v1.sh
+/mnt/data/Metablooms_OS/runtime/governance/python_resilient_execution_gate_v1.py

@@ -1,0 +1,129 @@
+{
+  "checks": [
+    {
+      "check_id": "PAC-001",
+      "deny_on": [
+        "controlled_artifact_missing_from_index",
+        "registered_hash_mismatch",
+        "unclassified_lifecycle_state"
+      ],
+      "evidence": "complete inventory with path, sha256, lifecycle_state, registry_status",
+      "name": "controlled_artifact_closure"
+    },
+    {
+      "check_id": "PAC-002",
+      "deny_on": [
+        "live_boot_file_names_noncurrent_authority",
+        "stage_pointer_disagreement",
+        "historical_reference_without_marker"
+      ],
+      "evidence": "sweep report over boot/start/pointer files",
+      "name": "stale_authority_sweep"
+    },
+    {
+      "check_id": "PAC-003",
+      "deny_on": [
+        "pointer_copies_not_byte_equivalent_json",
+        "pointer_sidecar_mismatch",
+        "authority_zip_sidecar_missing_or_mismatch"
+      ],
+      "evidence": "hash comparison over pointer copies and sidecars",
+      "name": "pointer_equivalence"
+    },
+    {
+      "check_id": "PAC-004",
+      "deny_on": [
+        "validator_without_declared_invocation_shape",
+        "declared_shape_fails_smoke",
+        "direct_call_contradicts_contract"
+      ],
+      "evidence": "validator command map with positional-root vs --root declarations",
+      "name": "validator_cli_contract_map"
+    },
+    {
+      "check_id": "PAC-005",
+      "deny_on": [
+        "new_chat_start_contract_missing",
+        "fresh_chat_boot_rehearsal_denied",
+        "runtime_starter_smoke_denied"
+      ],
+      "evidence": "fresh-chat replay receipt produced from /mnt/data only",
+      "name": "fresh_chat_replay"
+    },
+    {
+      "check_id": "PAC-006",
+      "deny_on": [
+        "manifest_declares_missing_member",
+        "ledger_declares_missing_output",
+        "zip_test_fails",
+        "duplicate_zip_member",
+        "internal_authority_differs_from_external_pointer"
+      ],
+      "evidence": "zip manifest, ledger-output match, duplicate scan, zip structural test",
+      "name": "export_self_consistency"
+    },
+    {
+      "check_id": "PAC-007",
+      "deny_on": [
+        "receipt_claims_success_without_all_gate_evidence",
+        "receipt_written_before_candidate_hash",
+        "post_zip_artifact_not_reexported"
+      ],
+      "evidence": "receipt lists gate_result_hash and candidate export sha256",
+      "name": "promotion_receipt_binding"
+    }
+  ],
+  "created_at": "2026-05-02T19:59:18.342997+00:00",
+  "decision_contract": {
+    "BLOCKED": "required input cannot be read or verified",
+    "DENY": "one or more deny_on conditions present",
+    "PASS": "all required checks pass with evidence hashes"
+  },
+  "external_evidence": [
+    {
+      "claim": "Provenance only protects releases if inspected by a verifier before trust/promotion.",
+      "id": "SEE-SLSA-VERIFY",
+      "url": "https://slsa.dev/spec/v1.0/verifying-artifacts"
+    },
+    {
+      "claim": "Release integrity verification and provenance data should be stored/protected and retained as release evidence.",
+      "id": "SEE-NIST-SSDF-PS3",
+      "url": "https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-218.pdf"
+    },
+    {
+      "claim": "Automated checks quantify supply-chain/security posture and expose weak practices before acceptance.",
+      "id": "SEE-OPENSSF-SCORECARD",
+      "url": "https://scorecard.dev/"
+    }
+  ],
+  "gate_id": "PROMOTION_AUTHORITY_COHERENCE_GATE_v1",
+  "minimum_stage2_implementation_outputs": [
+    "0_kernel/mpp_v3/promotion_authority_coherence_gate_v1.py",
+    "0_kernel/schemas/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_RESULT_SCHEMA_v1.json",
+    "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_*"
+  ],
+  "promotion_labels_blocked_until_pass": [
+    "current",
+    "full_authority",
+    "bootable",
+    "baseline",
+    "promotion_locked",
+    "latest"
+  ],
+  "purpose": "Prevent exports from becoming current/full/bootable authority when pointer, registry, start-contract, validator, sidecar, and exported-ZIP facts disagree.",
+  "required_inputs": [
+    "canonical_working_root",
+    "current_full_authority_pointer",
+    "current_export_authority",
+    "new_chat_start_contract",
+    "controlled_governance_artifact_index",
+    "governance_scatter_prevention_result",
+    "validator_invocation_contract_map",
+    "candidate_export_zip",
+    "candidate_export_sha256_sidecar"
+  ],
+  "result_hash": "f90f8036fe44d1e10320d57083c974cba9ac8700e565246fefa1f61ea201d8f2",
+  "schema_version": "metablooms.promotion_authority_coherence_gate.spec.v1",
+  "stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE1_SPEC_AND_FIXTURES",
+  "status": "SPEC_AND_FIXTURES_DEFINED_NOT_IMPLEMENTED"
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "METABLOOMS_STAGE_HANDOFF_v1",
+  "stage": "STAGE6D_BTS_V4_GATE_WRAPPED_INSTALL_SCAFFOLD",
+  "timestamp_utc": "20260502T015200Z",
+  "verdict": "PASS_WITH_WARNINGS_NO_FULL_OS_EXPORT",
+  "receipt": "/mnt/data/Metablooms_OS/runtime/receipts/METABLOOMS_STAGE6D_BTS_V4_GATE_WRAPPED_INSTALL_RECEIPT_20260502T015200Z.json",
+  "next_recommended_stage": "STAGE6E_BTS_WRAP_EXPORT_AND_FILESYSTEM_EXECUTORS",
+  "next_scope": [
+    "Route export and filesystem executor actions through pre-action gate + BTS turn tracker.",
+    "Require BTS implementation_reality before claiming files changed.",
+    "Do not run full OS export until executor wrappers pass fixtures."
+  ],
+  "resume_prompt": "Continue from /mnt/data/Metablooms_OS using METABLOOMS_STAGE6D_BTS_V4_GATE_WRAPPED_INSTALL_RECEIPT_20260502T015200Z.json. Run exactly one bounded governed stage: STAGE6E_BTS_WRAP_EXPORT_AND_FILESYSTEM_EXECUTORS. Do not create a full OS export until wrappers pass fixtures."
+}

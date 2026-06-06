@@ -1,0 +1,16 @@
+{
+  "artifact_type": "STAGE_HANDOFF.v1",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE5_TRACE_INGESTION_CLASSIFIER_REPAIR_AND_REGRESSION_FIXTURES",
+  "created_utc": "20260502T165945Z",
+  "handoff_status": "READY",
+  "summary": "Stage 5 repaired trace ingestion classifier behavior and added regression fixtures. CE/SEE evidence packets now default to OK unless explicit failure evidence exists.",
+  "current_state": {
+    "stage5_validator": "PASS",
+    "active_failure_clusters": 0,
+    "monitor_failure_clusters": 0,
+    "remaining_non_ok_records": 3,
+    "remaining_non_ok_records_note": "Historical stale boot/authority reconciliation artifacts remain preserved as resolved/suppressed evidence."
+  },
+  "next_recommended_stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE6_METHOD_RELIABILITY_LEDGER_AND_SUPPRESSED_FAILURE_LESSON_BINDING",
+  "next_stage_purpose": "Promote the suppressed CLI invocation failure into a durable method reliability lesson so wrong command shapes are prevented by executable wrappers and future receipts."
+}

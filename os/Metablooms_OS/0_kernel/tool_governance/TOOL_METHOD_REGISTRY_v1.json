@@ -1,0 +1,82 @@
+{
+  "artifact_type": "TOOL_METHOD_REGISTRY_v1",
+  "created_utc": "2026-04-30T19:57:32Z",
+  "methods": {
+    "artifact-specific libraries": {
+      "default_fit": [
+        "PDF/DOCX/PPTX/XLSX tasks only"
+      ],
+      "observed_latency": "task-dependent",
+      "risk": "medium"
+    },
+    "jq": {
+      "default_fit": [
+        "JSON query inspection"
+      ],
+      "observed_latency": "low",
+      "risk": "low"
+    },
+    "node": {
+      "default_fit": [
+        "JS/HTML validation"
+      ],
+      "observed_latency": "unknown until probed",
+      "risk": "medium"
+    },
+    "normal python": {
+      "default_fit": [
+        "only when probed necessary"
+      ],
+      "observed_latency": "unknown/flaky",
+      "risk": "high"
+    },
+    "python zipfile": {
+      "default_fit": [
+        "targeted extraction",
+        "duplicate-free stream rebuild"
+      ],
+      "observed_latency": "bounded when targeted",
+      "risk": "low"
+    },
+    "python3 -S": {
+      "default_fit": [
+        "zipfile",
+        "json",
+        "stdlib tests"
+      ],
+      "observed_latency": "medium-low",
+      "risk": "low"
+    },
+    "shell/coreutils": {
+      "default_fit": [
+        "probes",
+        "checksums",
+        "small text writes"
+      ],
+      "observed_latency": "low",
+      "risk": "low"
+    },
+    "unzip": {
+      "default_fit": [
+        "listing or targeted extraction only"
+      ],
+      "observed_latency": "full extraction risky",
+      "risk": "medium"
+    },
+    "zip -0": {
+      "default_fit": [
+        "fallback low-compression export"
+      ],
+      "observed_latency": "medium",
+      "risk": "medium"
+    },
+    "zipinfo": {
+      "default_fit": [
+        "central directory metadata"
+      ],
+      "observed_latency": "low",
+      "risk": "low"
+    }
+  },
+  "stage_id": "H0C1_TOOL_SELECTION_EVIDENCE_ROUTER_CONTINUED"
+}

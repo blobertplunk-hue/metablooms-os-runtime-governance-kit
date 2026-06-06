@@ -1,0 +1,23 @@
+{
+  "android_sandbox_primary": true,
+  "artifact_type": "visual_policy_spec",
+  "decision": "ALLOW_STATIC_ONLY_WITH_LIMITATION",
+  "environment": "android_chatgpt_sandbox",
+  "honesty_label": "static_only_limited",
+  "method_attempts": [
+    {
+      "attempt_policy": "always_available_static",
+      "failure_class_if_failed": "STATIC_CHECK_FAILED",
+      "method_id": "static_vpq_accessibility_checks",
+      "priority": 7,
+      "success_criteria": [
+        "json_valid",
+        "vpq_declaration_present",
+        "limitation_label_present"
+      ]
+    }
+  ],
+  "pc_addendum_available": true,
+  "requested_proof_tier": "static_only_allowed",
+  "selected_method": "static_vpq_accessibility_checks"
+}

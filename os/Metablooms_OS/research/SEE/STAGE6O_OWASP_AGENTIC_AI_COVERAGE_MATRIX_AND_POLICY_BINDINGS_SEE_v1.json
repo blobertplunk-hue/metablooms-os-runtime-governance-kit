@@ -1,0 +1,33 @@
+{
+  "schema": "SEEResearchPacket_v1",
+  "sources": [
+    {
+      "evidence": "Defines globally peer-reviewed Top 10 for autonomous and agentic AI systems.",
+      "source": "OWASP Top 10 for Agentic Applications 2026",
+      "url": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/"
+    },
+    {
+      "evidence": "Provides threat-model-based reference for emerging agentic threats and mitigations.",
+      "source": "OWASP Agentic AI - Threats and Mitigations",
+      "url": "https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/"
+    },
+    {
+      "evidence": "Frames AI Exchange as comprehensive core framework for AI security fundamentals, controls, and standards alignment.",
+      "source": "OWASP AI Exchange overview",
+      "url": "https://owaspai.org/docs/ai_security_overview/"
+    },
+    {
+      "evidence": "Used as prior governance basis for HITL, guardrails, and traceability patterns.",
+      "source": "OpenAI Agents SDK HITL/guardrails/tracing docs",
+      "url": "https://openai.github.io/openai-agents-python/"
+    }
+  ],
+  "stage_id": "STAGE6O_OWASP_AGENTIC_AI_COVERAGE_MATRIX_AND_POLICY_BINDINGS",
+  "status": "COMPLETE_WITH_WEB_RUN_EVIDENCE",
+  "synthesis_points": [
+    "OWASP Agentic Top 10 is the primary control taxonomy for this stage.",
+    "MetaBlooms already has resolver/BTS/pre/post gates; Stage 6O binds those controls to OWASP categories and forces classification before high-impact action.",
+    "Least-agency, observability, and human approval are directly relevant to exports, pointer promotions, installs, and broad repairs."
+  ],
+  "timestamp_utc": "2026-05-02T02:53:05Z"
+}

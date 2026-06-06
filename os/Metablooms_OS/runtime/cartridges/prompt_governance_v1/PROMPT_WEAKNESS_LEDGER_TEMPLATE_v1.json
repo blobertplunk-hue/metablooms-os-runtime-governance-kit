@@ -1,0 +1,17 @@
+{
+  "entries": [],
+  "entry_fields": [
+    "weakness_id",
+    "observed_in",
+    "evidence",
+    "failure_class",
+    "severity",
+    "repair",
+    "writeback_target",
+    "validation",
+    "sha256_after_repair",
+    "created_utc"
+  ],
+  "id": "PROMPT_WEAKNESS_LEDGER_TEMPLATE_v1",
+  "status": "active"
+}

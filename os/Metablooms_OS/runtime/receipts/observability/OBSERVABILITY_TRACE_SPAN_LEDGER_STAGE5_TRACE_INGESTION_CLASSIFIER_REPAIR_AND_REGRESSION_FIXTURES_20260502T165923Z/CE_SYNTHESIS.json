@@ -1,0 +1,14 @@
+{
+  "artifact_type": "CE_SYNTHESIS.v1",
+  "created_utc": "20260502T170000Z",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE5_TRACE_INGESTION_CLASSIFIER_REPAIR_AND_REGRESSION_FIXTURES",
+  "decision": "Patch trace ingestion status inference so evidence packets are not marked ERROR because their prose contains words like failure; add regression fixtures and validator coverage.",
+  "root_cause": "infer_status used substring matching against long prose in decision fields, so words such as failure triggered FAIL -> ERROR classification.",
+  "smallest_valid_fix": [
+    "Replace substring matching with exact/prefix status parsing.",
+    "Treat compact decision values such as ALLOW or DENY as status; treat long CE prose as evidence text.",
+    "Default CE/SEE evidence packets to OK unless explicit failure fields or issue lists are present.",
+    "Add fixture-based regression tests for CE, SEE, DENY, FAIL, and issues/WARN behavior."
+  ],
+  "expected_outcome": "derived_packet_missing_status_contract disappears from the failure cluster report and TRACE_INGESTION_CLASSIFIER_REPAIR is no longer routed as an active/monitor repair."
+}

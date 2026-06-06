@@ -1,0 +1,12 @@
+{
+  "schema_version":"PostToolResultValidationEnvelope_v1",
+  "validation_id":"stage6r_final_support_bundle_validation",
+  "stage_id":"STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS",
+  "tool_id":"python3_S_stdlib_bounded_installer",
+  "action_type":"zip_export",
+  "intent":"Validate final Stage6R support/proof bundle after hash-stable rebuild.",
+  "expected":{"sha256":"92bacfd6f5adba43d208edabfae1697bacc575658d17c149566eab3dfdc9c728","min_bytes":1000},
+  "actual":{"crc_verdict":"PASS","duplicates":0,"unsafe_paths":0,"implementation_reality_verdict":"PASS"},
+  "artifacts":{"primary_path":"/mnt/data/METABLOOMS_STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS_SUPPORT_PROOF_BUNDLE_NOT_OS_20260502T035000Z.zip","sidecar_path":"/mnt/data/METABLOOMS_STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS_SUPPORT_PROOF_BUNDLE_NOT_OS_20260502T035000Z.zip.sha256","receipt_path":"/mnt/data/Metablooms_OS/runtime/receipts/METABLOOMS_STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS_RECEIPT_20260502T035000Z.json"},
+  "created_at_utc":"2026-05-02T03:50:00Z"
+}

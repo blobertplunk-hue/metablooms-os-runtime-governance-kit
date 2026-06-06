@@ -1,0 +1,35 @@
+{
+  "artifact_type": "MB_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_SPEC_v1",
+  "created_utc": "20260501T130400Z",
+  "external_evidence": [
+    {
+      "claim": "Start with error analysis and manually review 20-50 outputs/traces for meaningful changes.",
+      "source": "Hamel Husain + Shreya Shankar evals FAQ"
+    },
+    {
+      "claim": "Evals describe task, run test inputs, analyze results, then iterate.",
+      "source": "OpenAI evals guide"
+    },
+    {
+      "claim": "Break quality into critical components and start with manually curated examples.",
+      "source": "LangSmith evaluation concepts"
+    }
+  ],
+  "gates": [
+    "EVAL-GATE-001 trace_review_dataset_schema_present",
+    "EVAL-GATE-002 minimum_viable_eval_loop_present",
+    "EVAL-GATE-003 validator_alignment_policy_present",
+    "EVAL-GATE-004 sample_traces_cover_pass_warn_fail",
+    "EVAL-GATE-005 evals_validator_passes_before_promotion"
+  ],
+  "next_stage": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_2_SCORECARDS_AND_REGRESSION_DATASET",
+  "purpose": "Make evals an executable governance layer: trace review, error taxonomy, validator alignment, and minimum viable evaluation loop before cartridge promotion.",
+  "quality_criteria": [
+    "trace_has_inputs_outputs_tool_steps_and_receipt_links",
+    "human_review_notes_capture_first_failure_and_tags",
+    "validator_decisions_align_to_expected_outcome",
+    "regression_examples_bind_to_failure_class",
+    "stage_promotion_requires_validation_report"
+  ],
+  "stage_name": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_1_OR_SECURITY_STAGE4_RED_TEAM_FIXTURES"
+}

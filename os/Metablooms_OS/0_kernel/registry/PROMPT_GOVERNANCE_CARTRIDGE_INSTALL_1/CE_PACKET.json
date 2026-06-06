@@ -1,0 +1,16 @@
+{
+  "design_rules": [
+    "profile-based prompt selection",
+    "failure taxonomy with writeback",
+    "same-turn options ranked best-to-worst",
+    "eval/regression hooks required for reusable prompt changes",
+    "asset index required for reuse"
+  ],
+  "repair_priorities": [
+    "repair boot blocker first",
+    "install prompt system as cartridge not loose spec",
+    "register cartridge as reusable asset",
+    "validate file presence and contract invariants"
+  ],
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_1"
+}

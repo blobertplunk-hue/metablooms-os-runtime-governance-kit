@@ -1,0 +1,9 @@
+{
+  "id":"NO_NORMAL_PYTHON_FOR_OS_WORK_v1",
+  "status":"active",
+  "gate":"PYTHON_QUARANTINE_GATE",
+  "description":"Normal Python is disabled for governed OS/export/manifest work unless explicitly authorized; python3 -S only for tiny timeout-wrapped stdlib tasks.",
+  "failure_action":"DENY_STAGE_EXECUTION",
+  "source":"project-files boot overlay",
+  "scope":"runtime_governance_overlay"
+}

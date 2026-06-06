@@ -1,0 +1,23 @@
+{
+  "artifact_type": "MB_CLI_COMMAND_SPEC_v10",
+  "commands": [
+    {
+      "fail_closed": "EVALS_STAGE2_CHECK_FAIL",
+      "name": "evals --scorecards",
+      "purpose": "run scorecard/regression validator and summarize scorecards"
+    },
+    {
+      "name": "evals --regression",
+      "purpose": "summarize regression dataset coverage",
+      "structured_json": true
+    },
+    {
+      "fail_closed": "EVALS_CHECK_FAIL",
+      "name": "evals --check",
+      "purpose": "run latest available evals validator, preferring Stage 2 when present"
+    }
+  ],
+  "created_utc": "20260501T132500Z",
+  "inherits": "MB_CLI_COMMAND_SPEC_v9",
+  "purpose": "Add evals scorecard and regression-dataset checks."
+}

@@ -1,0 +1,11 @@
+{
+  "created_at_utc": "2026-05-02T03:20:12.903509Z",
+  "description": "Executor-like files found by Stage6Q must be covered by sidecar policy bindings and active invocation gate before they can be treated as governed.",
+  "failure_action": "DENY_DIRECT_EXECUTOR_INVOCATION_AND_ROUTE_TO_BTS_WRAPPER_OR_HITL_APPROVAL",
+  "id": "LEGACY_EXECUTOR_RETROFIT_ENFORCEMENT_REQUIRED_v1",
+  "schema": "MetaBloomsInvariant_v1",
+  "source_binding_path": "0_kernel/registry/tool_governance/LEGACY_EXECUTOR_RETROFIT_BINDINGS_v1.json",
+  "stage_id": "STAGE6Q_REPAIR_LEGACY_EXECUTOR_RETROFIT",
+  "status": "active",
+  "validator_path": "runtime/governance/legacy_executor_retrofit_gate_v1.py"
+}

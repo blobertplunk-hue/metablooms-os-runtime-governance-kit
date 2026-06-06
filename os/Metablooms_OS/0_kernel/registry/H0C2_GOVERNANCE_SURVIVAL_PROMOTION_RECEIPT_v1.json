@@ -1,0 +1,21 @@
+{
+  "blocked_bundle_used": "/mnt/data/H0C2_GOVERNANCE_SURVIVAL_BLOCKED_ARTIFACTS_20260430T203803Z.zip",
+  "created_utc": "2026-04-30T20:40:22Z",
+  "export_route": "python3 -S zipfile stream rebuild with ZIP_STORED to avoid compression latency",
+  "final_sha256_external_sidecar_required": true,
+  "final_zip_name": "METABLOOMS_OS_H0C2_GOVERNANCE_SURVIVAL_PROMOTION_BLOCKERS_CLEAN_AUTHORITY_FINAL_20260430T204500Z.zip",
+  "overlay_behavior_test_preserved": "PASS",
+  "promotion_decision": "ALLOW_AFTER_EXTERNAL_VALIDATION_PASSES",
+  "required_gates": [
+    "duplicate_free_zip_validation",
+    "zip_integrity",
+    "targeted_fresh_extract_smoke",
+    "behavior_tests_from_fresh_extract",
+    "tracker_update",
+    "receipt_handoff_inclusion",
+    "checksum_sidecar"
+  ],
+  "source_authority": "/mnt/data/METABLOOMS_OS_H0C1_TOOL_SELECTION_EVIDENCE_ROUTER_CLEAN_AUTHORITY_FINAL_20260430T195732Z.zip",
+  "stage": "H0C2_GOVERNANCE_SURVIVAL_AND_PROMOTION_BLOCKER_AUDIT",
+  "status": "PASS_CLEAN_AUTHORITY_EXPORTED_PENDING_EXTERNAL_SHA_SIDECAR"
+}

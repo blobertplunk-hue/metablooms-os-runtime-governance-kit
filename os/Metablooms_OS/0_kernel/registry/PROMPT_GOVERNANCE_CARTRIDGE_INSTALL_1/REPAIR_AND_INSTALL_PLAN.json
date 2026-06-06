@@ -1,0 +1,15 @@
+{
+  "bounded_scope": "repair boot-critical governance loader and install prompt_governance_v1 portable cartridge only",
+  "do_not_do": [
+    "broad anti-scatter cleanup of all historical files",
+    "full refactor",
+    "fresh-chat H0C3 rehearsal"
+  ],
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_1",
+  "validators": [
+    "boot_runtime_executor_v1.py",
+    "prompt cartridge validator",
+    "zip integrity",
+    "fresh extract smoke"
+  ]
+}

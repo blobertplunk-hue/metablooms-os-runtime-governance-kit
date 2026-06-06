@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "policy_id": "OS_IMPORT_POLICY_STAGE43B_CLEANED_v1",
+  "stage": "PROFESSIONALIZATION_CONVERGENCE_STAGE43B_IMPORT_OS_TREE_TO_REPO_BRANCH",
+  "destination": "os/Metablooms_OS/",
+  "validation": "non_mutating_structural_repo_verifier_plus_forbidden_cleanup",
+  "forbidden_remaining": "NO",
+  "max_file_ok": "YES",
+  "boot_authority_sha256": "2a1d96759f71eff45acefe3eb8658e3a3518456867e3b64a763272e85a7a18ed",
+  "files_imported": "6856",
+  "os_manifest_sha256": "3a3e1ca039b463a3855a9f0b55103c3c44fac1c101b1fe7e39a56404235633f6"
+}

@@ -1,0 +1,34 @@
+{
+  "stage_id": "FL17-MERGE-1_STAGING_AND_DIFF_CLASSIFICATION",
+  "verdict": "PASS_DIFF_CLASSIFIED_NO_IMPORT_NO_PATCH",
+  "created_utc": "20260430T011129Z",
+  "inputs": [
+    "/mnt/data/MB_FULL_OS_WITH_TRACKER_INTEGRATED_20260429T113808Z/METABLOOMS_OS_FULL_WITH_INLINE_TRACKER_INTEGRATED_20260429T113808Z.zip",
+    "/mnt/data/METABLOOMS_OS_STABLE_v0.8.0_20260429T212440Z.zip",
+    "/mnt/data/METABLOOMS_OS_STABLE_v0.8.0_FL17_REPACKED_FROM_FL15_20260430T003638Z.zip"
+  ],
+  "outputs": [
+    "FL17_DELTA_REPORT_v1.json",
+    "FL17_DIFF_CLASSIFICATION_SUMMARY_v1.md",
+    "FL17_MERGE_1_SEE_PACKET_v1.json",
+    "FL17_MERGE_1_CE_SYNTHESIS_v1.json",
+    "FL17_MERGE_1_RECEIPT.json",
+    "FL17_MERGE_1_HANDOFF.json"
+  ],
+  "validation": {
+    "zip_integrity_pass": true,
+    "unsafe_paths_total": 0,
+    "no_import_performed": true,
+    "no_patch_performed": true,
+    "diff_basis": "archive-native CRC32+uncompressed size for all file deltas; full ZIP SHA-256 for bundle identity; content SHA-256 deferred to import stage for selected candidates to avoid sandbox timeouts"
+  },
+  "counts": {
+    "same_target_fl17": 1228,
+    "target_only_retain": 2,
+    "fl17_only_import_candidate": 870,
+    "conflict_different_hash": 9,
+    "exclude_candidate": 0,
+    "manual_review": 894
+  },
+  "next": "FL17-MERGE-2 import approved FL17 progression as quarantined evidence only"
+}

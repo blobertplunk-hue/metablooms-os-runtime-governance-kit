@@ -1,0 +1,31 @@
+{
+  "artifacts": {
+    "TRACKER_BOOT_GATE_v1.json": {
+      "path": "/mnt/data/Metablooms_OS/0_kernel/cartridges/inline_project_tracker/TRACKER_BOOT_GATE_v1.json",
+      "sha256": "7b65a5841c32ea3f2d2a1af1314ee1644737999ced80a895a1b37498c524c555"
+    },
+    "TRACKER_EVIDENCE_GATE_v1.json": {
+      "path": "/mnt/data/Metablooms_OS/0_kernel/cartridges/inline_project_tracker/TRACKER_EVIDENCE_GATE_v1.json",
+      "sha256": "b2a69bc98a13c1846146a4ce1e670d98315ea6480d42a7ab0900da82a8efeef4"
+    },
+    "TRACKER_STAGE_GATE_v1.json": {
+      "path": "/mnt/data/Metablooms_OS/0_kernel/cartridges/inline_project_tracker/TRACKER_STAGE_GATE_v1.json",
+      "sha256": "b9235e974616fab4f93de361385a4529910b8e5f8d2ad230cb0b6ca3e4bb3fef"
+    },
+    "TRACKER_STOP_GATE_v1.json": {
+      "path": "/mnt/data/Metablooms_OS/0_kernel/cartridges/inline_project_tracker/TRACKER_STOP_GATE_v1.json",
+      "sha256": "1940286875fa28af08db44369487a0b598d86b8d053bb71e918ffc15e61108c2"
+    }
+  },
+  "checks": {
+    "done_blocked_evidence_rejection": "PASS",
+    "existing_state_load_before_action": "PASS",
+    "gate_files_present": "PASS",
+    "missing_state_blocking": "PASS",
+    "top_marker_after_load": "PASS"
+  },
+  "errors": [],
+  "rendered_preview": "\u256d\u2500 PROJECT TRACKER \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Project: Inline Project Tracker                              \u2502\n\u2502 Status: DONE                                                 \u2502\n\u2502 Stage: TRACKER-2_MARKDOWN_RENDERER_AND_VALIDATOR             \u2502\n\u2502 Progress: 3/5 \u2588\u2588\u2588\u2588\u2588\u2588\u2591\u2591\u2591\u2591                                     \u2502\n\u2502 Now: TRACKER-2 complete; stopped before boot/stage gate imp\u2026 \u2502\n\u2502 Evidence: TRACKER render spec lock 45e460cfeb04              \u2502\n\u2502 Blocker: none                                                \u2502\n\u2502 Next: TRACKER-3 boot and stage gate implementation only.     \u2502\n\u2502 Stop Rule: Stopped after TRACKER-2; boot/stage gates not im\u2026 \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f",
+  "status": "PASS",
+  "validator": "TRACKER_GATE_VALIDATOR_v1"
+}

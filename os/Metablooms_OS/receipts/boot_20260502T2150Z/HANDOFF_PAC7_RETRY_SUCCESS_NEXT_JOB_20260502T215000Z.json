@@ -1,0 +1,11 @@
+{
+  "artifact_type": "METABLOOMS_HANDOFF.v1",
+  "boot_receipt": "/mnt/data/Metablooms_OS/receipts/boot_20260502T2150Z/BOOT_RECEIPT_PAC7_RETRY_SUCCESS_20260502T215000Z.json",
+  "created_utc": "2026-05-02T21:50:00Z",
+  "current_authority_zip": "/mnt/data/METABLOOMS_OS_PROMOTION_AUTHORITY_COHERENCE_GATE_PAC7_FULL_AUTHORITY_LOCKED_20260502T212700Z.zip",
+  "current_root": "/mnt/data/Metablooms_OS",
+  "done_state": "BOOT_READY",
+  "id": "HANDOFF_PAC7_RETRY_SUCCESS_NEXT_JOB_20260502T215000Z",
+  "next_valid_stage": "Start the requested new job from /mnt/data/Metablooms_OS; run prompt governance/pre-tool contract; execute one bounded governed stage; write receipt, handoff, and export if the stage mutates OS artifacts.",
+  "operator_tracker": "/mnt/data/Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html"
+}

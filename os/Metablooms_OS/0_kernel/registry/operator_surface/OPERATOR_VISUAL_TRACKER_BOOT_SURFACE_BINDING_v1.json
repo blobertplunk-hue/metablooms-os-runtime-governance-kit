@@ -1,0 +1,23 @@
+{
+  "artifact_type": "OperatorVisualTrackerBootSurface.v1",
+  "created_utc": "2026-05-02T15:37:25Z",
+  "final_export_binding": {
+    "export_sha256_sidecar": "/mnt/data/METABLOOMS_OS_OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_FULL_AUTHORITY_20260502T153800Z.zip.sha256",
+    "export_zip": "/mnt/data/METABLOOMS_OS_OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_FULL_AUTHORITY_20260502T153800Z.zip",
+    "external_sidecar_required": true,
+    "reason": "The final ZIP cannot embed its own final SHA without changing the final ZIP bytes."
+  },
+  "latest_completed_stage": "OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_EXPORT_INTEGRATION_AND_BOOT_SURFACE_BINDING",
+  "latest_verified_prior_bootable_export": "/mnt/data/METABLOOMS_OS_OPERATOR_VISUAL_TRACKER_POLISH_STAGE2_FULL_AUTHORITY_20260502T153307Z.zip",
+  "purpose": "Make the visual tracker a boot-visible surface instead of a hidden runtime artifact.",
+  "render_contract": "0_kernel/registry/operator_surface/OPERATOR_VISUAL_TRACKER_RENDER_CONTRACT_v1.json",
+  "required_surfaces": {
+    "markdown_preview": "runtime/handoffs/operator_tracker/CURRENT_OPERATOR_TRACKER_PREVIEW_LATEST.md",
+    "new_chat_start": "NEW_CHAT_START_HERE.md",
+    "root_html": "OPEN_OPERATOR_VISUAL_TRACKER.html",
+    "runtime_html": "runtime/operator_tracker/operator_visual_tracker_latest.html",
+    "state": "runtime/handoffs/operator_tracker/OPERATOR_VISUAL_TRACKER_STATE_LATEST.json"
+  },
+  "stage": "OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_EXPORT_INTEGRATION_AND_BOOT_SURFACE_BINDING",
+  "validator": "0_kernel/validators/validate_operator_visual_tracker_boot_surface_stage3_v1.py"
+}

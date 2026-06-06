@@ -1,0 +1,14 @@
+{
+  "enforcement": {
+    "code_bearing_pass_without_cdr_binding_packet": "DENY_STAGE_PASS",
+    "code_class_present_but_stage_contains_code_false": "DENY_STAGE_CONTRACT",
+    "missing_stage_contains_code": "DENY_STAGE_CONTRACT",
+    "non_code_stage_with_explicit_false": "ALLOW_IF_OTHER_MPP_GATES_PASS",
+    "stage_contains_code_true_but_cdr_required_false": "DENY_STAGE_CONTRACT"
+  },
+  "handoff_requirement": "Every future MPP handoff must include stage_contains_code, code_artifact_classes, cdr_required, and expected CDR gate path when code-bearing.",
+  "receipt_requirement": "Every code-bearing stage receipt must include CDR gate verdict and evidence path before PASS.",
+  "schema": "MPP_CDR_STAGE_CONTRACT_CODE_BEARING_POLICY_v1",
+  "stage": "MPP_CDR_BINDING_STAGE15_RETROFIT_STAGE_CONTRACTS_TO_DECLARE_CODE_BEARING_FLAG",
+  "status": "active"
+}

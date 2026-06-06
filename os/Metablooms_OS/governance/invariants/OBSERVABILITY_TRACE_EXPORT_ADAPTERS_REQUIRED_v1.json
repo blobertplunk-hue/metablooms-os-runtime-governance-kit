@@ -1,0 +1,9 @@
+{
+  "description": "BTS/tool/governance actions must be trace-exportable with gate lineage, artifact hashes, security attributes, and checkpoint links.",
+  "failure_action": "DENY_SUCCESS_COMMIT_FOR_TRACE_EXPORTABLE_ACTION",
+  "gate": "observability_trace_export_gate_v1",
+  "id": "OBSERVABILITY_TRACE_EXPORT_ADAPTERS_REQUIRED_v1",
+  "schema": "MetaBloomsInvariant_v1",
+  "stage_id": "STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS",
+  "status": "active"
+}

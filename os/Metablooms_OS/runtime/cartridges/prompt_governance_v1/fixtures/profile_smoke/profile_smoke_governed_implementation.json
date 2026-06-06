@@ -1,0 +1,25 @@
+{
+  "expected_profile": "governed_implementation",
+  "expected_required_gates": [
+    "boot",
+    "gap_audit",
+    "bounded_plan",
+    "implementation",
+    "validation",
+    "receipt_handoff"
+  ],
+  "fixture_id": "profile_smoke_governed_implementation",
+  "forbidden_patterns": [
+    "unranked_options_at_decision_point",
+    "claim_without_artifact",
+    "chat_only_writeback"
+  ],
+  "input_task": "Patch a runtime validator and export a whole OS bundle.",
+  "must_include_output_rules": [
+    "explicit_status",
+    "validation_evidence",
+    "next_step_when_relevant"
+  ],
+  "profile_id": "governed_implementation",
+  "status": "active"
+}

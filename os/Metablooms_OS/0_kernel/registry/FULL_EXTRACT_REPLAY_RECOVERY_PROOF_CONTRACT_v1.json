@@ -1,0 +1,30 @@
+{
+  "checks": [
+    "sidecar_hash",
+    "zipfile_testzip",
+    "duplicate_scan",
+    "unsafe_path_scan",
+    "full_member_read_replay",
+    "targeted_boot_critical_extract",
+    "required_files_present",
+    "validator_source_present"
+  ],
+  "created_utc": "2026-05-01T00:45:00Z",
+  "evidence_basis": [
+    "Python zipfile provides archive read/write/list/test operations for ZIP validation.",
+    "Safe ZIP recovery must reject duplicate names and unsafe path traversal members before extraction."
+  ],
+  "fail_closed_conditions": [
+    "checksum_mismatch",
+    "bad_zip",
+    "duplicate_member",
+    "unsafe_member",
+    "member_read_error",
+    "missing_required_file",
+    "targeted_extract_failed"
+  ],
+  "id": "FULL_EXTRACT_REPLAY_RECOVERY_PROOF_CONTRACT_v1",
+  "purpose": "Recovery-proof full authority validation using zipfile preflight, full member read replay, targeted materialized extraction for boot-critical paths, and optional filesystem extraction route when sandbox permits. This repairs the Stage 10 shell-unzip timeout class.",
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_11_FULL_EXTRACT_REPLAY_FIX_AND_RECOVERY_PROOF",
+  "validator": "runtime/governance/full_extract_replay_recovery_proof_validator_v1.py"
+}

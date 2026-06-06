@@ -1,0 +1,15 @@
+{
+  "bounded_next_scope": "Use the new export-zip-node-profile path to produce a full OS authority bundle only after explicit Stage6G budget approval/gate handling for 3111+ files. Do not use Python zipfile as the primary authority export backend unless Node profile fails and fallback is explicitly labeled.",
+  "do_not_repeat": [
+    "Do not claim Node ZIP tools are wired unless export-zip-node-profile fixture passes.",
+    "Do not underreport file budgets to pass the pre-action gate.",
+    "Do not create full OS export in same stage as broad retrofit unless budget gate allows it."
+  ],
+  "from_stage": "STAGE6F_RETROFIT_EXPORT_AND_FILESYSTEM_CALLS_TO_BTS_WRAPPER_OR_EXPORT_FULL_AUTHORITY_AFTER_6E",
+  "next_recommended_stage": "STAGE6G_FULL_AUTHORITY_EXPORT_WITH_EXPLICIT_BUDGET_APPROVAL_USING_BTS_NODE_ZIP_PROFILE",
+  "receipt": "/mnt/data/METABLOOMS_STAGE6F_BTS_NODE_ZIP_RETROFIT_RECEIPT_20260502T022600Z.json",
+  "resume_root": "/mnt/data/Metablooms_OS",
+  "schema": "METABLOOMS_STAGE_HANDOFF_v1",
+  "timestamp_utc": "2026-05-02T02:26:00Z",
+  "verdict": "PASS_WITH_WARNINGS_NO_FULL_OS_EXPORT"
+}

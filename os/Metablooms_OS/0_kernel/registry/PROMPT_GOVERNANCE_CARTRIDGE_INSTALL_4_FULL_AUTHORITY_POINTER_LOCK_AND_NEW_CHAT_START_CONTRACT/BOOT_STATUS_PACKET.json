@@ -1,0 +1,21 @@
+{
+  "base_sha256": "831f06a88f6740a0f0da349773d93d387a8b7369fdef4e7b426c70e82e13a763",
+  "base_sidecar_verified": true,
+  "base_zip": "METABLOOMS_OS_PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_3_FULL_EXPORT_STREAM_ROUTE_REPAIR_AND_FRESH_EXTRACT_REPLAY_FULL_AUTHORITY_20260430T221500Z.zip",
+  "canonical_working_root": "/mnt/data/pg_stage4_work/Metablooms_OS",
+  "created_utc": "2026-04-30T21:22:57.454480Z",
+  "prior_replay_summary": {
+    "duplicate_members": 0,
+    "passes": {
+      "boot": true,
+      "fresh_chat": true,
+      "prompt_validator": true,
+      "scatter": true
+    },
+    "root": "/mnt/data/pg_stage3_final_replay/Metablooms_OS",
+    "sidecar_ok": true,
+    "testzip_bad_member": null
+  },
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_4_FULL_AUTHORITY_POINTER_LOCK_AND_NEW_CHAT_START_CONTRACT",
+  "status": "booted_from_stage3_authority"
+}

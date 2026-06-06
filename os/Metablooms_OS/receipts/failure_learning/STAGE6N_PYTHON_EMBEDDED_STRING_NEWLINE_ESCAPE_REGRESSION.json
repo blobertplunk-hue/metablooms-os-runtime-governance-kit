@@ -1,0 +1,9 @@
+{
+  "corrective_action": "Rewrote validator/test with raw triple-quoted source strings and reran fixture smoke before success receipt.",
+  "created_at_utc": "2026-05-02T02:49:23.797353Z",
+  "failure_class": "PYTHON_EMBEDDED_STRING_NEWLINE_ESCAPE_REGRESSION",
+  "observed": "Initial validator write had an unterminated string literal due to unescaped newline in generated Python source.",
+  "prevention": "When generating Python source from another script, use raw source literals or explicit escaped \\n and immediately compile/smoke the generated file before declaring artifact success.",
+  "schema": "MetaBloomsFailureLearningEvent_v1",
+  "stage_id": "STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_20260502T035000Z"
+}

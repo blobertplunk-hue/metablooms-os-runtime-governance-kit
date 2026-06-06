@@ -1,0 +1,12 @@
+{
+  "last_receipt": "runtime/receipts/METABLOOMS_CDR_STAGE8_STATIC_ANALYSIS_AND_COMPLEXITY_QUALITY_GATES_RECEIPT_20260502T121232Z.json",
+  "next_best_stage": "CDR_STAGE9_LINT_SECURITY_SCANNER_INTEGRATION_AND_BASELINE_REPORTING",
+  "notes": [
+    "Stage 8 adds a stdlib static-analysis/complexity CDR gate.",
+    "Authority export was not performed; export after CDR chain should be separate."
+  ],
+  "schema": "MetaBloomsStageHandoff_v1",
+  "stage": "CDR_STAGE8_STATIC_ANALYSIS_AND_COMPLEXITY_QUALITY_GATES",
+  "status": "READY_FOR_NEXT_STAGE",
+  "timestamp_utc": "2026-05-02T12:12:32Z"
+}

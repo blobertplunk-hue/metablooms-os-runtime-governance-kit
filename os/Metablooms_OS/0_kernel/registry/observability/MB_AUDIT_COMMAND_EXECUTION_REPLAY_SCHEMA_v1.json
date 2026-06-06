@@ -1,0 +1,18 @@
+{
+  "artifact_type": "MB_AUDIT_COMMAND_EXECUTION_REPLAY_SCHEMA.v1",
+  "command_replay_required_fields": [
+    "command_id",
+    "operator_phrase",
+    "action",
+    "required_paths",
+    "missing_paths",
+    "verdict"
+  ],
+  "required_fields": [
+    "artifact_type",
+    "source_authority_zip",
+    "source_authority_zip_sha256",
+    "command_replays",
+    "verdict"
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "authority_export_performed": false,
+  "cdr_eval_count": 10,
+  "cdr_evals_passed": 10,
+  "decision": "retrofit_stage_contract_declarations_not_full_authority_export",
+  "evals": [
+    {
+      "cmd": [
+        "python3",
+        "-S",
+        "tests/evals/mpp_v3/test_mpp_stage_contract_code_bearing_declaration_gate_v1.py"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\n  \"results\": {\n    \"invalid_mpp_stage_contract_code_class_flag_false_v1.json\": {\n      \"code_artifact_classes\": [\n        \"policy\"\n      ],\n      \"effective_stage_contains_code\": true,\n      \"explicit_stage_contains_code\": false,\n      \"inferred_code_bearing\": true,\n      \"reasons\": [\n        \"code_classes_require_stage_contains_code_true\",\n        \"code_bearing_stage_requires_cdr_required_true\",\n        \"code_bearing_pass_requires_cdr_binding_packet_path\"\n      ],\n      \"schema\": \"MPP_CDR_STAGE_CONTRACT_CODE_BEARING_DECLARATION_GATE_RESULT_v1\",\n      \"stage_id\": \"EXAMPLE_MISMATCH\",\n      \"verdict\": \"DENY\"\n    },\n    \"invalid_mpp_stage_contract_missing_code_flag_v1.json\": {\n      \"code_artifact_classes\": [\n        \"python\"\n      ],\n      \"effective_stage_contains_code\": true,\n      \"explicit_stage_contains_code\": null,\n      \"inferred_code_bearing\": true,\n      \"reasons\": [\n        \"missing_required_fields:stage_contains_code\",\n        \"stage_contains_code_not_explicit_boolean\"\n      ],\n      \"schema\": \"MPP_CDR_STAGE_CONTRACT_CODE_BEARING_DECLARATION_GATE_RESULT_v1\",\n      \"stage_id\": \"EXAMPLE_MISSING_FLAG\",\n      \"verdict\": \"DENY\"\n    },\n    \"valid_mpp_stage_contract_code_bearing_declared_v1.json\": {\n      \"code_artifact_classes\": [\n        \"python\",\n        \"validator\"\n      ],\n      \"effective_stage_contains_code\": true,\n      \"explicit_stage_contains_code\": true,\n      \"inferred_code_bearing\": true,\n      \"reasons\": [],\n      \"schema\": \"MPP_CDR_STAGE_CONTRACT_CODE_BEARING_DECLARATION_GATE_RESULT_v1\",\n      \"stage_id\": \"EXAMPLE_CODE_STAGE\",\n      \"verdict\": \"ALLOW\"\n    },\n    \"valid_mpp_stage_contract_non_code_declared_v1.json\": {\n      \"code_artifact_classes\": [],\n      \"effective_stage_contains_code\": false,\n      \"explicit_stage_contains_code\": false,\n      \"inferred_code_bearing\": false,\n      \"reasons\": [],\n      \"schema\": \"MPP_CDR_STAGE_CONTRACT_CODE_BEARING_DECLARATION_GATE_RESULT_v1\",\n      \"stage_id\": \"EXAMPLE_NON_CODE_AUDIT\",\n      \"verdict\": \"ALLOW\"\n    }\n  },\n  \"verdict\": \"PASS\"\n}\n"
+    },
+    {
+      "cmd": [
+        "python3",
+        "-S",
+        "tests/evals/mpp_v3/test_mpp_cdr_binding_gate_v1.py"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "MPP_CDR_BINDING_GATE_TEST_PASS\n"
+    }
+  ],
+  "external_evidence_basis": [
+    "Google code review guidance",
+    "NIST SSDF",
+    "OWASP secure coding checklist"
+  ],
+  "installed_paths": [
+    "0_kernel/registry/mpp_v3/MPP_CDR_STAGE_CONTRACT_CODE_BEARING_DECLARATION_SPEC_v1.json",
+    "0_kernel/registry/mpp_v3/MPP_CDR_STAGE_CONTRACT_CODE_BEARING_POLICY_v1.json",
+    "0_kernel/schemas/mpp_v3/MPP_CDR_STAGE_CONTRACT_CODE_BEARING_DECLARATION_PACKET_SCHEMA_v1.json",
+    "runtime/governance/mpp_stage_contract_code_bearing_declaration_gate_v1.py",
+    "governance/invariants/MPP_STAGE_CONTRACTS_MUST_DECLARE_CODE_BEARING_FLAG_v1.json",
+    "0_kernel/registry/mpp_v3/MPP_STAGE_CONTRACT_CODE_BEARING_DECLARATION_REGISTRY_v1.json",
+    "tests/fixtures/mpp_v3/valid_mpp_stage_contract_code_bearing_declared_v1.json",
+    "tests/fixtures/mpp_v3/invalid_mpp_stage_contract_missing_code_flag_v1.json",
+    "tests/fixtures/mpp_v3/invalid_mpp_stage_contract_code_class_flag_false_v1.json",
+    "tests/fixtures/mpp_v3/valid_mpp_stage_contract_non_code_declared_v1.json",
+    "tests/evals/mpp_v3/test_mpp_stage_contract_code_bearing_declaration_gate_v1.py",
+    "research/SEE/MPP_CDR_BINDING_STAGE15_RETROFIT_STAGE_CONTRACTS_TO_DECLARE_CODE_BEARING_FLAG_SEE_v1.json",
+    "research/CE/MPP_CDR_BINDING_STAGE15_RETROFIT_STAGE_CONTRACTS_TO_DECLARE_CODE_BEARING_FLAG_CE_v1.json",
+    "governance/ACTIVE_INVARIANTS_INDEX.json",
+    "runtime/stage_work/MPP_CDR_BINDING_STAGE15_RETROFIT_STAGE_CONTRACTS_TO_DECLARE_CODE_BEARING_FLAG/CDR_STAGE15_CODE_ACCEPTANCE_PACKET_v1.json"
+  ],
+  "postchecks": {
+    "portable_boot_verify": {
+      "cmd": [
+        "python3",
+        "-S",
+        "portable_full_os_boot_verify.py"
+      ],
+      "returncode": 0,
+      "stderr": "/mnt/data/Metablooms_OS/portable_full_os_boot_verify.py:5: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n  def now(): return datetime.datetime.utcnow().replace(microsecond=0).isoformat()+'Z'\n",
+      "stdout": "{\n  \"stage\": \"PORTABLE_FULL_OS_BOOT_VERIFY_REPAIRED_H0B2\",\n  \"timestamp_utc\": \"2026-05-02T12:54:07Z\",\n  \"status\": \"PASS\",\n  \"root\": \"/mnt/data/Metablooms_OS\",\n  \"errors\": [],\n  \"sandbox_policy\": \"ALLOW\",\n  \"chat_kernel\": \"ALLOW\"\n}\n"
+    }
+  },
+  "prechecks": {
+    "mpp_cdr_stage14_eval": {
+      "cmd": [
+        "python3",
+        "-S",
+        "tests/evals/mpp_v3/test_mpp_cdr_binding_gate_v1.py"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "MPP_CDR_BINDING_GATE_TEST_PASS\n"
+    },
+    "portable_boot_verify": {
+      "cmd": [
+        "python3",
+        "-S",
+        "portable_full_os_boot_verify.py"
+      ],
+      "returncode": 0,
+      "stderr": "/mnt/data/Metablooms_OS/portable_full_os_boot_verify.py:5: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n  def now(): return datetime.datetime.utcnow().replace(microsecond=0).isoformat()+'Z'\n",
+      "stdout": "{\n  \"stage\": \"PORTABLE_FULL_OS_BOOT_VERIFY_REPAIRED_H0B2\",\n  \"timestamp_utc\": \"2026-05-02T12:53:50Z\",\n  \"status\": \"PASS\",\n  \"root\": \"/mnt/data/Metablooms_OS\",\n  \"errors\": [],\n  \"sandbox_policy\": \"ALLOW\",\n  \"chat_kernel\": \"ALLOW\"\n}\n"
+    },
+    "stage13_sidecar": {
+      "cmd": [
+        "sha256sum",
+        "-c",
+        "/mnt/data/METABLOOMS_OS_CDR_STAGE13_FULL_AUTHORITY_AFTER_CDR_STAGE12_BOOTABLE_FULL_OS_AUTHORITY_20260502T125500Z.zip.sha256"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "METABLOOMS_OS_CDR_STAGE13_FULL_AUTHORITY_AFTER_CDR_STAGE12_BOOTABLE_FULL_OS_AUTHORITY_20260502T125500Z.zip: OK\n"
+    }
+  },
+  "reason": "Primary gap is explicit code-bearing metadata in MPP stage contracts; export deferred until retrofit is verified.",
+  "reconstruction_notice": "Stage13 authority includes reconstructed CDR Stage2-5 and 7 plus verified Stage6; Stage15 builds on that current authority plus Stage14 support proof.",
+  "schema": "MetaBloomsStageReceipt_v1",
+  "stage": "MPP_CDR_BINDING_STAGE15_RETROFIT_STAGE_CONTRACTS_TO_DECLARE_CODE_BEARING_FLAG",
+  "timestamp_utc": "2026-05-02T12:54:07Z",
+  "verdict": "PASS"
+}

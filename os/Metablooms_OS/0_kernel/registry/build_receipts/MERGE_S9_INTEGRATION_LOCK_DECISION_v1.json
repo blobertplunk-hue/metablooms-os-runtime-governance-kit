@@ -1,0 +1,78 @@
+{
+  "stage": "MERGE-S9-SHELL",
+  "verdict": "PASS_LOCK",
+  "created_utc": "2026-04-25T21:37:27Z",
+  "runner": "shell_only",
+  "python_used": false,
+  "decision": "LOCK_SIR25_PLUS_ARB_SIDECAR_INTEGRATION_CANDIDATE_AS_RECOVERY_PROVEN",
+
+  "candidate": {
+    "path": "/home/claude/merge_staging/METABLOOMS_SIR25_PLUS_ARB_SIDECAR_CANDIDATE_v1.zip",
+    "sha256": "c7981682ca5978683cb977f4db56344c273113ba8d5da7ace850fd1ac427e2ae",
+    "entry_count": 831,
+    "sidecar_namespace": "Metablooms_OS_refined/0_kernel/registry/arb_shell_safe_sidecar/"
+  },
+
+  "sir25_baseline": {
+    "path": "baselines/MetaBlooms_OS_SIR25_FULL_INTEGRATED_CONTROL_SAFETY_CANDIDATE_v1.zip",
+    "sha256": "b1b82d7765c49db8f4368c4267b9002c141869f103660c4acee07fda7486187b",
+    "modified": false
+  },
+
+  "recovery_proof": {
+    "merge_v1_pass": true,
+    "merge_s1_pass": true,
+    "merge_s2_pass": true,
+    "merge_s3_pass": true,
+    "merge_s4_pass": true,
+    "merge_s5_pass": true,
+    "merge_s6_pass": true,
+    "merge_s7_pass": true,
+    "merge_s8_pass": true,
+    "sha_checks_total": 8,
+    "sha_checks_passed": 8,
+    "sha_checks_failed": 0,
+    "reextract_file_count": 691,
+    "reextract_verified": true
+  },
+
+  "sidecar_files_integrated": [
+    {
+      "file": "ARB6S_RUNAWAY_PROOF_STATE_v1.json",
+      "sha256": "8fdd447ffc7896567111f876b414ec1d10cc91543e64eb0f55d12a96f967ca07"
+    },
+    {
+      "file": "ARB7_SHELL_ARB_RUNTIME_WIRING_EXPORT_PLAN_v1.json",
+      "sha256": "596c3ae393ed6bfbdefd1a7e036a9889b982d7afa6cd4b433550d1e6c56316d0"
+    },
+    {
+      "file": "ARB8B_ARB_RUNTIME_WIRING_CANDIDATE_v1.zip",
+      "sha256": "580316ccb829d1dea634248870ac7dc4b8fe5172e6a0d1f023643ca35f3cd9fb"
+    },
+    {
+      "file": "ARB10_SHELL_BASELINE_LOCK_DECISION_v1.json",
+      "sha256": "30224c410c8680521ddc61cdf7da271e80b847ebd45993531f49d703bc0d3bf3"
+    },
+    {
+      "file": "MERGE_SIDECAR_INTEGRATION_MANIFEST_v1.txt",
+      "sha256": "f6b743495ad72ae765a809bbc838edd61129ed78bb0ba5c62c32d68277191112"
+    }
+  ],
+
+  "governance_constraints": {
+    "baseline_not_modified": true,
+    "normal_python_used": false,
+    "recursive_scan_used": false,
+    "in_place_sir25_mutation": false,
+    "lock_issued_only_after_s8_pass": true
+  },
+
+  "known_follow_on_work": [
+    "artifact_registry.json does not yet reference the arb_shell_safe_sidecar namespace files — registry patch is a separate follow-on stage",
+    "6 D4-only nested ZIPs (stage_cartridges_bundle.zip, MPE_CANONICAL_BASE_AUDITED_FULL_RUNTIME.zip, metablooms_audited_export.zip, mpp_runtime_v1_4_bundle.zip, CE_v1_ARTIFACT.zip, metablooms_full_runtime_full_bundle.zip) require separate archive payload audit",
+    "V7 .git commits may contain unreflected code changes — separate audit pass required"
+  ],
+
+  "must_stop": true,
+  "next_correct_command": "EXECUTE REGISTRY-PATCH-SHELL — add arb_shell_safe_sidecar namespace entries to artifact_registry.json in the candidate ZIP"
+}

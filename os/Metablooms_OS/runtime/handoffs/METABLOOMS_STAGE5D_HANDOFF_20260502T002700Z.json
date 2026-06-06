@@ -1,0 +1,15 @@
+{
+  "artifact_type": "STAGE5D_HANDOFF",
+  "stage": "STAGE5D_MINIMAL_POINTER_AND_REHEARSAL_PACKET_COHERENCE_REPAIR_NO_BROAD_EXPORT_UNTIL_VERIFIED",
+  "created_utc": "2026-05-02T00:27:00Z",
+  "verdict": "PASS_WITH_WARNINGS",
+  "current_live_root": "/mnt/data/Metablooms_OS",
+  "current_selected_authority_zip": "/mnt/data/METABLOOMS_OS_STAGE5B_FULL_BOOTABLE_BUNDLE_DELIVERY_HARDENED_AUTHORITY_20260502T000900Z.zip",
+  "current_selected_authority_sha256": "d165d151f77ab7674ba0a66f11cea855cc4d2e4096a46fa5ab507b94f48716e9",
+  "completed": "Patched only the two working baseline pointers and one new-chat rehearsal packet to Stage5B authority; verified coherence and boot smoke; did not broad-export.",
+  "next_options": [
+    "Stop here and use live-root repaired pointers for the next governed task.",
+    "Run STAGE5E_OPTIONAL_FULL_AUTHORITY_EXPORT_AFTER_POINTER_COHERENCE_REPAIR to create a new full OS bundle containing the repaired pointers."
+  ],
+  "continuation_prompt": "Continue from /mnt/data/Metablooms_OS using METABLOOMS_STAGE5D_MINIMAL_POINTER_AND_REHEARSAL_PACKET_COHERENCE_REPAIR_RECEIPT_20260502T002700Z.json. Run exactly one bounded stage: either the next concrete governed task, or STAGE5E_OPTIONAL_FULL_AUTHORITY_EXPORT_AFTER_POINTER_COHERENCE_REPAIR if a full downloadable OS ZIP with the repaired pointers is required."
+}

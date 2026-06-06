@@ -1,0 +1,40 @@
+{
+  "artifacts": [
+    {
+      "path": "0_kernel/tools/mpp_v3/research_planner_packet_writer_v1.py",
+      "sha256": "f7a2a5a62041e1f278b899ba33f031d0c8c3883597faf486ae4cd829b4830755",
+      "size": 21361
+    },
+    {
+      "path": "0_kernel/tests/mpp_v3/test_research_planner_packet_writer_v1.py",
+      "sha256": "2b7fcac32e95dffbac8382d87e9c86469a8dff8992e7ce5d6f10e99e2d1cbec5",
+      "size": 1920
+    },
+    {
+      "path": "0_kernel/tests/mpp_v3/fixtures/research_planner/pass_research_planner_packet_v1.json",
+      "sha256": "c4bdd6c0bca68840b7dc3ad582664ff6a3cb4142361390b10ac3999aff6ae86c",
+      "size": 3594
+    },
+    {
+      "path": "0_kernel/tests/mpp_v3/fixtures/research_planner/fail_research_planner_packet_missing_query_id_v1.json",
+      "sha256": "aadd5f2ba2cf15eb5ffa094a558bf0e41c36d97bf58b76bbc191c950adc0c69c",
+      "size": 3567
+    },
+    {
+      "path": "0_kernel/registry/mpp_v3/MPP_R1_RESEARCH_PLANNER_SMOKE_RESULTS_v1.json",
+      "sha256": "35ffaacb90bf4a157c750789ce600fd3a7b3015c07a04f97b338029ffcd3733c",
+      "size": 503
+    },
+    {
+      "path": "0_kernel/registry/mpp_v3/MPP_R1_RESEARCH_PLANNER_VALIDATOR_AND_PACKET_WRITER_RECEIPT_v1.json",
+      "sha256": "ba1b84569e5960047f0d0ab1caee313a8ef410adc8945f8e18b6dabfc34e1790",
+      "size": 2453
+    },
+    {
+      "path": "0_kernel/registry/mpp_v3/MPP_R1_TO_R2_HANDOFF_v1.json",
+      "sha256": "4d8aa9ca868bf02ce2a949deedcfa30d7efb20e0d3c10acbb7e9d23e8f1f5dd3",
+      "size": 926
+    }
+  ],
+  "stage": "MPP_R1_RESEARCH_PLANNER_VALIDATOR_AND_PACKET_WRITER"
+}

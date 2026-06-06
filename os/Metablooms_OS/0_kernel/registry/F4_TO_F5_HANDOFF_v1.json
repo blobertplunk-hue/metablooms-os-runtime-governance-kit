@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "created_at": 1777062152.7646391,
+  "from_stage": "F4_MANIFEST_PROVENANCE_EXPORT_CONTRACT",
+  "to_stage": "F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF",
+  "status": "ready",
+  "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F4_MANIFEST_PROVENANCE_EXPORT_CONTRACT_RECEIPT_v1.json",
+  "export_contract": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/MANIFEST_PROVENANCE_EXPORT_CONTRACT_v1.json",
+  "manifest_schema": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/EXPORT_MANIFEST_SCHEMA_v1.json",
+  "provenance_schema": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/EXPORT_PROVENANCE_SCHEMA_v1.json",
+  "dag": "/mnt/data/Metablooms_OS_refined/0_kernel/pipeline/STAGE_DAG_v1.json",
+  "ledger": "/mnt/data/Metablooms_OS_refined/0_kernel/state/STAGE_STATE_LEDGER_v1.json",
+  "proof_only": true,
+  "export_allowed": false,
+  "cleanup_allowed": false,
+  "next_command": "EXECUTE F5 \u2014 RESTORE LADDER + MODE-NORMALIZATION PROOF"
+}

@@ -1,0 +1,1 @@
+{"allowed":false,"decision":"DENY","reason":"denylist_hit","deny_hits":["DENY_HARDLINK_MUTABLE_ARCHIVE"],"task":"zip_repair","method":"cp --link hardlink mutable archive"}

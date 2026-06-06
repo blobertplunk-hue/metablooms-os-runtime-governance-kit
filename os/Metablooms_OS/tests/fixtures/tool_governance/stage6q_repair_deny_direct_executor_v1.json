@@ -1,0 +1,7 @@
+{
+  "controls_provided": [
+    "pre_tool_action_gate"
+  ],
+  "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_STAGE_FINALIZATION_HOOK_v1.py",
+  "schema": "LegacyExecutorInvocationPacket_v1"
+}

@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "created_utc": "2026-04-28T03:21:05.113013+00:00",
+  "external_design_basis": [
+    {
+      "claim": "events require stable event names and structured attributes",
+      "source": "OpenTelemetry semantic conventions for events"
+    },
+    {
+      "claim": "traceparent/tracestate provide vendor-neutral correlation fields",
+      "source": "W3C Trace Context"
+    }
+  ],
+  "properties": {
+    "attributes": {
+      "additionalProperties": true,
+      "properties": {
+        "answer.correct": {
+          "type": "boolean"
+        },
+        "artifact.id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "attempt.number": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "fraction.target": {
+          "type": "string"
+        },
+        "hint.used": {
+          "type": "boolean"
+        },
+        "question.id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "question.type": {
+          "type": "string"
+        },
+        "response.time_ms": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "session.id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "signal.id": {
+          "enum": [
+            null,
+            "BRUTE_FORCE_TAP",
+            "RAPID_SEQUENTIAL",
+            "ABANDONMENT",
+            "HINT_DEPENDENCY",
+            "UNIT_FRACTION_INVERSION",
+            "DENOMINATOR_SIZE_CONFUSION",
+            "TICK_MARK_COUNTING",
+            "ZERO_ANCHOR_CONFUSION",
+            "WHOLE_NUMBER_BIAS",
+            "EQUIVALENT_FRACTION_GAP"
+          ],
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "signal.type": {
+          "enum": [
+            "none",
+            "behavioral",
+            "conceptual"
+          ],
+          "type": "string"
+        },
+        "student.pseudonymous_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "student.response": {
+          "type": [
+            "string",
+            "number",
+            "integer",
+            "boolean",
+            "null"
+          ]
+        },
+        "teacher.action": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "teacher.flag": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "artifact.id",
+        "session.id",
+        "student.pseudonymous_id",
+        "question.id",
+        "attempt.number",
+        "answer.correct",
+        "signal.type"
+      ],
+      "type": "object"
+    },
+    "event_name": {
+      "enum": [
+        "metablooms.learning.attempt",
+        "metablooms.learning.signal",
+        "metablooms.learning.session_summary"
+      ],
+      "type": "string"
+    },
+    "event_time_unix_ms": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "parent_span_id": {
+      "pattern": "^[0-9a-f]{16}$",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "severity_number": {
+      "maximum": 24,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "span_id": {
+      "pattern": "^[0-9a-f]{16}$",
+      "type": "string"
+    },
+    "trace_id": {
+      "pattern": "^[0-9a-f]{32}$",
+      "type": "string"
+    },
+    "traceparent": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "event_name",
+    "event_time_unix_ms",
+    "trace_id",
+    "span_id",
+    "severity_number",
+    "attributes"
+  ],
+  "schema_id": "misconception_telemetry_event_schema_v1",
+  "status": "active",
+  "type": "object",
+  "version": "1.0.0"
+}

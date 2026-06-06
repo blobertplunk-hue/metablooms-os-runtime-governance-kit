@@ -1,0 +1,17 @@
+{
+  "legacy_artifact": "1_governance/workflow_v6/CLAUDE_MEMORY_SEED_v1.json",
+  "status": "quarantined_archive_only_after_r11",
+  "reason": "Claude-specific cross-session seed is not live MetaBlooms runtime authority after session-state export replacement.",
+  "archive_path": "runtime/governance/legacy_quarantine/R11_20260428T032630Z/CLAUDE_MEMORY_SEED_v1.json",
+  "archive_sha256": "b6b2a0e7fe8012e38bc730817b39a671f0516943194ed0d0093e68bd2572d2c9",
+  "original_sha256": "b6b2a0e7fe8012e38bc730817b39a671f0516943194ed0d0093e68bd2572d2c9",
+  "original_size_bytes": 2710,
+  "adr": "0_kernel/docs/decisions/ADR-0002-adopt-session-state-export-over-model-specific-sync.md",
+  "successor_contracts": [
+    "runtime/governance/state_exports/SESSION_STATE_EXPORT_LATEST_v1.json",
+    "0_kernel/scripts/session_state_exporter_v1.py"
+  ],
+  "machine_use_status": "forbidden_as_runtime_authority",
+  "created_utc": "2026-04-28T03:26:30Z",
+  "stage": "R11_LEGACY_QUARANTINE_REDIRECTS_AND_CLEANUP"
+}

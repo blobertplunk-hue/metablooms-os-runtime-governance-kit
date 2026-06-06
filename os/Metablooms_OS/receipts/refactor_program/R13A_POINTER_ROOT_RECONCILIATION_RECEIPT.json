@@ -1,0 +1,36 @@
+{
+  "active_zero_byte_r13_receipts_remaining": [],
+  "artifact_type": "R13A_POINTER_ROOT_RECONCILIATION_RECEIPT",
+  "canonical_root": "/mnt/data/Metablooms_OS",
+  "created_utc": "2026-04-29T10:06:32.093704+00:00",
+  "nested_r13_baseline_sha256": "4062f902e219e6ab03b87620e85e0e445c5db729ce13f085d6cabacd55d3345f",
+  "notes": [
+    "Current runtime root was reconstructed from verified project-files baseline because /mnt/data/Metablooms_OS was absent at turn start.",
+    "Prior R13 audit bundle from the previous chat turn was not present in /mnt/data; this stage used embedded R13 prep/export evidence from the verified OCL15R project-files ZIP."
+  ],
+  "outer_zip_sha256": "6111701e02a05d3910b5829db5304790d94b8ae0f148218f48e592521da2e8bd",
+  "pointer_after_active_root": "/mnt/data/Metablooms_OS",
+  "pointer_before_active_root": "/mnt/data/Metablooms_OS_refined",
+  "quarantine": {
+    "marker_left_at_original_path": true,
+    "original_path": "receipts/refactor_program/R13_EXPORT_PREP_RECEIPT_20260428T034114Z.json",
+    "quarantined_path": "receipts/quarantine/superseded_zero_byte/R13A_POINTER_ROOT_RECONCILE/R13_EXPORT_PREP_RECEIPT_20260428T034114Z.zero_byte.quarantined.json",
+    "zero_receipt_was_zero_byte": true
+  },
+  "required_dirs": {
+    "0_kernel": true,
+    "1_governance": true,
+    "2_engines": true,
+    "receipts": true,
+    "runtime": true
+  },
+  "root_proof": {
+    "r13_export_metadata_source_root": "/mnt/data/Metablooms_OS",
+    "r13_export_metadata_status": "READY_FOR_R13_EXPORT",
+    "r13_prep_source_root": "/mnt/data/Metablooms_OS"
+  },
+  "source_project_files_zip": "/mnt/data/METABLOOMS_PROJECT_FILES_W9S_X0_X7_PLUS_FOUNDATION_OCL_BASELINE_LOCKED_REPAIRED_OCL15R_20260429T000000Z.zip",
+  "stage": "R13A_POINTER_ROOT_RECONCILIATION_AND_ZERO_BYTE_RECEIPT_QUARANTINE",
+  "stopped_before_final_export": true,
+  "verdict": "PASS"
+}

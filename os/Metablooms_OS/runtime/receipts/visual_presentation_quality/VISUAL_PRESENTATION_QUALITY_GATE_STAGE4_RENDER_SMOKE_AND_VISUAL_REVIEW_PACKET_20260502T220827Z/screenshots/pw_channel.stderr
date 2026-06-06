@@ -1,0 +1,9 @@
+Error: Executable doesn't exist at /home/oai/.cache/ms-playwright/chromium-1200/chrome-linux64/chrome
+╔════════════════════════════════════════════════════════════╗
+║ Looks like Playwright was just installed or updated.       ║
+║ Please run the following command to download new browsers: ║
+║                                                            ║
+║     playwright install                                     ║
+║                                                            ║
+║ <3 Playwright Team                                         ║
+╚════════════════════════════════════════════════════════════╝

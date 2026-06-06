@@ -1,0 +1,7 @@
+{
+  "artifact_type": "TRACE_PACKET.v1",
+  "created_utc": "20260502T170000Z",
+  "issues": [{"code": "fixture_issue"}],
+  "stage_id": "FIXTURE_PACKET_WITH_ISSUES",
+  "expected_trace_status": "WARN"
+}

@@ -1,0 +1,146 @@
+{
+  "amended_utc": "20260502T165438Z",
+  "artifact_type": "StageReceipt.v1",
+  "build_report": "runtime/traces/observability/FAILURE_CLUSTER_ROUTER_BUILD_REPORT_LATEST.json",
+  "ce_synthesis": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING_20260502T165302Z/CE_SYNTHESIS.json",
+  "changed_artifacts": [
+    {
+      "bytes": 1680,
+      "path": "0_kernel/registry/observability/MB_FAILURE_CLUSTER_SCHEMA_v1.json",
+      "sha256": "d090a67fbbb5a6e1c5356cb2cad6f92e20354b85f98d0c12bb2704c2348680bf"
+    },
+    {
+      "bytes": 1269,
+      "path": "0_kernel/registry/observability/MB_REPAIR_ROUTER_BINDING_SCHEMA_v1.json",
+      "sha256": "5510736351536ad9bff37bc1337ae25933ae4f5bc271c01c91d9d9ef61d707c5"
+    },
+    {
+      "bytes": 1695,
+      "path": "0_kernel/registry/observability/MB_OBSERVABILITY_FAILURE_ROUTER_POLICY_v1.json",
+      "sha256": "6ced6ba15d6f3b1f6df9fd40b21b58a564446f90b4c2ccdb30ad3ca1e3a8b926"
+    },
+    {
+      "bytes": 8952,
+      "path": "0_kernel/scripts/observability_failure_cluster_router_v1.py",
+      "sha256": "a883409fcdc4cb29e2dc6372b127a518e42ca7cc3a2a68a80b66e6633775afb6"
+    },
+    {
+      "bytes": 3807,
+      "path": "0_kernel/validators/validate_observability_trace_span_ledger_stage4_failure_router_v1.py",
+      "sha256": "e4d600ee3c4521f7a53cc0ed803dfb2cf7edf689c18bfda1992b5a60d0cee78e"
+    },
+    {
+      "bytes": 4087,
+      "path": "runtime/traces/observability/FAILURE_CLUSTER_REPORT_LATEST.json",
+      "sha256": "851b110d6ba8da8027bd8b3bda03ad8685aaba8797dc4022190d1aaf74392bb8"
+    },
+    {
+      "bytes": 2307,
+      "path": "runtime/traces/observability/REPAIR_ROUTER_BINDING_LATEST.json",
+      "sha256": "444bc4a99eaf57359d69805ec7b84845095a88a1d18abdd68427e3781f18b29a"
+    },
+    {
+      "bytes": 5459,
+      "path": "runtime/state/operator_surface/OPERATOR_FAILURE_ROUTER_SUMMARY_LATEST.json",
+      "sha256": "95cd55053e22152f9022819dacc8287bd8d0d63be204d8c10ae6b3ea3c44308e"
+    },
+    {
+      "bytes": 1279,
+      "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE4_FAILURE_ROUTER_VALIDATION_LATEST.json",
+      "sha256": "6d24216c0cdfc0737613340552db6f8b0b695d9f8f73a5b51700ad4a0d6db9f7"
+    },
+    {
+      "bytes": 15280,
+      "path": "OPEN_OPERATOR_VISUAL_TRACKER.html",
+      "sha256": "a89fb357fbd960411fbb4072fb43935ec926d54b97ad799fdb9f4468a2efb1d5"
+    },
+    {
+      "bytes": 890,
+      "path": "runtime/traces/observability/BOOT_INGESTION_STAGE4_POST_RECEIPT_STDOUT_LATEST.json",
+      "sha256": "9d2ddd10977ca8cbf4542856a583fc6787284cade12af4382e1b15a027d6e5f4"
+    },
+    {
+      "bytes": 1193,
+      "path": "runtime/traces/observability/NEW_CHAT_VALIDATOR_STAGE4_AUTHORITY_LATEST.json",
+      "sha256": "3acf32a83856e7d9dea9d82218bc7334593b6ae8b3c1bccfd1f9a8587da065b1"
+    },
+    {
+      "bytes": 869,
+      "path": "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_HANDOFF_LATEST.json",
+      "sha256": "d82865bf016c810a87f1f88baf35bddfbead9f8ec47c1a0ba41a90f3b99cd39d"
+    }
+  ],
+  "created_utc": "20260502T165330Z",
+  "export_receipt_included_in_repaired_zip": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING_20260502T165302Z/STAGE4_EXPORT_RECEIPT_INCLUDED_IN_REPAIRED_ZIP.json",
+  "final_export": {
+    "duplicate_members": 0,
+    "entry_count": 5305,
+    "external_containment_proof": "runtime/traces/observability/OBSERVABILITY_STAGE4_REPAIRED_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+    "note": "Final repaired export proof is external because embedding a proof with the final ZIP hash would mutate the ZIP.",
+    "required_members_present": true,
+    "sidecar_path": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_ROUTER_BINDING_REPAIRED_20260502T165547Z.zip.sha256",
+    "verdict": "PASS",
+    "zip_integrity": "PASS",
+    "zip_name": "METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_ROUTER_BINDING_REPAIRED_20260502T165547Z.zip",
+    "zip_path": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_ROUTER_BINDING_REPAIRED_20260502T165547Z.zip",
+    "zip_sha256": "166b955782aa5ac7a4340a1b0037729d6766e539650b9c85c8095efbc2ec2518"
+  },
+  "new_chat_validator_decision": "ALLOW",
+  "next_recommended_stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE5_TRACE_INGESTION_CLASSIFIER_REPAIR_AND_REGRESSION_FIXTURES",
+  "objective": "Cluster trace-ledger non-OK records into failure classes and bind each class to a durable repair route surfaced in the operator tracker.",
+  "see_packet": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING_20260502T165302Z/SEE_PACKET.json",
+  "stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING",
+  "stop_rule": "Stop after one bounded governed Stage 4 build, validation, export, and handoff.",
+  "summary": {
+    "active_cluster_count": 0,
+    "cluster_count": 3,
+    "monitor_cluster_count": 1,
+    "non_ok_record_count": 5,
+    "record_count": 220,
+    "resolved_or_suppressed_cluster_count": 2
+  },
+  "validation": {
+    "artifact_type": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_ROUTER_VALIDATION.v1",
+    "checks": [
+      {
+        "exists_nonempty": true,
+        "path": "0_kernel/registry/observability/MB_FAILURE_CLUSTER_SCHEMA_v1.json"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "0_kernel/registry/observability/MB_REPAIR_ROUTER_BINDING_SCHEMA_v1.json"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "0_kernel/registry/observability/MB_OBSERVABILITY_FAILURE_ROUTER_POLICY_v1.json"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "0_kernel/scripts/observability_failure_cluster_router_v1.py"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "runtime/traces/observability/FAILURE_CLUSTER_REPORT_LATEST.json"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "runtime/traces/observability/REPAIR_ROUTER_BINDING_LATEST.json"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "runtime/state/operator_surface/OPERATOR_FAILURE_ROUTER_SUMMARY_LATEST.json"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "OPEN_OPERATOR_VISUAL_TRACKER.html"
+      }
+    ],
+    "created_utc": "20260502T165331Z",
+    "issues": [],
+    "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING",
+    "verdict": "PASS"
+  },
+  "validation_report": "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE4_FAILURE_ROUTER_VALIDATION_LATEST.json",
+  "verdict": "PASS"
+}

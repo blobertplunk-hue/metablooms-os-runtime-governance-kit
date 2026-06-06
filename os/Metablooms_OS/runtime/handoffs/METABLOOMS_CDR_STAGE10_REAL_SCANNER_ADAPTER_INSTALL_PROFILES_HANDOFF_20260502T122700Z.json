@@ -1,0 +1,15 @@
+{
+  "current_runtime_root": "/mnt/data/Metablooms_OS",
+  "next_stage_options_best_to_worst": [
+    "CDR_STAGE11_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE2_TO_STAGE10_RECONSTRUCTED_CHAIN",
+    "CDR_STAGE10B_REAL_SCANNER_SMOKE_IF_PACKAGE_INSTALL_AUTHORIZED"
+  ],
+  "schema": "MetaBloomsStageHandoff_v1",
+  "stage": "CDR_STAGE10_REAL_SCANNER_ADAPTER_INSTALL_PROFILES_OR_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE9",
+  "stage10_decision": "Install scanner adapter profiles only, no full authority export.",
+  "status": "READY_FOR_NEXT_STAGE",
+  "verdict": "PASS",
+  "warnings": [
+    "CDR stages 2,3,4,5,7 are reconstructed from chat summaries rather than original support bundles; authority export should explicitly mark reconstructed chain provenance."
+  ]
+}

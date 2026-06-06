@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-04-28T02:53:18Z",
+  "decision_id": "R4_SESSION_STATE_EXPORT_REPLACEMENT-899056fa3617b80b",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"blockers\": [], \"created_utc\": \"2026-04-28T02:53:18Z\", \"next_actions\": [\"Create gate_registry_v1.json from COOL_6 successor lane.\", \"Implement validate_gate_registry_v1.py and loader.\", \"Bind enabled gates to real entrypoints only.\"], \"next_stage\": \"R5_GATE_REGISTRY_AND_WIRING_REPLACEMENT\", \"stage\": \"R4_SESSION_STATE_EXPORT_REPLACEMENT\", \"verdict\": \"PASS\"}",
+  "reasons": [],
+  "record_id": "R4_HANDOFF_20260428T025318Z",
+  "record_kind": "handoff",
+  "result": "pass",
+  "source_record": {
+    "path": "receipts/refactor_program/R4_HANDOFF_20260428T025318Z.json",
+    "sha256": "899056fa3617b80bc36f9de6334211a9a154e276e5b0d9ff163b99122086b6d9",
+    "size_bytes": 390
+  },
+  "span_id": "d170d1c857df0340",
+  "stage_id": "R4_SESSION_STATE_EXPORT_REPLACEMENT",
+  "summary": "Canonical wrapper for R4_HANDOFF_20260428T025318Z.json",
+  "trace_id": "4884d9bcacc1d34cf0519a83541555b5"
+}

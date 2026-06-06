@@ -1,0 +1,14 @@
+{
+  "validation_id": "TRACKER_1_VALIDATION_20260429T111056Z",
+  "timestamp_utc": "20260429T111056Z",
+  "schema_path": "0_kernel/schemas/TRACKER_STATE_SCHEMA_v1.json",
+  "state_path": "runtime/state/TRACKER_STATE_v1.json",
+  "schema_json_parse": true,
+  "state_json_parse": true,
+  "schema_shape_validated": true,
+  "state_shape_validated": true,
+  "determinate_progress_allowed": true,
+  "denominator_source": "0_kernel/docs/inline_project_tracker/TRACKER_IMPLEMENTATION_PLAN_v1.md lists TRACKER-1 through TRACKER-5.",
+  "renderer_or_gate_implementation_performed": false,
+  "errors": []
+}

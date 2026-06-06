@@ -1,0 +1,18 @@
+{
+  "created_utc": "2026-05-02T22:24:25Z",
+  "failure_classes": [
+    "json_path_keys_not_serializable",
+    "tracker_visible_binding_gap",
+    "zip_symlink_no_such_device",
+    "compressed_zip_timeout"
+  ],
+  "prevention": "Full OS exports should use a file manifest of regular files and stored ZIP mode when compressed archive tools exceed turn budget.",
+  "repairs": [
+    "stringified JSON receipt keys",
+    "added visible VPQ and teacher-professional tracker card",
+    "excluded symlinks/socket lock artifacts",
+    "used ZIP_STORED regular-file archive for full export replay"
+  ],
+  "schema_version": "metablooms_failure_learning_event.v1",
+  "stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE5_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF"
+}

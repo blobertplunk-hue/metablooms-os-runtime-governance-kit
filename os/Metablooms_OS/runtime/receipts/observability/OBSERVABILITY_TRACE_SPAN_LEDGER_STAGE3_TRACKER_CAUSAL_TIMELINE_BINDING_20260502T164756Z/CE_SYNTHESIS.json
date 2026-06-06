@@ -1,0 +1,20 @@
+{
+  "artifact_type": "MB_CE_SYNTHESIS.v1",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE3_TRACKER_CAUSAL_TIMELINE_BINDING",
+  "created_utc": "20260502T164733Z",
+  "internal_inputs": [
+    "TRACE_SPAN_LEDGER_INDEX_LATEST.json",
+    "CAUSAL_STAGE_GRAPH_LATEST.json",
+    "TRACE_SPAN_LEDGER_LATEST.jsonl",
+    "OPEN_OPERATOR_VISUAL_TRACKER.html"
+  ],
+  "gap": "Stage 2 created a normalized trace/span ledger, but the visual operator surface still did not consume the ledger directly.",
+  "decision": "Bind a bounded latest-trace window, issue evidence strip, summary metrics, and next-action card into OPEN_OPERATOR_VISUAL_TRACKER.html.",
+  "risk_controls": [
+    "Keep rendering static and pre-populated for phone/GPT UI use.",
+    "Validate required sections by data-section markers.",
+    "Validate record-count agreement across index, graph, and model.",
+    "Validate source_artifact evidence binding in the timeline model."
+  ],
+  "next_stage_recommendation": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING"
+}

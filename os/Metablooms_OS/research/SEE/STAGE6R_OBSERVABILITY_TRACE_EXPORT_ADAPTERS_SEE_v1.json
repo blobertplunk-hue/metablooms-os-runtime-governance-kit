@@ -1,0 +1,42 @@
+{
+  "created_at_utc": "2026-05-02T03:28:16.896347Z",
+  "decision_relevance": [
+    "export traces must capture tool calls, guardrail/gate decisions, handoffs, custom events, checkpoint links, and security audit fields",
+    "adapter must emit portable JSONL and OpenTelemetry-like span fields without requiring live vendor SDKs"
+  ],
+  "schema": "SEEPacket_v1",
+  "sources": [
+    {
+      "finding": "Agents SDK tracing records LLM generations, tool calls, handoffs, guardrails, and custom events for debugging, visualization, and monitoring.",
+      "id": "openai_agents_tracing",
+      "url": "https://openai.github.io/openai-agents-python/tracing/"
+    },
+    {
+      "finding": "A tracer creates spans; trace exporters send traces to stdout, OpenTelemetry Collector, or vendor backends.",
+      "id": "opentelemetry_traces",
+      "url": "https://opentelemetry.io/docs/concepts/signals/traces/"
+    },
+    {
+      "finding": "Spans can be freely created and annotated with attributes specific to represented operations.",
+      "id": "opentelemetry_semconv",
+      "url": "https://opentelemetry.io/docs/specs/semconv/general/trace/"
+    },
+    {
+      "finding": "Traces are series of application steps represented as individual runs for debugging, evaluation, and monitoring.",
+      "id": "langsmith_observability",
+      "url": "https://docs.langchain.com/oss/python/langgraph/observability"
+    },
+    {
+      "finding": "Durable execution persists progress at key points for pause/resume and interruption recovery.",
+      "id": "langgraph_durable_execution",
+      "url": "https://docs.langchain.com/oss/python/langgraph/durable-execution"
+    },
+    {
+      "finding": "Lack of tool usage monitoring/auditing and runtime control mechanisms hinders detection and forensic analysis of tool misuse.",
+      "id": "owasp_aivss_tool_monitoring",
+      "url": "https://aivss.owasp.org/assets/publications/AIVSS%20Scoring%20System%20For%20OWASP%20Agentic%20AI%20Core%20Security%20Risks%20v0.8.pdf"
+    }
+  ],
+  "stage_id": "STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS",
+  "web_run_required": true
+}

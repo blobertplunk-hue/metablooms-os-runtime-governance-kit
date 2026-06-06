@@ -1,0 +1,21 @@
+{
+  "basis": "research_backed_SEE_CE",
+  "best_to_worst_ordering_rule": "Rank options from best to worst using explicit criteria; state why the winning option is selected before implementation.",
+  "id": "PROMPT_ENGINE_CONTRACT_v1",
+  "profile_registry": "PROMPT_PROFILE_REGISTRY_v1.json",
+  "profile_selection_required": true,
+  "required_prompt_sections": [
+    "task",
+    "context_authority",
+    "constraints",
+    "output_contract",
+    "validation_plan",
+    "failure_modes",
+    "handoff_or_next_step"
+  ],
+  "same_turn_ranked_options_required_when_decision_point": true,
+  "status": "active",
+  "test_measure_iterate_required": true,
+  "uncertainty_policy": "Identify ambiguity or missing evidence; use retrieval/research when required; fail closed if a claim cannot be supported and matters to execution.",
+  "writeback_required_for_reusable_prompt_improvements": true
+}

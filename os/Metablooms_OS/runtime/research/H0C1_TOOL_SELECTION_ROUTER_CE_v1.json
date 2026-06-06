@@ -1,0 +1,11 @@
+{
+  "artifact_type": "CE_SYNTHESIS_v1",
+  "created_utc": "2026-04-30T19:57:32Z",
+  "stage_id": "H0C1_TOOL_SELECTION_EVIDENCE_ROUTER_CONTINUED",
+  "synthesis": [
+    "Make tool selection a boot-critical runtime control, not a preference.",
+    "Require a decision packet before every substantive tool use.",
+    "Use observed sandbox evidence to prefer shell/coreutils and python3 -S for this repair.",
+    "Prove semantics in a minimal overlay before mutating a whole-system ZIP."
+  ]
+}

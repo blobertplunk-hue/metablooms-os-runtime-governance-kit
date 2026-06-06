@@ -1,0 +1,12 @@
+{
+  "from_stage": "MPP_R15_TRACE_ANALYSIS_SCHEMA_AND_ANOMALY_GATE",
+  "notes": "R16 should consume trace anomalies and verification evidence to evaluate reasoning/analysis quality before debugging/ECL/FIR.",
+  "required_inputs": [
+    "0_kernel/schemas/mpp_v3/TRACE_ANALYSIS_PACKET_SCHEMA_v1.json",
+    "0_kernel/mpp_v3/mpp_v3_trace_analysis_anomaly_gate_v1.py",
+    "tests/fixtures/mpp_v3/valid_trace_analysis_packet_v1.json"
+  ],
+  "root": "/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z",
+  "status": "READY",
+  "to_stage": "MPP_R16_ANALYSIS_EVALUATION_SCHEMA_AND_REASONING_GATE"
+}

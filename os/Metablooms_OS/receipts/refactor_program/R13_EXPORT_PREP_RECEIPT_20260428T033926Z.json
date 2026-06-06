@@ -1,0 +1,16 @@
+{
+  "created_utc": "2026-04-28T03:39:26.163164+00:00",
+  "export_binding": "final zip sha256 is external sidecar and final verify receipt to avoid circular self-hash",
+  "r12_regression_report": "runtime/evals/governance_regression_suite_v1/reports/R12_governance_regression_suite_final_20260428T033410Z.json",
+  "r13_gate_registry_integrity": "runtime/evals/governance_regression_suite_v1/reports/R13_gate_registry_integrity_20260428T033739Z.json",
+  "r13_session_validation": "runtime/evals/governance_regression_suite_v1/reports/R13_session_state_validation_20260428T033739Z.json",
+  "receipt_type": "R13_EXPORT_PREP_RECEIPT",
+  "source_root": "/mnt/data/Metablooms_OS",
+  "stage": "R13_EXPORT_PREP_AND_FINAL_EXPORT_AUDIT",
+  "transient_exclusions": [
+    "**/__pycache__",
+    "**/*.pyc",
+    ".registry_mutation.lock"
+  ],
+  "verdict": "PASS_PREPARED_FOR_EXPORT"
+}

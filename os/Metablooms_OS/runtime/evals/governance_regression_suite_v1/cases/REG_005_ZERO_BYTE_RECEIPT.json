@@ -1,0 +1,1 @@
+{"id":"REG_005_ZERO_BYTE_RECEIPT","failure_class":"receipt_integrity","severity":"high","description":"Zero-byte receipts must fail validation.","expected_decision":"DENY","fixture_type":"file_artifact","runtime_gate":"artifact_receipt_integrity","source_failure":"Export receipt path existed but was zero bytes.","checks":["file_exists","file_size_gt_zero","json_parse_required"]}

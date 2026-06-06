@@ -1,0 +1,49 @@
+{
+  "version": "1.0",
+  "created_at": 1777062946.1845355,
+  "rule_id": "BLOCKED_RECEIPT_HANDLING_RULE_v1",
+  "status": "active_rule",
+  "purpose": "Prevent failure artifacts from dirtying the next governed stage while preserving blocker evidence.",
+  "blocked_receipt_policy": {
+    "canonical_location": "0_kernel/registry/blockers/",
+    "fallback_location": "/mnt/data/blockers/",
+    "write_rule": "If active root and Git are usable, write blocker receipt under canonical location and commit immediately.",
+    "must_include": [
+      "stage",
+      "status=blocked",
+      "verdict=FAIL",
+      "root_cause",
+      "pointer_updated=false",
+      "latest_pass_advanced=false",
+      "next_correct_command"
+    ]
+  },
+  "dirty_tree_policy": {
+    "preflight_behavior": [
+      "git config core.filemode false",
+      "auto-commit recognized blocker receipts",
+      "block on unexpected dirty paths"
+    ],
+    "untracked_cleanup_forbidden": [
+      "broad git clean -fdx over active root",
+      "deleting tracked files without deletion contract"
+    ]
+  },
+  "ledger_policy": {
+    "blocked_entries_allowed": true,
+    "blocked_entries_advance_latest_pass": false,
+    "repair_entries_allowed": true,
+    "repair_entries_advance_latest_pass": false
+  },
+  "pointer_policy": {
+    "blocked_stage_updates_pointer": false,
+    "repair_stage_updates_pointer": false,
+    "successful_governed_stage_updates_pointer": true
+  },
+  "evidence_packaging_policy": {
+    "no_nested_git_repositories": true,
+    "proof_outputs_must_be_plain_json_or_text": true
+  },
+  "next_stage": "F7_STABLE_EXPORT_BOOT_RECOVERY_PROOF",
+  "verdict": "PASS"
+}

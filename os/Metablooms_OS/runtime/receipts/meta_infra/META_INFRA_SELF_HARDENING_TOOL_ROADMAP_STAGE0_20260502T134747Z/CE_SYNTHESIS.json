@@ -1,0 +1,19 @@
+{
+  "schema_version": "metablooms.ce_synthesis.v1",
+  "stage_id": "META_INFRA_SELF_HARDENING_TOOL_ROADMAP_STAGE0",
+  "status": "PASS",
+  "internal_artifacts_consulted": [
+    {"path":"FORBIDDEN_VALIDATION_METHODS_v1.json","finding":"Active forbidden-by-default method records full archive recursive validation failures: unzip -tqq and jar xf timed out/stalled during FL17-MERGE-5 and triggered user stop. Replacement methods include checksum sidecar verification, ZipFile.testzip, unsafe member path scan, central directory/member inventory, selective extraction/read, and semantic/tracker authority checks."},
+    {"path":"METHOD_RELIABILITY_ROUTER_POLICY_v1.json","finding":"Method reliability routing already defines forbid/promote thresholds and preferred bounded archive validation routes, including native ZIP validation, 7zz fallback, and local libarchive helper fallback."},
+    {"path":"0_kernel/registry/mpp_v3/policy_gates/MPP_V3_METHOD_RELIABILITY_GATE_v1.json","finding":"Persistent learning gate already requires evidence-bound recurrence keys, action routing, method attempt reconciliation, low-reliability demotion, and forbidden-method FORBID decisions."},
+    {"path":"runtime/governance/per_action_tool_interception_v1/fixtures/deny_forbidden_unzip_envelope.json","finding":"A negative fixture already exists for forbidden unzip validation envelope with explicit timeout/file/byte/step limits."},
+    {"path":"runtime/governance/receipts/per_action_tool_interception_v1/bts_subprocess_STAGE6D_FORBIDDEN_UNZIP_20260502T002534Z.decision.json","finding":"The policy gate has already denied forbidden unzip with reason_code FORBIDDEN_VALIDATION_METHOD and required next action select_replacement_validation_method."},
+    {"path":"0_kernel/scripts/registry_mutation_engine_v2_lite_final.py","finding":"Registry mutation engine exists and advertises transaction-safe mutation invariants, but is pre-CDR and still hard-codes ROOT=/mnt/data/Metablooms_OS_refined, which is a path-binding risk for current canonical root usage."},
+    {"path":"0_kernel/scripts/session_state_exporter_v1.py","finding":"Session state exporter exists and enforces python3 -S, but should be re-run through post-CDR complexity/security/fixture gates."}
+  ],
+  "root_cause_model": {
+    "current_gap": "MetaBlooms has policies and gates for method reliability, but not all critical internal operations are forced through one shared, CDR-vetted execution envelope with uniform timeout, retry, failure classification, method-router update, and receipt semantics.",
+    "risk": "Pre-CDR internal tools can still bypass newer standards or contain stale path assumptions, unsafe archive/path behavior, incomplete negative fixtures, or nonuniform telemetry.",
+    "correct_architecture": "Create a small set of hardened internal primitives and require all higher-level tools to call them rather than shelling out or writing state ad hoc."
+  }
+}

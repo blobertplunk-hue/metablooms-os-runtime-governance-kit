@@ -1,0 +1,16 @@
+{
+  "argv_redacted": [
+    "definitely_not_a_metablooms_binary_404"
+  ],
+  "artifact_type": "METABLOOMS_SUBPROCESS_FAILURE_LEARNING_EVENT_v1",
+  "attempts": [],
+  "created_utc": "20260502T135531Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "failure_class": "EXECUTABLE_NOT_FOUND",
+  "operation_type": "fixture_spawn_error",
+  "policy_matches": [],
+  "recommendation": "Route future matching operations through bounded wrapper and method reliability policy before spawn.",
+  "result_class": "SPAWN_ERROR",
+  "root": "/mnt/data/Metablooms_OS",
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES"
+}

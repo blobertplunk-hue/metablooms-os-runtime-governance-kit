@@ -1,0 +1,36 @@
+{
+  "external_sidecar_required": true,
+  "preflight": {
+    "importer_eval": "PASS",
+    "router_eval": "PASS"
+  },
+  "required_paths": [
+    "0_kernel/routers/workflow_generalization_router_v1.py",
+    "0_kernel/importers/transcript_lesson_importer_v1.py",
+    "0_kernel/registry/workflow_generalization_engine/WORKFLOW_GENERALIZATION_ENGINE_POLICY_v1.json",
+    "0_kernel/registry/workflow_generalization_engine/WORKFLOW_GENERALIZATION_ROUTING_BINDING_v1.json",
+    "0_kernel/registry/workflow_generalization_engine/WORKFLOW_LESSON_LEDGER_SCHEMA_v1.json",
+    "0_kernel/registry/workflow_generalization_engine/TRANSCRIPT_LESSON_IMPORT_GATE_POLICY_v1.json",
+    "0_kernel/registry/workflow_generalization_engine/TRANSCRIPT_LESSON_IMPORT_CANDIDATE_SCHEMA_v1.json",
+    "0_kernel/registry/workflow_generalization_engine/WORKFLOW_GENERALIZATION_STAGE2_EXPORT_BINDING_v1.json",
+    "0_kernel/registry/workflow_generalization_engine/WORKFLOW_GENERALIZATION_EXPORT_PREP_MANIFEST_v1.json",
+    "runtime/ledgers/workflow_generalization/WORKFLOW_LESSON_LEDGER_v1.json",
+    "runtime/ledgers/workflow_generalization/WORKFLOW_TRANSCRIPT_IMPORT_LEDGER_v1.json",
+    "tests/evals/workflow_generalization/test_workflow_generalization_router_v1.py",
+    "tests/evals/workflow_generalization/test_transcript_lesson_importer_v1.py",
+    "runtime/state/WORKFLOW_GENERALIZATION_ENGINE_TRACKER_PREVIEW.txt",
+    "0_kernel/registry/browser_render_capability/BROWSER_RENDER_CAPABILITY_RESOLVER_POLICY_v1.json",
+    "0_kernel/resolvers/browser_render_capability_resolver_v1.py",
+    "0_kernel/registry/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_CONTRACT_v1.json",
+    "0_kernel/validators/validate_visual_presentation_quality_gate_v1.py"
+  ],
+  "research_basis": {
+    "pmi_lessons_learned": "lessons should be captured and applied to future project performance",
+    "sre_postmortem": "preventive action items should reduce recurrence"
+  },
+  "root": "/mnt/data/Metablooms_OS",
+  "stage": "WORKFLOW_GENERALIZATION_ENGINE_STAGE3_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF",
+  "timestamp_utc": "20260502T232100Z",
+  "verdict": "READY_FOR_FULL_EXPORT",
+  "zip_hash_embedded_inside_zip": false
+}

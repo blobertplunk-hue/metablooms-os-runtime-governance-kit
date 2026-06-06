@@ -1,0 +1,84 @@
+{
+  "artifacts_written": [],
+  "next_stage": "MPP_R11_SSO_SCOPE_SCHEMA_AND_CONFLICT_GATE",
+  "predecessor_verification": {
+    "r9": {
+      "actual_sha256": "ddb56cf4ecb729767b8a0402d1eace58cce51f5285ea70d6c2f3f94a96397a09",
+      "checksum_match": true,
+      "exists": true,
+      "sha_sidecar_exists": true,
+      "sidecar_sha256": "ddb56cf4ecb729767b8a0402d1eace58cce51f5285ea70d6c2f3f94a96397a09",
+      "zip": "/mnt/data/MPP_R9_UXR_OPERATOR_CONTEXT_SCHEMA_AND_ACCESSIBILITY_GATE_20260501T001700Z.zip",
+      "zip_testzip": null
+    }
+  },
+  "research_sources": [
+    {
+      "ref": "turn599749search1",
+      "source": "ISO/IEC 25010:2023 product quality model"
+    },
+    {
+      "ref": "turn599749search0",
+      "source": "Google SRE Service Level Objectives"
+    },
+    {
+      "ref": "turn599749search6",
+      "source": "Google SRE Error Budget Policy"
+    }
+  ],
+  "root": "/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z",
+  "root_probe": {
+    "/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z": {
+      "exists": true,
+      "is_dir": true,
+      "writable": true
+    }
+  },
+  "stage_id": "MPP_R10_NUF_NONFUNCTIONAL_REQUIREMENTS_SCHEMA_AND_BUDGET_GATE",
+  "status": "PASS",
+  "tests": [
+    {
+      "cmd": "/opt/pyvenv/bin/python -m py_compile /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_nuf_nonfunctional_budget_gate_v1.py",
+      "expected": 0,
+      "returncode": 0,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.",
+      "stdout": ""
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_nuf_nonfunctional_budget_gate_v1.py --validate /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/tests/fixtures/mpp_v3/valid_nuf_nonfunctional_requirements_packet_v1.json",
+      "expected": 0,
+      "returncode": 0,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.",
+      "stdout": "{\"categories\": [\"artifact_integrity\", \"determinism\", \"latency\", \"reliability\", \"security\"], \"packet_id\": \"NUF-20260430T223743Z\", \"result_hash\": \"8d732fe76330b353463e92f2ef66f92cfacee5b518564d6d058bef801a2ca9fe\", \"status\": \"PASS\"}"
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_nuf_nonfunctional_budget_gate_v1.py --gate /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/tests/fixtures/mpp_v3/valid_nuf_nonfunctional_requirements_packet_v1.json",
+      "expected": 0,
+      "returncode": 0,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.",
+      "stdout": "{\"coverage\": {\"blocking_categories\": [\"artifact_integrity\", \"determinism\", \"reliability\", \"security\"], \"budget_type\": \"error_budget\", \"present_categories\": [\"artifact_integrity\", \"determinism\", \"latency\", \"reliability\", \"security\"], \"required_categories\": [\"artifact_integrity\", \"determinism\", \"reliability\", \"security\"]}, \"created_at\": \"2026-04-30T22:38:11.506591+00:00\", \"gate_id\": \"NUF-GATE-20260430T223811Z\", \"packet_id\": \"NUF-20260430T223743Z\", \"result_hash\": \"7db504469f2130f300a075fa132779643ea0b2094bc8a7dbb17db7b046343346\", \"schema_version\": \"mpp.nuf_budget_gate_result.v1\", \"stage\": \"NUF_BUDGET_GATE\", \"verdict\": \"PASS\", \"violations\": [], \"warnings\": []}"
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_nuf_nonfunctional_budget_gate_v1.py --gate /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/tests/fixtures/mpp_v3/invalid_nuf_missing_security_category_packet_v1.json",
+      "expected": 1,
+      "returncode": 1,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.",
+      "stdout": "{\"coverage\": {\"blocking_categories\": [\"artifact_integrity\", \"determinism\", \"reliability\"], \"budget_type\": \"error_budget\", \"present_categories\": [\"artifact_integrity\", \"determinism\", \"latency\", \"reliability\"], \"required_categories\": [\"artifact_integrity\", \"determinism\", \"reliability\", \"security\"]}, \"created_at\": \"2026-04-30T22:38:20.498154+00:00\", \"gate_id\": \"NUF-GATE-20260430T223820Z\", \"packet_id\": \"NUF-BAD-MISSING-SECURITY\", \"result_hash\": \"368dcbe14af1287b7c6b6a80984a3ba839e20d3cb91907b0ac94c4e828ea54cd\", \"schema_version\": \"mpp.nuf_budget_gate_result.v1\", \"stage\": \"NUF_BUDGET_GATE\", \"verdict\": \"FAIL\", \"violations\": [\"NUF_MISSING_REQUIRED_CATEGORY_SECURITY\"], \"warnings\": []}"
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_nuf_nonfunctional_budget_gate_v1.py --validate /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/tests/fixtures/mpp_v3/invalid_nuf_bad_threshold_packet_v1.json",
+      "expected": 1,
+      "returncode": 1,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.\nTraceback (most recent call last):\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_nuf_nonfunctional_budget_gate_v1.py\"\u001b[0m, line \u001b[35m233\u001b[0m, in \u001b[35m<module>\u001b[0m\n    raise SystemExit(\u001b[31mmain\u001b[0m\u001b[1;31m()\u001b[0m)\n                     \u001b[31m~~~~\u001b[0m\u001b[1;31m^^\u001b[0m\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_nuf_nonfunctional_budget_gate_v1.py\"\u001b[0m, line \u001b[35m222\u001b[0m, in \u001b[35mmain\u001b[0m\n    print(json.dumps(\u001b[31mvalidate_nuf_packet\u001b[0m\u001b[1;31m(packet)\u001b[0m, sort_keys=True))\n                     \u001b[31m~~~~~~~~~~~~~~~~~~~\u001b[0m\u001b[1;31m^^^^^^^^\u001b[0m\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_nuf_nonfunctional_budget_gate_v1.py\"\u001b[0m, line \u001b[35m59\u001b[0m, in \u001b[35mvalidate_nuf_packet\u001b[0m\n    \u001b[31mrequire\u001b[0m\u001b[1;31m(str(req[\"threshold\"]).strip().lower() not in BAD_THRESHOLDS, f\"NUF_REQ_{i}_BAD_THRESHOLD\")\u001b[0m\n    \u001b[31m~~~~~~~\u001b[0m\u001b[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\u001b[0m\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_nuf_nonfunctional_budget_gate_v1.py\"\u001b[0m, line \u001b[35m29\u001b[0m, in \u001b[35mrequire\u001b[0m\n    raise NUFValidationError(code)\n\u001b[1;35mNUFValidationError\u001b[0m: \u001b[35mNUF_REQ_0_BAD_THRESHOLD\u001b[0m",
+      "stdout": ""
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_nuf_nonfunctional_budget_gate_v1.py --validate /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/tests/fixtures/mpp_v3/invalid_nuf_bad_budget_packet_v1.json",
+      "expected": 1,
+      "returncode": 1,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.\nTraceback (most recent call last):\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_nuf_nonfunctional_budget_gate_v1.py\"\u001b[0m, line \u001b[35m233\u001b[0m, in \u001b[35m<module>\u001b[0m\n    raise SystemExit(\u001b[31mmain\u001b[0m\u001b[1;31m()\u001b[0m)\n                     \u001b[31m~~~~\u001b[0m\u001b[1;31m^^\u001b[0m\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_nuf_nonfunctional_budget_gate_v1.py\"\u001b[0m, line \u001b[35m222\u001b[0m, in \u001b[35mmain\u001b[0m\n    print(json.dumps(\u001b[31mvalidate_nuf_packet\u001b[0m\u001b[1;31m(packet)\u001b[0m, sort_keys=True))\n                     \u001b[31m~~~~~~~~~~~~~~~~~~~\u001b[0m\u001b[1;31m^^^^^^^^\u001b[0m\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_nuf_nonfunctional_budget_gate_v1.py\"\u001b[0m, line \u001b[35m67\u001b[0m, in \u001b[35mvalidate_nuf_packet\u001b[0m\n    \u001b[31mrequire\u001b[0m\u001b[1;31m(str(budget[\"allowed_budget\"]).strip().lower() not in BAD_THRESHOLDS, \"NUF_BUDGET_BAD_ALLOWED_BUDGET\")\u001b[0m\n    \u001b[31m~~~~~~~\u001b[0m\u001b[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\u001b[0m\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_nuf_nonfunctional_budget_gate_v1.py\"\u001b[0m, line \u001b[35m29\u001b[0m, in \u001b[35mrequire\u001b[0m\n    raise NUFValidationError(code)\n\u001b[1;35mNUFValidationError\u001b[0m: \u001b[35mNUF_BUDGET_BAD_ALLOWED_BUDGET\u001b[0m",
+      "stdout": ""
+    }
+  ],
+  "timestamp": "20260501T003000Z"
+}

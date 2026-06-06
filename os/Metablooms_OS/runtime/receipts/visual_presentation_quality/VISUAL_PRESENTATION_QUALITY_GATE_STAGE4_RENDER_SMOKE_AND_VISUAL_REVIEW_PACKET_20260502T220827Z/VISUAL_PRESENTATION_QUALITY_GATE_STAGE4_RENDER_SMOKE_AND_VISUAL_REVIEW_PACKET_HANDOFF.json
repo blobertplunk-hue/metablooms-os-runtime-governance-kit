@@ -1,0 +1,16 @@
+{
+  "authorized_next_stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE5_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF",
+  "blockers": [],
+  "created_utc": "2026-05-02T22:15:10Z",
+  "from_stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE4_RENDER_SMOKE_AND_VISUAL_REVIEW_PACKET",
+  "known_limitations": [
+    "Chromium/Playwright screenshots unavailable in this sandbox turn; proxy render proof was used."
+  ],
+  "next_stage_requirements": [
+    "Include VPQ registry, validator, fixtures, USS/MPP bindings, operator tracker, Stage 1-4 receipts, and render review packet in full OS export",
+    "Run portability replay proof from exported ZIP",
+    "If browser runtime becomes reliable, add browser screenshot replay proof before final lock; otherwise mark browser render limitation explicitly in export metadata"
+  ],
+  "schema_version": "metablooms_stage_handoff.v1",
+  "stage4_verdict": "PASS_WITH_BROWSER_RENDER_LIMITATION"
+}

@@ -1,0 +1,54 @@
+{
+  "version": "1.0",
+  "created_at": 1777062653.8808632,
+  "stage": "REPAIR_F5_EVIDENCE_PACKAGING_REMOVE_NESTED_GIT_REPO_ARTIFACT",
+  "status": "complete",
+  "problem": "F5 proof evidence created a nested Git repository under a tracked evidence directory, causing a gitlink/submodule-like dirty status.",
+  "actions": [
+    {
+      "action": "removed_gitlink_from_index",
+      "result": {
+        "cmd": [
+          "git",
+          "rm",
+          "--cached",
+          "-f",
+          "0_kernel/registry/restore_ladder_mode_normalization_evidence/mode_repo"
+        ],
+        "returncode": 0,
+        "stdout": "rm '0_kernel/registry/restore_ladder_mode_normalization_evidence/mode_repo'",
+        "stderr": ""
+      }
+    },
+    {
+      "action": "removed_nested_repo_from_filesystem",
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/restore_ladder_mode_normalization_evidence/mode_repo"
+    }
+  ],
+  "outputs": {
+    "plain_json_evidence": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/restore_ladder_mode_normalization_evidence/mode_normalization_plain_json_evidence_v1.json",
+    "updated_restore_proof": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/RESTORE_LADDER_MODE_NORMALIZATION_PROOF_v1.json",
+    "updated_f5_receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF_RECEIPT_v1.json",
+    "updated_ledger": "/mnt/data/Metablooms_OS_refined/0_kernel/state/STAGE_STATE_LEDGER_v1.json",
+    "repair_receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F5_EVIDENCE_PACKAGING_REPAIR_RECEIPT_v1.json"
+  },
+  "runaway_turn_guard": {
+    "repair_only": true,
+    "proof_rerun_performed": false,
+    "export_performed": false,
+    "cleanup_broad": false
+  },
+  "verdict": "PASS",
+  "next_improvement_task": "F6 \u2014 Blocked Receipt Handling Rule",
+  "why_next": "F5 evidence packaging is repaired; next define blocked receipt handling so failed stages do not dirty subsequent stages.",
+  "remaining_work": [
+    "F6 \u2014 Blocked Receipt Handling Rule",
+    "F7 \u2014 Stable Export + Boot Recovery Proof",
+    "Return to E4A\u2013E5D"
+  ],
+  "progress_estimate": {
+    "stages_remaining_before_return_to_E4": 2,
+    "major_arcs_remaining_after_recovery_arc": 2
+  },
+  "next_correct_command": "EXECUTE F6 \u2014 BLOCKED RECEIPT HANDLING RULE"
+}

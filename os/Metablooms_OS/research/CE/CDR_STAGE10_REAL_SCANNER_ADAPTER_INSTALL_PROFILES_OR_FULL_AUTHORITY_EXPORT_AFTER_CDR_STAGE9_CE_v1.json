@@ -1,0 +1,6 @@
+{
+  "decision": "INSTALL_PROFILES_NOT_AUTHORITY_EXPORT",
+  "schema": "CEPacket_v1",
+  "stage": "CDR_STAGE10_REAL_SCANNER_ADAPTER_INSTALL_PROFILES_OR_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE9",
+  "synthesis": "CDR should support real scanner adapters but not depend on them in ChatGPT sandbox conditions. Ruff/Bandit/Semgrep profiles should be governed, normalized, and fallback-backed. Authority export is deferred because this stage changes profiles/gates but does not yet produce a full fresh-authority validation."
+}

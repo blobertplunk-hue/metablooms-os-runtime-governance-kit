@@ -1,0 +1,58 @@
+{
+  "artifacts_created_or_updated": [
+    {
+      "bytes": 5614,
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_RENDERER_v1.py",
+      "sha256": "e03794d1cb0ef1b214b53d0e22acff046df007904f5d8090d26c2240b5f39eb1"
+    },
+    {
+      "bytes": 5419,
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_VALIDATOR_v1.py",
+      "sha256": "33ba5768e438a0b70c80c5af8a9fa2d455f7052cbaff7901ca1b153bb765270c"
+    },
+    {
+      "bytes": 960,
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_RENDER_SPEC_LOCK_v1.md",
+      "sha256": "45e460cfeb0406183f18367e92669914254e3945e29587d720bfc8874c395810"
+    },
+    {
+      "bytes": 4333,
+      "path": "runtime/state/TRACKER_STATE_v1.json",
+      "sha256": "debb79f04817ea718de80f74f30b27ca0426ad77bf4779148f550afc4e5d018d"
+    },
+    {
+      "bytes": 1993,
+      "path": "receipts/inline_project_tracker/TRACKER_2_20260429T111207Z/TRACKER_2_VALIDATION_REPORT.json",
+      "sha256": "1b491566c36e0aa0698bf582019ce6f181320899d7d87877049821ad8f8f5126"
+    },
+    {
+      "bytes": 955,
+      "path": "receipts/inline_project_tracker/TRACKER_2_20260429T111207Z/TRACKER_2_RENDERED_PREVIEW.txt",
+      "sha256": "db9277e3cf7da89a975fc20a78c6bb571ec69b3f8937ce7a0303e6be37399056"
+    },
+    {
+      "bytes": 874,
+      "path": "receipts/inline_project_tracker/TRACKER_2_20260429T111207Z/TRACKER_2_EXTERNAL_CHECK.md",
+      "sha256": "d6d3ee86a4fed9f9b9027a5930865a6d5ec750328fc8b3674ebb0d9333eaee08"
+    }
+  ],
+  "authorized_by": "receipts/inline_project_tracker/TRACKER_1_20260429T111056Z/TRACKER_1_HANDOFF.json",
+  "blocker": null,
+  "external_check_summary": "Applied W3C progress/status text guidance and NN/g visibility-of-system-status principle to renderer/validator constraints.",
+  "next_allowed_action": "TRACKER-3 boot and stage gate implementation only.",
+  "receipt_id": "TRACKER_2_RECEIPT_20260429T111207Z",
+  "root": "/mnt/data/Metablooms_OS",
+  "scope": "Markdown renderer and validator implementation only; stopped before boot/stage gate implementation.",
+  "stage": "TRACKER-2_MARKDOWN_RENDERER_AND_VALIDATOR",
+  "status": "PASS",
+  "stopped_before": "TRACKER-3_BOOT_AND_STAGE_GATES",
+  "timestamp_utc": "20260429T111207Z",
+  "validation_summary": {
+    "errors": [],
+    "fake_percent_rejection": "PASS",
+    "mobile_width_max_chars": 64,
+    "required_fields": "PASS",
+    "top_of_response_marker": "PASS",
+    "validator_status": "PASS"
+  }
+}

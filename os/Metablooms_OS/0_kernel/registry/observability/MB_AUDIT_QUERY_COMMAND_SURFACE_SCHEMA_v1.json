@@ -1,0 +1,32 @@
+{
+  "artifact_type": "MB_AUDIT_QUERY_COMMAND_SURFACE_SCHEMA.v1",
+  "command_required_fields": [
+    "command_id",
+    "label",
+    "intent",
+    "operator_phrase",
+    "action",
+    "source_pack_id",
+    "output_packet_path",
+    "evidence_paths",
+    "fail_closed_if"
+  ],
+  "created_utc": "20260502T191921Z",
+  "required_fields": [
+    "artifact_type",
+    "stage_id",
+    "commands",
+    "command_count",
+    "source_audit_query_packs",
+    "verdict"
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET",
+  "valid_actions": [
+    "show_audit_pack",
+    "export_evidence_packet",
+    "show_current_boot_guidance",
+    "show_blocker_evidence",
+    "show_stage_validation",
+    "show_trace_waterfall"
+  ]
+}

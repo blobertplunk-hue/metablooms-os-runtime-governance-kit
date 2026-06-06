@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "metablooms://schemas/ToolCallEnvelope_v1.schema.json",
+  "title": "ToolCallEnvelope_v1",
+  "type": "object",
+  "required": ["schema_version", "envelope_id", "stage_id", "action_type", "tool_name", "intent", "risk_tier", "requested_at_utc", "limits", "artifacts"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "ToolCallEnvelope_v1"},
+    "envelope_id": {"type": "string", "minLength": 8},
+    "stage_id": {"type": "string", "minLength": 3},
+    "parent_trace_id": {"type": "string"},
+    "action_type": {"enum": ["shell", "node", "python", "zip", "filesystem", "web_run", "export", "pointer_promotion", "tool_install", "validation", "unknown"]},
+    "tool_name": {"type": "string", "minLength": 1},
+    "command_summary": {"type": "string"},
+    "intent": {"type": "string", "minLength": 3},
+    "risk_tier": {"enum": ["low", "medium", "high", "critical"]},
+    "requested_at_utc": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"},
+    "requires_see": {"type": "boolean", "default": false},
+    "see_evidence_refs": {"type": "array", "items": {"type": "string"}, "default": []},
+    "approval_token": {"type": "string"},
+    "limits": {
+      "type": "object",
+      "required": ["timeout_seconds", "max_files", "max_bytes", "max_steps"],
+      "additionalProperties": false,
+      "properties": {
+        "timeout_seconds": {"type": "integer", "minimum": 1, "maximum": 120},
+        "max_files": {"type": "integer", "minimum": 0, "maximum": 5000},
+        "max_bytes": {"type": "integer", "minimum": 0, "maximum": 200000000},
+        "max_steps": {"type": "integer", "minimum": 1, "maximum": 100}
+      }
+    },
+    "artifacts": {
+      "type": "object",
+      "required": ["read_paths", "write_paths", "receipt_path"],
+      "additionalProperties": false,
+      "properties": {
+        "read_paths": {"type": "array", "items": {"type": "string"}},
+        "write_paths": {"type": "array", "items": {"type": "string"}},
+        "receipt_path": {"type": "string", "minLength": 1}
+      }
+    },
+    "metadata": {"type": "object", "additionalProperties": true, "default": {}}
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "argv_redacted": [
+    "/opt/pyvenv/bin/python3",
+    "/mnt/data/Metablooms_OS/runtime/governance/owasp_agentic_ai_policy_gate_v1.py",
+    "/mnt/data/Metablooms_OS/tests/fixtures/security/owasp_agentic_policy_allow_v1.json"
+  ],
+  "argv_resolved": [
+    "/opt/pyvenv/bin/python3",
+    "/mnt/data/Metablooms_OS/runtime/governance/owasp_agentic_ai_policy_gate_v1.py",
+    "/mnt/data/Metablooms_OS/tests/fixtures/security/owasp_agentic_policy_allow_v1.json"
+  ],
+  "artifact_type": "METABLOOMS_BOUNDED_COMMAND_DECISION_PACKET_v1",
+  "attempts": [
+    {
+      "attempt_index": 0,
+      "elapsed_ms": 4591,
+      "returncode": 0,
+      "started_utc": "20260502T141633Z",
+      "stderr": "/mnt/data/Metablooms_OS/runtime/governance/owasp_agentic_ai_policy_gate_v1.py:15: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n  return datetime.datetime.utcnow().replace(microsecond=0).isoformat()+'Z'\n",
+      "stderr_bytes": 360,
+      "stderr_sha256": "8414304ae37d116ca283d6b7acaa1c1bc39bf730fd746c018b347feb6b61e418",
+      "stderr_truncated": false,
+      "stdout": "{\n  \"action_class\": \"filesystem_export\",\n  \"controls_missing\": [],\n  \"controls_present\": [\n    \"BTS wrapper\",\n    \"CRC proof\",\n    \"SHA sidecar\",\n    \"Tool Universe Resolver\",\n    \"delivery guard\",\n    \"fresh boot proof\",\n    \"post_tool_result_validation_v1\",\n    \"pre_tool_action_gate_v1\"\n  ],\n  \"decision\": \"ALLOW\",\n  \"errors\": [],\n  \"high_impact\": true,\n  \"reason\": \"all_required_controls_present\",\n  \"risk_ids\": [\n    \"ASI02\",\n    \"ASI04\",\n    \"ASI08\",\n    \"ASI09\"\n  ],\n  \"schema\": \"OWASPAgenticAIPolicyGateDecision_v1\",\n  \"timestamp_utc\": \"2026-05-02T14:16:37Z\"\n}\n",
+      "stdout_bytes": 569,
+      "stdout_sha256": "27b8a05837f8441dc2d02bb000bc36c2d14e61d2ff08a817d7f1a72db0deecae",
+      "stdout_truncated": false,
+      "timeout_seconds": 10.0
+    }
+  ],
+  "created_utc": "20260502T141633Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision_packet_path": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT_retrofitted_subprocess_run_20260502T141633Z_0fdb872fec87/decision_packet.json",
+  "failure_class": null,
+  "failure_event_path": null,
+  "operation_type": "retrofitted_subprocess_run",
+  "policy_matches": [],
+  "pre_spawn_receipt_path": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT_retrofitted_subprocess_run_20260502T141633Z_0fdb872fec87/pre_spawn_receipt.json",
+  "receipt_dir": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT_retrofitted_subprocess_run_20260502T141633Z_0fdb872fec87",
+  "result_class": "ALLOW_SUCCESS",
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT",
+  "total_elapsed_ms": 4593
+}

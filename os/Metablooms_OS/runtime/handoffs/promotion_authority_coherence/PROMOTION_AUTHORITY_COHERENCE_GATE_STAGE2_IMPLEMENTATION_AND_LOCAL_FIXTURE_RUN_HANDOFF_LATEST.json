@@ -1,0 +1,35 @@
+{
+  "created_at": "2026-05-02T20:03:29.668338+00:00",
+  "from_stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN",
+  "required_inputs": [
+    "0_kernel/mpp_v3/promotion_authority_coherence_gate_v1.py",
+    "FIXTURE_RESULT_LEDGER.json",
+    "CURRENT_OS_REPORT_ONLY_SCAN.json",
+    "STAGE_RECEIPT.json"
+  ],
+  "result_hash": "8e84700768ab414ac9db8a5e7f0182a974eec085acd42feb78148c397056e9af",
+  "schema_version": "metablooms.stage_handoff.v1",
+  "stage2_summary": {
+    "decision": "DENY",
+    "defects": [
+      "controlled_artifact_missing_from_index",
+      "live_boot_file_names_noncurrent_authority",
+      "registered_hash_mismatch"
+    ],
+    "missing_from_registry_count": 939,
+    "registered_hash_mismatch_count": 83,
+    "report_only": true,
+    "result_hash": "78742327d2f811e00fbdf9a20e9bcae70c0853c6acf1442590bd25b85082cf75",
+    "stale_reference_count": 4
+  },
+  "stage3_required_actions": [
+    "Bind gate as hard pre-promotion blocker",
+    "Create current OS repair plan from report-only defects",
+    "Classify unregistered artifacts before registry mutation",
+    "Normalize stale live boot references",
+    "Resolve registered hash mismatches by repair/quarantine/update transaction"
+  ],
+  "status": "HANDOFF_READY",
+  "stop_condition": "Stage 2 complete; current OS remains DENY in report-only scan and must not be promoted until repaired.",
+  "to_stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE3_PROMOTION_BINDING_AND_CURRENT_OS_REPAIR_PLAN"
+}

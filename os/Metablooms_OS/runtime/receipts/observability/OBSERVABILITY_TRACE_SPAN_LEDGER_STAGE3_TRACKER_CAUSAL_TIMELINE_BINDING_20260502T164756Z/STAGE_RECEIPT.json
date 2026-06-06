@@ -1,0 +1,107 @@
+{
+  "amended_utc": "20260502T164811Z",
+  "artifact_type": "MB_STAGE_RECEIPT.v1",
+  "bounded_stage": true,
+  "ce_synthesis": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE3_TRACKER_CAUSAL_TIMELINE_BINDING_20260502T164756Z/CE_SYNTHESIS.json",
+  "created_utc": "20260502T164756Z",
+  "current_state": {
+    "issue_record_count": 4,
+    "latest_blocker": null,
+    "latest_event": {
+      "attributes": {
+        "bounded": true,
+        "max_files_per_glob": 80
+      },
+      "event": "metablooms.boot_ingestion.start",
+      "event_kind": "stage",
+      "event_name": "metablooms.boot_ingestion.start",
+      "input_materials": [],
+      "name": "metablooms.boot_ingestion.start",
+      "output_artifacts": [
+        "runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl",
+        "runtime/traces/observability/TRACE_SPAN_LEDGER_INDEX_LATEST.json",
+        "runtime/traces/observability/CAUSAL_STAGE_GRAPH_LATEST.json",
+        "runtime/traces/observability/BOOT_INGESTION_REPORT_LATEST.json"
+      ],
+      "parent_span_id": null,
+      "schema_version": "MB_TRACE_SPAN_EVENT.v1",
+      "source_artifact": "0_kernel/scripts/observability_boot_ingest_v1.py",
+      "span_id": "8f96b4ff51993598",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION",
+      "stage_name": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION",
+      "status": "OK",
+      "timestamp_utc": "20260502T164757Z",
+      "trace_id": "45a28f58f4dd8bdb5fa4da5eec6c29b2"
+    },
+    "next_action": "Proceed with next governed user-selected stage.",
+    "safe_to_continue": true
+  },
+  "next_recommended_stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING",
+  "outputs": [
+    "0_kernel/registry/operator_surface/MB_OPERATOR_TRACKER_CAUSAL_TIMELINE_BINDING_SPEC_v1.json",
+    "0_kernel/lib/operator_surface/build_operator_tracker_causal_timeline_v1.py",
+    "0_kernel/validators/validate_observability_trace_span_ledger_stage3_tracker_binding_v1.py",
+    "runtime/state/operator_surface/OPERATOR_CAUSAL_TIMELINE_LATEST.json",
+    "runtime/state/operator_surface/OPERATOR_CAUSAL_TIMELINE_PREVIEW_LATEST.md",
+    "runtime/state/operator_surface/OPERATOR_CAUSAL_TIMELINE_BUILD_REPORT_LATEST.json",
+    "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE3_TRACKER_BINDING_VALIDATION_LATEST.json",
+    "OPEN_OPERATOR_VISUAL_TRACKER.html"
+  ],
+  "post_receipt_ingestion": "PASS",
+  "see_packet": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE3_TRACKER_CAUSAL_TIMELINE_BINDING_20260502T164756Z/SEE_PACKET.json",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE3_TRACKER_CAUSAL_TIMELINE_BINDING",
+  "status": "PASS",
+  "summary": {
+    "blocked_count": 3,
+    "error_count": 1,
+    "event_kinds": {
+      "boot": 57,
+      "decision": 12,
+      "export": 24,
+      "handoff": 85,
+      "receipt": 32,
+      "stage": 1,
+      "tracker": 1,
+      "validator": 8
+    },
+    "graph_edge_count": 219,
+    "graph_node_count": 220,
+    "ok_count": 216,
+    "record_count": 220,
+    "warn_count": 0
+  },
+  "validation": {
+    "artifact_type": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE3_TRACKER_BINDING_VALIDATION.v1",
+    "checks": [
+      {
+        "exists_nonempty": true,
+        "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_INDEX_LATEST.json"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "runtime/traces/observability/CAUSAL_STAGE_GRAPH_LATEST.json"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "runtime/state/operator_surface/OPERATOR_CAUSAL_TIMELINE_LATEST.json"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "runtime/state/operator_surface/OPERATOR_CAUSAL_TIMELINE_PREVIEW_LATEST.md"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "OPEN_OPERATOR_VISUAL_TRACKER.html"
+      }
+    ],
+    "created_utc": "20260502T164757Z",
+    "issues": [],
+    "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE3_TRACKER_CAUSAL_TIMELINE_BINDING",
+    "verdict": "PASS"
+  },
+  "verdict": "PASS"
+}

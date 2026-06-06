@@ -1,0 +1,122 @@
+{
+  "cartridge_id": "continuity_compaction_v1",
+  "name": "Continuity Compaction v1",
+  "type": "core_governance",
+  "purpose": "Generate and compress continuity packets to preserve state across turns and sessions, enabling long-horizon execution without reliance on chat memory.",
+  "task_types": [
+    "continuity_management",
+    "state_compaction",
+    "session_resume",
+    "long_horizon_execution"
+  ],
+  "platform": [
+    "robert",
+    "shaye",
+    "both"
+  ],
+  "input_contract": {
+    "required": [
+      "project_id",
+      "current_stage",
+      "ledger_state"
+    ],
+    "optional": [
+      "artifacts",
+      "decisions",
+      "validation_state",
+      "next_stage",
+      "next_required_input",
+      "context_summary"
+    ]
+  },
+  "output_contract": {
+    "artifacts": [
+      "continuity_packet"
+    ],
+    "format": "structured_json_or_markdown",
+    "must_include": [
+      "project_id",
+      "current_stage",
+      "completed_stages",
+      "key_artifacts",
+      "key_decisions",
+      "validation_state",
+      "next_action",
+      "resume_instruction"
+    ]
+  },
+  "handoff_contract": {
+    "structure": "structured_markdown_v1",
+    "fields": [
+      "artifact",
+      "summary",
+      "next_required_input",
+      "next_recommended_cartridge"
+    ]
+  },
+  "execution_mode": "transform",
+  "external_tools": [],
+  "validation_rules": [
+    "must_include_current_stage",
+    "must_include_next_action",
+    "must_compress_nonessential_context",
+    "must_preserve_required_state",
+    "must_output_resume_ready_packet"
+  ],
+  "failure_modes": [
+    "missing_project_id",
+    "missing_stage_information",
+    "incomplete_ledger_state",
+    "loss_of_critical_information",
+    "non_resumable_packet"
+  ],
+  "status": "active",
+  "continuity_schema": {
+    "continuity_packet": {
+      "required": [
+        "project_id",
+        "current_stage",
+        "completed_stages",
+        "key_artifacts",
+        "key_decisions",
+        "validation_state",
+        "next_action",
+        "resume_instruction"
+      ],
+      "optional": [
+        "open_issues",
+        "risks",
+        "context_summary"
+      ]
+    },
+    "compaction_rules": {
+      "required": [
+        "retain_only_relevant_information",
+        "compress_large_context",
+        "remove_redundancy",
+        "preserve_decision_history",
+        "preserve_next_step_clarity"
+      ]
+    },
+    "resume_protocol": {
+      "required": [
+        "paste_continuity_packet",
+        "reconstruct_state",
+        "continue_next_stage"
+      ]
+    }
+  },
+  "continuity_output_schema": {
+    "project_id": "",
+    "current_stage": "",
+    "completed_stages": [],
+    "key_artifacts": [],
+    "key_decisions": [],
+    "validation_state": {
+      "status": "",
+      "issues": []
+    },
+    "next_action": "",
+    "resume_instruction": "Paste this packet into RESUME to continue."
+  }
+}

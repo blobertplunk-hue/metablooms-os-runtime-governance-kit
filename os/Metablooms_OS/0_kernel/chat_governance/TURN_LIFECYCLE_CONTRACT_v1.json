@@ -1,0 +1,32 @@
+{
+  "id": "TURN_LIFECYCLE_CONTRACT_v1",
+  "status": "runtime_active",
+  "required_order": [
+    "turn_intake",
+    "meta_task_detection",
+    "authority_boot_binding",
+    "active_governance_load",
+    "router_decision",
+    "gate_preflight",
+    "bounded_execution",
+    "SEE_requirement_resolution",
+    "CE_synthesis_requirement",
+    "tracker_preview_requirement",
+    "receipt_handoff_requirement",
+    "export_promotion_gate",
+    "final_response_gate"
+  ],
+  "blocked_if_missing": [
+    "authority_boot_binding",
+    "router_decision",
+    "gate_preflight",
+    "tracker_preview_requirement",
+    "receipt_handoff_requirement"
+  ],
+  "requires_evidence_when": [
+    "task_requires_current_or_external_claims",
+    "task_modifies_os",
+    "task_creates_or_updates_governance",
+    "task_routes_to_research_or_implementation_cartridge"
+  ]
+}

@@ -1,0 +1,299 @@
+{
+  "version": "1.0",
+  "created_at": 1777061653.5812476,
+  "updated_at": 1777068405.2277465,
+  "dag_id": "STAGE_DAG_v1",
+  "status": "active",
+  "purpose": "Record governed stage order, dependencies, outputs, and planned recovery-architecture sequence.",
+  "stage_classes": [
+    "scope_lock",
+    "contract",
+    "implementation",
+    "proof",
+    "export",
+    "boot_recovery",
+    "baseline_lock",
+    "repair",
+    "blocked"
+  ],
+  "nodes": [
+    {
+      "id": "F0",
+      "name": "Recovery Architecture Scope Lock",
+      "class": "scope_lock",
+      "status": "complete",
+      "produces": [
+        "F0_RECOVERY_ARCHITECTURE_SCOPE_CONTRACT_v1.json",
+        "F0_TO_F1_HANDOFF_v1.json"
+      ]
+    },
+    {
+      "id": "F1",
+      "name": "Current Working Baseline Pointer Contract",
+      "class": "contract",
+      "status": "complete",
+      "produces": [
+        "CURRENT_WORKING_BASELINE_POINTER_v1.json",
+        "F1_TO_F2_HANDOFF_v1.json"
+      ]
+    },
+    {
+      "id": "F2",
+      "name": "Stage DAG + Dependency Ledger Contract",
+      "class": "contract",
+      "status": "active",
+      "produces": [
+        "STAGE_DAG_v1.json",
+        "STAGE_STATE_LEDGER_v1.json",
+        "F2_TO_F3_HANDOFF_v1.json"
+      ]
+    },
+    {
+      "id": "F3",
+      "name": "Transactional Stage Runner Contract",
+      "class": "contract",
+      "status": "complete",
+      "produces": [
+        "TRANSACTIONAL_STAGE_RUNNER_CONTRACT_v1.json",
+        "TRANSACTIONAL_STAGE_RUNNER_SCHEMA_v1.json",
+        "TRANSACTIONAL_STAGE_STATE_MACHINE_v1.json",
+        "F3_TO_F4_HANDOFF_v1.json"
+      ]
+    },
+    {
+      "id": "F4",
+      "name": "Manifest/Provenance Export Contract",
+      "class": "contract",
+      "status": "complete",
+      "produces": [
+        "MANIFEST_PROVENANCE_EXPORT_CONTRACT_v1.json",
+        "EXPORT_MANIFEST_SCHEMA_v1.json",
+        "EXPORT_PROVENANCE_SCHEMA_v1.json",
+        "EXPORT_MANIFEST_TEMPLATE_v1.json",
+        "EXPORT_PROVENANCE_TEMPLATE_v1.json",
+        "F4_TO_F5_HANDOFF_v1.json"
+      ]
+    },
+    {
+      "id": "F5",
+      "name": "Restore Ladder + Mode-Normalization Proof",
+      "class": "proof",
+      "status": "complete",
+      "produces": [
+        "RESTORE_LADDER_CONTRACT_v1.json",
+        "RESTORE_LADDER_MODE_NORMALIZATION_PROOF_v1.json",
+        "F5_TO_F6_HANDOFF_v1.json"
+      ]
+    },
+    {
+      "id": "F6",
+      "name": "Blocked Receipt Handling Rule",
+      "class": "small_patch",
+      "status": "complete",
+      "produces": [
+        "BLOCKED_RECEIPT_HANDLING_RULE_v1.json",
+        "BLOCKED_RECEIPT_TEMPLATE_v1.json",
+        "BLOCKED_RECEIPT_HANDLING_RULE_PROOF_v1.json",
+        "F6_TO_F7_HANDOFF_v1.json"
+      ]
+    },
+    {
+      "id": "F7",
+      "name": "Stable Export + Boot Recovery Proof",
+      "class": "export_recovery_split",
+      "status": "complete",
+      "produces": [
+        "F7_STABLE_EXPORT_BOOT_RECOVERY_PROOF_RECEIPT_v1.json",
+        "F7_TO_E4A_RETURN_HANDOFF_v1.json",
+        "EXPORT_MANIFEST_v1.json",
+        "EXPORT_PROVENANCE_v1.json",
+        "RESTORE_CONTRACT_v1.json",
+        "CAPABILITY_SET_v1.json",
+        "recovery-proven stable export zip"
+      ]
+    },
+    {
+      "id": "E4A",
+      "name": "Master Pipeline Proof Scope Lock",
+      "class": "scope_lock",
+      "status": "complete",
+      "produces": [
+        "E4A_MASTER_PIPELINE_PROOF_SCOPE_CONTRACT_v1.json",
+        "E4A_TO_E4B_HANDOFF_v1.json"
+      ]
+    },
+    {
+      "id": "G0",
+      "name": "Export Recovery Validator Scope Lock",
+      "class": "scope_lock",
+      "status": "complete",
+      "produces": [
+        "G0_EXPORT_RECOVERY_VALIDATOR_SCOPE_CONTRACT_v1.json",
+        "G0_EXPORT_RECOVERY_VALIDATOR_GATE_MATRIX_v1.json",
+        "G0_TO_G1_HANDOFF_v1.json"
+      ]
+    },
+    {
+      "id": "G1",
+      "name": "Export Recovery Validator Schema + Contract",
+      "class": "contract",
+      "status": "complete",
+      "produces": [
+        "EXPORT_RECOVERY_VALIDATOR_INPUT_SCHEMA_v1.json",
+        "EXPORT_RECOVERY_VALIDATOR_DECISION_SCHEMA_v1.json",
+        "EXPORT_RECOVERY_PROVEN_VALIDATOR_CONTRACT_v1.json",
+        "EXPORT_RECOVERY_VALIDATOR_GATE_CATALOG_v1.json",
+        "G1_TO_G2_HANDOFF_v1.json"
+      ]
+    },
+    {
+      "id": "G2",
+      "name": "Export Recovery Validator Implementation",
+      "class": "implementation",
+      "status": "complete",
+      "produces": [
+        "export_recovery_proven_validator_v1.py",
+        "EXPORT_RECOVERY_VALIDATOR_SMOKE_DECISION_v1.json",
+        "G2_TO_G3_HANDOFF_v1.json"
+      ]
+    },
+    {
+      "id": "G3",
+      "name": "Export Recovery Validator Regression Fixtures",
+      "class": "tests",
+      "status": "complete",
+      "produces": [
+        "EXPORT_RECOVERY_VALIDATOR_REGRESSION_FIXTURES_MANIFEST_v1.json",
+        "EXPORT_RECOVERY_VALIDATOR_REGRESSION_RESULTS_v1.json",
+        "GOVERNANCE_USED_FOR_EXPORT_VALIDATOR_BUILD_v1.json",
+        "G3_TO_G4_HANDOFF_v1.json"
+      ]
+    },
+    {
+      "id": "G4",
+      "name": "Run Validator Against F7 Export",
+      "class": "proof",
+      "status": "complete",
+      "produces": [
+        "EXPORT_RECOVERY_VALIDATOR_G4_F7_DECISION_v1.json",
+        "G4_F7_EXPORT_REPAIR_PLAN_v1.json",
+        "G4_TO_G5_HANDOFF_v1.json"
+      ]
+    },
+    {
+      "id": "G5",
+      "name": "Repaired Recovery-Proven Export",
+      "class": "export",
+      "status": "complete",
+      "produces": [
+        "G5_REPAIRED_EXPORT_REPAIR_SUMMARY_v1.json",
+        "G5_REPAIRED_RECOVERY_PROVEN_EXPORT_RECEIPT_v1.json",
+        "G5_TO_G6_HANDOFF_v1.json",
+        "EXPORT_MANIFEST_v1.json",
+        "EXPORT_PROVENANCE_v1.json",
+        "RESTORE_CONTRACT_v1.json",
+        "CAPABILITY_SET_v1.json"
+      ]
+    },
+    {
+      "id": "G6",
+      "name": "Recovery Proof + Baseline Lock",
+      "class": "baseline_lock",
+      "status": "complete",
+      "produces": [
+        "G6_TWO_PASS_SELF_CONSISTENT_EXPORT_PLAN_v1.json",
+        "STAGE_DAG_LEDGER_ID_MAP_v1.json",
+        "G6_G5_AUDIT_OPEN_ISSUES_RESOLUTION_v1.json",
+        "EXPORT_RECOVERY_VALIDATOR_G6_DECISION_v1.json",
+        "EXPORT_RECOVERY_VALIDATOR_G6_EXTERNAL_DECISION_v1.json",
+        "G6_RECOVERY_PROOF_v1.json",
+        "G6_RECOVERY_PROVEN_BASELINE_LOCK_v1.json",
+        "G6_RECOVERY_PROOF_BASELINE_LOCK_RECEIPT_v1.json",
+        "G6_TO_G7_HANDOFF_v1.json"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "F0",
+      "to": "F1",
+      "dependency": "scope before pointer"
+    },
+    {
+      "from": "F1",
+      "to": "F2",
+      "dependency": "pointer before ledger"
+    },
+    {
+      "from": "F2",
+      "to": "F3",
+      "dependency": "DAG/ledger before runner contract"
+    },
+    {
+      "from": "F3",
+      "to": "F4",
+      "dependency": "runner semantics before export provenance contract"
+    },
+    {
+      "from": "F4",
+      "to": "F5",
+      "dependency": "provenance contract before restore proof"
+    },
+    {
+      "from": "F5",
+      "to": "F6",
+      "dependency": "restore failure modes before blocked-receipt rule"
+    },
+    {
+      "from": "F6",
+      "to": "F7",
+      "dependency": "blocked-receipt rule before stable export/recovery"
+    },
+    {
+      "from": "F7",
+      "to": "E4A",
+      "dependency": "recovery-proven baseline before return to E4"
+    },
+    {
+      "from": "E4A",
+      "to": "G0",
+      "dependency": "audit/research validator hardening before further export claims"
+    },
+    {
+      "from": "G0",
+      "to": "G1",
+      "dependency": "scope before validator contract"
+    },
+    {
+      "from": "G1",
+      "to": "G2",
+      "dependency": "schema/contract before implementation"
+    },
+    {
+      "from": "G2",
+      "to": "G3",
+      "dependency": "implementation before regression fixtures"
+    },
+    {
+      "from": "G3",
+      "to": "G4",
+      "dependency": "regression fixtures before real export validation"
+    },
+    {
+      "from": "G4",
+      "to": "G5",
+      "dependency": "validator failure decision before repaired export"
+    },
+    {
+      "from": "G5",
+      "to": "G6",
+      "dependency": "repaired export before recovery proof and baseline lock"
+    }
+  ],
+  "restore_use": {
+    "latest_pass_ledger_entry_may_supersede_stable_release_zip": true,
+    "current_working_pointer_has_first_precedence": true,
+    "ledger_is_second_precedence": true
+  },
+  "verdict": "PASS"
+}

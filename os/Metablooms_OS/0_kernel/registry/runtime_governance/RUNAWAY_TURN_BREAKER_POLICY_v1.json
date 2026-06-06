@@ -1,0 +1,50 @@
+{
+  "artifact_type": "RUNAWAY_TURN_BREAKER_POLICY_v1",
+  "created_utc": "20260501T203116Z",
+  "default_budget": {
+    "allow_broad_extract": false,
+    "force_blocked_receipt_on_stall": true,
+    "force_receipt_handoff_after_stage": true,
+    "max_command_count": 12,
+    "max_files_touched": 60,
+    "max_trace_metadata_bytes": 8000,
+    "max_wall_clock_seconds": 180,
+    "require_no_broad_extract": true
+  },
+  "learned_failure_bindings": [
+    "manual_user_stop_after_hour_long_turn",
+    "broad_extraction_path_probe_instability",
+    "unzip_or_full_recursive_extract_timeout",
+    "validation_stall_without_receipt",
+    "trace_bloat_from_full_hash_listing"
+  ],
+  "route_rules": [
+    {
+      "decision": "BLOCK",
+      "name": "wall_clock_budget_required",
+      "rule_id": "RTB-001"
+    },
+    {
+      "decision": "BLOCK",
+      "name": "command_count_budget_required",
+      "rule_id": "RTB-002"
+    },
+    {
+      "decision": "BLOCK",
+      "name": "file_touch_budget_required",
+      "rule_id": "RTB-003"
+    },
+    {
+      "decision": "BLOCK",
+      "name": "broad_extract_denied_by_default",
+      "rule_id": "RTB-004"
+    },
+    {
+      "decision": "BLOCK",
+      "name": "checkpoint_before_mutation",
+      "rule_id": "RTB-005"
+    }
+  ],
+  "schema_version": "RUNAWAY_TURN_BREAKER_POLICY_v1",
+  "stage": "RUNAWAY_TURN_BREAKER_STAGE_0"
+}

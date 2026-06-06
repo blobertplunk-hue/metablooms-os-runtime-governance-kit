@@ -1,0 +1,18 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/MONITOR_FEEDBACK_GATE_RESULT_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "gate_id",
+    "stage",
+    "created_at",
+    "packet_id",
+    "verdict",
+    "violations",
+    "warnings",
+    "routing_decisions",
+    "result_hash"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,23 @@
+{
+  "expected_profile": "adaptive",
+  "expected_required_gates": [
+    "task_classification",
+    "profile_selection",
+    "adaptive_constraints",
+    "validation"
+  ],
+  "fixture_id": "profile_smoke_adaptive",
+  "forbidden_patterns": [
+    "unranked_options_at_decision_point",
+    "claim_without_artifact",
+    "chat_only_writeback"
+  ],
+  "input_task": "Select prompt supports for a learner-facing task based on observed misconceptions.",
+  "must_include_output_rules": [
+    "explicit_status",
+    "validation_evidence",
+    "next_step_when_relevant"
+  ],
+  "profile_id": "adaptive",
+  "status": "active"
+}

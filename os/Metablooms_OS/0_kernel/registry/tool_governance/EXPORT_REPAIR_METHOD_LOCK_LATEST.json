@@ -1,0 +1,57 @@
+{
+  "artifact_type": "method_reliability_lock",
+  "name": "EXPORT_REPAIR_METHOD_LOCK_v1",
+  "created_utc": "2026-04-30T12:55:00Z",
+  "scope": "MetaBlooms full project-file ZIP repair/export in ChatGPT Linux sandbox",
+  "status": "ACTIVE_REUSABLE_METHOD",
+  "problem_class": [
+    "large ZIP extraction/copy stalls in sandbox",
+    "hardlink candidate mutates trusted source archive",
+    "overlong ZIP member paths fail native filesystem extraction with File name too long",
+    "normal python startup may be slow; use python3 -S for stdlib-only ZIP streaming"
+  ],
+  "forbidden_methods": [
+    {
+      "method": "hardlink archive candidate from authority ZIP",
+      "examples": ["ln source.zip candidate.zip", "cp --link source.zip candidate.zip"],
+      "reason": "Hard links share the same inode. Updating the candidate also mutates the authority archive. This destroyed source/candidate separation in the failed attempt."
+    },
+    {
+      "method": "full filesystem extraction before portability filtering",
+      "reason": "Overlong member names can fail extraction with ENAMETOOLONG before repair can occur."
+    },
+    {
+      "method": "broad all-in-one normal-python export scripts",
+      "reason": "Normal python startup/tool hooks can be slow or flaky in this sandbox. Use python3 -S and bounded stdlib-only stages."
+    }
+  ],
+  "preferred_method": {
+    "summary": "Stream-rebuild ZIP member-by-member from verified source authorities using python3 -S zipfile, overlay boot/split members, deterministically rename overlong paths before extraction, then validate sidecar, CRC, duplicate paths, inode independence, manifest presence, and extraction smoke.",
+    "steps": [
+      "Verify SHA-256 sidecars for every input ZIP before trusting content.",
+      "Never use hard links for candidate archives; prove candidate inode is independent from all source archives.",
+      "If reflink/copy-on-write is supported, it may be used only after proving independent inode behavior; otherwise use independent byte-copy or stream-rebuild.",
+      "Prefer stream rebuild with python3 -S and zipfile when archive extraction/copy is slow or path-portability defects are expected.",
+      "Read source ZIP members directly and write them into a new candidate ZIP; do not extract the full tree first.",
+      "Apply deterministic portability renames for overlong member paths and write a rename manifest into the ZIP.",
+      "Overlay minimal boot/runtime-critical authority after full-runtime baseline, then overlay split/final authority package metadata.",
+      "Write repair receipt and handoff into the candidate ZIP before final hashing.",
+      "Run zipfile.testzip() and duplicate-member detection.",
+      "Write SHA-256 sidecar after candidate is final; verify sidecar matches the file.",
+      "Run a bounded native extraction smoke only after overlong paths have been filtered/renamed.",
+      "Promote only if all gates pass."
+    ],
+    "tools": ["sha256sum", "stat/ls -li", "python3 -S zipfile", "unzip smoke after portability filtering"],
+    "validated_output_example": {
+      "zip": "/mnt/data/METABLOOMS_OS_FULLY_INTEGRATED_PROJECT_FILE_REPAIR_20260430T124000Z.zip",
+      "sha256": "0dafcc386a79e6f0385f882f63f4fe5a1b625cdb901fbcdd4731f44071c725af",
+      "sidecar": "/mnt/data/METABLOOMS_OS_FULLY_INTEGRATED_PROJECT_FILE_REPAIR_20260430T124000Z.zip.sha256",
+      "member_count": 1779,
+      "duplicates": 0,
+      "crc_test": "PASS",
+      "native_extraction_smoke": "PASS"
+    }
+  },
+  "promotion_rule": "Future full export repair stages must use this method or prove with artifacts why a different method is safer. Any attempt to use hardlink candidates is blocked by policy.",
+  "chat_lesson": "The working method was discovered after user escalation; the lesson must be persisted as artifact policy so future turns do not repeat the blocked methods."
+}

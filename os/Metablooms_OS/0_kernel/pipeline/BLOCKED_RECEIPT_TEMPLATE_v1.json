@@ -1,0 +1,13 @@
+{
+  "version": "1.0",
+  "created_at": "<timestamp>",
+  "stage": "<STAGE_ID>",
+  "status": "blocked",
+  "verdict": "FAIL",
+  "root_cause": "<specific root cause>",
+  "dirty_paths_if_any": [],
+  "missing_required_paths_if_any": [],
+  "pointer_updated": false,
+  "latest_pass_advanced": false,
+  "next_correct_command": "<NEXT REPAIR COMMAND>"
+}

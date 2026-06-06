@@ -1,0 +1,68 @@
+{
+  "stage": "WORKFLOW_GENERALIZATION_ENGINE_STAGE1_IMPLEMENT_ROUTER_AND_LESSON_LEDGER_EVALS",
+  "timestamp_utc": "20260502T231311Z",
+  "verdict": "FAIL",
+  "root": "/mnt/data/Metablooms_OS",
+  "research_basis": {
+    "claims": [
+      "lessons must be analyzed/applied to future projects",
+      "postmortems should produce preventive actions",
+      "organizational learning transforms individual knowledge into organizational knowledge"
+    ],
+    "sources": [
+      "PMI lessons learned methodology",
+      "Google SRE postmortem culture",
+      "organizational learning literature"
+    ]
+  },
+  "implemented": {
+    "router": "0_kernel/routers/workflow_generalization_router_v1.py",
+    "ledger_schema": "0_kernel/registry/workflow_generalization_engine/WORKFLOW_LESSON_LEDGER_SCHEMA_v1.json",
+    "lesson_ledger": "runtime/ledgers/workflow_generalization/WORKFLOW_LESSON_LEDGER_v1.json",
+    "eval_harness": "tests/evals/workflow_generalization/test_workflow_generalization_router_v1.py",
+    "export_prep_manifest": "0_kernel/registry/workflow_generalization_engine/WORKFLOW_GENERALIZATION_EXPORT_PREP_MANIFEST_v1.json"
+  },
+  "compile": {
+    "returncode": 1,
+    "stderr": "  File \"/mnt/data/Metablooms_OS/0_kernel/routers/workflow_generalization_router_v1.py\", line 53\n    if args.out: Path(args.out).write_text(s+'\n                                             ^\nSyntaxError: unterminated string literal (detected at line 53)\n"
+  },
+  "eval": {
+    "returncode": 1,
+    "stdout_tail": "",
+    "stderr_tail": "  File \"/mnt/data/Metablooms_OS/tests/evals/workflow_generalization/test_workflow_generalization_router_v1.py\", line 31\n    OUT.parent.mkdir(parents=True, exist_ok=True); OUT.write_text(json.dumps(report, indent=2)+'\n                                                                                               ^\nSyntaxError: unterminated string literal (detected at line 31)\n"
+  },
+  "path_check": [
+    {
+      "path": "0_kernel/registry/workflow_generalization_engine/WORKFLOW_GENERALIZATION_ENGINE_POLICY_v1.json",
+      "exists": true,
+      "sha256": "69cd57557175584e41f97e10a87995c927efcd5ed9e044f2446fa9587e699983"
+    },
+    {
+      "path": "0_kernel/registry/workflow_generalization_engine/WORKFLOW_LESSON_LEDGER_SCHEMA_v1.json",
+      "exists": true,
+      "sha256": "2de25ab8fcd3ca119375970653ea56bf1d06a60cf0dc6364589241c5cda5eded"
+    },
+    {
+      "path": "0_kernel/routers/workflow_generalization_router_v1.py",
+      "exists": true,
+      "sha256": "a6fb816c4a625fa73aec0f6e674f1263dd6cffa137bf6f94a86e870491d85330"
+    },
+    {
+      "path": "runtime/ledgers/workflow_generalization/WORKFLOW_LESSON_LEDGER_v1.json",
+      "exists": true,
+      "sha256": "4faf8b4c3a4295f17e12c5ffa63eb1b393cc15b847a9c31484d69f125cc37707"
+    },
+    {
+      "path": "tests/evals/workflow_generalization/test_workflow_generalization_router_v1.py",
+      "exists": true,
+      "sha256": "1caccd300736d1c95c6272bacbf16b582885e327d6417b32209cbb64138ec70d"
+    }
+  ],
+  "behavior_bound": {
+    "cumulative_learning": "enabled_by_ledger",
+    "old_transcript_import": "candidate_lessons_allowed_but_must_pass_better_than_current_gate",
+    "not_better_than_current": "reject_or_defer_no_routing_change",
+    "auto_routing": "implemented_for_visual_browser_repair_and_transcript_tasks"
+  },
+  "self_healing_note": "Initial stage script invocation failed because python3 -S heredoc arguments were bound incorrectly; rerun used python3 -S - ROOT OUT TS STAGE so stdin script and args were separated."
+}

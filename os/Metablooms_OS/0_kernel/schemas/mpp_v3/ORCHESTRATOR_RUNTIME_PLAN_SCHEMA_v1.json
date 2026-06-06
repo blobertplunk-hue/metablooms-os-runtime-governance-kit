@@ -1,0 +1,32 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/ORCHESTRATOR_RUNTIME_PLAN_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "result_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "mpp.orchestrator_runtime_plan.v1"
+    }
+  },
+  "required": [
+    "schema_version",
+    "packet_id",
+    "stage",
+    "created_at",
+    "objective_id",
+    "source_learning_packet_id",
+    "stage_graph",
+    "runtime_state",
+    "transition_rules",
+    "retry_policy",
+    "exit_handlers",
+    "reconciliation_policy",
+    "controller_summary",
+    "result_hash"
+  ],
+  "title": "MPP v3 Orchestrator Runtime Plan",
+  "type": "object"
+}

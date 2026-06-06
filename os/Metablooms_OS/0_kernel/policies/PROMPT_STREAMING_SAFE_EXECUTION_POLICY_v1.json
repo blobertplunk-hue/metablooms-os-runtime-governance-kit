@@ -1,0 +1,49 @@
+{
+  "id": "PROMPT_STREAMING_SAFE_EXECUTION_POLICY_v1",
+  "status": "active",
+  "purpose": "Prevent oversized turns, streaming interruptions, write-lane mismatches, and cumulative-bundle bloat in governed prompt/OS workflows.",
+  "root_causes_addressed": [
+    "oversized_bounded_stage_scope",
+    "recursive broad/deep requests executed in a single turn",
+    "nested cumulative bundle growth",
+    "tool-lane mismatch for OS-tree writes",
+    "overlong responses that keep streaming open unnecessarily"
+  ],
+  "hard_rules": {
+    "one_bounded_stage_per_turn": true,
+    "active_only_cumulative_bundles": true,
+    "never_nest_prior_cumulative_zips": true,
+    "os_tree_writes_must_use_verified_write_capable_lane": true,
+    "fail_closed_on_write_lane_mismatch": true,
+    "broad_recursive_optimization_requests_must_be_chunked": true,
+    "stop_after_first_successful_bounded_stage": true,
+    "response_must_prioritize_status_links_next_step_over_long_narrative": true
+  },
+  "budgets": {
+    "max_new_os_artifacts_per_stage": 8,
+    "max_new_top_level_bundle_files_per_turn": 2,
+    "max_user_visible_links_in_final_response": 8,
+    "max_governance_stages_executed_per_turn": 1
+  },
+  "delivery_risk_triggers": [
+    "recursive and broad and deep until all avenues are optimized",
+    "repair everything and improve anything else",
+    "large cumulative bundle creation including prior bundles",
+    "multiple implementation stages in one turn",
+    "simultaneous OS-tree patching and heavy top-level packaging through a non-verified write lane"
+  ],
+  "required_mitigations": [
+    "convert broad goals into a bounded current stage plus explicit next legal stage",
+    "write a compact execution-status packet instead of a long prose recap when risk is high",
+    "build only an active-only cumulative checkpoint",
+    "probe write lane directly before OS-tree writes when tool context changes",
+    "defer secondary improvements to later stages once primary bounded stage passes"
+  ],
+  "final_response_shape": [
+    "clear status line",
+    "2-8 most important artifact links",
+    "one-sentence root-cause/what-changed summary",
+    "one next correct command unless multiple real options are necessary"
+  ],
+  "updated_utc": "2026-05-03T20:45:25Z"
+}

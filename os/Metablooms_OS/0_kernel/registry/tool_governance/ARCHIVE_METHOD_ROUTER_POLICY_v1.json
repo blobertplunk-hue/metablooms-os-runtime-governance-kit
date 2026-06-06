@@ -1,0 +1,44 @@
+{
+  "artifact_type": "ARCHIVE_METHOD_ROUTER_POLICY_v1",
+  "created_utc": "20260501T031045Z",
+  "evidence_bindings": [
+    "7zz installed locally and smoke-tested against current authority ZIP",
+    "libarchive helper installed and smoke-tested",
+    "uploaded decorators article mapped to structured logging, bounded retry, and fail-closed fallback patterns"
+  ],
+  "hard_rules": [
+    "No fallback can convert a failed governance gate into success.",
+    "Do not delete the existing runtime root before verifying source authority and/or alternate root.",
+    "Full extraction of large OS bundles remains forbidden-by-default unless bounded and checkpointed.",
+    "External Python packages are advisory/non-boot-critical unless later validated and internalized in a separate bounded stage."
+  ],
+  "route_order": [
+    "sha256sum -c sidecar verification",
+    "unzip -tq integrity check",
+    "unzip -Z -1 inventory",
+    "verify existing runtime root before deleting/reextracting",
+    "7zz t/l/x fallback independent route",
+    "local libarchive helper secondary fallback",
+    "python3 -S stdlib selective stream checks"
+  ],
+  "scope": "MetaBlooms archive validation/extraction route governance",
+  "status": "ACTIVE",
+  "tools": {
+    "7zz": {
+      "available": true,
+      "path": "/mnt/data/Metablooms_OS/tools/7zip/7zz",
+      "role": "official 7-Zip fallback and independent archive validator"
+    },
+    "metablooms_archive_tool": {
+      "available": true,
+      "path": "/mnt/data/Metablooms_OS/tools/metablooms_archive_tool/mb_archive_tool",
+      "role": "libarchive-backed secondary fallback"
+    },
+    "sha256sum": {
+      "role": "mandatory sidecar verification"
+    },
+    "unzip": {
+      "role": "primary built-in inventory/integrity route"
+    }
+  }
+}

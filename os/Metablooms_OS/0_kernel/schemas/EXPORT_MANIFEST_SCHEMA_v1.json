@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "EXPORT_MANIFEST_SCHEMA_v1",
+  "title": "MetaBlooms Export Manifest v1",
+  "type": "object",
+  "required": [
+    "version",
+    "created_at",
+    "export_id",
+    "export_file",
+    "sha256",
+    "size_bytes",
+    "git_head",
+    "source_root",
+    "included_required_capabilities",
+    "excluded_paths_policy",
+    "provenance",
+    "restore_contract",
+    "verdict"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": [
+        "number",
+        "string"
+      ]
+    },
+    "export_id": {
+      "type": "string"
+    },
+    "export_file": {
+      "type": "string"
+    },
+    "sha256": {
+      "type": "string"
+    },
+    "size_bytes": {
+      "type": "integer"
+    },
+    "git_head": {
+      "type": "string"
+    },
+    "source_root": {
+      "type": "string"
+    },
+    "included_required_capabilities": {
+      "type": "array"
+    },
+    "excluded_paths_policy": {
+      "type": "object"
+    },
+    "provenance": {
+      "type": "string"
+    },
+    "restore_contract": {
+      "type": "string"
+    },
+    "verdict": {
+      "type": "string"
+    }
+  }
+}

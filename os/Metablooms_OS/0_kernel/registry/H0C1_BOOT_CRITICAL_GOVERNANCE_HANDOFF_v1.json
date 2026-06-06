@@ -1,0 +1,15 @@
+{
+  "artifact_type": "H0C1_BOOT_CRITICAL_GOVERNANCE_HANDOFF_v1",
+  "blockers": [],
+  "created_utc": "2026-04-30T21:45:00Z",
+  "must_not_proceed_unless": [
+    "H0C1 final ZIP sidecar verifies",
+    "boot_runtime_executor_v1.2 PASS or PASS_WITH_WARNINGS from fresh extraction",
+    "BOOT_REQUIRED_GATES loader ALLOW",
+    "scatter validator ALLOW",
+    "behavior tests PASS"
+  ],
+  "next_stage": "H0C2_ROUTER_CARTRIDGE_RUNTIME_UNIVERSALIZATION_AFTER_BOOT_CRITICAL_GOVERNANCE",
+  "stage_id": "H0C1_BOOT_CRITICAL_GOVERNANCE_CONSOLIDATION_AND_HOST_ENFORCEMENT_BRIDGE",
+  "status": "PASS_AFTER_FINAL_EXPORT_VALIDATION_REQUIRED"
+}

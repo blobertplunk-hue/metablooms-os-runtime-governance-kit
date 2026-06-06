@@ -1,0 +1,79 @@
+#!/usr/bin/env python3
+"""MPP v3 R3 Normalize Evidence and CE Bridge. Stdlib-only validator/writer."""
+from __future__ import annotations
+import argparse, hashlib, json
+from datetime import UTC, datetime
+from pathlib import Path
+from typing import Any
+class R3ValidationError(RuntimeError): pass
+def stable_hash(payload: dict[str, Any]) -> str:
+    clone=json.loads(json.dumps(payload,sort_keys=True)); clone['result_hash']=''
+    return hashlib.sha256(json.dumps(clone,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+def _require(cond: bool, code: str) -> None:
+    if not cond: raise R3ValidationError(code)
+def validate_normalized_evidence_packet(packet: dict[str, Any]) -> dict[str, Any]:
+    required=['schema_version','packet_id','stage','created_at','source_packets','normalized_atoms','claim_index','quality_summary','result_hash']
+    for key in required: _require(key in packet, f'NORMALIZE_MISSING_{key.upper()}')
+    _require(packet['schema_version']=='mpp.normalized_evidence_packet.v1','NORMALIZE_BAD_SCHEMA_VERSION')
+    _require(packet['stage']=='NORMALIZE_EVIDENCE','NORMALIZE_BAD_STAGE')
+    _require(isinstance(packet['source_packets'],list) and packet['source_packets'],'NORMALIZE_NO_SOURCE_PACKETS')
+    _require(isinstance(packet['normalized_atoms'],list) and packet['normalized_atoms'],'NORMALIZE_NO_ATOMS')
+    atom_ids=set()
+    for i, atom in enumerate(packet['normalized_atoms']):
+        for key in ['atom_id','claim','evidence_refs','confidence','risk_flags']: _require(key in atom, f'NORMALIZE_ATOM_{i}_MISSING_{key.upper()}')
+        _require(str(atom['atom_id']).startswith('ATOM-'), f'NORMALIZE_ATOM_{i}_BAD_ID')
+        _require(len(str(atom['claim']))>=10, f'NORMALIZE_ATOM_{i}_CLAIM_TOO_SHORT')
+        _require(isinstance(atom['evidence_refs'],list) and atom['evidence_refs'], f'NORMALIZE_ATOM_{i}_NO_REFS')
+        _require(atom['confidence'] in {'low','medium','high'}, f'NORMALIZE_ATOM_{i}_BAD_CONFIDENCE')
+        atom_ids.add(atom['atom_id'])
+    qs=packet['quality_summary']
+    _require(qs.get('source_count',0)>=1,'NORMALIZE_BAD_SOURCE_COUNT')
+    _require(qs.get('atom_count',0)==len(packet['normalized_atoms']),'NORMALIZE_ATOM_COUNT_MISMATCH')
+    _require(qs.get('blocked') is False,'NORMALIZE_BLOCKED')
+    for claim_key, claim in packet['claim_index'].items():
+        _require(claim.get('atom_ids'), f'NORMALIZE_CLAIM_{claim_key}_NO_ATOMS')
+        _require(set(claim['atom_ids']).issubset(atom_ids), f'NORMALIZE_CLAIM_{claim_key}_UNKNOWN_ATOM')
+        _require(claim.get('coverage') in {'single_source','multi_source','artifact_only','mixed'}, f'NORMALIZE_CLAIM_{claim_key}_BAD_COVERAGE')
+    expected=stable_hash(packet); _require(packet['result_hash']==expected,'NORMALIZE_HASH_MISMATCH')
+    return {'status':'PASS','packet_id':packet['packet_id'],'result_hash':expected}
+def validate_ce_bridge_packet(packet: dict[str, Any], normalized_packet: dict[str, Any] | None=None) -> dict[str, Any]:
+    required=['schema_version','packet_id','stage','created_at','normalized_evidence_packet_id','ce_inputs','coverage_questions','semantic_gaps','mmd_ready','result_hash']
+    for key in required: _require(key in packet, f'CE_MISSING_{key.upper()}')
+    _require(packet['schema_version']=='mpp.ce_bridge_packet.v1','CE_BAD_SCHEMA_VERSION')
+    _require(packet['stage']=='CE','CE_BAD_STAGE')
+    _require(isinstance(packet['ce_inputs'],list) and packet['ce_inputs'],'CE_NO_INPUTS')
+    known_atoms=None
+    if normalized_packet is not None:
+        validate_normalized_evidence_packet(normalized_packet)
+        _require(packet['normalized_evidence_packet_id']==normalized_packet['packet_id'],'CE_NORMALIZED_PACKET_ID_MISMATCH')
+        known_atoms={a['atom_id'] for a in normalized_packet['normalized_atoms']}
+    for i, item in enumerate(packet['ce_inputs']):
+        for key in ['input_id','atom_ids','question','expected_ce_action']: _require(key in item, f'CE_INPUT_{i}_MISSING_{key.upper()}')
+        _require(str(item['input_id']).startswith('CEI-'), f'CE_INPUT_{i}_BAD_ID')
+        _require(item['expected_ce_action'] in {'synthesize','disambiguate','challenge','route_to_mmd'}, f'CE_INPUT_{i}_BAD_ACTION')
+        if known_atoms is not None: _require(set(item['atom_ids']).issubset(known_atoms), f'CE_INPUT_{i}_UNKNOWN_ATOM')
+    _require(packet['mmd_ready'] is True or len(packet.get('semantic_gaps',[]))>0,'CE_NOT_MMD_READY_WITHOUT_GAPS')
+    expected=stable_hash(packet); _require(packet['result_hash']==expected,'CE_HASH_MISMATCH')
+    return {'status':'PASS','packet_id':packet['packet_id'],'result_hash':expected}
+def write_normalized_packet(source_packets: list[dict[str, Any]], claims: list[str], out_path: Path) -> dict[str, Any]:
+    now=datetime.now(UTC).isoformat()
+    atoms=[{'atom_id':f'ATOM-{i+1:03d}','claim':claim,'evidence_refs':[source_packets[min(i,len(source_packets)-1)]['packet_id']],'confidence':'high' if len(source_packets)>1 else 'medium','risk_flags':[]} for i,claim in enumerate(claims)]
+    pkt={'schema_version':'mpp.normalized_evidence_packet.v1','packet_id':f"NEP-{datetime.now(UTC).strftime('%Y%m%dT%H%M%SZ')}",'stage':'NORMALIZE_EVIDENCE','created_at':now,'source_packets':source_packets,'normalized_atoms':atoms,'claim_index':{f'claim_{i+1:03d}':{'atom_ids':[atom['atom_id']],'coverage':'mixed' if len(source_packets)>1 else 'single_source'} for i,atom in enumerate(atoms)},'quality_summary':{'source_count':len(source_packets),'atom_count':len(atoms),'blocked':False,'warnings':[]},'result_hash':''}
+    pkt['result_hash']=stable_hash(pkt); validate_normalized_evidence_packet(pkt); _mb_write_json_file(out_path, pkt, operation_id='STAGE4_ATOMIC_JSON_0_kernel_mpp_v3_mpp_v3_normalize_evidence_ce_bridge_v1_py_L62', create_parent=True, allowed_roots=[str(_MBAJWPath('/mnt/data').resolve())], indent=2, sort_keys=True, ensure_ascii=True, max_bytes=20000000); return pkt
+def write_ce_bridge_packet(normalized_packet: dict[str, Any], out_path: Path) -> dict[str, Any]:
+    now=datetime.now(UTC).isoformat(); atoms=normalized_packet['normalized_atoms']
+    ce_inputs=[{'input_id':f'CEI-{i+1:03d}','atom_ids':[atom['atom_id']],'question':f"What does this evidence imply for MPP stage design: {atom['claim']}",'expected_ce_action':'synthesize'} for i,atom in enumerate(atoms)]
+    pkt={'schema_version':'mpp.ce_bridge_packet.v1','packet_id':f"CEB-{datetime.now(UTC).strftime('%Y%m%dT%H%M%SZ')}",'stage':'CE','created_at':now,'normalized_evidence_packet_id':normalized_packet['packet_id'],'ce_inputs':ce_inputs,'coverage_questions':['Which claims are multi-source verified?','Which claims require MMD escalation?'],'semantic_gaps':[],'mmd_ready':True,'result_hash':''}
+    pkt['result_hash']=stable_hash(pkt); validate_ce_bridge_packet(pkt, normalized_packet); _mb_write_json_file(out_path, pkt, operation_id='STAGE4_ATOMIC_JSON_0_kernel_mpp_v3_mpp_v3_normalize_evidence_ce_bridge_v1_py_L67', create_parent=True, allowed_roots=[str(_MBAJWPath('/mnt/data').resolve())], indent=2, sort_keys=True, ensure_ascii=True, max_bytes=20000000); return pkt
+def main()->int:
+    ap=argparse.ArgumentParser(); ap.add_argument('--validate-normalized'); ap.add_argument('--validate-ce'); ap.add_argument('--normalized-context'); args=ap.parse_args()
+    try:
+        if args.validate_normalized:
+            print(json.dumps(validate_normalized_evidence_packet(json.loads(Path(args.validate_normalized).read_text())),sort_keys=True)); return 0
+        if args.validate_ce:
+            ctx=json.loads(Path(args.normalized_context).read_text()) if args.normalized_context else None
+            print(json.dumps(validate_ce_bridge_packet(json.loads(Path(args.validate_ce).read_text()),ctx),sort_keys=True)); return 0
+        ap.error('provide --validate-normalized or --validate-ce')
+    except R3ValidationError as e:
+        print(str(e)); return 1
+if __name__=='__main__': raise SystemExit(main())

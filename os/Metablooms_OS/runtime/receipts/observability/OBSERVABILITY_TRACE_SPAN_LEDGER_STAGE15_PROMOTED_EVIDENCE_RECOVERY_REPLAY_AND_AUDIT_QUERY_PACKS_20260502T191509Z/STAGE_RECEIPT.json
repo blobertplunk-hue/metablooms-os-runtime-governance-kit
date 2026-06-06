@@ -1,0 +1,19 @@
+{
+  "artifact_type": "MB_STAGE_RECEIPT.v1",
+  "audit_query_packs": "runtime/state/operator_surface/AUDIT_QUERY_PACKS_LATEST.json",
+  "created_utc": "20260502T191509Z",
+  "final_export_sha256_sidecar": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_RECOVERY_REPLAY_AUDIT_QUERY_FINAL_AUTHORITY_LOCKED_20260502T191630Z.zip.sha256",
+  "final_export_zip": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_RECOVERY_REPLAY_AUDIT_QUERY_FINAL_AUTHORITY_LOCKED_20260502T191630Z.zip",
+  "finalized_utc": "20260502T191630Z",
+  "issues": [],
+  "new_chat_validator_decision": "ALLOW",
+  "post_receipt_query_index": "runtime/traces/observability/OBSERVABILITY_STAGE15_POST_RECEIPT_QUERY_INDEX_STDOUT_LATEST.json",
+  "post_receipt_trace_ingest": "runtime/traces/observability/OBSERVABILITY_STAGE15_POST_RECEIPT_BOOT_INGEST_STDOUT_LATEST.json",
+  "recovery_replay": "runtime/traces/observability/PROMOTED_EVIDENCE_RECOVERY_REPLAY_LATEST.json",
+  "runtime_wrapper_decision": "ALLOW",
+  "see_packet": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS_20260502T191509Z/SEE_PACKET.json",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS",
+  "validator": "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE15_RECOVERY_REPLAY_AUDIT_QUERY_VALIDATION_LATEST.json",
+  "verdict": "PASS",
+  "write_probe": ".write_probe_stage15_20260502T191509Z"
+}

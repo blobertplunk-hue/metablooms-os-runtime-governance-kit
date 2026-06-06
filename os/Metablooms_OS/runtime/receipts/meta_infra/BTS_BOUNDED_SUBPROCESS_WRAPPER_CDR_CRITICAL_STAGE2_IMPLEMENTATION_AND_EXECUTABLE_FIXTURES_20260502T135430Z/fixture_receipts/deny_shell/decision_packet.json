@@ -1,0 +1,22 @@
+{
+  "argv_redacted": [
+    "echo",
+    "unsafe"
+  ],
+  "artifact_type": "METABLOOMS_BOUNDED_COMMAND_DECISION_PACKET_v1",
+  "attempts": [],
+  "created_utc": "20260502T135431Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "failure_class": "SCHEMA_INVALID",
+  "failure_event_path": null,
+  "operation_type": "fixture_deny_shell",
+  "policy_matches": [],
+  "pre_spawn_receipt_path": null,
+  "receipt_dir": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135430Z/fixture_receipts/deny_shell",
+  "result_class": "DENY_SCHEMA_INVALID",
+  "schema_errors": [
+    "shell_requires_exception_token_and_policy_authority"
+  ],
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES",
+  "total_elapsed_ms": null
+}

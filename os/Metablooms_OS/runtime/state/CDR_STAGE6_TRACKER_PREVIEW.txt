@@ -1,0 +1,6 @@
+TRACKER PREVIEW — CDR_STAGE6_ADAPTABILITY_AND_INTERFACE_CONTRACT_HARDENING
+Status: PASS
+Installed: CDR adaptability/interface contract spec, policy, packet schema, active invariant, gate, fixtures, eval, SEE/CE packets.
+Gate: PASS — stable interface fixture allowed; missing compatibility/negative evidence fixture denied.
+Authority export: NOT PERFORMED.
+Next best stage: CDR_STAGE7_SECURITY_AND_OBSERVABILITY_DEEPENING_BATCH_1.

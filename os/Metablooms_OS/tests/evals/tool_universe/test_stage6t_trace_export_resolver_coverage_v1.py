@@ -1,0 +1,39 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+import json, sys
+from pathlib import Path
+ROOT=Path('/mnt/data/Metablooms_OS')
+
+import importlib.util
+_BOUNDED_COMPAT_SPEC = importlib.util.spec_from_file_location('bounded_subprocess_compat_v1', ROOT / '0_kernel/lib/execution/bounded_subprocess_compat_v1.py')
+bounded_subprocess = importlib.util.module_from_spec(_BOUNDED_COMPAT_SPEC)
+assert _BOUNDED_COMPAT_SPEC and _BOUNDED_COMPAT_SPEC.loader
+_BOUNDED_COMPAT_SPEC.loader.exec_module(bounded_subprocess)
+RES=ROOT/'runtime/governance/tool_universe_resolver_v1.py'
+FIX=ROOT/'tests/fixtures/tool_universe/stage6t_trace_export_resolver_task_v1.json'
+WORK=ROOT/'runtime/stage_work/STAGE6T'
+WORK.mkdir(parents=True, exist_ok=True)
+fixture=json.loads(FIX.read_text())
+out=WORK/'after_candidate_set.json'
+p=bounded_subprocess.run([sys.executable,'-S',str(RES),'resolve','--task',fixture['task'],'--stage-id','STAGE6T_SMOKE','--out',str(out)],capture_output=True,text=True)
+result={'schema':'Stage6TTraceExportResolverCoverageSmoke_v1','returncode':p.returncode,'stdout_tail':p.stdout[-1000:],'stderr_tail':p.stderr[-1000:]}
+data=json.loads(out.read_text()) if out.exists() else {}
+result.update({'classified_job_type':data.get('classified_job_type'),'top_allowed_tool_id':data.get('top_allowed_tool_id'),'allowed_count':data.get('sufficiency',{}).get('allowed_count'),'candidate_count':data.get('sufficiency',{}).get('candidate_count'),'sufficiency_verdict':data.get('sufficiency',{}).get('verdict')})
+reasons=[]
+if p.returncode != 0: reasons.append('resolver command failed')
+if data.get('classified_job_type') != fixture['expected_job_type']: reasons.append('wrong classified_job_type')
+if data.get('top_allowed_tool_id') != fixture['expected_top_allowed_tool_id']: reasons.append('wrong top_allowed_tool_id')
+if data.get('sufficiency',{}).get('verdict') != 'PASS': reasons.append('sufficiency did not pass')
+# Verify generic export still routes to zip_export after the specificity repair.
+zip_out=WORK/'zip_export_regression_candidate_set.json'
+zip_task='Create a BOOTABLE FULL OS AUTHORITY ZIP export with CRC proof and sidecar'
+zp=bounded_subprocess.run([sys.executable,'-S',str(RES),'resolve','--task',zip_task,'--stage-id','STAGE6T_ZIP_REGRESSION','--out',str(zip_out)],capture_output=True,text=True)
+zdata=json.loads(zip_out.read_text()) if zip_out.exists() else {}
+result['zip_export_regression']={'returncode':zp.returncode,'classified_job_type':zdata.get('classified_job_type'),'top_allowed_tool_id':zdata.get('top_allowed_tool_id')}
+if zdata.get('classified_job_type') != 'zip_export': reasons.append('zip export regression misclassified')
+result['reasons']=reasons
+result['verdict']='PASS' if not reasons else 'FAIL'
+res_path=WORK/'stage6t_trace_export_resolver_coverage_smoke_result.json'
+_mb_write_json_file(res_path, result, operation_id='STAGE4_ATOMIC_JSON_tests_evals_tool_universe_test_stage6t_trace_export_resolver_coverage__L37', create_parent=True, allowed_roots=[str(_MBAJWPath('/mnt/data').resolve())], indent=2, sort_keys=True, ensure_ascii=True, max_bytes=20000000)
+print(json.dumps(result,indent=2,sort_keys=True))
+sys.exit(0 if result['verdict']=='PASS' else 1)

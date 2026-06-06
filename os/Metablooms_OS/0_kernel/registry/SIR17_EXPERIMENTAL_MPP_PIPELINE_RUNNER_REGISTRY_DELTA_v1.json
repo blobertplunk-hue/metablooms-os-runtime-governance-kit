@@ -1,0 +1,118 @@
+{
+  "version": "1.0",
+  "created_at": 1777126497.095184,
+  "stage": "SIR17_ACTIVATE_MPP_PIPELINE_RUNNER_REPAIRED_CANDIDATE",
+  "status": "experimental_inactive_post_copy",
+  "activation_root": "/mnt/data/SIR10_activation_package",
+  "activated_file": {
+    "file": "mpp_pipeline_runner.py",
+    "family": "pipeline_execution",
+    "destination": "/mnt/data/SIR10_activation_package/2_engines/runtime/mpp_pipeline_runner.py",
+    "sha256": "cb08ee481f8c5c8581e27bdaae97a8b69c036eb4b25946d765cccc5830c42359",
+    "size_bytes": 5109,
+    "source_staged_path": "/mnt/data/SIR6_staging/integrated_v3_runtime_import_repaired_1777118132/mpp_pipeline_runner.py",
+    "source_sha256": "cb08ee481f8c5c8581e27bdaae97a8b69c036eb4b25946d765cccc5830c42359"
+  },
+  "policy": {
+    "single_file_activation": true,
+    "bulk_activation": false,
+    "runtime_family_active_status": "experimental_inactive_until_full_package_verification",
+    "new_baseline_export_claimed": false,
+    "entrypoints_not_executed": true,
+    "guard_smoke_only": true,
+    "governed_write_text_dry_run_default": true
+  },
+  "verification": {
+    "source_guard_gates": {
+      "source_ast_parse_passed": true,
+      "source_budget_guard_marker_present": true,
+      "source_max_steps_present": true,
+      "source_timeout_present": true,
+      "source_dry_run_present": true,
+      "source_default_dry_run_present": true,
+      "source_governed_write_text_present": true,
+      "source_enforce_pipeline_budget_present": true,
+      "source_pipeline_budget_error_present": true
+    },
+    "destination_guard_gates": {
+      "destination_ast_parse_passed": true,
+      "destination_budget_guard_marker_present": true,
+      "destination_max_steps_present": true,
+      "destination_timeout_present": true,
+      "destination_dry_run_present": true,
+      "destination_default_dry_run_present": true,
+      "destination_governed_write_text_present": true,
+      "destination_enforce_pipeline_budget_present": true,
+      "destination_pipeline_budget_error_present": true
+    },
+    "scope_gates": {
+      "target_exactly_one_file": true,
+      "target_was_sir13_pass": true,
+      "patch_sha_matches": true,
+      "destination_sha_matches_source": true,
+      "compile_passed": true,
+      "import_passed": true,
+      "guard_smoke_passed": true,
+      "runtime_files_expected": true,
+      "baseline_export_not_performed": true,
+      "activation_package_only": true
+    },
+    "compile": {
+      "cmd": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "py_compile",
+        "/mnt/data/SIR10_activation_package/2_engines/runtime/mpp_pipeline_runner.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document."
+    },
+    "import": {
+      "passed": true,
+      "exported_symbol_count": 19,
+      "exported_symbols_preview": [
+        "Any",
+        "DEFAULT_DRY_RUN",
+        "DEFAULT_MAX_STEPS",
+        "DEFAULT_PIPELINE_TIMEOUT_SECONDS",
+        "ENGINES_DIR",
+        "Path",
+        "PipelineBudgetGuardError",
+        "STAGES_DIR",
+        "annotations",
+        "build_registry",
+        "enforce_pipeline_budget",
+        "governed_write_text",
+        "importlib",
+        "json",
+        "load_module",
+        "make_stub",
+        "run_pipeline",
+        "sys",
+        "time"
+      ]
+    },
+    "guard_smoke": {
+      "passed": true,
+      "details": {
+        "enforce_pipeline_budget_ok": true,
+        "raises_on_limit": "PipelineBudgetGuardError",
+        "governed_write_text_dry_run": {
+          "written": false,
+          "dry_run": true,
+          "path": "/mnt/data/SIR10_activation_package/SHOULD_NOT_WRITE.txt",
+          "bytes": 3
+        },
+        "dry_run_file_exists": false
+      }
+    }
+  },
+  "backup": {
+    "backup_created": false,
+    "reason": "destination did not exist",
+    "backup_path": null
+  },
+  "verdict": "PASS",
+  "next_correct_command": "EXECUTE SIR18 \u2014 VERIFY FULL CONTROL SAFETY RUNTIME PACKAGE"
+}

@@ -1,0 +1,23 @@
+{
+  "candidate_methods": [
+    "python3_S_stdlib"
+  ],
+  "capability_need": "python_execution",
+  "decision": "ALLOW_PRIMARY",
+  "evidence_paths": [],
+  "limitation_label": null,
+  "probe_records": [
+    {
+      "method_id": "python3_S_stdlib",
+      "probe": {
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "ok\n"
+      },
+      "rank": 1
+    }
+  ],
+  "selected_method": "python3_S_stdlib",
+  "task_id": "wc6_fixture",
+  "timestamp_utc": "2026-05-03T00:53:23Z"
+}

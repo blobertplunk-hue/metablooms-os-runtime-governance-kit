@@ -1,0 +1,131 @@
+{
+  "authority_export_performed": false,
+  "cdr_eval_summary": {
+    "passed": 10,
+    "results": [
+      {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "PASS\n",
+        "test": "tests/evals/cdr/test_cdr_adaptability_interface_contract_gate_v1.py"
+      },
+      {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "test_cdr_code_acceptance_gate_v1.py: PASS\n",
+        "test": "tests/evals/cdr/test_cdr_code_acceptance_gate_v1.py"
+      },
+      {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "{\n  \"invalid\": {\n    \"decision\": \"DENY\",\n    \"denied_findings\": [\n      \"fixture:dynamic_exec\"\n    ],\n    \"reasons\": [\n      \"zero_tolerance_finding:dynamic_exec\"\n    ],\n    \"risk_tier\": \"CRITICAL\",\n    \"schema\": \"CDRLintSecurityScannerGateResult_v1\",\n    \"summary\": {\n      \"finding_count\": 1,\n      \"max_complexity\": 0,\n      \"todo_count\": 0\n    }\n  },\n  \"valid\": {\n    \"decision\": \"ALLOW\",\n    \"denied_findings\": [],\n    \"reasons\": [],\n    \"risk_tier\": \"HIGH\",\n    \"schema\": \"CDRLintSecurityScannerGateResult_v1\",\n    \"summary\": {\n      \"finding_count\": 0,\n      \"max_complexity\": 0,\n      \"todo_count\": 0\n    }\n  },\n  \"verdict\": \"PASS\"\n}\n",
+        "test": "tests/evals/cdr/test_cdr_lint_security_scanner_gate_v1.py"
+      },
+      {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "PASS CDR real scanner adapter gate\n",
+        "test": "tests/evals/cdr/test_cdr_real_scanner_adapter_gate_v1.py"
+      },
+      {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "test_cdr_risk_tiered_test_matrix_gate_v1.py: PASS\n",
+        "test": "tests/evals/cdr/test_cdr_risk_tiered_test_matrix_gate_v1.py"
+      },
+      {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "test_cdr_security_observability_gate_v1.py: PASS\n",
+        "test": "tests/evals/cdr/test_cdr_security_observability_gate_v1.py"
+      },
+      {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "test_cdr_source_level_self_audit_gate_v1.py: PASS\n",
+        "test": "tests/evals/cdr/test_cdr_source_level_self_audit_gate_v1.py"
+      },
+      {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "test_cdr_source_style_debuggability_gate_v1.py: PASS\n",
+        "test": "tests/evals/cdr/test_cdr_source_style_debuggability_gate_v1.py"
+      },
+      {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "test_cdr_static_analysis_complexity_gate_v1.py: PASS\n",
+        "test": "tests/evals/cdr/test_cdr_static_analysis_complexity_gate_v1.py"
+      },
+      {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "{\n  \"verdict\": \"PASS\",\n  \"valid\": \"ALLOW\",\n  \"invalid\": \"DENY\"\n}\n",
+        "test": "tests/evals/cdr/test_cdr_linchpin_recursive_audit_gate_v1.py"
+      }
+    ],
+    "total": 10
+  },
+  "external_evidence_basis": [
+    "Google code review guidance",
+    "NIST SSDF",
+    "OWASP secure coding checklist"
+  ],
+  "installed_paths": [
+    "0_kernel/registry/mpp_v3/MPP_CDR_BINDING_CODE_WORK_REQUIRES_CDR_SPEC_v1.json",
+    "0_kernel/registry/mpp_v3/MPP_CODE_WORK_REQUIRES_CDR_POLICY_v1.json",
+    "0_kernel/schemas/mpp_v3/MPP_CDR_BINDING_PACKET_SCHEMA_v1.json",
+    "governance/invariants/MPP_CODE_WORK_REQUIRES_CDR_v1.json",
+    "tests/fixtures/mpp_v3/valid_mpp_code_work_with_cdr_pass_v1.json",
+    "tests/fixtures/mpp_v3/invalid_mpp_code_work_missing_cdr_v1.json",
+    "tests/fixtures/mpp_v3/valid_mpp_non_code_no_cdr_required_v1.json",
+    "research/SEE/MPP_CDR_BINDING_STAGE14_CODE_WORK_REQUIRES_CDR_IN_MPP_SEE_v1.json",
+    "research/CE/MPP_CDR_BINDING_STAGE14_CODE_WORK_REQUIRES_CDR_IN_MPP_CE_v1.json",
+    "runtime/governance/mpp_cdr_binding_gate_v1.py",
+    "tests/evals/mpp_v3/test_mpp_cdr_binding_gate_v1.py",
+    "governance/ACTIVE_INVARIANTS_INDEX.json",
+    "runtime/state/MPP_CDR_BINDING_STAGE14_TRACKER_PREVIEW.txt"
+  ],
+  "next_stage": "MPP_CDR_BINDING_STAGE15_RETROFIT_STAGE_CONTRACTS_TO_DECLARE_CODE_BEARING_FLAG_OR_FULL_AUTHORITY_EXPORT_AFTER_STAGE14",
+  "post_portable_boot_verify": {
+    "cmd": [
+      "python3",
+      "-S",
+      "/mnt/data/Metablooms_OS/portable_full_os_boot_verify.py",
+      "/mnt/data/Metablooms_OS"
+    ],
+    "returncode": 0,
+    "stderr": "/mnt/data/Metablooms_OS/portable_full_os_boot_verify.py:5: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n  def now(): return datetime.datetime.utcnow().replace(microsecond=0).isoformat()+'Z'\n",
+    "stdout": "{\n  \"stage\": \"PORTABLE_FULL_OS_BOOT_VERIFY_REPAIRED_H0B2\",\n  \"timestamp_utc\": \"2026-05-02T12:51:02Z\",\n  \"status\": \"PASS\",\n  \"root\": \"/mnt/data/Metablooms_OS\",\n  \"errors\": [],\n  \"sandbox_policy\": \"ALLOW\",\n  \"chat_kernel\": \"ALLOW\"\n}\n"
+  },
+  "post_runtime_starter_smoke": {
+    "cmd": [
+      "python3",
+      "-S",
+      "/mnt/data/Metablooms_OS/runtime/governance/runtime_starter_smoke_v1.py",
+      "--root",
+      "/mnt/data/Metablooms_OS",
+      "--json"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\n  \"decision\": \"ALLOW\",\n  \"invalid_json\": [],\n  \"missing\": [],\n  \"mode\": \"root\",\n  \"path\": \"/mnt/data/Metablooms_OS\",\n  \"read_errors\": []\n}\n"
+  },
+  "schema": "StageReceipt_v1",
+  "source_authority": "METABLOOMS_OS_CDR_STAGE13_FULL_AUTHORITY_AFTER_CDR_STAGE12_BOOTABLE_FULL_OS_AUTHORITY_20260502T125500Z.zip",
+  "stage": "MPP_CDR_BINDING_STAGE14_CODE_WORK_REQUIRES_CDR_IN_MPP",
+  "test_results": [
+    {
+      "cmd": [
+        "python3",
+        "-S",
+        "/mnt/data/Metablooms_OS/tests/evals/mpp_v3/test_mpp_cdr_binding_gate_v1.py"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "MPP_CDR_BINDING_GATE_TEST_PASS\n"
+    }
+  ],
+  "timestamp_utc": "2026-05-02T12:51:02Z",
+  "verdict": "PASS"
+}

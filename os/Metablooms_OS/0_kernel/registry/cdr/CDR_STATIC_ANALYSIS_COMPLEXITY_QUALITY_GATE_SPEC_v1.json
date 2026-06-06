@@ -1,0 +1,70 @@
+{
+  "default_thresholds": {
+    "CRITICAL": {
+      "max_broad_exception_handlers": 0,
+      "max_cognitive_complexity_proxy": 10,
+      "max_cyclomatic_complexity": 8,
+      "max_function_lines": 35,
+      "max_nesting_depth": 3,
+      "max_todo_count": 0
+    },
+    "HIGH": {
+      "max_broad_exception_handlers": 1,
+      "max_cognitive_complexity_proxy": 12,
+      "max_cyclomatic_complexity": 10,
+      "max_function_lines": 45,
+      "max_nesting_depth": 3,
+      "max_todo_count": 1
+    },
+    "LOW": {
+      "max_broad_exception_handlers": 3,
+      "max_cognitive_complexity_proxy": 20,
+      "max_cyclomatic_complexity": 15,
+      "max_function_lines": 80,
+      "max_nesting_depth": 5,
+      "max_todo_count": 5
+    },
+    "MEDIUM": {
+      "max_broad_exception_handlers": 2,
+      "max_cognitive_complexity_proxy": 16,
+      "max_cyclomatic_complexity": 12,
+      "max_function_lines": 60,
+      "max_nesting_depth": 4,
+      "max_todo_count": 3
+    }
+  },
+  "evidence_required": [
+    "static_analysis_report",
+    "complexity_metrics",
+    "security_grep_report",
+    "test_binding",
+    "negative_fixture",
+    "recursive_improvement_decision"
+  ],
+  "mandatory_zero_tolerance_violations": [
+    "syntax_error",
+    "dynamic_exec_detected",
+    "secret_literal_detected",
+    "unsafe_path_pattern_detected"
+  ],
+  "purpose": "Make static analysis and complexity ceilings mandatory evidence for Coding Done Right acceptance.",
+  "quality_dimensions": [
+    "syntax_parseability",
+    "function_size",
+    "cyclomatic_complexity",
+    "cognitive_complexity_proxy",
+    "nesting_depth",
+    "naming_clarity",
+    "exception_specificity",
+    "dynamic_execution_safety",
+    "file_path_safety",
+    "secret_literal_scan",
+    "todo_debt",
+    "test_binding"
+  ],
+  "schema": "CDRStaticAnalysisComplexityQualityGatesSpec_v1",
+  "stage": "CDR_STAGE8_STATIC_ANALYSIS_AND_COMPLEXITY_QUALITY_GATES",
+  "status": "active",
+  "timestamp_utc": "2026-05-02T12:12:32Z",
+  "waiver_rule": "Only non-zero-tolerance complexity/style violations may be waived, and only with explicit risk acceptance, bounded repair handoff, and CDR recursive-improvement evidence."
+}

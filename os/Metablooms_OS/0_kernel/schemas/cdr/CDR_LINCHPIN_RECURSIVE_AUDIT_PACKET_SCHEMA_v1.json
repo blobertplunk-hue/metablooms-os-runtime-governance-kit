@@ -1,0 +1,15 @@
+{
+  "notes": "Gate is implemented in runtime/governance/cdr_linchpin_recursive_audit_gate_v1.py.",
+  "required_fields": [
+    "stage",
+    "audit_cycles",
+    "gap_ledger",
+    "high_value_stop_rule",
+    "source_inventory",
+    "eval_summary",
+    "world_class_basis",
+    "next_stage"
+  ],
+  "schema": "JsonSchemaDraftLike_v1",
+  "title": "CDR_LINCHPIN_RECURSIVE_AUDIT_PACKET_SCHEMA_v1"
+}

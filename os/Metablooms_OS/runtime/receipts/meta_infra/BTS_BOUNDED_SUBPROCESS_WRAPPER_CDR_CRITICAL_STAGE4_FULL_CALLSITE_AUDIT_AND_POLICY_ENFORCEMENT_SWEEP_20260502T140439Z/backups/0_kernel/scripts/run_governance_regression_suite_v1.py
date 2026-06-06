@@ -1,0 +1,130 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+import json, os, subprocess, sys, time, hashlib, datetime
+from pathlib import Path
+
+if 'site' in sys.modules or getattr(sys.flags, 'no_site', 0) != 1:
+    print(json.dumps({'result':'fail','reason':'runner must be launched with python3 -S'}))
+    raise SystemExit(2)
+
+ROOT = Path(os.environ.get('METABLOOMS_ROOT','/mnt/data/Metablooms_OS')).resolve()
+RUN = ROOT/'runtime/governance/python3_S_lane_exec_v1.sh'
+REPORT_DIR = ROOT/'runtime/evals/governance_regression_suite_v1/reports'
+FIXTURE_DIR = ROOT/'runtime/evals/governance_regression_suite_v1/fixtures'
+REPORT_DIR.mkdir(parents=True, exist_ok=True)
+FIXTURE_DIR.mkdir(parents=True, exist_ok=True)
+
+def sha(p: Path)->str:
+    h=hashlib.sha256()
+    with p.open('rb') as f:
+        for c in iter(lambda:f.read(1024*1024), b''):
+            h.update(c)
+    return h.hexdigest()
+
+def write_json(path: Path, obj):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(obj, indent=2, sort_keys=True)+'\n', encoding='utf-8')
+
+def make_bad_session_fixture():
+    src=ROOT/'runtime/governance/state_exports/SESSION_STATE_EXPORT_LATEST_v1.json'
+    data=json.loads(src.read_text())
+    data['authoritative_root']='/mnt/data/Metablooms_OS_refined'
+    data['transfer_note']='bad fixture includes Claude vendor-specific field to trigger denial'
+    out=FIXTURE_DIR/'session_state_export.invalid_vendor_root.json'
+    write_json(out,data)
+    return out
+
+def run_case(case):
+    cmd=[str(x) for x in case['cmd']]
+    start=time.time()
+    try:
+        p=subprocess.run(cmd, cwd=str(ROOT), text=True, capture_output=True, timeout=case.get('timeout_s', 12))
+        timed_out=False
+        rc=p.returncode
+        stdout=p.stdout
+        stderr=p.stderr
+    except subprocess.TimeoutExpired as e:
+        timed_out=True
+        rc=124
+        stdout=e.stdout or ''
+        stderr=e.stderr or ''
+    elapsed_ms=round((time.time()-start)*1000,2)
+    expected=case.get('expect','pass')
+    if expected=='pass': ok=(rc==0 and not timed_out)
+    elif expected=='fail': ok=(rc!=0 and not timed_out)
+    else: ok=False
+    return {
+        'case_id':case['case_id'],
+        'gate_id':case.get('gate_id'),
+        'expect':expected,
+        'ok':ok,
+        'returncode':rc,
+        'timed_out':timed_out,
+        'elapsed_ms':elapsed_ms,
+        'cmd':cmd,
+        'stdout_excerpt':stdout[:4000],
+        'stderr_excerpt':stderr[:4000]
+    }
+
+def main():
+    ts=datetime.datetime.now(datetime.timezone.utc).replace(microsecond=0).isoformat().replace('+00:00','Z')
+    stamp=datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ')
+    bad_session=make_bad_session_fixture()
+    contract=ROOT/'runtime/governance/contracts/unified_runtime_compatibility_contract_v1.json'
+    stale=FIXTURE_DIR/'unified_runtime_compatibility_contract_v1.stale.json'
+    latest_export=ROOT/'runtime/governance/state_exports/SESSION_STATE_EXPORT_LATEST_v1.json'
+    manifest=ROOT/'runtime/governance/receipts/canonical/DECISION_RECEIPT_CANONICALIZATION_MANIFEST_v1.json'
+    cases=[
+      {'case_id':'R12_GATE_REGISTRY_LIVE_PASS','gate_id':'GATE_REGISTRY_INTEGRITY','expect':'pass','cmd':[RUN,ROOT/'0_kernel/scripts/assert_gate_registry_integrity_v1.py']},
+      {'case_id':'R12_GATE_REGISTRY_BAD_MISSING_ENTRYPOINT_DENY','gate_id':'GATE_REGISTRY_INTEGRITY','expect':'fail','cmd':[RUN,ROOT/'0_kernel/scripts/assert_gate_registry_integrity_v1.py',FIXTURE_DIR/'gate_registry_v1.enabled_missing_entrypoint.json']},
+      {'case_id':'R12_UNIFIED_RUNTIME_CONTRACT_LIVE_PASS','gate_id':'UNIFIED_RUNTIME_COMPATIBILITY_VALIDATION','expect':'pass','cmd':[RUN,ROOT/'0_kernel/scripts/validate_unified_runtime_compatibility_contract_v1.py',contract,'--json']},
+      {'case_id':'R12_UNIFIED_RUNTIME_CONTRACT_STALE_DENY','gate_id':'UNIFIED_RUNTIME_COMPATIBILITY_VALIDATION','expect':'fail','cmd':[RUN,ROOT/'0_kernel/scripts/validate_unified_runtime_compatibility_contract_v1.py',stale,'--json']},
+      {'case_id':'R12_SESSION_STATE_LATEST_PASS','gate_id':'SESSION_STATE_EXPORT_VALIDATION','expect':'pass','cmd':[RUN,ROOT/'0_kernel/scripts/validate_session_state_export_v1.py',latest_export]},
+      {'case_id':'R12_SESSION_STATE_VENDOR_ROOT_DENY','gate_id':'SESSION_STATE_EXPORT_VALIDATION','expect':'fail','cmd':[RUN,ROOT/'0_kernel/scripts/validate_session_state_export_v1.py',bad_session]},
+      {'case_id':'R12_P0A_VALID_ALLOW','gate_id':'P0A_EXTERNAL_REUSE_SCAN','expect':'pass','cmd':[RUN,ROOT/'0_kernel/scripts/p0a_external_reuse_scan_precheck_v1.py','--request',FIXTURE_DIR/'R6_external_reuse_scan_request_valid.json','--receipt-dir',REPORT_DIR,'--json-output']},
+      {'case_id':'R12_P0A_MISSING_EVIDENCE_DENY','gate_id':'P0A_EXTERNAL_REUSE_SCAN','expect':'fail','cmd':[RUN,ROOT/'0_kernel/scripts/p0a_external_reuse_scan_precheck_v1.py','--request',FIXTURE_DIR/'R6_external_reuse_scan_request_missing_evidence.json','--receipt-dir',REPORT_DIR,'--json-output']},
+      {'case_id':'R12_P0A_STALE_EVIDENCE_DENY','gate_id':'P0A_EXTERNAL_REUSE_SCAN','expect':'fail','cmd':[RUN,ROOT/'0_kernel/scripts/p0a_external_reuse_scan_precheck_v1.py','--request',FIXTURE_DIR/'R6_external_reuse_scan_request_stale.json','--receipt-dir',REPORT_DIR,'--json-output']},
+      {'case_id':'R12_USEFULNESS_VALID_ALLOW','gate_id':'USEFULNESS_SURFACE_VALIDATION','expect':'pass','cmd':[RUN,ROOT/'0_kernel/scripts/usefulness_surface_validator_v1.py','--declaration',FIXTURE_DIR/'usefulness_surface.valid.json','--receipt-dir',REPORT_DIR]},
+      {'case_id':'R12_USEFULNESS_TOO_FEW_DENY','gate_id':'USEFULNESS_SURFACE_VALIDATION','expect':'fail','cmd':[RUN,ROOT/'0_kernel/scripts/usefulness_surface_validator_v1.py','--declaration',FIXTURE_DIR/'usefulness_surface.too_few.json','--receipt-dir',REPORT_DIR]},
+      {'case_id':'R12_USEFULNESS_MISSING_REQUIRED_DENY','gate_id':'USEFULNESS_SURFACE_VALIDATION','expect':'fail','cmd':[RUN,ROOT/'0_kernel/scripts/usefulness_surface_validator_v1.py','--declaration',FIXTURE_DIR/'usefulness_surface.missing_required.json','--receipt-dir',REPORT_DIR]},
+      {'case_id':'R12_PYTHON_HEALTH_LIVE_ROUTE_CONTROLS','gate_id':'P0PY_PYTHON_HEALTH','expect':'pass','cmd':[RUN,ROOT/'0_kernel/scripts/p0py_python_health_governance_v1.py','--mode','live','--report',REPORT_DIR/f'R12_python_health_live_{stamp}.json']},
+      {'case_id':'R12_TELEMETRY_CARTRIDGE_PASS','gate_id':'TELEMETRY_CARTRIDGE_VALIDATION','expect':'pass','cmd':[RUN,ROOT/'0_kernel/scripts/validate_telemetry_cartridge_v1.py']},
+      {'case_id':'R12_DECISION_RECEIPT_MANIFEST_PASS','gate_id':'DECISION_RECEIPT_ENVELOPE_VALIDATION','expect':'pass','cmd':[RUN,ROOT/'0_kernel/scripts/validate_decision_receipt_envelope_v1.py',manifest]},
+      {'case_id':'R12_DECISION_RECEIPT_INVALID_DENY','gate_id':'DECISION_RECEIPT_ENVELOPE_VALIDATION','expect':'fail','cmd':[RUN,ROOT/'0_kernel/scripts/validate_decision_receipt_envelope_v1.py',FIXTURE_DIR/'decision_receipt_envelope_v1.invalid_missing_decision_id.json']},
+      {'case_id':'R12_LEGACY_QUARANTINE_PASS','gate_id':'LEGACY_QUARANTINE_VALIDATION','expect':'pass','cmd':[RUN,ROOT/'0_kernel/scripts/validate_legacy_quarantine_v1.py']},
+    ]
+    results=[run_case(c) for c in cases]
+    failed=[r for r in results if not r['ok']]
+    report={
+      'report_type':'R12_REGRESSION_SUITE_EXPANSION_REPORT',
+      'created_utc':ts,
+      'runner':'0_kernel/scripts/run_governance_regression_suite_v1.py',
+      'runner_no_site': bool(getattr(sys.flags,'no_site',0)),
+      'suite_policy_basis':[ 
+        'Every promoted gate must have at least one pass and one denial/failure case where applicable.',
+        'Gate registry integrity must be checked after registry-affecting stages.',
+        'Normal python is forbidden for regression runner and validators.'
+      ],
+      'external_design_basis':[
+        {'source':'OpenTelemetry events', 'claim':'event conventions require stable event names and structured attributes'},
+        {'source':'OpenTelemetry semantic convention groups', 'claim':'convention groups support stability/deprecation metadata and should not silently remove stable conventions'}
+      ],
+      'case_count':len(results),
+      'pass_count':sum(1 for r in results if r['ok']),
+      'fail_count':len(failed),
+      'verdict':'PASS' if not failed else 'FAIL',
+      'failed_cases':failed,
+      'cases':results,
+    }
+    out=REPORT_DIR/f'R12_governance_regression_suite_{stamp}.json'
+    write_json(out,report)
+    tsv=REPORT_DIR/f'R12_governance_regression_suite_{stamp}.tsv'
+    with tsv.open('w',encoding='utf-8') as f:
+        f.write('case_id\tgate_id\texpect\tok\treturncode\telapsed_ms\n')
+        for r in results:
+            f.write(f"{r['case_id']}\t{r.get('gate_id') or ''}\t{r['expect']}\t{r['ok']}\t{r['returncode']}\t{r['elapsed_ms']}\n")
+    print(json.dumps({'verdict':report['verdict'],'report':str(out),'tsv':str(tsv),'case_count':len(results),'failed_count':len(failed)}, indent=2))
+    return 0 if not failed else 1
+
+if __name__=='__main__':
+    raise SystemExit(main())

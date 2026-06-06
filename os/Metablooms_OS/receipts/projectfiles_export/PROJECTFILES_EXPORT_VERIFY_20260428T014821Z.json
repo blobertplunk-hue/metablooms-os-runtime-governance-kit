@@ -1,0 +1,12 @@
+{
+  "id":"PROJECTFILES_EXPORT_VERIFY",
+  "timestamp_utc":"20260428T014821Z",
+  "status":"PASS",
+  "bundle":"/mnt/data/METABLOOMS_PROJECT_FILES_UPGRADED_CLEAN_v3_3_FULL_PRESERVED.zip",
+  "bundle_sha256":"504bc48e7316f72246294c5f82b1789489c90957b08c5c4e7c57c6de93227947",
+  "bundle_size_bytes":15367790,
+  "bundle_zip_test":"PASS",
+  "included_root":"METABLOOMS_PROJECT_FILES_UPGRADED",
+  "baseline_sha256":"81f74208373eecc059ba5d2175dd66eab8af84d7afd770e8a6e186eb8e742821",
+  "overlay_sha256":"ffab0ff68e43323acd4ff96c79fe1f1f71f9b0297e0e6ad62ffd3d685529dc45"
+}

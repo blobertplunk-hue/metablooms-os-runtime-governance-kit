@@ -1,0 +1,13 @@
+{
+  "artifact_type": "CE_SYNTHESIS",
+  "stage_id": "FL17-MERGE-5_FULL_OS_EXPORT_AND_RECOVERY_VALIDATION",
+  "created_utc": "20260430T022600Z",
+  "constraints": [
+    "Always-on MetaBlooms governance is mandatory baseline governance; cartridge governance is additive.",
+    "Full OS export must include tracker-working baseline, quarantined FL17 progression, tracker lifecycle repair, and FL16/FL17 semantic authority.",
+    "Export PASS must be separated from promotion success.",
+    "ZIP validation must reject unsafe paths and pass integrity test.",
+    "Tracker state must be finalized after receipt/handoff and render compactly without box or pipe layout."
+  ],
+  "decision": "Package full OS export and do not declare baseline promotion in this stage."
+}

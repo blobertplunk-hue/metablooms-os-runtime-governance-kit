@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "artifact_id": "WORKFLOW_GENERALIZATION_EXPORT_PREP_MANIFEST_v1",
+  "stage": "WORKFLOW_GENERALIZATION_ENGINE_STAGE1_IMPLEMENT_ROUTER_AND_LESSON_LEDGER_EVALS",
+  "required_paths": [
+    "0_kernel/registry/workflow_generalization_engine/WORKFLOW_GENERALIZATION_ENGINE_POLICY_v1.json",
+    "0_kernel/registry/workflow_generalization_engine/WORKFLOW_LESSON_LEDGER_SCHEMA_v1.json",
+    "0_kernel/routers/workflow_generalization_router_v1.py",
+    "runtime/ledgers/workflow_generalization/WORKFLOW_LESSON_LEDGER_v1.json",
+    "tests/evals/workflow_generalization/test_workflow_generalization_router_v1.py"
+  ],
+  "future_export_requirement": "Full exports that claim workflow-generalization support must contain the router, ledger schema, cumulative lesson ledger, fixtures, eval report, receipt, and handoff.",
+  "transcript_import_policy": "Transcript-derived lessons enter as candidates and must pass better-than-current comparison before changing routing/gates."
+}

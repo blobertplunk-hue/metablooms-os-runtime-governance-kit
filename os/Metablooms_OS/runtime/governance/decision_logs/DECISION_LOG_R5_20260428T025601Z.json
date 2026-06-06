@@ -1,0 +1,53 @@
+{
+  "decision_log_id": "DECISION_LOG_R5_20260428T025601Z",
+  "stage": "R5_GATE_REGISTRY_AND_WIRING_REPLACEMENT",
+  "created_utc": "2026-04-28T02:56:01Z",
+  "decision_id": "r5-gate-registry-7b57ab768a3c47a9",
+  "decision": "pass",
+  "rationale": [
+    "COOL_6 plan converted from narrative wiring plan to executable registry.",
+    "Only gates with existing entrypoints are enabled.",
+    "P0A and P0PY remain deferred to their dedicated later stages rather than enabled prematurely.",
+    "Legacy memory sync validation is retired in favor of session-state export validation."
+  ],
+  "evidence": [
+    {
+      "source": "Open Policy Agent decision logs",
+      "url": "https://www.openpolicyagent.org/docs/management-decision-logs",
+      "claim": "Decision logs should include enough information for audit/offline debugging and API decisions include decision_id when logging is enabled."
+    },
+    {
+      "source": "OpenTelemetry event semantics",
+      "url": "https://opentelemetry.io/docs/specs/semconv/general/events/",
+      "claim": "Events require stable names and structured attributes; event names uniquely identify event structure."
+    },
+    {
+      "source": "JSON Schema annotations",
+      "url": "https://json-schema.org/understanding-json-schema/reference/annotations",
+      "claim": "title, description, and default are annotations, not enforcement."
+    }
+  ],
+  "registry_path": "runtime/governance/registries/gate_registry_v1.json",
+  "enabled_gates": [
+    "TOOL_ROUTE_GUARD",
+    "RESEARCH_SEE_CE_GATE",
+    "RUNTIME_WRITE_ROLLBACK_GATE",
+    "IC_INTERRUPT_CHECKER",
+    "RUNTIME_PULSE_GATE",
+    "TRACKER_RELEASE_GATE",
+    "FULL_BUNDLE_EXPORT_GATE",
+    "CARTRIDGE_PROMOTION_GATE",
+    "UNIFIED_RUNTIME_COMPATIBILITY_VALIDATION",
+    "SESSION_STATE_EXPORT_VALIDATION",
+    "SESSION_STATE_EXPORT_WRITE",
+    "PYTHON_RESILIENT_EXECUTION_GATE",
+    "GATE_REGISTRY_INTEGRITY"
+  ],
+  "deferred_gates": [
+    "P0A_EXTERNAL_REUSE_SCAN",
+    "P0PY_PYTHON_HEALTH"
+  ],
+  "retired_gates": [
+    "MEMORY_SYNC_VALIDATION"
+  ]
+}

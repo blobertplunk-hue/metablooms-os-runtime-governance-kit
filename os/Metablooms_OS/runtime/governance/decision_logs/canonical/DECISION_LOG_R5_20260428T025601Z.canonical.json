@@ -1,0 +1,57 @@
+{
+  "created_utc": "2026-04-28T02:56:01Z",
+  "decision_id": "r5-gate-registry-7b57ab768a3c47a9",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [
+    {
+      "claim": "Decision logs should include enough information for audit/offline debugging and API decisions include decision_id when logging is enabled.",
+      "source": "Open Policy Agent decision logs",
+      "url": "https://www.openpolicyagent.org/docs/management-decision-logs"
+    },
+    {
+      "claim": "Events require stable names and structured attributes; event names uniquely identify event structure.",
+      "source": "OpenTelemetry event semantics",
+      "url": "https://opentelemetry.io/docs/specs/semconv/general/events/"
+    },
+    {
+      "claim": "title, description, and default are annotations, not enforcement.",
+      "source": "JSON Schema annotations",
+      "url": "https://json-schema.org/understanding-json-schema/reference/annotations"
+    }
+  ],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"created_utc\": \"2026-04-28T02:56:01Z\", \"decision\": \"pass\", \"decision_id\": \"r5-gate-registry-7b57ab768a3c47a9\", \"decision_log_id\": \"DECISION_LOG_R5_20260428T025601Z\", \"deferred_gates\": [\"P0A_EXTERNAL_REUSE_SCAN\", \"P0PY_PYTHON_HEALTH\"], \"enabled_gates\": [\"TOOL_ROUTE_GUARD\", \"RESEARCH_SEE_CE_GATE\", \"RUNTIME_WRITE_ROLLBACK_GATE\", \"IC_INTERRUPT_CHECKER\", \"RUNTIME_PULSE_GATE\", \"TRACKER_RELEASE_GATE\", \"FULL_BUNDLE_EXPORT_GATE\", \"CARTRIDGE_PROMOTION_GATE\", \"UNIFIED_RUNTIME_COMPATIBILITY_VALIDATION\", \"SESSION_STATE_EXPORT_VALIDATION\", \"SESSION_STATE_EXPORT_WRITE\", \"PYTHON_RESILIENT_EXECUTION_GATE\", \"GATE_REGISTRY_INTEGRITY\"], \"evidence\": [{\"claim\": \"Decision logs should include enough information for audit/offline debugging and API decisions include decision_id when logging is enabled.\", \"source\": \"Open Policy Agent decision logs\", \"url\": \"https://www.openpolicyagent.org/docs/management-decision-logs\"}, {\"claim\": \"Events require stable names and structured attributes; event names uniquely identify event structure.\", \"source\": \"OpenTelemetry event semantics\", \"url\": \"https://opentelemetry.io/docs/specs/semconv/general/events/\"}, {\"claim\": \"title, description, and default are annotations, not enforcement.\", \"source\": \"JSON Schema annotations\", \"url\": \"https://json-schema.org/understanding-json-schema/reference/annotations\"}], \"rationale\": [\"COOL_6 plan converted from narrative wiring plan to executable registry.\", \"Only gates with existing entrypoints are enabled.\", \"P0A and P0PY remai",
+  "reasons": [
+    "COOL_6 plan converted from narrative wiring plan to executable registry.",
+    "Only gates with existing entrypoints are enabled.",
+    "P0A and P0PY remain deferred to their dedicated later stages rather than enabled prematurely.",
+    "Legacy memory sync validation is retired in favor of session-state export validation."
+  ],
+  "record_id": "DECISION_LOG_R5_20260428T025601Z",
+  "record_kind": "decision_log",
+  "result": "pass",
+  "source_record": {
+    "path": "runtime/governance/decision_logs/DECISION_LOG_R5_20260428T025601Z.json",
+    "sha256": "17381836044b3427367e604e526af8c1708d4ecd5486227ee4ade35e3966f7cc",
+    "size_bytes": 2045
+  },
+  "span_id": "acbea7bb603d539d",
+  "stage_id": "R5_GATE_REGISTRY_AND_WIRING_REPLACEMENT",
+  "summary": "pass",
+  "trace_id": "cff06ed0e813f3f1f96ac258b4a18bb4"
+}

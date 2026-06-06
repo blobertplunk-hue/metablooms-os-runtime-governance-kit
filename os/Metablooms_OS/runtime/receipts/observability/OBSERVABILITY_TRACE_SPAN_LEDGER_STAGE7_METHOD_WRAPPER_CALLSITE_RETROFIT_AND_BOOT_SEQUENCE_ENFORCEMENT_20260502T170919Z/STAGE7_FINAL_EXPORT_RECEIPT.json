@@ -1,0 +1,17 @@
+{
+  "artifact_type": "MB_EXPORT_RECEIPT.v1",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE7_METHOD_WRAPPER_CALLSITE_RETROFIT_AND_BOOT_SEQUENCE_ENFORCEMENT",
+  "created_utc": "20260502T171302Z",
+  "zip_path": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE7_BOOT_SEQUENCE_ENFORCEMENT_FINAL_20260502T171302Z.zip",
+  "zip_sha256": "7c2a1bc1fe9e2923b592d22cdcab03ed117da3ae78d9792547a4043941d6a867",
+  "zip_sidecar": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE7_BOOT_SEQUENCE_ENFORCEMENT_FINAL_20260502T171302Z.zip.sha256",
+  "zip_entries": 6227,
+  "duplicate_members": 0,
+  "zip_test": "PASS",
+  "containment_proof": "/mnt/data/Metablooms_OS/runtime/traces/observability/OBSERVABILITY_STAGE7_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+  "verdict": "PASS",
+  "external_sidecar_required": [
+    "zip .sha256",
+    "containment proof generated after archive creation"
+  ]
+}

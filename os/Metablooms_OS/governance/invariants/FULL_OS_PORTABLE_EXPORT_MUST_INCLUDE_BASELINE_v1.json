@@ -1,0 +1,9 @@
+{
+  "id":"FULL_OS_PORTABLE_EXPORT_MUST_INCLUDE_BASELINE_v1",
+  "status":"active",
+  "gate":"FULL_BUNDLE_EXPORT_GATE",
+  "description":"Full OS export/handoff must include current full OS baseline ZIP, pointer, tracker, receipt/lock, manifest/SHA, and boot/restore evidence. Tiny work slices are denied as full OS bundles.",
+  "failure_action":"DENY_STAGE_EXECUTION",
+  "source":"project-files boot overlay",
+  "scope":"runtime_governance_overlay"
+}

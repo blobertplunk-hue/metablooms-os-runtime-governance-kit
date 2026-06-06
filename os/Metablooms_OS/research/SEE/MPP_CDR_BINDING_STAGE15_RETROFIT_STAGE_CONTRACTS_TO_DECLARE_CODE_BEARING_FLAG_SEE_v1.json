@@ -1,0 +1,20 @@
+{
+  "note": "Web evidence was gathered in-chat with web.run; packet stores synthesis claims and URLs are cited in final response.",
+  "schema": "SEE_PACKET_v1",
+  "sources": [
+    {
+      "claim": "Code review should check design, functionality, complexity, tests, naming, comments, style, documentation, every line, and broader context.",
+      "name": "Google Engineering Practices - Code Review: What to look for"
+    },
+    {
+      "claim": "Secure development practices should reduce vulnerabilities, mitigate exploitation impact, and address root causes to prevent recurrence.",
+      "name": "NIST SSDF 1.1"
+    },
+    {
+      "claim": "Secure coding requires validation, access control, error handling/logging, data protection, file management, memory management, and general coding practices.",
+      "name": "OWASP Secure Coding Practices checklist"
+    }
+  ],
+  "stage": "MPP_CDR_BINDING_STAGE15_RETROFIT_STAGE_CONTRACTS_TO_DECLARE_CODE_BEARING_FLAG",
+  "timestamp_utc": "2026-05-02T12:53:54Z"
+}

@@ -1,0 +1,13 @@
+{
+  "artifact_type": "OBSERVABILITY_STAGE8_FINAL_LOCK_EXPORT_CONTAINMENT_PROOF.v1",
+  "created_utc": "20260502T172223Z",
+  "duplicate_members": 0,
+  "required_artifacts_missing": [],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE",
+  "verdict": "PASS",
+  "zip_entry_count": 6311,
+  "zip_integrity": "PASS",
+  "zip_path": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_HISTORICAL_CALLSITE_QUARANTINE_FINAL_LOCK_20260502T171821Z.zip",
+  "zip_sha256": "92de4d0f86f233f63e71737663faa36b52990caa6fcd8668353b864900ea4419",
+  "zip_size_bytes": 27321852
+}

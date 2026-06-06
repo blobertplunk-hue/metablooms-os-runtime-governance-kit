@@ -1,0 +1,47 @@
+{
+  "code_artifact_classes": [
+    "python",
+    "javascript",
+    "typescript",
+    "html_js",
+    "shell",
+    "node",
+    "schema_driven_runtime",
+    "validator",
+    "gate",
+    "policy",
+    "export_script",
+    "packaging_script",
+    "runtime_config"
+  ],
+  "required_cdr_evidence_when_code": [
+    "cdr_packet_path",
+    "cdr_gate_path",
+    "cdr_eval_path",
+    "cdr_gate_sha256",
+    "code_acceptance_dimensions",
+    "risk_tier",
+    "test_summary"
+  ],
+  "required_packet_fields": [
+    "stage_id",
+    "stage_contains_code",
+    "mpp_compliance_claimed",
+    "code_artifact_classes",
+    "cdr_gate_result",
+    "cdr_evidence",
+    "stage_verdict_requested"
+  ],
+  "schema": "MPP_CODE_WORK_REQUIRES_CDR_POLICY_v1",
+  "stage": "MPP_CDR_BINDING_STAGE14_CODE_WORK_REQUIRES_CDR_IN_MPP",
+  "terminal_block_verdicts": [
+    "BLOCKED_CDR_REQUIRED",
+    "FAIL_CDR"
+  ],
+  "verdict_logic": {
+    "allow_non_code_work_without_cdr": true,
+    "block_code_work_with_failed_cdr": true,
+    "block_code_work_without_cdr": true,
+    "require_reconstructed_flag_when_cdr_chain_reconstructed": true
+  }
+}

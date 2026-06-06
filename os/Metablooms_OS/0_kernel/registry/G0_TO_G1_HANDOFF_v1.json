@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "created_at": 1777064295.6769743,
+  "from_stage": "G0_EXPORT_RECOVERY_VALIDATOR_SCOPE_LOCK",
+  "to_stage": "G1_EXPORT_RECOVERY_VALIDATOR_SCHEMA_AND_CONTRACT",
+  "status": "ready",
+  "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G0_EXPORT_RECOVERY_VALIDATOR_SCOPE_LOCK_RECEIPT_v1.json",
+  "scope_contract": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G0_EXPORT_RECOVERY_VALIDATOR_SCOPE_CONTRACT_v1.json",
+  "gate_matrix": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G0_EXPORT_RECOVERY_VALIDATOR_GATE_MATRIX_v1.json",
+  "spec_only": true,
+  "implementation_allowed": false,
+  "export_allowed": false,
+  "cleanup_allowed": false,
+  "next_command": "EXECUTE G1 \u2014 EXPORT RECOVERY VALIDATOR SCHEMA + CONTRACT"
+}

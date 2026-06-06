@@ -1,0 +1,74 @@
+{
+  "stage": "R2_ADR_EXTRACTION_AND_ARCHIVAL_CONVERSION",
+  "timestamp_utc": "2026-04-28T02:44:46Z",
+  "adr_paths": [
+    "0_kernel/docs/decisions/ADR-0001-split-rationale-from-runtime-contracts.md",
+    "0_kernel/docs/decisions/ADR-0002-adopt-session-state-export-over-model-specific-sync.md",
+    "0_kernel/docs/decisions/ADR-0002-adopt-session-state-export-over-model-specific-sync.md",
+    "0_kernel/docs/decisions/ADR-0003-adopt-gate-registry-for-runtime-wiring.md"
+  ],
+  "archive_paths": [
+    "runtime/governance/legacy_archives/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.json",
+    "runtime/governance/legacy_archives/CLAUDE_MEMORY_SYNC_v1.json",
+    "runtime/governance/legacy_archives/claude_memory_sync_writer_v1.py",
+    "runtime/governance/legacy_archives/COOL_6_RUNTIME_GATE_WIRING_PLAN_v1.json"
+  ],
+  "tombstone_metadata_paths": [
+    "1_governance/workflow_v6/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.redirect.json",
+    "0_kernel/scripts/claude_memory_sync_writer_v1.redirect.json"
+  ],
+  "checks": {
+    "0_kernel/docs/decisions/ADR-0001-split-rationale-from-runtime-contracts.md": {
+      "exists": true,
+      "sha256": "9e10fa643510a31eec1320857047e6baecd5f62a020596a1845dbac0643b0cd7",
+      "size_bytes": 3257
+    },
+    "0_kernel/docs/decisions/ADR-0002-adopt-session-state-export-over-model-specific-sync.md": {
+      "exists": true,
+      "sha256": "a621e508ca0013233fbf0a3f0c74558e8a9cbca2f059f71927a4304ea930016a",
+      "size_bytes": 3396
+    },
+    "0_kernel/docs/decisions/ADR-0003-adopt-gate-registry-for-runtime-wiring.md": {
+      "exists": true,
+      "sha256": "3803b36e42d12a430509d9cd177981c439cd37486457e59dc714f6848b4ef23a",
+      "size_bytes": 3059
+    },
+    "runtime/governance/legacy_archives/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.json": {
+      "exists": true,
+      "sha256": "b0b2fa19a37e973bb38da416a569b43612d0c77912304640c20e53412a88f3b4",
+      "size_bytes": 6926
+    },
+    "runtime/governance/legacy_archives/CLAUDE_MEMORY_SYNC_v1.json": {
+      "exists": true,
+      "sha256": "be1a806d01ede56df088498c72cc1e1a16c6563b164fffd8d283d33420f1b445",
+      "size_bytes": 2869
+    },
+    "runtime/governance/legacy_archives/claude_memory_sync_writer_v1.py": {
+      "exists": true,
+      "sha256": "27600f4a273ced13bfc0e157be376cb15c3b0660acac60f0799f415b4bb0a49e",
+      "size_bytes": 20399
+    },
+    "runtime/governance/legacy_archives/COOL_6_RUNTIME_GATE_WIRING_PLAN_v1.json": {
+      "exists": true,
+      "sha256": "bb90a63995473293f557035a3b2a7da073c101b0bb21a36a81bc065535075bfa",
+      "size_bytes": 2341
+    },
+    "1_governance/workflow_v6/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.redirect.json": {
+      "exists": true,
+      "sha256": "f3b9c7b07bb66efbd7110f0ba66a148cc7956b252de4d4d44f48134bf5b55212",
+      "size_bytes": 477
+    },
+    "0_kernel/scripts/claude_memory_sync_writer_v1.redirect.json": {
+      "exists": true,
+      "sha256": "6963d57300752545f88f1dad957e95f321b516250922e674233933f9bfbaff22",
+      "size_bytes": 444
+    },
+    "runtime/governance/contracts/legacy_artifact_redirects_v1.json": {
+      "exists": true,
+      "sha256": "4203a4577a814a3d2c86c90a1450080743ef5ff1b668f8baf1c7da26d611edbc",
+      "size_bytes": 2846
+    }
+  },
+  "status": "PASS",
+  "all_present": true
+}

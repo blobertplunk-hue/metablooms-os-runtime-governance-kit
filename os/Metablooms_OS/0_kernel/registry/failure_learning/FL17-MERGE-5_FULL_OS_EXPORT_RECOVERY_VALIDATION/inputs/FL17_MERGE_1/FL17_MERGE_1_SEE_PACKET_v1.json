@@ -1,0 +1,31 @@
+{
+  "stage_id": "FL17-MERGE-1_SEE_PACKET",
+  "sources": [
+    {
+      "name": "NIST AI RMF",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+    },
+    {
+      "name": "SLSA verifying artifacts",
+      "url": "https://slsa.dev/spec/v1.2/verifying-artifacts"
+    },
+    {
+      "name": "SLSA provenance",
+      "url": "https://slsa.dev/spec/v1.1/provenance"
+    },
+    {
+      "name": "ISO/IEC/IEEE 42010 conceptual model",
+      "url": "https://www.iso-architecture.org/ieee-1471/cm/"
+    },
+    {
+      "name": "W3C status messages",
+      "url": "https://w3c.github.io/wcag/understanding/status-messages"
+    }
+  ],
+  "validated_claims": [
+    "governance is systematic risk-management, not ad hoc selection",
+    "artifact provenance/verification must be checked against expectations before trust/promotion",
+    "architecture decisions/correspondences should be explicit",
+    "status/progress states should be explicit and evidence-bound"
+  ]
+}

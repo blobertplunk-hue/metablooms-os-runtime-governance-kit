@@ -1,0 +1,16 @@
+{
+  "budget_approval_record": "/mnt/data/Metablooms_OS/runtime/receipts/METABLOOMS_STAGE6M_EXPLICIT_BUDGET_APPROVAL_RECORD_20260502T033800Z.json",
+  "embedded_stage6l_receipt_handoff": true,
+  "export_path_planned": "/mnt/data/METABLOOMS_OS_STAGE6M_FULL_AUTHORITY_AFTER_POST_TOOL_GATE_BOOTABLE_FULL_OS_AUTHORITY_20260502T033800Z.zip",
+  "inputs_verified": [
+    "Stage6J authority sidecar",
+    "Stage6L receipt sidecar",
+    "Stage6L handoff sidecar"
+  ],
+  "phase": "pre_export_pointer_budget_preparation",
+  "pointer_files_updated": 6,
+  "schema": "MetaBloomsStageReceipt_v1",
+  "stage_id": "STAGE6M_FULL_AUTHORITY_EXPORT_AFTER_POST_TOOL_GATE",
+  "timestamp_utc": "2026-05-02T02:13:11.818289Z",
+  "verdict": "PASS"
+}

@@ -1,0 +1,256 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/UXR_OPERATOR_CONTEXT_PACKET_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "accessibility_requirements": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "blocking": {
+            "type": "boolean"
+          },
+          "criterion": {
+            "minLength": 3,
+            "type": "string"
+          },
+          "level": {
+            "enum": [
+              "A",
+              "AA",
+              "AAA",
+              "platform",
+              "custom"
+            ],
+            "type": "string"
+          },
+          "requirement_id": {
+            "pattern": "^A11Y-[0-9]{3}$",
+            "type": "string"
+          },
+          "standard": {
+            "enum": [
+              "WCAG_2_2",
+              "platform_native",
+              "district_policy",
+              "custom"
+            ],
+            "type": "string"
+          },
+          "test_method": {
+            "minLength": 5,
+            "type": "string"
+          }
+        },
+        "required": [
+          "requirement_id",
+          "standard",
+          "criterion",
+          "level",
+          "test_method",
+          "blocking"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "context_constraints": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "constraint_id": {
+            "pattern": "^UXC-[0-9]{3}$",
+            "type": "string"
+          },
+          "description": {
+            "minLength": 10,
+            "type": "string"
+          },
+          "mitigation": {
+            "minLength": 8,
+            "type": "string"
+          },
+          "name": {
+            "minLength": 3,
+            "type": "string"
+          },
+          "severity": {
+            "enum": [
+              "low",
+              "medium",
+              "high",
+              "critical"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "constraint_id",
+          "name",
+          "description",
+          "severity",
+          "mitigation"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "created_at": {
+      "minLength": 10,
+      "type": "string"
+    },
+    "objective_id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "operator_profiles": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "constraints": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "primary_goal": {
+            "minLength": 8,
+            "type": "string"
+          },
+          "profile_id": {
+            "pattern": "^OP-[0-9]{3}$",
+            "type": "string"
+          },
+          "role": {
+            "minLength": 3,
+            "type": "string"
+          },
+          "skill_level": {
+            "enum": [
+              "novice",
+              "intermediate",
+              "expert",
+              "mixed"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "profile_id",
+          "role",
+          "primary_goal",
+          "skill_level",
+          "constraints"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "packet_id": {
+      "minLength": 8,
+      "type": "string"
+    },
+    "platform_requirements": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "platform": {
+            "minLength": 3,
+            "type": "string"
+          },
+          "platform_id": {
+            "pattern": "^PLAT-[0-9]{3}$",
+            "type": "string"
+          },
+          "requirement": {
+            "minLength": 8,
+            "type": "string"
+          },
+          "test_method": {
+            "minLength": 5,
+            "type": "string"
+          }
+        },
+        "required": [
+          "platform_id",
+          "platform",
+          "requirement",
+          "test_method"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "result_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "mpp.uxr_operator_context_packet.v1"
+    },
+    "source_ads_packet_id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "stage": {
+      "const": "UXR"
+    },
+    "ux_risks": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "detectable_by": {
+            "minLength": 5,
+            "type": "string"
+          },
+          "impact": {
+            "minLength": 5,
+            "type": "string"
+          },
+          "mitigation": {
+            "minLength": 5,
+            "type": "string"
+          },
+          "risk": {
+            "minLength": 5,
+            "type": "string"
+          },
+          "risk_id": {
+            "pattern": "^UXRISK-[0-9]{3}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "risk_id",
+          "risk",
+          "impact",
+          "detectable_by",
+          "mitigation"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "packet_id",
+    "stage",
+    "created_at",
+    "objective_id",
+    "source_ads_packet_id",
+    "operator_profiles",
+    "context_constraints",
+    "accessibility_requirements",
+    "platform_requirements",
+    "ux_risks",
+    "result_hash"
+  ],
+  "title": "MPP v3 UXR Operator Context Packet",
+  "type": "object"
+}

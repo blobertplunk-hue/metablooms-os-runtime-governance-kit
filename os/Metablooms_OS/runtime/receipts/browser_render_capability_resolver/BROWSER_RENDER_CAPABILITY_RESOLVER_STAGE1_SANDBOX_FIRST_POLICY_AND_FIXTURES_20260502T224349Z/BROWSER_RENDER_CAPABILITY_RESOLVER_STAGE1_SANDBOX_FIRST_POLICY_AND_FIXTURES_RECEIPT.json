@@ -1,0 +1,31 @@
+{
+  "fixture_validation_verdict": "PASS",
+  "fixtures_installed": [
+    "tests/fixtures/browser_render_capability_resolver/fixture_01_playwright_full_success.json",
+    "tests/fixtures/browser_render_capability_resolver/fixture_02_current_sandbox_weasy_fallback.json",
+    "tests/fixtures/browser_render_capability_resolver/fixture_03_production_browser_required_denied.json",
+    "tests/fixtures/browser_render_capability_resolver/fixture_04_static_only_preimplementation_allowed.json"
+  ],
+  "limitations": [
+    "Stage 1 does not implement executable resolver yet; it installs policy, schema, fixtures, and validation.",
+    "True browser screenshot remains opportunistic until Stage 2 method replay finds a working browser path."
+  ],
+  "next_stage": "BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE2_IMPLEMENT_RESOLVER_AND_LOCAL_METHOD_REPLAY",
+  "policy_installed": "0_kernel/registry/browser_render_capability/BROWSER_RENDER_CAPABILITY_RESOLVER_POLICY_v1.json",
+  "root": "/mnt/data/Metablooms_OS",
+  "schema_installed": "0_kernel/registry/browser_render_capability/browser_render_capability_resolver_decision_schema_v1.json",
+  "selected_default_for_current_sandbox": "weasyprint_pdf_png_proxy_after_failed_browser_paths",
+  "source_basis": {
+    "prior_probe_receipt": "/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_probe_20260502T223422Z/BROWSER_RENDER_CAPABILITY_PROBE_RECEIPT.json",
+    "visual_stage5_receipt": "/mnt/data/VISUAL_PRESENTATION_QUALITY_GATE_STAGE5_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF_20260502T222425Z_FINAL_RECEIPT_EXTERNAL.json",
+    "web_sources": [
+      "playwright.dev/docs/browsers",
+      "developer.chrome.com/docs/chromium/headless",
+      "weasyprint.org",
+      "doc.courtbouillon.org/weasyprint/stable/api_reference.html"
+    ]
+  },
+  "stage": "BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE1_SANDBOX_FIRST_POLICY_AND_FIXTURES",
+  "timestamp_utc": "20260502T224349Z",
+  "verdict": "PASS"
+}

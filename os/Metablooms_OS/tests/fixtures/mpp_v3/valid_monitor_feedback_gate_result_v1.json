@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-05-01T00:10:57.537280+00:00",
+  "gate_id": "MONITOR-GATE-20260501T001057Z",
+  "packet_id": "MONITOR-20260501T001057Z",
+  "result_hash": "00135f79cd5c78e3ef89d3b46da49143173cf88f40735bbf2c76ae7d82b3c2f7",
+  "routing_decisions": [
+    {
+      "blocking": false,
+      "created_at": "2026-05-01T00:10:57.537206+00:00",
+      "decision_id": "MON-ROUTE-20260501T001057Z-CONTINUE_NORMAL",
+      "evidence_refs": [
+        "MONITOR_PACKET"
+      ],
+      "next_stage": "R21_OR_R23",
+      "result_hash": "ee9a5b587b8f0ac5ebe927f8786ddad2ce13681dbc532a830d749eec589a470b",
+      "route_to": "CONTINUE_NORMAL",
+      "schema_version": "mpp.monitor_routing_decision.v1",
+      "severity": "INFO",
+      "source_packet_id": "MONITOR-20260501T001057Z",
+      "trigger": "all_monitor_checks_passed"
+    }
+  ],
+  "schema_version": "mpp.monitor_feedback_gate_result.v1",
+  "stage": "MONITOR_FEEDBACK_GATE",
+  "verdict": "PASS",
+  "violations": [],
+  "warnings": []
+}

@@ -1,0 +1,26 @@
+{
+  "id": "IAE_BOOT_CONTRACT_v1",
+  "status": "overlay_ready",
+  "purpose": "Make invariants runtime-active at boot instead of passive documentation.",
+  "boot_load_order": [
+    "1. Locate runtime root.",
+    "2. Load runtime/governance/invariant_activation_engine_v1.py.",
+    "3. Load active invariant JSON files from governance/invariants and registry invariant dirs.",
+    "4. Write boot/invariant_activation_boot_receipt.json.",
+    "5. Require *_GATE_EVALUATION.json before governed stages can release artifacts or modify runtime state.",
+    "6. Fail closed if engine or active invariant index is missing."
+  ],
+  "active_status_meaning": {
+    "proposed": "Stored but not enforced.",
+    "active": "Boot-loaded and enforced by a named gate.",
+    "runtime_active": "Boot-loaded, tested, and used in current stage decisions.",
+    "superseded": "Historical only.",
+    "quarantined": "Do not load."
+  },
+  "required_boot_artifacts": [
+    "runtime/governance/invariant_activation_engine_v1.py",
+    "governance/invariants/*.json",
+    "governance/ACTIVE_INVARIANTS_INDEX.json"
+  ],
+  "failure_mode": "If active invariants cannot be loaded, governed execution must stop."
+}

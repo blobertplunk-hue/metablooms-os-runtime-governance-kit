@@ -1,0 +1,177 @@
+{
+  "artifacts_written": [
+    {
+      "bytes": 10498,
+      "path": "0_kernel/mpp_v3/__pycache__/mpp_v3_export_promotion_gate_v1.cpython-313.pyc",
+      "sha256": "4e9746163127c587464fac09290151c3aa154833a35a00e9467fb1250abab3f5"
+    },
+    {
+      "bytes": 5922,
+      "path": "0_kernel/mpp_v3/mpp_v3_export_promotion_gate_v1.py",
+      "sha256": "e6273b1ab81be741c77aaa6678de37aa246d84dca8b2dbde3b267a5abacded25"
+    },
+    {
+      "bytes": 904,
+      "path": "0_kernel/registry/mpp_v3/policy_gates/MPP_V3_EXPORT_PROMOTION_GATE_v1.json",
+      "sha256": "efca10aeb40e50f5421edb732329a7af4fbe84e45e9abc16f7af62485bf0d559"
+    },
+    {
+      "bytes": 741,
+      "path": "0_kernel/schemas/mpp_v3/EXPORT_AUTHORITY_POINTER_SCHEMA_v1.json",
+      "sha256": "3f4f86bf773a6d20b0c3fc4dd55d3a8410912b87cec909d8c781ece4749a4c5d"
+    },
+    {
+      "bytes": 777,
+      "path": "0_kernel/schemas/mpp_v3/EXPORT_PROMOTION_GATE_RESULT_SCHEMA_v1.json",
+      "sha256": "0889b129a4fe6089e4228f5ea829623646e93a8fad181457fdaea767d517c595"
+    },
+    {
+      "bytes": 946,
+      "path": "0_kernel/schemas/mpp_v3/EXPORT_PROMOTION_PACKET_SCHEMA_v1.json",
+      "sha256": "67ba5b44e8a93dd7c788b1e55a3d9112590c2fba5aea6cc896cace46496471fe"
+    },
+    {
+      "bytes": 664,
+      "path": "runtime/authority/CURRENT_EXPORT_AUTHORITY_v1.json",
+      "sha256": "bf3b41771ab84c656d648ed9361dfcb39676baf632ccb7a94dc3a25c4de5d381"
+    },
+    {
+      "bytes": 1080,
+      "path": "runtime/exports/mpp_v3/FULL_MPP_V3_R0_R23_PROMOTION_MANIFEST.json",
+      "sha256": "cc1ee3820af7cfd754dd7fe19d72919009ac2070d67f1377be9b227b890ef946"
+    },
+    {
+      "bytes": 573,
+      "path": "runtime/handoffs/mpp_v3/MPP_R23_EXPORT_PROMOTION_GATE_HANDOFF_20260501T081500Z.json",
+      "sha256": "961e67c2bef088e935fd21e7bfb1f245e74a0b1ebd9ca351b982c5320a9cf5ad"
+    },
+    {
+      "bytes": 573,
+      "path": "runtime/handoffs/mpp_v3/MPP_R23_EXPORT_PROMOTION_GATE_HANDOFF_LATEST.json",
+      "sha256": "961e67c2bef088e935fd21e7bfb1f245e74a0b1ebd9ca351b982c5320a9cf5ad"
+    },
+    {
+      "bytes": 2234,
+      "path": "runtime/receipts/mpp_v3/MPP_R23_EXPORT_PROMOTION_GATE_RECEIPT_20260501T081500Z.json",
+      "sha256": "3b93ad6b00c3237e297973272209e11872f720f9a2fdd92b87191f109009e0c8"
+    },
+    {
+      "bytes": 2234,
+      "path": "runtime/receipts/mpp_v3/MPP_R23_EXPORT_PROMOTION_GATE_RECEIPT_LATEST.json",
+      "sha256": "3b93ad6b00c3237e297973272209e11872f720f9a2fdd92b87191f109009e0c8"
+    },
+    {
+      "bytes": 12960,
+      "path": "runtime/stage_bundles/mpp_v3/MPP_R23_EXPORT_PROMOTION_GATE_20260501T081500Z_DELTA.zip",
+      "sha256": "ff7dace069c033162a6fb853a9ff1b57811f1280202bc2a7b7f4d4481155a3e3"
+    },
+    {
+      "bytes": 123,
+      "path": "runtime/stage_bundles/mpp_v3/MPP_R23_EXPORT_PROMOTION_GATE_20260501T081500Z_DELTA.zip.sha256",
+      "sha256": "5149c4e311069f46ddba52a557fc7c93b44c59c765019a3461ea65d13fd1bef7"
+    },
+    {
+      "bytes": 635,
+      "path": "runtime/summaries/mpp_v3/MPP_R23_EXPORT_PROMOTION_GATE_SUMMARY.md",
+      "sha256": "0b41e235b1272bc5cf30ccdb2f956136833ea1a9f3cdd6399644ffd8991a1b45"
+    },
+    {
+      "bytes": 3539,
+      "path": "tests/fixtures/mpp_v3/invalid_export_duplicate_members_packet_v1.json",
+      "sha256": "7c5498aca0c33e83b53d0b9a248fe25754dcb64ec297f3390870c5f68278900a"
+    },
+    {
+      "bytes": 3551,
+      "path": "tests/fixtures/mpp_v3/invalid_export_missing_marker_packet_v1.json",
+      "sha256": "ff87048b6e1f0b03d5e922684f3498a50316fbf85f23929cb035d8bdc202d002"
+    },
+    {
+      "bytes": 3546,
+      "path": "tests/fixtures/mpp_v3/invalid_export_non_promote_packet_v1.json",
+      "sha256": "31242c351809c6cbdefe7ffebc080607a4c66086762a05012d1baf3c9883a2fa"
+    },
+    {
+      "bytes": 664,
+      "path": "tests/fixtures/mpp_v3/valid_export_authority_pointer_v1.json",
+      "sha256": "bf3b41771ab84c656d648ed9361dfcb39676baf632ccb7a94dc3a25c4de5d381"
+    },
+    {
+      "bytes": 703,
+      "path": "tests/fixtures/mpp_v3/valid_export_promotion_gate_result_v1.json",
+      "sha256": "3e103692f8a24fe55193a7b4015053aeba3aedafa6aacc426ff72c8d46d31fc2"
+    },
+    {
+      "bytes": 3550,
+      "path": "tests/fixtures/mpp_v3/valid_export_promotion_packet_v1.json",
+      "sha256": "06028a630875df10a315b3267f1073fd715cbe22273cba8c28bb3ed801137487"
+    }
+  ],
+  "base_full_os_verification": {
+    "actual_sha256": "0af70fce8ca9c8412507edef0aba0aa62a6c7901c15b303d21f1ef6ef87b4715",
+    "checksum_match": true,
+    "exists": true,
+    "sha_sidecar_exists": true,
+    "sidecar_sha256": "0af70fce8ca9c8412507edef0aba0aa62a6c7901c15b303d21f1ef6ef87b4715",
+    "zip": "/mnt/data/METABLOOMS_OS_FULL_MPP_V3_R0_R22_INTEGRATED_20260501T075000Z.zip",
+    "zip_testzip": null
+  },
+  "bundle_inventory": {
+    "fixture_count": 92,
+    "handoff_count": 40,
+    "impl_count": 20,
+    "receipt_count": 41,
+    "schema_count": 46,
+    "stage_bundle_count": 25
+  },
+  "candidate_validation": {
+    "duplicate_count": 0,
+    "member_count": 2555,
+    "testzip": null
+  },
+  "final_export_pending_rebuild": true,
+  "final_export_sha256_external_sidecar": "/mnt/data/METABLOOMS_OS_FULL_MPP_V3_R0_R23_PROMOTED_20260501T081500Z.zip.sha256",
+  "final_export_sha256_mode": "external_sidecar_required",
+  "next_stage": "COMPLETE_CURRENT_AUTHORITY_READY",
+  "schema_version": "metablooms.mpp_stage_receipt.v1",
+  "stage_id": "MPP_R23_EXPORT_PROMOTION_GATE",
+  "status": "PASS",
+  "tests": [
+    {
+      "detail": "/mnt/data/R23_overlay_20260501T081500Z/Metablooms_OS/0_kernel/mpp_v3/__pycache__/mpp_v3_export_promotion_gate_v1.cpython-313.pyc",
+      "expected": "PASS",
+      "name": "py_compile",
+      "status": "PASS"
+    },
+    {
+      "detail": "{'status': 'PASS', 'packet_id': 'EXPORT-20260501T005805Z', 'result_hash': 'be4d6c8ec2f5f01cc9f4efec0809737836253f0a8740c2c7fe1981e5d46aedfc'}",
+      "expected": "PASS",
+      "name": "valid_export_validate",
+      "status": "PASS"
+    },
+    {
+      "detail": "True",
+      "expected": "PASS",
+      "name": "valid_export_gate_pass",
+      "status": "PASS"
+    },
+    {
+      "error": "ExportPromotionError:EXPORT_REQUIRED_MARKER_MISSING_Metablooms_OS/0_kernel/schemas/mpp_v3/EXPORT_PROMOTION_PACKET_SCHEMA_v1.json",
+      "expected": "RAISE",
+      "name": "missing_marker_validate_raises",
+      "status": "PASS"
+    },
+    {
+      "error": "ExportPromotionError:EXPORT_DUPLICATE_MEMBERS_PRESENT",
+      "expected": "RAISE",
+      "name": "duplicate_member_validate_raises",
+      "status": "PASS"
+    },
+    {
+      "error": "ExportPromotionError:EXPORT_DECISION_NOT_PROMOTE",
+      "expected": "RAISE",
+      "name": "non_promote_validate_raises",
+      "status": "PASS"
+    }
+  ],
+  "timestamp": "20260501T081500Z"
+}

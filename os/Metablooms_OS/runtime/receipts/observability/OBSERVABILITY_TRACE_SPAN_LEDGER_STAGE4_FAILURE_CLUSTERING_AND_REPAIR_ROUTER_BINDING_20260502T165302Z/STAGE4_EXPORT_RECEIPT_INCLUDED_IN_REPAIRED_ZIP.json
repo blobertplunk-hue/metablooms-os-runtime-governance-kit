@@ -1,0 +1,50 @@
+{
+  "artifact_type": "StageExportReceipt.v1",
+  "created_utc": "20260502T165547Z",
+  "external_sidecar_required": true,
+  "first_zip_proof": {
+    "artifact_type": "OBSERVABILITY_STAGE4_FINAL_EXPORT_CONTAINMENT_PROOF.v1",
+    "bad_member": null,
+    "created_utc": "20260502T165519Z",
+    "duplicate_members": 0,
+    "entry_count": 5301,
+    "missing_required_members": [],
+    "required_members": [
+      "Metablooms_OS/0_kernel/registry/observability/MB_FAILURE_CLUSTER_SCHEMA_v1.json",
+      "Metablooms_OS/0_kernel/registry/observability/MB_REPAIR_ROUTER_BINDING_SCHEMA_v1.json",
+      "Metablooms_OS/0_kernel/registry/observability/MB_OBSERVABILITY_FAILURE_ROUTER_POLICY_v1.json",
+      "Metablooms_OS/0_kernel/scripts/observability_failure_cluster_router_v1.py",
+      "Metablooms_OS/0_kernel/validators/validate_observability_trace_span_ledger_stage4_failure_router_v1.py",
+      "Metablooms_OS/runtime/traces/observability/FAILURE_CLUSTER_REPORT_LATEST.json",
+      "Metablooms_OS/runtime/traces/observability/REPAIR_ROUTER_BINDING_LATEST.json",
+      "Metablooms_OS/runtime/state/operator_surface/OPERATOR_FAILURE_ROUTER_SUMMARY_LATEST.json",
+      "Metablooms_OS/runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE4_FAILURE_ROUTER_VALIDATION_LATEST.json",
+      "Metablooms_OS/runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_HANDOFF_LATEST.json",
+      "Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html"
+    ],
+    "required_members_present": true,
+    "sidecar_path": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_ROUTER_BINDING_20260502T165456Z.zip.sha256",
+    "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING",
+    "verdict": "PASS",
+    "zip_integrity": "PASS",
+    "zip_name": "METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_ROUTER_BINDING_20260502T165456Z.zip",
+    "zip_path": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_ROUTER_BINDING_20260502T165456Z.zip",
+    "zip_sha256": "3e690ee30e8d182a61b5ebf8644da14a5e8ea126a4cbfa59dda7f11eb665bb38"
+  },
+  "note": "This receipt is included in the repaired export; final repaired ZIP proof is external to avoid circular hash mutation.",
+  "required_stage4_artifacts": [
+    "Metablooms_OS/0_kernel/registry/observability/MB_FAILURE_CLUSTER_SCHEMA_v1.json",
+    "Metablooms_OS/0_kernel/registry/observability/MB_REPAIR_ROUTER_BINDING_SCHEMA_v1.json",
+    "Metablooms_OS/0_kernel/registry/observability/MB_OBSERVABILITY_FAILURE_ROUTER_POLICY_v1.json",
+    "Metablooms_OS/0_kernel/scripts/observability_failure_cluster_router_v1.py",
+    "Metablooms_OS/0_kernel/validators/validate_observability_trace_span_ledger_stage4_failure_router_v1.py",
+    "Metablooms_OS/runtime/traces/observability/FAILURE_CLUSTER_REPORT_LATEST.json",
+    "Metablooms_OS/runtime/traces/observability/REPAIR_ROUTER_BINDING_LATEST.json",
+    "Metablooms_OS/runtime/state/operator_surface/OPERATOR_FAILURE_ROUTER_SUMMARY_LATEST.json",
+    "Metablooms_OS/runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE4_FAILURE_ROUTER_VALIDATION_LATEST.json",
+    "Metablooms_OS/runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_HANDOFF_LATEST.json",
+    "Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html"
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING",
+  "verdict": "READY_FOR_REPAIRED_EXPORT"
+}

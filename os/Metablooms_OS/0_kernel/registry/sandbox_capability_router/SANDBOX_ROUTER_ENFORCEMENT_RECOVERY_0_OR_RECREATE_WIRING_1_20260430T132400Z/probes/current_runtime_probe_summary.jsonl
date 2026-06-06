@@ -1,0 +1,6 @@
+{"probe":"shell_coreutils","status":"PASS"}
+{"probe":"python3_S","status":"PASS"}
+{"probe":"node","status":"PASS:v22.16.0"}
+{"probe":"jq","status":"PASS:null"}
+{"probe":"go_version","status":"go version go1.23.2 linux/amd64"}
+{"probe":"archive_tools","status":"PASS"}

@@ -1,0 +1,10 @@
+{
+  "decision": "ALLOW",
+  "errors": [],
+  "error_count": 0,
+  "current_controlled_count": 2116,
+  "registered_count": 2116,
+  "index_status": "ACTIVE_CLOSED_STAGE7_FULL_EXPORT_REPLAY_LOCK",
+  "candidate_model": "promotion_authority_lifecycle_v1",
+  "mode": "controlled_artifact_index"
+}

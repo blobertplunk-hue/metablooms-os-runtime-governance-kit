@@ -1,0 +1,26 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+from pathlib import Path
+import datetime, importlib.util, json, sys
+def now(): return datetime.datetime.utcnow().replace(microsecond=0).isoformat()+'Z'
+def load(path,name):
+ spec=importlib.util.spec_from_file_location(name,path); mod=importlib.util.module_from_spec(spec); assert spec.loader; spec.loader.exec_module(mod); return mod
+def resolve_root(start):
+ p=Path(start).resolve(); p=p.parent if p.is_file() else p
+ for c in [p,p/'Metablooms_OS',p.parent]:
+  if (c/'runtime/governance').exists() and (c/'0_kernel').exists(): return c
+ raise SystemExit('FAIL could not resolve complete-system root')
+def main():
+ root=resolve_root(Path(__file__)); errors=[]
+ required=['runtime/governance/invariant_activation_engine_v1.py','runtime/governance/chat_governance_kernel_v1.py','runtime/governance/sandbox_tool_governance_v1.py','0_kernel/sandbox_governance/SANDBOX_TOOL_USE_POLICY_v1.json','0_kernel/chat_governance/CHAT_GOVERNANCE_KERNEL_v1.json']
+ for rel in required:
+  if not (root/rel).exists(): errors.append('missing:'+rel)
+ sload=load(root/'runtime/governance/sandbox_tool_governance_v1.py','sandbox_verify').load_policy(root)
+ if sload.get('decision')!='ALLOW': errors.append('sandbox_policy_load_failed:'+json.dumps(sload)[:500])
+ chat=load(root/'runtime/governance/chat_governance_kernel_v1.py','chat_verify')
+ packet={'turn_text':'MetaBlooms OS governance sandbox boot repair implementation export','explicit_meta_task':True,'authority_boot_verified':True,'sandbox_policy_loaded':True,'tool_selection_decision_packet_written':True,'router_decision':'os_governance','SEE_required':True,'web_sources':['official'],'SEE_artifact':'research/SEE/H0B2_SANDBOX_BOOTSTRAP_LAYOUT_REPAIR_SEE_v1.json','CE_artifact':'research/CE/H0B2_SANDBOX_BOOTSTRAP_LAYOUT_REPAIR_CE_v1.json','will_implement':True,'will_code':True,'will_modify_runtime':True,'stdlib_only_task':True,'python_method':'python3 -S','archive_or_hash_work':True,'export_latency_controls':True,'implementation_plan_artifact':'runtime/plans/H0B2_CODING_PLAN_v1.json','coding_plan_artifact':'runtime/plans/H0B2_CODING_PLAN_v1.json','test_plan_artifact':'runtime/evals/sandbox_governance/H0B2_FIXTURES_MANIFEST_v1.json','fixture_manifest_artifact':'runtime/evals/sandbox_governance/H0B2_FIXTURES_MANIFEST_v1.json','sandbox_tool_plan_artifact':'0_kernel/sandbox_governance/SANDBOX_TOOL_USE_POLICY_v1.json','final_response_ready':True,'tracker_preview_rendered':True,'receipt_artifact':'runtime/receipts/H0B2_RECEIPT.json','handoff_artifact':'runtime/handoffs/H0B2_HANDOFF.json','sandbox_receipt_artifact':'runtime/receipts/H0B2_SANDBOX_RECEIPT.json','promotion_requested':True,'location_verification_artifact':'runtime/evals/sandbox_governance/H0B2_LOCATION_VERIFICATION.json','behavior_test_artifact':'runtime/evals/sandbox_governance/H0B2_BEHAVIOR_TEST_RESULTS.json','whole_system_export_path':'/mnt/data/final.zip','whole_system_export_sha256':'provided','fresh_extract_test_artifact':'runtime/evals/sandbox_governance/H0B2_FRESH_EXTRACT_TEST_RESULTS.json'}
+ cres=chat.validate_turn(root,packet)
+ if cres.get('decision')!='ALLOW': errors.append('chat_kernel_valid_packet_denied:'+json.dumps(cres)[:1000])
+ out={'stage':'PORTABLE_FULL_OS_BOOT_VERIFY_REPAIRED_H0B2','timestamp_utc':now(),'status':'PASS' if not errors else 'FAIL','root':str(root),'errors':errors,'sandbox_policy':sload.get('decision'),'chat_kernel':cres.get('decision')}
+ p=root/'runtime/evals/sandbox_governance/H0B2_PORTABLE_VERIFIER_SMOKE_RESULTS.json'; p.parent.mkdir(parents=True,exist_ok=True); _mb_write_json_file(p, out, operation_id='STAGE4_ATOMIC_JSON_portable_full_os_boot_verify_py_L25', create_parent=True, allowed_roots=[str(_MBAJWPath('/mnt/data').resolve())], indent=2, sort_keys=False, ensure_ascii=True, max_bytes=20000000); print(json.dumps(out,indent=2)); return 0 if not errors else 1
+if __name__=='__main__': sys.exit(main())

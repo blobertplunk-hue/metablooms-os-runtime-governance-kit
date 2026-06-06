@@ -1,0 +1,19 @@
+{
+  "artifact_type": "MetaBloomsStageReceipt.v1",
+  "created_utc": "20260502T144330Z",
+  "external_evidence_bound": [
+    "python-atomicwrites: same-directory temp file, fsync, atomic replace, parent directory sync pattern",
+    "OWASP Path Traversal: dot-dot-slash/absolute path escape risk requiring canonical path validation and allowlists"
+  ],
+  "manual_patch_count": 2,
+  "patched_files": 73,
+  "policy_blocking_count": 0,
+  "runtime_root": "/mnt/data/Metablooms_OS",
+  "stage": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP",
+  "status": "PASS",
+  "warnings": [
+    "14 append-only JSONL/log stream sites remain policy warnings; they are intentionally deferred to a separate atomic append-log primitive because document replacement is the wrong operation for append streams.",
+    "Binary/archive writes are outside the atomic JSON document writer scope."
+  ],
+  "write_text_replacements": 78
+}

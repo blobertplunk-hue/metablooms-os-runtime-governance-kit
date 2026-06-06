@@ -1,0 +1,28 @@
+{
+  "allowed_roots": [
+    "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z",
+    "/mnt/data"
+  ],
+  "artifact_type": "AtomicJsonWriteDecisionPacket.v1",
+  "bytes_written": 9151,
+  "created_utc": "2026-05-02T14:36:51Z",
+  "deny_reason": null,
+  "error_type": null,
+  "failure_event_path": null,
+  "fsync_file": true,
+  "fsync_parent": {
+    "attempted": true,
+    "error": null,
+    "ok": true
+  },
+  "ok": true,
+  "operation_id": "stage3_write_CALLER_RETROFIT_REPORT.json",
+  "readback_ok": true,
+  "receipt_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/writer_decisions/stage3_write_CALLER_RETROFIT_REPORT_json_decision_packet.json",
+  "resolved_target_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/CALLER_RETROFIT_REPORT.json",
+  "status": "ALLOW_SUCCESS",
+  "target_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/CALLER_RETROFIT_REPORT.json",
+  "target_sha256": "bc3014f9521437172f3c10efcef65c0bacd72ce33970bde45df3733620c16ce9",
+  "temp_path_used": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/.CALLER_RETROFIT_REPORT.json.mqllu783.tmp",
+  "writer_version": "atomic_json_writer_v1"
+}

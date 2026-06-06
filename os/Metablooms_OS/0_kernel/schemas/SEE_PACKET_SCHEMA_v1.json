@@ -1,0 +1,239 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "SEE_PACKET_SCHEMA_v1",
+  "title": "MetaBlooms SEE Packet Schema v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "created_at",
+    "stage",
+    "original_request",
+    "research_trigger",
+    "query_plan",
+    "web_run_evidence",
+    "sources",
+    "claim_source_bindings",
+    "gaps_and_contradictions",
+    "synthesis",
+    "limitations",
+    "see_verdict"
+  ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": [
+        "number",
+        "string"
+      ]
+    },
+    "stage": {
+      "type": "string",
+      "const": "SEE_PASS"
+    },
+    "original_request": {
+      "type": "string",
+      "minLength": 1
+    },
+    "research_trigger": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "required",
+        "trigger_reason",
+        "trigger_terms"
+      ],
+      "properties": {
+        "required": {
+          "type": "boolean",
+          "const": true
+        },
+        "trigger_reason": {
+          "type": "string",
+          "minLength": 5
+        },
+        "trigger_terms": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "query_plan": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "query",
+          "purpose"
+        ],
+        "properties": {
+          "query": {
+            "type": "string",
+            "minLength": 3
+          },
+          "purpose": {
+            "type": "string",
+            "minLength": 5
+          },
+          "expected_source_type": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "web_run_evidence": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "web_run_called",
+        "call_count",
+        "tool_reference_required"
+      ],
+      "properties": {
+        "web_run_called": {
+          "type": "boolean",
+          "const": true
+        },
+        "call_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "tool_reference_required": {
+          "type": "boolean",
+          "const": true
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "source_id",
+          "title",
+          "url_or_ref",
+          "source_type",
+          "used_for"
+        ],
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url_or_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "used_for": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "claim_source_bindings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "claim",
+          "source_ids",
+          "confidence"
+        ],
+        "properties": {
+          "claim": {
+            "type": "string",
+            "minLength": 5
+          },
+          "source_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        }
+      }
+    },
+    "gaps_and_contradictions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "gaps",
+        "contradictions"
+      ],
+      "properties": {
+        "gaps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "contradictions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "synthesis": {
+      "type": "string",
+      "minLength": 20
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "see_verdict": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "FAIL"
+      ]
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "receipt_path": {
+      "type": "string"
+    }
+  }
+}

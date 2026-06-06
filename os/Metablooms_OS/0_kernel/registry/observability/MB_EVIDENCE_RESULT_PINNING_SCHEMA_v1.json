@@ -1,0 +1,17 @@
+{
+  "artifact_type": "MB_SCHEMA.v1",
+  "properties": {
+    "controls": "pin, unpin, clear, copy manifest",
+    "pin_seed": "optional starter proof set",
+    "storage_key": "browser localStorage key"
+  },
+  "required": [
+    "artifact_type",
+    "stage_id",
+    "storage_key",
+    "pin_fields",
+    "controls"
+  ],
+  "schema_name": "MB_EVIDENCE_RESULT_PINNING_MODEL.v1",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_INTERACTIONS_AND_RESULT_PINNING"
+}

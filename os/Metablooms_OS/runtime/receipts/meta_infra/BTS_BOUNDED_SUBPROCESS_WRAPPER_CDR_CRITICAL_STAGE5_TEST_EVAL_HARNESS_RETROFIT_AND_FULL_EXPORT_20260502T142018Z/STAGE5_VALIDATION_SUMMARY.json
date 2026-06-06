@@ -1,0 +1,37 @@
+{
+  "artifact_type": "STAGE5_VALIDATION_SUMMARY_v1",
+  "compile_pass": true,
+  "created_utc": "20260502T142018Z",
+  "partial_test_runs": {
+    "blocker_class": "sandbox_path_probe_saturation_from_expected_negative_failure_event_paths",
+    "fully_executed_pass_before_sandbox_probe_saturation": [
+      "runtime/evals/tool_universe/test_tool_universe_resolver_v1.py",
+      "tests/evals/mpp_v3/test_mpp_stage_contract_code_bearing_declaration_gate_v1.py",
+      "tests/evals/security/test_owasp_agentic_ai_policy_gate_v1.py",
+      "tests/evals/mpp_v3/test_mpp_cdr_binding_gate_v1.py",
+      "tests/evals/tool_universe/test_stage6t_trace_export_resolver_coverage_v1.py",
+      "tests/evals/observability/test_stage6r_trace_export_adapter_v1.py",
+      "tests/evals/governance/test_formal_hitl_approval_token_gate_v1.py"
+    ],
+    "mitigation": "Stage5 relies on py_compile, AST callsite policy, policy gate, and partial positive harness run rather than broad negative fixture execution in one turn.",
+    "not_fully_run_due_to_sandbox_normal_python_file_probe_saturation": [
+      "tests/evals/cdr/test_cdr_linchpin_recursive_audit_gate_v1.py",
+      "runtime/evals/post_tool_result_validation/test_post_tool_result_validation_v1.py",
+      "tests/evals/cdr/test_cdr_real_scanner_adapter_gate_v1.py",
+      "tests/evals/state_checkpoint/test_stage6p_durable_checkpoint_replay_gate_v1.py",
+      "tests/evals/tool_governance/test_stage6q_repair_legacy_executor_retrofit_gate_v1.py"
+    ]
+  },
+  "patched_test_eval_direct_ast_hit_count": 0,
+  "policy_gate": {
+    "blocking_count": 0,
+    "path": "/mnt/data/Metablooms_OS/runtime/tmp/stage5_policy_gate.json",
+    "summary_by_zone": {
+      "bounded_wrapper_internal_exempt": 1,
+      "snapshot_vendor_legacy_or_artifact_exempt": 74
+    },
+    "verdict": "PASS"
+  },
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT",
+  "verdict": "PASS_WITH_LIMITED_EXECUTION"
+}

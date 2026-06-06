@@ -1,0 +1,60 @@
+{
+  "id": "PYTHON_RESILIENT_EXECUTION_POLICY_v1",
+  "status": "active",
+  "scope": "governed MetaBlooms stages when Python is slow, hanging, or unreliable",
+  "lanes": [
+    {
+      "rank": 1,
+      "name": "shell_coreutils",
+      "uses": [
+        "find",
+        "sort",
+        "comm",
+        "diff",
+        "grep",
+        "sed",
+        "awk",
+        "sha256sum",
+        "zip",
+        "unzip",
+        "tar"
+      ]
+    },
+    {
+      "rank": 2,
+      "name": "jq_node",
+      "uses": [
+        "jq",
+        "node"
+      ]
+    },
+    {
+      "rank": 3,
+      "name": "python3_dash_S_stdlib",
+      "uses": [
+        "json",
+        "hashlib",
+        "zipfile",
+        "pathlib"
+      ],
+      "launcher": "runtime/governance/python3_S_lane_exec_v1.sh",
+      "timeout_required": true
+    },
+    {
+      "rank": 4,
+      "name": "normal_python_quarantine",
+      "timeout_required": true,
+      "allowed_only_if": "external_package_required"
+    }
+  ],
+  "hard_rules": [
+    "tool probe before each governed stage",
+    "normal python requires timeout and cannot be only verifier",
+    "filesystem/archive work defaults to shell/coreutils",
+    "json validation defaults to jq or node before python",
+    "large recursive jobs must be chunked and receipted",
+    "failure must switch lanes rather than repeat same failing tool",
+    "full OS exports must pass FULL_OS_PORTABLE_EXPORT_MUST_INCLUDE_BASELINE_v1"
+  ],
+  "activation_request": "Promote this policy through GPC if user asks to make it runtime-enforced."
+}

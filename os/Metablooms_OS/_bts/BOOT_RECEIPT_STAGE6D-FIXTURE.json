@@ -1,0 +1,9 @@
+{
+  "schema": "mb.bts_boot.v4",
+  "session_id": "STAGE6D-FIXTURE",
+  "os_root": "/mnt/data/Metablooms_OS",
+  "timestamp": "2026-05-02T00:23:02.789044Z",
+  "bts_version": "mb.bts.v4",
+  "armed": true,
+  "log_path": "/mnt/data/Metablooms_OS/bts/bts_log.ndjson"
+}

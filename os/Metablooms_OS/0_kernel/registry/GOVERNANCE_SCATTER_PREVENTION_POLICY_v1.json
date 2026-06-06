@@ -1,0 +1,19 @@
+{
+  "allowed_manifest": "0_kernel/registry/BOOT_REQUIRED_GATES_v1.json",
+  "artifact_type": "GOVERNANCE_SCATTER_PREVENTION_POLICY_v1",
+  "controlled_dirs": [
+    "0_kernel/chat_governance/",
+    "0_kernel/sandbox_governance/",
+    "runtime/governance/",
+    "governance/invariants/",
+    "0_kernel/registry/invariants/"
+  ],
+  "created_utc": "2026-04-30T21:45:00Z",
+  "deny_on_missing_behavior_test": true,
+  "deny_on_missing_loader": true,
+  "deny_on_unregistered_controlled_file": true,
+  "promotion_gate": "runtime/governance/governance_scatter_prevention_v1.py",
+  "purpose": "Prevent governance artifacts from being created as loose files that do not survive boot/export or are not invoked by runtime gates.",
+  "rule": "Every file in controlled_dirs must be listed in BOOT_REQUIRED_GATES_v1. New governance files must update the manifest and include behavior fixtures before promotion.",
+  "stage_id": "H0C1_BOOT_CRITICAL_GOVERNANCE_CONSOLIDATION_AND_HOST_ENFORCEMENT_BRIDGE"
+}

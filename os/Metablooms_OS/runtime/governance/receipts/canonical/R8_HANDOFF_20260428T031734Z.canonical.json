@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-04-28T03:18:31Z",
+  "decision_id": "R8-791bdb242f238d31",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"completed_stage\": \"R8_PYTHON_HEALTH_GOVERNANCE_PROMOTION\", \"created_utc\": \"2026-04-28T03:18:31Z\", \"handoff_type\": \"REFRACTOR_PROGRAM_STAGE_HANDOFF\", \"next_stage\": \"R9_TELEMETRY_CARTRIDGE_CONTRACT_PROMOTION\", \"notes\": [\"P0PY_PYTHON_HEALTH is active in gate registry\", \"normal python live probe is forbidden; hook-chain inspection is used instead\", \"python3 -S lane remains mandatory\"], \"required_next_inputs\": [\"R8_VERIFY_RECEIPT_20260428T031734Z.json\", \"runtime/governance/registries/gate_registry_v1.json\", \"2_engines/telemetry/MISCONCEPTION_TELEMETRY_ENGINE_v1.js\"], \"verdict\": \"PASS\"}",
+  "reasons": [],
+  "record_id": "R8_HANDOFF_20260428T031734Z",
+  "record_kind": "handoff",
+  "result": "pass",
+  "source_record": {
+    "path": "receipts/refactor_program/R8_HANDOFF_20260428T031734Z.json",
+    "sha256": "791bdb242f238d318821633614d9eaec6ac73660efd68534a5799537cc8c46bc",
+    "size_bytes": 637
+  },
+  "span_id": "d74277f5356f89ae",
+  "stage_id": "R8",
+  "summary": "Canonical wrapper for R8_HANDOFF_20260428T031734Z.json",
+  "trace_id": "37fb261ae4eb395e3457827c239a8a19"
+}

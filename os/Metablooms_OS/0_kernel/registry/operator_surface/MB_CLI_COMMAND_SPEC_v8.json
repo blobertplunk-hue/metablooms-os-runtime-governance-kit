@@ -1,0 +1,26 @@
+{
+  "artifact_type": "MB_CLI_COMMAND_SPEC_v8",
+  "commands": [
+    {
+      "fail_closed": "STAGE_RUNNER_SECURITY_GATE_BLOCK",
+      "gate": "security_gate_enforcer_v1.py",
+      "name": "run-stage --execute",
+      "security_enforced": true
+    },
+    {
+      "fail_closed": "EXPORT_FAIL if promotion gate blocks",
+      "gate": "export_promotion_gate_v1.py",
+      "name": "export",
+      "security_enforced": true
+    }
+  ],
+  "created_utc": "20260501T123800Z",
+  "inherits": "MB_CLI_COMMAND_SPEC_v7",
+  "non_negotiable_rules": [
+    "stage runner must invoke security gate before cartridge executor",
+    "cartridge executor must fail closed if called without prior or local security gate pass",
+    "export command must invoke export promotion gate before reporting EXPORT_PASS",
+    "malicious prompt-injection fixtures must never evaluate ALLOW"
+  ],
+  "purpose": "Hard-wire security enforcement gates into run-stage execution and export promotion."
+}

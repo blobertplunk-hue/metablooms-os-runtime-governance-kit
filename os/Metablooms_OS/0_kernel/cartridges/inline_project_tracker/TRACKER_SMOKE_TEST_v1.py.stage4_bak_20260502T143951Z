@@ -1,0 +1,73 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+# MetaBlooms Stage4 bounded subprocess enforcement shim.
+from pathlib import Path as _MBPath
+import sys as _MBSys
+_MB_SELF = _MBPath(__file__).resolve()
+for _MB_PARENT in [_MB_SELF] + list(_MB_SELF.parents):
+    _MB_EXEC_LIB = _MB_PARENT / "0_kernel" / "lib" / "execution"
+    if (_MB_EXEC_LIB / "bounded_subprocess_compat_v1.py").exists():
+        if str(_MB_EXEC_LIB) not in _MBSys.path:
+            _MBSys.path.insert(0, str(_MB_EXEC_LIB))
+        break
+from bounded_subprocess_compat_v1 import run as bounded_subprocess_run
+import importlib.util, json, subprocess, sys, tempfile
+from pathlib import Path
+FORBIDDEN=set("╭╮╰╯│┌┐└┘├┤┬┴┼─|")
+TOP="TRACKER ▸"
+
+def load_mod(path:Path,name:str):
+    spec=importlib.util.spec_from_file_location(name,path)
+    if spec is None or spec.loader is None: raise RuntimeError(f"cannot load {path}")
+    mod=importlib.util.module_from_spec(spec); spec.loader.exec_module(mod); return mod
+
+def main(argv):
+    if len(argv)!=4:
+        print('usage: TRACKER_SMOKE_TEST_v1.py <root> <state> <report>', file=sys.stderr); return 2
+    root=Path(argv[1]); state_path=Path(argv[2]); report=Path(argv[3])
+    cart=root/'0_kernel'/'cartridges'/'inline_project_tracker'
+    renderer_path=cart/'TRACKER_RENDERER_v1.py'; validator_path=cart/'TRACKER_VALIDATOR_v1.py'
+    gate_validator=cart/'TRACKER_GATE_VALIDATOR_v1.py'; updater=cart/'TRACKER_STATE_UPDATER_v1.py'; handoff_val=cart/'TRACKER_HANDOFF_UPDATE_VALIDATOR_v1.py'
+    errors=[]; checks={}
+    def check(name, cond, err):
+        checks[name]='PASS' if cond else 'FAIL'
+        if not cond: errors.append(err)
+    check('root_exists', root.is_dir(), 'root_missing')
+    check('state_exists', state_path.is_file(), 'state_missing')
+    for name,p in [('renderer',renderer_path),('validator',validator_path),('gate_validator',gate_validator),('updater',updater),('handoff_update_validator',handoff_val)]:
+        check(f'{name}_exists', p.is_file(), f'{name}_missing')
+    rendered=''
+    if state_path.is_file() and renderer_path.is_file():
+        renderer=load_mod(renderer_path,'renderer')
+        state=json.loads(state_path.read_text(encoding='utf-8'))
+        rendered=renderer.render_tracker(state)
+        lines=rendered.splitlines()
+        check('compact_tracker_renders_first', rendered.startswith(TOP), 'compact_tracker_not_first')
+        check('max_line_width_lte_64', max([len(x) for x in lines] or [0])<=64, 'line_width_exceeds_64')
+        check('no_box_drawing_or_pipe_table_layout', not any(ch in FORBIDDEN for ch in rendered), 'forbidden_box_or_pipe_layout')
+        if validator_path.is_file():
+            val_report=report.parent/'TRACKER_5_VALIDATOR_REPORT.json'
+            r=bounded_subprocess_run([sys.executable, str(validator_path), str(renderer_path), str(state_path), str(val_report)], text=True, capture_output=True)
+            check('renderer_validator_passes', r.returncode==0, 'renderer_validator_failed:'+r.stdout[-500:]+r.stderr[-500:])
+        if gate_validator.is_file():
+            gate_report=report.parent/'TRACKER_5_GATE_VALIDATION_REPORT.json'
+            r=bounded_subprocess_run([sys.executable, str(gate_validator), str(root), str(state_path), str(renderer_path), str(gate_report)], text=True, capture_output=True)
+            check('gate_validator_passes', r.returncode==0, 'gate_validator_failed:'+r.stdout[-500:]+r.stderr[-500:])
+        # Handoff update smoke on temp state/receipt/handoff.
+        if updater.is_file() and handoff_val.is_file():
+            with tempfile.TemporaryDirectory(prefix='tracker5_smoke_', dir=str(report.parent)) as td:
+                td=Path(td); tmp_state=td/'TRACKER_STATE_v1.json'; tmp_state.write_text(state_path.read_text(encoding='utf-8'), encoding='utf-8')
+                tmp_receipt=td/'TMP_RECEIPT.json'; tmp_handoff=td/'TMP_HANDOFF.json'; tmp_preview=td/'TMP_PREVIEW.txt'; tmp_report=td/'TMP_VALIDATION.json'
+                tmp_receipt.write_text(json.dumps({'stage':'TRACKER-5_TMP','status':'PASS'}, sort_keys=True), encoding='utf-8')
+                tmp_handoff.write_text(json.dumps({'status':'READY','to_stage_authorized':'NONE'}, sort_keys=True), encoding='utf-8')
+                r=bounded_subprocess_run([sys.executable, str(updater),'--root',str(root),'--state',str(tmp_state),'--receipt',str(tmp_receipt),'--handoff',str(tmp_handoff),'--stage','TRACKER-5_TMP','--stage-index','6','--stage-total','6','--status','DONE','--now','temporary smoke update','--next','none','--stop-rule','test only','--timestamp-utc','SMOKE','--render-preview',str(tmp_preview)],text=True,capture_output=True)
+                check('handoff_updater_runs', r.returncode==0, 'handoff_updater_failed:'+r.stdout[-500:]+r.stderr[-500:])
+                if r.returncode==0:
+                    r2=bounded_subprocess_run([sys.executable, str(handoff_val),'--root',str(root),'--state',str(tmp_state),'--receipt',str(tmp_receipt),'--handoff',str(tmp_handoff),'--preview',str(tmp_preview),'--stage','TRACKER-5_TMP','--report',str(tmp_report)],text=True,capture_output=True)
+                    check('handoff_update_validator_passes', r2.returncode==0, 'handoff_update_validator_failed:'+r2.stdout[-500:]+r2.stderr[-500:])
+    out={'validator':'TRACKER_SMOKE_TEST_v1','status':'PASS' if not errors else 'FAIL','errors':errors,'checks':checks,'rendered_preview':rendered}
+    report.write_text(json.dumps(out,indent=2,sort_keys=True)+'\n',encoding='utf-8')
+    print(json.dumps(out,indent=2,sort_keys=True))
+    return 0 if not errors else 1
+if __name__=='__main__': raise SystemExit(main(sys.argv))

@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "created_at": 1777062946.1861887,
+  "stage": "F6_SYNTHETIC_BLOCK_TEST",
+  "status": "blocked",
+  "verdict": "FAIL",
+  "root_cause": "synthetic proof for F6 rule",
+  "pointer_updated": false,
+  "latest_pass_advanced": false,
+  "next_correct_command": "SYNTHETIC_REPAIR_NOT_REQUIRED"
+}

@@ -1,0 +1,37 @@
+{
+  "artifact_type": "CDR_CRITICAL_GATE_RESULTS_STAGE5.v1",
+  "gates": [
+    {
+      "evidence": "",
+      "gate": "Stage4 handoff loaded",
+      "result": "PASS"
+    },
+    {
+      "evidence": "initial=8 post=0",
+      "gate": "Test/eval JSON write scan reached zero",
+      "result": "PASS"
+    },
+    {
+      "evidence": "",
+      "gate": "Patched files compile",
+      "result": "PASS"
+    },
+    {
+      "evidence": "",
+      "gate": "Atomic writer harness",
+      "result": "PASS"
+    },
+    {
+      "evidence": "",
+      "gate": "Atomic JSON Stage4 policy regression",
+      "result": "PASS"
+    },
+    {
+      "evidence": "pass=2 warnings=3",
+      "gate": "Eval smoke subset",
+      "result": "PASS_WITH_WARNINGS"
+    }
+  ],
+  "stage": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT_20260502T145012Z",
+  "verdict": "PASS_WITH_WARNINGS"
+}

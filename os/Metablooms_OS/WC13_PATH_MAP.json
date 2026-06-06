@@ -1,0 +1,81 @@
+{
+  "stage": "PROFESSIONALIZATION_CONVERGENCE_STAGE28_WC13_STAGING_BUILD",
+  "status": "STAGE28_STAGING_TREE_CREATED",
+  "staging_root": "/mnt/data/stage28_wc13_staging_build_20260503T214253Z/extract_wc12/Metablooms_OS",
+  "inputs": {
+    "wc12_zip": {
+      "path": "/mnt/data/BOOTABLE_FULL_AUTHORITY_WC12.zip",
+      "bytes": 34264406,
+      "sha256": "f9b1305da011bfdb9344e6de12bff5a4d21e90de81e7305d4fce6ce0d23b2db9"
+    },
+    "stage23_zip": {
+      "path": "/mnt/data/MetaBlooms_Stage23_Clean_PC_Bootstrap_Kit_20260503T155341Z.zip",
+      "bytes": 23480,
+      "sha256": "1dce177e3db3ab7bc5421c4589801da0be63fb6447ce2e07764eb965ed17130a"
+    },
+    "stage26_zip": {
+      "path": "/mnt/data/METABLOOMS_STAGE26_FINAL_HANDOFF_AND_WC13_INTEGRATION_PLAN_20260503.zip",
+      "bytes": 6186,
+      "sha256": "a0db5f324f9916b6b5f105713364b7e11d8e402beb65c35c038bc18d1f7e76d0"
+    },
+    "stage27_zip": {
+      "path": "/mnt/data/METABLOOMS_STAGE27_WC13_BOOTABLE_OS_INTEGRATION_BUILD_PLAN_20260503.zip",
+      "bytes": 4071,
+      "sha256": "011036a9496c417c0b9cb6d88227fb531ffbf1e3700265476bbf54cdce961a34"
+    },
+    "streaming_policy": {
+      "path": "/mnt/data/PROMPT_STREAMING_SAFE_EXECUTION_POLICY_v1.json",
+      "bytes": 2259,
+      "sha256": "1d73a248f4289129f0f80cc8a4f4cf655ffdd38b6f007f77ae0661179f0d7368"
+    }
+  },
+  "sidecar_checks": [
+    {
+      "input": "wc12_zip",
+      "sidecar": "/mnt/data/BOOTABLE_FULL_AUTHORITY_WC12.zip.sha256",
+      "declared": "f9b1305da011bfdb9344e6de12bff5a4d21e90de81e7305d4fce6ce0d23b2db9",
+      "actual": "f9b1305da011bfdb9344e6de12bff5a4d21e90de81e7305d4fce6ce0d23b2db9",
+      "match": true
+    },
+    {
+      "input": "stage23_zip",
+      "sidecar": "/mnt/data/MetaBlooms_Stage23_Clean_PC_Bootstrap_Kit_20260503T155341Z.zip.sha256",
+      "declared": "1dce177e3db3ab7bc5421c4589801da0be63fb6447ce2e07764eb965ed17130a",
+      "actual": "1dce177e3db3ab7bc5421c4589801da0be63fb6447ce2e07764eb965ed17130a",
+      "match": true
+    },
+    {
+      "input": "stage26_zip",
+      "sidecar": "/mnt/data/METABLOOMS_STAGE26_FINAL_HANDOFF_AND_WC13_INTEGRATION_PLAN_20260503.zip.sha256",
+      "declared": "a0db5f324f9916b6b5f105713364b7e11d8e402beb65c35c038bc18d1f7e76d0",
+      "actual": "a0db5f324f9916b6b5f105713364b7e11d8e402beb65c35c038bc18d1f7e76d0",
+      "match": true
+    },
+    {
+      "input": "stage27_zip",
+      "sidecar": "/mnt/data/METABLOOMS_STAGE27_WC13_BOOTABLE_OS_INTEGRATION_BUILD_PLAN_20260503.zip.sha256",
+      "declared": "011036a9496c417c0b9cb6d88227fb531ffbf1e3700265476bbf54cdce961a34",
+      "actual": "011036a9496c417c0b9cb6d88227fb531ffbf1e3700265476bbf54cdce961a34",
+      "match": true
+    }
+  ],
+  "created_overlay_files": [
+    "0_kernel/registry/environment/pc_powershell/ROBERT_PC_POWERSHELL_TARGET_v1.json",
+    "0_kernel/registry/operator_interface/POWERSHELL_UX_CARTRIDGE_RULES.md",
+    "0_kernel/registry/operator_interface/PASTEBACK_MARKER_STANDARD_v1.json",
+    "0_kernel/registry/external_git/github_repository_governance_state_v1.json",
+    "0_kernel/registry/external_git/github_release_distribution_state_v1.json",
+    "1_cartridges/pc_github_automation/STAGE23_PC_BOOTSTRAP_KIT_MANIFEST.json",
+    "1_cartridges/pc_github_automation/STAGE23_PC_BOOTSTRAP_KIT_RESCUE.zip.pointer.json",
+    "2_evidence/stage26_final_handoff/STAGE26_RECEIPT.json",
+    "2_evidence/stage26_final_handoff/FINAL_HANDOFF_STAGE26.md",
+    "0_kernel/policies/PROMPT_STREAMING_SAFE_EXECUTION_POLICY_v1.json",
+    "BOOT_HANDOFF_WC13.md"
+  ],
+  "boot_artifacts_checked": {
+    "BOOT_AUTHORITY_MANIFEST_v1.json": true,
+    "CURRENT_FULL_AUTHORITY_POINTER_v1.json": true,
+    "NEW_CHAT_START_HERE.md": true
+  },
+  "next_stage": "PROFESSIONALIZATION_CONVERGENCE_STAGE29_WC13_STAGING_VALIDATION"
+}

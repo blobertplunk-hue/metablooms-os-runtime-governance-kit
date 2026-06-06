@@ -1,0 +1,26 @@
+{
+  "created_at_utc": "20260503T022610Z",
+  "fixture_summary": {
+    "pass_rate": 1.0,
+    "passed": 6,
+    "total": 6
+  },
+  "honesty_label": "OS-governance score including bounded real-task proxy harness; not an external certification.",
+  "latest_measured_score_percent": 84.375,
+  "new_domain": {
+    "benchmark_domain": "real_task_eval_harness",
+    "decision": "partial",
+    "reason": "Harness exists and passes synthetic proxies; full real classroom/task corpus evals remain future work."
+  },
+  "previous_measured_score_percent": 81.25,
+  "remaining_gaps": [
+    "full classroom/task corpus evals",
+    "enforced runtime integration into every task cartridge",
+    "independent clean-room replay across new chats/devices",
+    "visual tracker UI polish beyond text preview"
+  ],
+  "schema_version": "v1",
+  "score_change_points": 3.125,
+  "source_authority_zip": "BOOTABLE_FULL_AUTHORITY_WC9.zip",
+  "stage": "WC_STAGE10_REAL_TASK_EVAL_HARNESS_AND_ENFORCEMENT_PROOF"
+}

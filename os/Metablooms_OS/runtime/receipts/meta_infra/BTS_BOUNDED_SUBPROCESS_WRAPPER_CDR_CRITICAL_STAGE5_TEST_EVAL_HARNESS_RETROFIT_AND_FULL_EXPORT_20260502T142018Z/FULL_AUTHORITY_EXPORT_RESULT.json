@@ -1,0 +1,39 @@
+{
+  "artifact_type": "FULL_AUTHORITY_EXPORT_RESULT_v1",
+  "created_utc": "20260502T142018Z",
+  "duplicate_member_count": 0,
+  "export_path": "/mnt/data/METABLOOMS_OS_BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE5_FULL_AUTHORITY_20260502T142018Z.zip",
+  "manifest_member_sample": [
+    {
+      "path": "Metablooms_OS/.gitignore",
+      "sha256": "a14ea8082d46dd4c047afec124f0b64ceb1e59e346be200d9778d5f8dc9c4acd",
+      "size": 59
+    },
+    {
+      "path": "Metablooms_OS/.registry_mutation.lock",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "Metablooms_OS/02_PROJECT_OVERLAYS/METABLOOMS_PROJECT_FILES_BOOT_OVERLAY_20260428T014821Z.zip",
+      "sha256": "ffab0ff68e43323acd4ff96c79fe1f1f71f9b0297e0e6ad62ffd3d685529dc45",
+      "size": 31620
+    },
+    {
+      "path": "Metablooms_OS/0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+      "sha256": "3e5186139593f856e25211458054be0c1f9a2492952e26ea35a37ef47747b198",
+      "size": 989
+    },
+    {
+      "path": "Metablooms_OS/0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md.sha256",
+      "sha256": "00a42f4f2a1f0de8c4be4e8c58f5ce95846df1b1003bada0eb268761defa267d",
+      "size": 96
+    }
+  ],
+  "manifest_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT_20260502T142018Z/FULL_EXPORT_MANIFEST.json",
+  "member_count": 4561,
+  "sha256": "6320b60044177813f42dec5f9ff391bf18993098993eb46d8661c331eb54efc6",
+  "sidecar_path": "/mnt/data/METABLOOMS_OS_BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE5_FULL_AUTHORITY_20260502T142018Z.zip.sha256",
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT",
+  "zip_testzip": "PASS"
+}

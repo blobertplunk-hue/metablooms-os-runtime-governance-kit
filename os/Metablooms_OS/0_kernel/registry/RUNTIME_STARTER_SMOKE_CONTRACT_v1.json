@@ -1,0 +1,47 @@
+{
+  "allowed_cli_shapes": [
+    "--root <path> --json",
+    "--zip <path> --json"
+  ],
+  "created_utc": "2026-04-30T23:23:00Z",
+  "fail_closed_if": [
+    "source_checksum_mismatch",
+    "zip_integrity_fails",
+    "duplicate_member_detected",
+    "unsafe_member_path_detected",
+    "starter_smoke_denies",
+    "pointer_not_promoted",
+    "wrapper_missing",
+    "wrapper_denies",
+    "direct_ad_hoc_operator_invocation_detected",
+    "live_operator_direct_runtime_starter_smoke_command_detected",
+    "unclassified_direct_callsite_reference_detected"
+  ],
+  "forbidden_cli_shapes": [
+    "<positional_root> --json",
+    "<positional_zip> --json",
+    "unknown args"
+  ],
+  "historical_callsite_quarantine_index": "runtime/traces/observability/HISTORICAL_CALLSITE_QUARANTINE_INDEX_LATEST.json",
+  "historical_callsite_quarantine_policy": "0_kernel/registry/observability/MB_HISTORICAL_CALLSITE_QUARANTINE_POLICY_v1.json",
+  "id": "RUNTIME_STARTER_SMOKE_CONTRACT_v1",
+  "mode": "stream_or_targeted_root",
+  "operator_entrypoint": "runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+  "purpose": "Targeted boot/start proof without full OS materialization.",
+  "required_members": [
+    "CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "0_kernel/registry/BOOT_REQUIRED_GATES_v1.json",
+    "runtime/governance/runtime_starter_smoke_v1.py",
+    "runtime/governance/task_start_hook_v1.py",
+    "runtime/governance/prompt_route_preexecution_enforcer_v1.py",
+    "runtime/cartridges/prompt_governance_v1/CARTRIDGE_MANIFEST.json",
+    "runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+    "runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py.sha256"
+  ],
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_12_POINTER_PROMOTION_AND_RUNTIME_STARTER_SMOKE",
+  "stage7_updated_by": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE7_METHOD_WRAPPER_CALLSITE_RETROFIT_AND_BOOT_SEQUENCE_ENFORCEMENT",
+  "stage7_updated_utc": "20260502T170919Z",
+  "stage8_updated_by": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE",
+  "stage8_updated_utc": "20260502T171707Z",
+  "underlying_gate": "runtime/governance/runtime_starter_smoke_v1.py"
+}

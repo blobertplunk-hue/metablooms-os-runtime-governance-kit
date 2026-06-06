@@ -1,0 +1,113 @@
+{
+  "created_utc": "2026-05-02T22:28:09Z",
+  "duplicate_member_count": 0,
+  "final_export_path": "/mnt/data/METABLOOMS_OS_VISUAL_PRESENTATION_QUALITY_GATE_STAGE5_FULL_AUTHORITY_EXPORT_20260502T222425Z_STORED_REPAIRED.zip",
+  "final_export_sha256": "3c75d9028f2ea0b09c2fae2796671303b8188a4f77f245734f86437c03edfbae",
+  "final_export_size_bytes": 96151710,
+  "include_checks": {
+    "current_pointer_in_zip": true,
+    "export_manifest_in_zip": true,
+    "pre_final_receipt_in_zip": true,
+    "stage4_render_packet_in_zip": true
+  },
+  "required": {
+    "0_kernel/registry/operator_surface/VISUAL_PRESENTATION_OPERATOR_TRACKER_BINDING_v1.json": {
+      "exists": true,
+      "sha256": "9b80a5d70cc333130301c05307f7e6b9b5d8f014ad184be1b1ce6222e233979d"
+    },
+    "0_kernel/registry/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_CONTRACT_v1.json": {
+      "exists": true,
+      "sha256": "e5e74affefcf800942c00aa5c38bc2ea6afc22652a1913dabda10e78a1c1de0a"
+    },
+    "0_kernel/registry/visual_presentation_quality/visual_presentation_quality_declaration_schema_v1.json": {
+      "exists": true,
+      "sha256": "cca7d35922c5de1071a6ccb4d596b6d186cfa1ced82348c35a6fa5c203c273be"
+    },
+    "0_kernel/validators/validate_visual_presentation_quality_gate_v1.py": {
+      "exists": true,
+      "sha256": "4731450310ef80649aab797040223a223ace44589adc8c5afc924534742a9fae"
+    },
+    "CURRENT_FULL_AUTHORITY_POINTER_v1.json": {
+      "exists": true,
+      "sha256": "a5107687d5b889d0041965836c1060f88b9b87c73559c25a9ee9861d35ea06de"
+    },
+    "OPEN_OPERATOR_VISUAL_TRACKER.html": {
+      "exists": true,
+      "sha256": "9fdb5000f48af4d5cfa830e2912e1f830b6586d0c4848f7cb4c166aa099b2f47"
+    },
+    "runtime/export_promotion/VISUAL_PRESENTATION_QUALITY_GATE_STAGE5_EXPORT_MANIFEST_v1.json": {
+      "exists": true,
+      "sha256": "fb109d8c5bb92bda78cd8b28f696988f2e60d49b31fafcbb64da470dd2bed16c"
+    },
+    "runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE4_RENDER_SMOKE_AND_VISUAL_REVIEW_PACKET_20260502T220827Z/VISUAL_PRESENTATION_QUALITY_GATE_STAGE4_RENDER_SMOKE_AND_VISUAL_REVIEW_PACKET_RECEIPT.json": {
+      "exists": true,
+      "sha256": "d763ec1b37c3aacb184d78ae8147150008c39a2391db78bdd0e674d6502de922"
+    },
+    "runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE4_RENDER_SMOKE_AND_VISUAL_REVIEW_PACKET_20260502T220827Z/VISUAL_REVIEW_PACKET_STAGE4.json": {
+      "exists": true,
+      "sha256": "d4afa56022cdca407c7a671e901dd3c3b1d236dd3918c9bf7fad2b4601dd5199"
+    },
+    "runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE4_RENDER_SMOKE_AND_VISUAL_REVIEW_PACKET_20260502T220827Z/weasy_render/operator_tracker_render_contact_sheet.png": {
+      "exists": true,
+      "sha256": "c6eaefe8b61e47b729b18fb7b70bc2e0fc7a94c51f00cf81f44ada962c2fbc11"
+    },
+    "runtime/state/VISUAL_PRESENTATION_QUALITY_GATE_TRACKER_PREVIEW.txt": {
+      "exists": true,
+      "sha256": "f278c54590e60b744afae25a972b5e20ad93e275913dc2f5729f9b99b22ed368"
+    },
+    "tests/fixtures/usefulness_surface/valid_usefulness_html_activity_with_visual_presentation_v1.json": {
+      "exists": true,
+      "sha256": "673ad7f813077b95f5e9a3c77f98eaa4cec5735b3adf2b8b13cbe1afe2313535"
+    },
+    "tests/fixtures/usefulness_surface/valid_usefulness_operator_tracker_with_visual_presentation_v1.json": {
+      "exists": true,
+      "sha256": "3b6f24440d8ddb3f2c9e49d1eb13d7f37698ac8910159be5fe2e92bf76adc0f0"
+    },
+    "tests/fixtures/visual_presentation_quality/invalid_visual_presentation_quality_default_browser_styles_v1.json": {
+      "exists": true,
+      "sha256": "9aa9110d98b97cd3e5083ef7ac3997d7075fe8657bc001bca25395f497f96bee"
+    },
+    "tests/fixtures/visual_presentation_quality/valid_visual_presentation_quality_html_activity_v1.json": {
+      "exists": true,
+      "sha256": "dbf5c0b33b5f9c13cf060ddb9031e0035d33cde394a7676e12c5833db55ca20e"
+    },
+    "tests/fixtures/visual_presentation_quality/valid_visual_presentation_quality_operator_tracker_v1.json": {
+      "exists": true,
+      "sha256": "5cecdbceffa216727ed6216d29316052c86c4811c929596b5dd13663aa11bea8"
+    }
+  },
+  "required_extraction_scope": "required authority paths extracted from final ZIP; full zip integrity tested with unzip -tq",
+  "required_replay_root": "/mnt/data/replay_required_VISUAL_PRESENTATION_QUALITY_GATE_STAGE5_20260502T222425Z_STORED_REPAIRED",
+  "schema_version": "metablooms_portability_replay_proof.v1",
+  "sidecar_path": "/mnt/data/METABLOOMS_OS_VISUAL_PRESENTATION_QUALITY_GATE_STAGE5_FULL_AUTHORITY_EXPORT_20260502T222425Z_STORED_REPAIRED.zip.sha256",
+  "stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE5_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF",
+  "tracker_static": {
+    "has_focus_visible": true,
+    "has_mobile_media_query": true,
+    "has_reduced_motion": true,
+    "has_teacher_professional_language": true,
+    "has_viewport": true,
+    "has_vpq_text_binding": true
+  },
+  "validator_replay": {
+    "invalid_default_deny": {
+      "decision": "DENY",
+      "expected_deny": true,
+      "ok": false,
+      "source": "/tmp/stage5_vpq_invalid.out"
+    },
+    "operator_tracker_allow": {
+      "decision": "ALLOW",
+      "ok": true,
+      "source": "/tmp/stage5_vpq_op.out"
+    },
+    "valid_html_allow": {
+      "decision": "ALLOW",
+      "ok": true,
+      "source": "/tmp/stage5_vpq_valid.out"
+    }
+  },
+  "verdict": "PASS",
+  "zip_entry_count": 6931,
+  "zip_test_bad_member": null
+}

@@ -1,0 +1,12 @@
+{
+  "artifact_type": "OperatorTrackerRestorationReceipt.v1",
+  "created_utc": "20260502T145510Z",
+  "status": "PASS",
+  "reason": "User reported loss of visual tracker and confusion about current MetaBlooms chain.",
+  "latest_full_authority_export": "/mnt/data/METABLOOMS_OS_BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE5_FULL_AUTHORITY_20260502T145012Z.zip",
+  "latest_full_authority_sha256": "66bba2bd61cb9a4b8335025a05bfd18cb3772fa1fc687eaeab1bacac4016de1e",
+  "current_active_chain": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL",
+  "current_active_stage_completed": "STAGE1_ADS_AND_CONTRACT",
+  "recommended_next": "Restore tracker enforcement before continuing append-log implementation.",
+  "tracker_preview_path": "/mnt/data/Metablooms_OS/runtime/receipts/operator_tracker/OPERATOR_TRACKER_RESTORED_20260502T145510Z/CURRENT_OPERATOR_TRACKER_PREVIEW.md"
+}

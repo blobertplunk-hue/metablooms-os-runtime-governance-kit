@@ -1,0 +1,36 @@
+{
+  "schema": "MetaBloomsFullAuthorityExportManifest_v1",
+  "archive_filename": "METABLOOMS_WC13_FINAL_BOOTABLE_FULL_AUTHORITY_REPAIRED2_20260503T232000Z.zip",
+  "label": "WC13 REPAIRED2 BOOTABLE FULL OS AUTHORITY ZIP",
+  "stage": "PROFESSIONALIZATION_CONVERGENCE_STAGE31_WC13_ROOT_AUTHORITY_NARRATIVE_REPAIR_AND_PREVENTION_LOCK",
+  "timestamp_utc": "2026-05-03T23:18:30Z",
+  "source_authority_zip": "METABLOOMS_WC13_FINAL_BOOTABLE_FULL_AUTHORITY_REPAIRED_20260503T222300Z.zip",
+  "source_authority_sha256": "a63e117eb253c45dc1bdbc7da92304cb0d3df5140d678ca74b3bab7095e9d143",
+  "external_sidecar_filename": "METABLOOMS_WC13_FINAL_BOOTABLE_FULL_AUTHORITY_REPAIRED2_20260503T232000Z.zip.sha256",
+  "hash_resolution": "external_sidecar_required_after_zip_close_no_internal_hash",
+  "sidecar_hash_policy": "external_sidecar_required_after_zip_close_no_internal_placeholder",
+  "boot_root_inside_zip": "Metablooms_OS/",
+  "declared_external_outputs": [
+    "/mnt/data/METABLOOMS_WC13_FINAL_BOOTABLE_FULL_AUTHORITY_REPAIRED2_20260503T232000Z.zip",
+    "/mnt/data/METABLOOMS_WC13_FINAL_BOOTABLE_FULL_AUTHORITY_REPAIRED2_20260503T232000Z.zip.sha256",
+    "/mnt/data/METABLOOMS_WC13_FINAL_BOOTABLE_FULL_AUTHORITY_REPAIRED2_20260503T232000Z_REPLAY_PROOF.json",
+    "/mnt/data/METABLOOMS_WC13_FINAL_BOOTABLE_FULL_AUTHORITY_REPAIRED2_20260503T232000Z_MANIFEST.json"
+  ],
+  "declared_internal_outputs": [
+    "NEW_CHAT_START_HERE.md",
+    "BOOT_AUTHORITY_MANIFEST_v1.json",
+    "EXPORT_MANIFEST_v1.json",
+    "EXPORT_PROVENANCE_v1.json",
+    "CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "CURRENT_EXPORT_AUTHORITY_v1.json",
+    "BOOT_HANDOFF_WC13.md",
+    "0_kernel/validators/validate_current_authority_identity_v1.py",
+    "runtime/receipts/professionalization_convergence/STAGE31_WC13_ROOT_AUTHORITY_REPAIR_RECEIPT.json"
+  ],
+  "repair_summary": [
+    "Updated stale root boot/narrative/provenance files from PAC7/WC10/WC12/Stage6S/Stage28 to WC13 repaired2 current authority.",
+    "Removed root .write_probe_* debug artifacts.",
+    "Added root authority identity validator to prevent recurrence."
+  ],
+  "verdict": "PASS_AFTER_REPLAY_PROOF"
+}

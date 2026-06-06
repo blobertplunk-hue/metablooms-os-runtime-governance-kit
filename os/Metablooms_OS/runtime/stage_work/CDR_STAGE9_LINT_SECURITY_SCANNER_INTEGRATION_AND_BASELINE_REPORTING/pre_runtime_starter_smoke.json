@@ -1,0 +1,13 @@
+{
+  "cmd": [
+    "python3",
+    "-S",
+    "runtime/governance/runtime_starter_smoke_v1.py",
+    "--root",
+    ".",
+    "--json"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "{\n  \"decision\": \"ALLOW\",\n  \"invalid_json\": [],\n  \"missing\": [],\n  \"mode\": \"root\",\n  \"path\": \".\",\n  \"read_errors\": []\n}\n"
+}

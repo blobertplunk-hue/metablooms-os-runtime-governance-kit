@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "created_at": 1777063115.0439227,
+  "stage": "F7_BOOT_RECOVERY_PROOF",
+  "status": "complete",
+  "export_zip": "/mnt/data/exports/MetaBlooms_OS_refined_F7_RECOVERY_PROVEN_1777063110.zip",
+  "download_copy": "/mnt/data/MetaBlooms_OS_refined_F7_RECOVERY_PROVEN_1777063110.zip",
+  "sidecar": "/mnt/data/exports/MetaBlooms_OS_refined_F7_RECOVERY_PROVEN_1777063110.zip.sha256.json",
+  "restore_stage": "/mnt/data/_f7_restore_proof_1777063114",
+  "restore_missing": [],
+  "restore_checks": {
+    "zip_sha_matches_sidecar": true,
+    "zip_size_matches_sidecar": true,
+    "restored_required_files_present": true,
+    "internal_manifest_present": true,
+    "internal_provenance_present": true,
+    "internal_restore_contract_present": true,
+    "capability_set_passed": true,
+    "f0_f7_receipts_present": true
+  },
+  "verdict": "PASS",
+  "next_correct_command": "RETURN TO E4A \u2014 MASTER PIPELINE PROOF SCOPE LOCK"
+}

@@ -1,0 +1,25 @@
+{
+  "created_by": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_5_PROMPT_ENGINE_REGRESSION_FIXTURES_AND_PROFILE_SMOKE",
+  "created_utc": "2026-04-30T21:36:34Z",
+  "fail_closed_conditions": [
+    "fixture_count_below_minimum",
+    "profile_missing_from_registry",
+    "missing_required_gate",
+    "banned_pattern_enforcer_denies"
+  ],
+  "fixtures_path": "runtime/cartridges/prompt_governance_v1/fixtures/profile_smoke/",
+  "id": "PROMPT_ENGINE_REGRESSION_FIXTURE_SUITE_v1",
+  "minimum_fixture_count": 6,
+  "purpose": "Profile smoke tests for prompt-engine operational readiness and regression detection.",
+  "report_generator": "runtime/cartridges/prompt_governance_v1/generate_prompt_engine_reliability_report_v1.py",
+  "required_fixture_fields": [
+    "fixture_id",
+    "profile_id",
+    "input_task",
+    "expected_profile",
+    "expected_required_gates",
+    "must_include_output_rules",
+    "forbidden_patterns"
+  ],
+  "status": "active"
+}

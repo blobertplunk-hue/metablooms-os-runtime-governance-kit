@@ -1,0 +1,27 @@
+{
+  "artifact_type": "MB_AGENT_HARNESS_WORKPACKET_SCHEMA_v2",
+  "created_utc": "20260501T145002Z",
+  "diff_review_rule": "every implementation workpacket requires a diff review report before export promotion",
+  "parallel_group_rule": "workpackets in the same group may run concurrently only if write_scope paths do not overlap",
+  "required_fields": [
+    "workpacket_id",
+    "stage_name",
+    "role",
+    "thread_id",
+    "checkpoint_id",
+    "parallel_group",
+    "write_scope",
+    "input_artifacts",
+    "output_artifacts",
+    "gates",
+    "status",
+    "diff_review_required"
+  ],
+  "status_values": [
+    "READY",
+    "BLOCKED_CONFLICT",
+    "VALIDATED",
+    "REVIEWED",
+    "PROMOTABLE"
+  ]
+}

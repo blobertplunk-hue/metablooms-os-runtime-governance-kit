@@ -1,0 +1,170 @@
+{
+  "created_at_utc": "2026-05-02T02:48:39.707852Z",
+  "json_schema": {
+    "$id": "metablooms://schemas/governance/HITL_APPROVAL_TOKEN_SCHEMA_v1",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "approval_scope": {
+        "additionalProperties": false,
+        "properties": {
+          "allowed_artifact_roots": {
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "allowed_stage_objective": {
+            "minLength": 10,
+            "type": "string"
+          },
+          "stage_id": {
+            "minLength": 4,
+            "type": "string"
+          }
+        },
+        "required": [
+          "stage_id",
+          "allowed_artifact_roots",
+          "allowed_stage_objective"
+        ],
+        "type": "object"
+      },
+      "approved_action_types": {
+        "items": {
+          "enum": [
+            "broad_repair",
+            "full_authority_export",
+            "pointer_promotion",
+            "privileged_filesystem_mutation",
+            "external_install",
+            "destructive_delete",
+            "network_side_effect",
+            "release_delivery"
+          ]
+        },
+        "minItems": 1,
+        "type": "array"
+      },
+      "approved_by": {
+        "minLength": 2,
+        "type": "string"
+      },
+      "approved_risk_tiers": {
+        "items": {
+          "enum": [
+            "high",
+            "critical"
+          ]
+        },
+        "minItems": 1,
+        "type": "array"
+      },
+      "authority_binding": {
+        "additionalProperties": false,
+        "properties": {
+          "authority_label": {
+            "minLength": 10,
+            "type": "string"
+          },
+          "authority_zip_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "authority_zip_sha256",
+          "authority_label"
+        ],
+        "type": "object"
+      },
+      "constraints": {
+        "additionalProperties": false,
+        "properties": {
+          "max_bytes": {
+            "minimum": 1,
+            "type": "integer"
+          },
+          "max_files": {
+            "minimum": 1,
+            "type": "integer"
+          },
+          "max_steps": {
+            "minimum": 1,
+            "type": "integer"
+          },
+          "requires_handoff": {
+            "const": true
+          },
+          "requires_post_tool_validation": {
+            "const": true
+          },
+          "requires_receipt": {
+            "const": true
+          }
+        },
+        "required": [
+          "max_files",
+          "max_bytes",
+          "max_steps",
+          "requires_post_tool_validation",
+          "requires_receipt",
+          "requires_handoff"
+        ],
+        "type": "object"
+      },
+      "expires_at_utc": {
+        "format": "date-time",
+        "type": "string"
+      },
+      "issued_at_utc": {
+        "format": "date-time",
+        "type": "string"
+      },
+      "nonce": {
+        "minLength": 12,
+        "type": "string"
+      },
+      "rationale": {
+        "minLength": 20,
+        "type": "string"
+      },
+      "schema": {
+        "const": "HITLApprovalToken_v1"
+      },
+      "status": {
+        "enum": [
+          "APPROVED",
+          "REJECTED",
+          "REVOKED",
+          "EXPIRED"
+        ]
+      },
+      "token_id": {
+        "pattern": "^HITL-[A-Z0-9_\\-]{8,128}$",
+        "type": "string"
+      }
+    },
+    "required": [
+      "schema",
+      "token_id",
+      "status",
+      "approval_scope",
+      "approved_action_types",
+      "approved_risk_tiers",
+      "approved_by",
+      "issued_at_utc",
+      "expires_at_utc",
+      "nonce",
+      "authority_binding",
+      "constraints",
+      "rationale"
+    ],
+    "type": "object"
+  },
+  "purpose": "Auditable human-in-the-loop approval token for high-impact MetaBlooms actions before execution.",
+  "schema": "JSONSchemaDraft2020_12_Pointer",
+  "schema_id": "HITL_APPROVAL_TOKEN_SCHEMA_v1",
+  "stage_id": "STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_20260502T035000Z"
+}

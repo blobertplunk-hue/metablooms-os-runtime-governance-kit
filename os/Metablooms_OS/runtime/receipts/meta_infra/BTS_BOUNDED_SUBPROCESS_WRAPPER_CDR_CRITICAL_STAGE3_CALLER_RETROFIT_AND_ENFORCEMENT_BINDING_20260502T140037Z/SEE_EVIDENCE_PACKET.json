@@ -1,0 +1,18 @@
+{
+  "artifact_type": "METABLOOMS_SEE_EVIDENCE_PACKET_v1",
+  "created_utc": "20260502T140253Z",
+  "design_binding": "Caller retrofit routes legacy subprocess operations into argv-array, timeout-bounded, policy-checked wrapper rather than direct subprocess.run calls.",
+  "sources": [
+    {
+      "claim": "Python subprocess supports timeout and recommends subprocess.run for many use cases; shell defaults false.",
+      "url": "https://docs.python.org/3/library/subprocess.html",
+      "web_ref": "turn719926search0"
+    },
+    {
+      "claim": "OWASP recommends avoiding direct OS commands where possible, and otherwise using parameterization plus input validation.",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.html",
+      "web_ref": "turn719926search1"
+    }
+  ],
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING"
+}

@@ -1,0 +1,26 @@
+{
+  "artifact_type": "FL17_MERGE_5R2_INTERNAL_PROOF_SIDECAR_BINDING_REPAIR_REPORT",
+  "base_5r_sha256": "0517e6c2b2cff5959ab4d47f07fefffb07949eefd70e031afbb3b9e240e62874",
+  "base_5r_zip": "/mnt/data/MB_FL17_MERGE_5R_RECOVERY_PROOF_REPAIR_20260430T014908Z/METABLOOMS_OS_FL17_MERGED_TRACKER_WORKING_5R_RECOVERY_PROVEN_20260430T014908Z.zip",
+  "baseline_promoted": false,
+  "created_utc": "20260430T015018Z",
+  "expected_post_export_gates": [
+    "checksum sidecar match",
+    "unsafe path count zero",
+    "zipfile.testzip returns None",
+    "boot-critical files readable and selectively extractable",
+    "tracker state current_stage is 5R2",
+    "semantic authority preserves FL16 BLOCKED_NOT_PROMOTED and FL17 EXPORT_PACKAGE_PASS_ONLY"
+  ],
+  "external_sidecar_required": true,
+  "final_zip_sha256": "EXTERNAL_SIDECAR_REQUIRED_NO_INTERNAL_SELF_HASH",
+  "fix": "Embed a final internal proof report that declares external_sidecar_required for final ZIP identity, plus receipt/handoff/tracker state bound to 5R2. The external sidecar and external validation report provide the final ZIP SHA-256.",
+  "promotion_performed": false,
+  "root_cause": "FL17-MERGE-5 timed out because heavyweight validation commands were used. FL17-MERGE-5R repaired recovery proof, but its internal ZIP member contained pre-export proof while final pass proof was external, creating a future-boot ambiguity. 5R2 repairs that by making the internal proof explicitly sidecar-bound rather than pretending to embed the final ZIP hash.",
+  "semantic_authority": {
+    "fl16_blocked_not_promoted_present": true,
+    "fl17_export_package_pass_only_present": true
+  },
+  "stage_id": "FL17-MERGE-5R2_INTERNAL_PROOF_SIDECAR_BINDING_REPAIR",
+  "verdict": "PASS_INTERNAL_PROOF_WITH_EXTERNAL_SIDECAR_REQUIRED"
+}

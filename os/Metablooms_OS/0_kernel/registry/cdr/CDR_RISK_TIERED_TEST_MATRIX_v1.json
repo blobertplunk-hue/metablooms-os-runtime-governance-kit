@@ -1,0 +1,59 @@
+{
+  "escalation": {
+    "data_mutation": "HIGH",
+    "destructive_action": "CRITICAL",
+    "export_authority": "CRITICAL",
+    "external_io": "HIGH",
+    "privileged_filesystem_mutation": "CRITICAL",
+    "public_api_change": "MEDIUM",
+    "runtime_critical": "HIGH",
+    "schema_change": "MEDIUM",
+    "security_sensitive": "HIGH",
+    "tool_execution": "HIGH",
+    "user_facing": "MEDIUM"
+  },
+  "reconstruction": "RECONSTRUCTED_FROM_CHAT_SUMMARY",
+  "schema": "CDRRiskTieredTestMatrix_v1",
+  "tiers": {
+    "CRITICAL": [
+      "static_review",
+      "unit",
+      "negative",
+      "integration",
+      "regression",
+      "failure_mode",
+      "security",
+      "observability",
+      "rollback_recovery",
+      "performance_resource",
+      "fresh_extract_e2e",
+      "hitl_approval",
+      "export_integrity",
+      "adversarial_abuse"
+    ],
+    "HIGH": [
+      "static_review",
+      "unit",
+      "negative",
+      "integration",
+      "regression",
+      "failure_mode",
+      "security",
+      "observability",
+      "rollback_recovery"
+    ],
+    "LOW": [
+      "static_review",
+      "unit",
+      "regression"
+    ],
+    "MEDIUM": [
+      "static_review",
+      "unit",
+      "negative",
+      "integration",
+      "regression",
+      "failure_mode"
+    ]
+  }
+}

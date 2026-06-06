@@ -1,0 +1,19 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/MONITOR_ROUTING_DECISION_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "decision_id",
+    "created_at",
+    "source_packet_id",
+    "route_to",
+    "trigger",
+    "severity",
+    "evidence_refs",
+    "next_stage",
+    "blocking",
+    "result_hash"
+  ],
+  "type": "object"
+}

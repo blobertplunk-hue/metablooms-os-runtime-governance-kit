@@ -1,0 +1,45 @@
+{
+  "argv_redacted": [
+    "unzip",
+    "-tqq",
+    "dummy.zip"
+  ],
+  "argv_resolved": [
+    "/usr/bin/unzip",
+    "-tqq",
+    "dummy.zip"
+  ],
+  "artifact_type": "METABLOOMS_BOUNDED_COMMAND_DECISION_PACKET_v1",
+  "attempts": [],
+  "created_utc": "20260502T135431Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "failure_class": "FORBIDDEN_METHOD",
+  "failure_event_path": null,
+  "operation_type": "fixture_forbidden_archive_validation",
+  "policy_matches": [
+    {
+      "method": {
+        "exception_policy": "Only allowed if explicitly authorized by a future stage, file-count/size threshold is bounded, timeout budget is declared, checkpoint receipt is written before and after, and failure cannot block smaller validation fallback.",
+        "forbidden_by_default": true,
+        "method_id": "FULL_ARCHIVE_RECURSIVE_EXTRACTION_FOR_LARGE_OS_VALIDATION_IN_CHATGPT_SANDBOX",
+        "observed_failure": "unzip -tqq and jar xf full recursive extraction timed out/stalled during FL17-MERGE-5 validation; user had to stop turn.",
+        "replacement_methods": [
+          "checksum sidecar verification",
+          "zipfile.ZipFile.testzip CRC/header validation",
+          "unsafe member path scan",
+          "central directory/member inventory",
+          "selective extraction/read of required boot-critical files",
+          "required semantic/tracker authority checks"
+        ],
+        "scope": "MetaBlooms full OS export/recovery validation in ChatGPT-style sandbox"
+      },
+      "method_id": "FULL_ARCHIVE_RECURSIVE_EXTRACTION_FOR_LARGE_OS_VALIDATION_IN_CHATGPT_SANDBOX",
+      "reason": "matched_observed_unzip_tqq_forbidden_method"
+    }
+  ],
+  "pre_spawn_receipt_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135430Z/fixture_receipts/deny_forbidden_unzip_tqq/pre_spawn_receipt.json",
+  "receipt_dir": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135430Z/fixture_receipts/deny_forbidden_unzip_tqq",
+  "result_class": "DENY_FORBIDDEN_METHOD",
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES",
+  "total_elapsed_ms": null
+}

@@ -1,0 +1,24 @@
+{
+  "version": "1.0",
+  "created_at": 1777062653.8466244,
+  "evidence_id": "F5_MODE_NORMALIZATION_PLAIN_JSON_EVIDENCE_v1",
+  "replaces": "nested git repo at 0_kernel/registry/restore_ladder_mode_normalization_evidence/mode_repo",
+  "reason": "Nested Git repos inside evidence directories are packaged as gitlinks/submodules and dirty the parent repository.",
+  "proof_summary": {
+    "mode_only_drift": {
+      "status_before": "M script.sh",
+      "numstat_before": "0\\t0\\tscript.sh",
+      "summary_before": "mode change 100755 => 100644 script.sh",
+      "normalization": "git config core.filemode false",
+      "status_after": "",
+      "passed": true
+    },
+    "content_drift": {
+      "status": "M script.sh",
+      "numstat": "1\\t1\\tscript.sh",
+      "passed": true
+    }
+  },
+  "packaging_rule": "Future proof evidence must not create nested .git directories under tracked evidence paths; store command outputs as JSON/text instead.",
+  "verdict": "PASS"
+}

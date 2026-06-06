@@ -1,0 +1,26 @@
+{
+  "allowed_claim_when_sidecar_replay_passes": "WC13 final bootable OS export exists and replay proof passed.",
+  "disallowed_claims": [
+    "Failing PRs are blocked",
+    "PR reviews are required",
+    "CODEOWNERS is enforced",
+    "Force-push/delete protection has been behavior-tested",
+    "Full professional repo governance is complete"
+  ],
+  "export_target": "/mnt/data/METABLOOMS_WC13_FINAL_BOOTABLE_FULL_AUTHORITY_REPAIRED_20260503T222300Z.zip",
+  "included_authorities": [
+    "WC12 bootable OS base",
+    "Stage23 PC/GitHub automation kit pointer and manifest",
+    "PowerShell UX cartridge rules",
+    "paste-back marker standard",
+    "GitHub governance/release state pointers",
+    "Stage26 handoff",
+    "streaming-safe execution policy"
+  ],
+  "source_staging_root": "/mnt/data/stage28_wc13_staging_build_20260503T214253Z/extract_wc12/Metablooms_OS",
+  "stage": "PROFESSIONALIZATION_CONVERGENCE_STAGE30_WC13_FINAL_EXPORT_AND_REPLAY_PROOF",
+  "stage29_validation": "passed_39_of_39",
+  "status": "EMBEDDED_PRE_EXPORT_RECEIPT",
+  "timestamp_utc": "2026-05-03T22:20:08Z",
+  "variant": "REPAIRED_AFTER_EXPECTED_PATH_CHECK_CORRECTION"
+}

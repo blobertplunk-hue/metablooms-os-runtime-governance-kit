@@ -1,0 +1,17 @@
+{
+  "locked_at": "20260501T000300Z",
+  "policy_id": "MPP_V3_ADS_DAG_OWNERSHIP_GATE_v1",
+  "research_basis": [
+    "Architecture decision records preserve design rationale and consequences.",
+    "Directed acyclic graphs provide verifiable ordering for dependent work.",
+    "Clear ownership prevents orphaned components and unaccountable risk."
+  ],
+  "rules": [
+    "Architecture components must form a directed acyclic graph.",
+    "Every component must have owner, authority, and accountability.",
+    "Every component must declare owned outputs.",
+    "Every architecture must trace components to OFM outcomes and success criteria.",
+    "High-risk components cannot be ownerless or accountability-free."
+  ],
+  "stage": "ADS"
+}

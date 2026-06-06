@@ -1,0 +1,29 @@
+{
+  "stage": "WC_STAGE9_REMEASURE_LATEST_WORLD_CLASS_SCORECARD_AGAINST_WC8RSSS",
+  "timestamp_utc": "2026-05-03T02:19:55Z",
+  "verdict": "PASS",
+  "source_authority": "BOOTABLE_FULL_AUTHORITY_WC8RSSS.zip",
+  "root_cause": "Continuation prompt was generated but not hard-gated.",
+  "fix": "Installed hard stage-exit validator and binding; upgraded generator to explicit source authority and sidecars.",
+  "measured_latest_percent": 81.25,
+  "previous_reconstructed_baseline_percent": 56.25,
+  "delta_points": 25.0,
+  "compile_results": [
+    "0_kernel/validators/next_stage_copy_prompt_exit_gate_v1.py",
+    "0_kernel/router/next_stage_copy_prompt_generator_v1.py",
+    "tests/world_class_gap_plan/test_next_stage_copy_prompt_exit_gate_v1.py"
+  ],
+  "prompt_gate_result": {
+    "verdict": "PASS",
+    "errors": [],
+    "warnings": []
+  },
+  "unit_test_stdout": "PASS\n",
+  "unit_test_returncode": 0,
+  "web_evidence": [
+    "turn701012search0",
+    "turn701012search1",
+    "turn701012search2",
+    "turn701012search6"
+  ]
+}

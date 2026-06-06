@@ -1,0 +1,34 @@
+{
+  "artifact_type": "MB_OPERATOR_TRACKER_CAUSAL_TIMELINE_BINDING_SPEC.v1",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE3_TRACKER_CAUSAL_TIMELINE_BINDING",
+  "purpose": "Bind the normalized trace/span ledger and causal graph into the operator visual tracker so it shows cause, blocker, evidence, and next action without reading raw receipts.",
+  "required_inputs": [
+    "runtime/traces/observability/TRACE_SPAN_LEDGER_INDEX_LATEST.json",
+    "runtime/traces/observability/CAUSAL_STAGE_GRAPH_LATEST.json",
+    "runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl"
+  ],
+  "required_outputs": [
+    "runtime/state/operator_surface/OPERATOR_CAUSAL_TIMELINE_LATEST.json",
+    "runtime/state/operator_surface/OPERATOR_CAUSAL_TIMELINE_PREVIEW_LATEST.md",
+    "OPEN_OPERATOR_VISUAL_TRACKER.html",
+    "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE3_TRACKER_BINDING_VALIDATION_LATEST.json"
+  ],
+  "ui_contract": {
+    "phone_safe": true,
+    "no_manual_receipt_reading_required": true,
+    "required_visual_sections": [
+      "hero_status_cards",
+      "causal_summary_cards",
+      "causal_timeline",
+      "evidence_strip",
+      "next_action_card"
+    ]
+  },
+  "validation_contract": {
+    "reject_if_missing_required_inputs": true,
+    "reject_if_html_lacks_causal_sections": true,
+    "reject_if_record_counts_mismatch": true,
+    "reject_if_latest_records_absent": true,
+    "reject_if_no_source_artifact_binding": true
+  }
+}

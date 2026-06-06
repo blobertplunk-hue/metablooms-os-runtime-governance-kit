@@ -1,0 +1,16 @@
+{
+  "module_headers": {
+    "mod": {
+      "Debuggability": "d",
+      "Failure modes": "f",
+      "Inputs": "i",
+      "Outputs": "o",
+      "Purpose": "p"
+    }
+  },
+  "structured_denial_contract": {
+    "reasons": true
+  },
+  "warnings_after": 0,
+  "warnings_before": 1
+}

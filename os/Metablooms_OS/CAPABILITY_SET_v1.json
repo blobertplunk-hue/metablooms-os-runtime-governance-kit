@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "created_at": 1777068405.2332695,
+  "capability_set_id": "CAPABILITY_SET_v1",
+  "status": "active",
+  "capabilities": [
+    "F0-F7 recovery architecture",
+    "G0-G6 export recovery validator hardening",
+    "G5 audit lessons",
+    "G6 two-pass self-consistent baseline lock",
+    "DAG ledger explicit mapping"
+  ],
+  "verdict": "PASS"
+}

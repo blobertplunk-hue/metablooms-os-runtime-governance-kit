@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "artifact_type": "MB_FAILURE_CLUSTER_SCHEMA.v1",
+  "properties": {
+    "artifact_type": {
+      "const": "MB_FAILURE_CLUSTER_REPORT.v1"
+    },
+    "clusters": {
+      "items": {
+        "properties": {
+          "cluster_id": {
+            "type": "string"
+          },
+          "evidence_records": {
+            "type": "array"
+          },
+          "failure_class": {
+            "type": "string"
+          },
+          "record_count": {
+            "minimum": 1,
+            "type": "integer"
+          },
+          "route_id": {
+            "type": "string"
+          },
+          "severity": {
+            "enum": [
+              "low",
+              "medium",
+              "high",
+              "critical"
+            ]
+          },
+          "status": {
+            "enum": [
+              "ACTIVE",
+              "RESOLVED_REFERENCE",
+              "MONITOR",
+              "SUPPRESSED_BY_LATER_PASS"
+            ]
+          }
+        },
+        "required": [
+          "cluster_id",
+          "failure_class",
+          "status",
+          "severity",
+          "record_count",
+          "route_id",
+          "evidence_records"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "created_utc": {
+      "type": "string"
+    },
+    "source_inputs": {
+      "type": "object"
+    },
+    "stage_id": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "artifact_type",
+    "stage_id",
+    "created_utc",
+    "source_inputs",
+    "summary",
+    "clusters"
+  ],
+  "title": "MetaBlooms Failure Cluster Report",
+  "type": "object"
+}

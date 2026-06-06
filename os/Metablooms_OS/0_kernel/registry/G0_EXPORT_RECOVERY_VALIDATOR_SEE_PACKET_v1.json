@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "created_at": 1777064295.6516013,
+  "stage": "SEE_SYNTHESIS_BINDING",
+  "source": "/mnt/data/PROACTIVE_GOVERNANCE_RESEARCH_SYNTHESIS_RECEIPT_v1.json",
+  "status": "bound_to_prior_research_receipt",
+  "research_receipt_sha256": "921e2b5a27f07099a90f782731a080310c6a6ded5aff532584729120568e4240",
+  "research_families": [
+    "SLSA/in-toto style provenance verification",
+    "artifact attestation and subject binding",
+    "deterministic/reproducible export requirements",
+    "transactional/idempotent stage execution",
+    "policy-as-code gates",
+    "isolated proof roots",
+    "Git filemode normalization",
+    "mistake retention ledgers"
+  ],
+  "scope_decision": "G0 locks validator scope; G1 must convert it into executable contract/schema; later stages implement and prove it.",
+  "see_verdict": "PASS",
+  "issues": []
+}

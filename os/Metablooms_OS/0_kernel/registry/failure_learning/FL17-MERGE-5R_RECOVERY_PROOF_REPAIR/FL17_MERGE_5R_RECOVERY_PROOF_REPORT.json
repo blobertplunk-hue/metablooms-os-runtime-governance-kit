@@ -1,0 +1,20 @@
+{
+  "artifact_type": "FL17_MERGE_5R_RECOVERY_PROOF_REPORT",
+  "base_candidate": "/mnt/data/MB_FL17_MERGE_5_FULL_OS_EXPORT_20260430T022600Z/METABLOOMS_OS_FL17_MERGED_TRACKER_WORKING_20260430T022600Z.zip",
+  "base_candidate_sha256": "1e9a4e557e34e6a6c5962eec477f44cd09f3a57bcae87a49a4c5b7c1b0d067e2",
+  "base_sidecar_match": true,
+  "baseline_promoted": false,
+  "created_utc": "20260430T014908Z",
+  "fix": "Rebuild candidate with repaired tracker evidence and run bounded archive-native verification.",
+  "pre_export_checks": {
+    "base_sidecar_match": true,
+    "base_zip_present": true,
+    "no_box_pipe_layout": true,
+    "required_base_entries_present": true,
+    "semantic_authority_blocks_misread": true,
+    "tracker_state_repaired_to_5r": true
+  },
+  "promotion_performed": false,
+  "root_cause": "Prior stage was stopped/timed out during heavy validation commands; archive was not proven corrupt.",
+  "stage_id": "FL17-MERGE-5R_RECOVERY_PROOF_REPAIR"
+}

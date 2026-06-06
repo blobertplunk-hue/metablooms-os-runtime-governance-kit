@@ -1,0 +1,6 @@
+{
+  "policy": "/mnt/data/Metablooms_OS/0_kernel/registry/tool_governance/ATOMIC_APPEND_LOG_WRITER_CALLSITE_POLICY_STAGE5_v1.json",
+  "policy_sha256": "ffc84fae89bbca21f4a5dfc20da2ab57d59bb86bd6be677892f6e59b2d6a082c",
+  "validator": "/mnt/data/Metablooms_OS/0_kernel/validators/validate_atomic_append_log_writer_callsite_policy_stage5_v1.py",
+  "validator_sha256": "fdc63981ee1a79f8c86d13efdecd1db89128696adc044d60246831585fb2cd24"
+}

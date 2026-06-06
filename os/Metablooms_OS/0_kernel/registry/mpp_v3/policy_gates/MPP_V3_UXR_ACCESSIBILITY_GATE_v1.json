@@ -1,0 +1,17 @@
+{
+  "locked_at": "20260501T001700Z",
+  "policy_id": "MPP_V3_UXR_ACCESSIBILITY_GATE_v1",
+  "research_basis": [
+    "W3C WCAG 2.2 is a W3C Recommendation and adds new success criteria for focus, dragging, target size, consistent help, redundant entry, and accessible authentication.",
+    "WCAG requires keyboard operability for interface functionality."
+  ],
+  "rules": [
+    "At least one operator profile is required.",
+    "At least one context constraint is required.",
+    "WCAG 2.2 core criteria must include keyboard, focus not obscured, dragging alternatives, target size, consistent help, and redundant entry.",
+    "At least one accessibility requirement must be blocking.",
+    "At least one platform requirement is required.",
+    "UX risks must include detection and mitigation."
+  ],
+  "stage": "UXR"
+}

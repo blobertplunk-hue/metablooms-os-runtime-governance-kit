@@ -1,0 +1,101 @@
+{
+  "created_at": "2026-04-30T21:43:54Z",
+  "handoff": {
+    "next_stage": "SEE",
+    "required_artifacts": [
+      "0_kernel/schemas/mpp_v3/RESEARCH_PLANNER_PACKET_SCHEMA_v1.json",
+      "research_planner_packet.v1.json"
+    ]
+  },
+  "objective": {
+    "domain": "MetaBlooms MPP governance research",
+    "operator_context": "ChatGPT UI governed runtime operator",
+    "request": "Improve MPP research pipeline using recursive evidence planning",
+    "stakes": "high"
+  },
+  "packet_id": "RP-METABLOOMS-MPP-GOVERNANCE-RESEARCH-E38655D84B1A",
+  "planning_basis": {
+    "assumptions": [
+      "Research may reveal constraints that change the downstream plan."
+    ],
+    "known_facts": [
+      "Task entered MPP v3 research pipeline."
+    ],
+    "unknowns": [
+      "Which sources are authoritative for this exact domain and task?",
+      "Which failure modes should block implementation?"
+    ]
+  },
+  "quality_gates": {
+    "claim_binding_required": true,
+    "minimum_domain_diversity": 2,
+    "minimum_source_count": 3,
+    "mmd_required": true
+  },
+  "query_plan": [
+    {
+      "expected_evidence_type": "official",
+      "priority": "must",
+      "purpose": "authoritative baseline",
+      "query": "MetaBlooms MPP governance research Improve MPP research pipeline using recursive evidence planning official guidance standard best practices"
+    },
+    {
+      "expected_evidence_type": "expert_practice",
+      "priority": "must",
+      "purpose": "peer or expert quality signals",
+      "query": "MetaBlooms MPP governance research Improve MPP research pipeline using recursive evidence planning expert practice quality criteria",
+      "query_id": "Q-002"
+    },
+    {
+      "expected_evidence_type": "community_failure_report",
+      "priority": "should",
+      "purpose": "failure modes and anti-patterns",
+      "query": "MetaBlooms MPP governance research Improve MPP research pipeline using recursive evidence planning common failures mistakes anti-patterns",
+      "query_id": "Q-003"
+    },
+    {
+      "expected_evidence_type": "technical_docs",
+      "priority": "should",
+      "purpose": "implementation and validation methods",
+      "query": "MetaBlooms MPP governance research Improve MPP research pipeline using recursive evidence planning implementation validation schema testing",
+      "query_id": "Q-004"
+    }
+  ],
+  "recursion_policy": {
+    "enabled": true,
+    "expansion_triggers": [
+      "authoritative source contradicts another source",
+      "source quality is below required threshold",
+      "MMD reports critical uncovered gap"
+    ],
+    "max_rounds": 3,
+    "stop_conditions": [
+      "minimum source count and domain diversity satisfied",
+      "no critical MMD gaps remain",
+      "recursion round limit reached and blocked receipt written"
+    ]
+  },
+  "research_trigger": {
+    "freshness_required": true,
+    "minimum_source_count": 3,
+    "must_use_web_run": true,
+    "required": true,
+    "trigger_reason": "MPP v3 requires planned SEE before evidence-dependent governance or implementation stages."
+  },
+  "schema_version": "research_planner_packet.v1",
+  "source_plan": {
+    "contradiction_handling": "record_and_resolve",
+    "date_capture_required": true,
+    "exclusion_rules": [
+      "Exclude uncited SEO summaries when stronger sources exist.",
+      "Exclude stale sources when freshness is required and newer official sources exist."
+    ],
+    "preferred_source_types": [
+      "official",
+      "peer_reviewed",
+      "technical_docs",
+      "expert_practice"
+    ]
+  },
+  "stage": "RESEARCH_PLANNER"
+}

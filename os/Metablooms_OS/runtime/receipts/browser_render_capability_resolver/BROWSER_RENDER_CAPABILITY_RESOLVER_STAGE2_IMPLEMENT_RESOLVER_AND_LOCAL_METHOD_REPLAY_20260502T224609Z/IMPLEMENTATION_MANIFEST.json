@@ -1,0 +1,46 @@
+{
+  "artifacts": [
+    {
+      "path": "0_kernel/resolvers/browser_render_capability_resolver_v1.py",
+      "sha256": "c2ca314e6e48f74d2f0e56941cf76b08b1b39dd9d53f9c6cb15cc3a3c69226a4",
+      "size_bytes": 17668
+    },
+    {
+      "path": "0_kernel/resolvers/browser_render_capability_resolver_v1.py.sha256",
+      "sha256": "d321f9e64ee8774dfaff34af00c6225ed3360e030e7f1c7f2bde56d0a5393756",
+      "size_bytes": 150
+    },
+    {
+      "path": "tests/evals/browser_render_capability/test_browser_render_capability_resolver_v1.py",
+      "sha256": "2270732e01d05ea7ea063eed8fe4a877e3827d63288b2b6a96a508c3a744a52f",
+      "size_bytes": 2590
+    },
+    {
+      "path": "tests/evals/browser_render_capability/test_browser_render_capability_resolver_v1.py.sha256",
+      "sha256": "21e6c212084a031eb835a7d597c8686856e3acb735b64cdeb4cac2d63f7a4d87",
+      "size_bytes": 174
+    },
+    {
+      "path": "runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE2_IMPLEMENT_RESOLVER_AND_LOCAL_METHOD_REPLAY_20260502T224609Z/local_replay/RESOLVER_DECISION_OPERATOR_TRACKER.json",
+      "sha256": "c9b87b2b68ce31003d04c4e2661d3bfdcdf5abac87f082c18f183803197dc312",
+      "size_bytes": 13112
+    },
+    {
+      "path": "runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE2_IMPLEMENT_RESOLVER_AND_LOCAL_METHOD_REPLAY_20260502T224609Z/local_replay/RESOLVER_DECISION_OPERATOR_TRACKER.json.sha256",
+      "sha256": "b9501de2b7f28ee286c6edc45e155662badc367ae971f429e93841c81845f8c0",
+      "size_bytes": 106
+    },
+    {
+      "path": "runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE2_IMPLEMENT_RESOLVER_AND_LOCAL_METHOD_REPLAY_20260502T224609Z/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE2_FIXTURE_AND_DECISION_REPLAY.json",
+      "sha256": "f8464b53c3c93b32422f40fce137b741096d07eee0154597a49d4467042ee1c4",
+      "size_bytes": 1456
+    },
+    {
+      "path": "runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE2_IMPLEMENT_RESOLVER_AND_LOCAL_METHOD_REPLAY_20260502T224609Z/BROWSER_RENDER_METHOD_RELIABILITY_LEDGER_STAGE2.json",
+      "sha256": "7e4dcae4b574d04e50ead88d55331132f0839b06a7b71de3ac73bdcb214cd884",
+      "size_bytes": 3314
+    }
+  ],
+  "stage": "BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE2_IMPLEMENT_RESOLVER_AND_LOCAL_METHOD_REPLAY",
+  "timestamp_utc": "20260502T224609Z"
+}

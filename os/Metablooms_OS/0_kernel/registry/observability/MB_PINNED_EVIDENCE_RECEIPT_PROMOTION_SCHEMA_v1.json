@@ -1,0 +1,16 @@
+{
+  "artifact_type": "MB_SCHEMA.v1",
+  "properties": {
+    "pins": "array of SHA-bound evidence artifact selections",
+    "verdict": "PASS only when selected artifacts exist and SHA checks are consistent"
+  },
+  "required": [
+    "artifact_type",
+    "stage_id",
+    "pins",
+    "pin_count",
+    "verdict"
+  ],
+  "schema_name": "MB_PROMOTED_PINNED_EVIDENCE_RECEIPT.v1",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING"
+}

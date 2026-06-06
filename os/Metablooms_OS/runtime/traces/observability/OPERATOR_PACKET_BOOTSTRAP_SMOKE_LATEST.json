@@ -1,0 +1,17 @@
+{
+  "artifact_type": "MB_OPERATOR_PACKET_BOOTSTRAP_SMOKE_RESULT.v1",
+  "audit_commands": 9,
+  "created_utc": "20260502T193453Z",
+  "failed_audit_commands": 0,
+  "full_os_locator": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE18_OPERATOR_PACKET_BOOTSTRAP_FINAL_AUTHORITY_REPAIRED_20260502T193453Z.zip",
+  "issues": [],
+  "missing_required_members": [],
+  "operator_packet_members": 34,
+  "packet_sha256": "adb56f3df0b3337cc12f70c8d807a7fd814fe13c6651ca308e0ac526c3db9c06",
+  "packet_sidecar": "/mnt/data/METABLOOMS_OS_STAGE18_OPERATOR_BOOTSTRAP_PACKET_REPAIRED_20260502T193453Z.zip.sha256",
+  "packet_zip": "/mnt/data/METABLOOMS_OS_STAGE18_OPERATOR_BOOTSTRAP_PACKET_REPAIRED_20260502T193453Z.zip",
+  "repair_note": "Final repaired smoke run against final rebuilt operator packet.",
+  "stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE18_OPERATOR_PACKET_BOOTSTRAP_SMOKE_AND_SMALL_BUNDLE_FIRST_START",
+  "verdict": "PASS",
+  "zip_integrity": "PASS"
+}

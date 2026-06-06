@@ -1,0 +1,7 @@
+{
+  "artifact_type": "VALIDATOR_REPORT.v1",
+  "created_utc": "20260502T170000Z",
+  "decision": "DENY",
+  "stage_id": "FIXTURE_VALIDATOR_DENIED",
+  "expected_trace_status": "BLOCKED"
+}

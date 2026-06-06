@@ -1,0 +1,10 @@
+{
+  "append_writer_fixture_count": 14,
+  "append_writer_fixture_harness": "PASS",
+  "artifact_type": "AtomicAppendLogWriterStage4SmokeResults.v1",
+  "bts_prior_sha_chain_smoke": "PASS",
+  "compile_changed_files": "PASS",
+  "created_utc": "2026-05-02T15:18:24Z",
+  "policy_gate_verdict": "PASS",
+  "runtime_pulse_hash_chain_smoke": "PASS"
+}

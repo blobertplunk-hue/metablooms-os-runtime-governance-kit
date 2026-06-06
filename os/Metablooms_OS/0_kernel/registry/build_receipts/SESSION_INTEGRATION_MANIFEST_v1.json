@@ -1,0 +1,58 @@
+{
+  "manifest_type": "SESSION_INTEGRATION_MANIFEST",
+  "session_date": "2026-04-26",
+  "session_description": "Claude audit+build session \u2014 MERGE-S9 lock + workflow v6 + BUILD-1/2/3",
+  "created_utc": "2026-04-26T10:37:40Z",
+  "files_added_to_os_tree": [
+    {
+      "path": "0_kernel/scripts/transactional_stage_runner_v1.py",
+      "sha256": "774cc14755b73e91556a3c49adaa48194b2254de9da7586400cae8adc6f0323c",
+      "build": "BUILD-1",
+      "lines": 886
+    },
+    {
+      "path": "0_kernel/scripts/intra_chunk_interrupt_checker_v1.py",
+      "sha256": "b50031c35b6ba53ee5dbacb3ccdf4a7c3e0ddb94ef59f9db7fe90461d0983dc8",
+      "build": "BUILD-2",
+      "lines": 665
+    },
+    {
+      "path": "0_kernel/scripts/runtime_pulse_logger_v1.py",
+      "sha256": "8b1c32de1d6358126d8df5f3260feb88cdd6b9f1d608afdecd7b1104b667af15",
+      "build": "BUILD-3",
+      "lines": 666
+    },
+    {
+      "path": "0_kernel/schemas/TRANSACTIONAL_STAGE_RUNNER_CONTRACT_v2.json",
+      "sha256": "e5dfa007683f0a08ec2e9fd56d2f56878ae293622138f67823f185367524b4f1",
+      "build": "AMEND-0009-A"
+    },
+    {
+      "path": "0_kernel/registry/HEAVY_WORK_CLASS_ENUM_v1.json",
+      "sha256": "d99b71a51dc1a528ecb753c46aa889c92d3f0f63200309e14369d508bd8a75ac",
+      "build": "AMEND-0009-B"
+    },
+    {
+      "path": "1_governance/workflow_v6/GOVERNED_RECURSIVE_SEE_CE_WORKFLOW_v6.md",
+      "sha256": "e750321bdbfd132f8fe414fa193a22f33d51f56b07fe969939aedf3f29e1906e",
+      "build": "WORKFLOW-v6"
+    },
+    {
+      "path": "1_governance/workflow_v6/WORKFLOW_AMENDMENT_LEDGER_v5.json",
+      "sha256": "a744d036e0ce85b511d98e4c8ae05a96fbe9893b679542c2bafbe1a1c6dedd40",
+      "build": "WORKFLOW-v6"
+    },
+    {
+      "path": "0_kernel/scripts/autonomous_sidecar_generator_v1.py",
+      "sha256": "783b46be80ef0b660dff3709104bc3b5311e0f02972f54cfaf1bbd24fe85e276",
+      "build": "BUILD-4",
+      "lines": 600
+    }
+  ],
+  "sidecar_namespace_already_in_tree": "0_kernel/registry/arb_shell_safe_sidecar/",
+  "merge_lock_sha": "c7981682ca5978683cb977f4db56344c273113ba8d5da7ace850fd1ac427e2ae",
+  "sir25_original_sha": "b1b82d7765c49db8f4368c4267b9002c141869f103660c4acee07fda7486187b",
+  "total_files_in_tree": 924,
+  "total_lines_of_new_python": 2817,
+  "last_updated": "2026-04-26T10:41:43Z"
+}

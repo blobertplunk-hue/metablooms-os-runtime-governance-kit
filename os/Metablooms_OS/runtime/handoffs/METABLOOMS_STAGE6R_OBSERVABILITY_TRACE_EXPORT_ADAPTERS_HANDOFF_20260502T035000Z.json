@@ -1,0 +1,28 @@
+{
+  "last_receipt": "runtime/receipts/METABLOOMS_STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS_RECEIPT_20260502T035000Z.json",
+  "next_stage_options_best_to_worst": [
+    {
+      "rank": 1,
+      "stage": "STAGE6S_FULL_AUTHORITY_EXPORT_AFTER_STAGE6N_TO_6R",
+      "why": "Creates a new bootable full OS authority ZIP only after stages 6N-6R support changes are verified."
+    },
+    {
+      "rank": 2,
+      "stage": "STAGE6Q_SOURCE_LEVEL_RETROFIT_PRIORITY_BATCH_1",
+      "why": "Optional source-level cleanup of executor candidates after sidecar gate repair."
+    },
+    {
+      "rank": 3,
+      "stage": "STAGE6T_TRACE_VIEWER_AND_DASHBOARD_MINIMUM",
+      "why": "Builds readable trace summaries/UI over exported trace records."
+    }
+  ],
+  "schema": "MetaBloomsStageHandoff_v1",
+  "stage_id": "STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS",
+  "status": "READY_FOR_NEXT_STAGE",
+  "stop_conditions": [
+    "Do not call support/proof bundle an OS bundle.",
+    "Do not export authority without explicit budget approval and fresh boot proof."
+  ],
+  "timestamp_utc": "2026-05-02T03:28:17.380951Z"
+}

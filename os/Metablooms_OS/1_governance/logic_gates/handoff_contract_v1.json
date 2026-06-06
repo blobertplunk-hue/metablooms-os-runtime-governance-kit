@@ -1,0 +1,106 @@
+{
+  "cartridge_id": "handoff_contract_v1",
+  "name": "Handoff Contract v1",
+  "type": "core_governance",
+  "purpose": "Standardize inter-cartridge communication by enforcing a consistent, structured handoff packet that enables deterministic chaining across stages.",
+  "task_types": [
+    "handoff_standardization",
+    "inter_cartridge_communication",
+    "state_transfer",
+    "workflow_chaining"
+  ],
+  "platform": [
+    "robert",
+    "shaye",
+    "both"
+  ],
+  "input_contract": {
+    "required": [
+      "artifact",
+      "summary",
+      "next_required_input",
+      "next_recommended_cartridge"
+    ],
+    "optional": [
+      "current_stage",
+      "validation_state",
+      "issues",
+      "decisions",
+      "tool_used",
+      "timestamp"
+    ]
+  },
+  "output_contract": {
+    "artifacts": [
+      "handoff_packet"
+    ],
+    "format": "structured_json_or_markdown",
+    "must_include": [
+      "artifact",
+      "summary",
+      "next_required_input",
+      "next_recommended_cartridge",
+      "execution_ready"
+    ]
+  },
+  "handoff_contract": {
+    "structure": "structured_markdown_v1",
+    "fields": [
+      "artifact",
+      "summary",
+      "next_required_input",
+      "next_recommended_cartridge",
+      "execution_ready"
+    ]
+  },
+  "execution_mode": "transform",
+  "external_tools": [],
+  "validation_rules": [
+    "must_include_all_required_fields",
+    "artifact_must_be_usable_by_next_cartridge",
+    "next_recommended_cartridge_must_exist_in_registry",
+    "next_required_input_must_be_explicit",
+    "must_set_execution_ready_flag"
+  ],
+  "failure_modes": [
+    "missing_required_fields",
+    "ambiguous_next_step",
+    "invalid_next_cartridge",
+    "non_executable_handoff",
+    "incomplete_artifact_context"
+  ],
+  "status": "active",
+  "handoff_schema": {
+    "handoff_packet": {
+      "required": [
+        "artifact",
+        "summary",
+        "next_required_input",
+        "next_recommended_cartridge",
+        "execution_ready"
+      ],
+      "optional": [
+        "current_stage",
+        "validation_state",
+        "issues",
+        "decisions",
+        "tool_used",
+        "timestamp"
+      ]
+    },
+    "field_definitions": {
+      "artifact": "Primary output from current stage",
+      "summary": "Concise explanation of what was produced",
+      "next_required_input": "Exact inputs needed for next stage",
+      "next_recommended_cartridge": "Cartridge to execute next",
+      "execution_ready": "Boolean indicating readiness to proceed"
+    }
+  },
+  "handoff_output_schema": {
+    "artifact": {},
+    "summary": "",
+    "next_required_input": {},
+    "next_recommended_cartridge": "",
+    "execution_ready": true
+  }
+}

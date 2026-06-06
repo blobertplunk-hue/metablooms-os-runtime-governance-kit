@@ -1,0 +1,340 @@
+{
+  "carried_limitation": "true browser screenshot unavailable in this sandbox turn unless resolver selected ALLOW_BROWSER_SCREENSHOT",
+  "created_utc": "20260502T230140Z",
+  "duplicate_members_count": 0,
+  "export_path": "/mnt/data/METABLOOMS_OS_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_AUTHORITY_EXPORT_20260502T230140Z_STORED.zip",
+  "export_sha256": "43dac2e1ce547c23c95d4738c819b7cd57d474c007e596367aabd804a0240fec",
+  "export_size_bytes": 98063049,
+  "extra_missing": [],
+  "pass_conditions": {
+    "duplicate_members_zero": true,
+    "pre_required_paths_present": true,
+    "replay_export_metadata_present": true,
+    "replay_honesty_label_present": true,
+    "replay_required_paths_present": true,
+    "replay_resolver_allowed": true,
+    "sandbox_first_preserved": true,
+    "vpq_invalid_deny": true,
+    "vpq_tracker_allow": true,
+    "vpq_valid_allow": true,
+    "zip_created": true,
+    "zip_integrity_testzip_none": true
+  },
+  "pre_export_missing_required_paths": [],
+  "replay_missing_required_paths": [],
+  "replay_resolver_decision": {
+    "android_sandbox_primary": true,
+    "artifact_type": "operator_tracker",
+    "attempt_evidence": [
+      {
+        "artifacts": [],
+        "failure_class": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "playwright_managed_browser",
+        "prior_failure": {
+          "failure_class": "PLAYWRIGHT_BROWSER_BUNDLE_ABSENT",
+          "retry_recommendation": "retry_only_if_conditions_change",
+          "source_ledger": "/mnt/data/replay_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_20260502T230140Z/Metablooms_OS/runtime/state/BROWSER_RENDER_METHOD_RELIABILITY_LEDGER_LATEST.json"
+        },
+        "skipped": true,
+        "started_utc": "20260502T230159Z",
+        "success": false
+      },
+      {
+        "artifacts": [],
+        "failure_class": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "system_chromium_headless",
+        "prior_failure": {
+          "failure_class": "CHROMIUM_SANDBOX_HANG",
+          "retry_recommendation": "skip_same_stage_after_timeout",
+          "source_ledger": "/mnt/data/replay_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_20260502T230140Z/Metablooms_OS/runtime/state/BROWSER_RENDER_METHOD_RELIABILITY_LEDGER_LATEST.json"
+        },
+        "skipped": true,
+        "started_utc": "20260502T230159Z",
+        "success": false
+      },
+      {
+        "artifacts": [],
+        "failure_class": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "xvfb_chromium",
+        "prior_failure": {
+          "failure_class": "XVFB_CHROMIUM_HANG",
+          "retry_recommendation": "skip_same_stage_after_timeout",
+          "source_ledger": "/mnt/data/replay_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_20260502T230140Z/Metablooms_OS/runtime/state/BROWSER_RENDER_METHOD_RELIABILITY_LEDGER_LATEST.json"
+        },
+        "skipped": true,
+        "started_utc": "20260502T230159Z",
+        "success": false
+      },
+      {
+        "artifacts": [],
+        "failure_class": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "firefox_or_other_installed_browser",
+        "prior_failure": {
+          "failure_class": "OTHER_BROWSER_ABSENT",
+          "retry_recommendation": "retry_only_if_conditions_change",
+          "source_ledger": "/mnt/data/replay_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_20260502T230140Z/Metablooms_OS/runtime/state/BROWSER_RENDER_METHOD_RELIABILITY_LEDGER_LATEST.json"
+        },
+        "skipped": true,
+        "started_utc": "20260502T230159Z",
+        "success": false
+      },
+      {
+        "artifacts": [],
+        "failure_class": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "wkhtmltoimage_or_equivalent",
+        "prior_failure": {
+          "failure_class": "WKHTMLTOIMAGE_ABSENT",
+          "retry_recommendation": "retry_only_if_conditions_change",
+          "source_ledger": "/mnt/data/replay_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_20260502T230140Z/Metablooms_OS/runtime/state/BROWSER_RENDER_METHOD_RELIABILITY_LEDGER_LATEST.json"
+        },
+        "skipped": true,
+        "started_utc": "20260502T230159Z",
+        "success": false
+      },
+      {
+        "artifacts": [
+          "/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF_20260502T230140Z/replay_extracted_resolver_run/weasyprint_proxy.pdf",
+          "/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF_20260502T230140Z/replay_extracted_resolver_run/weasyprint_proxy.png"
+        ],
+        "command_result": {
+          "pdftoppm": {
+            "command": [
+              "/usr/bin/pdftoppm",
+              "-png",
+              "-singlefile",
+              "/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF_20260502T230140Z/replay_extracted_resolver_run/weasyprint_proxy.pdf",
+              "/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF_20260502T230140Z/replay_extracted_resolver_run/weasyprint_proxy"
+            ],
+            "duration_seconds": 0.693,
+            "exit_code": 0,
+            "stderr_tail": "",
+            "stdout_tail": "",
+            "timed_out": false
+          },
+          "weasyprint": {
+            "command": [
+              "/opt/pyvenv/bin/weasyprint",
+              "/mnt/data/replay_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_20260502T230140Z/Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html",
+              "/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF_20260502T230140Z/replay_extracted_resolver_run/weasyprint_proxy.pdf"
+            ],
+            "duration_seconds": 3.557,
+            "exit_code": 0,
+            "stderr_tail": "WARNING: Ignored `box-shadow:var(--shadow)` at 5:233, unknown property.\nWARNING: Ignored `place-items:center` at 5:435, invalid value.\nWARNING: Ignored `box-shadow:var(--shadow)` at 6:173, unknown property.\nWARNING: Ignored `box-shadow:0 0 0 5px rgba(100,116,139,.14)` at 9:206, unknown property.\nWARNING: Expected a media type, got '(max-width:720px)'\nWARNING: Invalid media type '(max-width:720px)' the whole @media rule was ignored at 11:1.\nWARNING: Expected a media type, got '(prefers-reduced-motion: reduce)'\nWARNING: Invalid media type ' (prefers-reduced-motion: reduce)' the whole @media rule was ignored at 15:1.\nWARNING: Ignored `box-shadow:0 18px 44px rgba(0,0,0,.42)` at 17:60, unknown property.\nWARNING: Expected a media type, got '(max-width:520px)'\nWARNING: Invalid media type '(max-width:520px)' the whole @media rule was ignored at 19:1.\nWARNING: Invalid math function at 4:241: clamp(1.6rem,6vw,3.2rem)\nWARNING: \"auto-fit\" and \"auto-fill\" are unsupported in repeat()\n",
+            "stdout_tail": "",
+            "timed_out": false
+          }
+        },
+        "failure_class": "NONE",
+        "image_check": {
+          "exists": true,
+          "extrema": [
+            [
+              6,
+              255
+            ],
+            [
+              11,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "height": 1754,
+          "mean_rgb": [
+            81.99,
+            89.55,
+            102.08
+          ],
+          "nonblank": true,
+          "size_bytes": 236196,
+          "width": 1241
+        },
+        "method_id": "weasyprint_pdf_png_proxy",
+        "started_utc": "20260502T230159Z",
+        "success": true
+      },
+      {
+        "artifacts": [],
+        "failure_class": "NONE",
+        "method_id": "static_vpq_accessibility_checks",
+        "started_utc": "20260502T230203Z",
+        "static_checks": {
+          "focus_visible": true,
+          "reduced_motion": true,
+          "teacher_professional": true,
+          "viewport": true,
+          "vpq_binding": true
+        },
+        "success": true
+      }
+    ],
+    "decision": "ALLOW_RENDER_PROXY_WITH_LIMITATION",
+    "environment": "android_chatgpt_sandbox",
+    "honesty_label": "sandbox_render_proxy",
+    "html_path": "/mnt/data/replay_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_20260502T230140Z/Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html",
+    "html_sha256": "9fdb5000f48af4d5cfa830e2912e1f830b6586d0c4848f7cb4c166aa099b2f47",
+    "method_attempts": [
+      {
+        "attempt_policy": "try_if_bundle_present",
+        "failure_class_if_failed": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "playwright_managed_browser",
+        "priority": 1,
+        "success_criteria": [
+          "bounded_timeout",
+          "artifact_or_explicit_skip",
+          "failure_class_recorded"
+        ]
+      },
+      {
+        "attempt_policy": "try_if_binary_present",
+        "failure_class_if_failed": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "system_chromium_headless",
+        "priority": 2,
+        "success_criteria": [
+          "bounded_timeout",
+          "artifact_or_explicit_skip",
+          "failure_class_recorded"
+        ]
+      },
+      {
+        "attempt_policy": "try_if_binary_present",
+        "failure_class_if_failed": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "xvfb_chromium",
+        "priority": 3,
+        "success_criteria": [
+          "bounded_timeout",
+          "artifact_or_explicit_skip",
+          "failure_class_recorded"
+        ]
+      },
+      {
+        "attempt_policy": "try_if_binary_present",
+        "failure_class_if_failed": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "firefox_or_other_installed_browser",
+        "priority": 4,
+        "success_criteria": [
+          "bounded_timeout",
+          "artifact_or_explicit_skip",
+          "failure_class_recorded"
+        ]
+      },
+      {
+        "attempt_policy": "try_if_binary_present",
+        "failure_class_if_failed": "SKIPPED_PRIOR_SAME_STAGE_HARD_FAIL",
+        "method_id": "wkhtmltoimage_or_equivalent",
+        "priority": 5,
+        "success_criteria": [
+          "bounded_timeout",
+          "artifact_or_explicit_skip",
+          "failure_class_recorded"
+        ]
+      },
+      {
+        "attempt_policy": "try_if_binary_present",
+        "failure_class_if_failed": "NONE",
+        "method_id": "weasyprint_pdf_png_proxy",
+        "priority": 6,
+        "success_criteria": [
+          "bounded_timeout",
+          "artifact_or_explicit_skip",
+          "failure_class_recorded"
+        ]
+      },
+      {
+        "attempt_policy": "always_available_static",
+        "failure_class_if_failed": "NONE",
+        "method_id": "static_vpq_accessibility_checks",
+        "priority": 7,
+        "success_criteria": [
+          "bounded_timeout",
+          "artifact_or_explicit_skip",
+          "failure_class_recorded"
+        ]
+      }
+    ],
+    "pc_addendum_available": true,
+    "requested_proof_tier": "browser_screenshot_preferred",
+    "resolver_version": "browser_render_capability_resolver_v1",
+    "selected_method": "weasyprint_pdf_png_proxy",
+    "timestamp_utc": "20260502T230203Z"
+  },
+  "replay_resolver_result": {
+    "cmd": [
+      "python3",
+      "/mnt/data/replay_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_20260502T230140Z/Metablooms_OS/0_kernel/resolvers/browser_render_capability_resolver_v1.py",
+      "--html",
+      "/mnt/data/replay_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_20260502T230140Z/Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html",
+      "--out",
+      "/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF_20260502T230140Z/replay_extracted_resolver_run",
+      "--requested-proof-tier",
+      "browser_screenshot_preferred",
+      "--artifact-type",
+      "operator_tracker",
+      "--timeout",
+      "8",
+      "--write-decision",
+      "/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF_20260502T230140Z/replay_extracted_resolver_run/STAGE4_REPLAY_RESOLVER_DECISION_OPERATOR_TRACKER.json",
+      "--skip-known-hard-fails",
+      "--reliability-ledger",
+      "/mnt/data/replay_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_20260502T230140Z/Metablooms_OS/runtime/state/BROWSER_RENDER_METHOD_RELIABILITY_LEDGER_LATEST.json"
+    ],
+    "duration_seconds": 5.527,
+    "exit_code": 0,
+    "stderr_tail": "",
+    "stdout_tail": "{\n  \"decision_path\": \"/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF_20260502T230140Z/replay_extracted_resolver_run/STAGE4_REPLAY_RESOLVER_DECISION_OPERATOR_TRACKER.json\",\n  \"decision\": \"ALLOW_RENDER_PROXY_WITH_LIMITATION\",\n  \"selected_method\": \"weasyprint_pdf_png_proxy\",\n  \"honesty_label\": \"sandbox_render_proxy\"\n}\n",
+    "timed_out": false
+  },
+  "replay_root": "/mnt/data/replay_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_20260502T230140Z/Metablooms_OS",
+  "required_paths_count": 23,
+  "stage": "BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF",
+  "verdict": "PASS",
+  "vpq_invalid": {
+    "cmd": [
+      "python3",
+      "/mnt/data/replay_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_20260502T230140Z/Metablooms_OS/0_kernel/validators/validate_visual_presentation_quality_gate_v1.py",
+      "--validate",
+      "/mnt/data/replay_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_20260502T230140Z/Metablooms_OS/tests/fixtures/visual_presentation_quality/invalid_visual_presentation_quality_default_browser_styles_v1.json",
+      "--expect",
+      "DENY"
+    ],
+    "duration_seconds": 2.434,
+    "exit_code": 0,
+    "stderr_tail": "",
+    "stdout_tail": "man_review_prompts:[] is too short\",\n    \"SCHEMA:verification/promotion_blockers:[] is too short\",\n    \"SCHEMA:verification/render_checks:[] is too short\",\n    \"SCHEMA:verification/static_checks:[] is too short\",\n    \"SCHEMA:visual_presentation:'accessibility' is a required property\",\n    \"SCHEMA:visual_presentation:'anti_patterns_blocked' is a required property\",\n    \"SCHEMA:visual_presentation:'audience_profile' is a required property\",\n    \"SCHEMA:visual_presentation:'color_system' is a required property\",\n    \"SCHEMA:visual_presentation:'design_intent' is a required property\",\n    \"SCHEMA:visual_presentation:'design_system' is a required property\",\n    \"SCHEMA:visual_presentation:'interaction_feedback' is a required property\",\n    \"SCHEMA:visual_presentation:'layout' is a required property\",\n    \"SCHEMA:visual_presentation:'mobile_first' is a required property\",\n    \"SCHEMA:visual_presentation:'motion' is a required property\",\n    \"SCHEMA:visual_presentation:'platform_constraints' is a required property\",\n    \"SCHEMA:visual_presentation:'purpose_profile' is a required property\",\n    \"SCHEMA:visual_presentation:'teacher_professional_presentation' is a required property\",\n    \"SCHEMA:visual_presentation:'typography' is a required property\",\n    \"SCHEMA:visual_presentation:Additional properties are not allowed ('note' was unexpected)\",\n    \"VPQ_ACCESSIBILITY_FOCUS_VISIBILITY_REQUIRED\",\n    \"VPQ_ACCESSIBILITY_TARGET_SIZE_REQUIRED\",\n    \"VPQ_ANTI_PATTERN_MISSING_BLANK\",\n    \"VPQ_ANTI_PATTERN_MISSING_COLOR_ONLY\",\n    \"VPQ_ANTI_PATTERN_MISSING_DEFAULT_BROWSER\",\n    \"VPQ_BLOCK_DEFAULT_OR_UNSTYLED_PRESENTATION\",\n    \"VPQ_COLOR_INDEPENDENT_MEANING_REQUIRED\",\n    \"VPQ_CORRECT_INCORRECT_STATE_VISUALS_REQUIRED\",\n    \"VPQ_DESIGN_INTENT_CREDIBILITY_TARGET_REQUIRED\",\n    \"VPQ_DESIGN_INTENT_DESIRED_IMPRESSION_REQUIRED\",\n    \"VPQ_DESIGN_INTENT_ENGAGEMENT_STRATEGY_REQUIRED\",\n    \"VPQ_DESIGN_INTENT_FUNCTIONAL_MOOD_REQUIRED\",\n    \"VPQ_DRAG_ALTERNATIVE_REQUIRED\",\n    \"VPQ_EMPTY_STATE_RULE_REQUIRED\",\n    \"VPQ_HTML_ACTIVITY_GOOGLE_SITES_CONSTRAINT_REQUIRED\",\n    \"VPQ_HTML_ACTIVITY_SINGLE_FILE_CONSTRAINT_REQUIRED\",\n    \"VPQ_HUMAN_REVIEW_PROMPTS_MINIMUM_NOT_MET\",\n    \"VPQ_MISSING_DESIGN_SYSTEM\",\n    \"VPQ_MOBILE_BREAKPOINTS_INSUFFICIENT\",\n    \"VPQ_MOBILE_FIRST_CONFIRMATION_REQUIRED\",\n    \"VPQ_MOTION_PURPOSE_MUST_BE_FUNCTIONAL\",\n    \"VPQ_PROGRESS_STATE_REQUIRED\",\n    \"VPQ_PROMOTION_BLOCKERS_MINIMUM_NOT_MET\",\n    \"VPQ_REDUCED_MOTION_SUPPORT_REQUIRED\",\n    \"VPQ_RENDER_CHECKS_MINIMUM_NOT_MET\",\n    \"VPQ_RENDER_MOBILE_CHECK_REQUIRED\",\n    \"VPQ_RENDER_STUDENT_PROMPT_CHECK_REQUIRED\",\n    \"VPQ_STATIC_CHECKS_MINIMUM_NOT_MET\",\n    \"VPQ_STATIC_CHECK_DESIGN_TOKENS_REQUIRED\",\n    \"VPQ_STATIC_CHECK_FOCUS_REQUIRED\",\n    \"VPQ_STATIC_CHECK_REDUCED_MOTION_REQUIRED\",\n    \"VPQ_TEACHER_PROFESSIONAL_PRESENTATION_REQUIRED\",\n    \"VPQ_VISUAL_HIERARCHY_REQUIRED\",\n    \"VPQ_WCAG_2_2_AA_TARGET_REQUIRED\"\n  ],\n  \"warnings\": [\n    \"VPQ_WARN_HTML_ACTIVITY_EXTERNAL_DEPENDENCY_POLICY_NOT_EXPLICIT\"\n  ]\n}\n",
+    "timed_out": false
+  },
+  "vpq_tracker": {
+    "cmd": [
+      "python3",
+      "/mnt/data/replay_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_20260502T230140Z/Metablooms_OS/0_kernel/validators/validate_visual_presentation_quality_gate_v1.py",
+      "--validate",
+      "/mnt/data/replay_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_20260502T230140Z/Metablooms_OS/tests/fixtures/visual_presentation_quality/valid_visual_presentation_quality_operator_tracker_v1.json",
+      "--expect",
+      "ALLOW"
+    ],
+    "duration_seconds": 2.389,
+    "exit_code": 0,
+    "stderr_tail": "",
+    "stdout_tail": "{\n  \"artifact_id\": \"open_operator_visual_tracker_vpq_binding_v1\",\n  \"artifact_type\": \"operator_tracker\",\n  \"created_utc\": \"2026-05-02T23:01:57Z\",\n  \"decision\": \"ALLOW\",\n  \"evidence\": {\n    \"checks\": [\n      \"json_schema_draft_2020_12\",\n      \"default_browser_style_block\",\n      \"design_system_required\",\n      \"mobile_first_required\",\n      \"wcag_2_2_aa_required\",\n      \"reduced_motion_required\",\n      \"render_static_human_review_lists_required\",\n      \"html_activity_google_sites_single_file_constraints\"\n    ],\n    \"payload_sha256\": \"97aa43d219765d278e1d5469d8a6db9abae49107442d50e570cf61f314b25dd3\",\n    \"schema_path\": \"/mnt/data/replay_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_20260502T230140Z/Metablooms_OS/0_kernel/registry/visual_presentation_quality/visual_presentation_quality_declaration_schema_v1.json\",\n    \"schema_sha256\": \"cca7d35922c5de1071a6ccb4d596b6d186cfa1ced82348c35a6fa5c203c273be\"\n  },\n  \"ok\": true,\n  \"result_sha256\": \"f7745dd414c7a23bbb30aef26a752d2f44ebbf08a3350b806c2e49d5aad40464\",\n  \"schema_version\": \"visual_presentation_quality_gate_decision.v1\",\n  \"validator_version\": \"visual_presentation_quality_gate_validator_v1\",\n  \"violations\": [],\n  \"warnings\": []\n}\n",
+    "timed_out": false
+  },
+  "vpq_valid": {
+    "cmd": [
+      "python3",
+      "/mnt/data/replay_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_20260502T230140Z/Metablooms_OS/0_kernel/validators/validate_visual_presentation_quality_gate_v1.py",
+      "--validate",
+      "/mnt/data/replay_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_20260502T230140Z/Metablooms_OS/tests/fixtures/visual_presentation_quality/valid_visual_presentation_quality_html_activity_v1.json",
+      "--expect",
+      "ALLOW"
+    ],
+    "duration_seconds": 2.289,
+    "exit_code": 0,
+    "stderr_tail": "",
+    "stdout_tail": "{\n  \"artifact_id\": \"example_fraction_html_activity_v1\",\n  \"artifact_type\": \"html_activity\",\n  \"created_utc\": \"2026-05-02T23:01:53Z\",\n  \"decision\": \"ALLOW\",\n  \"evidence\": {\n    \"checks\": [\n      \"json_schema_draft_2020_12\",\n      \"default_browser_style_block\",\n      \"design_system_required\",\n      \"mobile_first_required\",\n      \"wcag_2_2_aa_required\",\n      \"reduced_motion_required\",\n      \"render_static_human_review_lists_required\",\n      \"html_activity_google_sites_single_file_constraints\"\n    ],\n    \"payload_sha256\": \"65694a9efc3bf014d0e324ac447411e4090d2c07a27979b1c1f2091e56f47584\",\n    \"schema_path\": \"/mnt/data/replay_BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_20260502T230140Z/Metablooms_OS/0_kernel/registry/visual_presentation_quality/visual_presentation_quality_declaration_schema_v1.json\",\n    \"schema_sha256\": \"cca7d35922c5de1071a6ccb4d596b6d186cfa1ced82348c35a6fa5c203c273be\"\n  },\n  \"ok\": true,\n  \"result_sha256\": \"35b8b4a2e6f00fe59f5d0068416895f8b5033921631bf2b70beb35b17d44aeaa\",\n  \"schema_version\": \"visual_presentation_quality_gate_decision.v1\",\n  \"validator_version\": \"visual_presentation_quality_gate_validator_v1\",\n  \"violations\": [],\n  \"warnings\": []\n}\n",
+    "timed_out": false
+  },
+  "zip_entry_count": 7051,
+  "zip_testzip": null
+}

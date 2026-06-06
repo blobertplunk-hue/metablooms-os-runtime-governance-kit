@@ -1,0 +1,9 @@
+{
+  "artifact_type": "EVALS_VALIDATOR_ALIGNMENT_STAGE4_VALIDATION_v1",
+  "created_utc": "20260501T153500Z",
+  "verdict": "PASS",
+  "issues": [],
+  "validation_mode": "no_broad_extract_in_zip_metric_validation",
+  "gate_verdict": "VALIDATOR_ALIGNMENT_GATE_PASS",
+  "promotion_decision": "PROMOTE"
+}

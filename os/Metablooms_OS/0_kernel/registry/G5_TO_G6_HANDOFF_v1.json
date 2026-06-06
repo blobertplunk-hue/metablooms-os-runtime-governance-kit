@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "created_at": 1777065171.338873,
+  "from_stage": "G5_REPAIRED_RECOVERY_PROVEN_EXPORT",
+  "to_stage": "G6_RECOVERY_PROOF_BASELINE_LOCK",
+  "status": "ready",
+  "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G5_REPAIRED_RECOVERY_PROVEN_EXPORT_RECEIPT_v1.json",
+  "export_zip": "/mnt/data/exports/MetaBlooms_OS_refined_G5_REPAIRED_RECOVERY_PROVEN_1777065171.zip",
+  "sidecar": "/mnt/data/exports/MetaBlooms_OS_refined_G5_REPAIRED_RECOVERY_PROVEN_1777065171.zip.sha256.json",
+  "validator_decision": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_G5_REPAIRED_DECISION_v1.json",
+  "recovery_proof_required": true,
+  "export_allowed": false,
+  "cleanup_allowed": false,
+  "next_command": "EXECUTE G6 \u2014 RECOVERY PROOF + BASELINE LOCK"
+}

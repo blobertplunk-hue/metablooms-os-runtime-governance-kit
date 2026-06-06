@@ -1,0 +1,82 @@
+{
+  "ok": false,
+  "contract_path": "/mnt/data/Metablooms_OS/runtime/governance/contracts/unified_runtime_compatibility_contract_v1.json",
+  "root": "/mnt/data/Metablooms_OS",
+  "errors": [
+    "cross_link_redirect_not_demoted"
+  ],
+  "checks": [
+    {
+      "check": "required_top:contract_id",
+      "ok": true
+    },
+    {
+      "check": "required_top:authoritative_root",
+      "ok": true
+    },
+    {
+      "check": "required_top:accepted_source_tracks",
+      "ok": true
+    },
+    {
+      "check": "required_top:required_handoff_artifacts",
+      "ok": true
+    },
+    {
+      "check": "required_top:compatibility_rules",
+      "ok": true
+    },
+    {
+      "check": "required_top:stale_after_utc",
+      "ok": true
+    },
+    {
+      "check": "required_top:supersedes",
+      "ok": true
+    },
+    {
+      "check": "contract_id",
+      "ok": true
+    },
+    {
+      "check": "authoritative_root",
+      "ok": true
+    },
+    {
+      "check": "accepted_source_tracks",
+      "ok": true
+    },
+    {
+      "check": "handoff:runtime/governance/contracts/artifact_disposition_contract_v1.json",
+      "ok": true
+    },
+    {
+      "check": "handoff:runtime/governance/contracts/legacy_artifact_redirects_v1.json",
+      "ok": true
+    },
+    {
+      "check": "handoff:0_kernel/docs/decisions/ADR-0001-split-rationale-from-runtime-contracts.md",
+      "ok": true
+    },
+    {
+      "check": "handoff:receipts/refactor_program/R2_VERIFY_RECEIPT_20260428T024446Z.json",
+      "ok": true
+    },
+    {
+      "check": "stale_after_utc_future",
+      "ok": true
+    },
+    {
+      "check": "supersedes",
+      "ok": true
+    },
+    {
+      "check": "cross_link_redirect_status",
+      "ok": false
+    },
+    {
+      "check": "compatibility_rules",
+      "ok": true
+    }
+  ]
+}

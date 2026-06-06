@@ -1,0 +1,12 @@
+{
+  "bounded_scope": [
+    "profile fixtures",
+    "report generator",
+    "safe_walk enforcement",
+    "registry/gate updates",
+    "full export"
+  ],
+  "id": "REPAIR_AND_INSTALL_PLAN",
+  "optimized_prompt": "Run Stage 5 as one bounded implementation/export stage: verify Stage 4 authority ZIP and sidecar; distrust any existing root unless pointer/hash match; install executable prompt profile smoke fixtures, reliability report generator, Safe_Walk traversal policy, banned rglob enforcement, boot gates, controlled-index registrations; validate checksum, zip integrity, duplicate scan, fixture validator, reliability report PASS, banned-pattern ALLOW, readback; export a full OS ZIP only if gates pass.",
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_5_PROMPT_ENGINE_REGRESSION_FIXTURES_AND_PROFILE_SMOKE"
+}

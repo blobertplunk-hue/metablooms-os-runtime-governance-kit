@@ -1,0 +1,11 @@
+{
+  "artifact_type": "AtomicJsonWriterStage5FullAuthorityExportResult.v1",
+  "duplicate_members": 0,
+  "full_authority_zip": "/mnt/data/METABLOOMS_OS_BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE5_FULL_AUTHORITY_20260502T145012Z.zip",
+  "member_count": 4948,
+  "sha256": "66bba2bd61cb9a4b8335025a05bfd18cb3772fa1fc687eaeab1bacac4016de1e",
+  "size_bytes": 25315881,
+  "stage": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT_20260502T145012Z",
+  "status": "PASS_WITH_WARNINGS",
+  "zip_testzip": "PASS"
+}

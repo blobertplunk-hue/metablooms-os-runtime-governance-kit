@@ -1,0 +1,35 @@
+{
+  "completed": [
+    "patched live Markdown boot guidance to Stage18 authority",
+    "updated CURRENT_EXPORT_AUTHORITY_v1.json to Stage18 authority",
+    "replaced stale current_authority boot rehearsal packet semantics",
+    "replaced stale promotion lock packet semantics",
+    "regenerated direct sidecars",
+    "performed targeted registry updates for patched live files only",
+    "verified PAC-002 stale authority sweep now passes with stale_reference_count=0",
+    "verified new_chat_start_contract_validator now ALLOW"
+  ],
+  "created_at": "2026-05-02T20:47:30+00:00",
+  "not_completed": [
+    "full registry closure",
+    "remaining registered hash mismatch reconciliation",
+    "full authority export promotion"
+  ],
+  "post_stage_counts": {
+    "controlled_files_scanned": 2086,
+    "missing_from_registry": 446,
+    "registered_entries": 3093,
+    "registered_hash_mismatches": 81,
+    "stale_live_authority_refs": 0,
+    "total_repair_items": 527
+  },
+  "post_stage_pac_defects": [
+    "controlled_artifact_missing_from_index",
+    "registered_hash_mismatch"
+  ],
+  "receipt": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE5_STALE_BOOT_REFERENCE_REPAIR_20260502T204355Z/STAGE_RECEIPT.json",
+  "required_next_stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE6_REGISTRY_HASH_RECONCILIATION_AND_TARGETED_CLOSURE",
+  "schema_version": "metablooms.stage_handoff.v1",
+  "stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE5_STALE_BOOT_REFERENCE_REPAIR",
+  "status": "HANDOFF_READY"
+}

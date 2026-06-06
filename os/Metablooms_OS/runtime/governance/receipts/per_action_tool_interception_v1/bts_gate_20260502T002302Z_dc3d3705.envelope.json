@@ -1,0 +1,28 @@
+{
+  "schema_version": "ToolCallEnvelope_v1",
+  "envelope_id": "bts_gate_20260502T002302Z_dc3d3705",
+  "stage_id": "BTS_V4_GATE_WRAPPED_RUNTIME",
+  "action_type": "shell",
+  "tool_name": "bts_tier1_subprocess",
+  "command_summary": "unzip -tqq /tmp/nope.zip",
+  "intent": "Produce T1 subprocess proof for STAGE6D_FORBIDDEN_UNZIP",
+  "risk_tier": "medium",
+  "requested_at_utc": "2026-05-02T00:23:02.663163Z",
+  "requires_see": false,
+  "see_evidence_refs": [],
+  "limits": {
+    "timeout_seconds": 60,
+    "max_files": 25,
+    "max_bytes": 10000000,
+    "max_steps": 5
+  },
+  "artifacts": {
+    "read_paths": [],
+    "write_paths": [],
+    "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/bts_gate_20260502T002302Z_dc3d3705.decision.json"
+  },
+  "metadata": {
+    "caller": "BTS_v4_gate_wrapped",
+    "ledger_surface": "BTS_V4_CANONICAL_RECEIPT_ENGINE"
+  }
+}

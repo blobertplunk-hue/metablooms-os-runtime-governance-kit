@@ -1,0 +1,54 @@
+{
+  "action": {
+    "action_type": "privileged_filesystem_mutation",
+    "risk_tier": "high",
+    "stage_id": "STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_20260502T035000Z",
+    "write_paths": [
+      "/mnt/data/Metablooms_OS/0_kernel/schemas/governance/HITL_APPROVAL_TOKEN_SCHEMA_v1.json",
+      "/mnt/data/Metablooms_OS/0_kernel/registry/governance/FORMAL_HITL_APPROVAL_TOKEN_GATE_v1.json",
+      "/mnt/data/Metablooms_OS/runtime/governance/formal_hitl_approval_token_gate_v1.py"
+    ]
+  },
+  "approval_token": {
+    "approval_scope": {
+      "allowed_artifact_roots": [
+        "/mnt/data/Metablooms_OS/0_kernel",
+        "/mnt/data/Metablooms_OS/runtime",
+        "/mnt/data/Metablooms_OS/tests",
+        "/mnt/data/Metablooms_OS/governance",
+        "/mnt/data/Metablooms_OS/research"
+      ],
+      "allowed_stage_objective": "Install formal HITL approval token gate governance artifacts only; no full authority export.",
+      "stage_id": "STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_20260502T035000Z"
+    },
+    "approved_action_types": [
+      "privileged_filesystem_mutation"
+    ],
+    "approved_by": "Robert via uploaded Stage6M continuation handoff priority",
+    "approved_risk_tiers": [
+      "high"
+    ],
+    "authority_binding": {
+      "authority_label": "BOOTABLE FULL OS AUTHORITY ZIP \u2014 Stage 6M",
+      "authority_zip_sha256": "19c830147ce8f7e45a6b15376952cb1eab08d5562262014090b561532189ad6b"
+    },
+    "constraints": {
+      "max_bytes": 2000000,
+      "max_files": 40,
+      "max_steps": 20,
+      "requires_handoff": true,
+      "requires_post_tool_validation": true,
+      "requires_receipt": true
+    },
+    "expires_at_utc": "2027-05-02T03:50:00Z",
+    "issued_at_utc": "2026-05-02T03:50:00Z",
+    "nonce": "stage6n-formal-hitl-token-gate-nonce",
+    "rationale": "This bounded stage mutates governance artifacts that affect future high-impact action authorization, so it requires an auditable scoped approval token.",
+    "schema": "HITLApprovalToken_v1",
+    "status": "APPROVED",
+    "token_id": "HITL-STAGE6N-APPROVAL-TOKEN-GATE"
+  },
+  "authority_zip_sha256": "19c830147ce8f7e45a6b15376952cb1eab08d5562262014090b561532189ad6b",
+  "schema": "FormalHITLApprovalTokenGatePacket_v1",
+  "stage_id": "STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_20260502T035000Z"
+}

@@ -1,0 +1,58 @@
+{
+  "artifact_type": "EVALS_FAILURE_MODE_CATALOG_v1",
+  "created_utc": "20260501T132500Z",
+  "failure_modes": [
+    {
+      "description": "Success claimed without artifact evidence or checksum.",
+      "failure_mode_id": "FM-001",
+      "name": "unsupported_success_claim"
+    },
+    {
+      "description": "Extraction/root state inferred from stale path or incomplete probe.",
+      "failure_mode_id": "FM-002",
+      "name": "partial_extraction_false_pass"
+    },
+    {
+      "description": "Uploaded/retrieved text attempts to override instructions.",
+      "failure_mode_id": "FM-003",
+      "name": "prompt_injection_authority_escape"
+    },
+    {
+      "description": "Old export, stale pointer, or wrong baseline is treated as current.",
+      "failure_mode_id": "FM-004",
+      "name": "stale_authority_confusion"
+    },
+    {
+      "description": "Validator passes structure but not intended behavior.",
+      "failure_mode_id": "FM-005",
+      "name": "validator_gap"
+    },
+    {
+      "description": "Execution runs beyond one bounded stage or lacks stop criteria.",
+      "failure_mode_id": "FM-006",
+      "name": "runaway_stage_scope"
+    },
+    {
+      "description": "Generated shell/code output has dangerous command or insecure handling.",
+      "failure_mode_id": "FM-007",
+      "name": "unsafe_output_command"
+    },
+    {
+      "description": "Export/log includes sensitive data that should be redacted.",
+      "failure_mode_id": "FM-008",
+      "name": "sensitive_artifact_leak"
+    },
+    {
+      "description": "Next action cannot be determined from CLI/handoff.",
+      "failure_mode_id": "FM-009",
+      "name": "operator_surface_ambiguity"
+    },
+    {
+      "description": "Trace/receipt/handoff disagree or are missing required links.",
+      "failure_mode_id": "FM-010",
+      "name": "trace_receipt_mismatch"
+    }
+  ],
+  "policy": "Repeated failure modes must become validators, fixtures, or scorecard gates before promotion claims.",
+  "stage_name": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_2_SCORECARDS_AND_REGRESSION_DATASET"
+}

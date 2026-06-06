@@ -1,0 +1,27 @@
+{
+  "schema": "SEEPacket_v1",
+  "sources": [
+    {
+      "claim": "code review evaluates design, functionality, complexity, tests, naming, comments, style, documentation, every line, and context",
+      "name": "Google Engineering Practices - Code Review",
+      "url": "https://google.github.io/eng-practices/review/reviewer/looking-for.html"
+    },
+    {
+      "claim": "secure code requires input validation, output encoding, access control, cryptography, error handling/logging, data/file/memory management, and general coding practices",
+      "name": "OWASP Secure Coding Practices Checklist",
+      "url": "https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/stable-en/02-checklist/"
+    },
+    {
+      "claim": "semantic conventions define keys and values describing common operations, including error and exception attributes",
+      "name": "OpenTelemetry Semantic Conventions",
+      "url": "https://opentelemetry.io/docs/specs/otel/semantic-conventions/"
+    },
+    {
+      "claim": "secure development should reduce vulnerabilities, mitigate impact, and address root causes to prevent recurrence",
+      "name": "NIST SSDF SP 800-218",
+      "url": "https://www.nist.gov/publications/secure-software-development-framework-ssdf-version-11-recommendations-mitigating-risk"
+    }
+  ],
+  "stage": "CDR_STAGE6_ADAPTABILITY_AND_INTERFACE_CONTRACT_HARDENING",
+  "timestamp_utc": "2026-05-02T04:36:43Z"
+}

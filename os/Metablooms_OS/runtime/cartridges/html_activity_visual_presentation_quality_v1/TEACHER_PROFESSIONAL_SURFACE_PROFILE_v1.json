@@ -1,0 +1,17 @@
+{
+  "profile_id": "teacher_professional_surface",
+  "purpose": "Make classroom HTML products look polished for students while making the teacher look prepared, credible, organized, and current.",
+  "rules": [
+    "Separate teacher controls, answer keys, telemetry, and setup panels from the student-facing path.",
+    "Use clean hierarchy and labels so a projected or screenshotted teacher dashboard reads as professional instructional evidence.",
+    "Never expose debug labels, placeholder strings, raw JSON, or developer jokes in teacher-facing surfaces.",
+    "Provide shareable summaries with concise learning-language, not system-language.",
+    "Prefer card/group layouts that make next instructional action obvious at a glance."
+  ],
+  "schema_version": "metablooms.html_activity_design_profile.v1",
+  "visual_references": [
+    "Material 3-informed tokens/components",
+    "NN/g dashboard at-a-glance hierarchy",
+    "WCAG 2.2 AA accessibility floor"
+  ]
+}

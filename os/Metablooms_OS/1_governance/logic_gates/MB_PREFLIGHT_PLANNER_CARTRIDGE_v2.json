@@ -1,0 +1,185 @@
+{
+  "cartridge_id": "mb_preflight_planner_v2",
+  "name": "MB Preflight Planner Cartridge v2",
+  "type": "core_governance",
+  "purpose": "High-performance preflight system for planning, context control, and execution readiness.",
+  "task_types": [
+    "planning",
+    "context_engineering",
+    "task_decomposition",
+    "routing",
+    "risk_analysis",
+    "execution_readiness"
+  ],
+  "platform": [
+    "robert",
+    "shaye",
+    "both"
+  ],
+  "input_contract": {
+    "required": [
+      "task"
+    ],
+    "optional": [
+      "context",
+      "constraints",
+      "target",
+      "existing_artifacts"
+    ]
+  },
+  "output_contract": {
+    "artifacts": [
+      "preflight_plan"
+    ],
+    "format": "structured_json_or_markdown",
+    "must_include": [
+      "ce_result",
+      "context_packet",
+      "spec_lock",
+      "task_decomposition",
+      "task_classification",
+      "cartridge_plan",
+      "mpp_stage_plan",
+      "artifact_contracts",
+      "tool_routing",
+      "simulation",
+      "risk_mitigation",
+      "input_check",
+      "complexity_score",
+      "preflight_score",
+      "execution_readiness"
+    ]
+  },
+  "handoff_contract": {
+    "structure": "structured_markdown_v1",
+    "fields": [
+      "artifact",
+      "summary",
+      "next_required_input",
+      "next_recommended_cartridge"
+    ]
+  },
+  "execution_mode": "plan",
+  "external_tools": [],
+  "validation_rules": [
+    "must_fail_closed_on_missing_required_inputs",
+    "must_define_one_artifact_per_stage",
+    "must_define_go_no_go_status",
+    "must_curate_context_not_expand_it",
+    "must_output_structured_plan"
+  ],
+  "failure_modes": [
+    "missing_required_input",
+    "unclear_objective",
+    "undefined_artifacts",
+    "ambiguous_routing",
+    "non_executable_stage_plan"
+  ],
+  "status": "active",
+  "preflight_schema": {
+    "ce_result": {
+      "required": [
+        "objective",
+        "constraints",
+        "success_criteria"
+      ]
+    },
+    "context_packet": {
+      "required": [
+        "write",
+        "select",
+        "compress",
+        "isolate"
+      ]
+    },
+    "spec_lock": {
+      "required": [
+        "definition_of_done",
+        "required_artifacts",
+        "acceptance_criteria",
+        "non_negotiables"
+      ]
+    },
+    "task_decomposition": {
+      "required": [
+        "tasks"
+      ],
+      "rules": [
+        "minimal_tasks",
+        "one_artifact_per_task"
+      ]
+    },
+    "task_classification": {
+      "required": [
+        "domains"
+      ]
+    },
+    "cartridge_plan": {
+      "required": [
+        "primary_path",
+        "confidence"
+      ],
+      "optional": [
+        "fallback_paths"
+      ]
+    },
+    "mpp_stage_plan": {
+      "required": [
+        "stages"
+      ],
+      "stage_fields": [
+        "goal",
+        "tool",
+        "output"
+      ]
+    },
+    "artifact_contracts": {
+      "required": [
+        "artifact_type",
+        "must_include"
+      ]
+    },
+    "tool_routing": {
+      "required": [
+        "routes"
+      ]
+    },
+    "simulation": {
+      "required": [
+        "stage_outputs",
+        "breakpoints",
+        "failure_risks"
+      ]
+    },
+    "risk_mitigation": {
+      "required": [
+        "risks"
+      ]
+    },
+    "input_check": {
+      "required": [
+        "missing_inputs",
+        "status"
+      ]
+    },
+    "complexity_score": {
+      "required": [
+        "level"
+      ]
+    },
+    "preflight_score": {
+      "required": [
+        "clarity",
+        "completeness",
+        "feasibility",
+        "risk_coverage"
+      ]
+    },
+    "execution_readiness": {
+      "required": [
+        "status",
+        "next_step"
+      ]
+    }
+  }
+}

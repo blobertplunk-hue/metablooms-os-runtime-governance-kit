@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "CE_PACKET_SCHEMA_v1",
+  "type": "object",
+  "required": [
+    "version",
+    "created_at",
+    "stage",
+    "task",
+    "intent_model",
+    "hidden_goal_detection",
+    "misinterpretation_traps",
+    "trap_mitigation_plan",
+    "fact_inference_uncertainty_map",
+    "comprehension_readiness_decision",
+    "ce_verdict"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "created_at": 1777061460.1145036,
+  "contract_id": "AUTO_RUNAWAY_STAGE_SPLIT_CONTRACT_v1",
+  "status": "active",
+  "split_required_when": [
+    "heavy_work_class_count > 1",
+    "stage includes implementation + proof",
+    "stage includes proof + export",
+    "stage includes export + boot_recovery"
+  ],
+  "E4_micro_stage_plan": [
+    "E4A",
+    "E4B",
+    "E4C",
+    "E4D",
+    "E4E"
+  ],
+  "E5_micro_stage_plan": [
+    "E5A",
+    "E5B",
+    "E5C",
+    "E5D"
+  ]
+}

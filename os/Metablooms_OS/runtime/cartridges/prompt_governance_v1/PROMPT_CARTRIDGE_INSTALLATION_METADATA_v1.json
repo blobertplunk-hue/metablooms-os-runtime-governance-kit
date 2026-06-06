@@ -1,0 +1,11 @@
+{
+  "id": "PROMPT_CARTRIDGE_INSTALLATION_METADATA_v1",
+  "installed_by_stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_1",
+  "installed_utc": "2026-04-30T21:05:12Z",
+  "lineage": [
+    "1_governance/specs/PROMPT_ENGINE_v2.md if present",
+    "current web.run SEE/CE packet"
+  ],
+  "status": "installed",
+  "supersedes_external_only_prompt_governance": true
+}

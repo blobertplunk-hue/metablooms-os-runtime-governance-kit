@@ -1,0 +1,142 @@
+{
+  "alternate_next_stage": "MPP_R23_EXPORT_PROMOTION_GATE",
+  "artifacts_written": [
+    {
+      "bytes": 15224,
+      "path": "0_kernel/mpp_v3/__pycache__/mpp_v3_persistent_learning_method_reliability_gate_v1.cpython-313.pyc",
+      "sha256": "911b3f5cc2646761acd222043d60ff8539af818c6ee4fc8f739a7b1fd56c7a25"
+    },
+    {
+      "bytes": 11372,
+      "path": "0_kernel/mpp_v3/mpp_v3_persistent_learning_method_reliability_gate_v1.py",
+      "sha256": "e2722cdda4f4a3fe794d6e44b2b8c4ac893d81c2be8b62f31f5c1bd6e4ee9f02"
+    },
+    {
+      "bytes": 1056,
+      "path": "0_kernel/registry/mpp_v3/policy_gates/MPP_V3_METHOD_RELIABILITY_GATE_v1.json",
+      "sha256": "872ff8e9ac472baf93d06d217563be28fb1f908a7062091d99ec5217548a9280"
+    },
+    {
+      "bytes": 806,
+      "path": "0_kernel/schemas/mpp_v3/METHOD_RELIABILITY_GATE_RESULT_SCHEMA_v1.json",
+      "sha256": "4167d11d8a2556b811e907565e66dae7fe992e979153214684c9569879fb3b68"
+    },
+    {
+      "bytes": 832,
+      "path": "0_kernel/schemas/mpp_v3/METHOD_ROUTER_UPDATE_SCHEMA_v1.json",
+      "sha256": "9f5f38e9d62c96a0151ae73f1d14ac8e069e73cc125bcad3f12e923d1dedfe07"
+    },
+    {
+      "bytes": 1039,
+      "path": "0_kernel/schemas/mpp_v3/PERSISTENT_LEARNING_REGISTRY_PACKET_SCHEMA_v1.json",
+      "sha256": "9973d7772b61f24493c408ee2140df050286d0a7a94ccb8f2ec9e143e983d3d2"
+    },
+    {
+      "bytes": 693,
+      "path": "runtime/handoffs/mpp_v3/MPP_R21_PERSISTENT_LEARNING_REGISTRY_AND_METHOD_RELIABILITY_GATE_HANDOFF_20260501T063000Z.json",
+      "sha256": "4613c8d1fe2758f298bec6589fe9da42b5acd8ea1ae0c15454ae1cfb582e6a87"
+    },
+    {
+      "bytes": 693,
+      "path": "runtime/handoffs/mpp_v3/MPP_R21_PERSISTENT_LEARNING_REGISTRY_AND_METHOD_RELIABILITY_GATE_HANDOFF_LATEST.json",
+      "sha256": "4613c8d1fe2758f298bec6589fe9da42b5acd8ea1ae0c15454ae1cfb582e6a87"
+    },
+    {
+      "bytes": 1853,
+      "path": "runtime/receipts/mpp_v3/MPP_R21_PERSISTENT_LEARNING_REGISTRY_AND_METHOD_RELIABILITY_GATE_RECEIPT_20260501T063000Z.json",
+      "sha256": "2f4e5c69e70cd0e47b526bc019a234eb493e514006e2e0dd52f6dfdfe09ace9d"
+    },
+    {
+      "bytes": 1853,
+      "path": "runtime/receipts/mpp_v3/MPP_R21_PERSISTENT_LEARNING_REGISTRY_AND_METHOD_RELIABILITY_GATE_RECEIPT_LATEST.json",
+      "sha256": "2f4e5c69e70cd0e47b526bc019a234eb493e514006e2e0dd52f6dfdfe09ace9d"
+    },
+    {
+      "bytes": 830,
+      "path": "runtime/summaries/mpp_v3/MPP_R21_PERSISTENT_LEARNING_REGISTRY_AND_METHOD_RELIABILITY_GATE_SUMMARY.md",
+      "sha256": "88d16438e6002e8ad0e1f7a6e7f87743db0f8d3d36fe95192d4af7226ce596f8"
+    },
+    {
+      "bytes": 3862,
+      "path": "tests/fixtures/mpp_v3/invalid_learning_action_without_route_packet_v1.json",
+      "sha256": "8e684c4b723ac80bce2116d1d638b64473966b69729dbc17706db292c8615648"
+    },
+    {
+      "bytes": 3881,
+      "path": "tests/fixtures/mpp_v3/invalid_learning_blocked_failure_promoted_packet_v1.json",
+      "sha256": "af8707810088b1305d7bf6368ccd789cb8ea6137a75f1f194eadf185b1dad7e3"
+    },
+    {
+      "bytes": 3880,
+      "path": "tests/fixtures/mpp_v3/invalid_learning_low_score_no_demotion_packet_v1.json",
+      "sha256": "4024f116e86430c43d97a382df8c59c54202c8993db3500b7d779c987c7680c3"
+    },
+    {
+      "bytes": 2009,
+      "path": "tests/fixtures/mpp_v3/valid_method_reliability_gate_result_v1.json",
+      "sha256": "db2159faab800e6c5fc2a0cdb20d1e89768934610dc0308c926f0d97cebeb793"
+    },
+    {
+      "bytes": 474,
+      "path": "tests/fixtures/mpp_v3/valid_method_router_update_v1.json",
+      "sha256": "79e888be358f24515f2796e0c33a43958d1eff77cb128b20480874f8b284689e"
+    },
+    {
+      "bytes": 3886,
+      "path": "tests/fixtures/mpp_v3/valid_persistent_learning_registry_packet_v1.json",
+      "sha256": "03dd674428701b1b39b6e7f3d587fd0dda2ed031f59468fee8ff58662bcf4925"
+    }
+  ],
+  "base_full_os_verification": {
+    "actual_sha256": "a74f1474b9113f559e3e99558ef380a83c9c4f82bfaa06c2498c39cf80cd2bca",
+    "checksum_match": true,
+    "exists": true,
+    "sha_sidecar_exists": true,
+    "sidecar_sha256": "a74f1474b9113f559e3e99558ef380a83c9c4f82bfaa06c2498c39cf80cd2bca",
+    "zip": "/mnt/data/METABLOOMS_OS_FULL_MPP_V3_R0_R20_INTEGRATED_20260501T050500Z.zip",
+    "zip_testzip": null
+  },
+  "next_stage": "MPP_R22_ORCHESTRATOR_RUNTIME_CONTROLLER",
+  "schema_version": "metablooms.mpp_stage_receipt.v1",
+  "stage_id": "MPP_R21_PERSISTENT_LEARNING_REGISTRY_AND_METHOD_RELIABILITY_GATE",
+  "status": "PASS",
+  "tests": [
+    {
+      "detail": "/mnt/data/R21_overlay_20260501T063000Z/Metablooms_OS/0_kernel/mpp_v3/__pycache__/mpp_v3_persistent_learning_method_reliability_gate_v1.cpython-313.pyc",
+      "expected": "PASS",
+      "name": "py_compile",
+      "status": "PASS"
+    },
+    {
+      "detail": "{'status': 'PASS', 'packet_id': 'LEARN-20260501T004042Z', 'result_hash': 'a331221b14b36907cf1645d82de1aa1b3a42de91798ebefd269706ca3b21d0f3'}",
+      "expected": "PASS",
+      "name": "valid_validate",
+      "status": "PASS"
+    },
+    {
+      "detail": "True",
+      "expected": "PASS",
+      "name": "valid_gate",
+      "status": "PASS"
+    },
+    {
+      "detail": "True",
+      "expected": "PASS",
+      "name": "low_score_no_demotion_gate_blocks",
+      "status": "PASS"
+    },
+    {
+      "detail": "True",
+      "expected": "PASS",
+      "name": "blocked_failure_promoted_gate_blocks",
+      "status": "PASS"
+    },
+    {
+      "error": "LearningRegistryError:LEARN_EVENT_0_BAD_ROUTE",
+      "expected": "RAISE",
+      "name": "action_without_route_validate_raises",
+      "status": "PASS"
+    }
+  ],
+  "timestamp": "20260501T063000Z"
+}

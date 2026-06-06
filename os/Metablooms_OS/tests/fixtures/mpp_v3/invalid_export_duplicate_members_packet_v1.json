@@ -1,0 +1,105 @@
+{
+  "bundle_inventory": {
+    "fixture_count": 92,
+    "handoff_count": 40,
+    "impl_count": 20,
+    "receipt_count": 41,
+    "schema_count": 46,
+    "stage_bundle_count": 25
+  },
+  "created_at": "2026-05-01T00:58:05.008481+00:00",
+  "export_candidate": {
+    "duplicate_count": 1,
+    "member_count": 2555,
+    "sha256": "3e4903b137e05fc84c1ae08d0b705203dff3910fcaecf9174f72109591248011",
+    "sidecar_path": "/mnt/data/METABLOOMS_OS_FULL_MPP_V3_R0_R23_PROMOTED_20260501T081500Z.zip.sha256",
+    "zip_path": "/mnt/data/METABLOOMS_OS_FULL_MPP_V3_R0_R23_PROMOTED_20260501T081500Z.zip",
+    "zip_testzip": null
+  },
+  "included_stage_range": "R0-R23",
+  "objective_id": "OBJ-MPP-R23",
+  "packet_id": "EXPORT-BAD-DUP",
+  "promotion_checks": [
+    {
+      "blocking": true,
+      "check_id": "EXPORT-CHECK-001",
+      "evidence_refs": [
+        "/mnt/data/METABLOOMS_OS_FULL_MPP_V3_R0_R23_PROMOTED_20260501T081500Z.zip"
+      ],
+      "name": "zip_integrity",
+      "status": "PASS"
+    },
+    {
+      "blocking": true,
+      "check_id": "EXPORT-CHECK-002",
+      "evidence_refs": [
+        "duplicate_count=0"
+      ],
+      "name": "duplicate_members",
+      "status": "PASS"
+    },
+    {
+      "blocking": true,
+      "check_id": "EXPORT-CHECK-003",
+      "evidence_refs": [
+        "Metablooms_OS/0_kernel/schemas/mpp_v3/EXPORT_PROMOTION_PACKET_SCHEMA_v1.json",
+        "Metablooms_OS/0_kernel/mpp_v3/mpp_v3_export_promotion_gate_v1.py",
+        "Metablooms_OS/runtime/handoffs/mpp_v3/MPP_R23_EXPORT_PROMOTION_GATE_HANDOFF_LATEST.json",
+        "Metablooms_OS/runtime/receipts/mpp_v3/MPP_R23_EXPORT_PROMOTION_GATE_RECEIPT_LATEST.json",
+        "Metablooms_OS/runtime/authority/CURRENT_EXPORT_AUTHORITY_v1.json"
+      ],
+      "name": "required_markers",
+      "status": "PASS"
+    },
+    {
+      "blocking": true,
+      "check_id": "EXPORT-CHECK-004",
+      "evidence_refs": [
+        "{\"fixture_count\": 92, \"handoff_count\": 40, \"impl_count\": 20, \"receipt_count\": 41, \"schema_count\": 46, \"stage_bundle_count\": 25}"
+      ],
+      "name": "bundle_inventory",
+      "status": "PASS"
+    }
+  ],
+  "promotion_summary": {
+    "all_blocking_checks_passed": true,
+    "decision": "BLOCK",
+    "sidecar_required": true
+  },
+  "required_markers": [
+    {
+      "marker_id": "MARKER-001",
+      "path": "Metablooms_OS/0_kernel/schemas/mpp_v3/EXPORT_PROMOTION_PACKET_SCHEMA_v1.json",
+      "present": true,
+      "purpose": "required R23 promotion marker"
+    },
+    {
+      "marker_id": "MARKER-002",
+      "path": "Metablooms_OS/0_kernel/mpp_v3/mpp_v3_export_promotion_gate_v1.py",
+      "present": true,
+      "purpose": "required R23 promotion marker"
+    },
+    {
+      "marker_id": "MARKER-003",
+      "path": "Metablooms_OS/runtime/handoffs/mpp_v3/MPP_R23_EXPORT_PROMOTION_GATE_HANDOFF_LATEST.json",
+      "present": true,
+      "purpose": "required R23 promotion marker"
+    },
+    {
+      "marker_id": "MARKER-004",
+      "path": "Metablooms_OS/runtime/receipts/mpp_v3/MPP_R23_EXPORT_PROMOTION_GATE_RECEIPT_LATEST.json",
+      "present": true,
+      "purpose": "required R23 promotion marker"
+    },
+    {
+      "marker_id": "MARKER-005",
+      "path": "Metablooms_OS/runtime/authority/CURRENT_EXPORT_AUTHORITY_v1.json",
+      "present": true,
+      "purpose": "required R23 promotion marker"
+    }
+  ],
+  "result_hash": "1184d9eb49914d09a42e83abcb76a59f60822dde080b123a18989c21a7087617",
+  "schema_version": "mpp.export_promotion_packet.v1",
+  "source_orchestrator_packet_id": "ORCH-R22-SMOKE",
+  "stage": "EXPORT_PROMOTION"
+}

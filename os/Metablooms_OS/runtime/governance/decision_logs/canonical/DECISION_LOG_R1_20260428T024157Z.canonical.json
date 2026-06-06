@@ -1,0 +1,36 @@
+{
+  "created_utc": "20260428T024157Z",
+  "decision_id": "DECISION_LOG_R1_20260428T024157Z",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"candidate_options\": [\"Keep all source artifacts in place and promote wholesale\", \"Split rationale-heavy artifacts while promoting executable artifacts into successor paths\", \"Archive most artifacts and rebuild successors from scratch\"], \"chosen_option\": \"Split rationale-heavy artifacts while promoting executable artifacts into successor paths\", \"decision_class\": \"Class B\", \"decision_context\": \"Disposition binding for 13 imported Claude-originated artifacts from repaired full-OS bundle.\", \"decision_log_id\": \"DECISION_LOG_R1_20260428T024157Z\", \"live_conflicts\": [], \"rejected_options\": [\"Keep all source artifacts in place and promote wholesale\", \"Archive most artifacts and rebuild successors from scratch\"], \"selection_rule\": \"Choose dispositions that minimize ambiguity, preserve rationale in ADR/archive targets, and route executable value into explicit successor artifacts.\", \"split_artifacts\": [\"CLAUDE_MEMORY_SYNC_v1.json\", \"0_kernel/scripts/claude_memory_sync_writer_v1.py\", \"1_governance/cool_overlays/COOL_6_RUNTIME_GATE_WIRING_PLAN_v1.json\", \"1_governance/workflow_v6/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.json\"], \"stage\": \"R1_CLASSIFICATION_AND_DISPOSITION_BINDING\", \"time_bound_minutes\": 10, \"timestamp_utc\": \"20260428T024157Z\"}",
+  "reasons": [],
+  "record_id": "DECISION_LOG_R1_20260428T024157Z",
+  "record_kind": "decision_log",
+  "result": "wrapped",
+  "source_record": {
+    "path": "runtime/governance/decision_logs/DECISION_LOG_R1_20260428T024157Z.json",
+    "sha256": "cf8b5baa2d67aa0b067c9e6e73afa97d70cf50c92570baa1dc64f5701f375609",
+    "size_bytes": 1318
+  },
+  "span_id": "6787de9b8d2a5ad3",
+  "stage_id": "R1_CLASSIFICATION_AND_DISPOSITION_BINDING",
+  "summary": "Disposition binding for 13 imported Claude-originated artifacts from repaired full-OS bundle.",
+  "trace_id": "51fe216b4d43f8ee05716ddd8090f3d4"
+}

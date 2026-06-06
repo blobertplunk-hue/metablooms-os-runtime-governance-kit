@@ -1,0 +1,99 @@
+{
+  "checks": {
+    "all_png_have_dimensions": true,
+    "all_png_nonblank_color_variation": true,
+    "all_png_nontrivial_size": true,
+    "pdf_exists": true,
+    "png_pages_exist": true
+  },
+  "decision": "PASS",
+  "images": [
+    {
+      "channel_extrema": [
+        [
+          6,
+          255
+        ],
+        [
+          11,
+          255
+        ],
+        [
+          0,
+          255
+        ]
+      ],
+      "file": "weasy_render/png/page-1.png",
+      "height": 1684,
+      "mean_rgb": [
+        82.02,
+        89.59,
+        102.1
+      ],
+      "sha256": "79fa90d092bef547b96196296b40ce8543aebf05fcc22cc721416bef2840cdc6",
+      "size_bytes": 223009,
+      "unique_colors_downsampled_160w": 3924,
+      "width": 1191
+    },
+    {
+      "channel_extrema": [
+        [
+          7,
+          255
+        ],
+        [
+          11,
+          255
+        ],
+        [
+          19,
+          255
+        ]
+      ],
+      "file": "weasy_render/png/page-2.png",
+      "height": 1684,
+      "mean_rgb": [
+        134.38,
+        139.12,
+        148.73
+      ],
+      "sha256": "439befb47c9cd6bd6317f26dbb7350250d124af66235e055a21a1c8e92b4b17f",
+      "size_bytes": 208449,
+      "unique_colors_downsampled_160w": 2506,
+      "width": 1191
+    },
+    {
+      "channel_extrema": [
+        [
+          8,
+          255
+        ],
+        [
+          12,
+          255
+        ],
+        [
+          20,
+          255
+        ]
+      ],
+      "file": "weasy_render/png/page-3.png",
+      "height": 1684,
+      "mean_rgb": [
+        150.55,
+        154.91,
+        165.91
+      ],
+      "sha256": "8ea2d1275c5e9d841cf7727fe6c17aa96fec2ef9c16769888fd1eeb3ca11efd6",
+      "size_bytes": 234984,
+      "unique_colors_downsampled_160w": 2928,
+      "width": 1191
+    }
+  ],
+  "limitations": [
+    "This is a renderer proxy, not Chromium/browser layout proof. Chromium and Playwright attempts were made but failed/hung in the sandbox."
+  ],
+  "renderer": "weasyprint_to_pdf_then_pdf_render_png",
+  "schema_version": "weasyprint_render_smoke.v1",
+  "violations": []
+}

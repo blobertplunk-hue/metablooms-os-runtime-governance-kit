@@ -1,0 +1,10 @@
+{
+  "required": [
+    "source_files_scanned",
+    "blocking_findings",
+    "warnings",
+    "fixtures",
+    "evals"
+  ],
+  "schema": "CDRSourceLevelAuditPacketSchema_v1"
+}

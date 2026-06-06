@@ -1,0 +1,55 @@
+{
+  "version": "1.0",
+  "created_at": 1777062944.8399076,
+  "stage": "REPAIR_F6_PRECHECK_RESTORE_F5_AS_LEDGER_LATEST_PASS",
+  "status": "complete",
+  "before_latest_pass": {
+    "entry_id": "F6_BLOCKED_RECEIPT_HANDLING_RULE",
+    "timestamp": 1777062910.175658,
+    "stage": "F6_BLOCKED_RECEIPT_HANDLING_RULE",
+    "verdict": "PASS",
+    "git_head": "83215087eaedc9b68a74e4f30cf22f0f86f0bbcd",
+    "receipt": "0_kernel/registry/F6_BLOCKED_RECEIPT_HANDLING_RULE_RECEIPT_v1.json",
+    "outputs": [
+      "0_kernel/schemas/BLOCKED_RECEIPT_HANDLING_RULE_SCHEMA_v1.json",
+      "0_kernel/schemas/BLOCKED_RECEIPT_HANDLING_RULE_v1.json",
+      "0_kernel/docs/BLOCKED_RECEIPT_HANDLING_RULE_v1.md",
+      "0_kernel/pipeline/BLOCKED_RECEIPT_TEMPLATE_v1.json",
+      "0_kernel/registry/BLOCKED_RECEIPT_HANDLING_RULE_PROOF_v1.json",
+      "0_kernel/registry/F6_TO_F7_HANDOFF_v1.json"
+    ],
+    "dependencies": [
+      "F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF"
+    ],
+    "supersedes": [
+      "ad_hoc_blocked_receipt_handling"
+    ],
+    "advances_latest_pass": true
+  },
+  "after_latest_pass": {
+    "entry_id": "F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF",
+    "timestamp": 1777062487.867908,
+    "stage": "F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF",
+    "verdict": "PASS",
+    "git_head": "107f41b2c2ec3c8d69a94bad7f0d0acd006fbaaf",
+    "receipt": "0_kernel/registry/F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF_RECEIPT_v1.json",
+    "outputs": [
+      "0_kernel/schemas/RESTORE_LADDER_SCHEMA_v1.json",
+      "0_kernel/schemas/RESTORE_LADDER_CONTRACT_v1.json",
+      "0_kernel/docs/RESTORE_LADDER_MODE_NORMALIZATION_PROOF_v1.md",
+      "0_kernel/registry/RESTORE_LADDER_MODE_NORMALIZATION_PROOF_v1.json",
+      "0_kernel/registry/F5_TO_F6_HANDOFF_v1.json"
+    ],
+    "dependencies": [
+      "F4_MANIFEST_PROVENANCE_EXPORT_CONTRACT"
+    ],
+    "supersedes": [
+      "ad_hoc_restore_selection",
+      "manual_filemode_repair_only"
+    ],
+    "advances_latest_pass": true
+  },
+  "pointer_updated": false,
+  "latest_pass_restored_to_existing_PASS_entry": true,
+  "verdict": "PASS"
+}

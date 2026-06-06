@@ -1,0 +1,10 @@
+{
+  "id": "UNGOVERNED_MODE_FORBIDDEN_v1",
+  "status": "runtime_active",
+  "deny_conditions": [
+    "meta_task_without_governance_turn_packet",
+    "router_decision_missing",
+    "final_response_without_tracker_when_tracker_required",
+    "implementation_without_test_and_export_plan"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "version": "1.0",
+  "created_at": 1777064935.780063,
+  "stage": "G3_EXPORT_RECOVERY_VALIDATOR_REGRESSION_FIXTURES",
+  "validator": "/mnt/data/Metablooms_OS_refined/0_kernel/scripts/export_recovery_proven_validator_v1.py",
+  "execution_mode": "in_process_no_bytecode",
+  "case_results": {
+    "fail_missing_ledger_output": {
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "passed": true,
+      "decision": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/results/fail_missing_ledger_output_decision.json",
+      "failed_gates": [
+        "G1_LEDGER_DECLARED_OUTPUTS_INSIDE_ZIP",
+        "G10_POLICY_AS_CODE_DECISION"
+      ]
+    },
+    "fail_pending_receipt": {
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "passed": true,
+      "decision": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/results/fail_pending_receipt_decision.json",
+      "failed_gates": [
+        "G2_FINAL_PASS_RECEIPTS_INSIDE_ZIP",
+        "G3_NO_PLACEHOLDER_METADATA",
+        "G10_POLICY_AS_CODE_DECISION"
+      ]
+    },
+    "fail_placeholder_metadata": {
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "passed": true,
+      "decision": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/results/fail_placeholder_metadata_decision.json",
+      "failed_gates": [
+        "G3_NO_PLACEHOLDER_METADATA",
+        "G10_POLICY_AS_CODE_DECISION"
+      ]
+    },
+    "fail_pointer_conflict": {
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "passed": true,
+      "decision": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/results/fail_pointer_conflict_decision.json",
+      "failed_gates": [
+        "G8_POINTER_CONFLICT_RESOLUTION",
+        "G10_POLICY_AS_CODE_DECISION"
+      ]
+    },
+    "fail_sidecar_mismatch": {
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "passed": true,
+      "decision": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/results/fail_sidecar_mismatch_decision.json",
+      "failed_gates": [
+        "G5_SIDECAR_BINDING",
+        "G10_POLICY_AS_CODE_DECISION"
+      ]
+    }
+  },
+  "passed": true,
+  "verdict": "PASS",
+  "next_correct_command": "EXECUTE G4 \u2014 RUN VALIDATOR AGAINST F7 EXPORT"
+}

@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-04-28T02:52:00Z",
+  "decision_id": "R3_COMPATIBILITY_CONTRACT_REPLACEMENT-c52c11ab73852e34",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"checks\": {\"cross_link_demoted\": true, \"live_contract_valid\": true, \"redirect_points_to_successor\": true, \"stale_fixture_rejected\": true}, \"created_utc\": \"2026-04-28T02:52:00Z\", \"next_stage\": \"R4_SESSION_STATE_EXPORT_REPLACEMENT\", \"stage\": \"R3_COMPATIBILITY_CONTRACT_REPLACEMENT\", \"verdict\": \"PASS\"}",
+  "reasons": [],
+  "record_id": "R3_VERIFY_RECEIPT_20260428T025200Z",
+  "record_kind": "verify_receipt",
+  "result": "pass",
+  "source_record": {
+    "path": "receipts/refactor_program/R3_VERIFY_RECEIPT_20260428T025200Z.json",
+    "sha256": "c52c11ab73852e34f093b2f4267cd215e1ed64608d4cc700dcdd1c29d31d97d0",
+    "size_bytes": 332
+  },
+  "span_id": "6263955217542744",
+  "stage_id": "R3_COMPATIBILITY_CONTRACT_REPLACEMENT",
+  "summary": "Canonical wrapper for R3_VERIFY_RECEIPT_20260428T025200Z.json",
+  "trace_id": "a487441e354fc675ad32d3a3d46d36e6"
+}

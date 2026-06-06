@@ -1,0 +1,12 @@
+{
+  "created_utc": "2026-04-30T21:22:57.454515Z",
+  "implemented": [
+    "CURRENT_FULL_AUTHORITY_POINTER_v1.json in root/runtime authority/registry",
+    "0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+    "NEW_CHAT_START_HERE.md",
+    "runtime/governance/new_chat_start_contract_validator_v1.py",
+    "BOOT_REQUIRED_GATES_v1.json updated",
+    "prompt_governance_v1 manifest lineage updated"
+  ],
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_4_FULL_AUTHORITY_POINTER_LOCK_AND_NEW_CHAT_START_CONTRACT"
+}

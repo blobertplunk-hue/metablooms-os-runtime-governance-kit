@@ -1,0 +1,8 @@
+{
+  "stage": "WC_STAGE1_WORLD_CLASS_BENCHMARK_MATRIX_AND_MEASURED_SCORECARD",
+  "timestamp": "20260502T234147Z",
+  "reconstructed_at": "20260503T002028Z",
+  "verdict": "PASS_RECONSTRUCTED",
+  "provenance": "RECONSTRUCTED_FROM_CHAT_SUMMARY_AND_BASE_AUTHORITY_20260503",
+  "measured_baseline_percent": 56.25
+}

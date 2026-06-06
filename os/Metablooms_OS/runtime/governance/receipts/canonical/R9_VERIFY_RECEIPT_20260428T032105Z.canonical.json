@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-04-28T03:21:05.639276+00:00",
+  "decision_id": "R9_TELEMETRY_CARTRIDGE_CONTRACT_PROMOTION-ef8a2a676d0429fb",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"checks\": {\"adapter_present\": true, \"cartridge_manifest_present\": true, \"demo_promoted\": true, \"engine_promoted\": true, \"node_smoke_passed\": true, \"registry_integrity_passed\": true, \"schema_promoted\": true, \"sources_present\": true, \"validator_passed\": true}, \"closed_loopholes\": [\"no telemetry cartridge without event contract\", \"no canonical event without stable event_name\", \"no exported telemetry event without trace_id/span_id correlation fields\", \"no unvalidated replay fixtures\", \"no registry promotion without entrypoint integrity pass\"], \"created_utc\": \"2026-04-28T03:21:05.639276+00:00\", \"receipt_type\": \"R9_VERIFY_RECEIPT\", \"stage\": \"R9_TELEMETRY_CARTRIDGE_CONTRACT_PROMOTION\", \"verdict\": \"PASS\"}",
+  "reasons": [],
+  "record_id": "R9_VERIFY_RECEIPT_20260428T032105Z",
+  "record_kind": "verify_receipt",
+  "result": "pass",
+  "source_record": {
+    "path": "receipts/refactor_program/R9_VERIFY_RECEIPT_20260428T032105Z.json",
+    "sha256": "ef8a2a676d0429fb209c3876bbccf3caa56f95a343a5386825ee9b176045ffc6",
+    "size_bytes": 786
+  },
+  "span_id": "5ade19a764ee1c35",
+  "stage_id": "R9_TELEMETRY_CARTRIDGE_CONTRACT_PROMOTION",
+  "summary": "Canonical wrapper for R9_VERIFY_RECEIPT_20260428T032105Z.json",
+  "trace_id": "26efd6d65fba1d31551ae5dc2d69ab8c"
+}

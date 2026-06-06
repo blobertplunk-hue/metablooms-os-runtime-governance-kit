@@ -1,0 +1,15 @@
+{
+  "artifact_type": "MB_SCHEMA.v1",
+  "name": "MB_OPERATOR_PACKET_BOOTSTRAP_SMOKE_SCHEMA_v1",
+  "required_fields": [
+    "artifact_type",
+    "stage",
+    "verdict",
+    "packet_zip",
+    "packet_sha256",
+    "zip_integrity",
+    "required_members",
+    "audit_commands",
+    "full_os_locator"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "metablooms://schemas/mpp_v3/DRS_DECISION_RECORD_SCHEMA_v1",
+  "title": "MPP v3 DRS Decision Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "decision_id", "stage", "title", "status", "created_at",
+    "context", "decision", "alternatives_considered", "evidence_bindings",
+    "consequences", "confidence", "result_hash"
+  ],
+  "properties": {
+    "schema_version": {"const": "mpp.drs_decision_record.v1"},
+    "decision_id": {"type": "string", "pattern": "^DRS-[0-9]{3,}$"},
+    "stage": {"const": "DRS"},
+    "title": {"type": "string", "minLength": 8},
+    "status": {"type": "string", "enum": ["proposed", "accepted", "deprecated", "superseded", "blocked"]},
+    "created_at": {"type": "string", "minLength": 10},
+    "supersedes": {"type": ["string", "null"]},
+    "context": {"type": "string", "minLength": 20},
+    "decision": {"type": "string", "minLength": 20},
+    "alternatives_considered": {
+      "type": "array", "minItems": 2,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["option", "reason_rejected"],
+        "properties": {
+          "option": {"type": "string", "minLength": 5},
+          "reason_rejected": {"type": "string", "minLength": 10}
+        }
+      }
+    },
+    "evidence_bindings": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["source_packet_id", "atom_ids", "supports"],
+        "properties": {
+          "source_packet_id": {"type": "string", "minLength": 3},
+          "atom_ids": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^ATOM-[0-9]{3,}$"}},
+          "supports": {"type": "string", "minLength": 10}
+        }
+      }
+    },
+    "consequences": {
+      "type": "object", "additionalProperties": false,
+      "required": ["positive", "negative", "follow_up_actions"],
+      "properties": {
+        "positive": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 5}},
+        "negative": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 5}},
+        "follow_up_actions": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+    "result_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

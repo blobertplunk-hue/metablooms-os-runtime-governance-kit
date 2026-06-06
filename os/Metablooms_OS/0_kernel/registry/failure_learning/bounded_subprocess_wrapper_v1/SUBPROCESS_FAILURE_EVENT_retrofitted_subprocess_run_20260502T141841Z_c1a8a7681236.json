@@ -1,0 +1,35 @@
+{
+  "argv_redacted": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "/mnt/data/Metablooms_OS/runtime/governance/formal_hitl_approval_token_gate_v1.py",
+    "/mnt/data/Metablooms_OS/tests/fixtures/governance/hitl_approval_token_invalid_missing_scope_v1.json"
+  ],
+  "artifact_type": "METABLOOMS_SUBPROCESS_FAILURE_LEARNING_EVENT_v1",
+  "attempts": [
+    {
+      "attempt_index": 0,
+      "elapsed_ms": 53,
+      "returncode": 20,
+      "started_utc": "20260502T141841Z",
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_truncated": false,
+      "stdout": "{\n  \"decided_at_utc\": \"2026-05-02T14:18:41.194777Z\",\n  \"decision\": \"DENY\",\n  \"gate_id\": \"FORMAL_HITL_APPROVAL_TOKEN_GATE_v1\",\n  \"reason_code\": \"TOKEN_STAGE_SCOPE_MISMATCH\",\n  \"reasons\": [\n    \"token stage WRONG_STAGE != action stage STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_20260502T035000Z\"\n  ],\n  \"safe_to_execute\": false,\n  \"schema\": \"FormalHITLApprovalTokenGateDecision_v1\",\n  \"stage_id\": \"STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_20260502T035000Z\"\n}\n",
+      "stdout_bytes": 453,
+      "stdout_sha256": "5d691e64f0539c601c7c1ab17bc4031ea89aee85bd2941b7d4c21d67995ad695",
+      "stdout_truncated": false,
+      "timeout_seconds": 10.0
+    }
+  ],
+  "created_utc": "20260502T141841Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "failure_class": "NONZERO_EXIT",
+  "operation_type": "retrofitted_subprocess_run",
+  "policy_matches": [],
+  "recommendation": "Route future matching operations through bounded wrapper and method reliability policy before spawn.",
+  "result_class": "ALLOW_NONZERO",
+  "root": "/mnt/data/Metablooms_OS",
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT"
+}

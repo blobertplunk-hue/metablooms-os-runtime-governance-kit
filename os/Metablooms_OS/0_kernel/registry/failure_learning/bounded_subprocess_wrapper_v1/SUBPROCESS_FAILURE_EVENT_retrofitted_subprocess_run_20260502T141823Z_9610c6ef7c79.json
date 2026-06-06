@@ -1,0 +1,34 @@
+{
+  "argv_redacted": [
+    "/opt/pyvenv/bin/python3",
+    "/mnt/data/Metablooms_OS/runtime/governance/owasp_agentic_ai_policy_gate_v1.py",
+    "/mnt/data/Metablooms_OS/tests/fixtures/security/owasp_agentic_policy_deny_missing_controls_v1.json"
+  ],
+  "artifact_type": "METABLOOMS_SUBPROCESS_FAILURE_LEARNING_EVENT_v1",
+  "attempts": [
+    {
+      "attempt_index": 0,
+      "elapsed_ms": 4865,
+      "returncode": 1,
+      "started_utc": "20260502T141818Z",
+      "stderr": "/mnt/data/Metablooms_OS/runtime/governance/owasp_agentic_ai_policy_gate_v1.py:15: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n  return datetime.datetime.utcnow().replace(microsecond=0).isoformat()+'Z'\n",
+      "stderr_bytes": 360,
+      "stderr_sha256": "8414304ae37d116ca283d6b7acaa1c1bc39bf730fd746c018b347feb6b61e418",
+      "stderr_truncated": false,
+      "stdout": "{\n  \"action_class\": \"external_install\",\n  \"controls_missing\": [\n    \"negative capability registry check\",\n    \"supply_chain_origin\",\n    \"version/hash pinning\"\n  ],\n  \"controls_present\": [\n    \"sandbox smoke\"\n  ],\n  \"decision\": \"DENY\",\n  \"errors\": [],\n  \"high_impact\": true,\n  \"reason\": \"missing_required_owasp_agentic_ai_controls_or_classification\",\n  \"risk_ids\": [\n    \"ASI04\",\n    \"ASI05\"\n  ],\n  \"schema\": \"OWASPAgenticAIPolicyGateDecision_v1\",\n  \"timestamp_utc\": \"2026-05-02T14:18:23Z\"\n}\n",
+      "stdout_bytes": 492,
+      "stdout_sha256": "eb598136716b266023e1e8d92a44c7c6edb750ad912f32782fb85a18875f1cef",
+      "stdout_truncated": false,
+      "timeout_seconds": 10.0
+    }
+  ],
+  "created_utc": "20260502T141823Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "failure_class": "NONZERO_EXIT",
+  "operation_type": "retrofitted_subprocess_run",
+  "policy_matches": [],
+  "recommendation": "Route future matching operations through bounded wrapper and method reliability policy before spawn.",
+  "result_class": "ALLOW_NONZERO",
+  "root": "/mnt/data/Metablooms_OS",
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT"
+}

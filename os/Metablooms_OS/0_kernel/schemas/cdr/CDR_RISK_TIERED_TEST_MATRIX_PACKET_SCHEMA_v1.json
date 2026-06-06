@@ -1,0 +1,9 @@
+{
+  "required": [
+    "declared_tier",
+    "triggers",
+    "evidence_categories",
+    "improvement_candidates"
+  ],
+  "schema": "CDRRiskTieredTestMatrixPacketSchema_v1"
+}

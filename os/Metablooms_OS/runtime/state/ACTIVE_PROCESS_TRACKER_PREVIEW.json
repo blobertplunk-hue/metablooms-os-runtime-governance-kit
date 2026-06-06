@@ -1,0 +1,21 @@
+{
+  "current_step": 7,
+  "download_link_precheck_required": true,
+  "export_required": true,
+  "generated_at_utc": "2026-05-03T01:24:21Z",
+  "next_prompt_required": true,
+  "previous_stage": "POST_WC8_BOOT_REPLAY_AND_AUTOTRACKER_ENFORCEMENT_SMOKE",
+  "primary_authority": "BOOTABLE_FULL_AUTHORITY_WC8RS.zip",
+  "schema_version": "v1",
+  "stage": "POST_WC8R_BOOT_REPLAY_AND_NEXT_TASK_ROUTING_SMOKE",
+  "status": "complete_export_pending_link_precheck",
+  "steps": [
+    "Verify WC8R authority",
+    "Extract and load manifest/handoff",
+    "Check required authorities",
+    "Resolve concrete next task",
+    "Run bounded routing smoke",
+    "Write receipt/handoff/next prompt",
+    "Export short full authority"
+  ]
+}

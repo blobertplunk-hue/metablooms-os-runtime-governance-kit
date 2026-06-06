@@ -1,0 +1,78 @@
+{
+  "allow": {
+    "binding": {
+      "audit_status_before": "OPEN_ACTIVE_BYPASS_CANDIDATE",
+      "classification": "ACTIVE_EXECUTOR_REQUIRES_WRAPPER",
+      "direct_invocation_default": "DENY unless packet satisfies invocation_policy and required_controls",
+      "invocation_policy": "DENY_DIRECT_INVOCATION_REQUIRE_BTS_WRAPPED_EXECUTOR",
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_STAGE_FINALIZATION_HOOK_v1.py",
+      "required_controls": [
+        "tool_universe_resolver_selection",
+        "bts_tool_evaluation",
+        "pre_tool_action_gate",
+        "bts_wrapped_executor",
+        "post_tool_result_validation",
+        "bts_commit"
+      ],
+      "retrofit_method": "sidecar_policy_binding_not_mass_source_edit",
+      "risk_patterns": [
+        "python_subprocess",
+        "python_file_write",
+        "shell_mutation"
+      ],
+      "severity_before": "HIGH",
+      "sha256_at_audit": "3a35093dc963d8bb56c41fd3939e133cd39767b6bde59532035b13f4cecdf4a8"
+    },
+    "decision": "ALLOW",
+    "reason_code": "FULL_GOVERNANCE_CHAIN_PRESENT",
+    "reasons": [
+      "all required retrofit controls present"
+    ],
+    "safe_to_invoke": true,
+    "schema": "LegacyExecutorRetrofitGateDecision_v1"
+  },
+  "deny": {
+    "binding": {
+      "audit_status_before": "OPEN_ACTIVE_BYPASS_CANDIDATE",
+      "classification": "ACTIVE_EXECUTOR_REQUIRES_WRAPPER",
+      "direct_invocation_default": "DENY unless packet satisfies invocation_policy and required_controls",
+      "invocation_policy": "DENY_DIRECT_INVOCATION_REQUIRE_BTS_WRAPPED_EXECUTOR",
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_STAGE_FINALIZATION_HOOK_v1.py",
+      "required_controls": [
+        "tool_universe_resolver_selection",
+        "bts_tool_evaluation",
+        "pre_tool_action_gate",
+        "bts_wrapped_executor",
+        "post_tool_result_validation",
+        "bts_commit"
+      ],
+      "retrofit_method": "sidecar_policy_binding_not_mass_source_edit",
+      "risk_patterns": [
+        "python_subprocess",
+        "python_file_write",
+        "shell_mutation"
+      ],
+      "severity_before": "HIGH",
+      "sha256_at_audit": "3a35093dc963d8bb56c41fd3939e133cd39767b6bde59532035b13f4cecdf4a8"
+    },
+    "decision": "DENY",
+    "reason_code": "GOVERNANCE_CHAIN_MISSING",
+    "reasons": [
+      "missing controls: ['bts_commit', 'bts_tool_evaluation', 'bts_wrapped_executor', 'post_tool_result_validation', 'tool_universe_resolver_selection']"
+    ],
+    "safe_to_invoke": false,
+    "schema": "LegacyExecutorRetrofitGateDecision_v1"
+  },
+  "inventory": {
+    "binding": {},
+    "decision": "ALLOW",
+    "reason_code": "ALL_AUDIT_FINDINGS_BOUND",
+    "reasons": [
+      "264 audit findings bound to invocation policy"
+    ],
+    "safe_to_invoke": true,
+    "schema": "LegacyExecutorRetrofitGateDecision_v1"
+  },
+  "schema": "Stage6QRepairSmokeReport_v1",
+  "verdict": "PASS"
+}

@@ -1,0 +1,23 @@
+{
+  "stage": "SANDBOX_TOOL_ROUTE_RESEARCH",
+  "kind": "CE",
+  "synthesis": {
+    "root_cause": "The first retry failed because final verification raced against extraction/cleanup/tool timeout behavior, not because the uploaded ZIP was invalid. The stable route is to avoid broad recursive cleanup during extraction, verify existing root by count and boot artifacts, and run boot through the OS-native executor with python3 -S and timeout.",
+    "best_route_order": [
+      "1. Verify sidecar with sha256sum -c from /mnt/data.",
+      "2. Verify archive with unzip -tq without extraction.",
+      "3. Inventory with unzip -Z -1 and check top-level Metablooms_OS plus critical boot artifacts.",
+      "4. If /mnt/data/Metablooms_OS exists, verify file count against archive before deleting or re-extracting.",
+      "5. If extraction is required, extract into a fresh staging directory, then atomic mv/swap only after count and critical-file checks pass.",
+      "6. Run /mnt/data/Metablooms_OS/0_kernel/scripts/boot_runtime_executor_v1.py with python3 -S and timeout.",
+      "7. Accept PASS_WITH_WARNINGS only when warnings are known/non-blocking, currently git_dir_missing.",
+      "8. Write receipt/handoff and bundle them."
+    ],
+    "tool_policy": {
+      "preferred": ["container.exec shell", "sha256sum", "unzip -tq", "unzip -Z -1", "python3 -S", "find", "du", "stat", "jq", "zip"],
+      "avoid": ["normal python startup for broad filesystem work", "unbounded recursive extraction/removal", "full extraction before archive inventory", "assuming os.access or file_search proves filesystem truth"],
+      "unavailable_here": ["7z", "7za", "bsdtar"]
+    },
+    "decision": "Current runtime root is present, complete by file count, and boot executor passed with only git_dir_missing warning. Use this as the immediate working route, and persist the tool-route plan to OS artifacts."
+  }
+}
