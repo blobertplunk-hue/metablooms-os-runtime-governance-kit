@@ -1,0 +1,22 @@
+{
+  "schema": "mb.deterministic_full_os_export_restore_contract.v1",
+  "purpose": "Prevent double-wrapper restores and partial extraction promotion for MetaBlooms full OS exports.",
+  "archive_layout": {
+    "required": "wrapped",
+    "wrapper_dir": "Metablooms_OS"
+  },
+  "canonical_restore_tool": "tools/metablooms/restore_full_os_archive_v1.py",
+  "failure_modes_addressed": [
+    "DOUBLE_WRAPPER",
+    "PARTIAL_EXTRACTION_PROMOTION"
+  ],
+  "restore_rules": [
+    "Wrapped archives must be restored to the parent directory that will contain the wrapper directory.",
+    "Restore tools must reject a destination parent whose basename equals the wrapper directory unless an explicit reviewed override is supplied.",
+    "Restore must extract to a temporary staging directory before replacing any existing runtime root.",
+    "Restore must validate archive integrity, member listing, wrapper layout, required boot members, and shell syntax before promotion.",
+    "Existing roots may be quarantined only after staged validation passes.",
+    "Interrupted extraction must leave the live root unchanged and must not claim restore success."
+  ],
+  "updated_at_utc": "2026-06-05T23:16:55Z"
+}
