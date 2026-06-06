@@ -1,0 +1,42 @@
+{
+  "artifact_type": "OPERATOR_VISUAL_TRACKER_POLISH_STAGE2_MANIFEST.v1",
+  "created_utc": "20260502T153307Z",
+  "files": [
+    {
+      "path": "/mnt/data/Metablooms_OS/0_kernel/registry/operator_surface/OPERATOR_VISUAL_TRACKER_RENDER_CONTRACT_v1.json",
+      "sha256": "9ed011900d9dc844e47ac8a09d1adbd3054983cc0838fedbeca066761482dbe1",
+      "size_bytes": 1286
+    },
+    {
+      "path": "/mnt/data/Metablooms_OS/runtime/handoffs/operator_tracker/OPERATOR_VISUAL_TRACKER_STATE_LATEST.json",
+      "sha256": "2eb16a67c252196ea588f5ca1e96e9ede491fd6c7111d21da51fdc6033d19a29",
+      "size_bytes": 2738
+    },
+    {
+      "path": "/mnt/data/Metablooms_OS/0_kernel/lib/operator_surface/render_operator_visual_tracker_v2.py",
+      "sha256": "a46aafdf978fcc70556bbf2594bd0d164d1796b3da3774a7df6f4c2ab058f8ec",
+      "size_bytes": 7964
+    },
+    {
+      "path": "/mnt/data/Metablooms_OS/0_kernel/validators/validate_operator_visual_tracker_render_v2.py",
+      "sha256": "efe48855cf8a8474033d3479440044fb068d74a43082dfb82aaa5a4fac1d1dd7",
+      "size_bytes": 1795
+    },
+    {
+      "path": "/mnt/data/Metablooms_OS/runtime/operator_tracker/operator_visual_tracker_latest.html",
+      "sha256": "25c445a02bee3b8dfb954a966c662dc37d5a78b9e9ac236db107310b68d95ff1",
+      "size_bytes": 8092
+    },
+    {
+      "path": "/mnt/data/Metablooms_OS/runtime/handoffs/operator_tracker/CURRENT_OPERATOR_TRACKER_PREVIEW_LATEST.md",
+      "sha256": "a25ad8af030b3fbe7b2add85a24a38ebae400e7d06e7b85fe07415a5db6abd7e",
+      "size_bytes": 625
+    },
+    {
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/operator_tracker/OPERATOR_VISUAL_TRACKER_POLISH_STAGE2_RENDER_CONTRACT_AND_PHONE_SAFE_TEMPLATE_20260502T153307Z/SEE_EVIDENCE_PACKET.json",
+      "sha256": "f0fc890a36c1d0b202780cd69932a576dff1475deb2e3fcddf6ab78084df2826",
+      "size_bytes": 1005
+    }
+  ],
+  "stage": "OPERATOR_VISUAL_TRACKER_POLISH_STAGE2_RENDER_CONTRACT_AND_PHONE_SAFE_TEMPLATE"
+}

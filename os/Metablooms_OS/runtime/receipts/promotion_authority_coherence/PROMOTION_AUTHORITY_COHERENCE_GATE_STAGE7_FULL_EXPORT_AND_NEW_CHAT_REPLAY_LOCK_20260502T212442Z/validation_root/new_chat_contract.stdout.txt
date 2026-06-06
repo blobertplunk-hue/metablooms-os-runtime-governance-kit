@@ -1,0 +1,71 @@
+{
+  "decision": "DENY",
+  "errors": [
+    "contract_missing_phrase:Verify the authority ZIP SHA-256",
+    "contract_missing_phrase:boot_critical_governance_loader_v1.py",
+    "contract_missing_phrase:prompt_governance_v1",
+    "contract_missing_phrase:MB_HISTORICAL_CALLSITE_QUARANTINE_POLICY_v1.json"
+  ],
+  "checks": [
+    {
+      "name": "exists:CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+      "passed": true
+    },
+    {
+      "name": "exists:runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+      "passed": true
+    },
+    {
+      "name": "exists:0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+      "passed": true
+    },
+    {
+      "name": "exists:0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+      "passed": true
+    },
+    {
+      "name": "exists:NEW_CHAT_START_HERE.md",
+      "passed": true
+    },
+    {
+      "name": "exists:runtime/governance/new_chat_start_contract_validator_v1.py",
+      "passed": true
+    },
+    {
+      "name": "exists:runtime/governance/boot_critical_governance_loader_v1.py",
+      "passed": true
+    },
+    {
+      "name": "exists:runtime/governance/governance_scatter_prevention_v1.py",
+      "passed": true
+    },
+    {
+      "name": "exists:runtime/governance/fresh_chat_boot_rehearsal_v1.py",
+      "passed": true
+    },
+    {
+      "name": "exists:runtime/cartridges/prompt_governance_v1/validate_prompt_governance_cartridge_v1.py",
+      "passed": true
+    },
+    {
+      "name": "exists:runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+      "passed": true
+    },
+    {
+      "name": "exists:0_kernel/registry/observability/MB_BOOT_SEQUENCE_WRAPPER_ENFORCEMENT_v1.json",
+      "passed": true
+    },
+    {
+      "name": "exists:0_kernel/registry/observability/MB_HISTORICAL_CALLSITE_QUARANTINE_POLICY_v1.json",
+      "passed": true
+    },
+    {
+      "name": "exists:runtime/traces/observability/HISTORICAL_CALLSITE_QUARANTINE_INDEX_LATEST.json",
+      "passed": true
+    },
+    {
+      "name": "exists:0_kernel/validators/validate_observability_trace_span_ledger_stage8_historical_callsite_quarantine_v1.py",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "stage": "R1_CLASSIFICATION_AND_DISPOSITION_BINDING",
+  "timestamp_utc": "20260428T024157Z",
+  "contract_path": "/mnt/data/Metablooms_OS/runtime/governance/contracts/artifact_disposition_contract_v1.json",
+  "decision_log_path": "/mnt/data/Metablooms_OS/runtime/governance/decision_logs/DECISION_LOG_R1_20260428T024157Z.json",
+  "summary": {
+    "total_items": 13,
+    "promote_count": 9,
+    "split_count": 4,
+    "archive_only_count": 0,
+    "discard_count": 0,
+    "live_runtime_conflict_count": 0,
+    "ambiguous_count": 0,
+    "split_without_targets_count": 0
+  },
+  "status": "PASS"
+}

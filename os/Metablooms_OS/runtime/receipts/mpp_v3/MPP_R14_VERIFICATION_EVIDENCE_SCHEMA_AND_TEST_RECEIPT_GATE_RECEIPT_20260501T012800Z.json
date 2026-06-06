@@ -1,0 +1,151 @@
+{
+  "artifacts_written": [
+    {
+      "bytes": 8098,
+      "path": "0_kernel/mpp_v3/mpp_v3_verification_evidence_gate_v1.py",
+      "sha256": "b309692e3f5d68336615ee5a2774319ea1a84c6804db5dfa4f735e68edcd4830"
+    },
+    {
+      "bytes": 781,
+      "path": "0_kernel/registry/mpp_v3/policy_gates/MPP_V3_VERIFICATION_TEST_RECEIPT_GATE_v1.json",
+      "sha256": "b188678c9e97356c2e55efa491b8cee05cc6664fbe191174c05c37120529dc3f"
+    },
+    {
+      "bytes": 4943,
+      "path": "0_kernel/schemas/mpp_v3/VERIFICATION_EVIDENCE_PACKET_SCHEMA_v1.json",
+      "sha256": "87df782a86f4ff5f22223619874ea54d54772c183cc6771a9f95daf6c22eb8b9"
+    },
+    {
+      "bytes": 1286,
+      "path": "0_kernel/schemas/mpp_v3/VERIFICATION_TEST_RECEIPT_GATE_RESULT_SCHEMA_v1.json",
+      "sha256": "2578fa500b35da8479f9670071aa832fc4bfde01923edb3b39d2a8032d9da4f7"
+    },
+    {
+      "bytes": 664,
+      "path": "MPP_R14_VERIFICATION_EVIDENCE_SCHEMA_AND_TEST_RECEIPT_GATE_SUMMARY.md",
+      "sha256": "5c68f3ef29617adc115c98d3d427ea4cd3b69f6f73d571115a5edd7f1ec87ed7"
+    },
+    {
+      "bytes": 586,
+      "path": "runtime/handoffs/mpp_v3/MPP_R14_VERIFICATION_EVIDENCE_SCHEMA_AND_TEST_RECEIPT_GATE_HANDOFF_20260501T012800Z.json",
+      "sha256": "4120fc08a048daa6f13997c9d59290339ef35e77075b2e149a9d722db1889675"
+    },
+    {
+      "bytes": 586,
+      "path": "runtime/handoffs/mpp_v3/MPP_R14_VERIFICATION_EVIDENCE_SCHEMA_AND_TEST_RECEIPT_GATE_HANDOFF_LATEST.json",
+      "sha256": "4120fc08a048daa6f13997c9d59290339ef35e77075b2e149a9d722db1889675"
+    },
+    {
+      "bytes": 15336,
+      "path": "runtime/receipts/mpp_v3/MPP_R14_VERIFICATION_EVIDENCE_SCHEMA_AND_TEST_RECEIPT_GATE_RECEIPT_20260501T012800Z.json",
+      "sha256": "0990acc915bb32bf0e30c02820986b6c6fb9c01f9989e99942c08c0ad73b524e"
+    },
+    {
+      "bytes": 15336,
+      "path": "runtime/receipts/mpp_v3/MPP_R14_VERIFICATION_EVIDENCE_SCHEMA_AND_TEST_RECEIPT_GATE_RECEIPT_LATEST.json",
+      "sha256": "0990acc915bb32bf0e30c02820986b6c6fb9c01f9989e99942c08c0ad73b524e"
+    },
+    {
+      "bytes": 1574,
+      "path": "tests/fixtures/mpp_v3/invalid_verification_artifact_hash_mismatch_packet_v1.json",
+      "sha256": "e9115bf534fd33cf67c559566e9862f106386c21cc61d6763606306023936076"
+    },
+    {
+      "bytes": 1574,
+      "path": "tests/fixtures/mpp_v3/invalid_verification_failed_gate_packet_v1.json",
+      "sha256": "c3af8b87080bf894d8acc0a52b9b10db86b21113b30e506e367e77b658e366c2"
+    },
+    {
+      "bytes": 1574,
+      "path": "tests/fixtures/mpp_v3/invalid_verification_failed_test_packet_v1.json",
+      "sha256": "099c9acde20f344fcd0144e30d3ab839c22bb84d7fbf9e8ac15403d4a86ed541"
+    },
+    {
+      "bytes": 1582,
+      "path": "tests/fixtures/mpp_v3/valid_verification_evidence_packet_v1.json",
+      "sha256": "4b9b6366f9854c6775e7d891830d93e2279f272088dad08a801a746297f9249f"
+    },
+    {
+      "bytes": 731,
+      "path": "tests/fixtures/mpp_v3/valid_verification_test_receipt_gate_result_v1.json",
+      "sha256": "eee8f8f698a0066f12d0ee9dd40ca86880a95eca76c698b44e25b31c88252857"
+    }
+  ],
+  "next_stage": "MPP_R15_TRACE_ANALYSIS_SCHEMA_AND_ANOMALY_GATE",
+  "predecessor_verification": {
+    "r13": {
+      "actual_sha256": "7e16f9348d47d07957ff17e79560a27c6c21bf43dfa9a00eb407ad7bd9f82f9a",
+      "checksum_match": true,
+      "exists": true,
+      "sha_sidecar_exists": true,
+      "sidecar_sha256": "7e16f9348d47d07957ff17e79560a27c6c21bf43dfa9a00eb407ad7bd9f82f9a",
+      "zip": "/mnt/data/MPP_R13_IMPLEMENTATION_CONTRACT_SCHEMA_AND_WRITE_PATH_GATE_20260501T011300Z.zip",
+      "zip_testzip": null
+    }
+  },
+  "research_sources": [
+    {
+      "ref": "prior R13 source",
+      "source": "SLSA verifying artifacts"
+    },
+    {
+      "ref": "prior R13 source",
+      "source": "SLSA provenance"
+    }
+  ],
+  "root": "/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z",
+  "root_probe": {
+    "/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z": {
+      "exists": true,
+      "is_dir": true,
+      "writable": true
+    }
+  },
+  "stage_id": "MPP_R14_VERIFICATION_EVIDENCE_SCHEMA_AND_TEST_RECEIPT_GATE",
+  "status": "PASS",
+  "tests": [
+    {
+      "cmd": "/opt/pyvenv/bin/python -m py_compile /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_verification_evidence_gate_v1.py",
+      "expected": 0,
+      "returncode": 0,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.",
+      "stdout": ""
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_verification_evidence_gate_v1.py --validate /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/tests/fixtures/mpp_v3/valid_verification_evidence_packet_v1.json",
+      "expected": 0,
+      "returncode": 0,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.",
+      "stdout": "{\"packet_id\": \"VERIFY-20260430T230936Z\", \"result_hash\": \"e32d915ed9f693a57fcb4608e04ea5d2a37acda8e35adf96fdf849b331a7cf60\", \"status\": \"PASS\"}"
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_verification_evidence_gate_v1.py --gate /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/tests/fixtures/mpp_v3/valid_verification_evidence_packet_v1.json",
+      "expected": 0,
+      "returncode": 0,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.",
+      "stdout": "{\"coverage\": {\"artifact_checks\": 1, \"coverage_summary\": {\"passed_artifacts\": 1, \"passed_gates\": 1, \"passed_tests\": 1, \"required_artifacts\": 1, \"required_gates\": 1, \"required_tests\": 1}, \"gate_results\": 1, \"test_receipts\": 1}, \"created_at\": \"2026-04-30T23:10:04.065139+00:00\", \"gate_id\": \"VERIFY-GATE-20260430T231004Z\", \"packet_id\": \"VERIFY-20260430T230936Z\", \"result_hash\": \"b7e1f0f0219fa342cec9b1deedd63468fc3af5ed4a2473a8927b1f92183a8512\", \"schema_version\": \"mpp.verification_test_receipt_gate_result.v1\", \"stage\": \"VERIFICATION_TEST_RECEIPT_GATE\", \"verdict\": \"PASS\", \"violations\": [], \"warnings\": [\"VERIFY_WARN_ONLY_ONE_TEST_RECEIPT\"]}"
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_verification_evidence_gate_v1.py --validate /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/tests/fixtures/mpp_v3/invalid_verification_failed_test_packet_v1.json",
+      "expected": 1,
+      "returncode": 1,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.\nTraceback (most recent call last):\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_verification_evidence_gate_v1.py\"\u001b[0m, line \u001b[35m174\u001b[0m, in \u001b[35m<module>\u001b[0m\n    raise SystemExit(\u001b[31mmain\u001b[0m\u001b[1;31m()\u001b[0m)\n                     \u001b[31m~~~~\u001b[0m\u001b[1;31m^^\u001b[0m\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_verification_evidence_gate_v1.py\"\u001b[0m, line \u001b[35m163\u001b[0m, in \u001b[35mmain\u001b[0m\n    print(json.dumps(\u001b[31mvalidate_verification_packet\u001b[0m\u001b[1;31m(packet)\u001b[0m, sort_keys=True))\n                     \u001b[31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~\u001b[0m\u001b[1;31m^^^^^^^^\u001b[0m\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_verification_evidence_gate_v1.py\"\u001b[0m, line \u001b[35m57\u001b[0m, in \u001b[35mvalidate_verification_packet\u001b[0m\n    \u001b[31mrequire\u001b[0m\u001b[1;31m(test[\"actual_returncode\"] == test[\"expected_returncode\"], f\"VERIFY_TEST_{i}_RETURNCODE_MISMATCH\")\u001b[0m\n    \u001b[31m~~~~~~~\u001b[0m\u001b[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\u001b[0m\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_verification_evidence_gate_v1.py\"\u001b[0m, line \u001b[35m29\u001b[0m, in \u001b[35mrequire\u001b[0m\n    raise VerificationValidationError(code)\n\u001b[1;35mVerificationValidationError\u001b[0m: \u001b[35mVERIFY_TEST_0_RETURNCODE_MISMATCH\u001b[0m",
+      "stdout": ""
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_verification_evidence_gate_v1.py --validate /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/tests/fixtures/mpp_v3/invalid_verification_artifact_hash_mismatch_packet_v1.json",
+      "expected": 1,
+      "returncode": 1,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.\nTraceback (most recent call last):\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_verification_evidence_gate_v1.py\"\u001b[0m, line \u001b[35m174\u001b[0m, in \u001b[35m<module>\u001b[0m\n    raise SystemExit(\u001b[31mmain\u001b[0m\u001b[1;31m()\u001b[0m)\n                     \u001b[31m~~~~\u001b[0m\u001b[1;31m^^\u001b[0m\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_verification_evidence_gate_v1.py\"\u001b[0m, line \u001b[35m163\u001b[0m, in \u001b[35mmain\u001b[0m\n    print(json.dumps(\u001b[31mvalidate_verification_packet\u001b[0m\u001b[1;31m(packet)\u001b[0m, sort_keys=True))\n                     \u001b[31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~\u001b[0m\u001b[1;31m^^^^^^^^\u001b[0m\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_verification_evidence_gate_v1.py\"\u001b[0m, line \u001b[35m50\u001b[0m, in \u001b[35mvalidate_verification_packet\u001b[0m\n    \u001b[31mrequire\u001b[0m\u001b[1;31m(art[\"sha256\"] == art[\"expected_sha256\"], f\"VERIFY_ARTIFACT_{i}_HASH_MISMATCH\")\u001b[0m\n    \u001b[31m~~~~~~~\u001b[0m\u001b[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\u001b[0m\n  File \u001b[35m\"/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_verification_evidence_gate_v1.py\"\u001b[0m, line \u001b[35m29\u001b[0m, in \u001b[35mrequire\u001b[0m\n    raise VerificationValidationError(code)\n\u001b[1;35mVerificationValidationError\u001b[0m: \u001b[35mVERIFY_ARTIFACT_0_HASH_MISMATCH\u001b[0m",
+      "stdout": ""
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/0_kernel/mpp_v3/mpp_v3_verification_evidence_gate_v1.py --gate /mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z/tests/fixtures/mpp_v3/invalid_verification_failed_gate_packet_v1.json",
+      "expected": 1,
+      "returncode": 1,
+      "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/generated/interface/models.py\", line 35986, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.vJDWZqkmKn/artifact_tool_v2-2.6.11/presentation_artifact_tool/rpc/client.py\", line 150, in call\npresentation_artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.",
+      "stdout": "{\"coverage\": {\"artifact_checks\": 1, \"coverage_summary\": {\"passed_artifacts\": 1, \"passed_gates\": 0, \"passed_tests\": 1, \"required_artifacts\": 1, \"required_gates\": 1, \"required_tests\": 1}, \"gate_results\": 1, \"test_receipts\": 1}, \"created_at\": \"2026-04-30T23:10:31.802346+00:00\", \"gate_id\": \"VERIFY-GATE-20260430T231031Z\", \"packet_id\": \"VERIFY-BAD-GATE\", \"result_hash\": \"f27529768a3cca57fb4fc3cadd117b9cc6e84614571432f6c030e610320b4de1\", \"schema_version\": \"mpp.verification_test_receipt_gate_result.v1\", \"stage\": \"VERIFICATION_TEST_RECEIPT_GATE\", \"verdict\": \"FAIL\", \"violations\": [\"VERIFY_GATE_0_FAIL\", \"VERIFY_GATE_FAILED_GATE_PRESENT\"], \"warnings\": [\"VERIFY_WARN_ONLY_ONE_TEST_RECEIPT\"]}"
+    }
+  ],
+  "timestamp": "20260501T012800Z"
+}

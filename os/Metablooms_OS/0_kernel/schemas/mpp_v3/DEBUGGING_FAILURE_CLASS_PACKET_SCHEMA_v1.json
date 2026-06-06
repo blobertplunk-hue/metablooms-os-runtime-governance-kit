@@ -1,0 +1,286 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/DEBUGGING_FAILURE_CLASS_PACKET_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "action_items": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action_id": {
+            "pattern": "^ACT-[0-9]{3}$",
+            "type": "string"
+          },
+          "description": {
+            "minLength": 8,
+            "type": "string"
+          },
+          "done_definition": {
+            "minLength": 8,
+            "type": "string"
+          },
+          "owner": {
+            "minLength": 3,
+            "type": "string"
+          },
+          "priority": {
+            "enum": [
+              "P0",
+              "P1",
+              "P2",
+              "P3"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "action_id",
+          "description",
+          "owner",
+          "priority",
+          "done_definition"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "created_at": {
+      "minLength": 10,
+      "type": "string"
+    },
+    "failure_classes": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "category": {
+            "enum": [
+              "artifact_integrity",
+              "schema_contract",
+              "test_failure",
+              "trace_anomaly",
+              "reasoning_failure",
+              "write_path",
+              "scope_conflict",
+              "recovery_gap",
+              "tool_failure",
+              "unknown"
+            ],
+            "type": "string"
+          },
+          "evidence_refs": {
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "failure_class_id": {
+            "pattern": "^FC-[0-9]{3}$",
+            "type": "string"
+          },
+          "owner": {
+            "minLength": 3,
+            "type": "string"
+          },
+          "recurrence_risk": {
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ],
+            "type": "string"
+          },
+          "severity": {
+            "enum": [
+              "S1_LOW",
+              "S2_MED",
+              "S3_HIGH",
+              "S4_CRITICAL"
+            ],
+            "type": "string"
+          },
+          "symptom": {
+            "minLength": 5,
+            "type": "string"
+          },
+          "trigger": {
+            "minLength": 5,
+            "type": "string"
+          }
+        },
+        "required": [
+          "failure_class_id",
+          "category",
+          "trigger",
+          "symptom",
+          "severity",
+          "evidence_refs",
+          "recurrence_risk",
+          "owner"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "learning_hooks": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "objective_id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "packet_id": {
+      "minLength": 8,
+      "type": "string"
+    },
+    "repair_routes": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "blocking": {
+            "type": "boolean"
+          },
+          "failure_class_id": {
+            "pattern": "^FC-[0-9]{3}$",
+            "type": "string"
+          },
+          "max_attempts": {
+            "maximum": 5,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "repair_strategy": {
+            "enum": [
+              "smallest_patch",
+              "schema_repair",
+              "fixture_addition",
+              "rollback",
+              "rerun_gate",
+              "research_escalation",
+              "stop_and_report"
+            ],
+            "type": "string"
+          },
+          "route_id": {
+            "pattern": "^ROUTE-[0-9]{3}$",
+            "type": "string"
+          },
+          "route_to": {
+            "enum": [
+              "IMPLEMENTATION",
+              "VERIFICATION",
+              "TRACE_ANALYSIS",
+              "ANALYSIS_EVALUATION",
+              "ECL",
+              "FIR_STAGE",
+              "MONITOR",
+              "STOP_BLOCKED"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "route_id",
+          "failure_class_id",
+          "route_to",
+          "repair_strategy",
+          "blocking",
+          "max_attempts"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "result_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "root_cause_analysis": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "confidence": {
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ],
+            "type": "string"
+          },
+          "failure_class_id": {
+            "pattern": "^FC-[0-9]{3}$",
+            "type": "string"
+          },
+          "five_whys": {
+            "items": {
+              "type": "string"
+            },
+            "minItems": 3,
+            "type": "array"
+          },
+          "preventive_change": {
+            "minLength": 5,
+            "type": "string"
+          },
+          "proximate_cause": {
+            "minLength": 5,
+            "type": "string"
+          },
+          "rca_id": {
+            "pattern": "^RCA-[0-9]{3}$",
+            "type": "string"
+          },
+          "systemic_cause": {
+            "minLength": 5,
+            "type": "string"
+          }
+        },
+        "required": [
+          "rca_id",
+          "failure_class_id",
+          "proximate_cause",
+          "systemic_cause",
+          "five_whys",
+          "confidence",
+          "preventive_change"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "mpp.debugging_failure_class_packet.v1"
+    },
+    "source_analysis_packet_id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "stage": {
+      "const": "DEBUGGING"
+    }
+  },
+  "required": [
+    "schema_version",
+    "packet_id",
+    "stage",
+    "created_at",
+    "objective_id",
+    "source_analysis_packet_id",
+    "failure_classes",
+    "root_cause_analysis",
+    "repair_routes",
+    "action_items",
+    "learning_hooks",
+    "result_hash"
+  ],
+  "title": "MPP v3 Debugging Failure Class Packet",
+  "type": "object"
+}

@@ -1,0 +1,8 @@
+{
+  "artifact_type": "ExportRepairNotice.v1",
+  "created_utc": "2026-05-02T15:38:08Z",
+  "reason": "Promoted a repaired Stage3 full authority export after final validation/summary artifacts existed in the tree; final hash remains external sidecar-bound.",
+  "repaired_export_path": "/mnt/data/METABLOOMS_OS_OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_FULL_AUTHORITY_REPAIRED_20260502T154025Z.zip",
+  "repaired_export_sidecar": "/mnt/data/METABLOOMS_OS_OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_FULL_AUTHORITY_REPAIRED_20260502T154025Z.zip.sha256",
+  "stage": "OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_EXPORT_INTEGRATION_AND_BOOT_SURFACE_BINDING"
+}

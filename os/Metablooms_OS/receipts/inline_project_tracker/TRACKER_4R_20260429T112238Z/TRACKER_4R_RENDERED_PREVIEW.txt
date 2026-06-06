@@ -1,0 +1,9 @@
+TRACKER ▸ Inline Project Tracker
+[█████░] 5/6 complete
+Status: DONE
+Stage: TRACKER-4R_MOBILE_REFLOW_RENDERER_REPAIR
+Now: TRACKER-4R complete; compact visual tracker repa…
+Evidence: TRACKER-4R handoff 98d94a73896a
+Blocker: none
+Next: TRACKER-5 smoke-test/export packaging only.
+Stop: Stopped after TRACKER-4R; smoke-test/export pack…

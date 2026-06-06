@@ -1,0 +1,158 @@
+#!/usr/bin/env python3
+"""MPP v3 R6: CDR constraints validator and policy gate."""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+from datetime import UTC, datetime
+from pathlib import Path
+from typing import Any
+
+JUNK_MODULE_NAMES = {"UTILS.py","HELPERS.py","MISC.py","COMMON.py","SHARED.py"}
+REQUIRED_PILLARS = ["rationale","constraints","module_name","failure_modes","integration_contract","supersedes","attestation"]
+
+class CDRValidationError(RuntimeError):
+    pass
+
+def stable_hash(payload: dict[str, Any]) -> str:
+    clone = json.loads(json.dumps(payload, sort_keys=True))
+    clone["result_hash"] = ""
+    return hashlib.sha256(json.dumps(clone, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+
+def require(cond: bool, code: str) -> None:
+    if not cond:
+        raise CDRValidationError(code)
+
+def validate_cdr_packet(packet: dict[str, Any]) -> dict[str, Any]:
+    for key in ["schema_version","packet_id","stage","created_at","objective_id","source_decision_records","seven_pillars","policy_checks","result_hash"]:
+        require(key in packet, f"CDR_MISSING_{key.upper()}")
+    require(packet["schema_version"] == "mpp.cdr_constraints_packet.v1", "CDR_BAD_SCHEMA_VERSION")
+    require(packet["stage"] == "CDR", "CDR_BAD_STAGE")
+    require(packet["source_decision_records"], "CDR_NO_SOURCE_DECISIONS")
+    pillars = packet["seven_pillars"]
+    for p in REQUIRED_PILLARS:
+        require(p in pillars, f"CDR_MISSING_PILLAR_{p.upper()}")
+    require(len(str(pillars["rationale"])) >= 20, "CDR_RATIONALE_TOO_SHORT")
+    require(isinstance(pillars["constraints"], list) and len(pillars["constraints"]) >= 2, "CDR_TOO_FEW_CONSTRAINTS")
+    module = pillars["module_name"]
+    require(module not in JUNK_MODULE_NAMES, "CDR_JUNK_DRAWER_MODULE_NAME")
+    require("." in module and module.rsplit(".",1)[1] in {"py","json","md","html","js","ts"}, "CDR_BAD_MODULE_EXTENSION")
+    require(pillars["failure_modes"], "CDR_NO_FAILURE_MODES")
+    for i, fm in enumerate(pillars["failure_modes"]):
+        for key in ["mode","safe_state","strategy","detectable_by","severity"]:
+            require(key in fm, f"CDR_FAILURE_MODE_{i}_MISSING_{key.upper()}")
+        require(fm["strategy"] in {"halt","rollback","repair_then_retry","degrade_with_receipt"}, f"CDR_FAILURE_MODE_{i}_BAD_STRATEGY")
+        require(fm["severity"] in {"S1_LOW","S2_MED","S3_HIGH","S4_CRITICAL"}, f"CDR_FAILURE_MODE_{i}_BAD_SEVERITY")
+    contract = pillars["integration_contract"]
+    for key in ["inputs","outputs","side_effects","assumptions"]:
+        require(key in contract, f"CDR_CONTRACT_MISSING_{key.upper()}")
+    require(contract["inputs"], "CDR_CONTRACT_NO_INPUTS")
+    require(contract["outputs"], "CDR_CONTRACT_NO_OUTPUTS")
+    require(len(str(pillars["attestation"])) >= 20, "CDR_ATTESTATION_TOO_SHORT")
+    checks = packet["policy_checks"]
+    require(len(checks) >= 3, "CDR_TOO_FEW_POLICY_CHECKS")
+    seen = set()
+    for check in checks:
+        cid = check.get("check_id")
+        require(cid and cid not in seen, "CDR_DUPLICATE_POLICY_CHECK")
+        seen.add(cid)
+        require(check.get("decision") in {"PASS","FAIL"}, f"CDR_POLICY_{cid}_BAD_DECISION")
+        require(check.get("evidence"), f"CDR_POLICY_{cid}_NO_EVIDENCE")
+    expected = stable_hash(packet)
+    require(packet["result_hash"] == expected, "CDR_HASH_MISMATCH")
+    return {"status":"PASS","packet_id":packet["packet_id"],"result_hash":expected}
+
+def run_policy_gate(packet: dict[str, Any]) -> dict[str, Any]:
+    violations: list[str] = []
+    warnings: list[str] = []
+    try:
+        validate_cdr_packet(packet)
+    except CDRValidationError as e:
+        violations.append(str(e))
+    pillars = packet.get("seven_pillars", {})
+    module = pillars.get("module_name", "")
+    if module in JUNK_MODULE_NAMES:
+        violations.append("POLICY_BLOCK_JUNK_DRAWER_MODULE")
+    if any(c.get("decision") == "FAIL" for c in packet.get("policy_checks", [])):
+        violations.append("POLICY_BLOCK_FAILED_CHECK")
+    if not any(fm.get("severity") == "S4_CRITICAL" for fm in pillars.get("failure_modes", [])):
+        warnings.append("POLICY_WARN_NO_CRITICAL_FAILURE_MODE_DECLARED")
+    verdict = "FAIL" if violations else "PASS"
+    result = {
+        "schema_version":"mpp.cdr_policy_gate_result.v1",
+        "gate_id":f"CDR-GATE-{datetime.now(UTC).strftime('%Y%m%dT%H%M%SZ')}",
+        "stage":"CDR_POLICY_GATE",
+        "created_at":datetime.now(UTC).isoformat(),
+        "packet_id":packet.get("packet_id","UNKNOWN"),
+        "verdict":verdict,
+        "violations":sorted(set(violations)),
+        "warnings":warnings,
+        "result_hash":"",
+    }
+    result["result_hash"] = stable_hash(result)
+    return result
+
+def write_cdr_packet(decision_ids: list[str], objective_id: str, module_name: str, out_path: Path) -> dict[str, Any]:
+    packet = {
+        "schema_version":"mpp.cdr_constraints_packet.v1",
+        "packet_id":f"CDR-{datetime.now(UTC).strftime('%Y%m%dT%H%M%SZ')}",
+        "stage":"CDR",
+        "created_at":datetime.now(UTC).isoformat(),
+        "objective_id":objective_id,
+        "source_decision_records":decision_ids,
+        "seven_pillars":{
+            "rationale":"Establish enforceable constraints before implementation so MPP decisions cannot drift into unvalidated code.",
+            "constraints":[
+                "No implementation may proceed without validated CDR constraints.",
+                "Every high-risk failure mode must declare a detectable safe state.",
+            ],
+            "module_name":module_name,
+            "failure_modes":[
+                {
+                    "mode":"implementation proceeds without constraints",
+                    "safe_state":"halt before implementation",
+                    "strategy":"halt",
+                    "detectable_by":"missing CDR packet or policy gate FAIL",
+                    "severity":"S4_CRITICAL",
+                }
+            ],
+            "integration_contract":{
+                "inputs":["DRS decision record ids","research-to-decision gate result"],
+                "outputs":["validated CDR constraints packet","CDR policy gate result"],
+                "side_effects":["writes receipt and handoff artifacts"],
+                "assumptions":["R5 DRS gate has passed"],
+            },
+            "supersedes":[],
+            "attestation":"Generated by MPP R6 validator; decisions are reconstructible from DRS inputs and policy checks.",
+        },
+        "policy_checks":[
+            {"check_id":"CDR-POL-001","description":"module name is semantic and not a junk drawer","decision":"PASS","evidence":module_name},
+            {"check_id":"CDR-POL-002","description":"failure modes include safe state and detection","decision":"PASS","evidence":"failure_modes[0]"},
+            {"check_id":"CDR-POL-003","description":"integration contract declares inputs and outputs","decision":"PASS","evidence":"integration_contract"},
+        ],
+        "result_hash":"",
+    }
+    packet["result_hash"] = stable_hash(packet)
+    validate_cdr_packet(packet)
+    _mb_write_json_file(out_path, packet, operation_id='STAGE4_ATOMIC_JSON_0_kernel_mpp_v3_mpp_v3_cdr_constraints_policy_gate_v1_py_L138', create_parent=True, allowed_roots=[str(_MBAJWPath('/mnt/data').resolve())], indent=2, sort_keys=True, ensure_ascii=True, max_bytes=20000000)
+    return packet
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--validate")
+    parser.add_argument("--gate")
+    args = parser.parse_args()
+    if args.validate:
+        packet = json.loads(Path(args.validate).read_text(encoding="utf-8"))
+        print(json.dumps(validate_cdr_packet(packet), sort_keys=True))
+        return 0
+    if args.gate:
+        packet = json.loads(Path(args.gate).read_text(encoding="utf-8"))
+        result = run_policy_gate(packet)
+        print(json.dumps(result, sort_keys=True))
+        return 0 if result["verdict"] == "PASS" else 1
+    parser.error("provide --validate or --gate")
+
+if __name__ == "__main__":
+    raise SystemExit(main())

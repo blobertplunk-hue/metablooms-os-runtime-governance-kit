@@ -1,0 +1,7 @@
+{
+  "artifact_type": "MB_PRE_EXPORT_SELF_VALIDATION.v1",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE7_METHOD_WRAPPER_CALLSITE_RETROFIT_AND_BOOT_SEQUENCE_ENFORCEMENT",
+  "created_utc": "20260502T171302Z",
+  "stage7_validator_verdict": "PASS",
+  "verdict": "PASS"
+}

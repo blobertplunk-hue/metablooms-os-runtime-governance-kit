@@ -1,0 +1,52 @@
+{
+  "agent_cli_controls": [
+    "--json accepted before or after subcommand",
+    "stdout is data; diagnostics are encoded in JSON fields",
+    "run-stage defaults to dry-run work-order creation",
+    "doctor is non-destructive unless --deep is requested"
+  ],
+  "artifact_type": "MB_CLI_COMMAND_SPEC_v2",
+  "command": "mb",
+  "commands": [
+    {
+      "contract": "Show one-screen runtime state and latest receipt/handoff.",
+      "name": "status"
+    },
+    {
+      "contract": "Run bounded boot smoke and surface boot verdict/receipt.",
+      "name": "boot"
+    },
+    {
+      "contract": "Verify critical operator-surface and boot artifacts.",
+      "name": "verify"
+    },
+    {
+      "contract": "Run non-destructive diagnostic checks with JSON evidence and remediations.",
+      "name": "doctor"
+    },
+    {
+      "contract": "Prepare a bounded governed stage work order by default; execute only if a real stage runner is installed.",
+      "name": "run-stage"
+    },
+    {
+      "contract": "Dry-run latest handoff continuation without executing new work.",
+      "name": "replay"
+    },
+    {
+      "contract": "Create a compressed complete OS ZIP plus checksum sidecar.",
+      "name": "export"
+    }
+  ],
+  "created_utc": "20260501T103500Z",
+  "fail_closed_rules": [
+    "run-stage --execute fails if no stage runner exists",
+    "doctor critical failures return nonzero",
+    "no command turns missing gates into pass"
+  ],
+  "purpose": "Add diagnostic and stage-preparation commands to the compact MetaBlooms operator surface while preserving fail-closed governance.",
+  "research_bindings": [
+    "CLI Spec structured output/non-interactive/idempotent/bounded-output principles",
+    "clig.dev --json/--dry-run guidance",
+    "agent-first CLI reviewability guidance for explicit scope and evidence packs"
+  ]
+}

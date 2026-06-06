@@ -1,0 +1,18 @@
+{
+  "created_utc": "2026-05-01T00:45:00Z",
+  "id": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_11_FULL_EXTRACT_REPLAY_FIX_AND_RECOVERY_PROOF_RECEIPT",
+  "implemented": [
+    "full_extract_replay_recovery_proof_validator_v1.py",
+    "FULL_EXTRACT_REPLAY_RECOVERY_PROOF_CONTRACT_v1.json",
+    "boot gate binding",
+    "recovery proof validation report",
+    "full OS export sidecar"
+  ],
+  "repaired": [
+    "Stage 10 full extract replay timeout by replacing shell unzip replay with zipfile member-read replay plus boot-critical targeted materialized extraction; full materialization remains optional when sandbox permits."
+  ],
+  "source_sha256": "18cab31e03a23321135b6e56252a9245969893e1d93c634500968ce615793dba",
+  "source_zip": "/mnt/data/METABLOOMS_OS_PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_10_PROMPT_ROUTE_PREEXECUTION_ENFORCER_AND_TASK_START_HOOK_FULL_AUTHORITY_20260501T002500Z.zip",
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_11_FULL_EXTRACT_REPLAY_FIX_AND_RECOVERY_PROOF",
+  "status": "implemented"
+}

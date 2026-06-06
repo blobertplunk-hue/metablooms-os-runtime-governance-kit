@@ -1,0 +1,20 @@
+{
+  "locked_at": "20260501T035800Z",
+  "policy_id": "MPP_V3_MONITOR_FEEDBACK_GATE_v1",
+  "research_basis": [
+    "OpenTelemetry semantic conventions provide consistent telemetry attributes and naming.",
+    "DORA metrics define delivery, instability, and recovery outcomes.",
+    "OPA policy testing supports executable governance policy gates."
+  ],
+  "rules": [
+    "Telemetry must be persisted as artifacts; console-only logs are invalid.",
+    "Every metric must define unit, aggregation, measurement window, threshold, owner, and route_on_breach.",
+    "Every telemetry event must bind to at least one artifact or gate.",
+    "FAIL/WARN events cannot route CONTINUE_NORMAL.",
+    "Every drift breach must route to FIR reevaluation, ECL, SEE/MMD refresh, or STOP_BLOCKED.",
+    "Silent failure blocks through STOP_BLOCKED or a valid repair route.",
+    "STOP_BLOCKED feedback route is mandatory.",
+    "Monitor summary counts must reconcile with event/drift/silent checks."
+  ],
+  "stage": "MONITOR"
+}

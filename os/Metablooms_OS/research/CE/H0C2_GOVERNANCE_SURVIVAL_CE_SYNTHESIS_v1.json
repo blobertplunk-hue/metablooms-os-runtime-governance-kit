@@ -1,0 +1,11 @@
+{
+  "artifact_type": "CE_SYNTHESIS",
+  "created_utc": "2026-04-30T20:29:16Z",
+  "required_implementation": "Add a governance survival/promotion gate, consolidated boot required gates manifest, anti-scatter audit, blocker fixtures, and fresh-extract behavior test.",
+  "stage": "H0C2_GOVERNANCE_SURVIVAL_AND_PROMOTION_BLOCKER_AUDIT",
+  "synthesis": [
+    "Governance must be lifecycle-spanning and promotion-blocking, not a loose collection of artifacts.",
+    "Agentic systems require explicit controls over planning, tool use, memory/state, orchestration, and update drift.",
+    "MetaBlooms must validate survival from fresh export and deny promotion if mandatory gates are missing."
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "artifact_type": "OperatorVisualTrackerRenderContract.v1",
+  "created_utc": "20260502T153307Z",
+  "data_binding": {
+    "mode": "prepopulated_with_latest_verified_export",
+    "source": "runtime/handoffs/operator_tracker/OPERATOR_VISUAL_TRACKER_STATE_LATEST.json"
+  },
+  "mobile_rules": {
+    "high_contrast_status_badges": true,
+    "large_touch_targets": true,
+    "no_box_drawing_status_strip": true,
+    "single_column_under_px": 720,
+    "summary_before_detail": true
+  },
+  "purpose": "Render a pre-populated operator dashboard from OS state so the user can see bootability, focus, next action, blockers, progress lanes, export identity, and optional-vs-required work without reading dense receipts.",
+  "render_targets": [
+    "phone_safe_markdown",
+    "standalone_html"
+  ],
+  "required_visual_sections": [
+    "hero_status_cards",
+    "progress_lanes",
+    "latest_export_card",
+    "decision_panel",
+    "timeline",
+    "compact_technical_receipt"
+  ],
+  "stage": "OPERATOR_VISUAL_TRACKER_POLISH_STAGE2_RENDER_CONTRACT_AND_PHONE_SAFE_TEMPLATE",
+  "stage3_boot_surface_binding": {
+    "external_sidecar_rule": "Self-export hashes must be verified by external .sha256 sidecars, not embedded final SHA placeholders.",
+    "required": true,
+    "surfaces": [
+      "OPEN_OPERATOR_VISUAL_TRACKER.html",
+      "runtime/operator_tracker/operator_visual_tracker_latest.html",
+      "runtime/operator_tracker/OPERATOR_VISUAL_TRACKER_BOOT_SURFACE_LATEST.json",
+      "NEW_CHAT_START_HERE.md"
+    ]
+  },
+  "validation_rules": [
+    "html_contains_required_sections",
+    "markdown_contains_at_a_glance_and_lanes",
+    "latest_export_path_exists",
+    "latest_export_sha_matches",
+    "no_dense_table_before_visual_sections",
+    "boot_surface_binding"
+  ]
+}

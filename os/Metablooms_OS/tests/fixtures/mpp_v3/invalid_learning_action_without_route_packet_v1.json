@@ -1,0 +1,131 @@
+{
+  "created_at": "2026-05-01T00:40:42.744815+00:00",
+  "decay_policy": {
+    "confidence_decay": "confidence drops one level when stale without reconfirmation",
+    "policy_id": "DECAY-001",
+    "refresh_route": "SEE_MMD_REFRESH",
+    "staleness_window": "30 days or after tool/runtime behavior changes"
+  },
+  "learning_events": [
+    {
+      "action_required": true,
+      "event_id": "LEARN-001",
+      "event_type": "successful_method",
+      "evidence_refs": [
+        "MPP_R20_RECEIPT",
+        "R20_TESTS"
+      ],
+      "recurrence_key": "sandbox_subprocess_hang_avoidance",
+      "routes_to": "",
+      "severity": "INFO",
+      "source_stage": "R20",
+      "summary": "In-process validator execution avoided subprocess hook instability for R20 validation."
+    },
+    {
+      "action_required": false,
+      "event_id": "LEARN-002",
+      "event_type": "artifact_export_success",
+      "evidence_refs": [
+        "FULL_MPP_V3_R0_R20_EXPORT_RECEIPT"
+      ],
+      "recurrence_key": "stream_zip_overlay_success",
+      "routes_to": "METHOD_ROUTER_UPDATE",
+      "severity": "INFO",
+      "source_stage": "FULL_EXPORT",
+      "summary": "Streaming ZIP overlay produced duplicate-free whole OS export with MPP integrated."
+    }
+  ],
+  "method_reliability_records": [
+    {
+      "attempts": 3,
+      "blocked_failures": 0,
+      "confidence": "medium",
+      "evidence_refs": [
+        "R20_FINAL_PASS"
+      ],
+      "failures": 0,
+      "last_outcome": "PASS",
+      "method_id": "METHOD-001",
+      "method_name": "python_in_process_validator_gate",
+      "method_type": "validation",
+      "recommended_decision": "PROMOTE",
+      "reliability_score": 1.0,
+      "status": "promoted",
+      "successes": 3
+    },
+    {
+      "attempts": 2,
+      "blocked_failures": 1,
+      "confidence": "medium",
+      "evidence_refs": [
+        "R20_INTERRUPTED_ATTEMPT"
+      ],
+      "failures": 2,
+      "last_outcome": "HANG_OR_INTERRUPTED",
+      "method_id": "METHOD-002",
+      "method_name": "subprocess_validation_inside_python_user_visible",
+      "method_type": "validation",
+      "recommended_decision": "FORBID",
+      "reliability_score": 0.0,
+      "status": "forbidden",
+      "successes": 0
+    },
+    {
+      "attempts": 1,
+      "blocked_failures": 0,
+      "confidence": "low",
+      "evidence_refs": [
+        "FULL_EXPORT_PASS"
+      ],
+      "failures": 0,
+      "last_outcome": "PASS",
+      "method_id": "METHOD-003",
+      "method_name": "zip_stream_overlay_full_export",
+      "method_type": "export",
+      "recommended_decision": "WATCH",
+      "reliability_score": 1.0,
+      "status": "watch",
+      "successes": 1
+    }
+  ],
+  "objective_id": "OBJ-MPP-R21",
+  "packet_id": "LEARN-BAD-NO-ROUTE",
+  "promotion_rules": [
+    {
+      "blocking": false,
+      "condition": "reliability_score >= 0.95 and failures == 0 with evidence",
+      "decision": "PROMOTE",
+      "minimum_evidence_count": 1,
+      "rule_id": "RULE-001",
+      "threshold": "0.95"
+    },
+    {
+      "blocking": true,
+      "condition": "blocked_failures > 0 or reliability_score < 0.50",
+      "decision": "FORBID",
+      "minimum_evidence_count": 1,
+      "rule_id": "RULE-002",
+      "threshold": "0.50"
+    },
+    {
+      "blocking": false,
+      "condition": "single success but insufficient sample size",
+      "decision": "WATCH",
+      "minimum_evidence_count": 1,
+      "rule_id": "RULE-003",
+      "threshold": "sample_count < 3"
+    }
+  ],
+  "registry_summary": {
+    "event_count": 2,
+    "forbid_count": 1,
+    "method_count": 3,
+    "promote_count": 1,
+    "recurring_event_count": 2,
+    "watch_count": 1
+  },
+  "result_hash": "ac78bc28b9855a3f47626ac0e1030fb148885e57fc97dc9e337c7e18f4bdbbf3",
+  "schema_version": "mpp.persistent_learning_registry_packet.v1",
+  "source_monitor_packet_id": "MONITOR-R20-SMOKE",
+  "stage": "PERSISTENT_LEARNING"
+}

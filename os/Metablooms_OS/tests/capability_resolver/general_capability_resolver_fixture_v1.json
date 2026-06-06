@@ -1,0 +1,13 @@
+{
+  "capabilities": [
+    "python_execution",
+    "filesystem_archive_export",
+    "download_link_exposure",
+    "browser_render"
+  ],
+  "expected_nonblocked": [
+    "python_execution",
+    "filesystem_archive_export",
+    "download_link_exposure"
+  ]
+}

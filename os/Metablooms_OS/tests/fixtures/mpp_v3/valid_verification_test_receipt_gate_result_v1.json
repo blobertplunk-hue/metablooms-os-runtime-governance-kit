@@ -1,0 +1,26 @@
+{
+  "coverage": {
+    "artifact_checks": 1,
+    "coverage_summary": {
+      "passed_artifacts": 1,
+      "passed_gates": 1,
+      "passed_tests": 1,
+      "required_artifacts": 1,
+      "required_gates": 1,
+      "required_tests": 1
+    },
+    "gate_results": 1,
+    "test_receipts": 1
+  },
+  "created_at": "2026-04-30T23:09:36.202212+00:00",
+  "gate_id": "VERIFY-GATE-20260430T230936Z",
+  "packet_id": "VERIFY-20260430T230936Z",
+  "result_hash": "4a79e794363c148a1db8760a4d33939c6c9bf6364934c6f218710b2d70bfe70f",
+  "schema_version": "mpp.verification_test_receipt_gate_result.v1",
+  "stage": "VERIFICATION_TEST_RECEIPT_GATE",
+  "verdict": "PASS",
+  "violations": [],
+  "warnings": [
+    "VERIFY_WARN_ONLY_ONE_TEST_RECEIPT"
+  ]
+}

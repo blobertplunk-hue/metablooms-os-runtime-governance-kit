@@ -1,0 +1,27 @@
+{
+  "artifact_type": "SEE_EVIDENCE_PACKET",
+  "created_utc": "20260502T145646Z",
+  "sources": [
+    {
+      "claim": "Project trackers should provide visibility into progress, health, blockers, and next steps.",
+      "source": "Slack project status update guidance",
+      "url": "https://slack.com/blog/collaboration/top-methods-and-metrics-for-tracking-project-progress"
+    },
+    {
+      "claim": "Dashboards should be scannable, visually organized, and easy to navigate for viewers at different levels.",
+      "source": "ClearPoint project dashboard best practices",
+      "url": "https://www.clearpointstrategy.com/blog/project-dashboard"
+    },
+    {
+      "claim": "Project tracking should centralize timelines/status and answer whether work is on pace and what is at risk.",
+      "source": "Wrike project tracking guide",
+      "url": "https://www.wrike.com/blog/project-tracking/"
+    },
+    {
+      "claim": "Status reports support asynchronous accountability and consistent path toward objectives.",
+      "source": "Atlassian status report guidance",
+      "url": "https://www.atlassian.com/agile/project-management/status-report"
+    }
+  ],
+  "stage": "OPERATOR_VISUAL_TRACKER_RESTORE_AND_ENFORCEMENT_STAGE1"
+}

@@ -1,0 +1,18 @@
+{
+  "acceptance_rule": "all dimensions must have status PASS and non-empty evidence; open high-value improvements require handoff or denial",
+  "reconstruction": "RECONSTRUCTED_FROM_CHAT_SUMMARY",
+  "required_dimensions": [
+    "correctness",
+    "completeness",
+    "comprehensibility",
+    "debuggability",
+    "adaptability",
+    "security",
+    "observability",
+    "testability",
+    "integration",
+    "regression_resistance",
+    "recursive_improvement"
+  ],
+  "schema": "CDRCodeAcceptanceContract_v1"
+}

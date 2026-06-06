@@ -1,0 +1,50 @@
+{
+  "authority_zip": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE18_OPERATOR_PACKET_BOOTSTRAP_FINAL_AUTHORITY_REPAIRED_20260502T193453Z.zip",
+  "authority_zip_sha256": "ecb457a1abf127bf4de361bf57181a7e3965ad9e13ca29afc6fef41932a1fcbf",
+  "created_at": "2026-05-02T20:14:02.789329+00:00",
+  "inputs": {
+    "pre_scan": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER_20260502T201258Z/CURRENT_OS_REPORT_ONLY_SCAN_BEFORE_STAGE4.json",
+    "stage3_handoff": "runtime/handoffs/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE3_PROMOTION_BINDING_AND_CURRENT_OS_REPAIR_PLAN_HANDOFF_LATEST.json",
+    "stage3_repair_plan": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_CURRENT_OS_REPAIR_PLAN_v1.json"
+  },
+  "next_stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE5_STALE_BOOT_REFERENCE_REPAIR",
+  "outputs": {
+    "classified_inventory": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER_20260502T201258Z/PROMOTION_AUTHORITY_REPAIR_CLASSIFIED_INVENTORY_v1.json",
+    "classified_inventory_sha256": "5e41095532de0f4d7965caf731310daa5a399e97da06d58b78e6dd730ffacdd5",
+    "classifier": "0_kernel/mpp_v3/promotion_authority_repair_inventory_classifier_v1.py",
+    "classifier_sha256": "171b26803a180c8f2fe5bb6ffbce1d5db893577cd89ecb07e9ac505be066409a",
+    "handoff": "runtime/handoffs/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER_HANDOFF_LATEST.json",
+    "latest_inventory_pointer": "runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER_LATEST_CLASSIFIED_INVENTORY_POINTER.json",
+    "verified_delta_bundle": "runtime/stage_bundles/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER_20260502T201258Z_VERIFIED_DELTA.zip",
+    "verified_delta_bundle_sha256": "2b166d74e04e9da89b7e94b4d1fcdbc2d32799547d13d5e9411ddab3860a8479"
+  },
+  "result_hash": "40f443906bda89b669d85d252811066020d4b0b65c558961ad6997d613b23ac0",
+  "root": "/mnt/data/Metablooms_OS",
+  "schema_version": "metablooms.stage_receipt.v1",
+  "see_sources": [
+    "SLSA verifying artifacts",
+    "NIST SSDF SP 800-218",
+    "OpenSSF Scorecard"
+  ],
+  "stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE4_REPAIR_INVENTORY_AND_CLASSIFIER",
+  "status": "COMPLETE_REPAIR_REQUIRED",
+  "verification": {
+    "authority_mutated": false,
+    "classifier_decision": "REPAIR_REQUIRED",
+    "counts": {
+      "controlled_files_scanned": 2086,
+      "missing_from_registry": 452,
+      "registered_entries": 3086,
+      "registered_hash_mismatches": 85,
+      "stale_live_authority_refs": 4,
+      "total_repair_items": 541
+    },
+    "delta_zip_duplicate_members": "PASS",
+    "delta_zip_test": "PASS",
+    "implementation_contract_validate": "PASS",
+    "json_parse": "PASS",
+    "pac_current_scan_decision": "DENY",
+    "python_compile": "PASS",
+    "write_path_gate": "PASS"
+  }
+}

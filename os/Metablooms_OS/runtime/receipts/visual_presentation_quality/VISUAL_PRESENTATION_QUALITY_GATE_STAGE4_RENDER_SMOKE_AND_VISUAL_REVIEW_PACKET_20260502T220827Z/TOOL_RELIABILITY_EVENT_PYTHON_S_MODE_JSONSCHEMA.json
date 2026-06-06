@@ -1,0 +1,9 @@
+{
+  "schema_version": "metablooms_tool_reliability_event.v1",
+  "stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE4_RENDER_SMOKE_AND_VISUAL_REVIEW_PACKET",
+  "event": "python3_dash_S_hides_site_packages",
+  "observed_failure": "VPQ validator denied valid fixture with VPQ_JSONSCHEMA_LIBRARY_UNAVAILABLE when run under python3 -S.",
+  "root_cause": "The -S flag disables site initialization, so installed package jsonschema is not visible. The VPQ validator requires jsonschema for schema validation.",
+  "corrective_action": "Run validators that require installed packages with normal python3; reserve python3 -S for stdlib-only receipt and smoke scripts.",
+  "decision": "RECOVERED_BY_RERUN_WITH_NORMAL_PYTHON3"
+}

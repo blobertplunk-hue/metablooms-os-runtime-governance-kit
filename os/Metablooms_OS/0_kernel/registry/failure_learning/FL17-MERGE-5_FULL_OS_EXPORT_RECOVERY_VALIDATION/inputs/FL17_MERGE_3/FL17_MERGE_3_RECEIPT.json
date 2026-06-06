@@ -1,0 +1,25 @@
+{
+  "artifact_type": "RECEIPT",
+  "created_utc": "20260430T014900Z",
+  "fl16_blocked_semantics": "preserved; FL16 blocked_before_promotion not converted to pass",
+  "full_os_export_performed": false,
+  "inputs_loaded": [
+    "GOV_REPAIR_SEE_CE_0",
+    "FL17_MERGE_1",
+    "FL17_MERGE_2",
+    "target_tracker_working_OS",
+    "FL17_quarantined_tracker_hook"
+  ],
+  "patch_boundary": "tracker lifecycle/finalization enforcement only",
+  "patched_files": [
+    "0_kernel/cartridges/inline_project_tracker/TRACKER_STAGE_FINALIZATION_HOOK_v1.py",
+    "1_governance/tracker/TRACKER_MANDATORY_STAGE_FINALIZATION_POLICY_v1.md",
+    "0_kernel/cartridges/inline_project_tracker/TRACKER_FINALIZATION_REQUIRED_STAGE_CONTRACT_v1.json",
+    "0_kernel/cartridges/inline_project_tracker/TRACKER_STALE_STATE_VALIDATOR_v1.py"
+  ],
+  "promotion_performed": false,
+  "stage": "FL17-MERGE-3_TRACKER_LIFECYCLE_REPAIR",
+  "status": "DONE_BEFORE_PROMOTION_OR_EXPORT",
+  "validation_report": "receipts/inline_project_tracker/FL17_MERGE_3_20260430T014900Z/FL17_MERGE_3_VALIDATION_REPORT.json",
+  "verdict": "PASS"
+}

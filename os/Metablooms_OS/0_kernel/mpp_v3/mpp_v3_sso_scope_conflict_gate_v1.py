@@ -1,0 +1,194 @@
+#!/usr/bin/env python3
+"""MPP v3 R11: SSO scope schema validator and conflict gate."""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+from datetime import UTC, datetime
+from pathlib import Path
+from typing import Any
+
+
+class SSOValidationError(RuntimeError):
+    pass
+
+
+def norm(text: str) -> str:
+    return " ".join(str(text).lower().replace("_", " ").replace("-", " ").split())
+
+
+def stable_hash(payload: dict[str, Any]) -> str:
+    clone = json.loads(json.dumps(payload, sort_keys=True))
+    clone["result_hash"] = ""
+    return hashlib.sha256(json.dumps(clone, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+
+
+def require(cond: bool, code: str) -> None:
+    if not cond:
+        raise SSOValidationError(code)
+
+
+def _detect_conflicts(packet: dict[str, Any]) -> list[dict[str, Any]]:
+    conflicts = []
+    ins = packet.get("in_scope", [])
+    outs = packet.get("out_of_scope", [])
+    for i in ins:
+        ni = norm(i.get("item", ""))
+        nd = norm(i.get("deliverable", ""))
+        for o in outs:
+            no = norm(o.get("item", ""))
+            if ni and no and (ni == no or ni in no or no in ni or nd == no):
+                conflicts.append({
+                    "type": "IN_OUT_SCOPE_OVERLAP",
+                    "in_scope_id": i.get("scope_id"),
+                    "out_of_scope_id": o.get("scope_id"),
+                    "in_item": i.get("item"),
+                    "out_item": o.get("item"),
+                })
+    return conflicts
+
+
+def validate_sso_packet(packet: dict[str, Any]) -> dict[str, Any]:
+    required = [
+        "schema_version","packet_id","stage","created_at","objective_id","source_nuf_packet_id",
+        "scope_statement","in_scope","out_of_scope","assumptions","constraints","acceptance_boundaries","change_control","result_hash",
+    ]
+    for key in required:
+        require(key in packet, f"SSO_MISSING_{key.upper()}")
+    require(packet["schema_version"] == "mpp.sso_scope_packet.v1", "SSO_BAD_SCHEMA_VERSION")
+    require(packet["stage"] == "SSO", "SSO_BAD_STAGE")
+    require(len(packet["scope_statement"]) >= 20, "SSO_SCOPE_STATEMENT_TOO_SHORT")
+    require(packet["in_scope"], "SSO_NO_IN_SCOPE_ITEMS")
+    require(packet["out_of_scope"], "SSO_NO_OUT_OF_SCOPE_ITEMS")
+    for i, item in enumerate(packet["in_scope"]):
+        for key in ["scope_id","item","deliverable","acceptance_ref","source_stage"]:
+            require(key in item, f"SSO_IN_{i}_MISSING_{key.upper()}")
+        require(item["scope_id"].startswith("IN-"), f"SSO_IN_{i}_BAD_ID")
+    for i, item in enumerate(packet["out_of_scope"]):
+        for key in ["scope_id","item","reason","redirect"]:
+            require(key in item, f"SSO_OUT_{i}_MISSING_{key.upper()}")
+        require(item["scope_id"].startswith("OUTS-"), f"SSO_OUT_{i}_BAD_ID")
+    require(packet["constraints"], "SSO_NO_CONSTRAINTS")
+    require(packet["acceptance_boundaries"], "SSO_NO_ACCEPTANCE_BOUNDARIES")
+    require(any(b.get("blocking") is True for b in packet["acceptance_boundaries"]), "SSO_NO_BLOCKING_BOUNDARY")
+    cc = packet["change_control"]
+    for key in ["process","requires_new_stage","requires_receipt","approval_mode"]:
+        require(key in cc, f"SSO_CHANGE_CONTROL_MISSING_{key.upper()}")
+    require(cc["requires_new_stage"] is True, "SSO_CHANGE_CONTROL_MUST_REQUIRE_NEW_STAGE")
+    require(cc["requires_receipt"] is True, "SSO_CHANGE_CONTROL_MUST_REQUIRE_RECEIPT")
+    require(cc["approval_mode"] in {"explicit_user_command","governed_handoff","blocked_until_review"}, "SSO_BAD_APPROVAL_MODE")
+    expected = stable_hash(packet)
+    require(packet["result_hash"] == expected, "SSO_HASH_MISMATCH")
+    return {"status":"PASS","packet_id":packet["packet_id"],"result_hash":expected}
+
+
+def run_conflict_gate(packet: dict[str, Any]) -> dict[str, Any]:
+    violations: list[str] = []
+    warnings: list[str] = []
+    try:
+        validate_sso_packet(packet)
+    except SSOValidationError as e:
+        violations.append(str(e))
+    conflicts = _detect_conflicts(packet)
+    if conflicts:
+        violations.append("SSO_IN_OUT_SCOPE_CONFLICT")
+    if len(packet.get("out_of_scope", [])) < 2:
+        warnings.append("SSO_WARN_FEW_OUT_OF_SCOPE_EXCLUSIONS")
+    if not packet.get("change_control", {}).get("requires_receipt"):
+        violations.append("SSO_CHANGE_WITHOUT_RECEIPT_FORBIDDEN")
+    verdict = "FAIL" if violations else "PASS"
+    result = {
+        "schema_version":"mpp.sso_conflict_gate_result.v1",
+        "gate_id":f"SSO-GATE-{datetime.now(UTC).strftime('%Y%m%dT%H%M%SZ')}",
+        "stage":"SSO_CONFLICT_GATE",
+        "created_at":datetime.now(UTC).isoformat(),
+        "packet_id":packet.get("packet_id","UNKNOWN"),
+        "verdict":verdict,
+        "violations":sorted(set(violations)),
+        "warnings":warnings,
+        "conflicts":conflicts,
+        "result_hash":"",
+    }
+    result["result_hash"] = stable_hash(result)
+    return result
+
+
+def write_sso_packet(source_nuf_packet_id: str, objective_id: str, out_path: Path) -> dict[str, Any]:
+    packet = {
+        "schema_version":"mpp.sso_scope_packet.v1",
+        "packet_id":f"SSO-{datetime.now(UTC).strftime('%Y%m%dT%H%M%SZ')}",
+        "stage":"SSO",
+        "created_at":datetime.now(UTC).isoformat(),
+        "objective_id":objective_id,
+        "source_nuf_packet_id":source_nuf_packet_id,
+        "scope_statement":"Define the exact bounded work for the next governed MPP stage, including explicit exclusions and change-control rules.",
+        "in_scope":[
+            {
+                "scope_id":"IN-001",
+                "item":"SSO scope packet schema",
+                "deliverable":"SSO_SCOPE_PACKET_SCHEMA_v1.json",
+                "acceptance_ref":"SC-001",
+                "source_stage":"NUF"
+            },
+            {
+                "scope_id":"IN-002",
+                "item":"scope conflict gate",
+                "deliverable":"mpp_v3_sso_scope_conflict_gate_v1.py",
+                "acceptance_ref":"SC-002",
+                "source_stage":"NUF"
+            }
+        ],
+        "out_of_scope":[
+            {
+                "scope_id":"OUTS-001",
+                "item":"implementation of downstream RRP repair logic",
+                "reason":"RRP is a later stage with separate contracts.",
+                "redirect":"MPP_R12_RRP"
+            },
+            {
+                "scope_id":"OUTS-002",
+                "item":"full OS export promotion",
+                "reason":"Export promotion is stage 23 and must not occur during SSO.",
+                "redirect":"MPP_R23_EXPORT_PROMOTION"
+            }
+        ],
+        "assumptions":["R10 NUF handoff is READY and its bundle checksum passes."],
+        "constraints":["one bounded stage only","no downstream implementation beyond SSO"],
+        "acceptance_boundaries":[
+            {"boundary_id":"BND-001","description":"No item may appear in both in_scope and out_of_scope.", "blocking":True},
+            {"boundary_id":"BND-002","description":"Any scope change requires a new governed stage and receipt.", "blocking":True}
+        ],
+        "change_control":{
+            "process":"Scope changes must be explicitly routed through a new handoff-authorized governed stage.",
+            "requires_new_stage":True,
+            "requires_receipt":True,
+            "approval_mode":"explicit_user_command"
+        },
+        "result_hash":"",
+    }
+    packet["result_hash"] = stable_hash(packet)
+    validate_sso_packet(packet)
+    _mb_write_json_file(out_path, packet, operation_id='STAGE4_ATOMIC_JSON_0_kernel_mpp_v3_mpp_v3_sso_scope_conflict_gate_v1_py_L172', create_parent=True, allowed_roots=[str(_MBAJWPath('/mnt/data').resolve())], indent=2, sort_keys=True, ensure_ascii=True, max_bytes=20000000)
+    return packet
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--validate")
+    parser.add_argument("--gate")
+    args = parser.parse_args()
+    if args.validate:
+        packet = json.loads(Path(args.validate).read_text(encoding="utf-8"))
+        print(json.dumps(validate_sso_packet(packet), sort_keys=True))
+        return 0
+    if args.gate:
+        packet = json.loads(Path(args.gate).read_text(encoding="utf-8"))
+        result = run_conflict_gate(packet)
+        print(json.dumps(result, sort_keys=True))
+        return 0 if result["verdict"] == "PASS" else 1
+    parser.error("provide --validate or --gate")
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

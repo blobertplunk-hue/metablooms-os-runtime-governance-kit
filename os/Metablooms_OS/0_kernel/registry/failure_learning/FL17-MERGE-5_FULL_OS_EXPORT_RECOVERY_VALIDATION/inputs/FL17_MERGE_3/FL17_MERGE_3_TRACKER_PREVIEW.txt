@@ -1,0 +1,9 @@
+TRACKER ▸ Inline Project Tracker
+[████░░] 3/5 complete
+Status: DONE
+Stage: FL17-MERGE-3_TRACKER_LIFECYCLE_REPAIR
+Now: Tracker lifecycle enforcement repaired
+Evidence: FL17-MERGE-3_TRACKER_LIFECYCLE_REPAIR handoff…
+Blocker: none
+Next: FL17-MERGE-4 reconcile FL16/FL17 semantics
+Stop: before promotion or full OS export

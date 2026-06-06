@@ -1,0 +1,19 @@
+{
+  "created_utc": "2026-04-28T03:34:10.801693Z",
+  "handoff_type": "R12_HANDOFF",
+  "key_artifacts": [
+    "receipts/refactor_program/R12_REGRESSION_SUITE_EXPANSION_RECEIPT_20260428T033410Z.json",
+    "receipts/refactor_program/R12_VERIFY_RECEIPT_20260428T033410Z.json",
+    "runtime/evals/governance_regression_suite_v1/reports/R12_governance_regression_suite_final_20260428T033410Z.json",
+    "runtime/governance/registries/gate_registry_v1.json"
+  ],
+  "must_not_skip": [
+    "run governance regression suite before export",
+    "run gate registry integrity after any registry change",
+    "refresh session-state export after code changes",
+    "do not use normal python for regression runner"
+  ],
+  "next_stage": "R13_EXPORT_PREP_OR_FINAL_EXPORT_AUDIT",
+  "stage": "R12_REGRESSION_SUITE_EXPANSION",
+  "verdict": "PASS"
+}

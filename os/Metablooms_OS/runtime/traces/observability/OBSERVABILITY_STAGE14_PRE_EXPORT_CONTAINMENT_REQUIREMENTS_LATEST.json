@@ -1,0 +1,15 @@
+{
+  "artifact_type": "MB_PRE_EXPORT_CONTAINMENT_REQUIREMENTS.v1",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING",
+  "created_utc": "20260502T190150Z",
+  "required_members": [
+    "Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html",
+    "Metablooms_OS/0_kernel/scripts/promote_pinned_evidence_receipt_v1.py",
+    "Metablooms_OS/0_kernel/validators/validate_observability_trace_span_ledger_stage14_pinned_evidence_promotion_v1.py",
+    "Metablooms_OS/runtime/receipts/pinned_evidence/PINNED_EVIDENCE_RECEIPT_LATEST.json",
+    "Metablooms_OS/runtime/state/operator_surface/PINNED_EVIDENCE_RECEIPT_PROMOTION_LATEST.json",
+    "Metablooms_OS/runtime/traces/observability/PINNED_EVIDENCE_EXPORT_BINDING_LATEST.json",
+    "Metablooms_OS/runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_PROMOTION_VALIDATION_LATEST.json",
+    "Metablooms_OS/runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_HANDOFF_LATEST.json"
+  ]
+}

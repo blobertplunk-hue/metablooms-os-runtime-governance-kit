@@ -1,0 +1,13 @@
+{
+  "artifact_type": "JSON_SCHEMA_PLACEHOLDER_WITH_REQUIRED_KEYS.v1",
+  "required_keys": [
+    "artifact_type",
+    "stage_id",
+    "mode_policy",
+    "summary",
+    "filters",
+    "waterfall_rows",
+    "evidence_sources"
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS"
+}

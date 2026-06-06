@@ -1,0 +1,17 @@
+{
+  "artifact_type": "UX_OPERATOR_SURFACE_STAGE_2_RECEIPT_v1",
+  "changes": [
+    "added mb doctor",
+    "added mb run-stage dry-run work-order path",
+    "fixed --json placement handling",
+    "added stage2 validator/spec/docs"
+  ],
+  "created_utc": "20260501T103500Z",
+  "research_bindings": [
+    "CLI Spec structured output and non-interactive defaults",
+    "clig.dev --json and --dry-run conventions",
+    "agent-first CLI explicit scope and evidence packs"
+  ],
+  "stage": "IMPLEMENT_UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE_STAGE_2_RUN_STAGE_AND_DOCTOR_COMMANDS",
+  "verdict": "PASS"
+}

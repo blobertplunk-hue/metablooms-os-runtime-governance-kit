@@ -1,0 +1,28 @@
+{
+  "artifact_type": "OBSERVABILITY_STAGE11_FINAL_EXPORT_CONTAINMENT_PROOF.v1",
+  "created_utc": "20260502T181215Z",
+  "duplicates": 0,
+  "external_sidecar_required": "METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_WATERFALL_FINAL_AUTHORITY_LOCKED_20260502T181215Z.zip.sha256",
+  "missing_required_members": [],
+  "required_members": [
+    "Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html",
+    "Metablooms_OS/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "Metablooms_OS/runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "Metablooms_OS/0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "Metablooms_OS/0_kernel/registry/observability/MB_VISUAL_TRACE_WATERFALL_EVIDENCE_FILTERS_SCHEMA_v1.json",
+    "Metablooms_OS/0_kernel/registry/observability/MB_VISUAL_TRACE_WATERFALL_EVIDENCE_FILTERS_POLICY_v1.json",
+    "Metablooms_OS/0_kernel/scripts/observability_visual_trace_waterfall_renderer_v1.py",
+    "Metablooms_OS/0_kernel/validators/validate_observability_trace_span_ledger_stage11_visual_waterfall_v1.py",
+    "Metablooms_OS/runtime/state/operator_surface/VISUAL_TRACE_WATERFALL_LATEST.json",
+    "Metablooms_OS/runtime/state/operator_surface/VISUAL_TRACE_WATERFALL_LATEST.md",
+    "Metablooms_OS/runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE11_VISUAL_WATERFALL_VALIDATION_LATEST.json",
+    "Metablooms_OS/runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_HANDOFF_LATEST.json"
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS",
+  "testzip_bad_member": null,
+  "verdict": "PASS",
+  "zip_entries": 5678,
+  "zip_path": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_WATERFALL_FINAL_AUTHORITY_LOCKED_20260502T181215Z.zip",
+  "zip_sha256": "7d36a61e4ffbb72177a658621059429d780723a348c5172e6bdee5dd22504297",
+  "zip_size_bytes": 72802979
+}

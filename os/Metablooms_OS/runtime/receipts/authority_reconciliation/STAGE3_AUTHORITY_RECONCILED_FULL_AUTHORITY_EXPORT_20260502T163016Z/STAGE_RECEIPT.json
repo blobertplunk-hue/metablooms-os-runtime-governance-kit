@@ -1,0 +1,118 @@
+{
+  "artifact_type": "StageReceipt.v1",
+  "canonical_root": "/mnt/data/Metablooms_OS",
+  "changed_artifacts": [
+    "/mnt/data/Metablooms_OS/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "/mnt/data/Metablooms_OS/runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "/mnt/data/Metablooms_OS/0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "/mnt/data/Metablooms_OS/0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+    "/mnt/data/Metablooms_OS/NEW_CHAT_START_HERE.md",
+    "/mnt/data/Metablooms_OS/runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_RECONCILED_FULL_AUTHORITY_EXPORT_20260502T163016Z/FULL_AUTHORITY_EXPORT_INTERNAL_NOTICE.json"
+  ],
+  "created_utc": "2026-05-02T16:30:16Z",
+  "decision": "PASS",
+  "export_sha256_sidecar": "/mnt/data/METABLOOMS_OS_STAGE3_AUTHORITY_RECONCILED_NEW_CHAT_VALIDATOR_PASS_20260502T163016Z.zip.sha256",
+  "export_zip": "/mnt/data/METABLOOMS_OS_STAGE3_AUTHORITY_RECONCILED_NEW_CHAT_VALIDATOR_PASS_20260502T163016Z.zip",
+  "external_sidecar_required": true,
+  "note": "This receipt is written before zipping so it is included in the exported OS tree. The final archive SHA-256 is intentionally external sidecar-bound.",
+  "objective": "Promote the reconciled Stage 3 authority into a cumulative full-authority OS ZIP with external SHA-256 sidecar.",
+  "stage": "STAGE3_AUTHORITY_RECONCILED_FULL_AUTHORITY_EXPORT",
+  "validation": {
+    "new_chat_start_contract_validator": {
+      "cmd": [
+        "python3",
+        "-S",
+        "/mnt/data/Metablooms_OS/runtime/governance/new_chat_start_contract_validator_v1.py",
+        "/mnt/data/Metablooms_OS"
+      ],
+      "parsed_stdout": {
+        "checks": [
+          {
+            "name": "exists:CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+            "passed": true
+          },
+          {
+            "name": "exists:runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+            "passed": true
+          },
+          {
+            "name": "exists:0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+            "passed": true
+          },
+          {
+            "name": "exists:0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+            "passed": true
+          },
+          {
+            "name": "exists:NEW_CHAT_START_HERE.md",
+            "passed": true
+          },
+          {
+            "name": "exists:runtime/governance/new_chat_start_contract_validator_v1.py",
+            "passed": true
+          },
+          {
+            "name": "exists:runtime/governance/boot_critical_governance_loader_v1.py",
+            "passed": true
+          },
+          {
+            "name": "exists:runtime/governance/governance_scatter_prevention_v1.py",
+            "passed": true
+          },
+          {
+            "name": "exists:runtime/governance/fresh_chat_boot_rehearsal_v1.py",
+            "passed": true
+          },
+          {
+            "name": "exists:runtime/cartridges/prompt_governance_v1/validate_prompt_governance_cartridge_v1.py",
+            "passed": true
+          }
+        ],
+        "decision": "ALLOW",
+        "errors": []
+      },
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\n  \"decision\": \"ALLOW\",\n  \"errors\": [],\n  \"checks\": [\n    {\n      \"name\": \"exists:CURRENT_FULL_AUTHORITY_POINTER_v1.json\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:NEW_CHAT_START_HERE.md\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:runtime/governance/new_chat_start_contract_validator_v1.py\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:runtime/governance/boot_critical_governance_loader_v1.py\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:runtime/governance/governance_scatter_prevention_v1.py\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:runtime/governance/fresh_chat_boot_rehearsal_v1.py\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:runtime/cartridges/prompt_governance_v1/validate_prompt_governance_cartridge_v1.py\",\n      \"passed\": true\n    }\n  ]\n}\n"
+    },
+    "operator_visual_tracker_boot_surface_validator": {
+      "cmd": [
+        "python3",
+        "-S",
+        "/mnt/data/Metablooms_OS/0_kernel/validators/validate_operator_visual_tracker_boot_surface_stage3_v1.py",
+        "/mnt/data/Metablooms_OS"
+      ],
+      "parsed_stdout": {
+        "manifest": "/mnt/data/Metablooms_OS/runtime/operator_tracker/OPERATOR_VISUAL_TRACKER_BOOT_SURFACE_LATEST.json",
+        "root_html": "/mnt/data/Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html",
+        "root_html_sha256": "369fd9996ad5cb7ae28d165d8816fa8fd4ef570104a6f2bce57d2f21933f4375",
+        "runtime_html": "/mnt/data/Metablooms_OS/runtime/operator_tracker/operator_visual_tracker_latest.html",
+        "status": "PASS"
+      },
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"root_html\": \"/mnt/data/Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html\",\n  \"runtime_html\": \"/mnt/data/Metablooms_OS/runtime/operator_tracker/operator_visual_tracker_latest.html\",\n  \"manifest\": \"/mnt/data/Metablooms_OS/runtime/operator_tracker/OPERATOR_VISUAL_TRACKER_BOOT_SURFACE_LATEST.json\",\n  \"root_html_sha256\": \"369fd9996ad5cb7ae28d165d8816fa8fd4ef570104a6f2bce57d2f21933f4375\"\n}\n"
+    },
+    "runtime_starter_smoke_root": {
+      "cmd": [
+        "python3",
+        "-S",
+        "/mnt/data/Metablooms_OS/runtime/governance/runtime_starter_smoke_v1.py",
+        "--root",
+        "/mnt/data/Metablooms_OS",
+        "--json"
+      ],
+      "parsed_stdout": {
+        "decision": "ALLOW",
+        "invalid_json": [],
+        "missing": [],
+        "mode": "root",
+        "path": "/mnt/data/Metablooms_OS",
+        "read_errors": []
+      },
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\n  \"decision\": \"ALLOW\",\n  \"invalid_json\": [],\n  \"missing\": [],\n  \"mode\": \"root\",\n  \"path\": \"/mnt/data/Metablooms_OS\",\n  \"read_errors\": []\n}\n"
+    }
+  }
+}

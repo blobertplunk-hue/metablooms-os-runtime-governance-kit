@@ -1,0 +1,18 @@
+{
+  "argv_resolved": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "/mnt/data/Metablooms_OS/runtime/governance/tool_universe_resolver_v1.py",
+    "resolve",
+    "--task",
+    "Validate an interactive HTML with TTS and accessibility DOM checks",
+    "--stage-id",
+    "STAGE6H_FIXTURE",
+    "--out",
+    "/mnt/data/stage6h_tool_universe_fixture_outputs/html_validation_candidate_set.json"
+  ],
+  "created_utc": "20260502T141608Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision": "ALLOW_SPAWN",
+  "timeout_seconds": 10
+}

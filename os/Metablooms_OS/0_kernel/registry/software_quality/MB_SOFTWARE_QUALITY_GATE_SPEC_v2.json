@@ -1,0 +1,19 @@
+{
+  "gates": [
+    "critical_path_contract_gate",
+    "python_compile_gate",
+    "stage_receipt_handoff_gate",
+    "regression_fixture_gate",
+    "documentation_quickstart_gate",
+    "bounded_validation_gate",
+    "diff_review_gate",
+    "export_promotion_quality_gate"
+  ],
+  "promotion_thresholds": {
+    "false_pass_count_max": 0,
+    "gate_pass_ratio_min": 1.0,
+    "overall_score_min": 0.9
+  },
+  "schema_version": "MB_SOFTWARE_QUALITY_GATE_SPEC_v2",
+  "stage": "SOFTWARE_QUALITY_STAGE2_HARDWIRED_EXPORT_PROMOTION"
+}

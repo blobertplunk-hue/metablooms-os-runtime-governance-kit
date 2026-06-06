@@ -1,0 +1,66 @@
+{
+  "default_rule": "Contracts missing explicit declaration are blocked. Registry entries are compatibility sidecars for known reconstructed CDR/MPP stages until all native stage contracts are rewritten.",
+  "entries": [
+    {
+      "cdr_required": true,
+      "code_artifact_classes": [
+        "python",
+        "schema_driven_runtime",
+        "validator",
+        "gate",
+        "policy"
+      ],
+      "declaration_basis": "CDR stages write governance code, schemas, fixtures, evals, and policies.",
+      "stage_contains_code": true,
+      "stage_pattern": "CDR_STAGE*"
+    },
+    {
+      "cdr_required": true,
+      "code_artifact_classes": [
+        "python",
+        "schema_driven_runtime",
+        "validator",
+        "gate",
+        "policy"
+      ],
+      "declaration_basis": "Stage14 installed MPP/CDR binding gate and policy.",
+      "stage_contains_code": true,
+      "stage_pattern": "MPP_CDR_BINDING_STAGE14*"
+    },
+    {
+      "cdr_required": true,
+      "code_artifact_classes": [
+        "python",
+        "schema_driven_runtime",
+        "validator",
+        "gate",
+        "policy"
+      ],
+      "declaration_basis": "Stage15 installs stage-contract declaration gate and policy.",
+      "stage_contains_code": true,
+      "stage_pattern": "MPP_CDR_BINDING_STAGE15*"
+    },
+    {
+      "cdr_required": true,
+      "code_artifact_classes": [
+        "export_script",
+        "packaging_script",
+        "runtime_config"
+      ],
+      "declaration_basis": "Authority export stages rely on executable packaging/verification logic.",
+      "stage_contains_code": true,
+      "stage_pattern": "*_FULL_AUTHORITY_EXPORT*"
+    },
+    {
+      "cdr_required": false,
+      "code_artifact_classes": [],
+      "declaration_basis": "Explicit non-code audit-only stages may omit CDR if no code/runtime artifact is written.",
+      "stage_contains_code": false,
+      "stage_pattern": "*_AUDIT_ONLY_NO_CODE*"
+    }
+  ],
+  "generated_utc": "2026-05-02T12:53:54Z",
+  "schema": "MPP_STAGE_CONTRACT_CODE_BEARING_DECLARATION_REGISTRY_v1",
+  "stage": "MPP_CDR_BINDING_STAGE15_RETROFIT_STAGE_CONTRACTS_TO_DECLARE_CODE_BEARING_FLAG",
+  "status": "active"
+}

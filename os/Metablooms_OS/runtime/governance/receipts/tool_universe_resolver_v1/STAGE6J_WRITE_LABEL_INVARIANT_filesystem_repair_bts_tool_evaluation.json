@@ -1,0 +1,24 @@
+{
+  "candidate_set_ref": "tool_candidates_93101f7f28d57991",
+  "candidates": [
+    {
+      "reason": "Resolver-ranked canonical filesystem repair route; routes gate, write, T1 receipt, and implementation_reality in one bounded unit",
+      "resolver_score": 80.0,
+      "resolver_status": "PREFERRED",
+      "tool": "bts_wrapped_filesystem_write",
+      "tool_id": "bts_wrapped_filesystem_write",
+      "verdict": "SELECTED"
+    },
+    {
+      "reason": "Denied by resolver / forbidden-method memory: denied by risk tier / forbidden-method memory",
+      "resolver_score": -100.0,
+      "resolver_status": "DENIED",
+      "tool": "unzip_tqq_full_test",
+      "tool_id": "unzip_tqq_full_test",
+      "verdict": "REJECTED"
+    }
+  ],
+  "schema": "BTS_TOOL_EVALUATION_WITH_TOOL_UNIVERSE_RESOLVER_v1",
+  "selected_tool_id": "bts_wrapped_filesystem_write",
+  "why_not_better_tool": ""
+}

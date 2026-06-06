@@ -1,0 +1,10 @@
+{
+  "artifact_type": "R13_FINAL_EXPORT_BLOCKED_HANDOFF",
+  "from_stage": "R13_FINAL_EXPORT_SELF_CONSISTENCY_AUDIT_AND_EXPORT",
+  "created_utc": "2026-04-29T10:13:49Z",
+  "receipt": "receipts/refactor_program/R13_FINAL_EXPORT_BLOCKED_RECEIPT_20260429T101334Z.json",
+  "verdict": "BLOCKED_BEFORE_EXPORT",
+  "blocked_reason": "ledger_declared_outputs_missing_absolute_external_path",
+  "blocked_output": "/home/claude/merge_staging/verify_reextract/Metablooms_OS_refined/0_kernel/registry/TEST_PROOF_ARTIFACT_v1.json",
+  "authorized_next_action": "Run exactly one bounded R13B ledger absolute-output reconciliation stage: inspect the ledger entry that declares the external /home/claude merge_staging TEST_PROOF_ARTIFACT path, determine whether it should be root-relative, quarantined as stale external-only evidence, or restored from artifacts, then validate and stop before final export."
+}

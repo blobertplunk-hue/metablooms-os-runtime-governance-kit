@@ -1,0 +1,66 @@
+{
+  "version": "1.0",
+  "created_at": 1776998702.339855,
+  "status": "failed_closed_not_promoted",
+  "package": "pyright",
+  "reason": "Pyright could not be safely verified in sandbox.",
+  "observed_failures": [
+    "npm install pyright failed with E401 stale/bad npm credentials.",
+    "isolated npm public-registry retry hung until sandbox interruption.",
+    "pip pyright wrapper installed files but pyright --version and --help timed out under bounded probes."
+  ],
+  "cleanup": {
+    "pre_status": {
+      "cmd": [
+        "git",
+        "status",
+        "--short"
+      ],
+      "returncode": 0,
+      "stdout": "M 0_kernel/registry/tool_governance/INSTALLABLE_TOOL_RESEARCH_RECOMMENDATIONS_v1.json\n M boot_manifest_v1.json\n?? 0_kernel/registry/PYRIGHT_BOOTSTRAP_RECEIPT_latest.json\n?? 0_kernel/registry/PYRIGHT_TYPE_CHECK_POLICY_v1.json\n?? 0_kernel/registry/PYRIGHT_VENDOR_INSTALL_RECEIPT_v1.json\n?? 0_kernel/scripts/ensure_pyright_available_v1.py\n?? 0_kernel/vendor/bin/pyright\n?? 0_kernel/vendor/node/\n?? 0_kernel/vendor/npm-public-noauth.npmrc\n?? 0_kernel/vendor/python/__pycache__/\n?? 0_kernel/vendor/python/nodeenv-1.10.0.dist-info/\n?? 0_kernel/vendor/python/nodeenv.py\n?? 0_kernel/vendor/python/nodejs_wheel/\n?? 0_kernel/vendor/python/nodejs_wheel_binaries-24.15.0.dist-info/\n?? 0_kernel/vendor/python/pyright-1.1.409.dist-info/\n?? 0_kernel/vendor/python/pyright/\n?? 0_kernel/vendor/python/typing_extensions-4.15.0.dist-info/\n?? 0_kernel/vendor/python/typing_extensions.py\n?? pyrightconfig.json",
+      "stderr": ""
+    },
+    "restore_result": {
+      "cmd": [
+        "git",
+        "restore",
+        "boot_manifest_v1.json",
+        "0_kernel/registry/tool_governance/INSTALLABLE_TOOL_RESEARCH_RECOMMENDATIONS_v1.json"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "removed_untracked_partial_paths": [
+      "/mnt/data/Metablooms_OS_refined/0_kernel/registry/PYRIGHT_BOOTSTRAP_RECEIPT_latest.json",
+      "/mnt/data/Metablooms_OS_refined/0_kernel/registry/PYRIGHT_TYPE_CHECK_POLICY_v1.json",
+      "/mnt/data/Metablooms_OS_refined/0_kernel/registry/PYRIGHT_VENDOR_INSTALL_RECEIPT_v1.json",
+      "/mnt/data/Metablooms_OS_refined/0_kernel/scripts/ensure_pyright_available_v1.py",
+      "/mnt/data/Metablooms_OS_refined/0_kernel/vendor/bin/pyright",
+      "/mnt/data/Metablooms_OS_refined/0_kernel/vendor/node",
+      "/mnt/data/Metablooms_OS_refined/0_kernel/vendor/npm-public-noauth.npmrc",
+      "/mnt/data/Metablooms_OS_refined/0_kernel/vendor/python/pyright",
+      "/mnt/data/Metablooms_OS_refined/0_kernel/vendor/python/pyright-1.1.409.dist-info",
+      "/mnt/data/Metablooms_OS_refined/0_kernel/vendor/python/nodeenv.py",
+      "/mnt/data/Metablooms_OS_refined/0_kernel/vendor/python/nodeenv-1.10.0.dist-info",
+      "/mnt/data/Metablooms_OS_refined/0_kernel/vendor/python/nodejs_wheel",
+      "/mnt/data/Metablooms_OS_refined/0_kernel/vendor/python/nodejs_wheel_binaries-24.15.0.dist-info",
+      "/mnt/data/Metablooms_OS_refined/0_kernel/vendor/python/typing_extensions.py",
+      "/mnt/data/Metablooms_OS_refined/0_kernel/vendor/python/typing_extensions-4.15.0.dist-info",
+      "/mnt/data/Metablooms_OS_refined/0_kernel/vendor/python/__pycache__",
+      "/mnt/data/Metablooms_OS_refined/pyrightconfig.json"
+    ]
+  },
+  "governance_decision": "Do not activate Pyright governance module until a bounded CLI verification returns successfully.",
+  "fallback_tools": [
+    "Ruff for lint/format",
+    "LibCST for structural transforms",
+    "pytest for regression tests",
+    "Python ast for structural inspection"
+  ],
+  "future_retry_options": [
+    "Use a clean npm userconfig plus longer execution window if available.",
+    "Try pinned pyright npm tarball if package manager auth is clean.",
+    "Try basedpyright or mypy as an alternative static checker if Pyright remains unsuitable."
+  ]
+}

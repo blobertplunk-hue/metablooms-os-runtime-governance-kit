@@ -1,0 +1,49 @@
+{
+  "audit_scope": "scan active runtime/governance, runtime/tooling, scripts, bin, tools, 0_kernel, governance, tests; classify legacy/quarantine separately; do not repair in Stage6Q",
+  "control_requirements": [
+    {
+      "control": "resolver_binding",
+      "required_evidence": [
+        "Tool Universe Resolver candidate set",
+        "BTS_TOOL_EVALUATION",
+        "BTS_TOOL_SELECTION"
+      ]
+    },
+    {
+      "control": "pre_action_gate",
+      "required_evidence": [
+        "ToolCallEnvelope_v1",
+        "PolicyDecision_v1 ALLOW/DEFER/DENY"
+      ]
+    },
+    {
+      "control": "bts_execution",
+      "required_evidence": [
+        "BTS_TOOL_RESULT or bts_wrapped executor receipt"
+      ]
+    },
+    {
+      "control": "post_result_validation",
+      "required_evidence": [
+        "PostToolResultValidationEnvelope_v1",
+        "ALLOW_SUCCESS_COMMIT decision before success"
+      ]
+    },
+    {
+      "control": "hitl_checkpoint_for_high_impact",
+      "required_evidence": [
+        "approval token or explicit not-required classification",
+        "checkpoint/replay pointer for interrupted work"
+      ]
+    },
+    {
+      "control": "traceability",
+      "required_evidence": [
+        "receipt/handoff/support proof bundle path and SHA256"
+      ]
+    }
+  ],
+  "created_at_utc": "2026-05-02T03:16:52.674181Z",
+  "schema": "CE_Synthesis_v1",
+  "stage_id": "STAGE6Q_LEGACY_EXECUTOR_RETROFIT_AUDIT"
+}

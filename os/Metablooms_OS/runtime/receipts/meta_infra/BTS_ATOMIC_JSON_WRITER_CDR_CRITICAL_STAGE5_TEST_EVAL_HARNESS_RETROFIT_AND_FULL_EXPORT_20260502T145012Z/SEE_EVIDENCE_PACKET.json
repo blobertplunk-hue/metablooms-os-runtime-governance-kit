@@ -1,0 +1,18 @@
+{
+  "artifact_type": "SEE_EVIDENCE_PACKET.v1",
+  "sources": [
+    {
+      "claim": "Atomic updates should use a same-directory temp file and rename/replace after data is written.",
+      "url": "https://python-atomicwrites.readthedocs.io/"
+    },
+    {
+      "claim": "POSIX durability pattern includes fsync on temp file and parent directory after move.",
+      "url": "https://python-atomicwrites.readthedocs.io/"
+    },
+    {
+      "claim": "Path traversal escapes intended directories through ../ sequences or absolute paths, requiring canonical path controls.",
+      "url": "https://owasp.org/www-community/attacks/Path_Traversal"
+    }
+  ],
+  "stage": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT_20260502T145012Z"
+}

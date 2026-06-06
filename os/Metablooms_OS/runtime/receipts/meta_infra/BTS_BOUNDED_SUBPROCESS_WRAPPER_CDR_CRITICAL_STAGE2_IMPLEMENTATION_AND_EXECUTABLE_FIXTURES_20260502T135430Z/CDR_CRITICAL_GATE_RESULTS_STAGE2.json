@@ -1,0 +1,48 @@
+{
+  "all_pass": true,
+  "artifact_type": "METABLOOMS_CDR_CRITICAL_GATE_RESULTS_v1",
+  "created_utc": "20260502T135430Z",
+  "gates": [
+    {
+      "gate": "Stage1 contract loaded",
+      "result": "PASS"
+    },
+    {
+      "gate": "Source installed under kernel lib execution",
+      "result": "PASS"
+    },
+    {
+      "gate": "API run_governed_command present",
+      "result": "PASS"
+    },
+    {
+      "gate": "Argv list / shell denial implemented",
+      "result": "PASS"
+    },
+    {
+      "gate": "Timeout kill/retry implemented",
+      "result": "PASS"
+    },
+    {
+      "gate": "Forbidden method policy implemented",
+      "result": "PASS"
+    },
+    {
+      "gate": "Path whitelist implemented",
+      "result": "PASS"
+    },
+    {
+      "gate": "Failure learning event implemented",
+      "result": "PASS"
+    },
+    {
+      "gate": "Executable fixtures pass",
+      "result": "PASS"
+    },
+    {
+      "gate": "Static security scan pass",
+      "result": "PASS"
+    }
+  ],
+  "stage_id": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES"
+}

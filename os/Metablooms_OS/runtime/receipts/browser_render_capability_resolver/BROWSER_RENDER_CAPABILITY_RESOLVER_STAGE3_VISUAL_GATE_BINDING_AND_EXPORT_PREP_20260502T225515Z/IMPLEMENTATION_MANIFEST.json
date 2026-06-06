@@ -1,0 +1,112 @@
+{
+  "export_check": {
+    "checked_count": 23,
+    "missing_required_paths": [],
+    "pass": true
+  },
+  "input_status": [
+    {
+      "exists": true,
+      "relative_path": "0_kernel/resolvers/browser_render_capability_resolver_v1.py",
+      "sha256": "c2ca314e6e48f74d2f0e56941cf76b08b1b39dd9d53f9c6cb15cc3a3c69226a4"
+    },
+    {
+      "exists": true,
+      "relative_path": "runtime/state/BROWSER_RENDER_METHOD_RELIABILITY_LEDGER_LATEST.json",
+      "sha256": "7e4dcae4b574d04e50ead88d55331132f0839b06a7b71de3ac73bdcb214cd884"
+    },
+    {
+      "exists": true,
+      "relative_path": "runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE2_IMPLEMENT_RESOLVER_AND_LOCAL_METHOD_REPLAY_20260502T224609Z/local_replay/RESOLVER_DECISION_OPERATOR_TRACKER.json",
+      "sha256": "c9b87b2b68ce31003d04c4e2661d3bfdcdf5abac87f082c18f183803197dc312"
+    },
+    {
+      "exists": true,
+      "relative_path": "runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE2_IMPLEMENT_RESOLVER_AND_LOCAL_METHOD_REPLAY_20260502T224609Z/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE2_FIXTURE_AND_DECISION_REPLAY.json",
+      "sha256": "f8464b53c3c93b32422f40fce137b741096d07eee0154597a49d4467042ee1c4"
+    },
+    {
+      "exists": true,
+      "relative_path": "0_kernel/registry/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_CONTRACT_v1.json",
+      "sha256": "e5e74affefcf800942c00aa5c38bc2ea6afc22652a1913dabda10e78a1c1de0a"
+    },
+    {
+      "exists": true,
+      "relative_path": "0_kernel/registry/visual_presentation_quality/VISUAL_PRESENTATION_MPP_USS_HTML_BINDING_v1.json",
+      "sha256": "a3b03d028b48173200d9d655b02d9821d01fba3f1454d68e6f8ffa9d8b5beefc"
+    },
+    {
+      "exists": true,
+      "relative_path": "runtime/export_promotion/VISUAL_PRESENTATION_QUALITY_GATE_STAGE5_EXPORT_MANIFEST_v1.json",
+      "sha256": "fb109d8c5bb92bda78cd8b28f696988f2e60d49b31fafcbb64da470dd2bed16c"
+    }
+  ],
+  "research_sources": [
+    "Playwright official browser docs",
+    "Chrome official headless docs",
+    "WeasyPrint official docs"
+  ],
+  "resolver_run": {
+    "command": [
+      "python3",
+      "/mnt/data/Metablooms_OS/0_kernel/resolvers/browser_render_capability_resolver_v1.py",
+      "--html",
+      "/mnt/data/Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html",
+      "--out",
+      "/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE3_VISUAL_GATE_BINDING_AND_EXPORT_PREP_20260502T225515Z/export_prep_replay",
+      "--requested-proof-tier",
+      "browser_screenshot_preferred",
+      "--artifact-type",
+      "operator_tracker",
+      "--timeout",
+      "4",
+      "--write-decision",
+      "EXPORT_PREP_RESOLVER_DECISION_OPERATOR_TRACKER.json"
+    ],
+    "exit_code": 2,
+    "stderr_tail": "",
+    "stdout_tail": "{\n  \"decision_path\": \"/mnt/data/Metablooms_OS/runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE3_VISUAL_GATE_BINDING_AND_EXPORT_PREP_20260502T225515Z/export_prep_replay/EXPORT_PREP_RESOLVER_DECISION_OPERATOR_TRACKER.json\",\n  \"decision\": \"DENY_PRODUCTION_PROMOTION\",\n  \"selected_method\": \"none\",\n  \"honesty_label\": \"blocked\"\n}\n"
+  },
+  "stage": "BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE3_VISUAL_GATE_BINDING_AND_EXPORT_PREP",
+  "timestamp_utc": "20260502T225515Z",
+  "verification": [
+    {
+      "exists": true,
+      "relative_path": "0_kernel/registry/browser_render_capability/BROWSER_RENDER_CAPABILITY_VISUAL_GATE_BINDING_v1.json",
+      "sha256": "644ea6dcc61307477b9632f05b1a574ca88c4280e0d5f3b646dc8bd3fb7b63f0"
+    },
+    {
+      "exists": true,
+      "relative_path": "0_kernel/registry/browser_render_capability/BROWSER_RENDER_CAPABILITY_EXPORT_PREP_MANIFEST_v1.json",
+      "sha256": "307f9cf883ee241889732ade61cad1d326786e3e4c1b2c50f2935c12aab12fed"
+    },
+    {
+      "exists": true,
+      "relative_path": "tools/pc_addenda/browser_render_replay/README.md",
+      "sha256": "ebb427a80bebd49fa0ddd2d69aa814d7edb427c3ad40e8faa51a6cedf3ae83ee"
+    },
+    {
+      "exists": true,
+      "relative_path": "tools/pc_addenda/browser_render_replay/run_browser_render_replay.ps1",
+      "sha256": "a1355edc9cc02796bc4d1162dc7091d87e093e0e1631d8a2098630ccf07a9151"
+    },
+    {
+      "compile_exit_code": 0,
+      "relative_path": "0_kernel/resolvers/browser_render_capability_resolver_v1.py",
+      "stderr_tail": ""
+    },
+    {
+      "compile_exit_code": 0,
+      "relative_path": "tests/evals/browser_render_capability/test_browser_render_capability_resolver_v1.py",
+      "stderr_tail": ""
+    }
+  ],
+  "written_artifacts": [
+    "0_kernel/registry/browser_render_capability/BROWSER_RENDER_CAPABILITY_VISUAL_GATE_BINDING_v1.json",
+    "0_kernel/registry/browser_render_capability/BROWSER_RENDER_CAPABILITY_EXPORT_PREP_MANIFEST_v1.json",
+    "tools/pc_addenda/browser_render_replay/README.md",
+    "tools/pc_addenda/browser_render_replay/run_browser_render_replay.ps1",
+    "runtime/state/BROWSER_RENDER_CAPABILITY_RESOLVER_TRACKER_PREVIEW.txt",
+    "runtime/receipts/browser_render_capability_resolver/BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE3_VISUAL_GATE_BINDING_AND_EXPORT_PREP_20260502T225515Z/export_prep_replay/EXPORT_PREP_RESOLVER_DECISION_OPERATOR_TRACKER.json"
+  ]
+}

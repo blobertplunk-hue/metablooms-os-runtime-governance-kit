@@ -1,0 +1,12 @@
+{
+  "artifact_type": "CE_SYNTHESIS.v1",
+  "created_utc": "20260502T175629Z",
+  "decision": "Implement minimal mode as the default tracker mode, with progressive disclosure drawers for evidence, trace, failure, and receipts.",
+  "internal_findings": [
+    "Stage 9 generated current-only live boot guidance, but the main tracker still opened with dense trace and failure panels before the operator action.",
+    "The live guidance JSON already contains the correct wrapper-only action and deep links; Stage 10 should surface that first instead of inventing a new boot process.",
+    "Existing observability files remain useful as evidence drawers; the repair should restructure the surface, not delete evidence."
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING",
+  "verdict": "PASS"
+}

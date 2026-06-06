@@ -1,0 +1,119 @@
+{
+  "atomic_preflight_archive": {
+    "check": "atomic_replace_preflight",
+    "created_utc": "20260502T164359Z",
+    "dst_df": {
+      "filesystem": "none",
+      "mount_point": "/",
+      "ok": true,
+      "path": "/mnt/data",
+      "raw": "none           9007199254740988 164184 9007199254576804       1% /"
+    },
+    "dst_path": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_20260502T164347Z.zip",
+    "dst_st_dev": 19,
+    "same_device": true,
+    "same_mount_point": true,
+    "schema_version": "FILESYSTEM_SAFETY_v1",
+    "tmp_df": {
+      "filesystem": "none",
+      "mount_point": "/",
+      "ok": true,
+      "path": "/mnt/data",
+      "raw": "none           9007199254740988 164180 9007199254576808       1% /"
+    },
+    "tmp_path": "/mnt/data/.METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_20260502T164347Z.zip.tmp.15185.zip",
+    "tmp_st_dev": 19,
+    "verdict": "ATOMIC_REPLACE_SAFE"
+  },
+  "atomic_preflight_sidecar": {
+    "check": "atomic_replace_preflight",
+    "created_utc": "20260502T164359Z",
+    "dst_df": {
+      "filesystem": "none",
+      "mount_point": "/",
+      "ok": true,
+      "path": "/mnt/data",
+      "raw": "none           9007199254740988 164184 9007199254576804       1% /"
+    },
+    "dst_path": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_20260502T164347Z.zip.sha256",
+    "dst_st_dev": 19,
+    "same_device": true,
+    "same_mount_point": true,
+    "schema_version": "FILESYSTEM_SAFETY_v1",
+    "tmp_df": {
+      "filesystem": "none",
+      "mount_point": "/",
+      "ok": true,
+      "path": "/mnt/data",
+      "raw": "none           9007199254740988 164184 9007199254576804       1% /"
+    },
+    "tmp_path": "/mnt/data/.METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_20260502T164347Z.zip.sha256.tmp.15185",
+    "tmp_st_dev": 19,
+    "verdict": "ATOMIC_REPLACE_SAFE"
+  },
+  "bad_member": null,
+  "differential_trace_summary": {
+    "artifact_type": "DIFFERENTIAL_TRACE_SUMMARY",
+    "base_bytes": 0,
+    "base_file_count": 0,
+    "base_root_hash": null,
+    "created_utc": "20260502T164350Z",
+    "delta_counts": {
+      "added": 5060,
+      "changed": 0,
+      "removed": 0
+    },
+    "new_bytes": 66648482,
+    "new_file_count": 5060,
+    "new_root_hash": "a511412b11e1f8f5ecc11fb324ee93faa85eba793a0f45c1c74aa8616a3e29c1",
+    "omitted_counts": {
+      "added": 5045,
+      "changed": 0,
+      "removed": 0
+    },
+    "policy": "Traces emit counts/root hash/bounded samples; full hash manifests remain artifacts.",
+    "samples": {
+      "added": [
+        ".gitignore",
+        ".registry_mutation.lock",
+        ".write_probe_20260502T163408Z",
+        "02_PROJECT_OVERLAYS/METABLOOMS_PROJECT_FILES_BOOT_OVERLAY_20260428T014821Z.zip",
+        "0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+        "0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md.sha256",
+        "0_kernel/cartridges/external_review_lenses/AGENT_HARNESS_STAGE_GRAPH_AND_WORKTREE_CARTRIDGE_SPEC_v1.json",
+        "0_kernel/cartridges/external_review_lenses/AGENT_HARNESS_STAGE_GRAPH_AND_WORKTREE_CARTRIDGE_SPEC_v1.json.sha256",
+        "0_kernel/cartridges/external_review_lenses/ARTIFACT_PORTABILITY_REPLAY_PROOF_CARTRIDGE_SPEC_v1.json",
+        "0_kernel/cartridges/external_review_lenses/ARTIFACT_PORTABILITY_REPLAY_PROOF_CARTRIDGE_SPEC_v1.json.sha256",
+        "0_kernel/cartridges/external_review_lenses/EDUCATION_VALIDITY_LEARNING_EFFICACY_CARTRIDGE_SPEC_v1.json",
+        "0_kernel/cartridges/external_review_lenses/EDUCATION_VALIDITY_LEARNING_EFFICACY_CARTRIDGE_SPEC_v1.json.sha256",
+        "0_kernel/cartridges/external_review_lenses/EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_SPEC_v1.json",
+        "0_kernel/cartridges/external_review_lenses/EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_SPEC_v1.json.sha256",
+        "0_kernel/cartridges/external_review_lenses/OBSERVABILITY_TRACE_SPAN_LEDGER_CARTRIDGE_SPEC_v1.json"
+      ],
+      "changed": [],
+      "removed": []
+    },
+    "schema_version": "TRACE_DIFF_LOGGER_v1"
+  },
+  "entries": 5207,
+  "export_path": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_20260502T164347Z.zip",
+  "promotion_gate": {
+    "info": {
+      "archive": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_20260502T164347Z.zip",
+      "education_accuracy": 1.0,
+      "education_false_pass_count": 0,
+      "education_promotion_decision": "PROMOTE",
+      "entries": 5207
+    },
+    "issues": [],
+    "promotion_decision": "PROMOTE",
+    "schema_version": "EXPORT_PROMOTION_GATE_v4_EDUCATION_HARDWIRED",
+    "verdict": "EXPORT_PROMOTION_PASS"
+  },
+  "promotion_gate_returncode": 0,
+  "root": "/mnt/data/Metablooms_OS",
+  "schema_version": "MB_CLI_OUTPUT_v25",
+  "sha256": "fe10bfa0e3953a02c2bcc380dadf2845e13b805c5d14e8ebdc0471312c1f5914",
+  "sidecar": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_20260502T164347Z.zip.sha256",
+  "verdict": "EXPORT_PASS"
+}

@@ -1,0 +1,11 @@
+{
+  "created_at_utc": "2026-05-02T02:48:39.708161Z",
+  "decision": "Install schema, policy, validator, fixtures, invariant, receipt, handoff, tracker preview, and support/proof bundle; do not export the full OS in this stage.",
+  "schema": "CEPacket_v1",
+  "stage_id": "STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_20260502T035000Z",
+  "synthesis": [
+    "Approval must be explicit, scoped, expiring, authority-bound, and artifact-root-bound; otherwise it cannot safely unlock broad repair/export/pointer promotion.",
+    "The gate must run before side effects but must not replace post-tool validation; both are required.",
+    "Durable receipts/handoffs are required so an interrupted turn can be resumed without relying on chat memory."
+  ]
+}

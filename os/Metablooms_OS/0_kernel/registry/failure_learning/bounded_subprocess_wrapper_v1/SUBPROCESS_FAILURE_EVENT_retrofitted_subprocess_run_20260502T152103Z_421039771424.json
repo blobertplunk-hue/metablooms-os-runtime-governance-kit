@@ -1,0 +1,37 @@
+{
+  "argv_redacted": [
+    "python3",
+    "-S",
+    "/mnt/data/Metablooms_OS/runtime/governance/post_tool_result_validation_v1.py",
+    "/tmp/tmptgbejtjq/env.json",
+    "--out",
+    "/tmp/tmptgbejtjq/out.json"
+  ],
+  "artifact_type": "METABLOOMS_SUBPROCESS_FAILURE_LEARNING_EVENT_v1",
+  "attempts": [
+    {
+      "attempt_index": 0,
+      "elapsed_ms": 59,
+      "returncode": 20,
+      "started_utc": "20260502T152103Z",
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_truncated": false,
+      "stdout": "{\n  \"action_type\": \"filesystem_write\",\n  \"decision\": \"DENY_SUCCESS_COMMIT\",\n  \"reason_code\": \"IMPLEMENTATION_REALITY_FAILED\",\n  \"reasons\": [\n    \"implementation_reality_verdict=FAIL\"\n  ],\n  \"required_next_action\": \"repair_result_or_mark_tool_failure\",\n  \"safe_to_commit_success\": false,\n  \"schema\": \"PostToolResultValidationDecision_v1\",\n  \"stage_id\": \"STAGE6L\",\n  \"tool_id\": \"bts_wrapped_filesystem_write\",\n  \"validated_at_utc\": \"2026-05-02T15:21:03.317020Z\",\n  \"validation_id\": \"fixture\"\n}\n",
+      "stdout_bytes": 492,
+      "stdout_sha256": "96f1ed6eba1a34885d6ae20426f71cd14d57d29d833aa217f44c32019220f3b3",
+      "stdout_truncated": false,
+      "timeout_seconds": 10.0
+    }
+  ],
+  "created_utc": "20260502T152103Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "failure_class": "NONZERO_EXIT",
+  "operation_type": "retrofitted_subprocess_run",
+  "policy_matches": [],
+  "recommendation": "Route future matching operations through bounded wrapper and method reliability policy before spawn.",
+  "result_class": "ALLOW_NONZERO",
+  "root": "/mnt/data/Metablooms_OS",
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT"
+}

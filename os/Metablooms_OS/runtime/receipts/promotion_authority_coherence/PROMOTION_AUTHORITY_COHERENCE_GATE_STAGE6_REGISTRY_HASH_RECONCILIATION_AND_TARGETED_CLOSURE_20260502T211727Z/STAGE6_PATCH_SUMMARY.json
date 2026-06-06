@@ -1,0 +1,20 @@
+{
+  "backups": [
+    "/mnt/data/Metablooms_OS/runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE6_REGISTRY_HASH_RECONCILIATION_AND_TARGETED_CLOSURE_20260502T211727Z/runtime__governance__controlled_artifact_registry_v1.py.pre_stage6_20260502T211727Z.bak",
+    "/mnt/data/Metablooms_OS/runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE6_REGISTRY_HASH_RECONCILIATION_AND_TARGETED_CLOSURE_20260502T211727Z/0_kernel__mpp_v3__promotion_authority_coherence_gate_v1.py.pre_stage6_20260502T211727Z.bak"
+  ],
+  "created_at": "20260502T211727Z",
+  "patched": [
+    "runtime/governance/controlled_artifact_registry_v1.py",
+    "runtime/governance/controlled_artifact_registry_v1.py.sha256",
+    "0_kernel/mpp_v3/promotion_authority_coherence_gate_v1.py",
+    "0_kernel/mpp_v3/promotion_authority_coherence_gate_v1.py.sha256",
+    "0_kernel/registry/CONTROLLED_GOVERNANCE_ARTIFACT_INDEX_v1.json",
+    "0_kernel/registry/CONTROLLED_GOVERNANCE_ARTIFACT_INDEX_v1.json.sha256"
+  ],
+  "receipt_dir": "/mnt/data/Metablooms_OS/runtime/receipts/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE6_REGISTRY_HASH_RECONCILIATION_AND_TARGETED_CLOSURE_20260502T211727Z",
+  "registry_entry_count": 2037,
+  "registry_sha256": "944a5c320e6a0ae196de245de5c8b56cc3b1147896944131b34ad5825c05e2dc",
+  "registry_sidecar_sha256": "c50b6de7e183bf9746426d4b039a28dd9593004e1c1b64e0220a9671ca36b699",
+  "stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE6_REGISTRY_HASH_RECONCILIATION_AND_TARGETED_CLOSURE"
+}

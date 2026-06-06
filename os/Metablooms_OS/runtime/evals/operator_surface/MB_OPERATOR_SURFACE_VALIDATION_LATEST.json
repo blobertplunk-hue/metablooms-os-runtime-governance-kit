@@ -1,0 +1,100 @@
+{
+  "artifact_type": "MB_OPERATOR_SURFACE_VALIDATION_v1",
+  "commands": {
+    "replay_json": {
+      "args": [
+        "python3",
+        "-S",
+        "/mnt/data/Metablooms_OS/bin/mb",
+        "--json",
+        "replay"
+      ],
+      "json": {
+        "dry_run": true,
+        "latest_handoff": "/mnt/data/Metablooms_OS/runtime/handoffs/external_review/UX_OPERATOR_SURFACE_STAGE_1_HANDOFF_LATEST.json",
+        "next_stage": null,
+        "resume_rule": "Run one bounded stage from this handoff; do not trust chat-only state.",
+        "root": "/mnt/data/Metablooms_OS",
+        "verdict": "REPLAY_DRY_RUN_READY"
+      },
+      "rc": 0,
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"dry_run\": true,\n  \"latest_handoff\": \"/mnt/data/Metablooms_OS/runtime/handoffs/external_review/UX_OPERATOR_SURFACE_STAGE_1_HANDOFF_LATEST.json\",\n  \"next_stage\": null,\n  \"resume_rule\": \"Run one bounded stage from this handoff; do not trust chat-only state.\",\n  \"root\": \"/mnt/data/Metablooms_OS\",\n  \"verdict\": \"REPLAY_DRY_RUN_READY\"\n}\n"
+    },
+    "status_json": {
+      "args": [
+        "python3",
+        "-S",
+        "/mnt/data/Metablooms_OS/bin/mb",
+        "--json",
+        "status"
+      ],
+      "json": {
+        "authority": {
+          "artifact_type": "CURRENT_EXPORT_AUTHORITY_v1",
+          "boot_status": "PASS_WITH_WARNINGS_ACCEPTED_git_dir_missing",
+          "contains_7zz_router": true,
+          "export_sha256": "d3dc00631aac8d37d216342451112a6fbdcb751cd399e84deb9246b7c3900466",
+          "export_zip": "/mnt/data/METABLOOMS_OS_WITH_7ZZ_ARCHIVE_ROUTER_20260501T031939Z.zip",
+          "stage": "ARCHIVE_TOOL_ROUTER_INTEGRATION_1_FINALIZE",
+          "updated_utc": "20260501T032043Z",
+          "verdict": "ACTIVE"
+        },
+        "authority_pointer_present": true,
+        "critical_commands": [
+          "mb boot",
+          "mb status",
+          "mb verify",
+          "mb export --output <zip>",
+          "mb replay"
+        ],
+        "latest_handoff": "/mnt/data/Metablooms_OS/runtime/handoffs/external_review/UX_OPERATOR_SURFACE_STAGE_1_HANDOFF_LATEST.json",
+        "latest_receipt": "/mnt/data/Metablooms_OS/runtime/receipts/external_review/UX_OPERATOR_SURFACE_STAGE_1_RECEIPT_LATEST.json",
+        "root": "/mnt/data/Metablooms_OS",
+        "status": "READY_FOR_BOUNDED_STAGE"
+      },
+      "rc": 0,
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"authority\": {\n    \"artifact_type\": \"CURRENT_EXPORT_AUTHORITY_v1\",\n    \"boot_status\": \"PASS_WITH_WARNINGS_ACCEPTED_git_dir_missing\",\n    \"contains_7zz_router\": true,\n    \"export_sha256\": \"d3dc00631aac8d37d216342451112a6fbdcb751cd399e84deb9246b7c3900466\",\n    \"export_zip\": \"/mnt/data/METABLOOMS_OS_WITH_7ZZ_ARCHIVE_ROUTER_20260501T031939Z.zip\",\n    \"stage\": \"ARCHIVE_TOOL_ROUTER_INTEGRATION_1_FINALIZE\",\n    \"updated_utc\": \"20260501T032043Z\",\n    \"verdict\": \"ACTIVE\"\n  },\n  \"authority_pointer_present\": true,\n  \"critical_commands\": [\n    \"mb boot\",\n    \"mb status\",\n    \"mb verify\",\n    \"mb export --output <zip>\",\n    \"mb replay\"\n  ],\n  \"latest_handoff\": \"/mnt/data/Metablooms_OS/runtime/handoffs/external_review/UX_OPERATOR_SURFACE_STAGE_1_HANDOFF_LATEST.json\",\n  \"latest_receipt\": \"/mnt/data/Metablooms_OS/runtime/receipts/external_review/UX_OPERATOR_SURFACE_STAGE_1_RECEIPT_LATEST.json\",\n  \"root\": \"/mnt/data/Metablooms_OS\",\n  \"status\": \"READY_FOR_BOUNDED_STAGE\"\n}\n"
+    },
+    "verify_json": {
+      "args": [
+        "python3",
+        "-S",
+        "/mnt/data/Metablooms_OS/bin/mb",
+        "--json",
+        "verify"
+      ],
+      "json": {
+        "checks": {
+          "0_kernel/registry/external_review/EXTERNAL_REVIEW_MATRIX_v1.json": true,
+          "0_kernel/registry/operator_surface/MB_CLI_COMMAND_SPEC_v1.json": true,
+          "0_kernel/scripts/boot_runtime_executor_v1.py": true,
+          "bin/mb": true,
+          "boot_manifest_v1.json": true,
+          "tools/7zip/7zz": true
+        },
+        "root": "/mnt/data/Metablooms_OS",
+        "verdict": "VERIFY_PASS"
+      },
+      "rc": 0,
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"checks\": {\n    \"0_kernel/registry/external_review/EXTERNAL_REVIEW_MATRIX_v1.json\": true,\n    \"0_kernel/registry/operator_surface/MB_CLI_COMMAND_SPEC_v1.json\": true,\n    \"0_kernel/scripts/boot_runtime_executor_v1.py\": true,\n    \"bin/mb\": true,\n    \"boot_manifest_v1.json\": true,\n    \"tools/7zip/7zz\": true\n  },\n  \"root\": \"/mnt/data/Metablooms_OS\",\n  \"verdict\": \"VERIFY_PASS\"\n}\n"
+    }
+  },
+  "created_utc": "20260501T040721Z",
+  "pass_conditions": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "path_checks": {
+    "0_kernel/registry/operator_surface/MB_CLI_COMMAND_SPEC_v1.json": true,
+    "bin/mb": true,
+    "docs/operator_surface/MB_OPERATOR_QUICKSTART_v1.md": true,
+    "runtime/fixtures/operator_surface/MB_CLI_FIXTURE_CASES_v1.json": true
+  },
+  "root": "/mnt/data/Metablooms_OS",
+  "verdict": "PASS"
+}

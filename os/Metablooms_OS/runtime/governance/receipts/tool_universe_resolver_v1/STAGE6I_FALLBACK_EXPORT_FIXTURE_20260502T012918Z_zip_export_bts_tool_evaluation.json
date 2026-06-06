@@ -1,0 +1,48 @@
+{
+  "candidate_set_ref": "tool_candidates_4529254eabcd75ea",
+  "candidates": [
+    {
+      "reason": "job_type match: zip_export; governed/promoted route; requires approval",
+      "resolver_score": 87.003,
+      "resolver_status": "PREFERRED",
+      "tool": "node_yazl_stream_export",
+      "tool_id": "node_yazl_stream_export",
+      "verdict": "REJECTED"
+    },
+    {
+      "reason": "job_type match: zip_export; governed/promoted route",
+      "resolver_score": 70.006,
+      "resolver_status": "PREFERRED",
+      "tool": "node_yauzl_crc_proof",
+      "tool_id": "node_yauzl_crc_proof",
+      "verdict": "REJECTED"
+    },
+    {
+      "reason": "job_type match: zip_export; smoke-tested route",
+      "resolver_score": 63.006,
+      "resolver_status": "ALLOWED",
+      "tool": "zipinfo_metadata_scan",
+      "tool_id": "zipinfo_metadata_scan",
+      "verdict": "REJECTED"
+    },
+    {
+      "reason": "Compatibility fallback route; only valid when Node ZIP profile is unavailable or explicitly unsuitable",
+      "resolver_score": 44.005,
+      "resolver_status": "ALLOWED",
+      "tool": "python_zipfile_compatibility_fallback",
+      "tool_id": "python_zipfile_compatibility_fallback",
+      "verdict": "SELECTED"
+    },
+    {
+      "reason": "Denied by resolver / forbidden-method memory: denied by risk tier / forbidden-method memory",
+      "resolver_score": -100.0,
+      "resolver_status": "DENIED",
+      "tool": "unzip_tqq_full_test",
+      "tool_id": "unzip_tqq_full_test",
+      "verdict": "REJECTED"
+    }
+  ],
+  "schema": "BTS_TOOL_EVALUATION_WITH_TOOL_UNIVERSE_RESOLVER_v1",
+  "selected_tool_id": "python_zipfile_compatibility_fallback",
+  "why_not_better_tool": "Compatibility export-zip path selected only when caller intentionally invokes fallback instead of canonical Node ZIP profile."
+}

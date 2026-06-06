@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "created_at": 1777063362.4524996,
+  "stage": "E3_TOOL_GOVERNANCE_ROUTER_PROOF",
+  "status": "rematerialized_after_F7",
+  "case_results": {
+    "mnt_data_filesystem": {
+      "passed": true
+    },
+    "export_bundle": {
+      "passed": true
+    },
+    "registry_mutation": {
+      "passed": true
+    },
+    "code_mutation": {
+      "passed": true
+    },
+    "mixed_tool_governed_task": {
+      "passed": true
+    }
+  },
+  "verdict": "PASS",
+  "next_correct_command": "EXECUTE STAGE E4A \u2014 MASTER PIPELINE PROOF SCOPE LOCK"
+}

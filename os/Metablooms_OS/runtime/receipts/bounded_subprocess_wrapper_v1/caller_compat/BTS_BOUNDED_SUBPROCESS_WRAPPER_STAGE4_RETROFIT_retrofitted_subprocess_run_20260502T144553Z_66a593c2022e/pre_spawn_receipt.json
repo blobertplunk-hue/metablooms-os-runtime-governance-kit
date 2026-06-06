@@ -1,0 +1,14 @@
+{
+  "argv_resolved": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "/mnt/data/Metablooms_OS/runtime/governance/post_tool_result_validation_v1.py",
+    "/tmp/tmp1_uiwb4b/env.json",
+    "--out",
+    "/tmp/tmp1_uiwb4b/out.json"
+  ],
+  "created_utc": "20260502T144553Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision": "ALLOW_SPAWN",
+  "timeout_seconds": 10
+}

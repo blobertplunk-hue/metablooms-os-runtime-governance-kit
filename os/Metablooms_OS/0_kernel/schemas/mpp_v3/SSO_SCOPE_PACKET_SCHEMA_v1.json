@@ -1,0 +1,193 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/SSO_SCOPE_PACKET_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "acceptance_boundaries": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "blocking": {
+            "type": "boolean"
+          },
+          "boundary_id": {
+            "pattern": "^BND-[0-9]{3}$",
+            "type": "string"
+          },
+          "description": {
+            "minLength": 10,
+            "type": "string"
+          }
+        },
+        "required": [
+          "boundary_id",
+          "description",
+          "blocking"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "assumptions": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "change_control": {
+      "additionalProperties": false,
+      "properties": {
+        "approval_mode": {
+          "enum": [
+            "explicit_user_command",
+            "governed_handoff",
+            "blocked_until_review"
+          ],
+          "type": "string"
+        },
+        "process": {
+          "minLength": 10,
+          "type": "string"
+        },
+        "requires_new_stage": {
+          "type": "boolean"
+        },
+        "requires_receipt": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "process",
+        "requires_new_stage",
+        "requires_receipt",
+        "approval_mode"
+      ],
+      "type": "object"
+    },
+    "constraints": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "created_at": {
+      "minLength": 10,
+      "type": "string"
+    },
+    "in_scope": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "acceptance_ref": {
+            "minLength": 3,
+            "type": "string"
+          },
+          "deliverable": {
+            "minLength": 4,
+            "type": "string"
+          },
+          "item": {
+            "minLength": 4,
+            "type": "string"
+          },
+          "scope_id": {
+            "pattern": "^IN-[0-9]{3}$",
+            "type": "string"
+          },
+          "source_stage": {
+            "minLength": 2,
+            "type": "string"
+          }
+        },
+        "required": [
+          "scope_id",
+          "item",
+          "deliverable",
+          "acceptance_ref",
+          "source_stage"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "objective_id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "out_of_scope": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "item": {
+            "minLength": 4,
+            "type": "string"
+          },
+          "reason": {
+            "minLength": 6,
+            "type": "string"
+          },
+          "redirect": {
+            "minLength": 4,
+            "type": "string"
+          },
+          "scope_id": {
+            "pattern": "^OUTS-[0-9]{3}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "scope_id",
+          "item",
+          "reason",
+          "redirect"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "packet_id": {
+      "minLength": 8,
+      "type": "string"
+    },
+    "result_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "mpp.sso_scope_packet.v1"
+    },
+    "scope_statement": {
+      "minLength": 20,
+      "type": "string"
+    },
+    "source_nuf_packet_id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "stage": {
+      "const": "SSO"
+    }
+  },
+  "required": [
+    "schema_version",
+    "packet_id",
+    "stage",
+    "created_at",
+    "objective_id",
+    "source_nuf_packet_id",
+    "scope_statement",
+    "in_scope",
+    "out_of_scope",
+    "assumptions",
+    "constraints",
+    "acceptance_boundaries",
+    "change_control",
+    "result_hash"
+  ],
+  "title": "MPP v3 SSO Scope Packet",
+  "type": "object"
+}

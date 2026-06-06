@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "created_at": 1777068405.226812,
+  "stage": "G6_TWO_PASS_SELF_CONSISTENT_EXPORT_PLAN",
+  "status": "active",
+  "reason": "Single-pass proof/lock was produced after zipping; final ZIP must contain all ledger-declared G6 outputs.",
+  "passes": [
+    "prewrite final artifacts",
+    "zip final tree",
+    "validate final zip",
+    "write external concrete proof"
+  ],
+  "verdict": "PASS"
+}

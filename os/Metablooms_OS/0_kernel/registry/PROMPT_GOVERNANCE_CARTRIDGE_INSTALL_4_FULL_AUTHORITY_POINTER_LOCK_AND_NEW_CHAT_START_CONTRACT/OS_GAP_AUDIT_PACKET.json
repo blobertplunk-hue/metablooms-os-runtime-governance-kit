@@ -1,0 +1,27 @@
+{
+  "created_utc": "2026-04-30T21:22:57.454494Z",
+  "gaps_found": [
+    {
+      "action": "install pointer in root, runtime authority, and registry",
+      "gap": "current full authority pointer not locked inside exported OS",
+      "severity": "blocking_for_new_chat_continuity"
+    },
+    {
+      "action": "install contract and validator, add to boot gates",
+      "gap": "new-chat start contract not boot-required",
+      "severity": "blocking_for_fresh_chat_operability"
+    },
+    {
+      "action": "install new_chat_start_contract_validator_v1.py",
+      "gap": "stage4 validator absent",
+      "severity": "blocking_for_proof"
+    }
+  ],
+  "preserve": [
+    "stage3 duplicate-free authority export",
+    "prompt_governance_v1 cartridge",
+    "anti-scatter exact index behavior",
+    "fresh-chat rehearsal gate"
+  ],
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_4_FULL_AUTHORITY_POINTER_LOCK_AND_NEW_CHAT_START_CONTRACT"
+}

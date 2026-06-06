@@ -1,0 +1,28 @@
+{
+  "action_type": "node_zip_profile_export",
+  "actual": {
+    "bytes": 187,
+    "crc_verdict": "PASS",
+    "duplicates": [],
+    "implementation_reality_verdict": "PASS",
+    "sha256": "d526a20b1b17a15bc56453664b3f10c46ea3519fe03aebaa7ed8a281ff1392a2",
+    "unsafe_paths": []
+  },
+  "artifacts": {
+    "primary_path": "/mnt/data/METABLOOMS_STAGE6L_NODE_ZIP_EXPORT_FIXTURE_RERUN_20260502T032600Z.zip",
+    "receipt_path": "/mnt/data/Metablooms_OS/_bts/receipts/T1-STAGE6L_NODE_ZIP_FIXTURE_RERUN_20260502T032600Z_node_zip_export_artifact-20260502T020747Z.json"
+  },
+  "created_at_utc": "2026-05-02T02:07:48.292114Z",
+  "expected": {
+    "min_bytes": 1,
+    "require_receipt": true,
+    "sha256": "d526a20b1b17a15bc56453664b3f10c46ea3519fe03aebaa7ed8a281ff1392a2"
+  },
+  "intent": "Validate BTS-wrapped Node ZIP export uses post-tool result validation before success commit after normalization repair",
+  "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/post_tool_result_validation_v1/STAGE6L_NODE_ZIP_FIXTURE_RERUN_20260502T032600Z_node_zip_profile_export_post_tool_validation_decision.json",
+  "risk_tier": "critical",
+  "schema_version": "PostToolResultValidationEnvelope_v1",
+  "stage_id": "STAGE6L_POST_TOOL_RESULT_VALIDATION_GATE",
+  "tool_id": "node_yazl_stream_export",
+  "validation_id": "STAGE6L_NODE_ZIP_FIXTURE_RERUN_20260502T032600Z_node_zip_profile_export_post_tool_validation"
+}

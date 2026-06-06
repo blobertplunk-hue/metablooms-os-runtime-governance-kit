@@ -1,0 +1,12 @@
+{
+  "from_stage": "MPP_R8_ADS_ARCHITECTURE_DAG_SCHEMA_AND_OWNERSHIP_GATE",
+  "notes": "R9 should map operator/user constraints onto the validated ADS architecture and OFM outcomes.",
+  "required_inputs": [
+    "0_kernel/schemas/mpp_v3/ADS_ARCHITECTURE_DAG_PACKET_SCHEMA_v1.json",
+    "0_kernel/mpp_v3/mpp_v3_ads_architecture_dag_gate_v1.py",
+    "tests/fixtures/mpp_v3/valid_ads_architecture_dag_packet_v1.json"
+  ],
+  "root": "/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z",
+  "status": "READY",
+  "to_stage": "MPP_R9_UXR_OPERATOR_CONTEXT_SCHEMA_AND_ACCESSIBILITY_GATE"
+}

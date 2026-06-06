@@ -1,0 +1,5 @@
+{
+  "expect_profile": "governed_implementation",
+  "expect_task_type": "governed_implementation",
+  "prompt": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_10_PROMPT_ROUTE_PREEXECUTION_ENFORCER_AND_TASK_START_HOOK"
+}

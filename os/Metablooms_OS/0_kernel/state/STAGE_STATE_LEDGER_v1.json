@@ -1,0 +1,663 @@
+{
+  "blocked_entries_do_not_advance_latest_pass": true,
+  "created_at": 1777061653.581956,
+  "entries": [
+    {
+      "advances_latest_pass": true,
+      "dependencies": [],
+      "entry_id": "F0_RECOVERY_ARCHITECTURE_SCOPE_LOCK",
+      "git_head": "60757dc1b811d52643b546128e0870433cb5f198",
+      "outputs": [
+        "0_kernel/docs/F0_RECOVERY_ARCHITECTURE_SCOPE_LOCK_v1.md",
+        "0_kernel/registry/F0_RECOVERY_ARCHITECTURE_SCOPE_CONTRACT_v1.json",
+        "0_kernel/registry/F0_TO_F1_HANDOFF_v1.json"
+      ],
+      "receipt": "0_kernel/registry/F0_RECOVERY_ARCHITECTURE_SCOPE_LOCK_RECEIPT_v1.json",
+      "stage": "F0_RECOVERY_ARCHITECTURE_SCOPE_LOCK",
+      "supersedes": [],
+      "timestamp": 1777061653.5819468,
+      "verdict": "PASS"
+    },
+    {
+      "advances_latest_pass": true,
+      "dependencies": [
+        "F0_RECOVERY_ARCHITECTURE_SCOPE_LOCK"
+      ],
+      "entry_id": "F1_CURRENT_WORKING_BASELINE_POINTER_CONTRACT",
+      "git_head": "d4c7243ee0d61897de6c12c1c5e85e154d7b1e00",
+      "outputs": [
+        "0_kernel/state/CURRENT_WORKING_BASELINE_POINTER_v1.json",
+        "0_kernel/schemas/CURRENT_WORKING_BASELINE_POINTER_CONTRACT_v1.json",
+        "0_kernel/registry/F1_TO_F2_HANDOFF_v1.json"
+      ],
+      "receipt": "0_kernel/registry/F1_CURRENT_WORKING_BASELINE_POINTER_CONTRACT_RECEIPT_v1.json",
+      "stage": "F1_CURRENT_WORKING_BASELINE_POINTER_CONTRACT",
+      "supersedes": [
+        "stable_release_baseline_for_working_state_selection"
+      ],
+      "timestamp": 1777061653.5819511,
+      "verdict": "PASS"
+    },
+    {
+      "advances_latest_pass": true,
+      "dependencies": [
+        "F1_CURRENT_WORKING_BASELINE_POINTER_CONTRACT"
+      ],
+      "entry_id": "F2_STAGE_DAG_AND_DEPENDENCY_LEDGER_CONTRACT",
+      "git_head": "d4c7243ee0d61897de6c12c1c5e85e154d7b1e00",
+      "outputs": [
+        "0_kernel/pipeline/STAGE_DAG_v1.json",
+        "0_kernel/state/STAGE_STATE_LEDGER_v1.json",
+        "0_kernel/schemas/STAGE_DAG_AND_DEPENDENCY_LEDGER_CONTRACT_v1.json",
+        "0_kernel/registry/F2_TO_F3_HANDOFF_v1.json"
+      ],
+      "receipt": "0_kernel/registry/F2_STAGE_DAG_AND_DEPENDENCY_LEDGER_CONTRACT_RECEIPT_v1.json",
+      "stage": "F2_STAGE_DAG_AND_DEPENDENCY_LEDGER_CONTRACT",
+      "supersedes": [
+        "ad_hoc_stage_reconstruction"
+      ],
+      "timestamp": 1777061653.581953,
+      "verdict": "PASS"
+    },
+    {
+      "advances_latest_pass": true,
+      "dependencies": [
+        "F2_STAGE_DAG_AND_DEPENDENCY_LEDGER_CONTRACT"
+      ],
+      "entry_id": "F3_TRANSACTIONAL_STAGE_RUNNER_CONTRACT",
+      "git_head": "01353b64fff6b11096cceb8af1b80689f7e68fcb",
+      "outputs": [
+        "0_kernel/schemas/TRANSACTIONAL_STAGE_RUNNER_SCHEMA_v1.json",
+        "0_kernel/schemas/TRANSACTIONAL_STAGE_RUNNER_CONTRACT_v1.json",
+        "0_kernel/docs/TRANSACTIONAL_STAGE_RUNNER_CONTRACT_v1.md",
+        "0_kernel/pipeline/TRANSACTIONAL_STAGE_STATE_MACHINE_v1.json",
+        "0_kernel/registry/F3_TO_F4_HANDOFF_v1.json"
+      ],
+      "receipt": "0_kernel/registry/F3_TRANSACTIONAL_STAGE_RUNNER_CONTRACT_RECEIPT_v1.json",
+      "stage": "F3_TRANSACTIONAL_STAGE_RUNNER_CONTRACT",
+      "supersedes": [
+        "ad_hoc_stage_execution_semantics"
+      ],
+      "timestamp": 1777062052.588998,
+      "verdict": "PASS"
+    },
+    {
+      "advances_latest_pass": true,
+      "dependencies": [
+        "F3_TRANSACTIONAL_STAGE_RUNNER_CONTRACT"
+      ],
+      "entry_id": "F4_MANIFEST_PROVENANCE_EXPORT_CONTRACT",
+      "git_head": "c64e4ae852346dd14e1cd3882dd3cff04ef370ff",
+      "outputs": [
+        "0_kernel/schemas/EXPORT_MANIFEST_SCHEMA_v1.json",
+        "0_kernel/schemas/EXPORT_PROVENANCE_SCHEMA_v1.json",
+        "0_kernel/schemas/MANIFEST_PROVENANCE_EXPORT_CONTRACT_v1.json",
+        "0_kernel/docs/MANIFEST_PROVENANCE_EXPORT_CONTRACT_v1.md",
+        "0_kernel/pipeline/EXPORT_MANIFEST_TEMPLATE_v1.json",
+        "0_kernel/pipeline/EXPORT_PROVENANCE_TEMPLATE_v1.json",
+        "0_kernel/registry/F4_TO_F5_HANDOFF_v1.json"
+      ],
+      "receipt": "0_kernel/registry/F4_MANIFEST_PROVENANCE_EXPORT_CONTRACT_RECEIPT_v1.json",
+      "stage": "F4_MANIFEST_PROVENANCE_EXPORT_CONTRACT",
+      "supersedes": [
+        "ad_hoc_export_manifest_policy"
+      ],
+      "timestamp": 1777062152.7620122,
+      "verdict": "PASS"
+    },
+    {
+      "advances_latest_pass": true,
+      "dependencies": [
+        "F4_MANIFEST_PROVENANCE_EXPORT_CONTRACT"
+      ],
+      "entry_id": "F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF",
+      "git_head": "107f41b2c2ec3c8d69a94bad7f0d0acd006fbaaf",
+      "outputs": [
+        "0_kernel/schemas/RESTORE_LADDER_SCHEMA_v1.json",
+        "0_kernel/schemas/RESTORE_LADDER_CONTRACT_v1.json",
+        "0_kernel/docs/RESTORE_LADDER_MODE_NORMALIZATION_PROOF_v1.md",
+        "0_kernel/registry/RESTORE_LADDER_MODE_NORMALIZATION_PROOF_v1.json",
+        "0_kernel/registry/F5_TO_F6_HANDOFF_v1.json"
+      ],
+      "receipt": "0_kernel/registry/F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF_RECEIPT_v1.json",
+      "stage": "F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF",
+      "supersedes": [
+        "ad_hoc_restore_selection",
+        "manual_filemode_repair_only"
+      ],
+      "timestamp": 1777062487.867908,
+      "verdict": "PASS"
+    },
+    {
+      "advances_latest_pass": false,
+      "dependencies": [
+        "F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF"
+      ],
+      "entry_id": "F5_EVIDENCE_PACKAGING_REPAIR",
+      "git_head": "a33c8800377486b4d8ae7ddd67839d682786467f",
+      "outputs": [
+        "0_kernel/registry/restore_ladder_mode_normalization_evidence/mode_normalization_plain_json_evidence_v1.json",
+        "0_kernel/registry/F5_EVIDENCE_PACKAGING_REPAIR_RECEIPT_v1.json"
+      ],
+      "receipt": "0_kernel/registry/F5_EVIDENCE_PACKAGING_REPAIR_RECEIPT_v1.json",
+      "stage": "REPAIR_F5_EVIDENCE_PACKAGING_REMOVE_NESTED_GIT_REPO_ARTIFACT",
+      "supersedes": [
+        "nested_git_repo_evidence_packaging"
+      ],
+      "timestamp": 1777062653.850136,
+      "verdict": "PASS"
+    },
+    {
+      "advances_latest_pass": true,
+      "dependencies": [
+        "F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF"
+      ],
+      "entry_id": "F6_BLOCKED_RECEIPT_HANDLING_RULE",
+      "git_head": "35e020b4ae93bd39333f9f0a9909badada63d59e",
+      "outputs": [
+        "0_kernel/schemas/BLOCKED_RECEIPT_HANDLING_RULE_SCHEMA_v1.json",
+        "0_kernel/schemas/BLOCKED_RECEIPT_HANDLING_RULE_v1.json",
+        "0_kernel/docs/BLOCKED_RECEIPT_HANDLING_RULE_v1.md",
+        "0_kernel/pipeline/BLOCKED_RECEIPT_TEMPLATE_v1.json",
+        "0_kernel/registry/BLOCKED_RECEIPT_HANDLING_RULE_PROOF_v1.json",
+        "0_kernel/registry/F6_TO_F7_HANDOFF_v1.json"
+      ],
+      "receipt": "0_kernel/registry/F6_BLOCKED_RECEIPT_HANDLING_RULE_RECEIPT_v1.json",
+      "stage": "F6_BLOCKED_RECEIPT_HANDLING_RULE",
+      "supersedes": [
+        "ad_hoc_blocked_receipt_handling"
+      ],
+      "timestamp": 1777062946.2118115,
+      "verdict": "PASS"
+    },
+    {
+      "advances_latest_pass": true,
+      "dependencies": [
+        "F6_BLOCKED_RECEIPT_HANDLING_RULE"
+      ],
+      "entry_id": "F7_STABLE_EXPORT_BOOT_RECOVERY_PROOF",
+      "git_head": "2b7447c3a626d028ede86fba7ce970ff082a4a5a",
+      "outputs": [
+        "EXPORT_MANIFEST_v1.json",
+        "EXPORT_PROVENANCE_v1.json",
+        "RESTORE_CONTRACT_v1.json",
+        "CAPABILITY_SET_v1.json",
+        "0_kernel/registry/F7_BOOT_RECOVERY_PROOF_v1.json",
+        "0_kernel/registry/F7_RECOVERY_PROVEN_STABLE_BASELINE_LOCK_v1.json",
+        "0_kernel/registry/F7_TO_E4A_RETURN_HANDOFF_v1.json"
+      ],
+      "receipt": "0_kernel/registry/F7_STABLE_EXPORT_BOOT_RECOVERY_PROOF_RECEIPT_v1.json",
+      "stage": "F7_STABLE_EXPORT_BOOT_RECOVERY_PROOF",
+      "supersedes": [
+        "D4_stable_release_for_current_working_state"
+      ],
+      "timestamp": 1777063110.0673385,
+      "verdict": "PASS"
+    },
+    {
+      "advances_latest_pass": true,
+      "dependencies": [
+        "F7_STABLE_EXPORT_BOOT_RECOVERY_PROOF"
+      ],
+      "entry_id": "E4A_MASTER_PIPELINE_PROOF_SCOPE_LOCK",
+      "git_head": "2551a8b0771bca46d04c1727261936475e276144",
+      "outputs": [
+        "0_kernel/docs/E4A_MASTER_PIPELINE_PROOF_SCOPE_LOCK_v1.md",
+        "0_kernel/registry/E4A_MASTER_PIPELINE_PROOF_SCOPE_CONTRACT_v1.json",
+        "0_kernel/registry/E4A_TO_E4B_HANDOFF_v1.json"
+      ],
+      "receipt": "0_kernel/registry/E4A_MASTER_PIPELINE_PROOF_SCOPE_LOCK_RECEIPT_v1.json",
+      "stage": "E4A_MASTER_PIPELINE_PROOF_SCOPE_LOCK",
+      "supersedes": [
+        "blocked_E4A_attempts_before_recovery_arc"
+      ],
+      "timestamp": 1777063362.4756658,
+      "verdict": "PASS"
+    },
+    {
+      "advances_latest_pass": true,
+      "dependencies": [
+        "E4A_MASTER_PIPELINE_PROOF_SCOPE_LOCK",
+        "PROACTIVE_GOVERNANCE_RESEARCH_SYNTHESIS"
+      ],
+      "entry_id": "G0_EXPORT_RECOVERY_VALIDATOR_SCOPE_LOCK",
+      "git_head": "8e4544b03b0c90ef2235e4c101e19e7cdcfa743f",
+      "outputs": [
+        "0_kernel/docs/G0_EXPORT_RECOVERY_VALIDATOR_SCOPE_LOCK_v1.md",
+        "0_kernel/registry/G0_EXPORT_RECOVERY_VALIDATOR_SCOPE_CONTRACT_v1.json",
+        "0_kernel/registry/G0_EXPORT_RECOVERY_VALIDATOR_GATE_MATRIX_v1.json",
+        "0_kernel/registry/G0_EXPORT_RECOVERY_VALIDATOR_CE_PACKET_v1.json",
+        "0_kernel/registry/G0_EXPORT_RECOVERY_VALIDATOR_SEE_PACKET_v1.json",
+        "0_kernel/registry/G0_TO_G1_HANDOFF_v1.json"
+      ],
+      "receipt": "0_kernel/registry/G0_EXPORT_RECOVERY_VALIDATOR_SCOPE_LOCK_RECEIPT_v1.json",
+      "stage": "G0_EXPORT_RECOVERY_VALIDATOR_SCOPE_LOCK",
+      "supersedes": [
+        "unvalidated_recovery_proven_export_claims"
+      ],
+      "timestamp": 1777064295.6755033,
+      "verdict": "PASS"
+    },
+    {
+      "advances_latest_pass": true,
+      "dependencies": [
+        "G0_EXPORT_RECOVERY_VALIDATOR_SCOPE_LOCK"
+      ],
+      "entry_id": "G1_EXPORT_RECOVERY_VALIDATOR_SCHEMA_AND_CONTRACT",
+      "git_head": "ae4bd36deda258316bed5c3f2a33be654f454ce5",
+      "outputs": [
+        "0_kernel/schemas/EXPORT_RECOVERY_VALIDATOR_INPUT_SCHEMA_v1.json",
+        "0_kernel/schemas/EXPORT_RECOVERY_VALIDATOR_DECISION_SCHEMA_v1.json",
+        "0_kernel/schemas/EXPORT_RECOVERY_PROVEN_VALIDATOR_CONTRACT_v1.json",
+        "0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_GATE_CATALOG_v1.json",
+        "0_kernel/docs/EXPORT_RECOVERY_PROVEN_VALIDATOR_CONTRACT_v1.md",
+        "0_kernel/registry/G1_TO_G2_HANDOFF_v1.json"
+      ],
+      "receipt": "0_kernel/registry/G1_EXPORT_RECOVERY_VALIDATOR_SCHEMA_CONTRACT_RECEIPT_v1.json",
+      "stage": "G1_EXPORT_RECOVERY_VALIDATOR_SCHEMA_AND_CONTRACT",
+      "supersedes": [
+        "prose_only_export_validation_gates"
+      ],
+      "timestamp": 1777064381.6707444,
+      "verdict": "PASS"
+    },
+    {
+      "advances_latest_pass": true,
+      "dependencies": [
+        "G1_EXPORT_RECOVERY_VALIDATOR_SCHEMA_AND_CONTRACT"
+      ],
+      "entry_id": "G2_EXPORT_RECOVERY_VALIDATOR_IMPLEMENTATION",
+      "git_head": "c1b07661259eb2fab0f591bb57491bf37d108e71",
+      "outputs": [
+        "0_kernel/scripts/export_recovery_proven_validator_v1.py",
+        "0_kernel/docs/EXPORT_RECOVERY_PROVEN_VALIDATOR_IMPLEMENTATION_NOTES_v1.md",
+        "0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_SMOKE_DECISION_v1.json",
+        "0_kernel/registry/G2_TO_G3_HANDOFF_v1.json"
+      ],
+      "receipt": "0_kernel/registry/G2_EXPORT_RECOVERY_VALIDATOR_IMPLEMENTATION_RECEIPT_v1.json",
+      "stage": "G2_EXPORT_RECOVERY_VALIDATOR_IMPLEMENTATION",
+      "supersedes": [
+        "manual_export_audit_only"
+      ],
+      "timestamp": 1777064523.0074081,
+      "verdict": "PASS"
+    },
+    {
+      "advances_latest_pass": true,
+      "dependencies": [
+        "G2_EXPORT_RECOVERY_VALIDATOR_IMPLEMENTATION"
+      ],
+      "entry_id": "G3_EXPORT_RECOVERY_VALIDATOR_REGRESSION_FIXTURES",
+      "git_head": "101bb72aafe3db9bafe642b11106ec9c93dfc81b",
+      "outputs": [
+        "0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_REGRESSION_FIXTURES_MANIFEST_v1.json",
+        "0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_REGRESSION_RESULTS_v1.json",
+        "0_kernel/registry/GOVERNANCE_USED_FOR_EXPORT_VALIDATOR_BUILD_v1.json",
+        "0_kernel/docs/GOVERNANCE_USED_FOR_EXPORT_VALIDATOR_BUILD_v1.md",
+        "0_kernel/registry/G3_TO_G4_HANDOFF_v1.json"
+      ],
+      "receipt": "0_kernel/registry/G3_EXPORT_RECOVERY_VALIDATOR_REGRESSION_FIXTURES_RECEIPT_v1.json",
+      "stage": "G3_EXPORT_RECOVERY_VALIDATOR_REGRESSION_FIXTURES",
+      "supersedes": [
+        "unproven_validator_implementation"
+      ],
+      "timestamp": 1777064935.8558538,
+      "verdict": "PASS"
+    },
+    {
+      "advances_latest_pass": true,
+      "dependencies": [
+        "G3_EXPORT_RECOVERY_VALIDATOR_REGRESSION_FIXTURES"
+      ],
+      "entry_id": "G4_RUN_VALIDATOR_AGAINST_F7_EXPORT",
+      "git_head": "c8cb977cda060b556cbd9f7b02063ba4d1602d2a",
+      "outputs": [
+        "0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_G4_F7_DECISION_v1.json",
+        "0_kernel/registry/G4_F7_EXPORT_REPAIR_PLAN_v1.json",
+        "0_kernel/docs/G4_RUN_VALIDATOR_AGAINST_F7_EXPORT_v1.md",
+        "0_kernel/registry/G4_TO_G5_HANDOFF_v1.json"
+      ],
+      "receipt": "0_kernel/registry/G4_RUN_VALIDATOR_AGAINST_F7_EXPORT_RECEIPT_v1.json",
+      "stage": "G4_RUN_VALIDATOR_AGAINST_F7_EXPORT",
+      "supersedes": [
+        "manual_audit_only_F7_failure_claim"
+      ],
+      "timestamp": 1777065053.7146342,
+      "verdict": "PASS"
+    },
+    {
+      "advances_latest_pass": true,
+      "dependencies": [
+        "G4_RUN_VALIDATOR_AGAINST_F7_EXPORT"
+      ],
+      "entry_id": "G5_REPAIRED_RECOVERY_PROVEN_EXPORT",
+      "git_head": "b5367f41216cfb023ba0eff66f400ce4093323d2",
+      "outputs": [
+        "EXPORT_MANIFEST_v1.json",
+        "EXPORT_PROVENANCE_v1.json",
+        "RESTORE_CONTRACT_v1.json",
+        "CAPABILITY_SET_v1.json",
+        "0_kernel/registry/G5_REPAIRED_EXPORT_REPAIR_SUMMARY_v1.json",
+        "0_kernel/docs/G5_REPAIRED_RECOVERY_PROVEN_EXPORT_v1.md",
+        "0_kernel/registry/G5_REPAIRED_RECOVERY_PROVEN_EXPORT_RECEIPT_v1.json",
+        "0_kernel/registry/G5_TO_G6_HANDOFF_v1.json"
+      ],
+      "receipt": "0_kernel/registry/G5_REPAIRED_RECOVERY_PROVEN_EXPORT_RECEIPT_v1.json",
+      "stage": "G5_REPAIRED_RECOVERY_PROVEN_EXPORT",
+      "supersedes": [
+        "F7_invalid_recovery_proven_export"
+      ],
+      "timestamp": 1777065171.3375475,
+      "verdict": "PASS"
+    },
+    {
+      "advances_latest_pass": false,
+      "dependencies": [
+        "G5_REPAIRED_RECOVERY_PROVEN_EXPORT",
+        "external_G5_audit"
+      ],
+      "entry_id": "LEARN_FROM_G5_BUNDLE_AUDIT",
+      "git_head": "7c8c8aa8a4fe206095fd4ef64c91cc1ca8f87fab",
+      "outputs": [
+        "0_kernel/registry/lessons_learned/G5_BUNDLE_AUDIT_LESSONS_LEARNED_v1.json",
+        "0_kernel/docs/G5_BUNDLE_AUDIT_LESSONS_LEARNED_v1.md",
+        "0_kernel/registry/repair_backlog/G5_AUDIT_REPAIR_BACKLOG_v1.json",
+        "0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_G5_AUDIT_DELTA_REQUIREMENTS_v1.json",
+        "0_kernel/registry/G6_PRECONDITION_G5_AUDIT_OPEN_ISSUES_v1.json"
+      ],
+      "receipt": "0_kernel/registry/lessons_learned/G5_BUNDLE_AUDIT_LESSONS_LEARNED_v1.json",
+      "stage": "LEARN_FROM_G5_BUNDLE_AND_GOVERNANCE_BUNDLE_AUDIT",
+      "supersedes": [
+        "treating_G5_as_full_pass_without_audit_delta"
+      ],
+      "timestamp": 1777065653.9249976,
+      "verdict": "PASS"
+    },
+    {
+      "advances_latest_pass": true,
+      "dependencies": [
+        "G5_REPAIRED_RECOVERY_PROVEN_EXPORT",
+        "LEARN_FROM_G5_BUNDLE_AUDIT"
+      ],
+      "entry_id": "G6_RECOVERY_PROOF_BASELINE_LOCK",
+      "git_head": "f4269ed201c2e38432aa1eb329bbe406be9d6310",
+      "outputs": [
+        "EXPORT_MANIFEST_v1.json",
+        "EXPORT_PROVENANCE_v1.json",
+        "RESTORE_CONTRACT_v1.json",
+        "CAPABILITY_SET_v1.json",
+        "0_kernel/registry/G6_TWO_PASS_SELF_CONSISTENT_EXPORT_PLAN_v1.json",
+        "0_kernel/registry/STAGE_DAG_LEDGER_ID_MAP_v1.json",
+        "0_kernel/registry/G6_G5_AUDIT_OPEN_ISSUES_RESOLUTION_v1.json",
+        "0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_G5_REPAIRED_DECISION_v1.json",
+        "0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_G6_DECISION_v1.json",
+        "0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_G6_EXTERNAL_DECISION_v1.json",
+        "0_kernel/registry/G6_RECOVERY_PROOF_v1.json",
+        "0_kernel/registry/G6_RECOVERY_PROVEN_BASELINE_LOCK_v1.json",
+        "0_kernel/docs/G6_RECOVERY_PROOF_BASELINE_LOCK_v1.md",
+        "0_kernel/docs/G6_TWO_PASS_SELF_CONSISTENT_EXPORT_REPAIR_v1.md",
+        "0_kernel/registry/G6_RECOVERY_PROOF_BASELINE_LOCK_RECEIPT_v1.json",
+        "0_kernel/registry/G6_TO_G7_HANDOFF_v1.json"
+      ],
+      "receipt": "0_kernel/registry/G6_RECOVERY_PROOF_BASELINE_LOCK_RECEIPT_v1.json",
+      "stage": "G6_RECOVERY_PROOF_BASELINE_LOCK",
+      "supersedes": [
+        "G5_near_pass_export",
+        "failed_single_pass_G6_lock"
+      ],
+      "timestamp": 1777068405.2285407,
+      "verdict": "PASS"
+    },
+    {
+      "advances_latest_pass": true,
+      "commit_sha": null,
+      "deferred": true,
+      "entry_id": "TEST_PROOF_STAGE_1777174263703",
+      "outputs": [
+        "0_kernel/registry/TEST_PROOF_ARTIFACT_v1.json"
+      ],
+      "reconciliation_history": [
+        {
+          "classification": "root_relative_reconciliation",
+          "created_utc": "2026-04-29T10:34:43Z",
+          "evidence": {
+            "blocked_receipt": "receipts/refactor_program/R13_FINAL_EXPORT_BLOCKED_RECEIPT_20260429T101334Z.json",
+            "canonical_artifact": "0_kernel/registry/TEST_PROOF_ARTIFACT_v1.json",
+            "canonical_sha256": "b7285316a6976896e6ee2b82c76305a1c31d470573358c5e9638ea269a54e0d7",
+            "external_handoff_recorded_sha256": "b7285316a6976896e6ee2b82c76305a1c31d470573358c5e9638ea269a54e0d7"
+          },
+          "field": "outputs",
+          "new_output": "0_kernel/registry/TEST_PROOF_ARTIFACT_v1.json",
+          "old_output": "/home/claude/merge_staging/verify_reextract/Metablooms_OS_refined/0_kernel/registry/TEST_PROOF_ARTIFACT_v1.json",
+          "stage": "R13B_LEDGER_ABSOLUTE_OUTPUT_RECONCILIATION"
+        }
+      ],
+      "stage": "TEST_PROOF_STAGE",
+      "state_ref": "/home/claude/test_stages/TEST_PROOF_STAGE_1777174263703_receipts/COMMIT_DEFERRED_RECEIPT_TEST_PROOF_STAGE_1777174263703.json",
+      "timestamp": 1777174263.721499,
+      "verdict": "PASS"
+    },
+    {
+      "advances_latest_pass": false,
+      "entry_id": "R13B_LEDGER_ABSOLUTE_OUTPUT_RECONCILIATION",
+      "handoff": "receipts/refactor_program/R13B_TO_R13_FINAL_EXPORT_HANDOFF.json",
+      "outputs": [
+        "0_kernel/state/STAGE_STATE_LEDGER_v1.json",
+        "0_kernel/registry/reconciliation/R13B_LEDGER_ABSOLUTE_OUTPUT_RECONCILIATION_DECISION.json",
+        "receipts/refactor_program/R13B_LEDGER_ABSOLUTE_OUTPUT_RECONCILIATION_RECEIPT.json",
+        "receipts/refactor_program/R13B_TO_R13_FINAL_EXPORT_HANDOFF.json"
+      ],
+      "receipt": "receipts/refactor_program/R13B_LEDGER_ABSOLUTE_OUTPUT_RECONCILIATION_RECEIPT.json",
+      "reconciles": [
+        "TEST_PROOF_STAGE_1777174263703"
+      ],
+      "stage": "R13B_LEDGER_ABSOLUTE_OUTPUT_RECONCILIATION",
+      "stopped_before_final_export": true,
+      "timestamp": 1777458883.4061987,
+      "verdict": "PASS"
+    },
+    {
+      "advances_latest_pass": true,
+      "builds_final_export": "METABLOOMS_OS_R13_FINAL_EXPORT_20260429T104000Z.zip",
+      "entry_id": "R13_FINAL_EXPORT_SELF_CONSISTENCY_AUDIT_AND_EXPORT",
+      "handoff": "receipts/refactor_program/R13_FINAL_EXPORT_HANDOFF.json",
+      "outputs": [
+        "0_kernel/state/STAGE_STATE_LEDGER_v1.json",
+        "0_kernel/state/CURRENT_WORKING_BASELINE_POINTER_v1.json",
+        "EXPORT_MANIFEST_v1.json",
+        "EXPORT_PROVENANCE_v1.json",
+        "runtime/governance/export/R13_EXPORT_INTERNAL_METADATA_v1.json",
+        "0_kernel/registry/export/R13_FINAL_EXPORT_DECISION.json",
+        "receipts/refactor_program/R13_FINAL_EXPORT_RECEIPT.json",
+        "receipts/refactor_program/R13_FINAL_EXPORT_HANDOFF.json"
+      ],
+      "receipt": "receipts/refactor_program/R13_FINAL_EXPORT_RECEIPT.json",
+      "stage": "R13_FINAL_EXPORT_SELF_CONSISTENCY_AUDIT_AND_EXPORT",
+      "timestamp": 1777459196.213181,
+      "verdict": "PASS",
+      "zip_sha256_binding": "external_sidecar_required"
+    }
+  ],
+  "latest_pass": "R13_FINAL_EXPORT_SELF_CONSISTENCY_AUDIT_AND_EXPORT",
+  "ledger_id": "STAGE_STATE_LEDGER_v1",
+  "purpose": "Track latest successful governed stages and their outputs so restore does not fall back to stale release ZIPs.",
+  "reconciliation_history": [
+    {
+      "artifact_sha256": "b7285316a6976896e6ee2b82c76305a1c31d470573358c5e9638ea269a54e0d7",
+      "changed_entries": [
+        "TEST_PROOF_STAGE_1777174263703"
+      ],
+      "classification": "root_relative_reconciliation",
+      "created_utc": "2026-04-29T10:34:43Z",
+      "new_output": "0_kernel/registry/TEST_PROOF_ARTIFACT_v1.json",
+      "old_output": "/home/claude/merge_staging/verify_reextract/Metablooms_OS_refined/0_kernel/registry/TEST_PROOF_ARTIFACT_v1.json",
+      "stage": "R13B_LEDGER_ABSOLUTE_OUTPUT_RECONCILIATION"
+    }
+  ],
+  "repair_notes": [
+    {
+      "advances_latest_pass": false,
+      "after_latest_pass": {
+        "advances_latest_pass": true,
+        "dependencies": [
+          "F4_MANIFEST_PROVENANCE_EXPORT_CONTRACT"
+        ],
+        "entry_id": "F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF",
+        "git_head": "107f41b2c2ec3c8d69a94bad7f0d0acd006fbaaf",
+        "outputs": [
+          "0_kernel/schemas/RESTORE_LADDER_SCHEMA_v1.json",
+          "0_kernel/schemas/RESTORE_LADDER_CONTRACT_v1.json",
+          "0_kernel/docs/RESTORE_LADDER_MODE_NORMALIZATION_PROOF_v1.md",
+          "0_kernel/registry/RESTORE_LADDER_MODE_NORMALIZATION_PROOF_v1.json",
+          "0_kernel/registry/F5_TO_F6_HANDOFF_v1.json"
+        ],
+        "receipt": "0_kernel/registry/F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF_RECEIPT_v1.json",
+        "stage": "F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF",
+        "supersedes": [
+          "ad_hoc_restore_selection",
+          "manual_filemode_repair_only"
+        ],
+        "timestamp": 1777062487.867908,
+        "verdict": "PASS"
+      },
+      "before_latest_pass": {
+        "advances_latest_pass": true,
+        "dependencies": [
+          "F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF"
+        ],
+        "entry_id": "F6_BLOCKED_RECEIPT_HANDLING_RULE",
+        "git_head": "f6ce64bcb1ad52a5bf50d503be8ec04019b37571",
+        "outputs": [
+          "0_kernel/schemas/BLOCKED_RECEIPT_HANDLING_RULE_SCHEMA_v1.json",
+          "0_kernel/schemas/BLOCKED_RECEIPT_HANDLING_RULE_v1.json",
+          "0_kernel/docs/BLOCKED_RECEIPT_HANDLING_RULE_v1.md",
+          "0_kernel/pipeline/BLOCKED_RECEIPT_TEMPLATE_v1.json",
+          "0_kernel/registry/BLOCKED_RECEIPT_HANDLING_RULE_PROOF_v1.json",
+          "0_kernel/registry/F6_TO_F7_HANDOFF_v1.json"
+        ],
+        "receipt": "0_kernel/registry/F6_BLOCKED_RECEIPT_HANDLING_RULE_RECEIPT_v1.json",
+        "stage": "F6_BLOCKED_RECEIPT_HANDLING_RULE",
+        "supersedes": [
+          "ad_hoc_blocked_receipt_handling"
+        ],
+        "timestamp": 1777062738.689846,
+        "verdict": "PASS"
+      },
+      "pointer_updated": false,
+      "reason": "F5 evidence packaging repair entry must not advance latest_pass; latest_pass restored to F5 PASS before F6.",
+      "stage": "REPAIR_F6_PRECHECK_RESTORE_F5_AS_LEDGER_LATEST_PASS",
+      "timestamp": 1777062872.8643782
+    },
+    {
+      "after": {
+        "advances_latest_pass": true,
+        "dependencies": [
+          "F4_MANIFEST_PROVENANCE_EXPORT_CONTRACT"
+        ],
+        "entry_id": "F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF",
+        "git_head": "107f41b2c2ec3c8d69a94bad7f0d0acd006fbaaf",
+        "outputs": [
+          "0_kernel/schemas/RESTORE_LADDER_SCHEMA_v1.json",
+          "0_kernel/schemas/RESTORE_LADDER_CONTRACT_v1.json",
+          "0_kernel/docs/RESTORE_LADDER_MODE_NORMALIZATION_PROOF_v1.md",
+          "0_kernel/registry/RESTORE_LADDER_MODE_NORMALIZATION_PROOF_v1.json",
+          "0_kernel/registry/F5_TO_F6_HANDOFF_v1.json"
+        ],
+        "receipt": "0_kernel/registry/F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF_RECEIPT_v1.json",
+        "stage": "F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF",
+        "supersedes": [
+          "ad_hoc_restore_selection",
+          "manual_filemode_repair_only"
+        ],
+        "timestamp": 1777062487.867908,
+        "verdict": "PASS"
+      },
+      "before": {
+        "advances_latest_pass": true,
+        "dependencies": [
+          "F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF"
+        ],
+        "entry_id": "F6_BLOCKED_RECEIPT_HANDLING_RULE",
+        "git_head": "a0f45281e9ba9f483cdf6c62a9ecf382334ee7c5",
+        "outputs": [
+          "0_kernel/schemas/BLOCKED_RECEIPT_HANDLING_RULE_SCHEMA_v1.json",
+          "0_kernel/schemas/BLOCKED_RECEIPT_HANDLING_RULE_v1.json",
+          "0_kernel/docs/BLOCKED_RECEIPT_HANDLING_RULE_v1.md",
+          "0_kernel/pipeline/BLOCKED_RECEIPT_TEMPLATE_v1.json",
+          "0_kernel/registry/BLOCKED_RECEIPT_HANDLING_RULE_PROOF_v1.json",
+          "0_kernel/registry/F6_TO_F7_HANDOFF_v1.json"
+        ],
+        "receipt": "0_kernel/registry/F6_BLOCKED_RECEIPT_HANDLING_RULE_RECEIPT_v1.json",
+        "stage": "F6_BLOCKED_RECEIPT_HANDLING_RULE",
+        "supersedes": [
+          "ad_hoc_blocked_receipt_handling"
+        ],
+        "timestamp": 1777062874.8044477,
+        "verdict": "PASS"
+      },
+      "latest_pass_advanced": false,
+      "pointer_updated": false,
+      "stage": "REPAIR_F6_PRECHECK_RESTORE_F5_AS_LEDGER_LATEST_PASS"
+    },
+    {
+      "after": {
+        "advances_latest_pass": true,
+        "dependencies": [
+          "F4_MANIFEST_PROVENANCE_EXPORT_CONTRACT"
+        ],
+        "entry_id": "F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF",
+        "git_head": "107f41b2c2ec3c8d69a94bad7f0d0acd006fbaaf",
+        "outputs": [
+          "0_kernel/schemas/RESTORE_LADDER_SCHEMA_v1.json",
+          "0_kernel/schemas/RESTORE_LADDER_CONTRACT_v1.json",
+          "0_kernel/docs/RESTORE_LADDER_MODE_NORMALIZATION_PROOF_v1.md",
+          "0_kernel/registry/RESTORE_LADDER_MODE_NORMALIZATION_PROOF_v1.json",
+          "0_kernel/registry/F5_TO_F6_HANDOFF_v1.json"
+        ],
+        "receipt": "0_kernel/registry/F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF_RECEIPT_v1.json",
+        "stage": "F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF",
+        "supersedes": [
+          "ad_hoc_restore_selection",
+          "manual_filemode_repair_only"
+        ],
+        "timestamp": 1777062487.867908,
+        "verdict": "PASS"
+      },
+      "before": {
+        "advances_latest_pass": true,
+        "dependencies": [
+          "F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF"
+        ],
+        "entry_id": "F6_BLOCKED_RECEIPT_HANDLING_RULE",
+        "git_head": "83215087eaedc9b68a74e4f30cf22f0f86f0bbcd",
+        "outputs": [
+          "0_kernel/schemas/BLOCKED_RECEIPT_HANDLING_RULE_SCHEMA_v1.json",
+          "0_kernel/schemas/BLOCKED_RECEIPT_HANDLING_RULE_v1.json",
+          "0_kernel/docs/BLOCKED_RECEIPT_HANDLING_RULE_v1.md",
+          "0_kernel/pipeline/BLOCKED_RECEIPT_TEMPLATE_v1.json",
+          "0_kernel/registry/BLOCKED_RECEIPT_HANDLING_RULE_PROOF_v1.json",
+          "0_kernel/registry/F6_TO_F7_HANDOFF_v1.json"
+        ],
+        "receipt": "0_kernel/registry/F6_BLOCKED_RECEIPT_HANDLING_RULE_RECEIPT_v1.json",
+        "stage": "F6_BLOCKED_RECEIPT_HANDLING_RULE",
+        "supersedes": [
+          "ad_hoc_blocked_receipt_handling"
+        ],
+        "timestamp": 1777062910.175658,
+        "verdict": "PASS"
+      },
+      "latest_pass_advanced": false,
+      "pointer_updated": false,
+      "stage": "REPAIR_F6_PRECHECK_RESTORE_F5_AS_LEDGER_LATEST_PASS"
+    }
+  ],
+  "restore_use": {
+    "use_after_current_working_pointer": true,
+    "use_before_stable_release_zip": true
+  },
+  "status": "active",
+  "updated_at": 1777459196.213184,
+  "updated_at_iso": "2026-04-29T10:39:56.213186Z",
+  "verdict": "PASS",
+  "version": "1.0"
+}

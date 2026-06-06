@@ -1,0 +1,46 @@
+{
+  "browser_constraints": [
+    "no external dependencies",
+    "Google Sites/iPad safe",
+    "no raw PII; student IDs must be pseudonymous"
+  ],
+  "cartridge_id": "telemetry_misconception_v1",
+  "contract_id": "TELEMETRY_CARTRIDGE_CONTRACT_v1",
+  "created_utc": "2026-04-28T03:21:05.115147+00:00",
+  "event_contract": {
+    "correlation": "W3C trace-context-shaped trace_id/span_id/traceparent fields are required for exported canonical events.",
+    "event_names": [
+      "metablooms.learning.attempt",
+      "metablooms.learning.signal",
+      "metablooms.learning.session_summary"
+    ],
+    "required_attribute_prefixes": [
+      "artifact.",
+      "session.",
+      "student.",
+      "question.",
+      "attempt.",
+      "signal."
+    ],
+    "schema": "runtime/governance/schemas/misconception_telemetry_event_schema_v1.json"
+  },
+  "promotion_gates": [
+    "TELEMETRY_CARTRIDGE_VALIDATION",
+    "USEFULNESS_SURFACE_VALIDATION"
+  ],
+  "purpose": "Reusable browser-safe misconception telemetry cartridge for MetaBlooms HTML learning activities.",
+  "receipts_required": [
+    "schema_validation_report",
+    "node_smoke_report",
+    "html_binding_report",
+    "gate_registry_integrity_report"
+  ],
+  "source_artifacts": {
+    "adapter": "2_engines/telemetry/telemetry_event_adapter_v1.js",
+    "demo": "3_data/html_activities/fractions_number_line_telemetry_v1.html",
+    "domain_schema": "runtime/governance/schemas/misconception_telemetry_source_schema_v1.json",
+    "engine": "2_engines/telemetry/MISCONCEPTION_TELEMETRY_ENGINE_v1.js"
+  },
+  "status": "active",
+  "version": "1.0.0"
+}

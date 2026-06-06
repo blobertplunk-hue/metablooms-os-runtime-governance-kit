@@ -1,0 +1,65 @@
+=== DATE ===
+2026-04-28T01:19:27Z
+=== PYTHON ===
+/opt/pyvenv/bin/python3
+Python 3.13.5
+=== SITE PKG DIRS ===
+/opt/pyvenv/bin/python3
+purelib /usr/local/lib/python3.13/dist-packages
+platlib /usr/local/lib/python3.13/dist-packages
+stdlib /usr/lib/python3.13
+=== TOP LEVEL /opt ===
+total 48
+drwxr-xr-x 2 root root         60 Apr 28 01:13 .
+drwxr-xr-x 2 root root        200 Apr 28 01:13 ..
+drwxr-xr-x 2 root root       4096 Apr 21 01:48 apply_patch
+drwxr-xr-x 2 root root       4096 Apr  8 23:45 entrypoint
+drwxr-xr-x 2 root root       4096 Mar  5 07:24 granola-cli
+drwxr-xr-x 2 root root       4096 Feb  6 19:25 imagemagick
+drwxr-xr-x 2 root root       4096 Jan 29 02:01 novnc
+drwxrwsr-x 2 oai  oai_shared 4096 Jan 29 02:02 nvm
+drwxr-xr-x 2 root root       4096 Apr  8 23:45 pdf_reader_service
+drwxr-xr-x 2 root root         80 Apr 28 01:14 python-hooks
+drwxr-xr-x 2 root root       4096 Apr 17 23:32 python-tool
+drwxrwsr-x 2 oai  oai_shared 4096 Apr 21 01:47 pyvenv
+drwxr-xr-x 2 root root       4096 Apr 20 19:13 pyvenv-python-tool
+drwxr-xr-x 2 root root       4096 Apr  8 23:45 scripts
+drwxr-xr-x 2 root root       4096 Feb  6 00:50 terminal-server
+=== python-hooks tree ===
+2026-04-28 01:13:18.5630473730 /opt/python-hooks/sitecustomize.py
+2026-04-28 01:14:10.4946171860 /opt/python-hooks
+2026-04-28 01:14:10.4949106620 /opt/python-hooks/__pycache__/sitecustomize.cpython-313.pyc
+2026-04-28 01:14:10.4951405550 /opt/python-hooks/__pycache__
+=== pyvenv site-packages selected ===
+2026-02-06 02:09:22.0000000000 /opt/pyvenv/lib/python3.13/site-packages/distutils-precedence.pth
+2026-02-06 02:11:46.0000000000 /opt/pyvenv/lib/python3.13/site-packages/a1_coverage.pth
+2026-04-21 01:48:01.0000000000 /opt/pyvenv/lib/python3.13/site-packages/000_oai_py_sys_path_prepend.pth
+2026-04-21 01:48:01.0000000000 /opt/pyvenv/lib/python3.13/site-packages/oai_py_sys_path_prepend.py
+2026-04-21 01:49:16.0000000000 /opt/pyvenv/lib/python3.13/site-packages/__pycache__/oai_py_sys_path_prepend.cpython-313.pyc
+2026-04-21 21:29:17.0000000000 /opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool
+=== pip list subset ===
+=== env subset ===
+ARTIFACT_TOOL_GRANOLA_CLI_PATH=/opt/granola-cli/bin/granola
+CAAS_ARTIFACTORY_BASE_URL=packages.applied-caas-gateway1.internal.api.openai.org
+CAAS_ARTIFACTORY_CARGO_REGISTRY=packages.applied-caas-gateway1.internal.api.openai.org/artifactory/api/cargo/cargo-public/index
+CAAS_ARTIFACTORY_DOCKER_REGISTRY=packages.applied-caas-gateway1.internal.api.openai.org/dockerhub-public
+CAAS_ARTIFACTORY_GO_REGISTRY=packages.applied-caas-gateway1.internal.api.openai.org/artifactory/api/go/golang-main
+CAAS_ARTIFACTORY_GRADLE_REGISTRY=packages.applied-caas-gateway1.internal.api.openai.org/artifactory/gradle-public
+CAAS_ARTIFACTORY_MAVEN_REGISTRY=packages.applied-caas-gateway1.internal.api.openai.org/artifactory/maven-public
+CAAS_ARTIFACTORY_NPM_REGISTRY=packages.applied-caas-gateway1.internal.api.openai.org/artifactory/api/npm/npm-public
+CAAS_ARTIFACTORY_PYPI_REGISTRY=packages.applied-caas-gateway1.internal.api.openai.org/artifactory/api/pypi/pypi-public
+CAAS_ARTIFACTORY_READER_PASSWORD=Ng8dn2S9KnC7klDG
+CAAS_ARTIFACTORY_READER_USERNAME=reader
+CUA_DD_INIT_ARTIFACT_TOOL_V2=true
+CUA_DD_INIT_ARTIFACT_TOOL_V2_ALIAS=
+CUA_DD_INIT_ARTIFACT_TOOL_V2_RECORD_OPERATIONS=true
+CUA_DD_INIT_MULTIKERNEL_JUPYTER_SERVER=false
+CUA_DD_INIT_MULTIKERNEL_JUPYTER_SERVER_USER=oai
+CUA_DD_PYTHON_TOOL=true
+CUA_DD_PYTHON_TOOL_USER=oai
+CUA_DD_PYTHON_TOOL_WARM_SPREADSHEET_RUNTIME=true
+ENABLE_MATPLOTLIB_JUPYTER_SERVER=true
+JUPYTER_NOTEBOOK_PORT=8888
+JUPYTER_SERVER_API_PORT=8080
+JUPYTER_SERVER_LOG_CONFIG=/opt/python-tool/uvicorn_logging.config
+JUPYTER_SERVER_OAI_PATH=/opt/python-tool/openai

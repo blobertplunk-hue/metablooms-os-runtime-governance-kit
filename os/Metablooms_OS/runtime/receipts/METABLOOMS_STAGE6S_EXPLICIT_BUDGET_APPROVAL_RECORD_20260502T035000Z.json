@@ -1,0 +1,16 @@
+{
+  "approval_source": "user_stage_command",
+  "decision": "APPROVED_FOR_STAGE6S_EXPORT_ONLY",
+  "limits": {
+    "crc_required": true,
+    "fresh_extract_required": true,
+    "no_additional_repair": true,
+    "one_stage": true,
+    "pointer_coherence_required": true
+  },
+  "requested_action": "Create BOOTABLE FULL OS AUTHORITY ZIP after Stage 6N through 6R.",
+  "schema": "MetaBloomsExplicitExportBudgetApproval_v1",
+  "scope": "whole /mnt/data/Metablooms_OS tree with Stage 6N, 6O, 6P, 6Q, 6Q Repair, and 6R artifacts included.",
+  "stage": "STAGE6S_FULL_AUTHORITY_EXPORT_AFTER_STAGE6N_TO_6R",
+  "timestamp_utc": "2026-05-02T03:32:44Z"
+}

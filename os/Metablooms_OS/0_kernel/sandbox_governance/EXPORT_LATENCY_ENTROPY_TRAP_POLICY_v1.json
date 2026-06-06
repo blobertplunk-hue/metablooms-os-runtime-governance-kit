@@ -1,0 +1,10 @@
+{
+  "id": "EXPORT_LATENCY_ENTROPY_TRAP_POLICY_v1",
+  "required_controls": [
+    "bounded command timeouts",
+    "scoped smoke tests",
+    "manifest checks",
+    "timeout receipts"
+  ],
+  "risk": "verification cost grows with OS size and can cause timeout loops"
+}

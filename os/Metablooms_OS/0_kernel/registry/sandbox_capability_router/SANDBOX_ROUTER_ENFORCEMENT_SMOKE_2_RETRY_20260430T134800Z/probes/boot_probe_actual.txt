@@ -1,0 +1,2 @@
+boot_probe_root=/mnt/data/Metablooms_OS
+write_probe=ok

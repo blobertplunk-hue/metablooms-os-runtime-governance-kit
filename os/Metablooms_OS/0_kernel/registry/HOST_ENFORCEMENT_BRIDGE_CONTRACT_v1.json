@@ -1,0 +1,14 @@
+{
+  "artifact_type": "HOST_ENFORCEMENT_BRIDGE_CONTRACT_v1",
+  "contract": [
+    "All MetaBlooms work begins by loading BOOT_REQUIRED_GATES_v1 through boot_critical_governance_loader_v1.py.",
+    "The boot executor must invoke the loader and report loader verdict in the boot receipt.",
+    "The chat governance kernel remains the always-on turn controller; the router is subordinate to it.",
+    "The scatter validator blocks promotion when governance files exist in controlled paths but are not registered.",
+    "A complete-system export is not promotable unless fresh extraction proves these checks still pass."
+  ],
+  "created_utc": "2026-04-30T21:45:00Z",
+  "host_limit_note": "A ZIP cannot force the ChatGPT model host to call code. This contract closes the OS-level gap by making any MetaBlooms OS stage invalid unless the first stage action calls the loader and writes evidence.",
+  "problem": "Prior gates were created as artifacts but were not always invoked at chat start or export promotion, so they disappeared or were bypassed in later OS iterations.",
+  "stage_id": "H0C1_BOOT_CRITICAL_GOVERNANCE_CONSOLIDATION_AND_HOST_ENFORCEMENT_BRIDGE"
+}

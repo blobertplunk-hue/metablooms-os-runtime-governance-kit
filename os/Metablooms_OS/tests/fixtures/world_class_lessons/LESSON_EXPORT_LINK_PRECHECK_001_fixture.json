@@ -1,0 +1,21 @@
+{
+  "expected_decision": "pass_when_gate_artifacts_present_else_fail",
+  "fixture_type": "lesson_promotion_regression",
+  "gate_under_test": "EXPORT_LINK_PRECHECK_GATE",
+  "lesson_id": "LESSON_EXPORT_LINK_PRECHECK_001",
+  "must_block_if": [
+    "evidence_paths_empty",
+    "fixture_missing",
+    "stage_exit_prompt_missing",
+    "successful_stage_without_bootable_full_authority_when_possible"
+  ],
+  "must_require": {
+    "artifact_evidence_paths": [
+      "runtime/receipts/browser_render_capability_probe_20260502T223422Z/BROWSER_RENDER_CAPABILITY_PROBE_RECEIPT.json",
+      "runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT_20260502T142018Z/FULL_EXPORT_MANIFEST.json"
+    ],
+    "prevention_claim": "Prevents false claims of downloadable boot authorities."
+  },
+  "problem_class": "download_link_exposure_failure",
+  "schema_version": "v1"
+}

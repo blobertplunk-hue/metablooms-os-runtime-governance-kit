@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "created_at": 1777061460.1171045,
+  "from_stage": "F0_RECOVERY_ARCHITECTURE_SCOPE_LOCK",
+  "to_stage": "F1_CURRENT_WORKING_BASELINE_POINTER_CONTRACT",
+  "status": "ready",
+  "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F0_RECOVERY_ARCHITECTURE_SCOPE_LOCK_RECEIPT_v1.json",
+  "scope_contract": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F0_RECOVERY_ARCHITECTURE_SCOPE_CONTRACT_v1.json",
+  "next_command": "EXECUTE F1 \u2014 CURRENT WORKING BASELINE POINTER CONTRACT"
+}

@@ -1,0 +1,9 @@
+{
+  "id":"RUNAWAY_TURN_BREAKER_v2",
+  "status":"active",
+  "gate":"RUNAWAY_TURN_GATE",
+  "description":"Governed turns must be one bounded chunk with timeout, max files/bytes/steps, receipt, tracker, and stop condition.",
+  "failure_action":"DENY_STAGE_EXECUTION",
+  "source":"project-files boot overlay",
+  "scope":"runtime_governance_overlay"
+}

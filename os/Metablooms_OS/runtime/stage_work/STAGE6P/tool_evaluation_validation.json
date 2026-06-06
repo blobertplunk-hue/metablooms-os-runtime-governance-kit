@@ -1,0 +1,11 @@
+{
+  "covered_candidate_count": 1,
+  "missing_candidates": [],
+  "reasons": [],
+  "required_candidate_count": 1,
+  "schema": "TOOL_SELECTION_SUFFICIENCY_GATE_RESULT_v1",
+  "selected_tool_id": "bts_wrapped_filesystem_write",
+  "timestamp_utc": "2026-05-02T02:55:36.149288Z",
+  "top_allowed_tool_id": "bts_wrapped_filesystem_write",
+  "verdict": "PASS"
+}

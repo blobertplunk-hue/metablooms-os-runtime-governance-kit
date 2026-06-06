@@ -1,0 +1,15 @@
+{
+  "cmd": [
+    "python3",
+    "-S",
+    "/mnt/data/Metablooms_OS/runtime/governance/runtime_starter_smoke_v1.py",
+    "--zip",
+    "/mnt/data/METABLOOMS_OS_BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE5_FULL_AUTHORITY_20260502T152058Z.zip",
+    "--json"
+  ],
+  "duration_s": 0.19,
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "{\n  \"decision\": \"ALLOW\",\n  \"invalid_json\": [],\n  \"missing\": [],\n  \"mode\": \"zip\",\n  \"path\": \"/mnt/data/METABLOOMS_OS_BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE5_FULL_AUTHORITY_20260502T152058Z.zip\",\n  \"read_errors\": []\n}\n",
+  "timeout": false
+}

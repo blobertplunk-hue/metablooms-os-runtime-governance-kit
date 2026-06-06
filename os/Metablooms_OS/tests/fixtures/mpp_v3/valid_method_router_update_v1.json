@@ -1,0 +1,14 @@
+{
+  "blocking": false,
+  "created_at": "2026-05-01T00:40:42.746507+00:00",
+  "decision": "PROMOTE",
+  "evidence_refs": [
+    "R20_FINAL_PASS"
+  ],
+  "method_id": "METHOD-001",
+  "reason": "reliability_score=1.0 status=promoted",
+  "result_hash": "736fc5371dc32ed45366c74fa242b2a58ec8a79f511e833188852a462f1067b0",
+  "schema_version": "mpp.method_router_update.v1",
+  "source_packet_id": "LEARN-20260501T004042Z",
+  "update_id": "METHOD-UPDATE-20260501T004042Z-METHOD-001"
+}

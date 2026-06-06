@@ -1,0 +1,26 @@
+{
+  "artifact_type": "H0C1_BOOT_CRITICAL_GOVERNANCE_IMPLEMENTATION_RECEIPT_v1",
+  "created_utc": "2026-04-30T21:45:00Z",
+  "implemented_files": [
+    "0_kernel/registry/BOOT_REQUIRED_GATES_v1.json",
+    "0_kernel/registry/GOVERNANCE_SCATTER_PREVENTION_POLICY_v1.json",
+    "0_kernel/registry/HOST_ENFORCEMENT_BRIDGE_CONTRACT_v1.json",
+    "0_kernel/registry/H0C1_BOOT_CRITICAL_GOVERNANCE_IMPLEMENTATION_RECEIPT_v1.json",
+    "0_kernel/registry/H0C1_BOOT_CRITICAL_GOVERNANCE_HANDOFF_v1.json",
+    "runtime/governance/boot_critical_governance_loader_v1.py",
+    "runtime/governance/governance_scatter_prevention_v1.py",
+    "runtime/evals/boot_critical_governance/H0C1_test_boot_critical_governance.py",
+    "runtime/evals/boot_critical_governance/fixtures/valid_boot_critical_packet.json",
+    "runtime/evals/boot_critical_governance/fixtures/deny_missing_chat_kernel.json",
+    "runtime/evals/boot_critical_governance/H0C1_BEHAVIOR_TEST_RESULTS.json",
+    "runtime/plans/H0C1_CODING_PLAN_v1.json",
+    "runtime/research/H0C1_SEE_RESEARCH_DIGEST_v1.json",
+    "runtime/research/H0C1_CE_SYNTHESIS_v1.json",
+    "runtime/state/H0C1_TRACKER_PREVIEW.txt"
+  ],
+  "source_sha256": "0051857e9910613616e1d5a807fdc6d76717b95df1d006f2b81e93b6b7f66dfa",
+  "source_zip": "/mnt/data/METABLOOMS_OS_H0B2C_DUPLICATE_FREE_CLEAN_AUTHORITY_FINAL_20260430T201500Z.zip",
+  "stage_id": "H0C1_BOOT_CRITICAL_GOVERNANCE_CONSOLIDATION_AND_HOST_ENFORCEMENT_BRIDGE",
+  "status": "PENDING_FINAL_EXPORT_VALIDATION_FILLED_BY_EXTERNAL_RECEIPT",
+  "tests": "runtime/evals/boot_critical_governance/H0C1_BEHAVIOR_TEST_RESULTS.json"
+}

@@ -1,0 +1,15 @@
+{
+  "artifact_type": "CE_SYNTHESIS",
+  "constraints": [
+    "Do not modify active baseline promotion state.",
+    "Treat always-on MetaBlooms governance as mandatory baseline governance; cartridge governance is additive.",
+    "Verify artifacts against expectations before increasing trust.",
+    "Keep FL16 BLOCKED_NOT_PROMOTED distinct from FL17 export/package PASS.",
+    "Update tracker state evidence to current receipt/handoff; reject stale tracker state.",
+    "Use compact tracker only; no box or pipe layout."
+  ],
+  "created_utc": "20260430T014908Z",
+  "decision": "Build a repaired full OS candidate from the FL17-MERGE-5 candidate with 5R validation artifacts and corrected tracker evidence, then validate with bounded archive-native recovery proof.",
+  "root_cause": "Prior FL17-MERGE-5 used heavy external archive commands/full extraction as promotion gates; those timed out even though archive-native Python checks complete quickly. The fix is a bounded recovery proof using checksum, central directory, unsafe-path scan, zipfile.testzip, and selective extraction/read of boot-critical artifacts.",
+  "stage_id": "FL17-MERGE-5R_RECOVERY_PROOF_REPAIR"
+}

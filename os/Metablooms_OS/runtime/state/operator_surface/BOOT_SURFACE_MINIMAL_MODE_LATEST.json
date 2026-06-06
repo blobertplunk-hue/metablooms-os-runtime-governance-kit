@@ -1,0 +1,100 @@
+{
+  "artifact_type": "MB_BOOT_SURFACE_MINIMAL_MODE.v1",
+  "authority": {
+    "authority_zip": "METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_MINIMAL_MOBILE_FINAL_AUTHORITY_LOCKED_20260502T180500Z.zip",
+    "canonical_working_root": "/mnt/data/Metablooms_OS",
+    "new_stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING",
+    "prior_stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS",
+    "sidecar": "METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_MINIMAL_MOBILE_FINAL_AUTHORITY_LOCKED_20260502T180500Z.zip.sha256"
+  },
+  "blocker_state": {
+    "active_blockers": 0,
+    "cluster_count": 2,
+    "safe_to_continue": true
+  },
+  "created_utc": "20260502T175921Z",
+  "deep_links": [
+    {
+      "href": "OPEN_OPERATOR_VISUAL_TRACKER.html",
+      "kind": "html",
+      "label": "Operator tracker",
+      "path": "OPEN_OPERATOR_VISUAL_TRACKER.html"
+    },
+    {
+      "href": "runtime/state/operator_surface/LIVE_BOOT_GUIDANCE_LATEST.json",
+      "kind": "json",
+      "label": "Live boot guidance JSON",
+      "path": "runtime/state/operator_surface/LIVE_BOOT_GUIDANCE_LATEST.json"
+    },
+    {
+      "href": "runtime/state/operator_surface/LIVE_BOOT_GUIDANCE_LATEST.md",
+      "kind": "markdown",
+      "label": "Live boot guidance Markdown",
+      "path": "runtime/state/operator_surface/LIVE_BOOT_GUIDANCE_LATEST.md"
+    },
+    {
+      "href": "0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+      "kind": "markdown",
+      "label": "New-chat contract",
+      "path": "0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md"
+    },
+    {
+      "href": "runtime/traces/observability/HISTORICAL_CALLSITE_QUARANTINE_INDEX_LATEST.json",
+      "kind": "json",
+      "label": "Historical quarantine index",
+      "path": "runtime/traces/observability/HISTORICAL_CALLSITE_QUARANTINE_INDEX_LATEST.json"
+    },
+    {
+      "href": "0_kernel/validators/validate_observability_trace_span_ledger_stage9_live_boot_guidance_v1.py",
+      "kind": "python",
+      "label": "Stage 9 validator",
+      "path": "0_kernel/validators/validate_observability_trace_span_ledger_stage9_live_boot_guidance_v1.py"
+    },
+    {
+      "href": "runtime/state/operator_surface/BOOT_SURFACE_MINIMAL_MODE_LATEST.json",
+      "kind": "json",
+      "label": "Minimal mode JSON",
+      "path": "runtime/state/operator_surface/BOOT_SURFACE_MINIMAL_MODE_LATEST.json"
+    },
+    {
+      "href": "0_kernel/validators/validate_observability_trace_span_ledger_stage10_minimal_mobile_v1.py",
+      "kind": "python",
+      "label": "Stage 10 validator",
+      "path": "0_kernel/validators/validate_observability_trace_span_ledger_stage10_minimal_mobile_v1.py"
+    }
+  ],
+  "evidence_sources": [
+    "runtime/state/operator_surface/LIVE_BOOT_GUIDANCE_LATEST.json",
+    "runtime/traces/observability/TRACE_SPAN_LEDGER_INDEX_LATEST.json",
+    "runtime/traces/observability/FAILURE_CLUSTER_REPORT_LATEST.json",
+    "runtime/traces/observability/METHOD_RELIABILITY_LEDGER_LATEST.json",
+    "OPEN_OPERATOR_VISUAL_TRACKER.html"
+  ],
+  "issues": [],
+  "minimal_mode": {
+    "default_mode": "minimal",
+    "headline": "Do this now",
+    "one_screen_goal": "Show current boot action, authority, blocker state, and evidence links without requiring raw receipt reading.",
+    "progressive_disclosure": "Detailed receipts, trace summaries, and historical evidence are hidden in details drawers by default."
+  },
+  "mobile_hardening": {
+    "command_wrapping": "overflow-wrap:anywhere; word-break:break-word",
+    "details_drawers": [
+      "Current live steps",
+      "Deep links",
+      "Trace and failure summary",
+      "Receipts and handoff"
+    ],
+    "horizontal_scroll": "disabled at body level",
+    "layout": "single-column-first",
+    "touch_target_min_px": 48,
+    "viewport": "width=device-width, initial-scale=1"
+  },
+  "primary_action": {
+    "command_or_path": "runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py --root /mnt/data/Metablooms_OS --json",
+    "evidence_path": "runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+    "label": "Run runtime starter smoke through the wrapper only."
+  },
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING",
+  "verdict": "PASS"
+}

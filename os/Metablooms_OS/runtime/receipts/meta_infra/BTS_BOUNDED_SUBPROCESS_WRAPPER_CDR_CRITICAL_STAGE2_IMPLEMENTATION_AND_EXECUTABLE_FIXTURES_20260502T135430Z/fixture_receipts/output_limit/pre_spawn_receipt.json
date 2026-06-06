@@ -1,0 +1,12 @@
+{
+  "argv_resolved": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "-c",
+    "print(\"x\"*5000)"
+  ],
+  "created_utc": "20260502T135431Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision": "ALLOW_SPAWN",
+  "timeout_seconds": 5
+}

@@ -1,0 +1,29 @@
+{
+  "action_type": "export",
+  "approval_token": "STAGE6F_DRYRUN_APPROVAL",
+  "artifacts": {
+    "read_paths": [
+      "/mnt/data/Metablooms_OS",
+      "/mnt/data/Metablooms_OS/runtime/tooling/governed_install_profiles/node_zip_authority_repair_v1",
+      "/mnt/data/metablooms_stage4c_node_stream_rebuild_20260501T233500Z"
+    ],
+    "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/STAGE6F_FULL_EXPORT_BUDGET_DRYRUN_20260502T022600Z_node_zip_profile_export.decision.json",
+    "write_paths": [
+      "/mnt/data/STAGE6F_DRYRUN_FULL_AUTHORITY_SHOULD_DEFER.zip"
+    ]
+  },
+  "envelope_id": "STAGE6F_FULL_EXPORT_BUDGET_DRYRUN_20260502T022600Z_node_zip_profile_export",
+  "intent": "Dry-run full OS authority export budget check through Node ZIP profile",
+  "limits": {
+    "max_bytes": 58566624,
+    "max_files": 3111,
+    "max_steps": 40,
+    "timeout_seconds": 90
+  },
+  "requested_at_utc": "2026-05-02T00:48:33.465485Z",
+  "requires_see": false,
+  "risk_tier": "critical",
+  "schema_version": "ToolCallEnvelope_v1",
+  "stage_id": "STAGE6F",
+  "tool_name": "bts_wrapped_node_zip_profile_export"
+}

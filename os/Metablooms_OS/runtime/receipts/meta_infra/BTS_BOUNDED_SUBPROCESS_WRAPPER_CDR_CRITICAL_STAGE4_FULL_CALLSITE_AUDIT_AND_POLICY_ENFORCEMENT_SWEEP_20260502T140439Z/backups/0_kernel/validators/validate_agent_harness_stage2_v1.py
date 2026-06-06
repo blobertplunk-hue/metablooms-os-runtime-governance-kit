@@ -1,0 +1,48 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+import json, subprocess, sys, py_compile
+from pathlib import Path
+
+def root():
+    p=Path(__file__).resolve()
+    for q in [p.parent,*p.parents]:
+        if (q/'boot_manifest_v1.json').exists() and (q/'0_kernel').exists(): return q
+    return Path.cwd()
+def load(p): return json.loads(Path(p).read_text(encoding='utf-8'))
+def main():
+    r=root(); required=[
+      r/'0_kernel/registry/agent_harness/MB_AGENT_HARNESS_STAGE_GRAPH_SPEC_v2.json',
+      r/'0_kernel/registry/agent_harness/MB_AGENT_HARNESS_PARALLEL_ROLE_POLICY_v1.json',
+      r/'0_kernel/registry/agent_harness/MB_AGENT_HARNESS_WORKPACKET_SCHEMA_v2.json',
+      r/'0_kernel/scripts/agent_harness_parallel_workpacket_planner_v1.py',
+      r/'0_kernel/scripts/agent_harness_diff_review_v1.py',
+      r/'docs/agent_harness/AGENT_HARNESS_STAGE2_PARALLEL_WORKPACKETS_DIFF_REVIEW.md'
+    ]
+    missing=[str(p) for p in required if not p.exists()]
+    issues=[]; smoke={}
+    for p in required:
+        if p.suffix=='.py' and p.exists():
+            try: py_compile.compile(str(p), doraise=True)
+            except Exception as e: issues.append('compile_failed:'+str(p)+':'+str(e))
+    if not missing:
+        spec=load(required[0]); schema=load(required[2]); nodes=spec.get('stage_graph',{}).get('nodes',[])
+        if len(nodes)<8: issues.append('stage2_node_count_below_8')
+        if 'parallelizable_groups' not in spec.get('stage_graph',{}): issues.append('missing_parallelizable_groups')
+        if 'diff_review_rule' not in schema: issues.append('missing_diff_review_rule')
+    planner=r/'0_kernel/scripts/agent_harness_parallel_workpacket_planner_v1.py'
+    diff=r/'0_kernel/scripts/agent_harness_diff_review_v1.py'
+    if planner.exists():
+        cp=subprocess.run(['python3','-S',str(planner),'--stage','AGENT_HARNESS_STAGE2_VALIDATOR_SMOKE','--write-plan','--parallel-plan','--json'],cwd=str(r),text=True,capture_output=True,timeout=60)
+        smoke['planner']={'rc':cp.returncode,'stdout_tail':cp.stdout[-1500:],'stderr_tail':cp.stderr[-500:]}
+        if cp.returncode!=0: issues.append('planner_smoke_failed')
+    if diff.exists():
+        cp=subprocess.run(['python3','-S',str(diff),'--stage','AGENT_HARNESS_STAGE2_VALIDATOR_SMOKE','--json'],cwd=str(r),text=True,capture_output=True,timeout=60)
+        smoke['diff_review']={'rc':cp.returncode,'stdout_tail':cp.stdout[-1500:],'stderr_tail':cp.stderr[-500:]}
+        if cp.returncode!=0: issues.append('diff_review_smoke_failed')
+    verdict='PASS' if not missing and not issues else 'FAIL'
+    out={'artifact_type':'AGENT_HARNESS_STAGE2_VALIDATION_v1','verdict':verdict,'missing':missing,'issues':issues,'smoke':smoke}
+    (r/'runtime/evals/agent_harness').mkdir(parents=True,exist_ok=True)
+    (r/'runtime/evals/agent_harness/AGENT_HARNESS_STAGE2_VALIDATION_LATEST.json').write_text(json.dumps(out,indent=2,sort_keys=True)+'\n')
+    print(json.dumps(out,indent=2,sort_keys=True))
+    return 0 if verdict=='PASS' else 2
+if __name__=='__main__': raise SystemExit(main())

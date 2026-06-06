@@ -1,0 +1,53 @@
+{
+  "receipt_type": "GW5U0_ENVIRONMENT_VALIDATION_RECEIPT",
+  "stage": "GW5U0_VALIDATE_METABLOOMS_BUILD_PLAN_ENVIRONMENT_AND_PATH_ASSUMPTIONS",
+  "created_utc": "2026-04-26T03:18:00Z",
+  "runner": "shell_only + python3_bounded",
+  "baseline_sha_verified": "c7981682ca5978683cb977f4db56344c273113ba8d5da7ace850fd1ac427e2ae",
+  "mutations": 0,
+
+  "block_results": {
+    "B1_candidate_zip": "PASS — SHA match, 831 entries, 691 files extracted",
+    "B2_script_inventory": "PASS — 12/12 existing scripts found, 5/5 to-build correctly absent, libcst 318 vendor files present",
+    "B3_governance_artifacts": "PASS — 21/21 key files present including all 5 sidecar namespace files",
+    "B4_contract_parseability": "PASS — 11/11 JSON files parse clean; 10 pipeline stages confirmed; 8 runner phases confirmed",
+    "B5_known_issues": "PASS — all 5 known issues confirmed correctly scoped: arb not in registry, runner absent, P-1 absent, GIT_COMMIT unconditional, HEAVY_WORK_CLASS_ENUM absent",
+    "B6_python_runtime": "PASS — Python 3.12.3, trigger_router runs and routes correctly, governed_run responds, libcst importable from vendor, staging dirs creatable"
+  },
+
+  "path_assumption_findings": {
+    "canonical_tree_root": "Metablooms_OS_refined/ (inside ZIP)",
+    "scripts_path": "Metablooms_OS_refined/0_kernel/scripts/",
+    "vendor_libcst_path": "Metablooms_OS_refined/0_kernel/vendor/python/libcst/",
+    "sidecar_namespace": "Metablooms_OS_refined/0_kernel/registry/arb_shell_safe_sidecar/",
+    "runaway_contracts": "Metablooms_OS_refined/0_kernel/registry/ (AUTO_RUNAWAY_* files)",
+    "note_for_chatgpt": "In ChatGPT /mnt/data, all paths will be /mnt/data/Metablooms_OS_refined/... — validate this on load"
+  },
+
+  "confirmed_for_build": [
+    "12 existing scripts ready to serve as integration targets",
+    "TRANSACTIONAL_STAGE_RUNNER_CONTRACT_v1.json parseable — ready for implementation reference",
+    "TRANSACTIONAL_STAGE_STATE_MACHINE_v1.json parseable — ready for implementation reference",
+    "trigger_router_evaluator_v1.py executable and routing correctly",
+    "libcst available from vendor — code patching scripts can use it",
+    "_stage/ and workflow_sidecars/ directories creatable in runtime"
+  ],
+
+  "chatgpt_validation_required": [
+    "Verify /mnt/data/Metablooms_OS_refined/ exists and SHA of candidate ZIP matches c7981682...",
+    "Verify Python available at runtime (not just bash)",
+    "Verify git available and repo exists at /mnt/data/Metablooms_OS_refined/ (or record as deferred)",
+    "Verify web.run available for SEE passes outside container execution",
+    "Verify METABLOOMS_TOOL_FAILURE_AND_FALLBACK_ROUTER_v1.json path (expected in tool_governance/)"
+  ],
+
+  "amendments_needed_before_build": [
+    "AMEND-0009: Add P-1 TOOL_ROUTE_GUARD to TRANSACTIONAL_STAGE_RUNNER_CONTRACT_v1.json",
+    "Patch P5_COMMIT: add conditional_on_git_available flag",
+    "Add HEAVY_WORK_CLASS_ENUM_v1 to AUTO_RUNAWAY_BREAKER_GOVERNANCE context"
+  ],
+
+  "next_correct_stage": "BUILD P-1 TOOL_ROUTE_GUARD CONTRACT PATCH + HEAVY_WORK_CLASS_ENUM_v1",
+  "cleared_for_build": true,
+  "overall_verdict": "PASS — environment assumptions validated from Claude side; ChatGPT must complete /mnt/data checks before first build stage"
+}

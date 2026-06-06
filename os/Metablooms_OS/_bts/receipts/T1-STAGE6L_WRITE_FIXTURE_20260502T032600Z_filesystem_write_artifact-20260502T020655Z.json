@@ -1,0 +1,11 @@
+{
+  "receipt_id": "T1-STAGE6L_WRITE_FIXTURE_20260502T032600Z_filesystem_write_artifact-20260502T020655Z",
+  "tier": "T1",
+  "artifact": "/mnt/data/Metablooms_OS/runtime/tmp/STAGE6L_WRAPPED_WRITE_FIXTURE.txt",
+  "sha256": "64f36a7a7e3f3707f1a1791ca72afd378cf3945897092d28c5b10bcf44ba7ccf",
+  "bytes_size": 31,
+  "prior_sha256": "",
+  "stdout_proof": "",
+  "timestamp": "2026-05-02T02:06:55.704961Z",
+  "turn_id": "STAGE6L_WRITE_FIXTURE_20260502T032600Z"
+}

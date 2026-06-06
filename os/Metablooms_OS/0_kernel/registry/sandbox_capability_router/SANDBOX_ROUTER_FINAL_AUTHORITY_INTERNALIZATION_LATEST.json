@@ -1,0 +1,205 @@
+{
+  "artifact_type": "metablooms_authority_internalization_pointer",
+  "authority_scope": "current_project_file_authority_metadata_overlay",
+  "enforcement_contract": {
+    "default_evaluator": "python3 -S policy evaluator",
+    "fallback_evaluator": "timeout-bounded Node enforcer",
+    "forbidden_methods": [
+      "hardlink_mutable_zip_candidate",
+      "blind_full_extract_before_member_audit",
+      "normal_python3_default_for_archive_work",
+      "internal_registry_only_delivery_when_download_requested"
+    ],
+    "pre_execution_bindings": {
+      "boot": "sandbox_router_gate_required",
+      "downloadable_artifact_delivery": "sandbox_router_gate_required; root-level /mnt/data ZIP plus sha256 sidecar",
+      "export_repair": "sandbox_router_gate_required; hardlink mutable candidates denied; zip member audit before extraction",
+      "governed_execution": "sandbox_router_gate_required; route selected; denylist checked; probe gates; bounded receipt/handoff"
+    }
+  },
+  "heavy_export_repair_run": false,
+  "internalized_router_components": [
+    {
+      "copy": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6_20260430T141800Z/internalized_copies/0_kernel/registry/sandbox_capability_router/SANDBOX_CAPABILITY_ROUTER_CARTRIDGE_LATEST.json",
+      "exists": true,
+      "rel": "0_kernel/registry/sandbox_capability_router/SANDBOX_CAPABILITY_ROUTER_CARTRIDGE_LATEST.json",
+      "sha256": "7fd330e6a0b09a695e29bd97963c18cf75be6cc001f9f042a4a1eb414ae5d5a1",
+      "size": 4599,
+      "src": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_CAPABILITY_ROUTER_CARTRIDGE_LATEST.json"
+    },
+    {
+      "copy": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6_20260430T141800Z/internalized_copies/0_kernel/registry/sandbox_capability_router/SANDBOX_CAPABILITY_ROUTER_CARTRIDGE_LATEST.json.sha256",
+      "exists": true,
+      "rel": "0_kernel/registry/sandbox_capability_router/SANDBOX_CAPABILITY_ROUTER_CARTRIDGE_LATEST.json.sha256",
+      "sha256": "ea40ef82ef87bc9e98d4f6cc5c83ddfb63dd7b47d8a8816aea3b357aae524b32",
+      "size": 182,
+      "src": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_CAPABILITY_ROUTER_CARTRIDGE_LATEST.json.sha256"
+    },
+    {
+      "copy": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6_20260430T141800Z/internalized_copies/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_WIRING_LATEST.json",
+      "exists": true,
+      "rel": "0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_WIRING_LATEST.json",
+      "sha256": "d8ee7e19eb6857109e648f75de9a89b32ab673fb4e0ab3a3146999c0324628bb",
+      "size": 2197,
+      "src": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_WIRING_LATEST.json"
+    },
+    {
+      "copy": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6_20260430T141800Z/internalized_copies/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_WIRING_LATEST.json.sha256",
+      "exists": true,
+      "rel": "0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_WIRING_LATEST.json.sha256",
+      "sha256": "e24e642b42db6d69a21e382867b4a06c81c68792882cc1a32c647aa85ae1b5c4",
+      "size": 180,
+      "src": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_WIRING_LATEST.json.sha256"
+    },
+    {
+      "copy": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6_20260430T141800Z/internalized_copies/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_WIRING_LATEST_HANDOFF.json",
+      "exists": true,
+      "rel": "0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_WIRING_LATEST_HANDOFF.json",
+      "sha256": "36f1f935bb17c0a2de00d0ab072d8c4463216586665ab6b8375926693c144584",
+      "size": 832,
+      "src": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_WIRING_LATEST_HANDOFF.json"
+    },
+    {
+      "copy": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6_20260430T141800Z/internalized_copies/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_SMOKE_2_RETRY_LATEST.json",
+      "exists": true,
+      "rel": "0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_SMOKE_2_RETRY_LATEST.json",
+      "sha256": "c18475909d983ddd33dad5cd8ae1c108cb01cf67220abf84febd3eef43356ddb",
+      "size": 3376,
+      "src": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_SMOKE_2_RETRY_LATEST.json"
+    },
+    {
+      "copy": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6_20260430T141800Z/internalized_copies/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_BOOT_EXPORT_BINDING_AUDIT_3_LATEST.json",
+      "exists": true,
+      "rel": "0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_BOOT_EXPORT_BINDING_AUDIT_3_LATEST.json",
+      "sha256": "489ed42c660a6f9a786623d0238be78d35dd4d5eb6a9fd90eb76a20610751799",
+      "size": 2989,
+      "src": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_BOOT_EXPORT_BINDING_AUDIT_3_LATEST.json"
+    },
+    {
+      "copy": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6_20260430T141800Z/internalized_copies/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_NODE_ENFORCER_TIMEOUT_HARDENING_4_LATEST.json",
+      "exists": true,
+      "rel": "0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_NODE_ENFORCER_TIMEOUT_HARDENING_4_LATEST.json",
+      "sha256": "1169c2ad3132b63f25ca77663a669e61e6569020f51f692082e848749983d611",
+      "size": 2559,
+      "src": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_NODE_ENFORCER_TIMEOUT_HARDENING_4_LATEST.json"
+    },
+    {
+      "copy": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6_20260430T141800Z/internalized_copies/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_NODE_ENFORCER_TIMEOUT_HARDENING_4_HANDOFF.json",
+      "exists": true,
+      "rel": "0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_NODE_ENFORCER_TIMEOUT_HARDENING_4_HANDOFF.json",
+      "sha256": "58286afada1313c1622b8aa3d4265e6378b501d5eefb06309f86ba1337dd53d7",
+      "size": 934,
+      "src": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_NODE_ENFORCER_TIMEOUT_HARDENING_4_HANDOFF.json"
+    },
+    {
+      "copy": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6_20260430T141800Z/internalized_copies/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_BINDING_RECHECK_5_LATEST.json",
+      "exists": true,
+      "rel": "0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_BINDING_RECHECK_5_LATEST.json",
+      "sha256": "ff944ed5de9939727541563913d5709bcdb1ad0b3a5eb2d732fd8763bc54e0b2",
+      "size": 2799,
+      "src": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_BINDING_RECHECK_5_LATEST.json"
+    },
+    {
+      "copy": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6_20260430T141800Z/internalized_copies/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_BINDING_RECHECK_5_HANDOFF.json",
+      "exists": true,
+      "rel": "0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_BINDING_RECHECK_5_HANDOFF.json",
+      "sha256": "5300ee1c1f630108801798cf1a52794d6c56ef6fcac6d6d4258b80112450dbd3",
+      "size": 1167,
+      "src": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_BINDING_RECHECK_5_HANDOFF.json"
+    },
+    {
+      "copy": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6_20260430T141800Z/internalized_copies/0_kernel/lib/sandbox_router_enforcer_v1.mjs",
+      "exists": true,
+      "rel": "0_kernel/lib/sandbox_router_enforcer_v1.mjs",
+      "sha256": "4c8b2a85a408326c4aa819b54a99b0358b849e139c760111ea147be119243475",
+      "size": 1917,
+      "src": "/mnt/data/Metablooms_OS/0_kernel/lib/sandbox_router_enforcer_v1.mjs"
+    },
+    {
+      "copy": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6_20260430T141800Z/internalized_copies/0_kernel/lib/sandbox_router_policy_loader_v1.py",
+      "exists": true,
+      "rel": "0_kernel/lib/sandbox_router_policy_loader_v1.py",
+      "sha256": "93f00d54fb1f8c77dbe7b35995cb424bcef87f3fddfebeaf365e34f193f305bd",
+      "size": 2912,
+      "src": "/mnt/data/Metablooms_OS/0_kernel/lib/sandbox_router_policy_loader_v1.py"
+    },
+    {
+      "copy": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6_20260430T141800Z/internalized_copies/0_kernel/scripts/sandbox_router/enforce_sandbox_route.sh",
+      "exists": true,
+      "rel": "0_kernel/scripts/sandbox_router/enforce_sandbox_route.sh",
+      "sha256": "3ff8d2f5bc1fd7bb0cc0fbb27e6e12509d499e0f6ad31bb5d6b63609390fec13",
+      "size": 1404,
+      "src": "/mnt/data/Metablooms_OS/0_kernel/scripts/sandbox_router/enforce_sandbox_route.sh"
+    }
+  ],
+  "root": "/mnt/data/Metablooms_OS",
+  "root_level_evidence_bundles": [
+    {
+      "name": "METABLOOMS_SANDBOX_ROUTER_BOOT_EXPORT_BINDING_AUDIT_3_20260430T135016Z.zip",
+      "path": "/mnt/data/METABLOOMS_SANDBOX_ROUTER_BOOT_EXPORT_BINDING_AUDIT_3_20260430T135016Z.zip",
+      "sha256": "fe1d77f5ffe55cae76f9cf7d204ad7e71184de72e76ef3a0e255d443f22f231a",
+      "sidecar_exists": true,
+      "sidecar_sha_text": "fe1d77f5ffe55cae76f9cf7d204ad7e71184de72e76ef3a0e255d443f22f231a  /mnt/data/METABLOOMS_SANDBOX_ROUTER_BOOT_EXPORT_BINDING_AUDIT_3_20260430T135016Z.zip",
+      "size": 23443
+    },
+    {
+      "name": "METABLOOMS_SANDBOX_ROUTER_ENFORCEMENT_BINDING_RECHECK_5_20260430T140200Z.zip",
+      "path": "/mnt/data/METABLOOMS_SANDBOX_ROUTER_ENFORCEMENT_BINDING_RECHECK_5_20260430T140200Z.zip",
+      "sha256": "9cbdd8ab0969e6e748d589c1a10a1853f20ba7231c865752731e6c983ae57fd6",
+      "sidecar_exists": true,
+      "sidecar_sha_text": "9cbdd8ab0969e6e748d589c1a10a1853f20ba7231c865752731e6c983ae57fd6  /mnt/data/METABLOOMS_SANDBOX_ROUTER_ENFORCEMENT_BINDING_RECHECK_5_20260430T140200Z.zip",
+      "size": 16369
+    },
+    {
+      "name": "METABLOOMS_SANDBOX_ROUTER_ENFORCEMENT_RECOVERY_0_OR_RECREATE_WIRING_1_20260430T132400Z.zip",
+      "path": "/mnt/data/METABLOOMS_SANDBOX_ROUTER_ENFORCEMENT_RECOVERY_0_OR_RECREATE_WIRING_1_20260430T132400Z.zip",
+      "sha256": "bffc524797897566f3b7d5486443eed42db56f8f3d94c611d7209ad26ee77914",
+      "sidecar_exists": true,
+      "sidecar_sha_text": "bffc524797897566f3b7d5486443eed42db56f8f3d94c611d7209ad26ee77914  /mnt/data/METABLOOMS_SANDBOX_ROUTER_ENFORCEMENT_RECOVERY_0_OR_RECREATE_WIRING_1_20260430T132400Z.zip",
+      "size": 13926
+    },
+    {
+      "name": "METABLOOMS_SANDBOX_ROUTER_ENFORCEMENT_SMOKE_2_BLOCKED_20260430T130500Z.zip",
+      "path": "/mnt/data/METABLOOMS_SANDBOX_ROUTER_ENFORCEMENT_SMOKE_2_BLOCKED_20260430T130500Z.zip",
+      "sha256": "6aa765a40f7ad4b84c3ff6c8b46e8833d9d2983b13ca4f4f373c110abd4fdd28",
+      "sidecar_exists": true,
+      "sidecar_sha_text": "6aa765a40f7ad4b84c3ff6c8b46e8833d9d2983b13ca4f4f373c110abd4fdd28  /mnt/data/METABLOOMS_SANDBOX_ROUTER_ENFORCEMENT_SMOKE_2_BLOCKED_20260430T130500Z.zip",
+      "size": 4199
+    },
+    {
+      "name": "METABLOOMS_SANDBOX_ROUTER_ENFORCEMENT_SMOKE_2_RETRY_20260430T134800Z.zip",
+      "path": "/mnt/data/METABLOOMS_SANDBOX_ROUTER_ENFORCEMENT_SMOKE_2_RETRY_20260430T134800Z.zip",
+      "sha256": "0422435efd7e2e752c4c2d907b379584340b7525325bf7b5b21b4519e83d6482",
+      "sidecar_exists": true,
+      "sidecar_sha_text": "0422435efd7e2e752c4c2d907b379584340b7525325bf7b5b21b4519e83d6482  /mnt/data/METABLOOMS_SANDBOX_ROUTER_ENFORCEMENT_SMOKE_2_RETRY_20260430T134800Z.zip",
+      "size": 11477
+    },
+    {
+      "name": "METABLOOMS_SANDBOX_ROUTER_NODE_ENFORCER_TIMEOUT_HARDENING_4_20260430T140900Z.zip",
+      "path": "/mnt/data/METABLOOMS_SANDBOX_ROUTER_NODE_ENFORCER_TIMEOUT_HARDENING_4_20260430T140900Z.zip",
+      "sha256": "7d861b81c4b7530eee1032d501fa20db7872d11dfce02ea6ef44ec47824c8048",
+      "sidecar_exists": true,
+      "sidecar_sha_text": "7d861b81c4b7530eee1032d501fa20db7872d11dfce02ea6ef44ec47824c8048  /mnt/data/METABLOOMS_SANDBOX_ROUTER_NODE_ENFORCER_TIMEOUT_HARDENING_4_20260430T140900Z.zip",
+      "size": 29140
+    }
+  ],
+  "source_handoff_verification": {
+    "actual_sha256": "5300ee1c1f630108801798cf1a52794d6c56ef6fcac6d6d4258b80112450dbd3",
+    "expected_sha256": "5300ee1c1f630108801798cf1a52794d6c56ef6fcac6d6d4258b80112450dbd3",
+    "handoff_exists": true,
+    "handoff_path": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_BINDING_RECHECK_5_HANDOFF.json",
+    "sha_check": "PASS",
+    "sha_sidecar_exists": true
+  },
+  "stage": "SANDBOX_ROUTER_FINAL_AUTHORITY_INTERNALIZE_6",
+  "status": "INTERNALIZED_WITHOUT_HEAVY_EXPORT_REPAIR",
+  "timestamp_utc": "20260430T141800Z",
+  "validation": {
+    "all_required_components_present": true,
+    "bundle_delivery_required": true,
+    "handoff_sha256": "PASS",
+    "heavy_export_repair_not_run": true,
+    "missing_components": [],
+    "required_component_count": 14
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "argv_resolved": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "/mnt/data/Metablooms_OS/0_kernel/lib/archive_method_router_v1.py",
+    "/mnt/data/stage3_tiny_test.zip",
+    "--root",
+    "/mnt/data/Metablooms_OS",
+    "--mode",
+    "validate",
+    "--timeout-s",
+    "5",
+    "--json-out",
+    "/mnt/data/stage3_archive_router_smoke.json"
+  ],
+  "created_utc": "20260502T140221Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision": "ALLOW_SPAWN",
+  "timeout_seconds": 10
+}

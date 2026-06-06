@@ -1,0 +1,10 @@
+{
+  "verdict": "PASS_WITH_WARNINGS",
+  "issues": [],
+  "warnings": [
+    "git_dir_missing"
+  ],
+  "receipt_path": "/mnt/data/Metablooms_OS/0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777769155361.json",
+  "pass_count": 7,
+  "check_count": 8
+}

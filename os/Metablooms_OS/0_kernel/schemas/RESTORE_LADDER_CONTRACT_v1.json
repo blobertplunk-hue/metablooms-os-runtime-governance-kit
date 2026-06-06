@@ -1,0 +1,64 @@
+{
+  "version": "1.0",
+  "created_at": 1777062487.5184722,
+  "contract_id": "RESTORE_LADDER_CONTRACT_v1",
+  "status": "active_contract",
+  "purpose": "Define restore source precedence and Git filemode normalization so restores do not lose current working deltas or block on mode-only drift.",
+  "selection_order": [
+    {
+      "rank": 1,
+      "source": "CURRENT_WORKING_BASELINE_POINTER_v1",
+      "path": "0_kernel/state/CURRENT_WORKING_BASELINE_POINTER_v1.json"
+    },
+    {
+      "rank": 2,
+      "source": "STAGE_STATE_LEDGER latest PASS",
+      "path": "0_kernel/state/STAGE_STATE_LEDGER_v1.json"
+    },
+    {
+      "rank": 3,
+      "source": "recovery-proven stable baseline manifest",
+      "path": "/mnt/data/*BOOT_RECOVERY_PROVEN*.zip.sha256.json or current stable sidecar"
+    },
+    {
+      "rank": 4,
+      "source": "manual repaired artifact",
+      "path": "repair receipt + repaired manifest"
+    }
+  ],
+  "mode_normalization": {
+    "must_run_before_status_checks": "git config core.filemode false",
+    "mode_only_drift_detection": [
+      "git diff --numstat",
+      "git diff --summary"
+    ],
+    "mode_only_allowed_when": "numstat rows are all 0/0 and diff summary only reports mode changes",
+    "content_drift_blocks": true
+  },
+  "staging_rules": [
+    "Never restore directly into active root.",
+    "Extract ZIPs or copy candidate roots into /mnt/data/_stage/<restore_id>/ first.",
+    "Validate required files in staging before promotion.",
+    "Promote only after hash, git, and capability checks pass."
+  ],
+  "promotion_rules": [
+    "Back up active root before promotion.",
+    "Do not overwrite active root from stable ZIP when current working pointer is valid.",
+    "If pointer and ledger are unavailable, stable baseline restore is allowed only with verified sidecar or repair receipt.",
+    "After promotion, normalize core.filemode=false before status checks."
+  ],
+  "proof_cases_required": [
+    "pointer source outranks stable ZIP",
+    "ledger latest PASS outranks stable ZIP when pointer is absent",
+    "stable ZIP requires verified manifest or explicit repair receipt",
+    "mode-only drift is normalized",
+    "content drift blocks"
+  ],
+  "non_goals": [
+    "F5 does not implement a restore CLI.",
+    "F5 does not promote or replace active root.",
+    "F5 does not export a stable baseline."
+  ],
+  "next_stage": "F6_BLOCKED_RECEIPT_HANDLING_RULE",
+  "verdict": "PASS"
+}

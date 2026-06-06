@@ -1,0 +1,28 @@
+{
+  "id": "CURRENT_AUTHORITY_IDENTITY_CONTRACT_v1",
+  "status": "active",
+  "purpose": "Prevent stale root authority/narrative/provenance files from being exported as current boot instructions.",
+  "current_authority_stage": "PROFESSIONALIZATION_CONVERGENCE_STAGE31_WC13_ROOT_AUTHORITY_NARRATIVE_REPAIR_AND_PREVENTION_LOCK",
+  "current_authority_zip": "METABLOOMS_WC13_FINAL_BOOTABLE_FULL_AUTHORITY_REPAIRED2_20260503T232000Z.zip",
+  "forbidden_current_identity_tokens": [
+    "PAC7 full authority export lock",
+    "BOOTABLE_FULL_AUTHORITY_WC12.zip",
+    "BOOTABLE_FULL_AUTHORITY_WC10.zip",
+    "STAGE6S_FULL_AUTHORITY_EXPORT_AFTER_STAGE6N_TO_6R",
+    "STAGE28_STAGING_ONLY"
+  ],
+  "root_files_required_current": [
+    "NEW_CHAT_START_HERE.md",
+    "BOOT_AUTHORITY_MANIFEST_v1.json",
+    "EXPORT_MANIFEST_v1.json",
+    "EXPORT_PROVENANCE_v1.json",
+    "CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "CURRENT_EXPORT_AUTHORITY_v1.json",
+    "BOOT_HANDOFF_WC13.md"
+  ],
+  "root_debug_artifacts_forbidden": [
+    ".write_probe_*"
+  ],
+  "validator": "0_kernel/validators/validate_current_authority_identity_v1.py",
+  "created_utc": "2026-05-03T23:18:30Z"
+}

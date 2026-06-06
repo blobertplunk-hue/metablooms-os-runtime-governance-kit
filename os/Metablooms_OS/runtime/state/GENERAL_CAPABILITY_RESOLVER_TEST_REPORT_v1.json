@@ -1,0 +1,42 @@
+{
+  "results": [
+    {
+      "capability": "python_execution",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "out_exists": true,
+      "decision": "ALLOW_PRIMARY",
+      "selected_method": "python3_S_stdlib"
+    },
+    {
+      "capability": "filesystem_archive_export",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "out_exists": true,
+      "decision": "ALLOW_PRIMARY",
+      "selected_method": "shell_zip"
+    },
+    {
+      "capability": "download_link_exposure",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "out_exists": true,
+      "decision": "ALLOW_PRIMARY",
+      "selected_method": "short_phone_safe_sandbox_link"
+    },
+    {
+      "capability": "browser_render",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "out_exists": true,
+      "decision": "ALLOW_PRIMARY",
+      "selected_method": "system_chromium_headless"
+    }
+  ],
+  "verdict": "PASS",
+  "failures": []
+}

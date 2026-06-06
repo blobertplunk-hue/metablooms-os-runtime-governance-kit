@@ -1,0 +1,13 @@
+MetaBlooms governed process tracker
+Stage: WC_STAGE9_REMEASURE_LATEST_WORLD_CLASS_SCORECARD_AGAINST_WC8RSSS
+Previous: POST_WC8RSS_BOOT_REPLAY_AND_NEXT_TASK_ROUTING_SMOKE
+Status: complete
+Authority: BOOTABLE_FULL_AUTHORITY_WC9.zip
+✓ 1. Verify WC8RSSS authority
+✓ 2. Extract and load manifest/handoff
+✓ 3. Diagnose continuation-prompt enforcement gap
+✓ 4. Install hard NEXT_STAGE_COPY_PROMPT exit gate
+✓ 5. Rerun measured latest scorecard
+✓ 6. Write receipt/handoff/next prompt
+✓ 7. Export short full authority
+Exit gates: prompt gate + receipt + handoff + next prompt + scorecard + short full-authority export

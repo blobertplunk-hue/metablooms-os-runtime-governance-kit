@@ -1,0 +1,138 @@
+{
+  "artifact_plan": [
+    {
+      "artifact_id": "ART-001",
+      "purpose": "normalized lifecycle-aware controlled artifact closure index",
+      "relative_path": "0_kernel/registry/CONTROLLED_GOVERNANCE_ARTIFACT_INDEX_v1.json",
+      "validation": "PAC current scan PASS and scatter prevention ALLOW"
+    }
+  ],
+  "created_at": "2026-05-02T21:19:38.078768+00:00",
+  "implementation_targets": [
+    {
+      "artifact_type": "python",
+      "expected_hash_mode": "sha256_required",
+      "operation": "modify",
+      "owner": "PAC_STAGE6",
+      "path": "runtime/governance/controlled_artifact_registry_v1.py",
+      "target_id": "IMPL-001"
+    },
+    {
+      "artifact_type": "json_or_sidecar",
+      "expected_hash_mode": "sha256_required",
+      "operation": "modify",
+      "owner": "PAC_STAGE6",
+      "path": "runtime/governance/controlled_artifact_registry_v1.py.sha256",
+      "target_id": "IMPL-002"
+    },
+    {
+      "artifact_type": "python",
+      "expected_hash_mode": "sha256_required",
+      "operation": "modify",
+      "owner": "PAC_STAGE6",
+      "path": "runtime/governance/fresh_chat_boot_rehearsal_v1.py",
+      "target_id": "IMPL-003"
+    },
+    {
+      "artifact_type": "json_or_sidecar",
+      "expected_hash_mode": "sha256_required",
+      "operation": "modify",
+      "owner": "PAC_STAGE6",
+      "path": "runtime/governance/fresh_chat_boot_rehearsal_v1.py.sha256",
+      "target_id": "IMPL-004"
+    },
+    {
+      "artifact_type": "python",
+      "expected_hash_mode": "sha256_required",
+      "operation": "modify",
+      "owner": "PAC_STAGE6",
+      "path": "0_kernel/mpp_v3/promotion_authority_coherence_gate_v1.py",
+      "target_id": "IMPL-005"
+    },
+    {
+      "artifact_type": "json_or_sidecar",
+      "expected_hash_mode": "sha256_required",
+      "operation": "modify",
+      "owner": "PAC_STAGE6",
+      "path": "0_kernel/mpp_v3/promotion_authority_coherence_gate_v1.py.sha256",
+      "target_id": "IMPL-006"
+    },
+    {
+      "artifact_type": "json_or_sidecar",
+      "expected_hash_mode": "sha256_required",
+      "operation": "modify",
+      "owner": "PAC_STAGE6",
+      "path": "0_kernel/registry/CONTROLLED_GOVERNANCE_ARTIFACT_INDEX_v1.json",
+      "target_id": "IMPL-007"
+    },
+    {
+      "artifact_type": "json_or_sidecar",
+      "expected_hash_mode": "sha256_required",
+      "operation": "modify",
+      "owner": "PAC_STAGE6",
+      "path": "0_kernel/registry/CONTROLLED_GOVERNANCE_ARTIFACT_INDEX_v1.json.sha256",
+      "target_id": "IMPL-008"
+    }
+  ],
+  "objective_id": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE6_REGISTRY_HASH_RECONCILIATION_AND_TARGETED_CLOSURE",
+  "packet_id": "IMPL-STAGE6-PAC-CLOSURE-20260502T211900Z",
+  "post_write_checks": [
+    "py_compile patched validators",
+    "PAC current scan PASS",
+    "scatter prevention ALLOW",
+    "fresh-chat rehearsal ALLOW",
+    "fixture ledger PASS",
+    "delta zip structural test"
+  ],
+  "pre_write_checks": [
+    "verify Stage 18 authority sidecar",
+    "load Stage 5 handoff",
+    "run PAC/scatter pre-scan"
+  ],
+  "provenance": {
+    "builder": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE6_REGISTRY_HASH_RECONCILIATION_AND_TARGETED_CLOSURE",
+    "expected_outputs": [
+      "runtime/governance/controlled_artifact_registry_v1.py",
+      "runtime/governance/controlled_artifact_registry_v1.py.sha256",
+      "runtime/governance/fresh_chat_boot_rehearsal_v1.py",
+      "runtime/governance/fresh_chat_boot_rehearsal_v1.py.sha256",
+      "0_kernel/mpp_v3/promotion_authority_coherence_gate_v1.py",
+      "0_kernel/mpp_v3/promotion_authority_coherence_gate_v1.py.sha256",
+      "0_kernel/registry/CONTROLLED_GOVERNANCE_ARTIFACT_INDEX_v1.json",
+      "0_kernel/registry/CONTROLLED_GOVERNANCE_ARTIFACT_INDEX_v1.json.sha256",
+      "STAGE_RECEIPT.json",
+      "handoff",
+      "verified delta zip"
+    ],
+    "inputs": [
+      "Stage 5 handoff",
+      "Stage 4 classified inventory",
+      "SLSA/NIST/OpenSSF SEE findings"
+    ],
+    "verification_expectations": [
+      "no missing controlled artifacts",
+      "no registered hash mismatches",
+      "no stale live authority references",
+      "fresh chat boot rehearsal pass"
+    ]
+  },
+  "result_hash": "e18992535249db17831e10820551b3c982808edad3cd7912892732f9103e4424",
+  "schema_version": "mpp.implementation_contract_packet.v1",
+  "source_rrp_packet_id": "PROMOTION_AUTHORITY_COHERENCE_CURRENT_OS_REPAIR_PLAN_v1",
+  "stage": "IMPLEMENTATION",
+  "write_policy": {
+    "allowed_roots": [
+      "/mnt/data/Metablooms_OS"
+    ],
+    "forbidden_path_patterns": [
+      "..",
+      "~",
+      "\u0000",
+      "//"
+    ],
+    "requires_atomic_write": true,
+    "requires_parent_creation": true,
+    "requires_probe": true,
+    "requires_receipt": true
+  }
+}

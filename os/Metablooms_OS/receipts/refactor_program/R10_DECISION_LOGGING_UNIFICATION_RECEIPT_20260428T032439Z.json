@@ -1,0 +1,36 @@
+{
+  "canonical_records": 41,
+  "canonicalized_counts": {
+    "decision_logs": 9,
+    "refactor_receipts": 32
+  },
+  "created_artifacts": [
+    "runtime/governance/schemas/decision_receipt_envelope_schema_v1.json",
+    "0_kernel/scripts/validate_decision_receipt_envelope_v1.py",
+    "0_kernel/scripts/standardize_decision_receipts_v1.py",
+    "runtime/governance/receipts/canonical/DECISION_RECEIPT_CANONICALIZATION_MANIFEST_v1.json",
+    "runtime/governance/decision_logs/DECISION_LOG_R10_20260428T032439Z.json"
+  ],
+  "created_utc": "2026-04-28T03:24:39.307635Z",
+  "external_evidence": [
+    {
+      "claim": "Decision logs include decision_id, input, result, timestamp and metadata for audit/offline debugging.",
+      "source": "OPA decision logs",
+      "url": "https://www.openpolicyagent.org/docs/management-decision-logs"
+    },
+    {
+      "claim": "Events require stable id/source/specversion/type identity fields; MetaBlooms envelope borrows this identity discipline.",
+      "source": "CloudEvents spec",
+      "url": "https://github.com/cloudevents/spec/blob/main/cloudevents/spec.md"
+    },
+    {
+      "claim": "Schema annotations are descriptive, so validators must enforce behavior.",
+      "source": "JSON Schema annotations",
+      "url": "https://json-schema.org/understanding-json-schema/reference/annotations"
+    }
+  ],
+  "gate_registry_updated": true,
+  "receipt_type": "R10_DECISION_LOGGING_AND_RECEIPT_UNIFICATION_RECEIPT",
+  "stage": "R10_DECISION_LOGGING_AND_RECEIPT_UNIFICATION",
+  "verdict": "PASS"
+}

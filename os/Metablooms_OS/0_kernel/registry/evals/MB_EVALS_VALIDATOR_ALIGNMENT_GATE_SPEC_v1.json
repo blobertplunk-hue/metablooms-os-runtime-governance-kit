@@ -1,0 +1,26 @@
+{
+  "artifact_type": "MB_EVALS_VALIDATOR_ALIGNMENT_GATE_SPEC_v1",
+  "created_utc": "20260501T153500Z",
+  "gate_checks": [
+    "minimum_dataset_size",
+    "required_label_coverage",
+    "minimum_accuracy",
+    "zero_false_pass",
+    "stage3_runner_complete",
+    "promotion_matrix_pass",
+    "conservative_mismatch_only"
+  ],
+  "promotion_rule": "PROMOTE only when all gate checks pass. WARN->BLOCK conservative mismatches are acceptable; WARN/BLOCK->PASS false passes are never acceptable.",
+  "promotion_thresholds": {
+    "false_pass_tolerance": 0,
+    "minimum_accuracy": 0.9,
+    "minimum_examples": 20,
+    "required_labels": [
+      "PASS",
+      "WARN",
+      "BLOCK"
+    ]
+  },
+  "purpose": "Gate promotion of eval-governed validators using Stage 3 evaluator results, confusion matrix, coverage, and zero false-pass policy.",
+  "stage_name": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_4_VALIDATOR_ALIGNMENT_GATE_PROMOTION"
+}

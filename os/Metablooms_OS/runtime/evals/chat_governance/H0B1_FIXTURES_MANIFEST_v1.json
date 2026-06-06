@@ -1,0 +1,17 @@
+{
+  "id": "H0B1_FIXTURES_MANIFEST_v1",
+  "fixtures": [
+    "valid_full_promotion",
+    "deny_missing_router",
+    "deny_missing_see_ce",
+    "deny_final_without_tracker",
+    "deny_promotion_without_export"
+  ],
+  "expected": {
+    "valid_full_promotion": "ALLOW",
+    "deny_missing_router": "DENY",
+    "deny_missing_see_ce": "DENY",
+    "deny_final_without_tracker": "DENY",
+    "deny_promotion_without_export": "DENY"
+  }
+}

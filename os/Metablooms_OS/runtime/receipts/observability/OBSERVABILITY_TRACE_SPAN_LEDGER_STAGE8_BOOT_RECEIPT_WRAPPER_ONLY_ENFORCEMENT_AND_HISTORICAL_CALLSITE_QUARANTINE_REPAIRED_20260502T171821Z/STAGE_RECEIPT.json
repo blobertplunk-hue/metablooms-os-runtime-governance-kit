@@ -1,0 +1,48 @@
+{
+  "artifact_type": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_REPAIRED_RECEIPT.v1",
+  "created_utc": "20260502T171821Z",
+  "export": {
+    "artifact_type": "OBSERVABILITY_STAGE8_FINAL_LOCK_EXPORT_CONTAINMENT_PROOF.v1",
+    "created_utc": "20260502T172223Z",
+    "duplicate_members": 0,
+    "required_artifacts_missing": [],
+    "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE",
+    "verdict": "PASS",
+    "zip_entry_count": 6311,
+    "zip_integrity": "PASS",
+    "zip_path": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_HISTORICAL_CALLSITE_QUARANTINE_FINAL_LOCK_20260502T171821Z.zip",
+    "zip_sha256": "92de4d0f86f233f63e71737663faa36b52990caa6fcd8668353b864900ea4419",
+    "zip_size_bytes": 27321852
+  },
+  "final_export_note": "Final export proof is external because a ZIP cannot contain a proof of its own final SHA-256 without circularity.",
+  "issues": [],
+  "quarantine_index": "runtime/traces/observability/HISTORICAL_CALLSITE_QUARANTINE_INDEX_LATEST.json",
+  "repair_summary": "Classified policy/scanner/registry-index/method-lesson references as non-live governance evidence and made Stage 7 validator accept Stage 8 as an explicit superset.",
+  "results": {
+    "new_chat_validator": {
+      "returncode": 0
+    },
+    "stage6_validator": {
+      "returncode": 0
+    },
+    "stage7_validator": {
+      "returncode": 0
+    },
+    "stage8_validator": {
+      "returncode": 0
+    },
+    "trace_ingestion_post_receipt": {
+      "returncode": 0
+    },
+    "wrapper_bad": {
+      "returncode": 2
+    },
+    "wrapper_good": {
+      "returncode": 0
+    }
+  },
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE",
+  "supersedes_previous_failed_stage8_receipt": true,
+  "validation_report": "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE8_HISTORICAL_CALLSITE_QUARANTINE_VALIDATION_LATEST.json",
+  "verdict": "PASS"
+}

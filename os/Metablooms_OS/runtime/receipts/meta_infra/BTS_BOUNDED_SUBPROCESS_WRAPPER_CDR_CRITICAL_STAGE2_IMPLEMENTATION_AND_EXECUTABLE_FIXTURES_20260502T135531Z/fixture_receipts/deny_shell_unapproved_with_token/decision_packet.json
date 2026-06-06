@@ -1,0 +1,20 @@
+{
+  "argv_redacted": [
+    "echo",
+    "unsafe"
+  ],
+  "artifact_type": "METABLOOMS_BOUNDED_COMMAND_DECISION_PACKET_v1",
+  "attempts": [],
+  "created_utc": "20260502T135531Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision_packet_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135531Z/fixture_receipts/deny_shell_unapproved_with_token/decision_packet.json",
+  "failure_class": "SHELL_UNAPPROVED",
+  "failure_event_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135531Z/fixture_receipts/deny_shell_unapproved_with_token/SUBPROCESS_FAILURE_EVENT_fixture_deny_shell_unapproved_20260502T135531Z_15289618ed45.json",
+  "operation_type": "fixture_deny_shell_unapproved",
+  "policy_matches": [],
+  "pre_spawn_receipt_path": null,
+  "receipt_dir": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135531Z/fixture_receipts/deny_shell_unapproved_with_token",
+  "result_class": "DENY_SHELL_UNAPPROVED",
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES",
+  "total_elapsed_ms": null
+}

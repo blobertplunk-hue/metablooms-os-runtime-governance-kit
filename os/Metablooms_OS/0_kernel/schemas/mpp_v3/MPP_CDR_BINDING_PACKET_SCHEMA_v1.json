@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "cdr_evidence": {
+      "type": "object"
+    },
+    "cdr_gate_result": {
+      "properties": {
+        "gate_id": {
+          "type": "string"
+        },
+        "packet_path": {
+          "type": "string"
+        },
+        "verdict": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict"
+      ],
+      "type": "object"
+    },
+    "code_artifact_classes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "mpp_compliance_claimed": {
+      "type": "boolean"
+    },
+    "reconstruction_status": {
+      "type": "string"
+    },
+    "stage_contains_code": {
+      "type": "boolean"
+    },
+    "stage_id": {
+      "type": "string"
+    },
+    "stage_verdict_requested": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "stage_id",
+    "stage_contains_code",
+    "mpp_compliance_claimed",
+    "code_artifact_classes",
+    "cdr_gate_result",
+    "cdr_evidence",
+    "stage_verdict_requested"
+  ],
+  "title": "MPP CDR Binding Packet",
+  "type": "object"
+}

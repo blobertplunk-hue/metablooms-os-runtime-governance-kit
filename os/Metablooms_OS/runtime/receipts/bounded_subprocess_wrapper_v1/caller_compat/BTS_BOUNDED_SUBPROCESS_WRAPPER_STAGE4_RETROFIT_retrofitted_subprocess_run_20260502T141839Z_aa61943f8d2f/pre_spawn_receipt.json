@@ -1,0 +1,18 @@
+{
+  "argv_resolved": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "/mnt/data/Metablooms_OS/runtime/governance/tool_universe_resolver_v1.py",
+    "resolve",
+    "--task",
+    "STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS install observability trace export adapters for MetaBlooms JSONL OpenTelemetry span JSON OpenAI Agents SDK event JSON LangGraph run JSON",
+    "--stage-id",
+    "STAGE6T_SMOKE",
+    "--out",
+    "/mnt/data/Metablooms_OS/runtime/stage_work/STAGE6T/after_candidate_set.json"
+  ],
+  "created_utc": "20260502T141839Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision": "ALLOW_SPAWN",
+  "timeout_seconds": 10
+}

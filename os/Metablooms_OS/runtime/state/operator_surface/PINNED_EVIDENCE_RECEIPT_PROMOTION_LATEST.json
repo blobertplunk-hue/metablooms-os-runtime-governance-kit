@@ -1,0 +1,15 @@
+{
+  "artifact_type": "MB_PINNED_EVIDENCE_RECEIPT_PROMOTION_UI.v1",
+  "created_utc": "20260502T190150Z",
+  "default_promoted_receipt": "runtime/receipts/pinned_evidence/PINNED_EVIDENCE_RECEIPT_LATEST.json",
+  "export_binding": "runtime/traces/observability/PINNED_EVIDENCE_EXPORT_BINDING_LATEST.json",
+  "script": "0_kernel/scripts/promote_pinned_evidence_receipt_v1.py",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_RECEIPT_PROMOTION_AND_EXPORT_BINDING",
+  "ui_contract": {
+    "copyable_browser_pin_manifest_remains_local_until_promoted": true,
+    "evidence_mode_can_show_promotion_status": true,
+    "minimal_mode_remains_default": true,
+    "promoted_receipt_is_export_bound": true
+  },
+  "validator": "0_kernel/validators/validate_observability_trace_span_ledger_stage14_pinned_evidence_promotion_v1.py"
+}

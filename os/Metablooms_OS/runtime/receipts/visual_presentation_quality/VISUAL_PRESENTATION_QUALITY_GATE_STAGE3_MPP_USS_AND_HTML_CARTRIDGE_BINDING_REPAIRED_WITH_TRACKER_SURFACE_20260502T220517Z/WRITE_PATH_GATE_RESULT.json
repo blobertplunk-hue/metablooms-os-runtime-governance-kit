@@ -1,0 +1,13 @@
+{
+  "checks": [
+    "root_exists",
+    "receipt_dir_created",
+    "write_probe_readback"
+  ],
+  "created_utc": "20260502T220517Z",
+  "probe_path": "/mnt/data/Metablooms_OS/runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE3_MPP_USS_AND_HTML_CARTRIDGE_BINDING_REPAIRED_WITH_TRACKER_SURFACE_20260502T220517Z/.write_probe",
+  "root": "/mnt/data/Metablooms_OS",
+  "schema_version": "metablooms.write_path_gate_result.v1",
+  "stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE3_MPP_USS_AND_HTML_CARTRIDGE_BINDING_REPAIRED_WITH_TRACKER_SURFACE",
+  "verdict": "PASS"
+}

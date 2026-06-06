@@ -1,0 +1,14 @@
+{
+  "artifact_type": "MB_CLI_COMMAND_SPEC_v17",
+  "created_utc": "20260501T164800Z",
+  "fail_closed_rules": [
+    "red-team false allow blocks promotion",
+    "hard-block fixtures must block"
+  ],
+  "new_or_hardened_commands": [
+    {
+      "behavior": "runs Stage 4 red-team fixture validator",
+      "command": "mb security --red-team --json"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "H0B1_IMPLEMENTATION_PLAN_v1",
+  "created_utc": "2026-04-30T17:50:37Z",
+  "slices": [
+    "write contracts",
+    "write runtime kernel",
+    "write active invariant",
+    "write fixtures/tests",
+    "patch invariant activation engine",
+    "run behavior tests",
+    "verify locations",
+    "export whole OS",
+    "fresh extract and retest"
+  ]
+}

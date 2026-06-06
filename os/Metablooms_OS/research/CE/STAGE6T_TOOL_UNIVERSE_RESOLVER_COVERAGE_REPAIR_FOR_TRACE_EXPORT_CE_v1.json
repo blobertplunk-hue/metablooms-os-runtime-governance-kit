@@ -1,0 +1,11 @@
+{
+  "created_utc": "2026-05-02T03:36:48.279363Z",
+  "decision": "install resolver classification rule + promoted trace adapter genome + regression fixtures",
+  "schema": "CE_PACKET_v1",
+  "stage_id": "STAGE6T_TOOL_UNIVERSE_RESOLVER_COVERAGE_REPAIR_FOR_TRACE_EXPORT",
+  "synthesis": [
+    "Specificity must outrank generic token matches: trace/export/adapter should map to observability_trace_export.",
+    "The resolver genome needs an allowed promoted candidate for the Stage 6R trace adapter and at least one comparison candidate for BTS evaluation.",
+    "Generic authority ZIP tasks must still route to zip_export; this is regression-tested."
+  ]
+}

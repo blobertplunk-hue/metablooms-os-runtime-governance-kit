@@ -1,0 +1,18 @@
+{
+  "created_utc": "2026-04-28T03:24:39.307635Z",
+  "handoff_type": "R10_HANDOFF",
+  "key_artifacts": [
+    "receipts/refactor_program/R10_DECISION_LOGGING_UNIFICATION_RECEIPT_20260428T032439Z.json",
+    "receipts/refactor_program/R10_VERIFY_RECEIPT_20260428T032439Z.json",
+    "runtime/governance/receipts/canonical/DECISION_RECEIPT_CANONICALIZATION_MANIFEST_v1.json",
+    "runtime/governance/decision_logs/DECISION_LOG_R10_20260428T032439Z.json"
+  ],
+  "must_not_skip": [
+    "canonical envelope validation before export",
+    "source hash checking for wrapped legacy records",
+    "python3 -S for validator/standardizer"
+  ],
+  "next_stage": "R11_LEGACY_QUARANTINE_REDIRECTS_AND_CLEANUP",
+  "stage": "R10_DECISION_LOGGING_AND_RECEIPT_UNIFICATION",
+  "verdict": "PASS"
+}

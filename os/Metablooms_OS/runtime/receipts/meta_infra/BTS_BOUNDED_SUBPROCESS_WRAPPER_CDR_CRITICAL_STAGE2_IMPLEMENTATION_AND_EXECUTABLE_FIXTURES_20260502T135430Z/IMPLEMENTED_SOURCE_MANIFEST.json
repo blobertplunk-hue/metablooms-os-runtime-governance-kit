@@ -1,0 +1,13 @@
+{
+  "artifact_type": "METABLOOMS_IMPLEMENTED_SOURCE_MANIFEST_v1",
+  "created_utc": "20260502T135430Z",
+  "install_location": "0_kernel/lib/execution/bounded_subprocess_wrapper_v1.py",
+  "source_files": [
+    {
+      "bytes": 18417,
+      "path": "/mnt/data/Metablooms_OS/0_kernel/lib/execution/bounded_subprocess_wrapper_v1.py",
+      "sha256": "6328383f6db41619bb9f8f1fe3a8c4afffb56b1c51be9fffb586568045f85ff9"
+    }
+  ],
+  "stage_id": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES"
+}

@@ -1,0 +1,218 @@
+{
+  "artifact_type": "MB_OPERATOR_CAUSAL_TIMELINE.v1",
+  "created_utc": "20260502T165955Z",
+  "current_state": {
+    "issue_record_count": 3,
+    "latest_blocker": null,
+    "latest_event": {
+      "attributes": {
+        "artifact_type": "CE_SYNTHESIS.v1",
+        "source_sha256": "177e4849cf4cf6c7d378fab4c34ad36f0feed1f9249b2a1814c43a823fb94dcf",
+        "source_size_bytes": 1143,
+        "status_raw": null,
+        "verdict": null
+      },
+      "event": "metablooms.stage.receipt",
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "input_materials": [
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE5_TRACE_INGESTION_CLASSIFIER_REPAIR_AND_REGRESSION_FIXTURES_20260502T165923Z/CE_SYNTHESIS.json"
+      ],
+      "name": "metablooms.stage.receipt",
+      "output_artifacts": [],
+      "parent_span_id": "774e2d93cf0e59e4",
+      "schema_version": "MB_TRACE_SPAN_EVENT.v1",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE5_TRACE_INGESTION_CLASSIFIER_REPAIR_AND_REGRESSION_FIXTURES_20260502T165923Z/CE_SYNTHESIS.json",
+      "span_id": "c407e4fd3fa49908",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE5_TRACE_INGESTION_CLASSIFIER_REPAIR_AND_REGRESSION_FIXTURES",
+      "stage_name": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE5_TRACE_INGESTION_CLASSIFIER_REPAIR_AND_REGRESSION_FIXTURES",
+      "status": "OK",
+      "timestamp_utc": "20260502T170000Z",
+      "trace_id": "dd9e0c1a61955832054ef99a4361c232"
+    },
+    "next_action": "Proceed with next governed user-selected stage.",
+    "safe_to_continue": true
+  },
+  "issue_records": [
+    {
+      "event_name": "metablooms.boot.receipt",
+      "source_artifact": "0_kernel/registry/boot_receipts/BOOT_FROM_MNT_DATA_20260502T162601Z/new_chat_start_contract_validator.json",
+      "span_id": "7d5a955c2532ba19",
+      "stage_id": "BOOT_FROM_MNT_DATA_20260502T162601Z",
+      "status": "BLOCKED",
+      "timestamp_utc": "20260502T162601Z"
+    },
+    {
+      "event_name": "metablooms.validator.result",
+      "source_artifact": "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_20260502T162918Z/STAGE_RECEIPT.json",
+      "span_id": "8fc364ae28faaae5",
+      "stage_id": "STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN",
+      "status": "BLOCKED",
+      "timestamp_utc": "2026-05-02T16:29:18Z"
+    },
+    {
+      "event_name": "metablooms.handoff.ready",
+      "source_artifact": "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_20260502T162918Z/STAGE_HANDOFF.json",
+      "span_id": "5dd3225c461dff67",
+      "stage_id": "STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN",
+      "status": "BLOCKED",
+      "timestamp_utc": "2026-05-02T16:29:18Z"
+    }
+  ],
+  "latest_export": {
+    "available": true,
+    "path": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_ROUTER_BINDING_REPAIRED_20260502T165547Z.zip",
+    "sha256": "166b955782aa5ac7a4340a1b0037729d6766e539650b9c85c8095efbc2ec2518",
+    "stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_ROUTER_BINDING_REPAIRED_20260502T165547Z"
+  },
+  "source_inputs": {
+    "causal_graph": "runtime/traces/observability/CAUSAL_STAGE_GRAPH_LATEST.json",
+    "causal_graph_sha256": "465c1bfec62ff6fc729941bcd3e42322da0b448192ed218e6e7118619616c343",
+    "trace_index": "runtime/traces/observability/TRACE_SPAN_LEDGER_INDEX_LATEST.json",
+    "trace_index_sha256": "16b37a0ef4dc20eee39ffffab863a5f5f3692b8763719f2f4709fc63d2cf932e",
+    "trace_ledger": "runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl",
+    "trace_ledger_sha256": "d1d8e177300b696b57b95dc9051b6ecec2cdd8e0a78ae4c149bb42a642759952"
+  },
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE3_TRACKER_CAUSAL_TIMELINE_BINDING",
+  "summary": {
+    "blocked_count": 3,
+    "error_count": 0,
+    "event_kinds": {
+      "boot": 57,
+      "decision": 12,
+      "export": 26,
+      "handoff": 87,
+      "receipt": 30,
+      "stage": 1,
+      "tracker": 1,
+      "validator": 6
+    },
+    "graph_edge_count": 219,
+    "graph_node_count": 220,
+    "ok_count": 217,
+    "record_count": 220,
+    "warn_count": 0
+  },
+  "timeline": [
+    {
+      "event_kind": "export",
+      "event_name": "metablooms.export.receipt",
+      "parent_span_id": "774e2d93cf0e59e4",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_STAGE3_FULL_AUTHORITY_EXPORT_INTERNAL_RECEIPT_LATEST.json",
+      "span_id": "30da060ce8446b81",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE3_TRACKER_CAUSAL_TIMELINE_BINDING",
+      "status": "OK",
+      "timestamp_utc": "20260502T164924Z"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "parent_span_id": "774e2d93cf0e59e4",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING_20260502T165302Z/SEE_PACKET.json",
+      "span_id": "041b037f8bca64f3",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING",
+      "status": "OK",
+      "timestamp_utc": "20260502T165302Z"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "parent_span_id": "774e2d93cf0e59e4",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING_20260502T165302Z/CE_SYNTHESIS.json",
+      "span_id": "0f6ebe5fb022ea87",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING",
+      "status": "OK",
+      "timestamp_utc": "20260502T165302Z"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "parent_span_id": "774e2d93cf0e59e4",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING_20260502T165302Z/STAGE_RECEIPT.json",
+      "span_id": "4367763bc64b4951",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING",
+      "status": "OK",
+      "timestamp_utc": "20260502T165330Z"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "parent_span_id": "774e2d93cf0e59e4",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING_20260502T165302Z/STAGE_HANDOFF.json",
+      "span_id": "4a1c0185b14a58df",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING",
+      "status": "OK",
+      "timestamp_utc": "20260502T165330Z"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "parent_span_id": "774e2d93cf0e59e4",
+      "source_artifact": "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_HANDOFF_LATEST.json",
+      "span_id": "b661011389039f7f",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING",
+      "status": "OK",
+      "timestamp_utc": "20260502T165330Z"
+    },
+    {
+      "event_kind": "export",
+      "event_name": "metablooms.export.receipt",
+      "parent_span_id": "774e2d93cf0e59e4",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING_20260502T165302Z/STAGE4_EXPORT_RECEIPT_INCLUDED_IN_REPAIRED_ZIP.json",
+      "span_id": "b41c26d8b2e9e293",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING",
+      "status": "OK",
+      "timestamp_utc": "20260502T165547Z"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "parent_span_id": "774e2d93cf0e59e4",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE5_TRACE_INGESTION_CLASSIFIER_REPAIR_AND_REGRESSION_FIXTURES_20260502T165923Z/STAGE_RECEIPT.json",
+      "span_id": "8595364eba28aa71",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE5_TRACE_INGESTION_CLASSIFIER_REPAIR_AND_REGRESSION_FIXTURES",
+      "status": "OK",
+      "timestamp_utc": "20260502T165945Z"
+    },
+    {
+      "event_kind": "handoff",
+      "event_name": "metablooms.handoff.ready",
+      "parent_span_id": "774e2d93cf0e59e4",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE5_TRACE_INGESTION_CLASSIFIER_REPAIR_AND_REGRESSION_FIXTURES_20260502T165923Z/STAGE_HANDOFF.json",
+      "span_id": "fd753746c24de400",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE5_TRACE_INGESTION_CLASSIFIER_REPAIR_AND_REGRESSION_FIXTURES",
+      "status": "OK",
+      "timestamp_utc": "20260502T165945Z"
+    },
+    {
+      "event_kind": "stage",
+      "event_name": "metablooms.boot_ingestion.start",
+      "parent_span_id": null,
+      "source_artifact": "0_kernel/scripts/observability_boot_ingest_v1.py",
+      "span_id": "774e2d93cf0e59e4",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION",
+      "status": "OK",
+      "timestamp_utc": "20260502T165955Z"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "parent_span_id": "774e2d93cf0e59e4",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE5_TRACE_INGESTION_CLASSIFIER_REPAIR_AND_REGRESSION_FIXTURES_20260502T165923Z/SEE_PACKET.json",
+      "span_id": "8ca4824987ad7696",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE5_TRACE_INGESTION_CLASSIFIER_REPAIR_AND_REGRESSION_FIXTURES",
+      "status": "OK",
+      "timestamp_utc": "20260502T170000Z"
+    },
+    {
+      "event_kind": "receipt",
+      "event_name": "metablooms.stage.receipt",
+      "parent_span_id": "774e2d93cf0e59e4",
+      "source_artifact": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE5_TRACE_INGESTION_CLASSIFIER_REPAIR_AND_REGRESSION_FIXTURES_20260502T165923Z/CE_SYNTHESIS.json",
+      "span_id": "c407e4fd3fa49908",
+      "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE5_TRACE_INGESTION_CLASSIFIER_REPAIR_AND_REGRESSION_FIXTURES",
+      "status": "OK",
+      "timestamp_utc": "20260502T170000Z"
+    }
+  ]
+}

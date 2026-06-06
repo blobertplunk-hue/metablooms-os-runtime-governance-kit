@@ -1,0 +1,24 @@
+# TRACKER_RENDER_SPEC_LOCK_v1
+
+Status: implemented in TRACKER-2.
+
+The inline tracker renderer MUST:
+
+1. Render plain-text / Markdown-safe output only.
+2. Begin with the exact marker prefix `╭─ PROJECT TRACKER`.
+3. Include these labels in every rendered block:
+   - Project
+   - Status
+   - Stage
+   - Progress
+   - Now
+   - Evidence
+   - Blocker
+   - Next
+   - Stop Rule
+4. Keep every rendered line at or below 64 characters.
+5. Render determinate progress only when `progress_mode=determinate` and integer `stage_index` and `stage_total` are present and valid.
+6. Render indeterminate progress without a percent sign and without a determinate bar.
+7. Render a failed-closed tracker if required tracker state is invalid.
+
+Accessibility note: the inline tracker uses visible text for every status/progress field. If a future HTML renderer is added, dynamic progress updates must also expose explicit status text, not rely only on progressbar value changes.

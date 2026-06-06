@@ -1,0 +1,98 @@
+{
+  "contract_id": "legacy_artifact_redirects_v1",
+  "version": "1.0",
+  "created_utc": "2026-04-28T02:44:46Z",
+  "stage": "R11_LEGACY_QUARANTINE_REDIRECTS_AND_CLEANUP",
+  "entries": [
+    {
+      "source_artifact_id": "1_governance/workflow_v6/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.json",
+      "classification": "split",
+      "legacy_archive_path": "runtime/governance/legacy_archives/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.json",
+      "adr_path": "0_kernel/docs/decisions/ADR-0001-split-rationale-from-runtime-contracts.md",
+      "successor_expected": [
+        "runtime/governance/contracts/unified_runtime_compatibility_contract_v1.json"
+      ],
+      "live_location": "1_governance/workflow_v6/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.json",
+      "tombstone_metadata": "1_governance/workflow_v6/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.redirect.json",
+      "machine_use_status": "archive_only_after_r3_confirmed_after_r11",
+      "r11_confirmed_utc": "2026-04-28T03:26:30Z"
+    },
+    {
+      "source_artifact_id": "CLAUDE_MEMORY_SYNC_v1.json",
+      "classification": "split",
+      "legacy_archive_path": "runtime/governance/legacy_archives/CLAUDE_MEMORY_SYNC_v1.json",
+      "adr_path": "0_kernel/docs/decisions/ADR-0002-adopt-session-state-export-over-model-specific-sync.md",
+      "successor_expected": [
+        "runtime/governance/schemas/session_state_export_schema_v1.json",
+        "runtime/governance/state_exports/SESSION_STATE_EXPORT_LATEST_v1.json"
+      ],
+      "live_location": null,
+      "tombstone_metadata": null,
+      "machine_use_status": "archive_only_after_r4_confirmed_after_r11",
+      "r11_confirmed_utc": "2026-04-28T03:26:30Z"
+    },
+    {
+      "source_artifact_id": "0_kernel/scripts/claude_memory_sync_writer_v1.py",
+      "classification": "split",
+      "legacy_archive_path": "runtime/governance/legacy_archives/claude_memory_sync_writer_v1.py",
+      "adr_path": "0_kernel/docs/decisions/ADR-0002-adopt-session-state-export-over-model-specific-sync.md",
+      "successor_expected": [
+        "0_kernel/scripts/session_state_exporter_v1.py",
+        "0_kernel/scripts/validate_session_state_export_v1.py"
+      ],
+      "live_location": "0_kernel/scripts/claude_memory_sync_writer_v1.py",
+      "tombstone_metadata": "0_kernel/scripts/claude_memory_sync_writer_v1.redirect.json",
+      "machine_use_status": "retired_fail_closed_after_r4_confirmed_after_r11",
+      "r11_confirmed_utc": "2026-04-28T03:26:30Z"
+    },
+    {
+      "source_artifact_id": "1_governance/cool_overlays/COOL_6_RUNTIME_GATE_WIRING_PLAN_v1.json",
+      "classification": "split",
+      "legacy_archive_path": "runtime/governance/legacy_archives/COOL_6_RUNTIME_GATE_WIRING_PLAN_v1.json",
+      "adr_path": "0_kernel/docs/decisions/ADR-0003-adopt-gate-registry-for-runtime-wiring.md",
+      "successor_expected": [
+        "runtime/governance/registries/gate_registry_v1.json",
+        "runtime/governance/load_gate_registry_v1.py",
+        "0_kernel/scripts/assert_gate_registry_integrity_v1.py",
+        "0_kernel/scripts/validate_gate_registry_v1.py"
+      ],
+      "live_location": null,
+      "tombstone_metadata": null,
+      "machine_use_status": "archive_only_after_r5_confirmed_after_r11",
+      "r5_replaced_utc": "2026-04-28T02:56:01Z",
+      "r11_confirmed_utc": "2026-04-28T03:26:30Z"
+    },
+    {
+      "source_artifact_id": "1_governance/workflow_v6/CLAUDE_MEMORY_SEED_v1.json",
+      "classification": "legacy_quarantine_extra",
+      "legacy_archive_path": "runtime/governance/legacy_quarantine/R11_20260428T032630Z/CLAUDE_MEMORY_SEED_v1.json",
+      "adr_path": "0_kernel/docs/decisions/ADR-0002-adopt-session-state-export-over-model-specific-sync.md",
+      "successor_expected": [
+        "runtime/governance/state_exports/SESSION_STATE_EXPORT_LATEST_v1.json",
+        "0_kernel/scripts/session_state_exporter_v1.py"
+      ],
+      "live_location": "1_governance/workflow_v6/CLAUDE_MEMORY_SEED_v1.json",
+      "tombstone_metadata": "1_governance/workflow_v6/CLAUDE_MEMORY_SEED_v1.json.redirect.json",
+      "machine_use_status": "forbidden_as_runtime_authority",
+      "r11_quarantined_utc": "2026-04-28T03:26:30Z",
+      "archive_sha256": "b6b2a0e7fe8012e38bc730817b39a671f0516943194ed0d0093e68bd2572d2c9"
+    },
+    {
+      "source_artifact_id": "1_governance/workflow_v6/CLAUDE_OPERATING_CONTRACT_v1.md",
+      "classification": "legacy_quarantine_extra",
+      "legacy_archive_path": "runtime/governance/legacy_quarantine/R11_20260428T032630Z/CLAUDE_OPERATING_CONTRACT_v1.md",
+      "adr_path": "0_kernel/docs/decisions/ADR-0001-split-rationale-from-runtime-contracts.md",
+      "successor_expected": [
+        "runtime/governance/contracts/unified_runtime_compatibility_contract_v1.json",
+        "runtime/governance/registries/gate_registry_v1.json",
+        "runtime/governance/state_exports/SESSION_STATE_EXPORT_LATEST_v1.json"
+      ],
+      "live_location": "1_governance/workflow_v6/CLAUDE_OPERATING_CONTRACT_v1.md",
+      "tombstone_metadata": "1_governance/workflow_v6/CLAUDE_OPERATING_CONTRACT_v1.md.redirect.json",
+      "machine_use_status": "forbidden_as_runtime_authority",
+      "r11_quarantined_utc": "2026-04-28T03:26:30Z",
+      "archive_sha256": "0aa014fe7be1451c45123c6c7de580f8cf8696070b36c88d2a447dd612320a1d"
+    }
+  ],
+  "updated_utc": "2026-04-28T03:26:30Z"
+}

@@ -1,0 +1,44 @@
+{
+  "argv_redacted": [
+    "python3",
+    "-S",
+    "-c",
+    "print(\"stage4-ok\")"
+  ],
+  "argv_resolved": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "-c",
+    "print(\"stage4-ok\")"
+  ],
+  "artifact_type": "METABLOOMS_BOUNDED_COMMAND_DECISION_PACKET_v1",
+  "attempts": [
+    {
+      "attempt_index": 0,
+      "elapsed_ms": 366,
+      "returncode": 0,
+      "started_utc": "20260502T140621Z",
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_truncated": false,
+      "stdout": "stage4-ok\n",
+      "stdout_bytes": 10,
+      "stdout_sha256": "5934d41b96dc698454499acdda355dd44dee60d8478e901e7f8580ec2c923fca",
+      "stdout_truncated": false,
+      "timeout_seconds": 5.0
+    }
+  ],
+  "created_utc": "20260502T140621Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision_packet_path": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/STAGE4_SMOKE_stage4_adapter_echo_smoke_20260502T140621Z_dc3129655c3f/decision_packet.json",
+  "failure_class": null,
+  "failure_event_path": null,
+  "operation_type": "stage4_adapter_echo_smoke",
+  "policy_matches": [],
+  "pre_spawn_receipt_path": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/STAGE4_SMOKE_stage4_adapter_echo_smoke_20260502T140621Z_dc3129655c3f/pre_spawn_receipt.json",
+  "receipt_dir": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/STAGE4_SMOKE_stage4_adapter_echo_smoke_20260502T140621Z_dc3129655c3f",
+  "result_class": "ALLOW_SUCCESS",
+  "stage": "STAGE4_SMOKE",
+  "total_elapsed_ms": 388
+}

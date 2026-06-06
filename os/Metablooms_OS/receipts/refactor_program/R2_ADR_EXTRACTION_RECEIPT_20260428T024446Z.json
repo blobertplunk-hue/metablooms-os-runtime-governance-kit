@@ -1,0 +1,11 @@
+{
+  "stage": "R2_ADR_EXTRACTION_AND_ARCHIVAL_CONVERSION",
+  "timestamp_utc": "2026-04-28T02:44:46Z",
+  "redirect_contract_path": "/mnt/data/Metablooms_OS/runtime/governance/contracts/legacy_artifact_redirects_v1.json",
+  "adr_count": 3,
+  "legacy_archives_count": 4,
+  "tombstone_metadata_count": 2,
+  "narrative_heavy_sources_archived_or_bound": true,
+  "status": "PASS",
+  "verify_receipt_path": "/mnt/data/Metablooms_OS/receipts/refactor_program/R2_VERIFY_RECEIPT_20260428T024446Z.json"
+}

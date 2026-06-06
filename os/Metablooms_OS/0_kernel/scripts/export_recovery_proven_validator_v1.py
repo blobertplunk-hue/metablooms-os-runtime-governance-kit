@@ -1,0 +1,439 @@
+#!/usr/bin/env python3
+"""
+MetaBlooms Export Recovery Proven Validator v1.
+
+Fail-closed validator for export ZIP + sidecar + internal metadata + ledger/DAG/pointer consistency.
+
+This module is intentionally standard-library only.
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import sys
+import time
+import zipfile
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Tuple
+
+
+PLACEHOLDER_STRINGS = [
+    "<filled_after_zip>",
+    "TODO",
+    "FIXME",
+    "PENDING_EXPORT",
+    "pending",
+    "export_ready",
+]
+
+
+REQUIRED_INTERNAL = [
+    "EXPORT_MANIFEST_v1.json",
+    "EXPORT_PROVENANCE_v1.json",
+    "RESTORE_CONTRACT_v1.json",
+    "CAPABILITY_SET_v1.json",
+]
+
+
+DEFAULT_REQUIRED_GATES = [
+    "G1_LEDGER_DECLARED_OUTPUTS_INSIDE_ZIP",
+    "G2_FINAL_PASS_RECEIPTS_INSIDE_ZIP",
+    "G3_NO_PLACEHOLDER_METADATA",
+    "G4_GIT_HEAD_LIFECYCLE_CONSISTENCY",
+    "G5_SIDECAR_BINDING",
+    "G6_DETERMINISTIC_ZIP_POLICY",
+    "G7_DAG_LEDGER_MAPPING",
+    "G8_POINTER_CONFLICT_RESOLUTION",
+    "G9_TRANSACTIONAL_STATE_ORDER",
+    "G10_POLICY_AS_CODE_DECISION",
+]
+
+
+def sha256_file(path: Path, chunk_size: int = 1024 * 1024) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as f:
+        for chunk in iter(lambda: f.read(chunk_size), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def load_json(path: Path) -> Dict[str, Any]:
+    with path.open("r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def dump_json(path: Path, obj: Dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    _mb_write_json_file(path, obj, operation_id='STAGE4_ATOMIC_JSON_0_kernel_scripts_export_recovery_proven_validator_v1_py_L68', create_parent=True, allowed_roots=[str(_MBAJWPath('/mnt/data').resolve())], indent=2, sort_keys=False, ensure_ascii=True, max_bytes=20000000)
+
+
+def zip_names(zip_path: Path) -> List[str]:
+    with zipfile.ZipFile(zip_path, "r") as z:
+        return z.namelist()
+
+
+def read_zip_json(zip_path: Path, rel_path: str) -> Optional[Dict[str, Any]]:
+    with zipfile.ZipFile(zip_path, "r") as z:
+        try:
+            raw = z.read(rel_path)
+        except KeyError:
+            return None
+    return json.loads(raw.decode("utf-8"))
+
+
+def find_zip_json(zip_path: Path, basename: str) -> Tuple[Optional[str], Optional[Dict[str, Any]]]:
+    names = zip_names(zip_path)
+    for name in names:
+        if name.endswith("/" + basename) or name == basename:
+            return name, read_zip_json(zip_path, name)
+    return None, None
+
+
+def normalize_zip_rel(output: str) -> str:
+    output = output.strip().lstrip("/")
+    if output.startswith("Metablooms_OS_refined/"):
+        return output
+    return "Metablooms_OS_refined/" + output
+
+
+def gate(gate_id: str, passed: bool, evidence: Dict[str, Any], message: str, severity: str = "blocking") -> Dict[str, Any]:
+    return {
+        "gate_id": gate_id,
+        "severity": severity,
+        "passed": bool(passed),
+        "evidence": evidence,
+        "message": message,
+    }
+
+
+def flatten_values(obj: Any, prefix: str = "") -> List[Tuple[str, Any]]:
+    out: List[Tuple[str, Any]] = []
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            new_prefix = f"{prefix}.{k}" if prefix else str(k)
+            out.extend(flatten_values(v, new_prefix))
+    elif isinstance(obj, list):
+        for i, v in enumerate(obj):
+            out.extend(flatten_values(v, f"{prefix}[{i}]"))
+    else:
+        out.append((prefix, obj))
+    return out
+
+
+def scan_placeholders(objs: Dict[str, Any]) -> List[Dict[str, Any]]:
+    hits: List[Dict[str, Any]] = []
+    for obj_name, obj in objs.items():
+        for path, value in flatten_values(obj):
+            if isinstance(value, str):
+                for token in PLACEHOLDER_STRINGS:
+                    if token in value:
+                        hits.append({"object": obj_name, "path": path, "token": token, "value": value})
+            if path.endswith("size_bytes") and value == 0:
+                hits.append({"object": obj_name, "path": path, "token": "size_bytes=0", "value": value})
+    return hits
+
+
+def get_expected_ledger_entry(ledger: Dict[str, Any], expected_entry_id: Optional[str], expected_stage: str) -> Optional[Dict[str, Any]]:
+    entries = ledger.get("entries", []) or []
+    if expected_entry_id:
+        for e in entries:
+            if e.get("entry_id") == expected_entry_id:
+                return e
+    for e in reversed(entries):
+        if e.get("stage") == expected_stage or e.get("entry_id") == expected_stage:
+            return e
+    latest = ledger.get("latest_pass", {})
+    if latest.get("stage") == expected_stage or latest.get("entry_id") == expected_stage:
+        return latest
+    return None
+
+
+def classify_head_fields(objs: Dict[str, Any]) -> Dict[str, str]:
+    found: Dict[str, str] = {}
+    for obj_name, obj in objs.items():
+        for path, value in flatten_values(obj):
+            if isinstance(value, str) and ("head" in path.lower() or path.lower().endswith("git_head")):
+                if len(value) >= 7 and all(c in "0123456789abcdefABCDEF" for c in value[:7]):
+                    found[f"{obj_name}:{path}"] = value
+    return found
+
+
+def validate(input_obj: Dict[str, Any]) -> Dict[str, Any]:
+    started = time.time()
+    gate_results: List[Dict[str, Any]] = []
+    expected_stage = input_obj.get("expected_stage", "")
+    expected_entry_id = input_obj.get("expected_ledger_entry_id")
+    expected_dag_id = input_obj.get("expected_dag_node_id")
+    required_gates = input_obj.get("gate_policy", {}).get("required_gates") or DEFAULT_REQUIRED_GATES
+
+    zip_path = Path(input_obj["export_zip"])
+    sidecar_path = Path(input_obj["sidecar_manifest"])
+    active_root = Path(input_obj["active_root"])
+    ledger_path = Path(input_obj["ledger_path"])
+    dag_path = Path(input_obj["dag_path"])
+    pointer_path = Path(input_obj["pointer_path"])
+    boot_path = Path(input_obj["boot_manifest_path"])
+    registry_path = Path(input_obj["artifact_registry_path"])
+
+    def missing_file_gate(gate_id: str, paths: List[Path]) -> Optional[Dict[str, Any]]:
+        missing = [str(p) for p in paths if not p.exists()]
+        if missing:
+            return gate(gate_id, False, {"missing": missing}, "required input path missing")
+        return None
+
+    missing_any = missing_file_gate("INPUTS_PRESENT", [zip_path, sidecar_path, ledger_path, dag_path, pointer_path, boot_path, registry_path])
+    if missing_any:
+        gate_results.append(missing_any)
+        return finalize(input_obj, gate_results, started)
+
+    names = zip_names(zip_path)
+    names_set = set(names)
+    sidecar = load_json(sidecar_path)
+    ledger = load_json(ledger_path)
+    dag = load_json(dag_path)
+    pointer = load_json(pointer_path)
+    boot = load_json(boot_path)
+    registry = load_json(registry_path)
+
+    manifest_name, manifest = find_zip_json(zip_path, "EXPORT_MANIFEST_v1.json")
+    provenance_name, provenance = find_zip_json(zip_path, "EXPORT_PROVENANCE_v1.json")
+    restore_name, restore_contract = find_zip_json(zip_path, "RESTORE_CONTRACT_v1.json")
+    cap_name, caps = find_zip_json(zip_path, "CAPABILITY_SET_v1.json")
+
+    internal_objs = {
+        "EXPORT_MANIFEST_v1.json": manifest or {},
+        "EXPORT_PROVENANCE_v1.json": provenance or {},
+        "RESTORE_CONTRACT_v1.json": restore_contract or {},
+        "CAPABILITY_SET_v1.json": caps or {},
+    }
+
+    # G1: ledger-declared outputs inside ZIP.
+    ledger_entry = get_expected_ledger_entry(ledger, expected_entry_id, expected_stage)
+    missing_outputs: List[str] = []
+    declared_outputs: List[str] = []
+    if ledger_entry:
+        declared_outputs = list(ledger_entry.get("outputs", []) or [])
+        for output in declared_outputs:
+            normalized = normalize_zip_rel(output)
+            if normalized not in names_set:
+                missing_outputs.append(output)
+    gate_results.append(gate(
+        "G1_LEDGER_DECLARED_OUTPUTS_INSIDE_ZIP",
+        bool(ledger_entry) and not missing_outputs,
+        {"expected_stage": expected_stage, "expected_entry_id": expected_entry_id, "declared_outputs": declared_outputs, "missing_outputs": missing_outputs},
+        "all ledger-declared outputs are inside ZIP" if ledger_entry and not missing_outputs else "ledger entry missing or declared outputs missing from ZIP"
+    ))
+
+    # G2: final PASS receipts inside ZIP.
+    bad_receipts: List[Dict[str, Any]] = []
+    checked_receipts: List[str] = []
+    receipt_outputs = [o for o in declared_outputs if o.endswith("RECEIPT_v1.json") or "RECEIPT" in Path(o).name]
+    for output in receipt_outputs:
+        normalized = normalize_zip_rel(output)
+        obj = read_zip_json(zip_path, normalized) if normalized in names_set else None
+        checked_receipts.append(output)
+        if not obj or obj.get("verdict") != "PASS" or obj.get("status") in {"blocked", "running", "pending", "export_ready", "pre_export_commit"}:
+            bad_receipts.append({"path": output, "status": None if not obj else obj.get("status"), "verdict": None if not obj else obj.get("verdict")})
+    gate_results.append(gate(
+        "G2_FINAL_PASS_RECEIPTS_INSIDE_ZIP",
+        not bad_receipts and bool(checked_receipts),
+        {"checked_receipts": checked_receipts, "bad_receipts": bad_receipts},
+        "final PASS receipts inside ZIP" if not bad_receipts and checked_receipts else "missing or non-final receipt inside ZIP"
+    ))
+
+    # G3: no placeholder metadata.
+    placeholder_hits = scan_placeholders(internal_objs)
+    gate_results.append(gate(
+        "G3_NO_PLACEHOLDER_METADATA",
+        not placeholder_hits and all(internal_objs.values()),
+        {"placeholder_hits": placeholder_hits, "internal_present": {k: bool(v) for k, v in internal_objs.items()}},
+        "no placeholder metadata found" if not placeholder_hits and all(internal_objs.values()) else "placeholder or missing internal metadata found"
+    ))
+
+    # G4: git head lifecycle consistency.
+    head_objs = {"pointer": pointer, "ledger_entry": ledger_entry or {}, "manifest": manifest or {}, "provenance": provenance or {}}
+    heads = classify_head_fields(head_objs)
+    unique_heads = sorted(set(heads.values()))
+    required_labels = set(input_obj.get("git_head_policy", {}).get("required_labels", []) or [])
+    labeled_ok = True
+    if len(unique_heads) > 1 and required_labels:
+        flat_manifest = dict(flatten_values(manifest or {}))
+        flat_prov = dict(flatten_values(provenance or {}))
+        all_flat = {**{f"manifest:{k}": v for k, v in flat_manifest.items()}, **{f"provenance:{k}": v for k, v in flat_prov.items()}}
+        label_text = " ".join(all_flat.keys())
+        labeled_ok = all(label in label_text for label in required_labels)
+    gate_results.append(gate(
+        "G4_GIT_HEAD_LIFECYCLE_CONSISTENCY",
+        len(unique_heads) <= 1 or labeled_ok,
+        {"heads": heads, "unique_heads": unique_heads, "required_labels": list(required_labels), "labeled_ok": labeled_ok},
+        "git heads consistent or lifecycle-labeled" if len(unique_heads) <= 1 or labeled_ok else "unlabeled git head divergence"
+    ))
+
+    # G5: sidecar binding.
+    actual_sha = sha256_file(zip_path)
+    actual_size = zip_path.stat().st_size
+    sidecar_sha = sidecar.get("sha256")
+    sidecar_size = sidecar.get("size_bytes")
+    manifest_sidecar_text = json.dumps(manifest or {})
+    sidecar_bound = (
+        str(sidecar_path.name) in manifest_sidecar_text
+        or "external_sidecar_required" in manifest_sidecar_text
+        or input_obj.get("external_sidecar_policy", {}).get("internal_manifest_must_reference_sidecar") is False
+    )
+    gate_results.append(gate(
+        "G5_SIDECAR_BINDING",
+        sidecar_sha == actual_sha and sidecar_size == actual_size and sidecar_bound,
+        {"actual_sha": actual_sha, "sidecar_sha": sidecar_sha, "actual_size": actual_size, "sidecar_size": sidecar_size, "sidecar_bound": sidecar_bound},
+        "sidecar matches and is bound" if sidecar_sha == actual_sha and sidecar_size == actual_size and sidecar_bound else "sidecar missing, mismatched, or unbound"
+    ))
+
+    # G6: deterministic ZIP policy.
+    duplicates = sorted({n for n in names if names.count(n) > 1})
+    bad_entries = [n for n in names if "__pycache__" in n or ".pytest_cache" in n or "/.git/" in n or n.endswith("/.git")]
+    sorted_ok = names == sorted(names)
+    gate_results.append(gate(
+        "G6_DETERMINISTIC_ZIP_POLICY",
+        not duplicates and not bad_entries and sorted_ok,
+        {"duplicate_entries": duplicates, "bad_entries": bad_entries, "sorted_ok": sorted_ok, "entry_count": len(names)},
+        "ZIP packaging is deterministic enough for current policy" if not duplicates and not bad_entries and sorted_ok else "ZIP has duplicate/forbidden/unsorted entries"
+    ))
+
+    # G7: DAG/ledger mapping.
+    dag_nodes = dag.get("nodes", []) or []
+    dag_node = None
+    if expected_dag_id:
+        dag_node = next((n for n in dag_nodes if n.get("id") == expected_dag_id), None)
+    if not dag_node and expected_stage:
+        dag_node = next((n for n in dag_nodes if n.get("name") == expected_stage or n.get("id") == expected_stage), None)
+    mapping_ok = bool(dag_node and ledger_entry)
+    if dag_node and ledger_entry:
+        mapping_ok = bool(ledger_entry.get("dependencies") is not None or ledger_entry.get("stage"))
+    gate_results.append(gate(
+        "G7_DAG_LEDGER_MAPPING",
+        mapping_ok,
+        {"expected_dag_node_id": expected_dag_id, "dag_node": dag_node, "ledger_entry_id": None if not ledger_entry else ledger_entry.get("entry_id")},
+        "DAG node maps to ledger entry" if mapping_ok else "DAG/ledger mapping ambiguous or missing"
+    ))
+
+    # G8: pointer conflict resolution.
+    pointer_like = []
+    for a in registry.get("artifacts", []) or []:
+        text = " ".join(str(a.get(k, "")) for k in ["artifact_id", "path", "type", "status"]).lower()
+        if "pointer" in text and ("active" in text or "boot" in text):
+            pointer_like.append(a)
+    active_pointer_roles: Dict[str, int] = {}
+    for a in pointer_like:
+        role = str(a.get("type", "pointer"))
+        active_pointer_roles[role] = active_pointer_roles.get(role, 0) + 1
+    conflicts = {k: v for k, v in active_pointer_roles.items() if v > 1}
+    gate_results.append(gate(
+        "G8_POINTER_CONFLICT_RESOLUTION",
+        not conflicts,
+        {"pointer_like_count": len(pointer_like), "role_counts": active_pointer_roles, "conflicts": conflicts},
+        "no active pointer conflicts detected" if not conflicts else "active pointer conflict detected"
+    ))
+
+    # G9: transactional state order.
+    latest = ledger.get("latest_pass", {})
+    latest_ok = latest.get("verdict") == "PASS" and bool(latest.get("receipt"))
+    pointer_ok = pointer.get("status") == "active_current_working_baseline"
+    gate_results.append(gate(
+        "G9_TRANSACTIONAL_STATE_ORDER",
+        latest_ok and pointer_ok,
+        {"latest_pass": latest, "pointer_status": pointer.get("status")},
+        "transactional state ordering appears valid" if latest_ok and pointer_ok else "ledger/pointer state order invalid"
+    ))
+
+    # G10: policy-as-code decision exists. During validation, this gate passes when all other required gates are represented
+    # and no prior blocking gate failed. It exists to prevent prose-only PASS.
+    prior_required = [g for g in gate_results if g["gate_id"] in required_gates and g["gate_id"] != "G10_POLICY_AS_CODE_DECISION"]
+    prior_ok = all(g["passed"] for g in prior_required)
+    represented = {g["gate_id"] for g in gate_results}
+    missing_required = [g for g in required_gates if g != "G10_POLICY_AS_CODE_DECISION" and g not in represented]
+    gate_results.append(gate(
+        "G10_POLICY_AS_CODE_DECISION",
+        prior_ok and not missing_required,
+        {"represented_gates": sorted(represented), "missing_required": missing_required, "prior_ok": prior_ok},
+        "machine-readable decision covers required gates" if prior_ok and not missing_required else "missing or failing machine-readable gate decision"
+    ))
+
+    return finalize(input_obj, gate_results, started)
+
+
+def finalize(input_obj: Dict[str, Any], gate_results: List[Dict[str, Any]], started: float) -> Dict[str, Any]:
+    blocking_failed = [g for g in gate_results if g.get("severity") == "blocking" and not g.get("passed")]
+    failed = [g for g in gate_results if not g.get("passed")]
+    passed = [g for g in gate_results if g.get("passed")]
+    verdict = "PASS" if not blocking_failed else "FAIL"
+    return {
+        "version": "1.0",
+        "created_at": time.time(),
+        "validator_id": "EXPORT_RECOVERY_PROVEN_VALIDATOR_v1",
+        "stage": "EXPORT_RECOVERY_VALIDATION",
+        "input": input_obj,
+        "gate_results": gate_results,
+        "summary": {
+            "passed_count": len(passed),
+            "failed_count": len(failed),
+            "blocking_failed_count": len(blocking_failed),
+            "warnings_count": 0,
+            "elapsed_seconds": round(time.time() - started, 6),
+        },
+        "verdict": verdict,
+        "next_correct_command": "EXPORT MAY BE CALLED RECOVERY-PROVEN" if verdict == "PASS" else "REPAIR EXPORT — VALIDATOR BLOCKED RECOVERY-PROVEN CLAIM",
+    }
+
+
+def default_input_from_args(args: argparse.Namespace) -> Dict[str, Any]:
+    active_root = Path(args.active_root)
+    return {
+        "version": "1.0",
+        "export_zip": args.export_zip,
+        "sidecar_manifest": args.sidecar_manifest,
+        "active_root": str(active_root),
+        "expected_stage": args.expected_stage,
+        "expected_ledger_entry_id": args.expected_ledger_entry_id,
+        "expected_dag_node_id": args.expected_dag_node_id,
+        "ledger_path": str(active_root / "0_kernel/state/STAGE_STATE_LEDGER_v1.json"),
+        "dag_path": str(active_root / "0_kernel/pipeline/STAGE_DAG_v1.json"),
+        "pointer_path": str(active_root / "0_kernel/state/CURRENT_WORKING_BASELINE_POINTER_v1.json"),
+        "boot_manifest_path": str(active_root / "boot_manifest_v1.json"),
+        "artifact_registry_path": str(active_root / "artifact_registry.json"),
+        "external_sidecar_policy": {
+            "external_sidecar_required": True,
+            "sidecar_must_match_zip": True,
+            "internal_manifest_must_reference_sidecar": True,
+        },
+        "git_head_policy": {
+            "allow_lifecycle_heads": True,
+            "required_labels": ["pre_export_head", "exported_tree_head", "metadata_commit_head", "final_lock_head", "current_working_head"],
+        },
+        "gate_policy": {
+            "fail_closed": True,
+            "required_gates": DEFAULT_REQUIRED_GATES,
+        },
+    }
+
+
+def main(argv: Optional[List[str]] = None) -> int:
+    parser = argparse.ArgumentParser(description="Validate MetaBlooms recovery-proven export claims.")
+    parser.add_argument("--export-zip", required=True)
+    parser.add_argument("--sidecar-manifest", required=True)
+    parser.add_argument("--active-root", required=True)
+    parser.add_argument("--expected-stage", default="F7_STABLE_EXPORT_BOOT_RECOVERY_PROOF")
+    parser.add_argument("--expected-ledger-entry-id", default="F7_STABLE_EXPORT_BOOT_RECOVERY_PROOF")
+    parser.add_argument("--expected-dag-node-id", default="F7")
+    parser.add_argument("--output", required=False)
+    args = parser.parse_args(argv)
+
+    input_obj = default_input_from_args(args)
+    decision = validate(input_obj)
+    if args.output:
+        dump_json(Path(args.output), decision)
+    print(json.dumps(decision, indent=2))
+    return 0 if decision.get("verdict") == "PASS" else 2
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

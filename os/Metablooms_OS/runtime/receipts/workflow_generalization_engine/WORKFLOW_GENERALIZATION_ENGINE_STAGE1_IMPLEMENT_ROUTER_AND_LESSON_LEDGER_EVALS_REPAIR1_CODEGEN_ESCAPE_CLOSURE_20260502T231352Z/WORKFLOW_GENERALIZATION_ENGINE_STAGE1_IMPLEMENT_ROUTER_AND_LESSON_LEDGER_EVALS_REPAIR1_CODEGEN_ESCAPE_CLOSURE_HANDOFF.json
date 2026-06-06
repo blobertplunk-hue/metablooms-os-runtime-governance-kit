@@ -1,0 +1,12 @@
+{
+  "from_stage": "WORKFLOW_GENERALIZATION_ENGINE_STAGE1_IMPLEMENT_ROUTER_AND_LESSON_LEDGER_EVALS_REPAIR1_CODEGEN_ESCAPE_CLOSURE",
+  "verdict": "PASS",
+  "authorized_next_stage": "WORKFLOW_GENERALIZATION_ENGINE_STAGE2_TRANSCRIPT_IMPORTER_AND_EXPORT_BINDING_OR_FULL_EXPORT",
+  "requirements": [
+    "implement transcript importer/parser that emits candidate lesson records without auto-adopting them",
+    "run importer against provided transcript artifacts when available",
+    "bind router into future MPP/preflight stages",
+    "include router/ledger/evals in next full authority export"
+  ],
+  "do_not_claim": "Do not claim old transcript lessons were adopted unless better-than-current comparison passed and a receipt records the decision."
+}

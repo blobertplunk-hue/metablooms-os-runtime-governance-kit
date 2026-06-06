@@ -1,0 +1,24 @@
+{
+  "checks": {
+    "adapter_present": true,
+    "cartridge_manifest_present": true,
+    "demo_promoted": true,
+    "engine_promoted": true,
+    "node_smoke_passed": true,
+    "registry_integrity_passed": true,
+    "schema_promoted": true,
+    "sources_present": true,
+    "validator_passed": true
+  },
+  "closed_loopholes": [
+    "no telemetry cartridge without event contract",
+    "no canonical event without stable event_name",
+    "no exported telemetry event without trace_id/span_id correlation fields",
+    "no unvalidated replay fixtures",
+    "no registry promotion without entrypoint integrity pass"
+  ],
+  "created_utc": "2026-04-28T03:21:05.639276+00:00",
+  "receipt_type": "R9_VERIFY_RECEIPT",
+  "stage": "R9_TELEMETRY_CARTRIDGE_CONTRACT_PROMOTION",
+  "verdict": "PASS"
+}

@@ -1,0 +1,43 @@
+{
+  "version": "1.0",
+  "status": "active",
+  "entries": [
+    {
+      "entry_id": "TEST_EXPORT_STAGE",
+      "stage": "TEST_EXPORT_STAGE",
+      "verdict": "PASS",
+      "git_head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "receipt": "0_kernel/registry/TEST_EXPORT_STAGE_RECEIPT_v1.json",
+      "outputs": [
+        "0_kernel/registry/TEST_EXPORT_STAGE_RECEIPT_v1.json",
+        "0_kernel/registry/TEST_LOCK_v1.json",
+        "EXPORT_MANIFEST_v1.json",
+        "EXPORT_PROVENANCE_v1.json",
+        "RESTORE_CONTRACT_v1.json",
+        "CAPABILITY_SET_v1.json"
+      ],
+      "dependencies": [],
+      "supersedes": [],
+      "advances_latest_pass": true
+    }
+  ],
+  "latest_pass": {
+    "entry_id": "TEST_EXPORT_STAGE",
+    "stage": "TEST_EXPORT_STAGE",
+    "verdict": "PASS",
+    "git_head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "receipt": "0_kernel/registry/TEST_EXPORT_STAGE_RECEIPT_v1.json",
+    "outputs": [
+      "0_kernel/registry/TEST_EXPORT_STAGE_RECEIPT_v1.json",
+      "0_kernel/registry/TEST_LOCK_v1.json",
+      "EXPORT_MANIFEST_v1.json",
+      "EXPORT_PROVENANCE_v1.json",
+      "RESTORE_CONTRACT_v1.json",
+      "CAPABILITY_SET_v1.json"
+    ],
+    "dependencies": [],
+    "supersedes": [],
+    "advances_latest_pass": true
+  },
+  "verdict": "PASS"
+}

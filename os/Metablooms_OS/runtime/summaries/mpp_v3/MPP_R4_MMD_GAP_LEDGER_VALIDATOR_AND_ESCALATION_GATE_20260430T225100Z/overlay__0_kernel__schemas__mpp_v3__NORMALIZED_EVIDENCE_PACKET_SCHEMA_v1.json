@@ -1,0 +1,170 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/NORMALIZED_EVIDENCE_PACKET_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "claim_index": {
+      "additionalProperties": {
+        "additionalProperties": false,
+        "properties": {
+          "atom_ids": {
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "coverage": {
+            "enum": [
+              "single_source",
+              "multi_source",
+              "artifact_only",
+              "mixed"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "atom_ids",
+          "coverage"
+        ],
+        "type": "object"
+      },
+      "type": "object"
+    },
+    "created_at": {
+      "minLength": 10,
+      "type": "string"
+    },
+    "normalized_atoms": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "atom_id": {
+            "pattern": "^ATOM-[0-9]{3,}$",
+            "type": "string"
+          },
+          "claim": {
+            "minLength": 10,
+            "type": "string"
+          },
+          "confidence": {
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ],
+            "type": "string"
+          },
+          "evidence_refs": {
+            "items": {
+              "minLength": 2,
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "risk_flags": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "atom_id",
+          "claim",
+          "evidence_refs",
+          "confidence",
+          "risk_flags"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "packet_id": {
+      "minLength": 8,
+      "type": "string"
+    },
+    "quality_summary": {
+      "additionalProperties": false,
+      "properties": {
+        "atom_count": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "blocked": {
+          "type": "boolean"
+        },
+        "source_count": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "source_count",
+        "atom_count",
+        "blocked",
+        "warnings"
+      ],
+      "type": "object"
+    },
+    "result_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "mpp.normalized_evidence_packet.v1"
+    },
+    "source_packets": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "packet_id": {
+            "minLength": 2,
+            "type": "string"
+          },
+          "packet_type": {
+            "minLength": 2,
+            "type": "string"
+          },
+          "result_hash": {
+            "pattern": "^[a-f0-9]{64}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "packet_type",
+          "packet_id",
+          "result_hash"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "stage": {
+      "const": "NORMALIZE_EVIDENCE"
+    }
+  },
+  "required": [
+    "schema_version",
+    "packet_id",
+    "stage",
+    "created_at",
+    "source_packets",
+    "normalized_atoms",
+    "claim_index",
+    "quality_summary",
+    "result_hash"
+  ],
+  "title": "MPP v3 Normalized Evidence Packet",
+  "type": "object"
+}

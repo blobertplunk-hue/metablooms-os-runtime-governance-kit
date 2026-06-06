@@ -1,0 +1,130 @@
+{
+  "$id": "https://metablooms.local/schemas/TOOL_CANDIDATE_SET_v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "candidates": {
+      "items": {
+        "properties": {
+          "competence_score": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "decision_status": {
+            "enum": [
+              "PREFERRED",
+              "ALLOWED",
+              "FALLBACK",
+              "DEFER_INSTALL",
+              "DENIED"
+            ],
+            "type": "string"
+          },
+          "install_state": {
+            "type": "string"
+          },
+          "reasons": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "requires_approval": {
+            "type": "boolean"
+          },
+          "risk_tier": {
+            "type": "string"
+          },
+          "score": {
+            "type": "number"
+          },
+          "tool_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "tool_id",
+          "decision_status",
+          "score",
+          "reasons"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "classified_job_type": {
+      "type": "string"
+    },
+    "created_utc": {
+      "type": "string"
+    },
+    "resolver_version": {
+      "type": "string"
+    },
+    "schema": {
+      "const": "TOOL_CANDIDATE_SET_v1"
+    },
+    "stage_id": {
+      "type": "string"
+    },
+    "sufficiency": {
+      "properties": {
+        "allowed_count": {
+          "type": "integer"
+        },
+        "candidate_count": {
+          "type": "integer"
+        },
+        "coverage_score": {
+          "type": "number"
+        },
+        "reasons": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "score_spread": {
+          "type": "number"
+        },
+        "verdict": {
+          "enum": [
+            "PASS",
+            "FAIL"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "candidate_count",
+        "allowed_count",
+        "score_spread",
+        "coverage_score"
+      ],
+      "type": "object"
+    },
+    "task": {
+      "type": "string"
+    },
+    "top_allowed_tool_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "schema",
+    "stage_id",
+    "task",
+    "classified_job_type",
+    "candidates",
+    "top_allowed_tool_id",
+    "sufficiency"
+  ],
+  "title": "MetaBlooms Tool Candidate Set v1",
+  "type": "object"
+}

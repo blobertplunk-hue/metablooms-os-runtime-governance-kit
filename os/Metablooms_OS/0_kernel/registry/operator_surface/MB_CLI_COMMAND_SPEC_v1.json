@@ -1,0 +1,50 @@
+{
+  "artifact_type": "MB_CLI_COMMAND_SPEC_v1",
+  "command": "mb",
+  "commands": [
+    {
+      "contract": "Run bounded boot smoke and surface boot verdict/receipt.",
+      "name": "boot"
+    },
+    {
+      "contract": "Show one-screen runtime state and latest receipt/handoff.",
+      "name": "status"
+    },
+    {
+      "contract": "Verify critical operator-surface and boot artifacts.",
+      "name": "verify"
+    },
+    {
+      "contract": "Create a compressed complete OS ZIP plus checksum sidecar.",
+      "name": "export"
+    },
+    {
+      "contract": "Dry-run latest handoff continuation without executing new work.",
+      "name": "replay"
+    }
+  ],
+  "created_utc": "20260501T040605Z",
+  "non_goals": [
+    "Replace existing governance",
+    "Bypass receipts or validators",
+    "Turn failed gates into success"
+  ],
+  "purpose": "Reduce MetaBlooms critical-path operation to a small, stable CLI surface.",
+  "research_bindings": [
+    {
+      "finding": "Clear subcommands, help text, errors, and scriptable output reduce operator burden.",
+      "source": "CLI Guidelines"
+    },
+    {
+      "finding": "Resume flows need stable state pointers and explicit pause/resume semantics.",
+      "source": "LangGraph HITL/checkpoint docs"
+    }
+  ],
+  "risk_controls": [
+    "json_mode_for_machine_validation",
+    "bounded_boot_timeout",
+    "export_testzip",
+    "no network dependency",
+    "dry_run_replay_default"
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "document_type": "CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1",
+  "created_utc": "2026-04-26T11:00:33Z",
+  "created_by": "Claude audit+build session 2026-04-26",
+  "purpose": "This document formally links the two parallel tracks of MetaBlooms development \u2014 the GW governed workflow (Claude Bundle artifact processing) and the OS kernel (SIR25 build line) \u2014 into a single unified handoff. From this point forward, both tracks share the same baseline ZIP and the same memory sync file.",
+  "two_track_summary": {
+    "gw_governed_workflow": {
+      "track_id": "GW",
+      "runtime": "ChatGPT (web.run + Python-S)",
+      "bundle": "claude_bundle_governed_workflow_v33_gw5t_recursive_archive_and_rule_review.zip",
+      "latest_stage_complete": "GW5U",
+      "stages_complete": 21,
+      "workflow_version": "v6",
+      "amendment_ledger_version": "v5",
+      "regression_checklist_version": "v5",
+      "queue_status": "EMPTY \u2014 all artifacts processed through GW5T",
+      "open_items": [
+        "stage_cartridges_bundle.zip promotion decision (ChatGPT must verify + promote or reject)",
+        "6 browser validation rules \u2014 deferred pending browser automation stage",
+        "6 Nomotic policy merge rules \u2014 deferred pending policy merge pass"
+      ]
+    },
+    "os_kernel_build_line": {
+      "track_id": "OS",
+      "runtime": "Claude (build) + ChatGPT (deploy to /mnt/data)",
+      "baseline": "METABLOOMS_FULL_INTEGRATED_OS_20260426_v4.zip",
+      "baseline_sha": "a1fa6eaf985bd1218f74cf98c6d9a7b13a814feb67a10f8a8718351e4fae5567",
+      "sir25_original_sha": "b1b82d7765c49db8f4368c4267b9002c141869f103660c4acee07fda7486187b",
+      "merge_lock": "MERGE-S9 PASS \u2014 2026-04-26",
+      "scripts_in_tree": 17,
+      "artifacts_in_registry": 204,
+      "open_items": [
+        "GW5U0 /mnt/data ChatGPT-side validation (SHA + path verification)",
+        "stage_cartridges_bundle.zip promotion decision (shared with GW track)"
+      ]
+    }
+  },
+  "unified_baseline": {
+    "authoritative_zip": "METABLOOMS_FULL_INTEGRATED_OS_20260426_v4.zip",
+    "sha256": "a1fa6eaf985bd1218f74cf98c6d9a7b13a814feb67a10f8a8718351e4fae5567",
+    "entry_count": 931,
+    "contents_summary": {
+      "scripts": "17 Python scripts in 0_kernel/scripts/ \u2014 12 original + 5 new (BUILD-1 through BUILD-5)",
+      "registry": "204 artifacts in artifact_registry.json (5 new ARB sidecar entries \u2014 BUILD-6)",
+      "governance": "Workflow v6 (AMEND-0005 through AMEND-0009) in 1_governance/workflow_v6/",
+      "memory_sync": "CLAUDE_MEMORY_SYNC_v1.json at ZIP root \u2014 load into Claude at session start",
+      "build_receipts": "BUILD-1 through BUILD-6 receipts in 0_kernel/registry/build_receipts/",
+      "arb_sidecar": "arb_shell_safe_sidecar/ namespace in 0_kernel/registry/ \u2014 MERGE-S9 output",
+      "merge_lock": "MERGE_S9_INTEGRATION_LOCK_DECISION_v1.json in build_receipts/"
+    }
+  },
+  "memory_sync": {
+    "file": "CLAUDE_MEMORY_SYNC_v1.json",
+    "sha256": "e6fce023f6404af537666ac3a54537ecce6bac2319351a85de84d8b154786636",
+    "session_note": "BUILD-1\u21926 complete: stage runner, interrupt checker, pulse logger, sidecar generator, memory sync, registry patch \u2014 204 artifacts, all MERGE-S9 follow-ons closed",
+    "usage": "Hand this file to Claude at the start of the next session. Claude reads it and starts pre-oriented \u2014 no re-reading the full bundle."
+  },
+  "three_model_architecture": {
+    "chatgpt": {
+      "role": "Executor \u2014 runs stages against /mnt/data",
+      "next_actions": [
+        "1. Load METABLOOMS_FULL_INTEGRATED_OS_20260426_v4.zip to /mnt/data/",
+        "2. Run GW5U0 /mnt/data validation (Section 8 checklist from MetaBlooms_Build_Plan_v1.docx)",
+        "3. Verify SHA a1fa6eaf... for the integrated OS",
+        "4. Resolve stage_cartridges_bundle.zip promotion decision",
+        "5. Deploy BUILD-1 through BUILD-6 scripts and run dry-run tests",
+        "6. Run transactional_stage_runner_v1.py --dry-run to verify P-1 and P0 pass"
+      ]
+    },
+    "claude": {
+      "role": "Auditor + Builder \u2014 verifies, builds, researches, bridges memory",
+      "next_actions": [
+        "Load CLAUDE_MEMORY_SYNC_v1.json at start of next session",
+        "Run SEE passes before any design/improvement work",
+        "Continue BUILD-series if new scripts are needed"
+      ]
+    },
+    "robert": {
+      "role": "Mediator + Strategic oversight",
+      "next_actions": [
+        "Download METABLOOMS_FULL_INTEGRATED_OS_20260426_v4.zip",
+        "Hand to ChatGPT for /mnt/data deployment",
+        "Hand CLAUDE_MEMORY_SYNC_v1.json to Claude at next session start",
+        "Authorize stage_cartridges_bundle.zip promotion decision after ChatGPT verification"
+      ]
+    }
+  },
+  "capability_delta": {
+    "what_was_not_possible_before_this_session": [
+      "Stages required manual sub-commands \u2014 now transactional_stage_runner_v1.py runs P-1\u2192P7 autonomously",
+      "Failures propagated silently through chunks \u2014 now IC-1\u2192IC-6 catch them per-artifact",
+      "No execution-time governance \u2014 now runtime pulse logger runs 8 checks per artifact",
+      "Failure patterns required Robert to notice and request bundles \u2014 now auto-generated at threshold",
+      "Every ChatGPT session cold-started \u2014 now CLAUDE_MEMORY_SYNC_v1.json eliminates re-orientation",
+      "ARB sidecar namespace was invisible to the registry \u2014 now 5 entries registered and auditable",
+      "OS had 12 scripts \u2014 now has 17, covering the full P-1\u2192P7 + IC + pulse + sidecar + memory lifecycle"
+    ]
+  },
+  "known_deferred_items": [
+    "6 D4-only nested ZIPs require separate archive payload audit",
+    "V7 .git commits may contain unreflected code changes \u2014 audit pass required",
+    "Automated browser-tier validation \u2014 Chromium/Playwright deferred",
+    "6 Nomotic policy merge rule proposals \u2014 deferred pending policy merge pass",
+    "6 browser validation rule proposals \u2014 deferred pending browser automation stage"
+  ],
+  "handoff_sha_anchors": {
+    "integrated_os_zip_v4": "a1fa6eaf985bd1218f74cf98c6d9a7b13a814feb67a10f8a8718351e4fae5567",
+    "memory_sync_v1": "e6fce023f6404af537666ac3a54537ecce6bac2319351a85de84d8b154786636",
+    "artifact_registry_post_build6": "46291489d69a74ddb90a0ae849ccb30c198ee89714ffcfd5a6892408a887dc6d",
+    "merge_s9_lock": "72ae96ce9c80ab69d6b4ae438b81844e16b45075a546408cd99921684d4ad465",
+    "stage_runner_v1": "774cc14755b73e91556a3c49adaa48194b2254de9da7586400cae8adc6f0323c",
+    "interrupt_checker_v1": "b50031c35b6ba53ee5dbacb3ccdf4a7c3e0ddb94ef59f9db7fe90461d0983dc8",
+    "pulse_logger_v1": "8b1c32de1d6358126d8df5f3260feb88cdd6b9f1d608afdecd7b1104b667af15",
+    "sidecar_generator_v1": "783b46be80ef0b660dff3709104bc3b5311e0f02972f54cfaf1bbd24fe85e276",
+    "memory_sync_writer_v1": "27600f4a273ced13bfc0e157be376cb15c3b0660acac60f0799f415b4bb0a49e"
+  }
+}

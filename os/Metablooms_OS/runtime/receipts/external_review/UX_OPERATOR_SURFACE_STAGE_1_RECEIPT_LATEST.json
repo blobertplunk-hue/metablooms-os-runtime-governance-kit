@@ -1,0 +1,24 @@
+{
+  "accepted_warning": "git_dir_missing",
+  "artifact_type": "UX_OPERATOR_SURFACE_STAGE_1_RECEIPT_v1",
+  "boot_verdict": "PASS_WITH_WARNINGS",
+  "created_utc": "20260501T040721Z",
+  "governance_note": "Stage 1 adds operator UX only; it does not bypass receipts, validators, or export gates.",
+  "implemented_paths": [
+    "bin/mb",
+    "0_kernel/validators/validate_operator_surface_v1.py",
+    "0_kernel/registry/operator_surface/MB_CLI_COMMAND_SPEC_v1.json",
+    "runtime/fixtures/operator_surface/MB_CLI_FIXTURE_CASES_v1.json",
+    "docs/operator_surface/MB_OPERATOR_QUICKSTART_v1.md",
+    "0_kernel/registry/external_review/UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE_RESULTS_v1.json"
+  ],
+  "research_evidence_summary": [
+    "CLI surface should have compact subcommands and scriptable JSON output.",
+    "Human-in-the-loop/resume systems require stable state pointers and explicit resume semantics."
+  ],
+  "runtime_root": "/mnt/data/Metablooms_OS",
+  "stage_id": "IMPLEMENT_UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE_STAGE_1",
+  "validation_path": "/mnt/data/Metablooms_OS/runtime/evals/operator_surface/MB_OPERATOR_SURFACE_VALIDATION_LATEST.json",
+  "validation_verdict": "PASS",
+  "verdict": "PASS"
+}

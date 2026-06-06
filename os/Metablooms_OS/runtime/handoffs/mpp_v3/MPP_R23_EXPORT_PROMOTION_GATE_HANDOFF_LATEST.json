@@ -1,0 +1,10 @@
+{
+  "authority_sha256": "3e4903b137e05fc84c1ae08d0b705203dff3910fcaecf9174f72109591248011",
+  "authority_sidecar": "/mnt/data/METABLOOMS_OS_FULL_MPP_V3_R0_R23_PROMOTED_20260501T081500Z.zip.sha256",
+  "authority_zip": "/mnt/data/METABLOOMS_OS_FULL_MPP_V3_R0_R23_PROMOTED_20260501T081500Z.zip",
+  "from_stage": "MPP_R23_EXPORT_PROMOTION_GATE",
+  "notes": "MPP v3 R0-R23 export promotion completed. Use this ZIP plus sidecar as current authority.",
+  "schema_version": "metablooms.mpp_stage_handoff.v1",
+  "status": "READY",
+  "to_stage": "COMPLETE_CURRENT_AUTHORITY_READY"
+}

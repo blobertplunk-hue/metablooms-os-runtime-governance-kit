@@ -1,0 +1,27 @@
+{
+  "allowed_roots": [
+    "/mnt/data/Metablooms_OS"
+  ],
+  "artifact_type": "AtomicAppendLogDecisionPacket.v1",
+  "bytes_appended": 598,
+  "created_utc": "2026-05-02T15:17:28Z",
+  "deny_reason": null,
+  "error_type": null,
+  "failure_event_path": null,
+  "file_size_after": 1193,
+  "fsync_file": false,
+  "fsync_parent": {
+    "attempted": false,
+    "error": null,
+    "ok": false
+  },
+  "line_sha256": "e4b979448dcf01f2100ff0ac3e6c2569beb819a8275a1b8a2629957763b136a2",
+  "log_path": "/mnt/data/Metablooms_OS/runtime/tmp/stage4_hashchain_smoke/pulse/RUNTIME_PULSE_LOG_v1.jsonl",
+  "ok": true,
+  "operation_id": "runtime_pulse_append_pulse_1777735048165223",
+  "receipt_path": "/mnt/data/Metablooms_OS/runtime/receipts/append_log_writer/runtime_pulse/runtime_pulse_append_pulse_1777735048165223_append_decision_packet.json",
+  "record_sha256": "5611c4298da1a7f3236285735dc9e4e013f69aa48ede42fa3968f31450546e4a",
+  "resolved_log_path": "/mnt/data/Metablooms_OS/runtime/tmp/stage4_hashchain_smoke/pulse/RUNTIME_PULSE_LOG_v1.jsonl",
+  "status": "ALLOW_APPENDED",
+  "writer_version": "atomic_append_log_writer_v1"
+}

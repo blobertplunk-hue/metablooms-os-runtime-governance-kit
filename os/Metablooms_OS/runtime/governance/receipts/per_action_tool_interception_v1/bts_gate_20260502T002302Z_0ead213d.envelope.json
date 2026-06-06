@@ -1,0 +1,30 @@
+{
+  "schema_version": "ToolCallEnvelope_v1",
+  "envelope_id": "bts_gate_20260502T002302Z_0ead213d",
+  "stage_id": "BTS_V4_GATE_WRAPPED_RUNTIME",
+  "action_type": "filesystem",
+  "tool_name": "write_bts_receipt",
+  "command_summary": "",
+  "intent": "Write BTS receipt artifact",
+  "risk_tier": "low",
+  "requested_at_utc": "2026-05-02T00:23:02.288548Z",
+  "requires_see": false,
+  "see_evidence_refs": [],
+  "limits": {
+    "timeout_seconds": 10,
+    "max_files": 1,
+    "max_bytes": 373,
+    "max_steps": 1
+  },
+  "artifacts": {
+    "read_paths": [],
+    "write_paths": [
+      "/mnt/data/Metablooms_OS/_bts/receipts/T1-exec-STAGE6D_SAFE_ECHO-20260502T002302Z.json"
+    ],
+    "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/bts_gate_20260502T002302Z_0ead213d.decision.json"
+  },
+  "metadata": {
+    "caller": "BTS_v4_gate_wrapped",
+    "ledger_surface": "BTS_V4_CANONICAL_RECEIPT_ENGINE"
+  }
+}

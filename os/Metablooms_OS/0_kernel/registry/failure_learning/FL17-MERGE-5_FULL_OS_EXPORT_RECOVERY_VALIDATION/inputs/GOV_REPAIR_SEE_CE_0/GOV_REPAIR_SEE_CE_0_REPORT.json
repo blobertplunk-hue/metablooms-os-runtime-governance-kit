@@ -1,0 +1,123 @@
+{
+  "amended_continuation_decision": {
+    "do_not": "Do not import, patch, or promote FL17 in this stage. Do not treat FL17 as baseline. Do not continue without visible SEE/CE evidence.",
+    "next_correct_command": "Run exactly one bounded FL17-MERGE-1 staging and diff classification stage with SEE/CE preflight: load GOV_REPAIR_SEE_CE_0_REPORT plus FL17-COMPARE-0 and FL17-MERGE-PLAN-0 artifacts, run current web.run research/improvement check appropriate to merge governance if needed, process SEE/CE, extract/probe target tracker-working OS and FL17 candidate to staging, compute hash-based file deltas, classify import/retain/exclude/conflict groups, write delta report, receipt, and handoff, and stop before importing or patching.",
+    "verdict": "PROCEED_TO_FL17_MERGE_1_ONLY_WITH_SEE_CE_PREFLIGHT_AND_THIS_REPORT_LOADED"
+  },
+  "artifact_type": "GOV_REPAIR_SEE_CE_0_REPORT",
+  "boot": {
+    "boot_method": "ZIP_AND_RECEIPT_ARTIFACT_AUTHORITY_FALLBACK",
+    "canonical_root_present": false,
+    "note": "The live extracted canonical root was not present in /mnt/data during this stage, so the stage used uploaded ZIPs, checksums, prior receipt directories, and PROMPT_ENGINE_v2.md as authority evidence without mutating OS contents.",
+    "requested_root": "/mnt/data/Metablooms_OS"
+  },
+  "ce": {
+    "artifact_type": "CE_SYNTHESIS_v1",
+    "constraints": [
+      "All subsequent FL17 merge stages must explicitly include a SEE/CE preflight or a written applicability exception before execution.",
+      "Prior FL17-COMPARE-0 and FL17-MERGE-PLAN-0 artifacts are governance-incomplete because their visible receipts do not show SEE/CE preflight, but their core local artifact findings remain materially valid.",
+      "The next stage may proceed only if it loads this GOV repair report and treats it as an amendment to those prior stage receipts.",
+      "Do not promote or patch FL17 until tracker lifecycle enforcement, FL16/FL17 semantic split, and baseline authority conflict are validated with evidence.",
+      "Tracker status must remain compact, render-first, evidence-bound, and mobile-safe."
+    ],
+    "created_utc": "20260430T010558Z",
+    "decision": "AMEND_PRIOR_OUTPUTS_DO_NOT_RERUN_YET",
+    "rationale": "The prior compare/merge-plan conclusions are supported by direct archive/receipt evidence and are consistent with current governance research. The defect is missing governance preflight evidence, not necessarily wrong classification. This report repairs the process lineage by explicitly binding SEE/CE constraints before the next import/patch stage.",
+    "required_next_stage": "FL17-MERGE-1_STAGING_DIFF_CLASSIFICATION_WITH_SEE_CE_PREFLIGHT",
+    "stage": "GOV-REPAIR-SEE-CE-0"
+  },
+  "created_utc": "20260430T010558Z",
+  "inputs_verified": {
+    "compare_dir_present": true,
+    "fl17_zip": {
+      "present": true,
+      "sha256": "464f96a118be37dba7507a554c3f0dce75b17296439ed0cc4ef456c0d69df691",
+      "size": 51936473
+    },
+    "merge_dir_present": true,
+    "prompt_engine": {
+      "present": true,
+      "sha256": "a8c5b68be362491c609e4be42bf858ea096e4a69a18f1803d8abc7ceb41a24f1",
+      "size": 11426
+    },
+    "stable_zip": {
+      "present": true,
+      "sha256": "92772171cb3e49921e652ee719b69a3ecc87d74d30d9c96b4502702968aa93c6",
+      "size": 52601312
+    },
+    "tracker_integrated_zip": {
+      "present": true,
+      "sha256": "ec6e06f13ada966a17a0f72cd6a226c49508e2c076ad22054688027cfda25f97",
+      "size": 42976642
+    }
+  },
+  "prior_stage_audit": {
+    "FL17_COMPARE_0": "materially_valid_but_governance_incomplete",
+    "FL17_MERGE_PLAN_0": "materially_valid_but_governance_incomplete",
+    "amendment": "Bind this GOV_REPAIR_SEE_CE_0_REPORT as a required authority for any next FL17 merge/import stage.",
+    "needs_amendment": true,
+    "needs_rerun": false,
+    "reason": "Both stages performed useful artifact comparisons/planning and did not patch/promote. However, their receipts do not demonstrate the required current research + SEE + CE preflight demanded for governed MetaBlooms work."
+  },
+  "scope": "governance repair audit only; no FL17 import, patch, or promotion",
+  "see": {
+    "artifact_type": "SEE_PACKET_v1",
+    "created_utc": "20260430T010558Z",
+    "limitations": [
+      "This stage did not patch or import FL17 artifacts.",
+      "Current canonical extracted root /mnt/data/Metablooms_OS was not present; ZIP/receipt artifacts were used as authority evidence."
+    ],
+    "research_question": "Does the FL17 compare/merge-plan workflow remain valid after correcting the skipped SEE/CE governance preflight?",
+    "source_index": [
+      {
+        "claim": "AI governance should manage risks through deliberate design/development/use/evaluation practices and maintain trustworthiness considerations.",
+        "id": "NIST_AI_RMF",
+        "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+      },
+      {
+        "claim": "ChatGPT UI/tool/project capabilities change over time, so platform-dependent workflow planning requires current source checks.",
+        "id": "OpenAI_ChatGPT_Release_Notes",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      },
+      {
+        "claim": "Progress, success, waiting, and error information should be explicit status information rather than hidden context changes.",
+        "id": "W3C_WCAG_Status_Messages",
+        "url": "https://w3c.github.io/wcag/understanding/status-messages"
+      },
+      {
+        "claim": "Architecture descriptions should include views governed by viewpoints, correspondence/consistency rules, known issues, and evaluation methods.",
+        "id": "ISO_IEC_IEEE_42010_AD",
+        "url": "https://www.iso-architecture.org/ieee-1471/ads/"
+      }
+    ],
+    "stage": "GOV-REPAIR-SEE-CE-0",
+    "validated_claims": [
+      {
+        "claim": "MetaBlooms governance should not be optional or selectively applied; governance gates should be mapped, measured, managed, and recorded as part of risk management.",
+        "source_ids": [
+          "NIST_AI_RMF"
+        ]
+      },
+      {
+        "claim": "Because ChatGPT UI/tool/project behavior changes, MetaBlooms stages that depend on ChatGPT behavior should include a current-source preflight or explicit bounded exception.",
+        "source_ids": [
+          "OpenAI_ChatGPT_Release_Notes"
+        ]
+      },
+      {
+        "claim": "Inline tracker status changes are a status-message problem and should remain explicit, visible, and evidence-bound.",
+        "source_ids": [
+          "W3C_WCAG_Status_Messages"
+        ]
+      },
+      {
+        "claim": "The OS architecture and merge plan should document views/concerns, known issues, consistency rules, and evaluation methods rather than relying on informal judgement.",
+        "source_ids": [
+          "ISO_IEC_IEEE_42010_AD"
+        ]
+      }
+    ]
+  },
+  "stage": "GOV-REPAIR-SEE-CE-0",
+  "verdict": "PASS_GOVERNANCE_REPAIR_REPORT_WRITTEN_NO_PATCHING"
+}

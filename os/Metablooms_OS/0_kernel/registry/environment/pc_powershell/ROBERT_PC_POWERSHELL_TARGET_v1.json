@@ -1,0 +1,13 @@
+{
+  "device_name": "DESKTOP-OO02IE5",
+  "os": "Windows 11 Pro 25H2",
+  "os_build": "26200.8328",
+  "cpu": "11th Gen Intel(R) Core(TM) i9-11900 @ 2.50GHz",
+  "ram_gb": 64,
+  "gpu": ["NVIDIA GeForce GTX 1660 (6 GB)", "Intel UHD Graphics 750"],
+  "storage_total_tb": 4.55,
+  "system_type": "64-bit operating system, x64-based processor",
+  "primary_shell": "PowerShell 7",
+  "primary_use": "MetaBlooms GitHub/repo automation from PC",
+  "status": "default_until_user_says_changed"
+}

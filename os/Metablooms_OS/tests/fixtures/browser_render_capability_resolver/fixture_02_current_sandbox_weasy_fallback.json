@@ -1,0 +1,42 @@
+{
+  "android_sandbox_primary": true,
+  "artifact_type": "operator_tracker",
+  "decision": "ALLOW_RENDER_PROXY_WITH_LIMITATION",
+  "environment": "android_chatgpt_sandbox",
+  "honesty_label": "sandbox_render_proxy",
+  "method_attempts": [
+    {
+      "attempt_policy": "skip_if_prior_same_turn_hard_fail",
+      "failure_class_if_failed": "PLAYWRIGHT_BROWSER_BUNDLE_ABSENT",
+      "method_id": "playwright_managed_browser",
+      "priority": 1,
+      "success_criteria": [
+        "bundle_present"
+      ]
+    },
+    {
+      "attempt_policy": "skip_if_prior_same_turn_hard_fail",
+      "failure_class_if_failed": "CHROMIUM_SANDBOX_HANG",
+      "method_id": "system_chromium_headless",
+      "priority": 2,
+      "success_criteria": [
+        "exit_0",
+        "png_exists"
+      ]
+    },
+    {
+      "attempt_policy": "try_if_binary_present",
+      "failure_class_if_failed": "WEASYPRINT_PROXY_FAILED",
+      "method_id": "weasyprint_pdf_png_proxy",
+      "priority": 6,
+      "success_criteria": [
+        "pdf_exists",
+        "png_proxy_exists",
+        "nonblank_proxy"
+      ]
+    }
+  ],
+  "pc_addendum_available": true,
+  "requested_proof_tier": "browser_screenshot_preferred",
+  "selected_method": "weasyprint_pdf_png_proxy"
+}

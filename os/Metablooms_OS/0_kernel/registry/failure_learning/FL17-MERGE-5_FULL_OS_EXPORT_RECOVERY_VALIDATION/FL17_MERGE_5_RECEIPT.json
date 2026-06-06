@@ -1,0 +1,17 @@
+{
+  "artifact_type": "STAGE_RECEIPT",
+  "stage_id": "FL17-MERGE-5_FULL_OS_EXPORT_AND_RECOVERY_VALIDATION",
+  "created_utc": "20260430T022600Z",
+  "bounded_stage": true,
+  "status": "PASS_PENDING_EXTERNAL_ZIP_HASH",
+  "governance_preflight": "SEE_CE_COMPLETED",
+  "promotion_performed": false,
+  "baseline_promoted": false,
+  "external_sidecar_required": true,
+  "actions": [
+    "loaded GOV_REPAIR and FL17-MERGE-1 through FL17-MERGE-4 artifacts",
+    "included FL17 quarantined progression as evidence archive plus import manifest",
+    "preserved tracker-working OS as active target baseline",
+    "wrote internal export manifest before zipping"
+  ]
+}

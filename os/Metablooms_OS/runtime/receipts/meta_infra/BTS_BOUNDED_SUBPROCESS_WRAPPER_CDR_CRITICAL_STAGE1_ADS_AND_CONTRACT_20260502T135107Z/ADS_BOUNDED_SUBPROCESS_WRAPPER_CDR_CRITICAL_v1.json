@@ -1,0 +1,46 @@
+{
+  "architecture": {
+    "entrypoint": "run_governed_command(envelope)->decision_packet",
+    "execution_mode": "argv-array only; shell false by default and denied unless exception token names policy authority",
+    "failure_learning": "timeout, nonzero, denied method, forbidden arg, path escape, output overflow, and spawn failure emit structured failure event",
+    "kill_semantics": "on timeout: terminate process, bounded wait, kill escalation if still alive, classify timeout failure",
+    "method_reliability": "must load FORBIDDEN_VALIDATION_METHODS_v1 and METHOD_RELIABILITY_ROUTER_POLICY_v1 before execution",
+    "must_accept": "JSON command envelope only",
+    "must_emit": "JSON decision packet plus optional failure event",
+    "retry_budget": "bounded max_attempts; no infinite loops; retry only for retryable classes",
+    "time_budget": "per_attempt_timeout_sec and total_timeout_sec required; default critical cap 30s total unless narrower policy applies"
+  },
+  "artifact_type": "METABLOOMS_ADS_v1",
+  "authorities_loaded": [
+    "FORBIDDEN_VALIDATION_METHODS_v1.json",
+    "METHOD_RELIABILITY_ROUTER_POLICY_v1.json",
+    "META_INFRA_SELF_HARDENING_TOOL_ROADMAP_STAGE0"
+  ],
+  "decision": "Create a single governed subprocess primitive that all future shell/process operations must use before direct subprocess, bash, zip/unzip, sha256sum, find, node, or python invocations are permitted inside OS-managed workflows.",
+  "design_constraints": [
+    "No direct string shell command in governed workflows.",
+    "No unbounded timeout or retry count.",
+    "No cwd outside canonical runtime root unless explicit path authority allows it.",
+    "No inherited broad environment by default; use minimal env overlay.",
+    "No stdout/stderr unbounded capture; byte caps required.",
+    "Forbidden validation methods block before spawn."
+  ],
+  "name": "bounded_subprocess_wrapper",
+  "problem": "MetaBlooms subprocess-like operations currently have inconsistent timeout, retry, receipt, denylist, and failure-learning enforcement.",
+  "scope_in": [
+    "command envelope schema",
+    "decision packet schema",
+    "failure event schema",
+    "fixture matrix",
+    "CDR critical gate packet",
+    "BTS receipt/handoff"
+  ],
+  "scope_out": [
+    "runtime implementation code",
+    "registry mutation of execution callers",
+    "full OS export promotion"
+  ],
+  "stage_id": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT",
+  "status": "DESIGN_CONTRACT_READY_NO_IMPLEMENTATION_IN_THIS_STAGE",
+  "tier": "CDR_CRITICAL"
+}

@@ -1,0 +1,6 @@
+{
+  "schema": "CE_PACKET_v1",
+  "stage": "MPP_CDR_BINDING_STAGE15_RETROFIT_STAGE_CONTRACTS_TO_DECLARE_CODE_BEARING_FLAG",
+  "synthesis": "Stage14 made CDR mandatory for code-bearing MPP work; Stage15 closes the metadata gap by making code-bearing status explicit and machine-gated in stage contracts. This prevents false non-code classification and makes CDR invocation auditable before PASS.",
+  "timestamp_utc": "2026-05-02T12:53:54Z"
+}

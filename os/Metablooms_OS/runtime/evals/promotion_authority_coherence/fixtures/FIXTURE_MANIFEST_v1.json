@@ -1,0 +1,62 @@
+{
+  "coverage": [
+    "controlled_artifact_closure",
+    "stale_authority_sweep",
+    "validator_cli_contract_map",
+    "export_self_consistency",
+    "promotion_receipt_binding",
+    "happy_path"
+  ],
+  "created_at": "2026-05-02T19:59:18.342997+00:00",
+  "fixtures": [
+    {
+      "defects": [
+        "controlled_artifact_missing_from_index"
+      ],
+      "expected_decision": "DENY",
+      "fixture_id": "PAC-FIX-001",
+      "result_hash": "7dfe48eea26c3bd52b0d7966e8eb680155ddf1a8993af5b76fe0fea44660400b"
+    },
+    {
+      "defects": [
+        "live_boot_file_names_noncurrent_authority"
+      ],
+      "expected_decision": "DENY",
+      "fixture_id": "PAC-FIX-002",
+      "result_hash": "fbb5d117f6bb7823a916651943167421b8a5d11914e1ca6ec09f6dfe16d0b605"
+    },
+    {
+      "defects": [
+        "declared_shape_fails_smoke"
+      ],
+      "expected_decision": "DENY",
+      "fixture_id": "PAC-FIX-003",
+      "result_hash": "7a44820de8c5f81519393c50bfb8202e16ba1c9da506ecec7c94102bb2d21b34"
+    },
+    {
+      "defects": [
+        "manifest_declares_missing_member"
+      ],
+      "expected_decision": "DENY",
+      "fixture_id": "PAC-FIX-004",
+      "result_hash": "f19a9fd1d5af8f9e0e946b1e93218d638a5ec2b0775505dd55519179b0a62e4c"
+    },
+    {
+      "defects": [],
+      "expected_decision": "PASS",
+      "fixture_id": "PAC-FIX-005",
+      "result_hash": "6d10aa80809bef11504d0c45a2801454b5f975ede18ecf3877a268d879f56b87"
+    },
+    {
+      "defects": [
+        "receipt_claims_success_without_all_gate_evidence"
+      ],
+      "expected_decision": "DENY",
+      "fixture_id": "PAC-FIX-006",
+      "result_hash": "d046f3154a4d4f7ba63c616f4ffcc5f31d9d647cc446f1c76ab46ae38657aa85"
+    }
+  ],
+  "result_hash": "4b4d606a6437cbd61e89c3b550c1047698bcf15dc28be1d610c6fa265f61b624",
+  "schema_version": "metablooms.promotion_authority_coherence.fixture_manifest.v1",
+  "stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE1_SPEC_AND_FIXTURES"
+}

@@ -1,0 +1,14 @@
+{
+  "artifact_type": "SECURITY_ARTIFACT_THREAT_MODEL_STAGE1_HANDOFF_v1",
+  "created_utc": "20260501T105650Z",
+  "from_stage": "IMPLEMENT_SECURITY_ARTIFACT_THREAT_MODEL_STAGE_1",
+  "latest_receipt": "runtime/receipts/security/SECURITY_ARTIFACT_THREAT_MODEL_STAGE1_RECEIPT_LATEST.json",
+  "latest_validation": "runtime/evals/security/SECURITY_ARTIFACT_THREAT_MODEL_STAGE1_VALIDATION_LATEST.json",
+  "next_stage": "IMPLEMENT_SECURITY_ARTIFACT_THREAT_MODEL_STAGE_2_ENFORCEMENT_GATES_OR_PROMPT_INJECTION_FIXTURES",
+  "operator_preview": [
+    "mb security --json",
+    "mb security --check --json",
+    "mb trace --stage IMPLEMENT_SECURITY_ARTIFACT_THREAT_MODEL_STAGE_1 --json"
+  ],
+  "verdict": "READY_FOR_NEXT_BOUNDED_STAGE"
+}

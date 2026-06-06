@@ -1,0 +1,43 @@
+{
+  "acceptance_rule": "A code-bearing MPP contract cannot request PASS unless CDR evidence is declared and Stage14 MPP/CDR binding can be satisfied.",
+  "code_bearing_artifact_classes": [
+    "python",
+    "javascript",
+    "typescript",
+    "html_js",
+    "shell",
+    "node",
+    "schema_driven_runtime",
+    "validator",
+    "gate",
+    "policy",
+    "export_script",
+    "packaging_script",
+    "runtime_config",
+    "html_activity",
+    "spreadsheet_macro",
+    "browser_extension",
+    "tampermonkey_script"
+  ],
+  "external_basis": [
+    "Google engineering practices code review: design/functionality/complexity/tests/naming/comments/style/documentation",
+    "NIST SSDF: secure development reduces vulnerabilities and addresses root causes to prevent recurrence",
+    "OWASP Secure Coding Practices: validation, access control, error handling/logging, file management, general practices"
+  ],
+  "inference_rule": "If code_artifact_classes intersects code-bearing classes, stage_contains_code must be true and cdr_required must be true.",
+  "no_implicit_state_rule": "Missing stage_contains_code is a DENY even when the stage appears non-code; contracts must make the declaration explicit.",
+  "purpose": "Require every MPP stage contract to explicitly declare whether the stage contains code-bearing work and whether CDR is required.",
+  "rationale": "Stage14 made CDR mandatory for code-bearing work; Stage15 prevents ambiguous stage contracts from hiding code-bearing work behind missing metadata.",
+  "required_contract_fields": [
+    "stage_id",
+    "stage_contains_code",
+    "code_artifact_classes",
+    "cdr_required",
+    "mpp_cdr_binding_policy_version",
+    "declaration_source",
+    "declared_by"
+  ],
+  "schema": "MPP_CDR_STAGE_CONTRACT_CODE_BEARING_DECLARATION_SPEC_v1",
+  "stage": "MPP_CDR_BINDING_STAGE15_RETROFIT_STAGE_CONTRACTS_TO_DECLARE_CODE_BEARING_FLAG",
+  "status": "active"
+}

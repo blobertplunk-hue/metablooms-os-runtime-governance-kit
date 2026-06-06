@@ -1,0 +1,22 @@
+{
+  "artifact_type": "MB_EXPORT_CONTAINMENT_REQUIREMENTS.v1",
+  "created_utc": "20260502T191630Z",
+  "required_members": [
+    "CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "0_kernel/registry/observability/MB_PROMOTED_EVIDENCE_RECOVERY_REPLAY_SCHEMA_v1.json",
+    "0_kernel/registry/observability/MB_AUDIT_QUERY_PACK_SCHEMA_v1.json",
+    "0_kernel/registry/observability/MB_PROMOTED_EVIDENCE_RECOVERY_REPLAY_POLICY_v1.json",
+    "runtime/governance/promoted_evidence_recovery_replay_v1.py",
+    "runtime/governance/validate_observability_trace_span_ledger_stage15_v1.py",
+    "runtime/traces/observability/PROMOTED_EVIDENCE_RECOVERY_REPLAY_LATEST.json",
+    "runtime/state/operator_surface/AUDIT_QUERY_PACKS_LATEST.json",
+    "runtime/state/operator_surface/AUDIT_QUERY_PACKS_LATEST.md",
+    "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE15_RECOVERY_REPLAY_AUDIT_QUERY_VALIDATION_LATEST.json",
+    "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_HANDOFF_LATEST.json",
+    "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS_20260502T191509Z/STAGE_RECEIPT.json",
+    "OPEN_OPERATOR_VISUAL_TRACKER.html"
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS"
+}

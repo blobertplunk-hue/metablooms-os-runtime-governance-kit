@@ -1,0 +1,168 @@
+{
+  "schema_version": "1.0",
+  "artifact_id": "WORKFLOW_LESSON_LEDGER_v1",
+  "updated_utc": "20260502T231311Z",
+  "adoption_policy": "cumulative_only_when_better_than_current",
+  "lessons": [
+    {
+      "lesson_id": "sandbox_first_pc_enhanced_default",
+      "source": {
+        "type": "chat_workflow",
+        "locator": "BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE1_TO_STAGE4"
+      },
+      "evidence": {
+        "summary": "Android phone plus ChatGPT sandbox is primary; PC tooling is useful as enhancement, not blocker.",
+        "artifacts": [
+          "BROWSER_RENDER_CAPABILITY_RESOLVER_POLICY_v1.json",
+          "BROWSER_RENDER_CAPABILITY_RESOLVER_STAGE4_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF"
+        ],
+        "external_sources": [
+          "Playwright docs",
+          "Chrome headless docs",
+          "WeasyPrint docs"
+        ]
+      },
+      "baseline_comparison": {
+        "current_behavior": "Visual/browser work could drift to PC-only advice or repeat unsupported Chromium attempts.",
+        "proposed_behavior": "Route through sandbox-first resolver, label proof tier, provide PC addendum only as enhancement.",
+        "score_current": {
+          "reliability": 2,
+          "sandbox_fit": 2,
+          "automation": 2,
+          "honesty": 3
+        },
+        "score_candidate": {
+          "reliability": 4,
+          "sandbox_fit": 5,
+          "automation": 4,
+          "honesty": 5
+        },
+        "regression_flags": []
+      },
+      "adoption_decision": {
+        "decision": "adopt",
+        "reason": "Candidate improves reliability, sandbox fit, automation, and honesty with no hard regression."
+      },
+      "artifactization": {
+        "artifacts": [
+          "browser_render_capability_resolver_v1.py",
+          "BROWSER_RENDER_CAPABILITY_VISUAL_GATE_BINDING_v1.json",
+          "BROWSER_RENDER_METHOD_RELIABILITY_LEDGER_STAGE2.json"
+        ]
+      },
+      "routing_targets": [
+        "browser_render",
+        "visual_review",
+        "google_sites_packaging",
+        "html_export"
+      ],
+      "status": "adopted"
+    },
+    {
+      "lesson_id": "visual_artifacts_require_purpose_fit_presentation_gate",
+      "source": {
+        "type": "chat_workflow",
+        "locator": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE1_TO_STAGE5"
+      },
+      "evidence": {
+        "summary": "Correct HTML can still look weak; visual presentation must be governed for student/teacher-facing artifacts.",
+        "artifacts": [
+          "VISUAL_PRESENTATION_QUALITY_GATE_CONTRACT_v1.json",
+          "validate_visual_presentation_quality_gate_v1.py"
+        ],
+        "external_sources": [
+          "WCAG 2.2",
+          "NN/g visual testing",
+          "Material Design 3"
+        ]
+      },
+      "baseline_comparison": {
+        "current_behavior": "MPP/CDR could pass visually poor artifacts.",
+        "proposed_behavior": "Require VPQ declarations, teacher-professional presentation, render proof tier, and export replay.",
+        "score_current": {
+          "quality": 2,
+          "usability": 3,
+          "automation": 2,
+          "honesty": 3
+        },
+        "score_candidate": {
+          "quality": 5,
+          "usability": 4,
+          "automation": 4,
+          "honesty": 5
+        },
+        "regression_flags": []
+      },
+      "adoption_decision": {
+        "decision": "adopt",
+        "reason": "Candidate directly improves visual quality and future auto-invocation."
+      },
+      "artifactization": {
+        "artifacts": [
+          "visual_presentation_quality_declaration_schema_v1.json",
+          "validate_visual_presentation_quality_gate_v1.py",
+          "VISUAL_PRESENTATION_QUALITY_GATE_STAGE5_FULL_AUTHORITY_EXPORT"
+        ]
+      },
+      "routing_targets": [
+        "html_activity",
+        "operator_tracker",
+        "teacher_dashboard",
+        "student_tool",
+        "landing_page"
+      ],
+      "status": "adopted"
+    },
+    {
+      "lesson_id": "old_transcript_import_requires_better_than_current_gate",
+      "source": {
+        "type": "chat_workflow",
+        "locator": "user_instruction_2026-05-02"
+      },
+      "evidence": {
+        "summary": "Old transcripts can be mined for lessons, but only adopted if they improve the current OS rather than regressing or duplicating it.",
+        "artifacts": [
+          "WORKFLOW_LESSON_LEDGER_SCHEMA_v1.json"
+        ],
+        "external_sources": [
+          "lessons learned methodology",
+          "SRE postmortem action-item practice",
+          "organizational learning literature"
+        ]
+      },
+      "baseline_comparison": {
+        "current_behavior": "Transcript imports were not yet governed by a formal improve-or-reject comparison.",
+        "proposed_behavior": "Treat transcript-derived ideas as candidates; adopt only with positive comparison and no hard regressions.",
+        "score_current": {
+          "reliability": 2,
+          "automation": 2,
+          "honesty": 3,
+          "quality": 3
+        },
+        "score_candidate": {
+          "reliability": 5,
+          "automation": 4,
+          "honesty": 5,
+          "quality": 4
+        },
+        "regression_flags": []
+      },
+      "adoption_decision": {
+        "decision": "adopt",
+        "reason": "Prevents stale transcript ideas from overwriting stronger current behavior."
+      },
+      "artifactization": {
+        "artifacts": [
+          "workflow_generalization_router_v1.py",
+          "test_workflow_generalization_router_v1.py"
+        ]
+      },
+      "routing_targets": [
+        "transcript_import",
+        "workflow_reconstruction",
+        "lesson_mining"
+      ],
+      "status": "adopted"
+    }
+  ]
+}

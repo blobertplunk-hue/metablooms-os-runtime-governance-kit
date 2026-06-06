@@ -1,0 +1,37 @@
+{
+  "version": "1.0",
+  "created_at": 1777037085.4636142,
+  "stage": "SEE_VALIDATION",
+  "schema_validation": {
+    "passed": false,
+    "issues": [
+      "claim_source_bindings_missing_or_empty"
+    ]
+  },
+  "web_run_evidence_validation": {
+    "passed": true,
+    "issues": []
+  },
+  "source_binding_validation": {
+    "passed": false,
+    "issues": [
+      "no_claims_bound_to_any_source"
+    ]
+  },
+  "semantic_validation": {
+    "passed": false,
+    "issues": [
+      "pass_verdict_without_claim_bindings"
+    ]
+  },
+  "verdict": "FAIL",
+  "issues": [
+    "claim_source_bindings_missing_or_empty",
+    "no_claims_bound_to_any_source",
+    "pass_verdict_without_claim_bindings"
+  ],
+  "next_stage": "BLOCK_WITH_SEE_VALIDATION_RECEIPT",
+  "packet_source": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/see_packet_validator_integration_evidence/pass_without_claims_rejected/packet.json",
+  "schema_path": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/SEE_PACKET_SCHEMA_v1.json",
+  "receipt_path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/see_packet_validator_integration_evidence/pass_without_claims_rejected/SEE_VALIDATION_RECEIPT_1777037085463.json"
+}

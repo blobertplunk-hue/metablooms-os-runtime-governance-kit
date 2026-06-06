@@ -1,0 +1,27 @@
+{
+  "artifact_type": "JSON_SCHEMA",
+  "properties": {
+    "artifact_type": {
+      "const": "MB_SEARCHABLE_EVIDENCE_INDEX.v1"
+    },
+    "documents": {
+      "type": "array"
+    },
+    "inverted_index": {
+      "type": "object"
+    },
+    "stage_id": {
+      "const": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE12_TRACE_QUERY_PACKET_AND_SEARCHABLE_EVIDENCE_INDEX"
+    }
+  },
+  "required": [
+    "artifact_type",
+    "stage_id",
+    "document_count",
+    "term_count",
+    "documents",
+    "inverted_index"
+  ],
+  "title": "MB_SEARCHABLE_EVIDENCE_INDEX.v1",
+  "type": "object"
+}

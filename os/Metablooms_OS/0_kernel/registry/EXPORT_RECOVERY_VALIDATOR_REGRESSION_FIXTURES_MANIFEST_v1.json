@@ -1,0 +1,41 @@
+{
+  "version": "1.0",
+  "created_at": 1777064935.7796032,
+  "stage": "G3_EXPORT_RECOVERY_VALIDATOR_REGRESSION_FIXTURES",
+  "fixtures_root": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures",
+  "cases": {
+    "fail_missing_ledger_output": {
+      "tree": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/fail_missing_ledger_output/Metablooms_OS_refined",
+      "zip": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/fail_missing_ledger_output/fail_missing_ledger_output.zip",
+      "sidecar": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/fail_missing_ledger_output/fail_missing_ledger_output.zip.sha256.json"
+    },
+    "fail_pending_receipt": {
+      "tree": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/fail_pending_receipt/Metablooms_OS_refined",
+      "zip": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/fail_pending_receipt/fail_pending_receipt.zip",
+      "sidecar": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/fail_pending_receipt/fail_pending_receipt.zip.sha256.json"
+    },
+    "fail_placeholder_metadata": {
+      "tree": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/fail_placeholder_metadata/Metablooms_OS_refined",
+      "zip": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/fail_placeholder_metadata/fail_placeholder_metadata.zip",
+      "sidecar": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/fail_placeholder_metadata/fail_placeholder_metadata.zip.sha256.json"
+    },
+    "fail_pointer_conflict": {
+      "tree": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/fail_pointer_conflict/Metablooms_OS_refined",
+      "zip": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/fail_pointer_conflict/fail_pointer_conflict.zip",
+      "sidecar": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/fail_pointer_conflict/fail_pointer_conflict.zip.sha256.json"
+    },
+    "fail_sidecar_mismatch": {
+      "tree": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/fail_sidecar_mismatch/Metablooms_OS_refined",
+      "zip": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/fail_sidecar_mismatch/fail_sidecar_mismatch.zip",
+      "sidecar": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/fail_sidecar_mismatch/fail_sidecar_mismatch.zip.sha256.json"
+    }
+  },
+  "expected": {
+    "fail_missing_ledger_output": "FAIL",
+    "fail_pending_receipt": "FAIL",
+    "fail_placeholder_metadata": "FAIL",
+    "fail_pointer_conflict": "FAIL",
+    "fail_sidecar_mismatch": "FAIL"
+  },
+  "verdict": "PASS"
+}

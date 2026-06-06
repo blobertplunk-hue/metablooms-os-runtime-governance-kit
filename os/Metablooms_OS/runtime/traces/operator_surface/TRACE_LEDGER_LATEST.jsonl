@@ -1,0 +1,1 @@
+{"attributes": {}, "event": "end", "name": "operator_surface.stage4.install", "parent_span_id": null, "span_id": "install", "stage_name": "IMPLEMENT_UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE_STAGE_4_REAL_CARTRIDGE_EXECUTOR_WIRING_OR_OBSERVABILITY_TRACE_LEDGER", "status": "OK", "timestamp_utc": "20260501T115500Z", "trace_id": "stage4_static_install"}

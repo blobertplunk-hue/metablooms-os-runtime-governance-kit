@@ -1,0 +1,24 @@
+{
+  "action_type": "filesystem_write",
+  "artifacts": {
+    "read_paths": [],
+    "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/STAGE6J_WRITE_FULL_POINTER_authority_CURRENT_FULL_AUTHORITY_POINTER_v1__filesystem_write.decision.json",
+    "write_paths": [
+      "/mnt/data/Metablooms_OS/runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json"
+    ]
+  },
+  "envelope_id": "STAGE6J_WRITE_FULL_POINTER_authority_CURRENT_FULL_AUTHORITY_POINTER_v1__filesystem_write",
+  "intent": "Stage6J pre-export pointer/labeling governance write: CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+  "limits": {
+    "max_bytes": 2234,
+    "max_files": 5,
+    "max_steps": 10,
+    "timeout_seconds": 30
+  },
+  "requested_at_utc": "2026-05-02T01:39:05.105457Z",
+  "requires_see": false,
+  "risk_tier": "medium",
+  "schema_version": "ToolCallEnvelope_v1",
+  "stage_id": "STAGE6J_FULL_AUTHORITY_EXPORT_AFTER_BTS_TOOL_UNIVERSE_RESOLVER_RETROFIT",
+  "tool_name": "bts_wrapped_filesystem_write"
+}

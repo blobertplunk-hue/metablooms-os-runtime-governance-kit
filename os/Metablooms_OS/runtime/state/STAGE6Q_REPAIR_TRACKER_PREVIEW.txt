@@ -1,0 +1,10 @@
+TRACKER PREVIEW — STAGE6Q_REPAIR_LEGACY_EXECUTOR_RETROFIT
+Status: PASS
+Repair: Sidecar policy binding + active legacy executor retrofit gate.
+Findings bound: 264
+Open active candidates before: 242
+Unbound candidates after: 0
+Mass source edit: NO — bounded invocation-policy retrofit.
+Smoke: PASS — inventory allow, wrapped-executor allow, direct-executor deny.
+Authority export: NOT PERFORMED.
+Next best stage: STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS, or STAGE6Q_SOURCE_LEVEL_RETROFIT_PRIORITY_BATCH_1 if you want source-level patching next.

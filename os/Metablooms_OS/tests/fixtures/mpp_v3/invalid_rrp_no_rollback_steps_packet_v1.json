@@ -1,0 +1,96 @@
+{
+  "cleanup_plan": [
+    "remove or ignore failed overlay outputs after blocked receipt",
+    "preserve failure evidence for debugging stage"
+  ],
+  "created_at": "2026-04-30T23:00:20.682334+00:00",
+  "drift_controls": [
+    "compare predecessor sidecar hash before trusting handoff",
+    "write latest receipt/handoff pointers only after PASS"
+  ],
+  "failure_modes": [
+    {
+      "detection": "missing file, hash mismatch, zip integrity failure, or validator failure",
+      "failure_id": "RRP-FM-001",
+      "mode": "stage writes incomplete or corrupted artifacts",
+      "recovery_strategy": "rollback to previous stage bundle and rerun bounded repair stage",
+      "rollback_required": true,
+      "safe_state": "block READY handoff and preserve failed receipt",
+      "severity": "S4_CRITICAL"
+    },
+    {
+      "detection": "artifact path or handoff target outside RRP contract",
+      "failure_id": "RRP-FM-002",
+      "mode": "scope creep attempts downstream implementation inside RRP",
+      "recovery_strategy": "route to correct downstream stage through SSO change control",
+      "rollback_required": false,
+      "safe_state": "stop with blocked receipt",
+      "severity": "S3_HIGH"
+    }
+  ],
+  "objective_id": "OBJ-MPP-R12",
+  "packet_id": "RRP-BAD-NO-STEPS",
+  "recovery_objectives": {
+    "data_loss_tolerance": "no loss of source artifacts; overlay outputs may be discarded if gate fails",
+    "rollback_window": "before READY handoff to implementation",
+    "rpo": "zero loss of validated receipts/handoffs already written to /mnt/data",
+    "rto": "one bounded stage response",
+    "success_state": "RRP gate passes and downstream implementation can safely proceed."
+  },
+  "recovery_runbook": [
+    {
+      "action": "Verify predecessor bundle checksum and ZIP integrity.",
+      "evidence": "predecessor_verification receipt block",
+      "expected_result": "checksum matches and testzip returns None",
+      "owner": "MPP_R12",
+      "step_id": "RRP-STEP-001"
+    },
+    {
+      "action": "Validate RRP packet and run rollback gate.",
+      "evidence": "smoke-test output in receipt",
+      "expected_result": "validator and gate return PASS",
+      "owner": "MPP_R12",
+      "step_id": "RRP-STEP-002"
+    },
+    {
+      "action": "Package RRP outputs and checksum sidecar.",
+      "evidence": "bundle SHA-256 and sidecar",
+      "expected_result": "bundle exists, sidecar exists, ZIP integrity passes",
+      "owner": "MPP_R12",
+      "step_id": "RRP-STEP-003"
+    }
+  ],
+  "result_hash": "33072733281261fa8c1cda8169a924b6d25a6fae2b15fa8a9b4bd1f52bac3411",
+  "rollback_plan": {
+    "abort_conditions": [
+      "unwritable artifact root",
+      "missing predecessor bundle and sidecar"
+    ],
+    "owner": "MPP_R12",
+    "steps": [],
+    "trigger_conditions": [
+      "predecessor checksum mismatch",
+      "RRP validator or rollback gate returns FAIL",
+      "ZIP integrity test fails",
+      "required receipt or handoff is missing"
+    ],
+    "verification": "Rerun validator, rollback gate, checksum verification, and zipfile.testzip."
+  },
+  "schema_version": "mpp.rrp_recovery_plan_packet.v1",
+  "source_sso_packet_id": "SSO-R11-SMOKE",
+  "stage": "RRP",
+  "validation_drills": [
+    {
+      "drill_id": "DRILL-001",
+      "frequency": "per RRP stage build",
+      "pass_criteria": "gate exits nonzero and records rollback-step violation",
+      "scenario": "invalid packet with missing rollback steps"
+    },
+    {
+      "drill_id": "DRILL-002",
+      "frequency": "per RRP stage build",
+      "pass_criteria": "validator exits nonzero on placeholder objective",
+      "scenario": "invalid packet with unknown recovery objectives"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id":"PYTHON_RESILIENT_EXECUTION_POLICY_v1",
+  "status":"active",
+  "gate":"PYTHON_RESILIENT_EXECUTION_GATE",
+  "description":"Use shell/coreutils first, switch lanes on failure, require timeout and alternate verifier for any Python lane.",
+  "failure_action":"DENY_STAGE_EXECUTION",
+  "source":"project-files boot overlay",
+  "scope":"runtime_governance_overlay"
+}

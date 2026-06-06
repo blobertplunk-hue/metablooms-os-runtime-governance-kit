@@ -1,0 +1,19 @@
+{
+  "conclusion": "MPP must force CDR for code-bearing work because code quality, security, testing and recurrence prevention must be reviewed before acceptance.",
+  "schema": "SEE_v1",
+  "sources": [
+    {
+      "claim": "Code review checks design, functionality, complexity, tests, naming, comments, style, documentation, every line and context.",
+      "url": "https://google.github.io/eng-practices/review/reviewer/looking-for.html"
+    },
+    {
+      "claim": "SSDF recommends practices to reduce vulnerabilities, mitigate exploitation impact and address root causes to prevent recurrence.",
+      "url": "https://www.nist.gov/publications/secure-software-development-framework-ssdf-version-11-recommendations-mitigating-risk"
+    },
+    {
+      "claim": "OWASP checklist covers validation, access control, error handling/logging, data protection, file management, memory management and general coding practices.",
+      "url": "https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/stable-en/02-checklist/"
+    }
+  ],
+  "stage": "MPP_CDR_BINDING_STAGE14_CODE_WORK_REQUIRES_CDR_IN_MPP"
+}

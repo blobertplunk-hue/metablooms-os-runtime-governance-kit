@@ -1,0 +1,6 @@
+{
+  "schema_version": "v1",
+  "provenance": "RECONSTRUCTED_FROM_CHAT_SUMMARY_AND_BASE_AUTHORITY_20260503",
+  "router": "0_kernel/router/workflow_generalization_router_v1.py",
+  "always_required_cartridge": "NEXT_STAGE_COPY_PROMPT_GENERATOR"
+}

@@ -1,0 +1,16 @@
+{
+  "blocking": false,
+  "created_at": "2026-05-01T00:44:31.743489+00:00",
+  "decision": "EXPORT_PROMOTION",
+  "decision_id": "ORCH-DECISION-20260501T004431Z",
+  "evidence_refs": [
+    "ORCHESTRATOR_RUNTIME_PLAN",
+    "R21_HANDOFF"
+  ],
+  "from_stage": "MPP_R22_ORCHESTRATOR_RUNTIME_CONTROLLER",
+  "reason": "R22 completed; export promotion is next",
+  "result_hash": "9e74d69144779c1be016eea04e7c5965f64191f3703da39a9c59a2c92513a4e0",
+  "schema_version": "mpp.orchestrator_transition_decision.v1",
+  "source_packet_id": "ORCH-20260501T004431Z",
+  "to_stage": "MPP_R23_EXPORT_PROMOTION_GATE"
+}

@@ -1,0 +1,23 @@
+{
+  "artifact_type": "METABLOOMS_SEE_EVIDENCE_PACKET_v1",
+  "created_utc": "20260502T135531Z",
+  "sources": [
+    {
+      "bound_claim": "subprocess timeout kills/waits after communicate timeout; process creation may not be immediately interruptible",
+      "source_ref": "turn899139search0",
+      "url": "https://docs.python.org/3/library/subprocess.html"
+    },
+    {
+      "bound_claim": "avoid OS commands where possible; use allowlisting/parameterization when commands are unavoidable",
+      "source_ref": "turn899139search1",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.html"
+    },
+    {
+      "bound_claim": "atomic write durability pattern uses fsync on temp file and parent directory on POSIX",
+      "source_ref": "turn899139search11",
+      "url": "https://python-atomicwrites.readthedocs.io/"
+    }
+  ],
+  "stage_id": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES",
+  "web_run_used": true
+}

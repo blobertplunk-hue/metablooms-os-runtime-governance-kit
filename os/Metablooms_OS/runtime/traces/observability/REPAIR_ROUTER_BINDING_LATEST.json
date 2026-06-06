@@ -1,0 +1,46 @@
+{
+  "artifact_type": "MB_REPAIR_ROUTER_BINDING.v1",
+  "created_utc": "20260502T165331Z",
+  "router_policy": {
+    "policy_artifact": "0_kernel/registry/observability/MB_OBSERVABILITY_FAILURE_ROUTER_POLICY_v1.json",
+    "policy_sha256": "6ced6ba15d6f3b1f6df9fd40b21b58a564446f90b4c2ccdb30ad3ca1e3a8b926"
+  },
+  "routes": [
+    {
+      "action": "Verify current authority pointer copies, contract phrases, and new-chat validator before boot-critical execution.",
+      "cluster_record_count": 1,
+      "evidence_binding": [
+        "0_kernel/registry/boot_receipts/BOOT_FROM_MNT_DATA_20260502T162601Z/new_chat_start_contract_validator.json"
+      ],
+      "failure_class": "authority_pointer_contract_mismatch",
+      "route_id": "route_authority_reconciliation_recheck",
+      "status": "RESOLVED_REFERENCE",
+      "target_workflow": "AUTHORITY_RECONCILIATION_RECHECK"
+    },
+    {
+      "action": "Preserve amended pass; store wrong CLI invocation as reliability lesson and avoid blocking current execution.",
+      "cluster_record_count": 2,
+      "evidence_binding": [
+        "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_20260502T162918Z/STAGE_RECEIPT.json",
+        "runtime/receipts/authority_reconciliation/STAGE3_AUTHORITY_POINTER_CONTRACT_RECONCILIATION_AND_NEW_CHAT_VALIDATOR_RERUN_20260502T162918Z/STAGE_HANDOFF.json"
+      ],
+      "failure_class": "cli_invocation_or_amended_receipt_superseded",
+      "route_id": "route_method_reliability_cli_shape",
+      "status": "SUPPRESSED_BY_LATER_PASS",
+      "target_workflow": "METHOD_RELIABILITY_LEDGER"
+    },
+    {
+      "action": "Update future trace ingestion to classify CE/SEE synthesis packets as evidence unless explicit failure fields exist.",
+      "cluster_record_count": 2,
+      "evidence_binding": [
+        "runtime/receipts/roadmap_decision/NEXT_BUILD_INTERNAL_RESEARCH_SEE_CE_DECISION_20260502T163517Z/CE_SYNTHESIS.json",
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING_20260502T165302Z/CE_SYNTHESIS.json"
+      ],
+      "failure_class": "derived_packet_missing_status_contract",
+      "route_id": "route_trace_ingestion_classifier_repair",
+      "status": "MONITOR",
+      "target_workflow": "TRACE_INGESTION_CLASSIFIER_REPAIR"
+    }
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING"
+}

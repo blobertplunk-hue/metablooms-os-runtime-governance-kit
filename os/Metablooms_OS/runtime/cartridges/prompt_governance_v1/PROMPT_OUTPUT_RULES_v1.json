@@ -1,0 +1,20 @@
+{
+  "final_response_rules": [
+    "include concise status",
+    "link bundle and checksum",
+    "cite web evidence for research-backed claims"
+  ],
+  "id": "PROMPT_OUTPUT_RULES_v1",
+  "next_step_rules": [
+    "state exact next bounded stage",
+    "include done/not_done/blocker state",
+    "include artifact paths and hashes when files are produced"
+  ],
+  "same_turn_ranked_option_rules": [
+    "enumerate viable options at decision points",
+    "order best-to-worst",
+    "state criteria",
+    "select one before patching"
+  ],
+  "status": "active"
+}

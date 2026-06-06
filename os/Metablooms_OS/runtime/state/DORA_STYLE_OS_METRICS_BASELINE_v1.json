@@ -1,0 +1,13 @@
+{
+  "schema_version": "v1",
+  "honesty_label": "artifact-delivery proxy metrics for sandbox OS; not production SaaS DORA metrics",
+  "events_modeled": 498,
+  "receipt_json_files": 269,
+  "handoff_json_files": 223,
+  "authority_or_delta_zips_in_mnt_data": 6,
+  "change_failure_block_rate_proxy": 0.057356608478802994,
+  "success_count": 378,
+  "failure_or_block_count": 23,
+  "unknown_count": 91,
+  "created_at": 1777767630.548498
+}

@@ -1,0 +1,7 @@
+TRACKER PREVIEW — CDR_STAGE8_STATIC_ANALYSIS_AND_COMPLEXITY_QUALITY_GATES
+Status: PASS
+Installed: CDR static-analysis/complexity spec, policy, packet schema, active invariant, gate, fixtures, eval, SEE/CE packets.
+Gate: PASS — valid packet allowed; over-complex/dynamic-exec packet denied.
+All CDR evals: PASS (7/7).
+Authority export: NOT PERFORMED.
+Next best stage: CDR_STAGE9_LINT_SECURITY_SCANNER_INTEGRATION_AND_BASELINE_REPORTING.

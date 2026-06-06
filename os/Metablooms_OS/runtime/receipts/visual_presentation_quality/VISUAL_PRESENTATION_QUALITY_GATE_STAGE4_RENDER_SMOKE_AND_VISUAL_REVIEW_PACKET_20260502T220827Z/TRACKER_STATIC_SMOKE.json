@@ -1,0 +1,25 @@
+{
+  "artifact": "/mnt/data/Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html",
+  "artifact_sha256": "5f332fd5a6658163023ec4ba7897d2dfeae408a8bcbe462e11aef4968129146c",
+  "checks": {
+    "css_custom_properties": true,
+    "decision_panel": true,
+    "focus_visible_css": true,
+    "has_next_step": true,
+    "has_no_raw_exception_text": true,
+    "has_plain_status_answer": true,
+    "hero_status_cards": true,
+    "html_lang_en": true,
+    "mobile_breakpoint_css": true,
+    "no_external_script_tags": true,
+    "no_external_stylesheets": true,
+    "progress_lanes": true,
+    "reduced_motion_css": true,
+    "timeline": true,
+    "viewport_meta": true,
+    "vpq_binding_present": true
+  },
+  "decision": "PASS",
+  "schema_version": "tracker_static_smoke.v1",
+  "violations": []
+}

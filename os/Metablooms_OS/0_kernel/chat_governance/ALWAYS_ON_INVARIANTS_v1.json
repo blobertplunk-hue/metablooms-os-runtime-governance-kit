@@ -1,0 +1,11 @@
+{
+  "id": "ALWAYS_ON_INVARIANTS_v1",
+  "status": "runtime_active",
+  "invariants": [
+    "META task turns must be evaluated by chat_governance_kernel_v1 before final response.",
+    "Router decisions are subordinate to the chat governance kernel.",
+    "SEE is invalid unless web.run-backed source ids or URLs are bound into the turn packet when research is required.",
+    "CE is invalid unless a synthesis/decision artifact exists when SEE was required.",
+    "No stage promotion without receipts, handoff, tests, location proof, and whole-system export survival proof."
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "schema": "BTS_TOOL_EVALUATION_v1",
+  "stage_id": "STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM",
+  "selected_tool_id": "bts_wrapped_filesystem_write",
+  "candidates": [
+    {"tool_id": "bts_wrapped_filesystem_write", "verdict": "SELECTED", "reason": "Top allowed resolver candidate for bounded filesystem writes."},
+    {"tool_id": "unzip_tqq_full_test", "verdict": "DENIED", "exclusion_reason": "Forbidden method memory: unzip validation route is denied."}
+  ],
+  "why_not_better_tool": "No higher-ranked allowed candidate was available."
+}

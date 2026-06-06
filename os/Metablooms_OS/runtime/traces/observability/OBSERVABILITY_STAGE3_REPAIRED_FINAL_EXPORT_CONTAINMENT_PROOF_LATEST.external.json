@@ -1,0 +1,25 @@
+{
+  "artifact_type": "OBSERVABILITY_STAGE3_REPAIRED_FINAL_EXPORT_CONTAINMENT_PROOF.v1",
+  "created_utc": "20260502T164942Z",
+  "duplicate_members": 0,
+  "entry_count": 6037,
+  "pointer_copies_json_equivalent": true,
+  "required": {
+    "Metablooms_OS/0_kernel/lib/operator_surface/build_operator_tracker_causal_timeline_v1.py": true,
+    "Metablooms_OS/0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json": true,
+    "Metablooms_OS/0_kernel/registry/operator_surface/MB_OPERATOR_TRACKER_CAUSAL_TIMELINE_BINDING_SPEC_v1.json": true,
+    "Metablooms_OS/0_kernel/validators/validate_observability_trace_span_ledger_stage3_tracker_binding_v1.py": true,
+    "Metablooms_OS/CURRENT_FULL_AUTHORITY_POINTER_v1.json": true,
+    "Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html": true,
+    "Metablooms_OS/runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json": true,
+    "Metablooms_OS/runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE3_HANDOFF_LATEST.json": true,
+    "Metablooms_OS/runtime/receipts/observability/OBSERVABILITY_STAGE3_FULL_AUTHORITY_EXPORT_INTERNAL_RECEIPT_LATEST.json": true,
+    "Metablooms_OS/runtime/state/operator_surface/OPERATOR_CAUSAL_TIMELINE_LATEST.json": true,
+    "Metablooms_OS/runtime/state/operator_surface/OPERATOR_CAUSAL_TIMELINE_PREVIEW_LATEST.md": true,
+    "Metablooms_OS/runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE3_TRACKER_BINDING_VALIDATION_LATEST.json": true
+  },
+  "verdict": "PASS",
+  "zip_path": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE3_TRACKER_CAUSAL_TIMELINE_BINDING_REPAIRED_20260502T164924Z.zip",
+  "zip_sha256": "21c1eee62db3d41dd24282e28c55aaeaf67c116768e70a9ae619398877881bd3",
+  "zip_testzip": null
+}

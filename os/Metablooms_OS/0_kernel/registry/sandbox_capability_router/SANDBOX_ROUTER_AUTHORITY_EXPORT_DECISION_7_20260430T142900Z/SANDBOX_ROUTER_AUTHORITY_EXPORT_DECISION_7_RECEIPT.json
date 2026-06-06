@@ -1,0 +1,24 @@
+{
+  "artifact_type": "metablooms_stage_receipt",
+  "decision": "CREATE_LIGHTWEIGHT_PROJECT_FILE_AUTHORITY_BUNDLE_AND_DEFER_HEAVY_FULL_EXPORT_REPAIR",
+  "heavy_export_repair_run": false,
+  "root_level_bundle": "/mnt/data/METABLOOMS_SANDBOX_ROUTER_AUTHORITY_EXPORT_DECISION_7_20260430T142900Z.zip",
+  "root_level_bundle_member_count": 274,
+  "root_level_bundle_planned": true,
+  "root_level_bundle_sha256": "acab7cece850a5207aa940bca38b27f891dace0c499abeaa3b7a7cf6decd29a1",
+  "source_handoff_checksum_verified": true,
+  "stage": "SANDBOX_ROUTER_AUTHORITY_EXPORT_DECISION_7",
+  "status": "PASS",
+  "timestamp_utc": "20260430T142900Z",
+  "validation_gates": {
+    "authority_filelist_created": "PASS",
+    "boot_router_precheck_valid": "PASS",
+    "delivery_router_precheck_valid": "PASS",
+    "heavy_export_repair_not_run": "PASS",
+    "lightweight_export_decision_written": "PASS",
+    "root_level_zip_created": "PASS",
+    "sha256_sidecar_written": "PASS",
+    "source_handoff_loaded": "PASS",
+    "zip_integrity_test": "PASS"
+  }
+}

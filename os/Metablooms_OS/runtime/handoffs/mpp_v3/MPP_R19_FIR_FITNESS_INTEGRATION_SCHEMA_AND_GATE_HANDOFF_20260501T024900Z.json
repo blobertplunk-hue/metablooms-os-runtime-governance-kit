@@ -1,0 +1,12 @@
+{
+  "from_stage": "MPP_R19_FIR_FITNESS_INTEGRATION_SCHEMA_AND_GATE",
+  "notes": "R20 should consume FIR PROMOTE_TO_MONITOR evidence and open monitor telemetry/feedback loops.",
+  "required_inputs": [
+    "0_kernel/schemas/mpp_v3/FIR_FITNESS_INTEGRATION_PACKET_SCHEMA_v1.json",
+    "0_kernel/mpp_v3/mpp_v3_fir_fitness_integration_gate_v1.py",
+    "tests/fixtures/mpp_v3/valid_fir_fitness_integration_packet_v1.json"
+  ],
+  "root": "/mnt/data/Metablooms_OS_R6_overlay_20260430T233000Z",
+  "status": "READY",
+  "to_stage": "MPP_R20_MONITOR_TELEMETRY_SCHEMA_AND_FEEDBACK_GATE"
+}

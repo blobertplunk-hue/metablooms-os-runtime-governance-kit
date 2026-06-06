@@ -1,0 +1,20 @@
+{
+  "allowed_roots": [
+    "/mnt/data/Metablooms_OS"
+  ],
+  "argv": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "-c",
+    "import time; time.sleep(5)"
+  ],
+  "cwd": "/mnt/data/Metablooms_OS",
+  "max_capture_bytes": 4096,
+  "max_retries": 1,
+  "operation_type": "fixture_timeout_retry",
+  "receipt_dir": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135531Z/fixture_receipts/timeout_retry",
+  "runtime_root": "/mnt/data/Metablooms_OS",
+  "shell": false,
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES",
+  "timeout_seconds": 0.2
+}

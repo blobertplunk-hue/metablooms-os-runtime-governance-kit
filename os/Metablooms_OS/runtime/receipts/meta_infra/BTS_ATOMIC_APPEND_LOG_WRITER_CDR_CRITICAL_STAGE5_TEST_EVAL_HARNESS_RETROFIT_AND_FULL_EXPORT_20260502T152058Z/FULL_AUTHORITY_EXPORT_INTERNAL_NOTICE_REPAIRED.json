@@ -1,0 +1,9 @@
+{
+  "artifact_type": "FullAuthorityExportInternalNotice.v1",
+  "created_utc": "2026-05-02T15:21:52Z",
+  "export_zip_path": "/mnt/data/METABLOOMS_OS_BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE5_FULL_AUTHORITY_REPAIRED_20260502T152152Z.zip",
+  "reason": "ZIP hash cannot be embedded inside the ZIP without changing the ZIP; final SHA-256 is bound by adjacent .sha256 sidecar and user-facing receipt.",
+  "repair_reason": "Initial Stage5 export was produced before final stage receipt/handoff were written; this repaired export includes those artifacts.",
+  "sha256_binding": "external_sidecar_required",
+  "stage": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT"
+}

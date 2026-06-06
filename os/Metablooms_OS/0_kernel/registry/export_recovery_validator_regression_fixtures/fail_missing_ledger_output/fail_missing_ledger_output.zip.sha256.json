@@ -1,0 +1,7 @@
+{
+  "version": "1.0",
+  "file": "fail_missing_ledger_output.zip",
+  "sha256": "64daad9e4002af766db154fb2e335001fef55ffcd79bfdc41dc6c0e482f22b51",
+  "size_bytes": 3575,
+  "verdict": "PASS"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "METABLOOMS_STAGE5B_OS_BUNDLE_DELIVERY_HARDENING_RECEIPT",
+  "stage": "STAGE5B_OS_BUNDLE_DELIVERY_FULL_BOOTABLE_AUTHORITY_HARDENING",
+  "timestamp_utc": "2026-05-01T23:08:38Z",
+  "verdict": "PRE_EXPORT_PASS",
+  "root": "/mnt/data/Metablooms_OS",
+  "installed": [
+    "governance/invariants/OS_BUNDLE_DELIVERY_MUST_BE_FULL_BOOTABLE_AUTHORITY_v1.json",
+    "runtime/governance/os_bundle_delivery_guard_v1.py",
+    "runtime/governance/OS_BUNDLE_DELIVERY_GUARD_BINDING_v1.json"
+  ],
+  "root_cause": "Existing FULL_OS_PORTABLE_EXPORT_MUST_INCLUDE_BASELINE guard focused on portable handoff bundles and was not active in ACTIVE_INVARIANTS_INDEX; it did not explicitly block support/proof bundles from being described as OS bundles.",
+  "correct_fix": "Install active USER_FACING_OS_BUNDLE_DELIVERY_GATE validator and invariant requiring full bootable incorporated OS authority ZIP for any user-facing OS bundle link.",
+  "boot_executor_exit": 0,
+  "boot_executor_tail": "{\n  \"verdict\": \"PASS_WITH_WARNINGS\",\n  \"issues\": [],\n  \"warnings\": [\n    \"git_dir_missing\"\n  ],\n  \"receipt_path\": \"/mnt/data/Metablooms_OS/0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777676918129.json\",\n  \"pass_count\": 7,\n  \"check_count\": 8\n}\n",
+  "runtime_starter_exit": 0,
+  "runtime_starter_stdout": "{\n  \"decision\": \"ALLOW\",\n  \"invalid_json\": [],\n  \"missing\": [],\n  \"mode\": \"root\",\n  \"path\": \"/mnt/data/Metablooms_OS\",\n  \"read_errors\": []\n}\n",
+  "portable_verify_exit": 0,
+  "portable_verify_tail": "{\n  \"stage\": \"PORTABLE_FULL_OS_BOOT_VERIFY_REPAIRED_H0B2\",\n  \"timestamp_utc\": \"2026-05-01T23:08:38Z\",\n  \"status\": \"PASS\",\n  \"root\": \"/mnt/data/Metablooms_OS\",\n  \"errors\": [],\n  \"sandbox_policy\": \"ALLOW\",\n  \"chat_kernel\": \"ALLOW\"\n}\n",
+  "support_bundle_negative_test_exit": 1,
+  "support_bundle_negative_test_stdout": "{\n  \"guard_id\": \"OS_BUNDLE_DELIVERY_MUST_BE_FULL_BOOTABLE_AUTHORITY_v1\",\n  \"decision\": \"DENY\",\n  \"errors\": [\n    \"zip_below_min_full_os_size\",\n    \"not_single_Metablooms_OS_root\",\n    \"missing_required_os_authority_paths\",\n    \"missing_runtime_receipt\",\n    \"missing_runtime_handoff\"\n  ],\n  \"warnings\": [],\n  \"zip\": \"/mnt/data/METABLOOMS_STAGE5_USE_PROMOTED_AUTHORITY_ARTIFACTS_20260501T230342Z.zip\",\n  \"bytes\": 9166,\n  \"required_count\": 8,\n  \"roots\": [\n    \"METABLOOMS_STAGE5_HANDOFF_FINAL_20260501T230342Z.json\",\n    \"METABLOOMS_STAGE5_HANDOFF_FINAL_20260501T230342Z.json.sha256\",\n    \"METABLOOMS_STAGE5_TRACKER_PREVIEW_20260501T230342Z.md\",\n    \"METABLOOMS_STAGE5_TRACKER_PREVIEW_20260501T230342Z.md.sha256\",\n    \"METABLOOMS_STAGE5_USE_PROMOTED_AUTHORITY_FINAL_RECEIPT_20260501T230342Z.json\",\n    \"METABLOOMS_STAGE5_USE_PROMOTED_AUTHORITY_FINAL_RECEIPT_20260501T230342Z.json.sha256\",\n    \"boot_executor_from_live_root.json\",\n    \"pointer_files_after.txt\",\n    \"pointer_files_before.txt\",\n    \"portable_full_os_boot_verify.json\",\n    \"runtime_starter_from_live_root.json\",\n    \"runtime_starter_from_stage4d_zip.json\",\n    \"stage5_zip_scan.json\",\n    \"stage5_zipinfo_t.txt\"\n  ],\n  \"file_count\": 14,\n  \"dir_count\": 0,\n  \"duplicate_count\": 0,\n  \"unsafe_count\": 0,\n  \"missing_required\": [\n    \"Metablooms_OS/portable_full_os_boot_verify.py\",\n    \"Metablooms_OS/0_kernel/scripts/boot_runtime_executor_v1.py\",\n    \"Metablooms_OS/runtime/governance/runtime_starter_smoke_v1.py\",\n    \"Metablooms_OS/CURRENT_FULL_AUTHORITY_POINTER_v1.json\",\n    \"Metablooms_OS/0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json\",\n    \"Metablooms_OS/runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json\",\n    \"Metablooms_OS/governance/invariants/OS_BUNDLE_DELIVERY_MUST_BE_FULL_BOOTABLE_AUTHORITY_v1.json\",\n    \"Metablooms_OS/runtime/governance/os_bundle_delivery_guard_v1.py\"\n  ]\n}\n",
+  "planned_export_zip": "/mnt/data/METABLOOMS_OS_STAGE5B_FULL_BOOTABLE_BUNDLE_DELIVERY_HARDENED_AUTHORITY_20260502T000900Z.zip",
+  "planned_sidecar": "/mnt/data/METABLOOMS_OS_STAGE5B_FULL_BOOTABLE_BUNDLE_DELIVERY_HARDENED_AUTHORITY_20260502T000900Z.zip.sha256"
+}

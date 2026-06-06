@@ -1,0 +1,39 @@
+{
+  "artifact_id": "weak_artifact",
+  "block_count": 6,
+  "blocks": [
+    "Covered dimension instruction requires a specific note of at least 4 words",
+    "Only 1 dimensions covered; minimum is 3",
+    "Required dimension practice missing for artifact_type=html_activity",
+    "Required dimension realtime_feedback missing for artifact_type=html_activity",
+    "Required dimension teacher_telemetry missing for artifact_type=html_activity",
+    "Required dimension misconception_diagnosis missing for artifact_type=html_activity"
+  ],
+  "decision_id": "dc2432d0-75da-42a4-b2d8-9c1183e94f62",
+  "input_summary": {
+    "declaration_path": "/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/fixtures/usefulness_surface.too_few.json",
+    "declaration_sha256": "e93b17dd197cfc3dc73ff8f27042ce288d4eee79c18e4edf01adc9612354e5da"
+  },
+  "policy_path": "metablooms/governance/usefulness_surface/allow",
+  "receipt_type": "USEFULNESS_SURFACE_GATE_DECISION",
+  "result": "DENY",
+  "schema_version": "1.1-r7",
+  "summary": {
+    "artifact_type": "html_activity",
+    "covered_count": 1,
+    "covered_dimensions": [
+      "instruction"
+    ],
+    "not_applicable": [],
+    "required_for_type": [
+      "instruction",
+      "practice",
+      "realtime_feedback",
+      "teacher_telemetry",
+      "misconception_diagnosis"
+    ]
+  },
+  "timestamp_utc": "2026-04-28T03:09:59Z",
+  "warn_count": 0,
+  "warnings": []
+}

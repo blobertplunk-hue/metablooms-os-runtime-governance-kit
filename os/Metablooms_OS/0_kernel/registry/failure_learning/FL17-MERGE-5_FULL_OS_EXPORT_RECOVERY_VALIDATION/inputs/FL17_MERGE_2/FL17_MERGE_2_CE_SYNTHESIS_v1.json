@@ -1,0 +1,17 @@
+{
+  "stage": "FL17-MERGE-2_QUARANTINED_EVIDENCE_IMPORT",
+  "constraints": [
+    "Always-on MetaBlooms governance is mandatory baseline; cartridge governance is additive.",
+    "Do not promote FL17 as baseline in this stage.",
+    "Do not overwrite active runtime state or tracker-working target files.",
+    "Approved FL17 progression is evidence only until later reconciliation/repair.",
+    "Preserve FL16 blocked-promotion semantics separately from FL17 export PASS semantics.",
+    "Compute content SHA-256 for every imported evidence file."
+  ],
+  "decisions": [
+    "Target tracker-working OS remains authoritative active baseline.",
+    "FL17 files are copied only into a quarantine namespace.",
+    "Conflict authority files are imported as snapshots only, not as active replacements.",
+    "FL17 tracker hook imported as evidence only; activation deferred to tracker repair stage."
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "decision": {
+    "argv_redacted": [
+      "/usr/bin/python3",
+      "-S",
+      "/mnt/data/Metablooms_OS/tests/evals/atomic_json_writer/test_atomic_json_writer_v1.py"
+    ],
+    "artifact_type": "METABLOOMS_BOUNDED_COMMAND_DECISION_PACKET_v1",
+    "attempts": [],
+    "created_utc": "20260502T142807Z",
+    "cwd": "/mnt/data/Metablooms_OS",
+    "decision_packet_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T142807Z/bounded_fixture_harness_receipts/decision_packet.json",
+    "failure_class": "SCHEMA_INVALID",
+    "failure_event_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T142807Z/bounded_fixture_harness_receipts/SUBPROCESS_FAILURE_EVENT_None_20260502T142807Z_674f24b8eda3.json",
+    "operation_type": null,
+    "policy_matches": [],
+    "pre_spawn_receipt_path": null,
+    "receipt_dir": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T142807Z/bounded_fixture_harness_receipts",
+    "result_class": "DENY_SCHEMA_INVALID",
+    "schema_errors": [
+      "operation_type_required"
+    ],
+    "stage": null,
+    "total_elapsed_ms": null
+  },
+  "parse_error": true,
+  "passed": false
+}

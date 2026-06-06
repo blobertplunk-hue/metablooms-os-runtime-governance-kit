@@ -1,0 +1,41 @@
+{
+  "artifact_type": "CONTRACT",
+  "created_utc": "20260502T144842Z",
+  "denied_patterns": [
+    "raw string log write",
+    "seek then write append",
+    "manual .write(json.dumps(...)+\"\\n\") in governed code",
+    "path escape",
+    "symlinked log target",
+    "oversized record",
+    "non-finite JSON",
+    "newline-delimited multi-record injection"
+  ],
+  "durability_modes": {
+    "no_fsync": "denied for CDR CRITICAL governance artifacts unless exception authority exists",
+    "sync_always": "default for governance logs",
+    "sync_on_critical": "allowed for high-volume non-critical telemetry"
+  },
+  "implementation_target": "0_kernel/lib/io/atomic_append_log_writer_v1.py",
+  "name": "ATOMIC_APPEND_LOG_WRITER_CONTRACT_v1",
+  "public_api": {
+    "failure_event_schema": "AtomicAppendLogFailureEvent.v1",
+    "function": "append_governed_jsonl_record(envelope: dict) -> dict",
+    "input_schema": "AtomicAppendLogEnvelope.v1",
+    "output_schema": "AtomicAppendLogDecisionPacket.v1"
+  },
+  "required_algorithm": [
+    "Validate envelope fields and allowed roots",
+    "Resolve log path and all ancestors before open",
+    "Deny path traversal, absolute-path mismatch, unsafe suffix, symlink target, symlink ancestor",
+    "Require record to be a JSON object with schema_version, event_id, timestamp_utc, source, event_type, severity, payload",
+    "Serialize with sort_keys and compact separators, allow_nan=False, ensure_ascii=False",
+    "Reject serialized record containing raw CR/LF before adding terminal newline",
+    "Compute record_sha256 over bytes without newline and line_sha256 over bytes with newline",
+    "Open with os.open flags O_WRONLY|O_CREAT|O_APPEND plus mode 0o600 by default",
+    "Write the full line using bounded write loop; verify bytes_written equals line length",
+    "fsync according to durability mode and severity policy",
+    "Emit decision packet and failure event through atomic JSON writer where available"
+  ],
+  "stage": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT"
+}

@@ -1,0 +1,1 @@
+{"id":"PRE_TOOL_EXECUTION_CONTRACT_v1","status":"active","gate":"PRE_TOOL_EXECUTION_CONTRACT_GATE","description":"Every governed tool action must include a machine-checkable pre-tool execution contract before the tool is used.","failure_action":"DENY_TOOL_CALL","runtime_enforcement":"runtime/governance/pre_tool_execution_contract_gate_v1.py"}

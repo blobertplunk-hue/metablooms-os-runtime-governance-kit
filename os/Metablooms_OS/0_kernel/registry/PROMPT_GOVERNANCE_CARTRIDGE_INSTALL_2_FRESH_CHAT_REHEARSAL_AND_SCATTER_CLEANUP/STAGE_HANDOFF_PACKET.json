@@ -1,0 +1,52 @@
+{
+  "next_allowed_stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_3_FULL_EXPORT_STREAM_ROUTE_REPAIR_AND_FRESH_EXTRACT_REPLAY",
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_2_FRESH_CHAT_REHEARSAL_AND_SCATTER_CLEANUP",
+  "status": "PASS_PARTIAL_EXPORT_BLOCKED_FULL_EXPORT_TIMEOUT",
+  "tracker_preview": {
+    "completed": [
+      "prompt cartridge bound into boot gates",
+      "controlled artifact index installed",
+      "anti-scatter validator exact-registration mode passes",
+      "fresh-chat rehearsal gate passes",
+      "full export attempted but timed out/partial stream archive quarantined"
+    ],
+    "export_status": "delta_export_only_full_export_blocked_by_timeout",
+    "pending": [
+      "repair full export route using source-zip streaming in smaller chunks or split authority",
+      "fresh-extract boot replay from completed full export",
+      "promotion pointer update only after replay"
+    ],
+    "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_2_FRESH_CHAT_REHEARSAL_AND_SCATTER_CLEANUP"
+  },
+  "validation_summary": {
+    "boot_loader": {
+      "checks_count": 13,
+      "decision": "ALLOW",
+      "errors": [],
+      "summary": {}
+    },
+    "fresh_chat": {
+      "checks_count": 9,
+      "decision": "ALLOW",
+      "errors": [],
+      "summary": {}
+    },
+    "prompt": {
+      "checks_count": 9,
+      "decision": "ALLOW",
+      "errors": [],
+      "summary": {}
+    },
+    "scatter": {
+      "checks_count": null,
+      "decision": "ALLOW",
+      "errors": [],
+      "summary": {
+        "current_controlled_count": 1776,
+        "index_status": "active",
+        "mode": "controlled_artifact_index",
+        "registered_count": 1776
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "metablooms://schemas/usefulness_surface_declaration_schema_v1",
+  "title": "MetaBlooms usefulness surface declaration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["artifact_id", "artifact_type", "dimensions_covered"],
+  "properties": {
+    "artifact_id": {"type": "string", "minLength": 1},
+    "artifact_type": {"type": "string", "enum": ["html_activity", "dashboard", "telemetry_engine", "schema", "governance_gate", "runtime_contract", "other"]},
+    "promotion_required": {"type": "boolean"},
+    "promotion_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "target_artifact_path": {"type": "string"},
+        "target_artifact_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "promotion_stage": {"type": "string"}
+      }
+    },
+    "dimensions_not_applicable": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "dimensions_covered": {
+      "type": "object",
+      "minProperties": 1,
+      "patternProperties": {
+        "^(instruction|practice|assessment|realtime_feedback|teacher_telemetry|misconception_diagnosis|adaptive_support|export_reuse|future_improvement)$": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["covered"],
+          "properties": {
+            "covered": {"type": "boolean"},
+            "note": {"type": "string"},
+            "evidence": {"type": "array", "items": {"type": "string", "minLength": 1}}
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "H0B1_PORTABILITY_RENAME_RECEIPT",
+  "status": "PASS",
+  "renamed": [
+    {
+      "original_name": "--Simon WillisonΓò¼├┤Γö£├ºΓö£├╗s complete analysis of ChatGPTΓò¼├┤Γö£├ºΓö£├╗s sandboxed code interpreter - container environment (January 26, 2026)--.pdf",
+      "safe_name": "Simon_Willison_Sandboxed_Code_Interpreter_20260126.pdf",
+      "action": "renamed"
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "activation_rule": "Only active/runtime_active invariants are enforced; user-facing full OS downloads must be clearly labeled BOOTABLE FULL OS AUTHORITY ZIP, while support/proof bundles must be labeled as not the OS bundle.",
+  "active_invariants": [
+    {
+      "failure_action": "DENY_RELEASE_AND_WRITE_BLOCKER_REPORT",
+      "gate": "TRACKER_RELEASE_GATE",
+      "id": "TRACKER_RELEASE_GATE_v1",
+      "status": "active"
+    },
+    {
+      "failure_action": "DENY_STAGE_EXECUTION",
+      "gate": "RESEARCH_SEE_CE_GATE",
+      "id": "RESEARCH_SEE_CE_GATE_v1",
+      "status": "active"
+    },
+    {
+      "failure_action": "DENY_RUNTIME_WRITE",
+      "gate": "RUNTIME_WRITE_ROLLBACK_GATE",
+      "id": "RUNTIME_WRITE_ROLLBACK_GATE_v1",
+      "status": "active"
+    },
+    {
+      "failure_action": "DENY_RELEASE_AND_WRITE_BLOCKER_REPORT",
+      "gate": "TRACKER_RELEASE_GATE",
+      "id": "TRACKER_CLASSIFICATION_GATE_v1",
+      "status": "proposed"
+    },
+    {
+      "failure_action": "DENY_DELIVERY_AND_LABEL_AS_SUPPORT_ARTIFACT",
+      "gate": "USER_FACING_OS_BUNDLE_DELIVERY_GATE",
+      "id": "OS_BUNDLE_DELIVERY_MUST_BE_FULL_BOOTABLE_AUTHORITY_v1",
+      "status": "active",
+      "validator_path": "runtime/governance/os_bundle_delivery_guard_v1.py"
+    },
+    {
+      "failure_action": "DENY_GOVERNED_EXECUTION_CLAIM",
+      "gate": "pre_tool_action_gate_v1",
+      "id": "PER_ACTION_TOOL_INTERCEPTION_REQUIRED_v1",
+      "status": "active",
+      "validator_path": "runtime/governance/per_action_tool_interception_v1/pre_tool_action_gate_v1.js"
+    },
+    {
+      "id": "BTS_V4_GATED_RECEIPT_ENGINE_REQUIRED_v1",
+      "path": "governance/invariants/BTS_V4_GATED_RECEIPT_ENGINE_REQUIRED_v1.json",
+      "stage": "STAGE6D_BTS_V4_GATE_WRAPPED_INSTALL_SCAFFOLD",
+      "status": "active"
+    },
+    {
+      "failure_action": "DENY_GOVERNED_FILE_OR_EXPORT_CLAIM",
+      "gate": "BTS_WRAPPED_EXECUTOR_GATE",
+      "id": "BTS_WRAPPED_EXPORT_AND_FILESYSTEM_EXECUTORS_REQUIRED_v1",
+      "path": "governance/invariants/BTS_WRAPPED_EXPORT_AND_FILESYSTEM_EXECUTORS_REQUIRED_v1.json",
+      "stage": "STAGE6E_BTS_WRAP_EXPORT_AND_FILESYSTEM_EXECUTORS",
+      "status": "active",
+      "validator_path": "runtime/governance/executors/bts_wrapped_executors_v1.py"
+    },
+    {
+      "failure_action": "DENY_FULL_AUTHORITY_EXPORT_CLAIM_OR_LABEL_AS_COMPATIBILITY_FALLBACK",
+      "gate": "BTS_WRAPPED_NODE_ZIP_PROFILE_EXPORT_GATE",
+      "id": "NODE_ZIP_PROFILE_REQUIRED_FOR_AUTHORITY_EXPORTS_v1",
+      "path": "governance/invariants/NODE_ZIP_PROFILE_REQUIRED_FOR_AUTHORITY_EXPORTS_v1.json",
+      "stage": "STAGE6F_RETROFIT_EXPORT_AND_FILESYSTEM_CALLS_TO_BTS_WRAPPER_OR_EXPORT_FULL_AUTHORITY_AFTER_6E",
+      "status": "active",
+      "validator_path": "runtime/governance/executors/bts_wrapped_executors_v1.py export-zip-node-profile"
+    },
+    {
+      "failure_action": "DENY_GOVERNED_TOOL_SELECTION_CLAIM",
+      "gate": "TOOL_UNIVERSE_RESOLVER_AND_SELECTION_SUFFICIENCY_GATE",
+      "id": "BTS_TOOL_UNIVERSE_RESOLVER_REQUIRED_v1",
+      "path": "governance/invariants/BTS_TOOL_UNIVERSE_RESOLVER_REQUIRED_v1.json",
+      "stage": "STAGE6H_BTS_TOOL_UNIVERSE_RESOLVER_AND_CANDIDATE_SELECTION_GATE",
+      "status": "active",
+      "validator_path": "runtime/governance/tool_universe_resolver_v1.py"
+    },
+    "BTS_CALLERS_REQUIRE_TOOL_UNIVERSE_RESOLVER_v1",
+    {
+      "failure_action": "DENY_USER_FACING_OS_BUNDLE_LABEL_OR_RELABEL_BEFORE_RESPONSE",
+      "gate": "USER_FACING_DOWNLOAD_LABEL_GATE",
+      "id": "USER_FACING_DOWNLOAD_LABELS_MUST_DISTINGUISH_BOOTABLE_OS_AUTHORITY_v1",
+      "path": "governance/invariants/USER_FACING_DOWNLOAD_LABELS_MUST_DISTINGUISH_BOOTABLE_OS_AUTHORITY_v1.json",
+      "stage": "STAGE6J_FULL_AUTHORITY_EXPORT_AFTER_BTS_TOOL_UNIVERSE_RESOLVER_RETROFIT",
+      "status": "active",
+      "validator_path": "runtime/governance/os_bundle_delivery_guard_v1.py"
+    },
+    {
+      "failure_action": "DENY_BTS_SUCCESS_COMMIT_AND_ROUTE_TO_REPAIR_OR_FAILURE_RESULT",
+      "gate": "post_tool_result_validation_v1",
+      "id": "POST_TOOL_RESULT_VALIDATION_REQUIRED_v1",
+      "stage": "STAGE6L_POST_TOOL_RESULT_VALIDATION_GATE",
+      "status": "active",
+      "validator_path": "runtime/governance/post_tool_result_validation_v1.py"
+    },
+    {
+      "failure_action": "DENY_RESUME_OR_STAGE_SUCCESS_CLAIM",
+      "gate": "durable_checkpoint_replay_gate_v1",
+      "id": "DURABLE_CHECKPOINT_REPLAY_MINIMUM_REQUIRED_v1",
+      "path": "governance/invariants/DURABLE_CHECKPOINT_REPLAY_MINIMUM_REQUIRED_v1.json",
+      "stage": "STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM",
+      "status": "active",
+      "validator_path": "runtime/governance/durable_checkpoint_replay_gate_v1.py"
+    },
+    {
+      "failure_action": "DENY_SUCCESS_COMMIT_FOR_TRACE_EXPORTABLE_ACTION",
+      "gate": "observability_trace_export_gate_v1",
+      "id": "OBSERVABILITY_TRACE_EXPORT_ADAPTERS_REQUIRED_v1",
+      "status": "active"
+    },
+    {
+      "id": "CDR_STATIC_ANALYSIS_AND_COMPLEXITY_QUALITY_GATES_REQUIRED_v1",
+      "path": "governance/invariants/CDR_STATIC_ANALYSIS_AND_COMPLEXITY_QUALITY_GATES_REQUIRED_v1.json",
+      "stage_id": "CDR_STAGE8_STATIC_ANALYSIS_AND_COMPLEXITY_QUALITY_GATES",
+      "status": "ACTIVE",
+      "validator_path": "runtime/governance/cdr_static_analysis_complexity_gate_v1.py"
+    },
+    {
+      "id": "CDR_LINT_SECURITY_SCANNER_BASELINE_REQUIRED_v1",
+      "path": "governance/invariants/CDR_LINT_SECURITY_SCANNER_BASELINE_REQUIRED_v1.json",
+      "stage": "CDR_STAGE9_LINT_SECURITY_SCANNER_INTEGRATION_AND_BASELINE_REPORTING"
+    },
+    {
+      "id": "MPP_CODE_WORK_REQUIRES_CDR_v1",
+      "path": "governance/invariants/MPP_CODE_WORK_REQUIRES_CDR_v1.json",
+      "stage": "MPP_CDR_BINDING_STAGE14_CODE_WORK_REQUIRES_CDR_IN_MPP",
+      "status": "ACTIVE"
+    },
+    {
+      "failure_action": "DENY_STAGE_CONTRACT_OR_STAGE_PASS",
+      "gate": "mpp_stage_contract_code_bearing_declaration_gate_v1",
+      "id": "MPP_STAGE_CONTRACTS_MUST_DECLARE_CODE_BEARING_FLAG_v1",
+      "path": "governance/invariants/MPP_STAGE_CONTRACTS_MUST_DECLARE_CODE_BEARING_FLAG_v1.json",
+      "stage": "MPP_CDR_BINDING_STAGE15_RETROFIT_STAGE_CONTRACTS_TO_DECLARE_CODE_BEARING_FLAG",
+      "status": "active",
+      "validator_path": "runtime/governance/mpp_stage_contract_code_bearing_declaration_gate_v1.py"
+    }
+  ],
+  "engine_path": "runtime/governance/invariant_activation_engine_v1.py",
+  "id": "ACTIVE_INVARIANTS_INDEX_v1",
+  "invariants": [
+    {
+      "id": "TOOL_UNIVERSE_RESOLVER_TRACE_EXPORT_COVERAGE_REQUIRED_v1",
+      "path": "governance/invariants/TOOL_UNIVERSE_RESOLVER_TRACE_EXPORT_COVERAGE_REQUIRED_v1.json",
+      "stage_id": "STAGE6T_TOOL_UNIVERSE_RESOLVER_COVERAGE_REPAIR_FOR_TRACE_EXPORT",
+      "status": "ACTIVE"
+    },
+    "governance/invariants/CDR_REAL_SCANNER_ADAPTER_INSTALL_PROFILES_REQUIRED_v1.json",
+    {
+      "id": "CDR_LINCHPIN_RECURSIVE_AUDIT_DEEPENING_REQUIRED_v1",
+      "path": "governance/invariants/CDR_LINCHPIN_RECURSIVE_AUDIT_DEEPENING_REQUIRED_v1.json",
+      "stage": "CDR_STAGE12_CDR_LINCHPIN_RECURSIVE_AUDIT_DEEPENING",
+      "status": "active"
+    }
+  ],
+  "last_cdr_reconstruction_stage": "CDR_REBUILD_STAGE2_TO_STAGE7_FROM_STAGE6U_PLUS_CHAT_SUMMARIES",
+  "last_cdr_stage": "CDR_STAGE8_STATIC_ANALYSIS_AND_COMPLEXITY_QUALITY_GATES",
+  "last_cdr_static_analysis_stage": "CDR_STAGE8_STATIC_ANALYSIS_AND_COMPLEXITY_QUALITY_GATES",
+  "last_stage": "STAGE6T_TOOL_UNIVERSE_RESOLVER_COVERAGE_REPAIR_FOR_TRACE_EXPORT",
+  "last_updated_by": "CDR_STAGE10_REAL_SCANNER_ADAPTER_INSTALL_PROFILES_OR_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE9",
+  "last_updated_by_stage": "MPP_CDR_BINDING_STAGE14_CODE_WORK_REQUIRES_CDR_IN_MPP",
+  "last_updated_stage": "STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM",
+  "last_updated_utc": "2026-05-02T12:50:55Z",
+  "reconstructed_cdr_stage2_to_stage7": [
+    "CDR_CODE_ACCEPTANCE_AND_RECURSIVE_AUDIT_REQUIRED",
+    "CDR_RISK_TIERED_TEST_MATRIX_REQUIRED",
+    "CDR_SOURCE_LEVEL_SELF_AUDIT_AND_FIXTURE_GENERATION_REQUIRED",
+    "CDR_SOURCE_STYLE_AND_DEBUGGABILITY_RETROFIT_REQUIRED",
+    "CDR_ADAPTABILITY_AND_INTERFACE_CONTRACT_REQUIRED",
+    "CDR_SECURITY_AND_OBSERVABILITY_DEEPENING_REQUIRED"
+  ],
+  "schema": "ACTIVE_INVARIANTS_INDEX",
+  "status": "runtime_active",
+  "timestamp_utc": "2026-05-01T23:08:38Z"
+}

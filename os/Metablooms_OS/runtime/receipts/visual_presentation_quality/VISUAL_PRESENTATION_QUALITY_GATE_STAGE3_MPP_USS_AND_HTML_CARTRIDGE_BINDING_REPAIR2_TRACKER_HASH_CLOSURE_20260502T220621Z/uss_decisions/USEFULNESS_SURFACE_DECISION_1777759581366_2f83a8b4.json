@@ -1,0 +1,34 @@
+{
+  "artifact_id": "open_operator_visual_tracker_usefulness_binding_v1",
+  "block_count": 0,
+  "blocks": [],
+  "decision_id": "2f83a8b4-26ee-4667-9418-85ad4477e23e",
+  "input_summary": {
+    "declaration_path": "/mnt/data/Metablooms_OS/tests/fixtures/usefulness_surface/valid_usefulness_operator_tracker_with_visual_presentation_v1.json",
+    "declaration_sha256": "3b6f24440d8ddb3f2c9e49d1eb13d7f37698ac8910159be5fe2e92bf76adc0f0"
+  },
+  "policy_path": "metablooms/governance/usefulness_surface/allow",
+  "receipt_type": "USEFULNESS_SURFACE_GATE_DECISION",
+  "result": "ALLOW",
+  "schema_version": "1.2-vpq-stage3",
+  "summary": {
+    "artifact_type": "operator_tracker",
+    "covered_count": 4,
+    "covered_dimensions": [
+      "assessment",
+      "future_improvement",
+      "realtime_feedback",
+      "visual_presentation"
+    ],
+    "not_applicable": [],
+    "required_for_type": [
+      "assessment",
+      "realtime_feedback",
+      "future_improvement",
+      "visual_presentation"
+    ]
+  },
+  "timestamp_utc": "2026-05-02T22:06:21Z",
+  "warn_count": 0,
+  "warnings": []
+}

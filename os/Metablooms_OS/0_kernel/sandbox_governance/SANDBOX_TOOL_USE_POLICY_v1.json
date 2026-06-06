@@ -1,0 +1,32 @@
+{
+  "deny_by_default": [
+    "normal python3 startup for stdlib-only filesystem/archive/hash tasks",
+    "unbounded recursive extraction before archive screening",
+    "hardlink candidate archives",
+    "success claims without artifacts"
+  ],
+  "exception_rule": "normal python3 requires direct probe and justification artifact",
+  "id": "SANDBOX_TOOL_USE_POLICY_v1",
+  "must_load_at_chat_start": true,
+  "preferred_methods": [
+    "shell/coreutils",
+    "jq when available",
+    "zipinfo/unzip for bounded listing",
+    "python3 -S stdlib-only for json/path/archive/hash"
+  ],
+  "scope": "all MetaBlooms turns before planning, routing, coding, archive, hash, export, or final response",
+  "sentry_controls": {
+    "EXPORT_LATENCY": [
+      "bounded commands",
+      "manifest-based verification",
+      "timeout receipts",
+      "critical-path fresh-extract smoke for stage-critical paths"
+    ],
+    "LAYOUT_DRIFT": [
+      "root resolver",
+      "relative complete-system checks",
+      "fresh ZIP smoke verifier"
+    ]
+  },
+  "version": "1.0"
+}

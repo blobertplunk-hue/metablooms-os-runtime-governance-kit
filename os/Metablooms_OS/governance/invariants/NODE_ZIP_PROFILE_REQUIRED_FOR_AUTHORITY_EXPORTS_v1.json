@@ -1,0 +1,14 @@
+{
+  "id": "NODE_ZIP_PROFILE_REQUIRED_FOR_AUTHORITY_EXPORTS_v1",
+  "schema": "METABLOOMS_INVARIANT_v1",
+  "status": "active",
+  "stage_installed": "STAGE6F_RETROFIT_EXPORT_AND_FILESYSTEM_CALLS_TO_BTS_WRAPPER_OR_EXPORT_FULL_AUTHORITY_AFTER_6E",
+  "description": "Full OS authority ZIP export and ZIP recovery proof must prefer the governed Node ZIP profile (yauzl/yazl/crc-32) through BTS-wrapped executors. Python zipfile export is a compatibility fallback only and must be labeled as such.",
+  "required_surfaces": [
+    "runtime/governance/executors/bts_wrapped_executors_v1.py",
+    "runtime/tooling/governed_install_profiles/node_zip_authority_repair_v1/stream_export_directory.js",
+    "runtime/tooling/governed_install_profiles/node_zip_authority_repair_v1/stream_crc_proof.js"
+  ],
+  "failure_action": "DENY_FULL_AUTHORITY_EXPORT_CLAIM_OR_LABEL_AS_COMPATIBILITY_FALLBACK",
+  "enforcement_note": "A user-facing full OS authority export after Stage6F should use export-zip-node-profile unless a receipt explains why the Node profile was unavailable or unsafe. Node modules remain outside the OS authority bundle."
+}

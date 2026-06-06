@@ -1,0 +1,14 @@
+WARNING: Ignored `box-shadow:var(--shadow)` at 5:233, unknown property.
+WARNING: Ignored `place-items:center` at 5:435, invalid value.
+WARNING: Ignored `box-shadow:var(--shadow)` at 6:173, unknown property.
+WARNING: Ignored `box-shadow:0 0 0 5px rgba(100,116,139,.14)` at 9:206, unknown property.
+WARNING: Expected a media type, got '(max-width:720px)'
+WARNING: Invalid media type '(max-width:720px)' the whole @media rule was ignored at 11:1.
+WARNING: Expected a media type, got '(prefers-reduced-motion: reduce)'
+WARNING: Invalid media type ' (prefers-reduced-motion: reduce)' the whole @media rule was ignored at 15:1.
+WARNING: Ignored `box-shadow:0 18px 44px rgba(0,0,0,.42)` at 17:60, unknown property.
+WARNING: Expected a media type, got '(max-width:520px)'
+WARNING: Invalid media type '(max-width:520px)' the whole @media rule was ignored at 19:1.
+WARNING: Invalid math function at 4:241: clamp(1.6rem,6vw,3.2rem)
+WARNING: "auto-fit" and "auto-fill" are unsupported in repeat()
+WARNING: "auto-fit" and "auto-fill" are unsupported in repeat()

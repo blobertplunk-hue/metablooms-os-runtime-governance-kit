@@ -1,0 +1,21 @@
+{
+  "actions": [
+    "loaded FL17-MERGE-5 candidate ZIP and sidecar",
+    "verified base checksum against sidecar",
+    "repaired tracker evidence binding to current 5R receipt/handoff",
+    "added 5R recovery proof artifacts",
+    "rebuilt full OS candidate ZIP",
+    "will run checksum, unsafe path, testzip, required artifact read, and selective extraction checks"
+  ],
+  "artifact_type": "STAGE_RECEIPT",
+  "baseline_promoted": false,
+  "bounded_stage": true,
+  "created_utc": "20260430T014908Z",
+  "next_allowed_stage": "BASELINE-PROMOTION-0 only if explicitly requested and promotion gates pass",
+  "promotion_performed": false,
+  "root_cause": "Validation method timeout, not proven archive corruption.",
+  "see_ce_preflight": "COMPLETED",
+  "stage_id": "FL17-MERGE-5R_RECOVERY_PROOF_REPAIR",
+  "status": "RECOVERY_PROOF_REPAIR_PACKAGING",
+  "verdict": "PASS_PENDING_POST_EXPORT_VALIDATION"
+}

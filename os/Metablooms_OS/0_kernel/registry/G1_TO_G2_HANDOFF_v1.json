@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "created_at": 1777064381.6720955,
+  "from_stage": "G1_EXPORT_RECOVERY_VALIDATOR_SCHEMA_AND_CONTRACT",
+  "to_stage": "G2_EXPORT_RECOVERY_VALIDATOR_IMPLEMENTATION",
+  "status": "ready",
+  "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G1_EXPORT_RECOVERY_VALIDATOR_SCHEMA_CONTRACT_RECEIPT_v1.json",
+  "input_schema": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/EXPORT_RECOVERY_VALIDATOR_INPUT_SCHEMA_v1.json",
+  "decision_schema": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/EXPORT_RECOVERY_VALIDATOR_DECISION_SCHEMA_v1.json",
+  "validator_contract": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/EXPORT_RECOVERY_PROVEN_VALIDATOR_CONTRACT_v1.json",
+  "gate_catalog": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_GATE_CATALOG_v1.json",
+  "implementation_allowed": true,
+  "export_allowed": false,
+  "cleanup_allowed": false,
+  "next_command": "EXECUTE G2 \u2014 EXPORT RECOVERY VALIDATOR IMPLEMENTATION"
+}

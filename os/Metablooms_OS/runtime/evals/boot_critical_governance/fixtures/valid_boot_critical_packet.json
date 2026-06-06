@@ -1,0 +1,10 @@
+{
+  "expected": "ALLOW",
+  "requires": [
+    "BOOT_REQUIRED_GATES",
+    "loader",
+    "scatter_validator",
+    "chat_kernel",
+    "sandbox_policy"
+  ]
+}

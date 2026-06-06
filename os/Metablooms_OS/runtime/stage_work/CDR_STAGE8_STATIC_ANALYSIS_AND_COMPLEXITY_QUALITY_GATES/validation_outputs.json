@@ -1,0 +1,81 @@
+{
+  "all_cdr_eval_results": [
+    {
+      "path": "tests/evals/cdr/test_cdr_adaptability_interface_contract_gate_v1.py",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "PASS\n"
+    },
+    {
+      "path": "tests/evals/cdr/test_cdr_code_acceptance_gate_v1.py",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "test_cdr_code_acceptance_gate_v1.py: PASS\n"
+    },
+    {
+      "path": "tests/evals/cdr/test_cdr_risk_tiered_test_matrix_gate_v1.py",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "test_cdr_risk_tiered_test_matrix_gate_v1.py: PASS\n"
+    },
+    {
+      "path": "tests/evals/cdr/test_cdr_security_observability_gate_v1.py",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "test_cdr_security_observability_gate_v1.py: PASS\n"
+    },
+    {
+      "path": "tests/evals/cdr/test_cdr_source_level_self_audit_gate_v1.py",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "test_cdr_source_level_self_audit_gate_v1.py: PASS\n"
+    },
+    {
+      "path": "tests/evals/cdr/test_cdr_source_style_debuggability_gate_v1.py",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "test_cdr_source_style_debuggability_gate_v1.py: PASS\n"
+    },
+    {
+      "path": "tests/evals/cdr/test_cdr_static_analysis_complexity_gate_v1.py",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "test_cdr_static_analysis_complexity_gate_v1.py: PASS\n"
+    }
+  ],
+  "boot_post": {
+    "cmd": [
+      "python3",
+      "-S",
+      "/mnt/data/Metablooms_OS/portable_full_os_boot_verify.py",
+      "/mnt/data/Metablooms_OS"
+    ],
+    "returncode": 0,
+    "stderr": "/mnt/data/Metablooms_OS/portable_full_os_boot_verify.py:5: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n  def now(): return datetime.datetime.utcnow().replace(microsecond=0).isoformat()+'Z'\n",
+    "stdout": "{\n  \"stage\": \"PORTABLE_FULL_OS_BOOT_VERIFY_REPAIRED_H0B2\",\n  \"timestamp_utc\": \"2026-05-02T12:12:32Z\",\n  \"status\": \"PASS\",\n  \"root\": \"/mnt/data/Metablooms_OS\",\n  \"errors\": [],\n  \"sandbox_policy\": \"ALLOW\",\n  \"chat_kernel\": \"ALLOW\"\n}\n"
+  },
+  "boot_pre": {
+    "cmd": [
+      "python3",
+      "-S",
+      "/mnt/data/Metablooms_OS/portable_full_os_boot_verify.py",
+      "/mnt/data/Metablooms_OS"
+    ],
+    "returncode": 0,
+    "stderr": "/mnt/data/Metablooms_OS/portable_full_os_boot_verify.py:5: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n  def now(): return datetime.datetime.utcnow().replace(microsecond=0).isoformat()+'Z'\n",
+    "stdout": "{\n  \"stage\": \"PORTABLE_FULL_OS_BOOT_VERIFY_REPAIRED_H0B2\",\n  \"timestamp_utc\": \"2026-05-02T12:12:32Z\",\n  \"status\": \"PASS\",\n  \"root\": \"/mnt/data/Metablooms_OS\",\n  \"errors\": [],\n  \"sandbox_policy\": \"ALLOW\",\n  \"chat_kernel\": \"ALLOW\"\n}\n"
+  },
+  "stage": "CDR_STAGE8_STATIC_ANALYSIS_AND_COMPLEXITY_QUALITY_GATES",
+  "stage6u_sidecar_ok": true,
+  "stage8_eval": {
+    "cmd": [
+      "python3",
+      "-S",
+      "/mnt/data/Metablooms_OS/tests/evals/cdr/test_cdr_static_analysis_complexity_gate_v1.py"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "test_cdr_static_analysis_complexity_gate_v1.py: PASS\n"
+  },
+  "timestamp_utc": "2026-05-02T12:12:32Z"
+}

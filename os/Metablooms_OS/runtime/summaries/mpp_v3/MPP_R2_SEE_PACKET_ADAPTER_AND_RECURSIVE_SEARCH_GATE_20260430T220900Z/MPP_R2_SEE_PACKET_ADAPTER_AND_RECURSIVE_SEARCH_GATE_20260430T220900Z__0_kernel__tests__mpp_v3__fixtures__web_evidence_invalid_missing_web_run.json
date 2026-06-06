@@ -1,0 +1,12 @@
+{
+  "web_run_called": false,
+  "call_count": 0,
+  "query_refs": [],
+  "research_rounds": [],
+  "sources": [],
+  "claims": [],
+  "gaps_and_contradictions": {"gaps": [], "contradictions": []},
+  "synthesis": "No web evidence was collected.",
+  "limitations": [],
+  "see_verdict": "PASS"
+}

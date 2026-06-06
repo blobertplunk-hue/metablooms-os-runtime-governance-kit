@@ -1,0 +1,16 @@
+{
+  "action_type": "filesystem_write",
+  "attributes": {
+    "artifact_sha256": "abc123",
+    "bts_commit_id": "bts_commit_stage6r"
+  },
+  "checkpoint_id": "ckpt_stage6p_child",
+  "kind": "INTERNAL",
+  "name": "bts.tool_execution",
+  "policy_decision": "ALLOW",
+  "risk_tier": "high",
+  "stage_id": "STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS",
+  "status": "PASS",
+  "thread_id": "thread_stage6",
+  "tool_id": "python3_S_stdlib"
+}

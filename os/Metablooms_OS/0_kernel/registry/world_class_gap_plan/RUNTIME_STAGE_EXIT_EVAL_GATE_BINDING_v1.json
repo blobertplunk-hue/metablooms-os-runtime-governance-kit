@@ -1,0 +1,26 @@
+{
+  "applies_to": [
+    "educational_html",
+    "blooket_csv",
+    "lesson_plan",
+    "research_see",
+    "artifact_export",
+    "repair_debugging",
+    "stage_exit"
+  ],
+  "binding_type": "runtime_stage_exit_gate",
+  "corpus": "0_kernel/evals/real_task_eval_harness/REAL_TASK_CORPUS_v2.json",
+  "gate": "0_kernel/evals/real_task_eval_harness/real_task_eval_runtime_gate_v1.py",
+  "hard_fail_conditions": [
+    "corpus fixture failure",
+    "missing continuation prompt",
+    "stale continuation prompt",
+    "missing receipt/handoff",
+    "missing full authority export for successful stages"
+  ],
+  "next_required_stage": "WC_STAGE12_RUNTIME_ORCHESTRATOR_GATE_WIRING_AND_FIELD_TASK_FIXTURES",
+  "runner": "0_kernel/evals/real_task_eval_harness/real_task_corpus_runner_v2.py",
+  "schema_version": "v1",
+  "stage": "WC_STAGE11_REAL_TASK_CORPUS_EXPANSION_AND_RUNTIME_GATE_BINDING",
+  "status": "installed_not_global_orchestrator_wired"
+}

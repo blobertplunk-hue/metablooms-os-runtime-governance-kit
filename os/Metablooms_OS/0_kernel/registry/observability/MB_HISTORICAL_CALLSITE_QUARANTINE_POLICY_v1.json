@@ -1,0 +1,71 @@
+{
+  "allowed_reference_classes": [
+    "historical_evidence",
+    "implementation_dependency",
+    "required_file_inventory",
+    "non_operator_state_or_inventory"
+  ],
+  "artifact_type": "MB_HISTORICAL_CALLSITE_QUARANTINE_POLICY.v1",
+  "classification_note": "Stage 8 repair classifies policy/scanner/registry index/method lesson references as governance evidence or implementation dependencies, not live boot instructions. Stage 9 classifies the live boot guidance policy as governance policy evidence and the runtime tracker mirror as a live operator surface. Stage 10 classifies the minimal-mode policy and validator as implementation/governance evidence, not live operator direct-call guidance.",
+  "created_utc": "20260502T171707Z",
+  "fail_closed_if": [
+    "live_operator_direct_runtime_starter_smoke_command_detected",
+    "unclassified_direct_callsite_reference_detected",
+    "quarantine_index_missing_or_stale",
+    "wrapper_invocation_regression"
+  ],
+  "forbidden_live_operator_command_fragments": [
+    "Run runtime/governance/runtime_starter_smoke_v1.py",
+    "Run `runtime/governance/runtime_starter_smoke_v1.py`",
+    "python runtime/governance/runtime_starter_smoke_v1.py",
+    "python3 runtime/governance/runtime_starter_smoke_v1.py"
+  ],
+  "historical_evidence_prefixes": [
+    "runtime/receipts/",
+    "runtime/handoffs/",
+    "runtime/traces/",
+    "runtime/evals/",
+    "runtime/stage_work/",
+    "0_kernel/registry/boot_receipts/",
+    "0_kernel/registry/boot_repair_receipts/"
+  ],
+  "implementation_exempt_files": [
+    "runtime/governance/runtime_starter_smoke_v1.py",
+    "runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+    "runtime/governance/new_chat_start_contract_validator_v1.py",
+    "runtime/governance/os_bundle_delivery_guard_v1.py",
+    "0_kernel/validators/validate_observability_trace_span_ledger_stage7_boot_sequence_enforcement_v1.py",
+    "0_kernel/validators/validate_observability_trace_span_ledger_stage8_historical_callsite_quarantine_v1.py",
+    "0_kernel/registry/observability/MB_HISTORICAL_CALLSITE_QUARANTINE_POLICY_v1.json",
+    "0_kernel/scripts/observability_historical_callsite_quarantine_v1.py",
+    "0_kernel/registry/CONTROLLED_GOVERNANCE_ARTIFACT_INDEX_v1.json",
+    "0_kernel/registry/observability/METHOD_RELIABILITY_LESSON_RUNTIME_STARTER_SMOKE_CLI_SHAPE_v1.json",
+    "0_kernel/registry/observability/MB_LIVE_BOOT_GUIDANCE_EXTRACTOR_POLICY_v1.json",
+    "0_kernel/registry/observability/MB_BOOT_SURFACE_MINIMAL_MODE_POLICY_v1.json",
+    "0_kernel/validators/validate_observability_trace_span_ledger_stage10_minimal_mobile_v1.py"
+  ],
+  "live_operator_surfaces": [
+    "NEW_CHAT_START_HERE.md",
+    "0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+    "CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "0_kernel/registry/BOOT_REQUIRED_GATES_v1.json",
+    "0_kernel/registry/RUNTIME_STARTER_SMOKE_CONTRACT_v1.json",
+    "0_kernel/registry/observability/MB_BOOT_SEQUENCE_WRAPPER_ENFORCEMENT_v1.json",
+    "OPEN_OPERATOR_VISUAL_TRACKER.html",
+    "runtime/operator_tracker/operator_visual_tracker_latest.html"
+  ],
+  "non_operator_inventory_prefixes": [
+    "tools/metablooms_archive_tool/",
+    "runtime/state/",
+    "0_kernel/registry/tool_governance/"
+  ],
+  "purpose": "Separate historical direct runtime starter smoke evidence from live operator boot instructions. Historical receipts remain searchable; live guidance is wrapper-only.",
+  "required_operator_entrypoint": "runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py --root /mnt/data/Metablooms_OS --json",
+  "stage10_repaired_utc": "20260502T175912Z",
+  "stage8_repaired_utc": "20260502T171821Z",
+  "stage9_repaired_utc": "20260502T175102Z",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE",
+  "underlying_gate": "runtime/governance/runtime_starter_smoke_v1.py"
+}

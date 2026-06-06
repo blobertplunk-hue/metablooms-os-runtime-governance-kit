@@ -1,0 +1,26 @@
+{
+  "artifact_type": "STAGE2_VALIDATION_SUMMARY.v1",
+  "compile_results": [
+    {
+      "path": "/mnt/data/Metablooms_OS/0_kernel/lib/operator_surface/render_operator_visual_tracker_v2.py",
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "path": "/mnt/data/Metablooms_OS/0_kernel/validators/validate_operator_visual_tracker_render_v2.py",
+      "returncode": 0,
+      "stderr": ""
+    }
+  ],
+  "created_utc": "20260502T153307Z",
+  "latest_export_sha256": "08f90b2a788831462aa7e1d72957f7ce21201174f4ea3663527fa96e7c623be9",
+  "latest_export_verified": "/mnt/data/METABLOOMS_OS_BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE5_FULL_AUTHORITY_REPAIRED_20260502T152152Z.zip",
+  "stage": "OPERATOR_VISUAL_TRACKER_POLISH_STAGE2_RENDER_CONTRACT_AND_PHONE_SAFE_TEMPLATE",
+  "status": "PASS",
+  "validation": {
+    "html": "/mnt/data/Metablooms_OS/runtime/operator_tracker/operator_visual_tracker_latest.html",
+    "latest_export_sha256": "08f90b2a788831462aa7e1d72957f7ce21201174f4ea3663527fa96e7c623be9",
+    "markdown": "/mnt/data/Metablooms_OS/runtime/handoffs/operator_tracker/CURRENT_OPERATOR_TRACKER_PREVIEW_LATEST.md",
+    "status": "PASS"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "blocks": [],
+  "created_utc": "2026-04-28T03:16:20Z",
+  "decision": "allow_with_route_controls",
+  "decision_id": "6628caacb41322da19373f87",
+  "gate_id": "P0PY_PYTHON_HEALTH",
+  "launched_with_no_site": true,
+  "launcher_path": "/mnt/data/Metablooms_OS/runtime/governance/python3_S_lane_exec_v1.sh",
+  "launcher_sha256": "fa4a2255d8a72bc7b6f881d8be9dde55dffefb75bd9337ddcbfde5b26994e219",
+  "mode": "live",
+  "policy_basis": [
+    "normal python is quarantined when startup is degraded, expensive, failed, or hung",
+    "governed stdlib Python work must use python3 -S launcher",
+    "normal python may only be used for declared site-package dependency with timeout and independent verification"
+  ],
+  "policy_path": "/mnt/data/Metablooms_OS/runtime/governance/PYTHON_RESILIENT_EXECUTION_POLICY_v1.json",
+  "policy_sha256": "2fd039ef9620a43f7722c0d8996a7cb93384e781e62db1b3cfe2439dd9dc8b7c",
+  "probe": {
+    "python3_dash_S": {
+      "available": true,
+      "cmd": [
+        "python3",
+        "-S",
+        "-c",
+        "import sys,json; print(json.dumps({'no_site': bool(sys.flags.no_site), 'site_loaded': 'site' in sys.modules}))"
+      ],
+      "elapsed_ms": 197.2,
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout": "{\"no_site\": true, \"site_loaded\": false}",
+      "timeout": false
+    },
+    "python3_normal": {
+      "available": false,
+      "elapsed_ms": 999999,
+      "evidence": {
+        "presentation_artifact_tool_exists": true,
+        "prior_findings_receipt_exists": true,
+        "prior_findings_sha256": "38701d127f0e0f1dcacb3f6600378ada595281be1652756b7ad0584e48d21954",
+        "pth_exists": true,
+        "risk_basis": "hook-chain inspection plus prior same-runtime forensic receipts; normal python execution is intentionally not run by default",
+        "sitecustomize_exists": true,
+        "unsafe_normal_probe_executed": false
+      },
+      "risk_quarantined_without_execution": true,
+      "stdout": "{\"site_loaded\": true, \"risk_inspected_without_execution\": true}",
+      "timeout": false
+    }
+  },
+  "python_health_status": "normal_python_quarantined_without_execution",
+  "required_launcher": "runtime/governance/python3_S_lane_exec_v1.sh",
+  "routing_recommendation": {
+    "external_package_python": "normal_python_quarantine_with_timeout_only",
+    "file_audit": "shell_coreutils",
+    "html_generation": "node_or_static_artifact",
+    "json_read": "python3_dash_S_stdlib",
+    "json_write": "python3_dash_S_stdlib",
+    "schema_validate": "python3_dash_S_stdlib",
+    "sha_verify": "shell_coreutils",
+    "stdlib_python": "python3_dash_S_stdlib",
+    "zip_ops": "shell_coreutils"
+  },
+  "target_work_type": "governed_stage_python_routing",
+  "thresholds": {
+    "normal_quarantine_ms": 1400,
+    "normal_timeout_s": 8,
+    "normal_warn_ms": 800,
+    "python3_S_max_ms": 500
+  },
+  "version": "1.1.0",
+  "warnings": [
+    "normal python hook-chain risk detected; quarantined without executing normal python"
+  ]
+}

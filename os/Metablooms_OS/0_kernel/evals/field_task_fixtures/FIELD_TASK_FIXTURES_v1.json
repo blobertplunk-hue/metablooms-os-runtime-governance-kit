@@ -1,0 +1,64 @@
+{
+  "created_at_utc": "20260503T025509Z",
+  "fixtures": [
+    {
+      "artifact": "artifacts/educational_html_field_fixture.html",
+      "domain": "educational_html",
+      "id": "field_educational_html_001",
+      "must_contain": [
+        "<!doctype html>",
+        "lang=\"en\"",
+        "aria-live",
+        "prefers-reduced-motion",
+        "--mb-color-bg"
+      ]
+    },
+    {
+      "artifact": "artifacts/blooket_field_fixture.csv",
+      "domain": "blooket_csv",
+      "id": "field_blooket_csv_001",
+      "must_contain": [
+        "Question,Answer 1",
+        "Correct Answer",
+        "\n\n"
+      ]
+    },
+    {
+      "artifact": "artifacts/lesson_plan_field_fixture.md",
+      "domain": "lesson_plan",
+      "id": "field_lesson_plan_001",
+      "must_contain": [
+        "Objective:",
+        "Success Criteria:",
+        "Teacher Move:"
+      ]
+    },
+    {
+      "artifact": "artifacts/research_see_field_fixture.json",
+      "domain": "research_see",
+      "id": "field_research_see_001",
+      "json_requires": {
+        "claim_binding_required": true,
+        "requires_web_run_for_SEE": true
+      }
+    },
+    {
+      "artifact": "artifacts/artifact_export_field_fixture_manifest.json",
+      "domain": "artifact_export",
+      "id": "field_artifact_export_001",
+      "json_requires_key": "required_checks"
+    },
+    {
+      "artifact": "artifacts/repair_debugging_field_fixture_receipt.json",
+      "domain": "repair_debugging",
+      "id": "field_repair_debugging_001",
+      "json_requires": {
+        "regression_fixture_added": true,
+        "verdict": "PASS"
+      }
+    }
+  ],
+  "honesty_label": "Field-like fixtures with actual artifact files; still sandbox fixtures, not external classroom field validation.",
+  "schema_version": "v1",
+  "stage": "WC_STAGE12_RUNTIME_ORCHESTRATOR_GATE_WIRING_AND_FIELD_TASK_FIXTURES"
+}

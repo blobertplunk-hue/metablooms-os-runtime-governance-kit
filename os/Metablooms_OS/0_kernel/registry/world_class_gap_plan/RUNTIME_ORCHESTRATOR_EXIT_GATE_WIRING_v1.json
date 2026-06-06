@@ -1,0 +1,16 @@
+{
+  "also_requires_prompt_gate": "0_kernel/validators/next_stage_copy_prompt_exit_gate_v1.py",
+  "binding_id": "RUNTIME_ORCHESTRATOR_EXIT_GATE_WIRING_v1",
+  "created_at_utc": "20260503T025509Z",
+  "evidence": [
+    "stage_runner_v1.py contains WC12_RUNTIME_EVAL_EXIT_GATE_WIRING",
+    "runtime smoke passes runtime eval gate"
+  ],
+  "fail_closed": true,
+  "gate_script": "0_kernel/evals/real_task_eval_harness/real_task_eval_runtime_gate_v1.py",
+  "gate_trigger": "after delegated executor returns success and before STAGE_RUNNER_DELEGATED_PASS",
+  "required_for_finished_status": true,
+  "schema_version": "v1",
+  "stage": "WC_STAGE12_RUNTIME_ORCHESTRATOR_GATE_WIRING_AND_FIELD_TASK_FIXTURES",
+  "wired_runner": "0_kernel/scripts/stage_runner_v1.py"
+}

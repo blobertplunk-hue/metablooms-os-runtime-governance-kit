@@ -1,0 +1,24 @@
+{
+  "created_utc": "2026-05-02T03:36:48.279328Z",
+  "reason_for_stage": "Resolver coverage must classify trace export adapter work as observability tooling, not authority ZIP export, while retaining the generic ZIP export route for real authority export tasks.",
+  "schema": "SEE_PACKET_v1",
+  "sources": [
+    {
+      "claim": "Agents SDK traces include LLM generations, tool calls, handoffs, guardrails, custom events, and can use custom trace processors.",
+      "url": "https://openai.github.io/openai-agents-python/tracing/"
+    },
+    {
+      "claim": "Tool guardrails run before and after function tool execution; some hosted/built-in tools and handoffs use separate paths.",
+      "url": "https://openai.github.io/openai-agents-python/guardrails/"
+    },
+    {
+      "claim": "OpenTelemetry span semantic conventions standardize attributes for trace/span analysis across systems.",
+      "url": "https://opentelemetry.io/docs/specs/semconv/general/trace/"
+    },
+    {
+      "claim": "LangGraph/LangSmith observability uses trace/run style monitoring for workflows.",
+      "url": "https://docs.langchain.com/oss/python/langgraph/observability"
+    }
+  ],
+  "stage_id": "STAGE6T_TOOL_UNIVERSE_RESOLVER_COVERAGE_REPAIR_FOR_TRACE_EXPORT"
+}

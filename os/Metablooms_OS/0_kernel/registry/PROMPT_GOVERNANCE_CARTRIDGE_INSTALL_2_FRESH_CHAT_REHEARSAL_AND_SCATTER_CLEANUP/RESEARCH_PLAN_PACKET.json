@@ -1,0 +1,9 @@
+{
+  "questions": [
+    "prompt governance",
+    "regression evals",
+    "fresh-chat boot activation"
+  ],
+  "sources_required": "web.run official/current prompt and eval guidance",
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_2_FRESH_CHAT_REHEARSAL_AND_SCATTER_CLEANUP"
+}

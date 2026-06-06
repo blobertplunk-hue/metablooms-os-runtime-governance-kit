@@ -1,0 +1,13 @@
+{
+  "last_receipt": "runtime/receipts/METABLOOMS_STAGE6O_OWASP_AGENTIC_AI_COVERAGE_MATRIX_AND_POLICY_BINDINGS_RECEIPT_20260502T035000Z.json",
+  "next_stage_options_best_to_worst": [
+    "STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM",
+    "STAGE6Q_LEGACY_EXECUTOR_RETROFIT_AUDIT",
+    "STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS"
+  ],
+  "resume_prompt": "Continue from /mnt/data/Metablooms_OS. Load METABLOOMS_STAGE6O_OWASP_AGENTIC_AI_COVERAGE_MATRIX_AND_POLICY_BINDINGS_RECEIPT_20260502T035000Z.json. Run exactly one bounded governed stage: STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM. Do not export full OS unless explicitly budget-approved.",
+  "schema": "MetaBloomsStageHandoff_v1",
+  "stage_id": "STAGE6O_OWASP_AGENTIC_AI_COVERAGE_MATRIX_AND_POLICY_BINDINGS",
+  "status": "READY_FOR_NEXT_STAGE",
+  "timestamp_utc": "2026-05-02T02:53:05Z"
+}

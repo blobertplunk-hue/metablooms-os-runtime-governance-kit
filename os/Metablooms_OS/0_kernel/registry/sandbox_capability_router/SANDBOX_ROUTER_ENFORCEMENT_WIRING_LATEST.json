@@ -1,0 +1,37 @@
+{
+  "artifact_type": "metablooms.sandbox_router_enforcement_wiring",
+  "binding_audit_latest": {
+    "heavy_export_repair_run": false,
+    "patch_scope": "metadata_only",
+    "stage": "SANDBOX_ROUTER_BOOT_EXPORT_BINDING_AUDIT_3",
+    "timestamp_utc": "2026-04-30T13:50:56.896Z",
+    "validated_binding_tasks": [
+      "boot_probe",
+      "zip_repair",
+      "governed_execution",
+      "downloadable_artifact_delivery"
+    ]
+  },
+  "binding_points": {
+    "boot": "MUST invoke sandbox router gate with task boot_probe before boot probes or boot authority checks",
+    "downloadable_artifact_delivery": "MUST invoke sandbox router gate with task downloadable_artifact_delivery before user-facing artifact delivery; requires root-level ZIP plus SHA-256 sidecar",
+    "export_archive_repair": "MUST invoke sandbox router gate with task zip_repair before archive repair; hardlink mutable candidates and blind full extraction are denied",
+    "governed_execution": "MUST invoke sandbox router gate with task governed_execution before implementation commands; requires route selection, denylist, probe gate, bounded stage, receipt, and handoff"
+  },
+  "enforcer_node": "0_kernel/lib/sandbox_router_enforcer_v1.mjs",
+  "heavy_export_repair_run": false,
+  "policy_loader_python3_S": "0_kernel/lib/sandbox_router_policy_loader_v1.py",
+  "router_latest": "0_kernel/registry/sandbox_capability_router/SANDBOX_CAPABILITY_ROUTER_CARTRIDGE_LATEST.json",
+  "shell_wrapper": "0_kernel/scripts/sandbox_router/enforce_sandbox_route.sh",
+  "stage": "SANDBOX_ROUTER_ENFORCEMENT_RECOVERY_0_OR_RECREATE_WIRING_1",
+  "timeout_hardening_latest": {
+    "default_evaluator": "python3 -S policy evaluator",
+    "heavy_export_repair_run": false,
+    "node_role": "bounded fallback only",
+    "reason": "direct Node invocation can hang; Node child_process synchronous timeout semantics may wait for process exit, so outer GNU timeout and python3 -S default are safer in this sandbox.",
+    "shell_wrapper_timeout": "timeout --kill-after=1s ${SANDBOX_ROUTER_TIMEOUT_SECONDS:-5}s",
+    "stage": "SANDBOX_ROUTER_NODE_ENFORCER_TIMEOUT_HARDENING_4",
+    "timestamp_utc": "2026-04-30T14:09:00Z"
+  },
+  "version": "1.0.0-recovered"
+}

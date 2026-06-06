@@ -1,0 +1,37 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/EXPORT_PROMOTION_GATE_RESULT_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "result_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "mpp.export_promotion_gate_result.v1"
+    },
+    "stage": {
+      "const": "EXPORT_PROMOTION_GATE"
+    },
+    "verdict": {
+      "enum": [
+        "PASS",
+        "FAIL"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "gate_id",
+    "stage",
+    "created_at",
+    "packet_id",
+    "verdict",
+    "violations",
+    "warnings",
+    "promotion_decision",
+    "result_hash"
+  ],
+  "title": "MPP v3 Export Promotion Gate Result",
+  "type": "object"
+}

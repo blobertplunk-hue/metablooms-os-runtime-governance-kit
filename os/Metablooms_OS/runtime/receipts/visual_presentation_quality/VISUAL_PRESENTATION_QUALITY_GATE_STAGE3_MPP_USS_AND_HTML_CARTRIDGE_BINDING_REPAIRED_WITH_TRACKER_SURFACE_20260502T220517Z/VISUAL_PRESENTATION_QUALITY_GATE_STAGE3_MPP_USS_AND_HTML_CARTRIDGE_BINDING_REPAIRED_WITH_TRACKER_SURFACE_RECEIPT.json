@@ -1,0 +1,25 @@
+{
+  "created_utc": "20260502T220517Z",
+  "modified_artifacts": [
+    "/mnt/data/Metablooms_OS/0_kernel/validators/validate_visual_presentation_quality_gate_v1.py",
+    "/mnt/data/Metablooms_OS/tests/fixtures/visual_presentation_quality/valid_visual_presentation_quality_operator_tracker_v1.json",
+    "/mnt/data/Metablooms_OS/tests/fixtures/usefulness_surface/valid_usefulness_operator_tracker_with_visual_presentation_v1.json",
+    "/mnt/data/Metablooms_OS/0_kernel/registry/operator_surface/VISUAL_PRESENTATION_OPERATOR_TRACKER_BINDING_v1.json",
+    "/mnt/data/Metablooms_OS/runtime/state/VISUAL_PRESENTATION_QUALITY_GATE_TRACKER_PREVIEW.txt",
+    "/mnt/data/Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html"
+  ],
+  "next_stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE4_RENDER_SMOKE_AND_VISUAL_REVIEW_PACKET",
+  "research_citations": [
+    "turn129124search0",
+    "turn129124search1",
+    "turn129124search3",
+    "turn129124search4",
+    "turn129124search8",
+    "turn129124search15"
+  ],
+  "schema_version": "metablooms.stage_receipt.v1",
+  "stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE3_MPP_USS_AND_HTML_CARTRIDGE_BINDING_REPAIRED_WITH_TRACKER_SURFACE",
+  "summary": "Repaired Stage 3 false positive, bound VPQ into operator tracker surfaces, updated tracker preview/HTML polish, and verified USS+VPQ fixtures.",
+  "tests_passed": false,
+  "verdict": "FAIL"
+}

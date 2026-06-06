@@ -1,0 +1,38 @@
+{
+  "id": "H0B1_SEE_PACKET_v1",
+  "created_utc": "2026-04-30T17:50:37Z",
+  "sources": [
+    {
+      "id": "NIST_AI_RMF_CORE",
+      "claim": "AI governance must span Govern, Map, Measure, and Manage across the lifecycle, not only one step.",
+      "url": "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/"
+    },
+    {
+      "id": "OPENAI_AGENTS_GUARDRAILS_SCOPE",
+      "claim": "Guardrails have pathway scope limits; tool guardrails do not automatically apply to handoffs.",
+      "url": "https://openai.github.io/openai-agents-python/guardrails/"
+    },
+    {
+      "id": "OPENAI_AGENTS_TRACING",
+      "claim": "Runtime tracing should record LLM generations, tool calls, handoffs, guardrails, and custom events.",
+      "url": "https://openai.github.io/openai-agents-python/tracing/"
+    },
+    {
+      "id": "OWASP_AGENTIC_THREATS",
+      "claim": "Agentic planning, tools, orchestration, memory, and execution are explicit threat surfaces requiring mitigations.",
+      "url": "https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/"
+    },
+    {
+      "id": "OWASP_AGENTIC_SKILLS_TOP10",
+      "claim": "Agentic systems need governance controls for skills/tools, update drift, weak isolation, over-privilege, and no-governance risks.",
+      "url": "https://owasp.org/www-project-agentic-skills-top-10/"
+    }
+  ],
+  "derived_requirements": [
+    "always-on lifecycle governance",
+    "pathway-scope guardrails",
+    "trace/evidence capture",
+    "agentic threat surface controls",
+    "regression proof against update drift"
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "artifact_type": "PATCH_MANIFEST_STAGE4_v1",
+  "changed_files": [
+    {
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_SMOKE_TEST_v1.py",
+      "sha256": "abf808c67bbd838ce5a8d58a4961dc87caf44e1d73d69589973490eb3005b056",
+      "size_bytes": 5647
+    },
+    {
+      "path": "0_kernel/scripts/agent_harness_diff_review_v1.py",
+      "sha256": "3d08ab4ce4372a4478120f3a2ac511aa7616906c91d15212e853e6aa87118be7",
+      "size_bytes": 4110
+    },
+    {
+      "path": "0_kernel/scripts/artifact_replay_proof_v2.py",
+      "sha256": "e3317e8ef4deccce9c15ad2e8e45cef0983973088878f3060b0f42f176415dc6",
+      "size_bytes": 4994
+    },
+    {
+      "path": "0_kernel/scripts/cartridge_executor_v1.py",
+      "sha256": "e3ff7bd4099334f0c819f48a240d5ff2ac599aa30f02ec788e8cb470fd2a0b79",
+      "size_bytes": 19355
+    },
+    {
+      "path": "0_kernel/scripts/ensure_libcst_available_v1.py",
+      "sha256": "0000360d2700c681a147d2f7f4c846c71eccf62dae29b558de93eaca180cc581",
+      "size_bytes": 3653
+    },
+    {
+      "path": "0_kernel/scripts/ensure_ruff_available_v1.py",
+      "sha256": "eb4cfc50c027f15504293015535da286314b1eb57d9f4ed7efd7a0c004ca09de",
+      "size_bytes": 2933
+    },
+    {
+      "path": "0_kernel/scripts/governed_run.py",
+      "sha256": "a6df892433a36516a6d88539253601fc21e78a968cb50cdaabb1ac7e7c557f4a",
+      "size_bytes": 3251
+    },
+    {
+      "path": "0_kernel/scripts/p0py_python_health_governance_v1.py",
+      "sha256": "d6e5ac588fa5cec0e4cd9b574a0d8ffc144748b6ee66342367a3a84dfbd45169",
+      "size_bytes": 12438
+    },
+    {
+      "path": "0_kernel/scripts/registry_mutation_engine_v2_lite_final.py",
+      "sha256": "b6957fb7ca0113445b0c366d17e597ece4bef2d05538d0412e08efc95ef393c7",
+      "size_bytes": 16724
+    },
+    {
+      "path": "0_kernel/scripts/run_governance_regression_suite_v1.py",
+      "sha256": "d18345cf6f444212475634d1c9fa4d40db10827dadd971d82f7ba05115ca413c",
+      "size_bytes": 9580
+    },
+    {
+      "path": "0_kernel/scripts/stage_runner_v1.py",
+      "sha256": "1c082a6ff6da608cf05bc08d1f33a037cac02390ae6f8fee271248a7f65c9d84",
+      "size_bytes": 9621
+    },
+    {
+      "path": "0_kernel/scripts/sync_writer_baseline_sha_patch_v1.py",
+      "sha256": "f80b4e7c1c725436bd9dd627352b6421da4d43ed35293a76ccdaa8405ff6733e",
+      "size_bytes": 6269
+    },
+    {
+      "path": "0_kernel/scripts/transactional_stage_runner_v1.py",
+      "sha256": "cc10d745c4307795205f189dceb139bcb175f99a609d2368bb98eb97adabb2f8",
+      "size_bytes": 37891
+    },
+    {
+      "path": "0_kernel/validators/validate_agent_harness_stage1_v1.py",
+      "sha256": "83d043f355aefa3b2db03d17930e16662647b59efa0bd2bfa2e8d59a788f60d3",
+      "size_bytes": 3005
+    },
+    {
+      "path": "0_kernel/validators/validate_agent_harness_stage2_v1.py",
+      "sha256": "690d77017812c37e42d5a07d0ae9da0f788914ef9db2ec0dd37231d4d18c2cbb",
+      "size_bytes": 3595
+    },
+    {
+      "path": "0_kernel/validators/validate_agent_harness_stage3_v1.py",
+      "sha256": "2c81573d788fe642013650695bb8a42ee650d3b3c8e417600551d6220a0fa2c1",
+      "size_bytes": 2689
+    },
+    {
+      "path": "0_kernel/validators/validate_education_validity_stage1_v1.py",
+      "sha256": "19191f97d0b8bdf2c94e8744d81f4a85d51793b8e12f36bd1b065564c5d93386",
+      "size_bytes": 3341
+    },
+    {
+      "path": "0_kernel/validators/validate_education_validity_stage2_v1.py",
+      "sha256": "e932c42876f7790936cf49327eb09b266974aa704389e913f9735ee87b3e6e32",
+      "size_bytes": 2157
+    },
+    {
+      "path": "0_kernel/validators/validate_evals_evaluator_runner_stage3_v1.py",
+      "sha256": "8883e99785bd754bad4b6ee15fb9e3d09ef5743e3f3d30255fcdf2e7dcfc1afa",
+      "size_bytes": 4494
+    },
+    {
+      "path": "0_kernel/validators/validate_evals_validator_alignment_stage4_v1.py",
+      "sha256": "95cdccdd27f8a6cb655728cffb044aaf669d1995502511d1acfc6831fa88de36",
+      "size_bytes": 2943
+    },
+    {
+      "path": "0_kernel/validators/validate_filesystem_handling_safety_stage1_v1.py",
+      "sha256": "fefd1af11a5539ca19cc226d2eb3e6ec6a3cd9656c64bb1a53360733267f3743",
+      "size_bytes": 3433
+    },
+    {
+      "path": "0_kernel/validators/validate_filesystem_handling_safety_stage2_v1.py",
+      "sha256": "e72d75a2e78e843918f2dea5c1bc2303d55ac6161d46e5c3dfc321e53b52c70b",
+      "size_bytes": 6243
+    },
+    {
+      "path": "0_kernel/validators/validate_operator_surface_stage3_v1.py",
+      "sha256": "90017035c31ca2debf98325009442a52ee91ae75a03400edb4184e1eeca23db0",
+      "size_bytes": 2577
+    },
+    {
+      "path": "0_kernel/validators/validate_operator_surface_v1.py",
+      "sha256": "7aaa3797f3760bf546976e48ed2f776b135ec397a2748ba1736c5b90f3eda5ea",
+      "size_bytes": 3006
+    },
+    {
+      "path": "0_kernel/validators/validate_runaway_turn_breaker_stage0_v1.py",
+      "sha256": "5848189ff52578c030a65d29804a0231ffdd05d191c359b06f4dc5f5ed5526e9",
+      "size_bytes": 2902
+    },
+    {
+      "path": "0_kernel/validators/validate_security_hardwired_stage3_v1.py",
+      "sha256": "111e42e220fa092b0e235266d7d0c3781efe2ec03fe43b7cd771bc5c3faf72d8",
+      "size_bytes": 3676
+    },
+    {
+      "path": "0_kernel/validators/validate_security_red_team_stage4_v1.py",
+      "sha256": "9c79d291319ad8e5821d5ff2d038a5f03403f6c599da750792305e2e3c9e9c14",
+      "size_bytes": 3156
+    },
+    {
+      "path": "0_kernel/validators/validate_software_quality_stage2_v1.py",
+      "sha256": "4eceac8cf9cfd0932e9f7811c64744c8424cd8f97020b25b3357c9c0631b100f",
+      "size_bytes": 1825
+    },
+    {
+      "path": "0_kernel/validators/validate_state_checkpoint_stage2_v1.py",
+      "sha256": "40be3160363605122195e4d9208a6aef07a6b96b4daa3873d811593fdfcc0c4a",
+      "size_bytes": 6108
+    },
+    {
+      "path": "runtime/governance/bts_v4/BTS.py",
+      "sha256": "b4eb3aa982d965936c4b2f44f094c62db124981d2156e5dd3f28a3a65a7bb9f1",
+      "size_bytes": 43524
+    },
+    {
+      "path": "runtime/governance/executors/bts_wrapped_executors_v1.py",
+      "sha256": "19dfa7badff61ca7b5747dabe9fb08ab23733069d5c3d8b2f6dbd0233781c49c",
+      "size_bytes": 33330
+    },
+    {
+      "path": "runtime/governance/full_os_recovery_replay_validator_v1.py",
+      "sha256": "7f54a6785afdf71ba6c06242b373d5d436c84711674027c7114b8fe244f73335",
+      "size_bytes": 5226
+    },
+    {
+      "path": "0_kernel/lib/execution/bounded_subprocess_compat_v1.py",
+      "sha256": "1362abbcce4370d8adc208b9a7ff4483489a8be2f0604d89a65c2c9026100961",
+      "size_bytes": 6829
+    },
+    {
+      "path": "0_kernel/validators/validate_bounded_subprocess_callsite_policy_stage4_v1.py",
+      "sha256": "8adb0f8410692c2e8bc0d76ddf2de922e3117cf220c78fd5ff35d17ca155439d",
+      "size_bytes": 3999
+    },
+    {
+      "path": "0_kernel/registry/tool_governance/BOUNDED_SUBPROCESS_CALLSITE_POLICY_STAGE4_v1.json",
+      "sha256": "5027bf0a059e45c691f70d44e5f8db110590cac1751012cbbbe6f6035ceb9795",
+      "size_bytes": 1017
+    }
+  ],
+  "created_utc": "20260502T140719Z"
+}

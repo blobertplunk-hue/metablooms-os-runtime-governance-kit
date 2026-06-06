@@ -1,0 +1,6 @@
+{
+  "created_at_utc": "2026-04-30T18:58:08Z",
+  "method": "zip -u replacement from duplicate-free source plus duplicate scan; fixture synchronized to H0B2 sandbox gates",
+  "stage": "H0B2C_DUPLICATE_FREE_EXPORT_REPAIR",
+  "status": "PASS_CLEAN_AUTHORITY_IN_ZIP_PRE_FINAL_SIDE_VALIDATION"
+}

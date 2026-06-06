@@ -1,0 +1,7 @@
+{
+  "artifact_type": "SEE_PACKET.v1",
+  "created_utc": "20260502T170000Z",
+  "sources": ["opentelemetry.io", "slsa.dev"],
+  "claim": "Evidence packet has no verdict and should not be treated as a failure.",
+  "expected_trace_status": "OK"
+}

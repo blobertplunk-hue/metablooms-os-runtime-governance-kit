@@ -1,0 +1,11 @@
+{
+  "schema": "metablooms.stage5.handoff.final.v1",
+  "stage": "STAGE5_USE_PROMOTED_AUTHORITY_FOR_NEXT_GOVERNED_TASK",
+  "timestamp_utc": "2026-05-01T23:03:43.731Z",
+  "verdict": "PASS_WITH_WARNINGS",
+  "selected_authority_zip": "/mnt/data/METABLOOMS_OS_STAGE4D_POINTER_PROMOTED_NEW_CHAT_REHEARSED_AUTHORITY_20260501T235500Z.zip",
+  "selected_authority_sha256": "0af17ce4310d3d23d00d973318715ef56a02d53d9c039bd3e62c3c5926b69e0a",
+  "live_root": "/mnt/data/Metablooms_OS",
+  "next_stage": "NEXT_CONCRETE_GOVERNED_TASK_FROM_PROMOTED_AUTHORITY",
+  "continuation_prompt": "Continue from /mnt/data/Metablooms_OS using METABLOOMS_STAGE5_USE_PROMOTED_AUTHORITY_FINAL_RECEIPT_20260501T230342Z.json. Run exactly one bounded governed stage for the next concrete task; verify selected authority sidecar first; use governed tool-install profiles when helpful; write receipt/handoff/export and stop."
+}

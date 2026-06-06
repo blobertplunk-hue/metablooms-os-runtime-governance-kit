@@ -1,0 +1,28 @@
+{
+  "artifact_type": "SEE_PACKET.v1",
+  "created_utc": "20260502T174908Z",
+  "design_constraints": [
+    "current-only boot guidance must be structured",
+    "tracker links must bind to artifacts",
+    "wrapper-only boot smoke remains enforced"
+  ],
+  "sources": [
+    {
+      "claim": "Traces are made of spans and exported for analysis.",
+      "url": "https://opentelemetry.io/docs/concepts/signals/traces/"
+    },
+    {
+      "claim": "Trace semantic conventions standardize operation attributes.",
+      "url": "https://opentelemetry.io/docs/specs/semconv/general/trace/"
+    },
+    {
+      "claim": "Provenance tracks where, when, and how artifacts were produced.",
+      "url": "https://slsa.dev/provenance"
+    },
+    {
+      "claim": "Provenance must be inspected/verified to be useful.",
+      "url": "https://slsa.dev/spec/v1.0/verifying-artifacts"
+    }
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS"
+}

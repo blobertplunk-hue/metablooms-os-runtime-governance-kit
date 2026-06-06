@@ -1,0 +1,19 @@
+{
+  "schema": "BTS_V4_OS_PATH_REGISTRY_v1",
+  "stage": "STAGE6D_BTS_V4_GATE_WRAPPED_INSTALL_SCAFFOLD",
+  "installed_files": [
+    "runtime/governance/bts_v4/BTS.py"
+  ],
+  "ledger_surfaces": [
+    "bts/bts_log.ndjson",
+    "_bts/receipts",
+    "_bts/tool_competence.json",
+    "_bts/reconciliation",
+    "runtime/governance/receipts/per_action_tool_interception_v1"
+  ],
+  "gate": "runtime/governance/per_action_tool_interception_v1/pre_tool_action_gate_v1.js",
+  "notes": [
+    "BTS subprocess/file-write instance surfaces route through Stage6B gate",
+    "Standalone write_boot_receipt remains local bootstrap helper; canonical use should instantiate BTS and use gated methods for execution evidence."
+  ]
+}

@@ -1,0 +1,166 @@
+--- /mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_WIRING_LATEST.json
+{
+  "artifact_type": "metablooms.sandbox_router_enforcement_wiring",
+  "version": "1.0.0-recovered",
+  "stage": "SANDBOX_ROUTER_ENFORCEMENT_RECOVERY_0_OR_RECREATE_WIRING_1",
+  "router_latest": "0_kernel/registry/sandbox_capability_router/SANDBOX_CAPABILITY_ROUTER_CARTRIDGE_LATEST.json",
+  "enforcer_node": "0_kernel/lib/sandbox_router_enforcer_v1.mjs",
+  "policy_loader_python3_S": "0_kernel/lib/sandbox_router_policy_loader_v1.py",
+  "shell_wrapper": "0_kernel/scripts/sandbox_router/enforce_sandbox_route.sh",
+  "heavy_export_repair_run": false,
+  "binding_points": {
+    "boot": "boot_probe precheck",
+    "export_archive_repair": "zip_repair precheck and denylist gates",
+    "governed_execution": "route selection plus probe gates",
+    "downloadable_artifact_delivery": "root-level ZIP plus sha256 sidecar gate"
+  }
+}
+--- /mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_CAPABILITY_ROUTER_CARTRIDGE_LATEST.json
+{
+  "artifact_type": "metablooms.sandbox_capability_router",
+  "version": "1.0.0-recovered",
+  "stage": "SANDBOX_ROUTER_ENFORCEMENT_RECOVERY_0_OR_RECREATE_WIRING_1",
+  "global_denylist": [
+    {
+      "id": "DENY_HARDLINK_MUTABLE_ARCHIVE",
+      "patterns": [
+        "hardlink",
+        "ln ",
+        "cp --link",
+        "same inode"
+      ],
+      "applies_to": [
+        "zip_repair",
+        "archive_mutation",
+        "export_candidate"
+      ],
+      "reason": "Hardlinks share an inode; mutating candidate can mutate authority."
+    },
+    {
+      "id": "DENY_BLIND_FULL_EXTRACTION_BEFORE_MEMBER_AUDIT",
+      "patterns": [
+        "blind_extract",
+        "full extraction before member audit",
+        "unzip before audit"
+      ],
+      "applies_to": [
+        "zip_repair",
+        "archive_validation"
+      ],
+      "reason": "Audit ZIP members and rename overlong paths before filesystem extraction."
+    },
+    {
+      "id": "DENY_NORMAL_PYTHON_FOR_LONG_ARCHIVE_WORK",
+      "patterns": [
+        "python3 normal",
+        "python without -S",
+        "python3 without -S"
+      ],
+      "applies_to": [
+        "zip_repair",
+        "large_manifest",
+        "broad_validation"
+      ],
+      "reason": "Prefer python3 -S or non-Python runtimes when normal Python startup is suspect."
+    },
+    {
+      "id": "DENY_INTERNAL_REGISTRY_ONLY_DELIVERY",
+      "patterns": [
+        "internal registry only",
+        "no root bundle",
+        "scattered links"
+      ],
+      "applies_to": [
+        "downloadable_artifact_delivery"
+      ],
+      "reason": "User delivery requires root-level /mnt/data ZIP plus SHA-256 sidecar."
+    },
+    {
+      "id": "DENY_UNBOUNDED_RECURSIVE_SCAN",
+      "patterns": [
+        "find /",
+        "unbounded recursive",
+        "no timeout"
+      ],
+      "applies_to": [
+        "filesystem_inventory",
+        "validation"
+      ],
+      "reason": "Filesystem scans must be bounded and receipt-backed."
+    }
+  ],
+  "routes": {
+    "boot_probe": {
+      "preferred": [
+        "shell_coreutils"
+      ],
+      "fallback": [
+        "node",
+        "python3_S"
+      ],
+      "required_gates": [
+        "root_exists",
+        "write_probe",
+        "sidecar_verify_when_zip_present"
+      ]
+    },
+    "json_transform": {
+      "preferred": [
+        "jq"
+      ],
+      "fallback": [
+        "node",
+        "python3_S"
+      ],
+      "required_gates": [
+        "input_json_valid",
+        "output_json_valid",
+        "atomic_write"
+      ]
+    },
+    "downloadable_artifact_delivery": {
+      "preferred": [
+        "shell_coreutils",
+        "zip",
+        "sha256sum"
+      ],
+      "fallback": [
+        "python3_S_zipfile"
+      ],
+      "required_gates": [
+        "root_level_mnt_data_zip",
+        "sha256_sidecar",
+        "zip_integrity_test",
+        "manifest_included"
+      ]
+    },
+    "zip_repair": {
+      "preferred": [
+        "python3_S_zipfile_stream_rebuild"
+      ],
+      "fallback": [
+        "go_archive_zip_if_probe_passes",
+        "node_if_zip_library_present",
+        "native_zip_only_after_independent_copy"
+      ],
+      "required_gates": [
+        "source_sidecar_valid",
+        "member_path_audit",
+        "duplicate_member_scan",
+        "no_hardlink_candidate",
+        "deterministic_portability_renames",
+        "testzip_or_equivalent",
+        "bounded_extraction_smoke"
+      ]
+    },
+    "blocked_hardlink_export_request": {
+      "preferred": [
+        "policy_deny"
+      ],
+      "fallback": [],
+      "required_gates": [
+        "deny_DENY_HARDLINK_MUTABLE_ARCHIVE"
+      ]
+    }
+  }
+}

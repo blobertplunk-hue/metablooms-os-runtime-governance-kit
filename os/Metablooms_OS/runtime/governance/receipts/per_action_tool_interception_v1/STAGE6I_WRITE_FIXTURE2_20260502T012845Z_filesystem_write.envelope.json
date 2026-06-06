@@ -1,0 +1,24 @@
+{
+  "action_type": "filesystem_write",
+  "artifacts": {
+    "read_paths": [],
+    "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/STAGE6I_WRITE_FIXTURE2_20260502T012845Z_filesystem_write.decision.json",
+    "write_paths": [
+      "/mnt/data/Metablooms_OS/runtime/tmp/stage6i_resolver_write_fixture2.txt"
+    ]
+  },
+  "envelope_id": "STAGE6I_WRITE_FIXTURE2_20260502T012845Z_filesystem_write",
+  "intent": "Write filesystem artifact through BTS resolver-backed executor",
+  "limits": {
+    "max_bytes": 40,
+    "max_files": 5,
+    "max_steps": 10,
+    "timeout_seconds": 30
+  },
+  "requested_at_utc": "2026-05-02T01:28:47.072235Z",
+  "requires_see": false,
+  "risk_tier": "medium",
+  "schema_version": "ToolCallEnvelope_v1",
+  "stage_id": "STAGE6I",
+  "tool_name": "bts_wrapped_filesystem_write"
+}

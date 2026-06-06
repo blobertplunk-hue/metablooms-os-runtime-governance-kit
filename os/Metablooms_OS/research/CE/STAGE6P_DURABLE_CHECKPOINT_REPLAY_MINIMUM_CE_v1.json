@@ -1,0 +1,27 @@
+{
+  "decision": "INSTALL_MINIMUM_DURABLE_CHECKPOINT_REPLAY_GATE",
+  "non_goals": [
+    "No full OS authority export in Stage 6P.",
+    "No broad executor rewrite.",
+    "No networked checkpoint store."
+  ],
+  "schema": "MetaBloomsCEPacket_v1",
+  "selected_controls": [
+    "atomic os.replace writes",
+    "safe thread-id/path normalization",
+    "checkpoint record required fields",
+    "checkpoint sha256 sidecars",
+    "THREAD_LATEST pointer",
+    "CHECKPOINT_THREAD_INDEX_LATEST registry",
+    "interrupt/resume validator smoke fixtures",
+    "post-tool validation before success commit"
+  ],
+  "stage_id": "STAGE6P_DURABLE_CHECKPOINT_REPLAY_MINIMUM",
+  "synthesis": [
+    "Adopt a small durable checkpoint model rather than a full orchestration engine in this stage.",
+    "Use thread_id as durable resume cursor, checkpoint_id as immutable event id, parent_checkpoint_id for hash-chain continuity.",
+    "Treat INTERRUPTED checkpoints as the only resumable state; resume payloads produce new RESUMED checkpoints instead of mutating old checkpoints.",
+    "Fail closed on missing checkpoints, thread mismatch, schema mismatch, non-JSON payloads, or chat-only resume claims."
+  ],
+  "timestamp_utc": "2026-05-02T02:56:33.705089Z"
+}

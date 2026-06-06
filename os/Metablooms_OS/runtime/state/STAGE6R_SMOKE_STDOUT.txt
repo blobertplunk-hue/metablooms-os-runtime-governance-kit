@@ -1,0 +1,37 @@
+{
+  "allow_results": [
+    {
+      "decision": "ALLOW",
+      "exists": true,
+      "format": "metablooms_jsonl",
+      "returncode": 0
+    },
+    {
+      "decision": "ALLOW",
+      "exists": true,
+      "format": "opentelemetry_span_json",
+      "returncode": 0
+    },
+    {
+      "decision": "ALLOW",
+      "exists": true,
+      "format": "openai_agents_event_json",
+      "returncode": 0
+    },
+    {
+      "decision": "ALLOW",
+      "exists": true,
+      "format": "langgraph_run_json",
+      "returncode": 0
+    }
+  ],
+  "deny_decision": "DENY",
+  "deny_errors": [
+    "security_attribute:tool_id",
+    "security_attribute:action_type",
+    "security_attribute:policy_decision"
+  ],
+  "deny_returncode": 20,
+  "schema": "Stage6RTraceExportSmokeResult_v1",
+  "verdict": "PASS"
+}

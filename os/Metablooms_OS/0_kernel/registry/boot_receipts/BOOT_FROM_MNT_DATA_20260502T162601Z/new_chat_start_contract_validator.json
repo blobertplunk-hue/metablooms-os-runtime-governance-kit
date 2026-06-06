@@ -1,0 +1,57 @@
+{
+  "decision": "DENY",
+  "errors": [
+    "pointer_copies_not_identical",
+    "pointer_missing_key:authority_zip",
+    "pointer_missing_key:authority_zip_sha256_sidecar",
+    "pointer_missing_key:boot_entry_contract",
+    "pointer_missing_key:fail_closed_if",
+    "contract_missing_phrase:Verify the authority ZIP SHA-256",
+    "contract_missing_phrase:boot_critical_governance_loader_v1.py",
+    "contract_missing_phrase:governance_scatter_prevention_v1.py",
+    "contract_missing_phrase:fresh_chat_boot_rehearsal_v1.py",
+    "contract_missing_phrase:prompt_governance_v1"
+  ],
+  "checks": [
+    {
+      "name": "exists:CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+      "passed": true
+    },
+    {
+      "name": "exists:runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+      "passed": true
+    },
+    {
+      "name": "exists:0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+      "passed": true
+    },
+    {
+      "name": "exists:0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+      "passed": true
+    },
+    {
+      "name": "exists:NEW_CHAT_START_HERE.md",
+      "passed": true
+    },
+    {
+      "name": "exists:runtime/governance/new_chat_start_contract_validator_v1.py",
+      "passed": true
+    },
+    {
+      "name": "exists:runtime/governance/boot_critical_governance_loader_v1.py",
+      "passed": true
+    },
+    {
+      "name": "exists:runtime/governance/governance_scatter_prevention_v1.py",
+      "passed": true
+    },
+    {
+      "name": "exists:runtime/governance/fresh_chat_boot_rehearsal_v1.py",
+      "passed": true
+    },
+    {
+      "name": "exists:runtime/cartridges/prompt_governance_v1/validate_prompt_governance_cartridge_v1.py",
+      "passed": true
+    }
+  ]
+}

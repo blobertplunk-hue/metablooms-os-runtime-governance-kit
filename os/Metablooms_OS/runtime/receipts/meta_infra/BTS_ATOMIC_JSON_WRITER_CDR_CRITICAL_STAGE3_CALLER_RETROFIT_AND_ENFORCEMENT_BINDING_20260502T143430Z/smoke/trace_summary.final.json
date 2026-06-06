@@ -1,0 +1,29 @@
+{
+  "artifact_type": "DIFFERENTIAL_TRACE_SUMMARY",
+  "base_bytes": 0,
+  "base_file_count": 0,
+  "base_root_hash": null,
+  "created_utc": "20260502T143609Z",
+  "delta_counts": {
+    "added": 1,
+    "changed": 0,
+    "removed": 0
+  },
+  "new_bytes": 370,
+  "new_file_count": 1,
+  "new_root_hash": "529359aed47e947b337d9dad01bd340a4dc4bc1d500cf94299d7e2e6b082de97",
+  "omitted_counts": {
+    "added": 0,
+    "changed": 0,
+    "removed": 0
+  },
+  "policy": "Traces emit counts/root hash/bounded samples; full hash manifests remain artifacts.",
+  "samples": {
+    "added": [
+      ".MB_FINALIZATION_SUCCESS.json"
+    ],
+    "changed": [],
+    "removed": []
+  },
+  "schema_version": "TRACE_DIFF_LOGGER_v1"
+}

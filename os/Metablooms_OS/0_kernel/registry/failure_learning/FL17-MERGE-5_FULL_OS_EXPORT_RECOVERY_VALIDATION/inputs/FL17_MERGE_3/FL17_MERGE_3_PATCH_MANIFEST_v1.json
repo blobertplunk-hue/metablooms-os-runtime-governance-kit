@@ -1,0 +1,27 @@
+{
+  "artifact_type": "FL17_MERGE_3_PATCH_MANIFEST",
+  "created_utc": "20260430T014900Z",
+  "patched_files": [
+    {
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_STAGE_FINALIZATION_HOOK_v1.py",
+      "sha256": "3a35093dc963d8bb56c41fd3939e133cd39767b6bde59532035b13f4cecdf4a8",
+      "size_bytes": 11178
+    },
+    {
+      "path": "1_governance/tracker/TRACKER_MANDATORY_STAGE_FINALIZATION_POLICY_v1.md",
+      "sha256": "d3c769408b7fe07cbc97dc02b1fa51862f4f06bc14cb5681d6fd144db5e5be96",
+      "size_bytes": 1213
+    },
+    {
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_FINALIZATION_REQUIRED_STAGE_CONTRACT_v1.json",
+      "sha256": "278c58cc7907134dc37819428773da0cde0d9d84d99c481d7c4a8333d94c54bc",
+      "size_bytes": 910
+    },
+    {
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_STALE_STATE_VALIDATOR_v1.py",
+      "sha256": "f58d9ded744f7124b9913d6616e45a57f61e3d32e5bc02d1032315697437bd3c",
+      "size_bytes": 3606
+    }
+  ],
+  "stage": "FL17-MERGE-3_TRACKER_LIFECYCLE_REPAIR"
+}

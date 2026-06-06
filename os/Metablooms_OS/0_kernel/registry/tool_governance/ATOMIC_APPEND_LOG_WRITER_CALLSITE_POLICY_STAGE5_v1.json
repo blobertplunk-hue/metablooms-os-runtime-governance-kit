@@ -1,0 +1,18 @@
+{
+  "allowed_exemptions": {
+    "runtime/governance/legacy_archives/claude_memory_sync_writer_v1.py": "legacy archive; not live governance execution"
+  },
+  "artifact_type": "AtomicAppendLogWriterCallsitePolicyStage5.v1",
+  "blocking_patterns": [
+    "direct open(..., append mode) outside canonical writer/compat/validator internals and non-live legacy exemptions"
+  ],
+  "canonical_writer": "0_kernel/lib/io/atomic_append_log_writer_v1.py",
+  "compat_adapter": "0_kernel/lib/io/atomic_append_log_compat_v1.py",
+  "created_utc": "2026-05-02T15:20:58Z",
+  "hash_chain_preservation_rule": "Hash-chain callers must preserve prior/hash fields and append through the governed writer/compat layer.",
+  "policy_id": "ATOMIC_APPEND_LOG_WRITER_CALLSITE_POLICY_STAGE5_v1",
+  "scope": "live governance plus test/eval append-stream harnesses before full export",
+  "stage4_validator": "0_kernel/validators/validate_atomic_append_log_writer_callsite_policy_stage4_v1.py",
+  "stage5_validator": "0_kernel/validators/validate_atomic_append_log_writer_callsite_policy_stage5_v1.py",
+  "verdict_rule": "PASS only when no blocking append-open call sites remain across live governance and test/eval harnesses."
+}

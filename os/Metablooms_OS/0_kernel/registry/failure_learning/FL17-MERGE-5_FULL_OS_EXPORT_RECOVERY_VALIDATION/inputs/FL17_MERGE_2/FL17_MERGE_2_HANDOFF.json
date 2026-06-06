@@ -1,0 +1,20 @@
+{
+  "artifact_type": "STAGE_HANDOFF",
+  "stage_id": "FL17-MERGE-2_QUARANTINED_EVIDENCE_IMPORT",
+  "created_utc": "20260430T013700Z",
+  "status": "PASS",
+  "next_allowed_stage": "FL17-MERGE-3_TRACKER_LIFECYCLE_REPAIR_PLAN_AND_PATCH",
+  "must_load": [
+    "GOV_REPAIR_SEE_CE_0_REPORT",
+    "FL17_MERGE_1_DELTA_REPORT",
+    "FL17_QUARANTINED_IMPORT_MANIFEST_v1.json"
+  ],
+  "constraints": [
+    "always-on MetaBlooms governance mandatory",
+    "SEE/CE preflight mandatory",
+    "do not promote FL17 until tracker lifecycle and authority conflicts are repaired",
+    "use tracker-working OS as target baseline",
+    "quarantined evidence is not active runtime state"
+  ],
+  "stop_condition": "stopped before tracker repair or promotion"
+}

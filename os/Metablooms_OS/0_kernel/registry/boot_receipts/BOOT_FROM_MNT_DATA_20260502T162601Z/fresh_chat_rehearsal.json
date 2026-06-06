@@ -1,0 +1,42 @@
+{
+  "decision": "ALLOW",
+  "errors": [],
+  "checks": [
+    {
+      "name": "exists:0_kernel/registry/BOOT_REQUIRED_GATES_v1.json",
+      "passed": true
+    },
+    {
+      "name": "exists:0_kernel/registry/CONTROLLED_GOVERNANCE_ARTIFACT_INDEX_v1.json",
+      "passed": true
+    },
+    {
+      "name": "exists:runtime/governance/boot_critical_governance_loader_v1.py",
+      "passed": true
+    },
+    {
+      "name": "exists:runtime/governance/governance_scatter_prevention_v1.py",
+      "passed": true
+    },
+    {
+      "name": "exists:runtime/governance/controlled_artifact_registry_v1.py",
+      "passed": true
+    },
+    {
+      "name": "exists:runtime/governance/fresh_chat_boot_rehearsal_v1.py",
+      "passed": true
+    },
+    {
+      "name": "exists:runtime/cartridges/prompt_governance_v1/CARTRIDGE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "name": "exists:runtime/cartridges/prompt_governance_v1/validate_prompt_governance_cartridge_v1.py",
+      "passed": true
+    },
+    {
+      "name": "exists:0_kernel/registry/PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_2_FRESH_CHAT_REHEARSAL_AND_SCATTER_CLEANUP/FRESH_CHAT_BOOT_PROMPT_LOCK_v1.md",
+      "passed": true
+    }
+  ]
+}

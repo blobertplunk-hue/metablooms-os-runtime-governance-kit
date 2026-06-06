@@ -1,0 +1,7 @@
+{
+  "handoff_id": "SANDBOX_ROUTER_ENFORCEMENT_SMOKE_2_BLOCKED_HANDOFF",
+  "status": "BLOCKED_PREREQUISITE_MISSING",
+  "latest_receipt": "0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_SMOKE_2_20260430T130500Z_BLOCKED/SANDBOX_ROUTER_ENFORCEMENT_SMOKE_2_BLOCKED_RECEIPT.json",
+  "next_authorized_stage": "SANDBOX_ROUTER_ENFORCEMENT_RECOVERY_0_OR_RECREATE_WIRING_1",
+  "instructions": "Do not claim SANDBOX_ROUTER_ENFORCEMENT_SMOKE_2 passed until the required latest handoff and enforcer files exist and the enforcer is invoked for the four required probes. First recover or recreate the missing router/enforcement artifacts from verified authorities; then rerun the smoke stage. Do not run heavy export repair."
+}

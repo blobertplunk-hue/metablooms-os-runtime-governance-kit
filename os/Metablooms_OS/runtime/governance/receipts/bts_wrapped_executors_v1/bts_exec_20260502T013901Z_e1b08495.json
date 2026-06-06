@@ -1,0 +1,58 @@
+{
+  "bts_receipt_id": "T1-STAGE6J_WRITE_BUDGET_APPROVAL_filesystem_write_artifact-20260502T013901Z",
+  "bts_turn_committed": true,
+  "implementation_reality": {
+    "actual_files": [
+      "/mnt/data/Metablooms_OS/runtime/authority/STAGE6J_EXPLICIT_BUDGET_APPROVAL_v1.json"
+    ],
+    "claimed_files": [
+      "/mnt/data/Metablooms_OS/runtime/authority/STAGE6J_EXPLICIT_BUDGET_APPROVAL_v1.json"
+    ],
+    "unclaimed": [],
+    "unfulfilled": [],
+    "verdict": "PASS"
+  },
+  "kind": "filesystem_write",
+  "policy_decision": {
+    "decided_at_utc": "2026-05-02T01:39:01Z",
+    "decision": "ALLOW",
+    "decision_id": "decision_1777685941084_02108765",
+    "enforced_by": "pre_tool_action_gate_v1",
+    "envelope_id": "STAGE6J_WRITE_BUDGET_APPROVAL_filesystem_write",
+    "envelope_sha256": "01854ed4035ce6eb18cd9b4641b1d8ed0dd69bb029c23e11afd44223ac830772",
+    "matched_rules": [
+      "schema.required",
+      "path.safety",
+      "runaway.breaker",
+      "method.reliability"
+    ],
+    "rationale": "Envelope passed schema, method, path, SEE, approval, and bounded-budget checks.",
+    "reason_code": "LOW_RISK_BOUNDED_ACTION",
+    "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/STAGE6J_WRITE_BUDGET_APPROVAL_filesystem_write.decision.json",
+    "required_next_action": "execute_action_and_write_action_receipt",
+    "safe_to_execute": true,
+    "schema_version": "PolicyDecision_v1",
+    "stage_id": "STAGE6J_FULL_AUTHORITY_EXPORT_AFTER_BTS_TOOL_UNIVERSE_RESOLVER_RETROFIT"
+  },
+  "receipt_id": "bts_exec_20260502T013901Z_e1b08495",
+  "schema": "mb.bts_wrapped_executors.v1",
+  "stage_id": "STAGE6J_FULL_AUTHORITY_EXPORT_AFTER_BTS_TOOL_UNIVERSE_RESOLVER_RETROFIT",
+  "target": "/mnt/data/Metablooms_OS/runtime/authority/STAGE6J_EXPLICIT_BUDGET_APPROVAL_v1.json",
+  "target_bytes": 960,
+  "target_sha256": "eebc2fe36da41b155d29fa9bd569a9aaedcac99fc9ac69602a9ac39907168da8",
+  "timestamp_utc": "2026-05-02T01:39:01.589960Z",
+  "tool_selection_sufficiency": {
+    "covered_candidate_count": 1,
+    "missing_candidates": [],
+    "reasons": [],
+    "required_candidate_count": 1,
+    "schema": "TOOL_SELECTION_SUFFICIENCY_GATE_RESULT_v1",
+    "selected_tool_id": "bts_wrapped_filesystem_write",
+    "timestamp_utc": "2026-05-02T01:39:00.890802Z",
+    "top_allowed_tool_id": "bts_wrapped_filesystem_write",
+    "verdict": "PASS"
+  },
+  "tool_universe_candidate_set_id": "tool_candidates_623666897c3942d2",
+  "turn_id": "STAGE6J_WRITE_BUDGET_APPROVAL",
+  "verdict": "PASS"
+}

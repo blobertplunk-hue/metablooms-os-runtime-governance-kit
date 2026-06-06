@@ -1,0 +1,13 @@
+{
+  "created_utc": "2026-04-30T21:56:29.826421Z",
+  "source_sidecar_verified": {
+    "actual": "a6e52b8fe9e4bd005d5598c35a3866e99869af20ad833023c57214f4ea11ed93",
+    "expected": "a6e52b8fe9e4bd005d5598c35a3866e99869af20ad833023c57214f4ea11ed93",
+    "passed": true
+  },
+  "source_zip": "/mnt/data/METABLOOMS_OS_PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_5_PROMPT_ENGINE_REGRESSION_FIXTURES_AND_PROFILE_SMOKE_FULL_AUTHORITY_20260430T224500Z.zip",
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_6_FULL_RECOVERY_PROOF_AND_GOVERNANCE_REPAIR",
+  "status": "BOOTED_WITH_WARNINGS",
+  "type": "BOOT_STATUS_PACKET",
+  "warning": "git_dir_missing accepted"
+}

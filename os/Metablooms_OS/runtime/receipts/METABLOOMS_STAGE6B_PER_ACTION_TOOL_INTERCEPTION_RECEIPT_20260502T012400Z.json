@@ -1,0 +1,57 @@
+{
+  "artifact_type": "STAGE_RECEIPT",
+  "stage": "STAGE6B_PER_ACTION_TOOL_INTERCEPTION_SCHEMA_AND_WRAPPER",
+  "created_utc": "2026-05-02T01:24:00Z",
+  "verdict": "PASS_WITH_WARNINGS_NO_FULL_OS_EXPORT",
+  "input_authority": {
+    "live_root": "/mnt/data/Metablooms_OS",
+    "selected_authority_zip": "/mnt/data/METABLOOMS_OS_STAGE5E_FULL_AUTHORITY_EXPORT_AFTER_POINTER_COHERENCE_REPAIR_20260502T004200Z.zip",
+    "selected_authority_sidecar_verified": true
+  },
+  "see_evidence": [
+    {"claim": "per-action interception is current SOTA governance pattern", "source": "Microsoft Agent Governance Toolkit", "url": "https://opensource.microsoft.com/blog/2026/04/02/introducing-the-agent-governance-toolkit-open-source-runtime-security-for-ai-agents/"},
+    {"claim": "OWASP Agentic Applications Top 10 is the security risk taxonomy target", "source": "OWASP", "url": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/"},
+    {"claim": "tool guardrails can run before tool execution and reject calls", "source": "OpenAI Agents SDK guardrails", "url": "https://openai.github.io/openai-agents-js/guides/guardrails/"},
+    {"claim": "tracing should record tool calls, guardrails, handoffs, and custom events", "source": "OpenAI Agents SDK tracing", "url": "https://openai.github.io/openai-agents-js/guides/tracing/"}
+  ],
+  "wrote_os_paths": [
+    "runtime/schemas/per_action_tool_interception_v1/ToolCallEnvelope_v1.schema.json",
+    "runtime/schemas/per_action_tool_interception_v1/PolicyDecision_v1.schema.json",
+    "runtime/governance/per_action_tool_interception_v1/pre_tool_action_gate_v1.js",
+    "runtime/governance/per_action_tool_interception_v1/fixtures/allow_shell_read_envelope.json",
+    "runtime/governance/per_action_tool_interception_v1/fixtures/deny_forbidden_unzip_envelope.json",
+    "runtime/governance/per_action_tool_interception_v1/fixtures/defer_see_missing_envelope.json",
+    "runtime/governance/per_action_tool_interception_v1/fixtures/require_approval_export_envelope.json",
+    "runtime/governance/per_action_tool_interception_v1/tests/run_stage6b_fixtures.sh",
+    "governance/invariants/PER_ACTION_TOOL_INTERCEPTION_REQUIRED_v1.json",
+    "governance/ACTIVE_INVARIANTS_INDEX.json"
+  ],
+  "fixture_results_path": "/mnt/data/metablooms_stage6b_work/fixture_results.jsonl",
+  "fixture_results": [
+    {"fixture": "allow_shell_read_envelope.json", "expected": "ALLOW", "actual": "ALLOW", "pass": true},
+    {"fixture": "deny_forbidden_unzip_envelope.json", "expected": "DENY", "actual": "DENY", "pass": true},
+    {"fixture": "defer_see_missing_envelope.json", "expected": "DEFER", "actual": "DEFER", "pass": true},
+    {"fixture": "require_approval_export_envelope.json", "expected": "REQUIRE_APPROVAL", "actual": "REQUIRE_APPROVAL", "pass": true}
+  ],
+  "activation": {
+    "active_index_updated": true,
+    "invariant_id": "PER_ACTION_TOOL_INTERCEPTION_REQUIRED_v1",
+    "validator_path": "runtime/governance/per_action_tool_interception_v1/pre_tool_action_gate_v1.js"
+  },
+  "smoke": {
+    "runtime_starter_smoke": "/mnt/data/metablooms_stage6b_work/runtime_starter_smoke.json",
+    "runtime_starter_decision": "ALLOW",
+    "portable_boot_verify": "/mnt/data/metablooms_stage6b_work/portable_boot_verify.json",
+    "portable_boot_status": "PASS"
+  },
+  "warnings": [
+    "This gate governs OS-routed actions; it cannot physically intercept ChatGPT platform tool calls unless future stages route execution through the wrapper.",
+    "A first incorrect runtime_starter_smoke invocation was attempted and corrected; no OS state was changed by the failed invocation."
+  ],
+  "did_not_do": [
+    "did not retrofit all executors",
+    "did not install external frameworks",
+    "did not create a full OS export"
+  ],
+  "next_recommended_stage": "STAGE6C_WRAP_EXPORT_AND_FILESYSTEM_ACTIONS"
+}

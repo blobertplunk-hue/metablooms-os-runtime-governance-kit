@@ -1,0 +1,20 @@
+{
+  "from_stage": "TRACKER-4R_MOBILE_REFLOW_RENDERER_REPAIR",
+  "handoff_id": "TRACKER_4R_TO_TRACKER_5_20260429T112238Z",
+  "next_command": "Continue MetaBlooms from /mnt/data/Metablooms_OS. Load TRACKER-4R mobile reflow repair receipt and handoff. Run exactly one bounded TRACKER-5 smoke-test and export packaging stage: run tracker boot/state/render/gate/handoff-update smoke tests, validate the compact tracker renders first, validate no box-drawing or pipe-table tracker layout, package the tracker cartridge/export bundle only if tests pass, write receipt and final handoff, return one bundle plus checksum, and stop.",
+  "receipt_path": "receipts/inline_project_tracker/TRACKER_4R_20260429T112238Z/TRACKER_4R_RECEIPT.json",
+  "receipt_sha256": "0f95306aca0c17ade84c1b7c846ece6845bb618004d6e53fbe0389cdd785f2ce",
+  "required_preconditions": [
+    "Load TRACKER_STATE_v1.json before governed action.",
+    "Render compact inline tracker first using TRACKER_RENDERER_v1.py.",
+    "Verify TRACKER-4R validation report PASS.",
+    "Do not use box-drawing borders or pipe-table layout in tracker output.",
+    "Run only TRACKER-5 smoke-test/export packaging."
+  ],
+  "root": "/mnt/data/Metablooms_OS",
+  "state_path": "runtime/state/TRACKER_STATE_v1.json",
+  "status": "READY_FOR_BOUNDED_SMOKE_TEST_EXPORT_PACKAGING_STAGE_AFTER_MOBILE_REFLOW_REPAIR",
+  "to_stage_authorized": "TRACKER-5_SMOKE_TEST_AND_EXPORT_PACKAGING",
+  "validation_report_path": "receipts/inline_project_tracker/TRACKER_4R_20260429T112238Z/TRACKER_4R_VALIDATION_REPORT.json",
+  "validation_report_sha256": "1a7cc8b21d10ed8340183fe307848fe42f4cf8ef9292d134ad2886e9aad3029b"
+}

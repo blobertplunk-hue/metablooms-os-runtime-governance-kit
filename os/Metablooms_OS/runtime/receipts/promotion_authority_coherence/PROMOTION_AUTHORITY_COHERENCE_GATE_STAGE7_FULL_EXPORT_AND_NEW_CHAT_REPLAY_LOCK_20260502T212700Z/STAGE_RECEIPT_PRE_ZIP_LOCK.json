@@ -1,0 +1,31 @@
+{
+  "artifact_type": "STAGE_RECEIPT",
+  "controlled_index_entry_count": 2116,
+  "created_utc": "2026-05-02T21:27:18.723929+00:00",
+  "export_sidecar": "/mnt/data/METABLOOMS_OS_PROMOTION_AUTHORITY_COHERENCE_GATE_PAC7_FULL_AUTHORITY_LOCKED_20260502T212700Z.zip.sha256",
+  "export_zip": "/mnt/data/METABLOOMS_OS_PROMOTION_AUTHORITY_COHERENCE_GATE_PAC7_FULL_AUTHORITY_LOCKED_20260502T212700Z.zip",
+  "external_evidence_sources": {
+    "NIST_SSDF_800_218": "https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-218.pdf",
+    "OpenSSF_Scorecard": "https://openssf.org/projects/scorecard/",
+    "SLSA_verifying_artifacts": "https://slsa.dev/spec/v1.0/verifying-artifacts"
+  },
+  "root_validation_returncodes": {
+    "fixture_ledger": 0,
+    "fresh_chat": 0,
+    "new_chat_contract": 0,
+    "pac_current": 0,
+    "runtime_smoke": 0,
+    "scatter": 0
+  },
+  "source_zip_sidecar_verification": {
+    "actual_sha256": "ecb457a1abf127bf4de361bf57181a7e3965ad9e13ca29afc6fef41932a1fcbf",
+    "passed": true,
+    "sidecar": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE18_OPERATOR_PACKET_BOOTSTRAP_FINAL_AUTHORITY_REPAIRED_20260502T193453Z.zip.sha256",
+    "sidecar_text": "ecb457a1abf127bf4de361bf57181a7e3965ad9e13ca29afc6fef41932a1fcbf  METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE18_OPERATOR_PACKET_BOOTSTRAP_FINAL_AUTHORITY_REPAIRED_20260502T193453Z.zip\n",
+    "zip": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE18_OPERATOR_PACKET_BOOTSTRAP_FINAL_AUTHORITY_REPAIRED_20260502T193453Z.zip"
+  },
+  "stage_id": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE7_FULL_EXPORT_AND_NEW_CHAT_REPLAY_LOCK",
+  "stage_label_for_live_boot_surface": "PROMOTION_AUTHORITY_COHERENCE_GATE_PAC7_FULL_EXPORT_AND_NEW_CHAT_REPLAY_LOCK",
+  "status": "PRE_ZIP_VALIDATED_PENDING_EXTERNAL_FINAL_LOCK",
+  "zip_hash_circularity_policy": "final archive SHA-256 is intentionally external"
+}

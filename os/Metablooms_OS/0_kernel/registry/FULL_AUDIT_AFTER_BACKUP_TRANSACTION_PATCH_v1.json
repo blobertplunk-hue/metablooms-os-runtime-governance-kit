@@ -1,0 +1,293 @@
+{
+  "version": "1.0",
+  "created_at": 1776996654.51357,
+  "root": "/mnt/data/Metablooms_OS_refined",
+  "file_count": 184,
+  "type_counts": {
+    ".json": 18,
+    ".lock": 1,
+    "(no_ext)": 125,
+    ".pdf": 1,
+    ".md": 11,
+    ".zip": 6,
+    ".html": 2,
+    ".gs": 1,
+    ".py": 5,
+    ".sample": 14
+  },
+  "critical": {
+    "artifact_registry": {
+      "path": "/mnt/data/Metablooms_OS_refined/artifact_registry.json",
+      "exists": true,
+      "size": 47728
+    },
+    "boot_manifest": {
+      "path": "/mnt/data/Metablooms_OS_refined/boot_manifest_v1.json",
+      "exists": true,
+      "size": 1240
+    },
+    "git_dir": {
+      "path": "/mnt/data/Metablooms_OS_refined/.git",
+      "exists": true,
+      "size": null
+    },
+    "governed_run": {
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/scripts/governed_run.py",
+      "exists": true,
+      "size": 2556
+    },
+    "mutation_engine": {
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/scripts/registry_mutation_engine_v2_lite_final.py",
+      "exists": true,
+      "size": 16187
+    },
+    "validator": {
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/scripts/validate_script_v2.py",
+      "exists": true,
+      "size": 4141
+    },
+    "safe_patch_helpers": {
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/scripts/safe_code_patch_helpers_v1.py",
+      "exists": true,
+      "size": 2111
+    },
+    "patch_invariants": {
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/CODE_PATCHING_SAFETY_INVARIANTS_v1.json",
+      "exists": true,
+      "size": 2108
+    },
+    "script_quality_gate": {
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/SCRIPT_QUALITY_GATE_v1.json",
+      "exists": true,
+      "size": 707
+    },
+    "backup_patch_receipt": {
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/BACKUP_GIT_TRANSACTION_PATCH_RECEIPT_v1.json",
+      "exists": true,
+      "size": 627
+    },
+    "engine_regex_audit": {
+      "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/ENGINE_REGEX_PATCH_RISK_AUDIT_v1.json",
+      "exists": true,
+      "size": 2401
+    }
+  },
+  "governance_files_count": 23,
+  "governance_files": [
+    {
+      "path": "1_governance/logic_gates/MB_PREFLIGHT_PLANNER_CARTRIDGE_v2.json",
+      "size": 3620,
+      "sha256": "af845e2a186341d812973f49a2aad1ae28e94514b7bcec6ee0356e129511e7fe"
+    },
+    {
+      "path": "1_governance/logic_gates/always_on_failure_guard_v1.json",
+      "size": 5459,
+      "sha256": "ec63b88ccafc46850676c6241ebb19c06046c874e4c34b103785d962258666ab"
+    },
+    {
+      "path": "1_governance/logic_gates/artifact_auditor_v1.json",
+      "size": 2729,
+      "sha256": "0f1296c0855093e1bc955b27cf1e9f930b4f264548dff35e5b642de628b2bac9"
+    },
+    {
+      "path": "1_governance/logic_gates/continuity_compaction_v1.json",
+      "size": 2864,
+      "sha256": "d049d7e23fb3f9d5eaa651521a35ac0392856c416a10d2ad64e60df33598e67b"
+    },
+    {
+      "path": "1_governance/logic_gates/current_best_engine_pointer_v1.json",
+      "size": 1042,
+      "sha256": "3d4b2625f23c65338af3d950907aa7b98ddbd4dda3fcc244a987ada5ac74440a"
+    },
+    {
+      "path": "1_governance/logic_gates/handoff_contract_v1.json",
+      "size": 2663,
+      "sha256": "197ae0a8fc6afd0578ec72ac898709be4bc456cf8936f51eecd44866f12ccc46"
+    },
+    {
+      "path": "1_governance/logic_gates/progress_ledger_v1.json",
+      "size": 3441,
+      "sha256": "3301e437bddebc3e44da61d1173f3e709348612cf216bccbb71c92443144dd93"
+    },
+    {
+      "path": "1_governance/logic_gates/registry_tool_loadout_router_v1.json",
+      "size": 4645,
+      "sha256": "e507221cb948dc95a12c46929aa11d1df28cba9c14ceb1c2741560af51621cf5"
+    },
+    {
+      "path": "1_governance/logic_gates/verification_critic_v2.json",
+      "size": 4149,
+      "sha256": "34eb03323ff75f44208c42e7831f4ebb5f7cdfdc21080a56f63e1ef58325923b"
+    },
+    {
+      "path": "1_governance/specs/MB_S_Tier_LLM_Workflow_System_v1.md",
+      "size": 1733,
+      "sha256": "393a9d6171572b1ff9cfb146d7a5fc02838dc76ff4e6ecab3b625b5856a93ec9"
+    },
+    {
+      "path": "1_governance/specs/META_PREFLIGHT_SYSTEM_v3.md",
+      "size": 3074,
+      "sha256": "99cc110720b2e79d4c9f7453dab7551349701c05d2a9cdb16d68c6ce1aa97c5d"
+    },
+    {
+      "path": "1_governance/specs/PROMPT_ENGINE_v2.md",
+      "size": 11426,
+      "sha256": "a8c5b68be362491c609e4be42bf858ea096e4a69a18f1803d8abc7ceb41a24f1"
+    },
+    {
+      "path": "1_governance/specs/STAAR_ENGINE_SOP_copy.md",
+      "size": 50983,
+      "sha256": "71dc9d4884ee7b8145e82d16ac89af3d1778eff7b1d8fd7c8e0787731fb4d4b8"
+    },
+    {
+      "path": "1_governance/specs/staar_engine_sop_generalized_v34_integrated.md",
+      "size": 22730,
+      "sha256": "7063989cb76ac717d36650b7a80e18045d9ba09a0ed61469c9dddcf4525e96c2"
+    },
+    {
+      "path": "1_governance/specs/video_classifier_heuristic_cartridge_v1.md",
+      "size": 9838,
+      "sha256": "a1f7d032850b7590108e335ed7a76ccf1ae89e2363a166cd53ac9418a0a21f22"
+    },
+    {
+      "path": "0_kernel/registry/BACKUP_GIT_TRANSACTION_PATCH_RECEIPT_v1.json",
+      "size": 627,
+      "sha256": "d345ca6c5ae9ea53604f7215cec063cb719e28529d55e6465872b472593747b2"
+    },
+    {
+      "path": "0_kernel/registry/CODE_PATCHING_SAFETY_INVARIANTS_v1.json",
+      "size": 2108,
+      "sha256": "d934dc4bf08e7673b76a196067b9fca68c14f5dc16bae6b61b941061b3429292"
+    },
+    {
+      "path": "0_kernel/registry/ENGINE_REGEX_PATCH_RISK_AUDIT_v1.json",
+      "size": 2401,
+      "sha256": "68a5567118a992d0ac4a312b71921c15aed6640b8c3ea5d2ab70c27a1cd180fb"
+    },
+    {
+      "path": "0_kernel/registry/SCRIPT_QUALITY_GATE_v1.json",
+      "size": 707,
+      "sha256": "352780d21a4b56c76ff5fb19a18bbabbc62b3872387f10ff35b1437b52cd228b"
+    },
+    {
+      "path": "0_kernel/scripts/governed_run.py",
+      "size": 2556,
+      "sha256": "49b0acaeb078244af2a4314908343a3b9a373614ee60c885cfdc27438e035d06"
+    },
+    {
+      "path": "0_kernel/scripts/registry_mutation_engine_v2_lite_final.py",
+      "size": 16187,
+      "sha256": "6bcd7dcc4db5f7b5025e4eeb32b72d8a3d1b16f197b2b5e49ed7ac886c7fd7c1"
+    },
+    {
+      "path": "0_kernel/scripts/safe_code_patch_helpers_v1.py",
+      "size": 2111,
+      "sha256": "f45533da070e85a838ce4865087fdb9f8a73a6b65c9f30409639285214df8873"
+    },
+    {
+      "path": "0_kernel/scripts/validate_script_v2.py",
+      "size": 4141,
+      "sha256": "19d18865f8cc10799aa33e8e099954f896bcb31151d9d9c91c50f741d749d019"
+    }
+  ],
+  "made_cut_by_name": {
+    "MB_PREFLIGHT_PLANNER_CARTRIDGE_v2.json": [
+      "1_governance/logic_gates/MB_PREFLIGHT_PLANNER_CARTRIDGE_v2.json"
+    ],
+    "registry_tool_loadout_router_v1.json": [
+      "1_governance/logic_gates/registry_tool_loadout_router_v1.json"
+    ],
+    "progress_ledger_v1.json": [
+      "1_governance/logic_gates/progress_ledger_v1.json"
+    ],
+    "continuity_compaction_v1.json": [
+      "1_governance/logic_gates/continuity_compaction_v1.json"
+    ],
+    "handoff_contract_v1.json": [
+      "1_governance/logic_gates/handoff_contract_v1.json"
+    ],
+    "artifact_auditor_v1.json": [
+      "1_governance/logic_gates/artifact_auditor_v1.json"
+    ],
+    "always_on_failure_guard_v1.json": [
+      "1_governance/logic_gates/always_on_failure_guard_v1.json"
+    ],
+    "verification_critic_v2.json": [
+      "1_governance/logic_gates/verification_critic_v2.json"
+    ],
+    "MB_S_Tier_LLM_Workflow_System_v1.md": [
+      "1_governance/specs/MB_S_Tier_LLM_Workflow_System_v1.md"
+    ],
+    "META_PREFLIGHT_SYSTEM_v3.md": [
+      "1_governance/specs/META_PREFLIGHT_SYSTEM_v3.md"
+    ],
+    "PROMPT_ENGINE_v2.md": [
+      "1_governance/specs/PROMPT_ENGINE_v2.md"
+    ],
+    "SEE_v2_ENGINE.md": [
+      "2_engines/tools/SEE/SEE_v2_ENGINE.md"
+    ],
+    "SEE_v2_ENGINE.py": [
+      "2_engines/tools/SEE/SEE_v2_ENGINE.py"
+    ],
+    "CE_v1_ARTIFACT.zip": [
+      "3_data/vault/portable/CE_v1_ARTIFACT.zip"
+    ],
+    "staar_engine_sop_generalized_v34_integrated.md": [
+      "1_governance/specs/staar_engine_sop_generalized_v34_integrated.md"
+    ],
+    "video_classifier_heuristic_cartridge_v1.md": [
+      "1_governance/specs/video_classifier_heuristic_cartridge_v1.md"
+    ],
+    "CODE_PATCHING_SAFETY_INVARIANTS_v1.json": [
+      "0_kernel/registry/CODE_PATCHING_SAFETY_INVARIANTS_v1.json"
+    ],
+    "SCRIPT_QUALITY_GATE_v1.json": [
+      "0_kernel/registry/SCRIPT_QUALITY_GATE_v1.json"
+    ],
+    "safe_code_patch_helpers_v1.py": [
+      "0_kernel/scripts/safe_code_patch_helpers_v1.py"
+    ]
+  },
+  "engine_checks": {
+    "backup_dir_staged_in_git_transaction": true,
+    "uses_lock": true,
+    "uses_git": true,
+    "has_state_transition_validation": true,
+    "has_hash_validation": true
+  },
+  "git": {
+    "status": {
+      "cmd": [
+        "git",
+        "status",
+        "--short"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "log": {
+      "cmd": [
+        "git",
+        "log",
+        "--oneline",
+        "-12"
+      ],
+      "returncode": 0,
+      "stdout": "23d1f66 ADD backup git transaction patch receipt\n32de632 PATCH engine to include registry backups in git transaction\n9e472ea ADD registry backup artifacts from mutation test\n8a87125 ADD engine regex patch risk audit\n81f8bbb MUTATION real_mutation_test_1776993903_receipt\nd830ad6 MUTATION real_mutation_test_1776993903\n97c8a00 ADD code patching safety invariants and helpers\n1725f05 Revert \"ENFORCE governed_run as sole mutation entrypoint\"\n763d9e3 ENFORCE governed_run as sole mutation entrypoint\nce7a64f ADD script quality gate validator v2\n119d0ba ADD governed execution wrapper and registry mutation engine\n067a4f0 INITIAL GOVERNED REGISTRY STATE",
+      "stderr": ""
+    },
+    "fsck": {
+      "cmd": [
+        "git",
+        "fsck",
+        "--no-progress"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "verdict": "PASS"
+}

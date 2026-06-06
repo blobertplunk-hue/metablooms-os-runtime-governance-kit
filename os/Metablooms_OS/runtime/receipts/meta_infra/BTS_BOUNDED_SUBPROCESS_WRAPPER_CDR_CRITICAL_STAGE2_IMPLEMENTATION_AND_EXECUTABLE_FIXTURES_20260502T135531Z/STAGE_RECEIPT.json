@@ -1,0 +1,15 @@
+{
+  "artifact_type": "METABLOOMS_STAGE_RECEIPT_v1",
+  "bounded_fix_applied": "failure_event_path now persisted inside decision_packet before write",
+  "cdr_gate_results_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135531Z/CDR_CRITICAL_GATE_RESULTS_STAGE2.json",
+  "created_utc": "20260502T135531Z",
+  "fixture_results_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135531Z/EXECUTABLE_FIXTURE_RESULTS.json",
+  "implemented_source": "/mnt/data/Metablooms_OS/0_kernel/lib/execution/bounded_subprocess_wrapper_v1.py",
+  "next_stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING",
+  "runtime_root": "/mnt/data/Metablooms_OS",
+  "source_sha256": "1303f3ee59f478a3f61d69e82b817668c30afe6aac2476b667fa9080c69b821f",
+  "stage1_handoff": "/mnt/data/Metablooms_OS/runtime/handoffs/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE1_HANDOFF_LATEST.json",
+  "stage_id": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES",
+  "static_scan_path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135531Z/STATIC_SECURITY_AND_COMPLEXITY_SCAN.json",
+  "status": "PASS"
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "metablooms://schemas/mpp_v3/RESEARCH_TO_DECISION_GATE_SCHEMA_v1",
+  "title": "MPP v3 Research To Decision Gate Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "gate_id", "stage", "created_at", "decision_ids", "verdict", "blocked_reasons", "result_hash"],
+  "properties": {
+    "schema_version": {"const": "mpp.research_to_decision_gate.v1"},
+    "gate_id": {"type": "string", "pattern": "^RTD-[0-9]{3,}$"},
+    "stage": {"const": "DRS"},
+    "created_at": {"type": "string", "minLength": 10},
+    "decision_ids": {"type": "array", "items": {"type": "string", "pattern": "^DRS-[0-9]{3,}$"}},
+    "verdict": {"type": "string", "enum": ["PASS", "BLOCK"]},
+    "blocked_reasons": {"type": "array", "items": {"type": "string"}},
+    "result_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

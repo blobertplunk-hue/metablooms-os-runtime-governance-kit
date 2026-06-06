@@ -1,0 +1,10 @@
+{
+  "argv_resolved": [
+    "/usr/bin/echo",
+    "ok"
+  ],
+  "created_utc": "20260502T143615Z",
+  "cwd": "/mnt/data",
+  "decision": "ALLOW_SPAWN",
+  "timeout_seconds": 5
+}

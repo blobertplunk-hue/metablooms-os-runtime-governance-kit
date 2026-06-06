@@ -1,0 +1,211 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/CDR_CONSTRAINTS_PACKET_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "created_at": {
+      "minLength": 10,
+      "type": "string"
+    },
+    "objective_id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "packet_id": {
+      "minLength": 8,
+      "type": "string"
+    },
+    "policy_checks": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "check_id": {
+            "pattern": "^CDR-POL-[0-9]{3}$",
+            "type": "string"
+          },
+          "decision": {
+            "enum": [
+              "PASS",
+              "FAIL"
+            ],
+            "type": "string"
+          },
+          "description": {
+            "minLength": 10,
+            "type": "string"
+          },
+          "evidence": {
+            "minLength": 3,
+            "type": "string"
+          }
+        },
+        "required": [
+          "check_id",
+          "description",
+          "decision",
+          "evidence"
+        ],
+        "type": "object"
+      },
+      "minItems": 3,
+      "type": "array"
+    },
+    "result_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "mpp.cdr_constraints_packet.v1"
+    },
+    "seven_pillars": {
+      "additionalProperties": false,
+      "properties": {
+        "attestation": {
+          "minLength": 20,
+          "type": "string"
+        },
+        "constraints": {
+          "items": {
+            "minLength": 8,
+            "type": "string"
+          },
+          "minItems": 2,
+          "type": "array"
+        },
+        "failure_modes": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "detectable_by": {
+                "minLength": 4,
+                "type": "string"
+              },
+              "mode": {
+                "minLength": 3,
+                "type": "string"
+              },
+              "safe_state": {
+                "minLength": 4,
+                "type": "string"
+              },
+              "severity": {
+                "enum": [
+                  "S1_LOW",
+                  "S2_MED",
+                  "S3_HIGH",
+                  "S4_CRITICAL"
+                ],
+                "type": "string"
+              },
+              "strategy": {
+                "enum": [
+                  "halt",
+                  "rollback",
+                  "repair_then_retry",
+                  "degrade_with_receipt"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "mode",
+              "safe_state",
+              "strategy",
+              "detectable_by",
+              "severity"
+            ],
+            "type": "object"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "integration_contract": {
+          "additionalProperties": false,
+          "properties": {
+            "assumptions": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "inputs": {
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "outputs": {
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "side_effects": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "inputs",
+            "outputs",
+            "side_effects",
+            "assumptions"
+          ],
+          "type": "object"
+        },
+        "module_name": {
+          "pattern": "^[A-Z0-9_]+\\.(py|json|md|html|js|ts)$",
+          "type": "string"
+        },
+        "rationale": {
+          "minLength": 20,
+          "type": "string"
+        },
+        "supersedes": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "rationale",
+        "constraints",
+        "module_name",
+        "failure_modes",
+        "integration_contract",
+        "supersedes",
+        "attestation"
+      ],
+      "type": "object"
+    },
+    "source_decision_records": {
+      "items": {
+        "minLength": 3,
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "stage": {
+      "const": "CDR"
+    }
+  },
+  "required": [
+    "schema_version",
+    "packet_id",
+    "stage",
+    "created_at",
+    "objective_id",
+    "source_decision_records",
+    "seven_pillars",
+    "policy_checks",
+    "result_hash"
+  ],
+  "title": "MPP v3 CDR Constraints Packet",
+  "type": "object"
+}

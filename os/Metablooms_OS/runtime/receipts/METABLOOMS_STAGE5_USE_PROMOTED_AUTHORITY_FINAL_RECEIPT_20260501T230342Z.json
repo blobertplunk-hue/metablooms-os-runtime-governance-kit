@@ -1,0 +1,39 @@
+{
+  "schema": "metablooms.stage5.use_promoted_authority.final_receipt.v1",
+  "stage": "STAGE5_USE_PROMOTED_AUTHORITY_FOR_NEXT_GOVERNED_TASK",
+  "timestamp_utc": "2026-05-01T23:03:43.728Z",
+  "verdict": "PASS_WITH_WARNINGS",
+  "selected_authority": {
+    "path": "/mnt/data/METABLOOMS_OS_STAGE4D_POINTER_PROMOTED_NEW_CHAT_REHEARSED_AUTHORITY_20260501T235500Z.zip",
+    "sha256": "0af17ce4310d3d23d00d973318715ef56a02d53d9c039bd3e62c3c5926b69e0a",
+    "sidecar_path": "/mnt/data/METABLOOMS_OS_STAGE4D_POINTER_PROMOTED_NEW_CHAT_REHEARSED_AUTHORITY_20260501T235500Z.zip.sha256",
+    "sidecar_match": true
+  },
+  "live_root": "/mnt/data/Metablooms_OS",
+  "checks": {
+    "runtime_starter_from_live_root_decision": "ALLOW",
+    "runtime_starter_from_stage4d_zip_decision": "ALLOW",
+    "boot_executor_from_live_root_verdict": "PASS_WITH_WARNINGS",
+    "boot_executor_from_live_root_issues": [],
+    "boot_executor_from_live_root_warnings": [
+      "git_dir_missing"
+    ],
+    "portable_verify_status": "PASS",
+    "portable_verify_errors": []
+  },
+  "pointer_corrections": [
+    "CURRENT_FULL_AUTHORITY_POINTER_v1.json root copy updated",
+    "0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json updated",
+    "runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json updated",
+    "0_kernel/state/CURRENT_WORKING_BASELINE_POINTER_v1.json updated",
+    "runtime/state/CURRENT_WORKING_BASELINE_POINTER_v1.json created/updated",
+    "NEW_CHAT_BOOT_REHEARSAL_PACKET_v1.json updated"
+  ],
+  "failure_classes_recorded": [
+    "node_here_doc_invocation_missing_dash"
+  ],
+  "accepted_warnings": [
+    "git_dir_missing"
+  ],
+  "status": "promoted authority is usable for next concrete governed task"
+}

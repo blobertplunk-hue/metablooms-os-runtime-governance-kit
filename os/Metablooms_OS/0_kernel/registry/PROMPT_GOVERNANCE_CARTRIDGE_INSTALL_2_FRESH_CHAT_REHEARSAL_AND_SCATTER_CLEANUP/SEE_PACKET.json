@@ -1,0 +1,30 @@
+{
+  "sources": [
+    {
+      "id": "OPENAI_PROMPT_ENGINEERING_API",
+      "url": "https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api"
+    },
+    {
+      "id": "OPENAI_CHATGPT_PROMPT_BEST_PRACTICES",
+      "url": "https://help.openai.com/en/articles/10032626-prompt-engineering-best-practices-for-chatgpt"
+    },
+    {
+      "id": "OPENAI_EVAL_SKILLS_2026",
+      "url": "https://developers.openai.com/blog/eval-skills"
+    },
+    {
+      "id": "OPENAI_EVALS_COOKBOOK",
+      "url": "https://developers.openai.com/cookbook/topic/evals"
+    },
+    {
+      "id": "OPENAI_CODEX_PROMPTING_2026",
+      "url": "https://developers.openai.com/cookbook/examples/gpt-5/codex_prompting_guide"
+    }
+  ],
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_2_FRESH_CHAT_REHEARSAL_AND_SCATTER_CLEANUP",
+  "validated_claims": [
+    "Prompt systems need explicit instructions, constraints, context separation, and output-format controls.",
+    "Prompt/governance changes need testable regression gates, not only documentation.",
+    "Coding-agent workflows should support non-interactive execution and correctness/tool-use validation."
+  ]
+}

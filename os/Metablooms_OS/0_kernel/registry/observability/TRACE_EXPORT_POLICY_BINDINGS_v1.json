@@ -1,0 +1,28 @@
+{
+  "accepted_export_targets": [
+    "metablooms_jsonl",
+    "opentelemetry_span_json",
+    "openai_agents_event_json",
+    "langgraph_run_json"
+  ],
+  "deny_conditions": [
+    "missing trace_id",
+    "missing span_id",
+    "missing stage_id",
+    "missing status",
+    "missing gate lineage for tool spans",
+    "raw_payload_exported_without_explicit_profile",
+    "high_risk_action_without_security attributes"
+  ],
+  "gate": "observability_trace_export_gate_v1",
+  "requirements": {
+    "checkpointed_stage_must_link_thread_and_checkpoint": true,
+    "every_bts_action_span_must_include_gate_lineage": true,
+    "export_records_must_include_hash_or_artifact_binding": true,
+    "high_risk_tool_action_must_include_security_attributes": true,
+    "raw_payload_export_default": "redacted_or_hash_only"
+  },
+  "schema": "TraceExportPolicyBindings_v1",
+  "stage_id": "STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS",
+  "status": "active"
+}

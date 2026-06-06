@@ -1,0 +1,42 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/EXPORT_PROMOTION_PACKET_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "promotion_checks": {
+      "minItems": 1,
+      "type": "array"
+    },
+    "required_markers": {
+      "minItems": 1,
+      "type": "array"
+    },
+    "result_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "mpp.export_promotion_packet.v1"
+    },
+    "stage": {
+      "const": "EXPORT_PROMOTION"
+    }
+  },
+  "required": [
+    "schema_version",
+    "packet_id",
+    "stage",
+    "created_at",
+    "objective_id",
+    "source_orchestrator_packet_id",
+    "export_candidate",
+    "included_stage_range",
+    "promotion_checks",
+    "required_markers",
+    "bundle_inventory",
+    "promotion_summary",
+    "result_hash"
+  ],
+  "title": "MPP v3 Export Promotion Packet",
+  "type": "object"
+}

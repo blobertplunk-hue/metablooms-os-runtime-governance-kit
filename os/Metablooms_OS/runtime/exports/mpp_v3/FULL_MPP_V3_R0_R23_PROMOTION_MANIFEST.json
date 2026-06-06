@@ -1,0 +1,19 @@
+{
+  "base_sha256": "0af70fce8ca9c8412507edef0aba0aa62a6c7901c15b303d21f1ef6ef87b4715",
+  "base_zip": "METABLOOMS_OS_FULL_MPP_V3_R0_R22_INTEGRATED_20260501T075000Z.zip",
+  "created_at": "2026-05-01T00:58:04.281777+00:00",
+  "export_id": "METABLOOMS_OS_FULL_MPP_V3_R0_R23_PROMOTED_20260501T081500Z",
+  "external_sidecar_required": true,
+  "integrated_stage": "R23",
+  "r23_delta_sha256": "ff7dace069c033162a6fb853a9ff1b57811f1280202bc2a7b7f4d4481155a3e3",
+  "r23_delta_zip": "MPP_R23_EXPORT_PROMOTION_GATE_20260501T081500Z_DELTA.zip",
+  "required_markers": [
+    "Metablooms_OS/0_kernel/schemas/mpp_v3/EXPORT_PROMOTION_PACKET_SCHEMA_v1.json",
+    "Metablooms_OS/0_kernel/mpp_v3/mpp_v3_export_promotion_gate_v1.py",
+    "Metablooms_OS/runtime/handoffs/mpp_v3/MPP_R23_EXPORT_PROMOTION_GATE_HANDOFF_LATEST.json",
+    "Metablooms_OS/runtime/receipts/mpp_v3/MPP_R23_EXPORT_PROMOTION_GATE_RECEIPT_LATEST.json",
+    "Metablooms_OS/runtime/authority/CURRENT_EXPORT_AUTHORITY_v1.json"
+  ],
+  "schema_version": "metablooms.full_mpp_integrated_export_manifest.v1",
+  "stage_range": "R0-R23"
+}

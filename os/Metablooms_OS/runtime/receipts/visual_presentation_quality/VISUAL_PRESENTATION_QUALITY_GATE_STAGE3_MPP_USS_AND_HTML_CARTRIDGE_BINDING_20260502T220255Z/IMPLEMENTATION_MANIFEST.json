@@ -1,0 +1,97 @@
+{
+  "backups": [
+    "/mnt/data/Metablooms_OS/runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE3_MPP_USS_AND_HTML_CARTRIDGE_BINDING_20260502T220255Z/visual_presentation_quality_declaration_schema_v1.json.pre_stage3_220255.bak",
+    "/mnt/data/Metablooms_OS/runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE3_MPP_USS_AND_HTML_CARTRIDGE_BINDING_20260502T220255Z/valid_visual_presentation_quality_html_activity_v1.json.pre_stage3_220255.bak",
+    "/mnt/data/Metablooms_OS/runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE3_MPP_USS_AND_HTML_CARTRIDGE_BINDING_20260502T220255Z/validate_visual_presentation_quality_gate_v1.py.pre_stage3_220255.bak",
+    "/mnt/data/Metablooms_OS/runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE3_MPP_USS_AND_HTML_CARTRIDGE_BINDING_20260502T220255Z/usefulness_surface_declaration_schema_v1.json.pre_stage3_220255.bak",
+    "/mnt/data/Metablooms_OS/runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE3_MPP_USS_AND_HTML_CARTRIDGE_BINDING_20260502T220255Z/usefulness_surface_validator_v1.py.pre_stage3_220255.bak"
+  ],
+  "created_utc": "2026-05-02T22:03:09Z",
+  "modified": [
+    "/mnt/data/Metablooms_OS/0_kernel/registry/visual_presentation_quality/visual_presentation_quality_declaration_schema_v1.json",
+    "/mnt/data/Metablooms_OS/tests/fixtures/visual_presentation_quality/valid_visual_presentation_quality_html_activity_v1.json",
+    "/mnt/data/Metablooms_OS/0_kernel/validators/validate_visual_presentation_quality_gate_v1.py",
+    "/mnt/data/Metablooms_OS/runtime/governance/schemas/usefulness_surface_declaration_schema_v1.json",
+    "/mnt/data/Metablooms_OS/0_kernel/scripts/usefulness_surface_validator_v1.py",
+    "/mnt/data/Metablooms_OS/0_kernel/registry/visual_presentation_quality/VISUAL_PRESENTATION_MPP_USS_HTML_BINDING_v1.json",
+    "/mnt/data/Metablooms_OS/0_kernel/mpp_v3/VISUAL_PRESENTATION_QUALITY_GATE_MPP_BINDING_v1.json",
+    "/mnt/data/Metablooms_OS/runtime/cartridges/html_activity_visual_presentation_quality_v1/CARTRIDGE_MANIFEST.json",
+    "/mnt/data/Metablooms_OS/runtime/cartridges/html_activity_visual_presentation_quality_v1/TEACHER_PROFESSIONAL_SURFACE_PROFILE_v1.json",
+    "/mnt/data/Metablooms_OS/tests/fixtures/usefulness_surface/valid_usefulness_html_activity_with_visual_presentation_v1.json",
+    "/mnt/data/Metablooms_OS/tests/fixtures/usefulness_surface/invalid_usefulness_html_activity_missing_visual_presentation_v1.json"
+  ],
+  "passed": false,
+  "schema_version": "metablooms.stage3.implementation_manifest.v1",
+  "stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE3_MPP_USS_AND_HTML_CARTRIDGE_BINDING",
+  "test_results": [
+    {
+      "cmd": [
+        "python3",
+        "-m",
+        "py_compile",
+        "/mnt/data/Metablooms_OS/0_kernel/validators/validate_visual_presentation_quality_gate_v1.py"
+      ],
+      "expected_rc": 0,
+      "pass": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "cmd": [
+        "python3",
+        "-m",
+        "py_compile",
+        "/mnt/data/Metablooms_OS/0_kernel/scripts/usefulness_surface_validator_v1.py"
+      ],
+      "expected_rc": 0,
+      "pass": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "cmd": [
+        "python3",
+        "/mnt/data/Metablooms_OS/tests/evals/visual_presentation_quality/test_visual_presentation_quality_gate_v1.py"
+      ],
+      "expected_rc": 0,
+      "pass": false,
+      "returncode": 1,
+      "stderr": "",
+      "stdout": "\n          \"VPQ_MOBILE_FIRST_CONFIRMATION_REQUIRED\",\n          \"VPQ_MOTION_PURPOSE_MUST_BE_FUNCTIONAL\",\n          \"VPQ_PROGRESS_STATE_REQUIRED\",\n          \"VPQ_PROMOTION_BLOCKERS_MINIMUM_NOT_MET\",\n          \"VPQ_REDUCED_MOTION_SUPPORT_REQUIRED\",\n          \"VPQ_RENDER_CHECKS_MINIMUM_NOT_MET\",\n          \"VPQ_RENDER_MOBILE_CHECK_REQUIRED\",\n          \"VPQ_RENDER_STUDENT_PROMPT_CHECK_REQUIRED\",\n          \"VPQ_STATIC_CHECKS_MINIMUM_NOT_MET\",\n          \"VPQ_STATIC_CHECK_DESIGN_TOKENS_REQUIRED\",\n          \"VPQ_STATIC_CHECK_FOCUS_REQUIRED\",\n          \"VPQ_STATIC_CHECK_REDUCED_MOTION_REQUIRED\",\n          \"VPQ_TEACHER_PROFESSIONAL_PRESENTATION_REQUIRED\",\n          \"VPQ_VISUAL_HIERARCHY_REQUIRED\",\n          \"VPQ_WCAG_2_2_AA_TARGET_REQUIRED\"\n        ],\n        \"warnings\": [\n          \"VPQ_WARN_HTML_ACTIVITY_EXTERNAL_DEPENDENCY_POLICY_NOT_EXPLICIT\"\n        ]\n      },\n      \"expected\": \"DENY\",\n      \"fixture_path\": \"/mnt/data/Metablooms_OS/tests/fixtures/visual_presentation_quality/invalid_visual_presentation_quality_default_browser_styles_v1.json\",\n      \"fixture_sha256\": \"9aa9110d98b97cd3e5083ef7ac3997d7075fe8657bc001bca25395f497f96bee\",\n      \"pass\": true,\n      \"returncode\": 0,\n      \"stderr\": \"\",\n      \"violations\": [\n        \"SCHEMA:verification/human_review_prompts:[] is too short\",\n        \"SCHEMA:verification/promotion_blockers:[] is too short\",\n        \"SCHEMA:verification/render_checks:[] is too short\",\n        \"SCHEMA:verification/static_checks:[] is too short\",\n        \"SCHEMA:visual_presentation:'accessibility' is a required property\",\n        \"SCHEMA:visual_presentation:'anti_patterns_blocked' is a required property\",\n        \"SCHEMA:visual_presentation:'audience_profile' is a required property\",\n        \"SCHEMA:visual_presentation:'color_system' is a required property\",\n        \"SCHEMA:visual_presentation:'design_intent' is a required property\",\n        \"SCHEMA:visual_presentation:'design_system' is a required property\",\n        \"SCHEMA:visual_presentation:'interaction_feedback' is a required property\",\n        \"SCHEMA:visual_presentation:'layout' is a required property\",\n        \"SCHEMA:visual_presentation:'mobile_first' is a required property\",\n        \"SCHEMA:visual_presentation:'motion' is a required property\",\n        \"SCHEMA:visual_presentation:'platform_constraints' is a required property\",\n        \"SCHEMA:visual_presentation:'purpose_profile' is a required property\",\n        \"SCHEMA:visual_presentation:'teacher_professional_presentation' is a required property\",\n        \"SCHEMA:visual_presentation:'typography' is a required property\",\n        \"SCHEMA:visual_presentation:Additional properties are not allowed ('note' was unexpected)\",\n        \"VPQ_ACCESSIBILITY_FOCUS_VISIBILITY_REQUIRED\",\n        \"VPQ_ACCESSIBILITY_TARGET_SIZE_REQUIRED\",\n        \"VPQ_ANTI_PATTERN_MISSING_BLANK\",\n        \"VPQ_ANTI_PATTERN_MISSING_COLOR_ONLY\",\n        \"VPQ_ANTI_PATTERN_MISSING_DEFAULT_BROWSER\",\n        \"VPQ_BLOCK_DEFAULT_OR_UNSTYLED_PRESENTATION\",\n        \"VPQ_COLOR_INDEPENDENT_MEANING_REQUIRED\",\n        \"VPQ_CORRECT_INCORRECT_STATE_VISUALS_REQUIRED\",\n        \"VPQ_DESIGN_INTENT_CREDIBILITY_TARGET_REQUIRED\",\n        \"VPQ_DESIGN_INTENT_DESIRED_IMPRESSION_REQUIRED\",\n        \"VPQ_DESIGN_INTENT_ENGAGEMENT_STRATEGY_REQUIRED\",\n        \"VPQ_DESIGN_INTENT_FUNCTIONAL_MOOD_REQUIRED\",\n        \"VPQ_DRAG_ALTERNATIVE_REQUIRED\",\n        \"VPQ_EMPTY_STATE_RULE_REQUIRED\",\n        \"VPQ_HTML_ACTIVITY_GOOGLE_SITES_CONSTRAINT_REQUIRED\",\n        \"VPQ_HTML_ACTIVITY_SINGLE_FILE_CONSTRAINT_REQUIRED\",\n        \"VPQ_HUMAN_REVIEW_PROMPTS_MINIMUM_NOT_MET\",\n        \"VPQ_MISSING_DESIGN_SYSTEM\",\n        \"VPQ_MOBILE_BREAKPOINTS_INSUFFICIENT\",\n        \"VPQ_MOBILE_FIRST_CONFIRMATION_REQUIRED\",\n        \"VPQ_MOTION_PURPOSE_MUST_BE_FUNCTIONAL\",\n        \"VPQ_PROGRESS_STATE_REQUIRED\",\n        \"VPQ_PROMOTION_BLOCKERS_MINIMUM_NOT_MET\",\n        \"VPQ_REDUCED_MOTION_SUPPORT_REQUIRED\",\n        \"VPQ_RENDER_CHECKS_MINIMUM_NOT_MET\",\n        \"VPQ_RENDER_MOBILE_CHECK_REQUIRED\",\n        \"VPQ_RENDER_STUDENT_PROMPT_CHECK_REQUIRED\",\n        \"VPQ_STATIC_CHECKS_MINIMUM_NOT_MET\",\n        \"VPQ_STATIC_CHECK_DESIGN_TOKENS_REQUIRED\",\n        \"VPQ_STATIC_CHECK_FOCUS_REQUIRED\",\n        \"VPQ_STATIC_CHECK_REDUCED_MOTION_REQUIRED\",\n        \"VPQ_TEACHER_PROFESSIONAL_PRESENTATION_REQUIRED\",\n        \"VPQ_VISUAL_HIERARCHY_REQUIRED\",\n        \"VPQ_WCAG_2_2_AA_TARGET_REQUIRED\"\n      ],\n      \"warnings\": [\n        \"VPQ_WARN_HTML_ACTIVITY_EXTERNAL_DEPENDENCY_POLICY_NOT_EXPLICIT\"\n      ]\n    }\n  ],\n  \"schema_path\": \"/mnt/data/Metablooms_OS/0_kernel/registry/visual_presentation_quality/visual_presentation_quality_declaration_schema_v1.json\",\n  \"schema_sha256\": \"cca7d35922c5de1071a6ccb4d596b6d186cfa1ced82348c35a6fa5c203c273be\",\n  \"schema_version\": \"visual_presentation_quality_fixture_results.v1\",\n  \"validator_path\": \"/mnt/data/Metablooms_OS/0_kernel/validators/validate_visual_presentation_quality_gate_v1.py\",\n  \"validator_sha256\": \"83a29686fc70bb9312437077a28b53840297e941689625ec0d15d6657ea9659e\"\n}\n"
+    },
+    {
+      "cmd": [
+        "python3",
+        "-S",
+        "/mnt/data/Metablooms_OS/0_kernel/scripts/usefulness_surface_validator_v1.py",
+        "--declaration",
+        "/mnt/data/Metablooms_OS/tests/fixtures/usefulness_surface/valid_usefulness_html_activity_with_visual_presentation_v1.json",
+        "--receipt-dir",
+        "/mnt/data/Metablooms_OS/runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE3_MPP_USS_AND_HTML_CARTRIDGE_BINDING_20260502T220255Z/uss_decisions"
+      ],
+      "expected_rc": 0,
+      "pass": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\n  \"artifact_id\": \"example_fraction_html_activity_v1\",\n  \"block_count\": 0,\n  \"blocks\": [],\n  \"decision_id\": \"d419f7d1-e931-4bcd-9aed-3b163818b9cc\",\n  \"input_summary\": {\n    \"declaration_path\": \"/mnt/data/Metablooms_OS/tests/fixtures/usefulness_surface/valid_usefulness_html_activity_with_visual_presentation_v1.json\",\n    \"declaration_sha256\": \"673ad7f813077b95f5e9a3c77f98eaa4cec5735b3adf2b8b13cbe1afe2313535\"\n  },\n  \"policy_path\": \"metablooms/governance/usefulness_surface/allow\",\n  \"receipt_path\": \"/mnt/data/Metablooms_OS/runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE3_MPP_USS_AND_HTML_CARTRIDGE_BINDING_20260502T220255Z/uss_decisions/USEFULNESS_SURFACE_DECISION_1777759389861_d419f7d1.json\",\n  \"receipt_sha256\": \"585a9fd817585fad80ad55adf39e1a82fb936b80f4b56bff0f8e9053f0e9a78a\",\n  \"receipt_type\": \"USEFULNESS_SURFACE_GATE_DECISION\",\n  \"result\": \"ALLOW\",\n  \"schema_version\": \"1.2-vpq-stage3\",\n  \"summary\": {\n    \"artifact_type\": \"html_activity\",\n    \"covered_count\": 6,\n    \"covered_dimensions\": [\n      \"instruction\",\n      \"misconception_diagnosis\",\n      \"practice\",\n      \"realtime_feedback\",\n      \"teacher_telemetry\",\n      \"visual_presentation\"\n    ],\n    \"not_applicable\": [],\n    \"required_for_type\": [\n      \"instruction\",\n      \"practice\",\n      \"realtime_feedback\",\n      \"teacher_telemetry\",\n      \"misconception_diagnosis\",\n      \"visual_presentation\"\n    ]\n  },\n  \"timestamp_utc\": \"2026-05-02T22:03:09Z\",\n  \"warn_count\": 0,\n  \"warnings\": []\n}\n"
+    },
+    {
+      "cmd": [
+        "python3",
+        "-S",
+        "/mnt/data/Metablooms_OS/0_kernel/scripts/usefulness_surface_validator_v1.py",
+        "--declaration",
+        "/mnt/data/Metablooms_OS/tests/fixtures/usefulness_surface/invalid_usefulness_html_activity_missing_visual_presentation_v1.json",
+        "--receipt-dir",
+        "/mnt/data/Metablooms_OS/runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE3_MPP_USS_AND_HTML_CARTRIDGE_BINDING_20260502T220255Z/uss_decisions"
+      ],
+      "expected_rc": 1,
+      "pass": true,
+      "returncode": 1,
+      "stderr": "",
+      "stdout": "{\n  \"artifact_id\": \"invalid_missing_visual_dimension\",\n  \"block_count\": 1,\n  \"blocks\": [\n    \"Required dimension visual_presentation missing for artifact_type=html_activity\"\n  ],\n  \"decision_id\": \"5dd8963b-5a5b-4d8c-9fac-e285622fe2ee\",\n  \"input_summary\": {\n    \"declaration_path\": \"/mnt/data/Metablooms_OS/tests/fixtures/usefulness_surface/invalid_usefulness_html_activity_missing_visual_presentation_v1.json\",\n    \"declaration_sha256\": \"6b61f84f67b9942675b4d7b02ad46833b4397cd3ce74cbeb05bdb904d4f83bc1\"\n  },\n  \"policy_path\": \"metablooms/governance/usefulness_surface/allow\",\n  \"receipt_path\": \"/mnt/data/Metablooms_OS/runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE3_MPP_USS_AND_HTML_CARTRIDGE_BINDING_20260502T220255Z/uss_decisions/USEFULNESS_SURFACE_DECISION_1777759389926_5dd8963b.json\",\n  \"receipt_sha256\": \"fdb6db607a26320fbffbef7048c4a65cfd5ec2318f878e716037f440a287ef7d\",\n  \"receipt_type\": \"USEFULNESS_SURFACE_GATE_DECISION\",\n  \"result\": \"DENY\",\n  \"schema_version\": \"1.2-vpq-stage3\",\n  \"summary\": {\n    \"artifact_type\": \"html_activity\",\n    \"covered_count\": 5,\n    \"covered_dimensions\": [\n      \"instruction\",\n      \"misconception_diagnosis\",\n      \"practice\",\n      \"realtime_feedback\",\n      \"teacher_telemetry\"\n    ],\n    \"not_applicable\": [],\n    \"required_for_type\": [\n      \"instruction\",\n      \"practice\",\n      \"realtime_feedback\",\n      \"teacher_telemetry\",\n      \"misconception_diagnosis\",\n      \"visual_presentation\"\n    ]\n  },\n  \"timestamp_utc\": \"2026-05-02T22:03:09Z\",\n  \"warn_count\": 0,\n  \"warnings\": []\n}\n"
+    }
+  ]
+}

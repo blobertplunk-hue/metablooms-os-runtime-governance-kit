@@ -1,0 +1,12 @@
+{
+  "ads": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T142219Z/ADS_ATOMIC_JSON_WRITER_CDR_CRITICAL_v1.json",
+  "artifact_type": "HANDOFF",
+  "contract": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T142219Z/ATOMIC_JSON_WRITER_CONTRACT_v1.json",
+  "created_utc": "2026-05-02T14:23:17Z",
+  "next_stage": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES",
+  "next_stage_scope": "Install canonical atomic_json_writer_v1.py, executable fixture harness, positive/negative fixture execution, and compatibility migration plan only if fixtures pass.",
+  "receipt": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T142219Z/STAGE_RECEIPT.json",
+  "runtime_root": "/mnt/data/Metablooms_OS",
+  "stage": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT",
+  "status": "PASS"
+}

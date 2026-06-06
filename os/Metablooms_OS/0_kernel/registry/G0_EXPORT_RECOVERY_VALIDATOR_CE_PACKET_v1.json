@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "created_at": 1777064295.6509848,
+  "stage": "CE_COMPREHENSION_PASS",
+  "task": {
+    "original_request": "EXECUTE G0 \u2014 EXPORT RECOVERY VALIDATOR SCOPE LOCK",
+    "normalized_request": "Lock scope for a validator that prevents false recovery-proven export claims."
+  },
+  "problem_model": {
+    "primary_failure": "An export was called recovery-proven even though the ZIP did not contain later proof/lock artifacts and had placeholder metadata.",
+    "mistake_class": "success claim outran artifact verification",
+    "highest_risk_future_regression": "building another export before final proof/lock files exist inside the ZIP"
+  },
+  "success_criteria": [
+    "G0 is scope-only",
+    "validator gates are explicitly enumerated",
+    "implementation is deferred to G1+",
+    "ZIP/ledger/provenance/head/pointer/sidecar consistency requirements are locked"
+  ],
+  "non_goals": [
+    "No validator code in G0",
+    "No export in G0",
+    "No boot recovery proof in G0",
+    "No cleanup in G0"
+  ],
+  "ce_verdict": "PASS",
+  "issues": []
+}

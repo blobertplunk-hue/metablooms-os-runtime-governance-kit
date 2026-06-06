@@ -1,0 +1,133 @@
+{
+  "created_utc": "20260502T140515Z",
+  "results": [
+    {
+      "compile": "PASS",
+      "path": "0_kernel/cartridges/inline_project_tracker/TRACKER_SMOKE_TEST_v1.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "0_kernel/scripts/agent_harness_diff_review_v1.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "0_kernel/scripts/artifact_replay_proof_v2.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "0_kernel/scripts/cartridge_executor_v1.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "0_kernel/scripts/ensure_libcst_available_v1.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "0_kernel/scripts/ensure_ruff_available_v1.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "0_kernel/scripts/governed_run.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "0_kernel/scripts/p0py_python_health_governance_v1.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "0_kernel/scripts/registry_mutation_engine_v2_lite_final.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "0_kernel/scripts/run_governance_regression_suite_v1.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "0_kernel/scripts/stage_runner_v1.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "0_kernel/scripts/sync_writer_baseline_sha_patch_v1.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "0_kernel/scripts/transactional_stage_runner_v1.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "0_kernel/validators/validate_agent_harness_stage1_v1.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "0_kernel/validators/validate_agent_harness_stage2_v1.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "0_kernel/validators/validate_agent_harness_stage3_v1.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "0_kernel/validators/validate_education_validity_stage1_v1.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "0_kernel/validators/validate_education_validity_stage2_v1.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "0_kernel/validators/validate_evals_evaluator_runner_stage3_v1.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "0_kernel/validators/validate_evals_validator_alignment_stage4_v1.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "0_kernel/validators/validate_filesystem_handling_safety_stage1_v1.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "0_kernel/validators/validate_filesystem_handling_safety_stage2_v1.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "0_kernel/validators/validate_operator_surface_stage3_v1.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "0_kernel/validators/validate_operator_surface_v1.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "0_kernel/validators/validate_runaway_turn_breaker_stage0_v1.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "0_kernel/validators/validate_security_hardwired_stage3_v1.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "0_kernel/validators/validate_security_red_team_stage4_v1.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "0_kernel/validators/validate_software_quality_stage2_v1.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "0_kernel/validators/validate_state_checkpoint_stage2_v1.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "runtime/governance/bts_v4/BTS.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "runtime/governance/executors/bts_wrapped_executors_v1.py"
+    },
+    {
+      "compile": "PASS",
+      "path": "runtime/governance/full_os_recovery_replay_validator_v1.py"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_id": "session_state_export_schema_v1",
+  "version": "1.0",
+  "title": "Session State Export",
+  "description": "Portable, model-agnostic session state export for MetaBlooms runtime continuity.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_id",
+    "version",
+    "created_utc",
+    "authoritative_root",
+    "runtime_facts",
+    "open_work",
+    "deferred_work",
+    "recent_receipts",
+    "transfer_note",
+    "artifact_hashes"
+  ],
+  "properties": {
+    "schema_id": {"const": "session_state_export_schema_v1"},
+    "version": {"type": "string"},
+    "created_utc": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"},
+    "authoritative_root": {"const": "/mnt/data/Metablooms_OS"},
+    "runtime_facts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["baseline_pointer", "current_stage_hint", "active_contracts", "active_invariants", "python_lane", "risk_register"],
+      "properties": {
+        "baseline_pointer": {"type": "string"},
+        "current_stage_hint": {"type": "string"},
+        "active_contracts": {"type": "array", "items": {"type": "string"}},
+        "active_invariants": {"type": "array", "items": {"type": "string"}},
+        "python_lane": {"type": "string"},
+        "risk_register": {"type": "string"}
+      }
+    },
+    "open_work": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["next_stage", "next_actions", "blockers"],
+      "properties": {
+        "next_stage": {"type": "string"},
+        "next_actions": {"type": "array", "items": {"type": "string"}},
+        "blockers": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "deferred_work": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "recent_receipts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "sha256"],
+        "properties": {
+          "path": {"type": "string"},
+          "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+        }
+      }
+    },
+    "transfer_note": {"type": "string", "minLength": 20},
+    "artifact_hashes": {
+      "type": "object",
+      "additionalProperties": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+    }
+  }
+}

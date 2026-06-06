@@ -1,0 +1,37 @@
+{
+  "accepted_lessons": 6,
+  "artifacts_written": [
+    "0_kernel/lessons/LESSON_PROMOTION_QUEUE_v1.json",
+    "0_kernel/lessons/lesson_fixture_factory_v1.py",
+    "0_kernel/registry/world_class_gap_plan/BOOT_AUTHORITY_MANIFEST_v1.json",
+    "0_kernel/registry/world_class_gap_plan/LESSON_PROMOTION_GATE_v1.json",
+    "0_kernel/registry/world_class_gap_plan/LESSON_PROMOTION_QUEUE_CONTRACT_v1.json",
+    "0_kernel/registry/world_class_gap_plan/WC_STAGE3_LESSON_PROMOTION_REPORT_v1.md",
+    "BOOT_AUTHORITY_MANIFEST_v1.json",
+    "runtime/state/LESSON_FIXTURE_FACTORY_RESULT_v1.json",
+    "runtime/state/NEXT_STAGE_COPY_PROMPT.md",
+    "tests/fixtures/world_class_lessons/LESSON_BOOT_MANIFEST_LOCATION_005_fixture.json",
+    "tests/fixtures/world_class_lessons/LESSON_EXPORT_LINK_PRECHECK_001_fixture.json",
+    "tests/fixtures/world_class_lessons/LESSON_FULL_AUTHORITY_DEFAULT_002_fixture.json",
+    "tests/fixtures/world_class_lessons/LESSON_PHONE_SAFE_FILENAMES_004_fixture.json",
+    "tests/fixtures/world_class_lessons/LESSON_RECONSTRUCTION_PROVENANCE_006_fixture.json",
+    "tests/fixtures/world_class_lessons/LESSON_STAGE_EXIT_PROMPT_003_fixture.json"
+  ],
+  "citations_required_in_final": [
+    "turn867249search0",
+    "turn867249search1"
+  ],
+  "export_policy": "short phone-safe BOOTABLE_FULL_AUTHORITY_WC3.zip plus .sha256 sidecar; hash verified externally after ZIP creation",
+  "external_sources": [
+    "Google SRE postmortem culture",
+    "Atlassian retrospectives"
+  ],
+  "fixture_count": 6,
+  "fixture_factory_verdict": "PASS",
+  "next_stage": "WC_STAGE6_GENERAL_CAPABILITY_RESOLVER_FRAMEWORK",
+  "previous_stage": "WC_STAGE4_OPERATOR_EXPERIENCE_AND_BOOT_AUTHORITY_POLISH",
+  "schema_version": "v1",
+  "stage": "WC_STAGE3_LESSON_PROMOTION_QUEUE_AND_FIXTURE_FACTORY",
+  "timestamp": "20260503T004507Z",
+  "verdict": "PASS"
+}

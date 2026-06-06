@@ -1,0 +1,7 @@
+{
+  "checkpoint_id": "ckpt_interrupt",
+  "decision": "approve",
+  "resume_payload": "chat says continue",
+  "schema": "DurableCheckpointResumePacket_v1",
+  "thread_id": "stage6p.other"
+}

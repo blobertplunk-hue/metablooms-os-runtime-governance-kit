@@ -1,0 +1,17 @@
+{
+  "created_utc": "20260502T220900Z",
+  "current_verdict": "PASS_STAGE1_SPEC_WRITTEN_NOT_RUNTIME_ENFORCED",
+  "from_stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE1_SPEC_AND_FIXTURES",
+  "handoff_type": "NEXT_STAGE_HANDOFF",
+  "must_read_first": [
+    "/mnt/data/Metablooms_OS/0_kernel/registry/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_STAGE1_SEE_PACKET_v1.json",
+    "/mnt/data/Metablooms_OS/0_kernel/registry/visual_presentation_quality/visual_presentation_quality_declaration_schema_v1.json",
+    "/mnt/data/Metablooms_OS/0_kernel/registry/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_CONTRACT_v1.json",
+    "/mnt/data/Metablooms_OS/tests/fixtures/visual_presentation_quality/valid_visual_presentation_quality_html_activity_v1.json",
+    "/mnt/data/Metablooms_OS/tests/fixtures/visual_presentation_quality/invalid_visual_presentation_quality_default_browser_styles_v1.json",
+    "/mnt/data/Metablooms_OS/runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE1_SPEC_AND_FIXTURES_20260502T220900Z/VISUAL_PRESENTATION_QUALITY_GATE_STAGE1_SPEC_AND_FIXTURES_RECEIPT.json"
+  ],
+  "next_stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE2_VALIDATOR_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN",
+  "objective": "Implement stdlib validator for visual_presentation_quality_declaration_schema_v1, run valid/invalid fixtures, write decision receipts, and prepare Stage 3 binding plan for MPP + USS + HTML cartridge promotion paths.",
+  "stop_condition": "Stop after local fixture run and receipt; do not full-export until Stage 5."
+}

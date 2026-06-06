@@ -1,0 +1,57 @@
+{
+  "$id": "metablooms/PostToolResultValidationEnvelope_v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "action_type": {
+      "type": "string"
+    },
+    "actual": {
+      "type": "object"
+    },
+    "artifacts": {
+      "type": "object"
+    },
+    "created_at_utc": {
+      "type": "string"
+    },
+    "expected": {
+      "type": "object"
+    },
+    "intent": {
+      "type": "string"
+    },
+    "receipt_path": {
+      "type": "string"
+    },
+    "risk_tier": {
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "PostToolResultValidationEnvelope_v1"
+    },
+    "stage_id": {
+      "type": "string"
+    },
+    "tool_id": {
+      "type": "string"
+    },
+    "validation_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "validation_id",
+    "stage_id",
+    "tool_id",
+    "action_type",
+    "intent",
+    "expected",
+    "actual",
+    "artifacts",
+    "created_at_utc"
+  ],
+  "title": "PostToolResultValidationEnvelope_v1",
+  "type": "object"
+}

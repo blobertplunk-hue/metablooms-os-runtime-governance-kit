@@ -1,0 +1,10 @@
+{
+  "cdr_required": false,
+  "code_artifact_classes": [],
+  "declaration_source": "stage_contract",
+  "declared_by": "stage_planner",
+  "mpp_cdr_binding_policy_version": "MPP_CODE_WORK_REQUIRES_CDR_v1",
+  "stage_contains_code": false,
+  "stage_id": "EXAMPLE_NON_CODE_AUDIT",
+  "stage_verdict_requested": "PASS"
+}

@@ -1,0 +1,202 @@
+{
+  "artifact_type": "MB_AUDIT_QUERY_COMMAND_SURFACE.v1",
+  "command_count": 9,
+  "commands": [
+    {
+      "action": "show_audit_pack",
+      "command_id": "show_audit_promoted_evidence_recovery",
+      "evidence_paths": [
+        "runtime/traces/observability/PINNED_EVIDENCE_EXPORT_BINDING_LATEST.json",
+        "runtime/traces/observability/TRACE_SPAN_LEDGER_INDEX_LATEST.json",
+        "runtime/receipts/pinned_evidence/PINNED_EVIDENCE_RECEIPT_LATEST.json",
+        "runtime/traces/observability/PROMOTED_EVIDENCE_RECOVERY_REPLAY_LATEST.json",
+        "runtime/traces/observability/FAILURE_CLUSTER_REPORT_LATEST.json",
+        "runtime/state/operator_surface/VISUAL_TRACE_WATERFALL_LATEST.json"
+      ],
+      "fail_closed_if": [
+        "source pack missing",
+        "evidence path missing"
+      ],
+      "intent": "Show audit pack: promoted evidence recovery",
+      "label": "Show promoted evidence recovery",
+      "operator_phrase": "Show audit pack: promoted evidence recovery",
+      "output_packet_path": null,
+      "source_pack_id": "audit_promoted_evidence_recovery"
+    },
+    {
+      "action": "show_audit_pack",
+      "command_id": "show_audit_export_binding",
+      "evidence_paths": [
+        "runtime/traces/observability/OBSERVABILITY_STAGE3_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.json",
+        "runtime/traces/observability/OBSERVABILITY_STAGE3_REPAIRED_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+        "runtime/traces/observability/OBSERVABILITY_STAGE4_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+        "runtime/traces/observability/OBSERVABILITY_STAGE4_REPAIRED_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+        "runtime/traces/observability/OBSERVABILITY_STAGE5_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json"
+      ],
+      "fail_closed_if": [
+        "source pack missing",
+        "evidence path missing"
+      ],
+      "intent": "Show audit pack: export binding",
+      "label": "Show export binding evidence",
+      "operator_phrase": "Show audit pack: export binding",
+      "output_packet_path": null,
+      "source_pack_id": "audit_export_binding"
+    },
+    {
+      "action": "show_blocker_evidence",
+      "command_id": "show_audit_blocker_or_failure",
+      "evidence_paths": [
+        "runtime/traces/observability/METHOD_RELIABILITY_LEDGER_LATEST.json",
+        "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE5_CLASSIFIER_REPAIR_VALIDATION_LATEST.json",
+        "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE5_VALIDATION_POST_RECEIPT_STDOUT_LATEST.json",
+        "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE5_VALIDATION_STDOUT_LATEST.json",
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING_20260502T165302Z/SEE_PACKET.json"
+      ],
+      "fail_closed_if": [
+        "source pack missing",
+        "evidence path missing"
+      ],
+      "intent": "Show audit pack: blocker or failure",
+      "label": "Show blocker/failure evidence",
+      "operator_phrase": "Show audit pack: blocker or failure",
+      "output_packet_path": null,
+      "source_pack_id": "audit_blocker_or_failure"
+    },
+    {
+      "action": "show_current_boot_guidance",
+      "command_id": "show_audit_boot_guidance",
+      "evidence_paths": [
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_20260502T175629Z/CE_SYNTHESIS.json",
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINALIZED_20260502T175839Z/CE_SYNTHESIS.json",
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINALIZED_20260502T175921Z/CE_SYNTHESIS.json",
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/SEE_PACKET.json",
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/pre_patch_backups/0_kernel__boot_contracts__NEW_CHAT_START_CONTRACT_v1.md"
+      ],
+      "fail_closed_if": [
+        "source pack missing",
+        "evidence path missing"
+      ],
+      "intent": "Show audit pack: boot guidance",
+      "label": "Show current boot guidance",
+      "operator_phrase": "Show audit pack: boot guidance",
+      "output_packet_path": null,
+      "source_pack_id": "audit_boot_guidance"
+    },
+    {
+      "action": "show_stage_validation",
+      "command_id": "show_audit_stage_validation",
+      "evidence_paths": [
+        "runtime/traces/observability/OBSERVABILITY_STAGE10_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+        "runtime/traces/observability/OBSERVABILITY_STAGE11_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+        "runtime/traces/observability/OBSERVABILITY_STAGE3_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.json",
+        "runtime/traces/observability/OBSERVABILITY_STAGE5_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+        "runtime/traces/observability/OBSERVABILITY_STAGE6_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json"
+      ],
+      "fail_closed_if": [
+        "source pack missing",
+        "evidence path missing"
+      ],
+      "intent": "Show audit pack: stage validation",
+      "label": "Show stage validation evidence",
+      "operator_phrase": "Show audit pack: stage validation",
+      "output_packet_path": null,
+      "source_pack_id": "audit_stage_validation"
+    },
+    {
+      "action": "show_trace_waterfall",
+      "command_id": "show_audit_trace_waterfall",
+      "evidence_paths": [
+        "runtime/traces/observability/TRACE_SPAN_LEDGER_INDEX_LATEST.json",
+        "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE11_VISUAL_WATERFALL_VALIDATION_LATEST.json",
+        "runtime/state/operator_surface/VISUAL_TRACE_WATERFALL_LATEST.json",
+        "runtime/traces/observability/OBSERVABILITY_STAGE11_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+        "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_HANDOFF_LATEST.json"
+      ],
+      "fail_closed_if": [
+        "source pack missing",
+        "evidence path missing"
+      ],
+      "intent": "Show audit pack: trace waterfall",
+      "label": "Show trace waterfall evidence",
+      "operator_phrase": "Show audit pack: trace waterfall",
+      "output_packet_path": null,
+      "source_pack_id": "audit_trace_waterfall"
+    },
+    {
+      "action": "export_evidence_packet",
+      "command_id": "export_promoted_evidence_packet",
+      "evidence_paths": [
+        "runtime/traces/observability/PINNED_EVIDENCE_EXPORT_BINDING_LATEST.json",
+        "runtime/traces/observability/TRACE_SPAN_LEDGER_INDEX_LATEST.json",
+        "runtime/receipts/pinned_evidence/PINNED_EVIDENCE_RECEIPT_LATEST.json",
+        "runtime/traces/observability/PROMOTED_EVIDENCE_RECOVERY_REPLAY_LATEST.json",
+        "runtime/traces/observability/FAILURE_CLUSTER_REPORT_LATEST.json",
+        "runtime/state/operator_surface/VISUAL_TRACE_WATERFALL_LATEST.json"
+      ],
+      "fail_closed_if": [
+        "source pack missing",
+        "artifact binding missing",
+        "sha mismatch"
+      ],
+      "intent": "Export evidence packet: promoted evidence recovery",
+      "label": "Export promoted evidence packet",
+      "operator_phrase": "Export evidence packet: promoted evidence recovery",
+      "output_packet_path": "runtime/exports/operator_packets/export_promoted_evidence_packet.json",
+      "source_pack_id": "audit_promoted_evidence_recovery"
+    },
+    {
+      "action": "export_evidence_packet",
+      "command_id": "export_boot_guidance_packet",
+      "evidence_paths": [
+        "runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+        "runtime/state/operator_surface/LIVE_BOOT_GUIDANCE_LATEST.md",
+        "runtime/state/operator_surface/LIVE_BOOT_GUIDANCE_LATEST.json",
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_20260502T175629Z/CE_SYNTHESIS.json",
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINALIZED_20260502T175839Z/CE_SYNTHESIS.json",
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINALIZED_20260502T175921Z/CE_SYNTHESIS.json",
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/SEE_PACKET.json",
+        "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/pre_patch_backups/0_kernel__boot_contracts__NEW_CHAT_START_CONTRACT_v1.md"
+      ],
+      "fail_closed_if": [
+        "source pack missing",
+        "artifact binding missing",
+        "sha mismatch"
+      ],
+      "intent": "Export evidence packet: current boot guidance",
+      "label": "Export boot guidance packet",
+      "operator_phrase": "Export evidence packet: current boot guidance",
+      "output_packet_path": "runtime/exports/operator_packets/export_boot_guidance_packet.json",
+      "source_pack_id": "audit_boot_guidance"
+    },
+    {
+      "action": "export_evidence_packet",
+      "command_id": "export_stage_validation_packet",
+      "evidence_paths": [
+        "runtime/state/operator_surface/AUDIT_QUERY_PACKS_LATEST.json",
+        "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE15_RECOVERY_REPLAY_AUDIT_QUERY_VALIDATION_LATEST.json",
+        "runtime/traces/observability/OBSERVABILITY_STAGE10_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+        "runtime/traces/observability/OBSERVABILITY_STAGE11_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+        "runtime/traces/observability/OBSERVABILITY_STAGE3_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.json",
+        "runtime/traces/observability/OBSERVABILITY_STAGE5_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+        "runtime/traces/observability/OBSERVABILITY_STAGE6_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json"
+      ],
+      "fail_closed_if": [
+        "source pack missing",
+        "artifact binding missing",
+        "sha mismatch"
+      ],
+      "intent": "Export evidence packet: stage validation",
+      "label": "Export stage validation packet",
+      "operator_phrase": "Export evidence packet: stage validation",
+      "output_packet_path": "runtime/exports/operator_packets/export_stage_validation_packet.json",
+      "source_pack_id": "audit_stage_validation"
+    }
+  ],
+  "created_utc": "20260502T191943Z",
+  "issues": [],
+  "source_audit_query_packs": "runtime/state/operator_surface/AUDIT_QUERY_PACKS_LATEST.json",
+  "source_audit_query_packs_sha256": "40b947ebd559b4c8023efd8875b7a3f16194feeb5d77dff2fa3b7f4d1aa25614",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_AND_OPERATOR_EXPORT_PACKET",
+  "verdict": "PASS"
+}

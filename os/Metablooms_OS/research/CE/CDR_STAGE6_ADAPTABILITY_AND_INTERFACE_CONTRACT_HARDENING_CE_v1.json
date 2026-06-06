@@ -1,0 +1,11 @@
+{
+  "design_decision": "Install a CDR adaptability/interface-contract gate that denies code acceptance if public/runtime interfaces lack versioned contracts, compatibility/migration policy, and change-impact evidence.",
+  "schema": "CEPacket_v1",
+  "stage": "CDR_STAGE6_ADAPTABILITY_AND_INTERFACE_CONTRACT_HARDENING",
+  "synthesis": [
+    "CDR adaptability must be enforceable through explicit interfaces, compatibility policy, deprecation plans, extension points, versioning rules, and migration evidence.",
+    "Interface contracts must declare inputs, outputs, errors, side effects, compatibility guarantees, ownership, and examples so future stages can modify code safely.",
+    "Adaptability is not accepted as an adjective; it requires measurable extension and change-impact evidence."
+  ],
+  "timestamp_utc": "2026-05-02T04:36:43Z"
+}

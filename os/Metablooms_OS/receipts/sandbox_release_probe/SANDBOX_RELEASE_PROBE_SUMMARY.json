@@ -1,0 +1,28 @@
+{
+  "paths": [
+    {
+      "path": "/opt/python-hooks/sitecustomize.py",
+      "mtime_epoch": 1777338798.5630474,
+      "size": 1007,
+      "is_dir": false
+    },
+    {
+      "path": "/opt/pyvenv/lib/python3.13/site-packages/000_oai_py_sys_path_prepend.pth",
+      "mtime_epoch": 1776736081.0,
+      "size": 31,
+      "is_dir": false
+    },
+    {
+      "path": "/opt/pyvenv/lib/python3.13/site-packages/oai_py_sys_path_prepend.py",
+      "mtime_epoch": 1776736081.0,
+      "size": 855,
+      "is_dir": false
+    },
+    {
+      "path": "/opt/pyvenv/lib/python3.13/site-packages/presentation_artifact_tool",
+      "mtime_epoch": 1776806957.0,
+      "size": 4096,
+      "is_dir": true
+    }
+  ]
+}

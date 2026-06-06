@@ -1,0 +1,13 @@
+{
+  "artifact_type": "BOOT_HANDOFF_v1",
+  "canonical_root": "/mnt/data/Metablooms_OS",
+  "created_utc": "20260502T162601Z",
+  "from_stage": "BOOT_FROM_MNT_DATA",
+  "next_stage": "RECONCILE_STAGE3_AUTHORITY_POINTER_AND_NEW_CHAT_START_CONTRACT",
+  "receipt": "/mnt/data/Metablooms_OS/0_kernel/registry/boot_receipts/BOOT_FROM_MNT_DATA_20260502T162601Z/BOOT_RECEIPT.json",
+  "receipt_sha256": "6cdf18a8f5a30ff09f7e905bd5a787fa5c61c22aba85b37669543c5e9ec76a05",
+  "status": "READY_FOR_POINTER_AND_START_CONTRACT_REPAIR_ONLY",
+  "stop_rule": "Do not run substantive MetaBlooms work until new_chat_start_contract_validator passes or a blocked receipt is written.",
+  "tracker_html": "/mnt/data/Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html",
+  "tracker_html_sha256": "369fd9996ad5cb7ae28d165d8816fa8fd4ef570104a6f2bce57d2f21933f4375"
+}

@@ -1,0 +1,20 @@
+{
+  "actions": [
+    "diagnosed prior validation timeout as method failure not proven corrupt archive",
+    "verified 5R ZIP as base",
+    "repaired internal proof/receipt/handoff semantics to use explicit external sidecar binding",
+    "rebuilt full OS ZIP candidate",
+    "validated with archive-native recovery proof after export"
+  ],
+  "artifact_type": "STAGE_RECEIPT",
+  "baseline_promoted": false,
+  "bounded_stage": true,
+  "created_utc": "20260430T015018Z",
+  "external_sidecar_required": true,
+  "final_zip_sha256": "EXTERNAL_SIDECAR_REQUIRED",
+  "promotion_performed": false,
+  "see_ce_preflight": "COMPLETED",
+  "stage_id": "FL17-MERGE-5R2_INTERNAL_PROOF_SIDECAR_BINDING_REPAIR",
+  "status": "PASS_RECOVERY_PROOF_REPAIRED",
+  "verdict": "PASS_INTERNAL_PROOF_WITH_EXTERNAL_SIDECAR_REQUIRED"
+}

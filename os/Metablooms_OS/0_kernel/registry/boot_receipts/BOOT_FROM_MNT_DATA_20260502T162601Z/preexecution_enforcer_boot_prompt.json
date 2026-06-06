@@ -1,0 +1,54 @@
+{
+  "artifact_requirements": [
+    "receipt",
+    "handoff",
+    "validation_packet",
+    "checksum_for_exported_bundle"
+  ],
+  "contract_hash": "bbf18df1cf6441b0db0169353ed5b8f99ea23b7cc1e1a1a8fb16dd58e09dfba6",
+  "created_utc": "2026-05-02T16:25:25Z",
+  "decision": "ALLOW",
+  "evidence_requirements": [
+    "web.run_required_for_current_or_best-practice_claims",
+    "SEE_packet_when_research_used",
+    "CE_packet_before_implementation_decision"
+  ],
+  "fail_closed_conditions": [
+    "missing_user_prompt",
+    "unknown_profile",
+    "missing_required_gate",
+    "artifact_write_unproven",
+    "validator_denied"
+  ],
+  "improved_prompt": "Boot from mnt/data\n\nGoverned pre-execution improvements:\n- Write a receipt and handoff for every completed bounded stage.\n- Validate readback and behavior before claiming completion.\n- Attempt a full OS export when validation permits; otherwise write a blocked/partial receipt.\n- Order any ranked options best-to-worst and explain why option 1 is best when options are presented.\n- Fail closed if required artifacts, gates, or evidence are missing.",
+  "ranking_explanation": [
+    {
+      "option": "execute_with_preexecution_contract",
+      "rank": 1,
+      "why": "best: binds task intent, profile, gates, artifacts, and validation before tools run"
+    },
+    {
+      "option": "execute_with_existing_prompt_only",
+      "rank": 2,
+      "why": "weaker: may preserve user wording but misses automatic repair and governance hardening"
+    },
+    {
+      "option": "manual_prompt_review_only",
+      "rank": 3,
+      "why": "weakest: delays execution and does not enforce artifact writeback"
+    }
+  ],
+  "required_gates": [
+    "boot_verify",
+    "gap_audit",
+    "prompt_auto_improvement",
+    "preexecution_route_enforcer",
+    "artifact_write",
+    "validator_replay",
+    "receipt_handoff",
+    "export_attempt"
+  ],
+  "selected_profile": "governed_implementation",
+  "source_prompt_sha256": "843011d4bf7afcb8072cae76823e72be7f7fdb67220351681dd89a7729bd7b11",
+  "task_type": "governed_implementation"
+}

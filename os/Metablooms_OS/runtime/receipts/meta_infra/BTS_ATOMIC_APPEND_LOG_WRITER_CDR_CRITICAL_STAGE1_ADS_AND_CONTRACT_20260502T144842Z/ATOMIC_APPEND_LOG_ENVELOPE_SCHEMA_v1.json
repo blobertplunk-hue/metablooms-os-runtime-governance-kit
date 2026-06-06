@@ -1,0 +1,78 @@
+{
+  "$id": "metablooms://schemas/AtomicAppendLogEnvelope.v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "allowed_roots": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "allowed_suffixes": {
+      "items": {
+        "enum": [
+          ".jsonl",
+          ".log.jsonl",
+          ".ledger.jsonl",
+          ".events.jsonl"
+        ]
+      },
+      "type": "array"
+    },
+    "create_parent": {
+      "default": false,
+      "type": "boolean"
+    },
+    "durability_mode": {
+      "enum": [
+        "sync_always",
+        "sync_on_critical",
+        "sync_never_with_exception"
+      ]
+    },
+    "failure_registry_dir": {
+      "type": "string"
+    },
+    "log_path": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "max_file_bytes": {
+      "minimum": 1024,
+      "type": "integer"
+    },
+    "max_record_bytes": {
+      "maximum": 1048576,
+      "minimum": 128,
+      "type": "integer"
+    },
+    "operation_id": {
+      "maxLength": 160,
+      "minLength": 8,
+      "type": "string"
+    },
+    "receipt_dir": {
+      "type": "string"
+    },
+    "record": {
+      "type": "object"
+    },
+    "schema_version": {
+      "const": "AtomicAppendLogEnvelope.v1"
+    }
+  },
+  "required": [
+    "schema_version",
+    "operation_id",
+    "log_path",
+    "allowed_roots",
+    "record",
+    "durability_mode",
+    "max_record_bytes"
+  ],
+  "title": "AtomicAppendLogEnvelope.v1",
+  "type": "object"
+}

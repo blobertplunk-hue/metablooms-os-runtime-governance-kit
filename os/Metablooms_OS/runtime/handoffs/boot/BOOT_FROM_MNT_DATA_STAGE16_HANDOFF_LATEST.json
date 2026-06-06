@@ -1,0 +1,10 @@
+{
+  "schema": "METABLOOMS_BOOT_HANDOFF_v1",
+  "timestamp_utc": "20260502T133901Z",
+  "latest_boot_receipt": "runtime/receipts/boot/BOOT_FROM_MNT_DATA_STAGE16_20260502T133901Z.json",
+  "canonical_runtime_root": "/mnt/data/Metablooms_OS",
+  "authority_zip": "/mnt/data/METABLOOMS_OS_MPP_CDR_STAGE16_FULL_AUTHORITY_AFTER_STAGE15_BOOTABLE_FULL_OS_AUTHORITY_20260502T132500Z.zip",
+  "authority_zip_sha256": "c1287eec39756bf57619a28ce622aef60760dfe97d8cbadf3cf0cb72cb9e775b",
+  "status": "READY_FOR_ONE_BOUNDED_GOVERNED_STAGE",
+  "required_next_step": "Reload artifacts from /mnt/data/Metablooms_OS before any substantive stage; for code-bearing work, run MPP with CDR required."
+}

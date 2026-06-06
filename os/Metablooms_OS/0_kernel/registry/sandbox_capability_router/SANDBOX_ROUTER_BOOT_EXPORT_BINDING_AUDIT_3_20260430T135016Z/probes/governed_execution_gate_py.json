@@ -1,0 +1,17 @@
+{
+  "allowed": true,
+  "decision": "ALLOW",
+  "reason": "route_allowed",
+  "task": "governed_execution",
+  "method": "node",
+  "required_gates": [
+    "route_selected",
+    "denylist_checked",
+    "probe_gate_passed",
+    "bounded_stage_declared",
+    "receipt_path_declared",
+    "handoff_path_declared"
+  ],
+  "router_path": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_CAPABILITY_ROUTER_CARTRIDGE_LATEST.json",
+  "enforcer_equivalence": "python3_S_timeout_safe_policy_evaluation"
+}

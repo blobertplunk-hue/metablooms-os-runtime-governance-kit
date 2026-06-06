@@ -1,0 +1,23 @@
+{
+  "created_at": "2026-05-02T20:03:29.580494+00:00",
+  "result_hash": "1b016cc134f270fc44f3e4406fa416940a83be880da330f04b9b26ed5db0271f",
+  "schema_version": "metablooms.see_packet.v1",
+  "sources": [
+    {
+      "finding": "Provenance only creates value when verified/inspected before trust is granted.",
+      "id": "SEE-SLSA-VERIFY",
+      "url": "https://slsa.dev/spec/v1.0/verifying-artifacts"
+    },
+    {
+      "finding": "Release evidence should include integrity verification and provenance data, retained/protected as part of software supply-chain integrity.",
+      "id": "SEE-NIST-SSDF-PS3",
+      "url": "https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-218.pdf"
+    },
+    {
+      "finding": "Automated checks expose supply-chain/security posture weaknesses before risk acceptance.",
+      "id": "SEE-OPENSSF-SCORECARD",
+      "url": "https://scorecard.dev/"
+    }
+  ],
+  "stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN"
+}

@@ -1,0 +1,38 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/METHOD_RELIABILITY_GATE_RESULT_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "result_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "mpp.method_reliability_gate_result.v1"
+    },
+    "stage": {
+      "const": "METHOD_RELIABILITY_GATE"
+    },
+    "verdict": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "NEEDS_REPAIR"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "gate_id",
+    "stage",
+    "created_at",
+    "packet_id",
+    "verdict",
+    "violations",
+    "warnings",
+    "routing_updates",
+    "result_hash"
+  ],
+  "title": "MPP v3 Method Reliability Gate Result",
+  "type": "object"
+}

@@ -1,0 +1,41 @@
+{
+  "artifact_type": "MB_PROMOTED_EVIDENCE_RECOVERY_REPLAY.v1",
+  "created_utc": "20260502T191509Z",
+  "export_binding_member": "Metablooms_OS/runtime/traces/observability/PINNED_EVIDENCE_EXPORT_BINDING_LATEST.json",
+  "export_zip": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE14_PINNED_EVIDENCE_PROMOTION_FINAL_AUTHORITY_REPAIRED_20260502T190150Z.zip",
+  "export_zip_sha256": "1cf42f9c5b1f2126cb3357db035a435e9f32fda62f5fb40cb35a507bc784a1d8",
+  "issues": [],
+  "promoted_receipt_member": "Metablooms_OS/runtime/receipts/pinned_evidence/PINNED_EVIDENCE_RECEIPT_LATEST.json",
+  "replayed_artifacts": [
+    {
+      "binding_declared_sha256": "2bb0a5a8439f692fa1abe4b7cae710e4773806db4f24cf812976e51622058b64",
+      "exists_in_zip": true,
+      "path": "runtime/state/operator_surface/VISUAL_TRACE_WATERFALL_LATEST.json",
+      "receipt_actual_sha256": "2bb0a5a8439f692fa1abe4b7cae710e4773806db4f24cf812976e51622058b64",
+      "verdict": "PASS_EXACT",
+      "zip_member": "Metablooms_OS/runtime/state/operator_surface/VISUAL_TRACE_WATERFALL_LATEST.json",
+      "zip_member_sha256": "2bb0a5a8439f692fa1abe4b7cae710e4773806db4f24cf812976e51622058b64"
+    },
+    {
+      "binding_declared_sha256": "bdad6b4dc7c934931b6f00c899c2a5b3f693d30dc2d082bce5e145200b3abc9d",
+      "exists_in_zip": true,
+      "note": "Generated evidence changed after prior binding; actual export member digest is recorded for audit replay.",
+      "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl",
+      "receipt_actual_sha256": "4f1e97b4c59ce10b2229ec776d6d55b2a62017708a3dac239e9b93fab72a3822",
+      "verdict": "PASS_REPLAYED_CURRENT_MUTABLE_GENERATED_ARTIFACT",
+      "zip_member": "Metablooms_OS/runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl",
+      "zip_member_sha256": "4f1e97b4c59ce10b2229ec776d6d55b2a62017708a3dac239e9b93fab72a3822"
+    },
+    {
+      "binding_declared_sha256": "ee57178357e691b1fcc03ef99c0e6f3e4cbcd51f24f07289a82a507dbc6b7626",
+      "exists_in_zip": true,
+      "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/stage9_validator.json",
+      "receipt_actual_sha256": "ee57178357e691b1fcc03ef99c0e6f3e4cbcd51f24f07289a82a507dbc6b7626",
+      "verdict": "PASS_EXACT",
+      "zip_member": "Metablooms_OS/runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/stage9_validator.json",
+      "zip_member_sha256": "ee57178357e691b1fcc03ef99c0e6f3e4cbcd51f24f07289a82a507dbc6b7626"
+    }
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS",
+  "verdict": "PASS"
+}

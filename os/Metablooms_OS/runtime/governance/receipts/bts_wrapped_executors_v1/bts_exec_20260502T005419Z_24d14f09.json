@@ -1,0 +1,46 @@
+{
+  "bts_receipt_id": "T1-STAGE6G_PRE_HANDOFF_20260502T005353Z_filesystem_write_artifact-20260502T005419Z",
+  "bts_turn_committed": true,
+  "implementation_reality": {
+    "actual_files": [
+      "/mnt/data/Metablooms_OS/runtime/handoffs/METABLOOMS_STAGE6G_PRE_EXPORT_HANDOFF_20260502T005353Z.json"
+    ],
+    "claimed_files": [
+      "/mnt/data/Metablooms_OS/runtime/handoffs/METABLOOMS_STAGE6G_PRE_EXPORT_HANDOFF_20260502T005353Z.json"
+    ],
+    "unclaimed": [],
+    "unfulfilled": [],
+    "verdict": "PASS"
+  },
+  "kind": "filesystem_write",
+  "policy_decision": {
+    "decided_at_utc": "2026-05-02T00:54:19Z",
+    "decision": "ALLOW",
+    "decision_id": "decision_1777683259665_81ce5e95",
+    "enforced_by": "pre_tool_action_gate_v1",
+    "envelope_id": "STAGE6G_PRE_HANDOFF_20260502T005353Z_filesystem_write",
+    "envelope_sha256": "4cb019998ffb6684c945829b628644cf3c7532ae831b572f20c07807d0f374c1",
+    "matched_rules": [
+      "schema.required",
+      "path.safety",
+      "runaway.breaker",
+      "method.reliability"
+    ],
+    "rationale": "Envelope passed schema, method, path, SEE, approval, and bounded-budget checks.",
+    "reason_code": "LOW_RISK_BOUNDED_ACTION",
+    "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/STAGE6G_PRE_HANDOFF_20260502T005353Z_filesystem_write.decision.json",
+    "required_next_action": "execute_action_and_write_action_receipt",
+    "safe_to_execute": true,
+    "schema_version": "PolicyDecision_v1",
+    "stage_id": "STAGE6G_FULL_AUTHORITY_EXPORT_WITH_EXPLICIT_BUDGET_APPROVAL_USING_BTS_NODE_ZIP_PROFILE"
+  },
+  "receipt_id": "bts_exec_20260502T005419Z_24d14f09",
+  "schema": "mb.bts_wrapped_executors.v1",
+  "stage_id": "STAGE6G_FULL_AUTHORITY_EXPORT_WITH_EXPLICIT_BUDGET_APPROVAL_USING_BTS_NODE_ZIP_PROFILE",
+  "target": "/mnt/data/Metablooms_OS/runtime/handoffs/METABLOOMS_STAGE6G_PRE_EXPORT_HANDOFF_20260502T005353Z.json",
+  "target_bytes": 469,
+  "target_sha256": "d4c3fbff7c02e15c911a48fbdb4bcd2ed6c003c870e18bddc9c9607b8c365667",
+  "timestamp_utc": "2026-05-02T00:54:19.864180Z",
+  "turn_id": "STAGE6G_PRE_HANDOFF_20260502T005353Z",
+  "verdict": "PASS"
+}

@@ -1,0 +1,87 @@
+### GOVERNANCE HEADER
+# purpose: Ensure LibCST is available for governed Python code patching/codemod work.
+# mutation_scope: vendor dependency bootstrap only
+# invariants_enforced: coding_dependency_probe_required, libcst_required_for_python_code_transforms, vendor_path_preferred, post_install_import_verification_required, no_regex_only_structural_code_patching
+# risk_level: mutation-safe
+###
+
+import argparse
+import json
+import subprocess
+import sys
+import time
+from pathlib import Path
+
+ROOT = Path("/mnt/data/Metablooms_OS_refined")
+VENDOR = ROOT / "0_kernel" / "vendor" / "python"
+RECEIPT_DIR = ROOT / "0_kernel" / "registry"
+RECEIPT = RECEIPT_DIR / "LIBCST_BOOTSTRAP_RECEIPT_latest.json"
+
+def can_import_libcst_from_vendor():
+    if str(VENDOR) not in sys.path:
+        sys.path.insert(0, str(VENDOR))
+    try:
+        import libcst as cst
+        module = cst.parse_module("x = 1\n")
+        return True, {"module_type": type(module).__name__, "code": module.code.strip(), "parse_module": True}
+    except Exception as e:
+        return False, {"error": repr(e)}
+
+def install_libcst():
+    VENDOR.mkdir(parents=True, exist_ok=True)
+    cmd = [sys.executable, "-m", "pip", "install", "--target", str(VENDOR), "libcst"]
+    result = subprocess.run(cmd, capture_output=True, text=True)
+    return {
+        "cmd": cmd,
+        "returncode": result.returncode,
+        "stdout_tail": result.stdout[-4000:],
+        "stderr_tail": result.stderr[-4000:]
+    }
+
+def write_receipt(receipt):
+    RECEIPT_DIR.mkdir(parents=True, exist_ok=True)
+    RECEIPT.write_text(json.dumps(receipt, indent=2), encoding="utf-8")
+
+def main():
+    parser = argparse.ArgumentParser(description="Ensure LibCST is available for governed code patching.")
+    parser.add_argument("--install-if-missing", action="store_true", help="Attempt pip install into OS vendor path if LibCST is missing.")
+    args = parser.parse_args()
+
+    before_ok, before_detail = can_import_libcst_from_vendor()
+
+    install_result = None
+    if not before_ok and args.install_if_missing:
+        install_result = install_libcst()
+
+    after_ok, after_detail = can_import_libcst_from_vendor()
+
+    receipt = {
+        "version": "1.0",
+        "created_at": time.time(),
+        "status": "PASS" if after_ok else "FAIL",
+        "vendor_path": str(VENDOR),
+        "before_import_ok": before_ok,
+        "before_detail": before_detail,
+        "install_attempted": install_result is not None,
+        "install_result": install_result,
+        "after_import_ok": after_ok,
+        "after_detail": after_detail,
+        "usage_contract": {
+            "preferred_for": "format-preserving Python code transforms and codemods",
+            "fallback": "Python ast + safe_code_patch_helpers_v1.py",
+            "forbidden": "regex-only structural code patching"
+        }
+    }
+    write_receipt(receipt)
+
+    if after_ok:
+        print("LIBCST_AVAILABLE")
+        print(json.dumps(receipt, indent=2))
+        return 0
+
+    print("LIBCST_UNAVAILABLE")
+    print(json.dumps(receipt, indent=2))
+    return 1
+
+if __name__ == "__main__":
+    raise SystemExit(main())

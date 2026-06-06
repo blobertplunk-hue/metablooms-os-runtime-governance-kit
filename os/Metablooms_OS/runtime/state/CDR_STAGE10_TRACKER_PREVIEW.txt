@@ -1,0 +1,9 @@
+TRACKER PREVIEW — CDR_STAGE10_REAL_SCANNER_ADAPTER_INSTALL_PROFILES_OR_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE9
+Status: PASS
+Installed: real scanner adapter/install profiles, scanner adapter policy, packet schema, active invariant, gate, fixtures, eval, SEE/CE packets.
+Decision: install profiles only; no ungoverned scanner installation and no full authority export in this stage.
+Scanner availability: [{'tool': 'ruff', 'available': False, 'path': None, 'version': None}, {'tool': 'bandit', 'available': False, 'path': None, 'version': None}, {'tool': 'semgrep', 'available': False, 'path': None, 'version': None}]
+Gate: PASS — valid profile/fallback packet allowed; missing fallback/blocking availability packet denied.
+All CDR evals: PASS (9/9).
+Authority export: NOT PERFORMED.
+Next best stage: CDR_STAGE11_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE2_TO_STAGE10_RECONSTRUCTED_CHAIN.

@@ -1,0 +1,8 @@
+{
+  "implementation_decision": "Install a forward-enforcing MPP/CDR binding gate rather than rewriting all historical MPP artifacts in one stage.",
+  "risk": "medium",
+  "schema": "CE_v1",
+  "stage": "MPP_CDR_BINDING_STAGE14_CODE_WORK_REQUIRES_CDR_IN_MPP",
+  "synthesis": "CDR is a subgate of MPP. MPP compliance for code-bearing stages is invalid unless CDR passes and its evidence is bound to the stage receipt.",
+  "why_smallest_valid_change": "A binding invariant plus gate blocks future bypass without risky mass edits."
+}

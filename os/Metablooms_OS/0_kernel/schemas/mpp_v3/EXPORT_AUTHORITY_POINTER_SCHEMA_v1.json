@@ -1,0 +1,34 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/EXPORT_AUTHORITY_POINTER_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "result_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "mpp.export_authority_pointer.v1"
+    },
+    "status": {
+      "enum": [
+        "PROMOTED",
+        "BLOCKED"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "pointer_id",
+    "created_at",
+    "authority_zip",
+    "authority_sha256",
+    "authority_sidecar",
+    "stage_range",
+    "status",
+    "next_recommended_stage",
+    "result_hash"
+  ],
+  "title": "MPP v3 Export Authority Pointer",
+  "type": "object"
+}

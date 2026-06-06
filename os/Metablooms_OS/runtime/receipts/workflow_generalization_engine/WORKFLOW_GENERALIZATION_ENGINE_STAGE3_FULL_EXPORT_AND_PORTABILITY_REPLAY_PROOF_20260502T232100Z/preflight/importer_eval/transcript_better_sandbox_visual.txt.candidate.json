@@ -1,0 +1,67 @@
+{
+  "candidates": [
+    {
+      "lesson_id": "transcript_candidate_6b755560af01",
+      "source": {
+        "type": "transcript_import",
+        "path": "/mnt/data/Metablooms_OS/tests/evals/workflow_generalization/fixtures/transcript_better_sandbox_visual.txt",
+        "sha256": "0a21c14892d7e3cfd7214a7a33185c43d00a51eb3792ec5644a844989a689b70"
+      },
+      "evidence": {
+        "summary": "Robert: From now on, when we make HTML or tracker tools, the system should automatically use the visual presentation gate and browser render resolver. It should stay sandbox-first because I am usually on Android and /mnt/data, and PC tools should only be an addendum. When browser screenshot fails, record the method reliability and use WeasyPrint proxy honestly. Build a router, ledger, fixture, and receipt so I do not have to explain this again.",
+        "strength": 0.72,
+        "excerpt_count": 1,
+        "tags": [
+          "directive",
+          "sandbox",
+          "visual_browser"
+        ],
+        "excerpts": [
+          {
+            "line": 1,
+            "text": "Robert: From now on, when we make HTML or tracker tools, the system should automatically use the visual presentation gate and browser render resolver. It should stay sandbox-first because I am usually on Android and /mnt/data, and PC tools should only be an addendum. When browser screenshot fails, record the method reliability and use WeasyPrint proxy honestly. Build a router, ledger, fixture, and receipt so I do not have to explain this again.",
+            "tags": [
+              "directive",
+              "sandbox",
+              "visual_browser"
+            ]
+          }
+        ]
+      },
+      "baseline_comparison": {
+        "current_behavior": "Use current OS routing, gates, resolvers, ledgers, fixtures, and sandbox-first defaults.",
+        "proposed_behavior": "Adopt transcript-derived workflow lesson only if it improves current behavior and can be artifactized.",
+        "score_current": {
+          "reliability": 3,
+          "sandbox_fit": 4,
+          "automation": 3,
+          "honesty": 4,
+          "artifactization": 3
+        },
+        "score_candidate": {
+          "reliability": 5,
+          "sandbox_fit": 5,
+          "automation": 5,
+          "honesty": 5,
+          "artifactization": 5
+        },
+        "regression_flags": []
+      },
+      "auto_include": [
+        "WORKFLOW_GENERALIZATION_ENGINE",
+        "BROWSER_RENDER_CAPABILITY_RESOLVER",
+        "VISUAL_PRESENTATION_QUALITY_GATE"
+      ],
+      "artifactization": {
+        "required": true,
+        "minimum_artifacts": [
+          "ledger_event",
+          "router_candidate",
+          "fixture_or_receipt"
+        ],
+        "candidate_kind": "transcript_lesson"
+      },
+      "import_decision_hint": "eligible_for_router_comparison"
+    }
+  ]
+}

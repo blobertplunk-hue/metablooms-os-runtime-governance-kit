@@ -1,0 +1,53 @@
+{
+  "agent_cli_controls": [
+    "--json accepted before or after subcommand",
+    "stdout is data",
+    "run-stage defaults to dry-run work-order creation",
+    "run-stage work orders include thread_id and checkpoint_id",
+    "tracker is read-only unless --write is supplied",
+    "execute is fail-closed when only the contract adapter exists"
+  ],
+  "artifact_type": "MB_CLI_COMMAND_SPEC_v3",
+  "command": "mb",
+  "commands": [
+    {
+      "contract": "Show one-screen runtime state and latest receipt/handoff.",
+      "name": "status"
+    },
+    {
+      "contract": "Run bounded boot smoke and surface boot verdict/receipt.",
+      "name": "boot"
+    },
+    {
+      "contract": "Verify critical operator-surface, runner-contract, tracker-preview, and boot artifacts.",
+      "name": "verify"
+    },
+    {
+      "contract": "Run non-destructive diagnostic checks with JSON evidence and remediations.",
+      "name": "doctor"
+    },
+    {
+      "contract": "Render compact tracker preview from runtime/state/TRACKER_STATE_v1.json.",
+      "name": "tracker"
+    },
+    {
+      "contract": "Prepare a checkpointed bounded governed stage work order; execute only through stage_runner_v1 contract adapter and future real executor.",
+      "name": "run-stage"
+    },
+    {
+      "contract": "Dry-run latest handoff continuation without executing new work.",
+      "name": "replay"
+    },
+    {
+      "contract": "Create a compressed complete OS ZIP plus checksum sidecar.",
+      "name": "export"
+    }
+  ],
+  "created_utc": "20260501T111500Z",
+  "purpose": "Add checkpointed stage-runner contract and tracker preview to the compact operator surface.",
+  "research_bindings": [
+    "LangGraph checkpoint/thread_id persistence and interrupt resume pattern",
+    "OpenTelemetry trace/span vocabulary for later trace ledger alignment",
+    "agent-friendly CLI structured output/dry-run/idempotence principles"
+  ]
+}

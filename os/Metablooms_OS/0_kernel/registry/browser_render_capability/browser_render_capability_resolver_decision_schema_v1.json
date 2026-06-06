@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "android_sandbox_primary": {
+      "type": "boolean"
+    },
+    "artifact_type": {
+      "type": "string"
+    },
+    "decision": {
+      "enum": [
+        "ALLOW_BROWSER_SCREENSHOT",
+        "ALLOW_RENDER_PROXY_WITH_LIMITATION",
+        "ALLOW_STATIC_ONLY_WITH_LIMITATION",
+        "DENY_PRODUCTION_PROMOTION"
+      ]
+    },
+    "environment": {
+      "enum": [
+        "chatgpt_sandbox",
+        "android_chatgpt_sandbox",
+        "pc_powershell",
+        "ci",
+        "unknown"
+      ]
+    },
+    "honesty_label": {
+      "enum": [
+        "full_browser_replay",
+        "sandbox_render_proxy",
+        "static_only_limited",
+        "blocked"
+      ]
+    },
+    "method_attempts": {
+      "items": {
+        "properties": {
+          "attempt_policy": {
+            "enum": [
+              "try_if_binary_present",
+              "try_if_bundle_present",
+              "try_install_if_network_available",
+              "skip_if_prior_same_turn_hard_fail",
+              "always_available_static"
+            ]
+          },
+          "failure_class_if_failed": {
+            "type": "string"
+          },
+          "method_id": {
+            "type": "string"
+          },
+          "priority": {
+            "minimum": 1,
+            "type": "integer"
+          },
+          "success_criteria": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "method_id",
+          "priority",
+          "attempt_policy",
+          "success_criteria",
+          "failure_class_if_failed"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "pc_addendum_available": {
+      "type": "boolean"
+    },
+    "requested_proof_tier": {
+      "enum": [
+        "browser_screenshot_required",
+        "browser_screenshot_preferred",
+        "render_proxy_allowed",
+        "static_only_allowed"
+      ]
+    },
+    "selected_method": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "artifact_type",
+    "environment",
+    "requested_proof_tier",
+    "method_attempts",
+    "selected_method",
+    "decision",
+    "honesty_label"
+  ],
+  "title": "Browser Render Capability Resolver Decision Schema v1",
+  "type": "object"
+}

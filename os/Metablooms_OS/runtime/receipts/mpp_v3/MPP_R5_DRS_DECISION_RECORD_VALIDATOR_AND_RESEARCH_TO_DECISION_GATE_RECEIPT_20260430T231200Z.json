@@ -1,0 +1,67 @@
+{
+  "artifacts": [
+    {
+      "bytes": 2454,
+      "path": "0_kernel/schemas/mpp_v3/DRS_DECISION_RECORD_SCHEMA_v1.json",
+      "sha256": "fc816b2998284d03512f04a02ce050da667b356d44572539d29ba4a7baa5fb66"
+    },
+    {
+      "bytes": 917,
+      "path": "0_kernel/schemas/mpp_v3/RESEARCH_TO_DECISION_GATE_SCHEMA_v1.json",
+      "sha256": "4951b3ac08a96ae64c2d2a94484951a80499343e88d98b40602645fd00031d46"
+    },
+    {
+      "bytes": 5651,
+      "path": "0_kernel/mpp_v3/mpp_v3_drs_decision_gate_v1.py",
+      "sha256": "ecc04092cef53d0e06dd79a4d0beaeae832820dedb6c306e1b6d302ef0c4fa05"
+    },
+    {
+      "bytes": 988,
+      "path": "tests/fixtures/mpp_v3/valid_normalized_evidence_for_drs_v1.json",
+      "sha256": "8866dbed4c91c8fd976f926cc5f5296aa3eea3dcd2a687c5ceb4d9dae4160682"
+    },
+    {
+      "bytes": 1577,
+      "path": "tests/fixtures/mpp_v3/valid_drs_decision_record_v1.json",
+      "sha256": "1d3414123a8da545082aa6cb0586a2ec77404e77da624aed128b2080a1288c5f"
+    },
+    {
+      "bytes": 1417,
+      "path": "tests/fixtures/mpp_v3/invalid_drs_one_alternative_v1.json",
+      "sha256": "6897a8b1cb1feb9d3fa1f2e4abf2cace9355a4ee650cdcbdf489548e11dec091"
+    },
+    {
+      "bytes": 1577,
+      "path": "tests/fixtures/mpp_v3/invalid_drs_unknown_atom_v1.json",
+      "sha256": "c4e4e59b43124b6aeb99a6dc96d762a738a1da00a0d89d5124b1c8926462eee8"
+    }
+  ],
+  "next_stage": "MPP_R6_CDR_CONSTRAINTS_SCHEMA_AND_POLICY_GATE",
+  "root": "/mnt/data/mbos_audit_extract_4945/Metablooms_OS",
+  "stage_id": "MPP_R5_DRS_DECISION_RECORD_VALIDATOR_AND_RESEARCH_TO_DECISION_GATE",
+  "status": "PASS",
+  "test_log": "R5_SMOKE_TESTS.jsonl",
+  "timestamp": "20260430T231200Z",
+  "web_evidence": [
+    {
+      "citation": "turn377534search0",
+      "claim": "The current JSON Schema version is 2020-12.",
+      "source": "JSON Schema"
+    },
+    {
+      "citation": "turn377534search6",
+      "claim": "Decision records make assumptions explicit and capture structured decisions.",
+      "source": "MADR"
+    },
+    {
+      "citation": "turn377534search5",
+      "claim": "ADRs commonly include decision statement, context, alternatives, criteria, consequences, related dependencies, status, and timestamps.",
+      "source": "TechTarget"
+    },
+    {
+      "citation": "turn377534search8",
+      "claim": "ADR records should include problem context, options considered, outcome, tradeoffs, and confidence.",
+      "source": "Microsoft Learn"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "approval_token_present": true,
+  "bts_receipt_id": "T1-STAGE6E_FIXTURE_EXPORT_export_zip_artifact-20260502T003016Z",
+  "bts_turn_committed": true,
+  "export_bytes": 253,
+  "export_path": "/mnt/data/Metablooms_OS/runtime/governance/executors/fixtures/stage6e/stage6e_fixture_export.zip",
+  "export_sha256": "73eac44395921cf063870327f2f0c934a2ac6b344c45ad5758e6bee9ec9b1e21",
+  "implementation_reality": {
+    "actual_files": [
+      "/mnt/data/Metablooms_OS/runtime/governance/executors/fixtures/stage6e/stage6e_fixture_export.zip"
+    ],
+    "claimed_files": [
+      "/mnt/data/Metablooms_OS/runtime/governance/executors/fixtures/stage6e/stage6e_fixture_export.zip"
+    ],
+    "unclaimed": [],
+    "unfulfilled": [],
+    "verdict": "PASS"
+  },
+  "kind": "export_zip",
+  "policy_decision": {
+    "decided_at_utc": "2026-05-02T00:30:16Z",
+    "decision": "ALLOW",
+    "decision_id": "decision_1777681816785_53752634",
+    "enforced_by": "pre_tool_action_gate_v1",
+    "envelope_id": "STAGE6E_FIXTURE_EXPORT_export_zip",
+    "envelope_sha256": "1798cefd1abf7c6a6e0540c0993fe00faec0558d9855eece030690e430a9e577",
+    "matched_rules": [
+      "schema.required",
+      "path.safety",
+      "runaway.breaker",
+      "method.reliability"
+    ],
+    "rationale": "Envelope passed schema, method, path, SEE, approval, and bounded-budget checks.",
+    "reason_code": "LOW_RISK_BOUNDED_ACTION",
+    "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/STAGE6E_FIXTURE_EXPORT_export_zip.decision.json",
+    "required_next_action": "execute_action_and_write_action_receipt",
+    "safe_to_execute": true,
+    "schema_version": "PolicyDecision_v1",
+    "stage_id": "STAGE6E_BTS_WRAP_EXPORT_AND_FILESYSTEM_EXECUTORS"
+  },
+  "receipt_id": "bts_exec_20260502T003017Z_0cfce892",
+  "schema": "mb.bts_wrapped_executors.v1",
+  "source_dir": "/mnt/data/Metablooms_OS/runtime/governance/executors/fixtures/stage6e/source_dir",
+  "stage_id": "STAGE6E_BTS_WRAP_EXPORT_AND_FILESYSTEM_EXECUTORS",
+  "timestamp_utc": "2026-05-02T00:30:17.290573Z",
+  "turn_id": "STAGE6E_FIXTURE_EXPORT",
+  "verdict": "PASS"
+}

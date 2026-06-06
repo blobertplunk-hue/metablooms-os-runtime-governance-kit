@@ -1,0 +1,284 @@
+{
+  "boot_validation": {
+    "boot_critical_loader_result": {
+      "checks": [
+        {
+          "name": "boot_required_gates_parseable",
+          "passed": true,
+          "path": "/mnt/data/Metablooms_OS_stage_prompt/Metablooms_OS/0_kernel/registry/BOOT_REQUIRED_GATES_v1.json"
+        },
+        {
+          "name": "required_file:0_kernel/chat_governance/CHAT_GOVERNANCE_KERNEL_v1.json",
+          "passed": true,
+          "path": "/mnt/data/Metablooms_OS_stage_prompt/Metablooms_OS/0_kernel/chat_governance/CHAT_GOVERNANCE_KERNEL_v1.json"
+        },
+        {
+          "name": "required_file:0_kernel/chat_governance/CARTRIDGE_SELECTION_POLICY_v1.json",
+          "passed": true,
+          "path": "/mnt/data/Metablooms_OS_stage_prompt/Metablooms_OS/0_kernel/chat_governance/CARTRIDGE_SELECTION_POLICY_v1.json"
+        },
+        {
+          "name": "required_file:0_kernel/chat_governance/TURN_LIFECYCLE_CONTRACT_v1.json",
+          "passed": true,
+          "path": "/mnt/data/Metablooms_OS_stage_prompt/Metablooms_OS/0_kernel/chat_governance/TURN_LIFECYCLE_CONTRACT_v1.json"
+        },
+        {
+          "name": "required_file:0_kernel/chat_governance/FINAL_RESPONSE_GATE_v1.json",
+          "passed": true,
+          "path": "/mnt/data/Metablooms_OS_stage_prompt/Metablooms_OS/0_kernel/chat_governance/FINAL_RESPONSE_GATE_v1.json"
+        },
+        {
+          "name": "required_file:0_kernel/registry/BOOT_REQUIRED_GATES_v1.json",
+          "passed": true,
+          "path": "/mnt/data/Metablooms_OS_stage_prompt/Metablooms_OS/0_kernel/registry/BOOT_REQUIRED_GATES_v1.json"
+        },
+        {
+          "name": "required_file:runtime/governance/boot_critical_governance_loader_v1.py",
+          "passed": true,
+          "path": "/mnt/data/Metablooms_OS_stage_prompt/Metablooms_OS/runtime/governance/boot_critical_governance_loader_v1.py"
+        },
+        {
+          "name": "required_file:runtime/governance/governance_scatter_prevention_v1.py",
+          "passed": true,
+          "path": "/mnt/data/Metablooms_OS_stage_prompt/Metablooms_OS/runtime/governance/governance_scatter_prevention_v1.py"
+        }
+      ],
+      "decision": "ALLOW",
+      "errors": [],
+      "manifest_id": "BOOT_REQUIRED_GATES_v1",
+      "warnings": []
+    },
+    "boot_manifest_summary": {
+      "boot_required_gates": {
+        "loader": "runtime/governance/boot_critical_governance_loader_v1.py",
+        "manifest": "0_kernel/registry/BOOT_REQUIRED_GATES_v1.json",
+        "must_run_before_governed_stage": true,
+        "scatter_validator": "runtime/governance/governance_scatter_prevention_v1.py",
+        "status": "active"
+      },
+      "current_stable_baseline": {
+        "baseline_export": "/mnt/data/METABLOOMS_OS_H0C1_BOOT_CRITICAL_GOVERNANCE_CONSOLIDATED_CLEAN_AUTHORITY_20260430T214500Z.zip",
+        "baseline_manifest": "/mnt/data/METABLOOMS_OS_H0C1_BOOT_CRITICAL_GOVERNANCE_CONSOLIDATED_CLEAN_AUTHORITY_20260430T214500Z.zip.sha256",
+        "boot_executor_integrated": true,
+        "boot_recovery_proven": true,
+        "boot_required_gates_integrated": true,
+        "chat_governance_integrated": true,
+        "governance_scatter_prevention_integrated": true,
+        "sandbox_governance_integrated": true,
+        "sha256_external_sidecar_required": true,
+        "status": "active_H0C1_boot_critical_governance_consolidated"
+      }
+    },
+    "check_count": 8,
+    "checks": [
+      {
+        "name": "root_exists",
+        "observed": {
+          "exists": true,
+          "is_dir": true,
+          "root": "/mnt/data/Metablooms_OS_stage_prompt/Metablooms_OS"
+        },
+        "passed": true
+      },
+      {
+        "name": "git_dir_exists",
+        "observed": {
+          "exists": false,
+          "path": "/mnt/data/Metablooms_OS_stage_prompt/Metablooms_OS/.git"
+        },
+        "passed": false
+      },
+      {
+        "name": "required_path:boot_manifest_v1.json",
+        "observed": {
+          "exists": true,
+          "is_file": true,
+          "path": "/mnt/data/Metablooms_OS_stage_prompt/Metablooms_OS/boot_manifest_v1.json",
+          "relative_path": "boot_manifest_v1.json",
+          "size_bytes": 14206
+        },
+        "passed": true
+      },
+      {
+        "name": "required_path:artifact_registry.json",
+        "observed": {
+          "exists": true,
+          "is_file": true,
+          "path": "/mnt/data/Metablooms_OS_stage_prompt/Metablooms_OS/artifact_registry.json",
+          "relative_path": "artifact_registry.json",
+          "size_bytes": 175692
+        },
+        "passed": true
+      },
+      {
+        "name": "required_path:0_kernel/scripts/boot_runtime_executor_v1.py",
+        "observed": {
+          "exists": true,
+          "is_file": true,
+          "path": "/mnt/data/Metablooms_OS_stage_prompt/Metablooms_OS/0_kernel/scripts/boot_runtime_executor_v1.py",
+          "relative_path": "0_kernel/scripts/boot_runtime_executor_v1.py",
+          "size_bytes": 6507
+        },
+        "passed": true
+      },
+      {
+        "name": "boot_manifest_parseable",
+        "observed": {
+          "keys": [
+            "boot_executor",
+            "boot_ready",
+            "boot_required_gates",
+            "ce_packet_validator",
+            "created_at",
+            "current_stable_baseline",
+            "entrypoints",
+            "execution_safety",
+            "export_recovery_validator",
+            "failures",
+            "governance_modules",
+            "host_enforcement_bridge",
+            "lessons_learned",
+            "master_pipeline_enforcement",
+            "notes",
+            "recovery_architecture",
+            "registry_path",
+            "registry_status",
+            "root",
+            "see_packet_validator",
+            "trigger_router_evaluator",
+            "updated_at",
+            "updated_at_utc",
+            "version"
+          ]
+        },
+        "passed": true
+      },
+      {
+        "name": "boot_critical_loader_present",
+        "observed": {
+          "path": "/mnt/data/Metablooms_OS_stage_prompt/Metablooms_OS/runtime/governance/boot_critical_governance_loader_v1.py"
+        },
+        "passed": true
+      },
+      {
+        "name": "boot_critical_governance_loader_allows",
+        "observed": {
+          "checks": [
+            {
+              "name": "boot_required_gates_parseable",
+              "passed": true,
+              "path": "/mnt/data/Metablooms_OS_stage_prompt/Metablooms_OS/0_kernel/registry/BOOT_REQUIRED_GATES_v1.json"
+            },
+            {
+              "name": "required_file:0_kernel/chat_governance/CHAT_GOVERNANCE_KERNEL_v1.json",
+              "passed": true,
+              "path": "/mnt/data/Metablooms_OS_stage_prompt/Metablooms_OS/0_kernel/chat_governance/CHAT_GOVERNANCE_KERNEL_v1.json"
+            },
+            {
+              "name": "required_file:0_kernel/chat_governance/CARTRIDGE_SELECTION_POLICY_v1.json",
+              "passed": true,
+              "path": "/mnt/data/Metablooms_OS_stage_prompt/Metablooms_OS/0_kernel/chat_governance/CARTRIDGE_SELECTION_POLICY_v1.json"
+            },
+            {
+              "name": "required_file:0_kernel/chat_governance/TURN_LIFECYCLE_CONTRACT_v1.json",
+              "passed": true,
+              "path": "/mnt/data/Metablooms_OS_stage_prompt/Metablooms_OS/0_kernel/chat_governance/TURN_LIFECYCLE_CONTRACT_v1.json"
+            },
+            {
+              "name": "required_file:0_kernel/chat_governance/FINAL_RESPONSE_GATE_v1.json",
+              "passed": true,
+              "path": "/mnt/data/Metablooms_OS_stage_prompt/Metablooms_OS/0_kernel/chat_governance/FINAL_RESPONSE_GATE_v1.json"
+            },
+            {
+              "name": "required_file:0_kernel/registry/BOOT_REQUIRED_GATES_v1.json",
+              "passed": true,
+              "path": "/mnt/data/Metablooms_OS_stage_prompt/Metablooms_OS/0_kernel/registry/BOOT_REQUIRED_GATES_v1.json"
+            },
+            {
+              "name": "required_file:runtime/governance/boot_critical_governance_loader_v1.py",
+              "passed": true,
+              "path": "/mnt/data/Metablooms_OS_stage_prompt/Metablooms_OS/runtime/governance/boot_critical_governance_loader_v1.py"
+            },
+            {
+              "name": "required_file:runtime/governance/governance_scatter_prevention_v1.py",
+              "passed": true,
+              "path": "/mnt/data/Metablooms_OS_stage_prompt/Metablooms_OS/runtime/governance/governance_scatter_prevention_v1.py"
+            }
+          ],
+          "decision": "ALLOW",
+          "errors": [],
+          "manifest_id": "BOOT_REQUIRED_GATES_v1",
+          "warnings": []
+        },
+        "passed": true
+      }
+    ],
+    "created_at": 1777583112.4387352,
+    "issues": [],
+    "pass_count": 7,
+    "receipt_path": "/mnt/data/Metablooms_OS_stage_prompt/Metablooms_OS/0_kernel/registry/PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_1/boot_receipts/BOOT_RECEIPT_1777583112438.json",
+    "root": "/mnt/data/Metablooms_OS_stage_prompt/Metablooms_OS",
+    "stage": "BOOT_RUNTIME_EXECUTOR_H0C1",
+    "verdict": "PASS_WITH_WARNINGS",
+    "version": "1.2",
+    "warnings": [
+      "git_dir_missing"
+    ]
+  },
+  "created_utc": "2026-04-30T21:05:12Z",
+  "improved": [
+    "artifact_registry prompt cartridge entries",
+    "runtime reusable asset index"
+  ],
+  "newly_installed": [
+    "runtime/cartridges/prompt_governance_v1"
+  ],
+  "prompt_cartridge_validation": {
+    "checks": [
+      {
+        "name": "exists:CARTRIDGE_MANIFEST.json",
+        "passed": true
+      },
+      {
+        "name": "exists:PROMPT_ENGINE_CONTRACT_v1.json",
+        "passed": true
+      },
+      {
+        "name": "exists:PROMPT_PROFILE_REGISTRY_v1.json",
+        "passed": true
+      },
+      {
+        "name": "exists:PROMPT_FAILURE_TAXONOMY_v1.json",
+        "passed": true
+      },
+      {
+        "name": "exists:PROMPT_WEAKNESS_LEDGER_TEMPLATE_v1.json",
+        "passed": true
+      },
+      {
+        "name": "exists:PROMPT_PATCH_WRITEBACK_PROTOCOL_v1.json",
+        "passed": true
+      },
+      {
+        "name": "exists:PROMPT_OUTPUT_RULES_v1.json",
+        "passed": true
+      },
+      {
+        "name": "exists:PROMPT_REUSABLE_ASSET_INDEXING_RULES_v1.json",
+        "passed": true
+      },
+      {
+        "name": "exists:PROMPT_CARTRIDGE_INSTALLATION_METADATA_v1.json",
+        "passed": true
+      }
+    ],
+    "decision": "ALLOW",
+    "errors": []
+  },
+  "repaired": [
+    "boot critical governance loader",
+    "boot required gates manifest",
+    "governance scatter validator placeholder enforcement hook"
+  ],
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_1"
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": "v1",
+  "stage": "WC_STAGE4_OPERATOR_EXPERIENCE_AND_BOOT_AUTHORITY_POLISH",
+  "operator_friction_fixes": [
+    "clear bootable bundle label",
+    "no unlabeled delta-only handoff when full export possible",
+    "copy-ready next prompt generated at exit",
+    "authority manifest lists included prior stages",
+    "blocked bundles explicitly labeled non-authority"
+  ],
+  "external_basis": [
+    "platform-as-product cognitive-load reduction",
+    "SRE recurrence prevention",
+    "observable authority metadata"
+  ]
+}

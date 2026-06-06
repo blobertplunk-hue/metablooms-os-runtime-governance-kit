@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-04-28T02:58:11Z",
+  "decision_id": "R5_GATE_REGISTRY_AND_WIRING_REPLACEMENT-6099476a63312103",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"blockers\": [], \"created_utc\": \"2026-04-28T02:58:11Z\", \"next_actions\": [\"Promote/refactor P0A external reuse scan into evidence-bound gate.\", \"Create external reuse scan input schema and policy contract.\", \"Register the active R6 gate only after pass/fail/defer fixtures prove evidence binding.\"], \"next_stage\": \"R6_EVIDENCE_BOUND_EXTERNAL_REUSE_SCAN_GATE\", \"registry\": \"runtime/governance/registries/gate_registry_v1.json\", \"stage\": \"R5_GATE_REGISTRY_AND_WIRING_REPLACEMENT\", \"verdict\": \"PASS\"}",
+  "reasons": [],
+  "record_id": "R5_HANDOFF_20260428T025601Z",
+  "record_kind": "handoff",
+  "result": "pass",
+  "source_record": {
+    "path": "receipts/refactor_program/R5_HANDOFF_20260428T025601Z.json",
+    "sha256": "6099476a633121038e40a15f65ef57ccd8f22f4c4b2b5451b95a5a3a09bff940",
+    "size_bytes": 529
+  },
+  "span_id": "f60f68cca14c52ea",
+  "stage_id": "R5_GATE_REGISTRY_AND_WIRING_REPLACEMENT",
+  "summary": "Canonical wrapper for R5_HANDOFF_20260428T025601Z.json",
+  "trace_id": "1fdf13245d5272b64269495d8cb16409"
+}

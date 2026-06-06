@@ -1,0 +1,5 @@
+{
+  "expect_profile": "governed_implementation",
+  "expect_task_type": "audit",
+  "prompt": "audit the OS files and validate what is missing or broken"
+}

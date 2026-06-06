@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "created_at": 1777068405.232377,
+  "stage": "G6_RECOVERY_PROOF_BASELINE_LOCK",
+  "status": "complete_locked",
+  "inputs": {
+    "g5_handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G5_TO_G6_HANDOFF_v1.json",
+    "g5_receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G5_REPAIRED_RECOVERY_PROVEN_EXPORT_RECEIPT_v1.json"
+  },
+  "outputs": {
+    "export_zip": "/mnt/data/exports/MetaBlooms_OS_refined_G6_SELF_CONSISTENT_BASELINE_LOCK_1777068405.zip",
+    "download_copy": "/mnt/data/MetaBlooms_OS_refined_G6_SELF_CONSISTENT_BASELINE_LOCK_1777068405.zip",
+    "sidecar": "/mnt/data/exports/MetaBlooms_OS_refined_G6_SELF_CONSISTENT_BASELINE_LOCK_1777068405.zip.sha256.json",
+    "download_sidecar": "/mnt/data/MetaBlooms_OS_refined_G6_SELF_CONSISTENT_BASELINE_LOCK_1777068405.zip.sha256.json",
+    "validator_decision": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_G6_EXTERNAL_DECISION_v1.json",
+    "recovery_proof": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G6_RECOVERY_PROOF_v1.json",
+    "baseline_lock": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G6_RECOVERY_PROVEN_BASELINE_LOCK_v1.json",
+    "dag_ledger_map": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/STAGE_DAG_LEDGER_ID_MAP_v1.json",
+    "audit_resolution": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G6_G5_AUDIT_OPEN_ISSUES_RESOLUTION_v1.json",
+    "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G6_RECOVERY_PROOF_BASELINE_LOCK_RECEIPT_v1.json",
+    "handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G6_TO_G7_HANDOFF_v1.json"
+  },
+  "two_pass_strategy": true,
+  "verdict": "PASS",
+  "next_improvement_task": "G7 \u2014 Return to E4B",
+  "next_correct_command": "EXECUTE G7 \u2014 RETURN TO E4B"
+}

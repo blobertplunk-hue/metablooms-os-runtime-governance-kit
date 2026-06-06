@@ -1,0 +1,12 @@
+{
+  "artifact_type": "MB_PROMOTED_EVIDENCE_RECOVERY_REPLAY_POLICY.v1",
+  "created_utc": "20260502T191509Z",
+  "rules": [
+    "Replay must read the exported ZIP directly, not only the working tree.",
+    "The promoted pinned-evidence receipt and export binding must exist in the ZIP.",
+    "Every bound evidence path must exist in the ZIP.",
+    "Exact SHA matches are required for immutable/non-generated artifacts. Mutable generated ledgers may be recorded as replayed-current if the actual ZIP member digest differs from a prior declared digest.",
+    "Audit query packs must include ranked evidence paths and digest fields."
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE15_PROMOTED_EVIDENCE_RECOVERY_REPLAY_AND_AUDIT_QUERY_PACKS"
+}

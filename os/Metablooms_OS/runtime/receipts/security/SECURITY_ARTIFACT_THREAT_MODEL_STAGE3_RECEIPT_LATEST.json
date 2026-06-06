@@ -1,0 +1,29 @@
+{
+  "artifact_type": "SECURITY_ARTIFACT_THREAT_MODEL_STAGE3_RECEIPT_v1",
+  "created_utc": "20260501T123800Z",
+  "hardwired_gates": [
+    "MBSEC-GATE-001",
+    "MBSEC-GATE-002",
+    "MBSEC-GATE-003",
+    "MBSEC-GATE-004",
+    "MBSEC-GATE-005",
+    "MBSEC-GATE-006",
+    "MBSEC-GATE-007",
+    "MBSEC-GATE-008"
+  ],
+  "implemented": [
+    "security_gate_enforcer_v1.py",
+    "export_promotion_gate_v1.py",
+    "stage_runner pre-executor security gate",
+    "cartridge_executor fallback security gate",
+    "mb export promotion gate",
+    "stage3 validator and work-order fixtures"
+  ],
+  "research_basis": {
+    "nist_ai_rmf": "Govern Map Measure Manage",
+    "owasp_llm": "prompt injection, supply chain, improper output handling, excessive agency, unbounded consumption",
+    "slsa": "artifact integrity and provenance"
+  },
+  "stage": "IMPLEMENT_SECURITY_ARTIFACT_THREAT_MODEL_STAGE_3_HARD_WIRE_GATES_INTO_RUNNER_AND_EXPORT_PROMOTION",
+  "verdict": "PASS"
+}

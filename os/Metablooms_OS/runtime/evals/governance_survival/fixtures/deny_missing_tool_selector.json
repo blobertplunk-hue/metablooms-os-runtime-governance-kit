@@ -1,0 +1,5 @@
+{
+  "remove_paths": [
+    "runtime/governance/tool_selection_evidence_router_v1.py"
+  ]
+}

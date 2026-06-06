@@ -1,0 +1,164 @@
+{
+  "cartridge_id": "verification_critic_v2",
+  "name": "Verification Critic v2",
+  "type": "core_governance",
+  "purpose": "System-aware validation engine that enforces fail-closed behavior, validates artifacts against contracts, verifies dependencies, and integrates artifact-level truth checks.",
+  "task_types": [
+    "validation",
+    "quality_control",
+    "artifact_verification",
+    "contract_enforcement",
+    "error_detection",
+    "system_dependency_validation"
+  ],
+  "platform": [
+    "robert",
+    "shaye",
+    "both"
+  ],
+  "input_contract": {
+    "required": [
+      "stage_output",
+      "artifact_contract"
+    ],
+    "optional": [
+      "task_objective",
+      "stage_goal",
+      "prior_artifacts",
+      "continuity_packet",
+      "tool_used",
+      "preflight_status",
+      "routing_status",
+      "ledger_status",
+      "artifact_reference",
+      "artifact_audit_status"
+    ]
+  },
+  "output_contract": {
+    "artifacts": [
+      "validation_report"
+    ],
+    "format": "structured_json_or_markdown",
+    "must_include": [
+      "status",
+      "checks_run",
+      "passed_checks",
+      "failed_checks",
+      "issues",
+      "required_fix",
+      "next_action"
+    ]
+  },
+  "execution_mode": "validate",
+  "external_tools": [],
+  "validation_rules": [
+    "must_check_contract_completeness",
+    "must_check_artifact_usability",
+    "must_check_consistency_with_objective",
+    "must_check_tool_executability",
+    "must_check_for_hallucination",
+    "must_verify_preflight_occurred_if_required",
+    "must_verify_routing_occurred_if_required",
+    "must_verify_ledger_recorded_if_required",
+    "must_integrate_artifact_auditor_if_artifact_present",
+    "must_enforce_deterministic_output_order",
+    "must_validate_own_output_schema",
+    "must_fail_closed_on_critical_errors"
+  ],
+  "failure_modes": [
+    "missing_required_artifact",
+    "incomplete_output",
+    "invalid_format",
+    "non_executable_instructions",
+    "tool_mismatch",
+    "hallucinated_content",
+    "missing_preflight",
+    "missing_routing",
+    "missing_ledger",
+    "artifact_not_verified",
+    "non_deterministic_output"
+  ],
+  "status": "active",
+  "validation_schema": {
+    "contract_validation": {
+      "checks": [
+        "artifact_exists",
+        "required_fields_present",
+        "correct_format"
+      ]
+    },
+    "completeness_check": {
+      "checks": [
+        "no_missing_steps",
+        "no_implicit_requirements",
+        "fully_executable_output"
+      ]
+    },
+    "consistency_check": {
+      "checks": [
+        "matches_objective",
+        "matches_stage_goal",
+        "aligned_with_prior_decisions"
+      ]
+    },
+    "tool_check": {
+      "checks": [
+        "tool_is_correct",
+        "steps_match_tool",
+        "output_is_usable_in_tool"
+      ]
+    },
+    "hallucination_check": {
+      "checks": [
+        "no_fabricated_claims",
+        "no_fake_execution",
+        "grounded_output"
+      ]
+    },
+    "dependency_check": {
+      "checks": [
+        "preflight_completed",
+        "routing_completed",
+        "ledger_recorded"
+      ]
+    },
+    "artifact_truth_check": {
+      "checks": [
+        "artifact_verified_by_auditor"
+      ]
+    },
+    "determinism_check": {
+      "checks": [
+        "consistent_output_order",
+        "stable_field_structure"
+      ]
+    },
+    "self_validation_check": {
+      "checks": [
+        "output_matches_schema"
+      ]
+    }
+  },
+  "validation_output_schema": {
+    "status": "PASS | FAIL",
+    "checks_run": [],
+    "passed_checks": [],
+    "failed_checks": [],
+    "issues": [],
+    "required_fix": [],
+    "next_action": "proceed | retry | fix | halt"
+  },
+  "enforcement_rules": [
+    "if artifact_reference provided and artifact_audit_status != PASS -> FAIL",
+    "if preflight required and preflight_status != PASS -> FAIL",
+    "if routing required and routing_status != PASS -> FAIL",
+    "if ledger required and ledger_status != PASS -> FAIL",
+    "if any critical check fails -> FAIL",
+    "if output schema invalid -> FAIL"
+  ],
+  "determinism_rules": [
+    "sort_checks_alphabetically",
+    "sort_issues_by_severity",
+    "fixed_field_order_output"
+  ]
+}

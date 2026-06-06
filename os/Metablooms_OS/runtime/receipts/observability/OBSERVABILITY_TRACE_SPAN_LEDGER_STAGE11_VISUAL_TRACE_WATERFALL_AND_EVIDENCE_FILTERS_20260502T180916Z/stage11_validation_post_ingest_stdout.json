@@ -1,0 +1,182 @@
+{
+  "cmd": [
+    "/opt/pyvenv/bin/python3",
+    "/mnt/data/Metablooms_OS/0_kernel/validators/validate_observability_trace_span_ledger_stage11_visual_waterfall_v1.py",
+    "--root",
+    "/mnt/data/Metablooms_OS",
+    "--json"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "stdout": {
+    "artifact_type": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_WATERFALL_VALIDATION.v1",
+    "checks": [
+      {
+        "exists_nonempty": true,
+        "path": "0_kernel/registry/observability/MB_VISUAL_TRACE_WATERFALL_EVIDENCE_FILTERS_SCHEMA_v1.json",
+        "sha256": "1ca8c788cf688bb345e9cff80f760818bf550964b549c9a7eab71e665698ca47"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "0_kernel/registry/observability/MB_VISUAL_TRACE_WATERFALL_EVIDENCE_FILTERS_POLICY_v1.json",
+        "sha256": "31c53c88527410e0e8d30fd451af72ab852d2ce1e6270c267d5bea0717fb01af"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "0_kernel/scripts/observability_visual_trace_waterfall_renderer_v1.py",
+        "sha256": "4e131775cb0b2e9042ca665e2c8d8b05302243f5223d5e3479f441bc383f532a"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "runtime/state/operator_surface/VISUAL_TRACE_WATERFALL_LATEST.json",
+        "sha256": "2bb0a5a8439f692fa1abe4b7cae710e4773806db4f24cf812976e51622058b64"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "runtime/state/operator_surface/VISUAL_TRACE_WATERFALL_LATEST.md",
+        "sha256": "442b3b6979c3d4931fc7eb8118ab13515579913169a31ad1cd9e6dd3f2b4cfc9"
+      },
+      {
+        "exists_nonempty": true,
+        "path": "OPEN_OPERATOR_VISUAL_TRACKER.html",
+        "sha256": "cb65d708102be88ed568dbadc7b9f00f5d90f4b0e7a963224c8a75e75e49d515"
+      }
+    ],
+    "created_utc": "20260502T180941Z",
+    "issues": [],
+    "smoke_checks": [
+      {
+        "name": "renderer_passes",
+        "pass": true,
+        "result": {
+          "cmd": [
+            "/opt/pyvenv/bin/python3",
+            "/mnt/data/Metablooms_OS/0_kernel/scripts/observability_visual_trace_waterfall_renderer_v1.py",
+            "--root",
+            "/mnt/data/Metablooms_OS",
+            "--json"
+          ],
+          "returncode": 0,
+          "stderr": "",
+          "stdout": {
+            "artifact_type": "MB_VISUAL_TRACE_WATERFALL_RENDERER_SMOKE.v1",
+            "issues": [],
+            "verdict": "PASS"
+          }
+        }
+      },
+      {
+        "name": "new_chat_validator_allows",
+        "pass": true,
+        "result": {
+          "cmd": [
+            "/opt/pyvenv/bin/python3",
+            "/mnt/data/Metablooms_OS/runtime/governance/new_chat_start_contract_validator_v1.py",
+            "/mnt/data/Metablooms_OS"
+          ],
+          "returncode": 0,
+          "stderr": "",
+          "stdout": {
+            "checks": [
+              {
+                "name": "exists:CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+                "passed": true
+              },
+              {
+                "name": "exists:runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+                "passed": true
+              },
+              {
+                "name": "exists:0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+                "passed": true
+              },
+              {
+                "name": "exists:0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+                "passed": true
+              },
+              {
+                "name": "exists:NEW_CHAT_START_HERE.md",
+                "passed": true
+              },
+              {
+                "name": "exists:runtime/governance/new_chat_start_contract_validator_v1.py",
+                "passed": true
+              },
+              {
+                "name": "exists:runtime/governance/boot_critical_governance_loader_v1.py",
+                "passed": true
+              },
+              {
+                "name": "exists:runtime/governance/governance_scatter_prevention_v1.py",
+                "passed": true
+              },
+              {
+                "name": "exists:runtime/governance/fresh_chat_boot_rehearsal_v1.py",
+                "passed": true
+              },
+              {
+                "name": "exists:runtime/cartridges/prompt_governance_v1/validate_prompt_governance_cartridge_v1.py",
+                "passed": true
+              },
+              {
+                "name": "exists:runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+                "passed": true
+              },
+              {
+                "name": "exists:0_kernel/registry/observability/MB_BOOT_SEQUENCE_WRAPPER_ENFORCEMENT_v1.json",
+                "passed": true
+              },
+              {
+                "name": "exists:0_kernel/registry/observability/MB_HISTORICAL_CALLSITE_QUARANTINE_POLICY_v1.json",
+                "passed": true
+              },
+              {
+                "name": "exists:runtime/traces/observability/HISTORICAL_CALLSITE_QUARANTINE_INDEX_LATEST.json",
+                "passed": true
+              },
+              {
+                "name": "exists:0_kernel/validators/validate_observability_trace_span_ledger_stage8_historical_callsite_quarantine_v1.py",
+                "passed": true
+              }
+            ],
+            "decision": "ALLOW",
+            "errors": []
+          }
+        }
+      },
+      {
+        "name": "runtime_wrapper_allows",
+        "pass": true,
+        "result": {
+          "cmd": [
+            "/opt/pyvenv/bin/python3",
+            "/mnt/data/Metablooms_OS/runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+            "--root",
+            "/mnt/data/Metablooms_OS",
+            "--json"
+          ],
+          "returncode": 0,
+          "stderr": "",
+          "stdout": {
+            "artifact_type": "MB_RUNTIME_STARTER_SMOKE_CONTRACT_WRAPPER_RESULT.v1",
+            "created_utc": "20260502T180940Z",
+            "decision": "ALLOW",
+            "method_reliability_lesson": "METHOD_RUNTIME_STARTER_SMOKE_CLI_SHAPE_v1",
+            "target_shape": "--root",
+            "underlying_gate": "runtime/governance/runtime_starter_smoke_v1.py",
+            "underlying_result": {
+              "decision": "ALLOW",
+              "invalid_json": [],
+              "missing": [],
+              "mode": "root",
+              "path": "/mnt/data/Metablooms_OS",
+              "read_errors": []
+            }
+          }
+        }
+      }
+    ],
+    "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS",
+    "verdict": "PASS"
+  }
+}

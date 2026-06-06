@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-04-28T02:53:18Z",
+  "decision_id": "R4_SESSION_STATE_EXPORT_REPLACEMENT-49a5afbeaf141abe",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"checks\": {\"export_exists\": true, \"legacy_writer_stubbed\": true, \"schema_exists\": true, \"validation_passed\": true, \"validator_exists\": true, \"vendor_specific_field_names_absent\": true, \"writer_exists\": true}, \"created_utc\": \"2026-04-28T02:53:18Z\", \"next_stage\": \"R5_GATE_REGISTRY_AND_WIRING_REPLACEMENT\", \"stage\": \"R4_SESSION_STATE_EXPORT_REPLACEMENT\", \"verdict\": \"PASS\"}",
+  "reasons": [],
+  "record_id": "R4_VERIFY_RECEIPT_20260428T025318Z",
+  "record_kind": "verify_receipt",
+  "result": "pass",
+  "source_record": {
+    "path": "receipts/refactor_program/R4_VERIFY_RECEIPT_20260428T025318Z.json",
+    "sha256": "49a5afbeaf141abeba0196680a5719247a3caf85da99423a80003123ac832b29",
+    "size_bytes": 417
+  },
+  "span_id": "b3004c163020672e",
+  "stage_id": "R4_SESSION_STATE_EXPORT_REPLACEMENT",
+  "summary": "Canonical wrapper for R4_VERIFY_RECEIPT_20260428T025318Z.json",
+  "trace_id": "9e8a39128afd368f010e809e9a4e0243"
+}

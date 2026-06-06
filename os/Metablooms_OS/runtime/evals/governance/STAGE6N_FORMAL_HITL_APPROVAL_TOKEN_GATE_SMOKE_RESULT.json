@@ -1,0 +1,8 @@
+{
+  "returncode": 0,
+  "schema": "Stage6NSmokeExecution_v1",
+  "stage_id": "STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_20260502T035000Z",
+  "stderr": "",
+  "stdout": "{\n  \"schema\": \"FormalHITLApprovalTokenGateSmokeResult_v1\",\n  \"verdict\": \"PASS\",\n  \"fixtures_checked\": 2\n}\n",
+  "verdict": "PASS"
+}

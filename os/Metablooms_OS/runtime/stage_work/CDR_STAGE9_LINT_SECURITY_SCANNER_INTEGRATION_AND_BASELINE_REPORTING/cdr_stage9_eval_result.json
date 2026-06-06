@@ -1,0 +1,10 @@
+{
+  "cmd": [
+    "python3",
+    "-S",
+    "tests/evals/cdr/test_cdr_lint_security_scanner_gate_v1.py"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "{\n  \"invalid\": {\n    \"decision\": \"DENY\",\n    \"denied_findings\": [\n      \"fixture:dynamic_exec\"\n    ],\n    \"reasons\": [\n      \"zero_tolerance_finding:dynamic_exec\"\n    ],\n    \"risk_tier\": \"CRITICAL\",\n    \"schema\": \"CDRLintSecurityScannerGateResult_v1\",\n    \"summary\": {\n      \"finding_count\": 1,\n      \"max_complexity\": 0,\n      \"todo_count\": 0\n    }\n  },\n  \"valid\": {\n    \"decision\": \"ALLOW\",\n    \"denied_findings\": [],\n    \"reasons\": [],\n    \"risk_tier\": \"HIGH\",\n    \"schema\": \"CDRLintSecurityScannerGateResult_v1\",\n    \"summary\": {\n      \"finding_count\": 0,\n      \"max_complexity\": 0,\n      \"todo_count\": 0\n    }\n  },\n  \"verdict\": \"PASS\"\n}\n"
+}

@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-04-28T03:18:31Z",
+  "decision_id": "R8_PYTHON_HEALTH_GOVERNANCE_PROMOTION-269697f9658ef4fb",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"created_utc\": \"2026-04-28T03:18:31Z\", \"live_normal_python_probe_policy\": \"forbidden; no unsafe normal-python subprocess is executed in live mode\", \"receipt_type\": \"R8_VERIFY_RECEIPT\", \"reports\": {\"bad_s\": {\"blocks\": [\"python3 -S lane exceeds max startup threshold\", \"python3 -S probe shows site module loaded\"], \"decision\": \"deny\", \"path\": \"/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R8_python_health_bad_s_20260428T031734Z.json\", \"sha256\": \"313fee2799be29112688f25353218a5c422c83fa63f9555819da8d246524524e\", \"status\": \"healthy_but_safe_lane_preferred\"}, \"live\": {\"blocks\": null, \"decision\": \"allow_with_route_controls\", \"path\": \"/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R8_python_health_live_20260428T031734Z.json\", \"sha256\": \"b95654b76841d71e466db6d9f130c0a79dcbf9ecda6205c325c4c064e998c37b\", \"status\": \"normal_python_quarantined_without_execution\"}, \"normal_failed\": {\"blocks\": null, \"decision\": \"allow_with_route_controls\", \"path\": \"/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R8_python_health_normal_failed_20260428T031734Z.json\", \"sha256\": \"7f8d2393832997358f5a1fbc7051e237386e312e0c37261bb9e8bcb35be1c16c\", \"status\": \"normal_python_unavailable_or_hung\"}, \"registry\": {\"blocks\": [], \"decision\": \"pass\", \"path\": \"/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R8_gate_registry_integrity_20260428T031734Z.json\", \"sha256\": \"d5d40c7b82deeeb0734ad41052e8f12141878e",
+  "reasons": [],
+  "record_id": "R8_VERIFY_RECEIPT_20260428T031734Z",
+  "record_kind": "verify_receipt",
+  "result": "pass",
+  "source_record": {
+    "path": "receipts/refactor_program/R8_VERIFY_RECEIPT_20260428T031734Z.json",
+    "sha256": "269697f9658ef4fbe8792fffd03b3bc9f8273a707ed8222211fcd5a94695713c",
+    "size_bytes": 2504
+  },
+  "span_id": "4bdc7592fcd8d1a2",
+  "stage_id": "R8_PYTHON_HEALTH_GOVERNANCE_PROMOTION",
+  "summary": "Canonical wrapper for R8_VERIFY_RECEIPT_20260428T031734Z.json",
+  "trace_id": "ba1c9d9e73b918c4e42302f43ed0d7c9"
+}

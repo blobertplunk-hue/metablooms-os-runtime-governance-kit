@@ -1,0 +1,18 @@
+{
+  "schema_version": "MB_EDUCATION_VALIDITY_GATE_SPEC_v2",
+  "created_utc": "20260501T182900Z",
+  "required_gates": [
+    "source_and_standards_alignment",
+    "assessment_fidelity",
+    "cognitive_demand",
+    "udl_accessibility",
+    "eb_support",
+    "feedback_telemetry",
+    "deployability",
+    "promotion_wiring"
+  ],
+  "promotion_thresholds": {
+    "minimum_accuracy": 0.95,
+    "maximum_false_pass_count": 0
+  }
+}

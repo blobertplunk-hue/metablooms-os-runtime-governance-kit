@@ -1,0 +1,27 @@
+{
+  "artifact_id": "interceptor_research_trigger_patch_v1",
+  "status": "active",
+  "created_at": "2026-04-24T00:58:30Z",
+  "pre_execution_checks": [
+    {
+      "check_id": "research_keyword_gate",
+      "input": "current_user_request",
+      "logic": "contains_keyword_research_outside_code_or_quote",
+      "then": [
+        "set task_class=research_required",
+        "schedule SEE_recursive_v1",
+        "queue required_tool web.run"
+      ],
+      "block_if": [
+        "SEE_recursive_v1_not_scheduled",
+        "web.run_not_queued_unless_explicit_no_web_override"
+      ]
+    }
+  ],
+  "integration_targets": [
+    "policy_engine_v1",
+    "tool_router_v1",
+    "verifier_v1"
+  ],
+  "notes": "Control-plane rule. In ChatGPT UI enforced by boot contract and verifier receipts; in executable runtimes enforce before response generation."
+}

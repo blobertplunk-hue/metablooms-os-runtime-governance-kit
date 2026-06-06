@@ -1,0 +1,15 @@
+{
+  "artifact_type": "HANDOFF",
+  "created_utc": "20260430T014900Z",
+  "next_allowed_action": "Preserve active tracker-working baseline; reconcile FL16 blocked status and FL17 export semantics before any promotion/export.",
+  "next_allowed_stage": "FL17-MERGE-4_RECONCILE_FL16_BLOCKED_STATUS_AND_FL17_EXPORT_SEMANTICS",
+  "now": "Tracker lifecycle finalization enforcement repaired.",
+  "requires": [
+    "mandatory always-on governance preflight",
+    "SEE/CE before next bounded stage",
+    "tracker finalization hook after receipt/handoff writes"
+  ],
+  "stage": "FL17-MERGE-3_TRACKER_LIFECYCLE_REPAIR",
+  "status": "PASS",
+  "stop_rule": "Stopped before promotion or full OS export."
+}

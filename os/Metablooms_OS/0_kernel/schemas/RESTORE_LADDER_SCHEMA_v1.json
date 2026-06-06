@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "RESTORE_LADDER_SCHEMA_v1",
+  "title": "MetaBlooms Restore Ladder Contract v1",
+  "type": "object",
+  "required": [
+    "version",
+    "created_at",
+    "contract_id",
+    "status",
+    "selection_order",
+    "mode_normalization",
+    "promotion_rules",
+    "verdict"
+  ]
+}

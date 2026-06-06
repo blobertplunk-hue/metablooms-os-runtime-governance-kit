@@ -1,0 +1,21 @@
+{
+  "created_at": "2026-04-30T21:50:22Z",
+  "from_stage": "MPP_R2_SEE_PACKET_ADAPTER_AND_RECURSIVE_SEARCH_GATE",
+  "locked_contracts": {
+    "blocked_next_stage": "BLOCK_WITH_SEE_RECEIPT",
+    "claim_binding_required": true,
+    "mmd_required_after_normalization": true,
+    "must_use_web_run": true,
+    "next_stage_on_pass": "NORMALIZE_EVIDENCE",
+    "see_packet_stage": "SEE_PASS"
+  },
+  "required_inputs": [
+    "0_kernel/tools/mpp_v3/see_packet_adapter_recursive_gate_v1.py",
+    "0_kernel/registry/mpp_v3/see_adapter_test_outputs/SEE_RECURSIVE_GATE_CLI_VALID_REPORT_v1.json",
+    "0_kernel/schemas/SEE_PACKET_SCHEMA_v1.json",
+    "0_kernel/scripts/see_packet_validator_v1.py"
+  ],
+  "schema_version": "metablooms.stage_handoff.v1",
+  "status": "READY",
+  "to_stage": "MPP_R3_NORMALIZE_EVIDENCE_AND_CE_BRIDGE"
+}

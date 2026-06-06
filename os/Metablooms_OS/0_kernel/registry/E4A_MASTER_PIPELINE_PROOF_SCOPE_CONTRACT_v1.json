@@ -1,0 +1,67 @@
+{
+  "version": "1.0",
+  "created_at": 1777063362.4534087,
+  "contract_id": "E4A_MASTER_PIPELINE_PROOF_SCOPE_CONTRACT_v1",
+  "status": "active_scope_lock",
+  "stage": "E4A_MASTER_PIPELINE_PROOF_SCOPE_LOCK",
+  "scope": "scope_lock_only",
+  "recovery_architecture_precondition": "F7_RECOVERY_PROVEN_STABLE_BASELINE_LOCK_PASS",
+  "mixed_task_under_test": "Research a current best-practice claim, use CE, validate SEE evidence, block if invalid, patch a script, update artifact_registry, write receipts, and defer export to E5.",
+  "required_execution_plan_elements": {
+    "required_routes": [
+      "research_required",
+      "ce_required",
+      "code_patch_required",
+      "registry_mutation_required",
+      "export_required",
+      "sandbox_tool_required"
+    ],
+    "required_stages": [
+      "BOOT",
+      "RESEARCH_TRIGGER_CHECK",
+      "CE_COMPREHENSION_PASS",
+      "SEE_PASS",
+      "TOOL_GOVERNANCE_CHECK",
+      "PLAN",
+      "EXECUTE_ONE_STAGE",
+      "VERIFY",
+      "RECEIPT",
+      "GIT_COMMIT"
+    ],
+    "required_modules": [
+      "research_trigger",
+      "CE_stage_cartridge",
+      "see_packet_validator",
+      "research_failure_blocker",
+      "sandbox_tool_governance",
+      "script_quality_gate",
+      "registry_mutation_engine",
+      "export_guard"
+    ],
+    "required_enforcement_checks": [
+      "route_packet_present",
+      "CE before implementation",
+      "SEE when research_required",
+      "research_failure_blocker enforces SEE receipt",
+      "tool governance for /mnt/data/export",
+      "registry mutation requires commit",
+      "export deferred to E5"
+    ]
+  },
+  "E4_micro_stage_boundaries": {
+    "E4A": "scope lock only",
+    "E4B": "execution plan packet contract only",
+    "E4C": "assembler prototype implementation only",
+    "E4D": "mixed task enforcement proof only",
+    "E4E": "handoff to E5 only"
+  },
+  "disallowed_in_E4A": [
+    "implementation",
+    "assembler prototype",
+    "mixed-task proof execution",
+    "stable export",
+    "boot recovery",
+    "cleanup deletion"
+  ],
+  "next_stage": "E4B_EXECUTION_PLAN_PACKET_CONTRACT"
+}

@@ -1,0 +1,35 @@
+{
+  "version": "1.0",
+  "created_at": 1777065053.6893916,
+  "stage": "G4_F7_EXPORT_REPAIR_PLAN",
+  "status": "active_repair_plan",
+  "source_export": "/mnt/data/MetaBlooms_OS_refined_F7_RECOVERY_PROVEN_1777063110.zip",
+  "source_sidecar": "/mnt/data/MetaBlooms_OS_refined_F7_RECOVERY_PROVEN_1777063110.zip.sha256.json",
+  "validator_decision": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_G4_F7_DECISION_v1.json",
+  "validator_verdict": "FAIL",
+  "blocking_failed_count": 8,
+  "failed_gate_ids": [
+    "G1_LEDGER_DECLARED_OUTPUTS_INSIDE_ZIP",
+    "G2_FINAL_PASS_RECEIPTS_INSIDE_ZIP",
+    "G3_NO_PLACEHOLDER_METADATA",
+    "G4_GIT_HEAD_LIFECYCLE_CONSISTENCY",
+    "G5_SIDECAR_BINDING",
+    "G6_DETERMINISTIC_ZIP_POLICY",
+    "G8_POINTER_CONFLICT_RESOLUTION",
+    "G10_POLICY_AS_CODE_DECISION"
+  ],
+  "repair_actions": [
+    "Rebuild export after all ledger-declared proof/lock/receipt/handoff outputs already exist; then validate ZIP contents against ledger outputs.",
+    "Ensure final PASS receipt is written before zipping; do not zip pending/export_ready receipts.",
+    "Replace placeholder SHA/size with explicit external_sidecar_required policy and verified sidecar binding.",
+    "Rewrite export metadata with lifecycle-labeled heads: pre_export_head, exported_tree_head, metadata_commit_head, final_lock_head, current_working_head.",
+    "Create sidecar after final ZIP and bind it from internal manifest using external_sidecar_required metadata.",
+    "Use deterministic packaging policy: sorted entries, no caches, no nested .git, no duplicates, declared exclusions.",
+    "Resolve or quarantine conflicting active pointer-like registry artifacts before stable export lock.",
+    "Include the machine-readable PASS validator decision as a required precondition for claiming recovery-proven status."
+  ],
+  "repair_stage": "G5_REPAIRED_RECOVERY_PROVEN_EXPORT",
+  "note": "G4 does not repair the ZIP. G4 proves and records the failures; G5 performs the repaired export.",
+  "verdict": "PASS",
+  "next_correct_command": "EXECUTE G5 \u2014 REPAIRED RECOVERY-PROVEN EXPORT"
+}

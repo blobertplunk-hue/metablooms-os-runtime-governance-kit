@@ -1,0 +1,25 @@
+{
+  "artifact_type": "UX_OPERATOR_SURFACE_STAGE_1_HANDOFF_v1",
+  "created_utc": "20260501T040721Z",
+  "from_stage": "IMPLEMENT_UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE_STAGE_1",
+  "must_verify_before_next_stage": [
+    "/mnt/data/Metablooms_OS/runtime/receipts/external_review/UX_OPERATOR_SURFACE_STAGE_1_RECEIPT_LATEST.json",
+    "/mnt/data/Metablooms_OS/runtime/evals/operator_surface/MB_OPERATOR_SURFACE_VALIDATION_LATEST.json",
+    "/mnt/data/Metablooms_OS/bin/mb"
+  ],
+  "next_recommended_stage": "IMPLEMENT_UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE_STAGE_2_RUN_STAGE_AND_DOCTOR_COMMANDS",
+  "open_gaps": [
+    "run-stage command",
+    "doctor command",
+    "first-class human approval interrupt gate"
+  ],
+  "operator_commands_available": [
+    "mb status",
+    "mb boot",
+    "mb verify",
+    "mb replay",
+    "mb export --output <zip>"
+  ],
+  "runtime_root": "/mnt/data/Metablooms_OS",
+  "status": "PASS"
+}

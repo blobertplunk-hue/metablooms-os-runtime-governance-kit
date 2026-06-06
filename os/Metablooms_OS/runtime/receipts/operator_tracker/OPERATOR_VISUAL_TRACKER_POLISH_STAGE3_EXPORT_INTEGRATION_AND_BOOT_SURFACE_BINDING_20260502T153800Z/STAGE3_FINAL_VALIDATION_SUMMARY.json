@@ -1,0 +1,33 @@
+{
+  "artifact_type": "Stage3FinalValidationSummary.v1",
+  "checks": {
+    "authority_pointers_bound": "PASS",
+    "boot_manifest_bound": "PASS",
+    "boot_surface_validator": "PASS",
+    "contains_boot_surface_manifest": true,
+    "contains_handoff": true,
+    "contains_new_chat_start": true,
+    "contains_root_html": true,
+    "contains_stage_receipt": true,
+    "duplicate_members": 0,
+    "members": 5142,
+    "new_chat_start_bound": "PASS",
+    "portable_boot_verify_pre_export": "PASS",
+    "render_validator": "PASS",
+    "root_html_surface_written": "PASS",
+    "runtime_root_smoke_pre_export": "PASS",
+    "stage2_handoff_loaded": "PASS",
+    "stage_bundle_duplicate_members": 0,
+    "stage_bundle_zip_testzip": "PASS",
+    "tracker_state_v3_written": "PASS",
+    "zip_testzip": "PASS"
+  },
+  "created_utc": "2026-05-02T15:37:39Z",
+  "final_export_path": "/mnt/data/METABLOOMS_OS_OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_FULL_AUTHORITY_20260502T153800Z.zip",
+  "final_export_sha256": "b262e591467559f9f75d894c505fb95a44e046aecade7d0f0b6dbd3705bc2cda",
+  "note": "Final export hash is sidecar-bound externally; internal pointers use external_sidecar_required to avoid self-hash paradox.",
+  "stage": "OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_EXPORT_INTEGRATION_AND_BOOT_SURFACE_BINDING",
+  "stage_bundle_path": "/mnt/data/Metablooms_OS/runtime/stage_bundles/operator_tracker/OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_EXPORT_INTEGRATION_AND_BOOT_SURFACE_BINDING_20260502T153800Z.zip",
+  "stage_bundle_sha256": "bb09a17cf33c144560fe91127ddad0d42956a51544df28a6833842428efe062d",
+  "status": "PASS"
+}

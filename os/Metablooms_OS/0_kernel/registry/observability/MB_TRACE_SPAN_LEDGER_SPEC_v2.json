@@ -1,0 +1,53 @@
+{
+  "artifact_type": "MB_TRACE_SPAN_LEDGER_SPEC_v2",
+  "authoritative_ledger_path": "runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl",
+  "created_utc": "20260501T121800Z",
+  "events": [
+    "stage.start",
+    "stage.checkpoint",
+    "stage.validate",
+    "stage.receipt",
+    "stage.handoff",
+    "stage.end",
+    "stage.blocked",
+    "tool.call",
+    "tool.result"
+  ],
+  "fail_closed_rules": [
+    "invalid_jsonl_blocks_observability_pass",
+    "missing_trace_id_or_span_id_blocks_pass",
+    "ERROR_or_BLOCKED_spans_must_have_error_or_blocker_attributes",
+    "trace summaries cannot replace raw ledger evidence"
+  ],
+  "fallback_ledger_path": "runtime/traces/operator_surface/TRACE_LEDGER_LATEST.jsonl",
+  "purpose": "Canonical JSONL trace/span ledger for MetaBlooms governed stages, aligned to OpenTelemetry-style trace/span concepts and LangGraph-style checkpoint/thread identity.",
+  "recommended_fields": [
+    "thread_id",
+    "checkpoint_id",
+    "work_order_path",
+    "receipt_path",
+    "handoff_path",
+    "duration_ms",
+    "error.type",
+    "error.message"
+  ],
+  "required_fields": [
+    "schema_version",
+    "trace_id",
+    "span_id",
+    "parent_span_id",
+    "name",
+    "stage_name",
+    "event",
+    "status",
+    "timestamp_utc",
+    "attributes"
+  ],
+  "stage": "IMPLEMENT_OBSERVABILITY_TRACE_SPAN_LEDGER_CARTRIDGE_STAGE_1",
+  "status_enum": [
+    "OK",
+    "WARN",
+    "ERROR",
+    "BLOCKED"
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/ADS_DAG_OWNERSHIP_GATE_RESULT_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "created_at": {
+      "minLength": 10,
+      "type": "string"
+    },
+    "gate_id": {
+      "minLength": 6,
+      "type": "string"
+    },
+    "packet_id": {
+      "minLength": 8,
+      "type": "string"
+    },
+    "result_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "mpp.ads_dag_ownership_gate_result.v1"
+    },
+    "stage": {
+      "const": "ADS_DAG_OWNERSHIP_GATE"
+    },
+    "topological_order": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "verdict": {
+      "enum": [
+        "PASS",
+        "FAIL"
+      ],
+      "type": "string"
+    },
+    "violations": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "warnings": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "gate_id",
+    "stage",
+    "created_at",
+    "packet_id",
+    "verdict",
+    "violations",
+    "warnings",
+    "topological_order",
+    "result_hash"
+  ],
+  "title": "MPP v3 ADS DAG Ownership Gate Result",
+  "type": "object"
+}

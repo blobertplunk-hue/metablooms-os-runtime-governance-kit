@@ -1,0 +1,12 @@
+{
+  "id": "TRACKER_RENDER_REQUIREMENT_v1",
+  "status": "runtime_active",
+  "requirement": "Every MetaBlooms governed-stage final response must render a compact in-chat tracker or explicitly report blocked tracker rendering as a failure.",
+  "minimum_fields": [
+    "stage",
+    "completed",
+    "failed_or_pending",
+    "next",
+    "export_status"
+  ]
+}

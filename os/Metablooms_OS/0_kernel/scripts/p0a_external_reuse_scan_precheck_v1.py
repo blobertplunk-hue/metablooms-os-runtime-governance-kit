@@ -1,0 +1,150 @@
+#!/usr/bin/env python3
+"""MetaBlooms R6 evidence-bound external reuse scan gate.
+Stdlib only. Must be launched with python3 -S.
+"""
+from __future__ import annotations
+import argparse, hashlib, json, os, re, sys, uuid
+from datetime import datetime, timezone, timedelta
+from pathlib import Path
+
+ROOT = Path('/mnt/data/Metablooms_OS')
+VALID_DECISIONS = {'adopt_existing','adapt_existing','compose_existing','build_new_with_evidence','defer_or_block'}
+ASSET_TYPES = {'schema','validator','component','html_engine','telemetry','dashboard','cartridge','workflow','runner_phase','gate','contract','registry','state_exporter'}
+MINIMUMS = {
+    'adopt_existing': {'evidence':1, 'candidates':1},
+    'adapt_existing': {'evidence':2, 'candidates':1, 'requires':'adaptation_scope'},
+    'compose_existing': {'evidence':2, 'candidates':2, 'requires':'composition_plan'},
+    'build_new_with_evidence': {'evidence':2, 'candidates':0, 'requires':'gap_rationale'},
+    'defer_or_block': {'always_deny': True},
+}
+URL_RE = re.compile(r'^https?://[^\s]+$')
+
+def iso_now(): return datetime.now(timezone.utc).isoformat().replace('+00:00','Z')
+def sha_file(path: Path) -> str: return hashlib.sha256(path.read_bytes()).hexdigest()
+def load_json(path: Path):
+    with path.open('r', encoding='utf-8') as f: return json.load(f)
+
+def require_dash_s(blocks):
+    if 'site' in sys.modules:
+        blocks.append('launcher violation: site module is loaded; use runtime/governance/python3_S_lane_exec_v1.sh or python3 -S')
+
+def resolve_path(value: str) -> Path:
+    p = Path(value)
+    if not p.is_absolute(): p = ROOT / p
+    return p
+
+def validate_hash_ref(name, ref, blocks):
+    if not isinstance(ref, dict):
+        blocks.append(f'{name} must be object with path and sha256')
+        return None
+    if not ref.get('path'):
+        blocks.append(f'{name}.path required')
+        return None
+    p = resolve_path(ref['path'])
+    if not p.exists():
+        blocks.append(f'{name}.path does not exist: {p}')
+        return None
+    actual = sha_file(p)
+    declared = ref.get('sha256')
+    if declared and declared != actual:
+        blocks.append(f'{name}.sha256 mismatch: declared={declared} actual={actual}')
+    ref['resolved_path'] = str(p)
+    ref['actual_sha256'] = actual
+    return p
+
+def parse_dt(s):
+    if not s: return None
+    try:
+        if s.endswith('Z'): s=s[:-1]+'+00:00'
+        return datetime.fromisoformat(s)
+    except Exception:
+        return None
+
+def evaluate(req):
+    blocks=[]; warns=[]
+    require_dash_s(blocks)
+    for key in ['stage_name','asset_type','asset_name','reuse_decision','reuse_rationale','evidence_bundle','target_artifact']:
+        if key not in req or req.get(key) in ('', None, []): blocks.append(f'missing required field: {key}')
+    decision=req.get('reuse_decision')
+    if decision not in VALID_DECISIONS: blocks.append(f'invalid reuse_decision: {decision}')
+    if req.get('asset_type') not in ASSET_TYPES: blocks.append(f'invalid asset_type: {req.get("asset_type")}')
+    if len(str(req.get('reuse_rationale','')).split()) < 12: blocks.append('reuse_rationale must be substantive: minimum 12 words')
+    evidence_path = validate_hash_ref('evidence_bundle', req.get('evidence_bundle'), blocks) if 'evidence_bundle' in req else None
+    target_path = validate_hash_ref('target_artifact', req.get('target_artifact'), blocks) if 'target_artifact' in req else None
+    bundle = None
+    if evidence_path and evidence_path.exists():
+        try: bundle=load_json(evidence_path)
+        except Exception as e: blocks.append(f'evidence_bundle is not valid JSON: {e}')
+    evidence=[]; candidates=[]
+    if isinstance(bundle, dict):
+        evidence = bundle.get('evidence_items', [])
+        candidates = bundle.get('candidate_refs', [])
+        if not isinstance(evidence, list): blocks.append('evidence_bundle.evidence_items must be list'); evidence=[]
+        if not isinstance(candidates, list): blocks.append('evidence_bundle.candidate_refs must be list'); candidates=[]
+        if not bundle.get('created_utc'): blocks.append('evidence_bundle.created_utc required')
+        if not bundle.get('queries'): blocks.append('evidence_bundle.queries required')
+    if decision == 'defer_or_block':
+        blocks.append('reuse_decision defer_or_block always denies promotion')
+    minimum = MINIMUMS.get(decision, {})
+    if len(evidence) < minimum.get('evidence', 0): blocks.append(f'{decision} requires at least {minimum.get("evidence",0)} evidence items; found {len(evidence)}')
+    if len(candidates) < minimum.get('candidates', 0): blocks.append(f'{decision} requires at least {minimum.get("candidates",0)} candidate_refs; found {len(candidates)}')
+    required_extra = minimum.get('requires')
+    if required_extra and not req.get(required_extra): blocks.append(f'{decision} requires request field: {required_extra}')
+    now=datetime.now(timezone.utc)
+    for i, ev in enumerate(evidence):
+        if not isinstance(ev, dict): blocks.append(f'evidence_items[{i}] must be object'); continue
+        for k in ['source_url','source_title','retrieved_utc','claim_supported','source_type','query']:
+            if not ev.get(k): blocks.append(f'evidence_items[{i}] missing {k}')
+        if ev.get('source_url') and not URL_RE.match(ev['source_url']): blocks.append(f'evidence_items[{i}].source_url must be http(s) URL')
+        dt=parse_dt(ev.get('retrieved_utc'))
+        if not dt: blocks.append(f'evidence_items[{i}].retrieved_utc invalid')
+        else:
+            if dt.tzinfo is None: dt=dt.replace(tzinfo=timezone.utc)
+            if now - dt > timedelta(days=180): blocks.append(f'evidence_items[{i}] is stale (>180 days)')
+        if len(str(ev.get('claim_supported','')).split()) < 5: blocks.append(f'evidence_items[{i}].claim_supported too thin')
+    for i, c in enumerate(candidates):
+        if not isinstance(c, dict): blocks.append(f'candidate_refs[{i}] must be object'); continue
+        for k in ['name','source_url','fit_summary','decision_relevance']:
+            if not c.get(k): blocks.append(f'candidate_refs[{i}] missing {k}')
+        if c.get('source_url') and not URL_RE.match(c['source_url']): blocks.append(f'candidate_refs[{i}].source_url must be http(s) URL')
+    decision_id=str(uuid.uuid4())
+    result='deny' if blocks else ('warn_allow' if warns else 'allow')
+    out={
+        'receipt_type':'EXTERNAL_REUSE_SCAN_GATE_DECISION',
+        'version':'1.0.0',
+        'decision_id':decision_id,
+        'created_utc':iso_now(),
+        'stage_name':req.get('stage_name'),
+        'asset_type':req.get('asset_type'),
+        'asset_name':req.get('asset_name'),
+        'reuse_decision':decision,
+        'result':result,
+        'blocks':blocks,
+        'warns':warns,
+        'input_summary':{
+            'evidence_count':len(evidence),
+            'candidate_count':len(candidates),
+            'evidence_bundle':req.get('evidence_bundle'),
+            'target_artifact':req.get('target_artifact')
+        },
+        'policy_basis':['OPA-style decision_id/input/result audit log','SLSA-style artifact/provenance expectation checks','JSON Schema annotations are not enforcement'],
+    }
+    return out
+
+def main():
+    ap=argparse.ArgumentParser()
+    ap.add_argument('--request', required=True)
+    ap.add_argument('--receipt-dir', default=str(ROOT/'runtime/governance/decision_logs/external_reuse_scan'))
+    ap.add_argument('--json-output', action='store_true')
+    args=ap.parse_args()
+    req=load_json(Path(args.request))
+    result=evaluate(req)
+    rd=Path(args.receipt_dir); rd.mkdir(parents=True, exist_ok=True)
+    out=rd/f"P0A_EXTERNAL_REUSE_SCAN_{result['stage_name']}_{result['decision_id']}.json".replace('/','_')
+    _mb_write_json_file(out, result, operation_id='STAGE4_ATOMIC_JSON_0_kernel_scripts_p0a_external_reuse_scan_precheck_v1_py_L144', create_parent=True, allowed_roots=[str(_MBAJWPath('/mnt/data').resolve())], indent=2, sort_keys=False, ensure_ascii=True, max_bytes=20000000)
+    result['receipt_path']=str(out); result['receipt_sha256']=sha_file(out)
+    _mb_write_json_file(out, result, operation_id='STAGE4_ATOMIC_JSON_0_kernel_scripts_p0a_external_reuse_scan_precheck_v1_py_L146', create_parent=True, allowed_roots=[str(_MBAJWPath('/mnt/data').resolve())], indent=2, sort_keys=False, ensure_ascii=True, max_bytes=20000000)
+    if args.json_output: print(json.dumps(result, indent=2))
+    else: print(f"{result['result'].upper()} decision_id={result['decision_id']} receipt={out}")
+    return 0 if result['result'] in ('allow','warn_allow') else 1
+if __name__=='__main__': raise SystemExit(main())

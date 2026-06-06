@@ -1,0 +1,15 @@
+{
+  "artifact_type": "R13A_TO_R13_FINAL_EXPORT_HANDOFF",
+  "authorized_next_action": "Run exactly one bounded final export self-consistency audit/export stage from /mnt/data/Metablooms_OS; do not patch unless a blocker is proven.",
+  "created_utc": "2026-04-29T10:06:32.093704+00:00",
+  "from_stage": "R13A_POINTER_ROOT_RECONCILIATION_AND_ZERO_BYTE_RECEIPT_QUARANTINE",
+  "preconditions": [
+    "/mnt/data/Metablooms_OS exists",
+    "CURRENT_WORKING_BASELINE_POINTER_v1.json active_root is /mnt/data/Metablooms_OS",
+    "No active zero-byte R13 receipt remains in receipts/refactor_program",
+    "R13A receipt verdict PASS"
+  ],
+  "receipt": "receipts/refactor_program/R13A_POINTER_ROOT_RECONCILIATION_RECEIPT.json",
+  "stopped_before_final_export": true,
+  "to_stage": "R13_FINAL_EXPORT_SELF_CONSISTENCY_AUDIT_AND_EXPORT"
+}

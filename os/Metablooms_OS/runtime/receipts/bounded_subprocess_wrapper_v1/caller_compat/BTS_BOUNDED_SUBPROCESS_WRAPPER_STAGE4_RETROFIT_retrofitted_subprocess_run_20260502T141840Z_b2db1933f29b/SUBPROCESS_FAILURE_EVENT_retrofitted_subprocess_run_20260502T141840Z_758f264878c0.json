@@ -1,0 +1,37 @@
+{
+  "argv_redacted": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "/mnt/data/Metablooms_OS/runtime/governance/observability_trace_export_adapter_v1.py",
+    "/mnt/data/Metablooms_OS/tests/fixtures/observability/stage6r_trace_export_deny_v1.json",
+    "opentelemetry_span_json",
+    "/mnt/data/Metablooms_OS/runtime/evals/observability/stage6r/deny_result.json"
+  ],
+  "artifact_type": "METABLOOMS_SUBPROCESS_FAILURE_LEARNING_EVENT_v1",
+  "attempts": [
+    {
+      "attempt_index": 0,
+      "elapsed_ms": 100,
+      "returncode": 20,
+      "started_utc": "20260502T141840Z",
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_truncated": false,
+      "stdout": "{\n  \"decision\": \"DENY\",\n  \"errors\": [\n    \"security_attribute:tool_id\",\n    \"security_attribute:action_type\",\n    \"security_attribute:policy_decision\"\n  ],\n  \"schema\": \"TraceExportAdapterResult_v1\",\n  \"span\": {\n    \"attributes\": {\n      \"risk_tier\": \"high\"\n    },\n    \"events\": [],\n    \"kind\": \"INTERNAL\",\n    \"links\": [],\n    \"name\": \"bts.tool_execution\",\n    \"parent_span_id\": null,\n    \"schema\": \"MetaBloomsTraceSpan_v1\",\n    \"span_id\": \"span_9a941f78bd9fd336\",\n    \"stage_id\": \"STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS\",\n    \"status\": \"PASS\",\n    \"timestamp_utc\": \"2026-05-02T14:18:40.847637Z\",\n    \"trace_id\": \"trace_4df2bb785b4edbbe\"\n  }\n}\n",
+      "stdout_bytes": 649,
+      "stdout_sha256": "a2316bbc55955bb947c0b9382371ff6c8cc70d40a99dff7bb86b3e3392732e05",
+      "stdout_truncated": false,
+      "timeout_seconds": 10.0
+    }
+  ],
+  "created_utc": "20260502T141840Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "failure_class": "NONZERO_EXIT",
+  "operation_type": "retrofitted_subprocess_run",
+  "policy_matches": [],
+  "recommendation": "Route future matching operations through bounded wrapper and method reliability policy before spawn.",
+  "result_class": "ALLOW_NONZERO",
+  "root": "/mnt/data/Metablooms_OS",
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT"
+}

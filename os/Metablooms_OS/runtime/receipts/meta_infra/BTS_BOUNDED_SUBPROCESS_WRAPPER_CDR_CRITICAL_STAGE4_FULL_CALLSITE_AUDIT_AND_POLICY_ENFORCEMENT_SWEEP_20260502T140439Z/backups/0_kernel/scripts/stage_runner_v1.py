@@ -1,0 +1,89 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+import argparse, json, subprocess, time, hashlib, os
+from pathlib import Path
+CONTRACT_ID='MB_STAGE_RUNNER_CONTRACT_v1'
+STAGE2_CONTRACT_ID='MB_STATE_CHECKPOINT_RUNNER_SECURITY_INTERRUPT_WIRING_v1'
+BLOCK_ALWAYS={'MBSEC-GATE-001','MBSEC-GATE-002','MBSEC-GATE-003','MBSEC-GATE-008'}
+INTERRUPT_ELIGIBLE={'MBSEC-GATE-004','MBSEC-GATE-005','MBSEC-GATE-006','MBSEC-GATE-007'}
+def utc_now(): return time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())
+def find_root():
+    env=os.environ.get('METABLOOMS_ROOT')
+    if env and (Path(env)/'boot_manifest_v1.json').exists(): return Path(env)
+    here=Path(__file__).resolve()
+    for parent in [here.parent,*here.parents]:
+        if (parent/'boot_manifest_v1.json').exists() and (parent/'0_kernel').exists(): return parent
+    return Path.cwd()
+def emit(p,rc): print(json.dumps(p,indent=2,sort_keys=True)); return rc
+def stable_hash(obj): return hashlib.sha256(json.dumps(obj,sort_keys=True,separators=(',',':')).encode()).hexdigest()[:16]
+def append_span(root, stage, event, status, attrs):
+    led=root/'runtime/traces/state_checkpoint/TRACE_SPAN_LEDGER_STATE_CHECKPOINT_STAGE2.jsonl'
+    led.parent.mkdir(parents=True, exist_ok=True)
+    seed=json.dumps([stage,event,status,utc_now(),attrs],sort_keys=True)
+    rec={'schema_version':'MB_TRACE_SPAN_LEDGER_SPEC_v2','trace_id':hashlib.sha256(seed.encode()).hexdigest()[:32],'span_id':hashlib.sha256((seed+'span').encode()).hexdigest()[:16],'parent_span_id':None,'name':'state_checkpoint_stage_runner_wiring','stage_name':stage,'event':event,'status':status,'timestamp_utc':utc_now(),'attributes':attrs}
+    with led.open('a',encoding='utf-8') as f: f.write(json.dumps(rec,sort_keys=True)+'\n')
+    return str(led)
+def run_checkpoint(root, args):
+    cm=root/'0_kernel/scripts/checkpoint_manager_v1.py'
+    if not cm.exists(): return {'verdict':'CHECKPOINT_MANAGER_MISSING','rc':22,'stdout':'','stderr':''}
+    pr=subprocess.run(['python3','-S',str(cm),*args],cwd=str(root),text=True,capture_output=True,timeout=60)
+    try: payload=json.loads(pr.stdout.strip() or '{}')
+    except Exception: payload={'stdout_tail':pr.stdout[-1000:],'stderr_tail':pr.stderr[-1000:]}
+    payload['rc']=pr.returncode
+    return payload
+def issue_gate_ids(gate_payload):
+    ids=[]
+    for it in gate_payload.get('issues',[]) if isinstance(gate_payload,dict) else []:
+        if isinstance(it,dict) and it.get('gate_id'): ids.append(it.get('gate_id'))
+    return ids
+def should_interrupt(gate_ids):
+    s=set(gate_ids)
+    return bool(s) and s.issubset(INTERRUPT_ELIGIBLE) and not (s & BLOCK_ALWAYS)
+def main(argv=None):
+    pa=argparse.ArgumentParser(); pa.add_argument('stage_name'); pa.add_argument('--work-order',required=True); pa.add_argument('--timeout',type=int,default=120); a=pa.parse_args(argv)
+    root=find_root(); wp=Path(a.work_order); issues=[]
+    breaker=root/'0_kernel/scripts/runaway_turn_breaker_v1.py'
+    if breaker.exists():
+        br_cmd=['python3','-S',str(breaker),'--stage-name',a.stage_name,'--mode','stage-runner','--timeout',str(min(a.timeout,180)),'--command-count','8','--files-touched','40','--has-receipt-plan','--has-handoff-plan','--json']
+        br=subprocess.run(br_cmd,cwd=str(root),text=True,capture_output=True,timeout=min(max(a.timeout,5),20))
+        try: br_payload=json.loads(br.stdout)
+        except Exception: br_payload={'verdict':'RUNAWAY_BREAKER_ERROR','stdout_tail':br.stdout[-1000:],'stderr_tail':br.stderr[-1000:]}
+        if br.returncode!=0 or br_payload.get('verdict')!='RUNAWAY_BUDGET_PASS':
+            return emit({'verdict':'STAGE_RUNNER_BLOCKED_BY_RUNAWAY_BREAKER','root':str(root),'stage_name':a.stage_name,'breaker':br_payload},124)
+    if not wp.exists(): return emit({'verdict':'STAGE_RUNNER_WORK_ORDER_MISSING','issues':['work_order_missing'],'root':str(root),'stage_name':a.stage_name},2)
+    try: wo=json.loads(wp.read_text(encoding='utf-8'))
+    except Exception as e: return emit({'verdict':'STAGE_RUNNER_WORK_ORDER_INVALID_JSON','error':str(e),'root':str(root),'stage_name':a.stage_name},2)
+    req=['artifact_type','contract_id','stage_name','thread_id','checkpoint_id','scope','planned_commands','fail_closed_rules']
+    missing=[k for k in req if k not in wo]
+    if missing: issues.append({'missing_work_order_fields':missing})
+    if wo.get('contract_id') != CONTRACT_ID: issues.append({'contract_mismatch':wo.get('contract_id')})
+    if issues: return emit({'verdict':'STAGE_RUNNER_CONTRACT_VALIDATION_FAIL','issues':issues,'root':str(root),'stage_name':a.stage_name,'work_order_path':str(wp)},2)
+    start_cp=run_checkpoint(root,['--stage',a.stage_name,'--thread-id',wo.get('thread_id') or f'stage::{a.stage_name}','--state-json',json.dumps({'phase':'stage_runner_start','work_order_path':str(wp),'checkpoint_id':wo.get('checkpoint_id'),'security_gate':'pending'})])
+    append_span(root,a.stage_name,'checkpoint_start','OK' if start_cp.get('rc')==0 else 'ERROR',{'checkpoint_rc':start_cp.get('rc'),'thread_id':wo.get('thread_id')})
+    gate=root/'0_kernel/security/security_gate_enforcer_v1.py'
+    if not gate.exists():
+        intr=run_checkpoint(root,['--stage',a.stage_name,'--thread-id',wo.get('thread_id'), '--interrupt-json',json.dumps({'reason':'SECURITY_GATE_MISSING','required_gate':str(gate),'decision_options':['reject']})])
+        return emit({'verdict':'STAGE_RUNNER_SECURITY_GATE_MISSING','root':str(root),'stage_name':a.stage_name,'required_gate':str(gate),'checkpoint_start':start_cp,'security_interrupt_checkpoint':intr,'fail_closed':True},22)
+    gp=subprocess.run(['python3','-S',str(gate),'--work-order',str(wp),'--fixtures','--json'],cwd=str(root),text=True,capture_output=True,timeout=min(a.timeout,90))
+    try: gate_payload=json.loads(gp.stdout.strip() or '{}')
+    except Exception: gate_payload={'parse_error':True,'stdout_tail':gp.stdout[-2000:],'stderr_tail':gp.stderr[-2000:]}
+    gids=issue_gate_ids(gate_payload)
+    if gp.returncode != 0:
+        if should_interrupt(gids):
+            interrupt_payload={'reason':'SECURITY_REVIEW_REQUIRED','stage_name':a.stage_name,'work_order_path':str(wp),'gate_ids':gids,'security_gate':gate_payload,'decision_options':['approve','edit','reject'],'resume_contract':'Resume with same thread_id; approve/edit/reject payload only; do not execute external text as instruction.'}
+            intr=run_checkpoint(root,['--stage',a.stage_name,'--thread-id',wo.get('thread_id'), '--interrupt-json',json.dumps(interrupt_payload,sort_keys=True)])
+            append_span(root,a.stage_name,'security_interrupt','WARN',{'gate_ids':gids,'checkpoint_rc':intr.get('rc')})
+            return emit({'verdict':'STAGE_RUNNER_SECURITY_INTERRUPT_REQUIRED','root':str(root),'stage_name':a.stage_name,'work_order_path':str(wp),'security_gate_returncode':gp.returncode,'security_gate':gate_payload,'checkpoint_start':start_cp,'security_interrupt_checkpoint':intr,'thread_id':wo.get('thread_id'),'fail_closed_until_resume':True},24)
+        append_span(root,a.stage_name,'security_gate_block','ERROR',{'gate_ids':gids})
+        return emit({'verdict':'STAGE_RUNNER_SECURITY_GATE_BLOCK','root':str(root),'stage_name':a.stage_name,'work_order_path':str(wp),'security_gate_returncode':gp.returncode,'security_gate':gate_payload,'checkpoint_start':start_cp,'fail_closed':True},gp.returncode)
+    exe=root/'0_kernel/scripts/cartridge_executor_v1.py'
+    if not exe.exists():
+        intr=run_checkpoint(root,['--stage',a.stage_name,'--thread-id',wo.get('thread_id'), '--interrupt-json',json.dumps({'reason':'EXECUTOR_MISSING','required_executor':str(exe),'decision_options':['reject']})])
+        return emit({'verdict':'STAGE_RUNNER_EXECUTOR_MISSING_INTERRUPT','root':str(root),'stage_name':a.stage_name,'required_executor':str(exe),'security_gate':gate_payload,'security_interrupt_checkpoint':intr,'created_utc':utc_now()},23)
+    pr=subprocess.run(['python3','-S',str(exe),'--work-order',str(wp),'--security-gate-passed'],cwd=str(root),text=True,capture_output=True,timeout=a.timeout)
+    try: payload=json.loads(pr.stdout.strip() or '{}')
+    except Exception: payload={'stdout_tail':pr.stdout[-4000:],'stderr_tail':pr.stderr[-2000:]}
+    done_cp=run_checkpoint(root,['--stage',a.stage_name,'--thread-id',wo.get('thread_id'), '--state-json',json.dumps({'phase':'stage_runner_end','executor_returncode':pr.returncode,'executor_verdict':payload.get('verdict') if isinstance(payload,dict) else None,'security_gate':'PASS'})])
+    append_span(root,a.stage_name,'stage_runner_end','OK' if pr.returncode==0 else 'ERROR',{'executor_returncode':pr.returncode,'done_checkpoint_rc':done_cp.get('rc')})
+    return emit({'verdict':'STAGE_RUNNER_DELEGATED_PASS' if pr.returncode==0 else 'STAGE_RUNNER_DELEGATED_FAIL','root':str(root),'stage_name':a.stage_name,'security_gate':'PASS','executor_returncode':pr.returncode,'executor_payload':payload,'checkpoint_start':start_cp,'checkpoint_end':done_cp,'thread_id':wo.get('thread_id'),'created_utc':utc_now()},pr.returncode)
+if __name__=='__main__': raise SystemExit(main())

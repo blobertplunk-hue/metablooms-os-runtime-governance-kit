@@ -1,0 +1,64 @@
+{
+  "stage": "WORKFLOW_GENERALIZATION_ENGINE_STAGE2_TRANSCRIPT_IMPORTER_AND_EXPORT_BINDING_OR_FULL_EXPORT_REPAIR1_DENSE_TRANSCRIPT_SCORING",
+  "canonical_stage": "WORKFLOW_GENERALIZATION_ENGINE_STAGE2_TRANSCRIPT_IMPORTER_AND_EXPORT_BINDING_OR_FULL_EXPORT",
+  "timestamp_utc": "20260502T231707Z",
+  "verdict": "PASS_IMPLEMENTED_EXPORT_BINDING_NOT_FULL_EXPORTED",
+  "scope": "Implemented transcript lesson importer, better-than-current import gate, cumulative transcript import ledger, fixture evals, and export binding. Full authority export remains the next bounded stage.",
+  "research_basis": [
+    "Lessons-learned repositories should capture and apply knowledge to future projects; postmortem/lessons processes should produce preventive actions rather than notes only."
+  ],
+  "eval_status": "PASS",
+  "fixtures": [
+    "better_sandbox_visual_transcript_adopts",
+    "pc_only_or_gate_skipping_transcript_rejects",
+    "vague_transcript_not_adopted"
+  ],
+  "repair_events": [
+    {
+      "failure_class": "dense_single_paragraph_transcript_underscored",
+      "fix": "score internal directive/artifact/sandbox evidence density, not only line count"
+    }
+  ],
+  "implementation_manifest": [
+    {
+      "path": "0_kernel/importers/transcript_lesson_importer_v1.py",
+      "sha256": "bdafaeb80dcd2ca054c34aa785055b5f9911cc24e35c86f3aac501800467dc7e",
+      "size": 8054
+    },
+    {
+      "path": "0_kernel/registry/workflow_generalization_engine/TRANSCRIPT_LESSON_IMPORT_GATE_POLICY_v1.json",
+      "sha256": "ef53e291f01884f000d770f601f01855b8f49ee76975d848c168aec5429975af",
+      "size": 1662
+    },
+    {
+      "path": "0_kernel/registry/workflow_generalization_engine/TRANSCRIPT_LESSON_IMPORT_CANDIDATE_SCHEMA_v1.json",
+      "sha256": "0e31858790a1ad59a62cee829cd01f17e0df7a1b6d8d592c58c7d7d16ea06e9c",
+      "size": 1252
+    },
+    {
+      "path": "0_kernel/registry/workflow_generalization_engine/WORKFLOW_GENERALIZATION_STAGE2_EXPORT_BINDING_v1.json",
+      "sha256": "78daf943c8b78e3046f06281eabc71ce3a6cbeb2e794e78437c365994a4225fd",
+      "size": 1828
+    },
+    {
+      "path": "runtime/ledgers/workflow_generalization/WORKFLOW_TRANSCRIPT_IMPORT_LEDGER_v1.json",
+      "sha256": "8f589d2da29f56f717871ef91a0d0b2d0df3f4957896218a048431e132afb878",
+      "size": 562
+    },
+    {
+      "path": "tests/evals/workflow_generalization/test_transcript_lesson_importer_v1.py",
+      "sha256": "5620d847858c4ebff0c5de861f2da286002b340350995c699236328a66663e92",
+      "size": 1993
+    },
+    {
+      "path": "runtime/state/WORKFLOW_GENERALIZATION_ENGINE_TRACKER_PREVIEW.txt",
+      "sha256": "f6ace59d3a876fd5eaca3ce29eab9c4bf7a78cfc24a00edf11c11c2d0eefccc3",
+      "size": 806
+    }
+  ],
+  "limitations": [
+    "Importer is deterministic and conservative; semantic clustering for very long transcript bundles should be added later.",
+    "No full authority ZIP created in this bounded implementation stage."
+  ],
+  "next_authorized_stage": "WORKFLOW_GENERALIZATION_ENGINE_STAGE3_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF"
+}

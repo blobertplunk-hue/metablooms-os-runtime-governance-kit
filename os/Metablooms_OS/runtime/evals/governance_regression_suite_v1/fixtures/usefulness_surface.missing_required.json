@@ -1,0 +1,10 @@
+{
+  "artifact_id": "missing_required_dims",
+  "artifact_type": "telemetry_engine",
+  "promotion_required": false,
+  "dimensions_covered": {
+    "instruction": {"covered": true, "note": "Documents the event payload shape", "evidence": ["readme"]},
+    "practice": {"covered": true, "note": "Supports repeated interaction attempts", "evidence": ["demo loop"]},
+    "assessment": {"covered": true, "note": "Can score events during analysis", "evidence": ["scoring function"]}
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "artifact_type": "STAGE_HANDOFF.v1",
+  "created_utc": "20260502T175921Z",
+  "current_authority_zip": "METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_MINIMAL_MOBILE_FINAL_AUTHORITY_LOCKED_20260502T175921Z.zip",
+  "must_keep": [
+    "minimal mode remains default",
+    "do-this-now card stays first",
+    "wrapper-only smoke command remains the live instruction",
+    "deep evidence stays behind drawers"
+  ],
+  "next_purpose": "Add an optional evidence-mode trace waterfall/filter view while preserving minimal mode as the default phone-safe boot surface.",
+  "next_recommended_stage": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS",
+  "resume_from": "/mnt/data/Metablooms_OS",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING",
+  "verdict": "PASS"
+}

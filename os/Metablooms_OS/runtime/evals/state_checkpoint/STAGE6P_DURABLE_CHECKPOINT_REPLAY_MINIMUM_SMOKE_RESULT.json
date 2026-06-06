@@ -1,0 +1,28 @@
+{
+  "deny_returncode": 20,
+  "deny_stdout": {
+    "decision": "DENY",
+    "reason": "resume_payload_not_object"
+  },
+  "resume_returncode": 0,
+  "resume_stdout": {
+    "action": "resume_checkpoint",
+    "child_file_sha256": "060030f18a76381f95dc9e9944217d82e3e09e402f247a3aec59cb4632a657f0",
+    "child_path": "/mnt/data/Metablooms_OS/runtime/checkpoints/stage6p.demo/ckpt_resumed.json",
+    "child_record_sha256": "48c2fa9807084bbe3cfb3ab4a82aa1f4795140f3411964470995da7017540a35",
+    "decision": "ALLOW",
+    "parent_path": "/mnt/data/Metablooms_OS/runtime/checkpoints/stage6p.demo/ckpt_interrupt.json"
+  },
+  "returncode": 0,
+  "schema": "Stage6PDurableCheckpointSmokeResult_v1",
+  "stderr": "",
+  "verdict": "PASS",
+  "write_returncode": 0,
+  "write_stdout": {
+    "action": "write_checkpoint",
+    "decision": "ALLOW",
+    "file_sha256": "7a03d3c8daa25fc0215eedb4cff17400594c493889eeca851e32e492c12babcc",
+    "path": "/mnt/data/Metablooms_OS/runtime/checkpoints/stage6p.demo/ckpt_interrupt.json",
+    "record_sha256": "95959b30b12915f4a451826974d0bf0e6bbcf44fbe0e0a85b8919379be76cf25"
+  }
+}

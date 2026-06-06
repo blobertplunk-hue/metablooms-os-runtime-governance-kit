@@ -1,0 +1,200 @@
+{
+  "artifact_type": "METABLOOMS_EXTERNAL_REVIEW_MATRIX_v1",
+  "cartridges_created": [
+    {
+      "cartridge_id": "EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE",
+      "lens": "Evals",
+      "path": "0_kernel/cartridges/external_review_lenses/EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_SPEC_v1.json",
+      "priority": "P1",
+      "score_before": 2.5
+    },
+    {
+      "cartridge_id": "STATE_CHECKPOINT_RESUME_AND_INTERRUPT_CARTRIDGE",
+      "lens": "State/checkpointing",
+      "path": "0_kernel/cartridges/external_review_lenses/STATE_CHECKPOINT_RESUME_AND_INTERRUPT_CARTRIDGE_SPEC_v1.json",
+      "priority": "P2",
+      "score_before": 3.0
+    },
+    {
+      "cartridge_id": "AGENT_HARNESS_STAGE_GRAPH_AND_WORKTREE_CARTRIDGE",
+      "lens": "Agent harness",
+      "path": "0_kernel/cartridges/external_review_lenses/AGENT_HARNESS_STAGE_GRAPH_AND_WORKTREE_CARTRIDGE_SPEC_v1.json",
+      "priority": "P1",
+      "score_before": 2.5
+    },
+    {
+      "cartridge_id": "SOFTWARE_QUALITY_CRITICAL_PATH_CLI_AND_TEST_CARTRIDGE",
+      "lens": "Software quality",
+      "path": "0_kernel/cartridges/external_review_lenses/SOFTWARE_QUALITY_CRITICAL_PATH_CLI_AND_TEST_CARTRIDGE_SPEC_v1.json",
+      "priority": "P2",
+      "score_before": 3.0
+    },
+    {
+      "cartridge_id": "SECURITY_ARTIFACT_THREAT_MODEL_AND_INJECTION_CARTRIDGE",
+      "lens": "Security",
+      "path": "0_kernel/cartridges/external_review_lenses/SECURITY_ARTIFACT_THREAT_MODEL_AND_INJECTION_CARTRIDGE_SPEC_v1.json",
+      "priority": "P1",
+      "score_before": 2.5
+    },
+    {
+      "cartridge_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_CARTRIDGE",
+      "lens": "Observability",
+      "path": "0_kernel/cartridges/external_review_lenses/OBSERVABILITY_TRACE_SPAN_LEDGER_CARTRIDGE_SPEC_v1.json",
+      "priority": "P1",
+      "score_before": 2.5
+    },
+    {
+      "cartridge_id": "EDUCATION_VALIDITY_LEARNING_EFFICACY_CARTRIDGE",
+      "lens": "Education validity",
+      "path": "0_kernel/cartridges/external_review_lenses/EDUCATION_VALIDITY_LEARNING_EFFICACY_CARTRIDGE_SPEC_v1.json",
+      "priority": "P1",
+      "score_before": 2.5
+    },
+    {
+      "cartridge_id": "UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE",
+      "lens": "UX/product simplicity",
+      "path": "0_kernel/cartridges/external_review_lenses/UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE_SPEC_v1.json",
+      "priority": "P0",
+      "score_before": 1.5
+    },
+    {
+      "cartridge_id": "ARTIFACT_PORTABILITY_REPLAY_PROOF_CARTRIDGE",
+      "lens": "Artifact portability",
+      "path": "0_kernel/cartridges/external_review_lenses/ARTIFACT_PORTABILITY_REPLAY_PROOF_CARTRIDGE_SPEC_v1.json",
+      "priority": "P3",
+      "score_before": 4.0
+    }
+  ],
+  "created_utc": "20260501T040110Z",
+  "governance_rule": "Scores are provisional until each cartridge runs its own executable validator and replay proof.",
+  "rows": [
+    {
+      "current_os_evidence": "Existing eval folders and behavior receipts exist, but current cartridge quality is uneven and there is no universal minimum viable eval loop, trace review protocol, or validator-alignment suite.",
+      "gap": "Missing cross-cartridge examples, trace-review rubrics, regression cases, validator meta-evals, and improvement metrics.",
+      "governed_cartridge": "EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE",
+      "lens": "Evals",
+      "priority": "P1",
+      "score_0_to_5": 2.5,
+      "score_label": "gap",
+      "source_lens": "hamel_evals"
+    },
+    {
+      "current_os_evidence": "OS has receipts, handoffs, pointers, and authority files; boot executor passes with accepted git_dir_missing warning.",
+      "gap": "No single durable checkpoint object with thread/resume semantics, state diff, rollback pointer, and human approval interrupt model.",
+      "governed_cartridge": "STATE_CHECKPOINT_RESUME_AND_INTERRUPT_CARTRIDGE",
+      "lens": "State/checkpointing",
+      "priority": "P2",
+      "score_0_to_5": 3.0,
+      "score_label": "developing",
+      "source_lens": "langgraph_persistence"
+    },
+    {
+      "current_os_evidence": "Stage boundaries and routers exist; archive method router and tool reliability policy are now present.",
+      "gap": "No canonical stage graph runtime, no multi-agent/worktree isolation, no branch-per-stage diff model, and no formal agent handoff protocol.",
+      "governed_cartridge": "AGENT_HARNESS_STAGE_GRAPH_AND_WORKTREE_CARTRIDGE",
+      "lens": "Agent harness",
+      "priority": "P1",
+      "score_0_to_5": 2.5,
+      "score_label": "gap",
+      "source_lens": "langgraph_interrupts"
+    },
+    {
+      "current_os_evidence": "Boot/export validation, checksum sidecars, and fail-closed receipts are strong; 7zz independent archive validator is integrated.",
+      "gap": "Critical path is still fragmented across prompts and scripts; too many governance artifacts are not proven executable gates.",
+      "governed_cartridge": "SOFTWARE_QUALITY_CRITICAL_PATH_CLI_AND_TEST_CARTRIDGE",
+      "lens": "Software quality",
+      "priority": "P2",
+      "score_0_to_5": 3.0,
+      "score_label": "developing",
+      "source_lens": "hamel_evals"
+    },
+    {
+      "current_os_evidence": "There are sandbox/router policies and forbidden-method artifacts; fail-closed posture exists.",
+      "gap": "No complete artifact threat model, malicious receipt detector, prompt-injection sanitizer, authority poisoning test, or least-privilege tool policy coverage matrix.",
+      "governed_cartridge": "SECURITY_ARTIFACT_THREAT_MODEL_AND_INJECTION_CARTRIDGE",
+      "lens": "Security",
+      "priority": "P1",
+      "score_0_to_5": 2.5,
+      "score_label": "gap",
+      "source_lens": "owasp_llm_top10"
+    },
+    {
+      "current_os_evidence": "Receipts and handoffs create audit data; method reliability observations are beginning to persist.",
+      "gap": "No unified trace/span schema, searchable execution timeline, failure clustering, or cross-stage causal graph.",
+      "governed_cartridge": "OBSERVABILITY_TRACE_SPAN_LEDGER_CARTRIDGE",
+      "lens": "Observability",
+      "priority": "P1",
+      "score_0_to_5": 2.5,
+      "score_label": "gap",
+      "source_lens": "langsmith_observability"
+    },
+    {
+      "current_os_evidence": "The OS repeatedly targets TEKS/STAAR artifacts and includes instructional constraints in prior workflows.",
+      "gap": "No universal education-validity rubric, student-facing usability eval, misconception-evidence loop, or learning-gain proxy cartridge across generated materials.",
+      "governed_cartridge": "EDUCATION_VALIDITY_LEARNING_EFFICACY_CARTRIDGE",
+      "lens": "Education validity",
+      "priority": "P1",
+      "score_0_to_5": 2.5,
+      "score_label": "gap",
+      "source_lens": "hamel_evals"
+    },
+    {
+      "current_os_evidence": "Power-user workflow is possible, but normal operation still depends on long prompt incantations and dense terminology.",
+      "gap": "No minimal operator surface such as mb boot/run/verify/export/replay, no one-screen critical path, and no plain-English state dashboard.",
+      "governed_cartridge": "UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE",
+      "lens": "UX/product simplicity",
+      "priority": "P0",
+      "score_0_to_5": 1.5,
+      "score_label": "critical_gap",
+      "source_lens": "langgraph_interrupts",
+      "stage1_evidence": "bin/mb plus executable operator-surface validator",
+      "stage1_score_after_operator_surface": 2.5,
+      "stage1_status": "IMPLEMENTED"
+    },
+    {
+      "current_os_evidence": "Strongest current lens: complete export exists with SHA sidecar, 7zz router, 2590 entries, and independent archive testing.",
+      "gap": "Needs automatic fresh-download/fresh-extract/fresh-boot replay proof for every promoted export, plus stale-authority quarantine and sidecar binding enforcement.",
+      "governed_cartridge": "ARTIFACT_PORTABILITY_REPLAY_PROOF_CARTRIDGE",
+      "lens": "Artifact portability",
+      "priority": "P3",
+      "score_0_to_5": 4.0,
+      "score_label": "strong",
+      "source_lens": "langgraph_persistence"
+    }
+  ],
+  "runtime_root": "/mnt/data/Metablooms_OS",
+  "scale": "0=absent, 1=critical gap, 2=partial descriptive support, 3=developing executable support, 4=strong executable support, 5=proven/replayable best-in-class support",
+  "sources": [
+    {
+      "claim": "State/checkpointing should save graph state as checkpoints to enable human-in-the-loop workflows, memory, time travel debugging, and fault-tolerant execution.",
+      "id": "langgraph_persistence",
+      "url": "https://docs.langchain.com/oss/python/langgraph/persistence"
+    },
+    {
+      "claim": "Human-in-the-loop interrupt workflows require persisted state and a thread identifier to resume execution.",
+      "id": "langgraph_interrupts",
+      "url": "https://docs.langchain.com/oss/python/langgraph/human-in-the-loop"
+    },
+    {
+      "claim": "OWASP LLM Top 10 is a core security framework for critical LLM application vulnerabilities.",
+      "id": "owasp_llm_top10",
+      "url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/"
+    },
+    {
+      "claim": "Agentic security controls should include scoping, threat modeling, prompt-as-code review, access verification, and controls for prompt injection, supply chain, poisoning, excessive agency, and related risks.",
+      "id": "aws_owasp_mapping",
+      "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-security/owasp-top-ten.html"
+    },
+    {
+      "claim": "LLM systems need domain-specific evaluation loops, trace review, and error analysis rather than informal vibe checks.",
+      "id": "hamel_evals",
+      "url": "https://hamel.dev/blog/posts/evals-faq/"
+    },
+    {
+      "claim": "Production LLM/agent applications benefit from trace-level observability, evaluations, and debugging workflows.",
+      "id": "langsmith_observability",
+      "url": "https://docs.smith.langchain.com/"
+    }
+  ],
+  "updated_utc": "20260501T040605Z"
+}

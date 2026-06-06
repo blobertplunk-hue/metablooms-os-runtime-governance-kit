@@ -1,0 +1,15 @@
+{
+  "action_type": "node_zip_profile_export",
+  "decision": "DENY_SUCCESS_COMMIT",
+  "reason_code": "ZIP_DUPLICATES_PRESENT",
+  "reasons": [
+    "duplicates=[]"
+  ],
+  "required_next_action": "repair_result_or_mark_tool_failure",
+  "safe_to_commit_success": false,
+  "schema": "PostToolResultValidationDecision_v1",
+  "stage_id": "STAGE6L_POST_TOOL_RESULT_VALIDATION_GATE",
+  "tool_id": "node_yazl_stream_export",
+  "validated_at_utc": "2026-05-02T02:06:57.901244Z",
+  "validation_id": "STAGE6L_NODE_ZIP_FIXTURE_20260502T032600Z_node_zip_profile_export_post_tool_validation"
+}

@@ -1,0 +1,36 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+import json
+from pathlib import Path
+try:
+ from runtime.governance.safe_walk_v1 import safe_walk
+except Exception:
+ try: from safe_walk_v1 import safe_walk
+ except Exception:
+  import os
+  def safe_walk(root, **kwargs):
+   root=Path(root); ignore={'__pycache__','legacy_archives','legacy_quarantine','.git'}
+   for dp,dns,fns in os.walk(root):
+    dns[:] = [d for d in dns if d not in ignore]
+    for fn in fns: yield Path(dp)/fn
+PATTERNS=('governance','kernel','router','gate','validator','receipt','handoff','cartridge','prompt')
+IGNORE={'__pycache__','legacy_archives','legacy_quarantine','.git'}
+def candidates(root):
+ root=Path(root); out=[]
+ for p in safe_walk(root, ignore_names=IGNORE, files_only=True, max_files=50000):
+  if not p.is_file(): continue
+  rel=p.relative_to(root).as_posix()
+  if any(x in IGNORE for x in rel.split('/')): continue
+  if any(s in rel.lower() for s in PATTERNS): out.append(rel)
+ return sorted(set(out))
+def load_index(root):
+ p=Path(root)/'0_kernel/registry/CONTROLLED_GOVERNANCE_ARTIFACT_INDEX_v1.json'
+ return json.loads(p.read_text()) if p.exists() else {'entries':[]}
+def validate_controlled_artifact_index(root, verify_hashes=False):
+ root=Path(root); data=load_index(root); reg={e.get('path') for e in data.get('entries',[]) if e.get('path')}
+ cur=set(candidates(root)); errors=[]
+ for rel in sorted(cur-reg): errors.append('unregistered_controlled_artifact:'+rel)
+ for rel in sorted(reg-cur): errors.append('registered_missing_artifact:'+rel)
+ return {'decision':'DENY' if errors else 'ALLOW','errors':errors[:200],'current_controlled_count':len(cur),'registered_count':len(reg),'index_status':data.get('status')}
+if __name__=='__main__':
+ import sys; r=validate_controlled_artifact_index(sys.argv[1] if len(sys.argv)>1 else Path.cwd()); print(json.dumps(r,indent=2)); raise SystemExit(0 if r['decision']=='ALLOW' else 1)

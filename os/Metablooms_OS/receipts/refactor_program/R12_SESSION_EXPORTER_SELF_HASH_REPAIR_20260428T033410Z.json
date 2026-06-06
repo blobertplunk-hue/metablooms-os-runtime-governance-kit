@@ -1,0 +1,8 @@
+{
+  "created_utc": "2026-04-28T03:34:10.801693Z",
+  "issue": "session exporter included output snapshot in artifact_hashes, causing circular self-hash drift",
+  "receipt_type": "R12_SESSION_EXPORTER_SELF_HASH_REPAIR",
+  "repair": "removed out_path from tracked artifact_hashes and refreshed latest session export",
+  "stage": "R12_REGRESSION_SUITE_EXPANSION",
+  "verdict": "PASS"
+}

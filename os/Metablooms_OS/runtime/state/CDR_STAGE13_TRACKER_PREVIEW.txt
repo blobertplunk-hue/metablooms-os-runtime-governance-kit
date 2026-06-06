@@ -1,0 +1,6 @@
+TRACKER PREVIEW — CDR_STAGE13_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE12
+Status: PASS_PRE_EXPORT_READY
+Export: BOOTABLE FULL OS AUTHORITY ZIP — CDR Stage 13
+Includes: CDR Stage11 authority plus Stage12 linchpin recursive audit deepening.
+CDR evals: 10/10 PASS.
+Sidecar: external SHA-256 required after export.

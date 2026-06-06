@@ -1,0 +1,24 @@
+{
+  "canonical_working_root": "/mnt/data/Metablooms_OS",
+  "created_utc": "2026-05-02T21:27:00.768062+00:00",
+  "decision": "READY_FOR_NEW_CHAT_BOOT_REPLAY_FROM_FULL_AUTHORITY_EXPORT",
+  "expected_boot_verdict": "PASS",
+  "expected_runtime_starter_decision": "ALLOW",
+  "input_sha256": "external_sidecar_required_after_zip_creation",
+  "input_sidecar": "/mnt/data/METABLOOMS_OS_PROMOTION_AUTHORITY_COHERENCE_GATE_PAC7_FULL_AUTHORITY_LOCKED_20260502T212700Z.zip.sha256",
+  "input_zip": "/mnt/data/METABLOOMS_OS_PROMOTION_AUTHORITY_COHERENCE_GATE_PAC7_FULL_AUTHORITY_LOCKED_20260502T212700Z.zip",
+  "packet_type": "NEW_CHAT_BOOT_REHEARSAL_PACKET_v1",
+  "post_tool_result_validation_required": true,
+  "required_start_sequence": [
+    "Verify the authority ZIP SHA-256 using the external sidecar",
+    "extract or verify /mnt/data/Metablooms_OS",
+    "open/show operator visual tracker",
+    "run boot-critical governance loader",
+    "run scatter prevention and fresh-chat rehearsal",
+    "run runtime starter smoke wrapper",
+    "execute at most one bounded governed stage"
+  ],
+  "stage": "PROMOTION_AUTHORITY_COHERENCE_GATE_PAC7_FULL_EXPORT_AND_NEW_CHAT_REPLAY_LOCK",
+  "stage_sequence": 7,
+  "user_facing_download_label_required": "BOOTABLE FULL OS AUTHORITY ZIP"
+}

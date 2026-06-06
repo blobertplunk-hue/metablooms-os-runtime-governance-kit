@@ -1,0 +1,27 @@
+{
+  "allowed_roots": [
+    "/mnt/data/Metablooms_OS"
+  ],
+  "artifact_type": "AtomicJsonWriteDecisionPacket.v1",
+  "bytes_written": 1127,
+  "created_utc": "2026-05-02T21:59:02Z",
+  "deny_reason": null,
+  "error_type": null,
+  "failure_event_path": null,
+  "fsync_file": true,
+  "fsync_parent": {
+    "attempted": true,
+    "error": null,
+    "ok": true
+  },
+  "ok": true,
+  "operation_id": "VPQ_STAGE2_FAILURE_LEARNING_EVENT",
+  "readback_ok": true,
+  "receipt_path": "/mnt/data/Metablooms_OS/runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE2_VALIDATOR_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T215848Z/atomic_write_decisions/VPQ_STAGE2_FAILURE_LEARNING_EVENT_decision_packet.json",
+  "resolved_target_path": "/mnt/data/Metablooms_OS/runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE2_VALIDATOR_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T215848Z/FAILURE_LEARNING_EVENT_STAGE2_REPAIR.json",
+  "status": "ALLOW_SUCCESS",
+  "target_path": "/mnt/data/Metablooms_OS/runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE2_VALIDATOR_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T215848Z/FAILURE_LEARNING_EVENT_STAGE2_REPAIR.json",
+  "target_sha256": "e00b1379ff4b80c51bf6a1182fae46cfcaa1c51403e713a1598ba23a8c8e8818",
+  "temp_path_used": "/mnt/data/Metablooms_OS/runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE2_VALIDATOR_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN_20260502T215848Z/.FAILURE_LEARNING_EVENT_STAGE2_REPAIR.json.kiixiy8g.tmp",
+  "writer_version": "atomic_json_writer_v1"
+}

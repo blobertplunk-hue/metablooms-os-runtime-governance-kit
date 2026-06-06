@@ -1,0 +1,18 @@
+{
+  "legacy_artifact": "1_governance/workflow_v6/CLAUDE_OPERATING_CONTRACT_v1.md",
+  "status": "quarantined_archive_only_after_r11",
+  "reason": "Claude-specific operating contract is external-agent guidance, not live ChatGPT MetaBlooms runtime authority.",
+  "archive_path": "runtime/governance/legacy_quarantine/R11_20260428T032630Z/CLAUDE_OPERATING_CONTRACT_v1.md",
+  "archive_sha256": "0aa014fe7be1451c45123c6c7de580f8cf8696070b36c88d2a447dd612320a1d",
+  "original_sha256": "0aa014fe7be1451c45123c6c7de580f8cf8696070b36c88d2a447dd612320a1d",
+  "original_size_bytes": 8462,
+  "adr": "0_kernel/docs/decisions/ADR-0001-split-rationale-from-runtime-contracts.md",
+  "successor_contracts": [
+    "runtime/governance/contracts/unified_runtime_compatibility_contract_v1.json",
+    "runtime/governance/registries/gate_registry_v1.json",
+    "runtime/governance/state_exports/SESSION_STATE_EXPORT_LATEST_v1.json"
+  ],
+  "machine_use_status": "forbidden_as_runtime_authority",
+  "created_utc": "2026-04-28T03:26:30Z",
+  "stage": "R11_LEGACY_QUARANTINE_REDIRECTS_AND_CLEANUP"
+}

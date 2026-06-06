@@ -1,0 +1,17 @@
+{
+  "gate_eval": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "PASS\n"
+  },
+  "invalid_cli": {
+    "returncode": 1,
+    "stderr": "",
+    "stdout": "{\n  \"reasons\": [\n    \"interface_missing_required_field:cdr_adaptability_interface_contract_gate_cli_v1:compatibility_policy\",\n    \"stable_interface_missing_backward_compatibility_decision:cdr_adaptability_interface_contract_gate_cli_v1\",\n    \"adaptability_check_not_PASS:compatibility_assessment\",\n    \"fixture_evidence_minimum_not_met\",\n    \"negative_fixture_missing\"\n  ],\n  \"verdict\": \"DENY\",\n  \"warnings\": []\n}\n"
+  },
+  "valid_cli": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\n  \"reasons\": [],\n  \"verdict\": \"ALLOW\",\n  \"warnings\": []\n}\n"
+  }
+}

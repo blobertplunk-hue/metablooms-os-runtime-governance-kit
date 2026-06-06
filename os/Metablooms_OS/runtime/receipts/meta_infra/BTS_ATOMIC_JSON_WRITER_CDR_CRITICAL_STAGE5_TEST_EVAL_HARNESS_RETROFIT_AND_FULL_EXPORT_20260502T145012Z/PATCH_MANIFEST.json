@@ -1,0 +1,37 @@
+{
+  "artifact_type": "AtomicJsonWriterStage5PatchManifest.v1",
+  "direct_json_document_write_replacements": 8,
+  "patched_files": [
+    {
+      "path": "runtime/evals/chat_governance/H0B1_test_chat_governance_kernel.py",
+      "sha256": "6838eae2c8de9598d262f5ecb5c52187bd3fcaa6ca2b9d05d100fa94ab249efa",
+      "size": 3672
+    },
+    {
+      "path": "runtime/evals/governance_survival/H0C2_test_governance_survival.py",
+      "sha256": "638e2c9147d7afdc17cd212240d6a4711a71c6c3719ac5af6de3547be1a43a57",
+      "size": 3060
+    },
+    {
+      "path": "runtime/evals/post_tool_result_validation/test_post_tool_result_validation_v1.py",
+      "sha256": "00f2e34dd1591ca923a135e519a824a1a9cc7e2af97d0d9d4b887a352693da16",
+      "size": 2728
+    },
+    {
+      "path": "runtime/evals/sandbox_governance/H0B2_test_sandbox_governance.py",
+      "sha256": "2cd7dd86512899b4692b1dd8befe1d6f008593752178eb634dcf6c1731cf0fac",
+      "size": 2436
+    },
+    {
+      "path": "runtime/evals/tool_governance/H0C1_test_tool_selection_evidence_router.py",
+      "sha256": "602d8b7b0624762fa8b84eec3b72ba986f9a0aa55ec4ce569e1719d37b32415b",
+      "size": 3318
+    },
+    {
+      "path": "runtime/evals/tool_universe/test_tool_universe_resolver_v1.py",
+      "sha256": "da6c2a7986a12a757423d476c57318a63794a7fd0663e697c5242479a4b5321b",
+      "size": 4484
+    }
+  ],
+  "stage": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT_20260502T145012Z"
+}

@@ -1,0 +1,26 @@
+{
+  "allowed": true,
+  "decision": "ALLOW",
+  "evaluator": "python3-S-policy-evaluator",
+  "fallback": [
+    "go_archive_zip_if_probe_passes",
+    "node_if_zip_library_present",
+    "native_zip_only_after_independent_copy"
+  ],
+  "method": "python3_S_zipfile_stream_rebuild",
+  "preferred": [
+    "python3_S_zipfile_stream_rebuild"
+  ],
+  "reason": "route_allowed",
+  "required_gates": [
+    "source_sidecar_valid",
+    "member_path_audit",
+    "duplicate_member_scan",
+    "no_hardlink_candidate",
+    "deterministic_portability_renames",
+    "testzip_or_equivalent",
+    "bounded_extraction_smoke"
+  ],
+  "router_path": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_CAPABILITY_ROUTER_CARTRIDGE_LATEST.json",
+  "task": "zip_repair"
+}

@@ -1,0 +1,33 @@
+{
+  "coverage": {
+    "blocking_categories": [
+      "artifact_integrity",
+      "determinism",
+      "reliability",
+      "security"
+    ],
+    "budget_type": "error_budget",
+    "present_categories": [
+      "artifact_integrity",
+      "determinism",
+      "latency",
+      "reliability",
+      "security"
+    ],
+    "required_categories": [
+      "artifact_integrity",
+      "determinism",
+      "reliability",
+      "security"
+    ]
+  },
+  "created_at": "2026-04-30T22:37:43.306711+00:00",
+  "gate_id": "NUF-GATE-20260430T223743Z",
+  "packet_id": "NUF-20260430T223743Z",
+  "result_hash": "7613d74cca3d8ad5c71562efbc9eab42183465f2fe451434352624f14b9612f5",
+  "schema_version": "mpp.nuf_budget_gate_result.v1",
+  "stage": "NUF_BUDGET_GATE",
+  "verdict": "PASS",
+  "violations": [],
+  "warnings": []
+}

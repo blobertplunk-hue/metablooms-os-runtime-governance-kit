@@ -1,0 +1,7 @@
+{
+  "expected_decision": "ALLOW",
+  "fixture_id": "patch_replay_export_prompt",
+  "min_top_score": 0.8,
+  "raw_prompt": "Continue the governed OS stage, repair missing files, validate, and export the full OS ZIP with checksum.",
+  "task_hint": "governed_implementation"
+}

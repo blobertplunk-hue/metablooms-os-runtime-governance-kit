@@ -1,0 +1,21 @@
+{
+  "coverage": {
+    "cleanup_steps": 2,
+    "drift_controls": 2,
+    "failure_modes": 2,
+    "has_rollback_window": true,
+    "has_rpo": true,
+    "has_rto": true,
+    "rollback_steps": 4,
+    "validation_drills": 2
+  },
+  "created_at": "2026-04-30T23:00:20.683387+00:00",
+  "gate_id": "RRP-GATE-20260430T230020Z",
+  "packet_id": "RRP-20260430T230020Z",
+  "result_hash": "19284739488cc5c9c0b30cbcf5682384ac644aca36a44112e7679a10a24c9d6c",
+  "schema_version": "mpp.rrp_rollback_gate_result.v1",
+  "stage": "RRP_ROLLBACK_GATE",
+  "verdict": "PASS",
+  "violations": [],
+  "warnings": []
+}

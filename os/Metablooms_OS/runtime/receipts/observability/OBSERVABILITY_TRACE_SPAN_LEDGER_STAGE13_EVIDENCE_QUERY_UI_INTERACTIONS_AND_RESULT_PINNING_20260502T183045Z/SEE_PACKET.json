@@ -1,0 +1,24 @@
+{
+  "artifact_type": "SEE_PACKET.v1",
+  "created_utc": "20260502T183045Z",
+  "design_decision": "Implement client-side expand/pin/copy interactions over static SHA-bound query results; preserve minimal mode and evidence mode separation.",
+  "sources": [
+    {
+      "claim": "OpenTelemetry logs are designed to enable correlation, filtering, querying, and analysis across telemetry records.",
+      "source": "https://opentelemetry.io/docs/specs/otel/logs/"
+    },
+    {
+      "claim": "OpenTelemetry trace/log correlation supports navigating from traces to related logs using trace/span context.",
+      "source": "https://opentelemetry.io/docs/languages/dotnet/logs/correlation/"
+    },
+    {
+      "claim": "Progressive disclosure keeps advanced content secondary to reduce errors and learning burden.",
+      "source": "https://www.nngroup.com/articles/progressive-disclosure/"
+    },
+    {
+      "claim": "Mobile bottom/detail surfaces are useful for contextual details and controls when implemented with care.",
+      "source": "https://www.nngroup.com/articles/bottom-sheet/"
+    }
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_INTERACTIONS_AND_RESULT_PINNING"
+}

@@ -1,0 +1,246 @@
+{
+  "allowed_next_action": "Run one bounded repair stage to reconcile CURRENT_FULL_AUTHORITY_POINTER copies and NEW_CHAT_START_CONTRACT to Stage3 tracker authority before substantive governed work.",
+  "artifact_type": "BOOT_RECEIPT_v1",
+  "blocker": "new_chat_start_contract_validator DENY: pointer copies not identical and contract text/keys stale versus Stage3 tracker authority. Runtime smoke, fresh chat rehearsal, preexecution, task start hook, and tracker boot surface validator passed.",
+  "boot_verdict": "PASS_WITH_BLOCKER_FOR_NEXT_GOVERNED_STAGE",
+  "canonical_root": "/mnt/data/Metablooms_OS",
+  "created_utc": "20260502T162601Z",
+  "extraction": {
+    "dir_count": 758,
+    "file_count": 5156,
+    "status": "PASS"
+  },
+  "fresh_chat_rehearsal": {
+    "checks": [
+      {
+        "name": "exists:0_kernel/registry/BOOT_REQUIRED_GATES_v1.json",
+        "passed": true
+      },
+      {
+        "name": "exists:0_kernel/registry/CONTROLLED_GOVERNANCE_ARTIFACT_INDEX_v1.json",
+        "passed": true
+      },
+      {
+        "name": "exists:runtime/governance/boot_critical_governance_loader_v1.py",
+        "passed": true
+      },
+      {
+        "name": "exists:runtime/governance/governance_scatter_prevention_v1.py",
+        "passed": true
+      },
+      {
+        "name": "exists:runtime/governance/controlled_artifact_registry_v1.py",
+        "passed": true
+      },
+      {
+        "name": "exists:runtime/governance/fresh_chat_boot_rehearsal_v1.py",
+        "passed": true
+      },
+      {
+        "name": "exists:runtime/cartridges/prompt_governance_v1/CARTRIDGE_MANIFEST.json",
+        "passed": true
+      },
+      {
+        "name": "exists:runtime/cartridges/prompt_governance_v1/validate_prompt_governance_cartridge_v1.py",
+        "passed": true
+      },
+      {
+        "name": "exists:0_kernel/registry/PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_2_FRESH_CHAT_REHEARSAL_AND_SCATTER_CLEANUP/FRESH_CHAT_BOOT_PROMPT_LOCK_v1.md",
+        "passed": true
+      }
+    ],
+    "decision": "ALLOW",
+    "errors": []
+  },
+  "new_chat_start_contract_validator": {
+    "checks": [
+      {
+        "name": "exists:CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+        "passed": true
+      },
+      {
+        "name": "exists:runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+        "passed": true
+      },
+      {
+        "name": "exists:0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+        "passed": true
+      },
+      {
+        "name": "exists:0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+        "passed": true
+      },
+      {
+        "name": "exists:NEW_CHAT_START_HERE.md",
+        "passed": true
+      },
+      {
+        "name": "exists:runtime/governance/new_chat_start_contract_validator_v1.py",
+        "passed": true
+      },
+      {
+        "name": "exists:runtime/governance/boot_critical_governance_loader_v1.py",
+        "passed": true
+      },
+      {
+        "name": "exists:runtime/governance/governance_scatter_prevention_v1.py",
+        "passed": true
+      },
+      {
+        "name": "exists:runtime/governance/fresh_chat_boot_rehearsal_v1.py",
+        "passed": true
+      },
+      {
+        "name": "exists:runtime/cartridges/prompt_governance_v1/validate_prompt_governance_cartridge_v1.py",
+        "passed": true
+      }
+    ],
+    "decision": "DENY",
+    "errors": [
+      "pointer_copies_not_identical",
+      "pointer_missing_key:authority_zip",
+      "pointer_missing_key:authority_zip_sha256_sidecar",
+      "pointer_missing_key:boot_entry_contract",
+      "pointer_missing_key:fail_closed_if",
+      "contract_missing_phrase:Verify the authority ZIP SHA-256",
+      "contract_missing_phrase:boot_critical_governance_loader_v1.py",
+      "contract_missing_phrase:governance_scatter_prevention_v1.py",
+      "contract_missing_phrase:fresh_chat_boot_rehearsal_v1.py",
+      "contract_missing_phrase:prompt_governance_v1"
+    ]
+  },
+  "operator_visual_tracker_boot_surface_validator": {
+    "manifest": "/mnt/data/Metablooms_OS/runtime/operator_tracker/OPERATOR_VISUAL_TRACKER_BOOT_SURFACE_LATEST.json",
+    "root_html": "/mnt/data/Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html",
+    "root_html_sha256": "369fd9996ad5cb7ae28d165d8816fa8fd4ef570104a6f2bce57d2f21933f4375",
+    "runtime_html": "/mnt/data/Metablooms_OS/runtime/operator_tracker/operator_visual_tracker_latest.html",
+    "status": "PASS"
+  },
+  "pointer_copy_hashes": {
+    "0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json": "f7e9323df7f1f7c2e5d99792c589d92d6b5085124f3d5f05db00ce18e106e27e",
+    "CURRENT_FULL_AUTHORITY_POINTER_v1.json": "8c644b3cfe6990c5464297896ee46a3c4e395d4fb0cabf99adb0bd96a7d3eb2e",
+    "runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json": "8c644b3cfe6990c5464297896ee46a3c4e395d4fb0cabf99adb0bd96a7d3eb2e"
+  },
+  "preexecution_enforcer": {
+    "artifact_requirements": [
+      "receipt",
+      "handoff",
+      "validation_packet",
+      "checksum_for_exported_bundle"
+    ],
+    "contract_hash": "bbf18df1cf6441b0db0169353ed5b8f99ea23b7cc1e1a1a8fb16dd58e09dfba6",
+    "created_utc": "2026-05-02T16:25:25Z",
+    "decision": "ALLOW",
+    "evidence_requirements": [
+      "web.run_required_for_current_or_best-practice_claims",
+      "SEE_packet_when_research_used",
+      "CE_packet_before_implementation_decision"
+    ],
+    "fail_closed_conditions": [
+      "missing_user_prompt",
+      "unknown_profile",
+      "missing_required_gate",
+      "artifact_write_unproven",
+      "validator_denied"
+    ],
+    "improved_prompt": "Boot from mnt/data\n\nGoverned pre-execution improvements:\n- Write a receipt and handoff for every completed bounded stage.\n- Validate readback and behavior before claiming completion.\n- Attempt a full OS export when validation permits; otherwise write a blocked/partial receipt.\n- Order any ranked options best-to-worst and explain why option 1 is best when options are presented.\n- Fail closed if required artifacts, gates, or evidence are missing.",
+    "ranking_explanation": [
+      {
+        "option": "execute_with_preexecution_contract",
+        "rank": 1,
+        "why": "best: binds task intent, profile, gates, artifacts, and validation before tools run"
+      },
+      {
+        "option": "execute_with_existing_prompt_only",
+        "rank": 2,
+        "why": "weaker: may preserve user wording but misses automatic repair and governance hardening"
+      },
+      {
+        "option": "manual_prompt_review_only",
+        "rank": 3,
+        "why": "weakest: delays execution and does not enforce artifact writeback"
+      }
+    ],
+    "required_gates": [
+      "boot_verify",
+      "gap_audit",
+      "prompt_auto_improvement",
+      "preexecution_route_enforcer",
+      "artifact_write",
+      "validator_replay",
+      "receipt_handoff",
+      "export_attempt"
+    ],
+    "selected_profile": "governed_implementation",
+    "source_prompt_sha256": "843011d4bf7afcb8072cae76823e72be7f7fdb67220351681dd89a7729bd7b11",
+    "task_type": "governed_implementation"
+  },
+  "runtime_starter_smoke": {
+    "decision": "ALLOW",
+    "invalid_json": [],
+    "missing": [],
+    "mode": "root",
+    "path": "/mnt/data/Metablooms_OS",
+    "read_errors": []
+  },
+  "source_sidecar": "/mnt/data/METABLOOMS_OS_OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_FULL_AUTHORITY_REPAIRED_20260502T154025Z.zip.sha256",
+  "source_sidecar_text": "6fc02ac16cd98941e1db334824d44bc1f3985d51bb24dc333918a34eba52c1ef  METABLOOMS_OS_OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_FULL_AUTHORITY_REPAIRED_20260502T154025Z.zip",
+  "source_zip": "/mnt/data/METABLOOMS_OS_OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_FULL_AUTHORITY_REPAIRED_20260502T154025Z.zip",
+  "source_zip_sha256": "6fc02ac16cd98941e1db334824d44bc1f3985d51bb24dc333918a34eba52c1ef",
+  "stage": "BOOT_FROM_MNT_DATA",
+  "task_start_hook": {
+    "artifact_requirements": [
+      "receipt",
+      "handoff",
+      "validation_packet",
+      "checksum_for_exported_bundle"
+    ],
+    "contract_hash": "bbf18df1cf6441b0db0169353ed5b8f99ea23b7cc1e1a1a8fb16dd58e09dfba6",
+    "created_utc": "2026-05-02T16:25:25Z",
+    "decision": "ALLOW",
+    "evidence_requirements": [
+      "web.run_required_for_current_or_best-practice_claims",
+      "SEE_packet_when_research_used",
+      "CE_packet_before_implementation_decision"
+    ],
+    "fail_closed_conditions": [
+      "missing_user_prompt",
+      "unknown_profile",
+      "missing_required_gate",
+      "artifact_write_unproven",
+      "validator_denied"
+    ],
+    "improved_prompt": "Boot from mnt/data\n\nGoverned pre-execution improvements:\n- Write a receipt and handoff for every completed bounded stage.\n- Validate readback and behavior before claiming completion.\n- Attempt a full OS export when validation permits; otherwise write a blocked/partial receipt.\n- Order any ranked options best-to-worst and explain why option 1 is best when options are presented.\n- Fail closed if required artifacts, gates, or evidence are missing.",
+    "ranking_explanation": [
+      {
+        "option": "execute_with_preexecution_contract",
+        "rank": 1,
+        "why": "best: binds task intent, profile, gates, artifacts, and validation before tools run"
+      },
+      {
+        "option": "execute_with_existing_prompt_only",
+        "rank": 2,
+        "why": "weaker: may preserve user wording but misses automatic repair and governance hardening"
+      },
+      {
+        "option": "manual_prompt_review_only",
+        "rank": 3,
+        "why": "weakest: delays execution and does not enforce artifact writeback"
+      }
+    ],
+    "required_gates": [
+      "boot_verify",
+      "gap_audit",
+      "prompt_auto_improvement",
+      "preexecution_route_enforcer",
+      "artifact_write",
+      "validator_replay",
+      "receipt_handoff",
+      "export_attempt"
+    ],
+    "selected_profile": "governed_implementation",
+    "source_prompt_sha256": "843011d4bf7afcb8072cae76823e72be7f7fdb67220351681dd89a7729bd7b11",
+    "task_type": "governed_implementation"
+  },
+  "write_probe": "PASS: /mnt/data write and /mnt/data/Metablooms_OS receipt write succeeded"
+}

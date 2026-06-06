@@ -1,0 +1,22 @@
+{
+  "artifact_type": "MB_CLI_COMMAND_SPEC_v14",
+  "commands": {
+    "checkpoint --interrupt": {
+      "purpose": "write interrupted checkpoint awaiting resume"
+    },
+    "checkpoint --list": {
+      "purpose": "list checkpoint threads"
+    },
+    "checkpoint --resume": {
+      "purpose": "resume interrupted checkpoint using same thread_id"
+    },
+    "checkpoint --stage": {
+      "purpose": "write stage checkpoint"
+    }
+  },
+  "created_utc": "20260501T160500Z",
+  "inherits": [
+    "MB_CLI_COMMAND_SPEC_v13"
+  ],
+  "stage_name": "IMPLEMENT_STATE_CHECKPOINT_RESUME_AND_INTERRUPT_CARTRIDGE_STAGE_1_OR_SECURITY_STAGE4_RED_TEAM_FIXTURES"
+}

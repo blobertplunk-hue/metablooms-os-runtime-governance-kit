@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-04-30T23:50:15.866364+00:00",
+  "decision": {
+    "minimum_promotion_score": 0.95,
+    "next_stage": "MONITOR",
+    "promotion_decision": "PROMOTE_TO_MONITOR",
+    "weighted_score": 1.0
+  },
+  "gate_id": "FIR-GATE-20260430T235015Z",
+  "packet_id": "FIR-20260430T235015Z",
+  "result_hash": "63f83d410b710281f21c81f696e83640181fb1ad349cc6a18ec7425a29b878dd",
+  "schema_version": "mpp.fir_fitness_gate_result.v1",
+  "stage": "FIR_FITNESS_GATE",
+  "verdict": "PASS",
+  "violations": [],
+  "warnings": []
+}

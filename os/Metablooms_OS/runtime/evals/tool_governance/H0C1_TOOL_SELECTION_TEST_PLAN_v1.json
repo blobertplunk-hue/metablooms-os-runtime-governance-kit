@@ -1,0 +1,12 @@
+{
+  "artifact_type": "TEST_PLAN_v1",
+  "stage_id": "H0C1_TOOL_SELECTION_EVIDENCE_ROUTER_CONTINUED",
+  "tests": [
+    "overlay behavior passes before ZIP mutation",
+    "router selects archive route from evidence",
+    "missing decision packet denied",
+    "chat kernel allows valid governed tool packet",
+    "chat kernel denies missing tool packet",
+    "boot loader calls router"
+  ]
+}

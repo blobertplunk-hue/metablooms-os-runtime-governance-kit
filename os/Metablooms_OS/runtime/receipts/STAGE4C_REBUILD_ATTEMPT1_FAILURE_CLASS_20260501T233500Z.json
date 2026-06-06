@@ -1,0 +1,9 @@
+{
+  "stage_id": "STAGE4C_NODE_YAUZL_YAZL_STREAM_REBUILD_AND_BOOT_PROOF",
+  "attempt": 1,
+  "verdict": "FAIL_REPAIRED_BEFORE_PROMOTION",
+  "failure_class": "lazy_source_stream_after_zip_autoclose",
+  "root_cause": "The first stream rebuild runner queued yazl lazy read callbacks, then allowed yauzl to close the source ZIP before yazl requested all source streams.",
+  "corrective_action": "Open source ZIP with autoClose:false and close it only after output stream close.",
+  "promotion_status": "No authority promoted from failed attempt. Partial output discarded before retry."
+}

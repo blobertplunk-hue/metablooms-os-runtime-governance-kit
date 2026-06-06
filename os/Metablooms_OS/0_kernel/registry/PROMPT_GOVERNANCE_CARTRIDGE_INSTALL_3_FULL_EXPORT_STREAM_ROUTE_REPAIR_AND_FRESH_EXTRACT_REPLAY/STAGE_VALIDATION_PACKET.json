@@ -1,0 +1,71 @@
+{
+  "archive": {
+    "duplicate_members": 0,
+    "metrics": {
+      "copied": 2093,
+      "skipped": 3,
+      "wrote": 63
+    },
+    "path": "/mnt/data/METABLOOMS_OS_PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_3_FULL_EXPORT_STREAM_ROUTE_REPAIR_AND_FRESH_EXTRACT_REPLAY_FULL_AUTHORITY_20260430T221500Z.zip",
+    "required_missing": [],
+    "sha256_pre_final": "a02f910ebac604a6660b1a16a4be652e0ca4bc09deae1621cee0a5cb14168cf0",
+    "size_pre_final": 47766632,
+    "testzip_bad_member": null
+  },
+  "fresh_extract_root": "/mnt/data/pg_stage3_fresh_extract_v2/Metablooms_OS",
+  "gate_results": {
+    "boot": {
+      "cmd": [
+        "python3",
+        "-S",
+        "/mnt/data/pg_stage3_fresh_extract_v2/Metablooms_OS/0_kernel/scripts/boot_runtime_executor_v1.py",
+        "--root",
+        "/mnt/data/pg_stage3_fresh_extract_v2/Metablooms_OS"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\n  \"verdict\": \"PASS_WITH_WARNINGS\",\n  \"issues\": [],\n  \"warnings\": [\n    \"git_dir_missing\"\n  ],\n  \"receipt_path\": \"/mnt/data/Metablooms_OS/0_kernel/registry/boot_receipts/BOOT_RECEIPT_1777583997686.json\",\n  \"pass_count\": 7,\n  \"check_count\": 8\n}\n"
+    },
+    "fresh_chat": {
+      "cmd": [
+        "python3",
+        "-S",
+        "/mnt/data/pg_stage3_fresh_extract_v2/Metablooms_OS/runtime/governance/fresh_chat_boot_rehearsal_v1.py",
+        "/mnt/data/pg_stage3_fresh_extract_v2/Metablooms_OS"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\n  \"decision\": \"ALLOW\",\n  \"errors\": [],\n  \"checks\": [\n    {\n      \"name\": \"exists:0_kernel/registry/BOOT_REQUIRED_GATES_v1.json\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:0_kernel/registry/CONTROLLED_GOVERNANCE_ARTIFACT_INDEX_v1.json\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:runtime/governance/boot_critical_governance_loader_v1.py\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:runtime/governance/governance_scatter_prevention_v1.py\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:runtime/governance/controlled_artifact_registry_v1.py\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:runtime/governance/fresh_chat_boot_rehearsal_v1.py\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:runtime/cartridges/prompt_governance_v1/CARTRIDGE_MANIFEST.json\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:runtime/cartridges/prompt_governance_v1/validate_prompt_governance_cartridge_v1.py\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:0_kernel/registry/PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_2_FRESH_CHAT_REHEARSAL_AND_SCATTER_CLEANUP/FRESH_CHAT_BOOT_PROMPT_LOCK_v1.md\",\n      \"passed\": true\n    }\n  ]\n}\n"
+    },
+    "prompt_validator": {
+      "cmd": [
+        "python3",
+        "-S",
+        "/mnt/data/pg_stage3_fresh_extract_v2/Metablooms_OS/runtime/cartridges/prompt_governance_v1/validate_prompt_governance_cartridge_v1.py",
+        "/mnt/data/pg_stage3_fresh_extract_v2/Metablooms_OS"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\n  \"decision\": \"ALLOW\",\n  \"errors\": [],\n  \"checks\": [\n    {\n      \"name\": \"exists:CARTRIDGE_MANIFEST.json\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:PROMPT_ENGINE_CONTRACT_v1.json\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:PROMPT_PROFILE_REGISTRY_v1.json\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:PROMPT_FAILURE_TAXONOMY_v1.json\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:PROMPT_WEAKNESS_LEDGER_TEMPLATE_v1.json\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:PROMPT_PATCH_WRITEBACK_PROTOCOL_v1.json\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:PROMPT_OUTPUT_RULES_v1.json\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:PROMPT_REUSABLE_ASSET_INDEXING_RULES_v1.json\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exists:PROMPT_CARTRIDGE_INSTALLATION_METADATA_v1.json\",\n      \"passed\": true\n    }\n  ]\n}\n"
+    },
+    "scatter": {
+      "cmd": [
+        "python3",
+        "-S",
+        "/mnt/data/pg_stage3_fresh_extract_v2/Metablooms_OS/runtime/governance/governance_scatter_prevention_v1.py",
+        "/mnt/data/pg_stage3_fresh_extract_v2/Metablooms_OS"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\n  \"decision\": \"ALLOW\",\n  \"errors\": [],\n  \"current_controlled_count\": 1789,\n  \"registered_count\": 1789,\n  \"index_status\": \"active\",\n  \"mode\": \"controlled_artifact_index\"\n}\n"
+    }
+  },
+  "passes": {
+    "boot": true,
+    "fresh_chat": true,
+    "prompt_validator": true,
+    "scatter": true
+  },
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_3_FULL_EXPORT_STREAM_ROUTE_REPAIR_AND_FRESH_EXTRACT_REPLAY",
+  "status": "PASS"
+}

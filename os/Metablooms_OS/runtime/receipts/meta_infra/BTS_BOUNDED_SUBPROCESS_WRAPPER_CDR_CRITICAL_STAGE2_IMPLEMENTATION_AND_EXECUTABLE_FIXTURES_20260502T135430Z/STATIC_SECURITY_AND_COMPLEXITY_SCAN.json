@@ -1,0 +1,56 @@
+{
+  "artifact_type": "METABLOOMS_STATIC_SECURITY_AND_COMPLEXITY_SCAN_v1",
+  "bytes": 18417,
+  "checks": [
+    {
+      "check": "shell_false_popen",
+      "detail": "",
+      "pass": true
+    },
+    {
+      "check": "start_new_session_posix",
+      "detail": "",
+      "pass": true
+    },
+    {
+      "check": "process_group_kill",
+      "detail": "",
+      "pass": true
+    },
+    {
+      "check": "atomic_write_json_present",
+      "detail": "",
+      "pass": true
+    },
+    {
+      "check": "forbidden_methods_loaded",
+      "detail": "",
+      "pass": true
+    },
+    {
+      "check": "failure_event_writer_present",
+      "detail": "",
+      "pass": true
+    },
+    {
+      "check": "no_eval_exec_compile",
+      "detail": "",
+      "pass": true
+    },
+    {
+      "check": "no_os_system",
+      "detail": "",
+      "pass": true
+    },
+    {
+      "check": "no_subprocess_shell_true",
+      "detail": "",
+      "pass": true
+    }
+  ],
+  "created_utc": "20260502T135430Z",
+  "line_count": 383,
+  "pass": true,
+  "source_path": "/mnt/data/Metablooms_OS/0_kernel/lib/execution/bounded_subprocess_wrapper_v1.py",
+  "stage_id": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES"
+}

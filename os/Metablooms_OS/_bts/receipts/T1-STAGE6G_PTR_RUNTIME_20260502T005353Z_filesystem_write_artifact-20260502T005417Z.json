@@ -1,0 +1,11 @@
+{
+  "receipt_id": "T1-STAGE6G_PTR_RUNTIME_20260502T005353Z_filesystem_write_artifact-20260502T005417Z",
+  "tier": "T1",
+  "artifact": "/mnt/data/Metablooms_OS/runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+  "sha256": "248878e98fddba7ed077617bc6686045a5249d43a24f6e086e7adaf9ce2c1fe7",
+  "bytes_size": 1822,
+  "prior_sha256": "",
+  "stdout_proof": "",
+  "timestamp": "2026-05-02T00:54:17.034206Z",
+  "turn_id": "STAGE6G_PTR_RUNTIME_20260502T005353Z"
+}

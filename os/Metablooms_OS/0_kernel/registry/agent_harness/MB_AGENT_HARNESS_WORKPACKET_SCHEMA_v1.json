@@ -1,0 +1,24 @@
+{
+  "artifact_type": "MB_AGENT_HARNESS_WORKPACKET_SCHEMA_v1",
+  "created_utc": "20260501T144521Z",
+  "decision_values": [
+    "READY",
+    "PASS",
+    "WARN",
+    "BLOCK",
+    "INTERRUPT"
+  ],
+  "required_fields": [
+    "workpacket_id",
+    "stage_name",
+    "role",
+    "thread_id",
+    "checkpoint_id",
+    "input_artifacts",
+    "output_artifacts",
+    "write_scope",
+    "gates",
+    "decision"
+  ],
+  "write_scope_rule": "write paths must be inside declared scope and must not include authority export until promotion gate passes"
+}

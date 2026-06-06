@@ -1,0 +1,24 @@
+{
+  "artifact": "PORTABLE_BOOT_REBUILD_WITH_PATH_MAPPING_FINAL_RECEIPT.json",
+  "artifacts_written": [
+    "PORTABILITY_RENAMES_v1.json",
+    "BOOT_RECEIPT_PORTABLE_BOOT_REBUILD_WITH_PATH_MAPPING.json"
+  ],
+  "boot_engine_id": "METABLOOMS_INVARIANT_ACTIVATION_ENGINE_v1",
+  "boot_invariants_loaded": 13,
+  "boot_status": "BOOTED_WITH_GOVERNANCE_LOADED",
+  "canonical_root": "/mnt/data/Metablooms_OS",
+  "created_utc": "20260430T163503Z",
+  "governance_enforcement_note": "runtime/governance/invariant_activation_engine_v1.py loaded active invariants from governance/invariants.",
+  "intermediate_rebuilt_sha256": "f2ab43c5a6a1bbb1077e506a7934d6f77037cf5537d8cdda11961cc38952defc",
+  "intermediate_rebuilt_zip": "/mnt/data/METABLOOMS_OS_PORTABLE_BOOT_REBUILT_PATH_MAPPED_20260430T163424Z.zip",
+  "long_archive_paths_renamed_threshold_chars": 200,
+  "materialized_file_count": 1689,
+  "max_future_archive_path_length_before_final_zip": 199,
+  "paths_over_200_before_final_zip": 0,
+  "rename_count": 18,
+  "source_sha256": "a7baebf1b73e2202aad2b8b5190da2cee0a86660eb309fe655397af74131e55a",
+  "source_zip": "/mnt/data/METABLOOMS_OS_COMPLETE_INTEGRATED_AUTHORITY_SIZE_CORRECTED_20260430T164800Z.zip",
+  "stage": "PORTABLE_BOOT_REBUILD_WITH_PATH_MAPPING",
+  "status": "PASS_BOOTED_WITH_GOVERNANCE_LOADED"
+}

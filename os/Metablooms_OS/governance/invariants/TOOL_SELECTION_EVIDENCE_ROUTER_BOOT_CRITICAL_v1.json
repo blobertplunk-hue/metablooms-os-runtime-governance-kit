@@ -1,0 +1,12 @@
+{
+  "artifact_type": "GOVERNANCE_INVARIANT_v1",
+  "enforcement_paths": [
+    "0_kernel/tool_governance/TOOL_SELECTION_EVIDENCE_ROUTER_v1.json",
+    "runtime/governance/tool_selection_evidence_router_v1.py",
+    "0_kernel/registry/BOOT_REQUIRED_GATES_v1.json"
+  ],
+  "id": "TOOL_SELECTION_EVIDENCE_ROUTER_BOOT_CRITICAL_v1",
+  "promotion_blocker": true,
+  "stage_id": "H0C1_TOOL_SELECTION_EVIDENCE_ROUTER_CONTINUED",
+  "statement": "Every MetaBlooms tool use must be preceded by an evidence-backed tool-selection decision packet comparing all viable sandbox routes."
+}

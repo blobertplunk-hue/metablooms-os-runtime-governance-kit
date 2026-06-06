@@ -1,0 +1,1 @@
+{"id":"REG_007_BAD_SHA_SIDECAR","failure_class":"artifact_verification","severity":"high","description":"SHA sidecar must match the actual artifact digest.","expected_decision":"DENY","fixture_type":"artifact_plus_sha","runtime_gate":"slsa_style_artifact_verification","source_failure":"Past exports required digest checks instead of label trust.","checks":["sha256sum_check"]}

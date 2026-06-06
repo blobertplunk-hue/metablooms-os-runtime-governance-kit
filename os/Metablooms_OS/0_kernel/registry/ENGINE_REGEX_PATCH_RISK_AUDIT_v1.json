@@ -1,0 +1,71 @@
+{
+  "version": "1.0",
+  "created_at": 1776996473.2274845,
+  "engine_path": "/mnt/data/Metablooms_OS_refined/0_kernel/scripts/registry_mutation_engine_v2_lite_final.py",
+  "engine_sha256": "a03fa023be4983e6d25d97a8e6b005e88f7771fc7a283f9757e545151842d2fc",
+  "signals_found": [
+    {
+      "line": 120,
+      "text": "os.replace(tmp, IDEMPOTENCY_LOG)",
+      "context": [
+        "def write_idempotency_log(log: Dict[str, Any]) -> None:",
+        "    tmp = IDEMPOTENCY_LOG.with_suffix(\".json.tmp\")",
+        "    save_json(tmp, log)",
+        "    os.replace(tmp, IDEMPOTENCY_LOG)",
+        "",
+        "",
+        "def validate_request(req: Dict[str, Any]) -> List[str]:"
+      ]
+    },
+    {
+      "line": 315,
+      "text": "os.replace(tmp, REG_PATH)",
+      "context": [
+        "",
+        "",
+        "def atomic_replace(tmp: Path) -> None:",
+        "    os.replace(tmp, REG_PATH)",
+        "",
+        "",
+        "def git_commit_transaction(idempotency_key: str, mutated: List[str], before_hash: str, after_hash: str) -> str:"
+      ]
+    }
+  ],
+  "classifications": [
+    {
+      "line": 120,
+      "text": "os.replace(tmp, IDEMPOTENCY_LOG)",
+      "context": [
+        "def write_idempotency_log(log: Dict[str, Any]) -> None:",
+        "    tmp = IDEMPOTENCY_LOG.with_suffix(\".json.tmp\")",
+        "    save_json(tmp, log)",
+        "    os.replace(tmp, IDEMPOTENCY_LOG)",
+        "",
+        "",
+        "def validate_request(req: Dict[str, Any]) -> List[str]:"
+      ],
+      "classification": "false_positive",
+      "reason": "os.replace is atomic filesystem replacement, not string/code patching."
+    },
+    {
+      "line": 315,
+      "text": "os.replace(tmp, REG_PATH)",
+      "context": [
+        "",
+        "",
+        "def atomic_replace(tmp: Path) -> None:",
+        "    os.replace(tmp, REG_PATH)",
+        "",
+        "",
+        "def git_commit_transaction(idempotency_key: str, mutated: List[str], before_hash: str, after_hash: str) -> str:"
+      ],
+      "classification": "false_positive",
+      "reason": "os.replace is atomic filesystem replacement, not string/code patching."
+    }
+  ],
+  "verdict": "false_positive_no_patch_required",
+  "notes": [
+    "Audit triggered by zip deep audit risk finding: regex_or_string_patch_without_clear_post_write_verification.",
+    "This inspection checks actual source lines rather than relying on broad scanner signal."
+  ]
+}

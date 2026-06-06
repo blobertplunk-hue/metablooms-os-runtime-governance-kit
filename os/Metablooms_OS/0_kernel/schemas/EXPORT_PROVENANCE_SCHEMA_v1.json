@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "EXPORT_PROVENANCE_SCHEMA_v1",
+  "title": "MetaBlooms Export Provenance v1",
+  "type": "object",
+  "required": [
+    "version",
+    "created_at",
+    "provenance_id",
+    "builder",
+    "source",
+    "materials",
+    "recipe",
+    "subject",
+    "capability_set",
+    "verification_summary",
+    "verdict"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": [
+        "number",
+        "string"
+      ]
+    },
+    "provenance_id": {
+      "type": "string"
+    },
+    "builder": {
+      "type": "object"
+    },
+    "source": {
+      "type": "object"
+    },
+    "materials": {
+      "type": "array"
+    },
+    "recipe": {
+      "type": "object"
+    },
+    "subject": {
+      "type": "array"
+    },
+    "capability_set": {
+      "type": "array"
+    },
+    "verification_summary": {
+      "type": "object"
+    },
+    "verdict": {
+      "type": "string"
+    }
+  }
+}

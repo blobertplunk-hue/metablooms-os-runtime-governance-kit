@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "created_at": 1777063362.4775305,
+  "from_stage": "E4A_MASTER_PIPELINE_PROOF_SCOPE_LOCK",
+  "to_stage": "E4B_EXECUTION_PLAN_PACKET_CONTRACT",
+  "status": "ready",
+  "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/E4A_MASTER_PIPELINE_PROOF_SCOPE_LOCK_RECEIPT_v1.json",
+  "scope_doc": "/mnt/data/Metablooms_OS_refined/0_kernel/docs/E4A_MASTER_PIPELINE_PROOF_SCOPE_LOCK_v1.md",
+  "scope_contract": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/E4A_MASTER_PIPELINE_PROOF_SCOPE_CONTRACT_v1.json",
+  "recovery_proven_export": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F7_RECOVERY_PROVEN_STABLE_BASELINE_LOCK_v1.json",
+  "implementation_allowed": false,
+  "spec_only": true,
+  "export_allowed": false,
+  "cleanup_allowed": false,
+  "next_command": "EXECUTE STAGE E4B \u2014 EXECUTION PLAN PACKET CONTRACT"
+}

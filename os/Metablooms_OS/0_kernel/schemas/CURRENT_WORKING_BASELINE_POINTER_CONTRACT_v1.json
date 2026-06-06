@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "created_at": 1777061460.423721,
+  "contract_id": "CURRENT_WORKING_BASELINE_POINTER_CONTRACT_v1",
+  "status": "active_contract",
+  "purpose": "Prevent baseline drift by distinguishing current working baseline from stable release exports.",
+  "pointer_file": "0_kernel/state/CURRENT_WORKING_BASELINE_POINTER_v1.json",
+  "schema": "0_kernel/schemas/CURRENT_WORKING_BASELINE_POINTER_SCHEMA_v1.json",
+  "must_update_after": [
+    "successful governed mutation stage",
+    "successful repair stage",
+    "successful rematerialization stage",
+    "successful scope-lock stage that changes governance state",
+    "successful export/baseline-lock stage"
+  ],
+  "must_not_update_after": [
+    "blocked stage",
+    "failed validation",
+    "uncommitted dirty tree",
+    "unverified restore"
+  ],
+  "restore_selection_order": [
+    "0_kernel/state/CURRENT_WORKING_BASELINE_POINTER_v1.json",
+    "0_kernel/state/STAGE_STATE_LEDGER_v1.json latest PASS entry",
+    "latest recovery-proven stable baseline manifest",
+    "manual repaired artifact with explicit repair receipt"
+  ],
+  "validity_requirements": [
+    "active_root exists",
+    ".git exists",
+    "git head in pointer matches active root head",
+    "git status is clean",
+    "git fsck passes",
+    "boot_manifest_v1.json exists",
+    "artifact_registry.json exists"
+  ],
+  "next_stage": "F2_STAGE_DAG_AND_DEPENDENCY_LEDGER_CONTRACT"
+}

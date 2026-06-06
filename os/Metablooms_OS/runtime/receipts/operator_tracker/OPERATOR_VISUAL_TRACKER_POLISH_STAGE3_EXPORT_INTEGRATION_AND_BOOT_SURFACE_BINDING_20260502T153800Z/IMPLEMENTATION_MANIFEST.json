@@ -1,0 +1,18 @@
+{
+  "added_or_modified": [
+    "OPEN_OPERATOR_VISUAL_TRACKER.html",
+    "runtime/operator_tracker/OPERATOR_VISUAL_TRACKER_BOOT_SURFACE_LATEST.json",
+    "0_kernel/registry/operator_surface/OPERATOR_VISUAL_TRACKER_BOOT_SURFACE_BINDING_v1.json",
+    "0_kernel/validators/validate_operator_visual_tracker_boot_surface_stage3_v1.py",
+    "NEW_CHAT_START_HERE.md",
+    "boot_manifest_v1.json",
+    "CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "CURRENT_EXPORT_AUTHORITY_v1.json",
+    "runtime/handoffs/operator_tracker/OPERATOR_VISUAL_TRACKER_STATE_LATEST.json",
+    "runtime/handoffs/operator_tracker/CURRENT_OPERATOR_TRACKER_PREVIEW_LATEST.md"
+  ],
+  "artifact_type": "ImplementationManifest.v1",
+  "binding_summary": "Tracker is now available at root and runtime surfaces, referenced from NEW_CHAT_START_HERE, boot_manifest, current authority pointers, and a dedicated boot-surface manifest.",
+  "created_utc": "2026-05-02T15:37:25Z",
+  "stage": "OPERATOR_VISUAL_TRACKER_POLISH_STAGE3_EXPORT_INTEGRATION_AND_BOOT_SURFACE_BINDING"
+}

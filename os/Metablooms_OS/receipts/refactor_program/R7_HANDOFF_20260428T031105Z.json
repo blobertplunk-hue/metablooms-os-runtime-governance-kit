@@ -1,0 +1,16 @@
+{
+  "handoff_type": "REFRACTOR_PROGRAM_STAGE_HANDOFF",
+  "completed_stage": "R7_USEFULNESS_VALIDATOR_PROMOTION",
+  "created_utc": "2026-04-28T03:11:05Z",
+  "verdict": "PASS",
+  "next_stage": "R8_PYTHON_HEALTH_GOVERNANCE_PROMOTION",
+  "required_next_inputs": [
+    "R7_VERIFY_RECEIPT_20260428T031105Z.json",
+    "runtime/governance/registries/gate_registry_v1.json",
+    "0_kernel/scripts/usefulness_surface_validator_v1.py"
+  ],
+  "notes": [
+    "USEFULNESS_SURFACE_VALIDATION is active in gate registry",
+    "P0PY_PYTHON_HEALTH remains deferred until R8"
+  ]
+}

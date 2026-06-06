@@ -1,0 +1,109 @@
+{
+  "artifact_type": "STAGE_RECEIPT",
+  "artifacts_written": [
+    {
+      "bytes": 2368,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T142219Z/SEE_EVIDENCE_PACKET.json",
+      "sha256": "36cdf604c600c0812647400a73a19ed9de74d67c0f1d242d065049539faf5c24"
+    },
+    {
+      "bytes": 1619,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T142219Z/CE_SYNTHESIS.json",
+      "sha256": "d502f7dca5058a41d3d350a0549dcdc2a34eebfe2cf294b7be0e5525f478a68c"
+    },
+    {
+      "bytes": 1854,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T142219Z/ADS_ATOMIC_JSON_WRITER_CDR_CRITICAL_v1.json",
+      "sha256": "5169affdcc33b66f89cda6db4757964b785208c23435dc0ee486a7bc9b9d43eb"
+    },
+    {
+      "bytes": 2686,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T142219Z/ATOMIC_JSON_WRITER_CONTRACT_v1.json",
+      "sha256": "bef4733cbd7d36aea5ff59fa9ae531221ea6e23e6d92d9529bd4995f0b677e61"
+    },
+    {
+      "bytes": 2029,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T142219Z/ATOMIC_JSON_WRITE_ENVELOPE_SCHEMA_v1.json",
+      "sha256": "593f0c2e2546a3b1eee7996186c644e9f1b413d81f19c3c88a4c3e841d8c34f4"
+    },
+    {
+      "bytes": 1474,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T142219Z/ATOMIC_JSON_WRITE_DECISION_PACKET_SCHEMA_v1.json",
+      "sha256": "d79e2dedfac09658d3e3a36349da953b33177d3046fea08b532d24603128cd9b"
+    },
+    {
+      "bytes": 1193,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T142219Z/ATOMIC_JSON_WRITE_FAILURE_EVENT_SCHEMA_v1.json",
+      "sha256": "76ba4db534492910066bd592f7d8f54f64f2c6259ea34f0fa762d373b1d1c80a"
+    },
+    {
+      "bytes": 1985,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T142219Z/FIXTURE_MATRIX_v1.json",
+      "sha256": "843cdbc6b5fe9f4777e407185fc811b176d068713f61d35fcb59301bae479fca"
+    },
+    {
+      "bytes": 986,
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T142219Z/CDR_CRITICAL_GATE_RESULTS_STAGE1.json",
+      "sha256": "546ff1341ca2acef1e405de3e56078681d116c4de497c4a6e6046647f7463026"
+    }
+  ],
+  "created_utc": "2026-05-02T14:23:17Z",
+  "json_reload_validation": [
+    {
+      "json_reload": "PASS",
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T142219Z/SEE_EVIDENCE_PACKET.json",
+      "sha256": "36cdf604c600c0812647400a73a19ed9de74d67c0f1d242d065049539faf5c24"
+    },
+    {
+      "json_reload": "PASS",
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T142219Z/CE_SYNTHESIS.json",
+      "sha256": "d502f7dca5058a41d3d350a0549dcdc2a34eebfe2cf294b7be0e5525f478a68c"
+    },
+    {
+      "json_reload": "PASS",
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T142219Z/ADS_ATOMIC_JSON_WRITER_CDR_CRITICAL_v1.json",
+      "sha256": "5169affdcc33b66f89cda6db4757964b785208c23435dc0ee486a7bc9b9d43eb"
+    },
+    {
+      "json_reload": "PASS",
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T142219Z/ATOMIC_JSON_WRITER_CONTRACT_v1.json",
+      "sha256": "bef4733cbd7d36aea5ff59fa9ae531221ea6e23e6d92d9529bd4995f0b677e61"
+    },
+    {
+      "json_reload": "PASS",
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T142219Z/ATOMIC_JSON_WRITE_ENVELOPE_SCHEMA_v1.json",
+      "sha256": "593f0c2e2546a3b1eee7996186c644e9f1b413d81f19c3c88a4c3e841d8c34f4"
+    },
+    {
+      "json_reload": "PASS",
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T142219Z/ATOMIC_JSON_WRITE_DECISION_PACKET_SCHEMA_v1.json",
+      "sha256": "d79e2dedfac09658d3e3a36349da953b33177d3046fea08b532d24603128cd9b"
+    },
+    {
+      "json_reload": "PASS",
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T142219Z/ATOMIC_JSON_WRITE_FAILURE_EVENT_SCHEMA_v1.json",
+      "sha256": "76ba4db534492910066bd592f7d8f54f64f2c6259ea34f0fa762d373b1d1c80a"
+    },
+    {
+      "json_reload": "PASS",
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T142219Z/FIXTURE_MATRIX_v1.json",
+      "sha256": "843cdbc6b5fe9f4777e407185fc811b176d068713f61d35fcb59301bae479fca"
+    },
+    {
+      "json_reload": "PASS",
+      "path": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT_20260502T142219Z/CDR_CRITICAL_GATE_RESULTS_STAGE1.json",
+      "sha256": "546ff1341ca2acef1e405de3e56078681d116c4de497c4a6e6046647f7463026"
+    }
+  ],
+  "latest_authority_sha256": "6320b60044177813f42dec5f9ff391bf18993098993eb46d8661c331eb54efc6",
+  "latest_authority_zip": "/mnt/data/METABLOOMS_OS_BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE5_FULL_AUTHORITY_20260502T142018Z.zip",
+  "next_stage": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES",
+  "notes": [
+    "Design/contract only; no implementation or caller retrofit performed.",
+    "No existing 0_kernel/lib/metablooms_atomic_json_v1.py was found in the current root; Stage2 should install a canonical module and then retrofit duplicated helper functions."
+  ],
+  "runtime_root": "/mnt/data/Metablooms_OS",
+  "stage": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT",
+  "stage5_handoff_loaded": true,
+  "status": "PASS"
+}

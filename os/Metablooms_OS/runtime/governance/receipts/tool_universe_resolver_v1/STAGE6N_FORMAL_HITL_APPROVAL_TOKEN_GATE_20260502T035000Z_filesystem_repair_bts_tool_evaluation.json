@@ -1,0 +1,18 @@
+{
+  "schema": "BTS_TOOL_EVALUATION_v1",
+  "stage_id": "STAGE6N_FORMAL_HITL_APPROVAL_TOKEN_GATE_20260502T035000Z",
+  "selected_tool_id": "bts_wrapped_filesystem_write",
+  "candidates": [
+    {
+      "tool_id": "bts_wrapped_filesystem_write",
+      "verdict": "SELECTED",
+      "why": "Top resolver-ranked promoted write route; required for governed filesystem artifact creation with receipts."
+    },
+    {
+      "tool_id": "unzip_tqq_full_test",
+      "verdict": "REJECTED",
+      "exclusion_reason": "Denied by forbidden-method memory; not relevant to low-byte filesystem writes."
+    }
+  ],
+  "why_not_better_tool": "Selected top_allowed_tool_id from Tool Universe Resolver. No higher-ranked allowed candidate exists."
+}

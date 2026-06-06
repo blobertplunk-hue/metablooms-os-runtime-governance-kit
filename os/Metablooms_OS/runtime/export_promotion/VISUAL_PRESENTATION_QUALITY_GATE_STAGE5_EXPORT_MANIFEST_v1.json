@@ -1,0 +1,26 @@
+{
+  "archive_method": "ZIP_STORED regular files only; transient symlinks excluded",
+  "browser_render_limitation_carried_forward": "Stage 4 browser screenshots were blocked by sandbox reliability; WeasyPrint render proxy proof is included.",
+  "created_utc": "2026-05-02T22:24:25Z",
+  "export_filename": "METABLOOMS_OS_VISUAL_PRESENTATION_QUALITY_GATE_STAGE5_FULL_AUTHORITY_EXPORT_20260502T222425Z_STORED_REPAIRED.zip",
+  "export_hash_policy": "external_sidecar_only_no_internal_placeholder",
+  "external_sidecar_required": "/mnt/data/METABLOOMS_OS_VISUAL_PRESENTATION_QUALITY_GATE_STAGE5_FULL_AUTHORITY_EXPORT_20260502T222425Z_STORED_REPAIRED.zip.sha256",
+  "required_relative_paths": [
+    "0_kernel/validators/validate_visual_presentation_quality_gate_v1.py",
+    "0_kernel/registry/visual_presentation_quality/visual_presentation_quality_declaration_schema_v1.json",
+    "0_kernel/registry/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_CONTRACT_v1.json",
+    "0_kernel/registry/operator_surface/VISUAL_PRESENTATION_OPERATOR_TRACKER_BINDING_v1.json",
+    "tests/fixtures/visual_presentation_quality/valid_visual_presentation_quality_html_activity_v1.json",
+    "tests/fixtures/visual_presentation_quality/invalid_visual_presentation_quality_default_browser_styles_v1.json",
+    "tests/fixtures/visual_presentation_quality/valid_visual_presentation_quality_operator_tracker_v1.json",
+    "tests/fixtures/usefulness_surface/valid_usefulness_html_activity_with_visual_presentation_v1.json",
+    "tests/fixtures/usefulness_surface/valid_usefulness_operator_tracker_with_visual_presentation_v1.json",
+    "OPEN_OPERATOR_VISUAL_TRACKER.html",
+    "runtime/state/VISUAL_PRESENTATION_QUALITY_GATE_TRACKER_PREVIEW.txt",
+    "runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE4_RENDER_SMOKE_AND_VISUAL_REVIEW_PACKET_20260502T220827Z/VISUAL_PRESENTATION_QUALITY_GATE_STAGE4_RENDER_SMOKE_AND_VISUAL_REVIEW_PACKET_RECEIPT.json",
+    "runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE4_RENDER_SMOKE_AND_VISUAL_REVIEW_PACKET_20260502T220827Z/VISUAL_REVIEW_PACKET_STAGE4.json",
+    "runtime/receipts/visual_presentation_quality/VISUAL_PRESENTATION_QUALITY_GATE_STAGE4_RENDER_SMOKE_AND_VISUAL_REVIEW_PACKET_20260502T220827Z/weasy_render/operator_tracker_render_contact_sheet.png"
+  ],
+  "schema_version": "metablooms_full_authority_export_manifest.v1",
+  "stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE5_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF"
+}

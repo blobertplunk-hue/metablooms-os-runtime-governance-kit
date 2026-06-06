@@ -1,0 +1,24 @@
+{
+  "contract_id": "PROMPT_AUTO_IMPROVEMENT_LOOP_CONTRACT_v1",
+  "entrypoint": "runtime/governance/prompt_auto_improvement_loop_v1.py",
+  "fail_closed_conditions": [
+    "empty_optimized_prompt",
+    "missing_profile",
+    "drift_gate_denies",
+    "validation_checks_fail",
+    "ledger_write_fails"
+  ],
+  "purpose": "Before a governed process starts, transform the raw user task prompt into a profile-selected execution prompt and log the patch rationale.",
+  "required_behavior": [
+    "select_profile",
+    "classify_task_type",
+    "preserve_original_intent",
+    "add_execution_contract",
+    "add_validation_and_export_rules",
+    "write_prompt_patch_ledger",
+    "write_telemetry_event",
+    "run_drift_gate"
+  ],
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_8_AUTOMATED_PATCH_LOOP_AND_FAILURE_CLASS_CORRECTION",
+  "status": "active"
+}

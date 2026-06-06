@@ -1,0 +1,105 @@
+{
+  "artifact_plan": [
+    {
+      "artifact_id": "ART-001",
+      "purpose": "executable promotion authority coherence gate",
+      "relative_path": "0_kernel/mpp_v3/promotion_authority_coherence_gate_v1.py",
+      "validation": "py_compile and fixture ledger pass"
+    },
+    {
+      "artifact_id": "ART-002",
+      "purpose": "fixture regression evidence",
+      "relative_path": "runtime/receipts/promotion_authority_coherence/.../FIXTURE_RESULT_LEDGER.json",
+      "validation": "six fixtures match expected decisions"
+    },
+    {
+      "artifact_id": "ART-003",
+      "purpose": "current OS defect report without mutating authority",
+      "relative_path": "runtime/receipts/promotion_authority_coherence/.../CURRENT_OS_REPORT_ONLY_SCAN.json",
+      "validation": "JSON parse and decision captured"
+    }
+  ],
+  "created_at": "2026-05-02T20:02:51.893493+00:00",
+  "implementation_targets": [
+    {
+      "artifact_type": "python",
+      "expected_hash_mode": "sha256_required",
+      "operation": "create",
+      "owner": "PROMOTION_AUTHORITY_COHERENCE",
+      "path": "0_kernel/mpp_v3/promotion_authority_coherence_gate_v1.py",
+      "target_id": "IMPL-001"
+    },
+    {
+      "artifact_type": "json_schema",
+      "expected_hash_mode": "sha256_required",
+      "operation": "create",
+      "owner": "PROMOTION_AUTHORITY_COHERENCE",
+      "path": "0_kernel/schemas/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_GATE_RESULT_SCHEMA_v1.json",
+      "target_id": "IMPL-002"
+    },
+    {
+      "artifact_type": "json",
+      "expected_hash_mode": "sha256_required",
+      "operation": "create",
+      "owner": "PROMOTION_AUTHORITY_COHERENCE",
+      "path": "0_kernel/registry/promotion_authority_coherence/PROMOTION_AUTHORITY_COHERENCE_PRE_PROMOTION_BINDING_v1.json",
+      "target_id": "IMPL-003"
+    }
+  ],
+  "objective_id": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN",
+  "packet_id": "IMPL-PAC-STAGE2-20260502T200251Z",
+  "post_write_checks": [
+    "py_compile runner",
+    "JSON parse schema and binding",
+    "run fixture ledger",
+    "run current OS report-only scan",
+    "write receipts and bundle"
+  ],
+  "pre_write_checks": [
+    "load Stage 1 handoff",
+    "verify Stage 1 fixtures readable",
+    "probe root exists"
+  ],
+  "provenance": {
+    "builder": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE2_IMPLEMENTATION_AND_LOCAL_FIXTURE_RUN",
+    "expected_outputs": [
+      "gate runner",
+      "result schema",
+      "fixture ledger",
+      "current OS report-only scan",
+      "receipt",
+      "handoff",
+      "delta ZIP"
+    ],
+    "inputs": [
+      "Stage 1 spec",
+      "Stage 1 lifecycle taxonomy",
+      "Stage 1 fixtures",
+      "SLSA/NIST/OpenSSF SEE findings"
+    ],
+    "verification_expectations": [
+      "fixture ledger PASS",
+      "current scan does not mutate authority",
+      "delta ZIP structural test PASS"
+    ]
+  },
+  "result_hash": "c7cddad25e25ecc5dd003268f5c35014ceb91705a29a33b5981ca0fef24848d5",
+  "schema_version": "mpp.implementation_contract_packet.v1",
+  "source_rrp_packet_id": "PROMOTION_AUTHORITY_COHERENCE_GATE_STAGE1_SPEC_AND_FIXTURES_HANDOFF_LATEST",
+  "stage": "IMPLEMENTATION",
+  "write_policy": {
+    "allowed_roots": [
+      "/mnt/data/Metablooms_OS"
+    ],
+    "forbidden_path_patterns": [
+      "..",
+      "~",
+      "\u0000",
+      "//"
+    ],
+    "requires_atomic_write": true,
+    "requires_parent_creation": true,
+    "requires_probe": true,
+    "requires_receipt": true
+  }
+}

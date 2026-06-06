@@ -1,0 +1,36 @@
+{
+  "artifact_type": "CDR_CRITICAL_GATE_RESULTS_STAGE5_v1",
+  "created_utc": "20260502T142018Z",
+  "gates": [
+    {
+      "gate": "Stage4 handoff loaded",
+      "result": "PASS"
+    },
+    {
+      "gate": "Test/eval harness retrofit",
+      "result": "PASS"
+    },
+    {
+      "gate": "Patched files py_compile",
+      "result": "PASS"
+    },
+    {
+      "gate": "Patched test/eval direct subprocess AST hits",
+      "result": "PASS"
+    },
+    {
+      "gate": "Policy gate",
+      "result": "PASS"
+    },
+    {
+      "gate": "Partial executable harness smoke",
+      "result": "PASS_WITH_LIMITED_EXECUTION"
+    },
+    {
+      "gate": "Full authority export",
+      "result": "PASS"
+    }
+  ],
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE5_TEST_EVAL_HARNESS_RETROFIT_AND_FULL_EXPORT",
+  "verdict": "PASS_WITH_WARNINGS"
+}

@@ -1,0 +1,15 @@
+{
+  "artifact": "/mnt/data/Metablooms_OS/0_kernel/docs/METABLOOMS_REFACTOR_IMPLEMENTATION_WORKFLOW_PLAN_v2.md",
+  "sha256": "d3f9acc63736d1850d8eb633c2323adfcdf9e51f60a32cbce66e3e40f3139d82",
+  "bytes": 21286,
+  "created_utc": "2026-04-28T02:33:39.682373Z",
+  "supersedes": "0_kernel/docs/METABLOOMS_REFACTOR_IMPLEMENTATION_WORKFLOW_PLAN_v1.md",
+  "improvements": [
+    "added explicit risk register",
+    "added bounded option-analysis protocol by decision class",
+    "added deterministic merge/refactor protocol",
+    "added gate-failure recovery rules",
+    "added source-bundle verification procedure",
+    "added conflict handling expectations and fallback branches"
+  ]
+}

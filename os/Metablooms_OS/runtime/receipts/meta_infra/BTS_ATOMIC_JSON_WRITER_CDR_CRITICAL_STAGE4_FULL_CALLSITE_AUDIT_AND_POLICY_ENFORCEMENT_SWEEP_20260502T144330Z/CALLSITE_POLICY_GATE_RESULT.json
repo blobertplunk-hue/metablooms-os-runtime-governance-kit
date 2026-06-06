@@ -1,0 +1,94 @@
+{
+  "artifact_type": "AtomicJsonWriterCallsitePolicyStage4Result.v1",
+  "blocking": [],
+  "blocking_count": 0,
+  "created_utc": "2026-05-02T14:43:53Z",
+  "verdict": "PASS",
+  "warning_count": 14,
+  "warnings": [
+    {
+      "file": "0_kernel/lib/governance_decorators_v1.py",
+      "kind": "append_stream_deferred",
+      "line": 11,
+      "src": "path.open('a',encoding='utf-8')"
+    },
+    {
+      "file": "0_kernel/lib/governance_decorators_v1.py",
+      "kind": "append_stream_deferred",
+      "line": 13,
+      "src": "path.open('a',encoding='utf-8')"
+    },
+    {
+      "file": "0_kernel/lib/governance_decorators_v1.py",
+      "kind": "append_stream_deferred",
+      "line": 15,
+      "src": "path.open('a',encoding='utf-8')"
+    },
+    {
+      "file": "0_kernel/scripts/agent_harness_diff_review_v1.py",
+      "kind": "append_stream_deferred",
+      "line": 26,
+      "src": "p.open('a',encoding='utf-8')"
+    },
+    {
+      "file": "0_kernel/scripts/agent_harness_executor_review_gate_v1.py",
+      "kind": "append_stream_deferred",
+      "line": 16,
+      "src": "p.open('a',encoding='utf-8')"
+    },
+    {
+      "file": "0_kernel/scripts/agent_harness_parallel_workpacket_planner_v1.py",
+      "kind": "append_stream_deferred",
+      "line": 14,
+      "src": "p.open('a',encoding='utf-8')"
+    },
+    {
+      "file": "0_kernel/scripts/agent_harness_planner_v1.py",
+      "kind": "append_stream_deferred",
+      "line": 14,
+      "src": "p.open('a',encoding='utf-8')"
+    },
+    {
+      "file": "0_kernel/scripts/cartridge_executor_v1.py",
+      "kind": "append_stream_deferred",
+      "line": 26,
+      "src": "p.open('a',encoding='utf-8')"
+    },
+    {
+      "file": "0_kernel/scripts/evals_evaluator_runner_v1.py",
+      "kind": "append_stream_deferred",
+      "line": 17,
+      "src": "p.open('a',encoding='utf-8')"
+    },
+    {
+      "file": "0_kernel/scripts/evals_validator_alignment_gate_v1.py",
+      "kind": "append_stream_deferred",
+      "line": 17,
+      "src": "p.open('a', encoding='utf-8')"
+    },
+    {
+      "file": "0_kernel/scripts/runaway_turn_breaker_v1.py",
+      "kind": "append_stream_deferred",
+      "line": 20,
+      "src": "t.open('a',encoding='utf-8')"
+    },
+    {
+      "file": "0_kernel/scripts/security_red_team_runner_v1.py",
+      "kind": "append_stream_deferred",
+      "line": 34,
+      "src": "trace.open(\"a\")"
+    },
+    {
+      "file": "0_kernel/scripts/stage_runner_v1.py",
+      "kind": "append_stream_deferred",
+      "line": 36,
+      "src": "led.open('a',encoding='utf-8')"
+    },
+    {
+      "file": "0_kernel/security/security_gate_enforcer_v1.py",
+      "kind": "append_stream_deferred",
+      "line": 32,
+      "src": "led.open('a',encoding='utf-8')"
+    }
+  ]
+}

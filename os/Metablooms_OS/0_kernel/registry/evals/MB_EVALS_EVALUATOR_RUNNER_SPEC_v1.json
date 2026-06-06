@@ -1,0 +1,36 @@
+{
+  "artifact_type": "MB_EVALS_EVALUATOR_RUNNER_SPEC_v1",
+  "created_utc": "20260501T122230Z",
+  "evaluator_policy": {
+    "false_pass_tolerance": 0,
+    "high_risk_failure_modes_block": [
+      "FM-001",
+      "FM-003",
+      "FM-004",
+      "FM-005",
+      "FM-006",
+      "FM-007",
+      "FM-008",
+      "FM-010"
+    ],
+    "minimum_accuracy": 0.9,
+    "minimum_examples": 20,
+    "no_failure_mode_pass": true,
+    "warning_failure_modes_warn": [
+      "FM-002",
+      "FM-009"
+    ]
+  },
+  "labels": [
+    "PASS",
+    "WARN",
+    "BLOCK"
+  ],
+  "operator_commands": [
+    "mb evals --runner --json",
+    "mb evals --confusion --json",
+    "mb evals --check --json"
+  ],
+  "purpose": "Run deterministic offline evaluator over Stage 2 regression dataset and compute PASS/WARN/BLOCK confusion matrix before promotion.",
+  "stage_name": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_3_EVALUATOR_RUNNER_AND_CONFUSION_MATRIX"
+}

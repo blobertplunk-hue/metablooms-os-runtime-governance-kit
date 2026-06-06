@@ -1,0 +1,23 @@
+{
+  "deny_conditions": [
+    "missing_cycle",
+    "missing_stop_rule",
+    "open_high_value_gap_without_next_stage",
+    "missing_world_class_basis",
+    "missing_source_inventory",
+    "missing_eval_summary"
+  ],
+  "requires": {
+    "min_audit_cycles": 10,
+    "min_gap_taxonomy_categories": 8,
+    "requires_eval_summary": true,
+    "requires_high_value_stop_rule": true,
+    "requires_next_stage_for_open_high_value_gaps": true,
+    "requires_source_inventory": true,
+    "requires_world_class_benchmark_evidence": true
+  },
+  "schema": "CDRLinchpinRecursiveAuditPolicy_v1",
+  "stage": "CDR_STAGE12_CDR_LINCHPIN_RECURSIVE_AUDIT_DEEPENING",
+  "status": "active",
+  "timestamp_utc": "20260502T124500Z"
+}

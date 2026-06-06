@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "artifact_type": "MB_REPAIR_ROUTER_BINDING_SCHEMA.v1",
+  "properties": {
+    "artifact_type": {
+      "const": "MB_REPAIR_ROUTER_BINDING.v1"
+    },
+    "created_utc": {
+      "type": "string"
+    },
+    "router_policy": {
+      "type": "object"
+    },
+    "routes": {
+      "items": {
+        "properties": {
+          "action": {
+            "type": "string"
+          },
+          "evidence_binding": {
+            "type": "array"
+          },
+          "failure_class": {
+            "type": "string"
+          },
+          "route_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "target_workflow": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "route_id",
+          "failure_class",
+          "action",
+          "target_workflow",
+          "evidence_binding",
+          "status"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "stage_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "artifact_type",
+    "stage_id",
+    "created_utc",
+    "router_policy",
+    "routes"
+  ],
+  "title": "MetaBlooms Repair Router Binding",
+  "type": "object"
+}

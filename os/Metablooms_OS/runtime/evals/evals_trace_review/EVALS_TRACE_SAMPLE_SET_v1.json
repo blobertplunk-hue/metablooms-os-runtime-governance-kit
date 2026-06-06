@@ -1,0 +1,45 @@
+{
+  "artifact_type": "EVALS_TRACE_SAMPLE_SET_v1",
+  "created_utc": "20260501T130400Z",
+  "trace_samples": [
+    {
+      "actual_behavior": "Registered stage executed and wrote trace evidence",
+      "decision": "PASS",
+      "expected_behavior": "Allow execution after security gate and produce receipt/handoff",
+      "failure_class": null,
+      "handoff_path": "runtime/handoffs/security/SECURITY_ARTIFACT_THREAT_MODEL_STAGE3_HANDOFF_LATEST.json",
+      "input_summary": "Registered bounded stage with receipts/handoff required",
+      "receipt_path": "runtime/receipts/security/SECURITY_ARTIFACT_THREAT_MODEL_STAGE3_RECEIPT_LATEST.json",
+      "review_notes": "Expected happy path; validates stage runner can route safe bounded work.",
+      "stage_name": "SECURITY_STAGE3_REGISTERED_EXECUTE",
+      "trace_id": "eval-seed-pass-001",
+      "validator_under_review": "security_gate_enforcer_v1.py"
+    },
+    {
+      "actual_behavior": "Security fixture suite expects BLOCK/QUARANTINE",
+      "decision": "BLOCK",
+      "expected_behavior": "Block or quarantine before execution",
+      "failure_class": "prompt_injection",
+      "handoff_path": "runtime/handoffs/security/SECURITY_ARTIFACT_THREAT_MODEL_STAGE2_HANDOFF_LATEST.json",
+      "input_summary": "Prompt-injection-like stage name",
+      "receipt_path": "runtime/receipts/security/SECURITY_ARTIFACT_THREAT_MODEL_STAGE2_RECEIPT_LATEST.json",
+      "review_notes": "Critical false-negative guard for prompt injection and excessive agency.",
+      "stage_name": "malicious_ignore_previous_instructions",
+      "trace_id": "eval-seed-block-001",
+      "validator_under_review": "security_gate_enforcer_v1.py"
+    },
+    {
+      "actual_behavior": "Boot receipts record accepted warning",
+      "decision": "WARN",
+      "expected_behavior": "PASS_WITH_WARNINGS accepted only when scoped to missing git metadata",
+      "failure_class": "non_blocking_environment_warning",
+      "handoff_path": "runtime/handoffs/boot/BOOT_HANDOFF_LATEST.json",
+      "input_summary": "Boot smoke passes with known non-blocking git_dir_missing warning",
+      "receipt_path": "runtime/receipts/boot/BOOT_RECEIPT_LATEST.json",
+      "review_notes": "Prevents warnings from being silently promoted to pass while preserving known non-blocking condition.",
+      "stage_name": "BOOT_WITH_WARNINGS_GIT_DIR_MISSING",
+      "trace_id": "eval-seed-warn-001",
+      "validator_under_review": "boot_runtime_executor_v1.py"
+    }
+  ]
+}

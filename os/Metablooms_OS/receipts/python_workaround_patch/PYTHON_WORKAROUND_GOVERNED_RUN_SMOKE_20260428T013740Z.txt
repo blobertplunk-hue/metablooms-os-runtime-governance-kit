@@ -1,0 +1,4 @@
+=== VALIDATION ===
+PASS: script complies with SQG v2
+MODE: read-only
+governed_run_smoke_ok

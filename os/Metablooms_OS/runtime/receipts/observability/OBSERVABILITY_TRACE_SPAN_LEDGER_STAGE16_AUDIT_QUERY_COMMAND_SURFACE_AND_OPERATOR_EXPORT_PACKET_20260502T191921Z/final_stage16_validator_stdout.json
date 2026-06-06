@@ -1,0 +1,52 @@
+{
+  "artifact_type": "MB_TRACE_SPAN_LEDGER_STAGE16_AUDIT_QUERY_COMMAND_SURFACE_VALIDATION.v1",
+  "checks": [
+    {
+      "check": "exists",
+      "passed": true,
+      "path": "0_kernel/registry/observability/MB_AUDIT_QUERY_COMMAND_SURFACE_SCHEMA_v1.json"
+    },
+    {
+      "check": "exists",
+      "passed": true,
+      "path": "0_kernel/registry/observability/MB_OPERATOR_EXPORT_PACKET_SCHEMA_v1.json"
+    },
+    {
+      "check": "exists",
+      "passed": true,
+      "path": "0_kernel/registry/observability/MB_AUDIT_QUERY_COMMAND_SURFACE_POLICY_v1.json"
+    },
+    {
+      "check": "exists",
+      "passed": true,
+      "path": "runtime/governance/audit_query_command_surface_v1.py"
+    },
+    {
+      "check": "exists",
+      "passed": true,
+      "path": "runtime/state/operator_surface/AUDIT_QUERY_COMMAND_SURFACE_LATEST.json"
+    },
+    {
+      "check": "exists",
+      "passed": true,
+      "path": "runtime/state/operator_surface/AUDIT_QUERY_COMMAND_SURFACE_LATEST.md"
+    },
+    {
+      "check": "exists",
+      "passed": true,
+      "path": "runtime/state/operator_surface/OPERATOR_EXPORT_PACKET_LATEST.json"
+    },
+    {
+      "check": "exists",
+      "passed": true,
+      "path": "runtime/state/operator_surface/OPERATOR_EXPORT_PACKET_LATEST.md"
+    },
+    {
+      "check": "exists",
+      "passed": true,
+      "path": "OPEN_OPERATOR_VISUAL_TRACKER.html"
+    }
+  ],
+  "issues": [],
+  "verdict": "PASS"
+}

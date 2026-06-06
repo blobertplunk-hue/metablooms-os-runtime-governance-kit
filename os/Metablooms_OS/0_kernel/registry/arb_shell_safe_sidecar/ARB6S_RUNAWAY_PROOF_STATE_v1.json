@@ -1,0 +1,63 @@
+{
+  "artifact_id": "ARB6S_RUNAWAY_PROOF_STATE_v1",
+  "stage": "ARB6S_E_SHELL_RUN_FINAL_2_ITEM_PROOF_CHUNK",
+  "status": "complete",
+  "verdict": "DONE",
+  "runner": "shell_only",
+  "python_used": false,
+  "governance": {
+    "runtime_model": "turn_based_artifact_protocol",
+    "runaway_rule": "broad_stages_must_be_split_before_execution",
+    "transaction_rule": "success_requires_write_and_verification",
+    "normal_python3": "blocked_this_session_due_to_startup_timeout"
+  },
+  "contract": {
+    "proof_id": "ARB6S_RUNAWAY_BREAKER_STAGED_PROOF_v1",
+    "purpose": "prove runaway-prevention work is executed as bounded chunks instead of one broad task",
+    "fixture_count": 4,
+    "chunk_size": 2,
+    "oversized_task_was_not_run_as_one_task": true,
+    "shell_only_required": true
+  },
+  "cursor": {
+    "offset": 4,
+    "fixture_count": 4,
+    "done": true,
+    "next_chunk_size": 0
+  },
+  "processed_items": [
+    "fixture_001",
+    "fixture_002",
+    "fixture_003",
+    "fixture_004"
+  ],
+  "chunks": [
+    {
+      "stage": "ARB6S_C_SHELL_RUN_FIRST_2_ITEM_PROOF_CHUNK",
+      "verdict": "CONTINUE",
+      "start_offset": 0,
+      "end_offset": 2,
+      "processed_items": ["fixture_001", "fixture_002"]
+    },
+    {
+      "stage": "ARB6S_E_SHELL_RUN_FINAL_2_ITEM_PROOF_CHUNK",
+      "verdict": "DONE",
+      "start_offset": 2,
+      "end_offset": 4,
+      "processed_items": ["fixture_003", "fixture_004"]
+    }
+  ],
+  "receipts": [
+    {
+      "stage": "ARB6S_E_SHELL_RUN_FINAL_2_ITEM_PROOF_CHUNK",
+      "verdict": "DONE",
+      "writes": 1,
+      "processed_count": 2,
+      "processed_items": ["fixture_003", "fixture_004"],
+      "must_stop": true,
+      "next_correct_command": "EXECUTE ARB6S-F-SHELL — VERIFY FINAL CURSOR/RECEIPT AND PROVE CHUNKING OCCURRED"
+    }
+  ],
+  "must_stop": true,
+  "next_correct_command": "EXECUTE ARB6S-F-SHELL — VERIFY FINAL CURSOR/RECEIPT AND PROVE CHUNKING OCCURRED"
+}

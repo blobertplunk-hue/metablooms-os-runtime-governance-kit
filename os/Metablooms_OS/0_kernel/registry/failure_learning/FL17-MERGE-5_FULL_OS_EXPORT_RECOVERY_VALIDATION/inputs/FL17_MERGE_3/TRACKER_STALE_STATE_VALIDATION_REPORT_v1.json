@@ -1,0 +1,12 @@
+{
+  "artifact_type": "TRACKER_STALE_STATE_VALIDATION_REPORT",
+  "checks": {
+    "no_forbidden_layout": "PASS",
+    "no_percent_symbol": "PASS",
+    "preview_top_marker": "PASS",
+    "stale_state_rejected": "NOT_APPLICABLE_ON_FRESH_STATE"
+  },
+  "errors": [],
+  "stage": "FL17-MERGE-3_TRACKER_LIFECYCLE_REPAIR",
+  "status": "PASS"
+}

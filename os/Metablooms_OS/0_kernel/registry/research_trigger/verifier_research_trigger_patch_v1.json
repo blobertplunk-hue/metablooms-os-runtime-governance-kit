@@ -1,0 +1,32 @@
+{
+  "artifact_id": "verifier_research_trigger_patch_v1",
+  "status": "active",
+  "created_at": "2026-04-24T00:58:30Z",
+  "verification_checks": [
+    {
+      "check_id": "research_keyword_requires_webrun",
+      "if": "user_request_contains_research_outside_code_or_quote AND no_explicit_no_web_override",
+      "must_have": [
+        "web.run_call_record",
+        "SEE_EVIDENCE",
+        "citations"
+      ],
+      "on_fail": "FAIL_CLOSED"
+    },
+    {
+      "check_id": "system_design_research_requires_gap_loop",
+      "if": "task_class in system_design/governance/architecture/audit AND research_keyword_triggered",
+      "must_have": [
+        "gap_report",
+        "recursive_or_expansion_pass_record"
+      ],
+      "on_fail": "FAIL_CLOSED"
+    }
+  ],
+  "output_contract": {
+    "validation_status": "PASS|FAIL",
+    "failed_checks": [],
+    "required_fix": [],
+    "next_action": "proceed|fix|halt"
+  }
+}

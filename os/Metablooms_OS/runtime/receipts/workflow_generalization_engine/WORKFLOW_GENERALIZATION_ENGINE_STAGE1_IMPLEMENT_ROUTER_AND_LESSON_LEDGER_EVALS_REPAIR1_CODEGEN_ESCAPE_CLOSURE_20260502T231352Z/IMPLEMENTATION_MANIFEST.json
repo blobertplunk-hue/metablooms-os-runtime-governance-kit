@@ -1,0 +1,14 @@
+{
+  "stage": "WORKFLOW_GENERALIZATION_ENGINE_STAGE1_IMPLEMENT_ROUTER_AND_LESSON_LEDGER_EVALS_REPAIR1_CODEGEN_ESCAPE_CLOSURE",
+  "timestamp_utc": "20260502T231352Z",
+  "files": [
+    "0_kernel/registry/workflow_generalization_engine/WORKFLOW_GENERALIZATION_ENGINE_POLICY_v1.json",
+    "0_kernel/registry/workflow_generalization_engine/WORKFLOW_LESSON_LEDGER_SCHEMA_v1.json",
+    "0_kernel/registry/workflow_generalization_engine/WORKFLOW_GENERALIZATION_EXPORT_PREP_MANIFEST_v1.json",
+    "runtime/ledgers/workflow_generalization/WORKFLOW_LESSON_LEDGER_v1.json",
+    "0_kernel/routers/workflow_generalization_router_v1.py",
+    "tests/evals/workflow_generalization/test_workflow_generalization_router_v1.py",
+    "runtime/receipts/workflow_generalization_engine/WORKFLOW_GENERALIZATION_ENGINE_STAGE1_IMPLEMENT_ROUTER_AND_LESSON_LEDGER_EVALS_REPAIR1_CODEGEN_ESCAPE_CLOSURE_20260502T231352Z/WORKFLOW_GENERALIZATION_ENGINE_STAGE1_ROUTER_EVAL_REPORT.json",
+    "runtime/state/WORKFLOW_GENERALIZATION_ENGINE_TRACKER_PREVIEW.txt"
+  ]
+}

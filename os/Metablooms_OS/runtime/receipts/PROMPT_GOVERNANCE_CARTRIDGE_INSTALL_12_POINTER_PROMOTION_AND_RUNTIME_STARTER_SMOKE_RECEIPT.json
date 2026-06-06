@@ -1,0 +1,16 @@
+{
+  "created_utc": "2026-04-30T23:23:00Z",
+  "id": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_12_POINTER_PROMOTION_AND_RUNTIME_STARTER_SMOKE_RECEIPT",
+  "implemented": [
+    "promoted current authority pointer paths",
+    "added runtime starter smoke gate",
+    "updated boot-required gates",
+    "wrote stage receipt/handoff",
+    "exported full authority ZIP via stream-only overlay"
+  ],
+  "source_sha256": "58f9d5f9fab816df215941152bf72c22dee94574ce4245cc969c6aa5297f9622",
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_12_POINTER_PROMOTION_AND_RUNTIME_STARTER_SMOKE",
+  "started_from": "METABLOOMS_OS_PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_11_FULL_EXTRACT_REPLAY_FIX_AND_RECOVERY_PROOF_FULL_AUTHORITY_20260501T004500Z.zip",
+  "status": "implemented",
+  "validation_summary": "pending_final_hash_at_receipt_write; see final validation sidecar for final SHA-256"
+}

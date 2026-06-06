@@ -1,0 +1,52 @@
+{
+  "created_utc": "2026-04-28T02:53:18Z",
+  "decision_id": "R4_SESSION_STATE_EXPORT_REPLACEMENT-0196d26c704f9c8e",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [
+    {
+      "path": "runtime/governance/schemas/session_state_export_schema_v1.json"
+    },
+    {
+      "path": "0_kernel/scripts/session_state_exporter_v1.py"
+    },
+    {
+      "path": "0_kernel/scripts/validate_session_state_export_v1.py"
+    },
+    {
+      "path": "runtime/governance/state_exports/SESSION_STATE_EXPORT_LATEST_v1.json"
+    },
+    {
+      "path": "0_kernel/scripts/claude_memory_sync_writer_v1.py"
+    }
+  ],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"authoritative_root\": \"/mnt/data/Metablooms_OS\", \"created_utc\": \"2026-04-28T02:53:18Z\", \"enforcement\": {\"legacy_writer_retired\": true, \"no_vendor_field_names\": true, \"python_lane\": \"runtime/governance/python3_S_lane_exec_v1.sh\", \"self_hash_excluded_to_avoid_circularity\": true}, \"hashes\": {\"0_kernel/scripts/claude_memory_sync_writer_v1.py\": \"e42ed7b66254bbbdf38009ae8af055c5dd5a5a6c4e2f017005619f105a145e23\", \"0_kernel/scripts/session_state_exporter_v1.py\": \"2a499402d1d1a4f157af2ed91fbb91b2d3047e251828e3b991561d064475ed9f\", \"0_kernel/scripts/validate_session_state_export_v1.py\": \"5e05025296fc35c554f1ebb8436d5277d306af0474435b37b99cf630fedc4fe0\", \"runtime/governance/schemas/session_state_export_schema_v1.json\": \"7e774f56c7b58274da8f6939897309c83aec50cf9f155d95a7e9a258e7c59e72\", \"runtime/governance/state_exports/SESSION_STATE_EXPORT_LATEST_v1.json\": \"54165c071dd7831f2daf1c3df747b197951e78047cbb319265ef687993c6aaf6\"}, \"next_stage\": \"R5_GATE_REGISTRY_AND_WIRING_REPLACEMENT\", \"outputs\": [\"runtime/governance/schemas/session_state_export_schema_v1.json\", \"0_kernel/scripts/session_state_exporter_v1.py\", \"0_kernel/scripts/validate_session_state_export_v1.py\", \"runtime/governance/state_exports/SESSION_STATE_EXPORT_LATEST_v1.json\", \"0_kernel/scripts/claude_memory_sync_writer_v1.py\"], \"stage\": \"R4_SESSION_STATE_EXPORT_REPLACEMENT\", \"validation_report\": \"receipts/refactor_program/R4_VALIDATION_REPORT_20260428T025317Z.json\", \"verdict\": \"PASS\"}",
+  "reasons": [],
+  "record_id": "R4_SESSION_STATE_EXPORT_RECEIPT_20260428T025318Z",
+  "record_kind": "stage_receipt",
+  "result": "pass",
+  "source_record": {
+    "path": "receipts/refactor_program/R4_SESSION_STATE_EXPORT_RECEIPT_20260428T025318Z.json",
+    "sha256": "0196d26c704f9c8ea2c811065dca952e145f6d6954bb299c2654d1a562c4c588",
+    "size_bytes": 1540
+  },
+  "span_id": "f7e3b2c0a8ce275d",
+  "stage_id": "R4_SESSION_STATE_EXPORT_REPLACEMENT",
+  "summary": "Canonical wrapper for R4_SESSION_STATE_EXPORT_RECEIPT_20260428T025318Z.json",
+  "trace_id": "c605c1ebe9df974a8e237b11ba613d8c"
+}

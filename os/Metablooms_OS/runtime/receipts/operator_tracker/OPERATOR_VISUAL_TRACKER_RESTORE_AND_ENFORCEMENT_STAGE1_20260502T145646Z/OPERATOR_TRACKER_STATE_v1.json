@@ -1,0 +1,60 @@
+{
+  "active_chain": "Operator visual tracker restore/enforcement",
+  "blocker": {
+    "present": false,
+    "summary": "none"
+  },
+  "completed_chains": [
+    {
+      "chain": "Baseline MPP/CDR authority",
+      "full_export": "METABLOOMS_OS_MPP_CDR_STAGE16_FULL_AUTHORITY_AFTER_STAGE15_BOOTABLE_FULL_OS_AUTHORITY_20260502T132500Z.zip",
+      "latest_stage": "Stage16 full authority",
+      "status": "PASS / bootable"
+    },
+    {
+      "chain": "Bounded subprocess wrapper",
+      "full_export": "METABLOOMS_OS_BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE5_FULL_AUTHORITY_20260502T142018Z.zip",
+      "latest_stage": "Stage5 test/eval + full export",
+      "status": "PASS_WITH_WARNINGS"
+    },
+    {
+      "chain": "Atomic JSON writer",
+      "full_export": "METABLOOMS_OS_BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE5_FULL_AUTHORITY_20260502T145012Z.zip",
+      "latest_stage": "Stage5 test/eval + full export",
+      "status": "PASS_WITH_WARNINGS"
+    },
+    {
+      "chain": "Atomic append-log writer",
+      "full_export": null,
+      "latest_stage": "Stage1 ADS/contract only",
+      "status": "PASS / optional branch paused"
+    },
+    {
+      "chain": "Operator visual tracker",
+      "full_export": null,
+      "latest_stage": "OPERATOR_VISUAL_TRACKER_RESTORE_AND_ENFORCEMENT_STAGE1",
+      "status": "RUNNING_THIS_STAGE"
+    }
+  ],
+  "created_utc": "20260502T145646Z",
+  "evidence": [
+    {
+      "kind": "bundle",
+      "label": "latest full authority export",
+      "path": "/mnt/data/METABLOOMS_OS_BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE5_FULL_AUTHORITY_20260502T145012Z.zip",
+      "sha256": "66bba2bd61cb9a4b8335025a05bfd18cb3772fa1fc687eaeab1bacac4016de1e"
+    }
+  ],
+  "latest_bootable_os": {
+    "exists": true,
+    "path": "/mnt/data/METABLOOMS_OS_BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE5_FULL_AUTHORITY_20260502T145012Z.zip",
+    "sha256": "66bba2bd61cb9a4b8335025a05bfd18cb3772fa1fc687eaeab1bacac4016de1e",
+    "status": "LATEST_FULL_AUTHORITY_AVAILABLE"
+  },
+  "next_optional_implementation": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES",
+  "next_required_action": "Use this tracker preview before any future governed stage response.",
+  "operator_rule": "Every governed final response must include current tracker status and latest full authority if available.",
+  "paused_chain": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL",
+  "schema_version": "OPERATOR_TRACKER_STATE_v1",
+  "stage": "OPERATOR_VISUAL_TRACKER_RESTORE_AND_ENFORCEMENT_STAGE1"
+}

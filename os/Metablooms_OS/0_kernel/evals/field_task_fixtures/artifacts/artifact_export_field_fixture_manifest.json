@@ -1,0 +1,11 @@
+{
+  "checksum_sidecar": "BOOTABLE_FULL_AUTHORITY_FIELD_FIXTURE.zip.sha256",
+  "primary_bootable_authority": "BOOTABLE_FULL_AUTHORITY_FIELD_FIXTURE.zip",
+  "required_checks": [
+    "stat",
+    "sha256sum -c",
+    "zip -T",
+    "clean extraction smoke",
+    "link precheck"
+  ]
+}

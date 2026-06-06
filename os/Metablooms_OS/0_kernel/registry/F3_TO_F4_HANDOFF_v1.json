@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "created_at": 1777062052.5912578,
+  "from_stage": "F3_TRANSACTIONAL_STAGE_RUNNER_CONTRACT",
+  "to_stage": "F4_MANIFEST_PROVENANCE_EXPORT_CONTRACT",
+  "status": "ready",
+  "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F3_TRANSACTIONAL_STAGE_RUNNER_CONTRACT_RECEIPT_v1.json",
+  "runner_contract": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/TRANSACTIONAL_STAGE_RUNNER_CONTRACT_v1.json",
+  "state_machine": "/mnt/data/Metablooms_OS_refined/0_kernel/pipeline/TRANSACTIONAL_STAGE_STATE_MACHINE_v1.json",
+  "dag": "/mnt/data/Metablooms_OS_refined/0_kernel/pipeline/STAGE_DAG_v1.json",
+  "ledger": "/mnt/data/Metablooms_OS_refined/0_kernel/state/STAGE_STATE_LEDGER_v1.json",
+  "spec_only": true,
+  "export_allowed": false,
+  "cleanup_allowed": false,
+  "next_command": "EXECUTE F4 \u2014 MANIFEST/PROVENANCE EXPORT CONTRACT"
+}

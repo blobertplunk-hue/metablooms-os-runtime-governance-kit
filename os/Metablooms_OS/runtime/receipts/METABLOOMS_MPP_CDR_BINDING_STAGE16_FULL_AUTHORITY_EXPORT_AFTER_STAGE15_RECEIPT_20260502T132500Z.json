@@ -1,0 +1,49 @@
+{
+  "accepted_warnings": [
+    "git_dir_missing"
+  ],
+  "authority_export": "/mnt/data/METABLOOMS_OS_MPP_CDR_STAGE16_FULL_AUTHORITY_AFTER_STAGE15_BOOTABLE_FULL_OS_AUTHORITY_20260502T132500Z.zip",
+  "export_label": "BOOTABLE FULL OS AUTHORITY ZIP \u2014 MPP/CDR Stage 16",
+  "external_sidecar_required": true,
+  "included_authority_base": {
+    "ok": true,
+    "path": "/mnt/data/METABLOOMS_OS_CDR_STAGE13_FULL_AUTHORITY_AFTER_CDR_STAGE12_BOOTABLE_FULL_OS_AUTHORITY_20260502T125500Z.zip",
+    "sha256": "74f3b44a925876f63bb12b0951697d91da497465dd565e35fef970f6056e6d9e",
+    "sidecar": "/mnt/data/METABLOOMS_OS_CDR_STAGE13_FULL_AUTHORITY_AFTER_CDR_STAGE12_BOOTABLE_FULL_OS_AUTHORITY_20260502T125500Z.zip.sha256"
+  },
+  "included_support_stages": {
+    "stage14": {
+      "ok": true,
+      "path": "/mnt/data/METABLOOMS_MPP_CDR_BINDING_STAGE14_CODE_WORK_REQUIRES_CDR_IN_MPP_SUPPORT_PROOF_BUNDLE_NOT_OS_20260502T130500Z.zip",
+      "sha256": "f2f1e83e8983763a8ad141257bf52a993140aaa87fe0fc5ded917e38cca9d7e6",
+      "sidecar": "/mnt/data/METABLOOMS_MPP_CDR_BINDING_STAGE14_CODE_WORK_REQUIRES_CDR_IN_MPP_SUPPORT_PROOF_BUNDLE_NOT_OS_20260502T130500Z.zip.sha256"
+    },
+    "stage15": {
+      "ok": true,
+      "path": "/mnt/data/METABLOOMS_MPP_CDR_BINDING_STAGE15_RETROFIT_STAGE_CONTRACTS_TO_DECLARE_CODE_BEARING_FLAG_SUPPORT_PROOF_BUNDLE_NOT_OS_20260502T131500Z.zip",
+      "sha256": "20ecee79066ab542dd8d4a0ea3068e028e00ff6ffd0d356640740943339e8ce7",
+      "sidecar": "/mnt/data/METABLOOMS_MPP_CDR_BINDING_STAGE15_RETROFIT_STAGE_CONTRACTS_TO_DECLARE_CODE_BEARING_FLAG_SUPPORT_PROOF_BUNDLE_NOT_OS_20260502T131500Z.zip.sha256"
+    }
+  },
+  "mpp_cdr_binding": {
+    "cdr_gate_result": "PASS",
+    "cdr_required": true,
+    "mpp_binding_gate_result": "PASS",
+    "stage_contains_code": true
+  },
+  "pre_export_boot": {
+    "boot_executor": "PASS_WITH_ACCEPTED_WARNING_git_dir_missing",
+    "portable_boot_verify": "PASS",
+    "runtime_starter_smoke_decision": "ALLOW"
+  },
+  "pre_export_evals": {
+    "passed": 12,
+    "total": 12
+  },
+  "schema": "MetaBloomsStageReceipt_v1",
+  "sha256_resolution": "external .sha256 sidecar and final proof after zip creation",
+  "stage": "MPP_CDR_BINDING_STAGE16_FULL_AUTHORITY_EXPORT_AFTER_STAGE15",
+  "support_bundle_not_authority": true,
+  "timestamp_utc": "2026-05-02T13:03:18Z",
+  "verdict": "PASS_PENDING_EXTERNAL_SIDECAR_FINALIZATION"
+}

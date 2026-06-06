@@ -1,0 +1,15 @@
+{
+  "findings": [
+    "prompt cartridge lacked formal profile smoke regression suite",
+    "no reliability report generator",
+    "controlled_artifact_registry used .rglob",
+    "Authentic/Adaptive/Wit smoke profiles absent"
+  ],
+  "id": "OS_GAP_AUDIT_PACKET",
+  "preserve": [
+    "Stage 4 pointer lock",
+    "new-chat start contract",
+    "existing profile lineage"
+  ],
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_5_PROMPT_ENGINE_REGRESSION_FIXTURES_AND_PROFILE_SMOKE"
+}

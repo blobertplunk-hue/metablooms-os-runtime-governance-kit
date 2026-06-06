@@ -1,0 +1,17 @@
+{
+  "receipt_type": "METABLOOMS_STAGE4D_POINTER_PROMOTION_RECEIPT",
+  "stage": "STAGE4D_POINTER_PROMOTION_AND_NEW_CHAT_BOOT_REHEARSAL",
+  "created_utc": "2026-05-01T23:55:00Z",
+  "verdict": "PENDING_FINAL_REHEARSAL",
+  "source_zip": "/mnt/data/METABLOOMS_OS_STAGE4C_TOOL_INSTALL_GOVERNED_STREAM_REBUILT_AUTHORITY_ROOTED_20260501T233500Z.zip",
+  "source_sha256": "faa2d0c13777039e995289f4067395fe1880a9d451c902bef62f9c28d311ca77",
+  "promotion_actions": [
+    "verified Stage4C authority sidecar",
+    "rewrote CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+    "rewrote CURRENT_WORKING_BASELINE_POINTER_v1.json",
+    "rewrote NEW_CHAT_BOOT_REHEARSAL_PACKET_v1.json",
+    "created duplicate-free root-prefixed Stage4D authority archive",
+    "scheduled fresh extract boot rehearsal"
+  ],
+  "circular_hash_policy": "final archive hash recorded in external sidecar and external final receipt, not embedded in self-referential ZIP"
+}

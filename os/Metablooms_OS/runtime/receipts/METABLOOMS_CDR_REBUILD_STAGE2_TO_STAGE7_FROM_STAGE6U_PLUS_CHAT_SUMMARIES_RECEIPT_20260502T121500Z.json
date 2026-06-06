@@ -1,0 +1,71 @@
+{
+  "authority_export_performed": false,
+  "basis": {
+    "authority_note": "These are reconstructed artifacts, not original Stage 2-7 support bundles, except Stage 6 which was reuploaded and verified.",
+    "source": "conversation_summaries_provided_in_current_chat_context",
+    "stages": {
+      "CDR_STAGE2": "Full code acceptance contract and recursive audit loop: all CDR dimensions require evidence; valid fixture allow, missing regression deny.",
+      "CDR_STAGE3": "Recursive audit expansion and risk-tiered test matrix: LOW/MEDIUM/HIGH/CRITICAL evidence tiers; authority export trigger escalates to CRITICAL.",
+      "CDR_STAGE4": "Source-level self-audit and fixture generation: audit CDR governance source, require fixture/eval coverage, generate negative fixtures.",
+      "CDR_STAGE5": "Source style and debuggability retrofit: module headers Purpose/Inputs/Outputs/Failure modes/Debuggability and structured denial reasons.",
+      "CDR_STAGE6": "Adaptability and interface contract hardening: uploaded support bundle verified and extracted; requires purpose, IO, errors, side effects, compatibility, extension and deprecation policy.",
+      "CDR_STAGE7": "Security and observability deepening: require input validation, access control, secret protection, file path safety, safe error logging, recurrence controls, trace span/error/correlation/export/log integrity."
+    }
+  },
+  "bundle_type": "SUPPORT/PROOF BUNDLE \u2014 NOT THE OS BUNDLE",
+  "next_best_stage": "CDR_STAGE8_STATIC_ANALYSIS_AND_COMPLEXITY_QUALITY_GATES",
+  "portable_boot_verify": {
+    "returncode": 0,
+    "stderr": "/mnt/data/Metablooms_OS/portable_full_os_boot_verify.py:5: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n  def now(): return datetime.datetime.utcnow().replace(microsecond=0).isoformat()+'Z'\n",
+    "stdout": "{\n  \"stage\": \"PORTABLE_FULL_OS_BOOT_VERIFY_REPAIRED_H0B2\",\n  \"timestamp_utc\": \"2026-05-02T12:10:20Z\",\n  \"status\": \"PASS\",\n  \"root\": \"/mnt/data/Metablooms_OS\",\n  \"errors\": [],\n  \"sandbox_policy\": \"ALLOW\",\n  \"chat_kernel\": \"ALLOW\"\n}\n"
+  },
+  "reconstructed_stages": [
+    "CDR_STAGE2",
+    "CDR_STAGE3",
+    "CDR_STAGE4",
+    "CDR_STAGE5",
+    "CDR_STAGE7"
+  ],
+  "schema": "MetaBloomsCDRReconstructionReceipt_v1",
+  "stage": "CDR_REBUILD_STAGE2_TO_STAGE7_FROM_STAGE6U_PLUS_CHAT_SUMMARIES",
+  "stage6u_authority_sha256": "78543cf3fa1618b590c1f75740ca68dc9357db3b66e5ebda4e2fe4cb3320abe9",
+  "timestamp_utc": "2026-05-02T12:10:20Z",
+  "uploaded_stage6_sha256": "5da01a3ad7cc86b2a5dc74a50d953f859097cea67b01db74bbef9a38fa1f7b74",
+  "validation_results": [
+    {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "test_cdr_code_acceptance_gate_v1.py: PASS\n",
+      "test": "tests/evals/cdr/test_cdr_code_acceptance_gate_v1.py"
+    },
+    {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "test_cdr_risk_tiered_test_matrix_gate_v1.py: PASS\n",
+      "test": "tests/evals/cdr/test_cdr_risk_tiered_test_matrix_gate_v1.py"
+    },
+    {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "test_cdr_security_observability_gate_v1.py: PASS\n",
+      "test": "tests/evals/cdr/test_cdr_security_observability_gate_v1.py"
+    },
+    {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "test_cdr_source_level_self_audit_gate_v1.py: PASS\n",
+      "test": "tests/evals/cdr/test_cdr_source_level_self_audit_gate_v1.py"
+    },
+    {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "test_cdr_source_style_debuggability_gate_v1.py: PASS\n",
+      "test": "tests/evals/cdr/test_cdr_source_style_debuggability_gate_v1.py"
+    }
+  ],
+  "verdict": "PASS_RECONSTRUCTED_CHAIN",
+  "verified_original_from_upload": [
+    "CDR_STAGE6"
+  ],
+  "warning": "Stages 2,3,4,5,7 are reconstructed from chat summaries, not original support bundles."
+}

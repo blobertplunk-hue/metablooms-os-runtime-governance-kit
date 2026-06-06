@@ -1,0 +1,28 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/ORCHESTRATOR_CONTROLLER_GATE_RESULT_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "result_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "mpp.orchestrator_controller_gate_result.v1"
+    }
+  },
+  "required": [
+    "schema_version",
+    "gate_id",
+    "stage",
+    "created_at",
+    "packet_id",
+    "verdict",
+    "violations",
+    "warnings",
+    "next_action",
+    "result_hash"
+  ],
+  "title": "MPP v3 Orchestrator Controller Gate Result",
+  "type": "object"
+}

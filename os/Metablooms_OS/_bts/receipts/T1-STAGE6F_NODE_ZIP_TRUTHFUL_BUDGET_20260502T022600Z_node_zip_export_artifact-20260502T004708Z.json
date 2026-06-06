@@ -1,0 +1,11 @@
+{
+  "receipt_id": "T1-STAGE6F_NODE_ZIP_TRUTHFUL_BUDGET_20260502T022600Z_node_zip_export_artifact-20260502T004708Z",
+  "tier": "T1",
+  "artifact": "/mnt/data/Metablooms_OS/runtime/governance/executors/fixtures/stage6f_node_profile_fixture_truthful_budget.zip",
+  "sha256": "e40876f9ee1cd9fd41110efa4d38f33fff13b5cbe13c5d0477adb1b35ba7d300",
+  "bytes_size": 350,
+  "prior_sha256": "",
+  "stdout_proof": "",
+  "timestamp": "2026-05-02T00:47:08.252929Z",
+  "turn_id": "STAGE6F_NODE_ZIP_TRUTHFUL_BUDGET_20260502T022600Z"
+}

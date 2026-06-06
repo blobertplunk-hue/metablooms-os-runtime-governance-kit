@@ -1,0 +1,14 @@
+{
+  "blocks": [
+    "unprofiled scanner install",
+    "scanner findings without normalized packet",
+    "missing fallback baseline",
+    "unavailable scanner treated as success without fallback"
+  ],
+  "gate": "runtime/governance/cdr_real_scanner_adapter_gate_v1.py",
+  "id": "CDR_REAL_SCANNER_ADAPTER_INSTALL_PROFILES_REQUIRED_v1",
+  "rule": "CDR scanner use must follow real-scanner adapter profiles when available and deterministic fallback baselines when unavailable; scanner installs require governed install receipts.",
+  "schema": "MetaBloomsInvariant_v1",
+  "stage": "CDR_STAGE10_REAL_SCANNER_ADAPTER_INSTALL_PROFILES_OR_FULL_AUTHORITY_EXPORT_AFTER_CDR_STAGE9",
+  "status": "ACTIVE"
+}

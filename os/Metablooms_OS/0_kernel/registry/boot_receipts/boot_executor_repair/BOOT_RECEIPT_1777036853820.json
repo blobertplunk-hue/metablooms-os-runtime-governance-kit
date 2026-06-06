@@ -1,0 +1,186 @@
+{
+  "version": "1.0",
+  "created_at": 1777036853.8204236,
+  "stage": "BOOT_RUNTIME_EXECUTOR",
+  "root": "/mnt/data/Metablooms_OS_refined",
+  "checks": [
+    {
+      "name": "root_exists",
+      "passed": true,
+      "observed": {
+        "root": "/mnt/data/Metablooms_OS_refined",
+        "exists": true,
+        "is_dir": true
+      }
+    },
+    {
+      "name": "git_dir_exists",
+      "passed": true,
+      "observed": {
+        "path": "/mnt/data/Metablooms_OS_refined/.git",
+        "exists": true
+      }
+    },
+    {
+      "name": "required_path:boot_manifest_v1.json",
+      "passed": true,
+      "observed": {
+        "relative_path": "boot_manifest_v1.json",
+        "path": "/mnt/data/Metablooms_OS_refined/boot_manifest_v1.json",
+        "exists": true,
+        "is_file": true,
+        "size_bytes": 5060
+      }
+    },
+    {
+      "name": "required_path:artifact_registry.json",
+      "passed": true,
+      "observed": {
+        "relative_path": "artifact_registry.json",
+        "path": "/mnt/data/Metablooms_OS_refined/artifact_registry.json",
+        "exists": true,
+        "is_file": true,
+        "size_bytes": 67688
+      }
+    },
+    {
+      "name": "required_path:0_kernel/scripts/boot_runtime_executor_v1.py",
+      "passed": true,
+      "observed": {
+        "relative_path": "0_kernel/scripts/boot_runtime_executor_v1.py",
+        "path": "/mnt/data/Metablooms_OS_refined/0_kernel/scripts/boot_runtime_executor_v1.py",
+        "exists": true,
+        "is_file": true,
+        "size_bytes": 8037
+      }
+    },
+    {
+      "name": "boot_manifest_parseable",
+      "passed": true,
+      "observed": {
+        "keys": [
+          "boot_executor",
+          "boot_ready",
+          "ce_packet_validator",
+          "created_at",
+          "current_stable_baseline",
+          "entrypoints",
+          "execution_safety",
+          "failures",
+          "governance_modules",
+          "lessons_learned",
+          "notes",
+          "registry_path",
+          "registry_status",
+          "root",
+          "trigger_router_evaluator",
+          "updated_at",
+          "version"
+        ]
+      }
+    },
+    {
+      "name": "artifact_registry_parseable",
+      "passed": true,
+      "observed": {
+        "artifact_count": 54
+      }
+    },
+    {
+      "name": "capability_path:trigger_router_evaluator",
+      "passed": true,
+      "observed": {
+        "relative_path": "0_kernel/scripts/trigger_router_evaluator_v1.py",
+        "path": "/mnt/data/Metablooms_OS_refined/0_kernel/scripts/trigger_router_evaluator_v1.py",
+        "exists": true,
+        "is_file": true,
+        "size_bytes": 3503
+      }
+    },
+    {
+      "name": "capability_path:ce_packet_validator",
+      "passed": true,
+      "observed": {
+        "relative_path": "0_kernel/scripts/ce_packet_validator_v1.py",
+        "path": "/mnt/data/Metablooms_OS_refined/0_kernel/scripts/ce_packet_validator_v1.py",
+        "exists": true,
+        "is_file": true,
+        "size_bytes": 4877
+      }
+    },
+    {
+      "name": "capability_path:runaway_turn_breaker",
+      "passed": true,
+      "observed": {
+        "relative_path": "0_kernel/registry/lessons_learned/RUNAWAY_TURN_BREAKER_INVARIANT_v1.json",
+        "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/lessons_learned/RUNAWAY_TURN_BREAKER_INVARIANT_v1.json",
+        "exists": true,
+        "is_file": true,
+        "size_bytes": 1185
+      }
+    },
+    {
+      "name": "capability_path:tracked_cache_invariant",
+      "passed": true,
+      "observed": {
+        "relative_path": "0_kernel/registry/lessons_learned/EXPORT_RECOVERY_TRACKED_CACHE_INVARIANT_v1.json",
+        "path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/lessons_learned/EXPORT_RECOVERY_TRACKED_CACHE_INVARIANT_v1.json",
+        "exists": true,
+        "is_file": true,
+        "size_bytes": 725
+      }
+    },
+    {
+      "name": "boot_manifest_trigger_router_reference",
+      "passed": true,
+      "observed": {
+        "script": "0_kernel/scripts/trigger_router_evaluator_v1.py"
+      }
+    },
+    {
+      "name": "boot_manifest_ce_validator_reference",
+      "passed": true,
+      "observed": {
+        "script": "0_kernel/scripts/ce_packet_validator_v1.py"
+      }
+    },
+    {
+      "name": "boot_manifest_runaway_breaker_active",
+      "passed": true,
+      "observed": {
+        "status": "active"
+      }
+    }
+  ],
+  "check_count": 14,
+  "pass_count": 14,
+  "issues": [],
+  "verdict": "PASS",
+  "boot_manifest_summary": {
+    "current_stable_baseline": {
+      "status": "active_recreated_current_before_D0",
+      "baseline_export": "/mnt/data/Metablooms_OS_refined_RECREATED_CURRENT_BASELINE_BEFORE_D0.zip",
+      "baseline_manifest": "/mnt/data/Metablooms_OS_refined_RECREATED_CURRENT_BASELINE_BEFORE_D0.zip.sha256.json",
+      "source_restored_from": "/mnt/data/Metablooms_OS_refined_research_tool_governed_bootfixed_v6.zip",
+      "boot_recovery_proven": false,
+      "trigger_router_evaluator_integrated": true,
+      "ce_packet_validator_integrated": true,
+      "runaway_turn_breaker_integrated": true,
+      "baseline_lock_receipt": "0_kernel/registry/BASELINE_LOCK_RECREATED_CURRENT_BEFORE_D0_RECEIPT.json"
+    },
+    "execution_safety": {
+      "runaway_turn_breaker": {
+        "status": "active",
+        "invariant": "0_kernel/registry/lessons_learned/RUNAWAY_TURN_BREAKER_INVARIANT_v1.json",
+        "subprocess_timeout_required": true,
+        "partial_receipt_on_blocker_required": true,
+        "resume_from_verified_artifact_required": true,
+        "broad_recursive_scan_requires_filter": true
+      }
+    }
+  },
+  "artifact_registry_summary": {
+    "artifact_count": 54
+  },
+  "receipt_path": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/boot_receipts/boot_executor_repair/BOOT_RECEIPT_1777036853820.json"
+}

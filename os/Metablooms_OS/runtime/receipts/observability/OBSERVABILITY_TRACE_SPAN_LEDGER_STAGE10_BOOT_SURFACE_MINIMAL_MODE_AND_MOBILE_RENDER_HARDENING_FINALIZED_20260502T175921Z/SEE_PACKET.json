@@ -1,0 +1,38 @@
+{
+  "artifact_type": "SEE_PACKET.v1",
+  "created_utc": "20260502T175629Z",
+  "design_constraints": [
+    "Minimal surface must show only current action, current authority, current blocker status, and the one command that matters.",
+    "Deep evidence must remain available through progressive disclosure/deep links, not removed.",
+    "Mobile layout must be one-column first, large touch targets, no horizontal scrolling, and readable monospace command wrapping.",
+    "Trace/causal details should be summary-first with expandable evidence."
+  ],
+  "sources": [
+    {
+      "claim": "Structure, transparency, clarity, and support reduce cognitive load in forms and related interaction surfaces.",
+      "source_ref": "turn448217search0",
+      "url": "https://www.nngroup.com/articles/4-principles-reduce-cognitive-load/"
+    },
+    {
+      "claim": "Progressive disclosure defers advanced or rarely used features to secondary UI, making complex applications easier to learn and less error-prone.",
+      "source_ref": "turn448217search1",
+      "url": "https://www.nngroup.com/articles/progressive-disclosure/"
+    },
+    {
+      "claim": "Mobile dashboards should prioritize essential data, avoid clutter, use progressive disclosure, and maintain thumb-friendly touch targets.",
+      "source_ref": "turn448217search12",
+      "url": "https://querio.ai/articles/how-to-design-dashboards-for-mobile-users"
+    },
+    {
+      "claim": "OpenTelemetry tracing captures operations as spans, useful for troubleshooting request flow and dependencies.",
+      "source_ref": "turn448217search6",
+      "url": "https://vfunction.com/blog/opentelemetry-tracing-guide/"
+    },
+    {
+      "claim": "Trace waterfall/timeline views help reveal ordered span execution and bottlenecks.",
+      "source_ref": "turn448217search3",
+      "url": "https://oneuptime.com/blog/post/2026-02-06-read-interpret-opentelemetry-trace-waterfalls/view"
+    }
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING"
+}

@@ -1,0 +1,31 @@
+{
+  "artifact_type": "ADS_ATOMIC_JSON_WRITER_CDR_CRITICAL_v1",
+  "blast_radius": "critical: registry, receipt, handoff, tracker, bounded subprocess decisions, and future CDR artifacts depend on JSON write correctness",
+  "constraints": {
+    "no_shell": true,
+    "no_unvalidated_target_paths": true,
+    "parent_directory_fsync_required_when_supported": true,
+    "receipt_required": true,
+    "same_directory_temp_required": true,
+    "schema_validation_before_write_required": true,
+    "stdlib_only": true
+  },
+  "created_utc": "2026-05-02T14:23:17Z",
+  "goals": [
+    "Provide canonical shared atomic JSON writer under 0_kernel/lib/io/atomic_json_writer_v1.py",
+    "Accept a structured AtomicJsonWriteEnvelope.v1 and emit AtomicJsonWriteDecisionPacket.v1",
+    "Validate target path against explicit allowlisted roots before opening files",
+    "Reject path traversal, absolute-path escape, symlink target/ancestor, unsupported extension, non-JSON-serializable payload, and unsafe overwrite modes",
+    "Write temp file in destination directory, flush/fsync temp file, os.replace into final path, fsync parent directory where available",
+    "Write structured receipts and failure-learning candidates for denied/failed writes",
+    "Provide executable fixtures for positive and negative cases in Stage2"
+  ],
+  "non_goals_stage1": [
+    "No source implementation in this stage",
+    "No caller retrofit in this stage",
+    "No full OS export in this stage"
+  ],
+  "problem_statement": "MetaBlooms needs a single CDR-critical JSON write primitive for state, receipts, registries, handoffs, and failure-learning events. The primitive must prevent partial writes, path traversal, symlink writes, malformed JSON commits, and silent durability gaps.",
+  "stage": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT",
+  "tier": "CDR_CRITICAL"
+}

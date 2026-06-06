@@ -1,0 +1,33 @@
+{
+  "artifact_type": "MB_STAGE_RECEIPT.v1",
+  "created_utc": "20260502T183138Z",
+  "final_export_plan": {
+    "external_containment_proof": "runtime/traces/observability/OBSERVABILITY_STAGE13_FINAL_EXPORT_CONTAINMENT_PROOF_LATEST.external.json",
+    "external_sidecar_required": true,
+    "zip_path": "/mnt/data/METABLOOMS_OS_OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_FINAL_AUTHORITY_LOCKED_20260502T183345Z.zip"
+  },
+  "notes": [
+    "Interactive query expansion and result pinning added to optional evidence mode.",
+    "Minimal boot surface remains default.",
+    "Pinned manifest is browser-local and does not mutate authority artifacts."
+  ],
+  "outputs": [
+    "0_kernel/registry/observability/MB_EVIDENCE_QUERY_UI_INTERACTION_SCHEMA_v1.json",
+    "0_kernel/registry/observability/MB_EVIDENCE_RESULT_PINNING_SCHEMA_v1.json",
+    "0_kernel/registry/observability/MB_EVIDENCE_PINNING_POLICY_v1.json",
+    "0_kernel/scripts/render_evidence_query_interactions_v1.py",
+    "0_kernel/validators/validate_observability_trace_span_ledger_stage13_evidence_query_ui_v1.py",
+    "runtime/state/operator_surface/EVIDENCE_QUERY_UI_INTERACTIONS_LATEST.json",
+    "runtime/state/operator_surface/EVIDENCE_QUERY_UI_INTERACTIONS_LATEST.md",
+    "runtime/state/operator_surface/EVIDENCE_RESULT_PINNING_MODEL_LATEST.json",
+    "runtime/state/operator_surface/EVIDENCE_RESULT_PINNING_MODEL_LATEST.md",
+    "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_VALIDATION_LATEST.json",
+    "OPEN_OPERATOR_VISUAL_TRACKER.html"
+  ],
+  "pre_export_requirements": "runtime/traces/observability/OBSERVABILITY_STAGE13_PRE_EXPORT_CONTAINMENT_REQUIREMENTS_LATEST.json",
+  "repair_note": "Initial validator generation failed due to improperly quoted marker literals; validator was repaired and rerun successfully.",
+  "see_packet": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_INTERACTIONS_AND_RESULT_PINNING_20260502T183045Z/SEE_PACKET.json",
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_INTERACTIONS_AND_RESULT_PINNING",
+  "validation_report": "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_VALIDATION_LATEST.json",
+  "verdict": "PASS"
+}

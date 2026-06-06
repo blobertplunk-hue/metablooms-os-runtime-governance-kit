@@ -1,0 +1,291 @@
+{
+  "artifact_id": "MPP_V3_AUTHORITY_AND_SCHEMA_LOCK_v1",
+  "authority_zip": "/mnt/data/METABLOOMS_OS_PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_3_FULL_EXPORT_STREAM_ROUTE_REPAIR_AND_FRESH_EXTRACT_REPLAY_FULL_AUTHORITY_20260430T221500Z.zip",
+  "authority_zip_sha256": "831f06a88f6740a0f0da349773d93d387a8b7369fdef4e7b426c70e82e13a763",
+  "canonical_stage_ids": [
+    "BOOT_AUTHORITY",
+    "RESEARCH_PLANNER",
+    "SEE",
+    "NORMALIZE_EVIDENCE",
+    "CE",
+    "MMD",
+    "DRS",
+    "CDR",
+    "OFM",
+    "ADS",
+    "UXR",
+    "NUF",
+    "SSO",
+    "RRP",
+    "IMPLEMENTATION",
+    "VERIFICATION",
+    "TRACE_ANALYSIS",
+    "ANALYSIS_EVALUATION",
+    "DEBUGGING",
+    "ECL",
+    "FIR_STAGE",
+    "MONITOR",
+    "EXPORT_PROMOTION"
+  ],
+  "created_at": "2026-04-30T21:46:00Z",
+  "hard_rules": [
+    "No implementation stage may run before BOOT_AUTHORITY, RESEARCH_PLANNER, SEE when triggered, CE, and MMD complete.",
+    "SEE claims are invalid without web.run-backed packet evidence when research is triggered.",
+    "CE must synthesize constraints and decisions; context summaries alone fail.",
+    "MMD critical gaps block DRS/CDR until resolved or explicitly moved to a blocked receipt.",
+    "Every stage must write a receipt, result hash, and next-stage handoff."
+  ],
+  "os_delegation_policy": "MPP v3 is an adapter over stronger OS governance tools; it must delegate rather than duplicate when a stronger validated OS tool exists.",
+  "runtime_root": "/mnt/data/mbos_audit_extract_4945/Metablooms_OS",
+  "stage": "MPP_R0_AUTHORITY_AND_SCHEMA_LOCK",
+  "stage_count": 23,
+  "stages": [
+    {
+      "class": "authority",
+      "delegates_to": [
+        "CURRENT_EXPORT_AUTHORITY_v1",
+        "CURRENT_WORKING_BASELINE_POINTER_v1",
+        "BOOT_RECEIPT"
+      ],
+      "gate": "Verified runtime root, checksum/sidecar match when present, write-path probe receipt exists.",
+      "id": "BOOT_AUTHORITY",
+      "order": 1,
+      "required": true
+    },
+    {
+      "class": "research_planning",
+      "delegates_to": [
+        "RESEARCH_TRIGGER_AND_TOOL_GOVERNANCE_INTEGRATION_v1",
+        "research_planner_schema_v1"
+      ],
+      "gate": "If research is required, produce a query/source/recursion plan before SEE.",
+      "id": "RESEARCH_PLANNER",
+      "order": 2,
+      "required": true
+    },
+    {
+      "class": "external_evidence",
+      "delegates_to": [
+        "SEE_PACKET_SCHEMA_v1",
+        "see_packet_validator_v1.py",
+        "WEBRUN_REQUIRED_FOR_GOVERNANCE_REPAIR_v1"
+      ],
+      "gate": "web.run evidence and claim-source bindings exist when triggered.",
+      "id": "SEE",
+      "order": 3,
+      "required": true
+    },
+    {
+      "class": "evidence_etl",
+      "delegates_to": [
+        "evidence_atom_normalizer_tbd"
+      ],
+      "gate": "Sources, claims, contradictions, dates, quality scores normalized into stable atoms.",
+      "id": "NORMALIZE_EVIDENCE",
+      "order": 4,
+      "required": true
+    },
+    {
+      "class": "context_synthesis",
+      "delegates_to": [
+        "CE_PACKET_VALIDATOR_SPEC_v1",
+        "ce_packet_validator_tbd"
+      ],
+      "gate": "CE synthesis is not a context-only summary; it resolves evidence into actionable constraints.",
+      "id": "CE",
+      "order": 5,
+      "required": true
+    },
+    {
+      "class": "gap_detection",
+      "delegates_to": [
+        "MMD_GAP_LEDGER_SCHEMA_v1"
+      ],
+      "gate": "Critical missing-middle gaps are blocked or explicitly resolved before decisions.",
+      "id": "MMD",
+      "order": 6,
+      "required": true
+    },
+    {
+      "class": "decision_record",
+      "delegates_to": [
+        "decision_record_policy_tbd"
+      ],
+      "gate": "Every material decision has rationale plus rejected alternatives.",
+      "id": "DRS",
+      "order": 7,
+      "required": true
+    },
+    {
+      "class": "contract_definition",
+      "delegates_to": [
+        "CDR_7_PILLARS"
+      ],
+      "gate": "Rationale, constraints, semantic module name, failure modes, integration contract, supersedes, attestation.",
+      "id": "CDR",
+      "order": 8,
+      "required": true
+    },
+    {
+      "class": "outcome_framing",
+      "delegates_to": [
+        "outcome_frame_contract_tbd"
+      ],
+      "gate": "Measurable success and failure criteria exist.",
+      "id": "OFM",
+      "order": 9,
+      "required": true
+    },
+    {
+      "class": "architecture_design",
+      "delegates_to": [
+        "architecture_decision_schema_tbd"
+      ],
+      "gate": "Components, dependencies, ownership, and DAG validity recorded.",
+      "id": "ADS",
+      "order": 10,
+      "required": true
+    },
+    {
+      "class": "user_requirements",
+      "delegates_to": [
+        "uxr_contract_tbd"
+      ],
+      "gate": "Operator context and constraints are represented.",
+      "id": "UXR",
+      "order": 11,
+      "required": true
+    },
+    {
+      "class": "nonfunctional_requirements",
+      "delegates_to": [
+        "method_reliability_router_policy_v1",
+        "forbidden_validation_methods_v1"
+      ],
+      "gate": "Reliability/security/performance/determinism thresholds are measurable.",
+      "id": "NUF",
+      "order": 12,
+      "required": true
+    },
+    {
+      "class": "scope_lock",
+      "delegates_to": [
+        "scope_lock_contract_tbd"
+      ],
+      "gate": "In-scope and out-of-scope are non-empty and conflict-free.",
+      "id": "SSO",
+      "order": 13,
+      "required": true
+    },
+    {
+      "class": "repair_recovery_plan",
+      "delegates_to": [
+        "BLOCKED_RECEIPT_TEMPLATE_v1",
+        "EXPORT_RECOVERY_PROVEN_VALIDATOR_CONTRACT_v1"
+      ],
+      "gate": "Known failure modes include detection, rollback, and safe-state strategy.",
+      "id": "RRP",
+      "order": 14,
+      "required": true
+    },
+    {
+      "class": "implementation",
+      "delegates_to": [
+        "TRANSACTIONAL_STAGE_RUNNER_CONTRACT_v1"
+      ],
+      "gate": "Writes occur through governed stage contract; artifact path/hash captured.",
+      "id": "IMPLEMENTATION",
+      "order": 15,
+      "required": true
+    },
+    {
+      "class": "verification",
+      "delegates_to": [
+        "gate_registry",
+        "regression_suite",
+        "export_guard"
+      ],
+      "gate": "Artifact behavior, schema, hashes, and scope checks pass.",
+      "id": "VERIFICATION",
+      "order": 16,
+      "required": true
+    },
+    {
+      "class": "observability",
+      "delegates_to": [
+        "trace_analysis_stage"
+      ],
+      "gate": "Stage spans, anomalies, durations, and artifact counts are summarized.",
+      "id": "TRACE_ANALYSIS",
+      "order": 17,
+      "required": true
+    },
+    {
+      "class": "reasoning_quality",
+      "delegates_to": [
+        "analysis_evaluation_stage"
+      ],
+      "gate": "Reasoning-quality/truth gate passes before FIR.",
+      "id": "ANALYSIS_EVALUATION",
+      "order": 18,
+      "required": true
+    },
+    {
+      "class": "conditional_repair",
+      "conditional": true,
+      "delegates_to": [
+        "debug_loop_policy"
+      ],
+      "gate": "Runs only on verification failure; skip receipt required otherwise; max loops enforced.",
+      "id": "DEBUGGING",
+      "order": 19,
+      "required": true
+    },
+    {
+      "class": "end_condition_lock",
+      "delegates_to": [
+        "stage_ledger",
+        "handoff_contract"
+      ],
+      "gate": "All required prior stages have COMPLETE or authorized SKIPPED receipts.",
+      "id": "ECL",
+      "order": 20,
+      "required": true
+    },
+    {
+      "class": "fitness_gate",
+      "delegates_to": [
+        "FIR_STAGE.py",
+        "FIR_ENGINE"
+      ],
+      "gate": "Composite fitness score >= threshold and no reasoning gate failure.",
+      "id": "FIR_STAGE",
+      "order": 21,
+      "required": true
+    },
+    {
+      "class": "feedback_monitor",
+      "delegates_to": [
+        "monitor_stage",
+        "co_evolution_log"
+      ],
+      "gate": "Health metrics and recurrent-error signals captured.",
+      "id": "MONITOR",
+      "order": 22,
+      "required": true
+    },
+    {
+      "class": "promotion_export",
+      "delegates_to": [
+        "EXPORT_MANIFEST_SCHEMA_v1",
+        "EXPORT_PROVENANCE_SCHEMA_v1",
+        "CURRENT_WORKING_BASELINE_POINTER_v1"
+      ],
+      "gate": "Promoted only after bundle integrity, duplicate scan, extraction smoke, and sidecar hash pass.",
+      "id": "EXPORT_PROMOTION",
+      "order": 23,
+      "required": true
+    }
+  ],
+  "status": "LOCKED"
+}

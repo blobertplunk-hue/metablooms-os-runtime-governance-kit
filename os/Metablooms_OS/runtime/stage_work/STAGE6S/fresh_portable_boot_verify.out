@@ -1,0 +1,11 @@
+/mnt/data/stage6s_fresh_extract_smoke/Metablooms_OS/portable_full_os_boot_verify.py:5: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  def now(): return datetime.datetime.utcnow().replace(microsecond=0).isoformat()+'Z'
+{
+  "stage": "PORTABLE_FULL_OS_BOOT_VERIFY_REPAIRED_H0B2",
+  "timestamp_utc": "2026-05-02T03:32:51Z",
+  "status": "PASS",
+  "root": "/mnt/data/stage6s_fresh_extract_smoke/Metablooms_OS",
+  "errors": [],
+  "sandbox_policy": "ALLOW",
+  "chat_kernel": "ALLOW"
+}

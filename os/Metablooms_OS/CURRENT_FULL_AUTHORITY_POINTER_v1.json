@@ -1,0 +1,14 @@
+{
+  "schema_version": "metablooms_current_full_authority_pointer.v1",
+  "boot_root_inside_zip": "Metablooms_OS/",
+  "current_authority_export_filename": "METABLOOMS_WC13_FINAL_BOOTABLE_FULL_AUTHORITY_REPAIRED2_20260503T232000Z.zip",
+  "current_authority_export_path": "/mnt/data/METABLOOMS_WC13_FINAL_BOOTABLE_FULL_AUTHORITY_REPAIRED2_20260503T232000Z.zip",
+  "sha256_sidecar_path": "/mnt/data/METABLOOMS_WC13_FINAL_BOOTABLE_FULL_AUTHORITY_REPAIRED2_20260503T232000Z.zip.sha256",
+  "sha256_embedded_in_zip": false,
+  "current_stage": "PROFESSIONALIZATION_CONVERGENCE_STAGE31_WC13_ROOT_AUTHORITY_NARRATIVE_REPAIR_AND_PREVENTION_LOCK",
+  "handoff_authorized_next_stage": "NEXT_GOVERNED_STAGE_AFTER_WC13_REPAIRED2_BOOT",
+  "updated_utc": "2026-05-03T23:18:30Z",
+  "previous_authority_export_filename": "METABLOOMS_WC13_FINAL_BOOTABLE_FULL_AUTHORITY_REPAIRED_20260503T222300Z.zip",
+  "previous_authority_sha256": "a63e117eb253c45dc1bdbc7da92304cb0d3df5140d678ca74b3bab7095e9d143",
+  "verdict": "ACTIVE"
+}

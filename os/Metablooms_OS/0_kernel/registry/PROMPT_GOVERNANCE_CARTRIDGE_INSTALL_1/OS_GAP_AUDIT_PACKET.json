@@ -1,0 +1,18 @@
+{
+  "missing": [
+    "runtime/governance/boot_critical_governance_loader_v1.py",
+    "runtime/governance/governance_scatter_prevention_v1.py",
+    "0_kernel/registry/BOOT_REQUIRED_GATES_v1.json",
+    "portable prompt governance cartridge"
+  ],
+  "preserve": [
+    "chat governance kernel",
+    "cartridge selection policy",
+    "existing PROMPT_ENGINE_v2.md lineage"
+  ],
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_1",
+  "weak": [
+    "legacy prompt engine exists as spec only, not installed runtime cartridge",
+    "boot_manifest referenced missing boot-critical loader"
+  ]
+}

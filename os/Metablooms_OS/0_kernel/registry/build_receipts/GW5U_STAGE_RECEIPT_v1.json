@@ -1,0 +1,39 @@
+{
+  "receipt_type": "STAGE_RECEIPT",
+  "stage": "GW5U_VALIDATE_CARTRIDGE_REGISTRY_MERGE_CANDIDATES",
+  "created_utc": "2026-04-26T10:59:40Z",
+  "workflow_version": "v6",
+  "governance_categories_selected": [
+    "registry_validation",
+    "cartridge_lifecycle"
+  ],
+  "heavy_work_class": "REGISTRY_RECONCILIATION",
+  "verdict": "PASS_WITH_ONE_OPEN_DECISION",
+  "cartridge_registry_decisions": [
+    {
+      "artifact_id": "MB_PREFLIGHT_PLANNER_CARTRIDGE_v2.json",
+      "decision": "RETAIN_ACTIVE",
+      "rationale": "Well-formed, present on disk, authority=low appropriate for preflight planner scope"
+    },
+    {
+      "artifact_id": "stage_cartridges_bundle.zip",
+      "decision": "DEFER_TO_CHATGPT",
+      "rationale": "Cannot unzip or verify SHA from Claude environment. ChatGPT must: (1) unzip at /mnt/data/stage_cartridges_bundle.zip, (2) verify SEE_STAGE_CARTRIDGE_V2.md + CE_STAGE_CARTRIDGE_V2.md + AIE_STAGE_CARTRIDGE_V1.md are present and valid against CARTRIDGE_BUILD_CONTRACT_v1.md, (3) if valid: update status from candidate_stage_cartridge_bundle to active, upgrade authority from medium to high, add refined_sha256. If invalid: mark status=rejected, add rejection_reason.",
+      "chatgpt_action_required": true
+    },
+    {
+      "artifact_id": "video_classifier_heuristic_cartridge_v1.md",
+      "decision": "RETAIN_ACTIVE",
+      "rationale": "Spec present on disk, status=active appropriate"
+    }
+  ],
+  "new_cartridge_merge_candidates": [],
+  "note": "No new cartridge merge candidates found in GW5T queue. Queue is empty. GW5U scope is validation-only.",
+  "outputs": [
+    {
+      "file": "GW5U_CE_PACKET_v1.json",
+      "sha256": "f7ee4c0ca4e8c9174aca6f9a0eeb7c69e6fa79c87a18fd29ba66461716e919f3"
+    }
+  ],
+  "next_stage": "CROSS-LINK_GW_OS_KERNEL_HANDOFF"
+}

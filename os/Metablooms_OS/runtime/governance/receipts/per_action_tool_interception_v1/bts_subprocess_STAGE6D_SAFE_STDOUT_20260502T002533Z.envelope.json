@@ -1,0 +1,27 @@
+{
+  "action_type": "shell",
+  "artifacts": {
+    "read_paths": [
+      "/mnt/data/Metablooms_OS"
+    ],
+    "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/bts_subprocess_STAGE6D_SAFE_STDOUT_20260502T002533Z.decision.json",
+    "write_paths": [
+      "/mnt/data/Metablooms_OS/_bts/receipts"
+    ]
+  },
+  "command_summary": "python3 -S -c print(\"stage6d-safe\")",
+  "envelope_id": "bts_subprocess_STAGE6D_SAFE_STDOUT_20260502T002533Z",
+  "intent": "Produce T1 subprocess receipt for STAGE6D_SAFE_STDOUT",
+  "limits": {
+    "max_bytes": 2000000,
+    "max_files": 20,
+    "max_steps": 10,
+    "timeout_seconds": 60
+  },
+  "requested_at_utc": "2026-05-02T00:25:33.366090Z",
+  "requires_see": false,
+  "risk_tier": "medium",
+  "schema_version": "ToolCallEnvelope_v1",
+  "stage_id": "BTS_V4_OS_GATED_SUBPROCESS",
+  "tool_name": "BTS.produce_tier1_subprocess_receipt"
+}

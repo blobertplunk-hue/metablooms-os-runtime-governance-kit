@@ -1,0 +1,9 @@
+TRACKER ▸ MetaBlooms FL17 merged OS
+[██████] 6/6 complete
+Status: DONE
+Stage: FL17-MERGE-5R recovery proof repair
+Now: recovery proof repaired and validated
+Evidence: receipt + handoff + checksum
+Blocker: none
+Next: explicit baseline promotion only
+Stop: no promotion in this stage

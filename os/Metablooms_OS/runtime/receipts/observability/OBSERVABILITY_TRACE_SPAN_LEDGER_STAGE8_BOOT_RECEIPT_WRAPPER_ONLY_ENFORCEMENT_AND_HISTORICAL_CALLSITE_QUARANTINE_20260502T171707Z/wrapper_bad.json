@@ -1,0 +1,24 @@
+{
+  "cmd": [
+    "/opt/pyvenv/bin/python3",
+    "/mnt/data/Metablooms_OS/runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+    "/mnt/data/Metablooms_OS",
+    "--json"
+  ],
+  "returncode": 2,
+  "stderr": "",
+  "stdout": {
+    "allowed_shapes": [
+      "--root <path>",
+      "--zip <path>"
+    ],
+    "artifact_type": "MB_RUNTIME_STARTER_SMOKE_CONTRACT_WRAPPER_RESULT.v1",
+    "created_utc": "20260502T171733Z",
+    "decision": "DENY",
+    "error_code": "MB_CLI_CONTRACT_DENY_POSITIONAL_ARGS",
+    "message": "Positional or unknown arguments are forbidden. Use --root <path> or --zip <path>.",
+    "unknown_args": [
+      "/mnt/data/Metablooms_OS"
+    ]
+  }
+}

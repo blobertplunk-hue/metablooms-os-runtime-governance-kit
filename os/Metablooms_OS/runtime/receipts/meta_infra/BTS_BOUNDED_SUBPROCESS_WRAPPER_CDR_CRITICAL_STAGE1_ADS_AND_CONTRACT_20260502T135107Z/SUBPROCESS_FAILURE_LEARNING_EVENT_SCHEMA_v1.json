@@ -1,0 +1,62 @@
+{
+  "$id": "metablooms://schemas/SubprocessFailureLearningEvent.v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "created_utc": {
+      "type": "string"
+    },
+    "event_id": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "object"
+    },
+    "failure_class": {
+      "enum": [
+        "TIMEOUT_STALL",
+        "FORBIDDEN_METHOD",
+        "COMMAND_INJECTION_RISK",
+        "PATH_ESCAPE",
+        "NONZERO_EXIT",
+        "SPAWN_FAILURE",
+        "OUTPUT_OVERFLOW",
+        "UNKNOWN"
+      ]
+    },
+    "method_id": {
+      "type": "string"
+    },
+    "operation_id": {
+      "type": "string"
+    },
+    "recommended_policy_update": {
+      "enum": [
+        "none",
+        "prefer_method",
+        "forbid_method",
+        "bounded_exception_only",
+        "needs_human_review"
+      ]
+    },
+    "schema_version": {
+      "const": "SubprocessFailureLearningEvent.v1"
+    },
+    "stage_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "event_id",
+    "stage_id",
+    "operation_id",
+    "failure_class",
+    "method_id",
+    "evidence",
+    "recommended_policy_update",
+    "created_utc"
+  ],
+  "title": "SubprocessFailureLearningEvent.v1",
+  "type": "object"
+}

@@ -1,0 +1,15 @@
+{
+  "checks": {
+    "fake_percent_rejection_preserved": "PASS",
+    "handoff_bound_in_state": "PASS",
+    "history_bound": "PASS",
+    "mobile_width_max_64": "PASS",
+    "receipt_bound_in_state": "PASS",
+    "state_transition_after_receipt_handoff_writes": "PASS",
+    "tracker_renders_first_after_update": "PASS"
+  },
+  "errors": [],
+  "stage": "FL17-MERGE-3_TRACKER_LIFECYCLE_REPAIR",
+  "status": "PASS",
+  "validator": "TRACKER_HANDOFF_UPDATE_VALIDATOR_v1"
+}

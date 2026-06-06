@@ -1,0 +1,265 @@
+{
+  "artifact_type": "TRACE_SPAN_LEDGER_STAGE12_TRACE_QUERY_VALIDATION.v1",
+  "checks": [
+    {
+      "exists_nonempty": true,
+      "path": "0_kernel/registry/observability/MB_TRACE_QUERY_PACKET_SCHEMA_v1.json",
+      "sha256": "da31cf4f7fb2ff88c28af523ece972c381d45bb432009b6c7480c5b8ab0f4caa"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "0_kernel/registry/observability/MB_SEARCHABLE_EVIDENCE_INDEX_SCHEMA_v1.json",
+      "sha256": "5178ad10d15abdc5649b60386cd6039b9d0d4d753740c247a4fca1b0da482a85"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "0_kernel/registry/observability/MB_TRACE_QUERY_INDEX_POLICY_v1.json",
+      "sha256": "c043bf928103790cb63b752837b5e07fcb76dd9fe92234720289e17f5f70c9be"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "0_kernel/scripts/observability_trace_query_indexer_v1.py",
+      "sha256": "f88b3b4dad5e78a2ba9a976c05d37474028b81e4e2785d7ec2c006454a0b11cd"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "runtime/traces/observability/SEARCHABLE_EVIDENCE_INDEX_LATEST.json",
+      "sha256": "3114cbb475308b5defcc5ef6f17a6e298ba1351b8594e0707ad37ca195407ca0"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "runtime/state/operator_surface/TRACE_QUERY_PACKET_LATEST.json",
+      "sha256": "038c81582299303e3220c85eaa50ea91a6dda41dbf4375595ec616f61394465b"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "runtime/state/operator_surface/TRACE_QUERY_PACKET_LATEST.md",
+      "sha256": "77e90063bc1a0d32e6a9c43e00ba809e5a197cce45d752f45a4f24e7fc6d97eb"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "OPEN_OPERATOR_VISUAL_TRACKER.html",
+      "sha256": "cae0df7f8d54b2527f6e49f96534a294a550ea3a32940c10eab021a98386e2cd"
+    }
+  ],
+  "created_utc": "20260502T181730Z",
+  "issues": [],
+  "smoke_checks": [
+    {
+      "name": "query_indexer",
+      "pass": true,
+      "result": {
+        "cmd": [
+          "/opt/pyvenv/bin/python3",
+          "/mnt/data/Metablooms_OS/0_kernel/scripts/observability_trace_query_indexer_v1.py",
+          "--root",
+          "/mnt/data/Metablooms_OS",
+          "--query",
+          "export containment proof sha256",
+          "--json"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": {
+          "artifact_type": "MB_TRACE_QUERY_RESULT.v1",
+          "query": "export containment proof sha256",
+          "results": [
+            {
+              "doc_id": "doc_0193",
+              "matched_terms": [
+                "sha256"
+              ],
+              "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/stage9_validator.json",
+              "score": 147
+            },
+            {
+              "doc_id": "doc_0070",
+              "matched_terms": [
+                "sha256"
+              ],
+              "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE8_HISTORICAL_CALLSITE_QUARANTINE_VALIDATION_LATEST.json",
+              "score": 143
+            },
+            {
+              "doc_id": "doc_0089",
+              "matched_terms": [
+                "sha256"
+              ],
+              "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE10_BOOT_SURFACE_MINIMAL_MODE_AND_MOBILE_RENDER_HARDENING_FINALIZED_20260502T175839Z/STAGE10_FINALIZATION_BLOCKED.json",
+              "score": 143
+            },
+            {
+              "doc_id": "doc_0192",
+              "matched_terms": [
+                "sha256"
+              ],
+              "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_20260502T174908Z/stage8_validator.json",
+              "score": 141
+            },
+            {
+              "doc_id": "doc_0071",
+              "matched_terms": [
+                "sha256"
+              ],
+              "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_VALIDATION_LATEST.json",
+              "score": 140
+            },
+            {
+              "doc_id": "doc_0201",
+              "matched_terms": [
+                "sha256"
+              ],
+              "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/stage9_validator.json",
+              "score": 140
+            },
+            {
+              "doc_id": "doc_0009",
+              "matched_terms": [
+                "sha256"
+              ],
+              "path": "runtime/traces/observability/HISTORICAL_CALLSITE_QUARANTINE_INDEX_LATEST.json",
+              "score": 138
+            },
+            {
+              "doc_id": "doc_0200",
+              "matched_terms": [
+                "sha256"
+              ],
+              "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE9_LIVE_BOOT_GUIDANCE_EXTRACTOR_AND_TRACKER_DEEP_LINKS_REPAIRED_20260502T175102Z/scanner.json",
+              "score": 132
+            },
+            {
+              "doc_id": "doc_0176",
+              "matched_terms": [
+                "sha256"
+              ],
+              "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z/stage8_validator.json",
+              "score": 128
+            },
+            {
+              "doc_id": "doc_0167",
+              "matched_terms": [
+                "sha256"
+              ],
+              "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_20260502T171707Z/stage8_validator.json",
+              "score": 121
+            }
+          ],
+          "verdict": "PASS"
+        }
+      }
+    },
+    {
+      "name": "new_chat_validator",
+      "pass": true,
+      "result": {
+        "cmd": [
+          "/opt/pyvenv/bin/python3",
+          "/mnt/data/Metablooms_OS/runtime/governance/new_chat_start_contract_validator_v1.py",
+          "/mnt/data/Metablooms_OS"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": {
+          "checks": [
+            {
+              "name": "exists:CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+              "passed": true
+            },
+            {
+              "name": "exists:0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+              "passed": true
+            },
+            {
+              "name": "exists:0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+              "passed": true
+            },
+            {
+              "name": "exists:NEW_CHAT_START_HERE.md",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/governance/new_chat_start_contract_validator_v1.py",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/governance/boot_critical_governance_loader_v1.py",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/governance/governance_scatter_prevention_v1.py",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/governance/fresh_chat_boot_rehearsal_v1.py",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/cartridges/prompt_governance_v1/validate_prompt_governance_cartridge_v1.py",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+              "passed": true
+            },
+            {
+              "name": "exists:0_kernel/registry/observability/MB_BOOT_SEQUENCE_WRAPPER_ENFORCEMENT_v1.json",
+              "passed": true
+            },
+            {
+              "name": "exists:0_kernel/registry/observability/MB_HISTORICAL_CALLSITE_QUARANTINE_POLICY_v1.json",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/traces/observability/HISTORICAL_CALLSITE_QUARANTINE_INDEX_LATEST.json",
+              "passed": true
+            },
+            {
+              "name": "exists:0_kernel/validators/validate_observability_trace_span_ledger_stage8_historical_callsite_quarantine_v1.py",
+              "passed": true
+            }
+          ],
+          "decision": "ALLOW",
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "runtime_wrapper",
+      "pass": true,
+      "result": {
+        "cmd": [
+          "/opt/pyvenv/bin/python3",
+          "/mnt/data/Metablooms_OS/runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+          "--root",
+          "/mnt/data/Metablooms_OS",
+          "--json"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": {
+          "artifact_type": "MB_RUNTIME_STARTER_SMOKE_CONTRACT_WRAPPER_RESULT.v1",
+          "created_utc": "20260502T181730Z",
+          "decision": "ALLOW",
+          "method_reliability_lesson": "METHOD_RUNTIME_STARTER_SMOKE_CLI_SHAPE_v1",
+          "target_shape": "--root",
+          "underlying_gate": "runtime/governance/runtime_starter_smoke_v1.py",
+          "underlying_result": {
+            "decision": "ALLOW",
+            "invalid_json": [],
+            "missing": [],
+            "mode": "root",
+            "path": "/mnt/data/Metablooms_OS",
+            "read_errors": []
+          }
+        }
+      }
+    }
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE12_TRACE_QUERY_PACKET_AND_SEARCHABLE_EVIDENCE_INDEX",
+  "verdict": "PASS"
+}

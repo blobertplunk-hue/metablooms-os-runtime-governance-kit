@@ -1,0 +1,56 @@
+{
+  "artifact_type": "CDRCriticalGateResultsStage4.v1",
+  "created_utc": "2026-05-02T15:18:24Z",
+  "gates": [
+    {
+      "gate": "Stage3 handoff loaded",
+      "result": "PASS"
+    },
+    {
+      "gate": "Runtime root verified",
+      "result": "PASS"
+    },
+    {
+      "gate": "Hash-chain callers inspected",
+      "result": "PASS"
+    },
+    {
+      "gate": "Runtime pulse logger patched",
+      "result": "PASS"
+    },
+    {
+      "gate": "BTS logger patched",
+      "result": "PASS"
+    },
+    {
+      "gate": "Compat import fallback patched",
+      "result": "PASS"
+    },
+    {
+      "gate": "Changed files compile",
+      "result": "PASS"
+    },
+    {
+      "gate": "Runtime pulse chain smoke",
+      "result": "PASS"
+    },
+    {
+      "gate": "BTS prior-sha chain smoke",
+      "result": "PASS"
+    },
+    {
+      "gate": "Append writer fixture harness",
+      "result": "PASS"
+    },
+    {
+      "gate": "Stage4 policy gate",
+      "result": "PASS"
+    },
+    {
+      "gate": "Legacy archive exemption classified",
+      "result": "PASS_WITH_WARNING"
+    }
+  ],
+  "stage_id": "BTS_ATOMIC_APPEND_LOG_WRITER_CDR_CRITICAL_STAGE4_HASH_CHAIN_CALLER_RETROFIT_AND_FULL_POLICY_SWEEP",
+  "verdict": "PASS_WITH_WARNINGS"
+}

@@ -1,0 +1,18 @@
+{
+  "artifact_type": "R13B_TO_R13_FINAL_EXPORT_HANDOFF",
+  "from_stage": "R13B_LEDGER_ABSOLUTE_OUTPUT_RECONCILIATION",
+  "to_stage": "R13_FINAL_EXPORT_SELF_CONSISTENCY_AUDIT_AND_EXPORT",
+  "created_utc": "2026-04-29T10:34:43Z",
+  "receipt": "receipts/refactor_program/R13B_LEDGER_ABSOLUTE_OUTPUT_RECONCILIATION_RECEIPT.json",
+  "verdict": "PASS",
+  "preconditions_for_next_stage": [
+    "/mnt/data/Metablooms_OS exists",
+    "CURRENT_WORKING_BASELINE_POINTER_v1.json active_root is /mnt/data/Metablooms_OS",
+    "No active zero-byte R13 receipts remain",
+    "No ledger outputs are absolute external paths",
+    "All ledger-declared root-relative outputs exist inside canonical root"
+  ],
+  "authorized_next_action": "Run exactly one bounded R13 final export self-consistency audit/export stage: verify pointer, quarantine state, ledger-declared outputs, build final export only if self-consistency passes, validate ZIP contents against ledger-declared outputs, write receipt and handoff, return one bundle plus checksum, and stop.",
+  "stopped_before_final_export": true,
+  "validation_corrected_utc": "2026-04-29T10:35:03Z"
+}

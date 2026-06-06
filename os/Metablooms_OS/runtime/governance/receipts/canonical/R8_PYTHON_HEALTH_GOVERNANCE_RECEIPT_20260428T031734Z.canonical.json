@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-04-28T03:18:31Z",
+  "decision_id": "R8_PYTHON_HEALTH_GOVERNANCE_PROMOTION-1e42e1a440995118",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"archived\": [\"runtime/governance/legacy_archives/R8_python_health/p0py_python_health_governance_v1.staged_source.py\"], \"created_utc\": \"2026-04-28T03:18:31Z\", \"normal_python_live_probe_policy\": \"forbidden; live gate uses hook-chain inspection plus prior forensic receipt\", \"promoted\": [\"0_kernel/scripts/p0py_python_health_governance_v1.py\", \"runtime/governance/schemas/python_health_gate_decision_schema_v1.json\"], \"receipt_type\": \"R8_STAGE_RECEIPT\", \"reports\": {\"bad_s\": {\"blocks\": [\"python3 -S lane exceeds max startup threshold\", \"python3 -S probe shows site module loaded\"], \"decision\": \"deny\", \"path\": \"/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R8_python_health_bad_s_20260428T031734Z.json\", \"sha256\": \"313fee2799be29112688f25353218a5c422c83fa63f9555819da8d246524524e\", \"status\": \"healthy_but_safe_lane_preferred\"}, \"live\": {\"blocks\": null, \"decision\": \"allow_with_route_controls\", \"path\": \"/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R8_python_health_live_20260428T031734Z.json\", \"sha256\": \"b95654b76841d71e466db6d9f130c0a79dcbf9ecda6205c325c4c064e998c37b\", \"status\": \"normal_python_quarantined_without_execution\"}, \"normal_failed\": {\"blocks\": null, \"decision\": \"allow_with_route_controls\", \"path\": \"/mnt/data/Metablooms_OS/runtime/evals/governance_regression_suite_v1/reports/R8_python_health_normal_failed_20260428T031734Z.json\", \"sha256\": \"7f8d2393832997358f5a1fbc7051e237386e312e0c37261bb9e8bcb35be1c16c\", \"status\": \"norm",
+  "reasons": [],
+  "record_id": "R8_PYTHON_HEALTH_GOVERNANCE_RECEIPT_20260428T031734Z",
+  "record_kind": "stage_receipt",
+  "result": "pass",
+  "source_record": {
+    "path": "receipts/refactor_program/R8_PYTHON_HEALTH_GOVERNANCE_RECEIPT_20260428T031734Z.json",
+    "sha256": "1e42e1a4409951180a034835c672bed5c66a57db441839537b5a56cee8784303",
+    "size_bytes": 2556
+  },
+  "span_id": "d91d06b54608d44e",
+  "stage_id": "R8_PYTHON_HEALTH_GOVERNANCE_PROMOTION",
+  "summary": "Canonical wrapper for R8_PYTHON_HEALTH_GOVERNANCE_RECEIPT_20260428T031734Z.json",
+  "trace_id": "7a388fd5162393251696c25d98752354"
+}

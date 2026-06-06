@@ -1,0 +1,13 @@
+{
+  "artifact_type": "CE_SYNTHESIS",
+  "constraints": [
+    "No baseline promotion in this stage",
+    "No final ZIP hash embedded as a mutable placeholder",
+    "Always-on MetaBlooms governance mandatory",
+    "FL16 blocked status preserved",
+    "Compact tracker only"
+  ],
+  "created_utc": "20260430T015018Z",
+  "decision": "Use external sidecar for final ZIP identity to avoid circular hash; embed recovery proof expectations and final gate status as sidecar-bound internal authority.",
+  "stage_id": "FL17-MERGE-5R2_INTERNAL_PROOF_SIDECAR_BINDING_REPAIR"
+}

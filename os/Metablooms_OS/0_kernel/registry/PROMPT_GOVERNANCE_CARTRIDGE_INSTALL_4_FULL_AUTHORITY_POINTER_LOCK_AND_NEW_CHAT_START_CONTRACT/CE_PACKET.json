@@ -1,0 +1,22 @@
+{
+  "created_utc": "2026-04-30T21:22:57.454509Z",
+  "decisions": [
+    {
+      "decision": "lock current full authority pointer inside OS and externally",
+      "reason": "new chats need a single sidecar-bound bundle target rather than prior conversational memory"
+    },
+    {
+      "decision": "make start contract boot-required",
+      "reason": "fresh chat behavior must be invoked by artifact path, not implied instruction"
+    },
+    {
+      "decision": "add validator before full export",
+      "reason": "new artifacts need executable proof and anti-scatter registration"
+    },
+    {
+      "decision": "preserve prompt cartridge without broad redesign",
+      "reason": "stage3 validators already pass; smallest valid change is pointer/contract binding"
+    }
+  ],
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_4_FULL_AUTHORITY_POINTER_LOCK_AND_NEW_CHAT_START_CONTRACT"
+}

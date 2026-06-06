@@ -1,0 +1,244 @@
+{
+  "decision": "ALLOW",
+  "errors": [],
+  "report": {
+    "created_utc": "2026-04-30T22:18:08Z",
+    "decision": "ALLOW",
+    "failed": 0,
+    "fixture_count": 4,
+    "packet_type": "PROMPT_PATCH_REPLAY_REPORT_v1",
+    "passed": 4,
+    "results": [
+      {
+        "expected_decision": "ALLOW",
+        "fixture_id": "patch_replay_artifact_generation_prompt",
+        "pass": true,
+        "path": "runtime/cartridges/prompt_governance_v1/fixtures/patch_replay_quality_ranker/patch_replay_artifact_generation_prompt.json",
+        "ranking": {
+          "candidate_count": 1,
+          "created_utc": "2026-04-30T22:18:07Z",
+          "decision": "ALLOW",
+          "packet_type": "PROMPT_PATCH_RANKING_REPORT_v1",
+          "ranked_candidates": [
+            {
+              "candidate_id": "patch_replay_artifact_generation_prompt:auto_primary",
+              "decision": "ALLOW",
+              "dimensions": {
+                "artifact_discipline": 1.0,
+                "contract_compliance": 1.0,
+                "evidence_binding": 0.6,
+                "regression_risk": 1.0,
+                "specificity": 1.0,
+                "task_fit": 1.0,
+                "validation_strength": 1.0
+              },
+              "hard_gate": {
+                "allow": true,
+                "errors": []
+              },
+              "prompt_hash": "6e7031fa3eaba6800387d5f96c5ed557ef479c26ad73d51f4a5db5f0db52a01e",
+              "score": 0.94
+            }
+          ],
+          "top_candidate": {
+            "candidate_id": "patch_replay_artifact_generation_prompt:auto_primary",
+            "decision": "ALLOW",
+            "dimensions": {
+              "artifact_discipline": 1.0,
+              "contract_compliance": 1.0,
+              "evidence_binding": 0.6,
+              "regression_risk": 1.0,
+              "specificity": 1.0,
+              "task_fit": 1.0,
+              "validation_strength": 1.0
+            },
+            "hard_gate": {
+              "allow": true,
+              "errors": []
+            },
+            "prompt_hash": "6e7031fa3eaba6800387d5f96c5ed557ef479c26ad73d51f4a5db5f0db52a01e",
+            "score": 0.94
+          }
+        }
+      },
+      {
+        "expected_decision": "ALLOW",
+        "fixture_id": "patch_replay_export_prompt",
+        "pass": true,
+        "path": "runtime/cartridges/prompt_governance_v1/fixtures/patch_replay_quality_ranker/patch_replay_export_prompt.json",
+        "ranking": {
+          "candidate_count": 1,
+          "created_utc": "2026-04-30T22:18:07Z",
+          "decision": "ALLOW",
+          "packet_type": "PROMPT_PATCH_RANKING_REPORT_v1",
+          "ranked_candidates": [
+            {
+              "candidate_id": "patch_replay_export_prompt:auto_primary",
+              "decision": "ALLOW",
+              "dimensions": {
+                "artifact_discipline": 1.0,
+                "contract_compliance": 1.0,
+                "evidence_binding": 0.6,
+                "regression_risk": 1.0,
+                "specificity": 1.0,
+                "task_fit": 1.0,
+                "validation_strength": 1.0
+              },
+              "hard_gate": {
+                "allow": true,
+                "errors": []
+              },
+              "prompt_hash": "2342e8edcf36f8fd718c0ada11faa51d7f9b9e03bba06edc2be0577de45e09a5",
+              "score": 0.94
+            }
+          ],
+          "top_candidate": {
+            "candidate_id": "patch_replay_export_prompt:auto_primary",
+            "decision": "ALLOW",
+            "dimensions": {
+              "artifact_discipline": 1.0,
+              "contract_compliance": 1.0,
+              "evidence_binding": 0.6,
+              "regression_risk": 1.0,
+              "specificity": 1.0,
+              "task_fit": 1.0,
+              "validation_strength": 1.0
+            },
+            "hard_gate": {
+              "allow": true,
+              "errors": []
+            },
+            "prompt_hash": "2342e8edcf36f8fd718c0ada11faa51d7f9b9e03bba06edc2be0577de45e09a5",
+            "score": 0.94
+          }
+        }
+      },
+      {
+        "expected_decision": "ALLOW",
+        "fixture_id": "patch_replay_option_ordering_prompt",
+        "pass": true,
+        "path": "runtime/cartridges/prompt_governance_v1/fixtures/patch_replay_quality_ranker/patch_replay_option_ordering_prompt.json",
+        "ranking": {
+          "candidate_count": 2,
+          "created_utc": "2026-04-30T22:18:08Z",
+          "decision": "ALLOW",
+          "packet_type": "PROMPT_PATCH_RANKING_REPORT_v1",
+          "ranked_candidates": [
+            {
+              "candidate_id": "patch_replay_option_ordering_prompt:auto_primary",
+              "decision": "ALLOW",
+              "dimensions": {
+                "artifact_discipline": 1.0,
+                "contract_compliance": 1.0,
+                "evidence_binding": 0.6,
+                "regression_risk": 1.0,
+                "specificity": 1.0,
+                "task_fit": 1.0,
+                "validation_strength": 1.0
+              },
+              "hard_gate": {
+                "allow": true,
+                "errors": []
+              },
+              "prompt_hash": "fcc2985d1e0d0bc7159d8c2c9203639e2d750106da3709f498c89e04decaaa78",
+              "score": 0.94
+            },
+            {
+              "candidate_id": "bad_missing_best_to_worst",
+              "decision": "DENY",
+              "dimensions": {
+                "artifact_discipline": 0.4,
+                "contract_compliance": 1.0,
+                "evidence_binding": 0.6,
+                "regression_risk": 0.0,
+                "specificity": 0.058888888888888886,
+                "task_fit": 1.0,
+                "validation_strength": 0.25
+              },
+              "hard_gate": {
+                "allow": false,
+                "errors": [
+                  "best_to_worst_rule_missing_for_option_task"
+                ]
+              },
+              "prompt_hash": "0586814aa47a61785a6b4df56f0a84feb2674fc3f5326ddc17c73cf4f7b9292f",
+              "score": 0.5559
+            }
+          ],
+          "top_candidate": {
+            "candidate_id": "patch_replay_option_ordering_prompt:auto_primary",
+            "decision": "ALLOW",
+            "dimensions": {
+              "artifact_discipline": 1.0,
+              "contract_compliance": 1.0,
+              "evidence_binding": 0.6,
+              "regression_risk": 1.0,
+              "specificity": 1.0,
+              "task_fit": 1.0,
+              "validation_strength": 1.0
+            },
+            "hard_gate": {
+              "allow": true,
+              "errors": []
+            },
+            "prompt_hash": "fcc2985d1e0d0bc7159d8c2c9203639e2d750106da3709f498c89e04decaaa78",
+            "score": 0.94
+          }
+        }
+      },
+      {
+        "expected_decision": "ALLOW",
+        "fixture_id": "patch_replay_research_prompt",
+        "pass": true,
+        "path": "runtime/cartridges/prompt_governance_v1/fixtures/patch_replay_quality_ranker/patch_replay_research_prompt.json",
+        "ranking": {
+          "candidate_count": 1,
+          "created_utc": "2026-04-30T22:18:08Z",
+          "decision": "ALLOW",
+          "packet_type": "PROMPT_PATCH_RANKING_REPORT_v1",
+          "ranked_candidates": [
+            {
+              "candidate_id": "patch_replay_research_prompt:auto_primary",
+              "decision": "ALLOW",
+              "dimensions": {
+                "artifact_discipline": 1.0,
+                "contract_compliance": 1.0,
+                "evidence_binding": 1.0,
+                "regression_risk": 1.0,
+                "specificity": 1.0,
+                "task_fit": 1.0,
+                "validation_strength": 1.0
+              },
+              "hard_gate": {
+                "allow": true,
+                "errors": []
+              },
+              "prompt_hash": "1e32f278eaf6a6890362801f07237e8f3813445ae7d06a16d23e16d42b8140e6",
+              "score": 1.0
+            }
+          ],
+          "top_candidate": {
+            "candidate_id": "patch_replay_research_prompt:auto_primary",
+            "decision": "ALLOW",
+            "dimensions": {
+              "artifact_discipline": 1.0,
+              "contract_compliance": 1.0,
+              "evidence_binding": 1.0,
+              "regression_risk": 1.0,
+              "specificity": 1.0,
+              "task_fit": 1.0,
+              "validation_strength": 1.0
+            },
+            "hard_gate": {
+              "allow": true,
+              "errors": []
+            },
+            "prompt_hash": "1e32f278eaf6a6890362801f07237e8f3813445ae7d06a16d23e16d42b8140e6",
+            "score": 1.0
+          }
+        }
+      }
+    ]
+  },
+  "validator": "validate_prompt_patch_replay_quality_ranker_v1"
+}

@@ -1,0 +1,54 @@
+{
+  "closure_controls": {
+    "requires_learning_hook": true,
+    "requires_owner": true,
+    "requires_receipt": true,
+    "requires_regression_pass": true,
+    "requires_tracking_ref": true
+  },
+  "corrections": [
+    {
+      "change_type": "fixture_patch",
+      "correction_id": "ECL-CORR-001",
+      "description": "Add a regression fixture that reproduces the failure class and blocks recurrence.",
+      "failure_class_id": "FC-001",
+      "owner": "MPP_R18",
+      "preventive": true,
+      "priority": "P1",
+      "status": "verified",
+      "tracking_ref": "ECL-R18-FC-001"
+    }
+  ],
+  "created_at": "2026-04-30T23:44:47.408963+00:00",
+  "enforcement_hooks": [
+    {
+      "action": "require blocking regression fixture before promotion",
+      "blocking": true,
+      "condition": "failure class has a correction",
+      "hook_id": "ECL-HOOK-001",
+      "hook_type": "regression_gate",
+      "stage": "ECL"
+    },
+    {
+      "action": "block FIR if regression gate fails",
+      "blocking": true,
+      "condition": "ECL correction exists",
+      "hook_id": "ECL-HOOK-002",
+      "hook_type": "promotion_gate",
+      "stage": "FIR_STAGE"
+    }
+  ],
+  "objective_id": "OBJ-MPP-R18",
+  "packet_id": "ECL-BAD-NO-TEST",
+  "promotion_criteria": [
+    "all corrections have owner/tracking_ref",
+    "at least one preventive correction exists",
+    "blocking regression test exists and passes",
+    "receipt and learning hook are written"
+  ],
+  "regression_tests": [],
+  "result_hash": "d543a3dde1ba544194987f1dd575f8fe7329bfa5913c2994e3fb85d73cd331a7",
+  "schema_version": "mpp.ecl_enforced_correction_packet.v1",
+  "source_debugging_packet_id": "DEBUG-R17-SMOKE",
+  "stage": "ECL"
+}

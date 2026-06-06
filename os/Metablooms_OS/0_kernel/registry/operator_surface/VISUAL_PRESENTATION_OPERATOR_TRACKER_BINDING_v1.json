@@ -1,0 +1,28 @@
+{
+  "binding_id": "VISUAL_PRESENTATION_OPERATOR_TRACKER_BINDING_v1",
+  "created_utc": "20260502T220517Z",
+  "hash_closure": "operator tracker USS fixture target hash synchronized after HTML polish write",
+  "last_repaired_utc": "20260502T220621Z",
+  "research_basis": [
+    "Material Design progress indicators communicate ongoing status and require accessible progress labels",
+    "Nielsen Norman Group visual hierarchy guidance supports color, contrast, scale, grouping, and progressive disclosure",
+    "Dashboard surfaces should convey actionable related information at a glance"
+  ],
+  "rules": [
+    "operator trackers are visual artifacts and require VPQ declaration ALLOW",
+    "tracker status must be at-a-glance before technical receipts",
+    "progress indicators require accessible labels and non-color state labels",
+    "teacher-professional credibility is required for operator surfaces because classroom and administrator-facing screenshots are plausible"
+  ],
+  "scope": [
+    "OPEN_OPERATOR_VISUAL_TRACKER.html",
+    "runtime/state/*TRACKER_PREVIEW*",
+    "operator_surface registry contracts",
+    "new-chat boot/dashboard surfaces"
+  ],
+  "stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE3_MPP_USS_AND_HTML_CARTRIDGE_BINDING_REPAIRED_WITH_TRACKER_SURFACE",
+  "status": "active_local_binding_pending_render_smoke_and_full_export",
+  "uss_fixture": "tests/fixtures/usefulness_surface/valid_usefulness_operator_tracker_with_visual_presentation_v1.json",
+  "validator": "0_kernel/validators/validate_visual_presentation_quality_gate_v1.py",
+  "vpq_fixture": "tests/fixtures/visual_presentation_quality/valid_visual_presentation_quality_operator_tracker_v1.json"
+}

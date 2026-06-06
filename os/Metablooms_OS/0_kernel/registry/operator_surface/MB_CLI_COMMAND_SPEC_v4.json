@@ -1,0 +1,17 @@
+{
+  "artifact_type": "MB_CLI_COMMAND_SPEC_v4",
+  "command": "mb",
+  "commands": [
+    "status",
+    "boot",
+    "verify",
+    "doctor",
+    "tracker",
+    "trace",
+    "run-stage",
+    "replay",
+    "export"
+  ],
+  "created_utc": "20260501T115500Z",
+  "purpose": "Real registered executor wiring and trace preview."
+}

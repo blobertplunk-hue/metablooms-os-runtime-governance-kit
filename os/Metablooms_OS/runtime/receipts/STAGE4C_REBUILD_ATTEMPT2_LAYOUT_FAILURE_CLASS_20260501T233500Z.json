@@ -1,0 +1,9 @@
+{
+  "stage_id": "STAGE4C_NODE_YAUZL_YAZL_STREAM_REBUILD_AND_BOOT_PROOF",
+  "attempt": 2,
+  "verdict": "FAIL_REPAIRED_BEFORE_PROMOTION",
+  "failure_class": "overlay_archive_root_prefix_mismatch",
+  "root_cause": "The Stage 2 source authority stores OS files under Metablooms_OS/, but the first successful stream rebuild inserted new overlay files at ZIP root without the Metablooms_OS/ prefix.",
+  "corrective_action": "Use an overlay manifest with archive_path under Metablooms_OS/ and local_path relative to the live OS root.",
+  "promotion_status": "The root-mismatched rebuilt ZIP is not promoted as final authority. A corrected rebuild is required."
+}

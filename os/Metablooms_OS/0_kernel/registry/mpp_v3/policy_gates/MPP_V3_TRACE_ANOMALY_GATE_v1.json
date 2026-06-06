@@ -1,0 +1,18 @@
+{
+  "locked_at": "20260501T014300Z",
+  "policy_id": "MPP_V3_TRACE_ANOMALY_GATE_v1",
+  "research_basis": [
+    "W3C Trace Context defines vendor-neutral trace identity propagation using traceparent/tracestate.",
+    "OpenTelemetry span semantic conventions emphasize consistent span attributes for analysis.",
+    "SRE observability practice uses trace/monitoring evidence to detect failure and latency anomalies."
+  ],
+  "rules": [
+    "Trace context must use a 32-hex trace_id and 16-hex span IDs.",
+    "Root span must exist and all non-root parents must resolve.",
+    "Span order must be valid and expected stages must appear.",
+    "ERROR spans block promotion.",
+    "Each span must bind to artifact references.",
+    "Trace summary counts must reconcile with span data."
+  ],
+  "stage": "TRACE_ANALYSIS"
+}

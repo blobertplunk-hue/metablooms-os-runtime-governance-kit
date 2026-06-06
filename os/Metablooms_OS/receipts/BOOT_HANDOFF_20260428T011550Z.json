@@ -1,0 +1,13 @@
+{
+  "timestamp_utc": "20260428T011550Z",
+  "status": "BOOTED",
+  "root": "/mnt/data/Metablooms_OS",
+  "compat_root": "/mnt/data/Metablooms_OS_refined",
+  "boot_receipt": "/mnt/data/Metablooms_OS/0_kernel/registry/boot_receipts/project_files_boot/BOOT_RECEIPT_1777338951.json",
+  "next_valid_stage": "TRACE-0 ADD SPAN-STYLE EVENT TRACE SCHEMA TO ACSM",
+  "notes": [
+    "Booted from project-file embedded baseline.",
+    "Project-files boot overlay verified and applied.",
+    "Same-turn PRE_TOOL_EXECUTION_CONTRACT written before further governed work."
+  ]
+}

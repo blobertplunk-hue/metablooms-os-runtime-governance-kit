@@ -1,0 +1,13 @@
+{
+  "artifact_type": "metablooms_stage_handoff",
+  "authorized_next_stage": "OPTIONAL_FULL_PROJECT_FILE_EXPORT_WITH_ROUTER_AUTHORITY_8",
+  "continuation_prompt": "Continue from /mnt/data/Metablooms_OS. Load SANDBOX_ROUTER_AUTHORITY_EXPORT_DECISION_7_HANDOFF.json. Run exactly one bounded stage: OPTIONAL_FULL_PROJECT_FILE_EXPORT_WITH_ROUTER_AUTHORITY_8 only if you want a full integrated project-file ZIP; otherwise use the lightweight router authority bundle as the current router delta authority. If running full export, enforce EXPORT_REPAIR_METHOD_LOCK_LATEST.json and the sandbox router gate before any archive work.",
+  "decision_path": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_AUTHORITY_EXPORT_DECISION_7_20260430T142900Z/SANDBOX_ROUTER_AUTHORITY_EXPORT_DECISION_7_DECISION.json",
+  "heavy_export_repair_allowed": "only_if_explicitly_requested",
+  "load_this_receipt": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_AUTHORITY_EXPORT_DECISION_7_20260430T142900Z/SANDBOX_ROUTER_AUTHORITY_EXPORT_DECISION_7_RECEIPT.json",
+  "root_level_bundle": "/mnt/data/METABLOOMS_SANDBOX_ROUTER_AUTHORITY_EXPORT_DECISION_7_20260430T142900Z.zip",
+  "root_level_bundle_sha256": "acab7cece850a5207aa940bca38b27f891dace0c499abeaa3b7a7cf6decd29a1",
+  "stage": "SANDBOX_ROUTER_AUTHORITY_EXPORT_DECISION_7",
+  "status": "PASS",
+  "timestamp_utc": "20260430T142900Z"
+}

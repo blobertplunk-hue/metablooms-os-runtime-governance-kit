@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+  <title>Fractions on a Number Line — MetaBlooms TEKS 3.3A/3.3B</title>
+  <style>
+    /* ── Base ── */
+    :root{
+      --bg:#0f1923;--card:#16222f;--card2:#1c2d3f;--text:#e8f4ff;
+      --muted:#7a9bb5;--line:#2a3f55;--green:#2ecc71;--yellow:#f1c40f;
+      --red:#e74c3c;--blue:#3498db;--purple:#9b59b6;--orange:#e67e22;
+      --shadow:0 8px 24px rgba(0,0,0,.4)
+    }
+    *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+    body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);
+         min-height:100vh;overflow-x:hidden}
+
+    /* ── Layout ── */
+    .app{max-width:800px;margin:0 auto;padding:16px}
+    .header{text-align:center;margin-bottom:20px}
+    .header h1{font-size:22px;font-weight:800;color:#e8f4ff;margin-bottom:4px}
+    .header .sub{font-size:12px;color:var(--muted)}
+    .teks-badge{display:inline-block;padding:3px 10px;border-radius:999px;
+                font-size:11px;font-weight:700;background:rgba(52,152,219,.2);
+                border:1px solid rgba(52,152,219,.4);color:#7ac8f5;margin-top:6px}
+
+    /* ── Cards ── */
+    .card{background:linear-gradient(180deg,var(--card),var(--card2));
+          border:1px solid var(--line);border-radius:18px;padding:20px;
+          margin-bottom:16px;box-shadow:var(--shadow)}
+
+    /* ── Progress ── */
+    .progress-bar{height:8px;background:#1e3447;border-radius:999px;overflow:hidden;margin-bottom:14px}
+    .progress-fill{height:100%;border-radius:999px;transition:width .4s ease;
+                   background:linear-gradient(90deg,var(--blue),var(--green))}
+    .progress-label{display:flex;justify-content:space-between;font-size:11px;
+                    color:var(--muted);margin-bottom:6px}
+
+    /* ── Question ── */
+    .question-text{font-size:18px;font-weight:700;text-align:center;margin-bottom:6px;line-height:1.3}
+    .question-sub{font-size:13px;color:var(--muted);text-align:center;margin-bottom:20px}
+    .fraction-display{font-size:42px;font-weight:900;text-align:center;
+                      color:var(--yellow);margin-bottom:24px;letter-spacing:-1px}
+
+    /* ── Number Line ── */
+    .number-line-wrap{padding:0 10px;margin-bottom:8px;position:relative;touch-action:none}
+    .nl-labels{display:flex;justify-content:space-between;font-size:13px;
+               color:var(--muted);padding:0 2px;margin-bottom:4px}
+    .nl-track{position:relative;height:56px;cursor:pointer}
+    .nl-bar{position:absolute;top:50%;left:4px;right:4px;height:6px;
+            background:linear-gradient(90deg,#2a3f55,#3a5470);border-radius:3px;
+            transform:translateY(-50%)}
+    .nl-tick{position:absolute;top:50%;width:2px;background:#4a6a8a;border-radius:1px;
+             transform:translate(-50%,-50%);transition:background .2s}
+    .nl-tick.major{height:22px;background:#5a7a9a}
+    .nl-tick.minor{height:14px}
+    .nl-tick-label{position:absolute;top:calc(50% + 16px);transform:translateX(-50%);
+                   font-size:11px;color:var(--muted);white-space:nowrap}
+    .nl-marker{position:absolute;top:50%;width:28px;height:28px;border-radius:50%;
+               transform:translate(-50%,-50%);cursor:grab;transition:transform .15s,box-shadow .15s;
+               display:flex;align-items:center;justify-content:center;font-size:11px;
+               font-weight:800;z-index:10;user-select:none;
+               background:radial-gradient(circle,var(--yellow),#d4a017);
+               border:3px solid rgba(255,255,255,.3);box-shadow:0 4px 12px rgba(241,196,15,.5);
+               color:#000}
+    .nl-marker:active{transform:translate(-50%,-50%) scale(1.2);cursor:grabbing}
+    .nl-marker.placed{background:radial-gradient(circle,#3498db,#1a5f8a);
+                      box-shadow:0 4px 12px rgba(52,152,219,.6);color:#fff}
+    .nl-correct-pos{position:absolute;top:50%;width:6px;height:6px;border-radius:50%;
+                    background:var(--green);transform:translate(-50%,-50%);
+                    opacity:0;transition:opacity .3s;z-index:5}
+    .drag-hint{text-align:center;font-size:12px;color:var(--muted);margin-top:4px;
+               animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
+
+    /* ── Buttons ── */
+    .btn-row{display:flex;gap:10px;justify-content:center;margin-top:18px;flex-wrap:wrap}
+    .btn{padding:12px 28px;border-radius:12px;font-size:15px;font-weight:700;
+         border:none;cursor:pointer;transition:transform .15s,box-shadow .15s}
+    .btn:active{transform:scale(.96)}
+    .btn-primary{background:linear-gradient(135deg,var(--blue),#1a5f8a);color:#fff;
+                 box-shadow:0 4px 14px rgba(52,152,219,.4)}
+    .btn-hint{background:rgba(241,196,15,.15);color:var(--yellow);
+              border:1px solid rgba(241,196,15,.3)}
+    .btn-disabled{opacity:.4;pointer-events:none}
+
+    /* ── Feedback ── */
+    .feedback{padding:14px 16px;border-radius:14px;margin-top:16px;
+              font-size:14px;line-height:1.5;display:none}
+    .feedback.correct{background:rgba(46,204,113,.12);border:1px solid rgba(46,204,113,.3)}
+    .feedback.incorrect{background:rgba(231,76,60,.1);border:1px solid rgba(231,76,60,.25)}
+    .feedback.hint-box{background:rgba(241,196,15,.08);border:1px solid rgba(241,196,15,.25)}
+    .feedback-icon{font-size:22px;margin-bottom:6px}
+    .feedback-title{font-weight:700;margin-bottom:4px}
+    .feedback-body{color:var(--muted)}
+    .feedback-misconception{margin-top:8px;padding:8px 10px;border-radius:8px;
+                            background:rgba(155,89,182,.1);border:1px solid rgba(155,89,182,.25);
+                            font-size:12px;color:#c8a0e8}
+
+    /* ── Teacher Dashboard ── */
+    #teacher-panel{display:none}
+    .teacher-header{display:flex;justify-content:space-between;align-items:center;
+                    margin-bottom:16px;flex-wrap:wrap;gap:8px}
+    .teacher-title{font-size:16px;font-weight:800;color:var(--text)}
+    .dashboard-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+    .dash-metric{padding:12px;border-radius:12px;background:rgba(255,255,255,.04);
+                 border:1px solid var(--line);text-align:center}
+    .dash-v{font-size:28px;font-weight:900}
+    .dash-k{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+    .flag-list{display:grid;gap:8px}
+    .flag-item{padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.04);
+               border-left:4px solid var(--line);font-size:12px}
+    .flag-item.behavioral{border-color:var(--orange)}
+    .flag-item.conceptual{border-color:var(--purple)}
+    .flag-item.clean{border-color:var(--green)}
+    .flag-label{font-weight:700;margin-bottom:2px;font-size:13px}
+    .flag-action{color:var(--muted)}
+    .intervention-badge{display:inline-block;padding:4px 10px;border-radius:999px;
+                        font-size:11px;font-weight:700;background:rgba(231,76,60,.15);
+                        border:1px solid rgba(231,76,60,.3);color:#f08070}
+    .ready-badge{display:inline-block;padding:4px 10px;border-radius:999px;
+                 font-size:11px;font-weight:700;background:rgba(46,204,113,.12);
+                 border:1px solid rgba(46,204,113,.3);color:#7be8aa}
+
+    /* ── Session complete ── */
+    .session-score{font-size:56px;font-weight:900;text-align:center;margin:8px 0}
+    .score-label{text-align:center;font-size:14px;color:var(--muted)}
+
+    /* ── Toggle ── */
+    .toggle-bar{display:flex;border-radius:12px;background:rgba(255,255,255,.06);
+                border:1px solid var(--line);overflow:hidden;margin-bottom:16px}
+    .toggle-btn{flex:1;padding:10px;text-align:center;font-size:13px;font-weight:600;
+                cursor:pointer;transition:background .2s;color:var(--muted)}
+    .toggle-btn.active{background:rgba(52,152,219,.2);color:var(--blue)}
+
+    @media(max-width:480px){
+      .dashboard-grid{grid-template-columns:1fr}
+      .app{padding:10px}
+      .question-text{font-size:16px}
+      .fraction-display{font-size:34px}
+    }
+  </style>
+
+<!-- USEFULNESS SURFACE DECLARATION
+  artifact_id: fractions_number_line_telemetry_v1
+  artifact_type: html_activity
+  teks_standard: TEKS 3.3A, 3.3B, 3.3H
+  grade_level: 3rd grade
+  language: English (bilingual expansion planned)
+  dimensions_covered:
+    instruction:            yes — teaches fraction placement concept
+    practice:               yes — 8 drag-and-drop placement questions
+    assessment:             yes — tracks accuracy per question, session score
+    realtime_feedback:      yes — immediate correct/incorrect + explanation
+    teacher_telemetry:      yes — live dashboard with flags and teacher note
+    misconception_diagnosis:yes — classifies 6 conceptual + 4 behavioral signals
+    adaptive_support:       no  — planned for v2
+    export_reuse:           no  — planned for v2 (Google Sheets export)
+    future_improvement:     yes — signal counts feed back into schema improvements
+-->
+</head>
+<body>
+<div class="app" id="app">
+
+  <!-- ── HEADER ── -->
+  <div class="header">
+    <h1>🔢 Fractions on a Number Line</h1>
+    <div class="sub">Drag the marker to place the fraction</div>
+    <span class="teks-badge">TEKS 3.3A · 3.3B · 3.3H</span>
+  </div>
+
+  <!-- ── VIEW TOGGLE ── -->
+  <div class="toggle-bar">
+    <div class="toggle-btn active" id="tab-student" onclick="showTab('student')">Student View</div>
+    <div class="toggle-btn" id="tab-teacher" onclick="showTab('teacher')">Teacher Dashboard</div>
+  </div>
+
+  <!-- ── STUDENT PANEL ── -->
+  <div id="student-panel">
+    <div class="card">
+      <div class="progress-label">
+        <span id="q-label">Question 1 of 8</span>
+        <span id="score-label">Score: 0</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+
+      <div class="question-text" id="question-text">Place this fraction on the number line:</div>
+      <div class="question-sub" id="question-sub">Drag the yellow marker to the correct position</div>
+      <div class="fraction-display" id="fraction-display">1/4</div>
+
+      <!-- Number Line -->
+      <div class="number-line-wrap">
+        <div class="nl-labels"><span>0</span><span>1</span></div>
+        <div class="nl-track" id="nl-track">
+          <div class="nl-bar"></div>
+          <div class="nl-correct-pos" id="nl-correct"></div>
+          <!-- ticks injected by JS -->
+          <div class="nl-marker" id="nl-marker" title="Drag me!">?</div>
+        </div>
+        <div class="drag-hint" id="drag-hint">👆 Drag the marker</div>
+      </div>
+
+      <!-- Feedback -->
+      <div class="feedback" id="feedback">
+        <div class="feedback-icon" id="fb-icon"></div>
+        <div class="feedback-title" id="fb-title"></div>
+        <div class="feedback-body" id="fb-body"></div>
+        <div class="feedback-misconception" id="fb-misconception" style="display:none"></div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-hint" id="btn-hint" onclick="showHint()">💡 Hint</button>
+        <button class="btn btn-primary btn-disabled" id="btn-check" onclick="checkAnswer()">Check</button>
+        <button class="btn btn-primary btn-disabled" id="btn-next" onclick="nextQuestion()" style="display:none">Next →</button>
+      </div>
+    </div>
+  </div><!-- /student-panel -->
+
+  <!-- ── TEACHER PANEL ── -->
+  <div id="teacher-panel">
+    <div class="card">
+      <div class="teacher-header">
+        <div class="teacher-title">📊 Live Session Dashboard</div>
+        <span id="intervention-badge"></span>
+      </div>
+      <div class="dashboard-grid">
+        <div class="dash-metric">
+          <div class="dash-v" id="dash-accuracy" style="color:var(--green)">—</div>
+          <div class="dash-k">Accuracy</div>
+        </div>
+        <div class="dash-metric">
+          <div class="dash-v" id="dash-attempted">0</div>
+          <div class="dash-k">Questions</div>
+        </div>
+        <div class="dash-metric">
+          <div class="dash-v" id="dash-behavioral" style="color:var(--orange)">0</div>
+          <div class="dash-k">Behavioral flags</div>
+        </div>
+        <div class="dash-metric">
+          <div class="dash-v" id="dash-conceptual" style="color:var(--purple)">0</div>
+          <div class="dash-k">Misconception flags</div>
+        </div>
+      </div>
+      <div class="flag-list" id="flag-list">
+        <div class="flag-item clean">
+          <div class="flag-label">No flags yet</div>
+          <div class="flag-action">Signals will appear as student works</div>
+        </div>
+      </div>
+      <div id="teacher-note-box" style="margin-top:12px;padding:12px;border-radius:10px;
+           background:rgba(52,152,219,.07);border:1px solid rgba(52,152,219,.2);
+           font-size:13px;display:none">
+        <strong>Teacher note: </strong><span id="teacher-note-text"></span>
+      </div>
+    </div>
+  </div><!-- /teacher-panel -->
+
+</div><!-- /app -->
+
+<!-- ── TELEMETRY ENGINE ── -->
+<script>
+// ── INLINE TELEMETRY ENGINE (condensed from MISCONCEPTION_TELEMETRY_ENGINE_v1.js) ──
+class MisconceptionTelemetryEngine {
+  constructor(cfg={}) {
+    this.studentId=cfg.studentId||'anon'; this.sessionId=cfg.sessionId||this._uuid();
+    this.events=[]; this.attempts={}; this.signalCounts={}; this._flagCBs=[];
+  }
+  recordAttempt(a) {
+    const qid=a.questionId;
+    if(!this.attempts[qid]) this.attempts[qid]=[];
+    const n=this.attempts[qid].length+1;
+    this.attempts[qid].push({...a,n,ts:Date.now()});
+    const sig=this._classify(a,this.attempts[qid]);
+    const evt=this._mkEvent(a,n,sig);
+    this.events.push(evt);
+    if(sig.signalId) this.signalCounts[sig.signalId]=(this.signalCounts[sig.signalId]||0)+1;
+    if(evt.teacherFlag) this._flagCBs.forEach(cb=>cb(evt));
+    return evt;
+  }
+  onTeacherFlag(cb){this._flagCBs.push(cb)}
+  getSessionSummary() {
+    const qs=Object.keys(this.attempts).length;
+    const firsts=this.events.filter(e=>e.attemptNumber===1);
+    const correct=firsts.filter(e=>e.correct).length;
+    const bFlags=[...new Set(this.events.filter(e=>e.signalType==='behavioral'&&e.signalId).map(e=>e.signalId))];
+    const cFlags=[...new Set(this.events.filter(e=>e.signalType==='conceptual'&&e.signalId).map(e=>e.signalId))];
+    let top=null,tc=0;
+    const CIDS=['WHOLE_NUMBER_BIAS','DENOMINATOR_SIZE_CONFUSION','TICK_MARK_COUNTING','UNIT_FRACTION_INVERSION','ZERO_ANCHOR_CONFUSION','EQUIVALENT_FRACTION_GAP'];
+    for(const[id,c] of Object.entries(this.signalCounts)) if(CIDS.includes(id)&&c>tc){top=id;tc=c;}
+    const needsIntervention=cFlags.length>0||bFlags.includes('HINT_DEPENDENCY');
+    return {studentId:this.studentId,sessionId:this.sessionId,questionsAttempted:qs,
+            questionsCorrect:correct,accuracyPct:qs>0?Math.round(correct/qs*100):0,
+            behavioralFlags:bFlags,conceptualFlags:cFlags,topMisconception:top,
+            needsIntervention,teacherNote:this._note(top,bFlags,qs>0?Math.round(correct/qs*100):0),
+            signalCounts:{...this.signalCounts}};
+  }
+  _classify(a,prior) {
+    if(prior.length>=3){const r=prior.slice(-3),span=r[r.length-1].ts-r[0].ts;if(span<4000)return{signalType:'behavioral',signalId:'BRUTE_FORCE_TAP',confidence:.9,teacherAction:'Check in — may be frustrated'};}
+    if(a.responseTimeMs>0&&a.responseTimeMs<1500)return{signalType:'behavioral',signalId:'RAPID_SEQUENTIAL',confidence:.75,teacherAction:'Remind to read the question'};
+    const hrun=prior.slice(-2).every(x=>x.hintUsed)&&a.hintUsed;
+    if(hrun)return{signalType:'behavioral',signalId:'HINT_DEPENDENCY',confidence:.85,teacherAction:'Consider small-group pull'};
+    if(!a.correct&&a.questionType==='place_on_line'&&typeof a.studentResponse==='number'){
+      const exp=a.positionCorrect!==undefined?a.positionCorrect:(a.numerator&&a.denominator?a.numerator/a.denominator:null);
+      if(exp===null)return{signalType:'none',signalId:null,confidence:1};
+      const err=a.studentResponse-exp,abs=Math.abs(err);
+      if(a.numerator===1&&a.denominator&&a.studentResponse>exp+0.2)return{signalType:'conceptual',signalId:'UNIT_FRACTION_INVERSION',confidence:.85,teacherAction:'Fold paper in half vs eighths — which piece is bigger?'};
+      if(a.denominator&&abs>0.15){const inv=1-exp;if(Math.abs(a.studentResponse-inv)<0.15)return{signalType:'conceptual',signalId:'DENOMINATOR_SIZE_CONFUSION',confidence:.8,teacherAction:'Pizza: 8 slices vs 4 slices — which is bigger?'};}
+      if(a.denominator&&a.denominator>0){const iv=1/a.denominator;if(Math.abs(abs-iv)<0.05)return{signalType:'conceptual',signalId:'TICK_MARK_COUNTING',confidence:.75,teacherAction:'Count spaces not lines — use colored blocks'};}
+      if(a.studentResponse>1.1||a.studentResponse<-0.1)return{signalType:'conceptual',signalId:'ZERO_ANCHOR_CONFUSION',confidence:.9,teacherAction:'Establish 0 and 1 as anchors first'};
+    }
+    return{signalType:'none',signalId:null,confidence:1};
+  }
+  _mkEvent(a,n,sig){
+    const tf=sig.signalId!==null&&(sig.signalType==='conceptual'||['ABANDONMENT','HINT_DEPENDENCY'].includes(sig.signalId));
+    return{eventId:this._uuid(),sessionId:this.sessionId,studentId:this.studentId,
+           timestampMs:Date.now(),questionId:a.questionId,questionType:a.questionType||'place_on_line',
+           fractionTarget:a.fractionTarget||'',studentResponse:a.studentResponse,correct:!!a.correct,
+           responseTimeMs:a.responseTimeMs||0,attemptNumber:n,hintUsed:!!a.hintUsed,
+           signalType:sig.signalType,signalId:sig.signalId||null,signalConfidence:sig.confidence||1,
+           teacherAction:sig.teacherAction||null,teacherFlag:tf};
+  }
+  _note(top,bFlags,acc) {
+    const N={UNIT_FRACTION_INVERSION:'Needs work on unit fraction size — try folding paper activity',
+             DENOMINATOR_SIZE_CONFUSION:'Confuses larger denominator with larger fraction — use pizza/candy bar model',
+             TICK_MARK_COUNTING:'Counts tick marks instead of intervals — use colored interval blocks',
+             ZERO_ANCHOR_CONFUSION:'Does not anchor fractions between 0 and 1 — establish anchors first',
+             WHOLE_NUMBER_BIAS:'Treats fraction as two separate numbers — use unit fraction anchor on number line',
+             EQUIVALENT_FRACTION_GAP:'Does not recognize equivalent fractions — overlay two number lines'};
+    if(top&&N[top])return N[top];
+    if(bFlags.includes('HINT_DEPENDENCY'))return'Relied on hints frequently — consider small-group pull';
+    if(acc<50)return'Low accuracy — review prerequisite concepts before next session';
+    if(acc>=80)return'Strong performance — ready for next level';
+    return'Monitor progress — review errors before next session';
+  }
+  _uuid(){return'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{const r=Math.random()*16|0;return(c==='x'?r:(r&0x3|0x8)).toString(16)});}
+}
+</script>
+
+<!-- ── ACTIVITY ENGINE ── -->
+<script>
+// ── QUESTIONS ──────────────────────────────────────────────────────────────
+const QUESTIONS = [
+  {id:'Q1', num:1, den:2, label:'1/2',  hint:'Split the line into 2 equal parts. 1/2 is the middle.'},
+  {id:'Q2', num:1, den:4, label:'1/4',  hint:'Split the line into 4 equal parts. Count 1 part from 0.'},
+  {id:'Q3', num:3, den:4, label:'3/4',  hint:'Split into 4 equal parts. Count 3 parts from 0.'},
+  {id:'Q4', num:1, den:3, label:'1/3',  hint:'Split into 3 equal parts. 1/3 is after the first part.'},
+  {id:'Q5', num:1, den:8, label:'1/8',  hint:'Split into 8 equal parts. 1/8 is very close to 0!'},
+  {id:'Q6', num:2, den:3, label:'2/3',  hint:'Split into 3 equal parts. Count 2 parts from 0.'},
+  {id:'Q7', num:3, den:8, label:'3/8',  hint:'Split into 8 equal parts. 3/8 is less than 1/2.'},
+  {id:'Q8', num:1, den:6, label:'1/6',  hint:'Split into 6 equal parts. 1/6 is close to 0.'},
+];
+
+// ── STATE ──────────────────────────────────────────────────────────────────
+let qIndex      = 0;
+let score       = 0;
+let markerX     = 0.5;   // 0-1 position
+let isDragging  = false;
+let answered    = false;
+let hintUsed    = false;
+let questionStartMs = Date.now();
+let sessionFlags = [];
+
+const engine = new MisconceptionTelemetryEngine({ studentId:'student-demo', sessionId:'sess-' + Date.now() });
+engine.onTeacherFlag(evt => {
+  sessionFlags.push(evt);
+  updateDashboard();
+});
+
+// ── SIGNAL LABELS ──────────────────────────────────────────────────────────
+const SIGNAL_LABELS = {
+  UNIT_FRACTION_INVERSION:    {label:'Unit fraction confusion',     desc:'Placed larger-denominator fraction too far right'},
+  DENOMINATOR_SIZE_CONFUSION: {label:'Denominator size confusion',  desc:'Believes larger denominator = larger fraction'},
+  TICK_MARK_COUNTING:         {label:'Counts tick marks not spaces',desc:'Off by one interval position'},
+  ZERO_ANCHOR_CONFUSION:      {label:'Zero anchor confusion',       desc:'Did not keep fraction between 0 and 1'},
+  WHOLE_NUMBER_BIAS:           {label:'Whole number bias',           desc:'Treated fraction as two separate numbers'},
+  BRUTE_FORCE_TAP:            {label:'Rapid guessing',              desc:'3+ attempts within 4 seconds'},
+  RAPID_SEQUENTIAL:           {label:'Too fast — not reading',      desc:'Response under 1.5 seconds'},
+  HINT_DEPENDENCY:            {label:'Hint dependency',             desc:'Used hints on 3+ consecutive questions'},
+};
+
+// ── INIT ───────────────────────────────────────────────────────────────────
+function init() {
+  buildTicks();
+  loadQuestion();
+  setupDrag();
+  updateDashboard();
+}
+
+function buildTicks() {
+  const track = document.getElementById('nl-track');
+  const denominator = QUESTIONS[qIndex].den;
+  // Remove old ticks
+  track.querySelectorAll('.nl-tick').forEach(t=>t.remove());
+  // Add ticks at 0, 1, and denominator intervals
+  const maxD = Math.max(denominator, 8);
+  for (let i=0; i<=maxD; i++) {
+    const pct = i/maxD*100;
+    const tick = document.createElement('div');
+    tick.className = 'nl-tick ' + (i===0||i===maxD ? 'major' : (i%(maxD/denominator)===0 ? 'major' : 'minor'));
+    tick.style.left = `calc(${pct}% + 4px)`;
+    if (i===0 || i===maxD || i%(maxD/denominator)===0) {
+      const label = document.createElement('div');
+      label.className = 'nl-tick-label';
+      if (i===0) label.textContent='0';
+      else if (i===maxD) label.textContent='1';
+      tick.appendChild(label);
+    }
+    track.appendChild(tick);
+  }
+}
+
+function loadQuestion() {
+  const q = QUESTIONS[qIndex];
+  answered = false;
+  hintUsed = false;
+  markerX  = 0.5;
+  questionStartMs = Date.now();
+
+  document.getElementById('fraction-display').textContent = q.label;
+  document.getElementById('q-label').textContent = `Question ${qIndex+1} of ${QUESTIONS.length}`;
+  document.getElementById('score-label').textContent = `Score: ${score}`;
+  document.getElementById('progress-fill').style.width = `${qIndex/QUESTIONS.length*100}%`;
+  document.getElementById('question-text').textContent = 'Place this fraction on the number line:';
+  document.getElementById('question-sub').textContent = 'Drag the yellow marker to the correct position';
+
+  // Reset feedback
+  const fb = document.getElementById('feedback');
+  fb.style.display='none'; fb.className='feedback';
+
+  // Reset marker
+  const marker = document.getElementById('nl-marker');
+  marker.className = 'nl-marker';
+  marker.textContent = '?';
+  setMarkerPosition(0.5);
+
+  // Hide correct position indicator
+  document.getElementById('nl-correct').style.opacity='0';
+  document.getElementById('drag-hint').style.display='block';
+
+  // Buttons
+  document.getElementById('btn-check').classList.add('btn-disabled');
+  document.getElementById('btn-check').style.display='inline-block';
+  document.getElementById('btn-next').style.display='none';
+  document.getElementById('btn-hint').disabled = false;
+  document.getElementById('btn-hint').classList.remove('btn-disabled');
+
+  buildTicks();
+}
+
+// ── DRAG LOGIC ─────────────────────────────────────────────────────────────
+function setupDrag() {
+  const marker = document.getElementById('nl-marker');
+  const track  = document.getElementById('nl-track');
+
+  function getPos(e) {
+    const rect = track.getBoundingClientRect();
+    const x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left - 4;
+    return Math.max(0, Math.min(1, x / (rect.width - 8)));
+  }
+
+  function start(e) {
+    if (answered) return;
+    isDragging = true;
+    markerX = getPos(e);
+    setMarkerPosition(markerX);
+    document.getElementById('drag-hint').style.display='none';
+    marker.classList.add('placed');
+    document.getElementById('btn-check').classList.remove('btn-disabled');
+    e.preventDefault();
+  }
+  function move(e) {
+    if (!isDragging || answered) return;
+    markerX = getPos(e);
+    setMarkerPosition(markerX);
+    e.preventDefault();
+  }
+  function end() { isDragging = false; }
+
+  marker.addEventListener('mousedown', start);
+  marker.addEventListener('touchstart', start, {passive:false});
+  track.addEventListener('mousedown', start);
+  track.addEventListener('touchstart', start, {passive:false});
+  document.addEventListener('mousemove', move);
+  document.addEventListener('touchmove', move, {passive:false});
+  document.addEventListener('mouseup', end);
+  document.addEventListener('touchend', end);
+}
+
+function setMarkerPosition(pct) {
+  const track = document.getElementById('nl-track');
+  const marker= document.getElementById('nl-marker');
+  const w = track.offsetWidth - 8;
+  marker.style.left = `${pct*w + 4}px`;
+}
+
+// ── CHECK ANSWER ───────────────────────────────────────────────────────────
+function checkAnswer() {
+  if (answered) return;
+  const q = QUESTIONS[qIndex];
+  const correct_pos = q.num / q.den;
+  const tolerance   = 0.05;
+  const correct     = Math.abs(markerX - correct_pos) <= tolerance;
+  const rtime = Date.now() - questionStartMs;
+
+  answered = true;
+
+  // Record telemetry
+  const evt = engine.recordAttempt({
+    questionId:     q.id,
+    questionType:   'place_on_line',
+    fractionTarget: q.label,
+    studentResponse:markerX,
+    correct,
+    responseTimeMs: rtime,
+    numerator:      q.num,
+    denominator:    q.den,
+    positionCorrect:correct_pos,
+    hintUsed,
+    attemptNumber:  (engine.attempts[q.id]||[]).length + 1,
+  });
+
+  // Update marker
+  const marker = document.getElementById('nl-marker');
+  marker.textContent = q.label;
+  marker.style.backgroundColor = correct ? 'var(--green)' : 'var(--red)';
+  marker.style.borderColor = correct ? 'rgba(46,204,113,.6)' : 'rgba(231,76,60,.5)';
+  marker.style.color = '#fff';
+
+  // Show correct position if wrong
+  if (!correct) {
+    const track = document.getElementById('nl-track');
+    const nc = document.getElementById('nl-correct');
+    const w  = track.offsetWidth - 8;
+    nc.style.left = `${correct_pos*w + 4}px`;
+    nc.style.opacity = '1';
+  }
+
+  if (correct) score++;
+
+  // Show feedback
+  showFeedback(correct, q, evt);
+
+  // Buttons
+  document.getElementById('btn-check').style.display='none';
+  document.getElementById('btn-next').style.display='inline-block';
+  document.getElementById('btn-next').classList.remove('btn-disabled');
+  document.getElementById('btn-hint').classList.add('btn-disabled');
+  document.getElementById('drag-hint').style.display='none';
+
+  updateDashboard();
+}
+
+function showFeedback(correct, q, evt) {
+  const fb = document.getElementById('feedback');
+  fb.className = 'feedback ' + (correct ? 'correct' : 'incorrect');
+  fb.style.display = 'block';
+  document.getElementById('fb-icon').textContent = correct ? '✅' : '❌';
+  document.getElementById('fb-title').textContent = correct ? 'Correct!' : 'Not quite';
+
+  const expected_pct = Math.round(q.num/q.den*100);
+  const placed_pct   = Math.round(markerX*100);
+
+  if (correct) {
+    document.getElementById('fb-body').textContent =
+      `${q.label} = ${expected_pct}% of the way from 0 to 1. Great job!`;
+  } else {
+    document.getElementById('fb-body').textContent =
+      `${q.label} should be at ${expected_pct}% — you placed it at ${placed_pct}%. ` +
+      `The green dot shows the correct position.`;
+  }
+
+  // Show misconception tip if one was detected
+  const mbox = document.getElementById('fb-misconception');
+  if (evt.signalId && evt.signalType === 'conceptual' && evt.teacherAction) {
+    const info = SIGNAL_LABELS[evt.signalId];
+    mbox.style.display='block';
+    mbox.innerHTML = `<strong>💡 Learning tip:</strong> ${getStudentTip(evt.signalId, q)}`;
+  } else {
+    mbox.style.display='none';
+  }
+}
+
+function getStudentTip(signalId, q) {
+  const TIPS = {
+    UNIT_FRACTION_INVERSION:    `Remember: when the bottom number (denominator) is bigger, each piece is SMALLER. ${q.label} — the bottom number is ${q.den}, so each piece is only 1/${q.den} of the whole line!`,
+    DENOMINATOR_SIZE_CONFUSION: `Bigger bottom number = smaller pieces! Think of a pizza: 8 slices means each slice is tinier than 4 slices.`,
+    TICK_MARK_COUNTING:         `Count the SPACES between marks, not the marks themselves. The number ${q.den} tells you how many spaces to make.`,
+    ZERO_ANCHOR_CONFUSION:      `Fractions between 0 and 1 are always between those two points on the number line — they are less than a whole.`,
+    WHOLE_NUMBER_BIAS:          `A fraction is ONE number, not two! ${q.label} means 1 piece out of ${q.den} equal pieces.`,
+  };
+  return TIPS[signalId] || `${q.label} = ${Math.round(q.num/q.den*100)}% of the way from 0 to 1.`;
+}
+
+function showHint() {
+  if (answered) return;
+  hintUsed = true;
+  const q = QUESTIONS[qIndex];
+  const fb = document.getElementById('feedback');
+  fb.className = 'feedback hint-box';
+  fb.style.display = 'block';
+  document.getElementById('fb-icon').textContent = '💡';
+  document.getElementById('fb-title').textContent = 'Hint';
+  document.getElementById('fb-body').textContent = q.hint;
+  document.getElementById('fb-misconception').style.display='none';
+  document.getElementById('btn-hint').classList.add('btn-disabled');
+}
+
+function nextQuestion() {
+  qIndex++;
+  if (qIndex >= QUESTIONS.length) {
+    showSessionComplete();
+    return;
+  }
+  loadQuestion();
+}
+
+function showSessionComplete() {
+  const acc = Math.round(score/QUESTIONS.length*100);
+  const summary = engine.getSessionSummary();
+  const panel = document.getElementById('student-panel');
+  panel.innerHTML = `
+    <div class="card" style="text-align:center">
+      <div style="font-size:36px;margin-bottom:8px">🎉</div>
+      <h2 style="font-size:20px;margin-bottom:6px">Session Complete!</h2>
+      <div class="session-score" style="color:${acc>=80?'var(--green)':acc>=60?'var(--yellow)':'var(--red)'}">${acc}%</div>
+      <div class="score-label">${score} out of ${QUESTIONS.length} correct</div>
+      <div style="margin-top:16px;padding:12px;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid var(--line);font-size:13px;color:var(--muted);text-align:left">
+        <strong style="color:var(--text)">Switch to Teacher Dashboard</strong> to see the full session report.
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-primary" onclick="restartSession()">Try Again</button>
+        <button class="btn btn-hint" onclick="showTab('teacher')">See Report 📊</button>
+      </div>
+    </div>`;
+  updateDashboard();
+  document.getElementById('tab-teacher').click();
+}
+
+function restartSession() {
+  qIndex=0; score=0; sessionFlags=[];
+  engine.reset();
+  document.getElementById('student-panel').innerHTML = ''; // rebuilt on page reload
+  location.reload();
+}
+
+// ── TEACHER DASHBOARD ──────────────────────────────────────────────────────
+function updateDashboard() {
+  const summary = engine.getSessionSummary();
+  document.getElementById('dash-accuracy').textContent =
+    summary.questionsAttempted > 0 ? summary.accuracyPct + '%' : '—';
+  document.getElementById('dash-attempted').textContent = summary.questionsAttempted;
+  document.getElementById('dash-behavioral').textContent = summary.behavioralFlags.length;
+  document.getElementById('dash-conceptual').textContent = summary.conceptualFlags.length;
+
+  // Intervention badge
+  const badge = document.getElementById('intervention-badge');
+  badge.innerHTML = summary.needsIntervention
+    ? '<span class="intervention-badge">⚠ Needs check-in</span>'
+    : '<span class="ready-badge">✓ On track</span>';
+
+  // Flag list
+  const list = document.getElementById('flag-list');
+  const allFlags = [...summary.behavioralFlags.map(id=>({id,type:'behavioral'})),
+                    ...summary.conceptualFlags.map(id=>({id,type:'conceptual'}))];
+
+  if (allFlags.length === 0) {
+    list.innerHTML = '<div class="flag-item clean"><div class="flag-label">No flags yet</div><div class="flag-action">Signals appear as student works through questions</div></div>';
+  } else {
+    list.innerHTML = allFlags.map(f => {
+      const info = SIGNAL_LABELS[f.id] || {label:f.id, desc:''};
+      const count = summary.signalCounts[f.id] || 1;
+      // Find teacher action
+      const evtWithAction = sessionFlags.find(e=>e.signalId===f.id);
+      const action = evtWithAction ? evtWithAction.teacherAction : '';
+      return `<div class="flag-item ${f.type}">
+        <div class="flag-label">${f.type==='conceptual'?'🔵':'🟠'} ${info.label} (×${count})</div>
+        <div class="flag-action">${info.desc}</div>
+        ${action ? `<div style="margin-top:4px;font-size:11px;color:var(--blue);font-style:italic">Action: ${action}</div>` : ''}
+      </div>`;
+    }).join('');
+  }
+
+  // Teacher note
+  if (summary.questionsAttempted > 0) {
+    document.getElementById('teacher-note-box').style.display='block';
+    document.getElementById('teacher-note-text').textContent = summary.teacherNote;
+  }
+}
+
+// ── TAB TOGGLE ─────────────────────────────────────────────────────────────
+function showTab(tab) {
+  document.getElementById('student-panel').style.display = tab==='student' ? '' : 'none';
+  document.getElementById('teacher-panel').style.display = tab==='teacher' ? '' : 'none';
+  document.getElementById('tab-student').className = 'toggle-btn' + (tab==='student'?' active':'');
+  document.getElementById('tab-teacher').className = 'toggle-btn' + (tab==='teacher'?' active':'');
+  if (tab==='teacher') updateDashboard();
+}
+
+// ── START ──────────────────────────────────────────────────────────────────
+init();
+</script>
+</body>
+</html>

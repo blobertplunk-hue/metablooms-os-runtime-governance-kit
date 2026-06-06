@@ -1,0 +1,9 @@
+{
+  "id":"PRE_TOOL_EXECUTION_CONTRACT_v1",
+  "status":"active",
+  "gate":"PRE_TOOL_EXECUTION_GATE",
+  "description":"Governed execution must declare lane, timeout, kill-after, file/byte/step limits, fallback lane, receipt path, and whether web.run is required before tool use.",
+  "failure_action":"DENY_STAGE_EXECUTION",
+  "source":"project-files boot overlay",
+  "scope":"runtime_governance_overlay"
+}

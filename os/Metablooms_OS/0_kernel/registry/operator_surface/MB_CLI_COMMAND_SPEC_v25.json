@@ -1,0 +1,11 @@
+{
+  "added_commands": [
+    "mb breaker --preflight"
+  ],
+  "artifact_type": "MB_CLI_COMMAND_SPEC_v25",
+  "created_utc": "20260501T203116Z",
+  "hardened_commands": [
+    "mb run-stage"
+  ],
+  "runaway_turn_breaker": "hard-wired"
+}

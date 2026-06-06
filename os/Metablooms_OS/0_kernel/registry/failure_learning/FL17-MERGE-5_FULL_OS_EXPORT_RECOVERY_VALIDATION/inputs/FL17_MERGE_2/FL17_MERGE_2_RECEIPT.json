@@ -1,0 +1,33 @@
+{
+  "artifact_type": "STAGE_RECEIPT",
+  "stage_id": "FL17-MERGE-2_QUARANTINED_EVIDENCE_IMPORT",
+  "created_utc": "20260430T013700Z",
+  "status": "PASS",
+  "bounded_stage": true,
+  "governance_preflight": "SEE_CE_COMPLETED",
+  "actions": [
+    "loaded GOV_REPAIR and FL17-MERGE-1 evidence",
+    "validated target/stable/FL17 archives",
+    "classified approved import candidates",
+    "copied approved FL17 progression into quarantine namespace",
+    "computed content sha256 for imports",
+    "preserved FL16 blocked semantics",
+    "stopped before tracker repair or promotion"
+  ],
+  "active_runtime_changed": false,
+  "promotion_performed": false,
+  "tracker_repair_performed": false,
+  "outputs": [
+    "quarantine_namespace/0_kernel/registry/quarantine/FL17_QUARANTINED_PROGRESSION_IMPORT_20260430T013700Z/FL17_QUARANTINED_IMPORT_MANIFEST_v1.json",
+    "quarantine_namespace/0_kernel/registry/quarantine/FL17_QUARANTINED_PROGRESSION_IMPORT_20260430T013700Z/FL17_MERGE_2_VALIDATION_REPORT.json",
+    "quarantine_namespace/0_kernel/registry/quarantine/FL17_QUARANTINED_PROGRESSION_IMPORT_20260430T013700Z/FL17_MERGE_2_SEE_PACKET_v1.json",
+    "quarantine_namespace/0_kernel/registry/quarantine/FL17_QUARANTINED_PROGRESSION_IMPORT_20260430T013700Z/FL17_MERGE_2_CE_SYNTHESIS_v1.json"
+  ],
+  "counts": {
+    "approved": 848,
+    "imported": 848,
+    "missing": 0,
+    "total_bytes": 3283806
+  },
+  "verdict": "PASS_QUARANTINED_IMPORT_READY_FOR_TRACKER_REPAIR"
+}

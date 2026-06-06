@@ -1,0 +1,15 @@
+{
+  "artifact_type": "CODING_PLAN_v1",
+  "created_utc": "2026-04-30T19:57:32Z",
+  "implementation_slices": [
+    "inspect blocked state",
+    "patch root resolver and token router semantics",
+    "run overlay tests",
+    "stream rebuild whole ZIP",
+    "targeted fresh-extract smoke",
+    "checksum"
+  ],
+  "selected_route": "minimal overlay first, then python3 -S zipfile stream patch",
+  "stage_id": "H0C1_TOOL_SELECTION_EVIDENCE_ROUTER_CONTINUED",
+  "tool_policy": "avoid normal python; avoid full extraction; python3 -S only"
+}

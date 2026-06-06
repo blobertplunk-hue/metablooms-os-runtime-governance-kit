@@ -1,0 +1,6 @@
+{
+  "created_utc": "20260501T182011Z",
+  "schema_version": "STAGE_RECEIPT_v1",
+  "stage": "RECONCILE_BRANCH_LINEAGE_AND_REPAIR_CUMULATIVE_AUTHORITY_POINTERS_STAGE_1",
+  "verdict": "PASS"
+}

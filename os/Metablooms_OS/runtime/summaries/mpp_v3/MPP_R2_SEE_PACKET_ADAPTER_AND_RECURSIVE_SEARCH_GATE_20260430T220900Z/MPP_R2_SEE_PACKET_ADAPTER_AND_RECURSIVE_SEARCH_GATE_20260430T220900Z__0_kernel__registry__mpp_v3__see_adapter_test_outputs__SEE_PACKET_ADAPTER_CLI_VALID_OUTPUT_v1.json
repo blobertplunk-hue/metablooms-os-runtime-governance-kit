@@ -1,0 +1,112 @@
+{
+  "claim_source_bindings": [
+    {
+      "claim": "JSON Schema 2020-12 is the correct dialect for MPP v3 packet schemas.",
+      "confidence": "high",
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "claim": "Governed runtime artifacts need provenance metadata for later verification.",
+      "confidence": "high",
+      "source_ids": [
+        "S3"
+      ]
+    }
+  ],
+  "created_at": "2026-04-30T21:50:03Z",
+  "gaps_and_contradictions": {
+    "contradictions": [],
+    "gaps": []
+  },
+  "limitations": [
+    "Fixture evidence is representative; production runs must bind live web.run references for the current task."
+  ],
+  "mpp_v3_adapter": {
+    "adapter": "see_packet_adapter_recursive_gate_v1",
+    "next_stage": "NORMALIZE_EVIDENCE",
+    "research_packet_hash": "2c33b5632e58aa58b26c788739f1ecebf07715f89317114e4b9b2d215c27eb0f"
+  },
+  "original_request": "Improve MPP research pipeline",
+  "query_plan": [
+    {
+      "expected_source_type": "technical_docs",
+      "purpose": "Select schema dialect",
+      "query": "JSON Schema 2020-12 official validation",
+      "research_planner_query_id": "Q-001"
+    },
+    {
+      "expected_source_type": "official",
+      "purpose": "Bind artifact provenance model",
+      "query": "SLSA provenance current specification",
+      "research_planner_query_id": "Q-002"
+    }
+  ],
+  "research_trigger": {
+    "required": true,
+    "research_planner_packet_id": "RP-SMOKE-001",
+    "trigger_reason": "MPP v3 Research Planner required SEE before downstream CE/MMD stages.",
+    "trigger_terms": [
+      "governed research pipeline",
+      "Improve MPP research pipeline"
+    ]
+  },
+  "see_verdict": "PASS",
+  "sources": [
+    {
+      "source_id": "S1",
+      "source_type": "official",
+      "title": "JSON Schema Specification",
+      "url_or_ref": "https://json-schema.org/specification",
+      "used_for": [
+        "schema dialect",
+        "validation vocabulary"
+      ]
+    },
+    {
+      "source_id": "S2",
+      "source_type": "official",
+      "title": "JSON Schema Draft 2020-12",
+      "url_or_ref": "https://json-schema.org/draft/2020-12",
+      "used_for": [
+        "current dialect confirmation"
+      ]
+    },
+    {
+      "source_id": "S3",
+      "source_type": "official",
+      "title": "SLSA Provenance",
+      "url_or_ref": "https://slsa.dev/spec/v1.2-rc2/build-provenance",
+      "used_for": [
+        "artifact provenance requirements"
+      ]
+    }
+  ],
+  "stage": "SEE_PASS",
+  "synthesis": "The source evidence supports a SEE adapter that validates JSON Schema 2020-12 packets and binds artifact provenance evidence before downstream MPP stages proceed.",
+  "version": "see_packet.v1",
+  "web_run_evidence": {
+    "call_count": 3,
+    "query_refs": [
+      "turn712934search0",
+      "turn712934search1",
+      "turn712934search3"
+    ],
+    "research_rounds": [
+      {
+        "decision": "sufficient_to_gate_schema_and_provenance",
+        "new_gaps_found": [],
+        "purpose": "baseline standards and provenance requirements",
+        "queries": [
+          "JSON Schema 2020-12 validation official specification",
+          "SLSA provenance build artifact official specification"
+        ],
+        "round": 1
+      }
+    ],
+    "tool_reference_required": true,
+    "web_run_called": true
+  }
+}

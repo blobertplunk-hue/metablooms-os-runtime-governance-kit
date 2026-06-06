@@ -1,0 +1,17 @@
+{
+  "artifact_type": "BOOT_STUCK_DIAGNOSIS_RECEIPT_v1",
+  "verdict": "BOOT_BLOCKED_BY_GOVERNANCE_SCATTER_GATE",
+  "summary": "The available Stage 18 authority ZIP checksum matches its sidecar, the ZIP structurally tests clean, extraction to /mnt/data/Metablooms_OS succeeded, and most boot gates pass when invoked with their actual CLI shapes. The current blocking gate is governance_scatter_prevention_v1.py, which denies boot because controlled artifacts under 0_kernel/cartridges/external_review_lenses are present but not registered in the controlled artifact registry. There is also a secondary confusion source: some embedded start guidance still references older Stage 3 authority names while CURRENT_FULL_AUTHORITY_POINTER_v1.json names the Stage 18 operator packet as current authority.",
+  "observations": {
+    "zip_sha256_verified": true,
+    "zip_structural_test": "PASS",
+    "canonical_root_extracted": "/mnt/data/Metablooms_OS",
+    "runtime_starter_smoke_wrapper": "PASS",
+    "fresh_chat_boot_rehearsal": "PASS after using positional root CLI",
+    "new_chat_start_contract_validator": "PASS after using positional root CLI",
+    "governance_scatter_prevention": "DENY",
+    "cli_shape_note": "Several older validators expect positional root, not --root. The runtime starter wrapper expects --root. Using --root on the older validators creates false missing-file errors because they interpret '--root' as the filesystem root argument."
+  },
+  "root_cause": "The boot sequence got stuck because the fail-closed scatter-prevention gate found unregistered controlled governance artifacts. Earlier diagnosis could be confused by mixed CLI contracts and stale embedded start guidance.",
+  "next_smallest_repair": "Audit CONTROLLED_GOVERNANCE_ARTIFACT_INDEX_v1.json and either register the external_review_lenses cartridge artifacts with hashes or quarantine them if non-boot-critical, then rerun governance_scatter_prevention_v1.py and write a repaired boot receipt."
+}

@@ -1,0 +1,56 @@
+{
+  "argv_redacted": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "/mnt/data/Metablooms_OS/runtime/governance/tool_universe_resolver_v1.py",
+    "resolve",
+    "--task",
+    "Validate an interactive HTML with TTS and accessibility DOM checks",
+    "--stage-id",
+    "STAGE6H_FIXTURE",
+    "--out",
+    "/mnt/data/stage6h_tool_universe_fixture_outputs/html_validation_candidate_set.json"
+  ],
+  "argv_resolved": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "/mnt/data/Metablooms_OS/runtime/governance/tool_universe_resolver_v1.py",
+    "resolve",
+    "--task",
+    "Validate an interactive HTML with TTS and accessibility DOM checks",
+    "--stage-id",
+    "STAGE6H_FIXTURE",
+    "--out",
+    "/mnt/data/stage6h_tool_universe_fixture_outputs/html_validation_candidate_set.json"
+  ],
+  "artifact_type": "METABLOOMS_BOUNDED_COMMAND_DECISION_PACKET_v1",
+  "attempts": [
+    {
+      "attempt_index": 0,
+      "elapsed_ms": 401,
+      "returncode": 0,
+      "started_utc": "20260502T141414Z",
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_truncated": false,
+      "stdout": "{\n  \"candidate_set_id\": \"tool_candidates_8f30791cf8692eda\",\n  \"candidates\": [\n    {\n      \"competence_score\": null,\n      \"decision_status\": \"ALLOWED\",\n      \"denied_replacements\": [\n        \"source_string_presence_as_ui_proof\"\n      ],\n      \"display_name\": \"Node DOM/accessibility validation profile\",\n      \"evidence_refs\": [\n        \"GOVERNED_TOOL_INSTALL_PROFILE_REGISTRY_v1.json\"\n      ],\n      \"execution_route\": \"governed npm profile B_HTML_VALIDATION_ACCESSIBILITY\",\n      \"fallbacks\": [\n        \"node_parse5_minimal\",\n        \"browser_render_smoke_if_available\"\n      ],\n      \"install_state\": \"INSTALLABLE\",\n      \"known_failure_classes\": [],\n      \"reasons\": [\n        \"job_type match: html_validation\"\n      ],\n      \"requires_approval\": false,\n      \"risk_tier\": \"read\",\n      \"score\": 45.002,\n      \"tool_id\": \"node_jsdom_html_validation_profile\"\n    },\n    {\n      \"competence_score\": null,\n      \"decision_status\": \"DENIED\",\n      \"denied_replacements\": [\n        \"node_yauzl_crc_proof\",\n        \"zipinfo_metadata_scan\"\n      ],\n      \"display_name\": \"unzip -tqq full test\",\n      \"evidence_refs\": [\n        \"FORBIDDEN_VALIDATION_METHODS_v1.json\"\n      ],\n      \"execution_route\": \"DENIED\",\n      \"fallbacks\": [],\n      \"install_state\": \"DENIED\",\n      \"known_failure_classes\": [\n        \"timeout_large_archive_validation\"\n      ],\n      \"reasons\": [\n        \"denied by risk tier / forbidden-method memory\"\n      ],\n      \"requires_approval\": true,\n      \"risk_tier\": \"denied\",\n      \"score\": -100.0,\n      \"tool_id\": \"unzip_tqq_full_test\"\n    }\n  ],\n  \"classified_job_type\": \"html_validation\",\n  \"created_utc\": \"2026-05-02T14:14:14.438536Z\",\n  \"resolver_version\": \"TOOL_UNIVERSE_RESOLVER_v1\",\n  \"schema\": \"TOOL_CANDIDATE_SET_v1\",\n  \"selection_gate\": {\n    \"requires_why_not_better_if_selected_not_top\": true,\n    \"rule\": \"BTS_TOOL_EVALUATION must cover resolver candidates or explain exclusions; selected tool should be top_allowed_tool_id unless WHY_NOT_BETTER_TOOL justification passes.\"\n  },\n  \"source_registries\": [\n    \"0_kernel/registry/tool_governance/TOOL_CAPABILITY_GENOME_BASELINE_v1.json\",\n    \"0_kernel/registry/tool_governance/sandbox_tool_probe_inventory_v1.json\",\n    \"0_kernel/registry/tool_governance/GOVERNED_TOOL_INSTALL_PROFILE_REGISTRY_v1.json\",\n    \"_bts/tool_competence.json\",\n    \"FORBIDDEN_VALIDATION_METHODS_v1.json\",\n    \"runtime/authority/FORBIDDEN_VALIDATION_METHODS_v1.json\"\n  ],\n  \"stage_id\": \"STAGE6H_FIXTURE\",\n  \"sufficiency\": {\n    \"allowed_count\": 1,\n    \"candidate_count\": 2,\n    \"coverage_score\": 1.0,\n    \"reasons\": [],\n    \"score_spread\": 0.0,\n    \"verdict\": \"PASS\"\n  },\n  \"task\": \"Validate an interactive HTML with TTS and accessibility DOM checks\",\n  \"top_allowed_tool_id\": \"node_jsdom_html_validation_profile\"\n}\n",
+      "stdout_bytes": 2772,
+      "stdout_sha256": "c2499ca28faf2c0171622bb035cad6577d511e3a2b622ada49bbf6c5cfa8423e",
+      "stdout_truncated": false,
+      "timeout_seconds": 10.0
+    }
+  ],
+  "created_utc": "20260502T141414Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision_packet_path": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT_retrofitted_subprocess_run_20260502T141414Z_5005c3e53898/decision_packet.json",
+  "failure_class": null,
+  "failure_event_path": null,
+  "operation_type": "retrofitted_subprocess_run",
+  "policy_matches": [],
+  "pre_spawn_receipt_path": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT_retrofitted_subprocess_run_20260502T141414Z_5005c3e53898/pre_spawn_receipt.json",
+  "receipt_dir": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT_retrofitted_subprocess_run_20260502T141414Z_5005c3e53898",
+  "result_class": "ALLOW_SUCCESS",
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT",
+  "total_elapsed_ms": 403
+}

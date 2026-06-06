@@ -1,0 +1,33 @@
+{
+  "artifact_type": "SEE_PACKET.v1",
+  "created_utc": "20260502T180849Z",
+  "sources": [
+    {
+      "claim": "Trace waterfalls expose parent/child span flow and help locate context for latency/errors.",
+      "source": "New Relic trace details UI",
+      "url": "https://docs.newrelic.com/docs/distributed-tracing/ui-data/trace-details/"
+    },
+    {
+      "claim": "OpenTelemetry traces are composed of spans that carry operation information and can be exported for analysis.",
+      "source": "OpenTelemetry traces documentation",
+      "url": "https://opentelemetry.io/docs/concepts/signals/traces/"
+    },
+    {
+      "claim": "Observability backends commonly visualize traces as waterfall diagrams showing parent/child relationships.",
+      "source": "OpenTelemetry observability primer",
+      "url": "https://opentelemetry.io/docs/concepts/observability-primer/"
+    },
+    {
+      "claim": "Trace waterfall filtering by tags or error status is a standard observability interaction pattern.",
+      "source": "Splunk Observability Cloud trace waterfall filtering",
+      "url": "https://help.splunk.com/splunk-observability-cloud/monitor-application-performance/manage-services-spans-and-traces-in-splunk-apm/view-and-filter-for-spans-within-a-trace"
+    },
+    {
+      "claim": "Progressive disclosure keeps essential content primary and advanced evidence secondary.",
+      "source": "Nielsen Norman Group progressive disclosure",
+      "url": "https://www.nngroup.com/articles/progressive-disclosure/"
+    }
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE11_VISUAL_TRACE_WATERFALL_AND_EVIDENCE_FILTERS",
+  "synthesis": "Use progressive disclosure: keep minimal boot default; add optional waterfall rows and filters for evidence mode."
+}

@@ -1,0 +1,33 @@
+{
+  "receipt_id": "METABLOOMS_BOOT_REPAIR_STAGE2_RUNAWAY_AUTHORITY_PROMOTION",
+  "created_utc": "2026-05-01T22:15:00Z",
+  "stage": "STAGE2_RUNAWAY_AUTHORITY_PROMOTION_AND_EXPORT",
+  "scope": "Promote the latest full OS-sized runaway-turn-breaker archive as the repaired authority because Stage1 boot-critical overlay exactly matches its boot-critical files; add Stage2 receipts without altering OS logic.",
+  "source_authority_zip": "METABLOOMS_OS_RUNAWAY_TURN_BREAKER_STAGE0_20260501T203500Z.zip",
+  "source_authority_sha256": "bfc709e5732acb78a20f513d9598de940063998c336a02fc09261854e05baa5d",
+  "stage1_overlay_zip": "METABLOOMS_BOOT_REPAIR_STAGE1_BOOT_CRITICAL_OVERLAY_20260501T215500Z.zip",
+  "stage1_overlay_sha256": "fd32acd01de08e49de09dffd2e2b2d6e80afd574736a58ec22a9b53a6562ec79",
+  "overlay_vs_source_comparison": "METABLOOMS_STAGE2_OVERLAY_VS_RUNAWAY_COMPARISON_20260501T221200Z.json",
+  "overlay_vs_source_result": {
+    "missing_in_source": 0,
+    "different_boot_critical_files": 0,
+    "same_boot_critical_files": 58
+  },
+  "zip_surface_precheck": {
+    "source_files": 2911,
+    "source_duplicate_names": 0,
+    "source_unsafe_paths": 0,
+    "source_has_runaway_artifacts": true,
+    "source_sidecar_matches": true
+  },
+  "external_method_check": {
+    "finding": "Use zipfile/testzip-style integrity checks and path sanitization checks; reject duplicate-name and path-traversal archive surfaces before promotion.",
+    "sources": ["Python zipfile documentation", "Info-ZIP documentation/behavior references"]
+  },
+  "decision": "PROMOTE_SOURCE_WITH_RECEIPTS",
+  "reason": "A full export rebuild is unnecessary in this bounded stage because the current full runaway authority already contains the boot-critical repair surface byte-for-byte; adding receipts preserves evidence without changing OS logic.",
+  "limitations": [
+    "No full extraction of every file was performed in this stage due prior extraction latency; validation used central directory inspection, checksum verification, boot-critical byte comparison, duplicate-name checks, unsafe-path checks, and targeted boot extraction.",
+    "The exported authority is expected to retain git_dir_missing warning because archives do not preserve .git as an OS runtime requirement."
+  ]
+}

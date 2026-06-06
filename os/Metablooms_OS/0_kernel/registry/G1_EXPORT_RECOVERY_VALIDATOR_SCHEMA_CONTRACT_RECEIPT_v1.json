@@ -1,0 +1,58 @@
+{
+  "version": "1.0",
+  "created_at": 1777064381.67145,
+  "stage": "G1_EXPORT_RECOVERY_VALIDATOR_SCHEMA_AND_CONTRACT",
+  "status": "complete",
+  "inputs": {
+    "g0_handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G0_TO_G1_HANDOFF_v1.json",
+    "g0_scope_contract": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G0_EXPORT_RECOVERY_VALIDATOR_SCOPE_CONTRACT_v1.json",
+    "g0_gate_matrix": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G0_EXPORT_RECOVERY_VALIDATOR_GATE_MATRIX_v1.json"
+  },
+  "outputs": {
+    "input_schema": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/EXPORT_RECOVERY_VALIDATOR_INPUT_SCHEMA_v1.json",
+    "decision_schema": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/EXPORT_RECOVERY_VALIDATOR_DECISION_SCHEMA_v1.json",
+    "validator_contract": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/EXPORT_RECOVERY_PROVEN_VALIDATOR_CONTRACT_v1.json",
+    "gate_catalog": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_GATE_CATALOG_v1.json",
+    "contract_doc": "/mnt/data/Metablooms_OS_refined/0_kernel/docs/EXPORT_RECOVERY_PROVEN_VALIDATOR_CONTRACT_v1.md",
+    "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G1_EXPORT_RECOVERY_VALIDATOR_SCHEMA_CONTRACT_RECEIPT_v1.json",
+    "handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G1_TO_G2_HANDOFF_v1.json"
+  },
+  "checks": {
+    "required_paths_present": true,
+    "git_clean_before_g1": true,
+    "git_fsck_clean_before_g1": true,
+    "g0_prechecks": {
+      "g0_handoff_ready": true,
+      "g0_receipt_passed": true,
+      "g1_declared_target": true,
+      "g0_scope_active": true,
+      "gate_matrix_passed": true,
+      "pointer_active": true,
+      "dag_active": true,
+      "ledger_latest_pass_is_g0": true
+    }
+  },
+  "runaway_turn_guard": {
+    "schema_contract_only": true,
+    "implementation_performed": false,
+    "tests_performed": false,
+    "export_performed": false,
+    "cleanup_performed": false
+  },
+  "verdict": "PASS",
+  "next_improvement_task": "G2 \u2014 Export Recovery Validator Implementation",
+  "why_next": "The validator contract is now machine-readable; next implement the validator script exactly against this contract.",
+  "remaining_work": [
+    "G2 \u2014 Validator Implementation",
+    "G3 \u2014 Regression Fixtures",
+    "G4 \u2014 Run Validator Against F7 Export",
+    "G5 \u2014 Repaired Recovery-Proven Export",
+    "G6 \u2014 Recovery Proof + Baseline Lock",
+    "G7 \u2014 Return to E4B"
+  ],
+  "progress_estimate": {
+    "stages_remaining_before_return_to_E4B": 6,
+    "current_arc": "G export-recovery validator hardening"
+  },
+  "next_correct_command": "EXECUTE G2 \u2014 EXPORT RECOVERY VALIDATOR IMPLEMENTATION"
+}

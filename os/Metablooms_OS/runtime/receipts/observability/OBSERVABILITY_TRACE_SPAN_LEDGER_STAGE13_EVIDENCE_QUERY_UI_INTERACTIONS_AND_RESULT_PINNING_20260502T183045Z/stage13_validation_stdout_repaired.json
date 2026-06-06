@@ -1,0 +1,288 @@
+{
+  "artifact_type": "TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_VALIDATION.v1",
+  "checks": [
+    {
+      "exists_nonempty": true,
+      "path": "0_kernel/registry/observability/MB_EVIDENCE_QUERY_UI_INTERACTION_SCHEMA_v1.json",
+      "sha256": "8b18ff49f8710ea0890cd0017987087b2b59de6638353d892f947683146981ee"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "0_kernel/registry/observability/MB_EVIDENCE_RESULT_PINNING_SCHEMA_v1.json",
+      "sha256": "6ea42427bbc10c8b2d36a447def0e6d299303abf23990a178225d849c7b4cf6d"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "0_kernel/registry/observability/MB_EVIDENCE_PINNING_POLICY_v1.json",
+      "sha256": "8fa7a55844905b24778f14f00bc5ab58913ada4dcd5ee626b978cca17f83be04"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "0_kernel/scripts/render_evidence_query_interactions_v1.py",
+      "sha256": "92fbe50a4c8164da003adf35fb779941fe7026a1da7b91fa4b80b3c3072d7865"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "runtime/state/operator_surface/EVIDENCE_QUERY_UI_INTERACTIONS_LATEST.json",
+      "sha256": "ac603abaea5863c2b4b90ea8a3f266ac50c5ceb8cff265aa040cd2812af9e8e5"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "runtime/state/operator_surface/EVIDENCE_QUERY_UI_INTERACTIONS_LATEST.md",
+      "sha256": "38332c53a823326b28a7f403d598d0414f0d4efef6366ac9ccc25feef8c67436"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "runtime/state/operator_surface/EVIDENCE_RESULT_PINNING_MODEL_LATEST.json",
+      "sha256": "cab727a6542e1217a6c46ae1b73231fcd27fe3fc843c155b310c429b1879d709"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "runtime/state/operator_surface/EVIDENCE_RESULT_PINNING_MODEL_LATEST.md",
+      "sha256": "de48f36d4c927658db4485c847d51253a7e94a1fabf6e3c2119534e18a8cbfc6"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "runtime/traces/observability/SEARCHABLE_EVIDENCE_INDEX_LATEST.json",
+      "sha256": "3114cbb475308b5defcc5ef6f17a6e298ba1351b8594e0707ad37ca195407ca0"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "runtime/state/operator_surface/TRACE_QUERY_PACKET_LATEST.json",
+      "sha256": "038c81582299303e3220c85eaa50ea91a6dda41dbf4375595ec616f61394465b"
+    },
+    {
+      "exists_nonempty": true,
+      "path": "OPEN_OPERATOR_VISUAL_TRACKER.html",
+      "sha256": "337ed76fa76668dccb16582e4dd93fc4eae238dcf76e1e087e0151b2cf42e627"
+    }
+  ],
+  "created_utc": "20260502T183149Z",
+  "issues": [],
+  "smoke_checks": [
+    {
+      "name": "new_chat_validator",
+      "pass": true,
+      "result": {
+        "cmd": [
+          "/opt/pyvenv/bin/python3",
+          "/mnt/data/Metablooms_OS/runtime/governance/new_chat_start_contract_validator_v1.py",
+          "/mnt/data/Metablooms_OS"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": {
+          "checks": [
+            {
+              "name": "exists:CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+              "passed": true
+            },
+            {
+              "name": "exists:0_kernel/registry/current_authority/CURRENT_FULL_AUTHORITY_POINTER_v1.json",
+              "passed": true
+            },
+            {
+              "name": "exists:0_kernel/boot_contracts/NEW_CHAT_START_CONTRACT_v1.md",
+              "passed": true
+            },
+            {
+              "name": "exists:NEW_CHAT_START_HERE.md",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/governance/new_chat_start_contract_validator_v1.py",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/governance/boot_critical_governance_loader_v1.py",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/governance/governance_scatter_prevention_v1.py",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/governance/fresh_chat_boot_rehearsal_v1.py",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/cartridges/prompt_governance_v1/validate_prompt_governance_cartridge_v1.py",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+              "passed": true
+            },
+            {
+              "name": "exists:0_kernel/registry/observability/MB_BOOT_SEQUENCE_WRAPPER_ENFORCEMENT_v1.json",
+              "passed": true
+            },
+            {
+              "name": "exists:0_kernel/registry/observability/MB_HISTORICAL_CALLSITE_QUARANTINE_POLICY_v1.json",
+              "passed": true
+            },
+            {
+              "name": "exists:runtime/traces/observability/HISTORICAL_CALLSITE_QUARANTINE_INDEX_LATEST.json",
+              "passed": true
+            },
+            {
+              "name": "exists:0_kernel/validators/validate_observability_trace_span_ledger_stage8_historical_callsite_quarantine_v1.py",
+              "passed": true
+            }
+          ],
+          "decision": "ALLOW",
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "runtime_wrapper",
+      "pass": true,
+      "result": {
+        "cmd": [
+          "/opt/pyvenv/bin/python3",
+          "/mnt/data/Metablooms_OS/runtime/governance/runtime_starter_smoke_contract_wrapper_v1.py",
+          "--root",
+          "/mnt/data/Metablooms_OS",
+          "--json"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": {
+          "artifact_type": "MB_RUNTIME_STARTER_SMOKE_CONTRACT_WRAPPER_RESULT.v1",
+          "created_utc": "20260502T183147Z",
+          "decision": "ALLOW",
+          "method_reliability_lesson": "METHOD_RUNTIME_STARTER_SMOKE_CLI_SHAPE_v1",
+          "target_shape": "--root",
+          "underlying_gate": "runtime/governance/runtime_starter_smoke_v1.py",
+          "underlying_result": {
+            "decision": "ALLOW",
+            "invalid_json": [],
+            "missing": [],
+            "mode": "root",
+            "path": "/mnt/data/Metablooms_OS",
+            "read_errors": []
+          }
+        }
+      }
+    },
+    {
+      "name": "query_indexer",
+      "pass": true,
+      "result": {
+        "cmd": [
+          "/opt/pyvenv/bin/python3",
+          "/mnt/data/Metablooms_OS/0_kernel/scripts/observability_trace_query_indexer_v1.py",
+          "--root",
+          "/mnt/data/Metablooms_OS",
+          "--query",
+          "pinned evidence export proof",
+          "--json"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": {
+          "artifact_type": "MB_TRACE_QUERY_RESULT.v1",
+          "query": "pinned evidence export proof",
+          "results": [
+            {
+              "doc_id": "doc_0001",
+              "matched_terms": [
+                "export"
+              ],
+              "path": "runtime/traces/observability/CAUSAL_STAGE_GRAPH_LATEST.json",
+              "score": 6
+            },
+            {
+              "doc_id": "doc_0170",
+              "matched_terms": [
+                "evidence",
+                "export",
+                "proof"
+              ],
+              "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_BOOT_RECEIPT_WRAPPER_ONLY_ENFORCEMENT_AND_HISTORICAL_CALLSITE_QUARANTINE_REPAIRED_20260502T171821Z/STAGE_RECEIPT.json",
+              "score": 5
+            },
+            {
+              "doc_id": "doc_0053",
+              "matched_terms": [
+                "export"
+              ],
+              "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_LATEST.jsonl",
+              "score": 5
+            },
+            {
+              "doc_id": "doc_0055",
+              "matched_terms": [
+                "export",
+                "proof"
+              ],
+              "path": "runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE12_TRACE_QUERY_VALIDATION_LATEST.json",
+              "score": 4
+            },
+            {
+              "doc_id": "doc_0082",
+              "matched_terms": [
+                "export",
+                "proof"
+              ],
+              "path": "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE8_HANDOFF_LATEST.json",
+              "score": 4
+            },
+            {
+              "doc_id": "doc_0111",
+              "matched_terms": [
+                "export",
+                "proof"
+              ],
+              "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE12_TRACE_QUERY_PACKET_AND_SEARCHABLE_EVIDENCE_INDEX_20260502T181632Z/stage12_validation_post_ingest_stdout.json",
+              "score": 4
+            },
+            {
+              "doc_id": "doc_0112",
+              "matched_terms": [
+                "export",
+                "proof"
+              ],
+              "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE12_TRACE_QUERY_PACKET_AND_SEARCHABLE_EVIDENCE_INDEX_20260502T181632Z/stage12_validation_stdout.json",
+              "score": 4
+            },
+            {
+              "doc_id": "doc_0125",
+              "matched_terms": [
+                "export",
+                "proof"
+              ],
+              "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE4_FAILURE_CLUSTERING_AND_REPAIR_ROUTER_BINDING_20260502T165302Z/STAGE_RECEIPT.json",
+              "score": 4
+            },
+            {
+              "doc_id": "doc_0126",
+              "matched_terms": [
+                "evidence"
+              ],
+              "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE5_TRACE_INGESTION_CLASSIFIER_REPAIR_AND_REGRESSION_FIXTURES_20260502T165923Z/CE_SYNTHESIS.json",
+              "score": 3
+            },
+            {
+              "doc_id": "doc_0118",
+              "matched_terms": [
+                "evidence",
+                "export"
+              ],
+              "path": "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE3_TRACKER_CAUSAL_TIMELINE_BINDING_20260502T164756Z/SEE_PACKET.json",
+              "score": 3
+            }
+          ],
+          "verdict": "PASS"
+        }
+      }
+    }
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_INTERACTIONS_AND_RESULT_PINNING",
+  "verdict": "PASS"
+}

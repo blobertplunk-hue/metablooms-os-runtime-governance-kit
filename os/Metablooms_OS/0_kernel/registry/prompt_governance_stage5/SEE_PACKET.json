@@ -1,0 +1,17 @@
+{
+  "id": "SEE_PACKET",
+  "limits": [
+    "External evidence does not define MetaBlooms paths; paths are OS-derived."
+  ],
+  "sources": [
+    "OpenAI prompt engineering best practices",
+    "OpenAI evaluation best practices",
+    "Python os.walk/zipfile docs via web research"
+  ],
+  "stage": "PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_5_PROMPT_ENGINE_REGRESSION_FIXTURES_AND_PROFILE_SMOKE",
+  "validated_claims": [
+    "Prompt contracts benefit from explicit instructions, context and output format.",
+    "Prompt systems need evaluation/regression checks due LLM variability.",
+    "Local failure evidence supports replacing broad rglob traversal with bounded Safe_Walk."
+  ]
+}

@@ -1,0 +1,207 @@
+#!/usr/bin/env python3
+"""MPP v3 R9: UXR operator-context validator and accessibility gate."""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+from datetime import UTC, datetime
+from pathlib import Path
+from typing import Any
+
+
+class UXRValidationError(RuntimeError):
+    pass
+
+
+REQUIRED_WCAG_22_CORE = {
+    "2.1.1 Keyboard",
+    "2.4.11 Focus Not Obscured",
+    "2.5.7 Dragging Movements",
+    "2.5.8 Target Size",
+    "3.2.6 Consistent Help",
+    "3.3.7 Redundant Entry",
+}
+
+
+def stable_hash(payload: dict[str, Any]) -> str:
+    clone = json.loads(json.dumps(payload, sort_keys=True))
+    clone["result_hash"] = ""
+    return hashlib.sha256(json.dumps(clone, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+
+
+def require(cond: bool, code: str) -> None:
+    if not cond:
+        raise UXRValidationError(code)
+
+
+def validate_uxr_packet(packet: dict[str, Any]) -> dict[str, Any]:
+    required = [
+        "schema_version","packet_id","stage","created_at","objective_id","source_ads_packet_id",
+        "operator_profiles","context_constraints","accessibility_requirements","platform_requirements","ux_risks","result_hash",
+    ]
+    for key in required:
+        require(key in packet, f"UXR_MISSING_{key.upper()}")
+    require(packet["schema_version"] == "mpp.uxr_operator_context_packet.v1", "UXR_BAD_SCHEMA_VERSION")
+    require(packet["stage"] == "UXR", "UXR_BAD_STAGE")
+    require(packet["operator_profiles"], "UXR_NO_OPERATOR_PROFILES")
+    for i, prof in enumerate(packet["operator_profiles"]):
+        for key in ["profile_id","role","primary_goal","skill_level","constraints"]:
+            require(key in prof, f"UXR_PROFILE_{i}_MISSING_{key.upper()}")
+        require(prof["profile_id"].startswith("OP-"), f"UXR_PROFILE_{i}_BAD_ID")
+    require(packet["context_constraints"], "UXR_NO_CONTEXT_CONSTRAINTS")
+    for i, c in enumerate(packet["context_constraints"]):
+        for key in ["constraint_id","name","description","severity","mitigation"]:
+            require(key in c, f"UXR_CONSTRAINT_{i}_MISSING_{key.upper()}")
+    require(packet["accessibility_requirements"], "UXR_NO_ACCESSIBILITY_REQUIREMENTS")
+    for i, req in enumerate(packet["accessibility_requirements"]):
+        for key in ["requirement_id","standard","criterion","level","test_method","blocking"]:
+            require(key in req, f"UXR_A11Y_{i}_MISSING_{key.upper()}")
+        require(req["standard"] in {"WCAG_2_2","platform_native","district_policy","custom"}, f"UXR_A11Y_{i}_BAD_STANDARD")
+        require(isinstance(req["blocking"], bool), f"UXR_A11Y_{i}_BLOCKING_NOT_BOOL")
+    require(packet["platform_requirements"], "UXR_NO_PLATFORM_REQUIREMENTS")
+    require(packet["ux_risks"], "UXR_NO_UX_RISKS")
+    expected = stable_hash(packet)
+    require(packet["result_hash"] == expected, "UXR_HASH_MISMATCH")
+    return {"status":"PASS","packet_id":packet["packet_id"],"result_hash":expected}
+
+
+def run_accessibility_gate(packet: dict[str, Any]) -> dict[str, Any]:
+    violations: list[str] = []
+    warnings: list[str] = []
+    try:
+        validate_uxr_packet(packet)
+    except UXRValidationError as e:
+        violations.append(str(e))
+    reqs = packet.get("accessibility_requirements", [])
+    criteria = {r.get("criterion") for r in reqs if r.get("standard") == "WCAG_2_2"}
+    missing = sorted(REQUIRED_WCAG_22_CORE - criteria)
+    for criterion in missing:
+        violations.append(f"UXR_MISSING_WCAG_2_2_CORE_{criterion.replace(' ', '_')}")
+    blocking_count = sum(1 for r in reqs if r.get("blocking") is True)
+    if blocking_count < 1:
+        violations.append("UXR_NO_BLOCKING_ACCESSIBILITY_REQUIREMENT")
+    platforms = {p.get("platform") for p in packet.get("platform_requirements", [])}
+    if not platforms:
+        violations.append("UXR_NO_PLATFORM_COVERAGE")
+    if not any("phone" in str(p).lower() or "mobile" in str(p).lower() for p in platforms):
+        warnings.append("UXR_WARN_NO_MOBILE_CONTEXT_DECLARED")
+    if not any(r.get("criterion") == "2.1.1 Keyboard" for r in reqs):
+        violations.append("UXR_KEYBOARD_ACCESS_NOT_DECLARED")
+    verdict = "FAIL" if violations else "PASS"
+    result = {
+        "schema_version":"mpp.uxr_accessibility_gate_result.v1",
+        "gate_id":f"UXR-GATE-{datetime.now(UTC).strftime('%Y%m%dT%H%M%SZ')}",
+        "stage":"UXR_ACCESSIBILITY_GATE",
+        "created_at":datetime.now(UTC).isoformat(),
+        "packet_id":packet.get("packet_id","UNKNOWN"),
+        "verdict":verdict,
+        "violations":sorted(set(violations)),
+        "warnings":warnings,
+        "coverage":{
+            "wcag_2_2_core_required": sorted(REQUIRED_WCAG_22_CORE),
+            "wcag_2_2_core_present": sorted(criteria),
+            "blocking_accessibility_requirements": blocking_count,
+            "platforms": sorted([p for p in platforms if p]),
+        },
+        "result_hash":"",
+    }
+    result["result_hash"] = stable_hash(result)
+    return result
+
+
+def write_uxr_packet(source_ads_packet_id: str, objective_id: str, out_path: Path) -> dict[str, Any]:
+    packet = {
+        "schema_version":"mpp.uxr_operator_context_packet.v1",
+        "packet_id":f"UXR-{datetime.now(UTC).strftime('%Y%m%dT%H%M%SZ')}",
+        "stage":"UXR",
+        "created_at":datetime.now(UTC).isoformat(),
+        "objective_id":objective_id,
+        "source_ads_packet_id":source_ads_packet_id,
+        "operator_profiles":[
+            {
+                "profile_id":"OP-001",
+                "role":"MetaBlooms operator",
+                "primary_goal":"Run governed stages in a phone-safe ChatGPT UI without losing artifacts.",
+                "skill_level":"expert",
+                "constraints":["turn-bounded execution","artifact-first proof","mobile-first review"]
+            },
+            {
+                "profile_id":"OP-002",
+                "role":"Student-facing artifact user",
+                "primary_goal":"Use produced learning artifacts with accessible controls and clear feedback.",
+                "skill_level":"mixed",
+                "constraints":["iPad/touch use","emergent bilingual support","reduced cognitive overload"]
+            }
+        ],
+        "context_constraints":[
+            {
+                "constraint_id":"UXC-001",
+                "name":"Mobile-first execution",
+                "description":"Operator may run workflows from a phone in the ChatGPT UI.",
+                "severity":"high",
+                "mitigation":"Keep stages bounded and return a single bundle plus checksum."
+            },
+            {
+                "constraint_id":"UXC-002",
+                "name":"Artifact persistence",
+                "description":"Chat text cannot be the only source of workflow state.",
+                "severity":"critical",
+                "mitigation":"Write receipts, handoffs, schemas, fixtures, and checksums."
+            }
+        ],
+        "accessibility_requirements":[
+            {"requirement_id":"A11Y-001","standard":"WCAG_2_2","criterion":"2.1.1 Keyboard","level":"A","test_method":"manual keyboard sweep and focus-order check","blocking":True},
+            {"requirement_id":"A11Y-002","standard":"WCAG_2_2","criterion":"2.4.11 Focus Not Obscured","level":"AA","test_method":"focus visibility check under sticky UI","blocking":True},
+            {"requirement_id":"A11Y-003","standard":"WCAG_2_2","criterion":"2.5.7 Dragging Movements","level":"AA","test_method":"verify non-drag alternative for drag actions","blocking":True},
+            {"requirement_id":"A11Y-004","standard":"WCAG_2_2","criterion":"2.5.8 Target Size","level":"AA","test_method":"target size and spacing audit","blocking":True},
+            {"requirement_id":"A11Y-005","standard":"WCAG_2_2","criterion":"3.2.6 Consistent Help","level":"A","test_method":"help-location consistency audit","blocking":False},
+            {"requirement_id":"A11Y-006","standard":"WCAG_2_2","criterion":"3.3.7 Redundant Entry","level":"A","test_method":"multi-step redundant-entry audit","blocking":False}
+        ],
+        "platform_requirements":[
+            {"platform_id":"PLAT-001","platform":"ChatGPT mobile app / phone","requirement":"single bundled artifact with checksum and short continuation prompt","test_method":"receipt and final response check"},
+            {"platform_id":"PLAT-002","platform":"iPad / touch classroom use","requirement":"touch targets and drag alternatives are required for student-facing outputs","test_method":"accessibility gate and UI smoke check"}
+        ],
+        "ux_risks":[
+            {
+                "risk_id":"UXRISK-001",
+                "risk":"artifact loss across turns",
+                "impact":"operator cannot continue governed workflow reliably",
+                "detectable_by":"missing receipt, handoff, or checksum",
+                "mitigation":"write latest handoff and return one bundle plus sidecar"
+            },
+            {
+                "risk_id":"UXRISK-002",
+                "risk":"student-facing controls inaccessible by keyboard or touch",
+                "impact":"some users cannot complete the activity",
+                "detectable_by":"UXR accessibility gate failure",
+                "mitigation":"require WCAG 2.2 core checks before promotion"
+            }
+        ],
+        "result_hash":"",
+    }
+    packet["result_hash"] = stable_hash(packet)
+    validate_uxr_packet(packet)
+    out_path.write_text(json.dumps(packet, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    return packet
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--validate")
+    parser.add_argument("--gate")
+    args = parser.parse_args()
+    if args.validate:
+        packet = json.loads(Path(args.validate).read_text(encoding="utf-8"))
+        print(json.dumps(validate_uxr_packet(packet), sort_keys=True))
+        return 0
+    if args.gate:
+        packet = json.loads(Path(args.gate).read_text(encoding="utf-8"))
+        result = run_accessibility_gate(packet)
+        print(json.dumps(result, sort_keys=True))
+        return 0 if result["verdict"] == "PASS" else 1
+    parser.error("provide --validate or --gate")
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -1,0 +1,5 @@
+{
+  "expected_decision": "ALLOW",
+  "fixture_id": "auto_patch_artifact",
+  "raw_prompt": "Create an HTML learning activity and bundle artifacts with receipt"
+}

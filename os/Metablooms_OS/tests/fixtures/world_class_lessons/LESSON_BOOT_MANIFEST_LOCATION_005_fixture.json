@@ -1,0 +1,22 @@
+{
+  "expected_decision": "pass_when_gate_artifacts_present_else_fail",
+  "fixture_type": "lesson_promotion_regression",
+  "gate_under_test": "BOOT_MANIFEST_DUAL_LOCATION_GATE",
+  "lesson_id": "LESSON_BOOT_MANIFEST_LOCATION_005",
+  "must_block_if": [
+    "evidence_paths_empty",
+    "fixture_missing",
+    "stage_exit_prompt_missing",
+    "successful_stage_without_bootable_full_authority_when_possible"
+  ],
+  "must_require": {
+    "artifact_evidence_paths": [
+      "BOOT_AUTHORITY_MANIFEST_v1.json",
+      "runtime/receipts/world_class_gap_plan/WC_STAGE4_OPERATOR_EXPERIENCE_AND_BOOT_AUTHORITY_POLISH_20260503T002028Z/WC_STAGE4_OPERATOR_EXPERIENCE_AND_BOOT_AUTHORITY_POLISH_RECEIPT.json",
+      "runtime/state/NEXT_STAGE_COPY_PROMPT.json"
+    ],
+    "prevention_claim": "Avoids false missing-manifest blockers during boot."
+  },
+  "problem_class": "authority_manifest_path_ambiguity",
+  "schema_version": "v1"
+}

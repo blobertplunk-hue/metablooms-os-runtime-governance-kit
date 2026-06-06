@@ -1,0 +1,51 @@
+{
+  "schema_id": "TRACKER_DESIGN_CONSTRAINTS_v1",
+  "stage": "TRACKER-0 INLINE PROJECT TRACKER RESEARCH AND DESIGN LOCK",
+  "status": "DESIGN_LOCKED_NOT_IMPLEMENTED",
+  "authority": [
+    "/mnt/data/Metablooms_OS",
+    "/mnt/data/PROMPT_ENGINE_v2.md",
+    "current web.run research",
+    "MetaBlooms artifact-first governance"
+  ],
+  "target_environment": {
+    "primary": "ChatGPT project chat with tools",
+    "device_bias": "Android/mobile-first",
+    "default_surface": "inline Markdown/plain-text response header",
+    "non_default_surfaces": ["canvas", "interactive code blocks", "HTML preview", "custom widget"],
+    "blocked_assumptions": [
+      "Do not assume a persistent custom UI widget can be injected into all future responses.",
+      "Do not assume canvas is available on Android/mobile as an enforcement surface.",
+      "Do not assume chat memory is authoritative state."
+    ]
+  },
+  "tracker_rules": {
+    "must_render_first": true,
+    "must_be_copyable": true,
+    "must_be_mobile_safe": true,
+    "max_recommended_width_chars": 64,
+    "must_include_text_labels": true,
+    "must_not_rely_on_color_alone": true,
+    "must_not_invent_percent": true,
+    "percent_allowed_only_when": ["stage_index is integer", "stage_total is integer", "stage_total > 0", "stage_index <= stage_total", "stage ledger or checklist provides denominator"],
+    "status_values": ["UNBOOTED", "BOOTING", "BOOTED", "RUNNING", "BLOCKED", "DONE", "FAILED_CLOSED"],
+    "minimum_fields": [
+      "project",
+      "status",
+      "stage",
+      "progress",
+      "now",
+      "evidence",
+      "blocker",
+      "next",
+      "stop_rule"
+    ]
+  },
+  "governance_constraints": {
+    "boot_gate": "No governed project action until tracker state is loaded or a blocked tracker is rendered.",
+    "render_gate": "Every governed project response must start with the tracker block.",
+    "evidence_gate": "Status/stage/done claims require path/hash/receipt/handoff evidence.",
+    "progress_gate": "No percentage or filled bar unless denominator is known.",
+    "stop_gate": "One bounded stage per turn unless user explicitly changes scope."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "artifact_type": "HANDOFF",
+  "created_utc": "20260430T015900Z",
+  "next_allowed_action": "Only after loading semantic authority, run full OS export/recovery validation; promotion still requires explicit pass gates.",
+  "next_allowed_stage": "FL17-MERGE-5_FULL_OS_EXPORT_AND_RECOVERY_VALIDATION",
+  "now": "Semantic authority written: export PASS cannot be misread as promotion success.",
+  "requires": [
+    "/mnt/data/Metablooms_OS/0_kernel/registry/failure_learning/FL17-MERGE-4_SEMANTIC_RECONCILIATION/FL16_FL17_SEMANTIC_AUTHORITY_v1.json",
+    "/mnt/data/Metablooms_OS/1_governance/failure_learning/FL17_EXPORT_PASS_NOT_PROMOTION_SUCCESS_POLICY_v1.md",
+    "/mnt/data/Metablooms_OS/0_kernel/registry/failure_learning/FL17-MERGE-4_SEMANTIC_RECONCILIATION/FL17_MERGE_4_VALIDATION_REPORT.json"
+  ],
+  "stage": "FL17-MERGE-4_SEMANTIC_RECONCILIATION",
+  "status": "PASS",
+  "stop_rule": "Stop before full OS export or baseline promotion was honored in FL17-MERGE-4."
+}

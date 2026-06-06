@@ -1,0 +1,57 @@
+{
+  "artifact_type": "CE_SYNTHESIS.v1",
+  "created_utc": "20260502T163517Z",
+  "question": "What should MetaBlooms build next after Stage 3 operator tracker authority reconciliation?",
+  "decision": "Build OBSERVABILITY_TRACE_SPAN_LEDGER_CARTRIDGE next, beginning with Stage 2/3 hardening: unified span schema, automatic stage-event ingestion, causal graph index, failure clustering, and tracker binding.",
+  "reasoning_summary": [
+    "The OS now has a better operator surface, but the surface still depends on reading receipts and handoffs rather than a normalized causal execution ledger.",
+    "External evidence favors platform maturity, standardized telemetry, semantic conventions, and artifact provenance as core foundations for trustworthy AI/software delivery.",
+    "Internal candidate scan shows UX/operator work is already comparatively mature, evals has multiple completed receipts, and observability remains a foundational P1 gap with broad downstream leverage.",
+    "A unified trace/span ledger would improve every later cartridge: MPP/CDR enforcement, SEE/CE evidence binding, evals, security, recovery replay, export proof, and the visual tracker."
+  ],
+  "rejected_near_term_options": [
+    {
+      "candidate": "More operator visual polish",
+      "why_not_next": "Valuable, but recent stages already addressed visibility; without trace data, further polish risks becoming cosmetic."
+    },
+    {
+      "candidate": "Education validity cartridge",
+      "why_not_next": "High value for classroom products, but MetaBlooms core stack first needs stronger execution/evidence observability."
+    },
+    {
+      "candidate": "Security artifact threat model",
+      "why_not_next": "Important, but threat detection is weaker without normalized artifact lineage and causal spans."
+    },
+    {
+      "candidate": "State checkpoint/resume",
+      "why_not_next": "Useful, but it should attach to a trace/span ledger rather than become another isolated state artifact."
+    }
+  ],
+  "recommended_next_stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_UNIFIED_EVENT_SCHEMA_AND_BOOT_INGESTION",
+  "stage_scope": {
+    "type": "bounded implementation-planning or implementation stage",
+    "inputs": [
+      "0_kernel/cartridges/external_review_lenses/OBSERVABILITY_TRACE_SPAN_LEDGER_CARTRIDGE_SPEC_v1.json",
+      "0_kernel/registry/observability/MB_TRACE_SPAN_LEDGER_SPEC_v2.json",
+      "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE1_RECEIPT_LATEST.json",
+      "runtime/receipts/**/STAGE_RECEIPT.json",
+      "runtime/handoffs/operator_tracker/OPERATOR_VISUAL_TRACKER_STATE_LATEST.json"
+    ],
+    "outputs": [
+      "0_kernel/registry/observability/MB_TRACE_SPAN_EVENT_SCHEMA_v1.json",
+      "0_kernel/registry/observability/MB_CAUSAL_STAGE_GRAPH_SCHEMA_v1.json",
+      "runtime/observability/TRACE_SPAN_LEDGER_LATEST.jsonl",
+      "runtime/observability/TRACE_SPAN_LEDGER_INDEX_LATEST.json",
+      "0_kernel/validators/validate_observability_trace_span_ledger_stage2_v1.py",
+      "runtime/receipts/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_RECEIPT.json",
+      "runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE2_HANDOFF.json"
+    ],
+    "deny_if": [
+      "schema has no stable event ids",
+      "receipt ingestion loses source file path, sha256, stage id, decision, timestamp, or parent/child relation",
+      "ledger cannot be regenerated from artifacts",
+      "validator is non-executable or only checks string presence",
+      "tracker cannot consume a compact summary from the ledger"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "artifact_type": "MB_CLI_FIXTURE_CASES_v1",
+  "cases": [
+    {
+      "command": [
+        "bin/mb",
+        "--json",
+        "status"
+      ],
+      "expected": "returncode 0 and JSON object",
+      "id": "status_json_parseable"
+    },
+    {
+      "command": [
+        "bin/mb",
+        "--json",
+        "verify"
+      ],
+      "expected": "VERIFY_PASS",
+      "id": "verify_pass"
+    },
+    {
+      "command": [
+        "bin/mb",
+        "--json",
+        "replay"
+      ],
+      "expected": "no mutation, reports latest handoff if present",
+      "id": "replay_dry_run"
+    }
+  ],
+  "created_utc": "20260501T040605Z"
+}

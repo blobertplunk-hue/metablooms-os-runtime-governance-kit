@@ -1,0 +1,88 @@
+{
+  "stage": "R0_INTAKE_AND_PATH_BINDING_BOUNDED_V2",
+  "timestamp_utc": "20260428T023844Z",
+  "authoritative_root": "/mnt/data/Metablooms_OS",
+  "source_zip": "/mnt/data/METABLOOMS_FULL_OS_v3_3_PHASE1_PHASE2_MERGED_REPAIRED.zip",
+  "staging_root": "/mnt/data/Metablooms_OS/0_kernel/staging/refactor_intake_20260428T023844Z/source_bundle_extract",
+  "bindings": [
+    {
+      "source_zip_entry": "CLAUDE_MEMORY_SYNC_v1.json",
+      "staged_path": "/mnt/data/Metablooms_OS/0_kernel/staging/refactor_intake_20260428T023844Z/source_bundle_extract/CLAUDE_MEMORY_SYNC_v1.json",
+      "sha256": "be1a806d01ede56df088498c72cc1e1a16c6563b164fffd8d283d33420f1b445",
+      "size_bytes": 2869
+    },
+    {
+      "source_zip_entry": "Metablooms_OS/0_kernel/scripts/claude_memory_sync_writer_v1.py",
+      "staged_path": "/mnt/data/Metablooms_OS/0_kernel/staging/refactor_intake_20260428T023844Z/source_bundle_extract/Metablooms_OS/0_kernel/scripts/claude_memory_sync_writer_v1.py",
+      "sha256": "27600f4a273ced13bfc0e157be376cb15c3b0660acac60f0799f415b4bb0a49e",
+      "size_bytes": 20399
+    },
+    {
+      "source_zip_entry": "Metablooms_OS/0_kernel/scripts/p0a_external_reuse_scan_precheck_v1.py",
+      "staged_path": "/mnt/data/Metablooms_OS/0_kernel/staging/refactor_intake_20260428T023844Z/source_bundle_extract/Metablooms_OS/0_kernel/scripts/p0a_external_reuse_scan_precheck_v1.py",
+      "sha256": "6da19d7974b3dbf0ff132f518d277da0dba15c14d0e78b794a276dc5d1c008fa",
+      "size_bytes": 6654
+    },
+    {
+      "source_zip_entry": "Metablooms_OS/1_governance/cool_overlays/COOL_5_EXTERNAL_REUSE_SCAN_GATE_SCHEMA_v1.json",
+      "staged_path": "/mnt/data/Metablooms_OS/0_kernel/staging/refactor_intake_20260428T023844Z/source_bundle_extract/Metablooms_OS/1_governance/cool_overlays/COOL_5_EXTERNAL_REUSE_SCAN_GATE_SCHEMA_v1.json",
+      "sha256": "27919934cd67c335c68e2099b232bd0e6da862315bf1f2a39feaad96f1181730",
+      "size_bytes": 2314
+    },
+    {
+      "source_zip_entry": "Metablooms_OS/1_governance/cool_overlays/COOL_6_RUNTIME_GATE_WIRING_PLAN_v1.json",
+      "staged_path": "/mnt/data/Metablooms_OS/0_kernel/staging/refactor_intake_20260428T023844Z/source_bundle_extract/Metablooms_OS/1_governance/cool_overlays/COOL_6_RUNTIME_GATE_WIRING_PLAN_v1.json",
+      "sha256": "bb90a63995473293f557035a3b2a7da073c101b0bb21a36a81bc065535075bfa",
+      "size_bytes": 2341
+    },
+    {
+      "source_zip_entry": "Metablooms_OS/0_kernel/scripts/usefulness_surface_validator_v1.py",
+      "staged_path": "/mnt/data/Metablooms_OS/0_kernel/staging/refactor_intake_20260428T023844Z/source_bundle_extract/Metablooms_OS/0_kernel/scripts/usefulness_surface_validator_v1.py",
+      "sha256": "e2da3a67c0038a509f49ec77958bee915be8c3bb5e90746f7ec5caa71848e88f",
+      "size_bytes": 6071
+    },
+    {
+      "source_zip_entry": "Metablooms_OS/0_kernel/scripts/p0py_python_health_governance_v1.py",
+      "staged_path": "/mnt/data/Metablooms_OS/0_kernel/staging/refactor_intake_20260428T023844Z/source_bundle_extract/Metablooms_OS/0_kernel/scripts/p0py_python_health_governance_v1.py",
+      "sha256": "0dc2cb1a552b33bc6d7fb97e112a4eb0234b9074d3f897a127ae42d4e19d2cb5",
+      "size_bytes": 8295
+    },
+    {
+      "source_zip_entry": "Metablooms_OS/0_kernel/scripts/stage_base_resolver_v1.py",
+      "staged_path": "/mnt/data/Metablooms_OS/0_kernel/staging/refactor_intake_20260428T023844Z/source_bundle_extract/Metablooms_OS/0_kernel/scripts/stage_base_resolver_v1.py",
+      "sha256": "873d67574a9e23ac83561e11f2bd3fdb43186a7496057449da94557c79dd386b",
+      "size_bytes": 4949
+    },
+    {
+      "source_zip_entry": "Metablooms_OS/2_engines/telemetry/MISCONCEPTION_TELEMETRY_ENGINE_v1.js",
+      "staged_path": "/mnt/data/Metablooms_OS/0_kernel/staging/refactor_intake_20260428T023844Z/source_bundle_extract/Metablooms_OS/2_engines/telemetry/MISCONCEPTION_TELEMETRY_ENGINE_v1.js",
+      "sha256": "0724edf8628d898557cff0ea61193472fd4e71fe7b1846f8cd59dcf9cfa7c9b8",
+      "size_bytes": 13725
+    },
+    {
+      "source_zip_entry": "Metablooms_OS/1_governance/cool_overlays/MISCONCEPTION_TELEMETRY_SCHEMA_v1.json",
+      "staged_path": "/mnt/data/Metablooms_OS/0_kernel/staging/refactor_intake_20260428T023844Z/source_bundle_extract/Metablooms_OS/1_governance/cool_overlays/MISCONCEPTION_TELEMETRY_SCHEMA_v1.json",
+      "sha256": "985e053c612a0c84fa2f48360e43d1a1d1f06868f11f4e098fc4a4a162f5e139",
+      "size_bytes": 5352
+    },
+    {
+      "source_zip_entry": "Metablooms_OS/3_data/html_activities/fractions_number_line_telemetry_v1.html",
+      "staged_path": "/mnt/data/Metablooms_OS/0_kernel/staging/refactor_intake_20260428T023844Z/source_bundle_extract/Metablooms_OS/3_data/html_activities/fractions_number_line_telemetry_v1.html",
+      "sha256": "a3cb0506bd114741b2ac00c01a9cf37217e1efb91c0c66f6740ddadf992104b8",
+      "size_bytes": 35672
+    },
+    {
+      "source_zip_entry": "Metablooms_OS/0_kernel/scripts/dryrun_receipt_phase_accuracy_patch_v1.py",
+      "staged_path": "/mnt/data/Metablooms_OS/0_kernel/staging/refactor_intake_20260428T023844Z/source_bundle_extract/Metablooms_OS/0_kernel/scripts/dryrun_receipt_phase_accuracy_patch_v1.py",
+      "sha256": "fd2fca947fddf83fdd7f82e3847b4b62d90f7c8cfa9157ba614348cc2aab03f3",
+      "size_bytes": 6296
+    },
+    {
+      "source_zip_entry": "Metablooms_OS/1_governance/workflow_v6/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.json",
+      "staged_path": "/mnt/data/Metablooms_OS/0_kernel/staging/refactor_intake_20260428T023844Z/source_bundle_extract/Metablooms_OS/1_governance/workflow_v6/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.json",
+      "sha256": "b0b2fa19a37e973bb38da416a569b43612d0c77912304640c20e53412a88f3b4",
+      "size_bytes": 6926
+    }
+  ],
+  "missing_bindings": []
+}

@@ -1,0 +1,97 @@
+{
+  "version": "1.0",
+  "created_at": 1777064935.8567982,
+  "stage": "G3_EXPORT_RECOVERY_VALIDATOR_REGRESSION_FIXTURES",
+  "status": "complete",
+  "outputs": {
+    "fixtures_manifest": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_REGRESSION_FIXTURES_MANIFEST_v1.json",
+    "regression_results": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/EXPORT_RECOVERY_VALIDATOR_REGRESSION_RESULTS_v1.json",
+    "governance_inventory": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/GOVERNANCE_USED_FOR_EXPORT_VALIDATOR_BUILD_v1.json",
+    "governance_doc": "/mnt/data/Metablooms_OS_refined/0_kernel/docs/GOVERNANCE_USED_FOR_EXPORT_VALIDATOR_BUILD_v1.md",
+    "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G3_EXPORT_RECOVERY_VALIDATOR_REGRESSION_FIXTURES_RECEIPT_v1.json",
+    "handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/G3_TO_G4_HANDOFF_v1.json"
+  },
+  "checks": {
+    "g2_prechecks": {
+      "g2_handoff_ready": true,
+      "g2_receipt_passed": true,
+      "g2_repair_passed": true,
+      "g3_declared_target": true,
+      "ledger_latest_pass_is_g2": true,
+      "pointer_active": true
+    }
+  },
+  "case_results": {
+    "fail_missing_ledger_output": {
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "passed": true,
+      "decision": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/results/fail_missing_ledger_output_decision.json",
+      "failed_gates": [
+        "G1_LEDGER_DECLARED_OUTPUTS_INSIDE_ZIP",
+        "G10_POLICY_AS_CODE_DECISION"
+      ]
+    },
+    "fail_pending_receipt": {
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "passed": true,
+      "decision": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/results/fail_pending_receipt_decision.json",
+      "failed_gates": [
+        "G2_FINAL_PASS_RECEIPTS_INSIDE_ZIP",
+        "G3_NO_PLACEHOLDER_METADATA",
+        "G10_POLICY_AS_CODE_DECISION"
+      ]
+    },
+    "fail_placeholder_metadata": {
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "passed": true,
+      "decision": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/results/fail_placeholder_metadata_decision.json",
+      "failed_gates": [
+        "G3_NO_PLACEHOLDER_METADATA",
+        "G10_POLICY_AS_CODE_DECISION"
+      ]
+    },
+    "fail_pointer_conflict": {
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "passed": true,
+      "decision": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/results/fail_pointer_conflict_decision.json",
+      "failed_gates": [
+        "G8_POINTER_CONFLICT_RESOLUTION",
+        "G10_POLICY_AS_CODE_DECISION"
+      ]
+    },
+    "fail_sidecar_mismatch": {
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "passed": true,
+      "decision": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/export_recovery_validator_regression_fixtures/results/fail_sidecar_mismatch_decision.json",
+      "failed_gates": [
+        "G5_SIDECAR_BINDING",
+        "G10_POLICY_AS_CODE_DECISION"
+      ]
+    }
+  },
+  "runaway_turn_guard": {
+    "fixtures_only": true,
+    "real_f7_validation_deferred": true,
+    "export_performed": false,
+    "cleanup_broad": false
+  },
+  "verdict": "PASS",
+  "next_improvement_task": "G4 \u2014 Run Validator Against F7 Export",
+  "why_next": "Regression fixtures pass; next run the validator against the actual known-bad F7 export and preserve the machine-readable blocking decision.",
+  "remaining_work": [
+    "G4 \u2014 Run Validator Against F7 Export",
+    "G5 \u2014 Repaired Recovery-Proven Export",
+    "G6 \u2014 Recovery Proof + Baseline Lock",
+    "G7 \u2014 Return to E4B"
+  ],
+  "progress_estimate": {
+    "stages_remaining_before_return_to_E4B": 4,
+    "current_arc": "G export-recovery validator hardening"
+  },
+  "next_correct_command": "EXECUTE G4 \u2014 RUN VALIDATOR AGAINST F7 EXPORT"
+}

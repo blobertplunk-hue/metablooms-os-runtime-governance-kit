@@ -1,0 +1,17 @@
+{
+  "artifact_type": "METABLOOMS_HANDOFF_v1",
+  "created_utc": "20260502T140253Z",
+  "latest_receipt": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T140037Z/STAGE_RECEIPT.json",
+  "next_stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE4_FULL_CALLSITE_AUDIT_AND_POLICY_ENFORCEMENT_SWEEP",
+  "patched_files": [
+    "0_kernel/lib/execution/bounded_subprocess_compat_v1.py",
+    "0_kernel/cartridges/inline_project_tracker/TRACKER_STAGE_FINALIZATION_HOOK_v1.py",
+    "0_kernel/lib/filesystem_safety_v1.py",
+    "0_kernel/lib/archive_method_router_v1.py",
+    "0_kernel/lib/archive_extraction_route_v1.py"
+  ],
+  "runtime_root": "/mnt/data/Metablooms_OS",
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING",
+  "status": "PASS",
+  "stop_rule": "Stop after one bounded Stage3 retrofit; do not continue to broad sweep in same turn."
+}

@@ -1,0 +1,150 @@
+{
+  "$id": "metablooms://schemas/decision_receipt_envelope_schema_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "description": "Canonical wrapper for decision logs and receipts. Annotation fields document; validation is performed by validate_decision_receipt_envelope_v1.py.",
+  "properties": {
+    "created_utc": {
+      "minLength": 10,
+      "type": "string"
+    },
+    "decision_id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "envelope_version": {
+      "const": "decision_receipt_envelope_v1"
+    },
+    "erased": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "evidence_refs": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "gate_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "input_artifacts": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "masked": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "normalization_status": {
+      "enum": [
+        "native",
+        "wrapped_legacy",
+        "generated"
+      ]
+    },
+    "output_artifacts": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "policy_basis": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "raw_excerpt": {
+      "type": "string"
+    },
+    "reasons": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "record_id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "record_kind": {
+      "enum": [
+        "decision_log",
+        "stage_receipt",
+        "verify_receipt",
+        "handoff",
+        "repair_receipt",
+        "other_receipt"
+      ]
+    },
+    "result": {
+      "minLength": 2,
+      "type": "string"
+    },
+    "source_record": {
+      "properties": {
+        "path": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "size_bytes": {
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "path",
+        "sha256",
+        "size_bytes"
+      ],
+      "type": "object"
+    },
+    "span_id": {
+      "minLength": 8,
+      "type": "string"
+    },
+    "stage_id": {
+      "minLength": 2,
+      "type": "string"
+    },
+    "summary": {
+      "minLength": 5,
+      "type": "string"
+    },
+    "trace_id": {
+      "minLength": 16,
+      "type": "string"
+    }
+  },
+  "required": [
+    "envelope_version",
+    "record_kind",
+    "record_id",
+    "stage_id",
+    "created_utc",
+    "decision_id",
+    "result",
+    "summary",
+    "source_record",
+    "input_artifacts",
+    "output_artifacts",
+    "evidence_refs",
+    "normalization_status"
+  ],
+  "title": "MetaBlooms Decision/Receipt Canonical Envelope v1",
+  "type": "object"
+}

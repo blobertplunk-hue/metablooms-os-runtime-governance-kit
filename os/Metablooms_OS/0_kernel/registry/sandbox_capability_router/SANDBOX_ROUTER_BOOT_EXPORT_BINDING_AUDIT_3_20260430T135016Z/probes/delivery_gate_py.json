@@ -1,0 +1,15 @@
+{
+  "allowed": true,
+  "decision": "ALLOW",
+  "reason": "route_allowed",
+  "task": "downloadable_artifact_delivery",
+  "method": "auto",
+  "required_gates": [
+    "root_level_mnt_data_zip",
+    "sha256_sidecar",
+    "zip_integrity_test",
+    "manifest_included"
+  ],
+  "router_path": "/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_CAPABILITY_ROUTER_CARTRIDGE_LATEST.json",
+  "enforcer_equivalence": "python3_S_timeout_safe_policy_evaluation"
+}

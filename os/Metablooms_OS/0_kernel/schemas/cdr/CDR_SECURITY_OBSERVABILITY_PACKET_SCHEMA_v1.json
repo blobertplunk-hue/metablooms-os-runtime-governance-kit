@@ -1,0 +1,8 @@
+{
+  "required": [
+    "risk_tier",
+    "security_controls",
+    "observability_controls"
+  ],
+  "schema": "CDRSecurityObservabilityPacketSchema_v1"
+}

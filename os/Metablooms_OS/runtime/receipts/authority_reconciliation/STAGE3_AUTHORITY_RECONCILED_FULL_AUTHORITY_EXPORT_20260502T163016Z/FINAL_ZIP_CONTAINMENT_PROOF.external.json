@@ -1,0 +1,15 @@
+{
+  "artifact_type": "FinalZipContainmentProof.v1",
+  "contains_contract": true,
+  "contains_handoff": true,
+  "contains_operator_tracker": true,
+  "contains_receipt": true,
+  "contains_registry_pointer": true,
+  "contains_root_pointer": true,
+  "duplicate_members": 0,
+  "members": 5943,
+  "sidecar": "/mnt/data/METABLOOMS_OS_STAGE3_AUTHORITY_RECONCILED_NEW_CHAT_VALIDATOR_PASS_20260502T163016Z.zip.sha256",
+  "zip": "/mnt/data/METABLOOMS_OS_STAGE3_AUTHORITY_RECONCILED_NEW_CHAT_VALIDATOR_PASS_20260502T163016Z.zip",
+  "zip_sha256": "f441b10c3ba1571e1af80fac8468908511031d30afac90eb5ad7761f0801e83c",
+  "zip_testzip": "PASS"
+}

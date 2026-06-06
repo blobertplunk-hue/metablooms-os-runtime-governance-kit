@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "created_at": 1776997309.523611,
+  "purpose": "Patch boot_manifest_v1.json to include research_trigger_integration_v1.md as required boot governance module.",
+  "patched_file": "/mnt/data/Metablooms_OS_refined/boot_manifest_v1.json",
+  "required_document": "0_kernel/registry/research_trigger/research_trigger_integration_v1.md",
+  "verified_in_boot_manifest": true,
+  "before_governance_modules": {
+    "research_trigger": {
+      "status": "active",
+      "path": "0_kernel/registry/research_trigger/research_trigger_rule_v1.json",
+      "integration_contract": "0_kernel/registry/RESEARCH_TRIGGER_AND_TOOL_GOVERNANCE_INTEGRATION_v1.json"
+    },
+    "sandbox_tool_governance": {
+      "status": "active",
+      "path": "0_kernel/registry/tool_governance/sandbox_tool_governance_v1.md",
+      "capability_registry": "0_kernel/registry/tool_governance/sandbox_tool_capability_registry_v1.json",
+      "integration_contract": "0_kernel/registry/RESEARCH_TRIGGER_AND_TOOL_GOVERNANCE_INTEGRATION_v1.json"
+    }
+  },
+  "after_research_trigger_module": {
+    "status": "active",
+    "path": "0_kernel/registry/research_trigger/research_trigger_rule_v1.json",
+    "integration_contract": "0_kernel/registry/RESEARCH_TRIGGER_AND_TOOL_GOVERNANCE_INTEGRATION_v1.json",
+    "required_boot_documents": [
+      "0_kernel/registry/research_trigger/research_trigger_integration_v1.md"
+    ],
+    "integration_document": "0_kernel/registry/research_trigger/research_trigger_integration_v1.md",
+    "updated_at": 1776997309.5225825
+  }
+}

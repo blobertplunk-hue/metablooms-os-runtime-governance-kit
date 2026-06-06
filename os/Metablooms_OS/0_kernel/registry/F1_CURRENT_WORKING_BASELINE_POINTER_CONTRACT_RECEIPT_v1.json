@@ -1,0 +1,42 @@
+{
+  "version": "1.0",
+  "created_at": 1777061460.426183,
+  "stage": "F1_CURRENT_WORKING_BASELINE_POINTER_CONTRACT",
+  "status": "complete",
+  "outputs": {
+    "pointer_schema": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/CURRENT_WORKING_BASELINE_POINTER_SCHEMA_v1.json",
+    "pointer_contract": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/CURRENT_WORKING_BASELINE_POINTER_CONTRACT_v1.json",
+    "pointer_doc": "/mnt/data/Metablooms_OS_refined/0_kernel/docs/CURRENT_WORKING_BASELINE_POINTER_CONTRACT_v1.md",
+    "pointer_file": "/mnt/data/Metablooms_OS_refined/0_kernel/state/CURRENT_WORKING_BASELINE_POINTER_v1.json",
+    "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F1_CURRENT_WORKING_BASELINE_POINTER_CONTRACT_RECEIPT_v1.json",
+    "handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F1_TO_F2_HANDOFF_v1.json"
+  },
+  "checks": {
+    "f0_rematerialized": true,
+    "git_clean_before_f1": true
+  },
+  "git_head_at_pointer_write": "60757dc1b811d52643b546128e0870433cb5f198",
+  "runaway_turn_guard": {
+    "contract_only": true,
+    "restore_performed": true,
+    "export_performed": false,
+    "cleanup_performed": false
+  },
+  "verdict": "PASS",
+  "next_improvement_task": "F2 \u2014 Stage DAG + Dependency Ledger Contract",
+  "why_next": "The current working pointer exists; next we need a stage DAG and ledger so restores know which successful stage outputs supersede older baselines.",
+  "remaining_work": [
+    "F2 \u2014 Stage DAG + Dependency Ledger Contract",
+    "F3 \u2014 Transactional Stage Runner Contract",
+    "F4 \u2014 Manifest/Provenance Export Contract",
+    "F5 \u2014 Restore Ladder + Mode-Normalization Proof",
+    "F6 \u2014 Blocked Receipt Handling Rule",
+    "F7 \u2014 Stable Export + Boot Recovery Proof",
+    "Return to E4A\u2013E5D"
+  ],
+  "progress_estimate": {
+    "stages_remaining_before_return_to_E4": 6,
+    "major_arcs_remaining_after_recovery_arc": 2
+  },
+  "next_correct_command": "EXECUTE F2 \u2014 STAGE DAG + DEPENDENCY LEDGER CONTRACT"
+}

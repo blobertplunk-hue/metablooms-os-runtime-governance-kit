@@ -1,0 +1,67 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+# MetaBlooms Stage4 bounded subprocess enforcement shim.
+from pathlib import Path as _MBPath
+import sys as _MBSys
+_MB_SELF = _MBPath(__file__).resolve()
+for _MB_PARENT in [_MB_SELF] + list(_MB_SELF.parents):
+    _MB_EXEC_LIB = _MB_PARENT / "0_kernel" / "lib" / "execution"
+    if (_MB_EXEC_LIB / "bounded_subprocess_compat_v1.py").exists():
+        if str(_MB_EXEC_LIB) not in _MBSys.path:
+            _MBSys.path.insert(0, str(_MB_EXEC_LIB))
+        break
+from bounded_subprocess_compat_v1 import run as bounded_subprocess_run
+import json, subprocess, sys, py_compile
+from pathlib import Path
+
+def find_root():
+    p = Path(__file__).resolve()
+    for q in [p.parent, *p.parents]:
+        if (q / 'boot_manifest_v1.json').exists() and (q / '0_kernel').exists():
+            return q
+    return Path.cwd()
+
+def main():
+    root = find_root()
+    required = [
+        '0_kernel/registry/education_validity/MB_EDUCATION_VALIDITY_GATE_SPEC_v1.json',
+        'runtime/evals/education_validity/EDUCATION_VALIDITY_STAGE1_FIXTURES_v1.json',
+        'runtime/evals/education_validity/EDUCATION_VALIDITY_STAGE1_SCORECARD_LATEST.json',
+        '0_kernel/scripts/education_validity_gate_v1.py',
+        'docs/education_validity/EDUCATION_VALIDITY_STAGE1.md',
+    ]
+    missing = [x for x in required if not (root / x).exists()]
+    issues = []
+    if missing:
+        issues.append({'issue': 'missing_required', 'paths': missing})
+    if not missing:
+        spec = json.loads((root / required[0]).read_text(encoding='utf-8'))
+        fixtures = json.loads((root / required[1]).read_text(encoding='utf-8'))['fixtures']
+        decisions = {f.get('expected_decision') for f in fixtures}
+        if len(spec.get('gates', [])) < 7:
+            issues.append({'issue': 'too_few_gates'})
+        if len(fixtures) < 12:
+            issues.append({'issue': 'too_few_fixtures'})
+        if not {'PASS', 'WARN', 'BLOCK'}.issubset(decisions):
+            issues.append({'issue': 'missing_decision_coverage', 'decisions': sorted(decisions)})
+        py_compile.compile(str(root / '0_kernel/scripts/education_validity_gate_v1.py'), doraise=True)
+        proc = bounded_subprocess_run([sys.executable, '-S', str(root / '0_kernel/scripts/education_validity_gate_v1.py'), '--json'], cwd=str(root), text=True, capture_output=True, timeout=20)
+        if proc.returncode:
+            issues.append({'issue': 'gate_runner_failed', 'rc': proc.returncode, 'stderr': proc.stderr[-500:]})
+        else:
+            out = json.loads(proc.stdout)
+            if out.get('false_pass_count') != 0:
+                issues.append({'issue': 'false_passes'})
+            if out.get('promotion_decision') != 'PROMOTE':
+                issues.append({'issue': 'not_promoted'})
+    verdict = 'PASS' if not issues else 'FAIL'
+    out = {'artifact_type': 'EDUCATION_VALIDITY_STAGE1_VALIDATION_v1', 'verdict': verdict, 'issues': issues}
+    path = root / 'runtime/evals/education_validity/EDUCATION_VALIDITY_STAGE1_VALIDATION_LATEST.json'
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(out, indent=2, sort_keys=True) + '\n', encoding='utf-8')
+    print(json.dumps(out, indent=2, sort_keys=True))
+    return 0 if verdict == 'PASS' else 1
+
+if __name__ == '__main__':
+    raise SystemExit(main())

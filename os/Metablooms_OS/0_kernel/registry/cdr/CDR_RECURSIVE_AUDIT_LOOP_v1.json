@@ -1,0 +1,13 @@
+{
+  "loop": [
+    "read_code_context",
+    "map_against_cdr_dimensions",
+    "identify_defects_and_improvement_candidates",
+    "score_benefit_risk_scope_stage_fit",
+    "implement_smallest_high_value_safe_change",
+    "verify",
+    "stop_only_when_no_bounded_high_value_improvement_remains"
+  ],
+  "reconstruction": "RECONSTRUCTED_FROM_CHAT_SUMMARY",
+  "schema": "CDRRecursiveAuditLoop_v1"
+}

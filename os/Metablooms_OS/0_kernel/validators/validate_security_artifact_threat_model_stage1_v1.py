@@ -1,0 +1,37 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+import json, time
+from pathlib import Path
+REQUIRED_RISK_IDS={'MBSEC-001','MBSEC-002','MBSEC-003','MBSEC-004','MBSEC-005','MBSEC-006','MBSEC-007','MBSEC-008'}
+REQUIRED_TERMS=['checksum','unsafe archive paths','bounded stage','receipts','handoffs','trace spans','fail-closed']
+def utc_now(): return time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())
+def find_root():
+    here=Path(__file__).resolve()
+    for parent in [here.parent,*here.parents]:
+        if (parent/'boot_manifest_v1.json').exists() and (parent/'0_kernel').exists(): return parent
+    cwd=Path.cwd()
+    if (cwd/'boot_manifest_v1.json').exists(): return cwd
+    raise SystemExit('METABLOOMS_ROOT_NOT_FOUND')
+def main():
+    root=find_root(); failures=[]
+    tpath=root/'0_kernel/registry/security/SECURITY_ARTIFACT_THREAT_MODEL_v1.json'; ppath=root/'0_kernel/registry/security/SECURITY_ARTIFACT_TRUST_POLICY_v1.json'
+    rpath=root/'runtime/receipts/security/SECURITY_ARTIFACT_THREAT_MODEL_STAGE1_RECEIPT_LATEST.json'; hpath=root/'runtime/handoffs/security/SECURITY_ARTIFACT_THREAT_MODEL_STAGE1_HANDOFF_LATEST.json'
+    outp=root/'runtime/evals/security/SECURITY_ARTIFACT_THREAT_MODEL_STAGE1_VALIDATION_LATEST.json'
+    if not tpath.exists(): failures.append('missing_threat_model')
+    if not ppath.exists(): failures.append('missing_trust_policy')
+    threat=json.loads(tpath.read_text()) if tpath.exists() else {}; policy=json.loads(ppath.read_text()) if ppath.exists() else {}
+    risk_ids={r.get('id') for r in threat.get('risks',[]) if isinstance(r,dict)}
+    missing=sorted(REQUIRED_RISK_IDS-risk_ids)
+    if missing: failures.append({'missing_risk_ids':missing})
+    blob=(json.dumps(threat)+' '+json.dumps(policy)).lower()
+    for term in REQUIRED_TERMS:
+        if term not in blob: failures.append({'missing_control_text':term})
+    if len(threat.get('critical_controls',[]))<5: failures.append('too_few_critical_controls')
+    if len(policy.get('deny_conditions',[]))<5: failures.append('policy_deny_conditions_insufficient')
+    if len(policy.get('promotion_conditions',[]))<4: failures.append('policy_promotion_conditions_insufficient')
+    if not rpath.exists(): failures.append('missing_stage_receipt')
+    if not hpath.exists(): failures.append('missing_stage_handoff')
+    result={'artifact_type':'SECURITY_ARTIFACT_THREAT_MODEL_STAGE1_VALIDATION_v1','created_utc':utc_now(),'verdict':'PASS' if not failures else 'FAIL','root':str(root),'risk_count':len(threat.get('risks',[])) if isinstance(threat.get('risks',[]),list) else 0,'required_risk_ids_present':sorted(risk_ids & REQUIRED_RISK_IDS),'failures':failures,'threat_model_path':str(tpath),'trust_policy_path':str(ppath)}
+    outp.parent.mkdir(parents=True,exist_ok=True); _mb_write_json_file(outp, result, operation_id='STAGE4_ATOMIC_JSON_0_kernel_validators_validate_security_artifact_threat_model_stage1_v1__L35', create_parent=True, allowed_roots=[str(_MBAJWPath('/mnt/data').resolve())], indent=2, sort_keys=True, ensure_ascii=True, max_bytes=20000000)
+    print(json.dumps(result,indent=2,sort_keys=True)); return 0 if not failures else 2
+if __name__=='__main__': raise SystemExit(main())

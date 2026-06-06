@@ -1,0 +1,65 @@
+{
+  "stage": "WORKFLOW_GENERALIZATION_ENGINE_STAGE1_IMPLEMENT_ROUTER_AND_LESSON_LEDGER_EVALS_REPAIR1_CODEGEN_ESCAPE_CLOSURE",
+  "timestamp_utc": "20260502T231352Z",
+  "verdict": "PASS",
+  "root": "/mnt/data/Metablooms_OS",
+  "implemented": {
+    "router": "0_kernel/routers/workflow_generalization_router_v1.py",
+    "ledger_schema": "0_kernel/registry/workflow_generalization_engine/WORKFLOW_LESSON_LEDGER_SCHEMA_v1.json",
+    "lesson_ledger": "runtime/ledgers/workflow_generalization/WORKFLOW_LESSON_LEDGER_v1.json",
+    "eval_harness": "tests/evals/workflow_generalization/test_workflow_generalization_router_v1.py",
+    "export_prep_manifest": "0_kernel/registry/workflow_generalization_engine/WORKFLOW_GENERALIZATION_EXPORT_PREP_MANIFEST_v1.json"
+  },
+  "eval_summary": {
+    "overall": "PASS",
+    "fixture_count": 5,
+    "passed": 5
+  },
+  "behavior_bound": {
+    "cumulative_learning": "enabled_by_ledger",
+    "old_transcript_import": "candidate_lessons_allowed_but_must_pass_better_than_current_gate",
+    "not_better_than_current": "reject_or_defer_no_routing_change",
+    "auto_routing": "implemented_for_visual_browser_repair_and_transcript_tasks"
+  },
+  "repairs_this_stage": [
+    "fixed python heredoc argument binding by using python3 -S -",
+    "fixed generated Python newline escaping by writing source files via shell here-doc rather than nested string interpolation"
+  ],
+  "path_check": [
+    {
+      "path": "0_kernel/registry/workflow_generalization_engine/WORKFLOW_GENERALIZATION_ENGINE_POLICY_v1.json",
+      "exists": true,
+      "sha256": "69cd57557175584e41f97e10a87995c927efcd5ed9e044f2446fa9587e699983"
+    },
+    {
+      "path": "0_kernel/registry/workflow_generalization_engine/WORKFLOW_LESSON_LEDGER_SCHEMA_v1.json",
+      "exists": true,
+      "sha256": "2de25ab8fcd3ca119375970653ea56bf1d06a60cf0dc6364589241c5cda5eded"
+    },
+    {
+      "path": "0_kernel/registry/workflow_generalization_engine/WORKFLOW_GENERALIZATION_EXPORT_PREP_MANIFEST_v1.json",
+      "exists": true,
+      "sha256": "18b5a867c8713d8c1d22cfbbb4e66a38ac94242e29b4e8179d92fef385ba4b01"
+    },
+    {
+      "path": "runtime/ledgers/workflow_generalization/WORKFLOW_LESSON_LEDGER_v1.json",
+      "exists": true,
+      "sha256": "4faf8b4c3a4295f17e12c5ffa63eb1b393cc15b847a9c31484d69f125cc37707"
+    },
+    {
+      "path": "0_kernel/routers/workflow_generalization_router_v1.py",
+      "exists": true,
+      "sha256": "e3d4c9ec370dd3bf23cd476bef3126b3db69b9f58f2143db5d9dd8d339b06edd"
+    },
+    {
+      "path": "tests/evals/workflow_generalization/test_workflow_generalization_router_v1.py",
+      "exists": true,
+      "sha256": "444adc369c7ee12810b6742254faa2628458fbb3be848bd4658503c2a71432c0"
+    },
+    {
+      "path": "runtime/receipts/workflow_generalization_engine/WORKFLOW_GENERALIZATION_ENGINE_STAGE1_IMPLEMENT_ROUTER_AND_LESSON_LEDGER_EVALS_REPAIR1_CODEGEN_ESCAPE_CLOSURE_20260502T231352Z/WORKFLOW_GENERALIZATION_ENGINE_STAGE1_ROUTER_EVAL_REPORT.json",
+      "exists": true,
+      "sha256": "b0247619ab6917d55b518390e99f9252976954fd916d8eba0a36612b54c4cdc7"
+    }
+  ]
+}

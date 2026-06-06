@@ -1,0 +1,23 @@
+{
+  "archive_method": "ZIP_STORED regular files only; Chrome profile symlinks excluded to avoid No such device/socket portability failures.",
+  "browser_render_limitation": "Carried from Stage 4: browser screenshots blocked in sandbox; WeasyPrint render proxy and static/validator replay are included.",
+  "created_utc": "2026-05-02T22:28:10Z",
+  "duplicate_member_count": 0,
+  "export_zip": "/mnt/data/METABLOOMS_OS_VISUAL_PRESENTATION_QUALITY_GATE_STAGE5_FULL_AUTHORITY_EXPORT_20260502T222425Z_STORED_REPAIRED.zip",
+  "export_zip_sha256": "3c75d9028f2ea0b09c2fae2796671303b8188a4f77f245734f86437c03edfbae",
+  "export_zip_size_bytes": 96151710,
+  "included_stage5_pre_final_proof": true,
+  "notes": [
+    "Final receipt/proof are external sidecars created after final ZIP; ZIP includes pre-final Stage 5 receipt/handoff/export manifest/pointer and all Stage 1-4 artifacts."
+  ],
+  "required_missing_count": 0,
+  "required_replay_root": "/mnt/data/replay_required_VISUAL_PRESENTATION_QUALITY_GATE_STAGE5_20260502T222425Z_STORED_REPAIRED",
+  "root": "/mnt/data/Metablooms_OS",
+  "schema_version": "metablooms_stage_receipt.v1",
+  "sidecar": "/mnt/data/METABLOOMS_OS_VISUAL_PRESENTATION_QUALITY_GATE_STAGE5_FULL_AUTHORITY_EXPORT_20260502T222425Z_STORED_REPAIRED.zip.sha256",
+  "stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE5_FULL_EXPORT_AND_PORTABILITY_REPLAY_PROOF",
+  "tracker_static_pass": true,
+  "validator_replay_pass": true,
+  "verdict": "PASS",
+  "zip_entry_count": 6931
+}

@@ -1,0 +1,11 @@
+{
+  "receipt_id": "T1-STAGE6J_WRITE_LABEL_INVARIANT_filesystem_write_artifact-20260502T013857Z",
+  "tier": "T1",
+  "artifact": "/mnt/data/Metablooms_OS/governance/invariants/USER_FACING_DOWNLOAD_LABELS_MUST_DISTINGUISH_BOOTABLE_OS_AUTHORITY_v1.json",
+  "sha256": "1769d93d9af740a2e1bc2d1b1e262e49923e4f82aeecae5e00f8efc6a751f13f",
+  "bytes_size": 1310,
+  "prior_sha256": "",
+  "stdout_proof": "",
+  "timestamp": "2026-05-02T01:38:57.512605Z",
+  "turn_id": "STAGE6J_WRITE_LABEL_INVARIANT"
+}

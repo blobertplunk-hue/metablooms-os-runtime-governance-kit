@@ -1,0 +1,7 @@
+{
+  "artifact_type": "CE_SYNTHESIS.v1",
+  "created_utc": "20260502T170000Z",
+  "decision": "Implement failure clustering and repair routing over trace evidence.",
+  "stage_id": "FIXTURE_CE_SYNTHESIS_FAILURE_WORD",
+  "expected_trace_status": "OK"
+}

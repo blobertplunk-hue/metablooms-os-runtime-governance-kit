@@ -1,0 +1,11 @@
+{
+  "covered_candidate_count": 4,
+  "missing_candidates": [],
+  "reasons": [],
+  "required_candidate_count": 4,
+  "schema": "TOOL_SELECTION_SUFFICIENCY_GATE_RESULT_v1",
+  "selected_tool_id": "node_yazl_stream_export",
+  "timestamp_utc": "2026-05-02T02:07:46.675170Z",
+  "top_allowed_tool_id": "node_yazl_stream_export",
+  "verdict": "PASS"
+}

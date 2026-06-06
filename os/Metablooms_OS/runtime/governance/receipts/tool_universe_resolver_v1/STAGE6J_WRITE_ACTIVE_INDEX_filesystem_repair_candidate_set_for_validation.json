@@ -1,0 +1,83 @@
+{
+  "candidate_set_id": "tool_candidates_d2bf1ce7ee5149a7",
+  "candidates": [
+    {
+      "competence_score": 1.0,
+      "decision_status": "PREFERRED",
+      "denied_replacements": [
+        "ad_hoc_shell_redirection"
+      ],
+      "display_name": "BTS-wrapped filesystem write/copy",
+      "evidence_refs": [
+        "METABLOOMS_STAGE6E"
+      ],
+      "execution_route": "runtime/governance/executors/bts_wrapped_executors_v1.py write/copy",
+      "fallbacks": [
+        "direct_write_only_if_bootstrap_exception"
+      ],
+      "install_state": "PROMOTED",
+      "known_failure_classes": [],
+      "reasons": [
+        "job_type match: filesystem_repair",
+        "governed/promoted route",
+        "BTS competence_score=1.0"
+      ],
+      "requires_approval": false,
+      "risk_tier": "write",
+      "score": 80.0,
+      "tool_id": "bts_wrapped_filesystem_write"
+    },
+    {
+      "competence_score": null,
+      "decision_status": "DENIED",
+      "denied_replacements": [
+        "node_yauzl_crc_proof",
+        "zipinfo_metadata_scan"
+      ],
+      "display_name": "unzip -tqq full test",
+      "evidence_refs": [
+        "FORBIDDEN_VALIDATION_METHODS_v1.json"
+      ],
+      "execution_route": "DENIED",
+      "fallbacks": [],
+      "install_state": "DENIED",
+      "known_failure_classes": [
+        "timeout_large_archive_validation"
+      ],
+      "reasons": [
+        "denied by risk tier / forbidden-method memory"
+      ],
+      "requires_approval": true,
+      "risk_tier": "denied",
+      "score": -100.0,
+      "tool_id": "unzip_tqq_full_test"
+    }
+  ],
+  "classified_job_type": "filesystem_repair",
+  "created_utc": "2026-05-02T01:38:58.872830Z",
+  "resolver_version": "TOOL_UNIVERSE_RESOLVER_v1",
+  "schema": "TOOL_CANDIDATE_SET_v1",
+  "selection_gate": {
+    "requires_why_not_better_if_selected_not_top": true,
+    "rule": "BTS_TOOL_EVALUATION must cover resolver candidates or explain exclusions; selected tool should be top_allowed_tool_id unless WHY_NOT_BETTER_TOOL justification passes."
+  },
+  "source_registries": [
+    "0_kernel/registry/tool_governance/TOOL_CAPABILITY_GENOME_BASELINE_v1.json",
+    "0_kernel/registry/tool_governance/sandbox_tool_probe_inventory_v1.json",
+    "0_kernel/registry/tool_governance/GOVERNED_TOOL_INSTALL_PROFILE_REGISTRY_v1.json",
+    "_bts/tool_competence.json",
+    "FORBIDDEN_VALIDATION_METHODS_v1.json",
+    "runtime/authority/FORBIDDEN_VALIDATION_METHODS_v1.json"
+  ],
+  "stage_id": "STAGE6J_FULL_AUTHORITY_EXPORT_AFTER_BTS_TOOL_UNIVERSE_RESOLVER_RETROFIT",
+  "sufficiency": {
+    "allowed_count": 1,
+    "candidate_count": 2,
+    "coverage_score": 1.0,
+    "reasons": [],
+    "score_spread": 0.0,
+    "verdict": "PASS"
+  },
+  "task": "Stage6J pre-export pointer/labeling governance write: ACTIVE_INVARIANTS_INDEX.json",
+  "top_allowed_tool_id": "bts_wrapped_filesystem_write"
+}

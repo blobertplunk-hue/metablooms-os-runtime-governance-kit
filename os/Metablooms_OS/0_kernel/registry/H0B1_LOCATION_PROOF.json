@@ -1,0 +1,109 @@
+{
+  "id": "H0B1_LOCATION_PROOF",
+  "stage": "H0B1_CHAT_GOVERNANCE_KERNEL_CONTRACTS_FIXTURES_AND_RUNTIME_GATE",
+  "timestamp_utc": "2026-04-30T17:52:37Z",
+  "status": "PASS",
+  "missing": [],
+  "files": [
+    {
+      "path": "0_kernel/chat_governance/CHAT_GOVERNANCE_KERNEL_v1.json",
+      "bytes": 2229,
+      "sha256": "bff5b45d3f3ba172b693bb4e80fee613bea9a3553169d15e0c3859be22c8388a"
+    },
+    {
+      "path": "0_kernel/chat_governance/TURN_LIFECYCLE_CONTRACT_v1.json",
+      "bytes": 847,
+      "sha256": "1cda29a540fb253b764b244725a5daa2c695859469b48de4df8ce4c592c01b64"
+    },
+    {
+      "path": "0_kernel/chat_governance/ALWAYS_ON_INVARIANTS_v1.json",
+      "bytes": 579,
+      "sha256": "86d80c2fe23a8b35490a9fcc222a30dc5d2b56c191694bb17c00e3fdc3a8fd74"
+    },
+    {
+      "path": "0_kernel/chat_governance/ROUTER_CONTRACT_v1.json",
+      "bytes": 493,
+      "sha256": "7a201172914c59255d5ac6fb527b79df65f7d7c0dc9839076514127b2b84f749"
+    },
+    {
+      "path": "0_kernel/chat_governance/CARTRIDGE_SELECTION_POLICY_v1.json",
+      "bytes": 359,
+      "sha256": "3c1fff7e6ba3c8a0e70015c5eb4d266360a90718f74574054b45db19dbe6aae1"
+    },
+    {
+      "path": "0_kernel/chat_governance/UNGOVERNED_MODE_FORBIDDEN_v1.json",
+      "bytes": 290,
+      "sha256": "05605273340ccf301a3faad12a739e83f79f58aaceb1cd8f750aacdd29f344d8"
+    },
+    {
+      "path": "0_kernel/chat_governance/FINAL_RESPONSE_GATE_v1.json",
+      "bytes": 374,
+      "sha256": "abb08ef09cd1472dc1c046a7aa5601a318af04fb7ddafabf7c198ab5f5306597"
+    },
+    {
+      "path": "0_kernel/chat_governance/TRACKER_RENDER_REQUIREMENT_v1.json",
+      "bytes": 354,
+      "sha256": "adf48be662a0c1be05ba4ded18906504f763b71cf2ad589946d0e3c2452e6f94"
+    },
+    {
+      "path": "runtime/governance/chat_governance_kernel_v1.py",
+      "bytes": 5828,
+      "sha256": "7ebe2dd68d59ef2167594099763d6548d0da665ee8d56f80766b95d5b18f4503"
+    },
+    {
+      "path": "runtime/governance/invariant_activation_engine_v1.py",
+      "bytes": 15526,
+      "sha256": "96d08b0ae59eac2186febf3690ca5fdff7341f7f17f1b222b885e5e8c0517ba7"
+    },
+    {
+      "path": "governance/invariants/CHAT_GOVERNANCE_KERNEL_ALWAYS_ON_v1.json",
+      "bytes": 1908,
+      "sha256": "2117fbcefd2897dad0cb3a679462fe9fec6662d1cc0fd68da2c73efbe90cb465"
+    },
+    {
+      "path": "0_kernel/registry/invariants/CHAT_GOVERNANCE_KERNEL_ALWAYS_ON_v1.json",
+      "bytes": 1908,
+      "sha256": "2117fbcefd2897dad0cb3a679462fe9fec6662d1cc0fd68da2c73efbe90cb465"
+    },
+    {
+      "path": "runtime/evals/chat_governance/H0B1_test_chat_governance_kernel.py",
+      "bytes": 3069,
+      "sha256": "c455e14edd150cd3c665a99ec9c8750b86ab16d673da039b917a67526514eaea"
+    },
+    {
+      "path": "runtime/evals/chat_governance/H0B1_FIXTURES_MANIFEST_v1.json",
+      "bytes": 427,
+      "sha256": "71594051326ce60196d48d489ccc42a7fc2c5dce564c39d7a98ecd2841383dc3"
+    },
+    {
+      "path": "runtime/evals/chat_governance/H0B1_BEHAVIOR_TEST_RESULTS.json",
+      "bytes": 287,
+      "sha256": "cb6676036f2fe95eac17f99a41c62f86e8ffaba84427eb809f56e85b8d6160c7"
+    },
+    {
+      "path": "0_kernel/registry/H0B1_SEE_PACKET_v1.json",
+      "bytes": 1560,
+      "sha256": "7ea9923b5793486d3a6622956bf6df4364871a2ef55370b12ba83cc947db8815"
+    },
+    {
+      "path": "0_kernel/registry/H0B1_CE_SYNTHESIS_v1.json",
+      "bytes": 569,
+      "sha256": "4be76cf71b74bbf1cd4d0811599976f60cee2d191a2410935e24398ee702dbdf"
+    },
+    {
+      "path": "0_kernel/registry/H0B1_IMPLEMENTATION_PLAN_v1.json",
+      "bytes": 356,
+      "sha256": "62f0e9976624f70936a98011cccd3e8b21377dd1278f59808a3d0eed0d76e144"
+    },
+    {
+      "path": "0_kernel/registry/H0B1_ROLLBACK_MANIFEST.json",
+      "bytes": 60,
+      "sha256": "6075f5ad3d288a223647587734fbdfcde83536d89f6ab1c8ed57f669e2db79a9"
+    },
+    {
+      "path": "0_kernel/registry/H0B1_PRE_WRITE_SNAPSHOT.json",
+      "bytes": 61,
+      "sha256": "d93a51b120d7dac1f4dc0f51afc6e29b8424d06d146221d2ba961c35f2f09026"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/PERSISTENT_LEARNING_REGISTRY_PACKET_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "learning_events": {
+      "minItems": 1,
+      "type": "array"
+    },
+    "method_reliability_records": {
+      "minItems": 1,
+      "type": "array"
+    },
+    "promotion_rules": {
+      "minItems": 1,
+      "type": "array"
+    },
+    "result_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "mpp.persistent_learning_registry_packet.v1"
+    },
+    "stage": {
+      "const": "PERSISTENT_LEARNING"
+    }
+  },
+  "required": [
+    "schema_version",
+    "packet_id",
+    "stage",
+    "created_at",
+    "objective_id",
+    "source_monitor_packet_id",
+    "learning_events",
+    "method_reliability_records",
+    "promotion_rules",
+    "decay_policy",
+    "registry_summary",
+    "result_hash"
+  ],
+  "title": "MPP v3 Persistent Learning Registry Packet",
+  "type": "object"
+}

@@ -1,0 +1,10 @@
+{
+  "legacy_artifact": "1_governance/workflow_v6/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.json",
+  "status": "archive_only",
+  "redirect": "1_governance/workflow_v6/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.redirect.json",
+  "archive_path": "runtime/governance/legacy_archives/CROSS_LINK_GW_OS_KERNEL_HANDOFF_v1.json",
+  "successor_contract": "runtime/governance/contracts/unified_runtime_compatibility_contract_v1.json",
+  "machine_use_status": "archive_only_after_r3",
+  "created_utc": "2026-04-28T02:52:00Z",
+  "note": "Legacy cross-link memo removed from active runtime authority in R3. Use the successor compatibility contract for machine checks and the ADR/archive for rationale."
+}

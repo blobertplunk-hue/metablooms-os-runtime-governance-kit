@@ -1,0 +1,20 @@
+{
+  "artifact_type": "MB_CLI_COMMAND_SPEC_v13",
+  "commands": {
+    "evals --alignment-gate": {
+      "purpose": "run validator alignment gate and write Stage 4 promotion report"
+    },
+    "evals --check": {
+      "purpose": "prefer Stage 4 validator when present"
+    },
+    "evals --promotion": {
+      "purpose": "alias for Stage 4 promotion gate result"
+    }
+  },
+  "created_utc": "20260501T153500Z",
+  "inherits": [
+    "MB_CLI_COMMAND_SPEC_v11",
+    "MB_CLI_COMMAND_SPEC_v12"
+  ],
+  "stage_name": "IMPLEMENT_EVALS_TRACE_REVIEW_AND_VALIDATOR_ALIGNMENT_CARTRIDGE_STAGE_4_VALIDATOR_ALIGNMENT_GATE_PROMOTION"
+}

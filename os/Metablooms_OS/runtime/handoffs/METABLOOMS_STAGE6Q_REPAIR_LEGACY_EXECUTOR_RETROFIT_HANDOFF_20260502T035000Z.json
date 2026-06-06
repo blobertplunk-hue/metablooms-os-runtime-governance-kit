@@ -1,0 +1,14 @@
+{
+  "from_stage": "STAGE6Q_REPAIR_LEGACY_EXECUTOR_RETROFIT",
+  "must_load_receipt": "runtime/receipts/METABLOOMS_STAGE6Q_REPAIR_LEGACY_EXECUTOR_RETROFIT_RECEIPT_20260502T035000Z.json",
+  "next_alt_stage": "STAGE6Q_SOURCE_LEVEL_RETROFIT_PRIORITY_BATCH_1",
+  "next_best_stage": "STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS",
+  "notes": [
+    "Legacy executor audit findings are now bound to an active direct-invocation policy gate.",
+    "No full authority export was performed.",
+    "Future source-level retrofits can be prioritized without leaving direct execution ungoverned."
+  ],
+  "schema": "MetaBloomsStageHandoff_v1",
+  "status": "READY_FOR_NEXT_STAGE",
+  "timestamp_utc": "2026-05-02T03:20:13.217658Z"
+}

@@ -1,0 +1,42 @@
+{
+  "argv_redacted": [
+    "df",
+    "-P",
+    "/mnt/data"
+  ],
+  "argv_resolved": [
+    "/usr/bin/df",
+    "-P",
+    "/mnt/data"
+  ],
+  "artifact_type": "METABLOOMS_BOUNDED_COMMAND_DECISION_PACKET_v1",
+  "attempts": [
+    {
+      "attempt_index": 0,
+      "elapsed_ms": 6,
+      "returncode": 0,
+      "started_utc": "20260502T164453Z",
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_truncated": false,
+      "stdout": "Filesystem          1024-blocks   Used        Available Capacity Mounted on\nnone           9007199254740988 189872 9007199254551116       1% /\n",
+      "stdout_bytes": 143,
+      "stdout_sha256": "143c85cd8be35b9af055d2f295243158f83893f637a299d9cf59205029b50276",
+      "stdout_truncated": false,
+      "timeout_seconds": 10.0
+    }
+  ],
+  "created_utc": "20260502T164453Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision_packet_path": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/filesystem_safety_v1_filesystem_df_probe_20260502T164453Z_b3ac5b86ac43/decision_packet.json",
+  "failure_class": null,
+  "failure_event_path": null,
+  "operation_type": "filesystem_df_probe",
+  "policy_matches": [],
+  "pre_spawn_receipt_path": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/filesystem_safety_v1_filesystem_df_probe_20260502T164453Z_b3ac5b86ac43/pre_spawn_receipt.json",
+  "receipt_dir": "/mnt/data/Metablooms_OS/runtime/receipts/bounded_subprocess_wrapper_v1/caller_compat/filesystem_safety_v1_filesystem_df_probe_20260502T164453Z_b3ac5b86ac43",
+  "result_class": "ALLOW_SUCCESS",
+  "stage": "filesystem_safety_v1",
+  "total_elapsed_ms": 8
+}

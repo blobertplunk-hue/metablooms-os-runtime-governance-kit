@@ -1,0 +1,5 @@
+{
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "{\n  \"blocks\": [],\n  \"contract_sha256\": \"50b713eba53d9149764644466772d593209332fc090ff957b74bc48293e204b1\",\n  \"created_utc\": \"2026-04-28T03:21:05.471768+00:00\",\n  \"decision\": \"allow\",\n  \"decision_id\": \"TELEMETRY-CART-20260428T032105Z\",\n  \"fixture_results\": {\n    \"invalid_missing\": {\n      \"blocks\": [\n        \"missing top-level field: event_name\"\n      ],\n      \"decision\": \"deny\",\n      \"sha256\": \"4320a35ca403eece493ec29daa77c2dcf74d68815c133b43160fb0044152a423\"\n    },\n    \"invalid_signal\": {\n      \"blocks\": [\n        \"invalid signal.id\"\n      ],\n      \"decision\": \"deny\",\n      \"sha256\": \"1144a4e7d52451cfd53faa66183a9aa787a4c153327fb91b62b6f0ff8d28679d\"\n    },\n    \"valid\": {\n      \"blocks\": [],\n      \"decision\": \"allow\",\n      \"sha256\": \"c845b18e17bb3a1b9100fda58cbfef4c39cb72e6f4e6a90bdb9d29da14dd1135\"\n    }\n  },\n  \"gate_id\": \"TELEMETRY_CARTRIDGE_VALIDATION\",\n  \"manifest_sha256\": \"d18ca3e14df73f56b5e21de66b8f23942a7e88aeb118fa9a5fb555f8f577d481\",\n  \"warnings\": []\n}\n"
+}

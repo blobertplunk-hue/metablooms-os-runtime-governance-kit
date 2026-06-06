@@ -1,0 +1,24 @@
+{
+  "action_type": "filesystem_write",
+  "artifacts": {
+    "read_paths": [],
+    "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/bts_write_receipt_20260502T013908Z.decision.json",
+    "write_paths": [
+      "/mnt/data/Metablooms_OS/_bts/receipts/T1-STAGE6J_WRITE_NEW_CHAT_REHEARSAL_PACKET_filesystem_write_artifact-20260502T013908Z.json"
+    ]
+  },
+  "envelope_id": "bts_write_receipt_20260502T013908Z",
+  "intent": "Write BTS governance artifact: receipt",
+  "limits": {
+    "max_bytes": 487,
+    "max_files": 5,
+    "max_steps": 5,
+    "timeout_seconds": 30
+  },
+  "requested_at_utc": "2026-05-02T01:39:08.704495Z",
+  "requires_see": false,
+  "risk_tier": "medium",
+  "schema_version": "ToolCallEnvelope_v1",
+  "stage_id": "BTS_V4_OS_GATED_WRITE",
+  "tool_name": "BTS._atomic_write_gated"
+}

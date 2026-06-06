@@ -1,0 +1,27 @@
+{
+  "artifact_id": "example_fraction_html_activity_v1",
+  "artifact_type": "html_activity",
+  "created_utc": "2026-05-02T22:09:19Z",
+  "decision": "ALLOW",
+  "evidence": {
+    "checks": [
+      "json_schema_draft_2020_12",
+      "default_browser_style_block",
+      "design_system_required",
+      "mobile_first_required",
+      "wcag_2_2_aa_required",
+      "reduced_motion_required",
+      "render_static_human_review_lists_required",
+      "html_activity_google_sites_single_file_constraints"
+    ],
+    "payload_sha256": "65694a9efc3bf014d0e324ac447411e4090d2c07a27979b1c1f2091e56f47584",
+    "schema_path": "/mnt/data/Metablooms_OS/0_kernel/registry/visual_presentation_quality/visual_presentation_quality_declaration_schema_v1.json",
+    "schema_sha256": "cca7d35922c5de1071a6ccb4d596b6d186cfa1ced82348c35a6fa5c203c273be"
+  },
+  "ok": true,
+  "result_sha256": "8de6ab4645002cfbe18ae6ad3dd0f8acd3c6edd2066c3921f4ca6c81a4a623db",
+  "schema_version": "visual_presentation_quality_gate_decision.v1",
+  "validator_version": "visual_presentation_quality_gate_validator_v1",
+  "violations": [],
+  "warnings": []
+}

@@ -1,0 +1,174 @@
+{
+  "stage": "R5_GATE_REGISTRY_AND_WIRING_REPLACEMENT",
+  "created_utc": "2026-04-28T02:58:11Z",
+  "verdict": "PASS",
+  "external_evidence_summary": [
+    "OPA decision logs support auditable gate decision records with decision_id.",
+    "OpenTelemetry event conventions support stable names and attributes for later telemetry stages.",
+    "JSON Schema annotation docs reinforce separation of descriptive metadata from enforcement."
+  ],
+  "outputs": [
+    {
+      "role": "registry",
+      "path": "runtime/governance/registries/gate_registry_v1.json",
+      "sha256": "9c13654151b2e6dfb2d6ae3a5031a918e5d6f12dfd2a62158af3d6802b901e72",
+      "size_bytes": 12501
+    },
+    {
+      "role": "schema",
+      "path": "runtime/governance/schemas/gate_registry_schema_v1.json",
+      "sha256": "2a691127f6eef4e5acd5799e1828699388a9062c485e559563b34cd8a82123bb",
+      "size_bytes": 2645
+    },
+    {
+      "role": "loader",
+      "path": "runtime/governance/load_gate_registry_v1.py",
+      "sha256": "cb191f82e9c7902985c62f0cc8ab0ef23f665038b4c7726aaafc28ca740a19fe",
+      "size_bytes": 893
+    },
+    {
+      "role": "validator",
+      "path": "0_kernel/scripts/assert_gate_registry_integrity_v1.py",
+      "sha256": "2cd9db87ede5b4071f4f8be852d3bcfa0fbc2d1169d5401f823b2e0f2e7410fa",
+      "size_bytes": 3654
+    },
+    {
+      "role": "alias",
+      "path": "0_kernel/scripts/validate_gate_registry_v1.py",
+      "sha256": "ff51cc04da4d64740a988f8de82b329f8433cfa69f0bb5ed2277cc51e1cbf68b",
+      "size_bytes": 462
+    },
+    {
+      "role": "redirects",
+      "path": "runtime/governance/contracts/legacy_artifact_redirects_v1.json",
+      "sha256": "60a4dc2ab73c455220419f19f3cb3d8346d392de1a2f5af484644d9468e04bff",
+      "size_bytes": 3017
+    },
+    {
+      "role": "valid_fixture",
+      "path": "runtime/evals/governance_regression_suite_v1/fixtures/gate_registry_v1.valid.json",
+      "sha256": "9c13654151b2e6dfb2d6ae3a5031a918e5d6f12dfd2a62158af3d6802b901e72",
+      "size_bytes": 12501
+    },
+    {
+      "role": "bad_fixture",
+      "path": "runtime/evals/governance_regression_suite_v1/fixtures/gate_registry_v1.enabled_missing_entrypoint.json",
+      "sha256": "db901e5d33530f4f97c54255f01c50111ea445848a9a789b444325214d084470",
+      "size_bytes": 12486
+    },
+    {
+      "role": "live_report",
+      "path": "runtime/evals/governance_regression_suite_v1/reports/R5_gate_registry_validation_live_20260428T025601Z.json",
+      "sha256": "37d5d36d16d9fffe3eceaee231d6a9b2d99a37a4a65a3c76727856facaf6545c",
+      "size_bytes": 382
+    },
+    {
+      "role": "valid_report",
+      "path": "runtime/evals/governance_regression_suite_v1/reports/R5_gate_registry_validation_fixture_valid_20260428T025601Z.json",
+      "sha256": "bb15f3ea0646961e8da8c66d4b4bbe1ecd6eac702e4f6850228b2f2ceda2c33c",
+      "size_bytes": 412
+    },
+    {
+      "role": "bad_report",
+      "path": "runtime/evals/governance_regression_suite_v1/reports/R5_gate_registry_validation_fixture_bad_20260428T025601Z.json",
+      "sha256": "466b07d8ed04a7d8771d342074e55e411c62554b98719803675e3c48c95a367b",
+      "size_bytes": 523
+    },
+    {
+      "role": "loader_report",
+      "path": "runtime/evals/governance_regression_suite_v1/reports/R5_gate_registry_loader_20260428T025601Z.json",
+      "sha256": "a70e05ffd06e0000e727df74e371d63d7a71d050159d18e957c7f2639323bae7",
+      "size_bytes": 83
+    },
+    {
+      "role": "alias_report",
+      "path": "runtime/evals/governance_regression_suite_v1/reports/R5_gate_registry_alias_20260428T025601Z.json",
+      "sha256": "243dfa294014bda71ebdb2d874588d65bfbb1c658c9a2bddf02896db245bd79c",
+      "size_bytes": 382
+    },
+    {
+      "role": "decision_log",
+      "path": "runtime/governance/decision_logs/DECISION_LOG_R5_20260428T025601Z.json",
+      "sha256": "17381836044b3427367e604e526af8c1708d4ecd5486227ee4ade35e3966f7cc",
+      "size_bytes": 2045
+    }
+  ],
+  "repair_receipts": [
+    {
+      "path": "receipts/refactor_program/R5_GATE_FIELD_TYPE_REPAIR_20260428T025750Z.json",
+      "sha256": "3b5a594c1cc307d07f5e489aba2240240786634f3d4444023153535cc599fcf2",
+      "size_bytes": 599
+    },
+    {
+      "path": "receipts/refactor_program/R5_VALIDATOR_REPAIR_20260428T025625Z.json",
+      "sha256": "b5b11f39fc5955e9eea7e2eedc6e68b8aa3cc7d4199ecdeef037eb0a34654cd6",
+      "size_bytes": 310
+    }
+  ],
+  "gate_summary": {
+    "gate_count": 16,
+    "enabled_count": 13,
+    "deferred": [
+      "P0A_EXTERNAL_REUSE_SCAN",
+      "P0PY_PYTHON_HEALTH"
+    ],
+    "retired": [
+      "MEMORY_SYNC_VALIDATION"
+    ]
+  },
+  "checks": [
+    {
+      "check": "live_registry_validation_passes",
+      "pass": true
+    },
+    {
+      "check": "valid_fixture_passes",
+      "pass": true
+    },
+    {
+      "check": "bad_fixture_fails",
+      "pass": true
+    },
+    {
+      "check": "loader_reads_registry",
+      "pass": true
+    },
+    {
+      "check": "alias_validator_passes",
+      "pass": true
+    },
+    {
+      "check": "enabled_gates_have_existing_entrypoints",
+      "pass": true,
+      "missing_enabled": []
+    },
+    {
+      "check": "p0a_deferred_until_r6",
+      "pass": true
+    },
+    {
+      "check": "p0py_deferred_until_r8",
+      "pass": true
+    },
+    {
+      "check": "legacy_memory_sync_retired",
+      "pass": true
+    },
+    {
+      "check": "all_decision_log_required_fields_boolean",
+      "pass": true
+    },
+    {
+      "check": "cool6_redirect_archive_only_after_r5",
+      "pass": true
+    }
+  ],
+  "no_gap_assertions": [
+    "COOL_6 plan is no longer a live wiring authority.",
+    "Every enabled gate resolves to an existing entrypoint.",
+    "Deferred gates name successor stages and are not enabled prematurely.",
+    "Legacy memory sync validation is retired in favor of session-state export validation.",
+    "Registry validator and compatibility wrapper both run under python3 -S.",
+    "Validator now type-checks boolean gate fields to prevent optional-argument misbinding regressions."
+  ]
+}

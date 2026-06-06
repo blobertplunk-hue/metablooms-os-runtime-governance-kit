@@ -1,0 +1,97 @@
+{
+  "artifact_sha256": "5f332fd5a6658163023ec4ba7897d2dfeae408a8bcbe462e11aef4968129146c",
+  "artifact_under_review": "/mnt/data/Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html",
+  "automated_checks": {
+    "chromium_browser_render": "BLOCKED_BY_SANDBOX_TOOL_RELIABILITY",
+    "tracker_static_smoke": "PASS",
+    "vpq_invalid_default_browser": "DENY",
+    "vpq_valid_html": "ALLOW",
+    "vpq_valid_operator_tracker": "ALLOW",
+    "weasyprint_render_proxy": "PASS"
+  },
+  "browser_attempts": {
+    "chromium_dump_dom": {
+      "command_family": "chromium --headless --dump-dom",
+      "evidence": [
+        "render_dom/chromium_dump_dom.stderr",
+        "render_dom/operator_tracker_dump_dom.html"
+      ],
+      "observed": "DOM output file remained empty; Chromium emitted sandbox/dbus/zygote errors and did not complete reliably.",
+      "status": "FAILED_OR_HUNG"
+    },
+    "chromium_screenshot": {
+      "command_family": "chromium --headless --screenshot",
+      "evidence": [
+        "screenshots/desktop.stderr",
+        "screenshots/test_single.stderr"
+      ],
+      "observed": "Chromium timed out under multiple flag sets, including single-process/no-zygote.",
+      "status": "FAILED_OR_TIMED_OUT"
+    },
+    "playwright_cli": {
+      "command_family": "playwright screenshot",
+      "evidence": [
+        "screenshots/pw_desktop.stderr",
+        "screenshots/pw_tablet.stderr",
+        "screenshots/pw_mobile.stderr",
+        "screenshots/pw_channel.stderr"
+      ],
+      "observed": "Playwright CLI is installed but its browser bundle is not installed in the runtime cache.",
+      "status": "FAILED_BROWSER_NOT_INSTALLED"
+    },
+    "weasyprint_pdf_png_proxy": {
+      "command_family": "weasyprint HTML->PDF plus PDF render to PNG",
+      "evidence": [
+        "weasy_render/operator_tracker_weasyprint.pdf",
+        "weasy_render/png/page-1.png",
+        "weasy_render/png/page-2.png",
+        "weasy_render/png/page-3.png",
+        "WEASYPRINT_RENDER_SMOKE.json"
+      ],
+      "observed": "Renderer proxy generated nonblank PDF and PNG render pages.",
+      "status": "PASS"
+    }
+  },
+  "created_utc": "2026-05-02T22:15:10Z",
+  "human_visual_review_prompts": [
+    {
+      "method": "5-second test",
+      "prompt": "After viewing the tracker briefly, can the operator tell whether the OS is bootable, what stage is active, and what decision comes next?"
+    },
+    {
+      "method": "first-click / first-action review",
+      "prompt": "Is the next safe action visually obvious without reading the whole page?"
+    },
+    {
+      "method": "preference/professionalism review",
+      "prompt": "Would this surface make the teacher/operator look prepared, credible, and intentional if shown to another adult?"
+    },
+    {
+      "method": "accessibility spot review",
+      "prompt": "Can status be understood without color alone, and are focus/reduced-motion/mobile requirements visible in the implementation?"
+    },
+    {
+      "method": "mobile glance review",
+      "prompt": "At phone width, do the status cards stack cleanly and preserve the main answer above the fold?"
+    }
+  ],
+  "limitations": [
+    "No true Chromium/Playwright screenshot could be completed in this sandbox turn; WeasyPrint/PDF/PNG render is an independent proxy, not a browser-layout substitute."
+  ],
+  "promotion_decision": {
+    "required_before_full_authority_export": "A future browser-backed render proof should be run when Chromium or Playwright browser binaries are reliable; current stage includes proxy render proof plus static gate checks.",
+    "stage4_local_promotion": "ALLOW_WITH_BROWSER_RENDER_LIMITATION"
+  },
+  "render_artifacts": {
+    "contact_sheet": "weasy_render/operator_tracker_render_contact_sheet.png",
+    "proxy_pdf": "weasy_render/operator_tracker_weasyprint.pdf",
+    "proxy_png_pages": [
+      "weasy_render/png/page-1.png",
+      "weasy_render/png/page-2.png",
+      "weasy_render/png/page-3.png"
+    ]
+  },
+  "schema_version": "visual_review_packet.v1",
+  "stage": "VISUAL_PRESENTATION_QUALITY_GATE_STAGE4_RENDER_SMOKE_AND_VISUAL_REVIEW_PACKET",
+  "verdict": "PASS_WITH_BROWSER_RENDER_LIMITATION"
+}

@@ -1,0 +1,13 @@
+{
+  "artifact_type": "MB_PRE_EXPORT_CONTAINMENT_REQUIREMENTS.v1",
+  "created_utc": "20260502T183345Z",
+  "required_members": [
+    "Metablooms_OS/OPEN_OPERATOR_VISUAL_TRACKER.html",
+    "Metablooms_OS/runtime/state/operator_surface/EVIDENCE_QUERY_UI_INTERACTIONS_LATEST.json",
+    "Metablooms_OS/runtime/state/operator_surface/EVIDENCE_RESULT_PINNING_MODEL_LATEST.json",
+    "Metablooms_OS/runtime/traces/observability/TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_VALIDATION_LATEST.json",
+    "Metablooms_OS/runtime/handoffs/observability/OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_HANDOFF_LATEST.json",
+    "Metablooms_OS/runtime/traces/observability/OBSERVABILITY_STAGE13_PRE_EXPORT_CONTAINMENT_REQUIREMENTS_LATEST.json"
+  ],
+  "stage_id": "OBSERVABILITY_TRACE_SPAN_LEDGER_STAGE13_EVIDENCE_QUERY_UI_INTERACTIONS_AND_RESULT_PINNING"
+}

@@ -1,0 +1,103 @@
+{
+  "version": "1.0",
+  "created_at": 1777036920.3916025,
+  "status": "active_spec",
+  "contract_id": "SEE_PACKET_VALIDATOR_CONTRACT_v1",
+  "future_script": "0_kernel/scripts/see_packet_validator_v1.py",
+  "schema": "0_kernel/schemas/SEE_PACKET_SCHEMA_v1.json",
+  "purpose": "Executable validator for Search/Evidence/External-research packets.",
+  "implementation_stage": "STAGE_D2_SEE_PACKET_VALIDATOR_IMPLEMENTATION",
+  "required_cli_args": [
+    "--packet",
+    "--packet-file",
+    "--schema",
+    "--receipt-dir",
+    "--json",
+    "--strict"
+  ],
+  "required_packet_fields": [
+    "original_request",
+    "research_trigger",
+    "query_plan",
+    "web_run_evidence",
+    "sources",
+    "claim_source_bindings",
+    "gaps_and_contradictions",
+    "synthesis",
+    "limitations",
+    "see_verdict"
+  ],
+  "must_reject": [
+    "missing_web_run_evidence",
+    "web_run_called_false",
+    "call_count_zero",
+    "no_sources",
+    "claim_without_source_binding",
+    "source_binding_references_missing_source",
+    "research_trigger_required_false",
+    "summary_without_synthesis",
+    "invalid_json",
+    "receipt_write_failed"
+  ],
+  "required_outputs": [
+    "validation_receipt",
+    "schema_validation",
+    "semantic_validation",
+    "source_binding_validation",
+    "web_run_evidence_validation",
+    "verdict",
+    "issues"
+  ],
+  "receipt_output": {
+    "directory": "0_kernel/registry/see_validation_receipts",
+    "name_pattern": "SEE_VALIDATION_RECEIPT_<timestamp>.json"
+  },
+  "return_codes": {
+    "0": "validation passes",
+    "1": "packet validation fails",
+    "2": "packet or schema parse failure",
+    "4": "receipt write failure"
+  },
+  "required_tests_for_D2": [
+    {
+      "id": "valid_full_see_packet",
+      "expected": "PASS"
+    },
+    {
+      "id": "missing_web_run_evidence",
+      "expected": "FAIL",
+      "expected_issue": "web_run"
+    },
+    {
+      "id": "web_run_called_false",
+      "expected": "FAIL",
+      "expected_issue": "web_run_called_false"
+    },
+    {
+      "id": "no_sources",
+      "expected": "FAIL",
+      "expected_issue": "sources"
+    },
+    {
+      "id": "claim_references_missing_source",
+      "expected": "FAIL",
+      "expected_issue": "missing_source"
+    },
+    {
+      "id": "invalid_json_file",
+      "expected": "FAIL",
+      "expected_issue": "parse"
+    },
+    {
+      "id": "packet_file_input_valid",
+      "expected": "PASS"
+    }
+  ],
+  "runaway_turn_guard": {
+    "D1_spec_only": true,
+    "D2_implementation_only": true,
+    "no_export_until_D3_or_later": true,
+    "no_cleanup_in_D1_or_D2": true
+  },
+  "next_stage": "STAGE_D2_SEE_PACKET_VALIDATOR_IMPLEMENTATION"
+}

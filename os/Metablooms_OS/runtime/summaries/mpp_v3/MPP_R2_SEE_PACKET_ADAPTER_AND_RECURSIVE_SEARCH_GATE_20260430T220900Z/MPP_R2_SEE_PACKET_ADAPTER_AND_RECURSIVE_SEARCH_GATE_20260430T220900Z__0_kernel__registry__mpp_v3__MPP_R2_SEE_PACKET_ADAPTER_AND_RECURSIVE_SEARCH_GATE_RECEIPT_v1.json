@@ -1,0 +1,139 @@
+{
+  "artifact_manifest": [
+    {
+      "exists": true,
+      "path": "0_kernel/tools/mpp_v3/see_packet_adapter_recursive_gate_v1.py",
+      "sha256": "2317fe1a88ecbc99599a7e47c8f1acacfa21f4e53941e7bae1122382e5d24cc7",
+      "size": 14347
+    },
+    {
+      "exists": true,
+      "path": "0_kernel/tests/mpp_v3/test_see_packet_adapter_recursive_gate_v1.py",
+      "sha256": "f4f89365d42e6caf06df7aead91d96545f6626d2f9ed06504b1b24d2a17de9ee",
+      "size": 2252
+    },
+    {
+      "exists": true,
+      "path": "0_kernel/tests/mpp_v3/fixtures/research_planner_valid_for_see_adapter.json",
+      "sha256": "e9d68c4c3fce15361bdc1b3e2f1d502d0532a8a718ff3189902747366fa087c8",
+      "size": 2232
+    },
+    {
+      "exists": true,
+      "path": "0_kernel/tests/mpp_v3/fixtures/web_evidence_valid_for_see_adapter.json",
+      "sha256": "d12b77ea8469d4dcae21b2a1af81cdf140e57b24f310fa8509849b26d2476adf",
+      "size": 1946
+    },
+    {
+      "exists": true,
+      "path": "0_kernel/tests/mpp_v3/fixtures/web_evidence_invalid_missing_web_run.json",
+      "sha256": "250a9b3de9d4ba985072ac1376fb6cec5220fff42afeaf231debcf7303ff4d68",
+      "size": 287
+    },
+    {
+      "exists": true,
+      "path": "0_kernel/registry/mpp_v3/see_adapter_test_outputs/SEE_PACKET_ADAPTER_VALID_OUTPUT_v1.json",
+      "sha256": "74a541016de8bdd149d65229ce58a4e277617dbd3368426cf2a8cc2cc5500584",
+      "size": 3303
+    },
+    {
+      "exists": true,
+      "path": "0_kernel/registry/mpp_v3/see_adapter_test_outputs/SEE_RECURSIVE_GATE_VALID_REPORT_v1.json",
+      "sha256": "90da500e3913e4dc941ef5f5e2506e8fc1151a421d22e6abece30a91ec67c203",
+      "size": 633
+    },
+    {
+      "exists": true,
+      "path": "0_kernel/registry/mpp_v3/see_adapter_test_outputs/SEE_RECURSIVE_GATE_INVALID_REPORT_v1.json",
+      "sha256": "f05fb8b584bb7ad081cb4ffeaebbbdd8dbd21ef73e24bd64089d0a0412b93fbf",
+      "size": 2377
+    },
+    {
+      "exists": true,
+      "path": "0_kernel/registry/mpp_v3/see_adapter_test_outputs/SEE_PACKET_ADAPTER_CLI_VALID_OUTPUT_v1.json",
+      "sha256": "a339ba3b77a52d88e42fae3b5c554733db0463cb6ce8614368a2b9ef26c16822",
+      "size": 3303
+    },
+    {
+      "exists": true,
+      "path": "0_kernel/registry/mpp_v3/see_adapter_test_outputs/SEE_RECURSIVE_GATE_CLI_VALID_REPORT_v1.json",
+      "sha256": "8564a4b94a84b709403445a2f65493ddcd61f0e3a326aef34884d3029e7a2e90",
+      "size": 633
+    },
+    {
+      "exists": true,
+      "path": "0_kernel/registry/mpp_v3/see_adapter_test_outputs/SEE_PACKET_ADAPTER_CLI_INVALID_OUTPUT_v1.json",
+      "sha256": "8515a5f6852297deb603d7a0326bcdc3dadaafed96dd5e6e586a50faa340c8a9",
+      "size": 1482
+    },
+    {
+      "exists": true,
+      "path": "0_kernel/registry/mpp_v3/see_adapter_test_outputs/SEE_RECURSIVE_GATE_CLI_INVALID_REPORT_v1.json",
+      "sha256": "bcad05a9afdb4ff8deacaad2e93407a672e77b23fbe7089b0a050e936d64e105",
+      "size": 2377
+    },
+    {
+      "exists": true,
+      "path": "0_kernel/registry/mpp_v3/see_adapter_test_outputs/SEE_ADAPTER_CLI_SMOKE_stdout.json",
+      "sha256": "b031c034554ca557ae04582b7c25127f973dee2c04714b671f62c5fa7de49eb2",
+      "size": 574
+    },
+    {
+      "exists": true,
+      "path": "0_kernel/registry/mpp_v3/see_adapter_test_outputs/SEE_ADAPTER_CLI_INVALID_stdout.json",
+      "sha256": "7f0d867452101e747f65a8f197a051f065a8ebbe0011f98a35505df25e46a6dd",
+      "size": 2318
+    }
+  ],
+  "created_at": "2026-04-30T21:50:22Z",
+  "external_evidence": [
+    {
+      "claim": "JSON Schema 2020-12 is current and appropriate for packet schema validation.",
+      "source_ref": "turn712934search0"
+    },
+    {
+      "claim": "JSON Schema Draft 2020-12 specifies validation and dialect mechanisms.",
+      "source_ref": "turn712934search1"
+    },
+    {
+      "claim": "SLSA provenance emphasizes artifact provenance metadata distribution/verification.",
+      "source_ref": "turn712934search3"
+    }
+  ],
+  "implemented": [
+    "see_packet_adapter_recursive_gate_v1.py",
+    "valid and invalid web evidence fixtures",
+    "unit smoke test",
+    "CLI smoke outputs",
+    "gate reports"
+  ],
+  "next_stage": "MPP_R3_NORMALIZE_EVIDENCE_AND_CE_BRIDGE",
+  "objective": "Bind MPP v3 SEE to existing OS SEE packet validator and add recursive search gate.",
+  "runtime_root": "/mnt/data/mbos_audit_extract_4945/Metablooms_OS",
+  "schema_version": "metablooms.stage_receipt.v1",
+  "stage": "MPP_R2_SEE_PACKET_ADAPTER_AND_RECURSIVE_SEARCH_GATE",
+  "status": "PASS",
+  "validation": {
+    "cli_invalid_gate": "FAIL",
+    "cli_valid_gate": "PASS",
+    "existing_see_validator_verdict": "PASS",
+    "invalid_issue_codes": [
+      "MIN_SOURCE_COUNT",
+      "MIN_DOMAIN_DIVERSITY",
+      "CLAIM_BINDING_REQUIRED",
+      "WEBRUN_REQUIRED",
+      "RECURSION_ACCOUNTING_REQUIRED",
+      "OS_SEE_VALIDATOR",
+      "OS_SEE_VALIDATOR",
+      "OS_SEE_VALIDATOR",
+      "OS_SEE_VALIDATOR",
+      "OS_SEE_VALIDATOR",
+      "OS_SEE_VALIDATOR",
+      "OS_SEE_VALIDATOR",
+      "OS_SEE_VALIDATOR"
+    ],
+    "unit_smoke": "PASS",
+    "valid_observed_domain_diversity": 2,
+    "valid_observed_source_count": 3
+  }
+}

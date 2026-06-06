@@ -1,0 +1,27 @@
+{
+  "artifact_type": "SEE_RESEARCH_ARTIFACT_v1",
+  "created_utc": "2026-04-30T19:57:32Z",
+  "sources": [
+    {
+      "claim": "Governance is lifecycle-spanning through Govern, Map, Measure, Manage.",
+      "source": "NIST AI RMF",
+      "url": "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/"
+    },
+    {
+      "claim": "Guardrails can miss handoff/tool pathways if scoped too narrowly.",
+      "source": "OpenAI Agents SDK guardrails",
+      "url": "https://openai.github.io/openai-agents-python/guardrails/"
+    },
+    {
+      "claim": "Tracing should cover tool calls, handoffs, guardrails, and custom events.",
+      "source": "OpenAI Agents SDK tracing",
+      "url": "https://openai.github.io/openai-agents-python/tracing/"
+    },
+    {
+      "claim": "Planning, tools, memory, and orchestration are agentic threat surfaces.",
+      "source": "OWASP Agentic AI threats",
+      "url": "https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/"
+    }
+  ],
+  "stage_id": "H0C1_TOOL_SELECTION_EVIDENCE_ROUTER_CONTINUED"
+}

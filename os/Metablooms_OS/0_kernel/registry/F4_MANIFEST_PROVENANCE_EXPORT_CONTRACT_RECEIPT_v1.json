@@ -1,0 +1,59 @@
+{
+  "version": "1.0",
+  "created_at": 1777062152.7639484,
+  "stage": "F4_MANIFEST_PROVENANCE_EXPORT_CONTRACT",
+  "status": "complete",
+  "inputs": {
+    "f3_handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F3_TO_F4_HANDOFF_v1.json",
+    "f3_receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F3_TRANSACTIONAL_STAGE_RUNNER_CONTRACT_RECEIPT_v1.json",
+    "runner_contract": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/TRANSACTIONAL_STAGE_RUNNER_CONTRACT_v1.json",
+    "stage_dag": "/mnt/data/Metablooms_OS_refined/0_kernel/pipeline/STAGE_DAG_v1.json",
+    "stage_state_ledger": "/mnt/data/Metablooms_OS_refined/0_kernel/state/STAGE_STATE_LEDGER_v1.json"
+  },
+  "outputs": {
+    "export_manifest_schema": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/EXPORT_MANIFEST_SCHEMA_v1.json",
+    "export_provenance_schema": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/EXPORT_PROVENANCE_SCHEMA_v1.json",
+    "export_contract": "/mnt/data/Metablooms_OS_refined/0_kernel/schemas/MANIFEST_PROVENANCE_EXPORT_CONTRACT_v1.json",
+    "export_doc": "/mnt/data/Metablooms_OS_refined/0_kernel/docs/MANIFEST_PROVENANCE_EXPORT_CONTRACT_v1.md",
+    "export_template_manifest": "/mnt/data/Metablooms_OS_refined/0_kernel/pipeline/EXPORT_MANIFEST_TEMPLATE_v1.json",
+    "export_template_provenance": "/mnt/data/Metablooms_OS_refined/0_kernel/pipeline/EXPORT_PROVENANCE_TEMPLATE_v1.json",
+    "receipt": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F4_MANIFEST_PROVENANCE_EXPORT_CONTRACT_RECEIPT_v1.json",
+    "handoff": "/mnt/data/Metablooms_OS_refined/0_kernel/registry/F4_TO_F5_HANDOFF_v1.json"
+  },
+  "checks": {
+    "required_paths_present": true,
+    "git_clean_before_f4": true,
+    "git_fsck_clean_before_f4": true,
+    "f3_runner_prechecks": {
+      "f3_handoff_ready": true,
+      "f3_receipt_passed": true,
+      "f4_declared_target": true,
+      "runner_contract_active": true,
+      "pointer_active": true,
+      "dag_active": true,
+      "ledger_active": true,
+      "ledger_latest_pass_is_f3": true
+    }
+  },
+  "git_head_at_contract_write": "c64e4ae852346dd14e1cd3882dd3cff04ef370ff",
+  "runaway_turn_guard": {
+    "contract_only": true,
+    "export_performed": false,
+    "restore_performed": false,
+    "cleanup_performed": false
+  },
+  "verdict": "PASS",
+  "next_improvement_task": "F5 \u2014 Restore Ladder + Mode-Normalization Proof",
+  "why_next": "Export provenance requirements are now defined; next we need to prove restore selection and filemode normalization behavior.",
+  "remaining_work": [
+    "F5 \u2014 Restore Ladder + Mode-Normalization Proof",
+    "F6 \u2014 Blocked Receipt Handling Rule",
+    "F7 \u2014 Stable Export + Boot Recovery Proof",
+    "Return to E4A\u2013E5D"
+  ],
+  "progress_estimate": {
+    "stages_remaining_before_return_to_E4": 3,
+    "major_arcs_remaining_after_recovery_arc": 2
+  },
+  "next_correct_command": "EXECUTE F5 \u2014 RESTORE LADDER + MODE-NORMALIZATION PROOF"
+}

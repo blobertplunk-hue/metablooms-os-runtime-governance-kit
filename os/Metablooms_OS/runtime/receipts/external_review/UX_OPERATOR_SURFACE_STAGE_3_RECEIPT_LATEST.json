@@ -1,0 +1,18 @@
+{
+  "artifact_type": "UX_OPERATOR_SURFACE_STAGE_3_RECEIPT_v1",
+  "changes": [
+    "Added MB_STAGE_RUNNER_CONTRACT_v1",
+    "Added MB_TRACKER_PREVIEW_SPEC_v1",
+    "Added mb tracker command",
+    "Upgraded run-stage work orders with thread_id/checkpoint_id",
+    "Added stage_runner_v1 contract adapter",
+    "Added Stage 3 validator and quickstart"
+  ],
+  "created_utc": "20260501T111500Z",
+  "fail_closed_notes": [
+    "stage_runner_v1 does not claim arbitrary execution",
+    "run-stage --execute returns contract-only block without cartridge_executor_v1.py"
+  ],
+  "stage": "IMPLEMENT_UX_OPERATOR_SURFACE_AND_CRITICAL_PATH_SIMPLIFICATION_CARTRIDGE_STAGE_3_STAGE_RUNNER_CONTRACT_AND_TRACKER_PREVIEW",
+  "verdict": "PASS"
+}

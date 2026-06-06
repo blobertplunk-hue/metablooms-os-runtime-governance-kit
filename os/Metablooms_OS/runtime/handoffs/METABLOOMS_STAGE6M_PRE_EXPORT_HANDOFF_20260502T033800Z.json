@@ -1,0 +1,8 @@
+{
+  "continue_prompt": "Continue Stage6M export with BTS-wrapped Node ZIP profile, then verify sidecar, CRC, fresh extract, runtime starter, portable boot, boot executor, delivery guard, and stop.",
+  "planned_bootable_full_os_authority_zip": "/mnt/data/METABLOOMS_OS_STAGE6M_FULL_AUTHORITY_AFTER_POST_TOOL_GATE_BOOTABLE_FULL_OS_AUTHORITY_20260502T033800Z.zip",
+  "schema": "MetaBloomsStageHandoff_v1",
+  "stage_id": "STAGE6M_FULL_AUTHORITY_EXPORT_AFTER_POST_TOOL_GATE",
+  "status": "PRE_EXPORT_READY",
+  "timestamp_utc": "2026-05-02T02:13:11.819275Z"
+}

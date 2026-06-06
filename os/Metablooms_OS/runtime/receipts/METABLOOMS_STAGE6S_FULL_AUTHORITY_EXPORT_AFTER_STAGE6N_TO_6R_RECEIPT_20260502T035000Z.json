@@ -1,0 +1,31 @@
+{
+  "authority_label": "BOOTABLE FULL OS AUTHORITY ZIP \u2014 Stage 6S",
+  "authority_zip": "/mnt/data/METABLOOMS_OS_STAGE6S_FULL_AUTHORITY_AFTER_STAGE6N_TO_6R_BOOTABLE_FULL_OS_AUTHORITY_20260502T035000Z.zip",
+  "authority_zip_sha256_resolution": "external_sidecar_required_after_zip_close_no_internal_hash",
+  "authority_zip_sidecar": "/mnt/data/METABLOOMS_OS_STAGE6S_FULL_AUTHORITY_AFTER_STAGE6N_TO_6R_BOOTABLE_FULL_OS_AUTHORITY_20260502T035000Z.zip.sha256",
+  "final_external_proof": "/mnt/data/METABLOOMS_STAGE6S_FULL_AUTHORITY_EXPORT_FINAL_PROOF_20260502T035000Z.json",
+  "fresh_extract_proof_required": true,
+  "governance_path": [
+    "Tool Universe Resolver",
+    "BTS_TOOL_EVALUATION",
+    "BTS_TOOL_SELECTION",
+    "pre_tool_action_gate_v1",
+    "BTS-wrapped executor",
+    "post_tool_result_validation_v1",
+    "BTS_COMMIT"
+  ],
+  "included_prior_stages": [
+    "STAGE6N",
+    "STAGE6O",
+    "STAGE6P",
+    "STAGE6Q",
+    "STAGE6Q_REPAIR",
+    "STAGE6R"
+  ],
+  "schema": "MetaBloomsStageReceipt_v1",
+  "stage": "STAGE6S_FULL_AUTHORITY_EXPORT_AFTER_STAGE6N_TO_6R",
+  "status": "PASS_INTERNAL_EXPORT_METADATA_FINALIZED",
+  "timestamp_utc": "2026-05-02T03:33:19Z",
+  "verdict": "PASS_WITH_EXTERNAL_SIDEcar_PROOF_REQUIRED",
+  "warning": "This internal receipt intentionally omits the final ZIP SHA-256 because that value is resolved by the external sidecar and external final proof after ZIP close."
+}

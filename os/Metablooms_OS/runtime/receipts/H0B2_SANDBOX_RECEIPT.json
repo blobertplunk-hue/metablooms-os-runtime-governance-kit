@@ -1,0 +1,8 @@
+{
+  "export_latency_controls": true,
+  "layout_drift_repaired": true,
+  "python_policy": "python3 -S required and used for patch/test scripts",
+  "stage": "H0B2_SANDBOX_TOOL_GOVERNANCE_BOOTSTRAP_AND_LAYOUT_DRIFT_REPAIR",
+  "status": "PASS",
+  "timestamp_utc": "2026-04-30T18:24:58Z"
+}

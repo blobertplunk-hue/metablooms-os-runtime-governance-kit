@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "artifact_id": "WORKFLOW_GENERALIZATION_ENGINE_POLICY_v1",
+  "purpose": "Convert repeated chat-level troubleshooting, improvement, and preference patterns into durable MetaBlooms OS behavior so future work starts from learned methods rather than requiring Robert to re-explain the process.",
+  "default_scope": "all_metablooms_governed_workflows",
+  "primary_user_mode": "android_phone_chatgpt_sandbox_first",
+  "secondary_modes": ["pc_powershell7", "ci_browser_replay", "github_repo"],
+  "principles": [
+    {
+      "name": "artifact_backed_learning_only",
+      "rule": "A workflow lesson is not considered learned until represented by artifacts such as policies, schemas, validators, fixtures, ledgers, routing metadata, templates, or executable resolvers. Chat-only memory is insufficient."
+    },
+    {
+      "name": "generalize_after_repair",
+      "rule": "When a workflow repairs a failure, the system must classify the failure class, identify the reusable method improvement, and decide whether to instantiate a persistent prevention or routing artifact."
+    },
+    {
+      "name": "sandbox_first_plus_enhancement_lane",
+      "rule": "For ordinary Robert workflows, the ChatGPT sandbox path is primary. PC/PowerShell/CI paths may be generated as enhancement lanes but must not block sandbox progress unless the artifact is explicitly production-critical."
+    },
+    {
+      "name": "automatic_future_invocation",
+      "rule": "If a learned method applies to a future task class, the relevant cartridge, gate, resolver, or checklist must be auto-invoked by routing metadata rather than waiting for Robert to name it again."
+    },
+    {
+      "name": "honesty_tier_labels",
+      "rule": "When capability is partial, the OS must label the evidence tier honestly, such as sandbox_render_proxy, static_only_preflight, or true_browser_screenshot, instead of claiming stronger proof."
+    },
+    {
+      "name": "minimum_valid_artifact_set",
+      "rule": "A generalized lesson should normally include a policy or contract, schema if structured data is involved, fixtures/evals, validator or resolver when executable, reliability or failure ledger entry, receipt, handoff, and export-prep binding when it affects future outputs."
+    }
+  ],
+  "workflow_pattern": [
+    "observe_repeated_user_friction_or_tool_failure",
+    "root_cause_and_failure_classification",
+    "extract_general_rule",
+    "choose_artifact_form",
+    "implement_smallest_durable_change",
+    "add_fixtures_or_replay_examples",
+    "verify_locally",
+    "bind_to_router_or_gate",
+    "write_receipt_and_handoff",
+    "include_in_next_full_export"
+  ],
+  "promotion_blockers": [
+    "lesson_described_only_in_chat",
+    "no_fixture_or_counterexample_for_repeated_failure",
+    "no_future_invocation_binding_for_recurring_task_class",
+    "pc_only_solution_for_sandbox_primary_workflow_without_sandbox_fallback",
+    "stronger_claim_than_evidence_tier_supports"
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "schema_version": "1.0",
+  "artifact_id": "WORKFLOW_LESSON_LEDGER_SCHEMA_v1",
+  "purpose": "Defines cumulative, artifact-backed lessons that can route future MetaBlooms workflows and transcript imports only when the proposed method improves on current OS behavior.",
+  "required_fields": [
+    "lesson_id",
+    "source",
+    "evidence",
+    "baseline_comparison",
+    "adoption_decision",
+    "artifactization",
+    "routing_targets",
+    "status"
+  ],
+  "fields": {
+    "lesson_id": "stable unique id",
+    "source": {
+      "type": [
+        "chat_workflow",
+        "old_transcript",
+        "tool_probe",
+        "postmortem",
+        "external_research"
+      ],
+      "locator": "path_or_summary"
+    },
+    "evidence": {
+      "summary": "what happened",
+      "artifacts": [
+        "receipts_or_files"
+      ],
+      "external_sources": [
+        "optional urls or SEE ids"
+      ]
+    },
+    "baseline_comparison": {
+      "current_behavior": "existing OS behavior before adopting lesson",
+      "proposed_behavior": "candidate improvement",
+      "improvement_axes": [
+        "correctness",
+        "reliability",
+        "sandbox_fit",
+        "quality",
+        "usability",
+        "automation",
+        "honesty"
+      ],
+      "score_current": "0_to_5_by_axis",
+      "score_candidate": "0_to_5_by_axis",
+      "regression_flags": "list of hard blockers",
+      "better_than_current_rule": "candidate_total > current_total and no hard regression flags"
+    },
+    "adoption_decision": {
+      "allowed": [
+        "adopt",
+        "reject",
+        "defer_for_more_evidence"
+      ],
+      "reason": "specific comparison result"
+    },
+    "artifactization": {
+      "required_when_adopted": [
+        "policy_or_contract",
+        "schema_or_structured_record",
+        "fixture_or_eval",
+        "router_or_gate_binding",
+        "receipt_or_handoff"
+      ]
+    },
+    "routing_targets": "task classes where lesson should auto-apply",
+    "status": {
+      "allowed": [
+        "candidate",
+        "adopted",
+        "rejected",
+        "superseded"
+      ]
+    }
+  },
+  "hard_regression_flags": [
+    "pc_only_blocks_sandbox_primary",
+    "evidence_tier_overclaim",
+    "removes_existing_gate",
+    "no_fixture_for_recurring_claim",
+    "unsafe_or_policy_invalid"
+  ],
+  "transcript_import_rule": "Old transcripts may seed candidate lessons, but cannot modify routing or gates unless baseline_comparison proves the candidate is better than current behavior and has no hard regression flags."
+}

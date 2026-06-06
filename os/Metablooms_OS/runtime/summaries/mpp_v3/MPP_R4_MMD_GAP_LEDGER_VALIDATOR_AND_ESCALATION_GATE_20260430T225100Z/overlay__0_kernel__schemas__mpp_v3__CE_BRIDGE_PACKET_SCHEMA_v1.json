@@ -1,0 +1,98 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/CE_BRIDGE_PACKET_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "ce_inputs": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "atom_ids": {
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "expected_ce_action": {
+            "enum": [
+              "synthesize",
+              "disambiguate",
+              "challenge",
+              "route_to_mmd"
+            ],
+            "type": "string"
+          },
+          "input_id": {
+            "pattern": "^CEI-[0-9]{3,}$",
+            "type": "string"
+          },
+          "question": {
+            "minLength": 10,
+            "type": "string"
+          }
+        },
+        "required": [
+          "input_id",
+          "atom_ids",
+          "question",
+          "expected_ce_action"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "coverage_questions": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "created_at": {
+      "minLength": 10,
+      "type": "string"
+    },
+    "mmd_ready": {
+      "type": "boolean"
+    },
+    "normalized_evidence_packet_id": {
+      "minLength": 8,
+      "type": "string"
+    },
+    "packet_id": {
+      "minLength": 8,
+      "type": "string"
+    },
+    "result_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "mpp.ce_bridge_packet.v1"
+    },
+    "semantic_gaps": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "stage": {
+      "const": "CE"
+    }
+  },
+  "required": [
+    "schema_version",
+    "packet_id",
+    "stage",
+    "created_at",
+    "normalized_evidence_packet_id",
+    "ce_inputs",
+    "coverage_questions",
+    "semantic_gaps",
+    "mmd_ready",
+    "result_hash"
+  ],
+  "title": "MPP v3 CE Bridge Packet",
+  "type": "object"
+}

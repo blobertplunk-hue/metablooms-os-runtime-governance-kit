@@ -1,0 +1,153 @@
+{
+  "accuracy": 1.0,
+  "decisions_covered": [
+    "BLOCK",
+    "PASS",
+    "WARN"
+  ],
+  "false_pass_count": 0,
+  "fixture_count": 16,
+  "promotion_decision": "PROMOTE",
+  "results": [
+    {
+      "expected": "PASS",
+      "fixture_id": "EDU2-001",
+      "match": true,
+      "predicted": "PASS",
+      "reasons": []
+    },
+    {
+      "expected": "BLOCK",
+      "fixture_id": "EDU2-002",
+      "match": true,
+      "predicted": "BLOCK",
+      "reasons": [
+        "missing_teks"
+      ]
+    },
+    {
+      "expected": "BLOCK",
+      "fixture_id": "EDU2-003",
+      "match": true,
+      "predicted": "BLOCK",
+      "reasons": [
+        "missing_official_source_refs"
+      ]
+    },
+    {
+      "expected": "BLOCK",
+      "fixture_id": "EDU2-004",
+      "match": true,
+      "predicted": "BLOCK",
+      "reasons": [
+        "missing_answer_or_scoring_rule"
+      ]
+    },
+    {
+      "expected": "WARN",
+      "fixture_id": "EDU2-005",
+      "match": true,
+      "predicted": "WARN",
+      "reasons": [
+        "cognitive_demand_too_low"
+      ]
+    },
+    {
+      "expected": "BLOCK",
+      "fixture_id": "EDU2-006",
+      "match": true,
+      "predicted": "BLOCK",
+      "reasons": [
+        "eb_support_reveals_answer"
+      ]
+    },
+    {
+      "expected": "WARN",
+      "fixture_id": "EDU2-007",
+      "match": true,
+      "predicted": "WARN",
+      "reasons": [
+        "telemetry_missing"
+      ]
+    },
+    {
+      "expected": "BLOCK",
+      "fixture_id": "EDU2-008",
+      "match": true,
+      "predicted": "BLOCK",
+      "reasons": [
+        "blocked_external_dependency"
+      ]
+    },
+    {
+      "expected": "WARN",
+      "fixture_id": "EDU2-009",
+      "match": true,
+      "predicted": "WARN",
+      "reasons": [
+        "distractor_parity_weak"
+      ]
+    },
+    {
+      "expected": "PASS",
+      "fixture_id": "EDU2-010",
+      "match": true,
+      "predicted": "PASS",
+      "reasons": []
+    },
+    {
+      "expected": "BLOCK",
+      "fixture_id": "EDU2-011",
+      "match": true,
+      "predicted": "BLOCK",
+      "reasons": [
+        "student_feedback_not_visible"
+      ]
+    },
+    {
+      "expected": "WARN",
+      "fixture_id": "EDU2-012",
+      "match": true,
+      "predicted": "WARN",
+      "reasons": [
+        "tts_needs_control_filtering",
+        "accessibility_incomplete"
+      ]
+    },
+    {
+      "expected": "PASS",
+      "fixture_id": "EDU2-013",
+      "match": true,
+      "predicted": "PASS",
+      "reasons": []
+    },
+    {
+      "expected": "BLOCK",
+      "fixture_id": "EDU2-014",
+      "match": true,
+      "predicted": "BLOCK",
+      "reasons": [
+        "unvetted_external_script"
+      ]
+    },
+    {
+      "expected": "WARN",
+      "fixture_id": "EDU2-015",
+      "match": true,
+      "predicted": "WARN",
+      "reasons": [
+        "udl_options_incomplete",
+        "eb_support_missing"
+      ]
+    },
+    {
+      "expected": "PASS",
+      "fixture_id": "EDU2-016",
+      "match": true,
+      "predicted": "PASS",
+      "reasons": []
+    }
+  ],
+  "schema_version": "EDUCATION_VALIDITY_GATE_v2",
+  "verdict": "EDUCATION_VALIDITY_PROMOTION_PASS"
+}

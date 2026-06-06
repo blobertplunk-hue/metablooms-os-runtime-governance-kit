@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-04-28T02:56:25Z",
+  "decision_id": "R5-b5b11f39fc5955e9",
+  "envelope_version": "decision_receipt_envelope_v1",
+  "erased": [],
+  "evidence_refs": [],
+  "gate_id": null,
+  "input_artifacts": [],
+  "masked": [],
+  "normalization_status": "wrapped_legacy",
+  "output_artifacts": [],
+  "policy_basis": [
+    {
+      "claim": "canonical envelope includes decision_id/input/result/timestamp-style fields for audit",
+      "source": "OPA decision logs"
+    },
+    {
+      "claim": "record identity uses stable event-style id/source/type concepts",
+      "source": "CloudEvents"
+    }
+  ],
+  "raw_excerpt": "{\"classification\": \"smallest_valid_change\", \"created_utc\": \"2026-04-28T02:56:25Z\", \"fix\": \"Set decision_log_required=true in live registry and both fixtures\", \"issue\": \"SESSION_STATE_EXPORT_WRITE was blocking while decision_log_required=false\", \"repair_id\": \"R5_VALIDATOR_REPAIR_20260428T025625Z\"}",
+  "reasons": [],
+  "record_id": "R5_VALIDATOR_REPAIR_20260428T025625Z",
+  "record_kind": "repair_receipt",
+  "result": "wrapped",
+  "source_record": {
+    "path": "receipts/refactor_program/R5_VALIDATOR_REPAIR_20260428T025625Z.json",
+    "sha256": "b5b11f39fc5955e9eea7e2eedc6e68b8aa3cc7d4199ecdeef037eb0a34654cd6",
+    "size_bytes": 310
+  },
+  "span_id": "0cf82092308f08e2",
+  "stage_id": "R5",
+  "summary": "Canonical wrapper for R5_VALIDATOR_REPAIR_20260428T025625Z.json",
+  "trace_id": "4bec40e46845f02e9b7afa2f124e2416"
+}

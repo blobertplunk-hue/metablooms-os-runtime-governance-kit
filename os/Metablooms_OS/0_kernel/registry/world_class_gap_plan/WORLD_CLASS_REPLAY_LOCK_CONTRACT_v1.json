@@ -1,0 +1,39 @@
+{
+  "automatic_tracker_rule": "Every multi-step governed process must auto-write runtime/state/ACTIVE_PROCESS_TRACKER_PREVIEW.txt and include a chat-visible tracker preview without user request.",
+  "external_basis": {
+    "dora_metrics": "DORA metrics: delivery performance uses throughput and instability/recovery signals.",
+    "sre_launch_readiness": "Google SRE reliable launches/checklists: launch coordination signs off safe launches and checklists provide action items.",
+    "user_tracker_requirement": "User interruption during WC_STAGE8: tracker should show automatically for every multi-step process.",
+    "wcag_conformance": "WCAG conformance requires satisfying applicable success criteria."
+  },
+  "purpose": "Lock the world-class workstream into a single replayable short-name BOOTABLE_FULL_AUTHORITY export.",
+  "replay_gates": [
+    "base checksum verified",
+    "required authorities present before export",
+    "automatic tracker preview present",
+    "receipt and handoff present",
+    "next prompt present",
+    "short-name zip + sidecar present",
+    "zip integrity pass",
+    "clean extraction pass",
+    "boot smoke pass"
+  ],
+  "required_authorities": [
+    "0_kernel/registry/world_class_gap_plan/WORLD_CLASS_MEASURED_SCORECARD_BASELINE_v1.json",
+    "runtime/state/DORA_STYLE_OS_METRICS_BASELINE_v1.json",
+    "0_kernel/cartridges/educational_html_design_system/EDUCATIONAL_HTML_DESIGN_SYSTEM_CARTRIDGE_SPEC_v1.json",
+    "0_kernel/registry/world_class_gap_plan/BOOTABLE_BUNDLE_LABELING_CONTRACT_v1.json",
+    "0_kernel/lessons/LESSON_PROMOTION_QUEUE_v1.json",
+    "0_kernel/registry/general_capability_resolver/GENERAL_CAPABILITY_RESOLVER_CONTRACT_v1.json"
+  ],
+  "required_authority_status": {
+    "0_kernel/cartridges/educational_html_design_system/EDUCATIONAL_HTML_DESIGN_SYSTEM_CARTRIDGE_SPEC_v1.json": true,
+    "0_kernel/lessons/LESSON_PROMOTION_QUEUE_v1.json": true,
+    "0_kernel/registry/general_capability_resolver/GENERAL_CAPABILITY_RESOLVER_CONTRACT_v1.json": true,
+    "0_kernel/registry/world_class_gap_plan/BOOTABLE_BUNDLE_LABELING_CONTRACT_v1.json": true,
+    "0_kernel/registry/world_class_gap_plan/WORLD_CLASS_MEASURED_SCORECARD_BASELINE_v1.json": true,
+    "runtime/state/DORA_STYLE_OS_METRICS_BASELINE_v1.json": true
+  },
+  "schema_version": "v1",
+  "stage": "WC_STAGE8_FULL_WORLD_CLASS_EXPORT_AND_NEW_CHAT_REPLAY_LOCK"
+}

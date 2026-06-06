@@ -1,0 +1,23 @@
+{
+  "artifact_type": "SEE_EVIDENCE_PACKET.v1",
+  "created_utc": "20260502T153307Z",
+  "sources": [
+    {
+      "claim": "Dashboard should provide single-page at-a-glance information for quick action.",
+      "url": "https://www.nngroup.com/articles/dashboards-preattentive/"
+    },
+    {
+      "claim": "Cards group related information into flexible visual containers, suitable for the tracker status cards.",
+      "url": "https://www.nngroup.com/articles/cards-component/"
+    },
+    {
+      "claim": "Dashboard initial view should avoid too many cards; the tracker uses four primary cards.",
+      "url": "https://www.justinmind.com/ui-design/dashboard-design-best-practices-ux"
+    },
+    {
+      "claim": "Configuration-based dashboards support rendering from state/configuration instead of hand-written status.",
+      "url": "https://docs.gitlab.com/development/fe_guide/analytics_dashboards/"
+    }
+  ],
+  "stage": "OPERATOR_VISUAL_TRACKER_POLISH_STAGE2_RENDER_CONTRACT_AND_PHONE_SAFE_TEMPLATE"
+}

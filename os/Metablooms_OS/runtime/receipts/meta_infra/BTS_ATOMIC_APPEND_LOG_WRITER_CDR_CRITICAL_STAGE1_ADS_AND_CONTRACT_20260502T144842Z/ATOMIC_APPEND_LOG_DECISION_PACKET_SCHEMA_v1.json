@@ -1,0 +1,63 @@
+{
+  "$id": "metablooms://schemas/AtomicAppendLogDecisionPacket.v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "bytes_appended": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "created_utc": {
+      "type": "string"
+    },
+    "decision": {
+      "enum": [
+        "ALLOW_APPENDED",
+        "DENY",
+        "ERROR"
+      ]
+    },
+    "failure_event_path": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "line_sha256": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "log_path_resolved": {
+      "type": "string"
+    },
+    "operation_id": {
+      "type": "string"
+    },
+    "reason_code": {
+      "type": "string"
+    },
+    "record_sha256": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "schema_version": {
+      "const": "AtomicAppendLogDecisionPacket.v1"
+    }
+  },
+  "required": [
+    "schema_version",
+    "operation_id",
+    "decision",
+    "reason_code",
+    "log_path_resolved",
+    "bytes_appended",
+    "record_sha256",
+    "created_utc"
+  ],
+  "title": "AtomicAppendLogDecisionPacket.v1",
+  "type": "object"
+}

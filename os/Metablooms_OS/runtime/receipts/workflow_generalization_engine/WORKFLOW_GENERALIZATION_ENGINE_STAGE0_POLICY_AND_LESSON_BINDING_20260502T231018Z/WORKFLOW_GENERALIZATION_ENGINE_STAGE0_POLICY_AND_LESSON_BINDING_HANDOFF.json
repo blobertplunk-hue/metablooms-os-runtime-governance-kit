@@ -1,0 +1,11 @@
+{
+  "from_stage": "WORKFLOW_GENERALIZATION_ENGINE_STAGE0_POLICY_AND_LESSON_BINDING",
+  "verdict": "PASS",
+  "authorized_next_stage": "WORKFLOW_GENERALIZATION_ENGINE_STAGE1_IMPLEMENT_ROUTER_AND_LESSON_LEDGER_EVALS",
+  "requirements": [
+    "implement executable router/evaluator",
+    "add lesson ledger schema",
+    "run fixtures proving auto-inclusion for visual/browser/repair tasks",
+    "bind outputs into export-prep manifest"
+  ]
+}

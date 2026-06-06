@@ -1,0 +1,46 @@
+{
+  "bts_receipt_id": "T1-STAGE6G_APPROVAL_20260502T005353Z_filesystem_write_artifact-20260502T005418Z",
+  "bts_turn_committed": true,
+  "implementation_reality": {
+    "actual_files": [
+      "/mnt/data/Metablooms_OS/runtime/receipts/METABLOOMS_STAGE6G_EXPLICIT_BUDGET_APPROVAL_RECORD_20260502T005353Z.json"
+    ],
+    "claimed_files": [
+      "/mnt/data/Metablooms_OS/runtime/receipts/METABLOOMS_STAGE6G_EXPLICIT_BUDGET_APPROVAL_RECORD_20260502T005353Z.json"
+    ],
+    "unclaimed": [],
+    "unfulfilled": [],
+    "verdict": "PASS"
+  },
+  "kind": "filesystem_write",
+  "policy_decision": {
+    "decided_at_utc": "2026-05-02T00:54:18Z",
+    "decision": "ALLOW",
+    "decision_id": "decision_1777683258774_70ebafce",
+    "enforced_by": "pre_tool_action_gate_v1",
+    "envelope_id": "STAGE6G_APPROVAL_20260502T005353Z_filesystem_write",
+    "envelope_sha256": "899b53cfede720c6ee1fc84b3e237f04b791fca58d958424907e63643d6cbe84",
+    "matched_rules": [
+      "schema.required",
+      "path.safety",
+      "runaway.breaker",
+      "method.reliability"
+    ],
+    "rationale": "Envelope passed schema, method, path, SEE, approval, and bounded-budget checks.",
+    "reason_code": "LOW_RISK_BOUNDED_ACTION",
+    "receipt_path": "/mnt/data/Metablooms_OS/runtime/governance/receipts/per_action_tool_interception_v1/STAGE6G_APPROVAL_20260502T005353Z_filesystem_write.decision.json",
+    "required_next_action": "execute_action_and_write_action_receipt",
+    "safe_to_execute": true,
+    "schema_version": "PolicyDecision_v1",
+    "stage_id": "STAGE6G_FULL_AUTHORITY_EXPORT_WITH_EXPLICIT_BUDGET_APPROVAL_USING_BTS_NODE_ZIP_PROFILE"
+  },
+  "receipt_id": "bts_exec_20260502T005418Z_10da1717",
+  "schema": "mb.bts_wrapped_executors.v1",
+  "stage_id": "STAGE6G_FULL_AUTHORITY_EXPORT_WITH_EXPLICIT_BUDGET_APPROVAL_USING_BTS_NODE_ZIP_PROFILE",
+  "target": "/mnt/data/Metablooms_OS/runtime/receipts/METABLOOMS_STAGE6G_EXPLICIT_BUDGET_APPROVAL_RECORD_20260502T005353Z.json",
+  "target_bytes": 865,
+  "target_sha256": "67a6cb876c459ac277dcc45df508619080d7c25b8c275d2170edc3cd63cb3ba6",
+  "timestamp_utc": "2026-05-02T00:54:18.974717Z",
+  "turn_id": "STAGE6G_APPROVAL_20260502T005353Z",
+  "verdict": "PASS"
+}

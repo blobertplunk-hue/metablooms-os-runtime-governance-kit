@@ -1,0 +1,11 @@
+{
+  "argv_resolved": [
+    "/usr/bin/unzip",
+    "-tq",
+    "/mnt/data/stage3_tiny_test.zip"
+  ],
+  "created_utc": "20260502T140156Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "decision": "ALLOW_SPAWN",
+  "timeout_seconds": 5
+}

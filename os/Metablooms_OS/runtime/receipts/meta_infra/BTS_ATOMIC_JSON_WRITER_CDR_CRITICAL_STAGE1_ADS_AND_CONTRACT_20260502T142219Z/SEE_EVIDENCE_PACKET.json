@@ -1,0 +1,40 @@
+{
+  "applied_design_conclusions": [
+    "Canonical writer must create temp file in destination directory to avoid cross-device rename problems.",
+    "Canonical writer must flush and fsync temp file before os.replace, then fsync parent directory where available.",
+    "Canonical writer must canonicalize destination and enforce allowlisted roots before opening temp file.",
+    "Canonical writer must reject symlink targets and symlink ancestors unless an explicit later policy allows otherwise.",
+    "Canonical writer must validate JSON serialization before touching the target path."
+  ],
+  "artifact_type": "SEE_EVIDENCE_PACKET",
+  "created_utc": "2026-05-02T14:23:17Z",
+  "research_method": "web.run plus direct runtime artifact inspection",
+  "sources": [
+    {
+      "claim": "Same-directory temporary file followed by atomic move/replace is the normal atomic-write pattern; atomicwrites uses a temp file in the same directory so it is on the same filesystem, then moves it atomically.",
+      "source_id": "turn563761search1",
+      "url": "https://python-atomicwrites.readthedocs.io/"
+    },
+    {
+      "claim": "The atomicwrites package documents POSIX fsync on the temp file and fsync on the parent directory after move to flush the filename/directory entry.",
+      "source_id": "turn563761search8",
+      "url": "https://pypi.org/project/atomicwrites/"
+    },
+    {
+      "claim": "Python os.replace provides overwrite replacement semantics appropriate for cross-platform destination replacement in Python 3.3+.",
+      "source_id": "turn563761search15",
+      "url": "https://docs.python.org/3/library/os.html"
+    },
+    {
+      "claim": "OWASP defines path traversal as filesystem access outside the intended directory through ../ or absolute-path manipulation; canonical path validation and root allowlisting are required controls.",
+      "source_id": "turn563761search2",
+      "url": "https://owasp.org/www-community/attacks/Path_Traversal"
+    },
+    {
+      "claim": "Android security guidance describes path traversal as attacker-controlled filesystem paths without validation and recommends validation before filesystem APIs.",
+      "source_id": "turn563761search22",
+      "url": "https://developer.android.com/privacy-and-security/risks/path-traversal"
+    }
+  ],
+  "stage": "BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE1_ADS_AND_CONTRACT"
+}

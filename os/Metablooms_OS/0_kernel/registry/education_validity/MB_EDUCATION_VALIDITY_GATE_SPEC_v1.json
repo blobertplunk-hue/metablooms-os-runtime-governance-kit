@@ -1,0 +1,40 @@
+{
+  "artifact_type": "MB_EDUCATION_VALIDITY_GATE_SPEC_v1",
+  "created_utc": "20260501T173600Z",
+  "gates": [
+    {
+      "gate_id": "EDU-GATE-001",
+      "name": "source_and_standards_alignment"
+    },
+    {
+      "gate_id": "EDU-GATE-002",
+      "name": "assessment_fidelity"
+    },
+    {
+      "gate_id": "EDU-GATE-003",
+      "name": "cognitive_demand_and_misconception_quality"
+    },
+    {
+      "gate_id": "EDU-GATE-004",
+      "name": "udl_and_accessibility"
+    },
+    {
+      "gate_id": "EDU-GATE-005",
+      "name": "emergent_bilingual_support"
+    },
+    {
+      "gate_id": "EDU-GATE-006",
+      "name": "feedback_and_telemetry"
+    },
+    {
+      "gate_id": "EDU-GATE-007",
+      "name": "classroom_deployability"
+    }
+  ],
+  "promotion_rule": {
+    "false_pass_tolerance": 0,
+    "min_accuracy": 0.9
+  },
+  "purpose": "Validate learning efficacy, TEKS/STAAR fidelity, accessibility, EB supports, feedback, telemetry, and classroom deployability before artifact promotion.",
+  "stage": "EDUCATION_VALIDITY_STAGE_1"
+}

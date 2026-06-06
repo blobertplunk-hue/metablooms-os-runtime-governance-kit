@@ -1,0 +1,41 @@
+{
+  "argv_redacted": [
+    "/opt/pyvenv/bin/python3",
+    "-S",
+    "/mnt/data/Metablooms_OS/runtime/governance/tool_universe_resolver_v1.py",
+    "validate-evaluation",
+    "--candidate-set",
+    "/mnt/data/stage6h_tool_universe_fixture_outputs/zip_export_candidate_set.json",
+    "--evaluation",
+    "/mnt/data/stage6h_tool_universe_fixture_outputs/bad_eval.json",
+    "--out",
+    "/mnt/data/stage6h_tool_universe_fixture_outputs/bad_eval_result.json"
+  ],
+  "artifact_type": "METABLOOMS_SUBPROCESS_FAILURE_LEARNING_EVENT_v1",
+  "attempts": [
+    {
+      "attempt_index": 0,
+      "elapsed_ms": 812,
+      "returncode": 1,
+      "started_utc": "20260502T141416Z",
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_truncated": false,
+      "stdout": "{\n  \"covered_candidate_count\": 1,\n  \"missing_candidates\": [\n    \"node_yauzl_crc_proof\",\n    \"node_yazl_stream_export\",\n    \"zipinfo_metadata_scan\"\n  ],\n  \"reasons\": [\n    \"BTS_TOOL_EVALUATION missing resolver candidates: node_yauzl_crc_proof, node_yazl_stream_export, zipinfo_metadata_scan\",\n    \"selected tool is not top-ranked and lacks sufficient WHY_NOT_BETTER_TOOL justification\"\n  ],\n  \"required_candidate_count\": 4,\n  \"schema\": \"TOOL_SELECTION_SUFFICIENCY_GATE_RESULT_v1\",\n  \"selected_tool_id\": \"python_zipfile_compatibility_fallback\",\n  \"timestamp_utc\": \"2026-05-02T14:14:17.235387Z\",\n  \"top_allowed_tool_id\": \"node_yazl_stream_export\",\n  \"verdict\": \"FAIL\"\n}\n",
+      "stdout_bytes": 667,
+      "stdout_sha256": "00bd73ed07f3d4ffe6749fb6522f01d66d06bbd060eeac353c57f94402ad99ac",
+      "stdout_truncated": false,
+      "timeout_seconds": 10.0
+    }
+  ],
+  "created_utc": "20260502T141417Z",
+  "cwd": "/mnt/data/Metablooms_OS",
+  "failure_class": "NONZERO_EXIT",
+  "operation_type": "retrofitted_subprocess_run",
+  "policy_matches": [],
+  "recommendation": "Route future matching operations through bounded wrapper and method reliability policy before spawn.",
+  "result_class": "ALLOW_NONZERO",
+  "root": "/mnt/data/Metablooms_OS",
+  "stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_STAGE4_RETROFIT"
+}

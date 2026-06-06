@@ -1,0 +1,20 @@
+{
+  "expected_decision": "pass_when_gate_artifacts_present_else_fail",
+  "fixture_type": "lesson_promotion_regression",
+  "gate_under_test": "RECONSTRUCTION_PROVENANCE_GATE",
+  "lesson_id": "LESSON_RECONSTRUCTION_PROVENANCE_006",
+  "must_block_if": [
+    "evidence_paths_empty",
+    "fixture_missing",
+    "stage_exit_prompt_missing",
+    "successful_stage_without_bootable_full_authority_when_possible"
+  ],
+  "must_require": {
+    "artifact_evidence_paths": [
+      "BOOT_AUTHORITY_MANIFEST_v1.json"
+    ],
+    "prevention_claim": "Preserves provenance honesty when recovering from artifact loss."
+  },
+  "problem_class": "lost_artifact_reconstruction",
+  "schema_version": "v1"
+}

@@ -1,0 +1,8 @@
+{
+  "behavior_tests_passed": true,
+  "checksum_sidecar_written": true,
+  "complete_os_export_written": true,
+  "duplicate_free_zip_validation_passed": true,
+  "promotion_requested": true,
+  "zip_integrity_test_passed": true
+}

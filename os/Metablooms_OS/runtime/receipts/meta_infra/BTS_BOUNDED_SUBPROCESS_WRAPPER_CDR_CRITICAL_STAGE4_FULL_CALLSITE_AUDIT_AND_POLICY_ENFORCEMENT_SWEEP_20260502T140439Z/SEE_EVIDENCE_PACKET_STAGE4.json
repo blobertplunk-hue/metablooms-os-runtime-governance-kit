@@ -1,0 +1,23 @@
+{
+  "artifact_type": "STAGE4_SEE_EVIDENCE_PACKET_v1",
+  "created_utc": "20260502T140719Z",
+  "sources": [
+    {
+      "claim": "Python subprocess supports timeout but process creation cannot always be interrupted immediately, requiring wrapper-level budget semantics.",
+      "url": "https://docs.python.org/3/library/subprocess.html"
+    },
+    {
+      "claim": "Python warns shell=True invokes a shell and shifts shell metacharacter safety to the application.",
+      "url": "https://docs.python.org/3/library/subprocess.html"
+    },
+    {
+      "claim": "OWASP recommends hardcoded commands/options and strict validation/allowlisting for OS command execution.",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.html"
+    },
+    {
+      "claim": "Semgrep treats subprocess shell usage and dangerous subprocess patterns as command-injection audit targets.",
+      "url": "https://semgrep.dev/docs/cheat-sheets/python-command-injection"
+    }
+  ],
+  "stage_binding": "Evidence supports Stage4 policy: route live governance command execution through a bounded wrapper, block direct live subprocess invocations, allow wrapper internals, and warn rather than rewrite third-party/snapshot/test code."
+}

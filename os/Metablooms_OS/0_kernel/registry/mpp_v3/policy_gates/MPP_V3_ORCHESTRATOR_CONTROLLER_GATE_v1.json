@@ -1,0 +1,19 @@
+{
+  "locked_at": "20260501T075000Z",
+  "policy_id": "MPP_V3_ORCHESTRATOR_CONTROLLER_GATE_v1",
+  "research_basis": [
+    "Temporal uses durable execution so workflow state can be recovered and replayed across failures.",
+    "Kubernetes controller patterns reconcile desired and actual state.",
+    "Argo Workflows supports retry strategies and exit handlers for workflow completion/failure handling.",
+    "OpenTelemetry semantic conventions support trace/metric/log correlation."
+  ],
+  "rules": [
+    "Stage graph must be ordered and duplicate-free.",
+    "Each stage must declare required inputs, gates, receipt, handoff, retryability, and repair routes.",
+    "Runtime desired_state and actual_state must reconcile or route to repair.",
+    "Retry policy must define retryable and non-retryable failures with bounded attempts.",
+    "Exit handlers must always run and emit evidence.",
+    "Controller PASS must emit a transition decision."
+  ],
+  "stage": "ORCHESTRATOR"
+}

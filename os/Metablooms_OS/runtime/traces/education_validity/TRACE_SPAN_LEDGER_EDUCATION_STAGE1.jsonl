@@ -1,0 +1,1 @@
+{"schema_version":"MB_TRACE_SPAN_LEDGER_v1","trace_id":"education-validity-stage1","span_id":"span-education-stage1","parent_span_id":null,"name":"education_validity_stage1_install","stage_name":"EDUCATION_VALIDITY_STAGE_1","event":"stage_complete","status":"OK","timestamp_utc":"20260501T173600Z","attributes":{"gates":7,"fixtures":12,"mode":"no_broad_extract_overlay"}}

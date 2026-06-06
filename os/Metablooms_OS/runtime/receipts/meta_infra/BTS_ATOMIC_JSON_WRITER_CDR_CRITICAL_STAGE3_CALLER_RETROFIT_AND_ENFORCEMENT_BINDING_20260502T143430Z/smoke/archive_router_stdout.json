@@ -1,0 +1,30 @@
+{
+  "archive": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/smoke/smoke.zip",
+  "artifact_type": "ARCHIVE_METHOD_ROUTER_EVIDENCE_v1",
+  "attempts": [
+    {
+      "cmd": [
+        "/usr/bin/unzip",
+        "-tq",
+        "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/smoke/smoke.zip"
+      ],
+      "elapsed_sec": 0.062,
+      "rc": 0,
+      "stderr": "",
+      "stdout": "No errors detected in compressed data of /mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_ATOMIC_JSON_WRITER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING_20260502T143430Z/smoke/smoke.zip.\n"
+    }
+  ],
+  "checks": [
+    {
+      "name": "unzip_integrity",
+      "passed": true
+    }
+  ],
+  "created_utc": "20260502T143437Z",
+  "issues": [],
+  "mode": "validate",
+  "verdict": "PASS",
+  "warnings": [
+    "7zz_missing"
+  ]
+}

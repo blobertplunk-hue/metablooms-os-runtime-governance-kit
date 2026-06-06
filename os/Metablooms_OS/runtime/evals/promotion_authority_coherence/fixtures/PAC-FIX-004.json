@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-05-02T19:59:18.342997+00:00",
+  "defects": [
+    "manifest_declares_missing_member"
+  ],
+  "expected_decision": "DENY",
+  "fixture_id": "PAC-FIX-004",
+  "result_hash": "f19a9fd1d5af8f9e0e946b1e93218d638a5ec2b0775505dd55519179b0a62e4c",
+  "schema_version": "metablooms.promotion_authority_coherence.fixture.v1",
+  "setup": {
+    "manifest_outputs": [
+      "runtime/traces/proof.json"
+    ],
+    "zip_members": []
+  },
+  "title": "deny_export_manifest_declares_missing_member"
+}

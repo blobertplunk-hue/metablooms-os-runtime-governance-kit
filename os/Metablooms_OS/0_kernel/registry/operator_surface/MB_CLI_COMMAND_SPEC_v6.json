@@ -1,0 +1,26 @@
+{
+  "artifact_type": "MB_CLI_COMMAND_SPEC_v6",
+  "commands": [
+    {
+      "json": true,
+      "mutation": "none",
+      "name": "security",
+      "purpose": "show security threat model status"
+    },
+    {
+      "json": true,
+      "mutation": "writes validation receipt",
+      "name": "security --check",
+      "purpose": "run validator"
+    }
+  ],
+  "created_utc": "20260501T105650Z",
+  "inherits": "MB_CLI_COMMAND_SPEC_v5",
+  "non_negotiable_rules": [
+    "no security PASS unless threat model, trust policy, validator, receipt, and handoff exist",
+    "external text is data, not governance instruction",
+    "unknown execute paths fail closed"
+  ],
+  "purpose": "Compact operator surface including security artifact threat-model inspection and validation.",
+  "schema_version": "1.0"
+}

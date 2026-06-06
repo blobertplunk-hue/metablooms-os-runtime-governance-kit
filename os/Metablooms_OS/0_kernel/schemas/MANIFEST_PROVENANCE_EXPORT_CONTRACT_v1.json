@@ -1,0 +1,74 @@
+{
+  "version": "1.0",
+  "created_at": 1777062152.758736,
+  "contract_id": "MANIFEST_PROVENANCE_EXPORT_CONTRACT_v1",
+  "status": "active_contract",
+  "purpose": "Define export manifest and provenance requirements so future restores can verify artifact origin, contents, capability set, and recovery expectations.",
+  "problems_addressed": [
+    "ZIP existed but sidecar SHA manifest was missing.",
+    "Stable release ZIP was valid but older than the current working state.",
+    "Restores lacked internal provenance when sidecar files were lost.",
+    "Exports did not consistently declare included capability sets or restore policy."
+  ],
+  "required_export_artifacts": [
+    "external_sidecar_sha256_manifest",
+    "internal_EXPORT_MANIFEST_v1.json",
+    "internal_EXPORT_PROVENANCE_v1.json",
+    "internal_RESTORE_CONTRACT_v1.json",
+    "internal_CAPABILITY_SET_v1.json"
+  ],
+  "manifest_requirements": [
+    "export file name",
+    "export SHA-256",
+    "export size in bytes",
+    "source root path",
+    "source git head",
+    "source git status clean",
+    "included required capabilities",
+    "excluded paths policy",
+    "provenance file reference",
+    "restore contract reference",
+    "verdict"
+  ],
+  "provenance_requirements": [
+    "builder identity",
+    "source git commit and branch",
+    "materials: pointer, ledger, DAG, boot manifest, artifact registry",
+    "recipe: export command/policy",
+    "subject: exported ZIP and hash",
+    "capability set",
+    "verification summary",
+    "verdict"
+  ],
+  "sidecar_policy": [
+    "Sidecar SHA manifest must be written next to the ZIP.",
+    "The ZIP must also contain internal manifest/provenance so restore remains explainable if sidecar is lost.",
+    "If sidecar is missing, restore may only continue through explicit manifest-repair stage."
+  ],
+  "excluded_paths_policy": {
+    "always_exclude": [
+      "0_kernel/scripts/__pycache__",
+      ".pytest_cache",
+      "temporary stage roots under /mnt/data/_stage"
+    ],
+    "preserve_if_tracked": [
+      "tracked vendor cache files",
+      "tracked registry artifacts",
+      "tracked evidence receipts"
+    ]
+  },
+  "restore_contract_requirements": [
+    "restore must verify SHA manifest or explicit manifest-repair receipt",
+    "restore must extract into staging",
+    "restore must normalize git core.filemode=false before status checks",
+    "restore must verify required capabilities before promotion",
+    "restore must not overwrite active root until staging validation passes"
+  ],
+  "non_goals": [
+    "F4 does not export a ZIP.",
+    "F4 does not run boot recovery.",
+    "F4 does not implement the restore ladder."
+  ],
+  "next_stage": "F5_RESTORE_LADDER_MODE_NORMALIZATION_PROOF",
+  "verdict": "PASS"
+}

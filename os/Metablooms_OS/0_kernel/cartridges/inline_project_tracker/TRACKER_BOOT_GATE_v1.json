@@ -1,0 +1,25 @@
+{
+  "schema_version": "TRACKER_BOOT_GATE_v1",
+  "gate_id": "inline_project_tracker.boot_gate.v1",
+  "purpose": "Block governed project action until tracker state exists, loads, validates, and can render before action.",
+  "required_inputs": [
+    "runtime/state/TRACKER_STATE_v1.json",
+    "0_kernel/cartridges/inline_project_tracker/TRACKER_RENDERER_v1.py",
+    "0_kernel/cartridges/inline_project_tracker/TRACKER_VALIDATOR_v1.py"
+  ],
+  "rules": [
+    {
+      "id": "BOOT-STATE-001",
+      "rule": "If tracker state is missing, malformed, or not renderable, block governed action and emit FAILED_CLOSED tracker output."
+    },
+    {
+      "id": "BOOT-STATE-002",
+      "rule": "Load tracker state before any project status, stage, completion, blocker, export, or implementation claim."
+    },
+    {
+      "id": "BOOT-RENDER-001",
+      "rule": "The first user-visible block of a governed project response must start with the exact tracker top marker."
+    }
+  ],
+  "failure_status": "BLOCKED_TRACKER_BOOT_GATE"
+}

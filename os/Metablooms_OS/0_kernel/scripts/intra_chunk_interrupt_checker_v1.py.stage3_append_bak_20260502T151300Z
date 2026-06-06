@@ -1,0 +1,665 @@
+#!/usr/bin/env python3
+### GOVERNANCE HEADER
+# artifact_id: intra_chunk_interrupt_checker_v1
+# purpose: Evaluate IC-1 through IC-6 interrupt conditions after each artifact
+#          in a GW workflow chunk. Implements AMEND-0005 of GOVERNED_RECURSIVE_SEE_CE_WORKFLOW_v6.
+# mutation_scope: read-only (writes interrupt receipts only; never mutates OS tree)
+# invariants_enforced:
+#   - IC conditions evaluated after EVERY artifact, not just at end-of-chunk
+#   - Any triggered IC condition writes INTRA_CHUNK_INTERRUPT_RECEIPT before continuing
+#   - Classification is defect|gap|friction|success_pattern
+#   - defect/gap → pause, write receipt, execute W0-W1 classification, signal caller to stop
+#   - friction/success_pattern → log to ISSUE_LESSON_LOG and continue
+#   - Never silently continue past a triggered IC condition
+#   - Autonomous sidecar generation when threshold crossed (2+ same-class IC)
+# risk_level: governance-layer
+# see_evidence:
+#   - "Circuit breakers monitor execution and count failures; when threshold exceeded, opens and prevents further execution."
+#   - "Interruptibility: users can pause/override/guide agent behavior mid-execution without losing context."
+#   - "Root cause of non-interruptible agents: sequential loop architecture runs until done with no intercept."
+###
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import os
+import time
+from dataclasses import dataclass, field
+from enum import Enum
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Tuple
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CONSTANTS
+# ─────────────────────────────────────────────────────────────────────────────
+VERSION = "1.0"
+AMENDMENT = "AMEND-0005"
+WORKFLOW_VERSION = "v6"
+
+DEFAULT_ROOT = Path("/mnt/data/Metablooms_OS_refined")
+DEFAULT_LOG_DIR = Path("/mnt/data/Metablooms_OS_refined/0_kernel/registry/interrupt_receipts")
+ISSUE_LESSON_LOG = Path("/mnt/data/Metablooms_OS_refined/0_kernel/registry/ISSUE_LESSON_LOG_v1.jsonl")
+SIDECAR_DIR = Path("/mnt/data/workflow_sidecars")
+
+# Sidecar generation threshold — 2+ same-class IC triggers in a chunk → auto-generate sidecar
+SIDECAR_THRESHOLD = 2
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# ENUMS AND DATA CLASSES
+# ─────────────────────────────────────────────────────────────────────────────
+
+class ICCondition(str, Enum):
+    IC1_TOOL_RETRY_EXCESS    = "IC-1"   # >2 tool retry attempts
+    IC2_CANMORE_ATTEMPT      = "IC-2"   # canmore/canvas route attempt
+    IC3_SEE_ZERO_RESULTS     = "IC-3"   # SEE search returned 0 relevant results
+    IC4_CLAIM_WITHOUT_EVIDENCE = "IC-4" # claim made without artifact evidence
+    IC5_RECURRING_PATTERN    = "IC-5"   # same pattern seen in 2+ prior artifacts
+    IC6_T1_GATE_FAIL         = "IC-6"   # output failed T1_DETERMINISTIC gate check
+
+
+class Classification(str, Enum):
+    DEFECT          = "defect"           # →  pause, W0-W1, W2-W3, stop
+    GAP             = "gap"              # →  pause, W0-W1, W2-W3, stop
+    FRICTION        = "friction"         # →  log to ISSUE_LESSON_LOG, continue
+    SUCCESS_PATTERN = "success_pattern"  # →  log to ISSUE_LESSON_LOG, continue
+
+
+# Default classification rules per IC condition
+IC_DEFAULT_CLASSIFICATION: Dict[ICCondition, Classification] = {
+    ICCondition.IC1_TOOL_RETRY_EXCESS:      Classification.FRICTION,
+    ICCondition.IC2_CANMORE_ATTEMPT:        Classification.DEFECT,
+    ICCondition.IC3_SEE_ZERO_RESULTS:       Classification.GAP,
+    ICCondition.IC4_CLAIM_WITHOUT_EVIDENCE: Classification.DEFECT,
+    ICCondition.IC5_RECURRING_PATTERN:      Classification.GAP,
+    ICCondition.IC6_T1_GATE_FAIL:           Classification.DEFECT,
+}
+
+
+@dataclass
+class ArtifactContext:
+    """Context about a single artifact being evaluated."""
+    artifact_id: str
+    chunk_position: int          # 1-based position in current chunk
+    chunk_total: int             # total artifacts in chunk
+    tool_retry_count: int = 0
+    canmore_attempted: bool = False
+    see_result_count: int = -1   # -1 = SEE not run
+    has_uncited_claims: bool = False
+    prior_artifact_ids: List[str] = field(default_factory=list)
+    t1_gate_results: Dict[str, bool] = field(default_factory=dict)
+    extra: Dict[str, Any] = field(default_factory=dict)
+
+
+@dataclass
+class ICTriggerResult:
+    """Result of evaluating a single IC condition."""
+    condition: ICCondition
+    triggered: bool
+    evidence: str
+    classification: Classification
+    proposed_action: str
+
+
+@dataclass
+class ChunkInterruptState:
+    """Tracks IC trigger history across a chunk for threshold-based sidecar generation."""
+    chunk_id: str
+    triggers_by_class: Dict[str, List[Dict]] = field(default_factory=dict)
+    total_triggers: int = 0
+    artifacts_evaluated: int = 0
+    open_interrupts: List[str] = field(default_factory=list)  # unresolved receipt IDs
+
+    def record_trigger(self, condition: ICCondition, artifact_id: str, evidence: str):
+        key = condition.value
+        self.triggers_by_class.setdefault(key, [])
+        self.triggers_by_class[key].append({
+            "artifact_id": artifact_id,
+            "evidence": evidence,
+            "ts": time.time(),
+        })
+        self.total_triggers += 1
+
+    def threshold_crossed(self, condition: ICCondition) -> bool:
+        return len(self.triggers_by_class.get(condition.value, [])) >= SIDECAR_THRESHOLD
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# UTILITIES
+# ─────────────────────────────────────────────────────────────────────────────
+
+def sha256_str(s: str) -> str:
+    return hashlib.sha256(s.encode()).hexdigest()
+
+
+def write_jsonl(path: Path, record: Dict[str, Any]):
+    """Append a record to a JSONL file atomically."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "a", encoding="utf-8") as f:
+        f.write(json.dumps(record) + "\n")
+
+
+def write_json_atomic(path: Path, data: Dict[str, Any]) -> str:
+    """Write JSON atomically; return SHA256."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(".tmp")
+    _mb_write_json_file(tmp, data, operation_id='STAGE4_ATOMIC_JSON_0_kernel_scripts_intra_chunk_interrupt_checker_v1_py_L148', create_parent=True, allowed_roots=[str(_MBAJWPath('/mnt/data').resolve())], indent=2, sort_keys=False, ensure_ascii=True, max_bytes=20000000)
+    os.replace(tmp, path)
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def chunk_id_for(stage_name: str) -> str:
+    ts = int(time.time() * 1000)
+    slug = stage_name.upper().replace(" ", "_")[:30]
+    return f"{slug}_{ts}"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# IC CONDITION EVALUATORS
+# ─────────────────────────────────────────────────────────────────────────────
+
+def eval_ic1(ctx: ArtifactContext) -> ICTriggerResult:
+    """IC-1: More than 2 tool retry attempts."""
+    triggered = ctx.tool_retry_count > 2
+    return ICTriggerResult(
+        condition=ICCondition.IC1_TOOL_RETRY_EXCESS,
+        triggered=triggered,
+        evidence=f"tool_retry_count={ctx.tool_retry_count} (threshold >2)",
+        classification=IC_DEFAULT_CLASSIFICATION[ICCondition.IC1_TOOL_RETRY_EXCESS],
+        proposed_action="log_and_continue — investigate tool reliability",
+    )
+
+
+def eval_ic2(ctx: ArtifactContext) -> ICTriggerResult:
+    """IC-2: Canmore/canvas route attempt detected."""
+    triggered = ctx.canmore_attempted
+    return ICTriggerResult(
+        condition=ICCondition.IC2_CANMORE_ATTEMPT,
+        triggered=triggered,
+        evidence="canmore/canvas route attempted" if triggered else "no canmore attempt",
+        classification=IC_DEFAULT_CLASSIFICATION[ICCondition.IC2_CANMORE_ATTEMPT],
+        proposed_action="pause_and_amend — canmore is a forbidden tool class per P-1 contract",
+    )
+
+
+def eval_ic3(ctx: ArtifactContext) -> ICTriggerResult:
+    """IC-3: SEE search returned 0 relevant results."""
+    if ctx.see_result_count == -1:
+        # SEE was not run — not a trigger
+        return ICTriggerResult(
+            condition=ICCondition.IC3_SEE_ZERO_RESULTS,
+            triggered=False,
+            evidence="SEE not run for this artifact",
+            classification=IC_DEFAULT_CLASSIFICATION[ICCondition.IC3_SEE_ZERO_RESULTS],
+            proposed_action="no_action",
+        )
+    triggered = ctx.see_result_count == 0
+    return ICTriggerResult(
+        condition=ICCondition.IC3_SEE_ZERO_RESULTS,
+        triggered=triggered,
+        evidence=f"SEE returned {ctx.see_result_count} results (threshold: >0)",
+        classification=IC_DEFAULT_CLASSIFICATION[ICCondition.IC3_SEE_ZERO_RESULTS],
+        proposed_action="pause_and_amend — refine SEE query or label claim T4-TRAINING-ONLY",
+    )
+
+
+def eval_ic4(ctx: ArtifactContext) -> ICTriggerResult:
+    """IC-4: Claim made without direct artifact evidence."""
+    triggered = ctx.has_uncited_claims
+    return ICTriggerResult(
+        condition=ICCondition.IC4_CLAIM_WITHOUT_EVIDENCE,
+        triggered=triggered,
+        evidence="uncited claims detected in artifact output" if triggered else "all claims cited",
+        classification=IC_DEFAULT_CLASSIFICATION[ICCondition.IC4_CLAIM_WITHOUT_EVIDENCE],
+        proposed_action="pause_and_amend — every substantive claim needs T1/T2 backing",
+    )
+
+
+def eval_ic5(ctx: ArtifactContext, chunk_state: ChunkInterruptState) -> ICTriggerResult:
+    """IC-5: Same pattern seen in 2+ prior artifacts in this chunk."""
+    # Pattern = same IC conditions firing on multiple artifacts
+    recurring_patterns = []
+    for ic_key, triggers in chunk_state.triggers_by_class.items():
+        ids = [t["artifact_id"] for t in triggers if t["artifact_id"] != ctx.artifact_id]
+        if len(ids) >= 1:
+            recurring_patterns.append(f"{ic_key} seen on: {ids}")
+
+    triggered = len(recurring_patterns) > 0
+    return ICTriggerResult(
+        condition=ICCondition.IC5_RECURRING_PATTERN,
+        triggered=triggered,
+        evidence="; ".join(recurring_patterns) if triggered else "no recurring patterns",
+        classification=IC_DEFAULT_CLASSIFICATION[ICCondition.IC5_RECURRING_PATTERN],
+        proposed_action="pause_and_amend — recurring pattern should trigger sidecar generation",
+    )
+
+
+def eval_ic6(ctx: ArtifactContext) -> ICTriggerResult:
+    """IC-6: Output failed a T1_DETERMINISTIC gate check."""
+    failed_gates = [k for k, v in ctx.t1_gate_results.items() if not v]
+    triggered = len(failed_gates) > 0
+    return ICTriggerResult(
+        condition=ICCondition.IC6_T1_GATE_FAIL,
+        triggered=triggered,
+        evidence=f"T1 gate failures: {failed_gates}" if triggered else "all T1 gates passed",
+        classification=IC_DEFAULT_CLASSIFICATION[ICCondition.IC6_T1_GATE_FAIL],
+        proposed_action="pause_and_amend — T1 gate failures block promotion",
+    )
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# W0-W1 OBSERVE → CLASSIFY
+# ─────────────────────────────────────────────────────────────────────────────
+
+def w0_observe(triggers: List[ICTriggerResult], ctx: ArtifactContext) -> Dict[str, Any]:
+    """W0: Observe — collect all triggered IC conditions into structured observation."""
+    return {
+        "observation_id": f"OBS_{ctx.artifact_id}_{int(time.time()*1000)}",
+        "artifact_id": ctx.artifact_id,
+        "chunk_position": f"{ctx.chunk_position}/{ctx.chunk_total}",
+        "timestamp": time.time(),
+        "triggered_conditions": [
+            {
+                "condition": t.condition.value,
+                "evidence": t.evidence,
+                "default_classification": t.classification.value,
+            }
+            for t in triggers if t.triggered
+        ],
+    }
+
+
+def w1_classify(observation: Dict[str, Any],
+                triggers: List[ICTriggerResult]) -> Tuple[Classification, str]:
+    """
+    W1: Classify — determine overall classification from all triggered conditions.
+    Priority: DEFECT > GAP > FRICTION > SUCCESS_PATTERN
+    Returns (classification, rationale).
+    """
+    triggered = [t for t in triggers if t.triggered]
+    if not triggered:
+        return Classification.FRICTION, "no IC conditions triggered"
+
+    classifications = [t.classification for t in triggered]
+
+    if Classification.DEFECT in classifications:
+        defects = [t for t in triggered if t.classification == Classification.DEFECT]
+        return Classification.DEFECT, f"defect conditions: {[t.condition.value for t in defects]}"
+
+    if Classification.GAP in classifications:
+        gaps = [t for t in triggered if t.classification == Classification.GAP]
+        return Classification.GAP, f"gap conditions: {[t.condition.value for t in gaps]}"
+
+    if Classification.FRICTION in classifications:
+        frictions = [t for t in triggered if t.classification == Classification.FRICTION]
+        return Classification.FRICTION, f"friction conditions: {[t.condition.value for t in frictions]}"
+
+    return Classification.SUCCESS_PATTERN, "success pattern identified"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# AUTONOMOUS SIDECAR GENERATION
+# ─────────────────────────────────────────────────────────────────────────────
+
+def generate_sidecar_if_threshold(
+    condition: ICCondition,
+    chunk_state: ChunkInterruptState,
+    log_dir: Path,
+) -> Optional[str]:
+    """
+    Auto-generate a sidecar bundle when SIDECAR_THRESHOLD is crossed for a condition.
+    Returns path to sidecar index if generated, else None.
+    Implements AMEND-0006.
+    """
+    if not chunk_state.threshold_crossed(condition):
+        return None
+
+    sidecar_name = f"FAILURE_CLASS_{condition.value.replace('-','_')}_SIDECAR"
+    ts = int(time.time() * 1000)
+    sidecar_dir = SIDECAR_DIR / f"{sidecar_name}_{ts}"
+    sidecar_dir.mkdir(parents=True, exist_ok=True)
+
+    triggers = chunk_state.triggers_by_class.get(condition.value, [])
+
+    readme = {
+        "sidecar_name": sidecar_name,
+        "condition": condition.value,
+        "generated_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "amendment": "AMEND-0006",
+        "why_generated": (
+            f"IC condition {condition.value} triggered {len(triggers)} times "
+            f"(threshold: {SIDECAR_THRESHOLD}) in chunk {chunk_state.chunk_id}"
+        ),
+        "trigger_instances": triggers,
+        "recommended_action": (
+            "Review trigger instances. If pattern is systemic, "
+            "create a governance amendment. If one-off, document and close."
+        ),
+    }
+
+    index = {
+        "sidecar_id": f"{sidecar_name}_{ts}",
+        "condition": condition.value,
+        "chunk_id": chunk_state.chunk_id,
+        "generated_utc": readme["generated_utc"],
+        "trigger_count": len(triggers),
+        "files": [],
+    }
+
+    readme_path = sidecar_dir / "README.json"
+    readme_sha = write_json_atomic(readme_path, readme)
+    index["files"].append({"file": "README.json", "sha256": readme_sha})
+
+    evidence_path = sidecar_dir / "TRIGGER_EVIDENCE_v1.json"
+    evidence = {
+        "chunk_id": chunk_state.chunk_id,
+        "condition": condition.value,
+        "triggers": triggers,
+        "all_chunk_triggers": chunk_state.triggers_by_class,
+    }
+    evidence_sha = write_json_atomic(evidence_path, evidence)
+    index["files"].append({"file": "TRIGGER_EVIDENCE_v1.json", "sha256": evidence_sha})
+
+    index_path = sidecar_dir / "SIDECAR_INDEX_v1.json"
+    write_json_atomic(index_path, index)
+
+    print(f"  [SIDECAR] Auto-generated: {sidecar_dir.name}")
+    return str(index_path)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# MAIN EVALUATION FUNCTION
+# ─────────────────────────────────────────────────────────────────────────────
+
+def evaluate_artifact(
+    ctx: ArtifactContext,
+    chunk_state: ChunkInterruptState,
+    log_dir: Path,
+) -> Dict[str, Any]:
+    """
+    Evaluate all IC conditions for a single artifact.
+    Returns interrupt result with: triggered_count, classification, action, receipt_path.
+    """
+    log_dir.mkdir(parents=True, exist_ok=True)
+
+    # Evaluate all 6 IC conditions
+    results = [
+        eval_ic1(ctx),
+        eval_ic2(ctx),
+        eval_ic3(ctx),
+        eval_ic4(ctx),
+        eval_ic5(ctx, chunk_state),
+        eval_ic6(ctx),
+    ]
+
+    triggered = [r for r in results if r.triggered]
+    chunk_state.artifacts_evaluated += 1
+
+    # Record all triggers in chunk state
+    for t in triggered:
+        chunk_state.record_trigger(t.condition, ctx.artifact_id, t.evidence)
+
+    if not triggered:
+        # Clean — log minimal pass record and return
+        record = {
+            "type": "IC_PASS",
+            "artifact_id": ctx.artifact_id,
+            "chunk_position": f"{ctx.chunk_position}/{ctx.chunk_total}",
+            "ts": time.time(),
+        }
+        write_jsonl(log_dir / "IC_PASS_LOG.jsonl", record)
+        return {
+            "artifact_id": ctx.artifact_id,
+            "triggered_count": 0,
+            "triggered_conditions": [],
+            "classification": None,
+            "action": "continue",
+            "receipt_path": None,
+            "sidecar_paths": [],
+            "must_stop": False,
+        }
+
+    # W0: Observe
+    observation = w0_observe(triggered, ctx)
+
+    # W1: Classify
+    classification, rationale = w1_classify(observation, results)
+
+    # Determine action
+    if classification in (Classification.DEFECT, Classification.GAP):
+        action = "pause_and_amend"
+    else:
+        action = "log_and_continue"
+
+    # Build receipt
+    receipt_id = f"IC_INTERRUPT_{ctx.artifact_id}_{int(time.time()*1000)}"
+    receipt = {
+        "receipt_type": "INTRA_CHUNK_INTERRUPT_RECEIPT",
+        "receipt_id": receipt_id,
+        "amendment": AMENDMENT,
+        "workflow_version": WORKFLOW_VERSION,
+        "artifact_id": ctx.artifact_id,
+        "chunk_position": f"{ctx.chunk_position}/{ctx.chunk_total}",
+        "chunk_id": chunk_state.chunk_id,
+        "created_at": time.time(),
+        "observation": observation,
+        "classification": classification.value,
+        "classification_rationale": rationale,
+        "proposed_action": action,
+        "triggered_conditions": [
+            {
+                "condition": t.condition.value,
+                "evidence": t.evidence,
+                "classification": t.classification.value,
+                "proposed_action": t.proposed_action,
+            }
+            for t in triggered
+        ],
+        "all_conditions_evaluated": [
+            {"condition": r.condition.value, "triggered": r.triggered}
+            for r in results
+        ],
+        "resumed": False,
+        "must_stop": action == "pause_and_amend",
+    }
+
+    receipt_path = log_dir / f"{receipt_id}.json"
+    receipt_sha = write_json_atomic(receipt_path, receipt)
+    receipt["receipt_sha"] = receipt_sha
+
+    # Write to ISSUE_LESSON_LOG
+    lesson_entry = {
+        "observation_id": observation["observation_id"],
+        "artifact_id": ctx.artifact_id,
+        "classification": classification.value,
+        "conditions": [t.condition.value for t in triggered],
+        "action": action,
+        "receipt_id": receipt_id,
+        "ts": time.time(),
+    }
+    write_jsonl(ISSUE_LESSON_LOG, lesson_entry)
+
+    # Check for sidecar generation (AMEND-0006)
+    sidecar_paths = []
+    for t in triggered:
+        sp = generate_sidecar_if_threshold(t.condition, chunk_state, log_dir)
+        if sp:
+            sidecar_paths.append(sp)
+
+    # Track open interrupt
+    if action == "pause_and_amend":
+        chunk_state.open_interrupts.append(receipt_id)
+
+    # Console output
+    status_symbol = "✗ INTERRUPT" if action == "pause_and_amend" else "⚠ WARN"
+    print(f"  [{status_symbol}] {ctx.artifact_id} ({ctx.chunk_position}/{ctx.chunk_total})")
+    print(f"    Class: {classification.value}  Action: {action}")
+    for t in triggered:
+        print(f"    {t.condition.value}: {t.evidence[:80]}")
+    if sidecar_paths:
+        for sp in sidecar_paths:
+            print(f"    [SIDECAR] {sp}")
+
+    return {
+        "artifact_id": ctx.artifact_id,
+        "triggered_count": len(triggered),
+        "triggered_conditions": [t.condition.value for t in triggered],
+        "classification": classification.value,
+        "action": action,
+        "receipt_path": str(receipt_path),
+        "receipt_sha": receipt_sha,
+        "sidecar_paths": sidecar_paths,
+        "must_stop": action == "pause_and_amend",
+    }
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CHUNK EVALUATION (evaluate all artifacts in a chunk sequentially)
+# ─────────────────────────────────────────────────────────────────────────────
+
+def evaluate_chunk(
+    stage_name: str,
+    artifact_contexts: List[Dict[str, Any]],
+    log_dir: Optional[Path] = None,
+) -> Dict[str, Any]:
+    """
+    Evaluate a complete chunk of artifacts sequentially.
+    Stops on first pause_and_amend if stop_on_interrupt=True (default).
+    Returns chunk-level summary.
+    """
+    if log_dir is None:
+        log_dir = DEFAULT_LOG_DIR
+
+    chunk_id = chunk_id_for(stage_name)
+    chunk_state = ChunkInterruptState(chunk_id=chunk_id)
+
+    print(f"\n{'='*60}")
+    print(f"[INTERRUPT CHECKER] Stage: {stage_name}")
+    print(f"[CHUNK] {chunk_id}  Artifacts: {len(artifact_contexts)}")
+    print(f"{'='*60}")
+
+    results = []
+    stopped_at = None
+
+    for i, ctx_dict in enumerate(artifact_contexts):
+        ctx = ArtifactContext(
+            artifact_id=ctx_dict.get("artifact_id", f"ARTIFACT_{i+1}"),
+            chunk_position=i + 1,
+            chunk_total=len(artifact_contexts),
+            tool_retry_count=ctx_dict.get("tool_retry_count", 0),
+            canmore_attempted=ctx_dict.get("canmore_attempted", False),
+            see_result_count=ctx_dict.get("see_result_count", -1),
+            has_uncited_claims=ctx_dict.get("has_uncited_claims", False),
+            prior_artifact_ids=[r["artifact_id"] for r in results],
+            t1_gate_results=ctx_dict.get("t1_gate_results", {}),
+            extra=ctx_dict.get("extra", {}),
+        )
+
+        result = evaluate_artifact(ctx, chunk_state, log_dir)
+        results.append(result)
+
+        if result.get("must_stop"):
+            stopped_at = ctx.artifact_id
+            print(f"\n  [CHUNK HALTED] Interrupt at {stopped_at} — resolve before continuing")
+            break
+
+    # Chunk summary
+    total_triggers = sum(r["triggered_count"] for r in results)
+    interrupt_count = sum(1 for r in results if r.get("must_stop"))
+    warn_count = sum(1 for r in results
+                     if r["triggered_count"] > 0 and not r.get("must_stop"))
+
+    summary = {
+        "receipt_type": "CHUNK_EVALUATION_SUMMARY",
+        "chunk_id": chunk_id,
+        "stage_name": stage_name,
+        "created_at": time.time(),
+        "artifacts_evaluated": chunk_state.artifacts_evaluated,
+        "artifacts_total": len(artifact_contexts),
+        "total_ic_triggers": total_triggers,
+        "interrupt_count": interrupt_count,
+        "warn_count": warn_count,
+        "stopped_at": stopped_at,
+        "chunk_complete": stopped_at is None,
+        "open_interrupts": chunk_state.open_interrupts,
+        "triggers_by_class": chunk_state.triggers_by_class,
+        "artifact_results": results,
+        "must_stop": stopped_at is not None,
+    }
+
+    summary_path = log_dir / f"CHUNK_EVAL_SUMMARY_{chunk_id}.json"
+    summary_sha = write_json_atomic(summary_path, summary)
+
+    print(f"\n[CHUNK SUMMARY]")
+    print(f"  Evaluated: {chunk_state.artifacts_evaluated}/{len(artifact_contexts)}")
+    print(f"  Triggers: {total_triggers}  Interrupts: {interrupt_count}  Warns: {warn_count}")
+    print(f"  Complete: {stopped_at is None}")
+    if stopped_at:
+        print(f"  Stopped at: {stopped_at}")
+    print(f"  Summary: {summary_path}  SHA: {summary_sha[:16]}...")
+
+    return summary
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CLI
+# ─────────────────────────────────────────────────────────────────────────────
+
+def main(argv=None):
+    ap = argparse.ArgumentParser(
+        description="MetaBlooms Intra-Chunk Interrupt Checker v1 — IC-1 through IC-6 evaluation"
+    )
+    ap.add_argument("--stage-name", required=True)
+    ap.add_argument("--artifacts", required=True,
+                    help="Path to JSON file containing list of artifact context dicts")
+    ap.add_argument("--log-dir", default=str(DEFAULT_LOG_DIR))
+    ap.add_argument("--json-output", action="store_true")
+
+    # Single-artifact mode
+    ap.add_argument("--artifact-id", help="Single artifact ID (single-artifact mode)")
+    ap.add_argument("--tool-retry-count", type=int, default=0)
+    ap.add_argument("--canmore-attempted", action="store_true")
+    ap.add_argument("--see-result-count", type=int, default=-1)
+    ap.add_argument("--has-uncited-claims", action="store_true")
+    ap.add_argument("--t1-gate-failures", nargs="*", default=[],
+                    help="Names of T1 gates that failed")
+    ap.add_argument("--chunk-position", type=int, default=1)
+    ap.add_argument("--chunk-total", type=int, default=1)
+
+    args = ap.parse_args(argv)
+    log_dir = Path(args.log_dir)
+
+    # Load artifacts from file or single-artifact mode
+    if args.artifact_id:
+        artifacts = [{
+            "artifact_id": args.artifact_id,
+            "tool_retry_count": args.tool_retry_count,
+            "canmore_attempted": args.canmore_attempted,
+            "see_result_count": args.see_result_count,
+            "has_uncited_claims": args.has_uncited_claims,
+            "t1_gate_results": {g: False for g in args.t1_gate_failures},
+        }]
+    elif args.artifacts and Path(args.artifacts).exists():
+        artifacts = json.loads(Path(args.artifacts).read_text())
+    else:
+        print(f"ERROR: --artifacts file not found: {args.artifacts}")
+        import sys; sys.exit(1)
+
+    result = evaluate_chunk(
+        stage_name=args.stage_name,
+        artifact_contexts=artifacts,
+        log_dir=log_dir,
+    )
+
+    if args.json_output:
+        import sys
+        print(json.dumps(result, indent=2), file=sys.stdout)
+
+    import sys
+    sys.exit(0 if result["chunk_complete"] else 1)
+
+
+if __name__ == "__main__":
+    main()

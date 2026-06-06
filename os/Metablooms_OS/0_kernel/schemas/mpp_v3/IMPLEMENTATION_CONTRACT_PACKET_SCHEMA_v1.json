@@ -1,0 +1,234 @@
+{
+  "$id": "metablooms://schemas/mpp_v3/IMPLEMENTATION_CONTRACT_PACKET_SCHEMA_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_plan": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_id": {
+            "pattern": "^ART-[0-9]{3}$",
+            "type": "string"
+          },
+          "purpose": {
+            "minLength": 5,
+            "type": "string"
+          },
+          "relative_path": {
+            "minLength": 3,
+            "type": "string"
+          },
+          "validation": {
+            "minLength": 5,
+            "type": "string"
+          }
+        },
+        "required": [
+          "artifact_id",
+          "relative_path",
+          "purpose",
+          "validation"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "created_at": {
+      "minLength": 10,
+      "type": "string"
+    },
+    "implementation_targets": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_type": {
+            "enum": [
+              "python",
+              "json",
+              "markdown",
+              "html",
+              "javascript",
+              "typescript",
+              "fixture",
+              "receipt",
+              "handoff",
+              "other"
+            ],
+            "type": "string"
+          },
+          "expected_hash_mode": {
+            "enum": [
+              "sha256_required",
+              "hash_not_applicable"
+            ],
+            "type": "string"
+          },
+          "operation": {
+            "enum": [
+              "create",
+              "update",
+              "delete",
+              "copy",
+              "generate"
+            ],
+            "type": "string"
+          },
+          "owner": {
+            "minLength": 3,
+            "type": "string"
+          },
+          "path": {
+            "minLength": 3,
+            "type": "string"
+          },
+          "target_id": {
+            "pattern": "^IMPL-[0-9]{3}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "target_id",
+          "path",
+          "artifact_type",
+          "operation",
+          "expected_hash_mode",
+          "owner"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "objective_id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "packet_id": {
+      "minLength": 8,
+      "type": "string"
+    },
+    "post_write_checks": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "pre_write_checks": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "provenance": {
+      "additionalProperties": false,
+      "properties": {
+        "builder": {
+          "minLength": 3,
+          "type": "string"
+        },
+        "expected_outputs": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "inputs": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "verification_expectations": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "builder",
+        "inputs",
+        "expected_outputs",
+        "verification_expectations"
+      ],
+      "type": "object"
+    },
+    "result_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "mpp.implementation_contract_packet.v1"
+    },
+    "source_rrp_packet_id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "stage": {
+      "const": "IMPLEMENTATION"
+    },
+    "write_policy": {
+      "additionalProperties": false,
+      "properties": {
+        "allowed_roots": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "forbidden_path_patterns": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "requires_atomic_write": {
+          "type": "boolean"
+        },
+        "requires_parent_creation": {
+          "type": "boolean"
+        },
+        "requires_probe": {
+          "type": "boolean"
+        },
+        "requires_receipt": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "allowed_roots",
+        "forbidden_path_patterns",
+        "requires_probe",
+        "requires_parent_creation",
+        "requires_atomic_write",
+        "requires_receipt"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "packet_id",
+    "stage",
+    "created_at",
+    "objective_id",
+    "source_rrp_packet_id",
+    "implementation_targets",
+    "write_policy",
+    "artifact_plan",
+    "pre_write_checks",
+    "post_write_checks",
+    "provenance",
+    "result_hash"
+  ],
+  "title": "MPP v3 Implementation Contract Packet",
+  "type": "object"
+}

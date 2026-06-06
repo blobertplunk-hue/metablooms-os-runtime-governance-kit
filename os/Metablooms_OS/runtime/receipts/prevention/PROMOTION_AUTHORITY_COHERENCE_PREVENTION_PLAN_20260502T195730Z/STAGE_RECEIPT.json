@@ -1,0 +1,11 @@
+{
+  "id": "PROMOTION_AUTHORITY_COHERENCE_PREVENTION_PLAN",
+  "created_utc": "20260502T195730Z",
+  "root": "/mnt/data/Metablooms_OS",
+  "observed_scatter_decision": "DENY",
+  "observed_current_controlled_count": 4835,
+  "observed_registered_count": 3086,
+  "prevention_gate": "PROMOTION_AUTHORITY_COHERENCE_GATE_v1",
+  "status": "PLAN_WRITTEN_NOT_IMPLEMENTED",
+  "receipt_dir": "/mnt/data/Metablooms_OS/runtime/receipts/prevention/PROMOTION_AUTHORITY_COHERENCE_PREVENTION_PLAN_20260502T195730Z"
+}

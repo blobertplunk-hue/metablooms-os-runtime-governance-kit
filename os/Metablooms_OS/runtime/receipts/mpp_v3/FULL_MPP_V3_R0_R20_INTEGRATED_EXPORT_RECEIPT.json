@@ -1,0 +1,150 @@
+{
+  "base_zip": "/mnt/data/METABLOOMS_OS_PROMPT_GOVERNANCE_CARTRIDGE_INSTALL_3_FULL_EXPORT_STREAM_ROUTE_REPAIR_AND_FRESH_EXTRACT_REPLAY_FULL_AUTHORITY_20260430T221500Z.zip",
+  "created_at": "2026-05-01T00:22:11.850964+00:00",
+  "external_sidecar_required": true,
+  "input_checks": [
+    {
+      "checksum_match": true,
+      "sha256": "3e0b69fad9a953891f4dcc197c979200e61c61ccb241dab621035a6c9e26b1e3",
+      "zip": "MPP_R0_AUTHORITY_AND_SCHEMA_LOCK_20260430T214600Z.zip",
+      "zip_testzip": null
+    },
+    {
+      "checksum_match": true,
+      "sha256": "feaa87eba2cb0e1bb809f626dda9f31bb8a48f00696cf4619adb3daac4fd8f48",
+      "zip": "MPP_R1_RESEARCH_PLANNER_VALIDATOR_AND_PACKET_WRITER_20260430T215500Z.zip",
+      "zip_testzip": null
+    },
+    {
+      "checksum_match": true,
+      "sha256": "c7be7336896a15b1493493908d3f45fb119c1d3235836656fc9e01ae9fda4cd6",
+      "zip": "MPP_R2_SEE_PACKET_ADAPTER_AND_RECURSIVE_SEARCH_GATE_20260430T220900Z.zip",
+      "zip_testzip": null
+    },
+    {
+      "checksum_match": true,
+      "sha256": "54fd68fd94499708e4379f64ed877190f6ea763d170d681b1b158b51aeb5514f",
+      "zip": "MPP_R3_NORMALIZE_EVIDENCE_AND_CE_BRIDGE_20260430T222400Z.zip",
+      "zip_testzip": null
+    },
+    {
+      "checksum_match": true,
+      "sha256": "09975416d1d97e53820481982260f4221a29f48667cb81f62ce027b0c8dea14e",
+      "zip": "MPP_R4_MMD_GAP_LEDGER_VALIDATOR_AND_ESCALATION_GATE_20260430T225100Z.zip",
+      "zip_testzip": null
+    },
+    {
+      "checksum_match": true,
+      "sha256": "e52cd83f16e3b64e727caf513b1042f51dd74b282ea1daa43231dafaeec0257d",
+      "zip": "MPP_R5_DRS_DECISION_RECORD_VALIDATOR_AND_RESEARCH_TO_DECISION_GATE_20260430T231200Z.zip",
+      "zip_testzip": null
+    },
+    {
+      "checksum_match": true,
+      "sha256": "321e9605f410d04dc8b7fffba55fd675e7b56e378046879529aea1ebdff4c65a",
+      "zip": "MPP_R6_CDR_CONSTRAINTS_SCHEMA_AND_POLICY_GATE_20260430T233000Z.zip",
+      "zip_testzip": null
+    },
+    {
+      "checksum_match": true,
+      "sha256": "468ffa0dbe24280d0a7aa56b8c41a15310d3236e0ce48fdae61e56e3dbcf24cc",
+      "zip": "MPP_R7_OFM_OUTCOME_FRAME_SCHEMA_AND_MEASURABLE_SUCCESS_GATE_20260430T234300Z.zip",
+      "zip_testzip": null
+    },
+    {
+      "checksum_match": true,
+      "sha256": "618356f1a0123cf88ace49aa426ebb314af57487e616f53c4a71464cb31a090b",
+      "zip": "MPP_R8_ADS_ARCHITECTURE_DAG_SCHEMA_AND_OWNERSHIP_GATE_20260501T000300Z.zip",
+      "zip_testzip": null
+    },
+    {
+      "checksum_match": true,
+      "sha256": "ddb56cf4ecb729767b8a0402d1eace58cce51f5285ea70d6c2f3f94a96397a09",
+      "zip": "MPP_R9_UXR_OPERATOR_CONTEXT_SCHEMA_AND_ACCESSIBILITY_GATE_20260501T001700Z.zip",
+      "zip_testzip": null
+    },
+    {
+      "checksum_match": true,
+      "sha256": "50892c2411579991528c69dcd5bc3d5855ef864021a2eac1e9d6d0d57fe02aca",
+      "zip": "MPP_R10_NUF_NONFUNCTIONAL_REQUIREMENTS_SCHEMA_AND_BUDGET_GATE_20260501T003000Z.zip",
+      "zip_testzip": null
+    },
+    {
+      "checksum_match": true,
+      "sha256": "0bcaffacc6941b1acc576c03eca6b10c623de4dcb31065b600018ab5acbf70d7",
+      "zip": "MPP_R11_SSO_SCOPE_SCHEMA_AND_CONFLICT_GATE_20260501T004200Z.zip",
+      "zip_testzip": null
+    },
+    {
+      "checksum_match": true,
+      "sha256": "b4690b10e22cb62a91cf1475d608e8ae8a6eae940e9f9074cb802fc96db7a5c5",
+      "zip": "MPP_R12_RRP_RECOVERY_PLAN_SCHEMA_AND_ROLLBACK_GATE_20260501T005900Z.zip",
+      "zip_testzip": null
+    },
+    {
+      "checksum_match": true,
+      "sha256": "7e16f9348d47d07957ff17e79560a27c6c21bf43dfa9a00eb407ad7bd9f82f9a",
+      "zip": "MPP_R13_IMPLEMENTATION_CONTRACT_SCHEMA_AND_WRITE_PATH_GATE_20260501T011300Z.zip",
+      "zip_testzip": null
+    },
+    {
+      "checksum_match": true,
+      "sha256": "64689ba2db8298f15d2e3344159c4cc573283f9e614f974f83e1e3260cf3e6db",
+      "zip": "MPP_R14_VERIFICATION_EVIDENCE_SCHEMA_AND_TEST_RECEIPT_GATE_20260501T012800Z.zip",
+      "zip_testzip": null
+    },
+    {
+      "checksum_match": true,
+      "sha256": "0aec682c16e6f25b285d3b824084d3bdaeb83b7fcb2925c1fc5ddca61573fe19",
+      "zip": "MPP_R15_TRACE_ANALYSIS_SCHEMA_AND_ANOMALY_GATE_20260501T014300Z.zip",
+      "zip_testzip": null
+    },
+    {
+      "checksum_match": true,
+      "sha256": "6607c315cf3b13fc48c51d5ba0e25503fc68619b39152628d1c0628a848f202d",
+      "zip": "MPP_R16_ANALYSIS_EVALUATION_SCHEMA_AND_REASONING_GATE_20260501T020300Z.zip",
+      "zip_testzip": null
+    },
+    {
+      "checksum_match": true,
+      "sha256": "0e7fa9f2809de03a2ae8d59ad1ea787cf8d63e3c09a0ae5589fe6402248f651c",
+      "zip": "MPP_R17_DEBUGGING_FAILURE_CLASS_SCHEMA_AND_REPAIR_ROUTER_20260501T021900Z.zip",
+      "zip_testzip": null
+    },
+    {
+      "checksum_match": true,
+      "sha256": "37e161d1e3f9e5eeda706ad9d987f4d48af54e415231b606d10535582cde8351",
+      "zip": "MPP_R18_ECL_ENFORCED_CORRECTION_LOOP_SCHEMA_AND_REGRESSION_GATE_20260501T023500Z.zip",
+      "zip_testzip": null
+    },
+    {
+      "checksum_match": true,
+      "sha256": "03ac0dee0d0ee7e3bfc9634bf1a1e3c45c3ab5d765c0dff086be1e3fe083b3ae",
+      "zip": "MPP_R19_FIR_FITNESS_INTEGRATION_SCHEMA_AND_GATE_20260501T024900Z.zip",
+      "zip_testzip": null
+    },
+    {
+      "checksum_match": true,
+      "sha256": "62488e551e46c454858c93aaaf0062d84066c7c839c1e3dccab90935296bd25e",
+      "zip": "MPP_R20_DESIGN_ENFORCED_GOVERNED_WORKFLOW_20260501T031200Z.zip",
+      "zip_testzip": null
+    },
+    {
+      "checksum_match": true,
+      "sha256": "bc8dfbd24a3aa2c018fedd16e9fa8b815705db3c00936c500934b69108f5d07d",
+      "zip": "MPP_R20_MONITOR_TELEMETRY_SCHEMA_AND_FEEDBACK_GATE_20260501T035800Z.zip",
+      "zip_testzip": null
+    }
+  ],
+  "integrated_stage_count": 22,
+  "overlay_file_count": 345,
+  "receipt_id": "FULL_MPP_V3_R0_R20_EXPORT_RECEIPT_20260501T050500Z",
+  "required_markers": [
+    "Metablooms_OS/0_kernel/schemas/mpp_v3/MONITOR_TELEMETRY_PACKET_SCHEMA_v1.json",
+    "Metablooms_OS/0_kernel/mpp_v3/mpp_v3_monitor_telemetry_feedback_gate_v1.py",
+    "Metablooms_OS/runtime/handoffs/mpp_v3/MPP_R20_MONITOR_TELEMETRY_SCHEMA_AND_FEEDBACK_GATE_HANDOFF_LATEST.json",
+    "Metablooms_OS/runtime/receipts/mpp_v3/MPP_R20_MONITOR_TELEMETRY_SCHEMA_AND_FEEDBACK_GATE_RECEIPT_LATEST.json"
+  ],
+  "schema_version": "metablooms.full_mpp_integrated_export_receipt.v1",
+  "status": "PASS_PRE_FINAL_SHA"
+}

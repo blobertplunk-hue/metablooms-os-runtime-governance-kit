@@ -1,0 +1,10 @@
+{
+  "schema_version": "FILESYSTEM_HANDLING_SAFETY_STAGE2_VALIDATION_REPAIR_RECEIPT_v1",
+  "artifact_type": "STAGE_RECEIPT",
+  "stage": "VALIDATE_OR_REPAIR_FILESYSTEM_HANDLING_SAFETY_STAGE2_CANDIDATE_WITH_NO_BROAD_EXTRACT",
+  "created_utc": "20260501T124554Z",
+  "source_candidate": "/mnt/data/METABLOOMS_OS_FILESYSTEM_HANDLING_SAFETY_STAGE2_HARDWIRED_EXPORT_EXTRACTION_ROUTES_20260501T151900Z.zip",
+  "repair_reason": "Original direct promotion gate/validator could time out under sandbox path-probe instability; repaired gate uses bounded central-directory validation by default and supports explicit --deep-test for CRC validation.",
+  "changed_paths": ["Metablooms_OS/0_kernel/security/export_promotion_gate_v1.py", "Metablooms_OS/0_kernel/validators/validate_filesystem_handling_safety_stage2_v1.py"],
+  "verdict": "VALIDATION_PENDING_AT_WRITE_TIME"
+}

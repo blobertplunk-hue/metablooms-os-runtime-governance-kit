@@ -1,0 +1,11 @@
+{
+  "id": "H0B1_TEST_PLAN_v1",
+  "tests": [
+    "import_kernel",
+    "validate_allow_fixture",
+    "validate_deny_fixtures",
+    "verify_expected_paths_exist",
+    "verify_invariant_activation_engine_dispatch",
+    "fresh_export_extract_and_retest"
+  ]
+}

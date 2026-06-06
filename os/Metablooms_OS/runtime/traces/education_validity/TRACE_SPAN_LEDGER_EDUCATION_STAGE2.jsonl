@@ -1,0 +1,1 @@
+{"schema_version":"TRACE_SPAN_v1","trace_id":"edu-stage2","span_id":"edu-stage2-001","stage_name":"EDUCATION_VALIDITY_STAGE_2_HARDWIRE_PROMOTION_GATE","event":"stage.complete","status":"OK","timestamp_utc":"20260501T182900Z","attributes":{"accuracy":1.0,"false_pass_count":0}}

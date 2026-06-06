@@ -1,0 +1,14 @@
+{
+  "id": "BTS_V4_GATED_RECEIPT_ENGINE_REQUIRED_v1",
+  "status": "active",
+  "stage": "STAGE6D_BTS_V4_GATE_WRAPPED_INSTALL_SCAFFOLD",
+  "description": "Canonical BTS receipt/reasoning substrate must use OS-gated BTS v4 for governed receipts; subprocess and managed file-write surfaces must route through Stage6B pre-action gate.",
+  "required_paths": [
+    "runtime/governance/bts_v4/BTS.py",
+    "runtime/governance/bts_v4/BTS_V4_OS_PATH_REGISTRY_v1.json"
+  ],
+  "failure_action": "DENY_GOVERNED_BTS_CLAIM",
+  "limitations": [
+    "Does not intercept ChatGPT platform tools directly; governs BTS-managed execution routed through OS module."
+  ]
+}

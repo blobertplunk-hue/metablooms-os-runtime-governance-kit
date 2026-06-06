@@ -1,0 +1,11 @@
+{
+  "artifact_type": "METABLOOMS_STAGE_HANDOFF_v1",
+  "authoritative_stage_receipt": "/mnt/data/Metablooms_OS/runtime/receipts/meta_infra/BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES_20260502T135531Z/STAGE_RECEIPT.json",
+  "created_utc": "20260502T135531Z",
+  "from_stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE2_IMPLEMENTATION_AND_EXECUTABLE_FIXTURES",
+  "implemented_source": "/mnt/data/Metablooms_OS/0_kernel/lib/execution/bounded_subprocess_wrapper_v1.py",
+  "required_next_stage": "BTS_BOUNDED_SUBPROCESS_WRAPPER_CDR_CRITICAL_STAGE3_CALLER_RETROFIT_AND_ENFORCEMENT_BINDING",
+  "source_sha256": "1303f3ee59f478a3f61d69e82b817668c30afe6aac2476b667fa9080c69b821f",
+  "status": "PASS",
+  "stop_rule": "Stop after Stage2 implementation and executable fixtures; do not retrofit callers until Stage3."
+}

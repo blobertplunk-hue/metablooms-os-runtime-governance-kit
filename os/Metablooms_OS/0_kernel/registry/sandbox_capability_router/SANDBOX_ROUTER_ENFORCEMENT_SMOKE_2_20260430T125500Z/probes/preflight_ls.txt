@@ -1,0 +1,3 @@
+ls: cannot access '/mnt/data/Metablooms_OS/0_kernel/registry/sandbox_capability_router/SANDBOX_ROUTER_ENFORCEMENT_WIRING_LATEST_HANDOFF.json': No such file or directory
+ls: cannot access '/mnt/data/Metablooms_OS/0_kernel/lib/sandbox_router_enforcer_v1.mjs': No such file or directory
+ls: cannot access '/mnt/data/Metablooms_OS/0_kernel/scripts/sandbox_router/enforce_sandbox_route.sh': No such file or directory

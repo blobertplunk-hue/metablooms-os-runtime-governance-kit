@@ -1,0 +1,8 @@
+{
+  "attributes": {},
+  "kind": "INTERNAL",
+  "name": "bts.tool_execution",
+  "risk_tier": "high",
+  "stage_id": "STAGE6R_OBSERVABILITY_TRACE_EXPORT_ADAPTERS",
+  "status": "PASS"
+}

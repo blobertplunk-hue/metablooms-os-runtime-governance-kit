@@ -1,0 +1,20 @@
+{
+  "created_at_utc": "20260503T025509Z",
+  "delta_points_from_previous": 3.125,
+  "evidence_paths": [
+    "0_kernel/scripts/stage_runner_v1.py",
+    "0_kernel/registry/world_class_gap_plan/RUNTIME_ORCHESTRATOR_EXIT_GATE_WIRING_v1.json",
+    "0_kernel/evals/field_task_fixtures/FIELD_TASK_FIXTURES_v1.json",
+    "0_kernel/evals/field_task_fixtures/field_task_fixture_runner_v1.py"
+  ],
+  "honesty_label": "OS-governance score with runtime orchestrator gate wiring and sandbox field-like artifact fixtures; not external certification or classroom field validation.",
+  "latest_measured_score_percent": 90.625,
+  "new_domain": {
+    "benchmark_domain": "runtime_orchestrator_gate_wiring_and_field_fixtures",
+    "decision": "partial",
+    "reason": "Stage runner now fail-closes on runtime gate when binding exists, and field-like artifact fixtures exist/pass; full external field validation remains future work."
+  },
+  "previous_measured_score_percent": 87.5,
+  "schema_version": "v4",
+  "stage": "WC_STAGE12_RUNTIME_ORCHESTRATOR_GATE_WIRING_AND_FIELD_TASK_FIXTURES"
+}
