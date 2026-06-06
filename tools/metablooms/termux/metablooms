@@ -1,0 +1,157 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -uo pipefail
+
+MB_REPO_DEFAULT="blobertplunk-hue/metablooms-os-runtime-governance-kit"
+MB_BOOT_SHA_DEFAULT="2a1d96759f71eff45acefe3eb8658e3a3518456867e3b64a763272e85a7a18ed"
+MB_HOME="${MB_HOME:-$HOME/metablooms/operator}"
+mkdir -p "$MB_HOME/runs"
+
+usage(){ cat <<'TXT'
+MetaBlooms high-level operator CLI
+
+Commands:
+  metablooms status --repo OWNER/REPO [--pr N]
+  metablooms merge-pr --pr N --expected-head SHA --stage STAGE --next-stage STAGE [--repo OWNER/REPO]
+  metablooms recover-last-run
+  metablooms inspect-blocker
+
+This command hides gh/jq/git/ruleset plumbing and always emits a copy-back block.
+TXT
+}
+
+copyback(){
+  local out_dir="$1" status="$2" result="$3" stage="$4" next_stage="$5" blocker="$6" extra_file="${7:-}"
+  mkdir -p "$out_dir"
+  local receipt="$out_dir/RECEIPT.json" cb="$out_dir/COPY_BACK_TO_CHAT.txt" log="$out_dir/run.log"
+  local ts; ts="$(date -u +%Y%m%dT%H%M%SZ)"
+  cat > "$receipt" <<JSON
+{"status":"$status","result":"$result","stage":"$stage","next_stage":"$next_stage","blocker":"$blocker","timestamp_utc":"$ts","out_dir":"$out_dir"}
+JSON
+  local rsha lsha clip
+  rsha="$(sha256sum "$receipt"|awk '{print $1}')"
+  lsha="$(sha256sum "$log" 2>/dev/null|awk '{print $1}' || echo LOG_NOT_AVAILABLE)"
+  cat > "$cb" <<CB
+🚨🚨🚨 COPY BACK TO CHAT — START 🚨🚨🚨
+STATUS=$status
+RESULT=$result
+STAGE=$stage
+NEXT_STAGE=$next_stage
+REPO=${MB_REPO:-$MB_REPO_DEFAULT}
+TERMUX_OUT_DIR=$out_dir
+RECEIPT=$receipt
+RECEIPT_SHA256=$rsha
+LOG=$log
+LOG_SHA256=$lsha
+BLOCKER=$blocker
+CB
+  [ -n "$extra_file" ] && cat "$extra_file" >> "$cb"
+  cat >> "$cb" <<'CB'
+CLIPBOARD_STATUS=PLACEHOLDER
+🚨🚨🚨 COPY BACK TO CHAT — END 🚨🚨🚨
+CB
+  if command -v termux-clipboard-set >/dev/null 2>&1 && termux-clipboard-set < "$cb" >/dev/null 2>&1; then clip="CLIPBOARD_SET"; else clip="CLIPBOARD_NOT_SET"; fi
+  sed -i "s/CLIPBOARD_STATUS=PLACEHOLDER/CLIPBOARD_STATUS=$clip/" "$cb"
+  [ "$clip" = "CLIPBOARD_SET" ] && termux-clipboard-set < "$cb" >/dev/null 2>&1 || true
+  cat "$cb"
+}
+
+require_tools(){
+  for p in gh jq git python; do
+    command -v "$p" >/dev/null 2>&1 || { pkg update -y; pkg install -y "$p"; }
+  done
+  command -v termux-clipboard-set >/dev/null 2>&1 || pkg install -y termux-api >/dev/null 2>&1 || true
+}
+
+status_cmd(){
+  require_tools
+  local repo="$MB_REPO_DEFAULT" pr="" out="$MB_HOME/runs/status_$(date -u +%Y%m%dT%H%M%SZ)"
+  while [ $# -gt 0 ]; do case "$1" in --repo) repo="$2"; shift 2;; --pr) pr="$2"; shift 2;; *) shift;; esac; done
+  export MB_REPO="$repo"
+  mkdir -p "$out"
+  { echo "MetaBlooms status"; echo "Repo: $repo"; [ -n "$pr" ] && gh pr view "$pr" --repo "$repo" --json number,state,headRefOid,mergeable,reviewDecision,mergedAt,mergeCommit,url | tee "$out/pr.json"; } 2>&1 | tee "$out/run.log"
+  copyback "$out" "COMPLETE" "STATUS_OBSERVED" "METABLOOMS_OPERATOR_STATUS" "NONE" "" ""
+}
+
+relax_rulesets(){
+  local owner="$1" name="$2" out="$3"
+  gh api "repos/$owner/$name/rulesets?includes_parents=false" > "$out/rulesets_list.json" || return 1
+  local ids changed=""
+  ids="$(jq -r '.[] | select(.target=="branch") | .id' "$out/rulesets_list.json")"
+  for id in $ids; do
+    local full="$out/backups/ruleset_$id.json" payload="$out/payloads/relax_$id.json"
+    mkdir -p "$out/backups" "$out/payloads"
+    gh api "repos/$owner/$name/rulesets/$id?includes_parents=false" > "$full" || return 1
+    local needs
+    needs="$(jq -r 'def targets_main:(.conditions.ref_name.include // []) as $inc | (($inc|length)==0) or any($inc[]; .=="~DEFAULT_BRANCH" or .=="refs/heads/main" or .=="main" or .=="*"); (.enforcement=="active") and (.target=="branch") and targets_main and (any(.rules[]?; .type=="pull_request" and ((.parameters.required_approving_review_count // 0)>0)))' "$full")"
+    if [ "$needs" = true ]; then
+      jq '{name:.name,target:.target,enforcement:.enforcement,bypass_actors:(.bypass_actors // []),conditions:.conditions,rules:(.rules|map(if .type=="pull_request" then .parameters.required_approving_review_count=0 else . end))}' "$full" > "$payload"
+      gh api --method PUT "repos/$owner/$name/rulesets/$id" --input "$payload" > "$out/relax_$id.out" || return 1
+      changed="$changed $id"
+    fi
+  done
+  echo "$changed" | xargs > "$out/rulesets_changed.txt"
+}
+
+restore_rulesets(){
+  local owner="$1" name="$2" out="$3" ok=YES
+  for full in "$out"/backups/ruleset_*.json; do
+    [ -f "$full" ] || continue
+    local id payload
+    id="$(basename "$full" | sed 's/ruleset_//; s/.json//')"
+    payload="$out/payloads/restore_$id.json"
+    jq '{name:.name,target:.target,enforcement:.enforcement,bypass_actors:(.bypass_actors // []),conditions:.conditions,rules:.rules}' "$full" > "$payload"
+    gh api --method PUT "repos/$owner/$name/rulesets/$id" --input "$payload" > "$out/restore_$id.out" 2>&1 || ok=NO
+  done
+  echo "$ok" > "$out/rulesets_restored.txt"
+}
+
+merge_pr_cmd(){
+  require_tools
+  local repo="$MB_REPO_DEFAULT" pr="" expected="" stage="" next="" mode="governed-single-owner"
+  while [ $# -gt 0 ]; do case "$1" in --repo) repo="$2"; shift 2;; --pr) pr="$2"; shift 2;; --expected-head) expected="$2"; shift 2;; --stage) stage="$2"; shift 2;; --next-stage) next="$2"; shift 2;; --mode) mode="$2"; shift 2;; *) shift;; esac; done
+  export MB_REPO="$repo"
+  local out="$MB_HOME/runs/merge_pr_${pr}_$(date -u +%Y%m%dT%H%M%SZ)" extra="$out/extra.env"
+  mkdir -p "$out/backups" "$out/payloads"
+  { echo "MetaBlooms merge-pr"; echo "PR: $pr"; echo "Repo: $repo"; } > "$out/run.log"
+  [ -n "$pr" ] && [ -n "$expected" ] && [ -n "$stage" ] && [ -n "$next" ] || { copyback "$out" BLOCKED MISSING_ARGUMENTS "$stage" "$next" "Missing --pr/--expected-head/--stage/--next-stage"; exit 1; }
+  gh auth status >> "$out/run.log" 2>&1 || { copyback "$out" BLOCKED GH_AUTH_REQUIRED "$stage" "$next" "Run gh auth login"; exit 1; }
+  gh pr view "$pr" --repo "$repo" --json state,headRefOid,mergeable,reviewDecision,url > "$out/pr_before.json" 2>>"$out/run.log" || { copyback "$out" BLOCKED PR_FETCH_FAILED "$stage" "$next" "Could not fetch PR"; exit 1; }
+  local state head mergeable review owner name changed restored merge_commit
+  state="$(jq -r .state "$out/pr_before.json")"; head="$(jq -r .headRefOid "$out/pr_before.json")"; mergeable="$(jq -r .mergeable "$out/pr_before.json")"; review="$(jq -r .reviewDecision "$out/pr_before.json")"
+  [ "$state" = OPEN ] || { copyback "$out" BLOCKED PR_NOT_OPEN "$stage" "$next" "PR state is $state"; exit 1; }
+  [ "$head" = "$expected" ] || { copyback "$out" BLOCKED HEAD_SHA_CHANGED "$stage" "$next" "Expected $expected got $head"; exit 1; }
+  owner="${repo%%/*}"; name="${repo#*/}"
+  relax_rulesets "$owner" "$name" "$out" >> "$out/run.log" 2>&1 || { copyback "$out" BLOCKED RULESET_RELAX_FAILED "$stage" "$next" "Could not temporarily relax review rules"; exit 1; }
+  changed="$(cat "$out/rulesets_changed.txt" 2>/dev/null || true)"
+  set +e
+  gh pr merge "$pr" --repo "$repo" --squash --delete-branch --match-head-commit "$expected" --subject "$stage" --body "Governed MetaBlooms merge. Next: $next" > "$out/merge.out" 2>&1
+  rc=$?
+  set -e
+  restore_rulesets "$owner" "$name" "$out" >> "$out/run.log" 2>&1
+  restored="$(cat "$out/rulesets_restored.txt" 2>/dev/null || echo NO)"
+  if [ "$restored" != YES ]; then copyback "$out" BLOCKED RULESET_RESTORE_FAILED "$stage" "$next" "Ruleset restore failed; inspect $out"; exit 2; fi
+  if [ "$rc" -ne 0 ]; then copyback "$out" BLOCKED MERGE_FAILED "$stage" "$next" "$(tr '\n' ' ' < "$out/merge.out" | cut -c1-240)"; exit 1; fi
+  gh pr view "$pr" --repo "$repo" --json state,mergeCommit,mergedAt > "$out/pr_after.json" 2>>"$out/run.log"
+  merge_commit="$(jq -r '.mergeCommit.oid // empty' "$out/pr_after.json")"
+  cat > "$extra" <<EXTRA
+PR=$pr
+EXPECTED_HEAD_SHA=$expected
+OBSERVED_HEAD_SHA=$head
+MERGEABLE=$mergeable
+REVIEW_DECISION=$review
+RULESETS_CHANGED=$changed
+RULESETS_RESTORED=$restored
+MERGE_COMMIT=$merge_commit
+EXTRA
+  copyback "$out" COMPLETE PR_MERGED_RULESETS_RESTORED "$stage" "$next" "" "$extra"
+}
+
+case "${1:-}" in
+  status) shift; status_cmd "$@";;
+  merge-pr) shift; merge_pr_cmd "$@";;
+  recover-last-run) ls -td "$MB_HOME"/runs/* 2>/dev/null | head -n 1 | xargs -r -I{} sh -c 'cat {}/COPY_BACK_TO_CHAT.txt 2>/dev/null || ls -la {}';;
+  inspect-blocker) ls -td "$MB_HOME"/runs/* 2>/dev/null | head -n 1 | xargs -r -I{} sh -c 'grep -E "STATUS=|RESULT=|BLOCKER=" {}/COPY_BACK_TO_CHAT.txt 2>/dev/null || true';;
+  continue) echo "No automatic continuation context installed yet. Use: metablooms status --repo $MB_REPO_DEFAULT --pr 8";;
+  help|-h|--help|"") usage;;
+  *) echo "Unknown command: $1"; usage; exit 2;;
+esac

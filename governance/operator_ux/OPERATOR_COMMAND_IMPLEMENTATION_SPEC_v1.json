@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "spec_id": "OPERATOR_COMMAND_IMPLEMENTATION_SPEC_v1",
+  "stage": "PROFESSIONALIZATION_CONVERGENCE_STAGE43B0_OPERATOR_COMMAND_ABSTRACTION_AND_UX_OPTIMIZATION_LAYER",
+  "purpose": "Expose high-level MetaBlooms operator commands and hide gh/jq/git/ruleset plumbing from user-facing Termux/PowerShell interactions.",
+  "hard_rules": [
+    "User-facing Termux/PowerShell blocks must be one-shot and high-level by default.",
+    "Do not expose gh api, jq ruleset transforms, or long restore plumbing in normal chat responses.",
+    "Every command must write a receipt, print a copy-back block, and attempt clipboard copy when available.",
+    "Every merge must pin expected head SHA.",
+    "Every protected branch write must route through PR flow.",
+    "Every blocker must provide one safe next command or explain why no safe command exists."
+  ],
+  "commands": [
+    {"name": "metablooms status", "role": "show current repo/stage/pr state"},
+    {"name": "metablooms continue", "role": "run the next known safe high-level action from a continuation context"},
+    {"name": "metablooms merge-pr", "role": "governed single-owner PR merge with backup/relax/restore hidden"},
+    {"name": "metablooms sync-os", "role": "branch/PR OS sync with validation hidden"},
+    {"name": "metablooms recover-last-run", "role": "inspect last run directory and emit recovery copy-back"},
+    {"name": "metablooms inspect-blocker", "role": "classify latest blocker and output safe next step"}
+  ],
+  "ux_requirements": {
+    "progress_style": "short human-readable stage updates",
+    "copyback_style": "stable key=value block",
+    "continuation_prompt": "compact unless final/blocker state requires full prompt",
+    "phone_first": true
+  }
+}

@@ -1,0 +1,80 @@
+name: MetaBlooms Stage15D Hosted CI Attestation Smoke
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - metablooms/stage15d-hosted-ci-proof
+
+permissions:
+  contents: read
+  id-token: write
+  attestations: write
+
+env:
+  PAYLOAD_NAME: metablooms_stage15d_hosted_smoke_payload.txt
+  DIFF_NAME: metablooms_stage15d_hosted_smoke_diff.txt
+
+jobs:
+  hosted_ci_attestation_smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build deterministic smoke payloads
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          {
+            echo "schema=mb.stage15d.hosted_ci.smoke_payload.v1"
+            echo "repository=${GITHUB_REPOSITORY}"
+            echo "workflow=${GITHUB_WORKFLOW}"
+            echo "run_id=${GITHUB_RUN_ID}"
+            echo "run_attempt=${GITHUB_RUN_ATTEMPT}"
+            echo "sha=${GITHUB_SHA}"
+          } > "dist/${PAYLOAD_NAME}"
+          {
+            echo "schema=mb.stage15d.hosted_ci.smoke_diff.v1"
+            echo "repository=${GITHUB_REPOSITORY}"
+            echo "sha=${GITHUB_SHA}"
+            echo "purpose=diff-artifact-presence-smoke-not-full-os-diff"
+          } > "dist/${DIFF_NAME}"
+          sha256sum "dist/${PAYLOAD_NAME}" > "dist/${PAYLOAD_NAME}.sha256"
+          sha256sum "dist/${DIFF_NAME}" > "dist/${DIFF_NAME}.sha256"
+          cat "dist/${PAYLOAD_NAME}.sha256"
+          cat "dist/${DIFF_NAME}.sha256"
+
+      - name: Upload hosted smoke payload
+        uses: actions/upload-artifact@v4
+        with:
+          name: metablooms-stage15d-hosted-smoke-payload
+          path: dist/${{ env.PAYLOAD_NAME }}
+          if-no-files-found: error
+
+      - name: Upload hosted smoke diff artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: metablooms-stage15d-hosted-smoke-diff
+          path: dist/${{ env.DIFF_NAME }}
+          if-no-files-found: error
+
+      - name: Upload hosted smoke SHA sidecars
+        uses: actions/upload-artifact@v4
+        with:
+          name: metablooms-stage15d-hosted-smoke-sha256-sidecars
+          path: |
+            dist/${{ env.PAYLOAD_NAME }}.sha256
+            dist/${{ env.DIFF_NAME }}.sha256
+          if-no-files-found: error
+
+      - name: Generate artifact attestation for payload
+        uses: actions/attest@v4
+        with:
+          subject-path: dist/${{ env.PAYLOAD_NAME }}
+
+      - name: Generate artifact attestation for diff
+        uses: actions/attest@v4
+        with:
+          subject-path: dist/${{ env.DIFF_NAME }}
