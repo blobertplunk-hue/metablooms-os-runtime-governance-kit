@@ -1,0 +1,192 @@
+name: MetaBlooms Hosted Smoke From Release Asset
+
+"on":
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: 'GitHub Release tag containing the OS bundle'
+        required: true
+        type: string
+      asset_name:
+        description: 'OS bundle asset filename (.tar.zst)'
+        required: true
+        type: string
+      asset_sha256:
+        description: 'Expected SHA-256 of the OS bundle'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+  id-token: write
+  actions: read
+
+env:
+  EXPECTED_REPOSITORY: blobertplunk-hue/metablooms-os-runtime-governance-kit
+
+jobs:
+  hosted-smoke-from-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository for workflow context
+        uses: actions/checkout@v4
+
+      - name: Install extraction tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y zstd
+          command -v gh
+          command -v python3
+          command -v tar
+          command -v sha256sum
+
+      - name: Download OS release asset
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.release_tag }}
+          ASSET_NAME: ${{ inputs.asset_name }}
+        run: |
+          set -euo pipefail
+          test "${GITHUB_ACTIONS:-}" = "true"
+          test "${GITHUB_REPOSITORY}" = "${EXPECTED_REPOSITORY}"
+          mkdir -p release_bundle
+          gh release download "$RELEASE_TAG" \
+            --repo "$GITHUB_REPOSITORY" \
+            --pattern "$ASSET_NAME" \
+            --pattern "$ASSET_NAME.sha256" \
+            --dir release_bundle
+          test -s "release_bundle/$ASSET_NAME"
+          ls -la release_bundle
+
+      - name: Verify OS bundle SHA
+        shell: bash
+        env:
+          ASSET_NAME: ${{ inputs.asset_name }}
+          ASSET_SHA256: ${{ inputs.asset_sha256 }}
+        run: |
+          set -euo pipefail
+          actual="$(sha256sum "release_bundle/$ASSET_NAME" | awk '{print $1}')"
+          echo "actual_sha256=$actual"
+          if [ -n "${ASSET_SHA256:-}" ]; then
+            test "$actual" = "$ASSET_SHA256"
+          fi
+          if [ -s "release_bundle/$ASSET_NAME.sha256" ]; then
+            sidecar_sha="$(awk '{print $1}' "release_bundle/$ASSET_NAME.sha256" | head -n 1)"
+            test "$actual" = "$sidecar_sha"
+          fi
+
+      - name: Extract OS bundle and locate root
+        shell: bash
+        env:
+          ASSET_NAME: ${{ inputs.asset_name }}
+        run: |
+          set -euo pipefail
+          mkdir -p extracted
+          tar --zstd -xf "release_bundle/$ASSET_NAME" -C extracted
+          if [ -s extracted/Metablooms_OS/scripts/mpp/security.sh ]; then
+            echo "extracted/Metablooms_OS" > os_root_path.txt
+          else
+            found="$(find extracted -path '*/scripts/mpp/security.sh' -type f | head -n 1 || true)"
+            test -n "$found"
+            dirname "$(dirname "$(dirname "$found")")" > os_root_path.txt
+          fi
+          OS_ROOT="$(cat os_root_path.txt)"
+          test -s "$OS_ROOT/scripts/mpp/mpp.sh"
+          test -s "$OS_ROOT/scripts/mpp/mpp_core_dispatch.sh"
+          test -s "$OS_ROOT/tools/metablooms/world_class_runner_validator_v1.py"
+          test -s "$OS_ROOT/runtime/schemas/track_b/track_b_hosted_smoke_receipt_schema_v1.json"
+          echo "OS_ROOT=$OS_ROOT"
+
+      - name: Generate hosted smoke receipt from extracted OS
+        shell: bash
+        env:
+          RELEASE_TAG: ${{ inputs.release_tag }}
+          ASSET_NAME: ${{ inputs.asset_name }}
+          ASSET_SHA256: ${{ inputs.asset_sha256 }}
+        run: |
+          set -euo pipefail
+          OS_ROOT="$(cat os_root_path.txt)"
+          mkdir -p "$OS_ROOT/runtime/evidence/track_b"
+          cat > /tmp/make_metablooms_hosted_smoke_receipt.py <<'PYMAKE'
+          import datetime, hashlib, json, os, pathlib
+          os_root = pathlib.Path(os.environ['OS_ROOT'])
+          required = [
+              'scripts/mpp/mpp.sh',
+              'scripts/mpp/mpp_core_dispatch.sh',
+              'tools/metablooms/world_class_runner_validator_v1.py',
+          ]
+          subjects = []
+          for rel in required:
+              p = os_root / rel
+              subjects.append({
+                  'name': rel,
+                  'sha256': hashlib.sha256(p.read_bytes()).hexdigest(),
+                  'size': p.stat().st_size,
+              })
+          receipt = {
+              'schema': 'mb.track_b.hosted_smoke_receipt.v1',
+              'issuer': 'https://token.actions.githubusercontent.com',
+              'repository': os.environ['GITHUB_REPOSITORY'],
+              'verification_scope': 'hosted_smoke_only',
+              'classification': 'HOSTED_RUNNER_SMOKE_PASS',
+              'created_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+              'run': {
+                  'github_actions': os.environ.get('GITHUB_ACTIONS'),
+                  'workflow': os.environ.get('GITHUB_WORKFLOW'),
+                  'run_id': os.environ.get('GITHUB_RUN_ID'),
+                  'run_attempt': os.environ.get('GITHUB_RUN_ATTEMPT'),
+                  'sha': os.environ.get('GITHUB_SHA'),
+                  'ref': os.environ.get('GITHUB_REF'),
+                  'actor': os.environ.get('GITHUB_ACTOR'),
+              },
+              'source_release': {
+                  'release_tag': os.environ.get('RELEASE_TAG'),
+                  'asset_name': os.environ.get('ASSET_NAME'),
+                  'asset_sha256_input': os.environ.get('ASSET_SHA256'),
+              },
+              'subjects': subjects,
+              'authority_boundary': {
+                  'hosted_smoke_only': True,
+                  'does_not_authorize': [
+                      'FULL_PROMOTION',
+                      'RELEASE_PROVENANCE',
+                      'SLSA_PROVENANCE',
+                      'COLD_PROOF',
+                      'CANONICAL_EXPORT_VERIFIED',
+                  ],
+              },
+          }
+          out = os_root / 'runtime/evidence/track_b/HOSTED_SMOKE_RECEIPT.json'
+          out.write_text(json.dumps(receipt, indent=2, sort_keys=True) + '\n', encoding='utf-8')
+          pathlib.Path(str(out) + '.sha256').write_text(
+              hashlib.sha256(out.read_bytes()).hexdigest() + '  HOSTED_SMOKE_RECEIPT.json\n',
+              encoding='utf-8'
+          )
+          print(json.dumps(receipt, indent=2, sort_keys=True))
+          PYMAKE
+          OS_ROOT="$OS_ROOT" python3 /tmp/make_metablooms_hosted_smoke_receipt.py
+
+      - name: Validate hosted smoke receipt using extracted OS gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          OS_ROOT="$(cat os_root_path.txt)"
+          cd "$OS_ROOT"
+          bash scripts/mpp/security.sh verify-hosted-smoke
+          cp runtime/evidence/track_b/HOSTED_SMOKE_RECEIPT.json "$GITHUB_WORKSPACE/HOSTED_SMOKE_RECEIPT.json"
+          cp runtime/evidence/track_b/HOSTED_SMOKE_RECEIPT.json.sha256 "$GITHUB_WORKSPACE/HOSTED_SMOKE_RECEIPT.json.sha256"
+          sha256sum "$GITHUB_WORKSPACE/HOSTED_SMOKE_RECEIPT.json" > "$GITHUB_WORKSPACE/HOSTED_SMOKE_RECEIPT.json.sha256.normalized"
+
+      - name: Upload hosted smoke receipt artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: metablooms-hosted-smoke-receipt
+          path: |
+            HOSTED_SMOKE_RECEIPT.json
+            HOSTED_SMOKE_RECEIPT.json.sha256
+            HOSTED_SMOKE_RECEIPT.json.sha256.normalized
+            os_root_path.txt
+          if-no-files-found: error
