@@ -1,0 +1,235 @@
+name: MetaBlooms Hosted Smoke From Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "GitHub release tag containing the MetaBlooms OS archive"
+        required: true
+        type: string
+      asset_name:
+        description: "Release asset filename, usually a .tar.zst OS export"
+        required: true
+        type: string
+      asset_sha256:
+        description: "Expected SHA-256 of the release asset"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  id-token: write
+  actions: read
+
+jobs:
+  hosted-smoke-from-release:
+    name: Hosted smoke from release asset
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout workflow repository
+        uses: actions/checkout@v4
+
+      - name: Prepare tools
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          sudo apt-get update
+          sudo apt-get install -y zstd jq
+          mkdir -p input extracted output diagnostics
+          gh --version
+          git --version
+          tar --version
+          zstd --version
+          python3 --version
+
+      - name: Download release asset
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.release_tag }}
+          ASSET_NAME: ${{ inputs.asset_name }}
+        run: |
+          set -Eeuo pipefail
+          gh release download "$RELEASE_TAG" --repo "${{ github.repository }}" --pattern "$ASSET_NAME" --dir input
+          test -s "input/$ASSET_NAME"
+          ls -lah input
+
+      - name: Verify release asset SHA-256
+        shell: bash
+        env:
+          ASSET_NAME: ${{ inputs.asset_name }}
+          EXPECTED_SHA256: ${{ inputs.asset_sha256 }}
+        run: |
+          set -Eeuo pipefail
+          actual="$(sha256sum "input/$ASSET_NAME" | awk '{print $1}')"
+          printf '%s  %s\n' "$actual" "$ASSET_NAME" | tee output/RELEASE_ASSET_VERIFIED.sha256
+          test "$actual" = "$EXPECTED_SHA256"
+
+      - name: Extract archive and locate OS root
+        shell: bash
+        env:
+          ASSET_NAME: ${{ inputs.asset_name }}
+        run: |
+          set -Eeuo pipefail
+          case "$ASSET_NAME" in
+            *.tar.zst)
+              zstd -dc "input/$ASSET_NAME" | tar -tf - > diagnostics/archive_members.txt
+              zstd -dc "input/$ASSET_NAME" | tar -xf - -C extracted
+              ;;
+            *.tar.gz|*.tgz)
+              tar -tzf "input/$ASSET_NAME" > diagnostics/archive_members.txt
+              tar -xzf "input/$ASSET_NAME" -C extracted
+              ;;
+            *.zip)
+              unzip -l "input/$ASSET_NAME" > diagnostics/archive_members.txt
+              unzip -q "input/$ASSET_NAME" -d extracted
+              ;;
+            *)
+              echo "Unsupported archive asset: $ASSET_NAME" >&2
+              exit 31
+              ;;
+          esac
+          OS_ROOT="$(find extracted -type f -path '*/scripts/mpp/mpp.sh' -print -quit | sed 's#/scripts/mpp/mpp.sh$##')"
+          test -n "$OS_ROOT"
+          test -s "$OS_ROOT/scripts/mpp/mpp.sh"
+          printf '%s\n' "$OS_ROOT" | tee output/OS_ROOT.txt
+
+      - name: Hosted smoke checks
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          OS_ROOT="$(cat output/OS_ROOT.txt)"
+          REQUIRED=(
+            "scripts/mpp/mpp.sh"
+            "scripts/mpp/mpp_core_dispatch.sh"
+            "tools/metablooms/world_class_runner_validator_v1.py"
+          )
+          for rel in "${REQUIRED[@]}"; do
+            test -s "$OS_ROOT/$rel"
+          done
+          bash -n "$OS_ROOT/scripts/mpp/mpp.sh"
+          bash -n "$OS_ROOT/scripts/mpp/mpp_core_dispatch.sh"
+          python3 -m py_compile "$OS_ROOT/tools/metablooms/world_class_runner_validator_v1.py"
+          if [ -s "$OS_ROOT/runtime/schemas/track_b/track_b_hosted_smoke_receipt_schema_v1.json" ]; then
+            python3 -m json.tool "$OS_ROOT/runtime/schemas/track_b/track_b_hosted_smoke_receipt_schema_v1.json" >/dev/null
+          fi
+
+      - name: Obtain and verify GitHub OIDC issuer
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          test -n "${ACTIONS_ID_TOKEN_REQUEST_URL:-}"
+          test -n "${ACTIONS_ID_TOKEN_REQUEST_TOKEN:-}"
+          curl -sS -H "Authorization: bearer ${ACTIONS_ID_TOKEN_REQUEST_TOKEN}" "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=metablooms-hosted-smoke" > output/oidc_response.json
+          python3 - <<'PYCODE'
+          import base64, json, pathlib
+          p = pathlib.Path('output/oidc_response.json')
+          r = json.loads(p.read_text())
+          tok = r.get('value')
+          if not tok or tok.count('.') < 2:
+              raise SystemExit('OIDC token missing')
+          payload = tok.split('.')[1]
+          payload += '=' * (-len(payload) % 4)
+          claims = json.loads(base64.urlsafe_b64decode(payload.encode()))
+          iss = claims.get('iss')
+          if iss != 'https://token.actions.githubusercontent.com':
+              raise SystemExit(f'OIDC issuer mismatch: {iss}')
+          pathlib.Path('output/OIDC_ISSUER.txt').write_text(iss + '\n')
+          pathlib.Path('diagnostics/oidc_claims_sanitized.json').write_text(json.dumps({
+              'iss': iss,
+              'aud': claims.get('aud'),
+              'repository': claims.get('repository'),
+              'workflow_ref': claims.get('workflow_ref'),
+              'run_id': claims.get('run_id'),
+          }, indent=2, sort_keys=True) + '\n')
+          PYCODE
+
+      - name: Emit hosted-smoke receipt
+        shell: bash
+        env:
+          RELEASE_TAG: ${{ inputs.release_tag }}
+          ASSET_NAME: ${{ inputs.asset_name }}
+          ASSET_SHA256: ${{ inputs.asset_sha256 }}
+        run: |
+          set -Eeuo pipefail
+          python3 - <<'PYCODE'
+          import datetime, hashlib, json, os, pathlib
+          os_root = pathlib.Path('output/OS_ROOT.txt').read_text().strip()
+          subjects = []
+          for rel in [
+              'scripts/mpp/mpp.sh',
+              'scripts/mpp/mpp_core_dispatch.sh',
+              'tools/metablooms/world_class_runner_validator_v1.py',
+          ]:
+              p = pathlib.Path(os_root) / rel
+              subjects.append({
+                  'name': rel,
+                  'sha256': hashlib.sha256(p.read_bytes()).hexdigest(),
+                  'size_bytes': p.stat().st_size,
+              })
+          receipt = {
+              'schema': 'mb.track_b.hosted_smoke_receipt.v1',
+              'issuer': pathlib.Path('output/OIDC_ISSUER.txt').read_text().strip(),
+              'repository': os.environ['GITHUB_REPOSITORY'],
+              'verification_scope': 'hosted_smoke_only',
+              'classification': 'HOSTED_RUNNER_SMOKE_PASS',
+              'created_utc': datetime.datetime.utcnow().replace(microsecond=0).isoformat() + 'Z',
+              'workflow': 'metablooms-hosted-smoke-from-release.yml',
+              'workflow_run_id': os.environ.get('GITHUB_RUN_ID'),
+              'workflow_run_attempt': os.environ.get('GITHUB_RUN_ATTEMPT'),
+              'workflow_sha': os.environ.get('GITHUB_SHA'),
+              'release_tag': os.environ['RELEASE_TAG'],
+              'asset_name': os.environ['ASSET_NAME'],
+              'asset_sha256': os.environ['ASSET_SHA256'],
+              'subjects': subjects,
+              'checks': [
+                  {'name': 'asset_sha256', 'status': 'PASS'},
+                  {'name': 'archive_extract', 'status': 'PASS'},
+                  {'name': 'required_subjects_present', 'status': 'PASS'},
+                  {'name': 'bash_n_mpp_sh', 'status': 'PASS'},
+                  {'name': 'bash_n_mpp_core_dispatch', 'status': 'PASS'},
+                  {'name': 'py_compile_world_class_runner_validator', 'status': 'PASS'},
+                  {'name': 'oidc_issuer', 'status': 'PASS'},
+              ],
+              'authority_boundary': 'hosted smoke only; does not authorize full promotion, SLSA provenance, cold proof, or canonical export verification',
+          }
+          out = pathlib.Path('output/HOSTED_SMOKE_RECEIPT.json')
+          out.write_text(json.dumps(receipt, indent=2, sort_keys=True) + '\n')
+          sha = hashlib.sha256(out.read_bytes()).hexdigest()
+          pathlib.Path('output/HOSTED_SMOKE_RECEIPT.json.sha256').write_text(f'{sha}  HOSTED_SMOKE_RECEIPT.json\n')
+          PYCODE
+
+      - name: Validate hosted-smoke receipt shape
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python3 - <<'PYCODE'
+          import json, pathlib
+          receipt=json.loads(pathlib.Path('output/HOSTED_SMOKE_RECEIPT.json').read_text())
+          assert receipt.get('schema')=='mb.track_b.hosted_smoke_receipt.v1'
+          assert receipt.get('issuer')=='https://token.actions.githubusercontent.com'
+          assert receipt.get('repository')=='blobertplunk-hue/metablooms-os-runtime-governance-kit'
+          assert receipt.get('verification_scope')=='hosted_smoke_only'
+          assert receipt.get('classification') in {'HOSTED_SMOKE_ONLY','HOSTED_CI_SMOKE_PASS','HOSTED_RUNNER_SMOKE_PASS'}
+          subjects={s.get('name') for s in receipt.get('subjects', []) if isinstance(s, dict)}
+          required={'scripts/mpp/mpp.sh','scripts/mpp/mpp_core_dispatch.sh','tools/metablooms/world_class_runner_validator_v1.py'}
+          missing=required-subjects
+          if missing:
+              raise SystemExit(f'missing required subjects: {sorted(missing)}')
+          print('HOSTED_SMOKE_RECEIPT_VALIDATION=PASS')
+          PYCODE
+
+      - name: Upload hosted-smoke receipt artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: metablooms-hosted-smoke-receipt
+          path: |
+            output/HOSTED_SMOKE_RECEIPT.json
+            output/HOSTED_SMOKE_RECEIPT.json.sha256
+            output/RELEASE_ASSET_VERIFIED.sha256
+            output/OS_ROOT.txt
+            diagnostics/archive_members.txt
+            diagnostics/oidc_claims_sanitized.json
+          if-no-files-found: error
+          retention-days: 14
